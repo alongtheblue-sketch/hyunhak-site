@@ -39,11 +39,23 @@
   .form .two,.pass .opts{grid-template-columns:1fr}
 }
 
-/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
-/* 섹션 표식: h2 앞 朱점 */
-h2{position:relative;padding-left:26px}
-h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
-/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+
+
+/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
+.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
+.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
+.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
+.invert p,.invert li,.invert span,.invert dd,.invert .v,
+.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
+.invert .ttl{color:var(--paper)!important}
+.invert .seal{background:var(--seal)!important}
+.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
+.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
+.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
+.invert .act:hover{background:transparent!important;color:var(--paper)!important}
+.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
+.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
 </style>
 </head>
 <body>
@@ -65,8 +77,8 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
 <div class="pagehead">
   <div class="inner">
     <p class="crumb u gray">현학적 연구소, 입회</p>
-    <h1>세 걸음의<br>등록 절차</h1>
-    <p class="han">約款, 本人認證, 情報記入</p>
+    <h1>회원 가입</h1>
+    <p class="han">약관 동의, 본인인증, 정보 입력</p>
     <p class="mock-note">시연 화면입니다. 등록 절차는 정식 오픈에서 동작합니다.</p>
   </div>
 </div>

@@ -34,11 +34,23 @@
   .room .box{padding:80px var(--gut) 100px}
 }
 
-/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
-/* 섹션 표식: h2 앞 朱점 */
-h2{position:relative;padding-left:26px}
-h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
-/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+
+
+/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
+.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
+.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
+.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
+.invert p,.invert li,.invert span,.invert dd,.invert .v,
+.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
+.invert .ttl{color:var(--paper)!important}
+.invert .seal{background:var(--seal)!important}
+.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
+.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
+.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
+.invert .act:hover{background:transparent!important;color:var(--paper)!important}
+.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
+.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
 </style>
 </head>
 <body>
@@ -60,9 +72,9 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
 <main class="room">
   <div class="side" aria-hidden="true"><span class="seal seal-dot"></span></div>
   <div class="box">
-    <p class="crumb u gray">현학적 연구소, 입장</p>
-    <h1>다시 읽으러<br>온 사람</h1>
-    <p class="han">入場, 열람은 로그인 뒤부터</p>
+    <p class="crumb u gray">현학적 연구소, 로그인</p>
+    <h1>로그인</h1>
+    <p class="han">구매한 지문은 로그인 후 열람</p>
     <p class="mock-note">시연 화면입니다. 로그인은 정식 오픈에서 동작합니다.</p>
     <form>
       <div class="field">

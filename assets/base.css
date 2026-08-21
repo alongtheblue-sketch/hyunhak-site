@@ -103,3 +103,70 @@ footer .han{font-family:var(--serif);font-weight:300}
 .checkrow>label{display:contents}
 /* 시연 고지 유틸 */
 .mock-note{font-size:11.5px;letter-spacing:.06em;color:var(--gray);margin-top:14px}
+
+/* ═══════ 재설계 v2 (2026-08-21) — 먹 반전 리듬 + 숫자 위계 + 절차 그리드 ═══════
+   전역 요소 셀렉터 금지(08-21 POINT-A 사고). 전부 클래스 스코프. 곡률 0 · 그림자 0 · 팔레트 추가 0 */
+
+/* 숫자 스트립 — 사실을 수치로 먼저 읽힌다 */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.facts .f{padding:28px var(--gut) 30px}
+.facts .f + .f{border-left:1px solid var(--hairs)}
+.facts .n{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);
+  letter-spacing:-0.03em;line-height:1;display:block}
+.facts .k{font-size:11px;letter-spacing:.14em;color:var(--gray);margin-top:10px;display:block}
+
+/* 먹 반전 판 — 스크롤 명암 박자의 강세 */
+.invert{background:var(--ink);color:var(--paper)}
+.invert .ttl{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);
+  letter-spacing:-0.03em;color:var(--paper)}
+.invert .sub{color:rgba(246,242,233,.66);margin-top:10px;font-size:14px}
+.invert .hr{border-top:1px solid rgba(246,242,233,.18);margin-top:26px;padding-top:22px}
+.invert .li{color:rgba(246,242,233,.88);font-size:13.5px;line-height:2}
+.invert .go{margin-top:18px;display:inline-block;font-size:11px;letter-spacing:.14em;
+  color:var(--paper);border-bottom:1px solid rgba(246,242,233,.5);padding-bottom:3px}
+.invert .go:hover{color:rgba(246,242,233,.62);border-color:rgba(246,242,233,.3)}
+.invert .idx{font-size:10.5px;letter-spacing:.16em;color:rgba(246,242,233,.55);display:block}
+.invert .seal{width:8px;height:8px;background:var(--seal);display:block;margin-bottom:20px}
+
+/* 절차 그리드 — 단계 4단 */
+.flow{padding:100px var(--gut) 106px;border-top:1px solid var(--hair)}
+.flow .fh{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:48px;gap:20px}
+.flow .fh h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
+.flow .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--ink)}
+.flow .s{padding:24px 22px 32px 0}
+.flow .s + .s{border-left:1px solid var(--hairs);padding-left:22px}
+.flow .no{font-size:10.5px;letter-spacing:.16em;color:var(--seal)}
+.flow .st{font-family:var(--serif);font-weight:700;font-size:var(--t-h4);margin-top:13px;letter-spacing:-0.02em}
+.flow .sd{font-size:13.5px;line-height:1.85;color:var(--body);margin-top:8px}
+
+/* 매트 마디 — 반전 사이의 밝은 층 */
+.mat-band{background:var(--mat)}
+
+@media (max-width:900px){
+  .facts,.flow .steps{grid-template-columns:repeat(2,1fr)}
+  .facts .f:nth-child(3){border-left:0}
+  .flow .s{padding-left:0!important;border-left:0!important;border-top:1px solid var(--hairs)}
+}
+
+/* 반전 판 내부 색 승계 — 먹 위에서 --gray/--body/--seal 는 판독 불가(실측 2.33:1).
+   반전 컨테이너 하위는 종이색 계열로 일괄 승계한다. 2026-08-21 수리. */
+.invert .gray,.invert .u,.invert .k,.invert .per,.invert .note,.invert .help,
+.invert .d,.invert .m,.invert .s,.invert .c,.invert .lead,.invert .member,
+.invert .spec .k,.invert .inc span:first-child{color:rgba(246,242,233,.66)}
+.invert .inc span:last-child,.invert .spec .v,.invert p,.invert li,.invert span,
+.invert dd,.invert dt{color:rgba(246,242,233,.9)}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b{color:var(--paper)}
+.invert .seal{background:var(--seal)}
+.invert .rows li,.invert .inc li,.invert ul,.invert ol{border-color:rgba(246,242,233,.16)}
+.invert .textlink{color:var(--paper);border-bottom-color:rgba(246,242,233,.5)}
+.invert .textlink:hover{color:rgba(246,242,233,.62);border-bottom-color:rgba(246,242,233,.3)}
+/* 반전 판 안의 확정 버튼 = 종이 바탕 + 먹 글자 (대비 역전 유지) */
+.invert .act{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.invert .act *{color:var(--ink)}
+.invert .act:hover{background:transparent;color:var(--paper)}
+.invert .act:hover *{color:var(--paper)}
+.invert .act.ghost{background:transparent;color:var(--paper);border-color:rgba(246,242,233,.55)}
+.invert .act.ghost *{color:var(--paper)}
+.invert .act.ghost:hover{background:var(--paper);color:var(--ink)}
+.invert .act.ghost:hover *{color:var(--ink)}

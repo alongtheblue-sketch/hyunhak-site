@@ -36,7 +36,7 @@
 .subcard .ops{display:flex;gap:20px;align-items:center}
 .rows li a,.rows li.row{display:grid;grid-template-columns:110px 1fr auto;gap:22px;
   align-items:baseline;padding:16px 0}
-.rows li a:hover{opacity:1}
+.rows li a:hover .t{text-decoration:underline;text-underline-offset:3px}
 .rows .d{font-size:12px;letter-spacing:.06em;color:var(--gray)}
 .rows .t{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-0.01em}
 .rows .s{font-size:12px;color:var(--gray)}
@@ -51,16 +51,30 @@
   .subcard{grid-template-columns:1fr}
 }
 
-/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
-/* 목록 hover 시 朱印 점 (대비 유지 수리 2026-08-21: opacity 감쇠 대체) */
-.rows li a{position:relative}
-.rows li a::after{content:"";position:absolute;left:-14px;top:50%;width:5px;height:5px;
-  margin-top:-2.5px;background:var(--seal);opacity:0;transition:opacity .2s}
-.rows li a:hover::after{opacity:1}
-/* 섹션 표식: h2 앞 朱점 */
-h2{position:relative;padding-left:26px}
-h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
-/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+
+
+/* 재설계 v2: 이용권 = 먹 반전 */
+.blk.invert{background:var(--ink);color:var(--paper);padding:26px var(--gut) 30px}
+.blk.invert h2{color:var(--paper)}
+.blk.invert .s,.blk.invert .d{color:rgba(246,242,233,.68)}
+.blk.invert .rows li{border-color:rgba(246,242,233,.16)}
+.blk.invert .textlink{color:var(--paper);border-color:rgba(246,242,233,.5)}
+
+/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
+.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
+.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
+.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
+.invert p,.invert li,.invert span,.invert dd,.invert .v,
+.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
+.invert .ttl{color:var(--paper)!important}
+.invert .seal{background:var(--seal)!important}
+.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
+.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
+.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
+.invert .act:hover{background:transparent!important;color:var(--paper)!important}
+.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
+.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
 </style>
 </head>
 <body>
@@ -93,10 +107,10 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
   </aside>
 
   <section class="main">
-    <h1>한눈에</h1>
+    <h1>내 정보</h1>
     <p class="mock-note">시연 화면입니다. 기록은 예시입니다.</p>
 
-    <div class="blk">
+    <div class="blk invert">
       <h2>이용권</h2>
       <div class="subcard">
         <div>

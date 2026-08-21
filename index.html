@@ -17,16 +17,20 @@
 <link rel="stylesheet" href="assets/base.css">
 <style>
 /* 홈 = 확정 시안 A 전람. 회화 전면 2분할 히어로, 게이트 2분할, 아카이브. */
-.hero{position:relative;min-height:calc(100vh - 62px);
-  display:grid;grid-template-columns:1fr minmax(400px,44vw);
+.hero{position:relative;min-height:calc(84vh - 62px);
+  display:grid;grid-template-columns:1fr minmax(400px,46vw);
   align-items:center;column-gap:clamp(24px,4vw,72px)}
 .hero .say{grid-column:1;padding:0 0 0 var(--gut)}
+.hero .say .eyebrow{font-size:11px;letter-spacing:.18em;color:var(--gray);
+  display:block;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--hair);width:max-content}
+.hero .say .eyebrow em{font-style:normal;color:var(--seal)}
 .hero .say .phrase{font-family:var(--serif);font-weight:300;
   font-size:var(--t-display);line-height:1.28;letter-spacing:-0.025em}
 .hero .say .phrase b{font-weight:700}
-.hero .say .enter{margin-top:44px;display:flex;flex-direction:column;gap:14px}
+.hero .say .enter{margin-top:40px;display:flex;gap:26px;align-items:baseline}
+.hero .say .enter .textlink{font-size:14px}
 .hero .art{grid-column:2;display:grid;place-items:center;padding:0 var(--gut) 0 0}
-.hero .art .wrap{width:100%;max-width:600px;position:relative}
+.hero .art .wrap{width:100%;max-width:660px;position:relative}
 .mk{width:100%;height:auto;color:var(--ink)}
 /* 획 순차 드로잉 — 로고 fill 을 붓 중심선 stroke 마스크로 덮고 획 순서대로 그린다.
    중심선 = symbol.svg 래스터 → skeletonize → spur 제거 → 방향연속 병합(109 획).
@@ -78,33 +82,37 @@
   .gate a + a{border-left:0;border-top:1px solid var(--hair)}
 }
 
-/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
-/* A. 朱印 운용 — 색 추가 0, 이미 있는 --seal 1점을 페이지 전체의 박자로 */
-.gate a::before, .lab::before, .archive::before{
-  content:""; position:absolute; left:var(--gut); width:7px; height:7px;
-  background:var(--seal); opacity:0; transition:opacity .3s}
-.gate a{position:relative}
-.gate a::before{top:44px; opacity:1}
-.lab, .archive{position:relative}
-.lab::before{top:110px} .archive::before{top:110px}
-.lab::before, .archive::before{opacity:1}
-.lab h2, .archive .head{padding-left:26px}
-.gate h2{padding-left:26px}
-.gate .han, .gate .meta{padding-left:26px}
-/* 수치에 朱印 밑줄 */
-.gate .meta span{position:relative; width:max-content}
-.gate .meta span:first-child::after{
-  content:""; position:absolute; left:0; right:0; bottom:-3px; height:1px; background:var(--seal)}
-.gate a:hover .meta span:first-child::after{background:var(--paper)}
-/* 목록 hover 시 朱印 점 */
-.archive li a{position:relative}
-.archive li a::after{content:""; position:absolute; left:-14px; top:50%; width:5px; height:5px;
-  margin-top:-2.5px; background:var(--seal); opacity:0; transition:opacity .2s}
-.archive li a:hover::after{opacity:1}
-.archive li a:hover{opacity:1}
-/* 히어로 印 = 낙관 위치 고정 */
-.seal-mark{width:38px;height:38px;font-size:17px}
-/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+
+
+/* 게이트 = 먹 반전 2분할 판 */
+.gate.invert{border-top:0}
+.gate.invert a{min-height:44vh;display:flex;flex-direction:column;
+  padding:38px var(--gut) 42px;transition:background .22s}
+.gate.invert a + a{border-left:1px solid rgba(246,242,233,.18)}
+.gate.invert a:hover{background:#252222}
+.gate.invert .meta{margin-top:auto;display:flex;flex-direction:column;gap:4px}
+/* 연구소 = 한지 매트 마디 */
+.lab{background:var(--mat);border-top:0}
+/* 아카이브 행 hover 반전 */
+.archive li a{transition:background .18s,color .18s;padding-left:14px;padding-right:14px}
+.archive li a:hover{background:var(--ink);color:var(--paper)}
+.archive li a:hover .yr,.archive li a:hover .n{color:rgba(246,242,233,.7)}
+
+/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
+.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
+.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
+.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
+.invert p,.invert li,.invert span,.invert dd,.invert .v,
+.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
+.invert .ttl{color:var(--paper)!important}
+.invert .seal{background:var(--seal)!important}
+.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
+.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
+.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
+.invert .act:hover{background:transparent!important;color:var(--paper)!important}
+.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
+.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
 </style>
 </head>
 <body>
@@ -125,7 +133,8 @@
 
 <section class="hero">
   <div class="say">
-    <h1 class="phrase">아득히 깊은 배움,<br>그 <b>바닥까지 내려간</b><br>사람의 기록</h1>
+    <span class="eyebrow">현학적 연구소 <em>·</em> 玄學的 硏究所</span>
+    <h1 class="phrase">대학별 제시문 면접,<br><b>지문 해제부터</b><br>촬영 첨삭까지</h1>
     <div class="enter u">
       <a class="textlink" href="studio.html">면접 스튜디오 입장</a>
       <a class="textlink" href="store.html">스토어</a>
@@ -427,34 +436,61 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
   </div>
 </section>
 
-<section class="gate">
+<section class="facts">
+  <div class="f"><span class="n">96</span><span class="k">수록 지문</span></div>
+  <div class="f"><span class="n">4</span><span class="k">대학</span></div>
+  <div class="f"><span class="n">5</span><span class="k">지문당 응시</span></div>
+  <div class="f"><span class="n">3</span><span class="k">첨삭 단계</span></div>
+</section>
+
+<section class="gate invert">
   <a href="studio.html">
-    <h2>면접 스튜디오</h2>
-    <p class="han">제시문 면접 영상 해제</p>
-    <div class="meta">
-      <span>지문 1편 22,000원, 응시 5회</span><!-- mock -->
-      <span>학교 전권 330,000원</span>
-    </div>
+    <span class="seal" aria-hidden="true"></span>
+    <span class="idx">01 &nbsp;/&nbsp; STUDIO</span>
+    <h2 class="ttl">면접 스튜디오</h2>
+    <p class="sub">제시문 면접 영상 해제</p>
+    <span class="meta hr">
+      <span class="li">지문 1편 22,000원, 응시 5회</span>
+      <span class="li">학교 전권 330,000원</span>
+    </span>
+    <span class="go">스튜디오 들어가기</span>
   </a>
   <a href="store.html">
-    <h2>스토어</h2>
-    <p class="han">교재와 기록의 판매대</p>
-    <div class="meta">
-      <span>제시문 해제집, 구술 노트</span>
-      <span>영어 봉투 모의고사 1부 38,500원</span>
-    </div>
+    <span class="seal" aria-hidden="true"></span>
+    <span class="idx">02 &nbsp;/&nbsp; STORE</span>
+    <h2 class="ttl">스토어</h2>
+    <p class="sub">해제집과 봉투 모의고사</p>
+    <span class="meta hr">
+      <span class="li">제시문 해제집, 구술 노트</span>
+      <span class="li">영어 봉투 모의고사 1부 38,500원</span>
+    </span>
+    <span class="go">스토어 보기</span>
   </a>
 </section>
 
 <section class="lab" id="lab">
-  <h2>연구소라는<br>이름의 뜻</h2>
+  <h2>현학적 연구소가<br>하는 일</h2>
   <div class="body">
-    <p>현학 玄學, 검을 현에 배울 학. 아득히 깊을 현 玄, 자랑할 현 衒과의
-    혼동을 사양하는 이름. 『천자문』 첫 구절 天地玄黃의 그 글자.
-    연구소 공부의 출발점은 <b>제시문의 바닥까지 내려가는 읽기</b>.</p>
-    <p style="margin-top:1em">로고의 선비는 이목구비 없이 책을 펼친 모습.
-    비워 둔 얼굴은 자리의 개방, 그 자리에 앉는 것은 결국 읽는 사람 각자의 얼굴.</p>
-    <p class="more"><a class="textlink u" href="studio.html">공부의 방식 보기</a></p>
+    <p>제시문 면접만 다룬다. 대학이 낸 지문을 <b>문장 단위로 해제</b>하고,
+    학생이 실제로 말하는 장면을 촬영해 첨삭한다. 지문 1편에 5회 응시,
+    회차마다 전사와 진단을 붙인다.</p>
+    <p style="margin-top:1em">이름은 검을 현 玄에 배울 학 學을 쓴다.
+    『천자문』 첫 구절 天地玄黃의 그 글자이며, 자랑할 현 衒이 아니다.
+    로고의 선비는 이목구비를 비워 두었다.</p>
+    <p class="more"><a class="textlink u" href="studio.html">면접 스튜디오 보기</a></p>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="fh">
+    <h2>응시 절차</h2>
+    <a class="textlink u" href="studio.html">스튜디오 보기</a>
+  </div>
+  <div class="steps">
+    <div class="s"><span class="no">01</span><p class="st">지문 선택</p><p class="sd">낱권이면 지문 1편, 전권이면 그 학교 지문 전량이 열린다.</p></div>
+    <div class="s"><span class="no">02</span><p class="st">실전형 응시</p><p class="sd">문항을 나누지 않고 한 번에 친다. 실제 고사장과 같은 배치.</p></div>
+    <div class="s"><span class="no">03</span><p class="st">첨삭 세 단</p><p class="sd">말한 그대로 전사, 오독과 비약 진단, 구술체로 재구성.</p></div>
+    <div class="s"><span class="no">04</span><p class="st">연습형 재응시</p><p class="sd">막힌 자리만 끊어 다시 친다. 지문 1편에 5회까지.</p></div>
   </div>
 </section>
 
@@ -465,7 +501,7 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
     <li><a href="studio.html"><span class="yr">2026 여름</span><span class="t">사회 계열 도표 제시문 집중 해제</span><span class="n">18편</span></a></li>
     <li><a href="studio.html"><span class="yr">2026 봄</span><span class="t">자연 계열 수리 구술의 뼈대</span><span class="n">21편</span></a></li>
     <li><a href="studio.html"><span class="yr">2025</span><span class="t">한 해의 기출 전량, 계열별 정리</span><span class="n">96편</span></a></li>
-    <li><a href="studio.html"><span class="yr">2024</span><span class="t">개소 첫해의 기록</span><span class="n">73편</span></a></li>
+    <li><a href="studio.html"><span class="yr">2024</span><span class="t">개소 첫해 기출 정리</span><span class="n">73편</span></a></li>
   </ol>
 </section>
 

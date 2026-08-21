@@ -52,7 +52,12 @@
   letter-spacing:-0.03em;line-height:1.25}
 .envelope .lead p:last-child{font-size:15px;line-height:2;color:var(--body);max-width:52ch}
 .envitems{margin-top:52px;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--hair)}
-.envitems .item{padding:34px var(--gut) 40px 0;transition:background .2s,color .2s}
+.envitems .item{padding:34px var(--gut) 40px 0;transition:background .2s,color .2s;
+  display:flex;flex-direction:column;align-items:flex-start;gap:9px;min-height:190px}
+.envitems .item .no{font-size:10.5px;letter-spacing:.14em;color:var(--gray)}
+.envitems .item .t{font-family:var(--serif);font-weight:700;font-size:var(--t-h4);letter-spacing:-0.02em}
+.envitems .item .d{font-size:12.5px;line-height:1.8;color:var(--body)}
+.envitems .item .p{margin-top:auto;font-weight:600;font-size:15px}
 .envitems .item + .item{border-left:1px solid var(--hair);padding-left:var(--gut)}
 .envitems .item:hover{background:var(--ink);color:var(--paper)}
 .envitems .item:hover .d,.envitems .item:hover .no{color:rgba(246,242,233,.6)}
@@ -62,17 +67,23 @@
   .envitems .item + .item{border-left:0;border-top:1px solid var(--hair);padding-left:0}
 }
 
-/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
-/* 섹션 표식: h2 앞 朱점 */
-h2{position:relative;padding-left:26px}
-h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
 
-/* 수치 강조: 朱 밑줄 */
-.items .p{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
-.envitems .p{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
-.envitems .item:hover .p{text-decoration-color:var(--paper)}
-.items a.item:hover .p{text-decoration-color:var(--paper)}
-/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+
+/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
+.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
+.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
+.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
+.invert p,.invert li,.invert span,.invert dd,.invert .v,
+.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
+.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
+.invert .ttl{color:var(--paper)!important}
+.invert .seal{background:var(--seal)!important}
+.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
+.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
+.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
+.invert .act:hover{background:transparent!important;color:var(--paper)!important}
+.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
+.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
 </style>
 </head>
 <body>
@@ -93,8 +104,8 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
 
 <section class="pagehead">
   <p class="crumb u gray">현학적 연구소, 스토어</p>
-  <h1>화면으로 보던 것을<br>손으로 넘기는 물성</h1>
-  <p class="han">冊과 記錄, 전권 무선제본과 실물 배송</p>
+  <h1>해제집과<br>봉투 모의고사</h1>
+  <p class="han">전권 무선제본, 실물 배송</p>
 </section>
 
 <section class="featured">
@@ -107,17 +118,24 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
   <div class="desc">
     <p class="cap u">이달의 책</p>
     <h2>수리 구술의 뼈대</h2>
-    <p>자연 계열 구술 해제집. 풀이의 나열 대신 답변이 서는 순서, 296면.
+    <p>자연 계열 구술 해제집. 풀이 나열이 아니라 답변 순서 중심, 296면.
     초판 소진 후 2쇄 입고.</p>
     <p class="go"><a class="textlink u" href="store_item.html">자세히 보기</a></p>
   </div>
+</section>
+
+<section class="facts">
+  <div class="f"><span class="n">4</span><span class="k">해제집 권수</span></div>
+  <div class="f"><span class="n">920</span><span class="k">총 면수</span></div>
+  <div class="f"><span class="n">3</span><span class="k">봉투 모의고사 회차</span></div>
+  <div class="f"><span class="n">2시</span><span class="k">당일 출고 기준</span></div>
 </section>
 
 <nav class="items">
   <a class="item" href="store_item.html">
     <span class="no">04-1</span>
     <span class="t">인문 제시문 해제집</span>
-    <span class="d">고전과 현대 제시문 스물네 편의 해부. 188 x 257, 264면.</span>
+    <span class="d">고전과 현대 제시문 24편 해제. 188 x 257, 264면.</span>
     <span class="p">28,000원</span><!-- mock -->
   </a>
   <a class="item" href="store_item.html">
@@ -135,7 +153,7 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
   <a class="item" href="store_item.html">
     <span class="no">04-4</span>
     <span class="t">구술 노트, 백지 연습장</span>
-    <span class="d">답변의 뼈대를 손으로 세우는 연습장. 148 x 210, 128면.</span>
+    <span class="d">답변 구조를 직접 적는 연습장. 148 x 210, 128면.</span>
     <span class="p">9,000원</span>
   </a>
 </nav>
@@ -143,7 +161,7 @@ h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;bac
 <section class="envelope">
   <div class="lead">
     <p class="cap u">봉투 모의고사</p>
-    <h2>봉투째 뜯어<br>한 회를 친다</h2>
+    <h2>영어 봉투<br>모의고사</h2>
     <p>영어 봉투 모의고사. 회차마다 문제지와 정답 해설을 봉투 한 장에 담아 낱부로 낸다.
     시험지 규격 그대로 인쇄해 실제 응시의 손감각을 남긴다.</p>
   </div>
