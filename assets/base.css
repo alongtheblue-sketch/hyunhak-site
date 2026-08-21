@@ -1,0 +1,105 @@
+/* ============ 현학적 연구소, 전람 展覽 디자인 시스템 v1 ============
+   확정 시안 A (2026-08-19 건우 TG 판정). 규칙:
+   1) 완전 모노크롬 + 朱印 점 1개. 2) 마케팅 CTA = 텍스트 링크(버튼 0),
+   커머스 확정 행동(담기/결제/인증/구독 신청)만 잉크 사각 버튼 .act 허용,
+   보조 확정 행동은 .act.ghost (AD 샵 문법). 3) 유틸 11px vs 디스플레이
+   세리프의 크기 격차. 4) 곡률 0, 그림자 0 (라디오 선택 표시의 inset 링만
+   기능 예외). 5) 폼 = 라벨 상단, 밑줄 인풋, 상자 없음. 지시문은 placeholder
+   금지, .help 로. 6) H1 2랭크 = 섹션 페이지 pagehead 72px / 유틸 페이지 52px. */
+
+
+:root{
+  --ink:#312E2E; --paper:#F6F2E9; --gray:#696561; --seal:#BC3529;
+  --mat:#F1EBDD; --body:#4A4644;
+  --hair:rgba(49,46,46,.26); --hairs:rgba(49,46,46,.08);
+  --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
+  --sans:'Pretendard Variable','Pretendard',-apple-system,sans-serif;
+  --gut:28px;
+  /* 타입 스케일 v2 — ratio 1.25, 상한 56px (구 84px 하향, 2026-08-20 B안 확정) */
+  --t-display:clamp(34px,4.2vw,56px);   /* 홈 히어로 */
+  --t-h1:clamp(30px,3.4vw,44px);        /* 페이지 제목 */
+  --t-h2:clamp(25px,2.6vw,35px);        /* 섹션·카드 제목 */
+  --t-h3:clamp(21px,2.2vw,28px);        /* 소제목·상품명 */
+  --t-h4:clamp(17px,1.8vw,23px);        /* 목록 항목 */
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:16px;line-height:1.7;letter-spacing:-0.01em;word-break:keep-all;
+  font-feature-settings:"palt" 1;font-variant-numeric:tabular-nums}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.u{font-size:11px;letter-spacing:.06em;color:var(--ink)}
+.u a:hover{text-decoration:underline;text-underline-offset:3px}
+.gray{color:var(--gray)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:50;background:rgba(246,242,233,.92);
+  backdrop-filter:blur(10px);display:flex;align-items:baseline;
+  justify-content:space-between;padding:18px var(--gut);border-bottom:1px solid var(--hairs)}
+.nav .brand{font-family:var(--serif);font-weight:700;font-size:15px;letter-spacing:-0.02em}
+.nav nav{display:flex;gap:26px}
+.nav .aux{display:flex;gap:26px;color:var(--gray)}
+.nav a.on{border-bottom:1px solid var(--ink);padding-bottom:2px}
+
+/* ---------- 공통 조판 ---------- */
+.page{min-height:72vh}
+.pagehead{padding:96px var(--gut) 64px;border-bottom:1px solid var(--hair)}
+.pagehead .crumb{margin-bottom:22px}
+.pagehead h1{font-family:var(--serif);font-weight:700;
+  font-size:var(--t-h1);letter-spacing:-0.028em;line-height:1.18}
+.pagehead .han{margin-top:14px;font-family:var(--serif);font-weight:300;font-size:15px;color:var(--gray)}
+.textlink{font-size:13px;letter-spacing:.04em;width:max-content;
+  border-bottom:1px solid var(--ink);padding-bottom:3px;display:inline-block}
+.textlink:hover{color:var(--gray);border-color:var(--gray)}
+.seal-dot{width:9px;height:9px;border-radius:50%;background:var(--seal);display:inline-block}
+
+/* ---------- 커머스 확정 버튼 (잉크 사각, AD 샵 문법) ---------- */
+.act{display:inline-flex;align-items:center;justify-content:center;
+  background:var(--ink);color:var(--paper);font-family:var(--sans);
+  font-weight:600;font-size:14px;letter-spacing:.04em;
+  min-height:52px;padding:0 34px;border:1px solid var(--ink);
+  cursor:pointer;transition:background .2s,color .2s}
+.act:hover{background:transparent;color:var(--ink)}
+.act.ghost{background:transparent;color:var(--ink)}
+.act.ghost:hover{background:var(--ink);color:var(--paper)}
+.act:disabled{opacity:.35;cursor:default}
+
+/* ---------- 폼 ---------- */
+.field{display:flex;flex-direction:column;gap:8px;margin-bottom:34px}
+.field label{font-size:12px;letter-spacing:.05em;color:var(--gray)}
+.field input,.field select{font-family:var(--sans);font-size:17px;color:var(--ink);
+  background:transparent;border:0;border-bottom:1px solid var(--ink);
+  padding:8px 0 10px;border-radius:0;outline:none;width:100%}
+.field input::placeholder{color:var(--gray)}
+.field input:focus{border-bottom-width:2px}
+.field .help{font-size:11.5px;color:var(--gray)}
+.field .err{font-size:11.5px;color:var(--seal)}
+.checkrow{display:flex;align-items:flex-start;gap:12px;padding:16px 0;border-top:1px solid var(--hairs)}
+.checkrow input[type=checkbox]{appearance:none;width:18px;height:18px;margin-top:3px;
+  border:1px solid var(--ink);cursor:pointer;flex:none}
+.checkrow input[type=checkbox]:checked{background:var(--ink);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none'/%3E%3C/svg%3E")}
+.checkrow .t{font-size:14px}
+.checkrow .t small{display:block;font-size:11.5px;color:var(--gray);margin-top:2px}
+
+/* ---------- 표 리스트 (아카이브, 장바구니 등) ---------- */
+.rows{list-style:none}
+.rows li{border-top:1px solid var(--hair)}
+.rows li:last-child{border-bottom:1px solid var(--hair)}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--hair);padding:26px var(--gut) 34px;display:flex;
+  justify-content:space-between;align-items:baseline;color:var(--gray);gap:16px;flex-wrap:wrap}
+footer .han{font-family:var(--serif);font-weight:300}
+
+/* ---------- 반응 ---------- */
+@media (max-width:900px){
+  :root{--gut:20px}
+  .nav nav{display:none}
+}
+
+/* 2026-08-21 수리: 전문 링크를 label 밖으로 (동의 오조작 차단) */
+.checkrow>label{display:contents}
+/* 시연 고지 유틸 */
+.mock-note{font-size:11.5px;letter-spacing:.06em;color:var(--gray);margin-top:14px}

@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>스토어, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/store.html">
+<meta property="og:url" content="https://hyunhak.com/store.html">
+<meta name="description" content="현학적 연구소 교재부. 제시문 해제집과 구술 노트, 전권 무선제본 실물 배송.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.items{border-bottom:1px solid var(--hair)}
+.items a.item{display:grid;grid-template-columns:100px minmax(0,1.1fr) minmax(0,1.4fr) 150px;
+  align-items:baseline;gap:26px;padding:34px var(--gut);border-top:1px solid var(--hair);
+  transition:background .2s,color .2s}
+.items a.item:hover{background:var(--ink);color:var(--paper)}
+.items a.item:hover .d,.items a.item:hover .no{color:rgba(246,242,233,.6)}
+.items .no{font-size:12px;letter-spacing:.08em;color:var(--gray)}
+.items .t{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.03em;line-height:1.25}
+.items .d{font-size:12.5px;color:var(--gray);line-height:1.8}
+.items .p{text-align:right;font-weight:600;font-size:16px}
+.featured{display:grid;grid-template-columns:minmax(320px,42%) 1fr;border-bottom:1px solid var(--hair)}
+.featured .plate{border-right:1px solid var(--hair);padding:64px var(--gut);
+  display:flex;align-items:center;justify-content:center}
+.featured .plate .frame{border:1px solid var(--hair);padding:10px;background:var(--mat);max-width:380px}
+.featured .plate img{width:100%;height:auto}
+.featured .plate figcaption{padding-top:8px;font-size:10.5px;color:var(--gray)}
+.featured .desc{padding:80px var(--gut);display:flex;flex-direction:column;justify-content:center}
+.featured .desc .cap{font-size:11px;letter-spacing:.08em;color:var(--gray)}
+.featured .desc h2{margin-top:16px;font-family:var(--serif);font-weight:700;
+  font-size:var(--t-h2);letter-spacing:-0.03em}
+.featured .desc p{margin-top:22px;font-size:15px;line-height:2;color:var(--body);max-width:52ch}
+.featured .desc .go{margin-top:36px}
+.notice{padding:56px var(--gut) 70px;display:flex;gap:60px;flex-wrap:wrap}
+.notice div{max-width:300px}
+.notice h3{font-family:var(--serif);font-weight:500;font-size:17px}
+.notice p{margin-top:10px;font-size:12.5px;color:var(--gray);line-height:1.9}
+@media (max-width:900px){
+  .items a.item{grid-template-columns:1fr;gap:8px}
+  .items .p{text-align:left}
+  .featured{grid-template-columns:1fr}
+  .featured .plate{border-right:0;border-bottom:1px solid var(--hair)}
+}
+.envelope{border-top:1px solid var(--hair);padding:96px var(--gut) 40px}
+.envelope .lead{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:56px;align-items:start}
+.envelope .cap{color:var(--gray)}
+.envelope h2{margin-top:14px;font-family:var(--serif);font-weight:700;font-size:var(--t-h2);
+  letter-spacing:-0.03em;line-height:1.25}
+.envelope .lead p:last-child{font-size:15px;line-height:2;color:var(--body);max-width:52ch}
+.envitems{margin-top:52px;display:grid;grid-template-columns:1fr 1fr 1fr;border-top:1px solid var(--hair)}
+.envitems .item{padding:34px var(--gut) 40px 0;transition:background .2s,color .2s}
+.envitems .item + .item{border-left:1px solid var(--hair);padding-left:var(--gut)}
+.envitems .item:hover{background:var(--ink);color:var(--paper)}
+.envitems .item:hover .d,.envitems .item:hover .no{color:rgba(246,242,233,.6)}
+.envelope .note{margin-top:22px;font-size:11.5px;color:var(--gray)}
+@media (max-width:900px){
+  .envelope .lead,.envitems{grid-template-columns:1fr}
+  .envitems .item + .item{border-left:0;border-top:1px solid var(--hair);padding-left:0}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+
+/* 수치 강조: 朱 밑줄 */
+.items .p{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
+.envitems .p{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
+.envitems .item:hover .p{text-decoration-color:var(--paper)}
+.items a.item:hover .p{text-decoration-color:var(--paper)}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a class="on" href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="login.html">로그인</a>
+    <a href="join.html">가입</a>
+    <a href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<section class="pagehead">
+  <p class="crumb u gray">현학적 연구소, 스토어</p>
+  <h1>화면으로 보던 것을<br>손으로 넘기는 물성</h1>
+  <p class="han">冊과 記錄, 전권 무선제본과 실물 배송</p>
+</section>
+
+<section class="featured">
+  <div class="plate">
+    <figure class="frame">
+      <img src="assets/photo/art_figure.png" alt="표지 시안, 선비 붓그림">
+      <figcaption>수리 구술의 뼈대, 표지 시안</figcaption>
+    </figure>
+  </div>
+  <div class="desc">
+    <p class="cap u">이달의 책</p>
+    <h2>수리 구술의 뼈대</h2>
+    <p>자연 계열 구술 해제집. 풀이의 나열 대신 답변이 서는 순서, 296면.
+    초판 소진 후 2쇄 입고.</p>
+    <p class="go"><a class="textlink u" href="store_item.html">자세히 보기</a></p>
+  </div>
+</section>
+
+<nav class="items">
+  <a class="item" href="store_item.html">
+    <span class="no">04-1</span>
+    <span class="t">인문 제시문 해제집</span>
+    <span class="d">고전과 현대 제시문 스물네 편의 해부. 188 x 257, 264면.</span>
+    <span class="p">28,000원</span><!-- mock -->
+  </a>
+  <a class="item" href="store_item.html">
+    <span class="no">04-2</span>
+    <span class="t">사회 도표 제시문 해제집</span>
+    <span class="d">수치와 도표를 다루는 독법. 188 x 257, 232면.</span>
+    <span class="p">26,000원</span>
+  </a>
+  <a class="item" href="store_item.html">
+    <span class="no">04-3</span>
+    <span class="t">수리 구술의 뼈대</span>
+    <span class="d">자연 계열 구술 해제집, 2쇄. 188 x 257, 296면.</span>
+    <span class="p">32,000원</span>
+  </a>
+  <a class="item" href="store_item.html">
+    <span class="no">04-4</span>
+    <span class="t">구술 노트, 백지 연습장</span>
+    <span class="d">답변의 뼈대를 손으로 세우는 연습장. 148 x 210, 128면.</span>
+    <span class="p">9,000원</span>
+  </a>
+</nav>
+
+<section class="envelope">
+  <div class="lead">
+    <p class="cap u">봉투 모의고사</p>
+    <h2>봉투째 뜯어<br>한 회를 친다</h2>
+    <p>영어 봉투 모의고사. 회차마다 문제지와 정답 해설을 봉투 한 장에 담아 낱부로 낸다.
+    시험지 규격 그대로 인쇄해 실제 응시의 손감각을 남긴다.</p>
+  </div>
+  <nav class="envitems">
+    <a class="item" href="store_item.html">
+      <span class="no">05-1</span>
+      <span class="t">영어 봉투 모의고사 1회</span>
+      <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
+      <span class="p">38,500원</span><!-- mock 회차 -->
+    </a>
+    <a class="item" href="store_item.html">
+      <span class="no">05-2</span>
+      <span class="t">영어 봉투 모의고사 2회</span>
+      <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
+      <span class="p">38,500원</span>
+    </a>
+    <a class="item" href="store_item.html">
+      <span class="no">05-3</span>
+      <span class="t">영어 봉투 모의고사 3회</span>
+      <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
+      <span class="p">38,500원</span>
+    </a>
+  </nav>
+  <p class="note">1부의 값. 회차는 시안 단계의 임시 기재.</p>
+</section>
+
+<section class="notice">
+  <div>
+    <h3>배송</h3>
+    <p>평일 오후 2시 이전 주문은 당일 출고. 배송비 3,000원, 5만원 이상 무료.</p>
+  </div>
+  <div>
+    <h3>교환과 환불</h3>
+    <p>수령 후 7일 이내, 훼손 없는 경우. 상세 규정은 결제 단계에 명시.</p>
+  </div>
+  <div>
+    <h3>디지털과 실물</h3>
+    <p>면접 스튜디오 이용권은 결제 즉시 열린다. 책과 봉투 모의고사만 배송 대상.</p>
+  </div>
+</section>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>

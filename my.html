@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>마이페이지, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/my.html">
+<meta property="og:url" content="https://hyunhak.com/my.html">
+<meta name="description" content="현학적 연구소 마이페이지. 이용권, 열람, 예약, 주문의 한눈에.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.grid{display:grid;grid-template-columns:260px minmax(0,1fr);border-bottom:1px solid var(--hair)}
+.side{border-right:1px solid var(--hair);padding:72px var(--gut) 100px}
+.side .who{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:-0.02em}
+.side .since{margin-top:8px;font-size:12px;color:var(--gray)}
+.side nav{margin-top:44px;display:flex;flex-direction:column}
+.side nav a{padding:12px 0;font-size:14px;border-top:1px solid var(--hairs)}
+.side nav a.cur{font-weight:700}
+.side nav a:hover{color:var(--gray)}
+.side .out{margin-top:44px}
+.main{padding:72px var(--gut) 110px}
+.main h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.03em;margin-bottom:56px}
+.blk{margin-bottom:70px}
+.blk h2{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-0.02em;margin-bottom:24px;
+  display:flex;justify-content:space-between;align-items:baseline}
+.blk h2 .all{font-family:var(--sans);font-size:11px;font-weight:400}
+.subcard{border:1px solid var(--ink);padding:30px 34px;display:grid;
+  grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;max-width:720px}
+.subcard .nm{font-family:var(--serif);font-weight:700;font-size:21px}
+.subcard .st{margin-top:8px;font-size:12.5px;color:var(--gray)}
+.subcard .st b{color:var(--seal);font-weight:600}
+.subcard .ops{display:flex;gap:20px;align-items:center}
+.rows li a,.rows li.row{display:grid;grid-template-columns:110px 1fr auto;gap:22px;
+  align-items:baseline;padding:16px 0}
+.rows li a:hover{opacity:1}
+.rows .d{font-size:12px;letter-spacing:.06em;color:var(--gray)}
+.rows .t{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-0.01em}
+.rows .s{font-size:12px;color:var(--gray)}
+.rows .s.red{color:var(--seal)}
+.resv{border:1px solid var(--hair);padding:22px 26px;max-width:720px;
+  display:flex;justify-content:space-between;align-items:baseline;gap:20px}
+.resv .t{font-family:var(--serif);font-weight:500;font-size:17px}
+.resv .m{font-size:12px;color:var(--gray);margin-top:6px}
+@media (max-width:900px){
+  .grid{grid-template-columns:1fr}
+  .side{border-right:0;border-bottom:1px solid var(--hair);padding-bottom:44px}
+  .subcard{grid-template-columns:1fr}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 목록 hover 시 朱印 점 (대비 유지 수리 2026-08-21: opacity 감쇠 대체) */
+.rows li a{position:relative}
+.rows li a::after{content:"";position:absolute;left:-14px;top:50%;width:5px;height:5px;
+  margin-top:-2.5px;background:var(--seal);opacity:0;transition:opacity .2s}
+.rows li a:hover::after{opacity:1}
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="my.html" class="on">마이페이지</a>
+    <a href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<main class="grid">
+  <aside class="side">
+    <p class="who">현건우</p>
+    <p class="since">2026년 8월 입회, 이용권 회원</p>
+    <nav>
+      <a class="cur" href="#">한눈에</a>
+      <a href="#">열람 기록</a>
+      <a href="#">촬영 예약</a>
+      <a href="#">주문 내역</a>
+      <a href="#">계정 관리</a>
+    </nav>
+    <p class="out"><a class="textlink u" href="login.html">로그아웃</a></p>
+  </aside>
+
+  <section class="main">
+    <h1>한눈에</h1>
+    <p class="mock-note">시연 화면입니다. 기록은 예시입니다.</p>
+
+    <div class="blk">
+      <h2>이용권</h2>
+      <div class="subcard">
+        <div>
+          <p class="nm">면접 스튜디오 이용권</p>
+          <p class="st">고려대 전권, <b>2027년 8월 19일</b>까지. 지문 60편 · 응시한 지문 3편 · 잔여 응시 12회.</p><!-- mock -->
+        </div>
+        <div class="ops">
+          <a class="textlink u" href="studio.html">응시하러 가기</a>
+          <a class="textlink u" href="#">관리</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h2>이어 보기 <a class="all textlink" href="#">열람 기록 전체</a></h2>
+      <ol class="rows">
+        <li><a href="#"><span class="d">2026.08.19</span><span class="t">공동체와 개인, 상반된 두 제시문의 접점</span><span class="s">21분 지점</span></a></li>
+        <li><a href="#"><span class="d">2026.08.18</span><span class="t">도표 제시문, 수치의 함정을 피하는 독법</span><span class="s">완료</span></a></li>
+        <li><a href="#"><span class="d">2026.08.16</span><span class="t">수리 구술, 풀이보다 먼저 세우는 뼈대</span><span class="s">완료</span></a></li>
+      </ol>
+    </div>
+
+    <div class="blk">
+      <h2>촬영 예약</h2>
+      <div class="resv">
+        <div>
+          <p class="t">모의면접 촬영, 3번 방</p>
+          <p class="m">2026년 8월 23일 토요일 14:00, 40분. 첨삭 회신은 25일 월요일까지.</p>
+        </div>
+        <a class="textlink u" href="#">변경</a>
+      </div>
+    </div>
+
+    <div class="blk">
+      <h2>주문 내역 <a class="all textlink" href="#">전체</a></h2>
+      <ol class="rows">
+        <li class="row"><span class="d">2026.08.19</span><span class="t">공동체와 개인 지문 외 1건, 60,500원</span><span class="s red">출고 준비</span></li>
+        <li class="row"><span class="d">2026.07.30</span><span class="t">인문 제시문 해제집, 28,000원</span><span class="s">배송 완료</span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>장바구니, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/cart.html">
+<meta property="og:url" content="https://hyunhak.com/cart.html">
+<meta name="description" content="현학적 연구소 장바구니.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.cartgrid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);border-bottom:1px solid var(--hair)}
+.items{padding:72px var(--gut) 90px;border-right:1px solid var(--hair)}
+.items h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.03em;margin-bottom:52px}
+.line{display:grid;grid-template-columns:72px 1fr auto;gap:24px;align-items:center;padding:26px 0}
+.line .thumb{width:72px;height:96px;border:1px solid var(--hair);background:var(--mat);
+  display:flex;align-items:center;justify-content:center;overflow:hidden}
+.line .thumb img{width:100%;height:100%;object-fit:cover}
+.line .thumb-txt{font-family:var(--serif);font-weight:500;font-size:13px;line-height:1.5;color:var(--gray);text-align:center;background:var(--mat)}
+.line .t{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-0.02em}
+.line .m{margin-top:6px;font-size:12px;color:var(--gray)}
+.line .ops{margin-top:14px;display:flex;gap:18px;align-items:center}
+.qty{display:inline-flex;border:1px solid var(--ink)}
+.qty button{width:32px;height:32px;background:transparent;border:0;font-size:15px;color:var(--ink);cursor:pointer}
+.qty span{width:36px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-left:1px solid var(--hairs);border-right:1px solid var(--hairs)}
+.line .p{text-align:right;font-weight:600;font-size:17px}
+.line .p .was{display:block;font-weight:400;font-size:12px;color:var(--gray);text-decoration:line-through}
+.memberline{padding:16px 0;border-top:1px solid var(--hairs);font-size:12.5px;color:var(--gray)}
+.memberline b{color:var(--seal);font-weight:600}
+.keep{margin-top:34px}
+.bill{padding:72px var(--gut) 90px;display:flex;flex-direction:column}
+.bill h2{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:-0.02em;margin-bottom:36px}
+.bill dl{font-size:14px}
+.bill dl div{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--hairs)}
+.bill dt{color:var(--gray)}
+.bill .total{border-top:2px solid var(--ink);margin-top:8px;padding-top:16px;
+  display:flex;justify-content:space-between;align-items:baseline}
+.bill .total .won{font-weight:700;font-size:26px;letter-spacing:-0.02em}
+.bill .free{margin-top:12px;font-size:12px;color:var(--gray)}
+.bill .act{margin-top:36px;width:100%}
+@media (max-width:900px){
+  .cartgrid{grid-template-columns:1fr}
+  .items{border-right:0;border-bottom:1px solid var(--hair)}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+
+/* 수치 강조: 朱 밑줄 */
+.bill .total .won{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="login.html">로그인</a>
+    <a href="join.html">가입</a>
+    <a class="on" href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<main class="cartgrid">
+  <section class="items">
+    <h1>장바구니</h1>
+    <p class="mock-note">시연 화면입니다. 담긴 상품은 예시입니다.</p>
+    <ol class="rows">
+      <li class="line">
+        <a class="thumb thumb-txt" href="studio.html" aria-label="지문 낱권 상세"><span>지문<br>낱권</span></a>
+        <div>
+          <p class="t"><a href="studio.html">공동체와 개인, 상반된 두 제시문의 접점</a></p>
+          <p class="m">고려대 인문, 지문 1편 · 응시 5회 · 디지털</p>
+          <div class="ops">
+            <span class="qty" aria-label="수량">
+              <button type="button" aria-label="빼기">&minus;</button><span>1</span><button type="button" aria-label="더하기">+</button>
+            </span>
+            <a class="textlink u" href="#">빼기</a>
+          </div>
+        </div>
+        <p class="p">22,000원</p><!-- mock -->
+      </li>
+      <li class="line">
+        <a class="thumb thumb-txt" href="store.html" aria-label="영어 봉투 모의고사 상세"><span>봉투<br>모의</span></a>
+        <div>
+          <p class="t"><a href="store.html">영어 봉투 모의고사 1회</a></p>
+          <p class="m">05-1, 문제지 + 정답 해설 · 실물 배송</p>
+          <div class="ops">
+            <span class="qty" aria-label="수량">
+              <button type="button" aria-label="빼기">&minus;</button><span>1</span><button type="button" aria-label="더하기">+</button>
+            </span>
+            <a class="textlink u" href="#">빼기</a>
+          </div>
+        </div>
+        <p class="p">38,500원</p>
+      </li>
+    </ol>
+    <p class="memberline">지문 낱권은 결제 즉시 열린다. 배송 대상은 <b>봉투 모의고사 1부</b>.</p>
+    <p class="keep"><a class="textlink u" href="store.html">계속 담기</a></p>
+  </section>
+
+  <aside class="bill">
+    <h2>합계</h2>
+    <dl>
+      <div><dt>지문 낱권</dt><dd>22,000원</dd></div>
+      <div><dt>봉투 모의고사</dt><dd>38,500원</dd></div>
+      <div><dt>배송</dt><dd>0원</dd></div>
+    </dl>
+    <div class="total"><span class="u gray">결제 예정</span><span class="won">60,500원</span></div>
+    <p class="free">배송비 3,000원, 실물 5만원 이상이면 무료. 이번 주문은 무료.</p>
+    <a class="act" href="checkout.html">결제로</a>
+  </aside>
+</main>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>

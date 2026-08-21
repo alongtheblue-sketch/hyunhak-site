@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>면접 스튜디오, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/studio.html">
+<meta property="og:url" content="https://hyunhak.com/studio.html">
+<meta name="description" content="학교별 기출 제시문으로 치르는 모의면접. 지문 1편 22,000원, 연습 5회. 학교 전권 330,000원.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.ways{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--hair)}
+.way{padding:56px var(--gut) 64px}
+.way + .way{border-left:1px solid var(--hair)}
+.way h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h4);letter-spacing:-0.02em}
+.way .han{font-family:var(--serif);font-weight:300;font-size:13px;color:var(--gray);margin-top:6px}
+.way p{margin-top:22px;font-size:14px;line-height:1.95;color:var(--body);max-width:36ch}
+.list{padding:100px var(--gut) 60px}
+.list .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:48px}
+.list h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
+.list li a{display:grid;grid-template-columns:110px 90px 1fr auto;align-items:baseline;
+  gap:24px;padding:19px 0;transition:background .2s,color .2s}
+.list li a:hover{background:var(--ink);color:var(--paper)}
+.list li a:hover .m{color:rgba(246,242,233,.6)}
+.list .m{font-size:12px;letter-spacing:.06em;color:var(--gray)}
+.list .t{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);letter-spacing:-0.02em;padding-left:8px}
+.list .len{font-size:12px;color:var(--gray);padding-right:8px}
+.list .note{margin-top:18px;font-size:11.5px;color:var(--gray)}
+.schools{padding:96px var(--gut) 40px;border-top:1px solid var(--hair)}
+.schools .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:44px}
+.schools h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
+.schools li a{display:grid;grid-template-columns:1fr 90px 130px auto;align-items:baseline;
+  gap:24px;padding:22px 0;transition:background .2s,color .2s}
+.schools li a:hover{background:var(--ink);color:var(--paper)}
+.schools li a:hover .c,.schools li a:hover .n{color:rgba(246,242,233,.6)}
+.schools .s{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);letter-spacing:-0.02em}
+.schools .c,.schools .n{font-size:12px;letter-spacing:.04em;color:var(--gray)}
+.schools .w{font-weight:600;font-size:14px;letter-spacing:-0.01em;padding-right:8px}
+.plans{border-top:1px solid var(--hair);display:grid;grid-template-columns:1fr 1fr}
+.plans .p{padding:84px var(--gut) 92px}
+.plans .p + .p{border-left:1px solid var(--hair)}
+.plans h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.03em}
+.plans .han{font-family:var(--serif);font-weight:300;font-size:13px;color:var(--gray);margin-top:6px}
+.plans .price{margin-top:34px;display:flex;align-items:baseline;gap:12px}
+.plans .price .won{font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
+.plans .price .per{font-size:13px;color:var(--gray)}
+.plans .inc{margin-top:28px;max-width:460px}
+.plans .inc li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;font-size:14px}
+.plans .inc li span:last-child{color:var(--gray);font-size:12.5px}
+.plans .acts{margin-top:40px;display:flex;align-items:center;gap:28px}
+.howto{border-top:1px solid var(--hair);padding:84px var(--gut) 96px;
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px}
+.howto h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.03em}
+.howto ol{list-style:none;counter-reset:s}
+.howto ol li{counter-increment:s;position:relative;padding:20px 0 20px 52px;
+  border-top:1px solid var(--hairs);font-size:14.5px;line-height:1.85;color:var(--body)}
+.howto ol li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:26px;
+  font-size:11px;letter-spacing:.06em;color:var(--gray)}
+.howto ol li b{font-weight:600;color:var(--ink)}
+@media (max-width:900px){
+  .ways{grid-template-columns:1fr}
+  .way + .way{border-left:0;border-top:1px solid var(--hair)}
+  .plans,.howto{grid-template-columns:1fr}
+  .plans .p + .p{border-left:0;border-top:1px solid var(--hair)}
+  .schools li a{grid-template-columns:1fr auto}
+  .schools .c,.schools .n{display:none}
+  .list li a{grid-template-columns:90px 1fr auto}
+  .list li a .m:nth-child(2){display:none}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+
+/* 수치 강조: 朱 밑줄 */
+.plans .price .won{text-decoration:underline;text-decoration-color:var(--seal);text-decoration-thickness:1px;text-underline-offset:5px}
+
+/* 목록 hover 시 朱印 점 */
+.rows li a{position:relative}
+.rows li a::after{content:"";position:absolute;left:-14px;top:50%;width:5px;height:5px;
+  margin-top:-2.5px;background:var(--seal);opacity:0;transition:opacity .2s}
+.rows li a:hover::after{opacity:1}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a class="on" href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="login.html">로그인</a>
+    <a href="join.html">가입</a>
+    <a href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<section class="pagehead">
+  <p class="crumb u gray">현학적 연구소, 면접 스튜디오</p>
+  <h1>말하기 전에,<br>다시 읽는 방</h1>
+  <p class="han">映像解題, 제시문 면접 영상 해제와 촬영 첨삭</p>
+</section>
+
+<section class="ways">
+  <div class="way">
+    <h2>실전 응시</h2>
+    <p class="han">한 지문, 다섯 번</p>
+    <p>학교의 실제 기출 제시문으로 치른다. 문항을 나누지 않는 실전형과 하나씩 끊는
+    연습형, 한 지문을 다섯 번까지.</p>
+  </div>
+  <div class="way">
+    <h2>태도 기록</h2>
+    <p class="han">말하는 자신을 마주 봄</p>
+    <p>전면 카메라로 응시 장면을 남긴다. 침묵의 길이, 답변의 완주, 개시 선언까지
+    응시 태도를 함께 기록한다.</p>
+  </div>
+  <div class="way">
+    <h2>첨삭 세 단</h2>
+    <p class="han">전사, 진단, 재구성</p>
+    <p>말한 그대로를 받아 적고, 오독과 논리의 비약을 짚고, 같은 내용을 어떻게
+    말했어야 하는지 구술체로 다시 세운다.</p>
+  </div>
+</section>
+
+<section class="list">
+  <div class="head">
+    <h2>지문 낱권</h2>
+    <a class="textlink u" href="#">전체 지문 목록</a>
+  </div>
+  <ol class="rows">
+    <li><a href="#"><span class="m">고려대</span><span class="m">인문</span><span class="t">공동체와 개인, 상반된 두 제시문의 접점</span><span class="len">22,000원</span></a></li>
+    <li><a href="#"><span class="m">고려대</span><span class="m">사회</span><span class="t">도표 제시문, 수치의 함정을 피하는 독법</span><span class="len">22,000원</span></a></li>
+    <li><a href="#"><span class="m">연세대</span><span class="m">자연</span><span class="t">수리 구술, 풀이보다 먼저 세우는 뼈대</span><span class="len">22,000원</span></a></li>
+    <li><a href="#"><span class="m">연세대</span><span class="m">인문</span><span class="t">고전 제시문의 현대적 재맥락화</span><span class="len">22,000원</span></a></li>
+    <li><a href="#"><span class="m">서울대</span><span class="m">사회</span><span class="t">두 통계가 충돌할 때의 답변 순서</span><span class="len">22,000원</span></a></li>
+  </ol>
+  <p class="note">지문 1편의 값. 결제하면 그 지문으로 다섯 번까지 응시한다. 학교와 지문명은 시안 단계의 임시 기재.</p>
+</section>
+
+<section class="schools">
+  <div class="head">
+    <h2>학교 전권</h2>
+    <a class="textlink u" href="#">전체 학교 보기</a>
+  </div>
+  <ol class="rows">
+    <li><a href="#"><span class="s">고려대학교</span><span class="c">계열적합</span><span class="n">지문 60편</span><span class="w">330,000원</span></a></li>
+    <li><a href="#"><span class="s">연세대학교</span><span class="c">활동우수</span><span class="n">지문 60편</span><span class="w">330,000원</span></a></li>
+    <li><a href="#"><span class="s">서울대학교</span><span class="c">일반전형</span><span class="n">지문 48편</span><span class="w">330,000원</span></a></li>
+    <li><a href="#"><span class="s">성균관대학교</span><span class="c">학과모집</span><span class="n">지문 36편</span><span class="w">330,000원</span></a></li>
+  </ol>
+  <p class="note">학교 하나의 지문 전량. 편수와 전형명은 시안 단계의 임시 기재.</p>
+</section>
+
+<section class="plans">
+  <div class="p">
+    <h2>지문 낱권</h2>
+    <p class="han">한 편씩 고른다</p>
+    <div class="price"><span class="won">22,000원</span><span class="per">지문 1편, 부가세 포함</span></div>
+    <ul class="inc rows">
+      <li><span>응시 횟수</span><span>지문당 5회</span></li>
+      <li><span>첨삭</span><span>응시마다 세 단 전량</span></li>
+      <li><span>응시 영상</span><span>보관, 다시 보기</span></li>
+      <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
+    </ul>
+    <div class="acts">
+      <a class="act" href="cart.html">지문 담기</a>
+      <a class="textlink u" href="#">맛보기 응시 1회</a>
+    </div>
+  </div>
+  <div class="p">
+    <h2>학교 전권</h2>
+    <p class="han">한 학교를 통째로</p>
+    <div class="price"><span class="won">330,000원</span><span class="per">학교 1곳, 부가세 포함</span></div>
+    <ul class="inc rows">
+      <li><span>범위</span><span>그 학교 지문 전량</span></li>
+      <li><span>응시 횟수</span><span>지문마다 5회</span></li>
+      <li><span>추가 지문</span><span>기간 내 갱신분 포함</span></li>
+      <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
+    </ul>
+    <div class="acts">
+      <a class="act" href="cart.html">전권 담기</a>
+      <a class="textlink u" href="#">수록 지문 확인</a>
+    </div>
+  </div>
+</section>
+
+<section class="howto">
+  <h2>응시의<br>순서</h2>
+  <ol>
+    <li><b>지문을 고른다.</b> 낱권이면 한 편, 전권이면 그 학교의 전량이 열린다.</li>
+    <li><b>실전형으로 먼저 친다.</b> 문항을 나누지 않고 한 번에. 실제 고사장의 배치.</li>
+    <li><b>첨삭 세 단을 읽는다.</b> 말한 그대로의 전사, 오독과 비약의 진단, 구술체 재구성.</li>
+    <li><b>연습형으로 다시 친다.</b> 문항을 끊어 약한 자리만. 한 지문에 다섯 번까지.</li>
+  </ol>
+</section>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>

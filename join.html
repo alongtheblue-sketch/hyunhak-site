@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>가입, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/join.html">
+<meta property="og:url" content="https://hyunhak.com/join.html">
+<meta name="description" content="현학적 연구소 입회. 약관 동의, 본인인증, 정보 입력의 세 걸음.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.wrap{max-width:680px;margin:0 auto;padding:0 var(--gut)}
+.pagehead{padding:88px 0 48px;border-bottom:0}
+.pagehead .inner{max-width:680px;margin:0 auto;padding:0 var(--gut)}
+.rail{display:flex;gap:34px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);
+  padding:16px 0;margin-bottom:64px}
+.rail span{font-size:12px;letter-spacing:.05em;color:var(--gray)}
+.rail span.cur{color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;font-weight:600}
+.step{margin-bottom:84px}
+.step .no{font-family:var(--serif);font-weight:300;font-size:15px;color:var(--gray)}
+.step h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);
+  letter-spacing:-0.02em;margin-top:8px;margin-bottom:30px}
+.terms .all{border-top:2px solid var(--ink);border-bottom:1px solid var(--hair);font-weight:600}
+.terms .checkrow:last-child{border-bottom:1px solid var(--hair)}
+.terms .view{font-size:11.5px;color:var(--gray);border-bottom:1px solid var(--hairs);padding-bottom:1px;margin-left:auto;flex:none}
+.pass{border:1px solid var(--ink);padding:34px}
+.pass .t{font-family:var(--serif);font-weight:500;font-size:19px}
+.pass p{margin-top:10px;font-size:13px;color:var(--gray);line-height:1.9}
+.pass .opts{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pass .mockbadge{margin-top:18px;font-size:10.5px;letter-spacing:.08em;color:var(--seal)}
+.form .two{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+.submit{display:flex;align-items:center;gap:26px;padding-bottom:120px}
+.submit .note{font-size:12px;color:var(--gray)}
+@media (max-width:700px){
+  .form .two,.pass .opts{grid-template-columns:1fr}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="login.html">로그인</a>
+    <a class="on" href="join.html">가입</a>
+    <a href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<div class="pagehead">
+  <div class="inner">
+    <p class="crumb u gray">현학적 연구소, 입회</p>
+    <h1>세 걸음의<br>등록 절차</h1>
+    <p class="han">約款, 本人認證, 情報記入</p>
+    <p class="mock-note">시연 화면입니다. 등록 절차는 정식 오픈에서 동작합니다.</p>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <div class="rail" aria-label="가입 단계">
+    <span class="cur">약관 동의</span>
+    <span>본인인증</span>
+    <span>정보 입력</span>
+  </div>
+
+  <section class="step terms">
+    <p class="no">一</p>
+    <h2>약관 동의</h2>
+    <label class="checkrow all">
+      <input type="checkbox">
+      <span class="t">전체 동의</span>
+    </label>
+    <div class="checkrow">
+      <label><input type="checkbox">
+      <span class="t">이용약관 동의 <small>필수</small></span></label>
+      <a class="view" href="#">전문</a>
+    </div>
+    <div class="checkrow">
+      <label><input type="checkbox">
+      <span class="t">개인정보 수집과 이용 동의 <small>필수, 수집 항목은 이름, 생년월일, 연락처, 이메일</small></span></label>
+      <a class="view" href="#">전문</a>
+    </div>
+    <label class="checkrow">
+      <input type="checkbox">
+      <span class="t">만 14세 이상 확인 <small>필수, 미만은 법정대리인 동의 절차로 분기</small></span>
+    </label>
+    <label class="checkrow">
+      <input type="checkbox">
+      <span class="t">새 해제와 소식 수신 <small>선택, 언제든 해지</small></span>
+    </label>
+  </section>
+
+  <section class="step">
+    <p class="no">二</p>
+    <h2>본인인증</h2>
+    <div class="pass">
+      <p class="t">휴대전화 본인인증</p>
+      <p>통신사 명의 기준의 1회 인증. 인증 결과는 계정 식별에만 쓰고
+      원문은 보관하지 않는 방식.</p>
+      <div class="opts">
+        <button class="act" type="button">PASS 앱 인증</button>
+        <button class="act ghost" type="button">문자 인증</button>
+      </div>
+      <p class="mockbadge">시안 단계 목업, 실 연동은 본인확인기관 계약 후</p>
+    </div>
+  </section>
+
+  <section class="step form">
+    <p class="no">三</p>
+    <h2>정보 입력</h2>
+    <div class="two">
+      <div class="field">
+        <label for="nm">이름</label>
+        <input id="nm" type="text" autocomplete="name">
+        <span class="help">본인인증 결과로 자동 기입</span>
+      </div>
+      <div class="field">
+        <label for="ph">연락처</label>
+        <input id="ph" type="tel" autocomplete="tel">
+        <span class="help">본인인증 결과로 자동 기입</span>
+      </div>
+    </div>
+    <div class="field">
+      <label for="em">이메일</label>
+      <input id="em" type="email" autocomplete="email">
+      <span class="help">영수증과 열람 안내의 수신처</span>
+    </div>
+    <div class="field">
+      <label for="pw">비밀번호</label>
+      <input id="pw" type="password" autocomplete="new-password">
+      <span class="help">10자 이상, 문자와 숫자 각 1자 이상</span>
+    </div>
+    <div class="field">
+      <label for="pw2">비밀번호 확인</label>
+      <input id="pw2" type="password" autocomplete="new-password">
+    </div>
+  </section>
+
+  <div class="submit">
+    <button class="act" type="button">가입 완료</button>
+    <span class="note">완료와 동시에 로그인 상태로 전환</span>
+  </div>
+
+</main>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>

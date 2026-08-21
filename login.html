@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>로그인, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/login.html">
+<meta property="og:url" content="https://hyunhak.com/login.html">
+<meta name="description" content="현학적 연구소 입장.">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+.room{min-height:calc(100vh - 140px);display:grid;grid-template-columns:1fr minmax(360px,520px) 1fr}
+.room .side{border-right:1px solid var(--hair);position:relative}
+.room .side .seal{position:absolute;right:28px;top:44%}
+.room .box{padding:120px 48px 140px}
+.room .aftr{border-left:1px solid var(--hair)}
+.box .crumb{margin-bottom:20px}
+.box h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.03em}
+.box .han{margin-top:10px;font-family:var(--serif);font-weight:300;font-size:14px;color:var(--gray)}
+.box form{margin-top:56px}
+.keep{display:flex;align-items:center;gap:10px;margin:6px 0 40px;font-size:12.5px;color:var(--gray)}
+.keep input{appearance:none;width:15px;height:15px;border:1px solid var(--ink);cursor:pointer}
+.keep input:checked{background:var(--ink)}
+.entry{display:flex;align-items:center;gap:26px}
+.aux2{margin-top:46px;padding-top:22px;border-top:1px solid var(--hairs);
+  display:flex;gap:28px}
+@media (max-width:900px){
+  .room{grid-template-columns:0 1fr 0}
+  .room .side,.room .aftr{display:none}
+  .room .box{padding:80px var(--gut) 100px}
+}
+
+/* ══ POINT-A 朱印 운용 (2026-08-21) ══ */
+/* 섹션 표식: h2 앞 朱점 */
+h2{position:relative;padding-left:26px}
+h2::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;background:var(--seal)}
+/* ══ /POINT-A 朱印 운용 (2026-08-21) ══ /*/
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a class="on" href="login.html">로그인</a>
+    <a href="join.html">가입</a>
+    <a href="cart.html">장바구니 2</a>
+  </div>
+</header>
+
+<main class="room">
+  <div class="side" aria-hidden="true"><span class="seal seal-dot"></span></div>
+  <div class="box">
+    <p class="crumb u gray">현학적 연구소, 입장</p>
+    <h1>다시 읽으러<br>온 사람</h1>
+    <p class="han">入場, 열람은 로그인 뒤부터</p>
+    <p class="mock-note">시연 화면입니다. 로그인은 정식 오픈에서 동작합니다.</p>
+    <form>
+      <div class="field">
+        <label for="em">이메일</label>
+        <input id="em" type="email" autocomplete="username">
+      </div>
+      <div class="field">
+        <label for="pw">비밀번호</label>
+        <input id="pw" type="password" autocomplete="current-password">
+      </div>
+      <label class="keep"><input type="checkbox"> 이 기기에서 로그인 유지</label>
+      <div class="entry">
+        <button class="act" type="button">로그인</button>
+        <a class="textlink u" href="#">비밀번호 재설정</a>
+      </div>
+    </form>
+    <div class="aux2 u">
+      <span class="gray">처음이라면</span>
+      <a class="textlink" href="join.html">세 걸음의 가입</a>
+    </div>
+  </div>
+  <div class="aftr" aria-hidden="true"></div>
+</main>
+
+<footer class="u">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+</body>
+</html>
