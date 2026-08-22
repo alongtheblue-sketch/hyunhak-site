@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>결제 확인, 현학적 연구소</title>
+<link rel="canonical" href="https://hyunhak.com/pay_done.html">
+<meta property="og:url" content="https://hyunhak.com/pay_done.html">
+<meta name="description" content="현학적 연구소 결제 확인 화면입니다.">
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/base.css">
+<style>
+/* pay_done 전용 — 클래스 스코프 */
+.payroom{min-height:70vh;display:grid;place-items:center;padding:80px var(--gut)}
+.paybox{max-width:560px;width:100%}
+.paybox .crumb{margin-bottom:18px}
+.paybox h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.028em;line-height:1.2}
+.paybox .han{margin-top:14px;font-family:var(--serif);font-weight:300;font-size:15px;color:var(--gray)}
+.payline{margin-top:36px;border-top:1px solid var(--ink)}
+.payline div{display:flex;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--hairs);font-size:14px}
+.payline dt{color:var(--gray)}
+.payacts{margin-top:34px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.spin{color:var(--gray);font-size:14px}
+</style>
+</head>
+<body>
+
+<header class="nav u">
+  <a class="brand" href="index.html">현학적 연구소</a>
+  <nav>
+    <a href="studio.html">면접 스튜디오</a>
+    <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
+    <a href="index.html#lab">연구소</a>
+  </nav>
+  <div class="aux">
+    <a href="my.html">마이페이지</a>
+  </div>
+</header>
+
+<main class="payroom">
+  <div class="paybox" id="box">
+    <p class="crumb u gray">현학적 연구소, 결제 확인</p>
+    <h1 id="h">결제를<br>확인하는 중입니다</h1>
+    <p class="han" id="sub">잠시만 기다려 주십시오. 창을 닫지 마십시오.</p>
+    <dl class="payline" id="lines" hidden></dl>
+    <div class="payacts" id="acts" hidden></div>
+  </div>
+</main>
+
+<footer class="u" style="display:flex;justify-content:space-between;padding:40px var(--gut);border-top:1px solid var(--hair)">
+  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
+  <span>www.hyunhak.com</span>
+  <span>서울, 대한민국</span>
+</footer>
+
+<script src="assets/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', async function(){
+  var q = new URLSearchParams(location.search);
+  var h = document.getElementById('h'), sub = document.getElementById('sub');
+  var lines = document.getElementById('lines'), acts = document.getElementById('acts');
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  if (q.get('code') || q.get('fail')) {
+    h.innerHTML = '결제가<br>완료되지 않았습니다';
+    sub.textContent = q.get('message') || '결제가 중단되었습니다. 장바구니에서 다시 시도하십시오.';
+    acts.hidden = false;
+    acts.innerHTML = '<a class="act" href="cart.html">장바구니로</a><a class="textlink u" href="index.html">처음으로</a>';
+    return;
+  }
+
+  var paymentKey = q.get('paymentKey'), orderId = q.get('orderId'), amount = parseInt(q.get('amount'), 10);
+  if (!paymentKey || !orderId || !amount) {
+    h.innerHTML = '잘못된 접근입니다';
+    sub.textContent = '결제 창을 통해서만 열리는 화면입니다.';
+    acts.hidden = false; acts.innerHTML = '<a class="act" href="index.html">처음으로</a>';
+    return;
+  }
+  try {
+    var r = await HH.api('/api/payments/confirm', { method: 'POST',
+      body: JSON.stringify({ paymentKey: paymentKey, orderId: orderId, amount: amount }) });
+    try { localStorage.removeItem('hh_cart_v1'); } catch(e) {}
+    h.innerHTML = '결제가<br>완료되었습니다';
+    sub.textContent = '이용권은 즉시 열리며, 실물 상품은 순차 출고합니다.';
+    lines.hidden = false;
+    lines.innerHTML = '<div><dt>주문 번호</dt><dd>' + esc(orderId) + '</dd></div>'
+      + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'
+      + (r.receipt ? '<div><dt>영수증</dt><dd><a class="textlink u" target="_blank" rel="noopener" href="' + esc(r.receipt) + '">보기</a></dd></div>' : '');
+    acts.hidden = false;
+    acts.innerHTML = '<a class="act" href="my.html">마이페이지</a><a class="textlink u" href="studio.html">면접 스튜디오</a>';
+  } catch (e) {
+    h.innerHTML = '승인에<br>실패했습니다';
+    sub.textContent = e.message || '결제 승인에 실패했습니다. 금액이 빠져나갔다면 자동 취소됩니다.';
+    acts.hidden = false;
+    acts.innerHTML = '<a class="act" href="cart.html">장바구니로</a><a class="textlink u" href="mailto:admin@hyunhak.com">문의</a>';
+  }
+});
+</script>
+</body>
+</html>

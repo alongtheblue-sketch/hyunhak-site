@@ -78,6 +78,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -90,59 +92,60 @@
 <main class="cartgrid">
   <section class="items">
     <h1>장바구니</h1>
-    <p class="mock-note">시연 화면입니다. 담긴 상품은 예시입니다.</p>
-    <ol class="rows">
-      <li class="line">
-        <a class="thumb thumb-txt" href="studio.html" aria-label="지문 낱권 상세"><span>지문<br>낱권</span></a>
-        <div>
-          <p class="t"><a href="studio.html">공동체와 개인, 상반된 두 제시문의 접점</a></p>
-          <p class="m">고려대 인문, 지문 1편 · 응시 5회 · 디지털</p>
-          <div class="ops">
-            <span class="qty" aria-label="수량">
-              <button type="button" aria-label="빼기">&minus;</button><span>1</span><button type="button" aria-label="더하기">+</button>
-            </span>
-            <a class="textlink u" href="#">빼기</a>
-          </div>
-        </div>
-        <p class="p">22,000원</p><!-- mock -->
-      </li>
-      <li class="line">
-        <a class="thumb thumb-txt" href="store.html" aria-label="영어 봉투 모의고사 상세"><span>봉투<br>모의</span></a>
-        <div>
-          <p class="t"><a href="store.html">영어 봉투 모의고사 1회</a></p>
-          <p class="m">05-1, 문제지 + 정답 해설 · 실물 배송</p>
-          <div class="ops">
-            <span class="qty" aria-label="수량">
-              <button type="button" aria-label="빼기">&minus;</button><span>1</span><button type="button" aria-label="더하기">+</button>
-            </span>
-            <a class="textlink u" href="#">빼기</a>
-          </div>
-        </div>
-        <p class="p">38,500원</p>
-      </li>
-    </ol>
-    <p class="memberline">지문 낱권은 결제 즉시 열립니다. 배송 대상은 <b>봉투 모의고사 1부</b>입니다.</p>
+    <ol class="rows" id="cartRows"></ol>
+    <p class="memberline" id="cartNote" hidden>이용권은 결제 즉시 열립니다. 실물 상품만 배송 대상입니다.</p>
+    <p class="memberline" id="cartEmpty" hidden>담긴 상품이 없습니다. 스토어와 면접 스튜디오에서 담아 주십시오.</p>
     <p class="keep"><a class="textlink u" href="store.html">계속 담기</a></p>
   </section>
 
   <aside class="bill">
     <h2>합계</h2>
-    <dl>
-      <div><dt>지문 낱권</dt><dd>22,000원</dd></div>
-      <div><dt>봉투 모의고사</dt><dd>38,500원</dd></div>
-      <div><dt>배송</dt><dd>0원</dd></div>
-    </dl>
-    <div class="total invert"><span class="u gray">결제 예정</span><span class="won">60,500원</span></div>
-    <p class="free">배송비는 3,000원이고, 실물 5만원 이상이면 무료입니다. 이번 주문은 무료입니다.</p>
-    <a class="act" href="checkout.html">결제로</a>
+    <dl id="billRows"></dl>
+    <div class="total invert"><span class="u gray">결제 예정</span><span class="won" id="billTotal">0원</span></div>
+    <p class="free">배송비는 3,000원이고, 실물 5만원 이상이면 무료입니다.</p>
+    <a class="act" href="checkout.html" id="toCheckout">결제로</a>
   </aside>
 </main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function render(){
+    var items=HH.cart(), rows=document.getElementById('cartRows');
+    document.getElementById('cartEmpty').hidden=items.length>0;
+    document.getElementById('cartNote').hidden=items.length===0;
+    document.getElementById('toCheckout').style.opacity=items.length?1:.35;
+    document.getElementById('toCheckout').style.pointerEvents=items.length?'auto':'none';
+    rows.innerHTML=items.map(function(it,i){
+      return '<li class="line">'
+        +'<a class="thumb thumb-txt" href="store.html"><span>'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>'
+        +'<div><p class="t">'+esc(it.title)+'</p>'
+        +'<p class="m">'+(it.ship?'실물 배송':'디지털 · 결제 즉시 열림')+'</p>'
+        +'<div class="ops"><span class="qty"><button type="button" data-i="'+i+'" data-d="-1">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1">+</button></span>'
+        +'<a class="textlink u" href="#" data-rm="'+i+'">빼기</a></div></div>'
+        +'<p class="p">'+HH.won(it.price*it.qty)+'</p></li>';
+    }).join('');
+    var sub=items.reduce(function(s,x){return s+x.price*x.qty},0);
+    var ship=(items.some(function(x){return x.ship})&&sub<50000&&sub>0)?3000:0;
+    document.getElementById('billRows').innerHTML=
+      items.map(function(it){return '<div><dt>'+esc(it.title)+'</dt><dd>'+HH.won(it.price*it.qty)+'</dd></div>'}).join('')
+      +'<div><dt>배송</dt><dd>'+HH.won(ship)+'</dd></div>';
+    document.getElementById('billTotal').textContent=HH.won(sub+ship);
+    rows.querySelectorAll('button[data-i]').forEach(function(b){b.addEventListener('click',function(){
+      var it=HH.cart();var x=it[+b.dataset.i];x.qty=Math.max(1,Math.min(10,x.qty+ +b.dataset.d));HH.saveCart(it);render();})});
+    rows.querySelectorAll('a[data-rm]').forEach(function(a){a.addEventListener('click',function(ev){
+      ev.preventDefault();var it=HH.cart();it.splice(+a.dataset.rm,1);HH.saveCart(it);render();})});
+  }
+  render();
+});
+</script>
 
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

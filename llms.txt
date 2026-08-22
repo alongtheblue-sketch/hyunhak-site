@@ -1,0 +1,38 @@
+# 현학적 연구소 (hyunhak.com)
+
+> 대학입시 구술·제시문 면접 전문 연구소. 대학별 면접 기출 아카이브, 면접가이드북 PDF 자료실,
+> 촬영·전사·첨삭이 붙는 면접 스튜디오를 운영한다.
+
+## 핵심 페이지
+- [면접 스튜디오](https://hyunhak.com/studio.html): 학교별 기출 지문으로 모의면접 응시, 전사와 6축 리포트
+- [면접 아카이브](https://hyunhak.com/interview/index.html): 대학별 면접 유형·실제 기출 질문·준비 전략
+- [자료실](https://hyunhak.com/library.html): 대학별 2027 면접가이드북 PDF (회원 무료)
+- [스토어](https://hyunhak.com/store.html): 이용권, 해제집, 봉투 모의고사
+
+## 대학별 면접 아카이브
+- [아주대학교 면접 기출·유형·전략](https://hyunhak.com/interview/ajou.html)
+- [가톨릭대학교 면접 기출·유형·전략](https://hyunhak.com/interview/catholic.html)
+- [중앙대학교 면접 기출·유형·전략](https://hyunhak.com/interview/cau.html)
+- [동국대학교 면접 기출·유형·전략](https://hyunhak.com/interview/dongguk.html)
+- [이화여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/ewha.html)
+- [가천대학교 면접 기출·유형·전략](https://hyunhak.com/interview/gachon.html)
+- [한국외국어대학교 면접 기출·유형·전략](https://hyunhak.com/interview/hufs.html)
+- [인하대학교 면접 기출·유형·전략](https://hyunhak.com/interview/inha.html)
+- [경희대학교 면접 기출·유형·전략](https://hyunhak.com/interview/khu.html)
+- [경북대학교 면접 기출·유형·전략](https://hyunhak.com/interview/knu.html)
+- [건국대학교 면접 기출·유형·전략](https://hyunhak.com/interview/konkuk.html)
+- [국민대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kookmin.html)
+- [고려대학교 면접 기출·유형·전략](https://hyunhak.com/interview/korea.html)
+- [광운대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kwangwoon.html)
+- [경기대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kyonggi.html)
+- [명지대학교 면접 기출·유형·전략](https://hyunhak.com/interview/myongji.html)
+- [부산대학교 면접 기출·유형·전략](https://hyunhak.com/interview/pusan.html)
+- [세종대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sejong.html)
+- [서울과학기술대학교 면접 기출·유형·전략](https://hyunhak.com/interview/seoultech.html)
+- [성균관대학교 면접 기출·유형·전략](https://hyunhak.com/interview/skku.html)
+- [서울대학교 면접 기출·유형·전략](https://hyunhak.com/interview/snu.html)
+- [숙명여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sookmyung.html)
+- [숭실대학교 면접 기출·유형·전략](https://hyunhak.com/interview/soongsil.html)
+- [성신여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sungshin.html)
+- [서울시립대학교 면접 기출·유형·전략](https://hyunhak.com/interview/uos.html)
+- [연세대학교 면접 기출·유형·전략](https://hyunhak.com/interview/yonsei.html)

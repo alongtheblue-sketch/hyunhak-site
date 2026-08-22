@@ -60,6 +60,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -75,22 +77,35 @@
     <p class="crumb u gray">현학적 연구소, 로그인</p>
     <h1>로그인</h1>
     <p class="han">구매한 지문은 로그인 후에 열람합니다</p>
-    <p class="mock-note">시연 화면입니다. 로그인은 정식 오픈에서 동작합니다.</p>
-    <form>
+    <form id="loginForm">
       <div class="field">
         <label for="em">이메일</label>
-        <input id="em" type="email" autocomplete="username">
+        <input id="em" type="email" autocomplete="username" required>
       </div>
       <div class="field">
         <label for="pw">비밀번호</label>
-        <input id="pw" type="password" autocomplete="current-password">
+        <input id="pw" type="password" autocomplete="current-password" required>
       </div>
-      <label class="keep"><input type="checkbox"> 이 기기에서 로그인 유지</label>
+      <label class="keep"><input type="checkbox" checked> 이 기기에서 로그인 유지</label>
       <div class="entry">
-        <button class="act" type="button">로그인</button>
-        <a class="textlink u" href="#">비밀번호 재설정</a>
+        <button class="act" type="submit" id="loginBtn">로그인</button>
+        <a class="textlink u" href="mailto:admin@hyunhak.com?subject=비밀번호 재설정 요청">비밀번호 재설정 문의</a>
       </div>
     </form>
+    <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      document.getElementById('loginForm').addEventListener('submit', async function(ev){
+        ev.preventDefault();
+        var btn=document.getElementById('loginBtn'); btn.disabled=true; btn.textContent='확인 중…';
+        try{
+          await HH.api('/api/auth/login',{method:'POST',body:JSON.stringify({
+            email:document.getElementById('em').value.trim(),
+            password:document.getElementById('pw').value})});
+          location.href=new URLSearchParams(location.search).get('next')||'my.html';
+        }catch(e){ alert(e.message||'로그인에 실패했습니다'); btn.disabled=false; btn.textContent='로그인'; }
+      });
+    });
+    </script>
     <div class="aux2 u">
       <span class="gray">처음이라면</span>
       <a class="textlink" href="join.html">세 걸음의 가입</a>
@@ -102,8 +117,9 @@
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

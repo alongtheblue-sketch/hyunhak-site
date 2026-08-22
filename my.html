@@ -84,6 +84,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -94,71 +96,95 @@
 
 <main class="grid">
   <aside class="side">
-    <p class="who">현건우</p>
-    <p class="since">2026년 8월에 입회한 이용권 회원입니다</p>
+    <p class="who" id="whoName">회원</p>
+    <p class="since" id="whoSince"></p>
     <nav>
       <a class="cur" href="#">한눈에</a>
-      <a href="#">열람 기록</a>
-      <a href="#">촬영 예약</a>
-      <a href="#">주문 내역</a>
-      <a href="#">계정 관리</a>
+      <a href="library.html">자료실</a>
+      <a href="studio.html">면접 스튜디오</a>
+      <a href="store.html">스토어</a>
     </nav>
-    <p class="out"><a class="textlink u" href="login.html">로그아웃</a></p>
+    <p class="out"><a class="textlink u" href="#" id="logoutBtn">로그아웃</a></p>
   </aside>
 
   <section class="main">
     <h1>내 정보</h1>
-    <p class="mock-note">시연 화면입니다. 기록은 예시입니다.</p>
 
     <div class="blk invert">
       <h2>이용권</h2>
-      <div class="subcard">
-        <div>
-          <p class="nm">면접 스튜디오 이용권</p>
-          <p class="st">고려대 전권을 <b>2027년 8월 19일</b>까지 이용합니다. 지문 60편 · 응시한 지문 3편 · 잔여 응시 12회.</p><!-- mock -->
-        </div>
-        <div class="ops">
-          <a class="textlink u" href="https://studio.hyunhak.com/" target="_blank" rel="noopener">응시하러 가기</a>
-          <a class="textlink u" href="#">관리</a>
-        </div>
-      </div>
+      <div id="passList"><p class="st gray">불러오는 중입니다…</p></div>
     </div>
 
     <div class="blk">
-      <h2>이어 보기 <a class="all textlink" href="#">열람 기록 전체</a></h2>
-      <ol class="rows">
-        <li><a href="#"><span class="d">2026.08.19</span><span class="t">공동체와 개인, 상반된 두 제시문의 접점</span><span class="s">21분 지점</span></a></li>
-        <li><a href="#"><span class="d">2026.08.18</span><span class="t">도표 제시문, 수치의 함정을 피하는 독법</span><span class="s">완료</span></a></li>
-        <li><a href="#"><span class="d">2026.08.16</span><span class="t">수리 구술, 풀이보다 먼저 세우는 뼈대</span><span class="s">완료</span></a></li>
-      </ol>
+      <h2>주문 내역</h2>
+      <ol class="rows" id="orderRows"></ol>
+      <p class="m gray" id="orderEmpty" hidden>주문 내역이 없습니다.</p>
     </div>
 
     <div class="blk">
-      <h2>촬영 예약</h2>
-      <div class="resv">
-        <div>
-          <p class="t">모의면접 촬영, 3번 방</p>
-          <p class="m">2026년 8월 23일 토요일 14:00, 40분입니다. 첨삭은 25일 월요일까지 회신합니다.</p>
-        </div>
-        <a class="textlink u" href="#">변경</a>
-      </div>
-    </div>
-
-    <div class="blk">
-      <h2>주문 내역 <a class="all textlink" href="#">전체</a></h2>
-      <ol class="rows">
-        <li class="row"><span class="d">2026.08.19</span><span class="t">공동체와 개인 지문 외 1건, 60,500원</span><span class="s red">출고 준비</span></li>
-        <li class="row"><span class="d">2026.07.30</span><span class="t">인문 제시문 해제집, 28,000원</span><span class="s">배송 완료</span></li>
-      </ol>
+      <h2>자료실</h2>
+      <p class="m">대학별 2027 면접가이드북 PDF 를 회원에게 무료로 제공합니다.</p>
+      <p style="margin-top:12px"><a class="textlink u" href="library.html">자료실로 가기</a></p>
     </div>
   </section>
 </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', async function(){
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  var st = await HH.me(true);
+  if(!st.member){ location.href='login.html?next=my.html'; return; }
+  document.getElementById('whoName').textContent = st.member.name || st.member.email;
+  document.getElementById('whoSince').textContent = st.member.email;
+
+  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'학교 전권 이용권', download:'디지털 자료', trial:'맛보기'};
+  var rows = (st.entitlements||[]).map(function(e){
+    var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
+    return '<div class="subcard"><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'
+      +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?' · 잔여 응시 '+e.uses_left+'회':'')
+      +(e.expires_at?' · '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p></div>'
+      +'<div class="ops"><a class="textlink u sgo" href="#">응시하러 가기</a></div></div>';
+  });
+  if(st.trial_available)
+    rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
+      +'<div class="ops"><a class="textlink u sgo" href="#">응시하러 가기</a></div></div>');
+  if(!rows.length)
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 학교 전권을 담아 주십시오.</p></div>'
+      +'<div class="ops"><a class="textlink u" href="studio.html">스튜디오로</a></div></div>');
+  document.getElementById('passList').innerHTML = rows.join('');
+  document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
+    ev.preventDefault();
+    try{ var r=await HH.api('/api/studio/token',{method:'POST'}); window.open(r.url,'_blank','noopener'); }
+    catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
+  })});
+
+  var ST={pending:'결제 대기',paid:'결제 완료',failed:'실패',canceled:'취소',refunded:'환불'};
+  try{
+    var od = await HH.api('/api/orders');
+    var ol = document.getElementById('orderRows');
+    document.getElementById('orderEmpty').hidden = od.orders.length>0;
+    ol.innerHTML = od.orders.map(function(o){
+      return '<li class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
+        +'<span class="t">'+esc(o.items.map(function(i){return i.title+(i.qty>1?' ×'+i.qty:'')}).join(', '))+', '+HH.won(o.amount)+'</span>'
+        +'<span class="s'+(o.status==='paid'?'':' red')+'">'+(ST[o.status]||o.status)
+        +(o.receipt_url?' · <a class="textlink u" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+'</span></li>';
+    }).join('');
+  }catch(e){}
+
+  document.getElementById('logoutBtn').addEventListener('click', async function(ev){
+    ev.preventDefault();
+    try{ await HH.api('/api/auth/logout',{method:'POST'}); }catch(e){}
+    location.href='index.html';
+  });
+});
+</script>
+
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

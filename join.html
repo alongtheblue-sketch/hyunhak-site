@@ -65,6 +65,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -79,7 +81,6 @@
     <p class="crumb u gray">현학적 연구소, 입회</p>
     <h1>회원 가입</h1>
     <p class="han">약관 동의, 본인인증, 정보 입력</p>
-    <p class="mock-note">시연 화면입니다. 등록 절차는 정식 오픈에서 동작합니다.</p>
   </div>
 </div>
 
@@ -95,25 +96,25 @@
     <p class="no">一</p>
     <h2>약관 동의</h2>
     <label class="checkrow all">
-      <input type="checkbox">
+      <input type="checkbox" id="ck-all">
       <span class="t">전체 동의</span>
     </label>
     <div class="checkrow">
-      <label><input type="checkbox">
+      <label><input type="checkbox" id="ck-terms" class="ck-item">
       <span class="t">이용약관 동의 <small>필수</small></span></label>
-      <a class="view" href="#">전문</a>
+      <a class="view" href="terms.html" target="_blank" rel="noopener">전문</a>
     </div>
     <div class="checkrow">
-      <label><input type="checkbox">
-      <span class="t">개인정보 수집과 이용 동의 <small>필수 항목이며 이름, 생년월일, 연락처, 이메일을 수집합니다</small></span></label>
-      <a class="view" href="#">전문</a>
+      <label><input type="checkbox" id="ck-priv" class="ck-item">
+      <span class="t">개인정보 수집과 이용 동의 <small>필수 항목이며 이름, 연락처, 이메일을 수집합니다</small></span></label>
+      <a class="view" href="privacy.html" target="_blank" rel="noopener">전문</a>
     </div>
     <label class="checkrow">
-      <input type="checkbox">
+      <input type="checkbox" id="ck-age" class="ck-item">
       <span class="t">만 14세 이상 확인 <small>필수 항목이며 만 14세 미만은 법정대리인 동의 절차로 분기합니다</small></span>
     </label>
     <label class="checkrow">
-      <input type="checkbox">
+      <input type="checkbox" id="ck-mkt" class="ck-item">
       <span class="t">새 해제와 소식 수신 <small>선택 항목이며 언제든 해지할 수 있습니다</small></span>
     </label>
   </section>
@@ -140,12 +141,12 @@
       <div class="field">
         <label for="nm">이름</label>
         <input id="nm" type="text" autocomplete="name">
-        <span class="help">본인인증 결과로 자동 기입합니다</span>
+        <span class="help">본인인증 도입 전에는 직접 입력합니다</span>
       </div>
       <div class="field">
         <label for="ph">연락처</label>
         <input id="ph" type="tel" autocomplete="tel">
-        <span class="help">본인인증 결과로 자동 기입합니다</span>
+        <span class="help">본인인증 도입 전에는 직접 입력합니다</span>
       </div>
     </div>
     <div class="field">
@@ -165,17 +166,40 @@
   </section>
 
   <div class="submit">
-    <button class="act" type="button">가입 완료</button>
-    <span class="note">완료와 동시에 로그인 상태로 전환합니다</span>
+    <button class="act" type="button" id="joinBtn">가입 완료</button>
+    <span class="note">완료와 동시에 로그인 상태로 전환하며, 면접 스튜디오 맛보기 1회가 열립니다</span>
   </div>
 
 </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  var $=function(s){return document.querySelector(s)};
+  var boxes=[].slice.call(document.querySelectorAll('.ck-item'));
+  $('#ck-all').addEventListener('change',function(){boxes.forEach(function(b){b.checked=$('#ck-all').checked})});
+  boxes.forEach(function(b){b.addEventListener('change',function(){$('#ck-all').checked=boxes.every(function(x){return x.checked})})});
+  $('#joinBtn').addEventListener('click', async function(){
+    if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의하십시오');
+    var name=$('#nm').value.trim(), phone=$('#ph').value.trim(), email=$('#em').value.trim(), pw=$('#pw').value, pw2=$('#pw2').value;
+    if(!name) return alert('이름을 입력하십시오');
+    if(!email) return alert('이메일을 입력하십시오');
+    if(pw.length<10||!/[A-Za-z]/.test(pw)||!/[0-9]/.test(pw)) return alert('비밀번호는 10자 이상, 문자와 숫자를 각 1자 이상 포함해야 합니다');
+    if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
+    var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중…';
+    try{
+      await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,marketing_opt_in:$('#ck-mkt').checked})});
+      location.href=new URLSearchParams(location.search).get('next')||'my.html';
+    }catch(e){ alert(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent='가입 완료'; }
+  });
+});
+</script>
+
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

@@ -93,6 +93,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a class="on" href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -166,26 +168,38 @@
     시험지 규격 그대로 인쇄해 실제 응시의 손감각을 남깁니다.</p>
   </div>
   <nav class="envitems">
-    <a class="item" href="store_item.html">
+    <a class="item" href="#" data-cart-sku="envelope-mock" data-cart-title="영어 봉투 모의고사 1회" data-cart-price="38500" data-cart-ship="1">
       <span class="no">05-1</span>
       <span class="t">영어 봉투 모의고사 1회</span>
       <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
-      <span class="p">38,500원</span><!-- mock 회차 -->
+      <span class="p">38,500원 · 담기</span>
     </a>
     <a class="item" href="store_item.html">
       <span class="no">05-2</span>
       <span class="t">영어 봉투 모의고사 2회</span>
-      <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
-      <span class="p">38,500원</span>
+      <span class="d">준비 중입니다. 입고되면 이 자리에서 판매합니다.</span>
+      <span class="p">준비 중</span>
     </a>
     <a class="item" href="store_item.html">
       <span class="no">05-3</span>
       <span class="t">영어 봉투 모의고사 3회</span>
-      <span class="d">문제지 + 정답 해설, 봉투 1부. 210 x 297.</span>
-      <span class="p">38,500원</span>
+      <span class="d">준비 중입니다. 입고되면 이 자리에서 판매합니다.</span>
+      <span class="p">준비 중</span>
     </a>
   </nav>
-  <p class="note">1부의 값입니다. 회차는 시안 단계의 임시 기재입니다.</p>
+  <p class="note">1부의 값입니다. 담기를 누르면 장바구니에 들어갑니다.</p>
+  <script>
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('[data-cart-sku]').forEach(function(el){
+      el.addEventListener('click', function(ev){
+        ev.preventDefault();
+        HH.addToCart({ sku: el.dataset.cartSku, title: el.dataset.cartTitle,
+          price: +el.dataset.cartPrice, ship: el.dataset.cartShip === '1' });
+        if (confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?')) location.href = 'cart.html';
+      });
+    });
+  });
+  </script>
 </section>
 
 <section class="notice">
@@ -206,8 +220,9 @@
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>

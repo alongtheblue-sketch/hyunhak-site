@@ -12,6 +12,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
 <link rel="stylesheet" href="assets/base.css">
+<script src="https://js.tosspayments.com/v2/standard"></script>
 <style>
 .grid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);border-bottom:1px solid var(--hair)}
 .main{padding:72px var(--gut) 100px;border-right:1px solid var(--hair);max-width:760px}
@@ -79,6 +80,8 @@
   <nav>
     <a href="studio.html">면접 스튜디오</a>
     <a href="store.html">스토어</a>
+    <a href="interview/index.html">면접 아카이브</a>
+    <a href="library.html">자료실</a>
     <a href="index.html#lab">연구소</a>
   </nav>
   <div class="aux">
@@ -127,36 +130,91 @@
     <div class="blk pay">
       <p class="no">二</p>
       <h2>결제 수단</h2>
-      <div class="payrow"><label><input type="radio" name="pay" checked><span class="t">신용카드, 체크카드</span><span class="d">전 카드사</span></label></div>
-      <div class="payrow"><label><input type="radio" name="pay"><span class="t">계좌이체</span><span class="d">실시간</span></label></div>
-      <div class="payrow"><label><input type="radio" name="pay"><span class="t">간편결제</span><span class="d">카카오페이, 네이버페이, 토스</span></label></div>
+      <div id="payment-method"></div>
+      <div id="agreement"></div>
     </div>
   </section>
 
   <aside class="bill">
     <h2>주문 요약</h2>
-    <div>
-      <p class="item"><span>공동체와 개인, 지문 낱권, 1권</span><span>22,000원</span></p><!-- mock -->
-      <p class="item"><span>영어 봉투 모의고사 1회, 1부</span><span>38,500원</span></p>
-    </div>
-    <dl>
-      <div><dt>상품</dt><dd>60,500원</dd></div>
-      <div><dt>배송</dt><dd>0원</dd></div>
-      <div><dt>배송</dt><dd>3,000원</dd></div>
-    </dl>
-    <div class="total invert"><span class="u gray">결제 금액</span><span class="won">60,500원</span></div>
-    <button class="act" type="button">60,500원 결제</button>
-    <p class="stub">PG 연동 전 스텁이며 실결제는 없습니다</p>
+    <div id="sumRows"></div>
+    <dl id="sumDl"></dl>
+    <div class="total invert"><span class="u gray">결제 금액</span><span class="won" id="sumTotal">0원</span></div>
+    <button class="act" type="button" id="payBtn">결제</button>
+    <p class="stub" id="testNote">테스트 결제 환경입니다. 실 승인 전까지 카드에서 돈이 빠져나가지 않습니다</p>
     <p class="rule">결제와 동시에 주문이 확정됩니다. 출고 전 취소는 전액 환불하고,
     출고 후에는 수령 7일 이내 미훼손을 기준으로 합니다. 전자상거래법에 따른 청약철회 규정을 적용합니다.</p>
   </aside>
 </main>
 
+<script>
+document.addEventListener('DOMContentLoaded', async function(){
+  var $=function(s){return document.querySelector(s)};
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+
+  var st = await HH.me();
+  if(!st.member){ location.href='login.html?next=checkout.html'; return; }
+  var items = HH.cart();
+  if(!items.length){ location.href='cart.html'; return; }
+
+  var needShip = items.some(function(x){return x.ship});
+  if(!needShip) document.querySelector('.blk.addr').style.display='none';
+  if(st.member.name && !$('#nm').value) $('#nm').value = st.member.name;
+
+  var sub = items.reduce(function(s,x){return s+x.price*x.qty},0);
+  var shipFee = (needShip && sub<50000) ? 3000 : 0;
+  var total = sub + shipFee;
+  $('#sumRows').innerHTML = items.map(function(it){
+    return '<p class="item"><span>'+esc(it.title)+', '+it.qty+(it.ship?'부':'건')+'</span><span>'+HH.won(it.price*it.qty)+'</span></p>'}).join('');
+  $('#sumDl').innerHTML = '<div><dt>상품</dt><dd>'+HH.won(sub)+'</dd></div><div><dt>배송</dt><dd>'+HH.won(shipFee)+'</dd></div>';
+  $('#sumTotal').textContent = HH.won(total);
+  $('#payBtn').textContent = HH.won(total)+' 결제';
+
+  var cfg = await HH.api('/api/config');
+  if(!/^test_/.test(cfg.tossClientKey)) $('#testNote').style.display='none';
+  var toss = TossPayments(cfg.tossClientKey);
+  var widgets = toss.widgets({ customerKey: st.member.id });
+  await widgets.setAmount({ currency:'KRW', value: total });
+  await Promise.all([
+    widgets.renderPaymentMethods({ selector:'#payment-method' }),
+    widgets.renderAgreement({ selector:'#agreement' })
+  ]);
+
+  $('#payBtn').addEventListener('click', async function(){
+    var btn=$('#payBtn');
+    var shipping=null;
+    if(needShip){
+      shipping={ name:$('#nm').value.trim(), phone:$('#ph').value.trim(), zip:$('#zip').value.trim(),
+                 addr1:$('#ad1').value.trim(), addr2:$('#ad2').value.trim() };
+      if(!shipping.name||!shipping.phone||!shipping.zip||!shipping.addr1) return alert('배송지 정보를 입력하십시오');
+    }
+    btn.disabled=true; btn.textContent='주문 생성 중…';
+    try{
+      var order = await HH.api('/api/orders',{method:'POST',body:JSON.stringify({
+        items: items.map(function(x){return {sku:x.sku, qty:x.qty}}), shipping: shipping })});
+      await widgets.setAmount({ currency:'KRW', value: order.amount });
+      await widgets.requestPayment({
+        orderId: order.orderId,
+        orderName: order.orderName,
+        successUrl: location.origin + '/pay_done.html',
+        failUrl: location.origin + '/pay_done.html?fail=1',
+        customerEmail: st.member.email,
+        customerName: st.member.name || undefined
+      });
+    }catch(e){
+      if(e && e.code === 'USER_CANCEL') {} else alert(e.message||'결제를 시작하지 못했습니다');
+      btn.disabled=false; btn.textContent=HH.won(total)+' 결제';
+    }
+  });
+});
+</script>
+
 <footer class="u">
   <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
   <span>www.hyunhak.com</span>
-  <span>서울, 대한민국</span>
+  <span class="bizline">대표 · 사업자등록번호 · 통신판매업신고 [정식 오픈 전 기재] · 서울, 대한민국 · admin@hyunhak.com · <a href="terms.html" style="border-bottom:1px solid var(--hair)">이용약관</a> · <a href="privacy.html" style="border-bottom:1px solid var(--hair)">개인정보처리방침</a></span>
 </footer>
 
+<script src="assets/app.js"></script>
 </body>
 </html>
