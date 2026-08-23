@@ -204,6 +204,7 @@ def cmd_refresh(args):
     for slug, univ in SLUGS:
         e = extract(univ, src)
         e = {"slug": slug, "sku": f"guide-{slug}", "price": old_items.get(slug, {}).get("price"),
+             "onsale": old_items.get(slug, {}).get("onsale", True),
              "archive": slug in ARCHIVE, **e}
         items.append(e)
     cat = {
@@ -348,6 +349,9 @@ def render_page(cat, items, i):
     name = e["name"]
     price = price_of(cat, e)
     h1 = f"{name} 2027 면접 가이드북"
+    acts = (f'<button class="act" type="button" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기</button>\n'
+            f'      <a class="textlink" href="../cart.html">장바구니 보기</a>') if e.get("onsale", True) else \
+           '<span class="u gray">보안 리더 준비 중입니다. 준비되는 대로 이 면에서 판매합니다</span>'
     title = f"{h1}, 현학적 연구소"
     desc = (f"{name} 생기부 기반 면접 예상 프로파일. PDF {e['pages']}면, 수록 질문 {e['questions']}건, "
             f"유형 {e['types_n']}종. 회원은 보안 리더로 열람합니다.")
@@ -413,8 +417,7 @@ def render_page(cat, items, i):
       <li><span class="k">원본 파일</span><span>비제공</span></li>
     </ul>
     <div class="acts">
-      <button class="act" type="button" data-cart-sku="{esc(e['sku'])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기</button>
-      <a class="textlink" href="../cart.html">장바구니 보기</a>
+      {acts}
     </div>
     <p class="member">회원은 보안 리더로 열람합니다. 인쇄 3회, 원본 파일 비제공. 결제 후 자료실에서 바로 열립니다.</p>
   </div>
@@ -470,7 +473,7 @@ def render_index(cat, items):
     for e in items:
         o.append(f'<li><a href="{e["slug"]}.html"><span class="t">{esc(e["name"])}</span>'
                  f'<span class="m">{e["pages"]}면</span><span class="m q">{e["questions"]}건</span>'
-                 f'<span class="p">{won(price_of(cat, e))}</span></a></li>')
+                 f'<span class="p">{won(price_of(cat, e)) if e.get("onsale", True) else "준비 중"}</span></a></li>')
     o.append("</ol></div>")
     o.append('<p class="note">PDF 상품입니다. 회원은 보안 리더로 열람하고 인쇄는 3회까지, 원본 파일은 제공하지 않습니다.</p>')
     o.append("</section>")

@@ -13,7 +13,7 @@ for i, it in enumerate(cat["items"]):
     pid = "prd_gb" + hashlib.sha1(it["sku"].encode()).hexdigest()[:6]
     title = f"{it['name']} 2027 면접 가이드북".replace("'", "''")
     sub = f"{it['pages']}면, 질문 {it['questions']}건, 보안 리더 열람".replace("'", "''")
-    rows.append(f"('{pid}','{it['sku']}','digital','{title}','{sub}','{it['name']}',{price},0,NULL,'active','library/guide-{it['slug']}.pdf','/guidebook/{it['slug']}.html',{200+i},'{TS}','{TS}')")
+    rows.append(f"('{pid}','{it['sku']}','digital','{title}','{sub}','{it['name']}',{price},0,NULL,'{'active' if it.get('onsale', True) else 'inactive'}','library/guide-{it['slug']}.pdf','/guidebook/{it['slug']}.html',{200+i},'{TS}','{TS}')")
 sql = ["-- 가이드북 38권 상품 시드 (_tools/build_products_sql.py 생성, 멱등)",
  "INSERT INTO products(id,sku,type,title,subtitle,school,price,requires_shipping,stock,status,file_key,detail_url,sort,created_at,updated_at) VALUES",
  ",\n".join(rows),
