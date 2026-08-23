@@ -10,6 +10,9 @@ res.popup_title = await pg.locator('#hhPopupTitle').textContent().catch(() => nu
 res.popup_strong = await pg.locator('.hh-popup-body strong').count();
 await pg.screenshot({ path: out + '/popup_index.png' });
 res.notice_strip = await pg.locator('#notices:not([hidden]) li').count();
+// 포커스 트랩: Tab 6회 동안 activeElement 가 팝업 안에 머문다
+let inside = 0; for (let i = 0; i < 6; i++) { await pg.keyboard.press('Tab'); inside += await pg.evaluate(() => !!document.activeElement.closest('.hh-popup')); }
+res.focus_trap_6tabs = inside;
 await pg.check('#hhPopupMute'); await pg.click('#hhPopupClose');
 res.popup_after_close = await pg.locator('.hh-popup').count();
 await pg.reload({ waitUntil: 'networkidle' }); await pg.waitForTimeout(500);

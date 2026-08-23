@@ -28,11 +28,11 @@
 <link rel="stylesheet" href="../assets/base.css">
 <style>
 /* guidebook 상품 페이지 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gb{max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.gb{--measure:760px;max-width:1080px;margin:0 auto;padding:0 var(--gut)}
 .gb .sec{padding:64px 0 8px}
 .gb .sec h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
 .gb .sec .lead{margin-top:12px;font-size:14px;line-height:1.9;color:var(--gray);max-width:60ch}
-.gb .toc{margin-top:28px;max-width:720px}
+.gb .toc{margin-top:28px;max-width:var(--measure)}
 .gb .toc li{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:baseline;padding:14px 0}
 .gb .toc .no{font-family:var(--serif);font-weight:300;font-size:14px;color:var(--gray)}
 .gb .toc .t{font-family:var(--serif);font-weight:500;font-size:16.5px;letter-spacing:-0.01em}
@@ -43,7 +43,7 @@
 .gb .tbl td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hairs);color:var(--body);line-height:1.7;vertical-align:top}
 .gb .tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 .gb .tbl th.num{text-align:right}
-.gb .taste{margin-top:28px;max-width:760px}
+.gb .taste{margin-top:28px;max-width:var(--measure)}
 .gb .taste li{padding:18px 0}
 .gb .taste .ty{font-size:11px;letter-spacing:.1em;color:var(--gray);display:block}
 .gb .taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;

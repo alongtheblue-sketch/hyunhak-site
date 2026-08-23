@@ -97,11 +97,13 @@
   document.addEventListener("DOMContentLoaded", function () {
     const hdr = document.querySelector(".nav"), btn = hdr && hdr.querySelector(".menu");
     if (!btn) return;
-    btn.addEventListener("click", function () {
-      const open = hdr.classList.toggle("open");
+    const setOpen = (open) => {
+      hdr.classList.toggle("open", open);
       btn.setAttribute("aria-expanded", open ? "true" : "false");
       btn.textContent = open ? "닫기" : "메뉴";
-    });
+    };
+    btn.addEventListener("click", function () { setOpen(!hdr.classList.contains("open")); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && hdr.classList.contains("open")) { setOpen(false); btn.focus(); } });
   });
   // ── 공지 팝업 (2026-08-23) ──
   // 정책: 관리자가 게시한 popup 중 노출 기간 안의 것을 최대 1건 띄운다.
@@ -145,12 +147,22 @@
         "</div>" +
       "</div>";
     document.body.appendChild(root);
+    const opener = document.activeElement;
+    const focusables = () => Array.from(root.querySelectorAll("a[href],button,input,[tabindex]:not([tabindex='-1'])"));
     const close = () => {
       if (root.querySelector("#hhPopupMute").checked) mutePopup(it.id, 24);
       root.remove();
       document.removeEventListener("keydown", onKey);
+      if (opener && opener.focus) opener.focus();   // 포커스 복귀
     };
-    const onKey = (e) => { if (e.key === "Escape") close(); };
+    const onKey = (e) => {
+      if (e.key === "Escape") return close();
+      if (e.key !== "Tab") return;                       // 포커스 트랩
+      const f = focusables(); if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
     root.querySelector("#hhPopupClose").addEventListener("click", close);
     root.querySelector(".hh-popup-back").addEventListener("click", close);
     document.addEventListener("keydown", onKey);
