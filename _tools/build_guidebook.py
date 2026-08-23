@@ -220,7 +220,7 @@ def cmd_refresh(args):
 # ---------------------------------------------------------------- build
 PAGE_CSS = """
 /* guidebook 상품 페이지 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gb{--measure:760px;max-width:1080px;margin:0 auto;padding:0 var(--gut)}
+.gb{--measure:760px;max-width:1080px;padding:0 var(--gut)}
 .gb .sec{padding:64px 0 8px}
 .gb .sec h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
 .gb .sec .lead{margin-top:12px;font-size:14px;line-height:1.9;color:var(--gray);max-width:60ch}
@@ -261,7 +261,7 @@ PAGE_CSS = """
 .buy .panel .spec .k{font-size:12px}
 .buy .panel .acts{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 .buy .panel .member{margin-top:22px;font-size:12.5px;line-height:1.9;max-width:52ch}
-.after{max-width:1080px;margin:0 auto;padding:56px var(--gut) 96px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline}
+.after{max-width:1080px;padding:56px var(--gut) 96px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline}
 .after .nb{display:flex;gap:26px;flex-wrap:wrap}
 @media (max-width:900px){
   .buy{grid-template-columns:1fr}
@@ -271,7 +271,7 @@ PAGE_CSS = """
 
 INDEX_CSS = """
 /* guidebook 목록 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gbl{max-width:1080px;margin:0 auto;padding:48px var(--gut) 96px}
+.gbl{max-width:1080px;padding:48px var(--gut) 96px}
 .gbl .lead{font-size:14.5px;line-height:1.9;color:var(--body);max-width:60ch}
 .gbl .list{margin-top:40px}
 .gbl .list li a{display:grid;grid-template-columns:minmax(0,1fr) 90px 110px 110px;gap:18px;align-items:baseline;padding:18px 0}
@@ -295,8 +295,7 @@ NAV = """<header class="nav u">
   <div class="aux"><a href="../login.html">로그인</a><a href="../join.html">가입</a><a href="../cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
 </header>"""
 
-FOOTER = """<footer>
-<span class="u">현학적 연구소</span><span class="han">玄學的 硏究所</span></footer>"""
+FOOTER = """<footer class="u">\n<span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>\n</footer>"""
 
 CART_JS = """<script>
 document.addEventListener('DOMContentLoaded', function(){
@@ -435,8 +434,8 @@ def render_page(cat, items, i):
     if next_e:
         o.append(f'<a class="textlink u" href="{next_e["slug"]}.html">다음, {esc(next_e["name"])}</a>')
     o.append("</div></div>")
-    o.append(FOOTER)
     o.append("</main>")
+    o.append(FOOTER)
     o.append('<script src="../assets/app.js"></script>')
     o.append(CART_JS)
     o.append("</body>\n</html>\n")
@@ -475,8 +474,8 @@ def render_index(cat, items):
     o.append("</ol></div>")
     o.append('<p class="note">PDF 상품입니다. 회원은 보안 리더로 열람하고 인쇄는 3회까지, 원본 파일은 제공하지 않습니다.</p>')
     o.append("</section>")
-    o.append(FOOTER)
     o.append("</main>")
+    o.append(FOOTER)
     o.append('<script src="../assets/app.js"></script>')
     o.append("</body>\n</html>\n")
     return "\n".join(o)

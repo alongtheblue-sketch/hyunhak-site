@@ -7,6 +7,7 @@ cd "$(dirname "$0")/.."
 SKIP="${SKIP_NAV:-library.html,my.html}"
 python3 _tools/build_guidebook.py build >/dev/null
 python3 _tools/apply_nav.py --skip "$SKIP"
+python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_fonts.py
 python3 _tools/seo_inject.py | tail -1
 python3 _tools/build_sitemap.py | tail -1
