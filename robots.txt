@@ -6,6 +6,7 @@ Disallow: /join.html
 Disallow: /login.html
 Disallow: /my.html
 Disallow: /pay_done.html
+Disallow: /programs/skku.html
 Disallow: /reader.html
 Disallow: /_tools/
 

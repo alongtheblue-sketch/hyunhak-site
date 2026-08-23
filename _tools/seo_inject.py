@@ -96,7 +96,7 @@ def build_graph(m, rel, e, page_html):
         out = []
         for o in offers or []:
             offer = {"@type": "Offer", "priceCurrency": sch.get("currency", "KRW"),
-                     "availability": "https://schema.org/InStock", "url": url}
+                     "availability": "https://schema.org/" + sch.get("availability", "InStock"), "url": url}
             if o.get("name"):
                 offer["name"] = o["name"]
             if o.get("price") is not None:
