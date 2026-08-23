@@ -4,7 +4,7 @@
 # build_guidebook.py verify 는 후공정(3,4) 전 원본 기준이라 본 파이프라인 이후엔 FAIL 이 정상. 멱등 증명은 본 스크립트의 해시 비교로 한다.
 set -e
 cd "$(dirname "$0")/.."
-SKIP="${SKIP_NAV:-library.html,my.html}"
+SKIP="${SKIP_NAV:-}"   # 리더 세션 커밋(159b755) 후 전면 적용. reader.html 은 각 도구 EXCLUDE 고정
 python3 _tools/build_guidebook.py build >/dev/null
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"

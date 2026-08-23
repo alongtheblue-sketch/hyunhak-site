@@ -10,8 +10,6 @@
   "email": "admin@hyunhak.com",
   "twitter_card": "summary_large_image",
   "skip_inject": [
-   "library.html",
-   "my.html",
    "reader.html"
   ],
   "planned_paths": [
@@ -2034,7 +2032,7 @@
   },
   "library.html": {
    "title": "자료실, 대학별 2027 면접가이드북 PDF | 현학적 연구소",
-   "description": "26개 대학 2027 면접가이드북 PDF. 면접 기본 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문까지. 회원에게 무료로 제공합니다.",
+   "description": "현학적 연구소 자료실. 대학별 2027 면접 가이드북 PDF 를 회원 계정으로 보안 리더에서 열람합니다.",
    "type": "hub",
    "priority": 0.8,
    "changefreq": "weekly",
@@ -2048,7 +2046,7 @@
      "path": "/library.html"
     }
    ],
-   "answer": ""
+   "answer": "자료실의 대학별 2027 면접 가이드북은 회원 계정으로 보안 리더에서 열람하며, 원본 파일은 제공하지 않습니다."
   },
   "login.html": {
    "title": "로그인, 현학적 연구소",

@@ -3,7 +3,7 @@
    <link rel="stylesheet" href=URL> → preload as=style + onload 승격 + <noscript> 폴백. preconnect 보강."""
 import re, glob, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SKIP = {"library.html", "my.html", "reader.html"}
+SKIP = {"reader.html"}
 PAT = re.compile(r'(?<!<noscript>)<link rel="stylesheet" href="(https://(?:fonts\.googleapis\.com|cdn\.jsdelivr\.net)[^"]+)"[^>]*>')
 def conv(m):
     u = m.group(1)
