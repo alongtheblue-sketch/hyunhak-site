@@ -170,3 +170,26 @@ footer .han{font-family:var(--serif);font-weight:300}
 .invert .act.ghost *{color:var(--paper)}
 .invert .act.ghost:hover{background:var(--paper);color:var(--ink)}
 .invert .act.ghost:hover *{color:var(--ink)}
+
+/* ── 간편 로그인 (2026-08-23) — 사이트 규범 유지: 곡률 0, 그림자 0 ── */
+.socwrap{margin-top:40px}
+.socwrap .or{display:flex;align-items:center;gap:14px;margin-bottom:20px;
+  font-family:var(--sans);font-size:11.5px;letter-spacing:.01em;color:var(--gray)}
+.socwrap .or::before,.socwrap .or::after{content:"";flex:1;height:1px;background:var(--hairs)}
+.socs{display:flex;flex-direction:column;gap:10px}
+.soc{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;height:50px;padding:0 46px;border:1px solid var(--hair);background:var(--paper);
+  font-family:var(--sans);font-size:14.5px;font-weight:500;color:var(--ink);
+  cursor:pointer;transition:opacity .16s ease}
+.soc svg{position:absolute;left:16px;top:50%;transform:translateY(-50%)}
+.soc:hover{opacity:.78}
+.soc-google{background:#fff;border-color:rgba(49,46,46,.34)}
+.soc-kakao{background:#FEE500;border-color:#FEE500;color:#191600}
+.soc-naver{background:#03C75A;border-color:#03C75A;color:#fff}
+.soc[disabled]{background:transparent;border-color:var(--hairs);color:var(--gray);
+  cursor:not-allowed;opacity:1}
+.soc[disabled] svg{opacity:.35}
+.socnote{margin-top:14px;font-family:var(--sans);font-size:11.5px;line-height:1.7;color:var(--gray)}
+.oauthmsg{margin:0 0 26px;padding:12px 14px;border-left:2px solid var(--seal);
+  font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);background:rgba(188,53,41,.05)}
+.oauthmsg.info{border-left-color:var(--ink);background:rgba(49,46,46,.045)}

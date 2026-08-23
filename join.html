@@ -86,6 +86,14 @@
 
 <main class="wrap">
 
+  <div id="oauthMsg" hidden></div>
+
+  <div class="socwrap" id="socwrap" style="margin:0 0 52px">
+    <p class="or u">간편 가입</p>
+    <div class="socs" id="socs"></div>
+    <p class="socnote">제공사 계정으로 시작하면 약관 동의 한 번만 거칩니다. 비밀번호를 따로 만들지 않습니다.</p>
+  </div>
+
   <div class="rail" aria-label="가입 단계">
     <span class="cur">약관 동의</span>
     <span>본인인증</span>
@@ -173,23 +181,77 @@
 </main>
 
 <script>
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', async function(){
   var $=function(s){return document.querySelector(s)};
+  var q=new URLSearchParams(location.search);
+  var next=q.get('next')||'my.html';
+  var social=q.get('social');
+  var msg=$('#oauthMsg');
+  function show(text, kind){ msg.textContent=text; msg.className='oauthmsg'+(kind==='info'?' info':''); msg.hidden=false; }
+
   var boxes=[].slice.call(document.querySelectorAll('.ck-item'));
   $('#ck-all').addEventListener('change',function(){boxes.forEach(function(b){b.checked=$('#ck-all').checked})});
   boxes.forEach(function(b){b.addEventListener('change',function(){$('#ck-all').checked=boxes.every(function(x){return x.checked})})});
-  $('#joinBtn').addEventListener('click', async function(){
+
+  // ── 일반 가입 ──
+  if(!social){
+    HH.oauthButtons($('#socs'), next);
+    $('#joinBtn').addEventListener('click', async function(){
+      if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의하십시오');
+      var name=$('#nm').value.trim(), phone=$('#ph').value.trim(), email=$('#em').value.trim(), pw=$('#pw').value, pw2=$('#pw2').value;
+      if(!name) return alert('이름을 입력하십시오');
+      if(!email) return alert('이메일을 입력하십시오');
+      if(pw.length<10||!/[A-Za-z]/.test(pw)||!/[0-9]/.test(pw)) return alert('비밀번호는 10자 이상, 문자와 숫자를 각 1자 이상 포함해야 합니다');
+      if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
+      var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중…';
+      try{
+        await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,marketing_opt_in:$('#ck-mkt').checked})});
+        location.href=next;
+      }catch(e){ alert(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent='가입 완료'; }
+    });
+    return;
+  }
+
+  // ── 간편 로그인 첫 가입 = 약관 동의 1회 화면 ──
+  var pend=null;
+  try{ pend=(await HH.api('/api/auth/oauth/pending')).pending; }catch(e){}
+  if(!pend||pend.mode!=='join'){
+    show('간편 가입 요청이 만료되었습니다. 로그인 화면에서 다시 시작하십시오.');
+    $('#socwrap').hidden=true;
+    document.querySelectorAll('main .step').forEach(function(s){s.hidden=true});
+    $('.rail').hidden=true; $('.submit').hidden=true;
+    return;
+  }
+  var label=(HH.OAUTH_LABEL&&HH.OAUTH_LABEL[pend.provider])||pend.provider;
+
+  $('#socwrap').hidden=true;
+  var steps=document.querySelectorAll('main .step');
+  steps[1].hidden=true;                       // 본인인증 = 소셜 경로에서 생략
+  var rail=$('.rail');
+  rail.innerHTML='<span class="cur">약관 동의</span><span>정보 확인</span>';
+  $('.pagehead .han').textContent=label+' 계정으로 가입, 약관 동의와 정보 확인';
+  steps[2].querySelector('.no').textContent='二';
+  show(label+' 계정을 확인했습니다'+(pend.email?' ('+pend.email+')':'')+'. 약관에 동의하면 가입이 끝납니다.','info');
+
+  // 비밀번호·이메일 입력 제거 (소셜 회원은 비밀번호를 만들지 않는다)
+  ['#pw','#pw2','#em'].forEach(function(sel){ var f=$(sel); if(f&&f.closest('.field')) f.closest('.field').hidden=true; });
+  if(pend.name) $('#nm').value=pend.name;
+  $('#nm').closest('.field').querySelector('.help').textContent=label+' 계정 이름을 가져왔습니다. 실명으로 고칠 수 있습니다';
+  $('#ph').closest('.field').querySelector('.help').textContent='배송이 있는 주문에 씁니다. 지금 비워도 됩니다';
+  var btn=$('#joinBtn'); btn.textContent=label+'로 가입 완료';
+  $('.submit .note').textContent='완료와 동시에 로그인 상태로 전환하며, 면접 스튜디오 맛보기 1회가 열립니다';
+
+  btn.addEventListener('click', async function(){
     if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의하십시오');
-    var name=$('#nm').value.trim(), phone=$('#ph').value.trim(), email=$('#em').value.trim(), pw=$('#pw').value, pw2=$('#pw2').value;
+    var name=$('#nm').value.trim(), phone=$('#ph').value.trim();
     if(!name) return alert('이름을 입력하십시오');
-    if(!email) return alert('이메일을 입력하십시오');
-    if(pw.length<10||!/[A-Za-z]/.test(pw)||!/[0-9]/.test(pw)) return alert('비밀번호는 10자 이상, 문자와 숫자를 각 1자 이상 포함해야 합니다');
-    if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
-    var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중…';
+    btn.disabled=true; btn.textContent='가입 중…';
     try{
-      await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,marketing_opt_in:$('#ck-mkt').checked})});
-      location.href=new URLSearchParams(location.search).get('next')||'my.html';
-    }catch(e){ alert(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent='가입 완료'; }
+      var r=await HH.api('/api/auth/oauth/complete',{method:'POST',body:JSON.stringify({
+        name:name, phone:phone, agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked,
+        agree_age:$('#ck-age').checked, marketing_opt_in:$('#ck-mkt').checked})});
+      location.href=r.next||next;
+    }catch(e){ show(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent=label+'로 가입 완료'; }
   });
 });
 </script>
