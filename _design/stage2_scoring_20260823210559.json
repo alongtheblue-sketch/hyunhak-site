@@ -1,0 +1,55 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-08-23T21:05:59.655222+09:00",
+ "deliverable_path": "/Users/gregory/Workspace/hyunhak-site",
+ "lenses": {
+  "L1": {
+   "score": 4,
+   "evidence": "2차 유지. 붓글씨 선비 마크 + 玄 자 + Noto Serif KR 500 헤드 = '요강·후기 관측 기록' 서사와 일치. index h1 53.76px 3행 + 4-fact 스트립(38/4,766/3/26) 즉시 증명. 재검 수리 5건은 서사 요소 미변경."
+  },
+  "L2": {
+   "score": 4,
+   "evidence": "2차 유지. 학원 사이트 클리셰(합격 배너·별점·카운트다운·그라디언트 CTA) 0건. 곡률 0·그림자 0 규칙 CSS 주석 명시(.gbl 스코프). 스톡 인물사진 0장(img 총 1장, store.html alt 보유)."
+  },
+  "L3": {
+   "score": 4,
+   "evidence": "H1 실측 3랭크(64px/53.76px/43.52px) — 커밋 선언 '2랭크'와 불일치하나 1.19~1.235 비율로 정합. 제목 h1→h2 스킵 0건(16면 실측). 본문 measure faq 답변 553px(≈40자) 적정."
+  },
+  "L4": {
+   "score": 4,
+   "evidence": "좌레일 x=28(1280)/x=20(390) 16면 전수 일치, footer firstChild x=28 전수 일치 — 구 guidebook·interview x=128 해소 확인. 잔여: 본문 컨테이너 우측 끝이 1252/1180/1152/1052/908/888/806 7종으로 모듈 부재. interview/index 카드그리드 우단 1052 vs 바로 위 facts 스트립 1252 = 200px flowline 단절."
+  },
+  "L5": {
+   "score": 4,
+   "evidence": "2차 유지. 크림 #f6f2e9 + 잉크 rgb(49,46,46) + 적 rgb(188,53,41) 액센트. 적색 대비 5.11:1(크림 대비) 계산 통과. 액센트는 about '이 표기를 씁니다'·모바일 현재메뉴 2용도로 희소 유지."
+  },
+  "L6": {
+   "score": 3,
+   "evidence": "guidebook/index(section 2823px)·interview/index·library 3면이 h2 0개 = h1 단독. guidebook 열 헤더(학교·연수·수록 질문·가격) .hd 는 sticky 미적용으로 첫 화면 이후 2400px 동안 재등장 없음. 38행/26행 구간에 가나다·권역 앵커 부재."
+  },
+  "L7": {
+   "score": 4,
+   "evidence": "cart h1 line-height 51.3536/43.52=1.180 실측 일치. faq 말미 'admin@hyunhak.com 앞으로 보내 주십시오' 조사 정상. footer 문자열 16면 동일(이용약관·개인정보처리방침 링크 포함). 잔여: index 본문 ¶1 과 about 본문 ¶1 이 '대입 면접만 다룹니다. …실제로 말하는 장면을 촬영해 첨삭합니다' 로 근사 중복."
+  },
+  "L8": {
+   "score": 4,
+   "evidence": "독립 히트테스트 재실행: .nav.open 링크 6개 전부 hitSelf=true, 상단+2px·하단-2px 양 끝단도 true, 행 51.1px×350px. aria-expanded false→true, 라벨 메뉴→닫기, ESC 시 false + 포커스 메뉴 버튼 복귀. overflowX = 0 (11면 × 1280/390 = 32조합 전수). studio 390 .acts 3버튼 세로 wrap 확인."
+  },
+  "L9": {
+   "score": 3,
+   "evidence": "저대비 쌍 0건(재검 8면). 포커스 outline solid 2px rgb(49,46,46) ≈10.6:1, :focus-visible·prefers-reduced-motion 규칙 존재. alt 누락 0, lang=ko, h1 1개/면. 미해소: (a) skip link 0개 — a[href^='#'] 전무, 헤더 반복 링크 11개 = WCAG 2.4.1 Level A 전면 실패. (b) footer 가 main 내부인 파일 30건(interview/*.html 27 + programs/*.html 3) → contentinfo 랜드마크 미노출. (c) 헤더 nav aria-current 전면 null. (d) join.html 체크박스 18x18px·14x14px = SC 2.5.8 미달."
+  }
+ },
+ "total": 34,
+ "minimum_check": {
+  "L1": "≥4 OK",
+  "L8": "≥3 OK",
+  "L9": "≥3 OK"
+ },
+ "release_recommendation": "RELEASE",
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}

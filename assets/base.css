@@ -240,3 +240,10 @@ footer .han{font-family:var(--serif);font-weight:300}
   padding:16px var(--gut) 0;max-width:72ch}
 .pagehead .aeo-answer{padding:18px 0 0}
 @media (max-width:900px){.aeo-answer{font-size:12px}}
+
+/* ── skip link + 체크박스 타깃 (critic 3차 잔여, 2026-08-23) ── */
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);
+  padding:12px 18px;font-size:12px;letter-spacing:.06em}
+.skip:focus{left:0}
+.checkrow input[type=checkbox]{width:22px;height:22px}
+.checkrow .t{cursor:pointer}

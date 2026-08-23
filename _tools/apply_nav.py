@@ -15,12 +15,12 @@ ITEMS = [  # (href, label, 매칭 파일들)
     ("about.html", "연구소", {"about.html", "faq.html", "notice.html"}),
 ]
 AUX = [("login.html", "로그인"), ("join.html", "가입"), ("cart.html", "장바구니")]
-EXCLUDE = {"reader.html"}
+EXCLUDE = {"reader.html", "insta.html"}   # insta = 링크 허브, nav/footer 없음
 HDR = re.compile(r'<header class="nav[^"]*">.*?</header>', re.S)
 
 def build(rel, prefix):
     on = lambda keys: any(rel == k or (k.endswith("/") and rel.startswith(k)) for k in keys)
-    nav = "".join(f'<a href="{prefix}{h}"{" class=\"on\"" if on(k) else ""}>{l}</a>' for h, l, k in ITEMS)
+    nav = "".join(f'<a href="{prefix}{h}"{" class=\"on\" aria-current=\"page\"" if on(k) else ""}>{l}</a>' for h, l, k in ITEMS)
     aux = "".join(f'<a href="{prefix}{h}">{l}</a>' for h, l in AUX)
     aux += '<button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button>'
     return (f'<header class="nav u">\n  <a class="brand" href="{prefix}index.html">현학적 연구소</a>\n'
@@ -38,6 +38,10 @@ def main():
         if not HDR.search(s): missing += 1; print("nav 없음:", rel); continue
         prefix = "/" if rel == "404.html" else "../" * (rel.count("/"))   # 404 는 임의 경로에서 서빙
         new = HDR.sub(lambda m: build(rel, prefix), s, count=1)
+        if '<a class="skip"' not in new:
+            new = new.replace('<header class="nav u">', '<a class="skip" href="#hhMain">본문으로 건너뛰기</a>\n<header class="nav u">', 1)
+        if 'id="hhMain"' not in new:
+            new = re.sub(r"<main\b(?![^>]*id=)", '<main id="hhMain"', new, count=1)
         if new != s:
             changed += 1
             if not check: open(path, "w", encoding="utf-8").write(new)

@@ -62,6 +62,7 @@ def build_robots(m):
     for rel in C.list_pages():
         e = C.resolve_entry(m, rel)
         if e and e["noindex"] and rel != "404.html":
+            if rel == "insta.html": continue   # meta noindex 로 충분 — IG/FB 링크 미리보기 크롤러(robots 준수)의 og 수집 허용
             lines.append(f"Disallow: /{rel}")
     lines.append("Disallow: /_tools/")
     lines.append("")
