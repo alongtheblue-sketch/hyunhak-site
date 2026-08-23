@@ -188,7 +188,8 @@ footer .han{font-family:var(--serif);font-weight:300}
 .soc-naver{background:#03C75A;border-color:#03C75A;color:#fff}
 .soc[disabled]{background:transparent;border-color:var(--hairs);color:var(--gray);
   cursor:not-allowed;opacity:1}
-.soc[disabled] svg{opacity:.35}
+.soc[disabled] svg{opacity:.5;filter:grayscale(1)}
+.soc-naver[disabled] svg path{fill:var(--gray)}   /* 흰 N 은 비활성 배경에서 안 보인다 */
 .socnote{margin-top:14px;font-family:var(--sans);font-size:11.5px;line-height:1.7;color:var(--gray)}
 .oauthmsg{margin:0 0 26px;padding:12px 14px;border-left:2px solid var(--seal);
   font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);background:rgba(188,53,41,.05)}
