@@ -140,10 +140,18 @@ document.addEventListener('DOMContentLoaded', async function(){
   var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'학교 전권 이용권', download:'디지털 자료', trial:'맛보기'};
   var rows = (st.entitlements||[]).map(function(e){
     var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
+    // 디지털 자료(download)는 보안 뷰어로 열람, 스튜디오 이용권은 응시 흐름으로 분기
+    var op;
+    if(e.kind==='download'){
+      var slug=(meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,'');
+      op='<a class="textlink u" href="reader.html?slug='+encodeURIComponent(slug)+'">열람하기</a>';
+    } else {
+      op='<a class="textlink u sgo" href="#">응시하러 가기</a>';
+    }
     return '<div class="subcard"><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'
       +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?' · 잔여 응시 '+e.uses_left+'회':'')
       +(e.expires_at?' · '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p></div>'
-      +'<div class="ops"><a class="textlink u sgo" href="#">응시하러 가기</a></div></div>';
+      +'<div class="ops">'+op+'</div></div>';
   });
   if(st.trial_available)
     rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
