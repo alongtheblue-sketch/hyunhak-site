@@ -1,0 +1,41 @@
+{
+ "project": "hyunhak.com 홈 index.html",
+ "round": 5,
+ "commit": "d35d7e3",
+ "scorer": "design-critic",
+ "blind": "셀프 점수 미열람 (round5 self-score 섹션 부재)",
+ "usecase_gate": "G1 = 대입 제시문 면접 브랜드 커머스 홈(신뢰형성+구매전환), 규범 = 모노크롬 + 朱印 1점, 곡률 0, 그림자 0",
+ "stage1": {
+  "G1_render": "PASS (art 589x660 full-bleed, 페이지지면 노출 0.3%, 재생중 letterbox 밴드 소멸)",
+  "G2_deliverable": "PASS (__TOKEN__/TODO/placeholder/Lorem 0건)",
+  "G3_margin": "N/A", "G4_font": "N/A",
+  "G5_integrity": "PASS (HTMLParser starttag 312, pageerror 0, 4xx 0)",
+  "G6_ratio_overflow": "PASS (CLS 0.0000, scrollWidth-clientWidth 0, art rect 691,63,589x660 불변)"
+ },
+ "repairs_verified": {
+  "P0-1": {"metric":"logo ink vs 배경 per-pixel 대비(가시성 diff 12,394px)","desktop":{"min":2.52,"p05":6.45,"median":7.35,"under3_pct":0.0,"under45_pct":0.2},"reduced_motion":{"min":4.62,"median":8.45,"under45_pct":0.0},"mobile_390":{"min":1.10,"p05":1.32,"median":8.33,"under3_pct":14.2,"failbox":"x242-346/350, y128-248/253 (우측 소매·무릎)"},"prior":"결정 획 2.21:1","verdict":"데스크톱·reduced-motion PASS, ≤900px FAIL"},
+  "P0-2": {"metric":"seal 34x34=1156px","redStrong_R-G>=80":"188px = 16.3% of rect / 74.6% of non-paper mark px","avgRedStrong":[190,59,47],"maxRG":135,"token":"#BC3529 R-G=135","prior":[69,43,41],"verdict":"R-G 기준 PASS(131~135), 화소율 60% 기준은 아티팩트 형태 변경(솔리드→종이배면 외곽선)으로 전제 불성립"},
+  "P0-3": {"facts":"38 / 면접 가이드북, 15권 판매 개시","gate01":"권당 16,500원, 15권 판매 개시","claim_count":{"38":5,"15":2},"verdict":"표기 존재, 주목도 비대칭 잔존"},
+  "P1-4": {"video_dur":4.88,"marks_ms":{"draw_start":2461,"strokes_done":5229,"seal_visible":6054},"prior":13400,"chroma":{"film":15.5,"page":12.9,"prior_film":30.1},"verdict":"PASS"},
+  "P1-5": {"gatefilm_element":false,"payload_removed_kb":50,"verdict":"PASS"},
+  "P2-9": {"og":"1200x630, lockup ink minx=301, square crop 285..915, leftClip=0","prior_clip_px":205,"verdict":"PASS"}
+ },
+ "lenses": [
+  {"n":1,"name":"내러티브-비주얼 일치","score":4,"prior":3,"evidence":"마크 가시성 diff 실측 median 7.35:1 (구 2.21:1), 4.5:1 미달 0.2%. 성균관대 제시문 표기 본문 0건, H1 '연세대 고려대', facts 3→2. 미달 사유: 코드 주석 '먹이 번진다(4.8s)' 대 실제 t=1.5s 프레임 = 우단 가시 돌기 구체, 좌측 80% 공백. OG 는 단일 붓질 스윕, 히어로는 방사 폭발 = 동일 브랜드 2개 먹 언어."},
+  {"n":2,"name":"클리셰 감지","score":4,"prior":4,"evidence":"모노크롬·곡률0·그림자0 유지, 게이트 장식영상 제거로 클리셰 표면 1개 감소. 번짐 방사 대칭 스포크 다발(국화/성게 형상)은 미교체, object-position 32% 로 코어를 우단 밖으로 밀어 노출 면적만 축소."},
+  {"n":3,"name":"타이포 위계","score":4,"prior":4,"evidence":"게이트 3열 meta 종결 라인이 전부 가격으로 정렬(01 권당 16,500원 / 02 22,000·330,000원 / 03 38,500원) — 4차 병렬 파괴 해소. 신규 결함: 01 meta 괘선 top 184px 대 02·03 215px = 31px 미정렬(li 3행 대 2행 + margin-top:auto). facts 1번 셀은 38(대형) 위 15권(11px) 으로 판매 가능 수량이 4배 작게 표기."},
+  {"n":4,"name":"그리드·공간","score":4,"prior":3,"evidence":"CLS 0.0000(구 0.0053), overflow 0, art rect 불변. 4차 '중앙 밴드 떠 있는 사각'(y188 -42.0 / y595 +39.3 하드엣지) 소멸 — 재생 중에도 589x660 full-bleed 확인. 잔여: 좌측 80% 회화칸이 2.46s 간 정보 0, 방사 초점 코어가 x1280 프레임 선에 이등분됨."},
+  {"n":5,"name":"컬러 시스템","score":4,"prior":3,"evidence":"chroma 페이지 12.9 대 필름 15.5(구 30.1) — 두 종류 종이색 해소, 격차 17→2.6. 낙관 강적화소 평균 (190,59,47), max R-G 135 = --seal #BC3529 정확 복원(구 (69,43,41) 갈색). 잔여: 배면 패치 내부 (245,240,231) 대 인접 필름 지면 (174,172,158) = 광도 27% 초과, 8px 링 중 478px 이 먹(62,59,55) → 그림 위에 붙인 흰 칩으로 읽힘."},
+  {"n":6,"name":"페이지 흐름","score":4,"prior":4,"evidence":"밀도 리듬 say 229.6 / art 152.2 / facts 230.6 / 게이트 먹판 유지. 브랜드 완성 13.4s→6.05s(seal 6054ms). 잔여: 6.05s 는 커머스 홈 진입 판단 구간 초과, 진입 직후 2.46s 는 우측 칸 무정보."},
+  {"n":7,"name":"디테일 품질","score":4,"prior":2,"evidence":"4차 4결함 중 3건 집행 확인: (a) 낙관 호흡 20ms→825ms(strokes 5229 / seal 6054), (b) gatefilm 엘리먼트 자체 제거(50KB dead download 소멸), (d) 게이트01 가격 라인 신설. (c) OG 낙관은 10x10 단색 적색 사각 유지(玄 자형 없음)이나 태그라인 종결 부호로는 성립. 신규: 괘선 31px 미정렬, 낙관 칩 광도 27% 초과, index line 579 → interview/skku.html 제시문 37회 잔존."},
+  {"n":8,"name":"매체 적합성","score":4,"prior":3,"evidence":"CLS 0, overflow 0, webm 201KB(구 301KB)/mp4 413KB(구 688KB), 게이트 mp4 50KB 제거 = 실전송 201KB. OG 락업 leftClip 205px→0(square crop 285..915 대 ink minx 301). 잔여: ≤900px 분기에 object-position·wrap 폭 수리 미전파 → 포스터 경로 마크 잉크 14.2% 가 3:1 미만."},
+  {"n":9,"name":"접근성·윤리","score":4,"prior":2,"evidence":"reduced-motion 경로 실측 min 4.62:1 / median 8.45:1 / 4.5:1 미달 0%, sealOp 1·dashoffset 0 즉시 = 완전 정적 대체 성립. 데스크톱 애니 경로 3:1 미달 0.0%. 윤리: 15권 고지 2개소 신설(4차 0개소)이나 38 주장 5개소(최대 48px) 대 고지 2개소(11~12px), 제한사항 근접·동등 주목도 미달. 모바일 14.2% 저대비는 WCAG 1.4.11 로고타입 면제 대상이나 브랜드 자체 기준(4.5:1) 위배."}
+ ],
+ "total": 36, "max": 45, "prior_total": 28, "delta_vs_prior": 8,
+ "overrides": {"lens1_lt_4": false, "lens8_lt_3": false, "lens9_lt_3": false},
+ "release": "RELEASE",
+ "grade": "36~40 출판 가능",
+ "residual_P0": [],
+ "residual_P1": ["모바일 ≤900px 마크 대비 14.2% <3:1", "38권 대 15권 주목도 비대칭(표시광고법 제한사항 표기)", "interview/skku.html 제시문 37회 미전파"],
+ "residual_P2": ["게이트01 괘선 31px 미정렬","낙관 배면 패치 광도 27% 초과","히어로 우측 칸 2.46s 공백","번짐 방사 대칭 형상·코어 우단 이등분","OG 낙관 자형 부재","브랜드 완성 6.05s","OG-히어로 먹 언어 불일치"]
+}
