@@ -1,7 +1,7 @@
 {
  "_note": "tools/build_guidebook.py refresh 가 박제. price 최상위 1 곳 = 전 권 기본값, 항목 price null = 상속.",
  "year": 2027,
- "price": 29000,
+ "price": 16500,
  "items": [
   {
    "slug": "ajou",

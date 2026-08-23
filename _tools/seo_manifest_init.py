@@ -111,10 +111,10 @@ SITE = {
     "llms": {
         "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대, 성균관대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 제시문 해제집 스토어를 운영하고, 26개 대학 면접 기출 아카이브를 무료로 공개합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
         "products": [
-            {"name": "학교별 2027 면접 가이드북 (디지털, 38권)", "path": "/guidebook/", "price": "1권 29,000원 (보안 리더 열람, 원본 PDF 비제공)",
+            {"name": "학교별 2027 면접 가이드북 (디지털, 38권)", "path": "/guidebook/", "price": "1권 16,500원 (보안 리더 열람, 원본 PDF 비제공)",
              "desc": "대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북."},
             {"name": "제시문 면접 스튜디오 (연세대, 고려대, 성균관대)", "path": "/studio.html", "price": "학교 전권 330,000원, 지문 1편 22,000원(응시 5회)",
-             "desc": "학교별 기출 제시문으로 실전 규격 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."},
+             "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."},
             {"name": "스토어", "path": "/store.html", "price": "해제집 26,000원부터, 영어 봉투 모의고사 1부 38,500원",
              "desc": "인문, 사회, 자연 계열 제시문 해제집과 구술 노트, 영어 봉투 모의고사 실물 배송."},
         ],
@@ -203,7 +203,7 @@ def build_entry(rel, s, stats):
                           "breadcrumb": DEFAULTS[pat]["breadcrumb"],
                           "schema": {"list_dir": "guidebook/", "list_name": "학교별 2027 면접 가이드북"}})
             page_desc = C.clean_text(C.get_meta_description(s))
-            desc = page_desc if desc_ok(page_desc) else "학교별 2027 면접 가이드북 38권. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다. 1권 29,000원."
+            desc = page_desc if desc_ok(page_desc) else "학교별 2027 면접 가이드북 38권. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다. 1권 16,500원."
     elif pat == "programs/*" and rel not in HAND:
         name = title or h1
         school = school_from_h1(name) if name else os.path.basename(rel)[:-5]

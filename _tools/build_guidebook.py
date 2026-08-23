@@ -41,7 +41,7 @@ SLUGS = [
     ("hongik", "홍익대학교(서울)"),
 ]
 ARCHIVE = {s for s, _ in SLUGS[:26]}
-DEFAULT_PRICE = 29000
+DEFAULT_PRICE = 16500
 SAMPLE_MAX = 4
 SAMPLE_LEN = 120
 
