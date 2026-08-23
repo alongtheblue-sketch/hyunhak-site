@@ -1,0 +1,5563 @@
+{
+ "_note": "tools/build_guidebook.py refresh 가 박제. price 최상위 1 곳 = 전 권 기본값, 항목 price null = 상속.",
+ "year": 2027,
+ "price": 29000,
+ "items": [
+  {
+   "slug": "ajou",
+   "sku": "guide-ajou",
+   "price": null,
+   "archive": true,
+   "name": "아주대학교",
+   "file": "아주대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 190,
+   "types_n": 14,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 아주대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "탐구, 세특심화",
+     "observed": 44,
+     "pct": 17.8,
+     "included": 28
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 28,
+     "pct": 11.3,
+     "included": 30
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 18,
+     "pct": 7.3,
+     "included": 19
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 15,
+     "pct": 6.1,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 11,
+     "pct": 4.5,
+     "included": 14
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 11,
+     "pct": 4.5,
+     "included": 11
+    },
+    {
+     "type": "독서",
+     "observed": 6,
+     "pct": 2.4,
+     "included": 8
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 5,
+     "pct": 2.0,
+     "included": 6
+    },
+    {
+     "type": "상황, 가치판단 및 제시문형",
+     "observed": 3,
+     "pct": 1.2,
+     "included": 6
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 2,
+     "pct": 0.8,
+     "included": 7
+    },
+    {
+     "type": "자기소개",
+     "observed": 2,
+     "pct": 0.8,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 12,
+     "pct": 4.9,
+     "included": 13
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 16,
+     "pct": 6.5,
+     "included": 16
+    },
+    {
+     "type": "기타",
+     "observed": 90,
+     "pct": 36.4,
+     "included": 12
+    }
+   ],
+   "samples": [
+    {
+     "type": "탐구, 세특심화",
+     "q": "Q2-3 최우수상은 어떤 내용으로 발표하였는가?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "베르누이 원리를 이용하여 양력을 설명하면 잘못된 설명이라고 하는데 정확한 설명이 무엇인지 설명해보세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "복지관에서 꾸준히 봉사활동을 하셨는데 청소 말고 다른 활동 중에 인상 깊었던 활동이 있으면 말해보세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "처음엔 단순히 컴퓨터공학자에서 IT벤처 CEO, 그리고 3학년에는 데이터사이언티스트 이런식으로 조금씩 꿈은 변했지만 같은 분야에서 꿈을 찾아간거네?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "catholic",
+   "sku": "guide-catholic",
+   "price": null,
+   "archive": true,
+   "name": "가톨릭대학교",
+   "file": "가톨릭대학교_2027면접가이드북.pdf",
+   "pages": 37,
+   "questions": 147,
+   "types_n": 12,
+   "sources_n": 20,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 10항목 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브 (원문)"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 11,
+     "pct": 3.1,
+     "included": 13
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 21,
+     "pct": 6.0,
+     "included": 11
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "observed": 74,
+     "pct": 21.1,
+     "included": 24
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 79,
+     "pct": 22.6,
+     "included": 20
+    },
+    {
+     "type": "독서",
+     "observed": 14,
+     "pct": 4.0,
+     "included": 10
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 26,
+     "pct": 7.4,
+     "included": 16
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 7,
+     "pct": 2.0,
+     "included": 9
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 13,
+     "pct": 3.7,
+     "included": 12
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 7,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 4,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 4,
+     "pct": 1.1,
+     "included": 5
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 7,
+     "pct": 2.0,
+     "included": 13
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "학과에 지원하였네요. ○○학과에 지원하게 된 동기가 된고교 재학기간 중 활동이 있다면 무엇인가요?",
+     "source": "경기도 진학연구팀"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "지원자의 꿈은 교사인데, 어떤 교사가 좋은 교사라고 생각하나요? 그런 자질을 어떻게 기를 수 있으며어떤 노력을 해 왔나요?",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "q": "사회탐구보고서 발표에서 인상적인 활동이 보이는데, 본인이 다른 경쟁자들보다 좋은 평가를 받았던 가장 큰 이유는 무엇인가요? 지금 다시 그 활동을 한다면 어떤 점을 보완하고 싶은지 이야기해 보세요",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "‘공정하다는 착각’이라는 책을 읽으셨는데, 이 책을 보고 사회에서 문제가 되는점은 무엇인지 1가지 말하고, 이를 해결하기 위한 방안은?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "cau",
+   "sku": "guide-cau",
+   "price": null,
+   "archive": true,
+   "name": "중앙대학교",
+   "file": "중앙대학교_2027면접가이드북.pdf",
+   "pages": 42,
+   "questions": 131,
+   "types_n": 13,
+   "sources_n": 10,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 13,
+     "pct": 2.1,
+     "included": 7
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 30,
+     "pct": 4.9,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 114,
+     "pct": 18.5,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 105,
+     "pct": 17.1,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 32,
+     "pct": 5.2,
+     "included": 10
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 24,
+     "pct": 3.9,
+     "included": 10
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 12,
+     "pct": 2.0,
+     "included": 7
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 14,
+     "pct": 2.3,
+     "included": 8
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 2,
+     "pct": 0.3,
+     "included": 6
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 8,
+     "pct": 1.3,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 22,
+     "pct": 3.6,
+     "included": 9
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 21,
+     "pct": 3.4,
+     "included": 17
+    },
+    {
+     "type": "자기소개",
+     "observed": 8,
+     "pct": 1.3,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지원 동기에 대해 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "꿈이 교사인데 왜 국어국문학과를 지원하게 됐는지 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "지리답사 동아리에서 탐구한 주제는 무엇이고, 어떤 결과를 얻었고, 무슨 능력을 기를 수 있었는지 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "학생부에 레오폴드의 대지 윤리에 관한 이야기가 있는데 그게 무엇이고, 이 개념이 ESG와 어떤 관계가 있다고 생각하나요?",
+     "source": "울산고 진학자료실"
+    }
+   ]
+  },
+  {
+   "slug": "dongguk",
+   "sku": "guide-dongguk",
+   "price": null,
+   "archive": true,
+   "name": "동국대학교",
+   "file": "동국대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 176,
+   "types_n": 16,
+   "sources_n": 9,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "전공지식확인",
+     "observed": 64,
+     "pct": 13.4,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 62,
+     "pct": 13.0,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 26,
+     "pct": 5.5,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 25,
+     "pct": 5.3,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 24,
+     "pct": 5.0,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 22,
+     "pct": 4.6,
+     "included": 15
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 16,
+     "pct": 3.4,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 11,
+     "pct": 2.3,
+     "included": 10
+    },
+    {
+     "type": "마무리",
+     "observed": 15,
+     "pct": 3.2,
+     "included": 15
+    },
+    {
+     "type": "자기소개",
+     "observed": 11,
+     "pct": 2.3,
+     "included": 10
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 23,
+     "pct": 5.0,
+     "included": 15
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 2,
+     "pct": 0.4,
+     "included": 2
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 1,
+     "pct": 0.2,
+     "included": 1
+    },
+    {
+     "type": "제시문형",
+     "observed": 1,
+     "pct": 0.2,
+     "included": 1
+    },
+    {
+     "type": "기타",
+     "observed": 196,
+     "pct": 41.2,
+     "included": 15
+    },
+    {
+     "type": "블라인드 저촉 관측 질문",
+     "observed": null,
+     "pct": null,
+     "included": 2
+    }
+   ],
+   "samples": [
+    {
+     "type": "전공지식확인",
+     "q": "공리주의가 무엇인가?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "화성연쇄살인사건에 대해 조사를 했었는데, 어떤 내용으로 조사한 거에요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "독서",
+     "q": "(생기부 관련) '세계의 반은 왜 굶주리는가' 라는 책에서 작가의 생각은?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "q": "우선 동국대학교 법학과를 지원하게 된 동기를 들어볼까요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "ewha",
+   "sku": "guide-ewha",
+   "price": null,
+   "archive": true,
+   "name": "이화여자대학교",
+   "file": "이화여자대학교_2027면접가이드북.pdf",
+   "pages": 39,
+   "questions": 152,
+   "types_n": 15,
+   "sources_n": 14,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식과 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "전공지식확인",
+     "observed": 166,
+     "pct": 16.3,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 118,
+     "pct": 11.6,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 79,
+     "pct": 7.7,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 79,
+     "pct": 7.7,
+     "included": 15
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 57,
+     "pct": 5.6,
+     "included": 12
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 45,
+     "pct": 4.4,
+     "included": 12
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 35,
+     "pct": 3.4,
+     "included": 10
+    },
+    {
+     "type": "독서",
+     "observed": 28,
+     "pct": 2.7,
+     "included": 10
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 9,
+     "pct": 0.9,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 21,
+     "pct": 2.1,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 33,
+     "pct": 3.2,
+     "included": 12
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 0.4,
+     "included": 4
+    },
+    {
+     "type": "자기소개",
+     "observed": 4,
+     "pct": 0.4,
+     "included": 4
+    },
+    {
+     "type": "제시문형",
+     "observed": 10,
+     "pct": 1.0,
+     "included": 5
+    },
+    {
+     "type": "기타",
+     "observed": 366,
+     "pct": 35.8,
+     "included": 10
+    }
+   ],
+   "samples": [
+    {
+     "type": "전공지식확인",
+     "q": "고등학교에서 수강했던 생명과학이나 화학 관련해서 자기가 가장 잘 아는 거 하나 설명해 보세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "학생부에 기재된 ○○ 과목 세특을 보면 깊이 있는 탐구활동이 있었던 것 같습니다. 이 활동을 통해 무엇을 배우고 느꼈는지 설명해 주세요.",
+     "source": "대학 공식 자료"
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지원한 전공(계열)에 대한 관심을 어떻게 구체화해 왔는지, 본인의 준비 과정을 설명해 주세요.",
+     "source": "대학 공식 자료"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "학생부에 기재된 ○○활동이 진로 탐색에 어떤 영향을 주었는지 설명해 주세요.",
+     "source": "대학 공식 자료"
+    }
+   ]
+  },
+  {
+   "slug": "gachon",
+   "sku": "guide-gachon",
+   "price": null,
+   "archive": true,
+   "name": "가천대학교",
+   "file": "가천대학교_2027면접가이드북.pdf",
+   "pages": 37,
+   "questions": 142,
+   "types_n": 14,
+   "sources_n": 6,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 47,
+     "pct": 9.3,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 35,
+     "pct": 6.9,
+     "included": 12
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 62,
+     "pct": 12.2,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 91,
+     "pct": 17.9,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 13,
+     "pct": 2.6,
+     "included": 8
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 24,
+     "pct": 4.7,
+     "included": 12
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 5,
+     "pct": 1.0,
+     "included": 5
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 17,
+     "pct": 3.3,
+     "included": 12
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 3,
+     "pct": 0.6,
+     "included": 3
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 3,
+     "pct": 0.6,
+     "included": 3
+    },
+    {
+     "type": "자기소개",
+     "observed": 4,
+     "pct": 0.8,
+     "included": 4
+    },
+    {
+     "type": "마무리",
+     "observed": 22,
+     "pct": 4.3,
+     "included": 11
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 34,
+     "pct": 6.7,
+     "included": 15
+    },
+    {
+     "type": "기타",
+     "observed": 182,
+     "pct": 35.8,
+     "included": 12
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "학교에서 많은 활동들을 했는데, 가장 의미있었던 경험을 포함해서 지원동기 말해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "나중에 어떤 간호사가 되고 싶어요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "자율동아리 이름이 OR인데 무슨 뜻인가요? / 3. 창체동아리 루카스는 무슨 뜻인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "SIR 감염모델과 SEIR 감염모델의 차이점이 뭔가요? / 8. 둘중에 뭐가 더 정확하다고 생각해요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "hufs",
+   "sku": "guide-hufs",
+   "price": null,
+   "archive": true,
+   "name": "한국외국어대학교",
+   "file": "한국외국어대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 167,
+   "types_n": 14,
+   "sources_n": 11,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "전공지식확인",
+     "observed": 87,
+     "pct": 15.0,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 47,
+     "pct": 8.1,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 41,
+     "pct": 7.1,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 35,
+     "pct": 6.0,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 30,
+     "pct": 5.2,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 26,
+     "pct": 4.5,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 12,
+     "pct": 2.1,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 12,
+     "pct": 2.1,
+     "included": 10
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 1,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 4,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "자기소개",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 21,
+     "pct": 3.6,
+     "included": 19
+    },
+    {
+     "type": "전공 국가, 지역 지식 [한국외대 고유 축, 팩 분류상 '기타'와 '전공지식확인' 혼재]",
+     "observed": null,
+     "pct": null,
+     "included": 10
+    }
+   ],
+   "samples": [
+    {
+     "type": "전공지식확인",
+     "q": "LD학부와 정외교학과의 차이점에 대해 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "세특 질문: 프랑스 소비윤리, 윤리적 소비에 대해 말씀해보세요",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "꿈을 가지게 된 계기가 어떻게 되는지 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "독서",
+     "q": "학생은 보니까 생기부도 굉장히 탄탄하고 독서도 많이 했는데 1학년 때 읽은 책 중에서 ‘나 사용설명서’가 있네요. 여기서 가장 인상 깊은 구절 하나만 이야기해줄 수 있어요?",
+     "source": "부산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "inha",
+   "sku": "guide-inha",
+   "price": null,
+   "archive": true,
+   "name": "인하대학교",
+   "file": "인하대학교_2027면접가이드북.pdf",
+   "pages": 45,
+   "questions": 148,
+   "types_n": 15,
+   "sources_n": 7,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "전공지식확인",
+     "observed": 121,
+     "pct": 20.6,
+     "included": 21
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 91,
+     "pct": 15.5,
+     "included": 20
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 38,
+     "pct": 6.5,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 25,
+     "pct": 4.3,
+     "included": 9
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 20,
+     "pct": 3.4,
+     "included": 10
+    },
+    {
+     "type": "독서",
+     "observed": 24,
+     "pct": 4.1,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 19,
+     "pct": 3.2,
+     "included": 11
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 6,
+     "pct": 1.0,
+     "included": 6
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 0.7,
+     "included": 4
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 3,
+     "pct": 0.5,
+     "included": 3
+    },
+    {
+     "type": "마무리",
+     "observed": 22,
+     "pct": 3.7,
+     "included": 7
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 31,
+     "pct": 5.3,
+     "included": 16
+    },
+    {
+     "type": "자기소개",
+     "observed": 3,
+     "pct": 0.5,
+     "included": 3
+    },
+    {
+     "type": "제시문형",
+     "observed": 3,
+     "pct": 0.5,
+     "included": 3
+    },
+    {
+     "type": "기타",
+     "observed": 209,
+     "pct": 35.5,
+     "included": 10
+    }
+   ],
+   "samples": [
+    {
+     "type": "전공지식확인",
+     "q": "홀효과, 로렌츠힘, 반도체 레이저를 이용한 광통신 등에 관심을 가졌다고 했는데 이 중하나 설명할 수 있을까요? 광통신의 원리가 무엇이죠?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "심화수학I 세부능력 및 특기사항에 ‘Fick의 확산법칙’에 대해 탐구했다고 되어 있는데, Fick의 확산법칙에 대해 설명하십시오",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "학년때 학급회장으로 활동했다 하셨는데 어떤 역할을 맡았고 무슨활동을 했어요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "q": "우리학과에 지원하게 된 동기를 간단하게 말해주세요",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "khu",
+   "sku": "guide-khu",
+   "price": null,
+   "archive": true,
+   "name": "경희대학교",
+   "file": "경희대학교_2027면접가이드북.pdf",
+   "pages": 41,
+   "questions": 172,
+   "types_n": 15,
+   "sources_n": 9,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 (대학 공식 + 학과별)"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "공식 예시문항",
+     "observed": null,
+     "pct": null,
+     "included": 16
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 48,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 44,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 44,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 42,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 34,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 29,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 20,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "독서",
+     "observed": 20,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 12,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "자기소개",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "마무리",
+     "observed": 38,
+     "pct": 5.5,
+     "included": 10
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 35,
+     "pct": 5.05,
+     "included": 15
+    },
+    {
+     "type": "제시문형",
+     "observed": 37,
+     "pct": null,
+     "included": 12
+    }
+   ],
+   "samples": [
+    {
+     "type": "탐구, 세특심화",
+     "q": "동아리 시간에 해당 학과와 관련된 내용을 탐구해본 경험이 있으면 말해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로가 신재생에너지 연구원이라 되어있는데 수학이랑 연관시킬 점이 있나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "유전자 가위가 무엇인지, 어떻게 쓰이는지 말해보세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "리더십 관련 활동이 많은 것 같은데 리더십 발휘했던 경험 하나 말해줄래요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "knu",
+   "sku": "guide-knu",
+   "price": null,
+   "archive": true,
+   "name": "경북대학교",
+   "file": "경북대학교_2027면접가이드북.pdf",
+   "pages": 39,
+   "questions": 162,
+   "types_n": 13,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 17,
+     "pct": 2.4,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 32,
+     "pct": 4.5,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 108,
+     "pct": 15.3,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 76,
+     "pct": 10.8,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 29,
+     "pct": 4.1,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 62,
+     "pct": 8.8,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 10,
+     "pct": 1.4,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 25,
+     "pct": 3.5,
+     "included": 15
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 5,
+     "pct": 0.7,
+     "included": 7
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 3,
+     "pct": 0.4,
+     "included": 7
+    },
+    {
+     "type": "마무리",
+     "observed": 12,
+     "pct": 1.7,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 56,
+     "pct": 7.9,
+     "included": 17
+    },
+    {
+     "type": "기타",
+     "observed": 321,
+     "pct": 45.5,
+     "included": 10
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "(말을 끊으며)아! 괜찮아요.(인적사항 말할까봐 끊으신 거 같습니다.) Q1 간단한 질문부터 해볼까요? 전자공학과에 지원하게 된 동기가 무엇이죠?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "(진로희망)꿈이 의료기기 개발자인데 왜 전자공학부에 지원을 하게 되었냐?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "학년 물리시간에 인공중력과 우주정거장에 대해 조사했다고 했는데 설명해주실 수 있나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "+ 관성력이 그럼 무엇인가요? [꼬리]",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "konkuk",
+   "sku": "guide-konkuk",
+   "price": null,
+   "archive": true,
+   "name": "건국대학교(서울)",
+   "file": "건국대학교(서울)_2027면접가이드북.pdf",
+   "pages": 37,
+   "questions": 120,
+   "types_n": 14,
+   "sources_n": 11,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "탐구, 세특심화",
+     "observed": 195,
+     "pct": 26.4,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 134,
+     "pct": 18.1,
+     "included": 15
+    },
+    {
+     "type": "기타",
+     "observed": 273,
+     "pct": 36.9,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 22,
+     "pct": 3.0,
+     "included": 8
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 22,
+     "pct": 3.0,
+     "included": 8
+    },
+    {
+     "type": "마무리",
+     "observed": 20,
+     "pct": 2.7,
+     "included": 8
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 18,
+     "pct": 2.4,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 17,
+     "pct": 2.3,
+     "included": 8
+    },
+    {
+     "type": "독서",
+     "observed": 16,
+     "pct": 2.2,
+     "included": 8
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 13,
+     "pct": 1.8,
+     "included": 8
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 7,
+     "pct": 0.9,
+     "included": 6
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 1,
+     "pct": 0.1,
+     "included": 1
+    },
+    {
+     "type": "자기소개",
+     "observed": 2,
+     "pct": 0.3,
+     "included": 2
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 33,
+     "pct": 4.6,
+     "included": 10
+    }
+   ],
+   "samples": [
+    {
+     "type": "탐구, 세특심화",
+     "q": "챗GPT를 활용한 시 창작 활동을 진행했는데, 인간과 인공지능이 제작한결과물의 각각의 특징을 비교하여 탐구했던 내용을 설명해 주세요",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "우리 고전 시가의 본가와 답가를 찾아 읽고 두 작품을 현대어로 풀이하고차이점을 서로 비교하는 활동을 했는데, 작품을 비교한 내용에 대해서 구체적으로 설명해 주세요",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "기타",
+     "q": "어떤 자료를 활용했나요?",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "수학 학습 멘토링에 멘토로 참여하여 ‘학급 최고의 수학 멘토’로 선정되었는데, 자신만의 수학 학습 지도 전략이 있나요?",
+     "source": "대구동구 진로진학센터"
+    }
+   ]
+  },
+  {
+   "slug": "kookmin",
+   "sku": "guide-kookmin",
+   "price": null,
+   "archive": true,
+   "name": "국민대학교",
+   "file": "국민대학교_2027면접가이드북.pdf",
+   "pages": 36,
+   "questions": 143,
+   "types_n": 13,
+   "sources_n": 10,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 17,
+     "pct": 5.0,
+     "included": 12
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 16,
+     "pct": 4.7,
+     "included": 13
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 22,
+     "pct": 6.4,
+     "included": 13
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 42,
+     "pct": 12.2,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 10,
+     "pct": 2.9,
+     "included": 9
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 24,
+     "pct": 7.0,
+     "included": 13
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 20,
+     "pct": 5.8,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 22,
+     "pct": 6.4,
+     "included": 13
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 1.2,
+     "included": 5
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 5,
+     "pct": 1.5,
+     "included": 6
+    },
+    {
+     "type": "자기소개",
+     "observed": 10,
+     "pct": 2.9,
+     "included": 9
+    },
+    {
+     "type": "마무리",
+     "observed": 13,
+     "pct": 3.8,
+     "included": 11
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 12,
+     "pct": 3.5,
+     "included": 14
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "왜 우리학과에 지원했는지 지원 동기 말해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로희망사항이 1학년 때는 빅데이터 전문가, 2학년 때는 건축공학자 3학년 때는 기계공학자로 바뀌는데 이러한 이유가있습니까?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "급식 앱 이외에 교내 활동에서 자바나 C언어같이 프로그래밍 언어를 사용한 적이 있나요?",
+     "source": "대구교육청"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "생기부를 보니 센서에 관심이 많은 것 같은데 센서 종류 3가지와 작동원리를 말해주세요",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "korea",
+   "sku": "guide-korea",
+   "price": null,
+   "archive": true,
+   "name": "고려대학교(서울)",
+   "file": "고려대학교(서울)_2027면접가이드북.pdf",
+   "pages": 33,
+   "questions": 135,
+   "types_n": 14,
+   "sources_n": 14,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "제시문형",
+     "observed": 185,
+     "pct": 20.2,
+     "included": 15
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 159,
+     "pct": 17.3,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "observed": 62,
+     "pct": 6.8,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 28,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 25,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 24,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 22,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 19,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "독서",
+     "observed": 19,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "마무리",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 29,
+     "pct": 3.2,
+     "included": 10
+    },
+    {
+     "type": "자기소개",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    }
+   ],
+   "samples": [
+    {
+     "type": "제시문형",
+     "q": "제시문을 읽고 문제에 답하시오",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "q": "자신이 주도적으로 했던 연구에는 무엇이 있는가? 타인의 영향을 받아서 했던 연구는 어떤 것이 있는가? 두 가지의 장단점은 무엇인가 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로희망과 언어학과의 연계성은 어떤 것이 있는지 말해보시오",
+     "source": "면접 복원문제 자료집"
+    }
+   ]
+  },
+  {
+   "slug": "kwangwoon",
+   "sku": "guide-kwangwoon",
+   "price": null,
+   "archive": true,
+   "name": "광운대학교",
+   "file": "광운대학교_2027면접가이드북.pdf",
+   "pages": 38,
+   "questions": 148,
+   "types_n": 13,
+   "sources_n": 11,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 광운대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기",
+     "observed": 11,
+     "pct": 4.9,
+     "included": 12
+    },
+    {
+     "type": "진로",
+     "observed": 7,
+     "pct": 3.1,
+     "included": 9
+    },
+    {
+     "type": "탐구세특",
+     "observed": 21,
+     "pct": 9.4,
+     "included": 16
+    },
+    {
+     "type": "전공지식",
+     "observed": 31,
+     "pct": 13.8,
+     "included": 26
+    },
+    {
+     "type": "독서",
+     "observed": 16,
+     "pct": 7.1,
+     "included": 16
+    },
+    {
+     "type": "공동체인성",
+     "observed": 8,
+     "pct": 3.6,
+     "included": 8
+    },
+    {
+     "type": "자기이해",
+     "observed": 4,
+     "pct": 1.8,
+     "included": 6
+    },
+    {
+     "type": "학업교과",
+     "observed": 13,
+     "pct": 5.8,
+     "included": 13
+    },
+    {
+     "type": "상황판단",
+     "observed": 3,
+     "pct": 1.3,
+     "included": 5
+    },
+    {
+     "type": "시사",
+     "observed": 0,
+     "pct": 0.0,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 10,
+     "pct": 4.5,
+     "included": 11
+    },
+    {
+     "type": "꼬리",
+     "observed": 17,
+     "pct": 7.6,
+     "included": 13
+    },
+    {
+     "type": "자기소개",
+     "observed": 6,
+     "pct": 2.7,
+     "included": 7
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기",
+     "q": "왜 화학공학과에 지원하시게 되었나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로",
+     "q": "진로가 어떻게 됩니까?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "탐구세특",
+     "q": "사회문화 시간에 세계화로 인한 사회변화를 조사했는데, 자세히 설명해 주세요",
+     "source": "울산교육청"
+    },
+    {
+     "type": "전공지식",
+     "q": "스마트 그리드가 무엇인가?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "kyonggi",
+   "sku": "guide-kyonggi",
+   "price": null,
+   "archive": true,
+   "name": "경기대학교",
+   "file": "경기대학교_2027면접가이드북.pdf",
+   "pages": 34,
+   "questions": 130,
+   "types_n": 14,
+   "sources_n": 9,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 경기대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기 및 대학이해",
+     "observed": 12,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "진로 및 장래",
+     "observed": 12,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "탐구 및 세특 심화",
+     "observed": 28,
+     "pct": null,
+     "included": 20
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 18,
+     "pct": null,
+     "included": 16
+    },
+    {
+     "type": "독서",
+     "observed": 9,
+     "pct": null,
+     "included": 9
+    },
+    {
+     "type": "공동체 및 인성",
+     "observed": 13,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "자기이해 및 성장",
+     "observed": 1,
+     "pct": null,
+     "included": 3
+    },
+    {
+     "type": "학업 및 교과",
+     "observed": 3,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "상황 및 가치판단",
+     "observed": 1,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "시사 및 사회이슈",
+     "observed": 3,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "자기소개",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 4,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "아이스브레이킹 및 진행 발화",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기 및 대학이해",
+     "q": "지원동기가 무엇인가요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로 및 장래",
+     "q": "진로 희망에 대해 설명해주세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "탐구 및 세특 심화",
+     "q": "사회문제탐구 시간에 청소년 범죄를 조사했다고 하는데, 이 결과에 대해 말해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "오버투어리즘의 원인이 무엇이고 해결 방안은 무엇인지 말해 보세요",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "myongji",
+   "sku": "guide-myongji",
+   "price": null,
+   "archive": true,
+   "name": "명지대학교",
+   "file": "명지대학교_2027면접가이드북.pdf",
+   "pages": 39,
+   "questions": 161,
+   "types_n": 13,
+   "sources_n": 7,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브 (원문 그대로)"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기 및 대학이해",
+     "observed": 35,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "진로 및 장래",
+     "observed": 26,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "탐구 및 세특 심화",
+     "observed": 50,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 59,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 10,
+     "pct": null,
+     "included": 11
+    },
+    {
+     "type": "공동체 및 인성",
+     "observed": 27,
+     "pct": null,
+     "included": 20
+    },
+    {
+     "type": "자기이해 및 성장",
+     "observed": 17,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "학업 및 교과",
+     "observed": 30,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "상황 및 가치판단",
+     "observed": 4,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "시사 및 사회이슈",
+     "observed": 5,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 9,
+     "pct": null,
+     "included": 11
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 51,
+     "pct": 10.5,
+     "included": 21
+    },
+    {
+     "type": "자기소개",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기 및 대학이해",
+     "q": "명지대학교를 지원하게 된 동기는 무엇입니까?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로 및 장래",
+     "q": "진로희망에 거시경제학 연구원이 있는데 거시와 미시의 차이를 아는가?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구 및 세특 심화",
+     "q": "자율활동 시간에 'OOO'에 대해 분석한 내용을 이야기해 주세요",
+     "source": "면접 기출 자료집"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "일차전지와 이차전지가 구조적으로 차이가 나나요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "pusan",
+   "sku": "guide-pusan",
+   "price": null,
+   "archive": true,
+   "name": "부산대학교",
+   "file": "부산대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 139,
+   "types_n": 15,
+   "sources_n": 7,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식과 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "탐구, 세특심화",
+     "observed": 91,
+     "pct": 17.2,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 93,
+     "pct": 17.6,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 37,
+     "pct": 7.0,
+     "included": 12
+    },
+    {
+     "type": "독서",
+     "observed": 30,
+     "pct": 5.7,
+     "included": 10
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 21,
+     "pct": 4.0,
+     "included": 10
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 20,
+     "pct": 3.8,
+     "included": 10
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 13,
+     "pct": 2.5,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 9,
+     "pct": 1.7,
+     "included": 9
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 0.8,
+     "included": 4
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 5,
+     "pct": 0.9,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 17,
+     "pct": 3.2,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 15,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "자기소개",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "제시문형",
+     "observed": 2,
+     "pct": 0.4,
+     "included": 2
+    },
+    {
+     "type": "학종 공식 면접문항 예시",
+     "observed": null,
+     "pct": null,
+     "included": 11
+    }
+   ],
+   "samples": [
+    {
+     "type": "탐구, 세특심화",
+     "q": "[(학과 미기재)] 수업에서 ○○에 대해 발표했던데, 발표를 준비하는 과정에서 새롭게 알게 된 내용은무엇인가요?",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "[생명과학과] 생기부에 PCR에 대해 나와있는데 본인이 생각하는 이 기술의 한계는 무엇인가요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "[(학과 미기재)] 학급 반장으로 활동했던데 그 과정에서 겪은 어려움과 어떻게 극복했는지에 대해 얘기해주세요",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "독서",
+     "q": "[고분자공학과] 거의 모든 물질의 화학이라는 책을 읽었던데 무슨 내용인가요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "sejong",
+   "sku": "guide-sejong",
+   "price": null,
+   "archive": true,
+   "name": "세종대학교",
+   "file": "세종대학교_2027면접가이드북.pdf",
+   "pages": 38,
+   "questions": 145,
+   "types_n": 13,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식과 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 13,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 7,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 18,
+     "pct": null,
+     "included": 21
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 12,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 3,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 5,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 5,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 1,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 3,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "마무리, 자기소개",
+     "observed": 11,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 3,
+     "pct": null,
+     "included": 19
+    },
+    {
+     "type": "공식 예시 문항",
+     "observed": null,
+     "pct": null,
+     "included": 9
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지능기전공학과에 지원한 이유는?",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로가 스마트팜 개발자라 하셨는데, 실제로 이에 관련한 교내활동이 있나요?",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "자소서 1번에 '~'책을 읽었고 여기서 동기를 얻어 프로젝트 동아리를 진행했다고 되어있는데, 어떻게 진행하셨나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "메모리반도체가 정보를 저장하는 원리를 아나요?",
+     "source": "울산고 진학자료실"
+    }
+   ]
+  },
+  {
+   "slug": "seoultech",
+   "sku": "guide-seoultech",
+   "price": null,
+   "archive": true,
+   "name": "서울과학기술대학교",
+   "file": "서울과학기술대학교_2027면접가이드북.pdf",
+   "pages": 33,
+   "questions": 151,
+   "types_n": 13,
+   "sources_n": 13,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 18,
+     "pct": null,
+     "included": 18
+    },
+    {
+     "type": "자기소개",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 3,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 19,
+     "pct": null,
+     "included": 16
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 45,
+     "pct": null,
+     "included": 25
+    },
+    {
+     "type": "독서",
+     "observed": 4,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 5,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 2,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 14,
+     "pct": null,
+     "included": 13
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": null,
+     "pct": null,
+     "included": 3
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 4,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 14,
+     "pct": null,
+     "included": 14
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 18,
+     "pct": null,
+     "included": 19
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "자기소개와 지원동기를 1 분 내에 말해보세요. / 2. 우리 학교에 오고 싶은 이유?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "자기소개",
+     "q": "간단한 자기소개를 해주세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "콘택트렌즈 연구원이 되고싶다고 했는데 콘택트렌즈의 성분에 대해 간단히 설명해주세요",
+     "source": "부산교육청"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "여러 가지 센서를 만져봤다는데 센서를 탐구해본 경험을 바탕으로 가장 기억에 남는 거 하나 설명해보세요",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "skku",
+   "sku": "guide-skku",
+   "price": null,
+   "archive": true,
+   "name": "성균관대학교",
+   "file": "성균관대학교_2027면접가이드북.pdf",
+   "pages": 30,
+   "questions": 81,
+   "types_n": 12,
+   "sources_n": 16,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 (대학 공식 + 학과별)"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 7,
+     "pct": null,
+     "included": 11
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 9,
+     "pct": null,
+     "included": 9
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 11,
+     "pct": null,
+     "included": 11
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 42,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 4,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "제시문형",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "마무리",
+     "observed": 4,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지원 동기와 앞으로의 계획을 말해보시오",
+     "source": "면접 복원문제 자료집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "년 후 스포츠 분야에서 본인이 어떠한 일을 하고 있을지 설명하시오. 본인이 생각하는 10년 후 미래의 모습을 이루기 위해 구체적으로 어떻게 할지 설명하시오",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "동물 실험에 대한 학생 본인의 입장은 무엇인가요? 그 이유는 무엇인가요?",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "인공지능 시대에 학생들의 문해력 신장이 왜 중요한지 구체적 예를 들어 설명하시오",
+     "source": "대구동구 진로진학센터"
+    }
+   ]
+  },
+  {
+   "slug": "snu",
+   "sku": "guide-snu",
+   "price": null,
+   "archive": true,
+   "name": "서울대학교",
+   "file": "서울대학교_2027면접가이드북.pdf",
+   "pages": 42,
+   "questions": 134,
+   "types_n": 14,
+   "sources_n": 16,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 79,
+     "pct": 2.3,
+     "included": 9
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 87,
+     "pct": 2.5,
+     "included": 9
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 496,
+     "pct": 14.4,
+     "included": 16
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 568,
+     "pct": 16.5,
+     "included": 16
+    },
+    {
+     "type": "독서",
+     "observed": 177,
+     "pct": 5.2,
+     "included": 11
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 106,
+     "pct": 3.1,
+     "included": 9
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 98,
+     "pct": 2.9,
+     "included": 9
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 82,
+     "pct": 2.4,
+     "included": 9
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 32,
+     "pct": 0.9,
+     "included": 7
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 40,
+     "pct": 1.2,
+     "included": 7
+    },
+    {
+     "type": "제시문형",
+     "observed": 66,
+     "pct": 1.9,
+     "included": 9
+    },
+    {
+     "type": "자기소개",
+     "observed": 15,
+     "pct": 0.4,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 29,
+     "pct": 0.8,
+     "included": 6
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 203,
+     "pct": 5.9,
+     "included": 12
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "네. 지원동기 말씀해보세요",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "그러면 혹시 여기 오고 졸업하고 나서 미래에는 구체적으로 뭐 하고 싶어요? 기업체에 들어가서 연구원이나.또 교수가 될 수도 있겠고 한 번 말해볼래요? [꼬리]",
+     "source": "대구교육청"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "여기에 보니까 호만 전이 궤도에 대한 탐구 내용이 있는데, 이게 어떤 건지 설명해보세요",
+     "source": "대구교육청"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "흠...하디 바인베르크 법칙에서의 필요한 조건이 뭐죠?",
+     "source": "부산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "sookmyung",
+   "sku": "guide-sookmyung",
+   "price": null,
+   "archive": true,
+   "name": "숙명여자대학교",
+   "file": "숙명여자대학교_2027면접가이드북.pdf",
+   "pages": 34,
+   "questions": 114,
+   "types_n": 13,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 (대학 공식 + 학과별)"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 11,
+     "pct": 3.8,
+     "included": 11
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 11,
+     "pct": 3.5,
+     "included": 11
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "observed": 34,
+     "pct": 11.0,
+     "included": 16
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 72,
+     "pct": 23.2,
+     "included": 17
+    },
+    {
+     "type": "독서",
+     "observed": 14,
+     "pct": 4.5,
+     "included": 9
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 6,
+     "pct": 1.9,
+     "included": 6
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 3,
+     "pct": 1.0,
+     "included": 6
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 4,
+     "pct": 1.3,
+     "included": 4
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 6,
+     "pct": 1.9,
+     "included": 5
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 8,
+     "pct": 2.6,
+     "included": 7
+    },
+    {
+     "type": "마무리",
+     "observed": 10,
+     "pct": 3.2,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 17,
+     "pct": 5.3,
+     "included": 13
+    },
+    {
+     "type": "자기소개",
+     "observed": 1,
+     "pct": 0.3,
+     "included": 1
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "숙명여대 법학부에 지원하게 된 동기가 무엇인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로관련해서 물어볼게요. 진로희망사항에 마케팅이라고 적혀있는데, 마케터를 희망하는 이유가 무엇인지또 그리고 그것과 관련하여 영어영문학과에 희망하게된 계기가 무엇인가요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "q": "발표 내용에 대해 간단히 설명해주세요",
+     "source": "울산교육청"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "엔탈피와 화학 평형이 무엇인지 좀 더 자세히 설명할 수 있을까요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "soongsil",
+   "sku": "guide-soongsil",
+   "price": null,
+   "archive": true,
+   "name": "숭실대학교",
+   "file": "숭실대학교_2027면접가이드북.pdf",
+   "pages": 37,
+   "questions": 165,
+   "types_n": 13,
+   "sources_n": 11,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 26,
+     "pct": 6.2,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 26,
+     "pct": 6.2,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 35,
+     "pct": 8.4,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 53,
+     "pct": 12.7,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 9,
+     "pct": 2.2,
+     "included": 9
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 13,
+     "pct": 3.1,
+     "included": 14
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 7,
+     "pct": 1.7,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 19,
+     "pct": 4.6,
+     "included": 16
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 4,
+     "pct": 1.0,
+     "included": 10
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": null,
+     "pct": null,
+     "included": 3
+    },
+    {
+     "type": "자기소개",
+     "observed": 8,
+     "pct": 1.9,
+     "included": 8
+    },
+    {
+     "type": "마무리",
+     "observed": 21,
+     "pct": 5.0,
+     "included": 17
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 34,
+     "pct": 8.2,
+     "included": 20
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "숭실대학교 ○○학과에 지원한 동기를 이야기해보세요.",
+     "source": "면접 기출 자료집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "○○라는 진로를 결정하게 된 결정적인 활동을 구체적으로 설명해보세요.",
+     "source": "면접 기출 자료집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "○○교과 선생님이 작성해 주신 내용에 따르면, ○○탐구활동과 연계하여 후속 활동을 하였다고 기재되어 있는데, 그 내용을 구체적으로 설명해 보세요.",
+     "source": "면접 후기 자료집"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "미분이란 무엇인가요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "sungshin",
+   "sku": "guide-sungshin",
+   "price": null,
+   "archive": true,
+   "name": "성신여자대학교",
+   "file": "성신여자대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 135,
+   "types_n": 11,
+   "sources_n": 6,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "진로, 장래",
+     "observed": 35,
+     "pct": 14.4,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 31,
+     "pct": 12.8,
+     "included": 14
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 28,
+     "pct": 11.5,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 24,
+     "pct": 9.9,
+     "included": 15
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 19,
+     "pct": 7.8,
+     "included": 14
+    },
+    {
+     "type": "독서",
+     "observed": 13,
+     "pct": 5.3,
+     "included": 13
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 20,
+     "pct": 8.2,
+     "included": 13
+    },
+    {
+     "type": "마무리",
+     "observed": 9,
+     "pct": 3.7,
+     "included": 9
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 6,
+     "pct": 2.5,
+     "included": 6
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 6,
+     "pct": 2.5,
+     "included": 6
+    },
+    {
+     "type": "기타",
+     "observed": 72,
+     "pct": 29.6,
+     "included": 15
+    }
+   ],
+   "samples": [
+    {
+     "type": "진로, 장래",
+     "q": "진로희망이 정치인이라고 되어있는데 왜 정치인이 되고 싶어졌나요? 그 꿈을 가지게 된 계기가 무엇인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "프랙탈에 대하여 공부했다고 되어있는데 프랙탈이 무엇인지 미적분에서 등비급수와 연결 지어 설명해보세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "각종 교과 세특에서 사회문제에 관심이 많다고 평가되어 있어요. 사회문제와 심리학이 어떤 연관이 있다고 생각하나요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "공동체, 인성",
+     "q": "리더로서 갈등을 해결한 사례를 말씀해주세요",
+     "source": "울산고 진학자료실"
+    }
+   ]
+  },
+  {
+   "slug": "uos",
+   "sku": "guide-uos",
+   "price": null,
+   "archive": true,
+   "name": "서울시립대학교",
+   "file": "서울시립대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 151,
+   "types_n": 14,
+   "sources_n": 12,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 서울시립대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 18,
+     "pct": 5.2,
+     "included": 18
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 50,
+     "pct": 14.3,
+     "included": 20
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 35,
+     "pct": 10.0,
+     "included": 18
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 15,
+     "pct": 4.3,
+     "included": 13
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 12,
+     "pct": 3.4,
+     "included": 12
+    },
+    {
+     "type": "독서",
+     "observed": 12,
+     "pct": 3.4,
+     "included": 10
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 9,
+     "pct": 2.6,
+     "included": 9
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 13,
+     "pct": 3.7,
+     "included": 10
+    },
+    {
+     "type": "자기소개",
+     "observed": 4,
+     "pct": 1.1,
+     "included": 4
+    },
+    {
+     "type": "마무리",
+     "observed": 16,
+     "pct": 4.6,
+     "included": 11
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 26,
+     "pct": 7.4,
+     "included": 17
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 1,
+     "pct": 0.6,
+     "included": 2
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 2,
+     "pct": 0.6,
+     "included": 2
+    },
+    {
+     "type": "제시문형",
+     "observed": 5,
+     "pct": 1.4,
+     "included": 5
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지원동기에 대해서 말해보세요",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "베이즈 정리가 무엇이고 자율주행 자동차에 어떻게 적용되는지 설명해 주세요",
+     "source": "울산교육청"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "확률과 통계 시간에 '베이즈 정리'에 대한 수학 탐구활동을 하셨다고 하는데 한 번 설명해보세요",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "학업, 교과",
+     "q": "1학년 성적 안 좋다가 2학년 때 잘 올라갔는데 왜 3학년 성적이 내려갔는가?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "yonsei",
+   "sku": "guide-yonsei",
+   "price": null,
+   "archive": true,
+   "name": "연세대학교(서울)",
+   "file": "연세대학교(서울)_2027면접가이드북.pdf",
+   "pages": 30,
+   "questions": 94,
+   "types_n": 14,
+   "sources_n": 15,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "제시문형",
+     "observed": 105,
+     "pct": 26.8,
+     "included": 17
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 55,
+     "pct": 14.0,
+     "included": 12
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 29,
+     "pct": 7.4,
+     "included": 10
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 6,
+     "pct": 1.5,
+     "included": 6
+    },
+    {
+     "type": "독서",
+     "observed": 11,
+     "pct": 2.8,
+     "included": 8
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 3,
+     "pct": 0.8,
+     "included": 3
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 6,
+     "pct": 1.5,
+     "included": 6
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 6,
+     "pct": 1.5,
+     "included": 6
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 5,
+     "pct": 1.3,
+     "included": 5
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 1.0,
+     "included": 4
+    },
+    {
+     "type": "마무리",
+     "observed": 10,
+     "pct": 2.6,
+     "included": 8
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 11,
+     "pct": 2.8,
+     "included": 7
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 1,
+     "pct": 0.3,
+     "included": 1
+    },
+    {
+     "type": "자기소개",
+     "observed": 1,
+     "pct": 0.3,
+     "included": 1
+    }
+   ],
+   "samples": [
+    {
+     "type": "제시문형",
+     "q": "다음 제시문을 읽고 질문에 답하시오",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "(나), (다), (라) 각각에 근거하여 (가)에 나타난 정부의 물가 변동 파악 방식의 한계점을 설명하시오",
+     "source": "대구동구 진로진학센터"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "블록체인 동아리에서 이더리움에 대해 실습을 하였다. 그 이유는?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "생기부에 보면 진로가 문화콘텐츠 제작자라고 되어있는데, 이게 노어노문이랑 무슨 관련이 있는지 설명해줄래요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "dgist",
+   "sku": "guide-dgist",
+   "price": null,
+   "archive": false,
+   "name": "DGIST(대구경북과학기술원)",
+   "file": "DGIST(대구경북과학기술원)_2027면접가이드북.pdf",
+   "pages": 33,
+   "questions": 124,
+   "types_n": 14,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과(계열)별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 6,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 16,
+     "pct": null,
+     "included": 13
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 23,
+     "pct": null,
+     "included": 14
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 68,
+     "pct": 20.5,
+     "included": 15
+    },
+    {
+     "type": "기타",
+     "observed": 151,
+     "pct": 45.6,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 20,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 13,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 2,
+     "pct": 0.6,
+     "included": 2
+    },
+    {
+     "type": "마무리",
+     "observed": 15,
+     "pct": 4.5,
+     "included": 13
+    },
+    {
+     "type": "제시문형",
+     "observed": 1,
+     "pct": 0.3,
+     "included": 1
+    },
+    {
+     "type": "자기소개",
+     "observed": 2,
+     "pct": null,
+     "included": 2
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 6,
+     "pct": 1.8,
+     "included": 5
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "종합대학에 진학하지 않고 dgist에 온 이유가 있을까요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "그러한 꿈을 위해 노력한 활동은?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "뇌지도, 기억과 같이 추상적인 것을 가시적으로 보여준다는 점에서 매력 느낌 커넥톰 연구에 사용되는 기술 중에 알고 있는 거?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "방향벡터는 그 직선의 기울기를 결정, 그 기울기를 활용해 서로 기울기가 다르면서 만나지 않는다는 점을 활용 꼬인 위치의 정의?",
+     "source": "오르비 면접후기 모음집"
+    }
+   ]
+  },
+  {
+   "slug": "dankook",
+   "sku": "guide-dankook",
+   "price": null,
+   "archive": false,
+   "name": "단국대학교(죽전)",
+   "file": "단국대학교(죽전)_2027면접가이드북.pdf",
+   "pages": 16,
+   "questions": 18,
+   "types_n": 3,
+   "sources_n": 1,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상과 모집단위별 확인 포인트"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 충돌과 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "과학교육과, DKU인재(면접형)",
+     "observed": null,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "무역학과, DKU인재(면접형)",
+     "observed": null,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "사이버보안학과, SW인재",
+     "observed": null,
+     "pct": null,
+     "included": 8
+    }
+   ],
+   "samples": [
+    {
+     "type": "과학교육과, DKU인재(면접형)",
+     "q": "‘생명과학, 공학을 만나다’라는 책을 읽고 교육, 공학, 경제를 주제로 토론을 했는데 어떤 내용이었나요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "무역학과, DKU인재(면접형)",
+     "q": "생기부에 무역보다 경영, 경제 내용이 많은데도 무역학과를 지원한 이유는 무엇인가요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "사이버보안학과, SW인재",
+     "q": "자기소개해 주세요.",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "duksung",
+   "sku": "guide-duksung",
+   "price": null,
+   "archive": false,
+   "name": "덕성여자대학교",
+   "file": "덕성여자대학교_2027면접가이드북.pdf",
+   "pages": 18,
+   "questions": 42,
+   "types_n": 4,
+   "sources_n": 3,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 공식 평가축 + 모집단위별 관측 패턴"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "글로벌융합대학(유아교육과 제외)",
+     "observed": 14,
+     "pct": null,
+     "included": 14
+    },
+    {
+     "type": "데이터사이언스학과",
+     "observed": 14,
+     "pct": null,
+     "included": 14
+    },
+    {
+     "type": "글로벌융합대학",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "과학기술대학",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "글로벌융합대학(유아교육과 제외)",
+     "q": "웃으면서 들어오니깐 인상이 참 좋네요. 긴장 별로 안한거 같은데?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "데이터사이언스학과",
+     "q": "밖에 누가 기다리고 있나요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "글로벌융합대학",
+     "q": "모델들의 피부를 파랗게 칠한 것은 인종차별인 이유가 있을까요?",
+     "source": "울산교육청"
+    },
+    {
+     "type": "과학기술대학",
+     "q": "생명과학의 어떤 점에 매료되었나요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "dongduk",
+   "sku": "guide-dongduk",
+   "price": null,
+   "archive": false,
+   "name": "동덕여자대학교",
+   "file": "동덕여자대학교_2027면접가이드북.pdf",
+   "pages": 18,
+   "questions": 43,
+   "types_n": 5,
+   "sources_n": 4,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 공식 평가축 + 모집단위별 관측 패턴"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "국어국문학과, 국어국문학전공",
+     "observed": 18,
+     "pct": null,
+     "included": 18
+    },
+    {
+     "type": "사회복지학과",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "문예창작과",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "보건관리학과",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "식품영양학과, 학과 미기재",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "국어국문학과, 국어국문학전공",
+     "q": "동덕여자대학교 국어국문학과에 지원한 동기가 뭐예요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "사회복지학과",
+     "q": "사회복지 관련된 책을 많이 읽었네요. 그 중 가장 인상깊은 책을 소개해주세요.",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "문예창작과",
+     "q": "웹소설과 순수문학 중 무엇이 가치있나?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "보건관리학과",
+     "q": "자소서를 보면 “팬데믹 시대를 살아갈 10대 어떻게 할까?”라는 책을 읽었다고 했는데 본인은 어떨 것 같아요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "donga",
+   "sku": "guide-donga",
+   "price": null,
+   "archive": false,
+   "name": "동아대학교",
+   "file": "동아대학교_2027면접가이드북.pdf",
+   "pages": 36,
+   "questions": 161,
+   "types_n": 15,
+   "sources_n": 8,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량으로의 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문으로의 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 동아대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 71,
+     "pct": 8.2,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 65,
+     "pct": 7.5,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "observed": 82,
+     "pct": 9.5,
+     "included": 15
+    },
+    {
+     "type": "전공지식 확인",
+     "observed": 89,
+     "pct": 10.3,
+     "included": 12
+    },
+    {
+     "type": "독서",
+     "observed": 54,
+     "pct": 6.3,
+     "included": 12
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 88,
+     "pct": 10.2,
+     "included": 15
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 52,
+     "pct": 6.0,
+     "included": 12
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 30,
+     "pct": 3.5,
+     "included": 10
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 1,
+     "pct": 0.1,
+     "included": 4
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 7,
+     "pct": 0.8,
+     "included": 7
+    },
+    {
+     "type": "마무리",
+     "observed": 38,
+     "pct": 4.4,
+     "included": 10
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 18,
+     "pct": 2.1,
+     "included": 15
+    },
+    {
+     "type": "자기소개",
+     "observed": 10,
+     "pct": 1.2,
+     "included": 5
+    },
+    {
+     "type": "기타, 아이스브레이킹",
+     "observed": 276,
+     "pct": 32.0,
+     "included": 8
+    },
+    {
+     "type": "학과 이해와 대학 이해",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "오 그렇군요. 시간이 벌써 이렇게 되었네요. 혹시 하필 동아대학교 화학공학과에 지원하게 된 이유가 있을까요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로 희망이 3학년 때 바뀌었는데 바뀐 이유가 무엇인지 물어봐도 될까요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "q": "학생부에 제로칼로리에 대한 내용이 있던데 탐구 내용을 설명할 수 있나?",
+     "source": "울산고 진학자료실"
+    },
+    {
+     "type": "전공지식 확인",
+     "q": "화학공학이 무엇이라고 생각해요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "pknu",
+   "sku": "guide-pknu",
+   "price": null,
+   "archive": false,
+   "name": "부경대학교",
+   "file": "부경대학교_2027면접가이드북.pdf",
+   "pages": 40,
+   "questions": 187,
+   "types_n": 15,
+   "sources_n": 5,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 (대학 공식 및 학과별)"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 부경대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 62,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 31,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 34,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 57,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 21,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 49,
+     "pct": null,
+     "included": 16
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 21,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 9,
+     "pct": null,
+     "included": 9
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 18,
+     "pct": null,
+     "included": 18
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "자기소개",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "제시문형",
+     "observed": 7,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "마무리",
+     "observed": 13,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 26,
+     "pct": 4.8,
+     "included": 17
+    },
+    {
+     "type": "기타",
+     "observed": 211,
+     "pct": null,
+     "included": 15
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "부경대학교에서 특히 법학과에 지원하게 된 동기를 말씀해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "앞으로의 진로 계획을 말해보세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "스스로 실험을 계획해서 한 적이 있나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "지금 이슈가 되는 법적인 기사 중에 가장 인상 깊게 읽은 기사가 무엇인지 그 기사에 대한 자신의 생각을 얘기해주세요",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "sahmyook",
+   "sku": "guide-sahmyook",
+   "price": null,
+   "archive": false,
+   "name": "삼육대학교",
+   "file": "삼육대학교_2027면접가이드북.pdf",
+   "pages": 17,
+   "questions": 18,
+   "types_n": 4,
+   "sources_n": 3,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과별 관측"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "탐구, 세특, 전공지식",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "지원동기, 전공 선택",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "보완, 확장, 상황 질문",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "마무리",
+     "observed": 3,
+     "pct": null,
+     "included": 3
+    }
+   ],
+   "samples": [
+    {
+     "type": "탐구, 세특, 전공지식",
+     "q": "[식품영양학과] 항비만에 대해서 연구를 하였는데 비만 예방에 좋은 음식은 무엇인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "지원동기, 전공 선택",
+     "q": "[식품영양학과] 지원동기가 무엇인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "보완, 확장, 상황 질문",
+     "q": "[식품영양학과] 지중해식 음식이 노인의 치매 예방에 효과적인 이유는 무엇이라고 생각하나요? (꼬리)",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "마무리",
+     "q": "[식품영양학과] 마지막으로 하고 싶은 말이 있나요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "swu",
+   "sku": "guide-swu",
+   "price": null,
+   "archive": false,
+   "name": "서울여자대학교",
+   "file": "서울여자대학교_2027면접가이드북.pdf",
+   "pages": 19,
+   "questions": 61,
+   "types_n": 8,
+   "sources_n": 4,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식 + 학과별 관측"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학 이해",
+     "observed": 10,
+     "pct": null,
+     "included": 10
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "observed": 12,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "개념, 전공지식 확인",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "진로, 선택의 정합성",
+     "observed": 8,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "학업, 성장, 문제해결",
+     "observed": 7,
+     "pct": null,
+     "included": 7
+    },
+    {
+     "type": "공동체, 인성, 윤리",
+     "observed": 6,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "독서, 산출물",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "반박, 꼬리, 마무리",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학 이해",
+     "q": "[식품응용시스템학부] 지원동기에서 배양육 가공식품을 연구하고 싶다고 했는데, 배양육이 개선해야 할 점과 배양육에 대한 생각을 말해주세요.",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특 심화",
+     "q": "[식품응용시스템학부] 천연보존제 실험을 했던데 그 실험을 소개해주세요.",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "개념, 전공지식 확인",
+     "q": "[국어국문학과] 기존 문학 교과서의 문제점을 구체적이고 상세한 근거를 들어 설명해주세요.",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 선택의 정합성",
+     "q": "[원예생명조경학과] 현장의 나무의사와 연구실의 식물병리학 중 어느 쪽에서 일하고 싶나요?",
+     "source": "울산교육청"
+    }
+   ]
+  },
+  {
+   "slug": "ulsan",
+   "sku": "guide-ulsan",
+   "price": null,
+   "archive": false,
+   "name": "울산대학교",
+   "file": "울산대학교_2027면접가이드북.pdf",
+   "pages": 39,
+   "questions": 165,
+   "types_n": 13,
+   "sources_n": 6,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 학종 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상 , 대학 공식 + 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 56,
+     "pct": 6.9,
+     "included": 15
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 63,
+     "pct": 7.7,
+     "included": 15
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 87,
+     "pct": 10.7,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 79,
+     "pct": 9.7,
+     "included": 15
+    },
+    {
+     "type": "독서",
+     "observed": 42,
+     "pct": 5.1,
+     "included": 12
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 70,
+     "pct": 8.6,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 45,
+     "pct": 5.5,
+     "included": 12
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 63,
+     "pct": 7.7,
+     "included": 15
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": 0.5,
+     "included": 7
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 6,
+     "pct": 0.7,
+     "included": 9
+    },
+    {
+     "type": "마무리",
+     "observed": 24,
+     "pct": 2.9,
+     "included": 10
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 37,
+     "pct": 4.5,
+     "included": 17
+    },
+    {
+     "type": "형식 문항",
+     "observed": 10,
+     "pct": null,
+     "included": 8
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "울산대에 지원하게 된 동기는 무엇인가요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "진로희망이 바뀌었는데 이유가 있을까요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "학년 때 일본의 수출규제에 관한 탐구 보고서를 작성한 게 있는데 설명해주세요",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "화학공학이 무엇인지 아나요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "incheon",
+   "sku": "guide-incheon",
+   "price": null,
+   "archive": false,
+   "name": "인천대학교",
+   "file": "인천대학교_2027면접가이드북.pdf",
+   "pages": 35,
+   "questions": 154,
+   "types_n": 14,
+   "sources_n": 6,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상: 대학 공식과 학과별"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 인천대의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 21,
+     "pct": null,
+     "included": 16
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 19,
+     "pct": null,
+     "included": 12
+    },
+    {
+     "type": "탐구, 세특심화",
+     "observed": 33,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "전공지식확인",
+     "observed": 52,
+     "pct": null,
+     "included": 18
+    },
+    {
+     "type": "독서",
+     "observed": 15,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "공동체, 인성",
+     "observed": 16,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 9,
+     "pct": null,
+     "included": 8
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 21,
+     "pct": null,
+     "included": 17
+    },
+    {
+     "type": "상황, 가치판단",
+     "observed": 4,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "시사, 사회이슈",
+     "observed": 5,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "마무리",
+     "observed": 11,
+     "pct": null,
+     "included": 11
+    },
+    {
+     "type": "꼬리질문",
+     "observed": 13,
+     "pct": 4.1,
+     "included": 8
+    },
+    {
+     "type": "자기소개",
+     "observed": 5,
+     "pct": null,
+     "included": 5
+    },
+    {
+     "type": "아이스브레이킹, 기타",
+     "observed": 134,
+     "pct": null,
+     "included": 6
+    }
+   ],
+   "samples": [
+    {
+     "type": "지원동기, 대학이해",
+     "q": "학과지원동기가 어떻게 되나요?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "꿈이 무엇인지?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "탐구, 세특심화",
+     "q": "피보나치 수열의 기원을 조사했다는데 무슨 내용이죠?",
+     "source": "신명여고 자료실"
+    },
+    {
+     "type": "전공지식확인",
+     "q": "토목공학과와 건축공학의 차이는 무엇인가요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "hanyang-erica",
+   "sku": "guide-hanyang-erica",
+   "price": null,
+   "archive": false,
+   "name": "한양대학교(ERICA)",
+   "file": "한양대학교(ERICA)_2027면접가이드북.pdf",
+   "pages": 15,
+   "questions": 11,
+   "types_n": 1,
+   "sources_n": 1,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "모집단위, 트랙별 인재 확인 포인트"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 충돌과 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "조기취업형 계약학과",
+     "observed": null,
+     "pct": null,
+     "included": 11
+    }
+   ],
+   "samples": [
+    {
+     "type": "조기취업형 계약학과",
+     "q": "자기소개 짧게 말해볼까요?",
+     "source": "신명여고 자료실"
+    }
+   ]
+  },
+  {
+   "slug": "hongik",
+   "sku": "guide-hongik",
+   "price": null,
+   "archive": false,
+   "name": "홍익대학교(서울)",
+   "file": "홍익대학교(서울)_2027면접가이드북.pdf",
+   "pages": 26,
+   "questions": 49,
+   "types_n": 8,
+   "sources_n": 7,
+   "secs": [
+    {
+     "no": 1,
+     "title": "면접 기본 제원"
+    },
+    {
+     "no": 2,
+     "title": "면접 유형 판정"
+    },
+    {
+     "no": 3,
+     "title": "평가항목에서 3대역량 매핑"
+    },
+    {
+     "no": 4,
+     "title": "인재상"
+    },
+    {
+     "no": 5,
+     "title": "실제 면접 질문 아카이브"
+    },
+    {
+     "no": 6,
+     "title": "생기부에서 질문 전환 규칙"
+    },
+    {
+     "no": 7,
+     "title": "타 대학 대비 이 학교의 특징"
+    },
+    {
+     "no": 8,
+     "title": "준비 전략"
+    },
+    {
+     "no": 9,
+     "title": "출처, 신뢰도, 공백"
+    }
+   ],
+   "types": [
+    {
+     "type": "전공지식확인",
+     "observed": 12,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "제시문 풀이 및 그 파생 질문",
+     "observed": 1,
+     "pct": null,
+     "included": 15
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "observed": 5,
+     "pct": null,
+     "included": 6
+    },
+    {
+     "type": "진로, 장래",
+     "observed": 2,
+     "pct": null,
+     "included": 3
+    },
+    {
+     "type": "학업, 교과",
+     "observed": 1,
+     "pct": null,
+     "included": 2
+    },
+    {
+     "type": "자기이해, 성장",
+     "observed": 1,
+     "pct": null,
+     "included": 1
+    },
+    {
+     "type": "미술활동보고서, 생기부 서류 확인",
+     "observed": null,
+     "pct": null,
+     "included": 4
+    },
+    {
+     "type": "꼬리질문",
+     "observed": null,
+     "pct": null,
+     "included": 3
+    }
+   ],
+   "samples": [
+    {
+     "type": "전공지식확인",
+     "q": "만화의 지그재그로 읽는 방식과 웹툰의 세로로 읽는 방식의 차이점이 무엇이라고 생각하나요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "제시문 풀이 및 그 파생 질문",
+     "q": "1번 제시문 풀이에 대해 설명해주시겠어요?(1번 문제 : 나선형 방파제 , 클레스 올덴버그의 옷핀 조형물, 자연 속에 놓인 한옥 정자 각각의 사진 제시. 이 셋을 자유롭게 비교하시오",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "지원동기, 대학이해",
+     "q": "지원동기가 무엇인지 디자인과 연관지어 설명해줄래요?",
+     "source": "오르비 면접후기 모음집"
+    },
+    {
+     "type": "진로, 장래",
+     "q": "꿈이 무엇인가?",
+     "source": "울산교육청"
+    }
+   ]
+  }
+ ]
+}

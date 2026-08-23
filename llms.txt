@@ -1,38 +1,106 @@
 # 현학적 연구소 (hyunhak.com)
 
-> 대학입시 구술·제시문 면접 전문 연구소. 대학별 면접 기출 아카이브, 면접가이드북 PDF 자료실,
-> 촬영·전사·첨삭이 붙는 면접 스튜디오를 운영한다.
+> 현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대, 성균관대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 제시문 해제집 스토어를 운영하고, 26개 대학 면접 기출 아카이브를 무료로 공개합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).
+
+## 상품 3군
+1. [학교별 2027 면접 가이드북 (디지털, 38권)](https://hyunhak.com/guidebook/): 대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북. 가격: 1권 29,000원 (보안 리더 열람, 원본 PDF 비제공)
+2. [제시문 면접 스튜디오 (연세대, 고려대, 성균관대)](https://hyunhak.com/studio.html): 학교별 기출 제시문으로 실전 규격 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단. 가격: 학교 전권 330,000원, 지문 1편 22,000원(응시 5회)
+3. [스토어](https://hyunhak.com/store.html): 인문, 사회, 자연 계열 제시문 해제집과 구술 노트, 영어 봉투 모의고사 실물 배송. 가격: 해제집 26,000원부터, 영어 봉투 모의고사 1부 38,500원
+
+## 무료 콘텐츠
+- [면접 아카이브 26교](https://hyunhak.com/interview/): 대학별 면접 유형 판정, 실제 기출 질문, 준비 전략. 회원 가입 없이 열람.
 
 ## 핵심 페이지
-- [면접 스튜디오](https://hyunhak.com/studio.html): 학교별 기출 지문으로 모의면접 응시, 전사와 6축 리포트
-- [면접 아카이브](https://hyunhak.com/interview/index.html): 대학별 면접 유형·실제 기출 질문·준비 전략
-- [자료실](https://hyunhak.com/library.html): 대학별 2027 면접가이드북 PDF (회원 무료)
-- [스토어](https://hyunhak.com/store.html): 이용권, 해제집, 봉투 모의고사
+- [현학적 연구소](https://hyunhak.com/): 현학적 연구소는 대입 제시문 면접 준비를 다룹니다. 연세대, 고려대, 성균관대 기출 지문 해제와 촬영 첨삭, 학교별 2027 면접 가이드북, 26개 대학 면접 기출 아카이브.
+- [면접 스튜디오, 현학적 연구소](https://hyunhak.com/studio.html): 학교별 기출 제시문으로 치르는 대입 면접 스튜디오. 지문 1편 22,000원에 5회 응시, 학교 전권 330,000원. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.
+- [학교별 2027 면접 가이드북 38권, 현학적 연구소](https://hyunhak.com/guidebook/): 학교별 2027 면접 가이드북 38권. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다. 1권 29,000원.
+- [스토어, 현학적 연구소](https://hyunhak.com/store.html): 현학적 연구소 스토어. 인문, 사회, 자연 계열 제시문 해제집과 구술 노트, 영어 봉투 모의고사를 판매합니다. 평일 오후 2시 이전 주문은 당일 출고합니다.
+- [대학별 면접 아카이브, 기출 질문, 유형, 전략 (2027) | 현학적 연구소](https://hyunhak.com/interview/): 26개 대학 수시 면접의 유형 판정과 실제 면접 기출 질문 3,733건, 학종 면접 질문과 준비 전략. 면접 후기와 2027 공식 요강으로 재구성한 무료 아카이브입니다.
+- [자료실, 대학별 2027 면접가이드북 PDF | 현학적 연구소](https://hyunhak.com/library.html): 26개 대학 2027 면접가이드북 PDF. 면접 기본 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문까지. 회원에게 무료로 제공합니다.
+- [연구소 소개, 현학적 연구소](https://hyunhak.com/about.html): 현학적 연구소는 대입 면접만 다룹니다. 학교별 면접 가이드북 38권, 연세대 고려대 성균관대 제시문 면접 스튜디오, 무료 면접 아카이브 26교의 출처와 만드는 방식을 설명합니다.
+- [자주 묻는 질문, 현학적 연구소](https://hyunhak.com/faq.html): 면접 가이드북 열람 방식, 제시문 면접 스튜디오 응시와 첨삭, 가격과 환불, 자료 출처에 대한 답을 모았습니다. 현학적 연구소 자주 묻는 질문.
+- [공지, 현학적 연구소](https://hyunhak.com/notice.html): 현학적 연구소 공지. 학교별 면접 가이드북 갱신 내역, 제시문 면접 스튜디오 일정, 결제와 열람에 관한 서비스 안내를 날짜순으로 게시합니다.
+- [이용약관, 현학적 연구소](https://hyunhak.com/terms.html): 현학적 연구소 이용약관. 회원 가입, 면접 스튜디오 이용권과 가이드북 구매, 결제, 청약철회와 환불, 지식재산권에 관한 조건을 안내합니다.
+- [개인정보처리방침, 현학적 연구소](https://hyunhak.com/privacy.html): 현학적 연구소 개인정보처리방침. 수집 항목과 목적, 보유 기간, 처리 위탁, 학생 음성과 영상의 처리, 정보주체의 권리와 안전성 확보 조치를 안내합니다.
+
+## 제시문 면접 스튜디오 (학교별)
+- [고려대 면접 21분](https://hyunhak.com/programs/korea.html): 고려대 계열적합전형 제시문 면접을 준비 21분과 발화 7분의 실전 규격으로 훈련하는 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 전권 330,000원, 지문 1편 22,000원.
+- [성균관대 제시문 면접 스튜디오](https://hyunhak.com/programs/skku.html): 성균관대 제시문 면접을 후기 관측 규격인 리딩 5분과 구술 5분으로 응시하고, 첨삭 세 단과 여섯 축 리포트로 되돌려 받는 스튜디오 전권 이용권 안내.
+- [연세대 면접 8분](https://hyunhak.com/programs/yonsei.html): 연세대 활동우수형 제시문 면접을 준비 8분과 답변 5분의 실전 규격으로 훈련하는 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 전권 330,000원, 지문 1편 22,000원.
+
+## 학교별 2027 면접 가이드북
+- [아주대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/ajou.html)
+- [가톨릭대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/catholic.html)
+- [중앙대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/cau.html)
+- [단국대학교(죽전) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/dankook.html)
+- [DGIST(대구경북과학기술원) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/dgist.html)
+- [동아대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/donga.html)
+- [동덕여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/dongduk.html)
+- [동국대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/dongguk.html)
+- [덕성여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/duksung.html)
+- [이화여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/ewha.html)
+- [가천대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/gachon.html)
+- [한양대학교(ERICA) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/hanyang-erica.html)
+- [홍익대학교(서울) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/hongik.html)
+- [한국외국어대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/hufs.html)
+- [인천대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/incheon.html)
+- [인하대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/inha.html)
+- [경희대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/khu.html)
+- [경북대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/knu.html)
+- [건국대학교(서울) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/konkuk.html)
+- [국민대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/kookmin.html)
+- [고려대학교(서울) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/korea.html)
+- [광운대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/kwangwoon.html)
+- [경기대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/kyonggi.html)
+- [명지대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/myongji.html)
+- [부경대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/pknu.html)
+- [부산대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/pusan.html)
+- [삼육대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/sahmyook.html)
+- [세종대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/sejong.html)
+- [서울과학기술대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/seoultech.html)
+- [성균관대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/skku.html)
+- [서울대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/snu.html)
+- [숙명여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/sookmyung.html)
+- [숭실대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/soongsil.html)
+- [성신여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/sungshin.html)
+- [서울여자대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/swu.html)
+- [울산대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/ulsan.html)
+- [서울시립대학교 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/uos.html)
+- [연세대학교(서울) 2027 면접 가이드북, 현학적 연구소](https://hyunhak.com/guidebook/yonsei.html)
 
 ## 대학별 면접 아카이브
-- [아주대학교 면접 기출·유형·전략](https://hyunhak.com/interview/ajou.html)
-- [가톨릭대학교 면접 기출·유형·전략](https://hyunhak.com/interview/catholic.html)
-- [중앙대학교 면접 기출·유형·전략](https://hyunhak.com/interview/cau.html)
-- [동국대학교 면접 기출·유형·전략](https://hyunhak.com/interview/dongguk.html)
-- [이화여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/ewha.html)
-- [가천대학교 면접 기출·유형·전략](https://hyunhak.com/interview/gachon.html)
-- [한국외국어대학교 면접 기출·유형·전략](https://hyunhak.com/interview/hufs.html)
-- [인하대학교 면접 기출·유형·전략](https://hyunhak.com/interview/inha.html)
-- [경희대학교 면접 기출·유형·전략](https://hyunhak.com/interview/khu.html)
-- [경북대학교 면접 기출·유형·전략](https://hyunhak.com/interview/knu.html)
-- [건국대학교 면접 기출·유형·전략](https://hyunhak.com/interview/konkuk.html)
-- [국민대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kookmin.html)
-- [고려대학교 면접 기출·유형·전략](https://hyunhak.com/interview/korea.html)
-- [광운대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kwangwoon.html)
-- [경기대학교 면접 기출·유형·전략](https://hyunhak.com/interview/kyonggi.html)
-- [명지대학교 면접 기출·유형·전략](https://hyunhak.com/interview/myongji.html)
-- [부산대학교 면접 기출·유형·전략](https://hyunhak.com/interview/pusan.html)
-- [세종대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sejong.html)
-- [서울과학기술대학교 면접 기출·유형·전략](https://hyunhak.com/interview/seoultech.html)
-- [성균관대학교 면접 기출·유형·전략](https://hyunhak.com/interview/skku.html)
-- [서울대학교 면접 기출·유형·전략](https://hyunhak.com/interview/snu.html)
-- [숙명여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sookmyung.html)
-- [숭실대학교 면접 기출·유형·전략](https://hyunhak.com/interview/soongsil.html)
-- [성신여자대학교 면접 기출·유형·전략](https://hyunhak.com/interview/sungshin.html)
-- [서울시립대학교 면접 기출·유형·전략](https://hyunhak.com/interview/uos.html)
-- [연세대학교 면접 기출·유형·전략](https://hyunhak.com/interview/yonsei.html)
+- [아주대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/ajou.html)
+- [가톨릭대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/catholic.html)
+- [중앙대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/cau.html)
+- [동국대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/dongguk.html)
+- [이화여자대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/ewha.html)
+- [가천대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/gachon.html)
+- [한국외국어대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/hufs.html)
+- [인하대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/inha.html)
+- [경희대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/khu.html)
+- [경북대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/knu.html)
+- [건국대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/konkuk.html)
+- [국민대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/kookmin.html)
+- [고려대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/korea.html)
+- [광운대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/kwangwoon.html)
+- [경기대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/kyonggi.html)
+- [명지대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/myongji.html)
+- [부산대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/pusan.html)
+- [세종대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/sejong.html)
+- [서울과학기술대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/seoultech.html)
+- [성균관대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/skku.html)
+- [서울대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/snu.html)
+- [숙명여자대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/sookmyung.html)
+- [숭실대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/soongsil.html)
+- [성신여자대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/sungshin.html)
+- [서울시립대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/uos.html)
+- [연세대학교 면접 기출 질문, 유형, 준비 전략 (2027), 현학적 연구소](https://hyunhak.com/interview/yonsei.html)
+
+## 검색 키워드
+- 연세대 면접, 고려대 계열적합 면접, 성균관대 면접, 제시문 면접, 구술면접, 대입 면접 준비, 면접 기출, 면접가이드북, 학종 면접 질문
+
+## 연락처
+- admin@hyunhak.com
+
+## 전체 목록
+- https://hyunhak.com/llms-full.txt

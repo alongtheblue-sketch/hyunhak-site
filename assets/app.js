@@ -93,6 +93,80 @@
   }
 
   document.addEventListener("DOMContentLoaded", updateNav);
+  // 모바일 메뉴 토글
+  document.addEventListener("DOMContentLoaded", function () {
+    const hdr = document.querySelector(".nav"), btn = hdr && hdr.querySelector(".menu");
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      const open = hdr.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+      btn.textContent = open ? "닫기" : "메뉴";
+    });
+  });
+  // ── 공지 팝업 (2026-08-23) ──
+  // 정책: 관리자가 게시한 popup 중 노출 기간 안의 것을 최대 1건 띄운다.
+  // "오늘 하루 보지 않기" = id 별로 24시간 억제(localStorage). 세션 안에서는 1회만.
+  const POPUP_KEY = "hh_popup_mute_v1";
+  function popupMutes() {
+    try { return JSON.parse(localStorage.getItem(POPUP_KEY) || "{}"); } catch { return {}; }
+  }
+  function mutePopup(id, hours) {
+    const m = popupMutes(); m[id] = Date.now() + hours * 3600 * 1000;
+    try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {}
+  }
+  // 노출 판정 함수. 건우 선택 지점: 팝업이 여러 건일 때 무엇을 보일지, 얼마나 자주 볼지.
+  // 기본 = 억제 안 된 것 중 서버 정렬(pinned, priority) 첫 건, 세션당 1회.
+  function pickPopup(items) {
+    const m = popupMutes(), now = Date.now();
+    let shown = false;
+    try { shown = sessionStorage.getItem("hh_popup_shown") === "1"; } catch {}
+    if (shown) return null;
+    return (items || []).find((it) => !(m[it.id] && m[it.id] > now)) || null;
+  }
+  function esc(t) { return String(t || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+  function renderPopup(it) {
+    const root = document.createElement("div");
+    root.className = "hh-popup";
+    root.setAttribute("role", "dialog");
+    root.setAttribute("aria-modal", "true");
+    root.setAttribute("aria-labelledby", "hhPopupTitle");
+    const link = it.link_url && /^(https:\/\/|\/)/.test(it.link_url)
+      ? '<a class="textlink" href="' + esc(it.link_url) + '">' + esc(it.link_label || "자세히 보기") + "</a>" : "";
+    root.innerHTML =
+      '<div class="hh-popup-back"></div>' +
+      '<div class="hh-popup-card">' +
+        '<p class="u gray hh-popup-kind">공지</p>' +
+        '<h2 id="hhPopupTitle" class="hh-popup-title">' + esc(it.title) + "</h2>" +
+        '<div class="hh-popup-body">' + (it.body_html || esc(it.body_md || "")) + "</div>" +
+        (link ? '<p class="hh-popup-link">' + link + "</p>" : "") +
+        '<div class="hh-popup-foot">' +
+          '<label class="hh-popup-mute"><input type="checkbox" id="hhPopupMute"> 오늘 하루 보지 않기</label>' +
+          '<button type="button" class="hh-popup-close" id="hhPopupClose">닫기</button>' +
+        "</div>" +
+      "</div>";
+    document.body.appendChild(root);
+    const close = () => {
+      if (root.querySelector("#hhPopupMute").checked) mutePopup(it.id, 24);
+      root.remove();
+      document.removeEventListener("keydown", onKey);
+    };
+    const onKey = (e) => { if (e.key === "Escape") close(); };
+    root.querySelector("#hhPopupClose").addEventListener("click", close);
+    root.querySelector(".hh-popup-back").addEventListener("click", close);
+    document.addEventListener("keydown", onKey);
+    root.querySelector("#hhPopupClose").focus();
+    try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
+  }
+  async function showPopup() {
+    if (document.body.dataset.noPopup !== undefined) return;   // body[data-no-popup] = 결제·리더 화면 제외
+    let data;
+    try { data = await api("/api/notices/active?kind=popup"); } catch { return; }
+    const items = Array.isArray(data) ? data : (data.items || data.notices || []);
+    const it = pickPopup(items);
+    if (it) renderPopup(it);
+  }
+  document.addEventListener("DOMContentLoaded", showPopup);
+
   window.HH = { API, api, me, cart, saveCart, addToCart, cartTotal, won, updateNav,
-    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR };
+    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc };
 })();
