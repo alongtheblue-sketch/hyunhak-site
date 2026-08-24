@@ -256,7 +256,7 @@
       "sku": "guide-ajou"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "아주대학교 생기부 기반 면접 예상 프로파일. PDF 40면, 수록 질문 190건, 유형 14종. 회원은 보안 리더로 열람합니다.",
    "answer": "아주대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -287,7 +287,7 @@
       "sku": "guide-catholic"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "가톨릭대학교 생기부 기반 면접 예상 프로파일. PDF 37면, 수록 질문 147건, 유형 12종. 회원은 보안 리더로 열람합니다.",
    "answer": "가톨릭대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -318,7 +318,7 @@
       "sku": "guide-cau"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "중앙대학교 생기부 기반 면접 예상 프로파일. PDF 42면, 수록 질문 131건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "중앙대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -349,7 +349,7 @@
       "sku": "guide-dankook"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "단국대학교(죽전) 생기부 기반 면접 예상 프로파일. PDF 16면, 수록 질문 18건, 유형 3종. 회원은 보안 리더로 열람합니다.",
    "answer": "단국대학교(죽전) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -410,7 +410,7 @@
       "sku": "guide-donga"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "동아대학교 생기부 기반 면접 예상 프로파일. PDF 36면, 수록 질문 161건, 유형 15종. 회원은 보안 리더로 열람합니다.",
    "answer": "동아대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -441,7 +441,7 @@
       "sku": "guide-dongduk"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "동덕여자대학교 생기부 기반 면접 예상 프로파일. PDF 18면, 수록 질문 43건, 유형 5종. 회원은 보안 리더로 열람합니다.",
    "answer": "동덕여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -502,7 +502,7 @@
       "sku": "guide-duksung"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "덕성여자대학교 생기부 기반 면접 예상 프로파일. PDF 18면, 수록 질문 42건, 유형 4종. 회원은 보안 리더로 열람합니다.",
    "answer": "덕성여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -533,7 +533,7 @@
       "sku": "guide-ewha"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "이화여자대학교 생기부 기반 면접 예상 프로파일. PDF 39면, 수록 질문 152건, 유형 15종. 회원은 보안 리더로 열람합니다.",
    "answer": "이화여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -594,7 +594,7 @@
       "sku": "guide-hanyang-erica"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "한양대학교(ERICA) 생기부 기반 면접 예상 프로파일. PDF 15면, 수록 질문 11건, 유형 1종. 회원은 보안 리더로 열람합니다.",
    "answer": "한양대학교(ERICA) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -625,7 +625,7 @@
       "sku": "guide-hongik"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "홍익대학교(서울) 생기부 기반 면접 예상 프로파일. PDF 26면, 수록 질문 49건, 유형 8종. 회원은 보안 리더로 열람합니다.",
    "answer": "홍익대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -656,7 +656,7 @@
       "sku": "guide-hufs"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "한국외국어대학교 생기부 기반 면접 예상 프로파일. PDF 40면, 수록 질문 167건, 유형 14종. 회원은 보안 리더로 열람합니다.",
    "answer": "한국외국어대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -687,7 +687,7 @@
       "sku": "guide-incheon"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "인천대학교 생기부 기반 면접 예상 프로파일. PDF 35면, 수록 질문 154건, 유형 14종. 회원은 보안 리더로 열람합니다.",
    "answer": "인천대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -740,7 +740,7 @@
       "sku": "guide-inha"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "인하대학교 생기부 기반 면접 예상 프로파일. PDF 45면, 수록 질문 148건, 유형 15종. 회원은 보안 리더로 열람합니다.",
    "answer": "인하대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -801,7 +801,7 @@
       "sku": "guide-knu"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "경북대학교 생기부 기반 면접 예상 프로파일. PDF 39면, 수록 질문 162건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "경북대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1012,7 +1012,7 @@
       "sku": "guide-pknu"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "부경대학교 생기부 기반 면접 예상 프로파일. PDF 40면, 수록 질문 187건, 유형 15종. 회원은 보안 리더로 열람합니다.",
    "answer": "부경대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1073,7 +1073,7 @@
       "sku": "guide-sahmyook"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "삼육대학교 2027 면접 가이드북. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다.",
    "answer": "삼육대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1104,7 +1104,7 @@
       "sku": "guide-sejong"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "세종대학교 생기부 기반 면접 예상 프로파일. PDF 38면, 수록 질문 145건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "세종대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1225,7 +1225,7 @@
       "sku": "guide-sookmyung"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "숙명여자대학교 생기부 기반 면접 예상 프로파일. PDF 34면, 수록 질문 114건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "숙명여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1256,7 +1256,7 @@
       "sku": "guide-soongsil"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "숭실대학교 생기부 기반 면접 예상 프로파일. PDF 37면, 수록 질문 165건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "숭실대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1287,7 +1287,7 @@
       "sku": "guide-sungshin"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "성신여자대학교 생기부 기반 면접 예상 프로파일. PDF 40면, 수록 질문 135건, 유형 11종. 회원은 보안 리더로 열람합니다.",
    "answer": "성신여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1318,7 +1318,7 @@
       "sku": "guide-swu"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "서울여자대학교 생기부 기반 면접 예상 프로파일. PDF 19면, 수록 질문 61건, 유형 8종. 회원은 보안 리더로 열람합니다.",
    "answer": "서울여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1349,7 +1349,7 @@
       "sku": "guide-ulsan"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "울산대학교 생기부 기반 면접 예상 프로파일. PDF 39면, 수록 질문 165건, 유형 13종. 회원은 보안 리더로 열람합니다.",
    "answer": "울산대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -1410,7 +1410,7 @@
       "sku": "guide-yonsei"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "description": "연세대학교(서울) 생기부 기반 면접 예상 프로파일. PDF 30면, 수록 질문 94건, 유형 14종. 회원은 보안 리더로 열람합니다.",
    "answer": "연세대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람."
@@ -2337,7 +2337,7 @@
       "sku": "BOOK-04-3"
      }
     ],
-    "availability": "PreOrder"
+    "availability": "OutOfStock"
    },
    "answer": ""
   },
