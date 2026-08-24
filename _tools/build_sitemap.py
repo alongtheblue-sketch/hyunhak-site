@@ -17,7 +17,17 @@ TYPE_ORDER = {"home": 0, "hub": 1, "product": 2, "faq": 3, "article": 4, "utilit
 
 
 def git_lastmod(rel):
+    """마지막 커밋일. 단 아직 커밋되지 않은 변경이 있으면 오늘로 본다.
+
+    커밋 전에 빌드하면 lastmod 가 한 커밋 뒤처지는 함정이 있었다.
+    '내용 커밋 → 재빌드 → sitemap 커밋' 순서를 사람이 매번 지키게 하는 대신,
+    작업 트리에 변경이 있으면 오늘 날짜를 쓰도록 해서 순서에 의존하지 않게 한다.
+    """
     try:
+        dirty = subprocess.run(["git", "status", "--porcelain", "--", rel], cwd=C.ROOT,
+                               capture_output=True, text=True, timeout=10).stdout.strip()
+        if dirty:
+            return datetime.date.today().isoformat()
         out = subprocess.run(["git", "log", "-1", "--format=%cI", "--", rel], cwd=C.ROOT,
                              capture_output=True, text=True, timeout=10).stdout.strip()
     except (OSError, subprocess.SubprocessError):
