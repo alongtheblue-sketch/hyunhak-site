@@ -2186,14 +2186,14 @@
     "about": "고려대학교",
     "offers": [
      {
-      "name": "학교 전권 (지문 60편)",
+      "name": "고려대학교 전권 이용권",
       "price": 330000,
-      "sku": "STUDIO-KOREA-FULL"
+      "sku": "pass-korea"
      },
      {
-      "name": "지문 1편 (응시 5회)",
+      "name": "스튜디오 지문 이용권 1편 (5회 응시)",
       "price": 22000,
-      "sku": "STUDIO-KOREA-ONE"
+      "sku": "passage-single"
      }
     ]
    },
@@ -2252,14 +2252,14 @@
     "about": "연세대학교",
     "offers": [
      {
-      "name": "학교 전권 (지문 60편)",
+      "name": "연세대학교 전권 이용권",
       "price": 330000,
-      "sku": "STUDIO-YONSEI-FULL"
+      "sku": "pass-yonsei"
      },
      {
-      "name": "지문 1편 (응시 5회)",
+      "name": "스튜디오 지문 이용권 1편 (5회 응시)",
       "price": 22000,
-      "sku": "STUDIO-YONSEI-ONE"
+      "sku": "passage-single"
      }
     ]
    },

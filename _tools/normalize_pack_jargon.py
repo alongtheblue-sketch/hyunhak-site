@@ -18,6 +18,9 @@ import io
 import re
 import sys
 
+# 내부 용어 '팩' 만 센다. 핫팩·아티팩트·팩트는 정상 단어라 계측에서 뺀다.
+GENUINE = re.compile(r"(?<![가-힣])팩(?![트])")
+
 RULES = [
     # §N 표기 제거. 여러 절을 묶어 부르는 형태부터 먼저 소진한다.
     (r"팩\s*§\s*\d+\s*(?:과|와)\s*팩\s*§\s*\d+", "관측 자료"),
@@ -39,6 +42,18 @@ RULES = [
     (r"관측 자료 관측", "관측"),
     (r"관측 관측", "관측"),
     (r"관측\s+(\"[^\"]+\")\s*관측", r"\1 관측"),
+
+    # 비문 교정. '팩' 은 문서 묶음을 뜻하는 명사였는데 행위명 '관측' 으로
+    # 바꾸면 "관측 공식문서", "관측 수록 409건" 같은 비문이 된다.
+    # 묶음을 가리키던 자리는 '수집 자료' 계열로 돌린다.
+    (r"관측 자료\s+([가-힣]+)\s*관측", r"\1 관측"),
+    (r"관측\s+([가-힣]+)\s*관측(?=\s|\d|[”\"])", r"\1 관측"),
+    (r"관측 수록 공식문서", "수집한 공식문서"),
+    (r"관측 공식문서", "수집한 공식문서"),
+    (r"관측 수록\s+(\d+건)", r"수집 자료 \1"),
+    (r"관측 발췌", "수집 자료 발췌"),
+    (r"관측 내(?=\s)", "수집 자료"),
+    (r"관측 자료에 관측된", "자료에 기록된"),
 ]
 
 
@@ -58,9 +73,9 @@ def main():
     changed = before = after = 0
     for p in paths:
         src = io.open(p, encoding="utf-8").read()
-        before += len(re.findall(r"팩", src))
+        before += len(GENUINE.findall(src))
         new = convert(src)
-        after += len(re.findall(r"팩", new))
+        after += len(GENUINE.findall(new))
         if new != src:
             changed += 1
             if args.apply:
