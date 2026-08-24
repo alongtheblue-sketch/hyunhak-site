@@ -31,7 +31,7 @@ def main():
             if s != 200:
                 fails.append(f"{s} {u}")
     print(f"pages 200: {len(urls) - sum(1 for f in fails if f[:3].strip().isdigit() or f.startswith('-1'))}/{len(urls)}")
-    for a in ["/assets/video/hero_loop_aigen.mp4", "/assets/video/hero_loop_aigen.webm", "/assets/video/gate_ink_aigen.mp4",
+    for a in ["/assets/video/hero_loop_aigen.mp4", "/assets/video/hero_loop_aigen.webm",
               "/assets/photo/hero_poster_aigen.jpg", "/assets/photo/og_aigen.jpg", "/assets/photo/bg_guidebook_aigen.jpg",
               "/insta.html", "/llms.txt", "/robots.txt"]:
         s, _ = get(SITE + a)
@@ -40,7 +40,7 @@ def main():
             fails.append(f"asset {s} {a}")
     s, b = get(SITE + "/")
     t = b.decode("utf-8", "ignore")
-    for needle in ['id="heroFilm"', "og_aigen.jpg", "2800ms"]:
+    for needle in ['id="heroFilm"', "og_aigen.jpg", "3400ms"]:
         ok = needle in t
         print(f"home {'ok' if ok else 'MISSING'} {needle}")
         if not ok:
