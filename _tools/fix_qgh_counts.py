@@ -1,21 +1,23 @@
 #!/usr/bin/env python3
-"""유형 그룹 머리글(span.cnt)을 표준 형식으로 재조립한다.
+"""유형 그룹 머리글(span.cnt)의 노출 주장을 실제 공개 수와 맞춘다.
 
-문제: trim_interview.py 가 문항을 줄인 뒤 머리글의 '몇 건 보여준다' 주장이
-실제와 어긋났다. 그 주장의 표기가 학교마다 제각각이라(아래) 개별 수선은
-반드시 빠뜨린다.
+문제: trim_interview.py 가 문항을 줄인 뒤에도 머리글이 '몇 건 보여준다' 를
+낡은 값으로 주장했다. 그 표기가 학교마다 제각각이라 개별 수선은 반드시
+빠뜨린다.
 
   … , 15건 수록      … ) — 15건 수록      … , 수록 15건
   … , 인용 11건       … / 노출 표본 33건    … / 원문 노출 13건
   … , 전량 수록 중 15건                     … ) 12건 전량 수록
 
-방침: 형식을 맞춰 고치지 말고 **표준 형식으로 다시 쓴다.**
-  {유형명} (관측 {총계}건, {비율}%{, 설명}) · 대표 {실제}건 공개
+방침: **빼는 방식.** 원문을 그대로 두고 낡은 주장만 도려낸 뒤
+표준 꼬리 ` · 대표 N건 공개` 를 붙인다. N 은 실제 <li> 개수에서만 만든다.
 
-보존: 총계와 비율(=건우가 남기라고 한 유형 분포 통계), 숫자 없는 설명 문구.
-버림: 낡은 노출 주장 전량. 노출 수는 실제 <li> 개수에서만 만든다.
+담는 방식(조각내어 골라 담기)을 먼저 시도했다가 설명이 숫자 조각에 붙어
+같이 버려졌다 — '★ 최다 빈도군', '전 코퍼스 5.6%', '이 대학 최대 유형'.
+skku 는 총계마저 '관측 분류 7건 + 기타 재배치 4건 = 11건' 에서 7만 집어
+틀렸다. 그래서 보존을 기본값으로 두고 제거를 열거하는 쪽으로 뒤집었다.
 
---check 는 재조립 결과가 실제와 어긋나면 종료코드 2.
+--check 는 '대표 N건 공개' 가 실제와 어긋나면 종료코드 2.
 """
 import argparse
 import glob
@@ -31,55 +33,56 @@ GROUP_RE = re.compile(
 )
 CNT_RE = re.compile(r"(<span class='cnt'>)(?P<txt>.*?)(</span>)", re.S)
 COUNT_RE = re.compile(r"(\d+)\s*건")
-PCT_RE = re.compile(r"([\d.]+)\s*%")
-# 숫자가 든 조각은 낡은 주장일 수 있어 버리고, 순수 설명만 남긴다.
-SPLIT_RE = re.compile(r"\s*[,/—·]\s*|\s*\+\s*")
+
+# 낡은 '몇 건 보여준다' 주장. 학교마다 표기가 달라 전부 열거한다.
+# 이것만 도려내고 나머지 원문(총계·비율·설명·전 코퍼스 비교 등)은 그대로 둔다.
+CLAIM_RES = [re.compile(p) for p in (
+    r"[,:·]?\s*\d+\s*건\s*전량\s*수록",
+    r"[,:·]?\s*전량\s*수록\s*중\s*\d+\s*건",
+    r"[,:·]?\s*원문\s*노출\s*\d+\s*건",
+    r"\s*/\s*노출\s*표본\s*\d+\s*건",
+    r"\s*/\s*표본\s*\d+\s*건",
+    r"[,:·]?\s*인용\s*\d+\s*건(?:\s*\+\s*보조\s*\d+\s*건)?",
+    r"[,:·]?\s*수록\s*\d+\s*건",
+    r"\s*[—-]\s*\d+\s*건\s*수록",
+    r"\s*[—-]\s*\d+\s*건(?![가-힣0-9])",
+    r"[,:·]?\s*\d+\s*건\s*수록",
+    r"[,:·]?\s*대표\s*\d+\s*건(?:\s*공개)?",
+    r"[,:·]?\s*전량\s*가이드북\s*수록",
+    r"[,:·]\s*전량(?![가-힣])",
+)]
+# 도려낸 뒤 남는 찌꺼기 (빈 괄호, 매달린 구두점)
+TIDY_RES = [
+    (re.compile(r"\*\*"), ""),                  # 원문에 남은 마크다운 강조 누출
+    (re.compile(r"\s*/\s*(?=[),])"), ""),       # 주장을 떼고 남은 매달린 슬래시
+    (re.compile(r"\s*/\s*$"), ""),
+    (re.compile(r"\(\s*\)"), ""),
+    (re.compile(r"\s*[,:·]\s*\)"), ")"),
+    (re.compile(r"\(\s*[,:·]\s*"), "("),
+    (re.compile(r"\s*[,:·]\s*$"), ""),
+    (re.compile(r"\s{2,}"), " "),
+]
 
 
 def rebuild(txt, actual):
-    """span.cnt 안 텍스트를 표준형으로. 실패하면 None (원문 유지)."""
+    """원문을 살리고 낡은 노출 주장만 도려낸 뒤 표준 꼬리를 붙인다.
+
+    앞선 판은 조각내어 골라 담다가 설명을 숫자에 붙여 같이 버렸고
+    ('★ 최다 빈도군', '전 코퍼스 5.6%'), skku 는 총계마저
+    '관측 분류 7건 + 기타 재배치 4건 = 11건' 에서 7건만 집어 틀렸다.
+    그래서 담는 방식이 아니라 **빼는 방식**으로 바꾼다.
+    """
     plain = re.sub(r"<[^>]+>", "", txt).strip()
-    i = plain.find("(")
-    if i < 0:
+    body = plain
+    for rx in CLAIM_RES:
+        body = rx.sub("", body)
+    for rx, rep in TIDY_RES:
+        body = rx.sub(rep, body)
+    body = body.strip().rstrip(",:·").strip()
+    if not body:
         return None
-    name = plain[:i].strip()
-    rest = plain[i + 1:]
-    j = rest.rfind(")")
-    inner = rest[:j] if j >= 0 else rest
-    trailer = rest[j + 1:] if j >= 0 else ""
-
-    m = COUNT_RE.search(inner)
-    if not m:
-        # 총계 숫자가 없는 머리글(예: "공식 예시문항 (가이드북 및 …, 신뢰도 A)").
-        # 통계가 없으니 괄호는 원문 그대로 두고 공개 수만 덧붙인다.
-        tail = (" · 대표 %d건 공개" % actual) if actual else " · 전량 가이드북 수록"
-        return "%s (%s)%s" % (name, inner.strip(), tail)
-    total = m.group(1)
-    p = PCT_RE.search(inner)
-    pct = p.group(1) if p else None
-
-    # 설명 = 숫자·비율이 없는 조각만. 낡은 노출 주장은 전부 숫자를 달고 있다.
-    notes = []
-    for seg in SPLIT_RE.split(inner + " " + trailer):
-        s = seg.strip().strip("()").strip()
-        s = s.replace("**", "")            # 원문에 남은 마크다운 강조 누출
-        if not s or COUNT_RE.search(s) or PCT_RE.search(s):
-            continue
-        if s in {"관측", "전체의", "전체", "관측 태그", "관측 분류", "전량"}:
-            continue
-        # 숫자가 빠진 노출 주장 잔해. 공개 수는 아래 tail 이 단독으로 만든다.
-        if re.search(r"수록|노출|인용|공개|대표|표본", s):
-            continue
-        notes.append(s)
-
-    head = "%s (관측 %s건" % (name, total)
-    if pct:
-        head += ", %s%%" % pct
-    if notes:
-        head += ", " + ", ".join(notes)
-    head += ")"
     tail = (" · 대표 %d건 공개" % actual) if actual else " · 전량 가이드북 수록"
-    return head + tail
+    return body + tail
 
 
 def process(src):

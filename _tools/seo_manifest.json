@@ -2336,7 +2336,8 @@
       "price": 32000,
       "sku": "BOOK-04-3"
      }
-    ]
+    ],
+    "availability": "PreOrder"
    },
    "answer": ""
   },
