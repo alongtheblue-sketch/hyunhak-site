@@ -51,10 +51,16 @@ def shipping_details(m, delivery, price):
         fee = mc.get("shipping_fee", 0)
         if free_over is not None and price is not None and price >= free_over:
             fee = 0
-        # 실물 소요일은 약관에 없다 -> deliveryTime 생략 (추정 금지)
-        return {"@type": "OfferShippingDetails",
-                "shippingRate": {"@type": "MonetaryAmount", "value": fee, "currency": "KRW"},
-                "shippingDestination": dest}
+        d = {"@type": "OfferShippingDetails",
+             "shippingRate": {"@type": "MonetaryAmount", "value": fee, "currency": "KRW"},
+             "shippingDestination": dest}
+        lo, hi = mc.get("physical_transit_days_min"), mc.get("physical_transit_days_max")
+        if lo is not None and hi is not None:
+            # 배송 소요 = transitTime. handlingTime 은 사실이 없어 비운다 (추정 금지)
+            d["deliveryTime"] = {"@type": "ShippingDeliveryTime",
+                                 "transitTime": {"@type": "QuantitativeValue",
+                                                 "minValue": lo, "maxValue": hi, "unitCode": "DAY"}}
+        return d
     zero = {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}
     return {"@type": "OfferShippingDetails",
             "shippingRate": {"@type": "MonetaryAmount", "value": 0, "currency": "KRW"},
