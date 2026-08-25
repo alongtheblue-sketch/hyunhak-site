@@ -54,12 +54,18 @@ def shipping_details(m, delivery, price):
         d = {"@type": "OfferShippingDetails",
              "shippingRate": {"@type": "MonetaryAmount", "value": fee, "currency": "KRW"},
              "shippingDestination": dest}
-        lo, hi = mc.get("physical_transit_days_min"), mc.get("physical_transit_days_max")
-        if lo is not None and hi is not None:
-            # 배송 소요 = transitTime. handlingTime 은 사실이 없어 비운다 (추정 금지)
-            d["deliveryTime"] = {"@type": "ShippingDeliveryTime",
-                                 "transitTime": {"@type": "QuantitativeValue",
-                                                 "minValue": lo, "maxValue": hi, "unitCode": "DAY"}}
+        def days(lo_key, hi_key):
+            lo, hi = mc.get(lo_key), mc.get(hi_key)
+            if lo is None or hi is None:
+                return None
+            return {"@type": "QuantitativeValue", "minValue": lo, "maxValue": hi, "unitCode": "DAY"}
+        # handlingTime = 주문에서 발송까지, transitTime = 발송에서 도착까지
+        dt = {k: v for k, v in (("handlingTime", days("physical_handling_days_min", "physical_handling_days_max")),
+                                ("transitTime", days("physical_transit_days_min", "physical_transit_days_max")))
+              if v is not None}
+        if dt:
+            dt["@type"] = "ShippingDeliveryTime"
+            d["deliveryTime"] = {"@type": dt.pop("@type"), **dt}
         return d
     zero = {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}
     return {"@type": "OfferShippingDetails",

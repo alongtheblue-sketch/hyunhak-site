@@ -67,7 +67,9 @@
    "physical_return_fee_amount": 3000,
    "digital_return_category": "MerchantReturnNotPermitted",
    "physical_transit_days_min": 1,
-   "physical_transit_days_max": 3
+   "physical_transit_days_max": 3,
+   "physical_handling_days_min": 0,
+   "physical_handling_days_max": 1
   }
  },
  "defaults": {
