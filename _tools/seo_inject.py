@@ -41,6 +41,61 @@ def page_image(m, e):
     return C.abs_url(m, e.get("image") or m["site"]["default_image"])
 
 
+def shipping_details(m, delivery, price):
+    """terms.html 제5조 전사. 실물 = 3,000원(5만원 이상 무료), 디지털 = 배송 없음(0원, 0일)."""
+    mc = m["site"].get("merchant") or {}
+    country = mc.get("country", "KR")
+    dest = {"@type": "DefinedRegion", "addressCountry": country}
+    if delivery == "physical":
+        free_over = mc.get("free_shipping_over")
+        fee = mc.get("shipping_fee", 0)
+        if free_over is not None and price is not None and price >= free_over:
+            fee = 0
+        # 실물 소요일은 약관에 없다 -> deliveryTime 생략 (추정 금지)
+        return {"@type": "OfferShippingDetails",
+                "shippingRate": {"@type": "MonetaryAmount", "value": fee, "currency": "KRW"},
+                "shippingDestination": dest}
+    zero = {"@type": "QuantitativeValue", "minValue": 0, "maxValue": 0, "unitCode": "DAY"}
+    return {"@type": "OfferShippingDetails",
+            "shippingRate": {"@type": "MonetaryAmount", "value": 0, "currency": "KRW"},
+            "shippingDestination": dest,
+            "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": zero, "transitTime": zero}}
+
+
+def return_policy(m, delivery):
+    """terms.html 제6조 전사. 근거 없는 값은 만들지 않는다 -> manifest 미기재면 None(속성 생략)."""
+    mc = m["site"].get("merchant") or {}
+    country = mc.get("country", "KR")
+    if delivery == "physical":
+        days = mc.get("physical_return_days")
+        fees = mc.get("physical_return_fees")
+        if days is None or fees is None:
+            return None
+        pol = {"@type": "MerchantReturnPolicy",
+               "applicableCountry": country,
+               "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+               "merchantReturnDays": days,
+               "returnMethod": "https://schema.org/ReturnByMail",
+               "returnFees": "https://schema.org/" + fees}
+        amt = mc.get("physical_return_fee_amount")
+        if fees == "ReturnShippingFees" and amt is not None:
+            pol["returnShippingFeesAmount"] = {"@type": "MonetaryAmount", "value": amt, "currency": "KRW"}
+        return pol
+    cat = mc.get("digital_return_category")
+    if not cat:
+        return None
+    pol = {"@type": "MerchantReturnPolicy", "applicableCountry": country,
+           "returnPolicyCategory": "https://schema.org/" + cat}
+    if cat == "MerchantReturnFiniteReturnWindow":
+        days = mc.get("digital_return_days")
+        if days is None:
+            return None
+        pol["merchantReturnDays"] = days
+        pol["returnMethod"] = "https://schema.org/ReturnByMail"
+        pol["returnFees"] = "https://schema.org/FreeReturn"
+    return pol
+
+
 def build_graph(m, rel, e, page_html):
     site = m["site"]
     url = C.canonical_url(m, rel)
@@ -88,11 +143,14 @@ def build_graph(m, rel, e, page_html):
         if not offers and sch.get("price") is not None:
             offers = [{"name": sch.get("offer_name"), "price": sch["price"], "sku": sch.get("sku")}]
         prod = {"@type": "Product", "@id": url + "#product", "name": sch.get("product_name") or title,
-                "description": desc, "url": url, "image": image, "brand": {"@id": org_id(m)}}
+                "description": desc, "url": url, "image": image,
+                "brand": {"@type": "Brand", "name": site["name"]}}
         if sch.get("sku"):
             prod["sku"] = sch["sku"]
         if sch.get("about"):
             prod["about"] = {"@type": "CollegeOrUniversity", "name": sch["about"]}
+        delivery = sch.get("delivery", "digital")
+        ret = return_policy(m, delivery)
         out = []
         for o in offers or []:
             offer = {"@type": "Offer", "priceCurrency": sch.get("currency", "KRW"),
@@ -103,6 +161,9 @@ def build_graph(m, rel, e, page_html):
                 offer["price"] = o["price"]
             if o.get("sku"):
                 offer["sku"] = o["sku"]
+            offer["shippingDetails"] = shipping_details(m, delivery, o.get("price"))
+            if ret:
+                offer["hasMerchantReturnPolicy"] = dict(ret)
             out.append(offer)
         if out:
             prod["offers"] = out[0] if len(out) == 1 else out

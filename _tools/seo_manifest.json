@@ -56,6 +56,16 @@
     "학종 면접 질문"
    ],
    "contact": "admin@hyunhak.com"
+  },
+  "merchant": {
+   "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)·제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신.",
+   "country": "KR",
+   "shipping_fee": 3000,
+   "free_shipping_over": 50000,
+   "physical_return_days": 7,
+   "physical_return_fees": "ReturnShippingFees",
+   "physical_return_fee_amount": 3000,
+   "digital_return_category": "MerchantReturnNotPermitted"
   }
  },
  "defaults": {
@@ -2054,7 +2064,7 @@
   },
   "library.html": {
    "title": "자료실, 대학별 2027 면접가이드북 PDF | 현학적 연구소",
-   "description": "현학적 연구소 자료실. 대학별 2027 면접 가이드북 PDF 를 구매한 계정으로 보안 리더에서 열람합니다.",
+   "description": "현학적 연구소 자료실. 대학별 2027 면접 가이드북 PDF 를 구매한 계정으로 보안 리더에서 열람합니다. 원본 파일은 내려받을 수 없습니다.",
    "type": "hub",
    "priority": 0.8,
    "changefreq": "weekly",
@@ -2337,7 +2347,8 @@
       "sku": "BOOK-04-3"
      }
     ],
-    "availability": "OutOfStock"
+    "availability": "OutOfStock",
+    "delivery": "physical"
    },
    "answer": ""
   },
