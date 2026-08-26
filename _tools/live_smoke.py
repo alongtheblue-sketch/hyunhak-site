@@ -40,7 +40,8 @@ def main():
             fails.append(f"asset {s} {a}")
     s, b = get(SITE + "/")
     t = b.decode("utf-8", "ignore")
-    for needle in ['id="heroFilm"', "og_aigen.jpg", "3400ms"]:
+    # 홈 마커 = 플랫폼 v2 (2026-08-26). 구 전람 v1 마커(heroFilm, 3400ms)는 폐기
+    for needle in ['<body class="v2">', "og_aigen.jpg", 'id="tiles"', "assets/covers/snu.jpg", "영어 봉투 모의고사 8회분 세트"]:
         ok = needle in t
         print(f"home {'ok' if ok else 'MISSING'} {needle}")
         if not ok:
