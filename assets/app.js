@@ -148,6 +148,24 @@
     return (items || []).find((it) => !(m[it.id] && m[it.id] > now)) || null;
   }
   function esc(t) { return String(t || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+  // 공지 body_html allowlist 정화 (저장형 XSS 차단): 허용 태그 외 언랩, 속성은 a[href https/절대경로] 만 유지
+  function sanitizeHtml(html) {
+    const ALLOW = new Set(["P", "BR", "B", "STRONG", "I", "EM", "U", "A", "UL", "OL", "LI", "H3", "H4", "SPAN"]);
+    let doc;
+    try { doc = new DOMParser().parseFromString(String(html || ""), "text/html"); } catch { return esc(html); }
+    doc.querySelectorAll("script,style,iframe,object,embed,link,meta,svg,math,template,form,input,button").forEach((n) => n.remove());
+    const walk = (root) => {
+      Array.from(root.children).forEach((el) => {
+        walk(el);
+        if (!ALLOW.has(el.tagName)) { el.replaceWith(...Array.from(el.childNodes)); return; }
+        const href = el.tagName === "A" ? el.getAttribute("href") : null;
+        Array.from(el.attributes).forEach((a) => el.removeAttribute(a.name));
+        if (href && /^(https:\/\/|\/)/.test(href)) { el.setAttribute("href", href); el.setAttribute("rel", "noopener"); }
+      });
+    };
+    walk(doc.body);
+    return doc.body.innerHTML;
+  }
   function renderPopup(it) {
     const root = document.createElement("div");
     root.className = "hh-popup";
@@ -161,7 +179,7 @@
       '<div class="hh-popup-card">' +
         '<p class="hh-popup-kind">공지</p>' +
         '<h2 id="hhPopupTitle" class="hh-popup-title">' + esc(it.title) + "</h2>" +
-        '<div class="hh-popup-body">' + (it.body_html || esc(it.body_md || "")) + "</div>" +
+        '<div class="hh-popup-body">' + (it.body_html ? sanitizeHtml(it.body_html) : esc(it.body_md || "")) + "</div>" +
         (link ? '<p class="hh-popup-link">' + link + "</p>" : "") +
         '<div class="hh-popup-foot">' +
           '<label class="hh-popup-mute"><input type="checkbox" id="hhPopupMute"> 오늘 하루 보지 않기</label>' +
@@ -201,6 +219,39 @@
   }
   document.addEventListener("DOMContentLoaded", showPopup);
 
+  // 가로 스크롤 표: 실제로 넘칠 때만 키보드 초점과 이름을 준다 (WCAG 2.1.1, 1.3.1).
+  // 넘치지 않는 표에 tabindex 를 걸면 불필요한 탭 정거장이 되므로 실측 후 부여한다.
+  function markScrollableTables() {
+    document.querySelectorAll(".tblwrap").forEach((w) => {
+      // 안내문은 우리가 넣은 것이므로 제목 탐색 전에 걷어내고 시작한다 (넣은 뒤 다시 재면 자기 자신을 제목으로 오인)
+      const prev = w.previousElementSibling;
+      if (prev && prev.classList.contains("tblnote")) prev.remove();
+      const over = w.scrollWidth > w.clientWidth + 1;
+      if (!over) {
+        w.removeAttribute("tabindex"); w.removeAttribute("role"); w.removeAttribute("aria-label");
+        w.classList.remove("scrollx");
+        return;
+      }
+      w.setAttribute("tabindex", "0");
+      w.setAttribute("role", "region");
+      // 이름은 caption 이나 표 제목 요소에서만. 앞 형제 산문을 잘라 쓰면
+      // "현행 요강에서, 가로로 스크롤할 수 있는 표" 처럼 문장 도중 절단된 이름이 나온다 (s17 critic 적발).
+      const cap = w.querySelector("table caption");
+      const h = w.previousElementSibling;
+      const head = h && /^H[1-6]$/.test(h.tagName) ? h.textContent.trim() : "";
+      const name = cap ? cap.textContent.trim() : head;
+      w.setAttribute("aria-label", name ? name + ", 가로로 스크롤할 수 있는 표" : "가로로 스크롤할 수 있는 표");
+      w.classList.add("scrollx");
+      const note = document.createElement("p");
+      note.className = "tblnote";
+      note.setAttribute("aria-hidden", "true");   // 이름은 aria-label 이 이미 전달
+      note.textContent = "옆으로 넘기거나, 표에 초점을 두고 좌우 방향키로 봅니다";
+      w.parentNode.insertBefore(note, w);
+    });
+  }
+  document.addEventListener("DOMContentLoaded", markScrollableTables);
+  addEventListener("resize", markScrollableTables);
+
   window.HH = { API, api, me, cart, saveCart, addToCart, cartTotal, won, updateNav,
-    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc };
+    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml };
 })();

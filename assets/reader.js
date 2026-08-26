@@ -144,8 +144,14 @@
   }
 
   // ---------- 부팅 ----------
+  // 오류 상태에서도 사이트로 돌아갈 길을 남긴다 (리더는 셸이 없는 단독 표면)
+  function esc(t) { return String(t == null ? "" : t).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  var BACK = "<p style='margin-top:20px;font-size:13px'>"
+    + "<a href='my.html'>내 자료실</a> &nbsp; <a href='guidebook/index.html'>가이드북 목록</a> &nbsp; <a href='index.html'>연구소 홈</a></p>";
+  function fail(html) { msg.innerHTML = html + BACK; }
+
   function boot() {
-    if (!slug) { msg.textContent = "잘못된 접근입니다."; return; }
+    if (!slug) { fail("잘못된 접근입니다."); return; }
     var sig = automationSignals();
     if (sig.length >= 2) { reportEvent("automation"); block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
 
@@ -156,15 +162,15 @@
       if (r.status === 401) { location.href = "login.html?next=" + encodeURIComponent("reader.html?slug=" + slug); throw "redirect"; }
       return r.json().then(function (d) { d._status = r.status; return d; });
     }).then(function (d) {
-      if (d._status === 403) { msg.innerHTML = "구매 후 열람할 수 있는 자료입니다. <a href='store.html'>스토어로</a>"; return; }
-      if (!d.token) { msg.textContent = d.error || "열 수 없습니다."; return; }
+      if (d._status === 403) { fail("구매 후 열람할 수 있는 자료입니다."); return; }
+      if (!d.token) { fail(esc(d.error || "열 수 없습니다.")); return; }   // 서버 문구는 이스케이프 후 삽입
       state.token = d.token; state.pages = d.pages; state.email = d.email || "";
       titleEl.textContent = d.title || "현학적 연구소";
       whoEl.textContent = state.email;
       printBtn.hidden = false;
       printBtn.addEventListener("click", doPrint);
       render();
-    }).catch(function (e) { if (e !== "redirect") { msg.textContent = "불러오지 못했습니다."; console.error(e); } });
+    }).catch(function (e) { if (e !== "redirect") { fail("불러오지 못했습니다."); console.error(e); } });
   }
 
   function render() {

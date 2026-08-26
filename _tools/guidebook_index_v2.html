@@ -19,28 +19,28 @@
 .bar .cnt{font-size:13px;color:var(--gray);white-space:nowrap}
 .lay{grid-template-columns:minmax(0,1fr) 300px}
 .side{top:148px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .gb{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.06);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .gb:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(49,46,46,.1)}
 .gb.ready{background:transparent;border:1px solid var(--hairs);box-shadow:none}
 .gb .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.gb .top .head,.gb .top h3{min-width:0}   /* 학교명이 길면 뱃지를 카드 밖으로 밀어내던 것 */
 .gb h3{font-size:17px;font-weight:700;letter-spacing:-0.02em;line-height:1.3}
 .gb h3 small{display:block;font-size:12px;font-weight:500;color:var(--gray);margin-top:2px}
 .gb .m{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums;display:flex;gap:12px}
 .gb .m span::before{content:"";display:inline-block;width:5px;height:5px;background:var(--hair);border-radius:50%;margin-right:7px;vertical-align:2px}
 .gb .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--hairs)}
-.gb .pr .price{font-size:17px;color:var(--ink)}
+.gb .pr .price{font-size:17px}   /* 색은 base.css 의 .price(朱印) 를 따른다, 목록만 먹색 쓰던 드리프트 해소 */
 .gb .head{display:flex;gap:14px;align-items:flex-start}
 .gb .pr .w{font-size:14px;font-weight:600;color:var(--gray)}
 .gb .acts{display:flex;gap:8px}
 .gb .acts .btn{flex:1}
 .gb .top .badge{white-space:nowrap;flex:none}
-.gb .arc{font-size:12.5px;color:var(--gray);padding:10px 0;margin:-10px 0;text-decoration:underline;text-underline-offset:3px}
 .box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:14px}
 .box ol li{display:flex;gap:10px;align-items:baseline}
 .box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
 .empty{grid-column:1/-1}
-@media (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){
   .bar{top:64px}
   .bar .in{flex-direction:column;align-items:stretch}
@@ -82,7 +82,6 @@
       <button role="tab" aria-selected="true" data-f="all">전체 <span>__N__</span></button>
       <button role="tab" aria-selected="false" data-f="sale">판매 중 <span>__SALE__</span></button>
       <button role="tab" aria-selected="false" data-f="ready">준비 중 <span>__READY__</span></button>
-      <button role="tab" aria-selected="false" data-f="archive">무료 아카이브 <span>__ARCHIVE__</span></button>
     </div>
     <form class="search" role="search" onsubmit="return false">
       <label for="q2" class="ph">대학 이름</label>
@@ -99,7 +98,7 @@
     <div class="box spec rv">
       <h3>한 권의 구성</h3>
       <ol>
-        <li>면접 기본 제원</li><li>유형 판정</li><li>평가항목 매핑</li><li>인재상</li><li>실제 질문 아카이브</li><li>생기부에서 질문으로의 전환 규칙</li><li>준비 전략</li><li>출처와 공백</li>
+        <li>1부 내 면접은 어느 형태인가</li><li>2부 이 대학은 무엇을 묻는가</li><li>3부 실제로 나온 질문</li><li>4부 내 생기부에서 질문 뽑기, 전환 규칙</li><li>5부 이 대학의 특징과 준비 전략</li>
       </ol>
     </div>
     <div class="box rv">
@@ -114,8 +113,8 @@
 <section class="sec tight">
   <div class="wrap">
     <div class="final rv">
-      <div><h2>지원 대학이 준비 중이면</h2><p>무료 아카이브 26개 대학에서 관측 기록 먼저 열람. 판매 개시는 공지로.</p></div>
-      <div class="acts"><a class="btn" href="../interview/index.html">무료 아카이브 열기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../notice.html">공지 보기</a></div>
+      <div><h2>준비 중인 대학은 공지로</h2><p>판매 개시와 갱신을 공지에 기록합니다.</p></div>
+      <div class="acts"><a class="btn" href="../notice.html">공지 보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../studio.html">면접 스튜디오</a></div>
     </div>
   </div>
 </section>
@@ -137,12 +136,11 @@ var HH_GB=__HH_GB__;
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     var pr=o.sale?'<span class="price">__PRICE__원</span>':'<span class="w">준비 중</span>';
     var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
-    var arc=o.archive?'<a class="arc" href="../interview/'+o.slug+'.html">무료 아카이브 열람</a>':'<span class="arc" style="text-decoration:none">아카이브 준비 중</span>';
-    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span></div><div class="pr">'+pr+arc+'</div><div class="acts">'+act+'</div></article>';
+    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span><span>규칙 '+o.r+'개</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
   }
   function render(){
     var kw=(q.value||'').trim();
-    var list=HH_GB.filter(function(o){return (f==='all'||(f==='sale'&&o.sale)||(f==='ready'&&!o.sale)||(f==='archive'&&o.archive))&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
+    var list=HH_GB.filter(function(o){return (f==='all'||(f==='sale'&&o.sale)||(f==='ready'&&!o.sale))&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
     grid.innerHTML=list.map(card).join('')||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
     cnt.textContent=list.length+'권';
   }

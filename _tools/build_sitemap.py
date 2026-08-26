@@ -88,11 +88,12 @@ def build_llms(m, pages):
            "## 상품 3군"]
     for i, p in enumerate(L["products"], 1):
         out.append(f"{i}. [{p['name']}]({C.abs_url(m, p['path'])}): {p['desc']} 가격: {p['price']}")
-    out += ["", "## 무료 콘텐츠"]
-    for p in L["free"]:
-        out.append(f"- [{p['name']}]({C.abs_url(m, p['path'])}): {p['desc']}")
+    if L["free"]:
+        out += ["", "## 무료 콘텐츠"]
+        for p in L["free"]:
+            out.append(f"- [{p['name']}]({C.abs_url(m, p['path'])}): {p['desc']}")
     out += ["", "## 핵심 페이지"]
-    core = ["index.html", "studio.html", "guidebook/index.html", "store.html", "interview/index.html",
+    core = ["index.html", "studio.html", "guidebook/index.html", "store.html",
             "library.html", "about.html", "faq.html", "notice.html", "terms.html", "privacy.html"]
     for rel in core:
         if rel in by_path:
@@ -104,10 +105,6 @@ def build_llms(m, pages):
     out += ["", "## 학교별 2027 면접 가이드북"]
     for rel, e in sorted(pages, key=lambda x: x[0]):
         if rel.startswith("guidebook/") and rel != "guidebook/index.html":
-            out.append(f"- [{e['title']}]({C.canonical_url(m, rel)})")
-    out += ["", "## 대학별 면접 아카이브"]
-    for rel, e in sorted(pages, key=lambda x: x[0]):
-        if rel.startswith("interview/") and rel != "interview/index.html":
             out.append(f"- [{e['title']}]({C.canonical_url(m, rel)})")
     out += ["", "## 검색 키워드", "- " + ", ".join(L["keywords"]), "",
             "## 연락처", f"- {L['contact']}", "",

@@ -27,10 +27,27 @@ for (const p of paths) {
       }
       if (r.height < 44 && r.width < 44) small.push((el.textContent || el.tagName).trim().slice(0, 20) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height));
     }
+    // 문서 overflowX 가 0 이어도 overflow:hidden 컨테이너 안에서 콘텐츠가 조용히 잘릴 수 있다 (s17).
+    // 장식 레이어(aria-hidden, pointer-events:none)는 의도된 재단이므로 제외.
+    const clips = [];
+    for (const el of document.querySelectorAll('section,header,div,figure')) {
+      const over = el.scrollWidth - el.clientWidth;
+      if (over <= 8) continue;
+      if (getComputedStyle(el).overflowX === 'auto' || getComputedStyle(el).overflowX === 'scroll') continue;
+      let worst = null;
+      for (const k of el.querySelectorAll('*')) {
+        if (k.getAttribute('aria-hidden') === 'true') continue;
+        if (getComputedStyle(k).pointerEvents === 'none') continue;
+        const kr = k.getBoundingClientRect(), er = el.getBoundingClientRect();
+        const out = Math.round(Math.max(kr.right - er.right, er.left - kr.left));
+        if (out > 8 && (!worst || out > worst.out)) worst = { out, tag: k.tagName, cls: String(k.className).slice(0, 24) };
+      }
+      if (worst) clips.push({ cls: String(el.className).slice(0, 24), over, worst });
+    }
     const h1 = document.querySelector('h1');
     const h1cs = h1 ? getComputedStyle(h1) : null;
     const rvAll = document.querySelectorAll('.rv').length, rvIn = document.querySelectorAll('.rv.in').length;
-    return { ox, smallN: small.length, small: small.slice(0, 8), height: de.scrollHeight, reveal: rvIn + '/' + rvAll,
+    return { ox, clipN: clips.length, clips: clips.slice(0, 4), smallN: small.length, small: small.slice(0, 8), height: de.scrollHeight, reveal: rvIn + '/' + rvAll,
       h1: h1cs ? h1cs.fontSize + ' ' + h1cs.fontFamily.split(',')[0] : null,
       dots: (document.body.innerText.match(/[·—]/g) || []).length };
   });

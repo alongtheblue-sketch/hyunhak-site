@@ -54,7 +54,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -66,7 +66,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -97,7 +97,7 @@
   <aside class="side">
     <div class="box rv">
       <h3>바로가기</h3>
-      <p>가이드북 판매 개시와 갱신은 공지로 안내. 지원 대학이 준비 중이면 무료 아카이브 먼저.</p>
+      <p>가이드북 판매 개시와 갱신은 공지로 안내.</p>
       <a class="btn ghost sm" href="guidebook/index.html">가이드북 목록 <span class="ar" aria-hidden="true">→</span></a>
     </div>
     <div class="box rv">
@@ -119,7 +119,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -132,7 +132,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -156,7 +156,7 @@
     const v = document.getElementById('view'); v.hidden = false;
     document.getElementById('vTitle').textContent = it.title;
     document.getElementById('vMeta').textContent = fmt(it.starts_at || it.created_at) + (it.pinned ? '  고정 공지' : '');
-    document.getElementById('vBody').innerHTML = it.body_html || ('<p>' + HH.esc(it.body_md || '') + '</p>');
+    document.getElementById('vBody').innerHTML = it.body_html ? HH.sanitizeHtml(it.body_html) : ('<p>' + HH.esc(it.body_md || '') + '</p>');
     document.title = it.title + ', 현학적 연구소 공지';
   }
   document.addEventListener('DOMContentLoaded', id ? view : list);

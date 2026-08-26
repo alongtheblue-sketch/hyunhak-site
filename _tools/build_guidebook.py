@@ -219,9 +219,17 @@ def cmd_refresh(args):
 
 
 # ---------------------------------------------------------------- build
-# 상품 면 = 플랫폼 v2 템플릿 (2026-08-26 s16 하위 페이지 v2 전개). 셸(헤더, 푸터, 모바일 바)은 자리표시를
+# 상품 면 = v3 템플릿 (2026-08-26 현학적 연구소 편집본). 셸(헤더, 푸터, 모바일 바)은 자리표시를
 # apply_nav/apply_footer 가 채우고, seo 블록과 aeo 단락은 seo_inject 가 manifest 로 넣는다.
-PAGE_TPL = Path(__file__).with_name("guidebook_page_v2.html")
+# 소구 수치·구조·미리보기 목록 = _tools/guidebook_meta_v3.json (build_previews.py 가 박제).
+PAGE_TPL = Path(__file__).with_name("guidebook_page_v3.html")
+META_V3 = Path(__file__).with_name("guidebook_meta_v3.json")
+
+
+def load_meta():
+    if not META_V3.exists():
+        sys.exit("guidebook_meta_v3.json 없음: 먼저 _tools/build_previews.py")
+    return json.load(open(META_V3, encoding="utf-8"))
 
 
 def fill(tpl, m):
@@ -235,15 +243,104 @@ def price_of(cat, e):
     return e["price"] if e.get("price") is not None else cat["price"]
 
 
-def render_page(cat, items, i):
+def _part_of(page, dividers):
+    """면 번호가 속한 부 (1~5). 간지 면 자신도 그 부에 속한다."""
+    part = 0
+    for i, d in enumerate(dividers, 1):
+        if page >= d:
+            part = i
+    return part
+
+
+def _previews_html(mv):
+    out = []
+    labels = {"cover": "표지", "toc": "차례와 쓰는 법"}
+    for i, pv in enumerate(mv["previews"]):
+        kind = pv["kind"]
+        part = _part_of(pv["page"], mv["dividers"])
+        if kind in labels:
+            label = labels[kind]
+        elif kind == "part":
+            label = f"{part}부 들어가는 면"
+        else:
+            label = f"{part}부 본문, 흐림"
+        lock = '<span class="lk">구매 후 선명</span>' if kind == "body" else ""
+        lazy = ' loading="lazy"' if i > 1 else ""
+        alt = f"{clean(mv['name'])} 가이드북 {pv['page']}면 {label}"
+        out.append(
+            f'      <figure class="pv"><img src="../{pv["file"]}" alt="{esc(alt)}" width="{pv["w"]}" height="{pv["h"]}"{lazy}>{lock}'
+            f'<figcaption><span>{esc(label)}</span><span>p.{pv["page"]}</span></figcaption></figure>')
+    return "\n".join(out)
+
+
+def _parts_html(mv):
+    out = []
+    subs = mv.get("toc_subs") or [""] * 5
+    for i, pt in enumerate(mv["parts"]):
+        sub = clean(subs[i]) if i < len(subs) else ""
+        st = "".join(f'<span><b>{esc(clean(b))}</b>{esc(clean(l))}</span>' for b, l in pt.get("strip", []))
+        out.append(
+            f'      <div class="p5"><span class="no">{pt["no"]}</span><div><h3>{esc(clean(pt["title"]))}</h3>'
+            f'<p class="d">{esc(sub)}</p><div class="st">{st}</div></div></div>')
+    return "\n".join(out)
+
+
+def _forms_html(mv):
+    out = []
+    for f in mv.get("forms", []):
+        on = f["has"]
+        out.append(f'      <div class="f {"on" if on else "off"}"><b>{esc(clean(f["form"]))}</b>'
+                   f'<span>{"이 대학에 있음" if on else "이 대학에 없음"}</span></div>')
+    return "\n".join(out)
+
+
+def _tracks_html(mv):
+    out = []
+    for t in mv.get("tracks", [])[:6]:
+        out.append(f'      <li><span class="t">{esc(clean(t["track"]))}</span><span class="f">{esc(clean(t["form"]))}</span></li>')
+    return "\n".join(out)
+
+
+def _chips(items, limit):
+    return "\n".join(f'      <span>{esc(clean(x))}</span>' for x in items[:limit])
+
+
+def _rules3_html(mv):
+    out = []
+    for r in mv.get("rule_list", [])[:3]:
+        out.append(f'      <div class="r"><span class="cd">{esc(r["code"])}</span><span class="ar">{esc(clean(r["area"]))}</span>'
+                   f'<p><b>언제</b> {esc(clean(r["when"]))}</p></div>')
+    return "\n".join(out)
+
+
+def _strat_sec_html(mv):
+    strat = mv.get("strategies", [])
+    if not strat:
+        return ""
+    out = []
+    for i, stt in enumerate(strat[:8], 1):
+        m = re.match(r"(S\d+)\.\s*(.*)", stt)
+        no, txt = (m.group(1), m.group(2)) if m else (f"{i:02d}", stt)
+        out.append(f'      <li><span class="sn">{esc(no)}</span><span>{esc(clean(txt))}</span></li>')
+    more = len(strat) - len(strat[:8])
+    tail = f'\n    <p class="rlock">전략 {len(strat)}개 중 {len(strat[:8])}개의 제목. 본문과 근거는 책에서.</p>' if more > 0 else ""
+    return ('  <section class="sec">\n'
+            '    <div class="sh rv"><div><h2>5부 준비 전략</h2><p>이 대학만의 차이에서 나온 전략. 제목만 싣습니다.</p></div></div>\n'
+            '    <ol class="strat rv">\n' + "\n".join(out) + '\n    </ol>' + tail + '\n  </section>')
+
+
+def render_page(cat, items, i, meta):
     e = items[i]
+    mv = meta[e["slug"]]
     name = e["name"]
     price = price_of(cat, e)
     sale = bool(e.get("onsale", True))
     h1 = f"{name} 2027 면접 가이드북"
     title = f"{h1}, 현학적 연구소"
-    lede = (f"생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 {name} 면접의 실제. "
-            f"PDF {e['pages']}면, 수록 질문 {e['questions']}건.")
+    q, rules = mv["questions"], mv["rules"]
+    years = f'{mv["years"][0]}~{mv["years"][1]}' if mv.get("years") else "복수 연도"
+    lede = (f"{name} 면접에서 실제로 나온 질문 {q}건, 내 생기부에서 질문을 뽑는 전환 규칙 {rules}개. "
+            f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.")
     if sale:
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
                 f'      <a class="btn ghost" href="../cart.html">장바구니 보기</a>')
@@ -254,32 +351,35 @@ def render_page(cat, items, i):
                       f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
     else:
         acts = ('<span class="btn" aria-disabled="true">입고 예정</span>\n'
-                + (f'      <a class="btn ghost" href="../interview/{e["slug"]}.html">무료 아카이브 열람</a>' if e["archive"]
-                   else '      <a class="btn ghost" href="index.html">판매 중인 가이드북</a>'))
+                '      <a class="btn ghost" href="index.html">판매 중인 가이드북</a>')
         badge = '<span class="badge mute">준비 중</span>'
         note = "보안 리더 준비 중. 준비되는 대로 이 면에서 판매하고 공지에 기록."
-        final_h2, final_p = "준비 중인 동안", ("무료 아카이브에서 관측 기록 먼저 열람. 판매 개시는 공지로." if e["archive"]
-                                           else "판매 중인 다른 대학 가이드북 먼저. 판매 개시는 공지로.")
-        final_acts = ((f'<a class="btn" href="../interview/{e["slug"]}.html">무료 아카이브 열기 <span class="ar" aria-hidden="true">→</span></a>' if e["archive"]
-                       else '<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>')
-                      + '<a class="btn ghost" href="../notice.html">공지 보기</a>')
-    toc = "\n".join(f'      <li><span class="no">{s["no"]:02d}</span><span class="t">{esc(s["title"])}</span></li>' for s in e["secs"])
-    rows = []
-    for t in e["types"]:
-        obs = f"{t['observed']}건" if t["observed"] is not None else "표기 없음"
-        pct = f"{t['pct']:.1f}%" if t["pct"] is not None else "표기 없음"
-        rows.append(f'      <tr><td>{esc(t["type"])}</td><td class="num">{obs}</td><td class="num">{pct}</td><td class="num">{t["included"]}건</td></tr>')
-    samples = "\n".join(f'      <li><span class="ty">{esc(s["type"])}</span><p class="q">{esc(s["q"])}</p><span class="src">출처: {esc(s["source"])}</span></li>'
-                        for s in e["samples"])
+        final_h2, final_p = "준비 중인 동안", "판매 중인 다른 대학 가이드북 먼저. 판매 개시는 공지로."
+        final_acts = ('<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>'
+                      '<a class="btn ghost" href="../notice.html">공지 보기</a>')
+    groups = mv.get("groups", [])
+    types_head = '<th>유형</th><th class="num">수록</th>'
+    types_rows = "\n".join(f'      <tr><td>{esc(clean(g["type"]))}</td><td class="num">{g["n"]}건</td></tr>'
+                            for g in groups if g.get("n"))
+    types_note = "책에 실린 수. 관측 원문에 그 변형과 파생 문항을 더해 싣습니다."
+    samples = "\n".join(f'      <li><span class="ty">{esc(clean(s["type"]))}</span><p class="q">{esc(clean(s["q"]))}</p><span class="src">출처: {esc(s["source"])}</span></li>'
+                         for s in e["samples"])
     prev_e = items[i - 1] if i > 0 else None
     next_e = items[i + 1] if i + 1 < len(items) else None
-    arc = (f'<a class="tlink" href="../interview/{e["slug"]}.html">같은 학교 무료 아카이브</a>' if e["archive"]
-           else '<span class="note">이 학교의 무료 아카이브는 준비 중</span>')
     m = {"__TITLE__": esc(title), "__NAME__": esc(name), "__H1__": esc(h1), "__LEDE__": esc(lede), "__SLUG__": e["slug"],
-         "__SKU__": esc(e["sku"]), "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}", "__PAGES__": str(e["pages"]),
-         "__QUESTIONS__": str(e["questions"]), "__TYPES_N__": str(e["types_n"]), "__SOURCES_N__": str(e["sources_n"]),
-         "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note, "__TOC__": toc, "__TYPES_ROWS__": "\n".join(rows),
-         "__SAMPLES__": samples, "__ARCHIVE_LINK__": arc,
+         "__SKU__": esc(e["sku"]), "__VOL__": str(mv.get("vol") or ""), "__YEARS__": years,
+         "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}", "__PAGES__": str(mv["pages"]),
+         "__QUESTIONS__": str(q), "__RULES__": str(rules), "__TYPES_N__": str(len(groups)),
+         "__TRACKS_N__": str(len(mv.get("spec_tracks", [])) or len(mv.get("tracks", []))),
+         "__SPEC_N__": str(len(mv.get("spec_items", []))),
+         "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note,
+         "__PREVIEWS__": _previews_html(mv), "__PARTS__": _parts_html(mv), "__FORMS__": _forms_html(mv),
+         "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
+         "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),
+         "__STRAT_SEC__": _strat_sec_html(mv),
+         "__TYPES_HEAD__": types_head, "__TYPES_ROWS__": types_rows, "__TYPES_NOTE__": types_note,
+         "__PRICE_CLS__": "price" if sale else "price mute",
+         "__SAMPLES__": samples,
          "__PREV__": (f'<a class="tlink" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>' if prev_e else ""),
          "__NEXT__": (f'<a class="tlink" href="{next_e["slug"]}.html">다음, {esc(next_e["name"])}</a>' if next_e else ""),
          "__FINAL_H2__": final_h2, "__FINAL_P__": esc(final_p), "__FINAL_ACTS__": final_acts}
@@ -289,23 +389,24 @@ def render_page(cat, items, i):
 INDEX_TPL = Path(__file__).with_name("guidebook_index_v2.html")
 
 
-def render_index(cat, items):
-    """목록 = 플랫폼 v2 템플릿 (2026-08-26 결재 V2-2). 숫자와 HH_GB 데이터는 카탈로그에서 채운다.
-    seo 블록과 aeo 단락은 seo_inject 가 manifest 로 넣는다 (템플릿에 canonical/description 없음)."""
+def render_index(cat, items, meta):
+    """목록 = 플랫폼 v2 템플릿. 수치는 meta v3 (판매 파일 실측)에서 채운다."""
     n = len(items)
-    pages = sum(e["pages"] for e in items)
-    qs = sum(e["questions"] for e in items)
+    pages = sum(meta[e["slug"]]["pages"] for e in items)
+    qs = sum(meta[e["slug"]]["questions"] for e in items)
+    rules = sum(meta[e["slug"]]["rules"] for e in items)
     sale = sum(1 for e in items if e.get("onsale", True))
-    archive = sum(1 for e in items if e.get("archive"))
     price = int(cat["price"])
-    gb = [{"slug": e["slug"], "sku": e.get("sku") or f"guide-{e['slug']}", "name": e["name"], "pages": e["pages"],
-           "q": e["questions"], "sale": bool(e.get("onsale", True)), "archive": bool(e.get("archive"))} for e in items]
+    gb = [{"slug": e["slug"], "sku": e.get("sku") or f"guide-{e['slug']}", "name": e["name"],
+           "short": e["name"].replace("학교", "").replace("(서울)", ""),
+           "pages": meta[e["slug"]]["pages"], "q": meta[e["slug"]]["questions"], "r": meta[e["slug"]]["rules"],
+           "sale": bool(e.get("onsale", True))} for e in items]
     h1 = "학교별 2027 면접 가이드북"
-    fill = {"__TITLE__": esc(f"{h1} {n}권, 현학적 연구소"), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
-            "__ARCHIVE__": str(archive), "__PAGES__": f"{pages:,}", "__QS__": f"{qs:,}", "__PRICE_RAW__": str(price),
-            "__PRICE__": f"{price:,}", "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
+    fillmap = {"__TITLE__": esc(f"{h1} {n}권, 현학적 연구소"), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
+               "__PAGES__": f"{pages:,}", "__QS__": f"{qs:,}", "__RULES__": f"{rules:,}", "__PRICE_RAW__": str(price),
+               "__PRICE__": f"{price:,}", "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
     t = INDEX_TPL.read_text(encoding="utf-8")
-    for k, v in fill.items():
+    for k, v in fillmap.items():
         t = t.replace(k, v)
     assert "__" not in t.replace("__proto__", ""), "템플릿 placeholder 잔존"
     return t
@@ -313,15 +414,19 @@ def render_index(cat, items):
 
 def build_to(out_dir):
     cat = json.load(open(CATALOG, encoding="utf-8"))
+    meta = load_meta()
+    missing = [s for s, _ in SLUGS if s not in meta]
+    if missing:
+        sys.exit(f"meta v3 누락 {len(missing)}권: {missing[:5]}")
     items = sorted(cat["items"], key=lambda e: e["name"])
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     p = out_dir / "index.html"
-    p.write_text(render_index(cat, items), encoding="utf-8")
+    p.write_text(render_index(cat, items, meta), encoding="utf-8")
     written.append(p)
     for i in range(len(items)):
         p = out_dir / f"{items[i]['slug']}.html"
-        p.write_text(render_page(cat, items, i), encoding="utf-8")
+        p.write_text(render_page(cat, items, i, meta), encoding="utf-8")
         written.append(p)
     return written
 
@@ -353,7 +458,8 @@ def cmd_verify(args):
     link_n = 0
     for f in files:
         html = f.read_text(encoding="utf-8")
-        for m in re.finditer(r'(?:href|src)="([^"]+)"', html):
+        html_noscript = re.sub(r"<script.*?</script>", "", html, flags=re.S)
+        for m in re.finditer(r'(?:href|src)="([^"]+)"', html_noscript):
             u = m.group(1)
             if u.startswith(("http", "#", "mailto:", "data:")):
                 continue

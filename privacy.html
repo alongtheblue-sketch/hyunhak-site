@@ -47,7 +47,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -59,7 +59,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -83,6 +83,8 @@
     <thead><tr><th>항목</th><th>수집 시점</th><th>목적</th><th>보유 기간</th></tr></thead>
     <tbody>
       <tr><td>이메일, 이름, 연락처, 비밀번호(암호화)</td><td>회원 가입</td><td>계정 식별, 주문, 이용권 관리, 공지</td><td>회원 탈퇴 시 지체 없이 파기</td></tr>
+      <tr><td>제공사 회원번호, 이메일, 닉네임</td><td>간편 로그인(카카오, 구글, 네이버)</td><td>계정 식별, 중복 가입 방지</td><td>회원 탈퇴 시 지체 없이 파기</td></tr>
+      <tr><td>동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라우저 정보)</td><td>약관 동의</td><td>동의 사실의 증빙</td><td>회원 탈퇴 시 파기. 광고성 정보 수신 동의 이력은 철회 후 6개월</td></tr>
       <tr><td>배송지 주소, 수령인 정보</td><td>실물 상품 주문</td><td>상품 배송</td><td>전자상거래법에 따라 5년</td></tr>
       <tr><td>결제 기록(결제수단 정보는 결제대행사가 보관)</td><td>결제</td><td>대금 정산, 환불</td><td>전자상거래법에 따라 5년</td></tr>
       <tr><td>본인인증 결과값(CI)</td><td>본인인증(도입 시)</td><td>본인 확인, 중복 가입 방지</td><td>회원 탈퇴 시 파기</td></tr>
@@ -97,6 +99,7 @@
     <li>결제 처리: 토스페이먼츠 (결제 승인, 정산)</li>
     <li>인프라 운영: Cloudflare (웹 호스팅, 보안), GitHub (정적 페이지 호스팅)</li>
     <li>본인인증(도입 시): 본인확인기관과 인증 중개사 <span class="mark">[계약 확정 후 상호 기재]</span></li>
+    <li>이메일, 문자 발송(도입 시): 발송 대행사 <span class="mark">[계약 확정 후 상호 기재]</span></li>
   </ul>
   <p>위 수탁자 외 제3자에게 개인정보를 제공하지 않습니다. 법령에 근거한 요청은 예외로 합니다.</p>
 
@@ -122,10 +125,30 @@
   <p>로그인 상태 유지를 위한 필수 쿠키만 사용합니다. 광고, 추적 목적의 쿠키는 사용하지 않습니다.
   방문 통계를 도입하는 경우 이 방침에 먼저 반영하고 고지합니다.</p>
 
-  <h2>7. 개인정보 보호책임자</h2>
+  <h2 id="ads">7. 광고성 정보의 전송</h2>
+  <p>연구소는 회원이 <b>광고성 정보 수신에 동의한 경우에만</b> 새 자료, 강좌 개설, 할인 안내를
+  보냅니다. 동의는 가입 화면 또는 마이페이지에서 받으며, 동의하지 않아도 회원 가입과 서비스
+  이용에 아무런 제한이 없습니다.</p>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>전송자</td><td>현학적 연구소 <span class="mark">[사업자 정보 확정 후 상호, 연락처 기재]</span></td></tr>
+      <tr><td>전송 수단</td><td>이메일, 문자메시지</td></tr>
+      <tr><td>전송 내용</td><td>신규 자료와 교재 안내, 강좌 개설과 일정, 할인과 행사 안내</td></tr>
+      <tr><td>수신 거부</td><td>마이페이지에서 즉시 해지. 각 메시지에 담긴 수신 거부 링크나 안내로도 해지</td></tr>
+      <tr><td>동의 확인</td><td>동의일로부터 2년마다, 동의 사실과 날짜, 유지와 철회 방법을 회원에게 알립니다</td></tr>
+    </tbody>
+  </table></div>
+  <p>수신 거부 또는 동의 철회 의사를 밝히면 그 시점부터 광고성 정보를 보내지 않습니다.
+  주문 확인, 결제 내역, 이용권 만료처럼 계약 이행에 필요한 안내는 광고성 정보가 아니므로
+  수신 동의 여부와 무관하게 발송합니다. 오후 9시부터 다음 날 오전 8시 사이에는 별도의 사전
+  동의를 받은 경우가 아니면 광고성 정보를 보내지 않습니다.</p>
+
+  <h2>8. 개인정보 보호책임자</h2>
   <p>보호책임자: <span class="mark">[정식 오픈 전 기재]</span>,  문의: admin@hyunhak.com</p>
 
-  <p class="updated">시행일: 정식 오픈일에 확정합니다. <span class="mark">[사업자 정보 확정 후 법률 검토를 거쳐 최종본을 게시합니다]</span></p>
+  <p class="updated">문서 버전: 2026-08-26. 시행일: 정식 오픈일에 확정합니다.
+  <span class="mark">[사업자 정보 확정 후 법률 검토를 거쳐 최종본을 게시합니다]</span></p>
 
 </div></div>
 
@@ -141,7 +164,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -154,7 +177,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 </body>

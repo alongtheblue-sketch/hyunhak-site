@@ -35,28 +35,28 @@
 .bar .cnt{font-size:13px;color:var(--gray);white-space:nowrap}
 .lay{grid-template-columns:minmax(0,1fr) 300px}
 .side{top:148px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .gb{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.06);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .gb:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(49,46,46,.1)}
 .gb.ready{background:transparent;border:1px solid var(--hairs);box-shadow:none}
 .gb .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.gb .top .head,.gb .top h3{min-width:0}   /* 학교명이 길면 뱃지를 카드 밖으로 밀어내던 것 */
 .gb h3{font-size:17px;font-weight:700;letter-spacing:-0.02em;line-height:1.3}
 .gb h3 small{display:block;font-size:12px;font-weight:500;color:var(--gray);margin-top:2px}
 .gb .m{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums;display:flex;gap:12px}
 .gb .m span::before{content:"";display:inline-block;width:5px;height:5px;background:var(--hair);border-radius:50%;margin-right:7px;vertical-align:2px}
 .gb .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--hairs)}
-.gb .pr .price{font-size:17px;color:var(--ink)}
+.gb .pr .price{font-size:17px}   /* 색은 base.css 의 .price(朱印) 를 따른다, 목록만 먹색 쓰던 드리프트 해소 */
 .gb .head{display:flex;gap:14px;align-items:flex-start}
 .gb .pr .w{font-size:14px;font-weight:600;color:var(--gray)}
 .gb .acts{display:flex;gap:8px}
 .gb .acts .btn{flex:1}
 .gb .top .badge{white-space:nowrap;flex:none}
-.gb .arc{font-size:12.5px;color:var(--gray);padding:10px 0;margin:-10px 0;text-decoration:underline;text-underline-offset:3px}
 .box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:14px}
 .box ol li{display:flex;gap:10px;align-items:baseline}
 .box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
 .empty{grid-column:1/-1}
-@media (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){
   .bar{top:64px}
   .bar .in{flex-direction:column;align-items:stretch}
@@ -84,7 +84,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -96,7 +96,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -113,7 +113,7 @@
 </div>
     <div class="facts rv">
       <div><b>38</b><span>권, 15권 판매 중</span></div>
-      <div><b>1,293</b><span>총 면수</span></div>
+      <div><b>1,284</b><span>총 면수</span></div>
       <div><b>4,766</b><span>총 수록 질문</span></div>
       <div><b>16,500</b><span>원, 권당</span></div>
     </div>
@@ -126,7 +126,6 @@
       <button role="tab" aria-selected="true" data-f="all">전체 <span>38</span></button>
       <button role="tab" aria-selected="false" data-f="sale">판매 중 <span>15</span></button>
       <button role="tab" aria-selected="false" data-f="ready">준비 중 <span>23</span></button>
-      <button role="tab" aria-selected="false" data-f="archive">무료 아카이브 <span>26</span></button>
     </div>
     <form class="search" role="search" onsubmit="return false">
       <label for="q2" class="ph">대학 이름</label>
@@ -143,7 +142,7 @@
     <div class="box spec rv">
       <h3>한 권의 구성</h3>
       <ol>
-        <li>면접 기본 제원</li><li>유형 판정</li><li>평가항목 매핑</li><li>인재상</li><li>실제 질문 아카이브</li><li>생기부에서 질문으로의 전환 규칙</li><li>준비 전략</li><li>출처와 공백</li>
+        <li>1부 내 면접은 어느 형태인가</li><li>2부 이 대학은 무엇을 묻는가</li><li>3부 실제로 나온 질문</li><li>4부 내 생기부에서 질문 뽑기, 전환 규칙</li><li>5부 이 대학의 특징과 준비 전략</li>
       </ol>
     </div>
     <div class="box rv">
@@ -158,8 +157,8 @@
 <section class="sec tight">
   <div class="wrap">
     <div class="final rv">
-      <div><h2>지원 대학이 준비 중이면</h2><p>무료 아카이브 26개 대학에서 관측 기록 먼저 열람. 판매 개시는 공지로.</p></div>
-      <div class="acts"><a class="btn" href="../interview/index.html">무료 아카이브 열기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../notice.html">공지 보기</a></div>
+      <div><h2>준비 중인 대학은 공지로</h2><p>판매 개시와 갱신을 공지에 기록합니다.</p></div>
+      <div class="acts"><a class="btn" href="../notice.html">공지 보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../studio.html">면접 스튜디오</a></div>
     </div>
   </div>
 </section>
@@ -176,7 +175,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../interview/index.html">무료 아카이브</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
+        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -189,23 +188,22 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="../index.html"><i aria-hidden="true"></i>홈</a><a href="../index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri on" href="#grid"><i aria-hidden="true"></i>가이드북</a><a href="../my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="../index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri on" href="#grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="../my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="../assets/app.js"></script>
 <script>
-var HH_GB=[{"slug":"dgist","sku":"guide-dgist","name":"DGIST(대구경북과학기술원)","pages":33,"q":124,"sale":true,"archive":false},{"slug":"gachon","sku":"guide-gachon","name":"가천대학교","pages":37,"q":142,"sale":true,"archive":true},{"slug":"catholic","sku":"guide-catholic","name":"가톨릭대학교","pages":37,"q":147,"sale":false,"archive":true},{"slug":"konkuk","sku":"guide-konkuk","name":"건국대학교(서울)","pages":37,"q":120,"sale":true,"archive":true},{"slug":"kyonggi","sku":"guide-kyonggi","name":"경기대학교","pages":34,"q":130,"sale":true,"archive":true},{"slug":"knu","sku":"guide-knu","name":"경북대학교","pages":39,"q":162,"sale":false,"archive":true},{"slug":"khu","sku":"guide-khu","name":"경희대학교","pages":41,"q":172,"sale":true,"archive":true},{"slug":"korea","sku":"guide-korea","name":"고려대학교(서울)","pages":33,"q":135,"sale":true,"archive":true},{"slug":"kwangwoon","sku":"guide-kwangwoon","name":"광운대학교","pages":38,"q":148,"sale":true,"archive":true},{"slug":"kookmin","sku":"guide-kookmin","name":"국민대학교","pages":36,"q":143,"sale":true,"archive":true},{"slug":"dankook","sku":"guide-dankook","name":"단국대학교(죽전)","pages":16,"q":18,"sale":false,"archive":false},{"slug":"duksung","sku":"guide-duksung","name":"덕성여자대학교","pages":18,"q":42,"sale":false,"archive":false},{"slug":"dongguk","sku":"guide-dongguk","name":"동국대학교","pages":40,"q":176,"sale":true,"archive":true},{"slug":"dongduk","sku":"guide-dongduk","name":"동덕여자대학교","pages":18,"q":43,"sale":false,"archive":false},{"slug":"donga","sku":"guide-donga","name":"동아대학교","pages":36,"q":161,"sale":false,"archive":false},{"slug":"myongji","sku":"guide-myongji","name":"명지대학교","pages":39,"q":161,"sale":true,"archive":true},{"slug":"pknu","sku":"guide-pknu","name":"부경대학교","pages":40,"q":187,"sale":false,"archive":false},{"slug":"pusan","sku":"guide-pusan","name":"부산대학교","pages":40,"q":139,"sale":true,"archive":true},{"slug":"sahmyook","sku":"guide-sahmyook","name":"삼육대학교","pages":17,"q":18,"sale":false,"archive":false},{"slug":"seoultech","sku":"guide-seoultech","name":"서울과학기술대학교","pages":33,"q":151,"sale":true,"archive":true},{"slug":"snu","sku":"guide-snu","name":"서울대학교","pages":42,"q":134,"sale":true,"archive":true},{"slug":"uos","sku":"guide-uos","name":"서울시립대학교","pages":40,"q":151,"sale":true,"archive":true},{"slug":"swu","sku":"guide-swu","name":"서울여자대학교","pages":19,"q":61,"sale":false,"archive":false},{"slug":"skku","sku":"guide-skku","name":"성균관대학교","pages":30,"q":81,"sale":true,"archive":true},{"slug":"sungshin","sku":"guide-sungshin","name":"성신여자대학교","pages":40,"q":135,"sale":false,"archive":true},{"slug":"sejong","sku":"guide-sejong","name":"세종대학교","pages":38,"q":145,"sale":false,"archive":true},{"slug":"sookmyung","sku":"guide-sookmyung","name":"숙명여자대학교","pages":34,"q":114,"sale":false,"archive":true},{"slug":"soongsil","sku":"guide-soongsil","name":"숭실대학교","pages":37,"q":165,"sale":false,"archive":true},{"slug":"ajou","sku":"guide-ajou","name":"아주대학교","pages":40,"q":190,"sale":false,"archive":true},{"slug":"yonsei","sku":"guide-yonsei","name":"연세대학교(서울)","pages":30,"q":94,"sale":false,"archive":true},{"slug":"ulsan","sku":"guide-ulsan","name":"울산대학교","pages":39,"q":165,"sale":false,"archive":false},{"slug":"ewha","sku":"guide-ewha","name":"이화여자대학교","pages":39,"q":152,"sale":false,"archive":true},{"slug":"incheon","sku":"guide-incheon","name":"인천대학교","pages":35,"q":154,"sale":false,"archive":false},{"slug":"inha","sku":"guide-inha","name":"인하대학교","pages":45,"q":148,"sale":false,"archive":true},{"slug":"cau","sku":"guide-cau","name":"중앙대학교","pages":42,"q":131,"sale":false,"archive":true},{"slug":"hufs","sku":"guide-hufs","name":"한국외국어대학교","pages":40,"q":167,"sale":false,"archive":true},{"slug":"hanyang-erica","sku":"guide-hanyang-erica","name":"한양대학교(ERICA)","pages":15,"q":11,"sale":false,"archive":false},{"slug":"hongik","sku":"guide-hongik","name":"홍익대학교(서울)","pages":26,"q":49,"sale":false,"archive":false}];
+var HH_GB=[{"slug":"dgist","sku":"guide-dgist","name":"DGIST(대구경북과학기술원)","short":"DGIST(대구경북과학기술원)","pages":31,"q":124,"r":53,"sale":true},{"slug":"gachon","sku":"guide-gachon","name":"가천대학교","short":"가천대","pages":36,"q":142,"r":54,"sale":true},{"slug":"catholic","sku":"guide-catholic","name":"가톨릭대학교","short":"가톨릭대","pages":36,"q":147,"r":59,"sale":false},{"slug":"konkuk","sku":"guide-konkuk","name":"건국대학교(서울)","short":"건국대","pages":37,"q":120,"r":55,"sale":true},{"slug":"kyonggi","sku":"guide-kyonggi","name":"경기대학교","short":"경기대","pages":34,"q":130,"r":49,"sale":true},{"slug":"knu","sku":"guide-knu","name":"경북대학교","short":"경북대","pages":38,"q":162,"r":48,"sale":false},{"slug":"khu","sku":"guide-khu","name":"경희대학교","short":"경희대","pages":41,"q":172,"r":52,"sale":true},{"slug":"korea","sku":"guide-korea","name":"고려대학교(서울)","short":"고려대","pages":33,"q":135,"r":40,"sale":true},{"slug":"kwangwoon","sku":"guide-kwangwoon","name":"광운대학교","short":"광운대","pages":38,"q":148,"r":67,"sale":true},{"slug":"kookmin","sku":"guide-kookmin","name":"국민대학교","short":"국민대","pages":36,"q":143,"r":60,"sale":true},{"slug":"dankook","sku":"guide-dankook","name":"단국대학교(죽전)","short":"단국대(죽전)","pages":16,"q":18,"r":20,"sale":false},{"slug":"duksung","sku":"guide-duksung","name":"덕성여자대학교","short":"덕성여자대","pages":18,"q":42,"r":20,"sale":false},{"slug":"dongguk","sku":"guide-dongguk","name":"동국대학교","short":"동국대","pages":39,"q":176,"r":59,"sale":true},{"slug":"dongduk","sku":"guide-dongduk","name":"동덕여자대학교","short":"동덕여자대","pages":18,"q":43,"r":20,"sale":false},{"slug":"donga","sku":"guide-donga","name":"동아대학교","short":"동아대","pages":36,"q":161,"r":48,"sale":false},{"slug":"myongji","sku":"guide-myongji","name":"명지대학교","short":"명지대","pages":39,"q":161,"r":55,"sale":true},{"slug":"pknu","sku":"guide-pknu","name":"부경대학교","short":"부경대","pages":39,"q":187,"r":55,"sale":false},{"slug":"pusan","sku":"guide-pusan","name":"부산대학교","short":"부산대","pages":40,"q":139,"r":61,"sale":true},{"slug":"sahmyook","sku":"guide-sahmyook","name":"삼육대학교","short":"삼육대","pages":17,"q":18,"r":18,"sale":false},{"slug":"seoultech","sku":"guide-seoultech","name":"서울과학기술대학교","short":"서울과학기술대","pages":33,"q":151,"r":45,"sale":true},{"slug":"snu","sku":"guide-snu","name":"서울대학교","short":"서울대","pages":41,"q":134,"r":49,"sale":true},{"slug":"uos","sku":"guide-uos","name":"서울시립대학교","short":"서울시립대","pages":40,"q":151,"r":53,"sale":true},{"slug":"swu","sku":"guide-swu","name":"서울여자대학교","short":"서울여자대","pages":19,"q":61,"r":20,"sale":false},{"slug":"skku","sku":"guide-skku","name":"성균관대학교","short":"성균관대","pages":30,"q":81,"r":35,"sale":true},{"slug":"sungshin","sku":"guide-sungshin","name":"성신여자대학교","short":"성신여자대","pages":40,"q":135,"r":66,"sale":false},{"slug":"sejong","sku":"guide-sejong","name":"세종대학교","short":"세종대","pages":37,"q":145,"r":51,"sale":false},{"slug":"sookmyung","sku":"guide-sookmyung","name":"숙명여자대학교","short":"숙명여자대","pages":34,"q":114,"r":45,"sale":false},{"slug":"soongsil","sku":"guide-soongsil","name":"숭실대학교","short":"숭실대","pages":37,"q":165,"r":54,"sale":false},{"slug":"ajou","sku":"guide-ajou","name":"아주대학교","short":"아주대","pages":40,"q":190,"r":62,"sale":false},{"slug":"yonsei","sku":"guide-yonsei","name":"연세대학교(서울)","short":"연세대","pages":30,"q":94,"r":39,"sale":false},{"slug":"ulsan","sku":"guide-ulsan","name":"울산대학교","short":"울산대","pages":39,"q":165,"r":48,"sale":false},{"slug":"ewha","sku":"guide-ewha","name":"이화여자대학교","short":"이화여자대","pages":39,"q":152,"r":50,"sale":false},{"slug":"incheon","sku":"guide-incheon","name":"인천대학교","short":"인천대","pages":35,"q":154,"r":44,"sale":false},{"slug":"inha","sku":"guide-inha","name":"인하대학교","short":"인하대","pages":45,"q":148,"r":69,"sale":false},{"slug":"cau","sku":"guide-cau","name":"중앙대학교","short":"중앙대","pages":42,"q":131,"r":59,"sale":false},{"slug":"hufs","sku":"guide-hufs","name":"한국외국어대학교","short":"한국외국어대","pages":40,"q":167,"r":53,"sale":false},{"slug":"hanyang-erica","sku":"guide-hanyang-erica","name":"한양대학교(ERICA)","short":"한양대(ERICA)","pages":15,"q":11,"r":20,"sale":false},{"slug":"hongik","sku":"guide-hongik","name":"홍익대학교(서울)","short":"홍익대","pages":26,"q":49,"r":35,"sale":false}];
 (function(){
   var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),tabs=document.querySelectorAll('.bar [role=tab]'),q=document.getElementById('q2'),f='all';
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     var pr=o.sale?'<span class="price">16,500원</span>':'<span class="w">준비 중</span>';
     var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="16500">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
-    var arc=o.archive?'<a class="arc" href="../interview/'+o.slug+'.html">무료 아카이브 열람</a>':'<span class="arc" style="text-decoration:none">아카이브 준비 중</span>';
-    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span></div><div class="pr">'+pr+arc+'</div><div class="acts">'+act+'</div></article>';
+    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span><span>규칙 '+o.r+'개</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
   }
   function render(){
     var kw=(q.value||'').trim();
-    var list=HH_GB.filter(function(o){return (f==='all'||(f==='sale'&&o.sale)||(f==='ready'&&!o.sale)||(f==='archive'&&o.archive))&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
+    var list=HH_GB.filter(function(o){return (f==='all'||(f==='sale'&&o.sale)||(f==='ready'&&!o.sale))&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
     grid.innerHTML=list.map(card).join('')||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
     cnt.textContent=list.length+'권';
   }

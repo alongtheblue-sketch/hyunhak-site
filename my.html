@@ -33,7 +33,7 @@
 .who{font-size:var(--t-h4);font-weight:700;letter-spacing:-0.02em}
 .since{margin-top:4px;font-size:13px;color:var(--gray);overflow-wrap:anywhere}
 .menu2{margin-top:var(--s3);display:flex;flex-direction:column}
-.menu2 a{padding:12px 0;font-size:14px;font-weight:600;border-top:1px solid var(--hairs);display:flex;justify-content:space-between}
+.menu2 a{padding:12px 0;font-size:14px;font-weight:600;border-top:1px solid var(--hairs);display:flex;align-items:center;gap:10px}
 .menu2 a.cur::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);align-self:center}
 .menu2 a:hover{color:var(--gray)}
 .out{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--hairs)}
@@ -71,7 +71,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -83,7 +83,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -106,7 +106,7 @@
       <p class="who" id="whoName">회원</p>
       <p class="since" id="whoSince"></p>
       <nav class="menu2" aria-label="마이페이지 메뉴">
-        <a class="cur" href="my.html">한눈에</a>
+        <a class="cur" href="my.html" aria-current="page">한눈에</a>
         <a href="library.html">자료실</a>
         <a href="studio.html">면접 스튜디오</a>
         <a href="store.html">봉투 모의고사</a>
@@ -130,6 +130,16 @@
     <div class="blk">
       <div class="sh"><div><h2>자료실</h2><p>구매한 가이드북은 보안 리더로 열람</p></div><a class="tlink" href="library.html">자료실로 가기</a></div>
     </div>
+
+    <div class="blk">
+      <div class="sh"><div><h2>수신 설정</h2><p>광고성 정보를 받을지 고르는 곳</p></div></div>
+      <div class="check">
+        <input type="checkbox" id="mktOpt">
+        <label for="mktOpt"><span>광고성 정보 수신 동의
+          <small>새 자료와 강좌, 할인 안내를 이메일과 문자로 받습니다. 선택 항목이며, 해지해도 이용에 제한이 없습니다.</small></span></label>
+      </div>
+      <p class="ckfoot" id="mktMsg" role="status" aria-live="polite">주문과 결제, 이용권 만료 안내는 수신 설정과 무관하게 보냅니다.</p>
+    </div>
   </section>
 </div>
 
@@ -145,7 +155,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -158,7 +168,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a class="on" href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a class="on" href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -210,6 +220,23 @@ document.addEventListener('DOMContentLoaded', async function(){
         +(o.receipt_url?', <a class="tlink" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+'</span></div></li>';
     }).join('');
   }catch(e){}
+
+  // 수신 설정 — 방침과 약관이 "마이페이지에서 언제든 해지" 를 약속하므로 실제 수단이 있어야 한다
+  var mkt = document.getElementById('mktOpt'), mktMsg = document.getElementById('mktMsg');
+  var MKT_BASE = '주문과 결제, 이용권 만료 안내는 수신 설정과 무관하게 보냅니다.';
+  mkt.checked = !!st.member.marketing_opt_in;
+  mkt.addEventListener('change', async function(){
+    var want = mkt.checked;
+    mkt.disabled = true;
+    try{
+      await HH.api('/api/auth/me',{method:'PATCH',body:JSON.stringify({marketing_opt_in:want})});
+      mktMsg.textContent = (want?'수신 동의를 저장했습니다. ':'수신을 해지했습니다. 이제 광고성 정보를 보내지 않습니다. ') + MKT_BASE;
+    }catch(e){
+      mkt.checked = !want;   // 저장에 실패했는데 화면만 바뀌어 있으면 해지한 줄 알고 넘어간다
+      mktMsg.textContent = (e.message||'저장하지 못했습니다') + '. 잠시 후 다시 시도해 주십시오.';
+    }
+    mkt.disabled = false;
+  });
 
   document.getElementById('logoutBtn').addEventListener('click', async function(ev){
     ev.preventDefault();

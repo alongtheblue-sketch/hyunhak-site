@@ -261,7 +261,8 @@ def main():
     total_missing = 0
     for rel, s in texts.items():
         imgs = re.findall(r"<img\b[^>]*>", s, re.I)
-        missing = [i for i in imgs if not re.search(r'\balt=["\'][^"\']+["\']', i)]
+        # alt 속성 자체가 없어야 누락. alt="" 는 장식 이미지 유효 표기 (WCAG) — 누락 아님
+        missing = [i for i in imgs if not re.search(r'\balt=["\'][^"\']*["\']', i)]
         if missing:
             total_missing += len(missing)
             warns.append(f"{rel}: alt 누락 {len(missing)}/{len(imgs)}")

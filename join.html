@@ -58,7 +58,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -70,7 +70,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -82,7 +82,7 @@
     <h1>회원 가입</h1>
     <p class="lede" id="joinSub">약관 동의, 본인인증, 정보 입력. 완료와 동시에 로그인.</p>
 
-    <div id="oauthMsg" hidden style="margin-top:var(--s4)"></div>
+    <div id="oauthMsg" role="status" aria-live="polite" hidden style="margin-top:var(--s4)"></div>
 
     <div class="socwrap" id="socwrap" style="margin:var(--s4) 0 var(--s6)">
       <p class="or">간편 가입</p>
@@ -100,7 +100,7 @@
       <h2><span class="no">1</span>약관 동의</h2>
       <div class="check all">
         <input type="checkbox" id="ck-all">
-        <label for="ck-all"><span>전체 동의</span></label>
+        <label for="ck-all"><span>전체 동의 <small>선택 항목까지 함께 체크됩니다</small></span></label>
       </div>
       <div class="check">
         <input type="checkbox" id="ck-terms" class="ck-item">
@@ -109,17 +109,20 @@
       </div>
       <div class="check">
         <input type="checkbox" id="ck-priv" class="ck-item">
-        <label for="ck-priv"><span>개인정보 수집과 이용 동의 <small>필수. 이름, 연락처, 이메일 수집</small></span></label>
+        <label for="ck-priv"><span>개인정보 수집과 이용 동의 <small>필수. 이름, 연락처, 이메일을 계정 식별과 주문 처리에 씁니다</small></span></label>
         <a class="view" href="privacy.html" target="_blank" rel="noopener">전문</a>
       </div>
       <div class="check">
         <input type="checkbox" id="ck-age" class="ck-item">
-        <label for="ck-age"><span>만 14세 이상 확인 <small>필수. 만 14세 미만은 법정대리인 동의 절차로 분기</small></span></label>
+        <label for="ck-age"><span>만 14세 이상 확인 <small>필수. 연구소 서비스는 만 14세 이상만 가입할 수 있습니다</small></span></label>
       </div>
       <div class="check">
         <input type="checkbox" id="ck-mkt" class="ck-item">
-        <label for="ck-mkt"><span>새 자료와 소식 수신 <small>선택. 언제든 해지 가능</small></span></label>
+        <label for="ck-mkt"><span>광고성 정보 수신 동의 <small>선택. 새 자료와 강좌 안내를 이메일과 문자로 보냅니다. 동의하지 않아도 가입과 이용에 제한이 없고, 마이페이지에서 언제든 해지할 수 있습니다</small></span></label>
+        <a class="view" href="privacy.html#ads" target="_blank" rel="noopener">전문</a>
       </div>
+      <p class="ckfoot">필수 항목은 동의를 거부할 수 있으나, 거부하시면 회원 가입과 서비스 이용이 어렵습니다.
+      선택 항목은 거부하셔도 아무런 불이익이 없습니다.</p>
     </section>
 
     <section class="step">
@@ -183,7 +186,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -196,7 +199,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -215,6 +218,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   // ── 일반 가입 ──
   if(!social){
     HH.oauthButtons($('#socs'), next);
+    ['nm','ph','em','pw','pw2'].forEach(function(id){ var el=$('#'+id); if(el) el.addEventListener('keydown', function(ev){
+      if(ev.key==='Enter'){ ev.preventDefault(); $('#joinBtn').click(); } }); });   // 입력 중 Enter = 가입 완료
     $('#joinBtn').addEventListener('click', async function(){
       if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의하십시오');
       var name=$('#nm').value.trim(), phone=$('#ph').value.trim(), email=$('#em').value.trim(), pw=$('#pw').value, pw2=$('#pw2').value;
@@ -224,7 +229,9 @@ document.addEventListener('DOMContentLoaded', async function(){
       if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
       var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중';
       try{
-        await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,marketing_opt_in:$('#ck-mkt').checked})});
+        await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,
+          agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked, agree_age:$('#ck-age').checked,
+          marketing_opt_in:$('#ck-mkt').checked})});
         location.href=next;
       }catch(e){ alert(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent='가입 완료'; }
     });

@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>__TITLE__</title>
+<link rel="icon" href="../assets/favicon_32.png">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="stylesheet" href="../assets/base.css">
+<style>
+/* 가이드북 상품 면 v3 (2026-08-26, 현학적 연구소 편집본), build_guidebook.render_page 가 채운다 */
+.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding:var(--s4) 0 var(--s6)}
+.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s6) var(--s5);position:relative}
+.prod .cover img{width:min(340px,84%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:0 24px 48px rgba(49,46,46,.28);border-radius:3px}
+.prod .cover .volchip{position:absolute;top:14px;left:16px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--gray)}
+.buy{position:sticky;top:96px}
+.buy .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.buy .price{display:block;margin-top:var(--s3);font-size:var(--t-h2)}
+.buy .price small{display:block;margin:6px 0 0;font-size:13px;font-weight:500}
+.buy .spec{margin-top:var(--s3);display:flex;flex-direction:column}
+.buy .spec li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--hairs);font-size:14px}
+.buy .spec li span:first-child{color:var(--gray);flex:none}
+.buy .spec li span:last-child{text-align:right}
+.buy .acts{margin-top:var(--s4);display:flex;flex-direction:column;gap:10px}
+.buy .acts .btn{width:100%}
+.buy .note{margin-top:var(--s3)}
+/* 지면 미리보기 필름 */
+.pvs{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.pv{flex:0 0 clamp(210px,25vw,290px);scroll-snap-align:start;position:relative;margin:0}
+.pv img{width:100%;height:auto;border:1px solid var(--hairs);border-radius:4px;box-shadow:0 12px 28px rgba(49,46,46,.16);background:var(--card)}
+.pv figcaption{margin-top:8px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:8px}
+.pv .lk{position:absolute;left:10px;bottom:44px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(49,46,46,.86);color:var(--paper);padding:5px 9px;border-radius:3px}
+.pvnote{font-size:13px;color:var(--gray);margin-top:2px}
+/* 5부 구조 */
+.parts{display:flex;flex-direction:column}
+.parts .p5{display:grid;grid-template-columns:72px minmax(0,1fr);gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--hairs);align-items:baseline}
+.parts .p5:last-child{border-bottom:1px solid var(--hairs)}
+.parts .no{font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.parts h3{font-size:var(--t-h4);margin:0}
+.parts .d{margin-top:6px;font-size:14px;color:var(--body);max-width:64ch}
+.parts .st{margin-top:10px;display:flex;gap:var(--s4);flex-wrap:wrap}
+.parts .st span{font-size:13px;color:var(--gray)}
+.parts .st b{font-size:15px;color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
+/* 면접 형태 판정 */
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.forms .f{border:1px solid var(--hair);border-radius:6px;padding:14px 16px;background:var(--card)}
+.forms .f.off{opacity:.45;background:none}
+.forms .f b{display:block;font-size:15px}
+.forms .f span{display:block;margin-top:4px;font-size:12.5px;color:var(--gray)}
+.forms .f.on span{color:var(--seal);font-weight:600}
+.trk{margin-top:var(--s4)}
+.trk li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;padding:11px 0;border-top:1px solid var(--hairs);font-size:14px}
+.trk li:last-child{border-bottom:1px solid var(--hairs)}
+.trk .t{font-weight:600}
+.trk .f{color:var(--body)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+.chips span{font-size:12.5px;border:1px solid var(--hair);border-radius:999px;padding:4px 11px;color:var(--body);background:var(--card)}
+/* 규칙 티저 */
+.rules3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.rules3 .r{border:1px solid var(--hair);border-radius:6px;padding:16px;background:var(--card)}
+.rules3 .r .cd{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--seal)}
+.rules3 .r .ar{font-size:12.5px;color:var(--gray);margin-left:8px}
+.rules3 .r p{margin-top:8px;font-size:14px;line-height:1.65}
+.rules3 .r p b{font-weight:600}
+.rlock{margin-top:var(--s3);font-size:13px;color:var(--gray)}
+/* 유형 표, 맛보기 (v2 유지) */
+.gbd{max-width:860px}
+.gbd .sec{padding:var(--s7) 0 0}
+.taste li{padding:16px 0;border-top:1px solid var(--hairs)}
+.taste li:last-child{border-bottom:1px solid var(--hairs)}
+.taste .ty{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
+.taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
+.taste .src{margin-top:6px;font-size:12.5px;color:var(--gray);display:block}
+.tastenote{margin-top:var(--s3)}
+.strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:15px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
+.strat li:last-child{border-bottom:1px solid var(--hairs)}
+.strat .sn{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--seal);font-variant-numeric:tabular-nums}
+.after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
+.after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
+@media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}.pv{flex-basis:66vw}.trk li{grid-template-columns:1fr}}
+</style>
+</head>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
+
+<!--v2:shell-->
+
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="index.html">가이드북</a><span aria-hidden="true">/</span><span>__NAME__</span></nav>
+    <h1 class="rv">__H1__</h1>
+    <p class="lede rv">__LEDE__</p>
+   </div>
+  </div>
+</section>
+
+<section class="wrap prod">
+  <figure class="cover rv"><span class="volchip">VOL.__VOL__</span><img src="../assets/covers/__SLUG__.jpg" alt="__H1__ 표지" width="210" height="297" fetchpriority="high"></figure>
+  <div class="panel buy rv">
+    <div class="top"><span class="eyebrow" style="margin:0">가이드북, __SKU__</span>__STATUS_BADGE__</div>
+    <h2>__H1__</h2>
+    <span class="__PRICE_CLS__">__PRICE__원<small>부가세 포함, 보안 리더 열람</small></span>
+    <ul class="spec">
+      <li><span>실제 질문</span><span>__QUESTIONS__건, 선배 후기 __YEARS__ 관측</span></li>
+      <li><span>전환 규칙</span><span>__RULES__개, 내 생기부에서 질문 뽑기</span></li>
+      <li><span>전형 분석</span><span>__TRACKS_N__개 전형, 제원 __SPEC_N__항목</span></li>
+      <li><span>형태</span><span>PDF __PAGES__면, 브라우저 보안 리더</span></li>
+      <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
+    </ul>
+    <div class="acts">
+      __ACTS__
+    </div>
+    <p class="note">__NOTE__</p>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="facts rv">
+      <div><b>__QUESTIONS__</b><span>실제 나온 질문</span></div>
+      <div><b>__RULES__</b><span>생기부 전환 규칙</span></div>
+      <div><b>__TYPES_N__</b><span>질문 유형</span></div>
+      <div><b>__PAGES__</b><span>면</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>지면 미리보기</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
+    <div class="pvs rv" tabindex="0" role="region" aria-label="지면 미리보기 가로 스크롤">
+__PREVIEWS__
+    </div>
+    <p class="pvnote">각 지면 아래 숫자는 실제 면 번호입니다. 워터마크는 열람 계정마다 다르게 찍힙니다.</p>
+  </div>
+</section>
+
+<div class="wrap">
+<div class="gbd">
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>다섯 부로 끝나는 구성</h2><p>표지의 차례 그대로. 각 부의 수치는 이 책에서 셉니다.</p></div></div>
+    <div class="parts rv">
+__PARTS__
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>이 대학의 면접, 판정부터</h2><p>1부와 2부가 하는 일. 형태가 다르면 준비 방법이 다릅니다.</p></div></div>
+    <div class="forms rv">
+__FORMS__
+    </div>
+    <ul class="trk rv">
+__TRACKS__
+    </ul>
+    <div class="chips rv" aria-label="전형별 제원 항목">
+__SPEC_CHIPS__
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>질문 유형 분포</h2><p>__TYPES_NOTE__</p></div></div>
+    <div class="tblwrap rv"><table class="tbl"><thead><tr>__TYPES_HEAD__</tr></thead><tbody>
+__TYPES_ROWS__
+    </tbody></table></div>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 자료집 기관명만 표기.</p></div></div>
+    <ol class="taste rv">
+__SAMPLES__
+    </ol>
+    <p class="tastenote note">전체 __QUESTIONS__건과 유형 해설은 책 본문에.</p>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>전환 규칙 __RULES__개, 이 책의 본론</h2><p>생기부의 기재 한 줄이 어느 질문으로 바뀌는지. 규칙마다 실제 나온 질문과 꼬리질문이 붙습니다.</p></div></div>
+    <div class="rules3 rv">
+__RULES3__
+    </div>
+    <p class="rlock">규칙의 질문 틀과 실제 질문, 꼬리질문 __RULES__세트는 본문에서. 위 미리보기 지면에 흐림 처리로 실려 있습니다.</p>
+    <div class="chips rv" aria-label="규칙이 다루는 생기부 영역">
+__RULE_CHIPS__
+    </div>
+  </section>
+
+__STRAT_SEC__
+
+  <div class="after rv">
+    <span class="note">현학적 연구소 편집본, 공식 요강과 후기 관측을 구분 표기</span>
+    <div class="nb">__PREV__<a class="tlink" href="index.html">전체 38권</a>__NEXT__</div>
+  </div>
+</div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="final rv">
+      <div><h2>__FINAL_H2__</h2><p>__FINAL_P__</p></div>
+      <div class="acts">__FINAL_ACTS__</div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!--v2:footer-->
+
+</div></div>
+
+<!--v2:fix-->
+
+<script src="../assets/app.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('[data-cart-sku]').forEach(function(el){
+    el.addEventListener('click', function(ev){
+      ev.preventDefault();
+      HH.addToCart({ sku: el.dataset.cartSku, title: el.dataset.cartTitle,
+        price: +el.dataset.cartPrice, qty: 1, ship: false });
+      if (confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?')) location.href = '../cart.html';
+    });
+  });
+});
+</script>
+</body>
+</html>

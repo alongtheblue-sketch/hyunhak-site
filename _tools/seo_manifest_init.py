@@ -18,16 +18,10 @@ BASE = "https://hyunhak.com"
 HAND = {
     "index.html": {
         "title": "현학적 연구소",
-        "description": "현학적 연구소는 대입 제시문 면접 준비를 다룹니다. 연세대, 고려대 기출 지문 해제와 촬영 첨삭, 학교별 2027 면접 가이드북, 26개 대학 면접 기출 아카이브.",
+        "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 학교별 2027 면접 가이드북 38권, 연세대와 고려대 제시문 면접 스튜디오, 실제 기출 4,766건과 전환 규칙 1,790개.",
         "type": "home", "priority": 1.0, "changefreq": "weekly",
         "breadcrumb": [{"name": "현학적 연구소", "path": "/"}],
-        "schema": {"items": ["programs/yonsei.html", "programs/korea.html", "programs/skku.html", "studio.html", "guidebook/index.html", "store.html", "interview/index.html"]},
-    },
-    "interview/index.html": {
-        "description": "26개 대학 수시 면접의 유형 판정과 실제 면접 기출 질문 3,733건, 학종 면접 질문과 준비 전략. 면접 후기와 2027 공식 요강으로 재구성한 무료 아카이브입니다.",
-        "type": "hub", "priority": 0.8, "changefreq": "weekly",
-        "breadcrumb": [{"name": "현학적 연구소", "path": "/"}, {"name": "면접 아카이브", "path": "/interview/"}],
-        "schema": {"list_dir": "interview/", "list_name": "대학별 면접 아카이브"},
+        "schema": {"items": ["programs/yonsei.html", "programs/korea.html", "studio.html", "guidebook/index.html", "store.html"]},
     },
     "programs/yonsei.html": {
         "description": "연세대 활동우수형 제시문 면접을 준비 8분과 답변 5분의 실전 규격으로 훈련하는 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 전권 330,000원, 지문 1편 22,000원.",
@@ -109,7 +103,7 @@ SITE = {
     "skip_inject": ["library.html", "my.html", "reader.html"],
     "planned_paths": ["programs/skku.html"],
     "llms": {
-        "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 제시문 해제집 스토어를 운영하고, 26개 대학 면접 기출 아카이브를 무료로 공개합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
+        "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 영어 봉투 모의고사 스토어를 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
         "products": [
             {"name": "학교별 2027 면접 가이드북 (디지털, 38권)", "path": "/guidebook/", "price": "1권 16,500원 (보안 리더 열람, 원본 PDF 비제공)",
              "desc": "대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북."},
@@ -118,18 +112,13 @@ SITE = {
             {"name": "스토어", "path": "/store.html", "price": "해제집 26,000원부터, 영어 봉투 모의고사 1부 38,500원",
              "desc": "인문, 사회, 자연 계열 제시문 해제집과 구술 노트, 영어 봉투 모의고사 실물 배송."},
         ],
-        "free": [{"name": "면접 아카이브 26교", "path": "/interview/", "desc": "대학별 면접 유형 판정, 실제 기출 질문, 준비 전략. 회원 가입 없이 열람."}],
+        "free": [],
         "keywords": ["연세대 면접", "고려대 계열적합 면접", "제시문 면접", "구술면접", "대입 면접 준비", "면접 기출", "성균관대 면접", "면접가이드북", "학종 면접 질문"],
         "contact": "admin@hyunhak.com",
     },
 }
 
 DEFAULTS = {
-    "interview/*": {
-        "_note": "면접 아카이브 26교. title/description 은 init 템플릿, 개별 수정은 pages 에서.",
-        "type": "article", "priority": 0.7, "changefreq": "monthly", "noindex": False,
-        "breadcrumb": [{"name": "현학적 연구소", "path": "/"}, {"name": "면접 아카이브", "path": "/interview/"}],
-    },
     "guidebook/*": {
         "_note": "학교별 2027 면접 가이드북 38권 (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
         "type": "product", "priority": 0.8, "changefreq": "monthly", "noindex": False,
@@ -144,18 +133,6 @@ DEFAULTS = {
                               {"name": "지문 1편 (응시 5회)", "price": 22000, "sku": None}]},
     },
 }
-
-
-def archive_stats():
-    """interview/index.html 허브에서 slug -> (질문 수, 유형 수)."""
-    stats = {}
-    try:
-        s = C.read("interview/index.html")
-    except FileNotFoundError:
-        return stats
-    for m in re.finditer(r"href=['\"]([a-z]+)\.html['\"][^>]*>.*?([\d,]+)건.*?유형\s*(\d+)종", s, re.S):
-        stats[m.group(1)] = (m.group(2), m.group(3))
-    return stats
 
 
 def desc_ok(d):
@@ -178,7 +155,7 @@ def build_entry(rel, s, stats):
     hand = HAND.get(rel, {})
     pat = C.match_default({"defaults": DEFAULTS}, rel)
 
-    if pat == "interview/*":
+    if False:  # interview/* 폐지 (2026-08-26)
         school = school_from_h1(h1)
         n, k = stats.get(os.path.basename(rel)[:-5], ("", ""))
         cnt = f"기출 및 예상 질문 {n}건, 유형 {k}종, " if n else "기출 질문과 유형 판정, "

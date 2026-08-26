@@ -91,11 +91,13 @@ body.v2{background:var(--ink)}
 :where(body.v2) .hd .row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--s5);height:72px;padding:0 var(--gut)}
 :where(body.v2) .brand{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:700;font-size:17px;letter-spacing:-0.02em;padding:12px 0;margin:-12px 0}
 :where(body.v2) .brand svg{width:28px;height:28px}
-:where(body.v2) .gnb{display:flex;gap:var(--s4);justify-content:center}
-:where(body.v2) .gnb a{font-weight:600;font-size:15px;letter-spacing:-0.01em;padding:24px 4px;margin:-24px 0;display:inline-block;border-bottom:2px solid transparent}
+:where(body.v2) .gnb{display:flex;gap:clamp(16px,1.9vw,28px);justify-content:center;flex-wrap:nowrap}
+:where(body.v2) .gnb a.gap{margin-left:clamp(10px,1.3vw,20px)}   /* 파는 것 4 과 부가 2 의 묶음 경계 */
+:where(body.v2) .mnav a.gap{margin-left:0}
+:where(body.v2) .gnb a{font-weight:600;font-size:15px;letter-spacing:-0.01em;padding:24px 4px;margin:-24px 0;display:inline-block;border-bottom:2px solid transparent;white-space:nowrap;flex:0 0 auto}
 :where(body.v2) .gnb a:hover,:where(body.v2) .gnb a.on{border-bottom-color:var(--ink)}
 :where(body.v2) .hd .tools{display:flex;align-items:center;gap:var(--s3)}
-:where(body.v2) .search{display:flex;align-items:center;height:48px;border:1px solid var(--hair);border-radius:999px;background:var(--card);padding:0 2px 0 18px;min-width:220px}
+:where(body.v2) .search{display:flex;align-items:center;height:48px;border:1px solid var(--hair);border-radius:999px;background:var(--card);padding:0 2px 0 18px;width:clamp(180px,17vw,240px);flex:0 1 auto}
 :where(body.v2) .search .ph{font-size:13px;color:var(--gray);white-space:nowrap;margin-right:8px}
 :where(body.v2) .search input{border:0;background:transparent;font:inherit;font-size:14px;color:var(--ink);width:100%;outline:none;min-height:44px}
 :where(body.v2) .search input:focus-visible{outline:none}
@@ -135,6 +137,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .badge.mute{background:transparent;color:var(--gray);border:1px solid var(--hairs)}
 :where(body.v2) .price{font-weight:700;color:var(--seal);font-size:var(--t-lg);letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
 :where(body.v2) .price.sub{font-size:15px}
+:where(body.v2) .price.mute{color:var(--gray)} /* 준비 중 상품: 참고 가격, 朱印 강조 해제 */
 :where(body.v2) .price small{font-size:13px;font-weight:600;color:var(--gray);margin-left:6px}
 
 /* 섹션 공통 */
@@ -162,7 +165,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .bracket::after{right:-8px;bottom:-8px;border-left:0;border-top:0}
 
 /* 탭 */
-:where(body.v2) .tabs{display:flex;gap:4px;border-bottom:1px solid var(--hair);overflow-x:auto}
+:where(body.v2) .tabs{display:flex;gap:4px;border-bottom:1px solid var(--hair);overflow-x:auto;min-width:0;max-width:100%}
 :where(body.v2) .tabs button{font-weight:600;font-size:14px;color:var(--gray);padding:0 14px;min-height:44px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color .2s var(--ease)}
 :where(body.v2) .tabs button:hover{color:var(--ink)}
 :where(body.v2) .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
@@ -299,7 +302,7 @@ body.v2{background:var(--ink)}
   :where(body.v2) .fix{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:6px 8px calc(6px + env(safe-area-inset-bottom));
     background:rgba(246,242,233,.96);backdrop-filter:blur(10px);border-top:1px solid var(--hair)}
   :where(body.v2) .fix a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:6px;font-size:12px;font-weight:600;color:var(--gray)}
-  :where(body.v2) .fix a i{display:block;width:18px;height:18px;border:1.5px solid currentColor;border-radius:4px;opacity:.8}
+  :where(body.v2) .fix a svg{display:block;width:18px;height:18px;opacity:.85}
   :where(body.v2) .fix a.pri{background:var(--ink);color:var(--paper)}
   :where(body.v2) .fix a.on{color:var(--ink)}
 }
@@ -311,9 +314,9 @@ body.v2{background:var(--ink)}
 /* 실물 표지 부채꼴 (V6 수리: AI 목업 대신 실제 표지 렌더) */
 :where(body.v2) .covers{position:relative;aspect-ratio:3/2;overflow:hidden;border-radius:4px;background:var(--mat)}
 :where(body.v2) .covers>img,:where(body.v2) .card .covers>img,:where(body.v2) .mock .covers>img{position:absolute;width:37%;height:auto;aspect-ratio:210/297;object-fit:cover;left:50%;top:9%;transform-origin:50% 100%;box-shadow:0 14px 30px rgba(49,46,46,.22);border-radius:2px}
-:where(body.v2) .covers>img:nth-child(1){transform:translateX(-122%) rotate(-7deg);top:15%}
+:where(body.v2) .covers>img:nth-child(1){transform:translateX(-118%) rotate(-7deg);top:15%}
 :where(body.v2) .covers>img:nth-child(2){transform:translateX(-50%);z-index:2;top:6%}
-:where(body.v2) .covers>img:nth-child(3){transform:translateX(22%) rotate(7deg);top:15%}
+:where(body.v2) .covers>img:nth-child(3){transform:translateX(18%) rotate(7deg);top:15%}
 :where(body.v2) .covers .badge{position:absolute;top:12px;left:12px;z-index:3;background:var(--paper)}
 :where(body.v2) .cv{width:56px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:2px;box-shadow:0 4px 12px rgba(49,46,46,.18);flex:none}
 
@@ -374,6 +377,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .check small{display:block;font-size:12.5px;color:var(--gray);margin-top:2px}
 :where(body.v2) .check .view{margin-left:auto;flex:none;font-size:12.5px;color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:13px 8px;margin:-13px -8px 0 auto}
 :where(body.v2) .check .view:hover{color:var(--ink)}
+:where(body.v2) .ckfoot{margin:14px 0 0;font-size:12.5px;line-height:1.6;color:var(--gray)}
 :where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:6px;background:rgba(188,53,41,.06);border-left:3px solid var(--seal);font-size:14px;line-height:1.7}
 :where(body.v2) .oauthmsg.info{background:var(--mat);border-left-color:var(--ink)}
 :where(body.v2) .rail{display:flex;gap:4px;border-bottom:1px solid var(--hair);margin-bottom:var(--s6);overflow-x:auto}
@@ -413,6 +417,15 @@ body.v2{background:var(--ink)}
 
 /* 표 */
 :where(body.v2) .tblwrap{overflow-x:auto;margin-top:var(--s4);border-top:2px solid var(--ink)}
+:where(body.v2) .tblwrap .atbl.wide{min-width:1080px} /* 8열+ 제원표: 셀 세로 파열 대신 가로 스크롤 */
+/* 실제로 넘치는 표만 app.js 가 .scrollx 부여 — 가장자리 그림자로 더 있음을 알리고, 초점 링을 남긴다 */
+:where(body.v2) .tblwrap.scrollx{background:linear-gradient(90deg,var(--paper) 30%,transparent),linear-gradient(90deg,transparent,var(--paper) 70%) 100% 0,
+  radial-gradient(farthest-side at 0 50%,rgba(49,46,46,.16),transparent),radial-gradient(farthest-side at 100% 50%,rgba(49,46,46,.16),transparent) 100% 0;
+  background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
+:where(body.v2) .tblwrap.scrollx:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+/* 안내는 표 앞에. ::after 로 두면 900px 넘는 표를 다 지난 뒤에야 만난다. 터치와 키보드 문구 병기 */
+:where(body.v2) .tblnote{font-size:12px;color:var(--gray);margin:var(--s4) 0 -8px}
+:where(body.v2) .tblwrap .atbl.wide th{white-space:nowrap}
 :where(body.v2) .tbl{border-collapse:collapse;width:100%;min-width:520px;font-size:13.5px}
 :where(body.v2) .tbl th{font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--gray);text-align:left;padding:12px 14px 12px 0;border-bottom:1px solid var(--hair);white-space:nowrap}
 :where(body.v2) .tbl td{padding:12px 14px 12px 0;border-bottom:1px solid var(--hairs);color:var(--body);line-height:1.7;vertical-align:top}
@@ -453,6 +466,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) .plan h3{font-size:var(--t-h3);font-weight:700;letter-spacing:-0.02em}
 :where(body.v2) .plan .who{font-size:14px;color:var(--gray);margin-top:-8px}
 :where(body.v2) .plan .price{font-size:var(--t-h2)}
+:where(body.v2) .plan .deal{font-size:14px;color:var(--seal);margin-top:-6px}
+:where(body.v2) .plan .deal b{font-weight:700}
 :where(body.v2) .plan .inc{display:flex;flex-direction:column}
 :where(body.v2) .plan .inc li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--hairs);font-size:14px}
 :where(body.v2) .plan .inc li span:first-child{color:var(--gray)}

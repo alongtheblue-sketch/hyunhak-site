@@ -27,10 +27,11 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
-/* 가이드북 상품 면 전용 (build_guidebook.render_page 가 채운다) */
-.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding:var(--s4) 0 var(--s8)}
-.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s7) var(--s5)}
-.prod .cover img{width:min(300px,72%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:0 20px 40px rgba(49,46,46,.22);border-radius:2px}
+/* 가이드북 상품 면 v3 (2026-08-26, 현학적 연구소 편집본), build_guidebook.render_page 가 채운다 */
+.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding:var(--s4) 0 var(--s6)}
+.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s6) var(--s5);position:relative}
+.prod .cover img{width:min(340px,84%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:0 24px 48px rgba(49,46,46,.28);border-radius:3px}
+.prod .cover .volchip{position:absolute;top:14px;left:16px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--gray)}
 .buy{position:sticky;top:96px}
 .buy .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .buy .price{display:block;margin-top:var(--s3);font-size:var(--t-h2)}
@@ -42,22 +43,60 @@
 .buy .acts{margin-top:var(--s4);display:flex;flex-direction:column;gap:10px}
 .buy .acts .btn{width:100%}
 .buy .note{margin-top:var(--s3)}
+/* 지면 미리보기 필름 */
+.pvs{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.pv{flex:0 0 clamp(210px,25vw,290px);scroll-snap-align:start;position:relative;margin:0}
+.pv img{width:100%;height:auto;border:1px solid var(--hairs);border-radius:4px;box-shadow:0 12px 28px rgba(49,46,46,.16);background:var(--card)}
+.pv figcaption{margin-top:8px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:8px}
+.pv .lk{position:absolute;left:10px;bottom:44px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(49,46,46,.86);color:var(--paper);padding:5px 9px;border-radius:3px}
+.pvnote{font-size:13px;color:var(--gray);margin-top:2px}
+/* 5부 구조 */
+.parts{display:flex;flex-direction:column}
+.parts .p5{display:grid;grid-template-columns:72px minmax(0,1fr);gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--hairs);align-items:baseline}
+.parts .p5:last-child{border-bottom:1px solid var(--hairs)}
+.parts .no{font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
+.parts h3{font-size:var(--t-h4);margin:0}
+.parts .d{margin-top:6px;font-size:14px;color:var(--body);max-width:64ch}
+.parts .st{margin-top:10px;display:flex;gap:var(--s4);flex-wrap:wrap}
+.parts .st span{font-size:13px;color:var(--gray)}
+.parts .st b{font-size:15px;color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
+/* 면접 형태 판정 */
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
+.forms .f{border:1px solid var(--hair);border-radius:6px;padding:14px 16px;background:var(--card)}
+.forms .f.off{opacity:.45;background:none}
+.forms .f b{display:block;font-size:15px}
+.forms .f span{display:block;margin-top:4px;font-size:12.5px;color:var(--gray)}
+.forms .f.on span{color:var(--seal);font-weight:600}
+.trk{margin-top:var(--s4)}
+.trk li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;padding:11px 0;border-top:1px solid var(--hairs);font-size:14px}
+.trk li:last-child{border-bottom:1px solid var(--hairs)}
+.trk .t{font-weight:600}
+.trk .f{color:var(--body)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
+.chips span{font-size:12.5px;border:1px solid var(--hair);border-radius:999px;padding:4px 11px;color:var(--body);background:var(--card)}
+/* 규칙 티저 */
+.rules3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.rules3 .r{border:1px solid var(--hair);border-radius:6px;padding:16px;background:var(--card)}
+.rules3 .r .cd{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--seal)}
+.rules3 .r .ar{font-size:12.5px;color:var(--gray);margin-left:8px}
+.rules3 .r p{margin-top:8px;font-size:14px;line-height:1.65}
+.rules3 .r p b{font-weight:600}
+.rlock{margin-top:var(--s3);font-size:13px;color:var(--gray)}
+/* 유형 표, 맛보기 (v2 유지) */
 .gbd{max-width:860px}
 .gbd .sec{padding:var(--s7) 0 0}
-.toc{counter-reset:c}
-.toc li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 0;border-top:1px solid var(--hairs);font-size:15px}
-.toc li:last-child{border-bottom:1px solid var(--hairs)}
-.toc .no{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--seal);font-variant-numeric:tabular-nums}
-.toc .t{font-weight:500}
 .taste li{padding:16px 0;border-top:1px solid var(--hairs)}
 .taste li:last-child{border-bottom:1px solid var(--hairs)}
 .taste .ty{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
 .taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
 .taste .src{margin-top:6px;font-size:12.5px;color:var(--gray);display:block}
 .tastenote{margin-top:var(--s3)}
+.strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:15px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
+.strat li:last-child{border-bottom:1px solid var(--hairs)}
+.strat .sn{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--seal);font-variant-numeric:tabular-nums}
 .after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
 .after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
-@media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}}
+@media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}.pv{flex-basis:66vw}.trk li{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="v2">
@@ -76,7 +115,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -88,7 +127,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -100,22 +139,23 @@
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="index.html">가이드북</a><span aria-hidden="true">/</span><span>경희대학교</span></nav>
     <h1 class="rv">경희대학교 2027 면접 가이드북</h1>
-    <p class="lede rv">생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 경희대학교 면접의 실제. PDF 41면, 수록 질문 172건.</p>
+    <p class="lede rv">경희대학교 면접에서 실제로 나온 질문 172건, 내 생기부에서 질문을 뽑는 전환 규칙 52개. 선배 후기 2017~2026 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.</p>
      <!-- aeo --><p class="aeo-answer">경희대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람.</p><!-- /aeo -->
 </div>
   </div>
 </section>
 
 <section class="wrap prod">
-  <figure class="cover rv"><img src="../assets/covers/khu.jpg" alt="경희대학교 2027 면접 가이드북 표지" width="210" height="297" fetchpriority="high"></figure>
+  <figure class="cover rv"><span class="volchip">VOL.6</span><img src="../assets/covers/khu.jpg" alt="경희대학교 2027 면접 가이드북 표지" width="210" height="297" fetchpriority="high"></figure>
   <div class="panel buy rv">
     <div class="top"><span class="eyebrow" style="margin:0">가이드북, guide-khu</span><span class="badge seal">판매 중</span></div>
     <h2>경희대학교 2027 면접 가이드북</h2>
     <span class="price">16,500원<small>부가세 포함, 보안 리더 열람</small></span>
     <ul class="spec">
+      <li><span>실제 질문</span><span>172건, 선배 후기 2017~2026 관측</span></li>
+      <li><span>전환 규칙</span><span>52개, 내 생기부에서 질문 뽑기</span></li>
+      <li><span>전형 분석</span><span>4개 전형, 제원 9항목</span></li>
       <li><span>형태</span><span>PDF 41면, 브라우저 보안 리더</span></li>
-      <li><span>수록</span><span>질문 172건, 유형 15종</span></li>
-      <li><span>출처</span><span>자료 9종, 공식과 관측 구분</span></li>
       <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
     </ul>
     <div class="acts">
@@ -129,50 +169,100 @@
 <section class="sec tight">
   <div class="wrap">
     <div class="facts rv">
+      <div><b>172</b><span>실제 나온 질문</span></div>
+      <div><b>52</b><span>생기부 전환 규칙</span></div>
+      <div><b>17</b><span>질문 유형</span></div>
       <div><b>41</b><span>면</span></div>
-      <div><b>172</b><span>수록 질문</span></div>
-      <div><b>15</b><span>질문 유형</span></div>
-      <div><b>9</b><span>출처 자료</span></div>
     </div>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>지면 미리보기</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
+    <div class="pvs rv" tabindex="0" role="region" aria-label="지면 미리보기 가로 스크롤">
+      <figure class="pv"><img src="../assets/preview/khu/p01.webp" alt="경희대학교 가이드북 1면 표지" width="880" height="1245"><figcaption><span>표지</span><span>p.1</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p02.webp" alt="경희대학교 가이드북 2면 차례와 쓰는 법" width="880" height="1245"><figcaption><span>차례와 쓰는 법</span><span>p.2</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p03.webp" alt="경희대학교 가이드북 3면 1부 들어가는 면" width="880" height="1245" loading="lazy"><figcaption><span>1부 들어가는 면</span><span>p.3</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p04.webp" alt="경희대학교 가이드북 4면 1부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>1부 본문, 흐림</span><span>p.4</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p05.webp" alt="경희대학교 가이드북 5면 2부 들어가는 면" width="880" height="1245" loading="lazy"><figcaption><span>2부 들어가는 면</span><span>p.5</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p06.webp" alt="경희대학교 가이드북 6면 2부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>2부 본문, 흐림</span><span>p.6</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p15.webp" alt="경희대학교 가이드북 15면 3부 들어가는 면" width="880" height="1245" loading="lazy"><figcaption><span>3부 들어가는 면</span><span>p.15</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p16.webp" alt="경희대학교 가이드북 16면 3부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>3부 본문, 흐림</span><span>p.16</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p17.webp" alt="경희대학교 가이드북 17면 3부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>3부 본문, 흐림</span><span>p.17</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p24.webp" alt="경희대학교 가이드북 24면 4부 들어가는 면" width="880" height="1245" loading="lazy"><figcaption><span>4부 들어가는 면</span><span>p.24</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p25.webp" alt="경희대학교 가이드북 25면 4부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>4부 본문, 흐림</span><span>p.25</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p26.webp" alt="경희대학교 가이드북 26면 4부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>4부 본문, 흐림</span><span>p.26</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p36.webp" alt="경희대학교 가이드북 36면 5부 들어가는 면" width="880" height="1245" loading="lazy"><figcaption><span>5부 들어가는 면</span><span>p.36</span></figcaption></figure>
+      <figure class="pv"><img src="../assets/preview/khu/p37.webp" alt="경희대학교 가이드북 37면 5부 본문, 흐림" width="880" height="1245" loading="lazy"><span class="lk">구매 후 선명</span><figcaption><span>5부 본문, 흐림</span><span>p.37</span></figcaption></figure>
+    </div>
+    <p class="pvnote">각 지면 아래 숫자는 실제 면 번호입니다. 워터마크는 열람 계정마다 다르게 찍힙니다.</p>
   </div>
 </section>
 
 <div class="wrap">
 <div class="gbd">
+
   <section class="sec">
-    <div class="sh rv"><div><h2>이 책이 다루는 것</h2><p>본문 장 구성. 머리말 제외.</p></div></div>
-    <ol class="toc rv">
-      <li><span class="no">01</span><span class="t">면접 기본 제원</span></li>
-      <li><span class="no">02</span><span class="t">면접 유형 판정</span></li>
-      <li><span class="no">03</span><span class="t">평가항목에서 3대역량 매핑</span></li>
-      <li><span class="no">04</span><span class="t">인재상 (대학 공식 + 학과별)</span></li>
-      <li><span class="no">05</span><span class="t">실제 면접 질문 아카이브</span></li>
-      <li><span class="no">06</span><span class="t">생기부에서 질문 전환 규칙</span></li>
-      <li><span class="no">07</span><span class="t">타 대학 대비 이 학교의 특징</span></li>
-      <li><span class="no">08</span><span class="t">준비 전략</span></li>
-      <li><span class="no">09</span><span class="t">출처, 신뢰도, 공백</span></li>
-    </ol>
+    <div class="sh rv"><div><h2>다섯 부로 끝나는 구성</h2><p>표지의 차례 그대로. 각 부의 수치는 이 책에서 셉니다.</p></div></div>
+    <div class="parts rv">
+      <div class="p5"><span class="no">1</span><div><h3>내 면접은 어느 형태인가</h3><p class="d">서류기반｜제시문｜MMI, 전형별 형태 판정</p><div class="st"><span><b>2</b>이 대학의 면접 형태</span><span><b>3</b>면접 있는 전형</span><span><b>172</b>수록 기출</span></div></div></div>
+      <div class="p5"><span class="no">2</span><div><h3>이 대학은 무엇을 묻는가</h3><p class="d">전형별 제원｜이 대학이 찾는 학생</p><div class="st"><span><b>6</b>전형</span><span><b>8</b>제원 항목</span></div></div></div>
+      <div class="p5"><span class="no">3</span><div><h3>실제로 나온 질문</h3><p class="d">선배 후기에서 회수한 기출 172건, 유형별, 모집단위와 연도</p><div class="st"><span><b>172</b>수록 질문</span><span><b>17</b>유형</span><span><b>탐구, 세특심화</b>최다 유형</span></div></div></div>
+      <div class="p5"><span class="no">4</span><div><h3>내 생기부에서 질문 뽑기</h3><p class="d">전환 규칙 52개</p><div class="st"><span><b>52</b>전환 규칙</span></div></div></div>
+      <div class="p5"><span class="no">5</span><div><h3>이 대학의 특징과 준비 전략</h3><p class="d">타 대학 대비 차이｜준비 전략</p><div class="st"></div></div></div>
+    </div>
   </section>
+
   <section class="sec">
-    <div class="sh rv"><div><h2>질문 유형 분포</h2><p>관측 건수는 이 학교 면접 후기 전체에서 집계한 수, 수록 건수는 책에 실린 수.</p></div></div>
-    <div class="tblwrap rv"><table class="tbl"><thead><tr><th>유형</th><th class="num">관측</th><th class="num">비율</th><th class="num">수록</th></tr></thead><tbody>
-      <tr><td>공식 예시문항</td><td class="num">표기 없음</td><td class="num">표기 없음</td><td class="num">16건</td></tr>
-      <tr><td>탐구, 세특심화</td><td class="num">48건</td><td class="num">표기 없음</td><td class="num">15건</td></tr>
-      <tr><td>진로, 장래</td><td class="num">44건</td><td class="num">표기 없음</td><td class="num">15건</td></tr>
-      <tr><td>전공지식확인</td><td class="num">44건</td><td class="num">표기 없음</td><td class="num">15건</td></tr>
-      <tr><td>공동체, 인성</td><td class="num">42건</td><td class="num">표기 없음</td><td class="num">15건</td></tr>
-      <tr><td>지원동기, 대학이해</td><td class="num">34건</td><td class="num">표기 없음</td><td class="num">10건</td></tr>
-      <tr><td>자기이해, 성장</td><td class="num">29건</td><td class="num">표기 없음</td><td class="num">10건</td></tr>
-      <tr><td>학업, 교과</td><td class="num">20건</td><td class="num">표기 없음</td><td class="num">8건</td></tr>
-      <tr><td>독서</td><td class="num">20건</td><td class="num">표기 없음</td><td class="num">8건</td></tr>
-      <tr><td>시사, 사회이슈</td><td class="num">12건</td><td class="num">표기 없음</td><td class="num">8건</td></tr>
-      <tr><td>상황, 가치판단</td><td class="num">7건</td><td class="num">표기 없음</td><td class="num">7건</td></tr>
-      <tr><td>자기소개</td><td class="num">8건</td><td class="num">표기 없음</td><td class="num">8건</td></tr>
-      <tr><td>마무리</td><td class="num">38건</td><td class="num">5.5%</td><td class="num">10건</td></tr>
-      <tr><td>꼬리질문</td><td class="num">35건</td><td class="num">5.0%</td><td class="num">15건</td></tr>
-      <tr><td>제시문형</td><td class="num">37건</td><td class="num">표기 없음</td><td class="num">12건</td></tr>
+    <div class="sh rv"><div><h2>이 대학의 면접, 판정부터</h2><p>1부와 2부가 하는 일. 형태가 다르면 준비 방법이 다릅니다.</p></div></div>
+    <div class="forms rv">
+      <div class="f on"><b>서류기반</b><span>이 대학에 있음</span></div>
+      <div class="f off"><b>제시문</b><span>이 대학에 없음</span></div>
+      <div class="f off"><b>MMI</b><span>이 대학에 없음</span></div>
+      <div class="f on"><b>확인 필요</b><span>이 대학에 있음</span></div>
+    </div>
+    <ul class="trk rv">
+      <li><span class="t">네오르네상스전형 (2027 현행)</span><span class="f">서류확인형</span></li>
+      <li><span class="t">재외국민특별전형</span><span class="f">자료 없음. 자료에 문항 유형 미수록. 비대면 온라인 실시간이라는 형식 정보만 확보</span></li>
+      <li><span class="t">실기우수자전형</span><span class="f">자료 없음. 자료에 면접 문항 미수록</span></li>
+    </ul>
+    <div class="chips rv" aria-label="전형별 제원 항목">
+      <span>전형유형</span>
+      <span>면접 실시여부</span>
+      <span>면접 반영비율</span>
+      <span>면접시간</span>
+      <span>면접형태</span>
+      <span>대면여부</span>
+      <span>블라인드</span>
+      <span>제시문 유무</span>
+      <span>확인된 건수</span>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>질문 유형 분포</h2><p>책에 실린 수. 관측 원문에 그 변형과 파생 문항을 더해 싣습니다.</p></div></div>
+    <div class="tblwrap rv"><table class="tbl"><thead><tr><th>유형</th><th class="num">수록</th></tr></thead><tbody>
+      <tr><td>공식 예시문항 (가이드북 및 선행학습영향평가, 신뢰도 A)｜인성</td><td class="num">6건</td></tr>
+      <tr><td>공식 예시문항 (가이드북 및 선행학습영향평가, 신뢰도 A)｜전공적합성</td><td class="num">4건</td></tr>
+      <tr><td>공식 예시문항 (가이드북 및 선행학습영향평가, 신뢰도 A)｜전공적합성 확장 6문항</td><td class="num">6건</td></tr>
+      <tr><td>탐구, 세특심화 (후기 확인 48행, 최다 유형)</td><td class="num">15건</td></tr>
+      <tr><td>진로, 장래 (후기 확인 44행)</td><td class="num">15건</td></tr>
+      <tr><td>전공지식확인 (후기 확인 44행)</td><td class="num">15건</td></tr>
+      <tr><td>공동체, 인성 (후기 확인 42행)</td><td class="num">15건</td></tr>
+      <tr><td>지원동기, 대학이해 (후기 확인 34행)</td><td class="num">10건</td></tr>
+      <tr><td>자기이해, 성장 (후기 확인 29행)</td><td class="num">10건</td></tr>
+      <tr><td>학업, 교과 (후기 확인 20행)</td><td class="num">8건</td></tr>
+      <tr><td>독서 (후기 확인 20행)｜주의</td><td class="num">8건</td></tr>
+      <tr><td>시사, 사회이슈 (후기 확인 12행)</td><td class="num">8건</td></tr>
+      <tr><td>상황, 가치판단 (후기 확인 7행, 전량 수록)</td><td class="num">7건</td></tr>
+      <tr><td>자기소개 (후기 확인 8행, 전량 수록)</td><td class="num">8건</td></tr>
+      <tr><td>마무리</td><td class="num">693건</td></tr>
+      <tr><td>꼬리질문</td><td class="num">693건</td></tr>
+      <tr><td>제시문형 (후기 확인 37행, 2027 현행 미실시, 참고용)｜2027 지원자는 이 유형을 기본 준비 범위에서 제외합니다.</td><td class="num">12건</td></tr>
     </tbody></table></div>
   </section>
+
   <section class="sec">
     <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 자료집 기관명만 표기.</p></div></div>
     <ol class="taste rv">
@@ -183,8 +273,35 @@
     </ol>
     <p class="tastenote note">전체 172건과 유형 해설은 책 본문에.</p>
   </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>전환 규칙 52개, 이 책의 본론</h2><p>생기부의 기재 한 줄이 어느 질문으로 바뀌는지. 규칙마다 실제 나온 질문과 꼬리질문이 붙습니다.</p></div></div>
+    <div class="rules3 rv">
+
+    </div>
+    <p class="rlock">규칙의 질문 틀과 실제 질문, 꼬리질문 52세트는 본문에서. 위 미리보기 지면에 흐림 처리로 실려 있습니다.</p>
+    <div class="chips rv" aria-label="규칙이 다루는 생기부 영역">
+
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sh rv"><div><h2>5부 준비 전략</h2><p>이 대학만의 차이에서 나온 전략. 제목만 싣습니다.</p></div></div>
+    <ol class="strat rv">
+      <li><span class="sn">01</span><span>생기부를 문장 단위로 쪼개고 각 문장에 질문 1개씩 붙입니다</span></li>
+      <li><span class="sn">02</span><span>답변은 30초 단위로 잘라 연습합니다</span></li>
+      <li><span class="sn">03</span><span>마무리 발언을 30초본과 20초본 2벌 준비합니다</span></li>
+      <li><span class="sn">04</span><span>모든 주장에 반대 근거를 1개씩 붙여 둡니다</span></li>
+      <li><span class="sn">05</span><span>인성 6문항을 사례 카드로 미리 채웁니다</span></li>
+      <li><span class="sn">06</span><span>출결 기재 사유를 먼저 준비합니다</span></li>
+      <li><span class="sn">07</span><span>진로 이력을 3년 타임라인으로 그려 전환점마다 이유를 적습니다</span></li>
+      <li><span class="sn">08</span><span>성적 그래프의 변곡점과 최저 과목을 미리 설명합니다</span></li>
+    </ol>
+    <p class="rlock">전략 11개 중 8개의 제목. 본문과 근거는 책에서.</p>
+  </section>
+
   <div class="after rv">
-    <a class="tlink" href="../interview/khu.html">같은 학교 무료 아카이브</a>
+    <span class="note">현학적 연구소 편집본, 공식 요강과 후기 관측을 구분 표기</span>
     <div class="nb"><a class="tlink" href="knu.html">이전, 경북대학교</a><a class="tlink" href="index.html">전체 38권</a><a class="tlink" href="korea.html">다음, 고려대학교(서울)</a></div>
   </div>
 </div>
@@ -211,7 +328,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../interview/index.html">무료 아카이브</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
+        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -224,7 +341,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="../index.html"><i aria-hidden="true"></i>홈</a><a href="../index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri on" href="../guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="../my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="../index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="../index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri on" href="../guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="../my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="../assets/app.js"></script>
 <script>

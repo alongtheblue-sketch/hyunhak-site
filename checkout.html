@@ -62,7 +62,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -74,7 +74,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -139,7 +139,7 @@
       <div class="total"><span>결제 금액</span><span class="won" id="sumTotal">0원</span></div>
       <button class="btn" type="button" id="payBtn">결제</button>
       <p class="stub" id="testNote">테스트 결제 환경. 실 승인 전까지 카드에서 돈이 빠져나가지 않음.</p>
-      <p class="note rule">결제와 동시에 주문 확정. 출고 전 취소는 전액 환불, 출고 후에는 수령 7일 이내 미훼손 기준. 전자상거래법의 청약철회 규정 적용.</p>
+      <p class="note rule" id="refundNote"></p>
     </div>
   </aside>
 </div>
@@ -156,7 +156,7 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -169,7 +169,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -183,7 +183,17 @@ document.addEventListener('DOMContentLoaded', async function(){
   if(!items.length){ location.href='cart.html'; return; }
 
   var needShip = items.some(function(x){return x.ship});
-  if(!needShip) document.querySelector('.blk.addr').style.display='none';
+  if(!needShip){
+    document.querySelector('.blk.addr').style.display='none';
+    var payNo = document.querySelector('.blk.pay h2 .no');   // 배송지 단계가 빠지면 결제 수단이 1번
+    if(payNo) payNo.textContent='1';
+  }
+  // 환불 안내는 담긴 상품 종류에 맞춰야 한다 (디지털 전용에 실물 반품 문구 = 오고지)
+  var hasDigital = items.some(function(x){return !x.ship});
+  $('#refundNote').textContent = '결제와 동시에 주문 확정. '
+    + (needShip ? '실물은 출고 전 취소 시 전액 환불, 출고 후에는 수령 7일 이내 미훼손 기준. ' : '')
+    + (hasDigital ? '디지털 상품(이용권, PDF)은 열람 시작 전까지 취소할 수 있고, 열람이 시작되면 청약철회가 제한됩니다. ' : '')
+    + '전자상거래법의 청약철회 규정 적용.';
   if(st.member.name && !$('#nm').value) $('#nm').value = st.member.name;
 
   var sub = items.reduce(function(s,x){return s+x.price*x.qty},0);
@@ -191,19 +201,30 @@ document.addEventListener('DOMContentLoaded', async function(){
   var total = sub + shipFee;
   $('#sumRows').innerHTML = items.map(function(it){
     return '<p class="item"><span>'+esc(it.title)+', '+it.qty+(it.ship?'부':'건')+'</span><span>'+HH.won(it.price*it.qty)+'</span></p>'}).join('');
-  $('#sumDl').innerHTML = '<div><dt>상품</dt><dd>'+HH.won(sub)+'</dd></div><div><dt>배송</dt><dd>'+HH.won(shipFee)+'</dd></div>';
+  $('#sumDl').innerHTML = '<div><dt>상품</dt><dd>'+HH.won(sub)+'</dd></div>'
+    + (needShip ? '<div><dt>배송</dt><dd>'+HH.won(shipFee)+'</dd></div>' : '');
   $('#sumTotal').textContent = HH.won(total);
   $('#payBtn').textContent = HH.won(total)+' 결제';
 
-  var cfg = await HH.api('/api/config');
-  if(!/^test_/.test(cfg.tossClientKey)) $('#testNote').style.display='none';
-  var toss = TossPayments(cfg.tossClientKey);
-  var widgets = toss.widgets({ customerKey: st.member.id });
-  await widgets.setAmount({ currency:'KRW', value: total });
-  await Promise.all([
-    widgets.renderPaymentMethods({ selector:'#payment-method' }),
-    widgets.renderAgreement({ selector:'#agreement' })
-  ]);
+  // 위젯 초기화 실패(설정 API, SDK 로드, 키 문제) 시 무반응 버튼 방지: 성공 전까지 비활성 + 안내
+  var widgets;
+  $('#payBtn').disabled = true;
+  try{
+    var cfg = await HH.api('/api/config');
+    if(!/^test_/.test(cfg.tossClientKey)) $('#testNote').style.display='none';
+    if(typeof TossPayments!=='function') throw new Error('결제 모듈을 불러오지 못했습니다');
+    var toss = TossPayments(cfg.tossClientKey);
+    widgets = toss.widgets({ customerKey: st.member.id });
+    await widgets.setAmount({ currency:'KRW', value: total });
+    await Promise.all([
+      widgets.renderPaymentMethods({ selector:'#payment-method' }),
+      widgets.renderAgreement({ selector:'#agreement' })
+    ]);
+    $('#payBtn').disabled = false;
+  }catch(e){
+    $('#payment-method').innerHTML = '<p class="note" role="alert">결제 수단을 불러오지 못했습니다. 새로고침 후 다시 시도하시고, 반복되면 admin@hyunhak.com 으로 알려 주십시오.</p>';
+    return;
+  }
 
   $('#payBtn').addEventListener('click', async function(){
     var btn=$('#payBtn');

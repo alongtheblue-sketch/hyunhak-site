@@ -5,13 +5,15 @@
 set -e
 cd "$(dirname "$0")/.."
 SKIP="${SKIP_NAV:-}"   # 리더 세션 커밋(159b755) 후 전면 적용. reader.html 은 각 도구 EXCLUDE 고정
+# 파이프는 좌변 실패를 삼킨다 (| tail 의 exit 0 이 set -e 를 무력화) — 출력을 변수로 받아 종료코드 보존
+tail1() { _o=$("$@"); printf '%s\n' "$_o" | tail -1; }
+head1() { _o=$("$@"); printf '%s\n' "$_o" | head -1; }
 python3 _tools/build_guidebook.py build >/dev/null
-python3 _tools/v2_interview.py
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_fonts.py
-python3 _tools/seo_inject.py | tail -1
-python3 _tools/build_sitemap.py | tail -1
-python3 _tools/seo_check.py | tail -1
-python3 _tools/v2_check.py | head -1
+tail1 python3 _tools/seo_inject.py
+tail1 python3 _tools/build_sitemap.py
+tail1 python3 _tools/seo_check.py
+head1 python3 _tools/v2_check.py
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16

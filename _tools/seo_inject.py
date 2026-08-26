@@ -165,8 +165,11 @@ def build_graph(m, rel, e, page_html):
         ret = return_policy(m, delivery)
         out = []
         for o in offers or []:
+            # 살 수 있는 곳이 이 면이 아니면 offer_url 로 실제 결제 동선을 가리킨다.
+            # (구조화 데이터의 InStock 은 그 url 에서 실제로 살 수 있어야 참이다 — s17 critic 적발)
             offer = {"@type": "Offer", "priceCurrency": sch.get("currency", "KRW"),
-                     "availability": "https://schema.org/" + sch.get("availability", "InStock"), "url": url}
+                     "availability": "https://schema.org/" + o.get("availability", sch.get("availability", "InStock")),
+                     "url": C.abs_url(m, o["offer_url"]) if o.get("offer_url") else url}
             if o.get("name"):
                 offer["name"] = o["name"]
             if o.get("price") is not None:

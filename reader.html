@@ -7,9 +7,9 @@
 <meta http-equiv="Content-Security-Policy"
   content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src http://localhost:8799 https://api.hyunhak.com; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
 <meta name="referrer" content="no-referrer">
-<title>현학적 연구소 · 보안 뷰어</title>
+<title>현학적 연구소, 보안 뷰어</title>
 <style>
-  :root{ --hyun:#312E2E; --paper:#EFE9DC; --ash:#696561; --seal:#BC3529; }
+  :root{ --hyun:#312E2E; --paper:#EFE9DC; --ash:#9A948E; --seal:#BC3529; } /* ash: #1a1918 위 5.85:1 (구 #696561 = 3.04 FAIL) */
   *{ box-sizing:border-box; margin:0; padding:0;
      -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
   html,body{ height:100%; background:#1a1918; color:var(--paper);
@@ -20,7 +20,7 @@
   #bar .t{ font-size:15px; font-weight:600; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
   #bar .who{ font-size:11px; color:var(--ash); }
   button{ font:inherit; font-size:13px; color:var(--paper); background:#2d2b2a;
-    border:1px solid #4a4744; border-radius:6px; padding:7px 13px; cursor:pointer; }
+    border:1px solid #7a756f; border-radius:6px; padding:7px 13px; cursor:pointer; }
   button:hover{ background:#3a3836; } button:disabled{ opacity:.5; cursor:default; }
   #stage{ position:absolute; top:52px; bottom:0; left:0; right:0; overflow-y:auto;
     scroll-behavior:smooth; -webkit-overflow-scrolling:touch; text-align:center; padding:20px 0 60px; }
@@ -46,7 +46,7 @@
   <button id="printBtn" hidden>인쇄</button>
 </div>
 <div id="stage"><div id="msg">불러오는 중…</div></div>
-<div id="foot">© 현학적 연구소 <span class="han">玄學的 硏究所</span> · 무단 복제, 전재, 배포 금지</div>
+<div id="foot">© 현학적 연구소 <span class="han">玄學的 硏究所</span>. 무단 복제, 전재, 배포 금지</div>
 <div id="curtain"></div>
 <script src="assets/reader.js"></script>
 </body>
