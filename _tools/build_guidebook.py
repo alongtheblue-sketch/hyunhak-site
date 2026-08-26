@@ -4,7 +4,7 @@
 서브커맨드
   refresh  원천(interview_guidebook_2027/build/*.json + PDF 면수)을 읽어
            _tools/guidebook_catalog.json 을 재박제한다. 가격(price) 필드는 보존.
-  build    카탈로그만 읽어 guidebook/index.html + guidebook/<slug>.html 38 개를 쓴다.
+  build    카탈로그만 읽어 guidebook/index.html + guidebook/<slug>.html 38 개를 쓴다 (플랫폼 v2 템플릿 2종).
   verify   산출 검증: 멱등(재생성 바이트 동일), 상대 링크 실재, <style> 금지 속성,
            hex 색상, 금지 문자, 명단(roster) 문자열 0 건.
 
@@ -219,125 +219,16 @@ def cmd_refresh(args):
 
 
 # ---------------------------------------------------------------- build
-PAGE_CSS = """
-/* guidebook 상품 페이지 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gb{--measure:760px;max-width:1080px;padding:0 var(--gut)}
-.gb .sec{padding:64px 0 8px}
-.gb .sec h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.gb .sec .lead{margin-top:12px;font-size:14px;line-height:1.9;color:var(--gray);max-width:60ch}
-.gb .toc{margin-top:28px;max-width:var(--measure)}
-.gb .toc li{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:baseline;padding:14px 0}
-.gb .toc .no{font-family:var(--serif);font-weight:300;font-size:14px;color:var(--gray)}
-.gb .toc .t{font-family:var(--serif);font-weight:500;font-size:16.5px;letter-spacing:-0.01em}
-.gb .tblwrap{overflow-x:auto;margin-top:28px;border-top:1px solid var(--ink)}
-.gb .tbl{border-collapse:collapse;width:100%;min-width:520px;font-size:13px}
-.gb .tbl th{font-size:11px;letter-spacing:.08em;color:var(--gray);font-weight:600;text-align:left;
-  padding:10px 14px 10px 0;border-bottom:1px solid var(--hair);white-space:nowrap}
-.gb .tbl td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hairs);color:var(--body);line-height:1.7;vertical-align:top}
-.gb .tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.gb .tbl th.num{text-align:right}
-.gb .taste{margin-top:28px;max-width:var(--measure)}
-.gb .taste li{padding:18px 0}
-.gb .taste .ty{font-size:11px;letter-spacing:.1em;color:var(--gray);display:block}
-.gb .taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;
-  letter-spacing:-0.01em;overflow-wrap:anywhere}
-.gb .taste .src{margin-top:6px;font-size:11px;letter-spacing:.04em;color:var(--gray);display:block}
-.gb .tastenote{margin-top:16px;font-size:12px;color:var(--gray)}
-.buy{margin-top:80px;display:grid;grid-template-columns:minmax(300px,40%) 1fr;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.buy .plate{background:var(--mat);border-right:1px solid var(--hair);padding:56px var(--gut);display:flex;align-items:flex-start;justify-content:center}
-.buy .cover{border:1px solid var(--hair);padding:38px 30px 34px;width:100%;max-width:340px;aspect-ratio:1/1.4142;
-  display:flex;flex-direction:column;justify-content:space-between;background:var(--paper)}
-.buy .cover .brand{font-family:var(--serif);font-weight:300;font-size:12px;letter-spacing:.12em;color:var(--gray)}
-.buy .cover .ct{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.03em;line-height:1.25;margin-top:auto}
-.buy .cover .cy{font-family:var(--serif);font-weight:300;font-size:15px;margin-top:10px;color:var(--gray)}
-.buy .cover .foot{display:flex;justify-content:space-between;align-items:center;margin-top:34px}
-.buy .cover .foot .han{font-family:var(--serif);font-weight:300;font-size:12px;color:var(--gray)}
-.buy .panel{padding:64px var(--gut) 70px}
-.buy .panel .cap{font-size:11px;letter-spacing:.1em;display:block}
-.buy .panel .pt{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em;margin-top:16px}
-.buy .panel .price{margin-top:22px;font-weight:700;font-size:26px;letter-spacing:-0.02em}
-.buy .panel .spec{margin-top:30px;max-width:460px;list-style:none}
-.buy .panel .spec li{display:flex;justify-content:space-between;gap:20px;padding:11px 0;font-size:13.5px;border-top:1px solid rgba(246,242,233,.16)}
-.buy .panel .spec li:last-child{border-bottom:1px solid rgba(246,242,233,.16)}
-.buy .panel .spec .k{font-size:12px}
-.buy .panel .acts{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.buy .panel .member{margin-top:22px;font-size:12.5px;line-height:1.9;max-width:52ch}
-.after{max-width:1080px;padding:56px var(--gut) 96px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline}
-.after .nb{display:flex;gap:26px;flex-wrap:wrap}
-@media (max-width:900px){
-  .buy{grid-template-columns:1fr}
-  .buy .plate{border-right:0;border-bottom:1px solid var(--hair)}
-}
-"""
-
-INDEX_CSS = """
-/* guidebook 목록 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gbl{max-width:1080px;padding:48px var(--gut) 96px}
-.gbl .lead{font-size:14.5px;line-height:1.9;color:var(--body);max-width:60ch}
-.gbl .list{margin-top:40px}
-.gbl .list li a{display:grid;grid-template-columns:minmax(0,1fr) 90px 110px 110px;gap:18px;align-items:baseline;padding:18px 0}
-.gbl .list li a:hover .t{color:var(--gray)}
-.gbl .list .t{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-0.01em}
-.gbl .list .m{font-size:12px;color:var(--gray);text-align:right;font-variant-numeric:tabular-nums}
-.gbl .list .p{font-size:14px;font-weight:600;text-align:right}
-.gbl .list .hd{display:grid;grid-template-columns:minmax(0,1fr) 90px 110px 110px;gap:18px;padding:0 0 10px;
-  font-size:11px;letter-spacing:.08em;color:var(--gray)}
-.gbl .list .hd span:not(:first-child){text-align:right}
-.gbl .note{margin-top:28px;font-size:12px;color:var(--gray);line-height:1.9}
-@media (max-width:900px){
-  .gbl .list li a,.gbl .list .hd{grid-template-columns:minmax(0,1fr) 70px 80px}
-  .gbl .list .hd span:nth-child(3),.gbl .list .m.q{display:none}
-}
-"""
-
-NAV = """<header class="nav u">
-  <a class="brand" href="../index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="../studio.html">면접 스튜디오</a><a href="../guidebook/index.html" class="on">가이드북</a><a href="../store.html">스토어</a><a href="../interview/index.html">면접 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a></nav>
-  <div class="aux"><a href="../login.html">로그인</a><a href="../join.html">가입</a><a href="../cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
-</header>"""
-
-FOOTER = """<footer class="u">\n<span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>\n</footer>"""
-
-CART_JS = """<script>
-document.addEventListener('DOMContentLoaded', function(){
-  document.querySelectorAll('[data-cart-sku]').forEach(function(el){
-    el.addEventListener('click', function(ev){
-      ev.preventDefault();
-      HH.addToCart({ sku: el.dataset.cartSku, title: el.dataset.cartTitle,
-        price: +el.dataset.cartPrice, qty: 1, ship: false });
-      if (confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?')) location.href = '../cart.html';
-    });
-  });
-});
-</script>"""
+# 상품 면 = 플랫폼 v2 템플릿 (2026-08-26 s16 하위 페이지 v2 전개). 셸(헤더, 푸터, 모바일 바)은 자리표시를
+# apply_nav/apply_footer 가 채우고, seo 블록과 aeo 단락은 seo_inject 가 manifest 로 넣는다.
+PAGE_TPL = Path(__file__).with_name("guidebook_page_v2.html")
 
 
-def head(title, path, desc, css, crumbs):
-    ld = {"@context": "https://schema.org", "@type": "BreadcrumbList",
-          "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": u}
-                              for i, (n, u) in enumerate(crumbs)]}
-    return f"""<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{esc(title)}</title>
-<link rel="canonical" href="https://hyunhak.com/guidebook/{path}">
-<meta property="og:url" content="https://hyunhak.com/guidebook/{path}">
-<meta name="description" content="{esc(desc)}">
-<meta property="og:title" content="{esc(title)}">
-<meta property="og:description" content="{esc(desc)}">
-<meta property="og:type" content="product">
-<link rel="icon" href="../assets/favicon_32.png">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap">
-<link rel="stylesheet" href="../assets/base.css">
-<script type="application/ld+json">{json.dumps(ld, ensure_ascii=False)}</script>
-<style>{css}</style>
-</head>
-<body>
-"""
+def fill(tpl, m):
+    for k, v in m.items():
+        tpl = tpl.replace(k, v)
+    assert "__" not in tpl.replace("__proto__", ""), "템플릿 placeholder 잔존: " + tpl[tpl.find("__"):tpl.find("__") + 30]
+    return tpl
 
 
 def price_of(cat, e):
@@ -348,101 +239,51 @@ def render_page(cat, items, i):
     e = items[i]
     name = e["name"]
     price = price_of(cat, e)
+    sale = bool(e.get("onsale", True))
     h1 = f"{name} 2027 면접 가이드북"
-    acts = (f'<button class="act" type="button" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기</button>\n'
-            f'      <a class="textlink" href="../cart.html">장바구니 보기</a>') if e.get("onsale", True) else \
-           '<span class="u gray">보안 리더 준비 중입니다. 준비되는 대로 이 면에서 판매합니다</span>'
     title = f"{h1}, 현학적 연구소"
-    desc = (f"{name} 생기부 기반 면접 예상 프로파일. PDF {e['pages']}면, 수록 질문 {e['questions']}건, "
-            f"유형 {e['types_n']}종. 회원은 보안 리더로 열람합니다.")
-    crumbs = [("현학적 연구소", "https://hyunhak.com/"),
-              ("가이드북", "https://hyunhak.com/guidebook/"),
-              (h1, f"https://hyunhak.com/guidebook/{e['slug']}.html")]
-    o = [head(title, f"{e['slug']}.html", desc, PAGE_CSS, crumbs), NAV, '<main class="page">']
-    o.append(f"""<div class="pagehead">
-  <p class="crumb u gray"><a href="index.html">가이드북</a> / {esc(name)}</p>
-  <h1>{esc(h1)}</h1>
-  <p class="han">생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 {esc(name)} 면접의 실제</p>
-</div>""")
-    o.append(f"""<div class="facts">
-  <div class="f"><span class="n">{e['pages']}</span><span class="k">면</span></div>
-  <div class="f"><span class="n">{e['questions']}</span><span class="k">수록 질문</span></div>
-  <div class="f"><span class="n">{e['types_n']}</span><span class="k">질문 유형</span></div>
-  <div class="f"><span class="n">{e['sources_n']}</span><span class="k">출처 자료</span></div>
-</div>""")
-    # 목차
-    o.append('<div class="gb">')
-    o.append('<section class="sec"><h2>이 책이 다루는 것</h2>'
-             '<p class="lead">본문 장 구성입니다. 머리말은 제외했습니다.</p><ol class="toc rows">')
-    for s in e["secs"]:
-        o.append(f'<li><span class="no">{s["no"]:02d}</span><span class="t">{esc(s["title"])}</span></li>')
-    o.append("</ol></section>")
-    # 유형 분포
-    o.append('<section class="sec"><h2>질문 유형 분포</h2>'
-             '<p class="lead">관측 건수는 이 학교 면접 후기 전체에서 집계한 수, 수록 건수는 책에 실린 수입니다.</p>'
-             '<div class="tblwrap"><table class="tbl"><thead><tr><th>유형</th><th class="num">관측</th>'
-             '<th class="num">비율</th><th class="num">수록</th></tr></thead><tbody>')
+    lede = (f"생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 {name} 면접의 실제. "
+            f"PDF {e['pages']}면, 수록 질문 {e['questions']}건.")
+    if sale:
+        acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
+                f'      <a class="btn ghost" href="../cart.html">장바구니 보기</a>')
+        badge = '<span class="badge seal">판매 중</span>'
+        note = "결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 시작 전 취소 가능."
+        final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람."
+        final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
+                      f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
+    else:
+        acts = ('<span class="btn" aria-disabled="true">입고 예정</span>\n'
+                + (f'      <a class="btn ghost" href="../interview/{e["slug"]}.html">무료 아카이브 열람</a>' if e["archive"]
+                   else '      <a class="btn ghost" href="index.html">판매 중인 가이드북</a>'))
+        badge = '<span class="badge mute">준비 중</span>'
+        note = "보안 리더 준비 중. 준비되는 대로 이 면에서 판매하고 공지에 기록."
+        final_h2, final_p = "준비 중인 동안", ("무료 아카이브에서 관측 기록 먼저 열람. 판매 개시는 공지로." if e["archive"]
+                                           else "판매 중인 다른 대학 가이드북 먼저. 판매 개시는 공지로.")
+        final_acts = ((f'<a class="btn" href="../interview/{e["slug"]}.html">무료 아카이브 열기 <span class="ar" aria-hidden="true">→</span></a>' if e["archive"]
+                       else '<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>')
+                      + '<a class="btn ghost" href="../notice.html">공지 보기</a>')
+    toc = "\n".join(f'      <li><span class="no">{s["no"]:02d}</span><span class="t">{esc(s["title"])}</span></li>' for s in e["secs"])
+    rows = []
     for t in e["types"]:
         obs = f"{t['observed']}건" if t["observed"] is not None else "표기 없음"
         pct = f"{t['pct']:.1f}%" if t["pct"] is not None else "표기 없음"
-        o.append(f'<tr><td>{esc(t["type"])}</td><td class="num">{obs}</td><td class="num">{pct}</td>'
-                 f'<td class="num">{t["included"]}건</td></tr>')
-    o.append("</tbody></table></div></section>")
-    # 맛보기
-    o.append('<section class="sec"><h2>맛보기</h2>'
-             '<p class="lead">유형별 첫 수록 질문입니다. 출처는 자료집 기관명만 표기합니다.</p><ol class="taste rows">')
-    for s in e["samples"]:
-        o.append(f'<li><span class="ty">{esc(s["type"])}</span><p class="q">{esc(s["q"])}</p>'
-                 f'<span class="src">출처: {esc(s["source"])}</span></li>')
-    o.append(f'</ol><p class="tastenote">전체 {e["questions"]}건과 유형 해설은 책 본문에 있습니다.</p></section>')
-    o.append("</div>")
-    # 구매 블록
-    o.append(f"""<section class="buy">
-  <div class="plate">
-    <div class="cover" aria-label="표지">
-      <span class="brand">현학적 연구소</span>
-      <p class="ct">{esc(name)}<br>면접 가이드북</p>
-      <p class="cy">2027 대비</p>
-      <div class="foot"><span class="seal-dot" aria-hidden="true"></span><span class="han">玄學的 硏究所</span></div>
-    </div>
-  </div>
-  <div class="panel invert">
-    <span class="cap u">가이드북, {esc(e['sku'])}</span>
-    <p class="pt">{esc(h1)}</p>
-    <p class="price">{won(price)}</p>
-    <ul class="spec">
-      <li><span class="k">형태</span><span>PDF {e['pages']}면, 보안 리더 열람</span></li>
-      <li><span class="k">수록</span><span>질문 {e['questions']}건, 유형 {e['types_n']}종</span></li>
-      <li><span class="k">인쇄</span><span>3회</span></li>
-      <li><span class="k">원본 파일</span><span>비제공</span></li>
-    </ul>
-    <div class="acts">
-      {acts}
-    </div>
-    <p class="member">회원은 보안 리더로 열람합니다. 인쇄 3회, 원본 파일 비제공. 결제 후 자료실에서 바로 열립니다.</p>
-  </div>
-</section>""")
-    # 하단 링크
+        rows.append(f'      <tr><td>{esc(t["type"])}</td><td class="num">{obs}</td><td class="num">{pct}</td><td class="num">{t["included"]}건</td></tr>')
+    samples = "\n".join(f'      <li><span class="ty">{esc(s["type"])}</span><p class="q">{esc(s["q"])}</p><span class="src">출처: {esc(s["source"])}</span></li>'
+                        for s in e["samples"])
     prev_e = items[i - 1] if i > 0 else None
     next_e = items[i + 1] if i + 1 < len(items) else None
-    o.append('<div class="after">')
-    if e["archive"]:
-        o.append(f'<a class="textlink u" href="../interview/{e["slug"]}.html">같은 학교 면접 아카이브</a>')
-    else:
-        o.append('<span class="u gray">이 학교의 면접 아카이브는 준비 중입니다</span>')
-    o.append('<div class="nb">')
-    if prev_e:
-        o.append(f'<a class="textlink u" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>')
-    o.append('<a class="textlink u" href="index.html">전체 38권</a>')
-    if next_e:
-        o.append(f'<a class="textlink u" href="{next_e["slug"]}.html">다음, {esc(next_e["name"])}</a>')
-    o.append("</div></div>")
-    o.append("</main>")
-    o.append(FOOTER)
-    o.append('<script src="../assets/app.js"></script>')
-    o.append(CART_JS)
-    o.append("</body>\n</html>\n")
-    return "\n".join(o)
+    arc = (f'<a class="tlink" href="../interview/{e["slug"]}.html">같은 학교 무료 아카이브</a>' if e["archive"]
+           else '<span class="note">이 학교의 무료 아카이브는 준비 중</span>')
+    m = {"__TITLE__": esc(title), "__NAME__": esc(name), "__H1__": esc(h1), "__LEDE__": esc(lede), "__SLUG__": e["slug"],
+         "__SKU__": esc(e["sku"]), "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}", "__PAGES__": str(e["pages"]),
+         "__QUESTIONS__": str(e["questions"]), "__TYPES_N__": str(e["types_n"]), "__SOURCES_N__": str(e["sources_n"]),
+         "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note, "__TOC__": toc, "__TYPES_ROWS__": "\n".join(rows),
+         "__SAMPLES__": samples, "__ARCHIVE_LINK__": arc,
+         "__PREV__": (f'<a class="tlink" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>' if prev_e else ""),
+         "__NEXT__": (f'<a class="tlink" href="{next_e["slug"]}.html">다음, {esc(next_e["name"])}</a>' if next_e else ""),
+         "__FINAL_H2__": final_h2, "__FINAL_P__": esc(final_p), "__FINAL_ACTS__": final_acts}
+    return fill(PAGE_TPL.read_text(encoding="utf-8"), m)
 
 
 INDEX_TPL = Path(__file__).with_name("guidebook_index_v2.html")
@@ -493,7 +334,7 @@ def cmd_build(args):
 
 
 # ---------------------------------------------------------------- verify
-ALLOWED_HEX = {"#312e2e", "#f6f2e9", "#696561", "#bc3529", "#f1ebdd"}
+ALLOWED_HEX = {"#312e2e", "#f6f2e9", "#696561", "#bc3529", "#f1ebdd", "#efe9dc", "#fbf9f4", "#4a4644", "#3b2c20", "#d0ac6e"}
 
 
 def cmd_verify(args):
@@ -521,9 +362,7 @@ def cmd_verify(args):
             if not target.exists():
                 fails.append(f"링크 부재: {f.name} -> {u}")
         for style in re.findall(r"<style>(.*?)</style>", html, flags=re.S):
-            for bad in ("border-radius", "box-shadow"):
-                if bad in style:
-                    fails.append(f"{bad}: {f.name}")
+            # v2 규범: 곡률 6px, 먹 틴트 그림자 1단 허용 (2026-08-26). 팔레트 밖 hex 만 금지
             for hx in re.findall(r"#[0-9a-fA-F]{3,8}\b", style):
                 if hx.lower() not in ALLOWED_HEX:
                     fails.append(f"hex {hx}: {f.name}")

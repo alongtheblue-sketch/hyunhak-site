@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>마이페이지, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/my.html">
@@ -28,114 +28,139 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-.grid{display:grid;grid-template-columns:260px minmax(0,1fr);border-bottom:1px solid var(--hair)}
-.side{border-right:1px solid var(--hair);padding:72px var(--gut) 100px}
-.side .who{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:-0.02em}
-.side .since{margin-top:8px;font-size:12px;color:var(--gray)}
-.side nav{margin-top:44px;display:flex;flex-direction:column}
-.side nav a{padding:12px 0;font-size:14px;border-top:1px solid var(--hairs)}
-.side nav a.cur{font-weight:700}
-.side nav a:hover{color:var(--gray)}
-.side .out{margin-top:44px}
-.main{padding:72px var(--gut) 110px}
-.main h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.03em;margin-bottom:56px}
-.blk{margin-bottom:70px}
-.blk h2{font-family:var(--serif);font-weight:700;font-size:22px;letter-spacing:-0.02em;margin-bottom:24px;
-  display:flex;justify-content:space-between;align-items:baseline}
-.blk h2 .all{font-family:var(--sans);font-size:11px;font-weight:400}
-.subcard{border:1px solid var(--ink);padding:30px 34px;display:grid;
-  grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;max-width:720px}
-.subcard .nm{font-family:var(--serif);font-weight:700;font-size:21px}
-.subcard .st{margin-top:8px;font-size:12.5px;color:var(--gray)}
+/* 마이페이지 전용 */
+.lay{padding-top:0}
+.who{font-size:var(--t-h4);font-weight:700;letter-spacing:-0.02em}
+.since{margin-top:4px;font-size:13px;color:var(--gray);overflow-wrap:anywhere}
+.menu2{margin-top:var(--s3);display:flex;flex-direction:column}
+.menu2 a{padding:12px 0;font-size:14px;font-weight:600;border-top:1px solid var(--hairs);display:flex;justify-content:space-between}
+.menu2 a.cur::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);align-self:center}
+.menu2 a:hover{color:var(--gray)}
+.out{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--hairs)}
+.blk{margin-bottom:var(--s7)}
+.blk .sh{margin-bottom:var(--s4)}
+.subcards{display:grid;gap:var(--s3)}
+.subcard{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.08);padding:var(--s4);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:center}
+.subcard .nm{font-size:17px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.subcard .st{margin-top:6px;font-size:13px;color:var(--gray)}
 .subcard .st b{color:var(--seal);font-weight:600}
-.subcard .ops{display:flex;gap:20px;align-items:center}
-.rows li a,.rows li.row{display:grid;grid-template-columns:110px 1fr auto;gap:22px;
-  align-items:baseline;padding:16px 0}
-.rows li a:hover .t{text-decoration:underline;text-underline-offset:3px}
-.rows .d{font-size:12px;letter-spacing:.06em;color:var(--gray)}
-.rows .t{font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-0.01em}
-.rows .s{font-size:12px;color:var(--gray)}
-.rows .s.red{color:var(--seal)}
-.resv{border:1px solid var(--hair);padding:22px 26px;max-width:720px;
-  display:flex;justify-content:space-between;align-items:baseline;gap:20px}
-.resv .t{font-family:var(--serif);font-weight:500;font-size:17px}
-.resv .m{font-size:12px;color:var(--gray);margin-top:6px}
-@media (max-width:900px){
-  .grid{grid-template-columns:1fr}
-  .side{border-right:0;border-bottom:1px solid var(--hair);padding-bottom:44px}
-  .subcard{grid-template-columns:1fr}
-}
-
-
-
-/* 재설계 v2: 이용권 = 먹 반전 */
-.blk.invert{background:var(--ink);color:var(--paper);padding:26px var(--gut) 30px}
-.blk.invert h2{color:var(--paper)}
-.blk.invert .s,.blk.invert .d{color:rgba(246,242,233,.68)}
-.blk.invert .rows li{border-color:rgba(246,242,233,.16)}
-.blk.invert .textlink{color:var(--paper);border-color:rgba(246,242,233,.5)}
-
-/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
-.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
-.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
-.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
-.invert p,.invert li,.invert span,.invert dd,.invert .v,
-.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
-.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
-.invert .ttl{color:var(--paper)!important}
-.invert .seal{background:var(--seal)!important}
-.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
-.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
-.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
-.invert .act:hover{background:transparent!important;color:var(--paper)!important}
-.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
-.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
+.subcard .ops{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.orders li{border-top:1px solid var(--hair)}
+.orders li:last-child{border-bottom:1px solid var(--hair)}
+.orders .row{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:var(--s3);align-items:baseline;padding:14px 4px;font-size:14.5px}
+.orders .d{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums}
+.orders .t{font-weight:600}
+.orders .s{font-size:13px;color:var(--gray);text-align:right;white-space:nowrap}
+.orders .s.red{color:var(--seal)}
+@media (max-width:700px){.subcard{grid-template-columns:1fr}.orders .row{grid-template-columns:1fr;gap:4px}.orders .s{text-align:left}}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
 </header>
 
-<main id="hhMain" class="grid">
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>마이페이지</span></nav>
+    <h1>내 정보</h1>
+    <p class="lede">이용권, 주문 내역, 구매한 가이드북 열람.</p>
+   </div>
+  </div>
+</section>
+
+<div class="wrap lay rev">
   <aside class="side">
-    <p class="who" id="whoName">회원</p>
-    <p class="since" id="whoSince"></p>
-    <nav>
-      <a class="cur" href="#">한눈에</a>
-      <a href="library.html">자료실</a>
-      <a href="studio.html">면접 스튜디오</a>
-      <a href="store.html">스토어</a>
-    </nav>
-    <p class="out"><a class="textlink u" href="#" id="logoutBtn">로그아웃</a></p>
+    <div class="box">
+      <p class="who" id="whoName">회원</p>
+      <p class="since" id="whoSince"></p>
+      <nav class="menu2" aria-label="마이페이지 메뉴">
+        <a class="cur" href="my.html">한눈에</a>
+        <a href="library.html">자료실</a>
+        <a href="studio.html">면접 스튜디오</a>
+        <a href="store.html">봉투 모의고사</a>
+      </nav>
+      <p class="out"><button type="button" class="tlink" id="logoutBtn">로그아웃</button></p>
+    </div>
   </aside>
 
   <section class="main">
-    <h1>내 정보</h1>
-
-    <div class="blk invert">
-      <h2>이용권</h2>
-      <div id="passList"><p class="st gray">불러오는 중입니다…</p></div>
+    <div class="blk">
+      <div class="sh"><div><h2>이용권</h2><p>스튜디오 이용권과 구매한 가이드북</p></div></div>
+      <div class="subcards" id="passList"><div class="empty">불러오는 중</div></div>
     </div>
 
     <div class="blk">
-      <h2>주문 내역</h2>
-      <ol class="rows" id="orderRows"></ol>
-      <p class="m gray" id="orderEmpty" hidden>주문 내역이 없습니다.</p>
+      <div class="sh"><div><h2>주문 내역</h2></div></div>
+      <ol class="orders" id="orderRows"></ol>
+      <div class="empty" id="orderEmpty" hidden>주문 내역이 없습니다.</div>
     </div>
 
     <div class="blk">
-      <h2>자료실</h2>
-      <p class="m">대학별 2027 면접가이드북 PDF 를 회원에게 무료로 제공합니다.</p>
-      <p style="margin-top:12px"><a class="textlink u" href="library.html">자료실로 가기</a></p>
+      <div class="sh"><div><h2>자료실</h2><p>구매한 가이드북은 보안 리더로 열람</p></div><a class="tlink" href="library.html">자료실로 가기</a></div>
     </div>
   </section>
+</div>
+
 </main>
 
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
+</footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a class="on" href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+
+<script src="assets/app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', async function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
@@ -151,21 +176,21 @@ document.addEventListener('DOMContentLoaded', async function(){
     var op;
     if(e.kind==='download'){
       var slug=(meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,'');
-      op='<a class="textlink u" href="reader.html?slug='+encodeURIComponent(slug)+'">열람하기</a>';
+      op='<a class="btn sm" href="reader.html?slug='+encodeURIComponent(slug)+'">열람하기</a>';
     } else {
-      op='<a class="textlink u sgo" href="#">응시하러 가기</a>';
+      op='<button type="button" class="btn sm sgo">응시하러 가기</button>';
     }
     return '<div class="subcard"><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'
-      +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?' · 잔여 응시 '+e.uses_left+'회':'')
-      +(e.expires_at?' · '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p></div>'
+      +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?', 잔여 응시 '+e.uses_left+'회':'')
+      +(e.expires_at?', '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p></div>'
       +'<div class="ops">'+op+'</div></div>';
   });
   if(st.trial_available)
     rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
-      +'<div class="ops"><a class="textlink u sgo" href="#">응시하러 가기</a></div></div>');
+      +'<div class="ops"><button type="button" class="btn sm sgo">응시하러 가기</button></div></div>');
   if(!rows.length)
-    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 학교 전권을 담아 주십시오.</p></div>'
-      +'<div class="ops"><a class="textlink u" href="studio.html">스튜디오로</a></div></div>');
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 학교 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주십시오.</p></div>'
+      +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
     ev.preventDefault();
@@ -179,10 +204,10 @@ document.addEventListener('DOMContentLoaded', async function(){
     var ol = document.getElementById('orderRows');
     document.getElementById('orderEmpty').hidden = od.orders.length>0;
     ol.innerHTML = od.orders.map(function(o){
-      return '<li class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
-        +'<span class="t">'+esc(o.items.map(function(i){return i.title+(i.qty>1?' ×'+i.qty:'')}).join(', '))+', '+HH.won(o.amount)+'</span>'
+      return '<li><div class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
+        +'<span class="t">'+esc(o.items.map(function(i){return i.title+(i.qty>1?' x'+i.qty:'')}).join(', '))+', '+HH.won(o.amount)+'</span>'
         +'<span class="s'+(o.status==='paid'?'':' red')+'">'+(ST[o.status]||o.status)
-        +(o.receipt_url?' · <a class="textlink u" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+'</span></li>';
+        +(o.receipt_url?', <a class="tlink" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+'</span></div></li>';
     }).join('');
   }catch(e){}
 
@@ -193,15 +218,5 @@ document.addEventListener('DOMContentLoaded', async function(){
   });
 });
 </script>
-
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
-</footer>
-
-<script src="assets/app.js"></script>
 </body>
 </html>

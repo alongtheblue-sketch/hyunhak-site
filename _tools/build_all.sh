@@ -1,15 +1,17 @@
 #!/bin/sh
 # 사이트 빌드 파이프라인 (순서 고정). 2회 연속 실행 시 트리 해시 동일 = 멱등.
-#   1 가이드북 38권 생성 → 2 nav 통일 → 3 폰트 비차단 → 4 SEO/AEO 주입 → 5 sitemap/robots/llms → 6 검증
+#   1 가이드북 38권 생성 → 1b 아카이브 26면 v2 변환(멱등) → 2 nav/footer 통일(v2 셸) → 3 폰트 비차단 → 4 SEO/AEO 주입 → 5 sitemap/robots/llms → 6 검증(seo_check + v2_check)
 # build_guidebook.py verify 는 후공정(3,4) 전 원본 기준이라 본 파이프라인 이후엔 FAIL 이 정상. 멱등 증명은 본 스크립트의 해시 비교로 한다.
 set -e
 cd "$(dirname "$0")/.."
 SKIP="${SKIP_NAV:-}"   # 리더 세션 커밋(159b755) 후 전면 적용. reader.html 은 각 도구 EXCLUDE 고정
 python3 _tools/build_guidebook.py build >/dev/null
+python3 _tools/v2_interview.py
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_fonts.py
 python3 _tools/seo_inject.py | tail -1
 python3 _tools/build_sitemap.py | tail -1
 python3 _tools/seo_check.py | tail -1
+python3 _tools/v2_check.py | head -1
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16

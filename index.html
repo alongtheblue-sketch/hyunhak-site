@@ -497,7 +497,7 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
       </div>
       <div>
         <h4>고객센터</h4>
-        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
@@ -506,7 +506,7 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a class="on" href="index.html"><i aria-hidden="true"></i>홈</a><a href="#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a class="on" href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -525,14 +525,7 @@ var HH_GB=[{"slug":"dgist","name":"DGIST(대구경북과학기술원)","short":"
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');f=b.dataset.f;render()})});
   q.addEventListener('input',render); render();
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  var h=document.getElementById('hd'),m=h.querySelector('.menu');
-  m.addEventListener('click',function(){var o=h.classList.toggle('open');m.setAttribute('aria-expanded',o)});
-  // 헤더 검색 pill(q1) → 대학별 찾기(q2) 위임
-  var q1=document.getElementById('q1');
-  if(q1){q1.addEventListener('input',function(){q.value=q1.value;render()});
-    q1.form.addEventListener('submit',function(e){e.preventDefault();q.value=q1.value;render();document.getElementById('find').scrollIntoView({behavior:'smooth',block:'start'})})}
+  // 리빌, 모바일 메뉴, 헤더 검색 pill(q1 → q2) 위임 = assets/app.js 공통 (2026-08-26 s16)
   // 공지 3건 (API). 실패하거나 0건이면 공지 전체 링크만 남긴다
   var nr=document.getElementById('noticeRows');
   if(nr&&window.HH){HH.api('/api/notices?kind=notice&limit=3').then(function(data){

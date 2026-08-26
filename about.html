@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>연구소 소개, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/about.html">
@@ -27,110 +27,167 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-.about .pagehead{max-width:none}
-.about .intro{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,5vw,90px);padding:80px var(--gut) 90px;border-bottom:1px solid var(--hair)}
-.about .intro p{font-size:16px;line-height:1.95;color:var(--body);max-width:56ch}
-.about .intro p+p{margin-top:18px}
-.about .intro .han-big{font-family:var(--serif);font-weight:300;font-size:clamp(44px,8vw,120px);line-height:1;letter-spacing:-0.02em;color:var(--ink);align-self:start;justify-self:end}
-.about .intro .han-big small{display:block;font-size:12px;letter-spacing:.14em;color:var(--gray);margin-top:18px;font-family:var(--sans)}
-.about .three{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--hair)}
-.about .three .c{padding:44px var(--gut) 52px;display:flex;flex-direction:column}
-.about .three .c+.c{border-left:1px solid var(--hairs)}
-.about .three .no{font-size:10.5px;letter-spacing:.16em;color:var(--gray)}
-.about .three h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);margin-top:12px;letter-spacing:-0.025em}
-.about .three p{font-size:14px;line-height:1.85;color:var(--body);margin-top:12px}
-.about .three .textlink{margin-top:auto;padding-top:22px}
-.about .how{padding:90px var(--gut) 96px;border-bottom:1px solid var(--hair)}
-.about .how h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em;margin-bottom:36px}
-.about .how dl{display:grid;grid-template-columns:200px 1fr;row-gap:0;max-width:880px}
-.about .how dt{font-size:11px;letter-spacing:.14em;color:var(--gray);padding:20px 0;border-top:1px solid var(--hairs)}
-.about .how dd{font-size:14.5px;line-height:1.85;color:var(--body);padding:18px 0 22px;border-top:1px solid var(--hairs)}
-.about .name{padding:90px var(--gut) 100px}
-.about .name .grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,90px);max-width:1100px}
-.about .name h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.about .name p{font-size:14.5px;line-height:1.9;color:var(--body);margin-top:16px}
-.about .name table{width:100%;border-collapse:collapse;font-size:14px;margin-top:8px}
-.about .name td,.about .name th{text-align:left;padding:12px 0;border-top:1px solid var(--hairs);vertical-align:top}
-.about .name th{font-weight:500;font-family:var(--serif);font-size:22px;width:120px}
-.about .name .no{color:var(--gray)}
-.about .name .yes{color:var(--seal)}
-@media (max-width:900px){.about .intro,.about .name .grid{grid-template-columns:1fr}
-  .about .intro .han-big{justify-self:start}.about .three{grid-template-columns:1fr}
-  .about .three .c+.c{border-left:0;border-top:1px solid var(--hairs)}.about .how dl{grid-template-columns:1fr}
-  .about .how dt{padding-bottom:4px}.about .how dd{border-top:0;padding-top:0}}
+/* 연구소 소개 전용 */
+.intro{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s8);align-items:start;padding:0 0 var(--s6)}
+.intro .prose{font-size:16px}
+.intro .glyph{display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s7) var(--s5);text-align:center}
+.intro .glyph b{font-family:var(--serif);font-weight:300;font-size:clamp(88px,10vw,140px);line-height:1;letter-spacing:-0.02em;color:var(--ink)}
+.intro .glyph span{display:block;margin-top:var(--s3);font-size:13px;color:var(--gray)}
+.three{grid-template-columns:repeat(3,1fr)}
+.three .step .tlink{margin-top:var(--s3)}
+.how dl{display:grid;grid-template-columns:160px minmax(0,1fr);max-width:880px}
+.how dt{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gray);padding:18px 0;border-top:1px solid var(--hairs)}
+.how dd{font-size:15px;line-height:1.8;color:var(--body);padding:16px 0 20px;border-top:1px solid var(--hairs)}
+.name .lab{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start}
+.name table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:var(--s3)}
+.name td,.name th{text-align:left;padding:12px 0;border-top:1px solid var(--hairs);vertical-align:top}
+.name th{font-weight:500;font-family:var(--serif);font-size:24px;width:120px;line-height:1.2}
+.name .no{color:var(--gray)}
+.name .yes{color:var(--seal)}
+@media (max-width:900px){.intro{grid-template-columns:1fr;gap:var(--s5)}.three{grid-template-columns:1fr}.how dl{grid-template-columns:1fr}.how dt{padding-bottom:4px}.how dd{border-top:0;padding-top:0}}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
-</header>
-
-<main id="hhMain" class="page sec about">
-<div class="pagehead">
-  <p class="crumb u gray"><a href="index.html">현학적 연구소</a> / 연구소</p>
-  <h1>현학적 연구소</h1>
-  <p class="han">玄學的 硏究所. 요강과 관측 기록에서 출발하는 면접 자료</p>
-
-  <!-- aeo --><p class="aeo-answer">현학적 연구소의 자료는 모집요강, 선행학습영향평가 보고서, 수험생 후기 관측에서 나오며, 유료(가이드북 38권, 스튜디오 2교)와 무료(아카이브 26교)로 나뉩니다.</p><!-- /aeo -->
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
 </div>
 
-<section class="intro">
-  <div>
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>연구소</span></nav>
+    <h1 class="rv">현학적 연구소</h1>
+    <p class="lede rv">玄學的 硏究所. 요강과 관측 기록에서 출발하는 면접 자료.</p>
+  <!-- aeo --><p class="aeo-answer">현학적 연구소의 자료는 모집요강, 선행학습영향평가 보고서, 수험생 후기 관측에서 나오며, 유료(가이드북 38권, 스튜디오 2교)와 무료(아카이브 26교)로 나뉩니다.</p><!-- /aeo -->
+</div>
+  </div>
+</section>
+
+<section class="wrap intro">
+  <div class="prose rv">
     <p>현학적 연구소는 대입 면접만 다룹니다. 대학이 공개한 모집요강과 선행학습영향평가 보고서, 수험생 후기에서 관측된 질문을 모아 학교별로 정리하고, 제시문 면접은 학생이 실제로 말하는 장면을 온라인으로 촬영해 첨삭합니다.</p>
     <p>산출물은 세 가지입니다. 학교별 2027 면접 가이드북 38권, 연세대와 고려대의 제시문 면접 스튜디오, 그리고 누구나 읽는 면접 아카이브 26교. 가이드북과 스튜디오는 유료이고 아카이브는 무료입니다.</p>
     <p>면접 자료의 출처는 페이지마다 공식과 관측을 구분해 표기합니다. 사업자 정보는 하단 이용약관과 개인정보처리방침에 기재합니다.</p>
   </div>
-  <div class="han-big">玄<small>검을 현. 아득히 깊은 배움</small></div>
+  <div class="glyph rv" aria-hidden="true"><b>玄</b><span>검을 현. 아득히 깊은 배움</span></div>
 </section>
 
-<section class="three">
-  <div class="c"><span class="no">01</span><h2>학교별 면접 가이드북</h2>
-    <p>38개 대학, 1,293면, 수록 질문 4,766개. 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 한 권에 담았습니다. 회원은 보안 리더로 열람합니다.</p>
-    <a class="textlink" href="guidebook/index.html">가이드북 38권 보기</a></div>
-  <div class="c"><span class="no">02</span><h2>제시문 면접 스튜디오</h2>
-    <p>연세대, 고려대의 제시문을 문장 단위로 해제하고, 실제 고사장 규격 그대로 온라인으로 촬영 응시합니다. 지문 1편에 5회 응시, 회차마다 전사와 진단을 붙입니다.</p>
-    <a class="textlink" href="studio.html">스튜디오 보기</a></div>
-  <div class="c"><span class="no">03</span><h2>면접 아카이브</h2>
-    <p>26개 대학의 면접 제원과 실제 질문을 공식 요강과 후기 관측으로 구분해 정리했습니다. 로그인 없이 읽습니다.</p>
-    <a class="textlink" href="interview/index.html">아카이브 보기</a></div>
-</section>
-
-<section class="how">
-  <h2>자료를 만드는 방식</h2>
-  <dl>
-    <dt>출처</dt><dd>대학 모집요강, 선행학습영향평가 보고서, 시도 진로진학센터 자료집, 2016~2025 수험생 후기. 페이지마다 (공식)과 (관측)을 구분해 적습니다.</dd>
-    <dt>검증</dt><dd>질문 하나마다 출처를 붙이고, 출처가 없는 질문은 싣지 않습니다. 학생 개인정보는 수집 단계에서 제거합니다.</dd>
-    <dt>갱신</dt><dd>2027학년도 모집요강 공개분을 기준으로 하며, 변경 사항은 공지에 기록합니다.</dd>
-    <dt>한계</dt><dd>후기 관측은 표본이 작습니다. 면접 시간과 형식은 해당 연도 요강을 최종 기준으로 삼으십시오.</dd>
-  </dl>
-</section>
-
-<section class="name">
-  <div class="grid">
-    <div>
-      <h2>이름에 쓰는 글자</h2>
-      <p>현학적의 현은 검을 현 玄입니다. 『천자문』 첫 구절 天地玄黃의 그 글자이며, 『설문해자』는 “검되 붉은 기가 도는 것”과 “그윽하고 멂”으로 풉니다. 사전의 현학적(衒學的, 학식을 뽐냄)과는 다른 글자입니다.</p>
-      <p>로고의 선비는 이목구비를 비워 두었습니다. 그 자리에 읽는 사람이 들어갑니다.</p>
+<section class="sec tight">
+  <div class="wrap">
+    <div class="facts rv">
+      <div><b>38</b><span>면접 가이드북, 1,293면</span></div>
+      <div><b>4,766</b><span>수록 질문</span></div>
+      <div><b>2</b><span>제시문 면접 스튜디오 대학</span></div>
+      <div><b>26</b><span>무료 아카이브 대학</span></div>
     </div>
-    <table>
-      <tr><th class="yes">玄學的</th><td>검을 현, 배울 학. 아득히 깊은 배움. <span class="yes">이 표기를 씁니다</span></td></tr>
-      <tr><th class="no">衒學的</th><td>자랑할 현. 학식을 뽐냄. <span class="no">쓰지 않습니다</span></td></tr>
-    </table>
   </div>
 </section>
+
+<section class="sec tight" id="three">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>산출물 세 가지</h2><p>가이드북, 스튜디오, 아카이브</p></div></div>
+    <div class="steps three">
+      <div class="step rv"><span class="no">01</span><h3>학교별 면접 가이드북</h3><p>38개 대학, 1,293면, 수록 질문 4,766개. 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 한 권에. 회원은 보안 리더로 열람.</p><a class="tlink" href="guidebook/index.html">가이드북 38권 보기</a></div>
+      <div class="step rv"><span class="no">02</span><h3>제시문 면접 스튜디오</h3><p>연세대, 고려대의 제시문을 문장 단위로 해제하고, 실제 고사장 규격 그대로 온라인으로 촬영 응시. 지문 1편에 5회 응시, 회차마다 전사와 진단.</p><a class="tlink" href="studio.html">스튜디오 보기</a></div>
+      <div class="step rv"><span class="no">03</span><h3>면접 아카이브</h3><p>26개 대학의 면접 제원과 실제 질문을 공식 요강과 후기 관측으로 구분해 정리. 로그인 없이 열람.</p><a class="tlink" href="interview/index.html">아카이브 보기</a></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight how" id="how">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>자료를 만드는 방식</h2><p>출처, 검증, 갱신, 한계</p></div></div>
+    <dl class="rv">
+      <dt>출처</dt><dd>대학 모집요강, 선행학습영향평가 보고서, 시도 진로진학센터 자료집, 2016~2025 수험생 후기. 페이지마다 (공식)과 (관측)을 구분해 적습니다.</dd>
+      <dt>검증</dt><dd>질문 하나마다 출처를 붙이고, 출처가 없는 질문은 싣지 않습니다. 학생 개인정보는 수집 단계에서 제거합니다.</dd>
+      <dt>갱신</dt><dd>2027학년도 모집요강 공개분을 기준으로 하며, 변경 사항은 공지에 기록합니다.</dd>
+      <dt>한계</dt><dd>후기 관측은 표본이 작습니다. 면접 시간과 형식은 해당 연도 요강을 최종 기준으로 삼으십시오.</dd>
+    </dl>
+  </div>
+</section>
+
+<section class="sec tight name" id="name">
+  <div class="wrap">
+    <div class="lab rv">
+      <div>
+        <span class="eyebrow">이름에 쓰는 글자</span>
+        <blockquote>현학적의 현은 검을 현 <b>玄</b>. 『천자문』 첫 구절 天地玄黃의 그 글자이며, 『설문해자』는 "검되 붉은 기가 도는 것"과 "그윽하고 멂"으로 풉니다. 사전의 현학적(衒學的, 학식을 뽐냄)과는 다른 글자.</blockquote>
+        <p class="more" style="font-size:14px;color:var(--body);line-height:1.7">로고의 선비는 이목구비를 비워 두었습니다. 그 자리에 읽는 사람이 들어갑니다.</p>
+      </div>
+      <table>
+        <tr><th class="yes">玄學的</th><td>검을 현, 배울 학. 아득히 깊은 배움. <span class="yes">이 표기를 씁니다</span></td></tr>
+        <tr><th class="no">衒學的</th><td>자랑할 현. 학식을 뽐냄. <span class="no">쓰지 않습니다</span></td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="final rv">
+      <div><h2>지원 대학부터 고르기</h2><p>38개 대학 가이드북, 연세대와 고려대 스튜디오, 26개 대학 무료 아카이브</p></div>
+      <div class="acts"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="faq.html">자주 묻는 질문</a></div>
+    </div>
+  </div>
+</section>
+
 </main>
 
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
 </footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+
 <script src="assets/app.js"></script>
 </body>
 </html>

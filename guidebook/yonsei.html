@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>연세대학교(서울) 2027 면접 가이드북, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/guidebook/yonsei.html">
@@ -27,152 +27,204 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
-/* guidebook 상품 페이지 전용. 전부 클래스 스코프, 곡률 0, 그림자 0, 팔레트 추가 0 */
-.gb{--measure:760px;max-width:1080px;padding:0 var(--gut)}
-.gb .sec{padding:64px 0 8px}
-.gb .sec h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.gb .sec .lead{margin-top:12px;font-size:14px;line-height:1.9;color:var(--gray);max-width:60ch}
-.gb .toc{margin-top:28px;max-width:var(--measure)}
-.gb .toc li{display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:baseline;padding:14px 0}
-.gb .toc .no{font-family:var(--serif);font-weight:300;font-size:14px;color:var(--gray)}
-.gb .toc .t{font-family:var(--serif);font-weight:500;font-size:16.5px;letter-spacing:-0.01em}
-.gb .tblwrap{overflow-x:auto;margin-top:28px;border-top:1px solid var(--ink)}
-.gb .tbl{border-collapse:collapse;width:100%;min-width:520px;font-size:13px}
-.gb .tbl th{font-size:11px;letter-spacing:.08em;color:var(--gray);font-weight:600;text-align:left;
-  padding:10px 14px 10px 0;border-bottom:1px solid var(--hair);white-space:nowrap}
-.gb .tbl td{padding:11px 14px 11px 0;border-bottom:1px solid var(--hairs);color:var(--body);line-height:1.7;vertical-align:top}
-.gb .tbl .num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
-.gb .tbl th.num{text-align:right}
-.gb .taste{margin-top:28px;max-width:var(--measure)}
-.gb .taste li{padding:18px 0}
-.gb .taste .ty{font-size:11px;letter-spacing:.1em;color:var(--gray);display:block}
-.gb .taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;
-  letter-spacing:-0.01em;overflow-wrap:anywhere}
-.gb .taste .src{margin-top:6px;font-size:11px;letter-spacing:.04em;color:var(--gray);display:block}
-.gb .tastenote{margin-top:16px;font-size:12px;color:var(--gray)}
-.buy{margin-top:80px;display:grid;grid-template-columns:minmax(300px,40%) 1fr;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-.buy .plate{background:var(--mat);border-right:1px solid var(--hair);padding:56px var(--gut);display:flex;align-items:flex-start;justify-content:center}
-.buy .cover{border:1px solid var(--hair);padding:38px 30px 34px;width:100%;max-width:340px;aspect-ratio:1/1.4142;
-  display:flex;flex-direction:column;justify-content:space-between;background:var(--paper)}
-.buy .cover .brand{font-family:var(--serif);font-weight:300;font-size:12px;letter-spacing:.12em;color:var(--gray)}
-.buy .cover .ct{font-family:var(--serif);font-weight:700;font-size:clamp(22px,2.4vw,30px);letter-spacing:-0.03em;line-height:1.25;margin-top:auto}
-.buy .cover .cy{font-family:var(--serif);font-weight:300;font-size:15px;margin-top:10px;color:var(--gray)}
-.buy .cover .foot{display:flex;justify-content:space-between;align-items:center;margin-top:34px}
-.buy .cover .foot .han{font-family:var(--serif);font-weight:300;font-size:12px;color:var(--gray)}
-.buy .panel{padding:64px var(--gut) 70px}
-.buy .panel .cap{font-size:11px;letter-spacing:.1em;display:block}
-.buy .panel .pt{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em;margin-top:16px}
-.buy .panel .price{margin-top:22px;font-weight:700;font-size:26px;letter-spacing:-0.02em}
-.buy .panel .spec{margin-top:30px;max-width:460px;list-style:none}
-.buy .panel .spec li{display:flex;justify-content:space-between;gap:20px;padding:11px 0;font-size:13.5px;border-top:1px solid rgba(246,242,233,.16)}
-.buy .panel .spec li:last-child{border-bottom:1px solid rgba(246,242,233,.16)}
-.buy .panel .spec .k{font-size:12px}
-.buy .panel .acts{margin-top:36px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.buy .panel .member{margin-top:22px;font-size:12.5px;line-height:1.9;max-width:52ch}
-.after{max-width:1080px;padding:56px var(--gut) 96px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:baseline}
-.after .nb{display:flex;gap:26px;flex-wrap:wrap}
-@media (max-width:900px){
-  .buy{grid-template-columns:1fr}
-  .buy .plate{border-right:0;border-bottom:1px solid var(--hair)}
-}
+/* 가이드북 상품 면 전용 (build_guidebook.render_page 가 채운다) */
+.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding:var(--s4) 0 var(--s8)}
+.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s7) var(--s5)}
+.prod .cover img{width:min(300px,72%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:0 20px 40px rgba(49,46,46,.22);border-radius:2px}
+.buy{position:sticky;top:96px}
+.buy .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.buy .price{display:block;margin-top:var(--s3);font-size:var(--t-h2)}
+.buy .price small{display:block;margin:6px 0 0;font-size:13px;font-weight:500}
+.buy .spec{margin-top:var(--s3);display:flex;flex-direction:column}
+.buy .spec li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--hairs);font-size:14px}
+.buy .spec li span:first-child{color:var(--gray);flex:none}
+.buy .spec li span:last-child{text-align:right}
+.buy .acts{margin-top:var(--s4);display:flex;flex-direction:column;gap:10px}
+.buy .acts .btn{width:100%}
+.buy .note{margin-top:var(--s3)}
+.gbd{max-width:860px}
+.gbd .sec{padding:var(--s7) 0 0}
+.toc{counter-reset:c}
+.toc li{display:grid;grid-template-columns:48px minmax(0,1fr);gap:14px;align-items:baseline;padding:12px 0;border-top:1px solid var(--hairs);font-size:15px}
+.toc li:last-child{border-bottom:1px solid var(--hairs)}
+.toc .no{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--seal);font-variant-numeric:tabular-nums}
+.toc .t{font-weight:500}
+.taste li{padding:16px 0;border-top:1px solid var(--hairs)}
+.taste li:last-child{border-bottom:1px solid var(--hairs)}
+.taste .ty{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
+.taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
+.taste .src{margin-top:6px;font-size:12.5px;color:var(--gray);display:block}
+.tastenote{margin-top:var(--s3)}
+.after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
+.after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
+@media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="../index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="../studio.html">면접 스튜디오</a><a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../store.html">스토어</a><a href="../interview/index.html">면접 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a></nav>
-  <div class="aux"><a href="../login.html">로그인</a><a href="../join.html">가입</a><a href="../cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
-</header>
-<main id="hhMain" class="page">
-<div class="pagehead">
-  <p class="crumb u gray"><a href="index.html">가이드북</a> / 연세대학교(서울)</p>
-  <h1>연세대학교(서울) 2027 면접 가이드북</h1>
-  <p class="han">생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 연세대학교(서울) 면접의 실제</p>
-  <!-- aeo --><p class="aeo-answer">연세대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람.</p><!-- /aeo -->
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></nav>
 </div>
-<div class="facts">
-  <div class="f"><span class="n">30</span><span class="k">면</span></div>
-  <div class="f"><span class="n">94</span><span class="k">수록 질문</span></div>
-  <div class="f"><span class="n">14</span><span class="k">질문 유형</span></div>
-  <div class="f"><span class="n">15</span><span class="k">출처 자료</span></div>
-</div>
-<div class="gb">
-<section class="sec"><h2>이 책이 다루는 것</h2><p class="lead">본문 장 구성입니다. 머리말은 제외했습니다.</p><ol class="toc rows">
-<li><span class="no">01</span><span class="t">면접 기본 제원</span></li>
-<li><span class="no">02</span><span class="t">면접 유형 판정</span></li>
-<li><span class="no">03</span><span class="t">평가항목에서 3대역량 매핑</span></li>
-<li><span class="no">04</span><span class="t">인재상: 대학 공식 + 학과별</span></li>
-<li><span class="no">05</span><span class="t">실제 면접 질문 아카이브</span></li>
-<li><span class="no">06</span><span class="t">생기부에서 질문 전환 규칙</span></li>
-<li><span class="no">07</span><span class="t">타 대학 대비 이 학교의 특징</span></li>
-<li><span class="no">08</span><span class="t">준비 전략</span></li>
-<li><span class="no">09</span><span class="t">출처, 신뢰도, 공백</span></li>
-</ol></section>
-<section class="sec"><h2>질문 유형 분포</h2><p class="lead">관측 건수는 이 학교 면접 후기 전체에서 집계한 수, 수록 건수는 책에 실린 수입니다.</p><div class="tblwrap"><table class="tbl"><thead><tr><th>유형</th><th class="num">관측</th><th class="num">비율</th><th class="num">수록</th></tr></thead><tbody>
-<tr><td>제시문형</td><td class="num">105건</td><td class="num">26.8%</td><td class="num">17건</td></tr>
-<tr><td>전공지식확인</td><td class="num">55건</td><td class="num">14.0%</td><td class="num">12건</td></tr>
-<tr><td>탐구, 세특심화</td><td class="num">29건</td><td class="num">7.4%</td><td class="num">10건</td></tr>
-<tr><td>진로, 장래</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
-<tr><td>독서</td><td class="num">11건</td><td class="num">2.8%</td><td class="num">8건</td></tr>
-<tr><td>공동체, 인성</td><td class="num">3건</td><td class="num">0.8%</td><td class="num">3건</td></tr>
-<tr><td>자기이해, 성장</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
-<tr><td>지원동기, 대학이해</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
-<tr><td>시사, 사회이슈</td><td class="num">5건</td><td class="num">1.3%</td><td class="num">5건</td></tr>
-<tr><td>상황, 가치판단</td><td class="num">4건</td><td class="num">1.0%</td><td class="num">4건</td></tr>
-<tr><td>마무리</td><td class="num">10건</td><td class="num">2.6%</td><td class="num">8건</td></tr>
-<tr><td>꼬리질문</td><td class="num">11건</td><td class="num">2.8%</td><td class="num">7건</td></tr>
-<tr><td>학업, 교과</td><td class="num">1건</td><td class="num">0.3%</td><td class="num">1건</td></tr>
-<tr><td>자기소개</td><td class="num">1건</td><td class="num">0.3%</td><td class="num">1건</td></tr>
-</tbody></table></div></section>
-<section class="sec"><h2>맛보기</h2><p class="lead">유형별 첫 수록 질문입니다. 출처는 자료집 기관명만 표기합니다.</p><ol class="taste rows">
-<li><span class="ty">제시문형</span><p class="q">다음 제시문을 읽고 질문에 답하시오</p><span class="src">출처: 대구동구 진로진학센터</span></li>
-<li><span class="ty">전공지식확인</span><p class="q">(나), (다), (라) 각각에 근거하여 (가)에 나타난 정부의 물가 변동 파악 방식의 한계점을 설명하시오</p><span class="src">출처: 대구동구 진로진학센터</span></li>
-<li><span class="ty">탐구, 세특심화</span><p class="q">블록체인 동아리에서 이더리움에 대해 실습을 하였다. 그 이유는?</p><span class="src">출처: 신명여고 자료실</span></li>
-<li><span class="ty">진로, 장래</span><p class="q">생기부에 보면 진로가 문화콘텐츠 제작자라고 되어있는데, 이게 노어노문이랑 무슨 관련이 있는지 설명해줄래요?</p><span class="src">출처: 신명여고 자료실</span></li>
-</ol><p class="tastenote">전체 94건과 유형 해설은 책 본문에 있습니다.</p></section>
-</div>
-<section class="buy">
-  <div class="plate">
-    <div class="cover" aria-label="표지">
-      <span class="brand">현학적 연구소</span>
-      <p class="ct">연세대학교(서울)<br>면접 가이드북</p>
-      <p class="cy">2027 대비</p>
-      <div class="foot"><span class="seal-dot" aria-hidden="true"></span><span class="han">玄學的 硏究所</span></div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="../index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
     </div>
   </div>
-  <div class="panel invert">
-    <span class="cap u">가이드북, guide-yonsei</span>
-    <p class="pt">연세대학교(서울) 2027 면접 가이드북</p>
-    <p class="price">16,500원</p>
-    <ul class="spec">
-      <li><span class="k">형태</span><span>PDF 30면, 보안 리더 열람</span></li>
-      <li><span class="k">수록</span><span>질문 94건, 유형 14종</span></li>
-      <li><span class="k">인쇄</span><span>3회</span></li>
-      <li><span class="k">원본 파일</span><span>비제공</span></li>
-    </ul>
-    <div class="acts">
-      <span class="u gray">보안 리더 준비 중입니다. 준비되는 대로 이 면에서 판매합니다</span>
-    </div>
-    <p class="member">회원은 보안 리더로 열람합니다. 인쇄 3회, 원본 파일 비제공. 결제 후 자료실에서 바로 열립니다.</p>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+    <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="index.html">가이드북</a><span aria-hidden="true">/</span><span>연세대학교(서울)</span></nav>
+    <h1 class="rv">연세대학교(서울) 2027 면접 가이드북</h1>
+    <p class="lede rv">생기부 기반 면접 예상 프로파일, 2027 대비. 면접 후기와 공식 요강으로 재구성한 연세대학교(서울) 면접의 실제. PDF 30면, 수록 질문 94건.</p>
+     <!-- aeo --><p class="aeo-answer">연세대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 16,500원, 보안 리더 열람.</p><!-- /aeo -->
+</div>
   </div>
 </section>
-<div class="after">
-<a class="textlink u" href="../interview/yonsei.html">같은 학교 면접 아카이브</a>
-<div class="nb">
-<a class="textlink u" href="ajou.html">이전, 아주대학교</a>
-<a class="textlink u" href="index.html">전체 38권</a>
-<a class="textlink u" href="ulsan.html">다음, 울산대학교</a>
-</div></div>
+
+<section class="wrap prod">
+  <figure class="cover rv"><img src="../assets/covers/yonsei.jpg" alt="연세대학교(서울) 2027 면접 가이드북 표지" width="210" height="297" fetchpriority="high"></figure>
+  <div class="panel buy rv">
+    <div class="top"><span class="eyebrow" style="margin:0">가이드북, guide-yonsei</span><span class="badge mute">준비 중</span></div>
+    <h2>연세대학교(서울) 2027 면접 가이드북</h2>
+    <span class="price">16,500원<small>부가세 포함, 보안 리더 열람</small></span>
+    <ul class="spec">
+      <li><span>형태</span><span>PDF 30면, 브라우저 보안 리더</span></li>
+      <li><span>수록</span><span>질문 94건, 유형 14종</span></li>
+      <li><span>출처</span><span>자료 15종, 공식과 관측 구분</span></li>
+      <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
+    </ul>
+    <div class="acts">
+      <span class="btn" aria-disabled="true">입고 예정</span>
+      <a class="btn ghost" href="../interview/yonsei.html">무료 아카이브 열람</a>
+    </div>
+    <p class="note">보안 리더 준비 중. 준비되는 대로 이 면에서 판매하고 공지에 기록.</p>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="facts rv">
+      <div><b>30</b><span>면</span></div>
+      <div><b>94</b><span>수록 질문</span></div>
+      <div><b>14</b><span>질문 유형</span></div>
+      <div><b>15</b><span>출처 자료</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+<div class="gbd">
+  <section class="sec">
+    <div class="sh rv"><div><h2>이 책이 다루는 것</h2><p>본문 장 구성. 머리말 제외.</p></div></div>
+    <ol class="toc rv">
+      <li><span class="no">01</span><span class="t">면접 기본 제원</span></li>
+      <li><span class="no">02</span><span class="t">면접 유형 판정</span></li>
+      <li><span class="no">03</span><span class="t">평가항목에서 3대역량 매핑</span></li>
+      <li><span class="no">04</span><span class="t">인재상: 대학 공식 + 학과별</span></li>
+      <li><span class="no">05</span><span class="t">실제 면접 질문 아카이브</span></li>
+      <li><span class="no">06</span><span class="t">생기부에서 질문 전환 규칙</span></li>
+      <li><span class="no">07</span><span class="t">타 대학 대비 이 학교의 특징</span></li>
+      <li><span class="no">08</span><span class="t">준비 전략</span></li>
+      <li><span class="no">09</span><span class="t">출처, 신뢰도, 공백</span></li>
+    </ol>
+  </section>
+  <section class="sec">
+    <div class="sh rv"><div><h2>질문 유형 분포</h2><p>관측 건수는 이 학교 면접 후기 전체에서 집계한 수, 수록 건수는 책에 실린 수.</p></div></div>
+    <div class="tblwrap rv"><table class="tbl"><thead><tr><th>유형</th><th class="num">관측</th><th class="num">비율</th><th class="num">수록</th></tr></thead><tbody>
+      <tr><td>제시문형</td><td class="num">105건</td><td class="num">26.8%</td><td class="num">17건</td></tr>
+      <tr><td>전공지식확인</td><td class="num">55건</td><td class="num">14.0%</td><td class="num">12건</td></tr>
+      <tr><td>탐구, 세특심화</td><td class="num">29건</td><td class="num">7.4%</td><td class="num">10건</td></tr>
+      <tr><td>진로, 장래</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
+      <tr><td>독서</td><td class="num">11건</td><td class="num">2.8%</td><td class="num">8건</td></tr>
+      <tr><td>공동체, 인성</td><td class="num">3건</td><td class="num">0.8%</td><td class="num">3건</td></tr>
+      <tr><td>자기이해, 성장</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
+      <tr><td>지원동기, 대학이해</td><td class="num">6건</td><td class="num">1.5%</td><td class="num">6건</td></tr>
+      <tr><td>시사, 사회이슈</td><td class="num">5건</td><td class="num">1.3%</td><td class="num">5건</td></tr>
+      <tr><td>상황, 가치판단</td><td class="num">4건</td><td class="num">1.0%</td><td class="num">4건</td></tr>
+      <tr><td>마무리</td><td class="num">10건</td><td class="num">2.6%</td><td class="num">8건</td></tr>
+      <tr><td>꼬리질문</td><td class="num">11건</td><td class="num">2.8%</td><td class="num">7건</td></tr>
+      <tr><td>학업, 교과</td><td class="num">1건</td><td class="num">0.3%</td><td class="num">1건</td></tr>
+      <tr><td>자기소개</td><td class="num">1건</td><td class="num">0.3%</td><td class="num">1건</td></tr>
+    </tbody></table></div>
+  </section>
+  <section class="sec">
+    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 자료집 기관명만 표기.</p></div></div>
+    <ol class="taste rv">
+      <li><span class="ty">제시문형</span><p class="q">다음 제시문을 읽고 질문에 답하시오</p><span class="src">출처: 대구동구 진로진학센터</span></li>
+      <li><span class="ty">전공지식확인</span><p class="q">(나), (다), (라) 각각에 근거하여 (가)에 나타난 정부의 물가 변동 파악 방식의 한계점을 설명하시오</p><span class="src">출처: 대구동구 진로진학센터</span></li>
+      <li><span class="ty">탐구, 세특심화</span><p class="q">블록체인 동아리에서 이더리움에 대해 실습을 하였다. 그 이유는?</p><span class="src">출처: 신명여고 자료실</span></li>
+      <li><span class="ty">진로, 장래</span><p class="q">생기부에 보면 진로가 문화콘텐츠 제작자라고 되어있는데, 이게 노어노문이랑 무슨 관련이 있는지 설명해줄래요?</p><span class="src">출처: 신명여고 자료실</span></li>
+    </ol>
+    <p class="tastenote note">전체 94건과 유형 해설은 책 본문에.</p>
+  </section>
+  <div class="after rv">
+    <a class="tlink" href="../interview/yonsei.html">같은 학교 무료 아카이브</a>
+    <div class="nb"><a class="tlink" href="ajou.html">이전, 아주대학교</a><a class="tlink" href="index.html">전체 38권</a><a class="tlink" href="ulsan.html">다음, 울산대학교</a></div>
+  </div>
+</div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="final rv">
+      <div><h2>준비 중인 동안</h2><p>무료 아카이브에서 관측 기록 먼저 열람. 판매 개시는 공지로.</p></div>
+      <div class="acts"><a class="btn" href="../interview/yonsei.html">무료 아카이브 열기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../notice.html">공지 보기</a></div>
+    </div>
+  </div>
+</section>
+
 </main>
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="../terms.html">이용약관</a> <a href="../privacy.html">개인정보처리방침</a></span>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../interview/index.html">무료 아카이브</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="../faq.html">자주 묻는 질문</a></li><li><a href="../notice.html">공지</a></li><li><a href="../terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="../terms.html">이용약관</a> &nbsp; <a href="../privacy.html">개인정보처리방침</a></nav></div>
+  </div>
 </footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="../index.html"><i aria-hidden="true"></i>홈</a><a href="../index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri on" href="../guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="../my.html"><i aria-hidden="true"></i>MY</a></nav>
+
 <script src="../assets/app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){

@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>장바구니, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/cart.html">
@@ -28,105 +28,138 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-.cartgrid{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(320px,1fr);border-bottom:1px solid var(--hair)}
-.items{padding:72px var(--gut) 90px;border-right:1px solid var(--hair)}
-.items h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.03em;line-height:1.18;margin-bottom:52px}
-.line{display:grid;grid-template-columns:72px 1fr auto;gap:24px;align-items:center;padding:26px 0}
-.line .thumb{width:72px;height:96px;border:1px solid var(--hair);background:var(--mat);
-  display:flex;align-items:center;justify-content:center;overflow:hidden}
+/* 장바구니 전용 */
+.lay{padding-top:0}
+.lines li{border-top:1px solid var(--hair)}
+.lines li:last-child{border-bottom:1px solid var(--hair)}
+.line{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s3) 4px}
+.line .thumb{width:56px;height:79px;border-radius:2px;background:var(--mat);display:grid;place-items:center;overflow:hidden;box-shadow:0 4px 12px rgba(49,46,46,.18)}
 .line .thumb img{width:100%;height:100%;object-fit:cover}
-.line .thumb-txt{font-family:var(--serif);font-weight:500;font-size:13px;line-height:1.5;color:var(--gray);text-align:center;background:var(--mat)}
-.line .t{font-family:var(--serif);font-weight:700;font-size:20px;letter-spacing:-0.02em}
-.line .m{margin-top:6px;font-size:12px;color:var(--gray)}
-.line .ops{margin-top:14px;display:flex;gap:18px;align-items:center}
-.qty{display:inline-flex;border:1px solid var(--ink)}
-.qty button{width:32px;height:32px;background:transparent;border:0;font-size:15px;color:var(--ink);cursor:pointer}
-.qty span{width:36px;display:inline-flex;align-items:center;justify-content:center;font-size:13px;border-left:1px solid var(--hairs);border-right:1px solid var(--hairs)}
-.line .p{text-align:right;font-weight:600;font-size:17px}
-.line .p .was{display:block;font-weight:400;font-size:12px;color:var(--gray);text-decoration:line-through}
-.memberline{padding:16px 0;border-top:1px solid var(--hairs);font-size:12.5px;color:var(--gray)}
-.memberline b{color:var(--seal);font-weight:600}
-.keep{margin-top:34px}
-.bill{padding:72px var(--gut) 90px;display:flex;flex-direction:column}
-.bill h2{font-family:var(--serif);font-weight:700;font-size:24px;letter-spacing:-0.02em;margin-bottom:36px}
-.bill dl{font-size:14px}
-.bill dl div{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid var(--hairs)}
-.bill dt{color:var(--gray)}
-.bill .total{border-top:2px solid var(--ink);margin-top:8px;padding-top:16px;
-  display:flex;justify-content:space-between;align-items:baseline}
-.bill .total .won{font-weight:700;font-size:26px;letter-spacing:-0.02em}
-.bill .free{margin-top:12px;font-size:12px;color:var(--gray)}
-.bill .act{margin-top:36px;width:100%}
-@media (max-width:900px){
-  .cartgrid{grid-template-columns:1fr}
-  .items{border-right:0;border-bottom:1px solid var(--hair)}
-}
-
-/* 재설계 v2: 합계 = 먹 반전 */
-.bill .total.invert{background:var(--ink);color:var(--paper);border-top:0;
-  margin-top:14px;padding:18px 16px}
-.bill .total.invert .won{color:var(--paper)}
-
-/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
-.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
-.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
-.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
-.invert p,.invert li,.invert span,.invert dd,.invert .v,
-.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
-.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
-.invert .ttl{color:var(--paper)!important}
-.invert .seal{background:var(--seal)!important}
-.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
-.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
-.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
-.invert .act:hover{background:transparent!important;color:var(--paper)!important}
-.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
-.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
+.line .thumb-txt{font-size:11px;font-weight:600;line-height:1.4;color:var(--gray);text-align:center;padding:4px}
+.line .t{font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.line .m{margin-top:4px;font-size:13px;color:var(--gray)}
+.line .ops{margin-top:12px;display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
+.line .p{text-align:right;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.memberline{margin-top:var(--s3)}
+.keep{margin-top:var(--s5)}
+.bill .btn{width:100%;margin-top:var(--s4)}
+.bill .free{margin-top:12px}
+@media (max-width:600px){.line{grid-template-columns:56px minmax(0,1fr)}.line .p{grid-column:2;text-align:left}}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
 </header>
 
-<main id="hhMain" class="cartgrid">
-  <section class="items">
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>장바구니</span></nav>
     <h1>장바구니</h1>
-    <ol class="rows" id="cartRows"></ol>
-    <p class="memberline" id="cartNote" hidden>이용권은 결제 즉시 열립니다. 실물 상품만 배송 대상입니다.</p>
-    <p class="memberline" id="cartEmpty" hidden>담긴 상품이 없습니다. 스토어와 면접 스튜디오에서 담아 주십시오.</p>
-    <p class="keep"><a class="textlink u" href="store.html">계속 담기</a></p>
+    <p class="lede">이용권과 가이드북은 결제 즉시 열리고, 봉투 모의고사만 배송.</p>
+   </div>
+  </div>
+</section>
+
+<div class="wrap lay">
+  <section class="items">
+    <ol class="lines" id="cartRows"></ol>
+    <p class="note memberline" id="cartNote" hidden>디지털 상품은 결제 즉시 마이페이지에서 열림. 실물 상품만 배송 대상.</p>
+    <div class="empty" id="cartEmpty" hidden>담긴 상품이 없습니다. 가이드북, 스튜디오, 스토어에서 담아 주십시오.</div>
+    <p class="keep"><a class="btn ghost sm" href="guidebook/index.html">가이드북 더 보기 <span class="ar" aria-hidden="true">→</span></a></p>
   </section>
 
-  <aside class="bill">
-    <h2>합계</h2>
-    <dl id="billRows"></dl>
-    <div class="total invert"><span class="u gray">결제 예정</span><span class="won" id="billTotal">0원</span></div>
-    <p class="free">배송비는 3,000원이고, 실물 5만원 이상이면 무료입니다.</p>
-    <a class="act" href="checkout.html" id="toCheckout">결제로</a>
+  <aside class="side">
+    <div class="panel bill">
+      <h2>합계</h2>
+      <dl class="kv" id="billRows" style="margin-top:var(--s3)"></dl>
+      <div class="total"><span>결제 예정</span><span class="won" id="billTotal">0원</span></div>
+      <p class="note free">배송비 3,000원, 실물 5만원 이상이면 무료.</p>
+      <a class="btn" href="checkout.html" id="toCheckout">결제로 <span class="ar" aria-hidden="true">→</span></a>
+    </div>
   </aside>
+</div>
+
 </main>
 
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
+</footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+
+<script src="assets/app.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+  function thumb(it){
+    var sku=String(it.sku||'');
+    if(sku.indexOf('guide-')===0) return '<a class="thumb" href="guidebook/'+encodeURIComponent(sku.slice(6))+'.html"><img src="assets/covers/'+encodeURIComponent(sku.slice(6))+'.jpg" alt="" width="56" height="79"></a>';
+    if(sku==='envelope-mock') return '<a class="thumb" href="store.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
+    return '<a class="thumb" href="studio.html"><span class="thumb-txt">'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>';
+  }
   function render(){
     var items=HH.cart(), rows=document.getElementById('cartRows');
     document.getElementById('cartEmpty').hidden=items.length>0;
     document.getElementById('cartNote').hidden=items.length===0;
-    document.getElementById('toCheckout').style.opacity=items.length?1:.35;
-    document.getElementById('toCheckout').style.pointerEvents=items.length?'auto':'none';
+    var go=document.getElementById('toCheckout');
+    go.setAttribute('aria-disabled', items.length?'false':'true');
     rows.innerHTML=items.map(function(it,i){
-      return '<li class="line">'
-        +'<a class="thumb thumb-txt" href="store.html"><span>'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>'
+      return '<li class="line">'+thumb(it)
         +'<div><p class="t">'+esc(it.title)+'</p>'
-        +'<p class="m">'+(it.ship?'실물 배송':'디지털 · 결제 즉시 열림')+'</p>'
-        +'<div class="ops"><span class="qty"><button type="button" data-i="'+i+'" data-d="-1">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1">+</button></span>'
-        +'<a class="textlink u" href="#" data-rm="'+i+'">빼기</a></div></div>'
+        +'<p class="m">'+(it.ship?'실물 배송':'디지털, 결제 즉시 열림')+'</p>'
+        +'<div class="ops"><span class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="수량 줄이기">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="수량 늘리기">+</button></span>'
+        +'<button type="button" class="tlink" data-rm="'+i+'">빼기</button></div></div>'
         +'<p class="p">'+HH.won(it.price*it.qty)+'</p></li>';
     }).join('');
     var sub=items.reduce(function(s,x){return s+x.price*x.qty},0);
@@ -137,21 +170,11 @@ document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('billTotal').textContent=HH.won(sub+ship);
     rows.querySelectorAll('button[data-i]').forEach(function(b){b.addEventListener('click',function(){
       var it=HH.cart();var x=it[+b.dataset.i];x.qty=Math.max(1,Math.min(10,x.qty+ +b.dataset.d));HH.saveCart(it);render();})});
-    rows.querySelectorAll('a[data-rm]').forEach(function(a){a.addEventListener('click',function(ev){
-      ev.preventDefault();var it=HH.cart();it.splice(+a.dataset.rm,1);HH.saveCart(it);render();})});
+    rows.querySelectorAll('button[data-rm]').forEach(function(a){a.addEventListener('click',function(){
+      var it=HH.cart();it.splice(+a.dataset.rm,1);HH.saveCart(it);render();})});
   }
   render();
 });
 </script>
-
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
-</footer>
-
-<script src="assets/app.js"></script>
 </body>
 </html>

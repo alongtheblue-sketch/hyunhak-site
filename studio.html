@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>면접 스튜디오, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/studio.html">
@@ -27,231 +27,226 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-.ways{display:grid;grid-template-columns:1fr 1fr 1fr;border-bottom:1px solid var(--hair)}
-.way{padding:56px var(--gut) 64px}
-.way + .way{border-left:1px solid var(--hair)}
-.way h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h4);letter-spacing:-0.02em}
-.way .han{font-family:var(--serif);font-weight:300;font-size:13px;color:var(--gray);margin-top:6px}
-.way p{margin-top:22px;font-size:14px;line-height:1.95;color:var(--body);max-width:36ch}
-.list{padding:100px var(--gut) 60px}
-.list .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:48px}
-.list h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.list li a{display:grid;grid-template-columns:110px 90px 1fr auto;align-items:baseline;
-  gap:24px;padding:19px 0;transition:background .2s,color .2s}
-.list li a:hover{background:var(--ink);color:var(--paper)}
-.list li a:hover .m{color:rgba(246,242,233,.6)}
-.list .m{font-size:12px;letter-spacing:.06em;color:var(--gray)}
-.list .t{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);letter-spacing:-0.02em;padding-left:8px}
-.list .len{font-size:12px;color:var(--gray);padding-right:8px}
-.list .note{margin-top:18px;font-size:11.5px;color:var(--gray)}
-.schools{padding:96px var(--gut) 40px;border-top:1px solid var(--hair)}
-.schools .head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:44px}
-.schools h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.schools li a,.schools li .soon{display:grid;grid-template-columns:1fr 90px 130px auto;align-items:baseline;
-  gap:24px;padding:22px 0;transition:background .2s,color .2s}
-.schools li a:hover{background:var(--ink);color:var(--paper)}
-.schools li a:hover .c,.schools li a:hover .n{color:rgba(246,242,233,.6)}
-.schools .s{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);letter-spacing:-0.02em}
-.schools .c,.schools .n{font-size:12px;letter-spacing:.04em;color:var(--gray)}
-.schools .w{font-weight:600;font-size:14px;letter-spacing:-0.01em;padding-right:8px}
-.schools li .soon{color:var(--gray);cursor:default}
-.plans{border-top:1px solid var(--hair);display:grid;grid-template-columns:1fr 1fr}
-.plans .p{padding:84px var(--gut) 92px}
-.plans .p + .p{border-left:1px solid var(--hair)}
-.plans h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.03em}
-.plans .han{font-family:var(--serif);font-weight:300;font-size:13px;color:var(--gray);margin-top:6px}
-.plans .price{margin-top:34px;display:flex;align-items:baseline;gap:12px}
-.plans .price .won{font-weight:700;font-size:var(--t-h2);letter-spacing:-0.03em}
-.plans .price .per{font-size:13px;color:var(--gray)}
-.plans .inc{margin-top:28px;max-width:460px}
-.plans .inc li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;font-size:14px}
-.plans .inc li span:last-child{color:var(--gray);font-size:12.5px}
-.plans .acts{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px}
-.howto{border-top:1px solid var(--hair);padding:84px var(--gut) 96px;
-  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:56px}
-.howto h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.03em}
-.howto ol{list-style:none;counter-reset:s}
-.howto ol li{counter-increment:s;position:relative;padding:20px 0 20px 52px;
-  border-top:1px solid var(--hairs);font-size:14.5px;line-height:1.85;color:var(--body)}
-.howto ol li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:26px;
-  font-size:11px;letter-spacing:.06em;color:var(--gray)}
-.howto ol li b{font-weight:600;color:var(--ink)}
-@media (max-width:900px){
-  .ways{grid-template-columns:1fr}
-  .way + .way{border-left:0;border-top:1px solid var(--hair)}
-  .plans,.howto{grid-template-columns:1fr}
-  .plans .p + .p{border-left:0;border-top:1px solid var(--hair)}
-  .schools li a,.schools li .soon{grid-template-columns:1fr auto}
-  .schools .c,.schools .n{display:none}
-  .list li a{grid-template-columns:90px 1fr auto}
-  .list li a .m:nth-child(2){display:none}
-}
-
-/* 재설계 v2: 플랜 = 먹 반전 판 */
-.plans .p.invert{background:var(--ink);color:var(--paper);border-color:rgba(246,242,233,.18)}
-.plans .p.invert h2{color:var(--paper)}
-.plans .p.invert .han{color:rgba(246,242,233,.62)}
-.plans .p.invert .won{color:var(--paper)}
-.plans .p.invert .per{color:rgba(246,242,233,.7)}
-.plans .p.invert .spec div{border-color:rgba(246,242,233,.16)}
-.plans .p.invert .spec .k{color:rgba(246,242,233,.6)}
-.plans .p.invert .spec .v{color:rgba(246,242,233,.92)}
-.plans .p.invert .act{background:var(--paper);color:var(--ink);border-color:var(--paper)}
-.plans .p.invert .act:hover{background:transparent;color:var(--paper)}
-.plans .p.invert .textlink{color:var(--paper);border-color:rgba(246,242,233,.5)}
-
-/* ── 반전 판 색 승계 (페이지 인라인이 base.css 보다 후순위라 여기서 재선언) ── */
-.invert .gray,.invert .k,.invert .per,.invert .note,.invert .help,.invert .d,.invert .m,
-.invert .s,.invert .c,.invert .lead,.invert .member,.invert .crumb,
-.invert .inc li>span:first-child,.invert .spec .k,.invert dt{color:rgba(246,242,233,.66)!important}
-.invert p,.invert li,.invert span,.invert dd,.invert .v,
-.invert .inc li>span:last-child{color:rgba(246,242,233,.9)!important}
-.invert h1,.invert h2,.invert h3,.invert .t,.invert .won,.invert .price,.invert b,
-.invert .ttl{color:var(--paper)!important}
-.invert .seal{background:var(--seal)!important}
-.invert li,.invert .rows li,.invert .inc li{border-color:rgba(246,242,233,.16)!important}
-.invert .textlink{color:var(--paper)!important;border-bottom-color:rgba(246,242,233,.5)!important}
-.invert .act{background:var(--paper)!important;color:var(--ink)!important;border-color:var(--paper)!important}
-.invert .act:hover{background:transparent!important;color:var(--paper)!important}
-.invert .act.ghost{background:transparent!important;color:var(--paper)!important;border-color:rgba(246,242,233,.55)!important}
-.invert .act.ghost:hover{background:var(--paper)!important;color:var(--ink)!important}
+/* 스튜디오 전용 */
+.hero2{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:center;padding:0 0 var(--s6)}
+.hero2 figure{position:relative;margin:0;border-radius:6px;overflow:hidden;box-shadow:0 8px 24px rgba(49,46,46,.08);background:var(--mat)}
+.hero2 figure img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.hero2 figure .badge{position:absolute;top:12px;left:12px}
+.hero2 figure .ai{position:absolute;right:12px;bottom:10px}
+.ways{grid-template-columns:repeat(3,1fr)}
+.plist{margin-top:var(--s4)}
+.plist li{border-top:1px solid var(--hair)}
+.plist li:last-child{border-bottom:1px solid var(--hair)}
+.plist .r{display:grid;grid-template-columns:110px 70px minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:12px 4px;font-size:15px}
+.plist .u{font-weight:600}
+.plist .m{font-size:13px;color:var(--gray)}
+.plist .t{font-weight:500}
+.plist .price{font-size:15px;white-space:nowrap}
+.plist .acts{display:flex;gap:8px;align-items:center;justify-content:flex-end}
+.plist .soon .t,.plist .soon .u{color:var(--gray)}
+.plan .price small{margin-left:0;display:block;margin-top:2px}
+@media (max-width:900px){.hero2{grid-template-columns:1fr;gap:var(--s5)}.ways{grid-template-columns:1fr}.plist .r{grid-template-columns:1fr auto;gap:6px var(--s3)}.plist .m{display:none}.plist .t{grid-column:1/-1}}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html" class="on" aria-current="page">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
 </header>
-<main id="hhMain" class="page sec">
 
-<section class="pagehead">
-  <p class="crumb u gray">현학적 연구소, 면접 스튜디오</p>
-  <h1>제시문 면접<br>영상 해제와 촬영 첨삭</h1>
-  <p class="han">지문 1편당 5회 응시하고, 회차마다 첨삭합니다</p>
+<main id="main">
 
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>면접 스튜디오</span></nav>
+    <h1 class="rv">제시문 면접 스튜디오</h1>
+    <p class="lede rv">연세대와 고려대의 기출 제시문으로 온라인 촬영 응시. 지문 1편에 5회 응시, 회차마다 전사, 진단, 구술체 재구성의 첨삭 세 단.</p>
   <!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 촬영 응시하고 세 단 첨삭과 해설을 받는 과정입니다. 지문 1편 22,000원, 전권 330,000원.</p><!-- /aeo -->
-</section>
-
-<section class="ways">
-  <div class="way">
-    <h2>실전 응시</h2>
-    <p class="han">지문 1편당 5회</p>
-    <p>학교의 실제 기출 제시문으로 치릅니다. 문항을 나누지 않는 실전형과 하나씩 끊는
-    연습형이 있고, 한 지문을 다섯 번까지 응시합니다.</p>
-  </div>
-  <div class="way">
-    <h2>태도 기록</h2>
-    <p class="han">전면 카메라 녹화</p>
-    <p>전면 카메라로 응시 장면을 남깁니다. 침묵의 길이, 답변의 완주, 개시 선언까지
-    응시 태도를 함께 기록합니다.</p>
-  </div>
-  <div class="way">
-    <h2>첨삭 세 단</h2>
-    <p class="han">전사, 진단, 재구성</p>
-    <p>말한 그대로를 받아 적고, 오독과 논리의 비약을 짚고, 같은 내용을 어떻게
-    말했어야 하는지 구술체로 다시 세웁니다.</p>
+</div>
+    <div class="acts rv"><a class="btn" href="#plans">이용권 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#trialGo" id="trialGo">회원 체험 응시 1회</a></div>
   </div>
 </section>
 
-<section class="list">
-  <div class="head">
-    <h2>지문 낱권</h2>
-  </div>
-  <ol class="rows">
-    <li><a href="#" data-cart-sku="passage-single" data-cart-title="지문 낱권, 공동체와 개인, 상반된 두 제시문의 접점" data-cart-price="22000"><span class="m">고려대</span><span class="m">인문</span><span class="t">공동체와 개인, 상반된 두 제시문의 접점</span><span class="len">22,000원 · 담기</span></a></li>
-    <li><a href="#" data-cart-sku="passage-single" data-cart-title="지문 낱권, 도표 제시문, 수치의 함정을 피하는 독법" data-cart-price="22000"><span class="m">고려대</span><span class="m">사회</span><span class="t">도표 제시문, 수치의 함정을 피하는 독법</span><span class="len">22,000원 · 담기</span></a></li>
-    <li><a href="#" data-cart-sku="passage-single" data-cart-title="지문 낱권, 수리 구술, 답변 순서를 세우는 법" data-cart-price="22000"><span class="m">연세대</span><span class="m">자연</span><span class="t">수리 구술, 답변 순서를 세우는 법</span><span class="len">22,000원 · 담기</span></a></li>
-    <li><a href="#" data-cart-sku="passage-single" data-cart-title="지문 낱권, 고전 제시문의 현대적 재맥락화" data-cart-price="22000"><span class="m">연세대</span><span class="m">인문</span><span class="t">고전 제시문의 현대적 재맥락화</span><span class="len">22,000원 · 담기</span></a></li>
-  </ol>
-  <p class="note">지문 1편의 값입니다. 결제하면 그 지문으로 다섯 번까지 응시합니다. 담기를 누르면 장바구니에 들어갑니다.</p>
-</section>
-
-<section class="schools">
-  <div class="head">
-    <h2>학교 전권</h2>
-  </div>
-  <ol class="rows">
-    <li><a href="#" data-cart-sku="pass-korea" data-cart-title="고려대학교 전권 이용권" data-cart-price="330000"><span class="s">고려대학교</span><span class="c">계열적합</span><span class="n">지문 60편</span><span class="w">330,000원 · 담기</span></a></li>
-    <li><a href="#" data-cart-sku="pass-yonsei" data-cart-title="연세대학교 전권 이용권" data-cart-price="330000"><span class="s">연세대학교</span><span class="c">활동우수</span><span class="n">지문 60편</span><span class="w">330,000원 · 담기</span></a></li>
-    <li><span class="soon"><span class="s">연세대학교 미래캠퍼스</span><span class="c">제시문 면접</span><span class="n">준비 중</span><span class="w">공개 예정</span></span></li>
-  </ol>
-  <p class="note">학교 하나의 지문 전량입니다. 고려대와 연세대 2교를 판매하며, 연세대 미래캠퍼스는 준비 중입니다.</p>
-</section>
-
-<section class="facts">
-  <div class="f"><span class="n">5</span><span class="k">지문당 응시</span></div>
-  <div class="f"><span class="n">3</span><span class="k">첨삭 단계</span></div>
-  <div class="f"><span class="n">12</span><span class="k">이용 개월</span></div>
-  <div class="f"><span class="n">2</span><span class="k">판매 대학</span></div>
-</section>
-
-<section class="plans">
-  <div class="p invert">
-    <h2>지문 낱권</h2>
-    <p class="han">지문 1편 단위</p>
-    <div class="price"><span class="won">22,000원</span><span class="per">지문 1편, 부가세 포함</span></div>
-    <ul class="inc rows">
-      <li><span>응시 횟수</span><span>지문당 5회</span></li>
-      <li><span>첨삭</span><span>응시마다 세 단 전량</span></li>
-      <li><span>응시 영상</span><span>보관, 다시 보기</span></li>
-      <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
-    </ul>
-    <div class="acts">
-      <a class="act" href="#" data-cart-sku="passage-single" data-cart-title="스튜디오 지문 이용권 1편" data-cart-price="22000">지문 담기</a>
-      <a class="textlink u" href="#" id="trialGo">체험 응시 1회</a>
-      <script>
-      document.addEventListener('DOMContentLoaded', function(){
-        document.getElementById('trialGo').addEventListener('click', async function(ev){
-          ev.preventDefault();
-          var st = await HH.me();
-          if(!st.member){ location.href='join.html?next=studio.html'; return; }
-          try{
-            var r = await HH.api('/api/studio/token',{method:'POST'});
-            window.open(r.url,'_blank','noopener');
-          }catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
-        });
-      });
-      </script>
+<section class="wrap hero2">
+  <div class="rv">
+    <div class="facts">
+      <div><b>5</b><span>지문당 응시 횟수</span></div>
+      <div><b>3</b><span>첨삭 단계</span></div>
+      <div><b>12</b><span>이용권 유효 개월</span></div>
+      <div><b>2</b><span>판매 대학</span></div>
     </div>
   </div>
-  <div class="p invert">
-    <h2>학교 전권</h2>
-    <p class="han">학교별 지문 전량</p>
-    <div class="price"><span class="won">330,000원</span><span class="per">학교 1곳, 부가세 포함</span></div>
-    <ul class="inc rows">
-      <li><span>범위</span><span>그 학교 지문 전량</span></li>
-      <li><span>응시 횟수</span><span>지문마다 5회</span></li>
-      <li><span>추가 지문</span><span>기간 내 갱신분 포함</span></li>
-      <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
-    </ul>
-    <div class="acts">
-      <a class="act" href="#" data-cart-sku="pass-korea" data-cart-title="고려대학교 전권 이용권" data-cart-price="330000">고려대 전권 담기</a>
-      <a class="act ghost" href="#" data-cart-sku="pass-yonsei" data-cart-title="연세대학교 전권 이용권" data-cart-price="330000">연세대 전권 담기</a>
+  <figure class="rv"><img src="assets/photo/studio_desk_aigen.jpg" alt="링 조명과 노트북이 놓인 온라인 면접 촬영 책상" data-ai="generated" width="1600" height="1067" loading="lazy"><span class="badge">연세대, 고려대</span><span class="ai">AI 생성 이미지</span></figure>
+</section>
+
+<section class="sec tight" id="ways">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>응시 방식</h2><p>실제 고사장 규격, 전면 카메라, 첨삭 세 단</p></div></div>
+    <div class="steps ways">
+      <div class="step rv"><span class="no">실전 응시</span><h3>지문 1편당 5회</h3><p>학교의 실제 기출 제시문으로 응시. 문항을 나누지 않는 실전형과 하나씩 끊는 연습형, 한 지문에 다섯 번까지.</p></div>
+      <div class="step rv"><span class="no">태도 기록</span><h3>전면 카메라 녹화</h3><p>응시 장면을 전면 카메라로 기록. 침묵의 길이, 답변의 완주, 개시 선언까지 응시 태도를 함께 남김.</p></div>
+      <div class="step rv"><span class="no">첨삭 세 단</span><h3>전사, 진단, 재구성</h3><p>말한 그대로를 받아 적고, 오독과 논리의 비약을 짚고, 같은 내용을 어떻게 말했어야 하는지 구술체로 다시 세움.</p></div>
     </div>
   </div>
 </section>
 
-<section class="howto">
-  <h2>응시 절차</h2>
-  <ol>
-    <li><b>지문을 고릅니다.</b> 낱권이면 한 편, 전권이면 그 학교의 전량이 열립니다.</li>
-    <li><b>실전형으로 먼저 칩니다.</b> 문항을 나누지 않고 한 번에 칩니다. 실제 고사장과 같은 규격입니다.</li>
-    <li><b>첨삭 세 단을 읽습니다.</b> 말한 그대로를 전사하고, 오독과 비약을 진단하고, 구술체로 재구성합니다.</li>
-    <li><b>연습형으로 다시 칩니다.</b> 문항을 끊어 약한 자리만 칩니다. 한 지문에 다섯 번까지 응시합니다.</li>
-  </ol>
+<section class="sec tight" id="plans">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>이용권 두 가지</h2><p>지문 1편 낱권, 학교 지문 전량 전권. 부가세 포함.</p></div></div>
+    <div class="plans">
+      <div class="plan rv">
+        <h3>지문 낱권</h3>
+        <p class="who">지문 1편 단위. 지원 대학 지문을 하나씩 고를 때.</p>
+        <span class="price">22,000원<small>지문 1편, 5회 응시</small></span>
+        <ul class="inc">
+          <li><span>응시 횟수</span><span>지문당 5회</span></li>
+          <li><span>첨삭</span><span>응시마다 세 단 전량</span></li>
+          <li><span>응시 영상</span><span>보관, 다시 보기</span></li>
+          <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
+        </ul>
+        <div class="acts"><a class="btn ghost" href="#passages">지문 고르기</a></div>
+      </div>
+      <div class="plan pick rv">
+        <span class="badge seal">학교 전권</span>
+        <h3>학교 전권</h3>
+        <p class="who">학교 한 곳의 지문 전량. 기간 안의 추가 지문 포함.</p>
+        <span class="price">330,000원<small>학교 1곳, 지문마다 5회 응시</small></span>
+        <ul class="inc">
+          <li><span>범위</span><span>그 학교 지문 전량, 60편</span></li>
+          <li><span>응시 횟수</span><span>지문마다 5회</span></li>
+          <li><span>추가 지문</span><span>기간 내 갱신분 포함</span></li>
+          <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
+        </ul>
+        <div class="acts">
+          <button type="button" class="btn" data-cart-sku="pass-korea" data-cart-title="고려대학교 전권 이용권" data-cart-price="330000">고려대 전권 담기 <span class="ar" aria-hidden="true">→</span></button>
+          <button type="button" class="btn ghost" data-cart-sku="pass-yonsei" data-cart-title="연세대학교 전권 이용권" data-cart-price="330000">연세대 전권 담기</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight" id="passages">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>지문 낱권</h2><p>지문 1편의 값, 22,000원. 결제하면 그 지문으로 다섯 번까지 응시.</p></div></div>
+    <ol class="plist rv">
+      <li><div class="r"><span class="u">고려대</span><span class="m">인문</span><span class="t">공동체와 개인, 상반된 두 제시문의 접점</span><span class="acts"><span class="price">22,000원</span><button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-cart-title="지문 낱권, 공동체와 개인, 상반된 두 제시문의 접점" data-cart-price="22000">담기</button></span></div></li>
+      <li><div class="r"><span class="u">고려대</span><span class="m">사회</span><span class="t">도표 제시문, 수치의 함정을 피하는 독법</span><span class="acts"><span class="price">22,000원</span><button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-cart-title="지문 낱권, 도표 제시문, 수치의 함정을 피하는 독법" data-cart-price="22000">담기</button></span></div></li>
+      <li><div class="r"><span class="u">연세대</span><span class="m">자연</span><span class="t">수리 구술, 답변 순서를 세우는 법</span><span class="acts"><span class="price">22,000원</span><button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-cart-title="지문 낱권, 수리 구술, 답변 순서를 세우는 법" data-cart-price="22000">담기</button></span></div></li>
+      <li><div class="r"><span class="u">연세대</span><span class="m">인문</span><span class="t">고전 제시문의 현대적 재맥락화</span><span class="acts"><span class="price">22,000원</span><button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-cart-title="지문 낱권, 고전 제시문의 현대적 재맥락화" data-cart-price="22000">담기</button></span></div></li>
+    </ol>
+    <p class="note" style="margin-top:12px">담기를 누르면 장바구니에 들어가고, 결제 후 마이페이지에서 응시.</p>
+  </div>
+</section>
+
+<section class="sec tight" id="schools">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>학교 전권</h2><p>학교 하나의 지문 전량. 고려대와 연세대 2교 판매, 연세대 미래캠퍼스 준비 중.</p></div></div>
+    <ol class="plist rv">
+      <li><div class="r"><span class="u">고려대학교</span><span class="m">계열적합</span><span class="t">지문 60편, 12개월 <a class="tlink" href="programs/korea.html">과정 안내</a></span><span class="acts"><span class="price">330,000원</span><button type="button" class="btn sm" data-cart-sku="pass-korea" data-cart-title="고려대학교 전권 이용권" data-cart-price="330000">담기</button></span></div></li>
+      <li><div class="r"><span class="u">연세대학교</span><span class="m">활동우수</span><span class="t">지문 60편, 12개월 <a class="tlink" href="programs/yonsei.html">과정 안내</a></span><span class="acts"><span class="price">330,000원</span><button type="button" class="btn sm" data-cart-sku="pass-yonsei" data-cart-title="연세대학교 전권 이용권" data-cart-price="330000">담기</button></span></div></li>
+      <li class="soon"><div class="r"><span class="u">연세대학교 미래캠퍼스</span><span class="m">제시문 면접</span><span class="t">준비 중</span><span class="acts"><span class="badge mute">공개 예정</span></span></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="sec tight" id="flow">
+  <div class="wrap">
+    <div class="sh rv"><div><h2>응시 절차</h2><p>지문 1편, 응시 5회</p></div></div>
+    <div class="steps">
+      <div class="step rv"><span class="no">01</span><h3>지문 선택</h3><p>낱권이면 지문 1편, 전권이면 그 학교 지문 전량.</p></div>
+      <div class="step rv"><span class="no">02</span><h3>실전형 응시</h3><p>문항을 나누지 않고 한 번에. 실제 고사장과 같은 규격.</p></div>
+      <div class="step rv"><span class="no">03</span><h3>첨삭 세 단</h3><p>말한 그대로 전사, 오독과 비약 진단, 구술체 재구성.</p></div>
+      <div class="step rv"><span class="no">04</span><h3>연습형 재응시</h3><p>막힌 자리만 끊어 다시. 지문 1편에 5회까지.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec tight" id="faq">
+  <div class="wrap two">
+    <div class="rv">
+      <div class="sh"><div><h2>자주 묻는 질문</h2></div></div>
+      <dl class="faq">
+        <dt>응시에 무엇이 필요한가요</dt><dd>카메라와 마이크가 있는 브라우저. 응시 시간은 대학 규격과 동일.</dd>
+        <dt>첨삭은 언제 받나요</dt><dd>응시 회차마다 전사, 진단, 재구성 세 단을 마이페이지에 첨부.</dd>
+        <dt>환불은 어떻게 되나요</dt><dd>응시 시작 전 전액. 시작 이후는 약관 환불 조항.</dd>
+        <dt>체험 응시는 무엇인가요</dt><dd>회원 가입 후 무료 응시 1회. 이 면의 체험 응시 링크에서 시작.</dd>
+      </dl>
+    </div>
+    <div class="rv">
+      <div class="box">
+        <h3>가격 요약</h3>
+        <p>지문 낱권 22,000원, 지문 1편에 5회 응시.</p>
+        <p>학교 전권 330,000원, 그 학교 지문 전량에 각 5회 응시, 12개월.</p>
+        <a class="btn ghost sm" href="faq.html">자주 묻는 질문 전체 <span class="ar" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="final rv">
+      <div><h2>지문 하나로 시작</h2><p>낱권 22,000원, 전권 330,000원. 회원 체험 응시 1회.</p></div>
+      <div class="acts"><a class="btn" href="#plans">이용권 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="guidebook/index.html">가이드북 보기</a></div>
+    </div>
+  </div>
 </section>
 
 </main>
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
 </footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -263,6 +258,15 @@ document.addEventListener('DOMContentLoaded', function(){
         price: +el.dataset.cartPrice, ship: el.dataset.cartShip === '1' });
       if (confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?')) location.href = 'cart.html';
     });
+  });
+  document.getElementById('trialGo').addEventListener('click', async function(ev){
+    ev.preventDefault();
+    var st = await HH.me();
+    if(!st.member){ location.href='join.html?next=studio.html'; return; }
+    try{
+      var r = await HH.api('/api/studio/token',{method:'POST'});
+      window.open(r.url,'_blank','noopener');
+    }catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
   });
 });
 </script>

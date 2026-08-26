@@ -27,17 +27,14 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
-/* 가이드북 목록 전용 */
-.phead{padding:var(--s7) 0 var(--s6)}
-.phead h1{font-size:clamp(32px,3.6vw,48px);font-weight:700;letter-spacing:-0.025em;line-height:1.2;margin-top:var(--s4);text-wrap:balance}
-.phead .lede{margin-top:var(--s3);font-size:var(--t-md);color:var(--body);max-width:44em;line-height:1.75}
-.phead .facts{margin-top:var(--s6)}
+/* 가이드북 목록 전용 (공통 phead, lay, side, box 는 base.css [2b]) */
 .bar{position:sticky;top:72px;z-index:30;background:rgba(246,242,233,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--hairs);padding:12px 0}
 .bar .in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
 .bar .tabs{border-bottom:0}
 .bar .search{height:44px;min-width:260px;background:var(--card)}
 .bar .cnt{font-size:13px;color:var(--gray);white-space:nowrap}
-.lay{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:var(--s6);align-items:start;padding:var(--s6) 0 var(--s9)}
+.lay{grid-template-columns:minmax(0,1fr) 300px}
+.side{top:148px}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
 .gb{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.06);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .gb:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(49,46,46,.1)}
@@ -49,30 +46,23 @@
 .gb .m span::before{content:"";display:inline-block;width:5px;height:5px;background:var(--hair);border-radius:50%;margin-right:7px;vertical-align:2px}
 .gb .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--hairs)}
 .gb .pr .price{font-size:17px;color:var(--ink)}
-.gb .top{align-items:flex-start}
 .gb .head{display:flex;gap:14px;align-items:flex-start}
 .gb .pr .w{font-size:14px;font-weight:600;color:var(--gray)}
 .gb .acts{display:flex;gap:8px}
 .gb .acts .btn{flex:1}
 .gb .top .badge{white-space:nowrap;flex:none}
 .gb .arc{font-size:12.5px;color:var(--gray);padding:10px 0;margin:-10px 0;text-decoration:underline;text-underline-offset:3px}
-.side{position:sticky;top:148px;display:flex;flex-direction:column;gap:var(--s3)}
-.box{background:var(--mat);border-radius:6px;padding:var(--s4)}
-.box h3{font-size:13px;font-weight:600;letter-spacing:.06em;color:var(--gray);margin-bottom:10px}
 .box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:14px}
 .box ol li{display:flex;gap:10px;align-items:baseline}
 .box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
-.box p{font-size:14px;color:var(--body);line-height:1.7}
-.box p+p{margin-top:8px}
-.box .btn{width:100%;margin-top:12px}
-.empty{grid-column:1/-1;padding:var(--s6);text-align:center;color:var(--gray);font-size:14px;border:1px dashed var(--hair);border-radius:6px}
+.empty{grid-column:1/-1}
 @media (max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:900px){
   .bar{top:64px}
   .bar .in{flex-direction:column;align-items:stretch}
   .bar .search{min-width:0}
-  .lay{grid-template-columns:1fr;padding-top:var(--s5)}
-  .side{position:static;order:-1}
+  .lay{padding-top:var(--s5)}
+  .side{order:-1}
   .side .box.spec{display:none}
 }
 @media (max-width:600px){.grid{grid-template-columns:1fr}}
@@ -94,7 +84,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -106,7 +96,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
+    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../store.html">봉투 모의고사</a><a href="../interview/index.html">무료 아카이브</a><a href="../library.html">자료실</a><a href="../about.html">연구소</a>
     <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -148,7 +138,7 @@
 </div>
 
 <div class="wrap lay">
-  <div class="grid" id="grid"></div>
+  <div class="grid" id="grid" data-search-target></div>
   <aside class="side">
     <div class="box spec rv">
       <h3>한 권의 구성</h3>
@@ -186,11 +176,11 @@
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../interview/index.html">무료 아카이브</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
+        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../store.html">봉투 모의고사</a></li><li><a href="../interview/index.html">무료 아카이브</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
-        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="../terms.html">환불 규정</a></li></ul>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="../faq.html">자주 묻는 질문</a></li><li><a href="../notice.html">공지</a></li><li><a href="../terms.html">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="../terms.html">이용약관</a> &nbsp; <a href="../privacy.html">개인정보처리방침</a></nav></div>
@@ -209,7 +199,7 @@ var HH_GB=[{"slug":"dgist","sku":"guide-dgist","name":"DGIST(대구경북과학�
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     var pr=o.sale?'<span class="price">16,500원</span>':'<span class="w">준비 중</span>';
-    var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="16500">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<span class="btn sm" aria-disabled="true">입고 예정</span>';
+    var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="16500">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
     var arc=o.archive?'<a class="arc" href="../interview/'+o.slug+'.html">무료 아카이브 열람</a>':'<span class="arc" style="text-decoration:none">아카이브 준비 중</span>';
     return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span></div><div class="pr">'+pr+arc+'</div><div class="acts">'+act+'</div></article>';
   }
@@ -220,15 +210,11 @@ var HH_GB=[{"slug":"dgist","sku":"guide-dgist","name":"DGIST(대구경북과학�
     cnt.textContent=list.length+'권';
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');f=b.dataset.f;render()})});
+  // 다른 면의 헤더 검색에서 넘어온 ?q=
+  var qs=new URLSearchParams(location.search).get('q'); if(qs){q.value=qs;}
   q.addEventListener('input',render); render();
-  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px'});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
-  var h=document.getElementById('hd'),m=h.querySelector('.menu');
-  m.addEventListener('click',function(){var o=h.classList.toggle('open');m.setAttribute('aria-expanded',o)});
-  // 헤더 검색 pill(q1) → 목록 검색(q2) 위임
-  var q1=document.getElementById('q1');
-  if(q1){q1.addEventListener('input',function(){q.value=q1.value;render()});
-    q1.form.addEventListener('submit',function(e){e.preventDefault();q.value=q1.value;render();grid.scrollIntoView({behavior:'smooth',block:'start'})})}
+  if(qs){grid.scrollIntoView({block:'start'})}
+  // 리빌, 모바일 메뉴, 헤더 검색 pill(q1 → q2) 위임 = assets/app.js 공통
   // 담기: 카드가 재렌더되므로 위임 바인딩
   grid.addEventListener('click',function(ev){var el=ev.target.closest('[data-cart-sku]');if(!el||!window.HH)return;ev.preventDefault();
     HH.addToCart({sku:el.dataset.cartSku,title:el.dataset.cartTitle,price:+el.dataset.cartPrice,qty:1,ship:false});

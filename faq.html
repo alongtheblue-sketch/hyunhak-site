@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>자주 묻는 질문, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/faq.html">
@@ -27,69 +27,128 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-.faqp{padding:0 0 120px}
-.faqp>.lead,.faqp>h2,.faqp>.faq,.faqp>.more{margin-left:var(--gut);margin-right:var(--gut);max-width:860px}
-.faqp .lead{font-size:16px;line-height:1.9;color:var(--body);margin-top:40px;margin-bottom:10px}
-.faqp h2{font-family:var(--serif);font-weight:700;font-size:var(--t-h3);letter-spacing:-0.025em;margin-top:64px;margin-bottom:8px}
-.faq{border-top:1px solid var(--hair)}
-.faq:last-of-type{border-bottom:1px solid var(--hair)}
-.faq summary{list-style:none;cursor:pointer;padding:22px 0;display:flex;justify-content:space-between;gap:20px;
-  font-family:var(--serif);font-weight:500;font-size:17px;letter-spacing:-0.015em;line-height:1.5}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--sans);font-weight:300;color:var(--gray);flex:none}
-.faq[open] summary::after{content:"\2212"}
-.faq .a{padding:0 0 26px;font-size:14.5px;line-height:1.9;color:var(--body);max-width:64ch}
-.faq .a p+p{margin-top:10px}
-.faqp .more{margin-top:48px;font-size:14px;color:var(--body)}
-.faq+.faq{margin-top:0}
+/* 자주 묻는 질문 전용 */
+.lay{padding-top:0}
+.faqp h2{font-size:var(--t-h4);font-weight:700;letter-spacing:-0.02em;margin:var(--s6) 0 var(--s2)}
+.faqp h2:first-child{margin-top:0}
+.faqp .more{margin-top:var(--s5)}
+.toc a{display:block;padding:8px 0;font-size:14px;font-weight:600;border-top:1px solid var(--hairs)}
+.toc a:hover{color:var(--gray)}
 </style>
 </head>
-<body>
+<body class="v2">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html" class="on" aria-current="page">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
 </header>
 
-<main id="hhMain" class="page faqp">
-<div class="pagehead">
-  <p class="crumb u gray"><a href="index.html">현학적 연구소</a> / 자주 묻는 질문</p>
-  <h1>자주 묻는 질문</h1>
-  <p class="han">가이드북, 스튜디오, 결제, 자료 출처</p>
+<main id="main">
 
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>자주 묻는 질문</span></nav>
+    <h1 class="rv">자주 묻는 질문</h1>
+    <p class="lede rv">현학적 연구소는 학교별 면접 가이드북 38권과 연세대, 고려대 제시문 면접 스튜디오를 판매하고, 26개 대학 면접 아카이브를 무료로 공개합니다.</p>
   <!-- aeo --><p class="aeo-answer">가이드북은 구매 후 보안 리더로 열람하며 원본 파일은 제공하지 않습니다. 스튜디오는 지문 1편에 5회 응시하고 회차마다 첨삭이 붙습니다.</p><!-- /aeo -->
 </div>
-<p class="lead">현학적 연구소는 학교별 면접 가이드북 38권과 연세대, 고려대 제시문 면접 스튜디오를 판매하고, 26개 대학 면접 아카이브를 무료로 공개합니다.</p>
-<h2>가이드북과 스튜디오</h2>
-<details class="faq"><summary>면접 가이드북은 무엇을 담고 있습니까</summary><div class="a"><p>학교 한 곳의 면접을 한 권으로 정리한 문서입니다. 전형별 면접 제원(실시 여부, 반영 비율, 시간, 형태), 질문 유형별 기출과 예상 질문, 답변 설계 순서가 들어 있습니다. 2027학년도 대비판이며 38개 대학이 있습니다.</p></div></details>
-<details class="faq"><summary>가이드북은 어떻게 읽습니까</summary><div class="a"><p>구매 후 회원 계정으로 사이트의 보안 리더에서 읽습니다. 원본 PDF 파일은 제공하지 않으며, 인쇄는 계정당 3회까지 계정 정보가 찍힌 상태로 가능합니다.</p></div></details>
-<details class="faq"><summary>면접 스튜디오는 어떤 서비스입니까</summary><div class="a"><p>연세대, 고려대의 제시문 면접을 촬영 응시하고 첨삭받는 온라인 과정입니다. 지문 1편을 고르면 실제 고사장과 같은 규격으로 온라인 응시하고, 회차마다 말한 그대로의 전사, 오독과 비약 진단, 구술체 재구성 세 단의 첨삭이 붙습니다. 지문 1편에 5회까지 응시합니다.</p></div></details>
-<details class="faq"><summary>지문 낱권과 학교 전권의 차이는 무엇입니까</summary><div class="a"><p>낱권은 지문 1편 22,000원이고 그 지문으로 5회 응시합니다. 전권은 학교 한 곳의 지문 전량 330,000원이며 지문마다 5회 응시, 유효 기간 12개월, 기간 안의 추가 지문이 포함됩니다.</p></div></details>
-<details class="faq"><summary>체험 응시가 있습니까</summary><div class="a"><p>회원 가입 후 체험 응시 1회를 제공합니다. 스튜디오 페이지의 체험 응시 링크에서 시작합니다.</p></div></details>
-<h2>결제와 이용</h2>
-<details class="faq"><summary>결제 수단은 무엇입니까</summary><div class="a"><p>토스페이먼츠 결제창에서 카드, 계좌이체, 간편결제를 지원합니다. 결제 완료 즉시 이용권이 계정에 부여됩니다.</p></div></details>
-<details class="faq"><summary>환불은 어떻게 됩니까</summary><div class="a"><p>디지털 상품은 열람 또는 응시를 시작하기 전까지 전액 환불됩니다. 시작 이후에는 이용약관 환불 조항에 따르며, 실물 배송 상품은 수령 후 7일 이내 미개봉 상태에서 반품됩니다.</p></div></details>
-<details class="faq"><summary>여러 기기에서 볼 수 있습니까</summary><div class="a"><p>같은 계정으로 로그인한 기기에서 열람합니다. 열람 기록은 계정 단위로 남으며, 계정 공유는 이용약관 위반입니다.</p></div></details>
-<details class="faq"><summary>간편 로그인은 무엇을 지원합니까</summary><div class="a"><p>구글, 카카오, 네이버를 지원합니다. 제공사 등록 절차가 끝나는 대로 버튼이 열리며, 그 전까지는 이메일 가입으로 이용합니다.</p></div></details>
-<h2>자료와 출처</h2>
-<details class="faq"><summary>자료의 출처는 무엇입니까</summary><div class="a"><p>대학 모집요강, 선행학습영향평가 보고서, 시도 진로진학센터 자료집, 2016~2025 수험생 후기입니다. 페이지마다 (공식)과 (관측)을 구분해 표기하고, 출처 없는 질문은 싣지 않습니다.</p></div></details>
-<details class="faq"><summary>면접 아카이브는 무료입니까</summary><div class="a"><p>예. 26개 대학의 면접 아카이브는 로그인 없이 읽습니다. 가이드북은 아카이브보다 깊은 내용을 담은 유료 문서입니다.</p></div></details>
-<details class="faq"><summary>학생 개인정보가 들어 있지 않습니까</summary><div class="a"><p>후기에서 수집한 질문은 개인 식별 정보를 제거한 뒤 수록합니다. 스튜디오 응시 영상은 본인 계정에서만 열람하며 외부에 공개하지 않습니다.</p></div></details>
-<h2>연구소</h2>
-<details class="faq"><summary>현학적의 뜻이 무엇입니까</summary><div class="a"><p>검을 현 玄에 배울 학 學입니다. 『천자문』 첫 구절 天地玄黃의 그 글자이며, 아득히 깊은 배움이라는 뜻으로 씁니다. 사전의 衒學的(학식을 뽐냄)과는 다른 글자입니다.</p></div></details>
-<details class="faq"><summary>문의는 어디로 합니까</summary><div class="a"><p>admin@hyunhak.com 앞으로 보내 주십시오. 확인 후 답합니다.</p></div></details>
-<p class="more">여기에 없는 질문은 <a class="textlink" href="mailto:admin@hyunhak.com">admin@hyunhak.com</a> 앞으로 보내 주십시오.</p>
+  </div>
+</section>
+
+<div class="wrap lay">
+  <div class="faqp rv">
+    <h2 id="q-product">가이드북과 스튜디오</h2>
+    <details class="faq"><summary>면접 가이드북은 무엇을 담고 있습니까</summary><div class="a"><p>학교 한 곳의 면접을 한 권으로 정리한 문서입니다. 전형별 면접 제원(실시 여부, 반영 비율, 시간, 형태), 질문 유형별 기출과 예상 질문, 답변 설계 순서가 들어 있습니다. 2027학년도 대비판이며 38개 대학이 있습니다.</p></div></details>
+    <details class="faq"><summary>가이드북은 어떻게 읽습니까</summary><div class="a"><p>구매 후 회원 계정으로 사이트의 보안 리더에서 읽습니다. 원본 PDF 파일은 제공하지 않으며, 인쇄는 계정당 3회까지 계정 정보가 찍힌 상태로 가능합니다.</p></div></details>
+    <details class="faq"><summary>면접 스튜디오는 어떤 서비스입니까</summary><div class="a"><p>연세대, 고려대의 제시문 면접을 촬영 응시하고 첨삭받는 온라인 과정입니다. 지문 1편을 고르면 실제 고사장과 같은 규격으로 온라인 응시하고, 회차마다 말한 그대로의 전사, 오독과 비약 진단, 구술체 재구성 세 단의 첨삭이 붙습니다. 지문 1편에 5회까지 응시합니다.</p></div></details>
+    <details class="faq"><summary>지문 낱권과 학교 전권의 차이는 무엇입니까</summary><div class="a"><p>낱권은 지문 1편 22,000원이고 그 지문으로 5회 응시합니다. 전권은 학교 한 곳의 지문 전량 330,000원이며 지문마다 5회 응시, 유효 기간 12개월, 기간 안의 추가 지문이 포함됩니다.</p></div></details>
+    <details class="faq"><summary>체험 응시가 있습니까</summary><div class="a"><p>회원 가입 후 체험 응시 1회를 제공합니다. 스튜디오 페이지의 체험 응시 링크에서 시작합니다.</p></div></details>
+    <h2 id="q-pay">결제와 이용</h2>
+    <details class="faq"><summary>결제 수단은 무엇입니까</summary><div class="a"><p>토스페이먼츠 결제창에서 카드, 계좌이체, 간편결제를 지원합니다. 결제 완료 즉시 이용권이 계정에 부여됩니다.</p></div></details>
+    <details class="faq"><summary>환불은 어떻게 됩니까</summary><div class="a"><p>디지털 상품은 열람 또는 응시를 시작하기 전까지 전액 환불됩니다. 시작 이후에는 이용약관 환불 조항에 따르며, 실물 배송 상품은 수령 후 7일 이내 미개봉 상태에서 반품됩니다.</p></div></details>
+    <details class="faq"><summary>여러 기기에서 볼 수 있습니까</summary><div class="a"><p>같은 계정으로 로그인한 기기에서 열람합니다. 열람 기록은 계정 단위로 남으며, 계정 공유는 이용약관 위반입니다.</p></div></details>
+    <details class="faq"><summary>간편 로그인은 무엇을 지원합니까</summary><div class="a"><p>구글, 카카오, 네이버를 지원합니다. 제공사 등록 절차가 끝나는 대로 버튼이 열리며, 그 전까지는 이메일 가입으로 이용합니다.</p></div></details>
+    <h2 id="q-source">자료와 출처</h2>
+    <details class="faq"><summary>자료의 출처는 무엇입니까</summary><div class="a"><p>대학 모집요강, 선행학습영향평가 보고서, 시도 진로진학센터 자료집, 2016~2025 수험생 후기입니다. 페이지마다 (공식)과 (관측)을 구분해 표기하고, 출처 없는 질문은 싣지 않습니다.</p></div></details>
+    <details class="faq"><summary>면접 아카이브는 무료입니까</summary><div class="a"><p>예. 26개 대학의 면접 아카이브는 로그인 없이 읽습니다. 가이드북은 아카이브보다 깊은 내용을 담은 유료 문서입니다.</p></div></details>
+    <details class="faq"><summary>학생 개인정보가 들어 있지 않습니까</summary><div class="a"><p>후기에서 수집한 질문은 개인 식별 정보를 제거한 뒤 수록합니다. 스튜디오 응시 영상은 본인 계정에서만 열람하며 외부에 공개하지 않습니다.</p></div></details>
+    <h2 id="q-lab">연구소</h2>
+    <details class="faq"><summary>현학적의 뜻이 무엇입니까</summary><div class="a"><p>검을 현 玄에 배울 학 學입니다. 『천자문』 첫 구절 天地玄黃의 그 글자이며, 아득히 깊은 배움이라는 뜻으로 씁니다. 사전의 衒學的(학식을 뽐냄)과는 다른 글자입니다.</p></div></details>
+    <details class="faq"><summary>문의는 어디로 합니까</summary><div class="a"><p>admin@hyunhak.com 앞으로 보내 주십시오. 확인 후 답합니다.</p></div></details>
+    <p class="more note">여기에 없는 질문은 <a class="tlink" href="mailto:admin@hyunhak.com">admin@hyunhak.com</a> 앞으로.</p>
+  </div>
+  <aside class="side">
+    <div class="box rv">
+      <h3>바로가기</h3>
+      <nav class="toc" aria-label="문답 묶음">
+        <a href="#q-product">가이드북과 스튜디오</a>
+        <a href="#q-pay">결제와 이용</a>
+        <a href="#q-source">자료와 출처</a>
+        <a href="#q-lab">연구소</a>
+      </nav>
+    </div>
+    <div class="box rv">
+      <h3>가격</h3>
+      <p>가이드북 권당 16,500원. 스튜디오 지문 낱권 22,000원, 학교 전권 330,000원. 봉투 모의고사 8회분 세트 38,500원.</p>
+      <a class="btn ghost sm" href="guidebook/index.html">가이드북 목록 <span class="ar" aria-hidden="true">→</span></a>
+    </div>
+  </aside>
+</div>
+
 </main>
 
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
 </footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
+
 <script src="assets/app.js"></script>
 </body>
 </html>

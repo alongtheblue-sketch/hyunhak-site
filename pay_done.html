@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>결제 확인, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/pay_done.html">
@@ -21,47 +21,87 @@
 <meta name="twitter:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
 <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","sameAs":[]},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/pay_done.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"결제를 확인하는 중입니다","item":"https://hyunhak.com/pay_done.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/pay_done.html#webpage","url":"https://hyunhak.com/pay_done.html","name":"결제 확인, 현학적 연구소","description":"현학적 연구소 결제 확인 화면입니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/pay_done.html#breadcrumb"}}]}</script>
 <!-- seo:end -->
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-/* pay_done 전용 — 클래스 스코프 */
-.payroom{min-height:70vh;display:grid;place-items:center;padding:80px var(--gut)}
-.paybox{max-width:560px;width:100%}
-.paybox .crumb{margin-bottom:18px}
-.paybox h1{font-family:var(--serif);font-weight:700;font-size:var(--t-h1);letter-spacing:-0.028em;line-height:1.2}
-.paybox .han{margin-top:14px;font-family:var(--serif);font-weight:300;font-size:15px;color:var(--gray)}
-.payline{margin-top:36px;border-top:1px solid var(--ink)}
-.payline div{display:flex;justify-content:space-between;padding:13px 2px;border-bottom:1px solid var(--hairs);font-size:14px}
-.payline dt{color:var(--gray)}
-.payacts{margin-top:34px;display:flex;gap:22px;align-items:center;flex-wrap:wrap}
-.spin{color:var(--gray);font-size:14px}
+/* 결제 확인 전용 */
+.auth{min-height:50vh}
+.payline{margin-top:var(--s5)}
 </style>
 </head>
-<body>
+<body class="v2" data-no-popup>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
 
-<a class="skip" href="#hhMain">본문으로 건너뛰기</a>
-<header class="nav u">
-  <a class="brand" href="index.html">현학적 연구소</a>
-  <nav id="hhNav"><a href="studio.html">면접 스튜디오</a><a href="guidebook/index.html">가이드북</a><a href="store.html">스토어</a><a href="interview/index.html">면접 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a></nav>
-  <div class="aux"><a href="login.html">로그인</a><a href="join.html">가입</a><a href="cart.html">장바구니</a><button type="button" class="menu" aria-expanded="false" aria-controls="hhNav">메뉴</button></div>
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="interview/index.html">무료 아카이브</a><a href="library.html">자료실</a><a href="about.html">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
 </header>
 
-<main id="hhMain" class="payroom">
-  <div class="paybox" id="box">
-    <p class="crumb u gray">현학적 연구소, 결제 확인</p>
-    <h1 id="h">결제를<br>확인하는 중입니다</h1>
-    <p class="han" id="sub">잠시만 기다려 주십시오. 창을 닫지 마십시오.</p>
-    <dl class="payline" id="lines" hidden></dl>
-    <div class="payacts" id="acts" hidden></div>
+<main id="main">
+<div class="wrap">
+  <div class="auth wide" id="box">
+    <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>결제 확인</span></nav>
+    <h1 id="h">결제를 확인하는 중</h1>
+    <p class="lede" id="sub">잠시만 기다려 주십시오. 창을 닫지 마십시오.</p>
+    <dl class="kv payline" id="lines" hidden></dl>
+    <div class="acts" id="acts" hidden></div>
   </div>
+</div>
 </main>
 
-<footer class="u">
-  <span>현학적 연구소 <span class="han">玄學的 硏究所</span></span>
-  <span>www.hyunhak.com</span>
-  <span>admin@hyunhak.com</span>
-  <span class="bizline">대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span>
-  <span><a href="terms.html">이용약관</a> <a href="privacy.html">개인정보처리방침</a></span>
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="interview/index.html">무료 아카이브</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
 </footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><i aria-hidden="true"></i>홈</a><a href="index.html#find"><i aria-hidden="true"></i>대학 찾기</a><a class="pri" href="guidebook/index.html"><i aria-hidden="true"></i>가이드북</a><a href="my.html"><i aria-hidden="true"></i>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -72,37 +112,37 @@ document.addEventListener('DOMContentLoaded', async function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
   if (q.get('code') || q.get('fail')) {
-    h.innerHTML = '결제가<br>완료되지 않았습니다';
+    h.textContent = '결제가 완료되지 않았습니다';
     sub.textContent = q.get('message') || '결제가 중단되었습니다. 장바구니에서 다시 시도하십시오.';
     acts.hidden = false;
-    acts.innerHTML = '<a class="act" href="cart.html">장바구니로</a><a class="textlink u" href="index.html">처음으로</a>';
+    acts.innerHTML = '<a class="btn" href="cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="index.html">처음으로</a>';
     return;
   }
 
   var paymentKey = q.get('paymentKey'), orderId = q.get('orderId'), amount = parseInt(q.get('amount'), 10);
   if (!paymentKey || !orderId || !amount) {
-    h.innerHTML = '잘못된 접근입니다';
+    h.textContent = '잘못된 접근입니다';
     sub.textContent = '결제 창을 통해서만 열리는 화면입니다.';
-    acts.hidden = false; acts.innerHTML = '<a class="act" href="index.html">처음으로</a>';
+    acts.hidden = false; acts.innerHTML = '<a class="btn" href="index.html">처음으로 <span class="ar" aria-hidden="true">→</span></a>';
     return;
   }
   try {
     var r = await HH.api('/api/payments/confirm', { method: 'POST',
       body: JSON.stringify({ paymentKey: paymentKey, orderId: orderId, amount: amount }) });
     try { localStorage.removeItem('hh_cart_v1'); } catch(e) {}
-    h.innerHTML = '결제가<br>완료되었습니다';
+    h.textContent = '결제가 완료되었습니다';
     sub.textContent = '이용권은 즉시 열리며, 실물 상품은 순차 출고합니다.';
     lines.hidden = false;
     lines.innerHTML = '<div><dt>주문 번호</dt><dd>' + esc(orderId) + '</dd></div>'
       + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'
-      + (r.receipt ? '<div><dt>영수증</dt><dd><a class="textlink u" target="_blank" rel="noopener" href="' + esc(r.receipt) + '">보기</a></dd></div>' : '');
+      + (r.receipt ? '<div><dt>영수증</dt><dd><a class="tlink" target="_blank" rel="noopener" href="' + esc(r.receipt) + '">보기</a></dd></div>' : '');
     acts.hidden = false;
-    acts.innerHTML = '<a class="act" href="my.html">마이페이지</a><a class="textlink u" href="studio.html">면접 스튜디오</a>';
+    acts.innerHTML = '<a class="btn" href="my.html">마이페이지 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="studio.html">면접 스튜디오</a>';
   } catch (e) {
-    h.innerHTML = '승인에<br>실패했습니다';
+    h.textContent = '승인에 실패했습니다';
     sub.textContent = e.message || '결제 승인에 실패했습니다. 금액이 빠져나갔다면 자동 취소됩니다.';
     acts.hidden = false;
-    acts.innerHTML = '<a class="act" href="cart.html">장바구니로</a><a class="textlink u" href="mailto:admin@hyunhak.com">문의</a>';
+    acts.innerHTML = '<a class="btn" href="cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="mailto:admin@hyunhak.com">문의</a>';
   }
 });
 </script>

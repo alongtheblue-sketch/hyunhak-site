@@ -96,17 +96,36 @@
   }
 
   document.addEventListener("DOMContentLoaded", updateNav);
-  // 모바일 메뉴 토글
+  // ── 플랫폼 v2 공통 (2026-08-26 s16): 모바일 메뉴 토글, 리빌, 헤더 검색 위임 ──
   document.addEventListener("DOMContentLoaded", function () {
-    const hdr = document.querySelector(".nav"), btn = hdr && hdr.querySelector(".menu");
-    if (!btn) return;
-    const setOpen = (open) => {
-      hdr.classList.toggle("open", open);
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      btn.textContent = open ? "닫기" : "메뉴";
-    };
-    btn.addEventListener("click", function () { setOpen(!hdr.classList.contains("open")); });
-    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && hdr.classList.contains("open")) { setOpen(false); btn.focus(); } });
+    const hdr = document.querySelector(".hd"), btn = hdr && hdr.querySelector(".menu");
+    if (btn) {
+      const setOpen = (open) => {
+        hdr.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+        btn.textContent = open ? "닫기" : "메뉴";
+      };
+      btn.addEventListener("click", function () { setOpen(!hdr.classList.contains("open")); });
+      document.addEventListener("keydown", function (e) { if (e.key === "Escape" && hdr.classList.contains("open")) { setOpen(false); btn.focus(); } });
+    }
+    // 리빌: transform/opacity 만. reduced-motion 은 CSS 가 즉시 표시
+    const rv = document.querySelectorAll(".rv");
+    if (rv.length && "IntersectionObserver" in window) {
+      const io = new IntersectionObserver((es) => { es.forEach((e) => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }); }, { rootMargin: "0px 0px -8% 0px" });
+      rv.forEach((el) => io.observe(el));
+    } else rv.forEach((el) => el.classList.add("in"));
+    // 헤더 검색 pill(q1): 같은 면에 목록 검색(q2)이 있으면 위임, 없으면 가이드북 목록으로 ?q= 이동
+    const q1 = document.getElementById("q1"), q2 = document.getElementById("q2");
+    if (q1) {
+      const prefix = ((hdr && hdr.querySelector(".brand")) || { getAttribute: () => "index.html" }).getAttribute("href").replace("index.html", "");
+      const target = () => document.querySelector("[data-search-target]") || (q2 && q2.closest("section")) || q2;
+      if (q2) q1.addEventListener("input", function () { q2.value = q1.value; q2.dispatchEvent(new Event("input", { bubbles: true })); });
+      q1.form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (q2) { q2.value = q1.value; q2.dispatchEvent(new Event("input", { bubbles: true })); const t = target(); if (t) t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+        else location.href = prefix + "guidebook/index.html?q=" + encodeURIComponent(q1.value.trim());
+      });
+    }
   });
   // ── 공지 팝업 (2026-08-23) ──
   // 정책: 관리자가 게시한 popup 중 노출 기간 안의 것을 최대 1건 띄운다.
@@ -136,11 +155,11 @@
     root.setAttribute("aria-modal", "true");
     root.setAttribute("aria-labelledby", "hhPopupTitle");
     const link = it.link_url && /^(https:\/\/|\/)/.test(it.link_url)
-      ? '<a class="textlink" href="' + esc(it.link_url) + '">' + esc(it.link_label || "자세히 보기") + "</a>" : "";
+      ? '<a class="tlink" href="' + esc(it.link_url) + '">' + esc(it.link_label || "자세히 보기") + "</a>" : "";
     root.innerHTML =
       '<div class="hh-popup-back"></div>' +
       '<div class="hh-popup-card">' +
-        '<p class="u gray hh-popup-kind">공지</p>' +
+        '<p class="hh-popup-kind">공지</p>' +
         '<h2 id="hhPopupTitle" class="hh-popup-title">' + esc(it.title) + "</h2>" +
         '<div class="hh-popup-body">' + (it.body_html || esc(it.body_md || "")) + "</div>" +
         (link ? '<p class="hh-popup-link">' + link + "</p>" : "") +
