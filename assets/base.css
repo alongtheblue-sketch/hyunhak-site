@@ -304,7 +304,7 @@ body.v2{background:var(--ink)}
   :where(body.v2) .fix a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:6px;font-size:12px;font-weight:600;color:var(--gray)}
   :where(body.v2) .fix a svg{display:block;width:18px;height:18px;opacity:.85}
   :where(body.v2) .fix a.pri{background:var(--ink);color:var(--paper)}
-  :where(body.v2) .fix a.on{color:var(--ink)}
+  :where(body.v2) .fix a.on:not(.pri){color:var(--ink)}
 }
 @media (max-width:420px){
   :where(body.v2) .rows a{grid-template-columns:1fr;gap:4px}

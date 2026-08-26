@@ -78,7 +78,8 @@ def clean(s):
     s = s.replace("★", "")
     s = re.sub(r"[➊-➓①-⑳]\s*", "", s)
     s = re.sub(r"\s*→\s*", "에서 ", s)
-    s = s.replace("·", ", ").replace("—", ", ").replace("–", ", ")
+    for ch in ("·", "∙", "‧", "・", "•", "—", "–"):
+        s = s.replace(ch, ", ")
     s = re.sub(r"\s+", " ", s).strip()
     s = re.sub(r"\s*,\s*,\s*", ", ", s)
     return s
@@ -235,7 +236,9 @@ def load_meta():
 def fill(tpl, m):
     for k, v in m.items():
         tpl = tpl.replace(k, v)
-    assert "__" not in tpl.replace("__proto__", ""), "템플릿 placeholder 잔존: " + tpl[tpl.find("__"):tpl.find("__") + 30]
+    left = tpl.replace("__proto__", "")
+    if "__" in left:
+        raise RuntimeError("템플릿 placeholder 잔존: " + left[left.find("__"):left.find("__") + 30])
     return tpl
 
 
@@ -268,7 +271,8 @@ def _previews_html(mv):
         lazy = ' loading="lazy"' if i > 1 else ""
         alt = f"{clean(mv['name'])} 가이드북 {pv['page']}면 {label}"
         out.append(
-            f'      <figure class="pv"><img src="../{pv["file"]}" alt="{esc(alt)}" width="{pv["w"]}" height="{pv["h"]}"{lazy}>{lock}'
+            f'      <figure class="pv"><a href="../{pv["file"]}" target="_blank" rel="noopener" aria-label="{esc(label)} 크게 보기">'
+            f'<img src="../{pv["file"]}" alt="{esc(alt)}" width="{pv["w"]}" height="{pv["h"]}"{lazy}></a>{lock}'
             f'<figcaption><span>{esc(label)}</span><span>p.{pv["page"]}</span></figcaption></figure>')
     return "\n".join(out)
 
@@ -288,6 +292,8 @@ def _parts_html(mv):
 def _forms_html(mv):
     out = []
     for f in mv.get("forms", []):
+        if "확인 필요" in f["form"]:
+            continue
         on = f["has"]
         out.append(f'      <div class="f {"on" if on else "off"}"><b>{esc(clean(f["form"]))}</b>'
                    f'<span>{"이 대학에 있음" if on else "이 대학에 없음"}</span></div>')
@@ -358,10 +364,8 @@ def render_page(cat, items, i, meta):
         final_acts = ('<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>'
                       '<a class="btn ghost" href="../notice.html">공지 보기</a>')
     groups = mv.get("groups", [])
-    types_head = '<th>유형</th><th class="num">수록</th>'
-    types_rows = "\n".join(f'      <tr><td>{esc(clean(g["type"]))}</td><td class="num">{g["n"]}건</td></tr>'
-                            for g in groups if g.get("n"))
-    types_note = "책에 실린 수. 관측 원문에 그 변형과 파생 문항을 더해 싣습니다."
+    # 유형은 이름만 싣는다 (건우 2026-08-26: "몇 건 중 몇 건 수록 이런 건 다 빼도 돼")
+    type_chips = "\n".join(f'      <span>{esc(clean(g["type"]))}</span>' for g in groups)
     samples = "\n".join(f'      <li><span class="ty">{esc(clean(s["type"]))}</span><p class="q">{esc(clean(s["q"]))}</p><span class="src">출처: {esc(s["source"])}</span></li>'
                          for s in e["samples"])
     prev_e = items[i - 1] if i > 0 else None
@@ -377,7 +381,7 @@ def render_page(cat, items, i, meta):
          "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
          "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),
          "__STRAT_SEC__": _strat_sec_html(mv),
-         "__TYPES_HEAD__": types_head, "__TYPES_ROWS__": types_rows, "__TYPES_NOTE__": types_note,
+         "__TYPE_CHIPS__": type_chips, "__PV_N__": str(len(mv["previews"])),
          "__PRICE_CLS__": "price" if sale else "price mute",
          "__SAMPLES__": samples,
          "__PREV__": (f'<a class="tlink" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>' if prev_e else ""),
@@ -408,7 +412,8 @@ def render_index(cat, items, meta):
     t = INDEX_TPL.read_text(encoding="utf-8")
     for k, v in fillmap.items():
         t = t.replace(k, v)
-    assert "__" not in t.replace("__proto__", ""), "템플릿 placeholder 잔존"
+    if "__" in t.replace("__proto__", ""):
+        raise RuntimeError("템플릿 placeholder 잔존 (index)")
     return t
 
 

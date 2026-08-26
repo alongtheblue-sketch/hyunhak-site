@@ -28,8 +28,11 @@
 .buy .acts .btn{width:100%}
 .buy .note{margin-top:var(--s3)}
 /* 지면 미리보기 필름 */
+.pvwrap{position:relative}
+.pvwrap::after{content:"";position:absolute;top:0;bottom:20px;right:0;width:72px;pointer-events:none;background:linear-gradient(to right,rgba(246,242,233,0),var(--paper))}
 .pvs{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
 .pv{flex:0 0 clamp(210px,25vw,290px);scroll-snap-align:start;position:relative;margin:0}
+.pv a{display:block}
 .pv img{width:100%;height:auto;border:1px solid var(--hairs);border-radius:4px;box-shadow:0 12px 28px rgba(49,46,46,.16);background:var(--card)}
 .pv figcaption{margin-top:8px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:8px}
 .pv .lk{position:absolute;left:10px;bottom:44px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(49,46,46,.86);color:var(--paper);padding:5px 9px;border-radius:3px}
@@ -110,7 +113,7 @@
     <ul class="spec">
       <li><span>실제 질문</span><span>__QUESTIONS__건, 선배 후기 __YEARS__ 관측</span></li>
       <li><span>전환 규칙</span><span>__RULES__개, 내 생기부에서 질문 뽑기</span></li>
-      <li><span>전형 분석</span><span>__TRACKS_N__개 전형, 제원 __SPEC_N__항목</span></li>
+      <li><span>전형 분석</span><span>전형별 제원 __SPEC_N__항목, 형태 판정표</span></li>
       <li><span>형태</span><span>PDF __PAGES__면, 브라우저 보안 리더</span></li>
       <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
     </ul>
@@ -134,10 +137,10 @@
 
 <section class="sec tight">
   <div class="wrap">
-    <div class="sh rv"><div><h2>지면 미리보기</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
-    <div class="pvs rv" tabindex="0" role="region" aria-label="지면 미리보기 가로 스크롤">
+    <div class="sh rv"><div><h2>지면 미리보기 __PV_N__면</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
+    <div class="pvwrap rv"><div class="pvs" tabindex="0" role="region" aria-label="지면 미리보기 가로 스크롤">
 __PREVIEWS__
-    </div>
+    </div></div>
     <p class="pvnote">각 지면 아래 숫자는 실제 면 번호입니다. 워터마크는 열람 계정마다 다르게 찍힙니다.</p>
   </div>
 </section>
@@ -166,14 +169,14 @@ __SPEC_CHIPS__
   </section>
 
   <section class="sec">
-    <div class="sh rv"><div><h2>질문 유형 분포</h2><p>__TYPES_NOTE__</p></div></div>
-    <div class="tblwrap rv"><table class="tbl"><thead><tr>__TYPES_HEAD__</tr></thead><tbody>
-__TYPES_ROWS__
-    </tbody></table></div>
+    <div class="sh rv"><div><h2>질문 유형 __TYPES_N__종</h2><p>실제 나온 질문 __QUESTIONS__건을 이 유형들로 나눠 싣습니다.</p></div></div>
+    <div class="chips rv" aria-label="질문 유형">
+__TYPE_CHIPS__
+    </div>
   </section>
 
   <section class="sec">
-    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 자료집 기관명만 표기.</p></div></div>
+    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 전국 단위로 회수한 자료집의 기관명만 표기.</p></div></div>
     <ol class="taste rv">
 __SAMPLES__
     </ol>
