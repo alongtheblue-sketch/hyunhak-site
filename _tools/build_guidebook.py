@@ -445,43 +445,29 @@ def render_page(cat, items, i):
     return "\n".join(o)
 
 
+INDEX_TPL = Path(__file__).with_name("guidebook_index_v2.html")
+
+
 def render_index(cat, items):
+    """목록 = 플랫폼 v2 템플릿 (2026-08-26 결재 V2-2). 숫자와 HH_GB 데이터는 카탈로그에서 채운다.
+    seo 블록과 aeo 단락은 seo_inject 가 manifest 로 넣는다 (템플릿에 canonical/description 없음)."""
     n = len(items)
     pages = sum(e["pages"] for e in items)
     qs = sum(e["questions"] for e in items)
+    sale = sum(1 for e in items if e.get("onsale", True))
+    archive = sum(1 for e in items if e.get("archive"))
+    price = int(cat["price"])
+    gb = [{"slug": e["slug"], "sku": e.get("sku") or f"guide-{e['slug']}", "name": e["name"], "pages": e["pages"],
+           "q": e["questions"], "sale": bool(e.get("onsale", True)), "archive": bool(e.get("archive"))} for e in items]
     h1 = "학교별 2027 면접 가이드북"
-    title = f"{h1} {n}권, 현학적 연구소"
-    desc = f"{n}개 대학 생기부 기반 면접 예상 프로파일. 총 {pages}면, 수록 질문 {qs}건. 회원은 보안 리더로 열람합니다."
-    crumbs = [("현학적 연구소", "https://hyunhak.com/"), ("가이드북", "https://hyunhak.com/guidebook/")]
-    o = [head(title, "index.html", desc, INDEX_CSS, crumbs), NAV, '<main class="page sec">']
-    o.append(f"""<div class="pagehead">
-  <p class="crumb u gray">현학적 연구소 / 가이드북</p>
-  <h1>{h1}</h1>
-  <p class="han">면접 후기와 공식 요강으로 재구성한 학교별 면접의 실제, {n}권</p>
-</div>""")
-    o.append(f"""<div class="facts">
-  <div class="f"><span class="n">{n}</span><span class="k">권</span></div>
-  <div class="f"><span class="n">{pages:,}</span><span class="k">총 면수</span></div>
-  <div class="f"><span class="n">{qs:,}</span><span class="k">총 수록 질문</span></div>
-  <div class="f"><span class="n">2027</span><span class="k">대비 학년도</span></div>
-</div>""")
-    o.append('<section class="gbl">')
-    o.append('<p class="lead">학교마다 면접 기본 제원, 유형 판정, 평가항목 매핑, 인재상, 실제 질문 아카이브, '
-             '생기부에서 질문으로의 전환 규칙, 준비 전략, 출처와 공백을 한 권에 담았습니다. '
-             '가나다 순입니다.</p>')
-    o.append('<div class="list"><div class="hd"><span>학교</span><span>면수</span><span>수록 질문</span><span>가격</span></div><ol class="rows">')
-    for e in items:
-        o.append(f'<li><a href="{e["slug"]}.html"><span class="t">{esc(e["name"])}</span>'
-                 f'<span class="m">{e["pages"]}면</span><span class="m q">{e["questions"]}건</span>'
-                 f'<span class="p">{won(price_of(cat, e)) if e.get("onsale", True) else "준비 중"}</span></a></li>')
-    o.append("</ol></div>")
-    o.append('<p class="note">PDF 상품입니다. 회원은 보안 리더로 열람하고 인쇄는 3회까지, 원본 파일은 제공하지 않습니다.</p>')
-    o.append("</section>")
-    o.append("</main>")
-    o.append(FOOTER)
-    o.append('<script src="../assets/app.js"></script>')
-    o.append("</body>\n</html>\n")
-    return "\n".join(o)
+    fill = {"__TITLE__": esc(f"{h1} {n}권, 현학적 연구소"), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
+            "__ARCHIVE__": str(archive), "__PAGES__": f"{pages:,}", "__QS__": f"{qs:,}", "__PRICE_RAW__": str(price),
+            "__PRICE__": f"{price:,}", "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
+    t = INDEX_TPL.read_text(encoding="utf-8")
+    for k, v in fill.items():
+        t = t.replace(k, v)
+    assert "__" not in t.replace("__proto__", ""), "템플릿 placeholder 잔존"
+    return t
 
 
 def build_to(out_dir):

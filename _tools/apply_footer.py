@@ -18,6 +18,7 @@ def main():
         rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
         if rel in skip or rel.startswith("_"): continue   # programs 포함(footer 이동만 적용돼도 무해)
         s = open(path, encoding="utf-8").read()
+        if '<body class="v2">' in s: continue   # 플랫폼 v2 페이지는 자체 헤더/푸터 (2026-08-26)
         if not F.search(s): print("footer 없음:", rel); continue
         prefix = "/" if rel == "404.html" else "../" * rel.count("/")
         if rel.startswith("programs/"):

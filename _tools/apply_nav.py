@@ -35,6 +35,7 @@ def main():
         rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
         if rel in skip or rel.startswith("programs/") or rel.startswith(("design/", "_design/", "_tools/")) or "/_" in "/" + rel: continue
         s = open(path, encoding="utf-8").read()
+        if '<body class="v2">' in s: continue   # 플랫폼 v2 페이지는 자체 헤더/푸터 (2026-08-26)
         if not HDR.search(s): missing += 1; print("nav 없음:", rel); continue
         prefix = "/" if rel == "404.html" else "../" * (rel.count("/"))   # 404 는 임의 경로에서 서빙
         new = HDR.sub(lambda m: build(rel, prefix), s, count=1)

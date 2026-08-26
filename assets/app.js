@@ -82,14 +82,17 @@
   const won = (n) => Number(n || 0).toLocaleString("ko-KR") + "원";
 
   async function updateNav() {
-    const aux = document.querySelector(".nav .aux");
-    if (!aux) return;
+    // 전람 v1(.nav .aux) 과 플랫폼 v2(.util nav, .hd .aux) 헤더를 함께 갱신 (2026-08-26)
+    const auxes = document.querySelectorAll(".nav .aux, .util nav, .hd .aux");
+    if (!auxes.length) return;
     const n = cart().reduce((s, x) => s + x.qty, 0);
-    const cartLink = aux.querySelector('a[href$="cart.html"]');
-    if (cartLink) cartLink.textContent = n ? `장바구니 ${n}` : "장바구니";
     const st = await me();
-    const loginLink = aux.querySelector('a[href$="login.html"]');
-    if (loginLink && st.member) { loginLink.textContent = st.member.name || "마이페이지"; loginLink.href = loginLink.href.replace("login.html", "my.html"); }
+    auxes.forEach((aux) => {
+      const cartLink = aux.querySelector('a[href$="cart.html"]');
+      if (cartLink) cartLink.textContent = n ? `장바구니 ${n}` : "장바구니";
+      const loginLink = aux.querySelector('a[href$="login.html"]');
+      if (loginLink && st.member) { loginLink.textContent = st.member.name || "마이페이지"; loginLink.href = loginLink.href.replace("login.html", "my.html"); }
+    });
   }
 
   document.addEventListener("DOMContentLoaded", updateNav);
