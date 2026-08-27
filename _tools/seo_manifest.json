@@ -27,7 +27,7 @@
     {
      "name": "제시문 면접 스튜디오 (연세대, 고려대)",
      "path": "/studio.html",
-     "price": "학교 전권 330,000원, 지문 1편 22,000원(응시 5회)",
+     "price": "단위 전권 396,000원, 지문 1편 33,000원(응시 5회)",
      "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."
     },
     {
@@ -94,7 +94,7 @@
    }
   },
   "programs/*": {
-   "_note": "제시문 면접 스튜디오 학교별 LP. 전권 330,000원, 지문 1편 22,000원.",
+   "_note": "제시문 면접 스튜디오 학교별 LP. 단위 전권 396,000원, 지문 1편 33,000원.",
    "type": "product",
    "priority": 0.9,
    "changefreq": "monthly",
@@ -1600,7 +1600,7 @@
   },
   "programs/korea.html": {
    "title": "고려대 면접 21분",
-   "description": "고려대 계열적합전형 제시문 면접을 준비 21분과 발화 7분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 학교 전권 330,000원, 지문 1편 22,000원.",
+   "description": "고려대 계열적합전형 제시문 면접을 준비 21분과 발화 7분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 단위 전권 396,000원, 지문 1편 33,000원.",
    "breadcrumb": [
     {
      "name": "현학적 연구소",
@@ -1620,14 +1620,20 @@
     "about": "고려대학교",
     "offers": [
      {
-      "name": "고려대학교 전권 이용권 (지문 60편)",
-      "price": 330000,
-      "sku": "pass-korea",
+      "name": "고려대 인문 전권 이용권",
+      "price": 396000,
+      "sku": "pass-korea-hum",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "고려대 자연 전권 이용권",
+      "price": 396000,
+      "sku": "pass-korea-sci",
       "offer_url": "/studio.html"
      },
      {
       "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 22000,
+      "price": 33000,
       "sku": "passage-single",
       "offer_url": "/studio.html"
      }
@@ -1635,42 +1641,9 @@
    },
    "answer": ""
   },
-  "programs/skku.html": {
-   "title": "성균관대 제시문 면접 스튜디오",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "면접 스튜디오",
-     "path": "/studio.html"
-    },
-    {
-     "name": "성균관대 제시문 면접 스튜디오",
-     "path": "/programs/skku.html"
-    }
-   ],
-   "schema": {
-    "about": "성균관대학교",
-    "product_name": "성균관대 제시문 면접 스튜디오",
-    "offers": [
-     {
-      "name": "학교 전권",
-      "price": 330000,
-      "sku": "pass-skku",
-      "availability": "OutOfStock",
-      "offer_url": "/studio.html"
-     }
-    ]
-   },
-   "description": "성균관대 제시문 면접을 후기 관측 규격인 리딩 5분과 구술 5분으로 온라인 응시하고, 첨삭 세 단과 여섯 축 리포트로 되돌려 받는 스튜디오 전권 이용권 안내.",
-   "answer": "",
-   "noindex": true
-  },
   "programs/yonsei.html": {
    "title": "연세대 면접 8분",
-   "description": "연세대 활동우수형 제시문 면접을 준비 8분과 답변 5분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 학교 전권 330,000원, 지문 1편 22,000원.",
+   "description": "연세대 활동우수형 제시문 면접을 준비 8분과 답변 5분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 단위 전권 396,000원, 지문 1편 33,000원.",
    "breadcrumb": [
     {
      "name": "현학적 연구소",
@@ -1690,14 +1663,26 @@
     "about": "연세대학교",
     "offers": [
      {
-      "name": "연세대학교 전권 이용권 (지문 60편)",
-      "price": 330000,
-      "sku": "pass-yonsei",
+      "name": "연세대 인문 통합 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-hum",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 자연 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-sci",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 국제 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-intl",
       "offer_url": "/studio.html"
      },
      {
       "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 22000,
+      "price": 33000,
       "sku": "passage-single",
       "offer_url": "/studio.html"
      }
@@ -1756,7 +1741,7 @@
   },
   "studio.html": {
    "title": "면접 스튜디오, 현학적 연구소",
-   "description": "학교별 기출 제시문으로 온라인으로 치르는 대입 면접 스튜디오. 지문 1편 22,000원에 5회 응시, 학교 전권 330,000원. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.",
+   "description": "학교별 기출 제시문으로 온라인으로 치르는 대입 면접 스튜디오. 지문 1편 33,000원에 5회 응시, 응시 단위 전권 396,000원. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.",
    "type": "product",
    "priority": 0.9,
    "changefreq": "weekly",
@@ -1774,23 +1759,62 @@
     "product_name": "제시문 면접 스튜디오",
     "offers": [
      {
-      "name": "연세대학교 전권 이용권 (지문 60편)",
-      "price": 330000,
-      "sku": "pass-yonsei"
+      "name": "고려대 인문 전권 이용권",
+      "price": 396000,
+      "sku": "pass-korea-hum",
+      "offer_url": "/studio.html"
      },
      {
-      "name": "고려대학교 전권 이용권 (지문 60편)",
-      "price": 330000,
-      "sku": "pass-korea"
+      "name": "고려대 자연 전권 이용권",
+      "price": 396000,
+      "sku": "pass-korea-sci",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 인문 통합 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-hum",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 자연 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-sci",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 국제 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-intl",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 미래 자율융합 디자인 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-mirae-design",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 미래 첨단 보건 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-mirae-health",
+      "offer_url": "/studio.html"
+     },
+     {
+      "name": "연세대 미래 국제 전권 이용권",
+      "price": 396000,
+      "sku": "pass-yonsei-mirae-intl",
+      "offer_url": "/studio.html"
      },
      {
       "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 22000,
-      "sku": "passage-single"
+      "price": 33000,
+      "sku": "passage-single",
+      "offer_url": "/studio.html"
      }
     ]
    },
-   "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 과정입니다. 지문 1편 22,000원, 학교 전권 330,000원."
+   "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 과정입니다. 지문 1편 33,000원, 응시 단위 전권 396,000원."
   },
   "terms.html": {
    "title": "이용약관, 현학적 연구소",

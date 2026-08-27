@@ -179,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   document.getElementById('whoName').textContent = st.member.name || st.member.email;
   document.getElementById('whoSince').textContent = st.member.email;
 
-  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'학교 전권 이용권', download:'디지털 자료', trial:'맛보기'};
+  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'단위 전권 이용권', download:'디지털 자료', trial:'맛보기'};
   var rows = (st.entitlements||[]).map(function(e){
     var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
     // 디지털 자료(download)는 보안 뷰어로 열람, 스튜디오 이용권은 응시 흐름으로 분기
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
       +'<div class="ops"><button type="button" class="btn sm sgo">응시하러 가기</button></div></div>');
   if(!rows.length)
-    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 학교 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주십시오.</p></div>'
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주십시오.</p></div>'
       +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
