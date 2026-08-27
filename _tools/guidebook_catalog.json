@@ -1,7 +1,7 @@
 {
  "_note": "tools/build_guidebook.py refresh 가 박제. price 최상위 1 곳 = 전 권 기본값, 항목 price null = 상속. onsale=false 는 리더 미인제스트(판매 보류, 상품면 '준비 중', 시드 status inactive).",
  "year": 2027,
- "price": 16500,
+ "price": 33000,
  "items": [
   {
    "slug": "ajou",

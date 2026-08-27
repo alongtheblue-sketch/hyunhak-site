@@ -49,8 +49,8 @@ def main():
     if "__SEALMS__" in t:
         fails.append("home __SEALMS__ residual")
     s, b = get(SITE + "/guidebook/snu.html"); t = b.decode("utf-8", "ignore")
-    print(f"guidebook/snu {s} 16,500={'16,500' in t} 29,000={'29,000' in t} 담기={'data-cart-price' in t}")
-    if s != 200 or "16,500" not in t or "29,000" in t:
+    print(f"guidebook/snu {s} 33,000={'33,000' in t} 구가격16,500={'16,500' in t} 29,000={'29,000' in t} 담기={'data-cart-price' in t}")
+    if s != 200 or "33,000" not in t or "29,000" in t or "16,500" in t:
         fails.append("guidebook price")
     # 2026-08-27 go-live 후 세계: 전권 38 onsale (ajou 포함), 푸터 = 래스터 사업자 정보
     s, b = get(SITE + "/guidebook/ajou.html"); t = b.decode("utf-8", "ignore")
