@@ -73,6 +73,8 @@ def main():
     s, b = get(API + "/api/products")
     if s == 200:
         prods = _json.loads(b)
+        if isinstance(prods, dict):
+            prods = prods.get("products", [])
         by = {p.get("sku"): p for p in prods}
         n_guide = sum(1 for p in prods if str(p.get("sku", "")).startswith("guide-"))
         n_pass = sum(1 for p in prods if str(p.get("sku", "")).startswith("pass-") and p.get("price") == 396000)
