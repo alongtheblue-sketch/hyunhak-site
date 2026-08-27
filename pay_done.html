@@ -71,7 +71,7 @@
   <div class="auth wide" id="box">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>결제 확인</span></nav>
     <h1 id="h">결제를 확인하는 중</h1>
-    <p class="lede" id="sub">잠시만 기다려 주십시오. 창을 닫지 마십시오.</p>
+    <p class="lede" id="sub">잠시만 기다려 주세요. 창을 닫지 말아 주세요.</p>
     <dl class="kv payline" id="lines" hidden></dl>
     <div class="acts" id="acts" hidden></div>
   </div>
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', async function(){
 
   if (q.get('code') || q.get('fail')) {
     h.textContent = '결제가 완료되지 않았습니다';
-    sub.textContent = q.get('message') || '결제가 중단되었습니다. 장바구니에서 다시 시도하십시오.';
+    sub.textContent = q.get('message') || '결제가 중단되었습니다. 장바구니에서 다시 시도해 주세요.';
     acts.hidden = false;
     acts.innerHTML = '<a class="btn" href="cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="index.html">처음으로</a>';
     return;
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     if (r.status === 'waiting_deposit') {
       var va = r.vaccount || {};
       h.textContent = '가상계좌가 발급되었습니다';
-      sub.textContent = '입금이 확인되면 이용권이 열립니다. 기한 안에 입금하십시오.';
+      sub.textContent = '입금이 확인되면 이용권이 열립니다. 기한 안에 입금해 주세요.';
       lines.hidden = false;
       lines.innerHTML = '<div><dt>주문 번호</dt><dd>' + esc(orderId) + '</dd></div>'
         + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'

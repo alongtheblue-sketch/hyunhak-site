@@ -184,7 +184,7 @@
   },
   "checkout.html": {
    "title": "결제, 현학적 연구소",
-   "description": "현학적 연구소 스토어 결제 화면입니다. PG 연동 전 프로토타입입니다.",
+   "description": "현학적 연구소 스토어 결제 화면입니다.",
    "type": "utility",
    "noindex": true,
    "priority": 0.1,

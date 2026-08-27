@@ -6,20 +6,20 @@
 <title>결제, 현학적 연구소</title>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/checkout.html">
-<meta name="description" content="현학적 연구소 스토어 결제 화면입니다. PG 연동 전 프로토타입입니다.">
+<meta name="description" content="현학적 연구소 스토어 결제 화면입니다.">
 <meta name="robots" content="noindex, follow">
 <meta property="og:type" content="website">
 <meta property="og:title" content="결제, 현학적 연구소">
-<meta property="og:description" content="현학적 연구소 스토어 결제 화면입니다. PG 연동 전 프로토타입입니다.">
+<meta property="og:description" content="현학적 연구소 스토어 결제 화면입니다.">
 <meta property="og:url" content="https://hyunhak.com/checkout.html">
 <meta property="og:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:site_name" content="현학적 연구소">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="결제, 현학적 연구소">
-<meta name="twitter:description" content="현학적 연구소 스토어 결제 화면입니다. PG 연동 전 프로토타입입니다.">
+<meta name="twitter:description" content="현학적 연구소 스토어 결제 화면입니다.">
 <meta name="twitter:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","sameAs":[]},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/checkout.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"결제","item":"https://hyunhak.com/checkout.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/checkout.html#webpage","url":"https://hyunhak.com/checkout.html","name":"결제, 현학적 연구소","description":"현학적 연구소 스토어 결제 화면입니다. PG 연동 전 프로토타입입니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/checkout.html#breadcrumb"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","sameAs":[]},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/checkout.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"결제","item":"https://hyunhak.com/checkout.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/checkout.html#webpage","url":"https://hyunhak.com/checkout.html","name":"결제, 현학적 연구소","description":"현학적 연구소 스토어 결제 화면입니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/checkout.html#breadcrumb"}}]}</script>
 <!-- seo:end -->
 <link rel="icon" href="assets/favicon_32.png">
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
@@ -138,7 +138,7 @@
       <dl class="kv" id="sumDl"></dl>
       <div class="total"><span>결제 금액</span><span class="won" id="sumTotal">0원</span></div>
       <button class="btn" type="button" id="payBtn">결제</button>
-      <p class="stub" id="testNote">테스트 결제 환경. 실 승인 전까지 카드에서 돈이 빠져나가지 않음.</p>
+      <p class="stub" id="testNote">테스트 결제 환경입니다. 실제 승인 전에는 카드에서 돈이 빠져나가지 않습니다.</p>
       <p class="note rule" id="refundNote"></p>
     </div>
   </aside>
@@ -182,6 +182,36 @@ document.addEventListener('DOMContentLoaded', async function(){
   var items = HH.cart();
   if(!items.length){ location.href='cart.html'; return; }
 
+  // 구매 전 고지 (2026-08-27 건우 지시): 가이드북(보안 리더 상품)이 담겨 있으면
+  // 열람 방식(브라우저 무제한, 인쇄 3회, PDF 다운로드 불가)을 결제 전에 팝업으로 고지하고
+  // 확인 전까지 결제 버튼을 잠근다.
+  // 결제 버튼은 (팝업 확인)과 (위젯 준비) 둘 다 충족해야 열린다 — 위젯 성공 시점의 일괄 활성화가 고지 잠금을 덮지 않게
+  var gbAck = !items.some(function(x){ return /^guide-/.test(String(x.sku||'')); });
+  var widgetReady = false;
+  function syncPayBtn(){ var pb = document.getElementById('payBtn'); if (pb) pb.disabled = !(gbAck && widgetReady); }
+  if (!gbAck) {
+    var pop = document.createElement('div');
+    pop.className = 'hh-popup';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-modal', 'true');
+    pop.setAttribute('aria-labelledby', 'gbNoticeTitle');
+    pop.innerHTML = '<div class="hh-popup-back"></div>'
+      + '<div class="hh-popup-card">'
+      + '<p class="hh-popup-kind">구매 전 안내</p>'
+      + '<h2 id="gbNoticeTitle" class="hh-popup-title">가이드북 열람 안내</h2>'
+      + '<div class="hh-popup-body">'
+      + '<p>가이드북은 결제 즉시 브라우저 보안 리더로 열람하실 수 있으며, 열람 횟수에는 제한이 없습니다.</p>'
+      + '<p>인쇄는 권당 3회까지 가능합니다.</p>'
+      + '<p>PDF 원본 파일 다운로드는 제공되지 않습니다.</p>'
+      + '</div>'
+      + '<div class="acts" style="margin-top:18px"><button type="button" class="btn" id="gbNoticeOk">확인했습니다</button></div>'
+      + '</div>';
+    document.body.appendChild(pop);
+    var okBtn = document.getElementById('gbNoticeOk');
+    okBtn.focus();
+    okBtn.addEventListener('click', function(){ pop.remove(); gbAck = true; syncPayBtn(); document.getElementById('payBtn').focus(); });
+  }
+
   var needShip = items.some(function(x){return x.ship});
   if(!needShip){
     document.querySelector('.blk.addr').style.display='none';
@@ -190,10 +220,10 @@ document.addEventListener('DOMContentLoaded', async function(){
   }
   // 환불 안내는 담긴 상품 종류에 맞춰야 한다 (디지털 전용에 실물 반품 문구 = 오고지)
   var hasDigital = items.some(function(x){return !x.ship});
-  $('#refundNote').textContent = '결제와 동시에 주문 확정. '
-    + (needShip ? '실물은 출고 전 취소 시 전액 환불, 출고 후에는 수령 7일 이내 미훼손 기준. ' : '')
+  $('#refundNote').textContent = '결제와 동시에 주문이 확정됩니다. '
+    + (needShip ? '실물은 출고 전 취소 시 전액 환불되며, 출고 후에는 수령 7일 이내 미훼손 기준으로 반품하실 수 있습니다. ' : '')
     + (hasDigital ? '디지털 상품(이용권, PDF)은 열람 시작 전까지 취소할 수 있고, 열람이 시작되면 청약철회가 제한됩니다. ' : '')
-    + '전자상거래법의 청약철회 규정 적용.';
+    + '전자상거래법의 청약철회 규정이 적용됩니다.';
   if(st.member.name && !$('#nm').value) $('#nm').value = st.member.name;
 
   var sub = items.reduce(function(s,x){return s+x.price*x.qty},0);
@@ -220,9 +250,9 @@ document.addEventListener('DOMContentLoaded', async function(){
       widgets.renderPaymentMethods({ selector:'#payment-method' }),
       widgets.renderAgreement({ selector:'#agreement' })
     ]);
-    $('#payBtn').disabled = false;
+    widgetReady = true; syncPayBtn();
   }catch(e){
-    $('#payment-method').innerHTML = '<p class="note" role="alert">결제 수단을 불러오지 못했습니다. 새로고침 후 다시 시도하시고, 반복되면 admin@hyunhak.com 으로 알려 주십시오.</p>';
+    $('#payment-method').innerHTML = '<p class="note" role="alert">결제 수단을 불러오지 못했습니다. 새로고침 후 다시 시도하시고, 반복되면 admin@hyunhak.com 으로 알려 주세요.</p>';
     return;
   }
 
@@ -232,7 +262,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     if(needShip){
       shipping={ name:$('#nm').value.trim(), phone:$('#ph').value.trim(), zip:$('#zip').value.trim(),
                  addr1:$('#ad1').value.trim(), addr2:$('#ad2').value.trim() };
-      if(!shipping.name||!shipping.phone||!shipping.zip||!shipping.addr1) return alert('배송지 정보를 입력하십시오');
+      if(!shipping.name||!shipping.phone||!shipping.zip||!shipping.addr1) return alert('배송지 정보를 입력해 주세요');
     }
     btn.disabled=true; btn.textContent='주문 생성 중';
     try{

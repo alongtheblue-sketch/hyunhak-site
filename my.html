@@ -95,7 +95,7 @@
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>마이페이지</span></nav>
     <h1>내 정보</h1>
-    <p class="lede">이용권, 주문 내역, 구매한 가이드북 열람.</p>
+    <p class="lede">이용권과 주문 내역, 구매하신 가이드북을 확인하실 수 있습니다.</p>
    </div>
   </div>
 </section>
@@ -128,7 +128,7 @@
     </div>
 
     <div class="blk">
-      <div class="sh"><div><h2>자료실</h2><p>구매한 가이드북은 보안 리더로 열람</p></div><a class="tlink" href="library.html">자료실로 가기</a></div>
+      <div class="sh"><div><h2>자료실</h2><p>구매하신 가이드북은 보안 리더로 열람하실 수 있습니다</p></div><a class="tlink" href="library.html">자료실로 가기</a></div>
     </div>
 
     <div class="blk">
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
       +'<div class="ops"><button type="button" class="btn sm sgo">응시하러 가기</button></div></div>');
   if(!rows.length)
-    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주십시오.</p></div>'
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주세요.</p></div>'
       +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
@@ -233,7 +233,7 @@ document.addEventListener('DOMContentLoaded', async function(){
       mktMsg.textContent = (want?'수신 동의를 저장했습니다. ':'수신을 해지했습니다. 이제 광고성 정보를 보내지 않습니다. ') + MKT_BASE;
     }catch(e){
       mkt.checked = !want;   // 저장에 실패했는데 화면만 바뀌어 있으면 해지한 줄 알고 넘어간다
-      mktMsg.textContent = (e.message||'저장하지 못했습니다') + '. 잠시 후 다시 시도해 주십시오.';
+      mktMsg.textContent = (e.message||'저장하지 못했습니다') + '. 잠시 후 다시 시도해 주세요.';
     }
     mkt.disabled = false;
   });

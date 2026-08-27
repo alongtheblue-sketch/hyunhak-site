@@ -90,6 +90,10 @@ def main():
             for m in re.finditer(re.escape(ch), b):
                 if not in_quote(b, m.start()):
                     fails.append(f"{rel}: 인용 밖 원문 표기 문자 {ch!r}")
+        # 말투 게이트 (2026-08-27 건우): 하십시오체 명령형 금지 — 공손체(주세요체)로. verbatim 인용 안만 허용
+        for m in re.finditer("십시오", b):
+            if not in_quote(b, m.start()):
+                fails.append(f"{rel}: 십시오체 (공손체로 전환)")
     for rel in files:
         s = open(os.path.join(ROOT, rel), encoding="utf-8").read()
         if '<body class="v2' not in s:
@@ -111,6 +115,12 @@ def main():
             for m in re.finditer(re.escape(ch), body_of(vis)):
                 if not in_quote(body_of(vis), m.start()):
                     fails.append(f"{rel}: 인용 밖 원문 표기 문자 {ch!r} (verbatim 인용 안에서만 허용)")
+        # 말투 게이트 (2026-08-27 건우): 하십시오체 명령형 금지 — 공손체(주세요체)로.
+        # 예외 = verbatim 인용: 큰따옴표 안 + 기출 질문 .q 요소 (관측 원문은 고치지 않는다)
+        vq = re.sub(r'<(p|span) class="q">.*?</\1>', "", body_of(vis), flags=re.S)
+        for m in re.finditer("십시오", vq):
+            if not in_quote(vq, m.start()):
+                fails.append(f"{rel}: 십시오체 (공손체로 전환)")
         if 'class="pagehead"' in vis and not re.search(r'<div class="pagehead">', vis):
             fails.append(f"{rel}: pagehead 구조 (div.pagehead 여야 함)")
         if rel not in ("insta.html",):

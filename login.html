@@ -72,7 +72,7 @@
   <div class="auth">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>로그인</span></nav>
     <h1>로그인</h1>
-    <p class="lede">구매한 가이드북과 스튜디오 이용권은 로그인 후 열람.</p>
+    <p class="lede">구매하신 가이드북과 스튜디오 이용권은 로그인 후 이용하실 수 있습니다.</p>
     <div id="oauthMsg" role="status" aria-live="polite" hidden style="margin-top:var(--s4)"></div>
     <form id="loginForm">
       <div class="field">
@@ -139,11 +139,11 @@ document.addEventListener('DOMContentLoaded', function(){
   function show(text, kind){ msg.textContent=text; msg.className='oauthmsg'+(kind==='info'?' info':''); msg.hidden=false; }
 
   var err=q.get('oauth_error');
-  if(err) show((HH.OAUTH_ERR&&HH.OAUTH_ERR[err])||'간편 로그인에 실패했습니다. 다시 시도하십시오');
+  if(err) show((HH.OAUTH_ERR&&HH.OAUTH_ERR[err])||'간편 로그인에 실패했습니다. 다시 시도해 주세요');
   if(linkP){
     var label=(HH.OAUTH_LABEL&&HH.OAUTH_LABEL[linkP])||linkP;
     show(q.get('nopw')
-      ? '이 이메일은 간편 로그인으로 만든 계정입니다. 기존에 쓰던 간편 로그인으로 먼저 로그인한 뒤 다시 시도하십시오.'
+      ? '이 이메일은 간편 로그인으로 만든 계정입니다. 기존에 쓰던 간편 로그인으로 먼저 로그인한 뒤 다시 시도해 주세요.'
       : '이미 '+label+' 계정과 같은 이메일로 가입되어 있습니다. 비밀번호로 로그인하면 두 계정을 연결합니다.','info');
     // 이미 로그인된 상태면 비밀번호를 다시 넣지 않고 바로 연결한다
     HH.me(true).then(function(st){
