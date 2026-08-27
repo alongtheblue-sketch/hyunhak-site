@@ -101,7 +101,7 @@ SITE = {
     "email": "admin@hyunhak.com",
     "twitter_card": "summary_large_image",
     "skip_inject": ["library.html", "my.html", "reader.html"],
-    "planned_paths": ["programs/skku.html"],
+    "planned_paths": [],
     "llms": {
         "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 영어 봉투 모의고사 스토어를 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
         "products": [
