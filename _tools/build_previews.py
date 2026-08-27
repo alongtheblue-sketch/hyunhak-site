@@ -2,8 +2,9 @@
 """가이드북 상세페이지 v3 원천 생성기 — 현학적 연구소 편집본 38권 (2026-08-26).
 
 입력
-  PDF  = 2027면접가이드북_현학적연구소편집_전체38/ (보호 배포본, 텍스트층 없음, 판매 파일과 동일)
-  HTML = Codex copy_revision_20260823/build_hyunhak/<대학>_R.html (같은 판의 조판 원천, 텍스트 추출용)
+  PDF  = interview_guidebook_2027/dist_hyunhak_protected/<대학>_2027면접가이드북.pdf
+  HTML = interview_guidebook_2027/out2/<대학>_H.html (같은 판의 조판 원천, 텍스트 추출용)
+  JSON = interview_guidebook_2027/export/site/<대학>.json (질문·규칙 내부 카운트)
 출력
   assets/covers/<slug>.jpg             표지 (596x842, 판매 파일 1면 렌더)
   assets/preview/<slug>/pNN.webp       미리보기 면. 표지·차례·부 간지는 선명, 본문 면은 픽셀 단계 블러
@@ -28,8 +29,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_guidebook import SLUGS  # noqa: E402  (slug ↔ 학교명 단일 원천)
 
 SITE = Path(__file__).resolve().parent.parent
-PDF_DIR = Path("/Users/gregory/Documents/Codex/2026-08-22/dl/outputs/2027면접가이드북_현학적연구소편집_전체38")
-HTML_DIR = Path("/Users/gregory/Documents/Codex/2026-08-22/dl/work/canonical_landmark_covers/dual_brand/copy_revision_20260823/build_hyunhak")
+GUIDEBOOK_SRC = Path("/Users/gregory/Workspace/interview_guidebook_2027")
+PDF_DIR = GUIDEBOOK_SRC / "dist_hyunhak_protected"
+HTML_DIR = GUIDEBOOK_SRC / "out2"
+EXPORT_DIR = GUIDEBOOK_SRC / "export" / "site"
 COVERS = SITE / "assets" / "covers"
 PREVIEW = SITE / "assets" / "preview"
 META = SITE / "_tools" / "guidebook_meta_v3.json"
@@ -52,13 +55,17 @@ def _t(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def parse_html(univ):
-    p = HTML_DIR / f"{univ}_R.html"
+def parse_html(univ, p, export_path):
     s = p.read_text(encoding="utf-8").replace("⁠", "")
     body = s[s.find("<body"):]
-    m = {}
-    st = re.search(r'class="cvstat"><b>(\d+)</b>\s*건의 실제 질문<span>(\d+)\s*개의 전환 규칙', body)
-    m["questions"], m["rules"] = int(st.group(1)), int(st.group(2))
+    site_data = json.loads(export_path.read_text(encoding="utf-8"))
+    counts = site_data.get("counts")
+    if not isinstance(counts, dict):
+        raise ValueError(f"{univ}: export/site counts 계약 누락")
+    for key in ("questions", "rules"):
+        if not isinstance(counts.get(key), int):
+            raise ValueError(f"{univ}: export/site counts.{key} 정수 누락")
+    m = {"questions": counts["questions"], "rules": counts["rules"]}
     v = re.search(r"VOL\.(\d+)", body)
     m["vol"] = int(v.group(1)) if v else None
 
@@ -246,18 +253,26 @@ def pick_pages(n_pages, dividers):
 
 
 def build_one(slug, univ, dry=False):
-    pdf = PDF_DIR / f"{univ}_2027면접가이드북_현학적연구소편집.pdf"
+    pdf = PDF_DIR / f"{univ}_2027면접가이드북.pdf"
+    html_path = HTML_DIR / f"{univ}_H.html"
+    export_path = EXPORT_DIR / f"{univ}.json"
+    paths = {"pdf": pdf, "html": html_path, "export": export_path}
+    missing = [f"{kind}={path}" for kind, path in paths.items() if not path.is_file()]
+    if missing:
+        raise FileNotFoundError(f"{univ}: 입력 경로 누락: {', '.join(missing)}")
+    if dry:
+        return {"slug": slug, "name": univ,
+                "paths": {kind: str(path) for kind, path in paths.items()}}
+
     doc = fitz.open(pdf)
     n = doc.page_count
     means = page_means(doc)
     dividers = [i + 1 for i, v in enumerate(means) if i >= 2 and v < DARK_MEAN]
     if len(dividers) != 5:
         print(f"  ⚠ {univ}: 간지 판정 {len(dividers)}건 (기대 5) means={['%.2f' % v for v in means]}")
-    meta = parse_html(univ)
+    meta = parse_html(univ, html_path, export_path)
     meta.update({"slug": slug, "name": univ, "pages": n, "dividers": dividers,
                  "file": pdf.name, "bytes": pdf.stat().st_size})
-    if dry:
-        return meta
     # 표지 jpg (596x842)
     cover = render(doc, 0, 596).resize((596, 842), Image.LANCZOS)
     cover.save(COVERS / f"{slug}.jpg", "JPEG", quality=COVER_Q, optimize=True, progressive=True)
@@ -291,9 +306,14 @@ def main():
             continue
         print(f"[{slug}] {univ}")
         out[slug] = build_one(slug, univ, dry=a.dry)
-        print(f"  pages={out[slug]['pages']} q={out[slug]['questions']} rules={out[slug]['rules']} "
-              f"dividers={out[slug]['dividers']} previews={len(out[slug].get('previews', []))}")
-    if not a.dry and not only:
+        if a.dry:
+            print("  paths=ok (pdf, html, export)")
+        else:
+            print(f"  pages={out[slug]['pages']} q={out[slug]['questions']} rules={out[slug]['rules']} "
+                  f"dividers={out[slug]['dividers']} previews={len(out[slug].get('previews', []))}")
+    if a.dry:
+        print(f"dry: paths={len(out)}/{len(only) if only else len(SLUGS)} ok, render=0, writes=0")
+    elif not only:
         META.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         total = sum(p["bytes"] for m in out.values() for p in m["previews"])
         print(f"meta -> {META} ({len(out)} 권, 미리보기 {sum(len(m['previews']) for m in out.values())}면, {total/1e6:.1f} MB)")

@@ -48,10 +48,26 @@ def main():
             fails.append(f"home missing {needle}")
     if "__SEALMS__" in t:
         fails.append("home __SEALMS__ residual")
+    print(f"home 15권잔존={'15권' in t}")
+    if "15권" in t:
+        fails.append("home 15권 잔존")
     s, b = get(SITE + "/guidebook/snu.html"); t = b.decode("utf-8", "ignore")
     print(f"guidebook/snu {s} 33,000={'33,000' in t} 구가격16,500={'16,500' in t} 29,000={'29,000' in t} 담기={'data-cart-price' in t}")
     if s != 200 or "33,000" not in t or "29,000" in t or "16,500" in t:
         fails.append("guidebook price")
+    forbidden = {
+        "출처:": "출처 표기",
+        "실제 나온 질문": "구 질문 문구",
+        'class="facts"': "통계 facts",
+    }
+    for needle, label in forbidden.items():
+        print(f"guidebook/snu {label}잔존={needle in t}")
+        if needle in t:
+            fails.append(f"guidebook/snu {label} 잔존")
+    page_stat = bool(re.search(r"\d+면,", t))
+    print(f"guidebook/snu 면수통계잔존={page_stat}")
+    if page_stat:
+        fails.append("guidebook/snu N면, 잔존")
     # 2026-08-27 go-live 후 세계: 전권 38 onsale (ajou 포함), 푸터 = 래스터 사업자 정보
     s, b = get(SITE + "/guidebook/ajou.html"); t = b.decode("utf-8", "ignore")
     ok_cart = 'data-cart-sku="guide-ajou"' in t

@@ -44,9 +44,6 @@
 .parts .no{font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
 .parts h3{font-size:var(--t-h4);margin:0}
 .parts .d{margin-top:6px;font-size:14px;color:var(--body);max-width:64ch}
-.parts .st{margin-top:10px;display:flex;gap:var(--s4);flex-wrap:wrap}
-.parts .st span{font-size:13px;color:var(--gray)}
-.parts .st b{font-size:15px;color:var(--ink);margin-right:5px;font-variant-numeric:tabular-nums}
 /* 면접 형태 판정 */
 .forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
 .forms .f{border:1px solid var(--hair);border-radius:6px;padding:14px 16px;background:var(--card)}
@@ -76,7 +73,6 @@
 .taste li:last-child{border-bottom:1px solid var(--hairs)}
 .taste .ty{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
 .taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
-.taste .src{margin-top:6px;font-size:12.5px;color:var(--gray);display:block}
 .tastenote{margin-top:var(--s3)}
 .strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:15px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
 .strat li:last-child{border-bottom:1px solid var(--hairs)}
@@ -111,10 +107,10 @@
     <h2>__H1__</h2>
     <span class="__PRICE_CLS__">__PRICE__원<small>부가세 포함, 보안 리더 열람</small></span>
     <ul class="spec">
-      <li><span>실제 질문</span><span>__QUESTIONS__건, 선배 후기 __YEARS__ 관측</span></li>
-      <li><span>전환 규칙</span><span>__RULES__개, 내 생기부에서 질문 뽑기</span></li>
-      <li><span>전형 분석</span><span>전형별 제원 __SPEC_N__항목, 형태 판정표</span></li>
-      <li><span>형태</span><span>PDF __PAGES__면, 브라우저 보안 리더</span></li>
+      <li><span>실제 질문</span><span>선배 후기 __YEARS__ 관측, 유형별 수록</span></li>
+      <li><span>전환 규칙</span><span>내 생기부에서 질문 뽑기, 꼬리질문까지</span></li>
+      <li><span>전형 분석</span><span>전형별 제원, 형태 판정표</span></li>
+      <li><span>형태</span><span>PDF, 브라우저 보안 리더</span></li>
       <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
     </ul>
     <div class="acts">
@@ -126,18 +122,7 @@
 
 <section class="sec tight">
   <div class="wrap">
-    <div class="facts rv">
-      <div><b>__QUESTIONS__</b><span>실제 나온 질문</span></div>
-      <div><b>__RULES__</b><span>생기부 전환 규칙</span></div>
-      <div><b>__TYPES_N__</b><span>질문 유형</span></div>
-      <div><b>__PAGES__</b><span>면</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="sec tight">
-  <div class="wrap">
-    <div class="sh rv"><div><h2>지면 미리보기 __PV_N__면</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
+    <div class="sh rv"><div><h2>지면 미리보기</h2><p>판매본 그대로의 지면. 본문은 흐림 처리, 구매 후 전체가 선명하게 열립니다.</p></div></div>
     <div class="pvwrap rv"><div class="pvs" tabindex="0" role="region" aria-label="지면 미리보기 가로 스크롤">
 __PREVIEWS__
     </div></div>
@@ -149,7 +134,7 @@ __PREVIEWS__
 <div class="gbd">
 
   <section class="sec">
-    <div class="sh rv"><div><h2>다섯 부로 끝나는 구성</h2><p>표지의 차례 그대로입니다. 각 부의 수치는 이 책에서 셉니다.</p></div></div>
+    <div class="sh rv"><div><h2>다섯 부로 끝나는 구성</h2><p>표지의 차례 그대로입니다.</p></div></div>
     <div class="parts rv">
 __PARTS__
     </div>
@@ -169,26 +154,26 @@ __SPEC_CHIPS__
   </section>
 
   <section class="sec">
-    <div class="sh rv"><div><h2>질문 유형 __TYPES_N__종</h2><p>실제 나온 질문 __QUESTIONS__건을 이 유형들로 나눠 싣습니다.</p></div></div>
+    <div class="sh rv"><div><h2>질문 유형</h2><p>실제로 나온 질문을 이 유형들로 나눠 싣습니다.</p></div></div>
     <div class="chips rv" aria-label="질문 유형">
 __TYPE_CHIPS__
     </div>
   </section>
 
   <section class="sec">
-    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문. 출처는 전국 단위로 회수한 자료집의 기관명만 표기.</p></div></div>
+    <div class="sh rv"><div><h2>맛보기</h2><p>유형별 첫 수록 질문.</p></div></div>
     <ol class="taste rv">
 __SAMPLES__
     </ol>
-    <p class="tastenote note">전체 __QUESTIONS__건과 유형 해설은 책 본문에.</p>
+    <p class="tastenote note">전체 질문과 유형 해설은 책 본문에.</p>
   </section>
 
   <section class="sec">
-    <div class="sh rv"><div><h2>전환 규칙 __RULES__개, 이 책의 본론</h2><p>생기부의 기재 한 줄이 어느 질문으로 바뀌는지. 규칙마다 실제 나온 질문과 꼬리질문이 붙습니다.</p></div></div>
+    <div class="sh rv"><div><h2>전환 규칙, 이 책의 본론</h2><p>생기부의 기재 한 줄이 어느 질문으로 바뀌는지. 규칙마다 실제로 나온 질문과 꼬리질문이 붙습니다.</p></div></div>
     <div class="rules3 rv">
 __RULES3__
     </div>
-    <p class="rlock">규칙의 질문 틀과 실제 질문, 꼬리질문 __RULES__세트는 본문에서. 위 미리보기 지면에 흐림 처리로 실려 있습니다.</p>
+    <p class="rlock">규칙의 질문 틀과 실제 질문, 꼬리질문은 본문에서. 위 미리보기 지면에 흐림 처리로 실려 있습니다.</p>
     <div class="chips rv" aria-label="규칙이 다루는 생기부 영역">
 __RULE_CHIPS__
     </div>
@@ -197,7 +182,7 @@ __RULE_CHIPS__
 __STRAT_SEC__
 
   <div class="after rv">
-    <span class="note">현학적 연구소 편집본, 공식 요강과 후기 관측을 구분 표기</span>
+    <span class="note">현학적 연구소 편집본</span>
     <div class="nb">__PREV__<a class="tlink" href="index.html">전체 38권</a>__NEXT__</div>
   </div>
 </div>

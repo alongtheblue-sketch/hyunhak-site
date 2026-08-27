@@ -69,8 +69,8 @@
    </div>
     <div class="facts rv">
       <div><b>__N__</b><span>권, __SALE__권 판매 중</span></div>
-      <div><b>__PAGES__</b><span>총 면수</span></div>
-      <div><b>__QS__</b><span>총 수록 질문</span></div>
+      <div><b>실제 질문</b><span>유형별 수록</span></div>
+      <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
       <div><b>__PRICE__</b><span>원, 권당</span></div>
     </div>
   </div>
@@ -98,7 +98,7 @@
     <div class="box spec rv">
       <h3>한 권의 구성</h3>
       <ol>
-        <li>1부 내 면접은 어느 형태인가</li><li>2부 이 대학은 무엇을 묻는가</li><li>3부 실제로 나온 질문</li><li>4부 내 생기부에서 질문 뽑기, 전환 규칙</li><li>5부 이 대학의 특징과 준비 전략</li>
+        <li>1부 내 면접은 어느 형태인가</li><li>2부 이 대학은 무엇을 묻는가</li><li>3부 실제 질문</li><li>4부 내 생기부에서 질문 뽑기, 전환 규칙</li><li>5부 이 대학의 특징과 준비 전략</li>
       </ol>
     </div>
     <div class="box rv">
@@ -136,7 +136,7 @@ var HH_GB=__HH_GB__;
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     var pr=o.sale?'<span class="price">__PRICE__원</span>':'<span class="w">준비 중</span>';
     var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
-    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>'+o.pages+'면</span><span>'+o.q+'문항</span><span>규칙 '+o.r+'개</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
+    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>2027학년도 대비</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
   }
   function render(){
     var kw=(q.value||'').trim();

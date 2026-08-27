@@ -2,7 +2,7 @@
 """학교별 2027 면접 가이드북 상품군 페이지 생성기 (결정론).
 
 서브커맨드
-  refresh  원천(interview_guidebook_2027/build/*.json + PDF 면수)을 읽어
+  refresh  원천(interview_guidebook_2027/export/site/*.json + PDF 면수)을 읽어
            _tools/guidebook_catalog.json 을 재박제한다. 가격(price) 필드는 보존.
   build    카탈로그만 읽어 guidebook/index.html + guidebook/<slug>.html 38 개를 쓴다 (플랫폼 v2 템플릿 2종).
   verify   산출 검증: 멱등(재생성 바이트 동일), 상대 링크 실재, <style> 금지 속성,
@@ -45,28 +45,6 @@ DEFAULT_PRICE = 33000
 SAMPLE_MAX = 4
 SAMPLE_LEN = 120
 
-# 출처 문자열 → 기관명. 파일명, 개인 필명, 페이지 번호는 노출하지 않는다.
-SOURCE_MAP = [
-    (r"신명", "신명여고 자료실"),
-    (r"울산고", "울산고 진학자료실"),
-    (r"대구동구", "대구동구 진로진학센터"),
-    (r"orbi", "오르비 면접후기 모음집"),
-    (r"부산교육청|부산광역시교", "부산교육청"),
-    (r"제주교육청", "제주교육청"),
-    (r"광주교육청", "광주교육청"),
-    (r"대구교육청|^대구\d{4}", "대구교육청"),
-    (r"울산교육청|^울산\d{4}", "울산교육청"),
-    (r"경기도 진학", "경기도 진학연구팀"),
-    (r"도교육청", "도교육청 면접자료집"),
-    (r"^팩", "대학 공식 요강"),
-    (r"요강", "대학 입학 요강"),
-    (r"복원", "면접 복원문제 자료집"),
-    (r"기출", "면접 기출 자료집"),
-    (r"후기", "면접 후기 자료집"),
-    (r"대학교|대학|여대", "대학 공식 자료"),
-]
-SOURCE_FALLBACK = "면접 후기 자료집"
-
 
 # ---------------------------------------------------------------- 텍스트 정리
 def clean(s):
@@ -94,105 +72,69 @@ def won(n):
     return f"{n:,}원"
 
 
-def source_label(cite):
-    if not cite:
-        return None
-    for pat, label in SOURCE_MAP:
-        if re.search(pat, cite):
-            return label
-    return SOURCE_FALLBACK
-
-
-def source_doc(cite):
-    """출처 문서 식별자 (면 번호 제거). 출처 건수 집계용."""
-    return re.sub(r"\s+p\.?\s*\d+.*$", "", cite).strip()
-
-
-def parse_group_title(t):
-    """'유형명 (관측 N건, P%) ...' 류 제목에서 (유형명, 관측건수, 비율) 추출.
-    괄호는 숫자, '팩', '관측' 을 품은 첫 괄호 또는 ' (' 에서 끊고, ' — ' 뒤 설명은 버린다."""
-    t = t.replace("**", "")
-    cuts = [len(t)]
-    i = t.find(" (")
-    if i >= 0:
-        cuts.append(i)
-    for m in re.finditer(r"\(([^)]*)\)", t):
-        if re.search(r"\d|팩|관측", m.group(1)):
-            cuts.append(m.start())
-            break
-    for dash in ("—", "–"):
-        i = t.find(dash)
-        if i >= 0:
-            cuts.append(i)
-    cut = min(cuts)
-    name, rest = t[:cut], t[cut:]
-    name = re.sub(r"^\d+-\d+\s+", "", name.strip())
-    m = re.search(r"([\d.]+)\s*%", rest)
-    pct = float(m.group(1)) if m else None
-    first = re.search(r"(\d+)\s*[건행]", rest)
-    observed = int(first.group(1)) if first else None
-    m = re.search(r"(\d+)\s*[건행]\s*중\s*(\d+)\s*[건행]", rest)
-    if m and pct is not None and abs(int(m.group(2)) / int(m.group(1)) * 100 - pct) < 0.2:
-        observed = int(m.group(2))          # "관측 693건 중 35건, 5.05%" = 분모 중 관측
-    elif re.search(r"(\d+)\s*/\s*(\d+)", rest):
-        observed = int(re.search(r"(\d+)\s*/\s*(\d+)", rest).group(1))   # "29/917건 = 3.2%"
-    else:
-        m = re.search(r"(\d+)\s*[건행]\s*\+\s*(?:재분류\s*)?(\d+)\s*[건행]", rest)
-        if m:
-            observed = int(m.group(1)) + int(m.group(2))
-    return clean(name), observed, pct
-
-
 # ---------------------------------------------------------------- refresh
 def pdf_pages(path):
+    if not path.is_file():
+        raise FileNotFoundError(f"PDF 없음: {path}")
     r = subprocess.run(["mdls", "-name", "kMDItemNumberOfPages", "-raw", str(path)],
-                       capture_output=True, text=True, check=True)
-    return int(r.stdout.strip())
+                       capture_output=True, text=True)
+    raw = r.stdout.strip()
+    if r.returncode == 0 and raw.isdigit():
+        return int(raw)
+    # 외부 저장소는 Spotlight 메타데이터가 없어도 PDF 자체는 정상일 수 있다.
+    r = subprocess.run(["pdfinfo", str(path)], capture_output=True, text=True)
+    m = re.search(r"^Pages:\s+(\d+)\s*$", r.stdout, flags=re.M)
+    if r.returncode != 0 or not m:
+        raise RuntimeError(f"PDF 면수 판독 실패: {path}: {r.stderr.strip()}")
+    return int(m.group(1))
 
 
 def extract(univ, src):
-    d = json.load(open(src / "build" / f"{univ}.json", encoding="utf-8"))
-    pdf = src / "dist_hyunhak_clean" / f"{univ}_2027면접가이드북.pdf"
-    secs = [{"no": s["no"], "title": clean(s["title"])} for s in d["secs"] if s["no"] >= 1]
+    site_json = src / "export" / "site" / f"{univ}.json"
+    if not site_json.is_file():
+        raise FileNotFoundError(f"site export 없음: {site_json}")
+    d = json.load(open(site_json, encoding="utf-8"))
+    if d.get("univ") != univ:
+        raise ValueError(f"{univ}: export/site univ 불일치: {d.get('univ')!r}")
+    qgroups = d.get("qgroups")
+    counts = d.get("counts")
+    if not isinstance(qgroups, list) or not isinstance(counts, dict):
+        raise ValueError(f"{univ}: export/site qgroups 또는 counts 계약 누락")
+    for key in ("questions", "rules", "types"):
+        if not isinstance(counts.get(key), int):
+            raise ValueError(f"{univ}: export/site counts.{key} 정수 누락")
+    if counts["types"] != len(qgroups):
+        raise ValueError(f"{univ}: counts.types={counts['types']} != qgroups={len(qgroups)}")
 
-    types, order = {}, []
-    docs = set()
+    pdf = src / "dist_hyunhak_clean" / f"{univ}_2027면접가이드북.pdf"
+    types = []
     samples = []
-    n_items = 0
-    for g in d["qgroups"]:
-        name, observed, pct = parse_group_title(g["title"])
-        if name not in types:
-            types[name] = {"type": name, "observed": observed, "pct": pct, "included": 0}
-            order.append(name)
-        types[name]["included"] += len(g["items"])
-        n_items += len(g["items"])
-        prev = None
-        picked = any(s["type"] == name for s in samples)
-        for it in g["items"]:
-            cite = it.get("cite")
-            if cite and cite.strip().startswith("동") and prev:
-                cite = prev
-            if cite:
-                prev = cite
-                docs.add(source_doc(cite))
-            label = source_label(cite)
-            if label is None and g.get("sub") and re.search(r"공식|요강|안내서", g["sub"]):
-                label = "대학 공식 안내서"
-            if not picked and label and len(samples) < SAMPLE_MAX and it.get("q"):
-                q = clean(it["q"])
-                if len(q) > SAMPLE_LEN:
-                    q = q[:SAMPLE_LEN].rstrip() + "…"
-                samples.append({"type": name, "q": q, "source": label})
-                picked = True
+    for i, g in enumerate(qgroups):
+        name = g.get("type")
+        items = g.get("items")
+        if not isinstance(name, str) or not name.strip():
+            raise ValueError(f"{univ}: qgroups[{i}].type 누락")
+        if not isinstance(items, list) or not items:
+            raise ValueError(f"{univ}: qgroups[{i}].items 비어 있음")
+        q = items[0].get("q") if isinstance(items[0], dict) else None
+        if not isinstance(q, str) or not q.strip():
+            raise ValueError(f"{univ}: qgroups[{i}].items[0].q 누락")
+        public_type = clean(name)
+        # 원류의 일부 임시 유형명 끝에 붙은 문항 개수는 화면용 유형명이 아니다.
+        public_type = re.sub(r"\s+[—–]\s+.*\d+\s*(?:문|건|개|종|세트).*$", "", public_type).strip()
+        types.append(public_type)
+        if len(samples) < SAMPLE_MAX:
+            q = clean(q)
+            if len(q) > SAMPLE_LEN:
+                q = q[:SAMPLE_LEN].rstrip() + "…"
+            samples.append({"type": public_type, "q": q})
     return {
         "name": univ,
         "file": pdf.name,
         "pages": pdf_pages(pdf),
-        "questions": n_items,
-        "types_n": len(order),
-        "sources_n": len(docs),
-        "secs": secs,
-        "types": [types[k] for k in order],
+        "questions": counts["questions"],
+        "types_n": counts["types"],
+        "types": types,
         "samples": samples,
     }
 
@@ -279,13 +221,20 @@ def _previews_html(mv):
 
 def _parts_html(mv):
     out = []
-    subs = mv.get("toc_subs") or [""] * 5
+    # meta_v3.toc_subs에는 질문·규칙 카운트가 섞여 있으므로 화면 문구로 쓰지 않는다.
+    # 부 제목의 의미만 남긴 고정 설명을 사용하고, 원천 수치는 내부 메타에 보존한다.
+    subs = {
+        1: "서류기반｜제시문｜MMI, 전형별 형태 판정",
+        2: "전형별 제원｜이 대학이 찾는 학생",
+        3: "선배 후기에서 회수한 실제 질문, 유형별, 모집단위와 연도",
+        4: "생기부에서 질문 뽑는 전환 규칙",
+        5: "타 대학 대비 차이｜준비 전략",
+    }
     for i, pt in enumerate(mv["parts"]):
-        sub = clean(subs[i]) if i < len(subs) else ""
-        st = "".join(f'<span><b>{esc(clean(b))}</b>{esc(clean(l))}</span>' for b, l in pt.get("strip", []))
+        sub = subs.get(int(pt["no"]), "")
         out.append(
             f'      <div class="p5"><span class="no">{pt["no"]}</span><div><h3>{esc(clean(pt["title"]))}</h3>'
-            f'<p class="d">{esc(sub)}</p><div class="st">{st}</div></div></div>')
+            f'<p class="d">{esc(sub)}</p></div></div>')
     return "\n".join(out)
 
 
@@ -329,7 +278,7 @@ def _strat_sec_html(mv):
         no, txt = (m.group(1), m.group(2)) if m else (f"{i:02d}", stt)
         out.append(f'      <li><span class="sn">{esc(no)}</span><span>{esc(clean(txt))}</span></li>')
     more = len(strat) - len(strat[:8])
-    tail = f'\n    <p class="rlock">전략 {len(strat)}개 중 {len(strat[:8])}개의 제목. 본문과 근거는 책에서.</p>' if more > 0 else ""
+    tail = '\n    <p class="rlock">전략의 제목 일부입니다. 본문과 근거는 책에서.</p>' if more > 0 else ""
     return ('  <section class="sec">\n'
             '    <div class="sh rv"><div><h2>5부 준비 전략</h2><p>이 대학만의 차이에서 나온 전략. 제목만 싣습니다.</p></div></div>\n'
             '    <ol class="strat rv">\n' + "\n".join(out) + '\n    </ol>' + tail + '\n  </section>')
@@ -343,9 +292,8 @@ def render_page(cat, items, i, meta):
     sale = bool(e.get("onsale", True))
     h1 = f"{name} 2027 면접 가이드북"
     title = f"{h1}, 현학적 연구소"
-    q, rules = mv["questions"], mv["rules"]
     years = f'{mv["years"][0]}~{mv["years"][1]}' if mv.get("years") else "복수 연도"
-    lede = (f"{name} 면접에서 실제로 나온 질문 {q}건, 내 생기부에서 질문을 뽑는 전환 규칙 {rules}개. "
+    lede = (f"{name} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙. "
             f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.")
     if sale:
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
@@ -363,17 +311,15 @@ def render_page(cat, items, i, meta):
         final_h2, final_p = "준비 중인 동안", "판매 중인 다른 대학 가이드북 먼저. 판매 개시는 공지로."
         final_acts = ('<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>'
                       '<a class="btn ghost" href="../notice.html">공지 보기</a>')
-    groups = mv.get("groups", [])
-    # 유형은 이름만 싣는다 (건우 2026-08-26: "몇 건 중 몇 건 수록 이런 건 다 빼도 돼")
-    type_chips = "\n".join(f'      <span>{esc(clean(g["type"]))}</span>' for g in groups)
-    samples = "\n".join(f'      <li><span class="ty">{esc(clean(s["type"]))}</span><p class="q">{esc(clean(s["q"]))}</p><span class="src">출처: {esc(s["source"])}</span></li>'
+    # 유형명 역시 export/site 계약을 사용한다. 카운트·관측 주석은 원류 단계에서 제외한다.
+    type_chips = "\n".join(f'      <span>{esc(clean(label))}</span>' for label in e["types"])
+    samples = "\n".join(f'      <li><span class="ty">{esc(clean(s["type"]))}</span><p class="q">{esc(clean(s["q"]))}</p></li>'
                          for s in e["samples"])
     prev_e = items[i - 1] if i > 0 else None
     next_e = items[i + 1] if i + 1 < len(items) else None
     m = {"__TITLE__": esc(title), "__NAME__": esc(name), "__H1__": esc(h1), "__LEDE__": esc(lede), "__SLUG__": e["slug"],
          "__SKU__": esc(e["sku"]), "__VOL__": str(mv.get("vol") or ""), "__YEARS__": years,
-         "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}", "__PAGES__": str(mv["pages"]),
-         "__QUESTIONS__": str(q), "__RULES__": str(rules), "__TYPES_N__": str(len(groups)),
+         "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}",
          "__TRACKS_N__": str(len(mv.get("spec_tracks", [])) or len(mv.get("tracks", []))),
          "__SPEC_N__": str(len(mv.get("spec_items", []))),
          "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note,
@@ -381,7 +327,7 @@ def render_page(cat, items, i, meta):
          "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
          "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),
          "__STRAT_SEC__": _strat_sec_html(mv),
-         "__TYPE_CHIPS__": type_chips, "__PV_N__": str(len(mv["previews"])),
+         "__TYPE_CHIPS__": type_chips,
          "__PRICE_CLS__": "price" if sale else "price mute",
          "__SAMPLES__": samples,
          "__PREV__": (f'<a class="tlink" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>' if prev_e else ""),
@@ -394,11 +340,8 @@ INDEX_TPL = Path(__file__).with_name("guidebook_index_v2.html")
 
 
 def render_index(cat, items, meta):
-    """목록 = 플랫폼 v2 템플릿. 수치는 meta v3 (판매 파일 실측)에서 채운다."""
+    """목록 = 플랫폼 v2 템플릿. meta v3 수치는 내부 데이터로만 유지한다."""
     n = len(items)
-    pages = sum(meta[e["slug"]]["pages"] for e in items)
-    qs = sum(meta[e["slug"]]["questions"] for e in items)
-    rules = sum(meta[e["slug"]]["rules"] for e in items)
     sale = sum(1 for e in items if e.get("onsale", True))
     price = int(cat["price"])
     gb = [{"slug": e["slug"], "sku": e.get("sku") or f"guide-{e['slug']}", "name": e["name"],
@@ -407,8 +350,8 @@ def render_index(cat, items, meta):
            "sale": bool(e.get("onsale", True))} for e in items]
     h1 = "학교별 2027 면접 가이드북"
     fillmap = {"__TITLE__": esc(f"{h1} {n}권, 현학적 연구소"), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
-               "__PAGES__": f"{pages:,}", "__QS__": f"{qs:,}", "__RULES__": f"{rules:,}", "__PRICE_RAW__": str(price),
-               "__PRICE__": f"{price:,}", "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
+               "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}",
+               "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
     t = INDEX_TPL.read_text(encoding="utf-8")
     for k, v in fillmap.items():
         t = t.replace(k, v)

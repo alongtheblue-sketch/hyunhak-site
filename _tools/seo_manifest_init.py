@@ -14,11 +14,11 @@ import seo_common as C
 
 BASE = "https://hyunhak.com"
 
-# 지표 포함 수기 description (70~110자, 가운뎃점/em대시 없음). 빈 페이지는 h1/첫 문단 템플릿.
+# 수기 description (70~110자, 가운뎃점/em대시 없음). 빈 페이지는 h1/첫 문단 템플릿.
 HAND = {
     "index.html": {
         "title": "현학적 연구소",
-        "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 학교별 2027 면접 가이드북 38권, 연세대와 고려대 제시문 면접 스튜디오, 실제 기출 4,766건과 전환 규칙 1,790개.",
+        "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 학교별 2027 면접 가이드북 38권과 연세대, 고려대 제시문 면접 스튜디오를 운영합니다.",
         "type": "home", "priority": 1.0, "changefreq": "weekly",
         "breadcrumb": [{"name": "현학적 연구소", "path": "/"}],
         "schema": {"items": ["programs/yonsei.html", "programs/korea.html", "studio.html", "guidebook/index.html", "store.html"]},
@@ -147,7 +147,7 @@ def school_from_h1(h1):
     return w + "학교" if w.endswith("대") else w
 
 
-def build_entry(rel, s, stats):
+def build_entry(rel, s):
     title = C.get_title(s)
     h1 = C.get_h1(s)
     desc = C.clean_text(C.get_meta_description(s))
@@ -155,19 +155,12 @@ def build_entry(rel, s, stats):
     hand = HAND.get(rel, {})
     pat = C.match_default({"defaults": DEFAULTS}, rel)
 
-    if False:  # interview/* 폐지 (2026-08-26)
-        school = school_from_h1(h1)
-        n, k = stats.get(os.path.basename(rel)[:-5], ("", ""))
-        cnt = f"기출 및 예상 질문 {n}건, 유형 {k}종, " if n else "기출 질문과 유형 판정, "
-        desc = f"{school} 면접 {cnt}준비 전략. 2016~2025 면접 후기와 2027 수시 요강으로 재구성한 아카이브입니다."
-        entry["breadcrumb"] = DEFAULTS[pat]["breadcrumb"] + [{"name": f"{school} 면접", "path": "/" + rel}]
-        entry["schema"] = {"about": school}
-    elif pat == "guidebook/*":
+    if pat == "guidebook/*":
         school = re.sub(r"\s*2027.*$", "", h1).strip() if h1 else os.path.basename(rel)[:-5]
         if not title:
             entry["title"] = f"{school} 2027 면접 가이드북 | 현학적 연구소"
-        if not desc_ok(desc):
-            desc = f"{school} 2027 면접 가이드북. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다."
+        desc = (f"{school} 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, "
+                "전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.")
         entry["breadcrumb"] = DEFAULTS[pat]["breadcrumb"] + [{"name": f"{school} 2027 면접 가이드북", "path": "/" + rel}]
         pm = re.search(r'data-cart-price="(\d+)"', s)
         sm = re.search(r'data-cart-sku="([^"]+)"', s)
@@ -179,8 +172,8 @@ def build_entry(rel, s, stats):
             entry.update({"type": "hub", "priority": 0.9, "changefreq": "weekly",
                           "breadcrumb": DEFAULTS[pat]["breadcrumb"],
                           "schema": {"list_dir": "guidebook/", "list_name": "학교별 2027 면접 가이드북"}})
-            page_desc = C.clean_text(C.get_meta_description(s))
-            desc = page_desc if desc_ok(page_desc) else "학교별 2027 면접 가이드북 38권. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다. 1권 33,000원."
+            desc = ("학교별 2027 면접 가이드북 38권. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, "
+                    "전형별 면접 제원과 준비 전략을 담았습니다. 1권 33,000원.")
     elif pat == "programs/*" and rel not in HAND:
         name = title or h1
         school = school_from_h1(name) if name else os.path.basename(rel)[:-5]
@@ -212,12 +205,11 @@ def main():
     force = "--force" in sys.argv
     exists = os.path.exists(C.MANIFEST_PATH) and not force
     manifest = C.load_manifest() if exists else {"site": SITE, "defaults": DEFAULTS, "pages": {}}
-    stats = archive_stats()
     added = []
     for rel in C.list_pages():
         if rel in manifest["pages"]:
             continue
-        manifest["pages"][rel] = build_entry(rel, C.read(rel), stats)
+        manifest["pages"][rel] = build_entry(rel, C.read(rel))
         added.append(rel)
     manifest["pages"] = dict(sorted(manifest["pages"].items()))
     C.save_manifest(manifest)
