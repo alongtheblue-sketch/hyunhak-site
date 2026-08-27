@@ -124,7 +124,7 @@ def footer(rel):
         <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="{p}terms.html">이용약관</a> &nbsp; <a href="{p}privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><img src="{p}assets/bizinfo.png" alt="사업자 정보" width="159" height="63" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="{p}terms.html">이용약관</a> &nbsp; <a href="{p}privacy.html">개인정보처리방침</a></nav></div>
   </div>
 </footer>'''
 

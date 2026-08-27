@@ -160,7 +160,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "catholic",
@@ -307,7 +307,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "cau",
@@ -460,7 +460,7 @@
      "source": "울산고 진학자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "dongguk",
@@ -796,7 +796,7 @@
      "source": "대학 공식 자료"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "gachon",
@@ -1114,7 +1114,7 @@
      "source": "부산교육청"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "inha",
@@ -1279,7 +1279,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "khu",
@@ -1597,7 +1597,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "konkuk",
@@ -2851,7 +2851,7 @@
      "source": "울산고 진학자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "seoultech",
@@ -3463,7 +3463,7 @@
      "source": "울산교육청"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "soongsil",
@@ -3616,7 +3616,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "sungshin",
@@ -3757,7 +3757,7 @@
      "source": "울산고 진학자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "uos",
@@ -4075,7 +4075,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "dgist",
@@ -4322,7 +4322,7 @@
      "source": "울산교육청"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "duksung",
@@ -4421,7 +4421,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "dongduk",
@@ -4526,7 +4526,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "donga",
@@ -4691,7 +4691,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "pknu",
@@ -4856,7 +4856,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "sahmyook",
@@ -4955,7 +4955,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "swu",
@@ -5078,7 +5078,7 @@
      "source": "울산교육청"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "ulsan",
@@ -5231,7 +5231,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "incheon",
@@ -5406,7 +5406,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "hanyang-erica",
@@ -5472,7 +5472,7 @@
      "source": "신명여고 자료실"
     }
    ],
-   "onsale": false
+   "onsale": true
   },
   {
    "slug": "hongik",
@@ -5595,7 +5595,7 @@
      "source": "울산교육청"
     }
    ],
-   "onsale": false
+   "onsale": true
   }
  ]
 }

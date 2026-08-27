@@ -95,7 +95,7 @@
         <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><span>대표, 사업자등록번호, 통신판매업신고 [정식 오픈 전 기재]</span><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><img src="assets/bizinfo.png" alt="사업자 정보" width="159" height="63" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
   </div>
 </footer>
 
@@ -130,6 +130,19 @@ document.addEventListener('DOMContentLoaded', async function(){
     var r = await HH.api('/api/payments/confirm', { method: 'POST',
       body: JSON.stringify({ paymentKey: paymentKey, orderId: orderId, amount: amount }) });
     try { localStorage.removeItem('hh_cart_v1'); } catch(e) {}
+    if (r.status === 'waiting_deposit') {
+      var va = r.vaccount || {};
+      h.textContent = '가상계좌가 발급되었습니다';
+      sub.textContent = '입금이 확인되면 이용권이 열립니다. 기한 안에 입금하십시오.';
+      lines.hidden = false;
+      lines.innerHTML = '<div><dt>주문 번호</dt><dd>' + esc(orderId) + '</dd></div>'
+        + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'
+        + (va.accountNumber ? '<div><dt>입금 계좌</dt><dd>' + esc(va.accountNumber) + '</dd></div>' : '')
+        + (va.dueDate ? '<div><dt>입금 기한</dt><dd>' + esc(va.dueDate) + '</dd></div>' : '');
+      acts.hidden = false;
+      acts.innerHTML = '<a class="btn" href="my.html">마이페이지 <span class="ar" aria-hidden="true">→</span></a>';
+      return;
+    }
     h.textContent = '결제가 완료되었습니다';
     sub.textContent = '이용권은 즉시 열리며, 실물 상품은 순차 출고합니다.';
     lines.hidden = false;
