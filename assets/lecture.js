@@ -105,7 +105,7 @@
   var P = {};                    // DOM 참조
 
   function buildViewer(d) {
-    S.token = d.token; S.sid = d.session_id; S.dur = Number(d.duration_sec) || 0; S.chapters = d.chapters || []; S.bookmarks = d.bookmarks || [];
+    S.token = d.token; S.sid = d.session_id; S.seq = Number(d.seq) || 0; S.dur = Number(d.duration_sec) || 0; S.chapters = d.chapters || []; S.bookmarks = d.bookmarks || [];
     S.email = d.email || ""; S.vtt = !!d.vtt; S.rate = Number(d.rate) || 1; S.resume = Number(d.resume_sec) || 0; S.viewCount = d.view_count || 1; S.title = d.title || "";
     titleEl.textContent = d.title || "강의";
     crumbNow.textContent = d.title || "강의";
@@ -207,7 +207,7 @@
     S.reopening = true;
     var at = P.v.currentTime || S.lastT, playing = !P.v.paused;
     var apply = function (d) {
-      S.token = d.token; S.sid = d.session_id;
+      S.token = d.token; S.sid = d.session_id; S.seq = Math.max(S.seq || 0, Number(d.seq) || 0);
       loadSource(at);
       if (playing) P.v.play().catch(function () { showBigPlay(); });
       if (reason) toast(reason);
