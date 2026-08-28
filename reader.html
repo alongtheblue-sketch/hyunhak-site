@@ -3,49 +3,164 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3">
-<!-- 리더 보안 CSP (T12): 제3자 스크립트·서비스워커·인라인 없음, connect 는 API 만 -->
+<!-- 리더 보안 CSP (T12): 제3자 스크립트, 서비스워커, 인라인 없음, connect 는 API 만.
+     frame-ancestors 는 meta 로 전달하면 브라우저가 무시하고 콘솔 오류만 낸다 (GitHub Pages 라 헤더 불가) → reader.js 가 window.top 검사로 프레임 렌더를 막는다 -->
 <meta http-equiv="Content-Security-Policy"
-  content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src http://localhost:8799 https://api.hyunhak.com; font-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'">
+  content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src http://localhost:8799 https://api.hyunhak.com; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>현학적 연구소, 보안 뷰어</title>
 <style>
-  :root{ --hyun:#312E2E; --paper:#EFE9DC; --ash:#9A948E; --seal:#BC3529; } /* ash: #1a1918 위 5.85:1 (구 #696561 = 3.04 FAIL) */
+  :root{ --hyun:#312E2E; --paper:#EFE9DC; --ash:#9A948E; --seal:#BC3529; --ink:#1a1918; --panel:#201f1e; --line:#3a3836;
+         --pgw:900px; --barh:52px; --sidew:300px; }
   *{ box-sizing:border-box; margin:0; padding:0;
      -webkit-user-select:none; user-select:none; -webkit-touch-callout:none; }
-  html,body{ height:100%; background:#1a1918; color:var(--paper);
+  html,body{ height:100%; background:var(--ink); color:var(--paper);
     font-family:"KoPubWorld Batang","Apple SD Gothic Neo",sans-serif; overscroll-behavior:none; }
-  #bar{ position:fixed; top:0; left:0; right:0; height:52px; z-index:10;
-    display:flex; align-items:center; gap:14px; padding:0 16px;
-    background:rgba(26,25,24,.94); border-bottom:1px solid #3a3836; }
-  #bar .t{ font-size:15px; font-weight:600; flex:1; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-  #bar .who{ font-size:11px; color:var(--ash); }
+  @supports (height:100dvh){ body{ height:100dvh; } }   /* iOS Safari 툴바 변동 대응 */
+  #stage[inert]{ pointer-events:none; }
   button{ font:inherit; font-size:13px; color:var(--paper); background:#2d2b2a;
-    border:1px solid #7a756f; border-radius:6px; padding:7px 13px; cursor:pointer; }
+    border:1px solid #7a756f; border-radius:6px; padding:7px 12px; cursor:pointer; white-space:nowrap; }
   button:hover{ background:#3a3836; } button:disabled{ opacity:.5; cursor:default; }
-  #stage{ position:absolute; top:52px; bottom:0; left:0; right:0; overflow-y:auto;
-    scroll-behavior:smooth; -webkit-overflow-scrolling:touch; text-align:center; padding:20px 0 60px; }
-  .pg{ display:block; margin:0 auto 14px; max-width:min(94vw,900px); width:100%;
-    box-shadow:0 2px 18px rgba(0,0,0,.5); background:#2a2826; }
+  button.on{ background:#4a4744; border-color:var(--paper); }
+  input{ font:inherit; color:var(--paper); background:#141312; border:1px solid #7a756f; border-radius:6px; padding:6px 8px; }
+  input{ -webkit-user-select:text; user-select:text; }
+  input:focus{ outline:2px solid #c9b98a; outline-offset:0; }
+
+  /* 상단 바 */
+  #bar{ position:fixed; top:0; left:0; right:0; height:var(--barh); z-index:30;
+    display:flex; align-items:center; gap:10px; padding:0 12px;
+    background:rgba(26,25,24,.96); border-bottom:1px solid var(--line); }
+  #bar .t{ font-size:15px; font-weight:600; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  #bar .who{ font-size:11px; color:var(--ash); white-space:nowrap; }
+  #pager{ display:flex; align-items:center; gap:4px; font-size:13px; color:var(--ash); white-space:nowrap; }
+  #pageIn{ width:52px; text-align:center; padding:5px 4px; }
+  #zoom{ display:flex; gap:4px; }
+  #zoom button{ padding:6px 9px; min-width:34px; }
+  .hk{ font-size:11px; color:var(--ash); margin-left:4px; }
+
+  /* 본문 + 사이드바 */
+  #wrap{ position:absolute; top:var(--barh); bottom:0; left:0; right:0; display:flex; }
+  #side{ flex:0 0 var(--sidew); width:var(--sidew); display:flex; flex-direction:column; min-height:0;
+    background:var(--panel); border-right:1px solid var(--line); }
+  #side[hidden]{ display:none; }
+  #side .tabs{ display:flex; align-items:center; gap:4px; padding:8px 8px 6px; border-bottom:1px solid var(--line); }
+  #side .tabs button{ padding:6px 12px; }
+  #sideClose{ margin-left:auto; padding:4px 9px; font-size:15px; line-height:1; }
+  .pane{ flex:1; min-height:0; overflow-y:auto; overscroll-behavior:contain; padding:8px 6px 24px; }
+  .pane[hidden]{ display:none; }
+
+  /* 목차 트리 */
+  #toc{ list-style:none; }
+  #toc li{ margin:0; }
+  #toc .row{ display:flex; align-items:flex-start; gap:2px; }
+  #toc .tg{ flex:0 0 20px; width:20px; height:24px; padding:0; border:0; background:none; color:var(--ash); font-size:11px; line-height:24px; text-align:center; }
+  #toc .tg[hidden]{ visibility:hidden; display:block; }
+  #toc .it{ flex:1; text-align:left; background:none; border:0; border-radius:4px; padding:4px 6px; line-height:1.45;
+    font-size:13px; color:var(--paper); white-space:normal; word-break:keep-all; }
+  #toc .it:hover{ background:#2d2b2a; }
+  #toc .it[aria-current="true"]{ background:#3a3530; color:#fff; box-shadow:inset 3px 0 0 var(--seal); }
+  #toc .l1 > .row .it{ font-weight:600; margin-top:6px; }
+  #toc .l2 > .row{ padding-left:14px; }
+  #toc .l3 > .row{ padding-left:30px; }
+  #toc .l3 > .row .it{ font-size:12px; color:#cfc8ba; }
+  #toc .it .pn{ float:right; font-size:11px; color:var(--ash); margin-left:8px; }
+  #toc li.fold > ul{ display:none; }
+
+  /* 검색 */
+  .findbar{ display:flex; align-items:center; gap:4px; padding:2px 2px 6px; }
+  #q{ flex:1; min-width:0; }
+  #findCount{ font-size:12px; color:var(--ash); white-space:nowrap; min-width:44px; text-align:center; }
+  .findbar button{ padding:5px 8px; }
+  #findMsg{ font-size:12px; color:var(--ash); padding:4px 6px 8px; line-height:1.5; }
+  #hits{ list-style:none; }
+  #hits .ph{ font-size:12px; color:var(--ash); padding:8px 6px 2px; border-top:1px solid var(--line); }
+  #hits .ph:first-child{ border-top:0; }
+  #hits .hit{ width:100%; text-align:left; background:none; border:0; border-radius:4px; padding:5px 6px; font-size:13px;
+    line-height:1.5; color:var(--paper); white-space:normal; word-break:keep-all; }
+  #hits .hit:hover{ background:#2d2b2a; }
+  #hits .hit.on{ background:#3a3530; box-shadow:inset 3px 0 0 var(--seal); }
+  #hits mark{ background:#c9a227; color:#111; padding:0 1px; border-radius:2px; }
+
+  /* 페이지 */
+  #stage{ flex:1; min-width:0; overflow-y:auto; scroll-behavior:smooth; -webkit-overflow-scrolling:touch;
+    text-align:center; padding:20px 12px 60px; outline:none; }
+  .pgwrap{ position:relative; margin:0 auto 14px; width:100%; max-width:var(--pgw);
+    aspect-ratio:var(--pgar, 210 / 297); background:#2a2826; box-shadow:0 2px 18px rgba(0,0,0,.5); }
+  .pgwrap.ld{ aspect-ratio:auto; }
+  .pg{ display:block; width:100%; height:auto; }
+  .pgwrap .no{ position:absolute; right:8px; top:6px; font-size:11px; color:var(--ash); opacity:.6; }
+  .hl{ position:absolute; pointer-events:none; background:rgba(255,214,90,.42); outline:1px solid rgba(255,190,0,.75); border-radius:2px; }
+  .hl.on{ background:rgba(255,128,48,.55); outline-color:#ff9a4d; }
   #msg{ padding:80px 24px; text-align:center; color:var(--ash); line-height:1.7; }
   #msg a{ color:var(--paper); }
   .han{ font-size:.82em; color:var(--ash); }
   #foot{ position:fixed; bottom:0; left:0; right:0; z-index:10; padding:5px 16px;
-    font-size:10px; color:var(--ash); background:rgba(26,25,24,.94); border-top:1px solid #3a3836;
+    font-size:10px; color:var(--ash); background:rgba(26,25,24,.94); border-top:1px solid var(--line);
     text-align:center; }
+  #toast{ position:fixed; left:50%; bottom:44px; transform:translateX(-50%); z-index:40;
+    background:rgba(49,46,46,.96); color:var(--paper); border:1px solid #7a756f; border-radius:8px;
+    padding:8px 14px; font-size:13px; }
+  #toast[hidden]{ display:none; }
+  #scrim{ display:none; }
+
+  /* 좁은 화면: 사이드바를 본문 위에 얹는다 (건우: 본문 보는 데 거슬리면 안 된다) */
+  @media (max-width:999px){
+    #side{ position:absolute; left:0; top:0; bottom:0; z-index:25; box-shadow:4px 0 24px rgba(0,0,0,.5); width:min(86vw, 340px); flex-basis:auto; }
+    #scrim{ display:block; position:absolute; inset:0; z-index:24; background:rgba(0,0,0,.45); }
+    #scrim[hidden]{ display:none; }
+    #zoom .fit, .hk, #bar .who{ display:none; }
+  }
+  @media (max-width:640px){
+    #bar{ gap:6px; padding:0 8px; }
+    #bar .t{ font-size:13px; }
+    #zoom{ display:none; }
+    #searchBtn{ display:none; }
+  }
+
   /* 웹 인쇄 억지 (T8): 공식 인쇄 버튼만 허용, ctrl+P 는 빈 안내 */
   @media print{ body *{ display:none !important; }
     body::after{ display:block !important; content:"현학적 연구소 자료는 뷰어의 인쇄 버튼으로만 인쇄할 수 있습니다."; padding:40px; color:#000; } }
   #curtain{ position:fixed; inset:0; z-index:100; background:#111; color:var(--paper);
-    display:none; align-items:center; justify-content:center; text-align:center; padding:40px; line-height:1.8; }
+    display:none; align-items:center; justify-content:center; text-align:center; padding:40px; line-height:1.8; white-space:pre-line; }
 </style>
 </head>
 <body>
 <div id="bar">
+  <button id="sideBtn" aria-expanded="false" aria-controls="side" title="목차 열기 (T)">☰ 목차</button>
   <span class="t" id="title">현학적 연구소 보안 뷰어</span>
+  <span id="pager" hidden><input id="pageIn" type="text" inputmode="numeric" aria-label="페이지 번호" value="1"><span>/</span><span id="pageN"></span></span>
+  <span id="zoom" hidden>
+    <button data-z="-" title="축소 (-)">－</button>
+    <button data-z="+" title="확대 (+)">＋</button>
+    <button data-z="fit" class="fit" title="화면 너비에 맞춤">화면맞춤</button>
+  </span>
+  <button id="searchBtn" hidden title="본문 검색 (Ctrl+F)">검색</button>
   <span class="who" id="who"></span>
   <button id="printBtn" hidden>인쇄</button>
 </div>
-<div id="stage"><div id="msg">불러오는 중…</div></div>
+<div id="wrap">
+  <aside id="side" hidden aria-label="목차와 검색">
+    <div class="tabs">
+      <button data-tab="toc" class="on">목차</button>
+      <button data-tab="find">검색</button>
+      <button id="sideClose" aria-label="사이드바 닫기" title="닫기 (Esc)">×</button>
+    </div>
+    <div id="tocPane" class="pane"><ul id="toc" role="tree" aria-label="목차"></ul></div>
+    <div id="findPane" class="pane" hidden>
+      <div class="findbar">
+        <input id="q" type="search" placeholder="본문 검색 (2자 이상)" autocomplete="off" spellcheck="false" aria-label="검색어">
+        <span id="findCount" aria-live="polite"></span>
+        <button id="prevHit" title="이전 결과 (Shift+Enter)" disabled>▲</button>
+        <button id="nextHit" title="다음 결과 (Enter)" disabled>▼</button>
+      </div>
+      <div id="findMsg"></div>
+      <ul id="hits"></ul>
+    </div>
+  </aside>
+  <div id="scrim" hidden></div>
+  <div id="stage" tabindex="0"><div id="msg">불러오는 중…</div></div>
+</div>
+<div id="toast" hidden role="status"></div>
 <div id="foot">© 현학적 연구소 <span class="han">玄學的 硏究所</span>. 무단 복제, 전재, 배포 금지</div>
 <div id="curtain"></div>
 <script src="assets/reader.js"></script>
