@@ -846,7 +846,7 @@
    "archive": true,
    "name": "서울과학기술대학교",
    "file": "서울과학기술대학교_2027면접가이드북.pdf",
-   "pages": 36,
+   "pages": 34,
    "questions": 151,
    "types_n": 13,
    "types": [
@@ -1027,7 +1027,7 @@
    "archive": true,
    "name": "숭실대학교",
    "file": "숭실대학교_2027면접가이드북.pdf",
-   "pages": 40,
+   "pages": 39,
    "questions": 165,
    "types_n": 13,
    "types": [
@@ -1208,7 +1208,7 @@
    "archive": false,
    "name": "DGIST(대구경북과학기술원)",
    "file": "DGIST(대구경북과학기술원)_2027면접가이드북.pdf",
-   "pages": 36,
+   "pages": 35,
    "questions": 124,
    "types_n": 14,
    "types": [
@@ -1406,7 +1406,7 @@
    "archive": false,
    "name": "부경대학교",
    "file": "부경대학교_2027면접가이드북.pdf",
-   "pages": 43,
+   "pages": 42,
    "questions": 187,
    "types_n": 21,
    "types": [
@@ -1535,7 +1535,7 @@
    "archive": false,
    "name": "울산대학교",
    "file": "울산대학교_2027면접가이드북.pdf",
-   "pages": 44,
+   "pages": 42,
    "questions": 165,
    "types_n": 14,
    "types": [
@@ -1581,7 +1581,7 @@
    "archive": false,
    "name": "인천대학교",
    "file": "인천대학교_2027면접가이드북.pdf",
-   "pages": 39,
+   "pages": 38,
    "questions": 154,
    "types_n": 14,
    "types": [

@@ -3,7 +3,7 @@
 
 입력
   PDF  = interview_guidebook_2027/dist_hyunhak_protected/<대학>_2027면접가이드북.pdf
-  HTML = interview_guidebook_2027/out2/<대학>_H.html (같은 판의 조판 원천, 텍스트 추출용)
+  HTML = interview_guidebook_2027/out2/<대학>_R.html (같은 판의 조판 원천, 텍스트 추출용. 2026-08-28 s26: 테마 H 기각, 승인판 = R 현학 edition)
   JSON = interview_guidebook_2027/export/site/<대학>.json (질문·규칙 내부 카운트)
 출력
   assets/covers/<slug>.jpg             표지 (596x842, 판매 파일 1면 렌더)
@@ -254,7 +254,7 @@ def pick_pages(n_pages, dividers):
 
 def build_one(slug, univ, dry=False):
     pdf = PDF_DIR / f"{univ}_2027면접가이드북.pdf"
-    html_path = HTML_DIR / f"{univ}_H.html"
+    html_path = HTML_DIR / f"{univ}_R.html"
     export_path = EXPORT_DIR / f"{univ}.json"
     paths = {"pdf": pdf, "html": html_path, "export": export_path}
     missing = [f"{kind}={path}" for kind, path in paths.items() if not path.is_file()]
