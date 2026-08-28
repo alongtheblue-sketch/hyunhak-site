@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>인강 뷰어, 현학적 연구소</title>
+<!-- seo:begin -->
+<link rel="canonical" href="https://hyunhak.com/lecture.html">
+<meta name="description" content="현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.">
+<meta name="robots" content="noindex, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="인강 뷰어, 현학적 연구소">
+<meta property="og:description" content="현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.">
+<meta property="og:url" content="https://hyunhak.com/lecture.html">
+<meta property="og:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:site_name" content="현학적 연구소">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="인강 뷰어, 현학적 연구소">
+<meta name="twitter:description" content="현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.">
+<meta name="twitter:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","sameAs":[]},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/lecture.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"마이페이지","item":"https://hyunhak.com/my.html"},{"@type":"ListItem","position":3,"name":"인강 뷰어","item":"https://hyunhak.com/lecture.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/lecture.html#webpage","url":"https://hyunhak.com/lecture.html","name":"인강 뷰어, 현학적 연구소","description":"현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/lecture.html#breadcrumb"}}]}</script>
+<!-- seo:end -->
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="assets/favicon_32.png">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="stylesheet" href="assets/base.css">
+<style>
+/* ===== 인강 뷰어 전용 (2026-08-28). 규범: 곡률 6px, 朱印은 활성 표식과 책갈피 점에만, 1차 CTA 玄墨 1개 ===== */
+.lec .phead{padding-bottom:var(--s4)}
+.lec .phead h1{font-size:clamp(24px,2.6vw,34px);margin-top:var(--s3)}
+.lec .meta{display:flex;gap:var(--s3);flex-wrap:wrap;align-items:center;margin-top:var(--s3);font-size:13px;color:var(--gray)}
+.lec .meta .badge{vertical-align:middle}
+.lay2{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:var(--s5);align-items:start;padding-bottom:var(--s9)}
+@media (max-width:960px){.lay2{grid-template-columns:1fr;gap:var(--s4)}}
+
+/* 플레이어 */
+.player{position:relative;background:var(--ink);border-radius:6px;overflow:hidden;aspect-ratio:16/9;outline:none;
+  box-shadow:0 12px 32px rgba(49,46,46,.18);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.player:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.player video{position:absolute;inset:0;width:100%;height:100%;background:#000;display:block}
+.player video::cue{font-family:var(--sans);font-size:1.05em;line-height:1.5;background:rgba(0,0,0,.55);color:#fff}
+.player.fs-css{position:fixed;inset:0;z-index:200;border-radius:0;aspect-ratio:auto}
+.player:fullscreen{border-radius:0}
+.player:fullscreen video,.player.fs-css video{object-fit:contain}
+/* 워터마크: 캔버스 밖 오버레이. pointer-events 0, DOM 제거 시 서버 원장이 남는다 */
+.wm{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:2;color:rgba(246,242,233,.5);font-size:12px;letter-spacing:.02em}
+.wm span{position:absolute;white-space:nowrap;transform:rotate(-22deg);transition:top 1.2s var(--ease),left 1.2s var(--ease)}
+.wm .w1{top:var(--wy1,18%);left:var(--wx1,12%)}
+.wm .w2{top:var(--wy2,62%);left:var(--wx2,58%)}
+.wm .w3{top:auto;bottom:46px;right:14px;left:auto;transform:none;color:rgba(246,242,233,.75);font-weight:600}
+/* 중앙 상태 카드 */
+.stage{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:var(--s4);text-align:center;color:var(--paper)}
+.stage[hidden]{display:none}
+.stage .box{background:rgba(49,46,46,.82);backdrop-filter:blur(6px);border:1px solid rgba(246,242,233,.18);border-radius:6px;padding:var(--s4) var(--s5);max-width:420px}
+.stage h2{font-size:18px;font-weight:700;letter-spacing:-0.02em;margin-bottom:6px}
+.stage p{font-size:14px;color:rgba(246,242,233,.78);line-height:1.6}
+.stage .row{display:flex;gap:10px;justify-content:center;margin-top:var(--s3);flex-wrap:wrap}
+.stage .btn{background:var(--paper);color:var(--ink);min-height:44px;padding:0 18px;font-size:14px}
+.stage .btn:hover{background:#fff}
+.stage .btn.ghost{background:transparent;color:var(--paper);border-color:rgba(246,242,233,.5)}
+.stage .btn.ghost:hover{background:rgba(246,242,233,.12)}
+.bigplay{width:76px;height:76px;border-radius:50%;background:rgba(246,242,233,.92);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:transform .25s var(--ease)}
+.bigplay:hover{transform:scale(1.06)}
+.bigplay svg{width:30px;height:30px;margin-left:4px}
+/* 컨트롤 바 */
+.ctl{position:absolute;left:0;right:0;bottom:0;z-index:4;padding:28px 12px 8px;color:var(--paper);
+  background:linear-gradient(180deg,rgba(26,25,24,0) 0%,rgba(26,25,24,.78) 60%,rgba(26,25,24,.92) 100%);
+  transition:opacity .35s var(--ease)}
+.player.idle.playing .ctl{opacity:0;pointer-events:none}
+.player.idle.playing{cursor:none}
+.bar{position:relative;height:22px;cursor:pointer;touch-action:none}
+.bar .rail{position:absolute;left:0;right:0;top:9px;height:4px;background:rgba(246,242,233,.28);border-radius:2px}
+.bar .buf{position:absolute;left:0;top:9px;height:4px;background:rgba(246,242,233,.45);border-radius:2px;width:0}
+.bar .played{position:absolute;left:0;top:9px;height:4px;background:var(--paper);border-radius:2px;width:0}
+.bar .knob{position:absolute;top:4px;width:14px;height:14px;border-radius:50%;background:var(--paper);margin-left:-7px;left:0;transform:scale(.7);transition:transform .2s var(--ease)}
+.bar:hover .knob,.bar.drag .knob{transform:scale(1)}
+.bar .tick{position:absolute;top:8px;width:2px;height:6px;background:rgba(49,46,46,.85);margin-left:-1px}
+.bar .mark{position:absolute;top:-1px;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-left:-3px;border:1px solid rgba(246,242,233,.8)}
+.bar .tip{position:absolute;bottom:26px;transform:translateX(-50%);background:rgba(26,25,24,.95);color:var(--paper);font-size:12px;padding:5px 9px;border-radius:4px;white-space:nowrap;pointer-events:none;display:none;font-variant-numeric:tabular-nums}
+.bar:hover .tip,.bar.drag .tip{display:block}
+.row2{display:flex;align-items:center;gap:4px;margin-top:2px}
+.row2 .sp{flex:1;min-width:0}
+.ib{width:44px;height:44px;display:grid;place-items:center;border-radius:6px;color:var(--paper);flex:none;position:relative}
+.ib:hover{background:rgba(246,242,233,.12)}
+.ib svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ib.on::after{content:"";position:absolute;bottom:5px;left:50%;width:14px;height:2px;margin-left:-7px;background:var(--seal);border-radius:1px}
+.tm{font-size:13px;font-variant-numeric:tabular-nums;color:rgba(246,242,233,.9);padding:0 6px;white-space:nowrap}
+.tm b{font-weight:600;color:var(--paper)}
+.chnow{font-size:13px;color:rgba(246,242,233,.85);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding:0 8px;min-width:0}
+.rate{height:44px;min-width:56px;padding:0 10px;border-radius:6px;font-size:13px;font-weight:700;color:var(--paper);font-variant-numeric:tabular-nums;position:relative;flex:none}
+.rate:hover{background:rgba(246,242,233,.12)}
+.menu2x{position:absolute;right:0;bottom:50px;background:rgba(26,25,24,.97);border:1px solid rgba(246,242,233,.18);border-radius:6px;padding:6px;display:none;z-index:6;min-width:120px}
+.menu2x[data-open="1"]{display:block}
+.menu2x button{display:block;width:100%;text-align:left;padding:10px 12px;font-size:13px;color:var(--paper);border-radius:4px;font-variant-numeric:tabular-nums}
+.menu2x button:hover{background:rgba(246,242,233,.12)}
+.menu2x button.on{color:var(--gold);font-weight:700}
+.menu2x .mh{font-size:11px;color:rgba(246,242,233,.6);padding:6px 12px 4px;letter-spacing:.06em}
+/* 사이드 패널 */
+.side{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.08);overflow:hidden;position:sticky;top:88px}
+@media (max-width:960px){.side{position:static}}
+.tabs{display:flex;border-bottom:1px solid var(--hairs)}
+.tabs button{flex:1;min-height:48px;font-size:14px;font-weight:600;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
+.tabs button b{font-weight:600;color:var(--gray);margin-left:4px;font-variant-numeric:tabular-nums}
+.pane{max-height:min(62vh,640px);overflow:auto;padding:6px}
+.pane[hidden]{display:none}
+.chl li,.bml li{border-radius:6px}
+.chl button{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;width:100%;text-align:left;padding:11px 10px;border-radius:6px;font-size:14px;line-height:1.35}
+.chl button:hover{background:var(--mat)}
+.chl li.on button{background:var(--ink);color:var(--paper)}
+.chl .n{font-size:12px;color:var(--gray);font-variant-numeric:tabular-nums}
+.chl li.on .n,.chl li.on .t2{color:rgba(246,242,233,.8)}
+.chl .t2{font-size:12px;color:var(--gray);font-variant-numeric:tabular-nums;white-space:nowrap}
+.chl li.done .n::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-left:5px;vertical-align:1px}
+.bml li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:start;padding:10px 10px;border-bottom:1px solid var(--hairs)}
+.bml li:last-child{border-bottom:0}
+.bml .jump{font-size:12px;font-weight:700;color:var(--seal);font-variant-numeric:tabular-nums;padding:6px 8px;margin:-6px -8px;border-radius:4px;white-space:nowrap}
+.bml .jump:hover{background:var(--mat)}
+.bml .lb{font-size:14px;font-weight:600;line-height:1.35;word-break:keep-all}
+.bml .nt{font-size:13px;color:var(--body);margin-top:3px;line-height:1.55;white-space:pre-wrap}
+.bml .ops{display:flex;gap:2px}
+.bml .ops button{width:36px;height:36px;display:grid;place-items:center;border-radius:6px;color:var(--gray)}
+.bml .ops button:hover{background:var(--mat);color:var(--ink)}
+.bml .ops svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round}
+.bml .edit{grid-column:1/-1;display:grid;gap:6px;margin-top:4px}
+.bml input,.bml textarea{font:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--hair);border-radius:6px;background:#fff;color:var(--ink);width:100%}
+.bml textarea{min-height:72px;resize:vertical}
+.bml .edit .r{display:flex;gap:6px;justify-content:flex-end}
+.bml .edit .r button{min-height:36px;padding:0 12px;font-size:13px;font-weight:600;border-radius:6px;border:1px solid var(--hair)}
+.bml .edit .r button.pri{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.empty{padding:var(--s5) var(--s3);text-align:center;color:var(--gray);font-size:13.5px;line-height:1.7}
+.side .foot{border-top:1px solid var(--hairs);padding:10px 12px;font-size:12px;color:var(--gray);line-height:1.6}
+.side .foot kbd{font:inherit;font-size:11px;padding:1px 5px;border:1px solid var(--hair);border-radius:3px;background:#fff;margin:0 1px}
+/* 안내 카드 (잠금, 준비 중, 오류) */
+.notice{background:var(--card);border-radius:6px;padding:var(--s5);box-shadow:0 8px 24px rgba(49,46,46,.08);max-width:560px}
+.notice h2{font-size:var(--t-h3);font-weight:700;letter-spacing:-0.02em}
+.notice p{margin-top:10px;color:var(--body);line-height:1.7}
+.notice .acts{margin-top:var(--s4);display:flex;gap:10px;flex-wrap:wrap}
+/* 강의 목록 (id 없이 진입) */
+.lecl{display:grid;gap:var(--s3);padding-bottom:var(--s9)}
+.lecl h2{font-size:var(--t-h3);font-weight:700;letter-spacing:-0.02em;margin-top:var(--s5)}
+.lecl h2:first-child{margin-top:0}
+.lrow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:14px 4px;border-top:1px solid var(--hair)}
+.lrow:last-child{border-bottom:1px solid var(--hair)}
+.lrow .t{font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.lrow .m{margin-top:4px;font-size:13px;color:var(--gray);display:flex;gap:10px;flex-wrap:wrap;font-variant-numeric:tabular-nums}
+.lrow .prog{height:3px;background:var(--mat);border-radius:2px;margin-top:8px;max-width:320px;overflow:hidden}
+.lrow .prog i{display:block;height:100%;background:var(--ink)}
+@media (max-width:600px){.lrow{grid-template-columns:1fr}}
+.lecnote{margin:12px 4px 0;font-size:13px;color:var(--gray);line-height:1.65;word-break:keep-all}
+.lecnote b{font-weight:600;color:var(--body)}
+@media (max-width:600px){
+  .chnow{display:none}
+  .ctl{padding:22px 6px 6px}
+  .tm{font-size:12px;padding:0 4px}
+  .stage .box{padding:var(--s3) var(--s4)}
+  .stage h2{font-size:16px}
+}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);font-size:13px;padding:10px 16px;border-radius:6px;z-index:300;opacity:0;pointer-events:none;transition:opacity .3s var(--ease)}
+.toast.show{opacity:1}
+@media (max-width:600px){.toast{bottom:80px}}
+#curtain{position:fixed;inset:0;z-index:400;background:#111;color:var(--paper);display:none;align-items:center;justify-content:center;text-align:center;padding:40px;line-height:1.8}
+</style>
+</head>
+<body class="v2 lec" data-no-popup>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
+
+<div class="util">
+  <span class="han">玄學的 硏究所</span>
+  <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
+</div>
+
+<header class="hd" id="hd">
+  <div class="row wrap">
+    <a class="brand" href="index.html" aria-label="현학적 연구소 홈">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/><rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>
+      현학적 연구소
+    </a>
+    <nav class="gnb" aria-label="주메뉴">
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    </nav>
+    <div class="tools">
+      <form class="search" role="search" onsubmit="return false">
+        <label for="q1" class="ph">대학 검색</label>
+        <input id="q1" type="search" autocomplete="off">
+        <button type="submit" aria-label="검색">→</button>
+      </form>
+      <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
+    </div>
+  </div>
+  <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
+  </nav>
+</header>
+
+<main id="main">
+
+<section class="phead tight">
+  <div class="wrap">
+   <div class="pagehead">
+    <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="my.html">마이페이지</a><span aria-hidden="true">/</span><span id="crumbNow">인강</span></nav>
+    <h1 id="title">인강</h1>
+    <p class="meta" id="meta"></p>
+   </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div id="view" aria-live="polite">
+    <p class="empty" id="loading">불러오는 중입니다.</p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="g">
+      <div>
+        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+      </div>
+      <div>
+        <h4>바로가기</h4>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+      </div>
+      <div>
+        <h4>고객센터</h4>
+        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+      </div>
+    </div>
+    <div class="biz"><img src="assets/bizinfo.png" alt="사업자 정보" width="159" height="63" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+  </div>
+</footer>
+
+</div></div>
+
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+
+<div class="toast" id="toast" role="status"></div>
+<div id="curtain"></div>
+
+<script src="assets/app.js"></script>
+<script src="assets/lecture.js"></script>
+</body>
+</html>

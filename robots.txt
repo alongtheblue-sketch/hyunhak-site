@@ -3,6 +3,7 @@ Allow: /
 Disallow: /cart.html
 Disallow: /checkout.html
 Disallow: /join.html
+Disallow: /lecture.html
 Disallow: /login.html
 Disallow: /my.html
 Disallow: /pay_done.html
