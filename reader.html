@@ -6,7 +6,7 @@
 <!-- 리더 보안 CSP (T12): 제3자 스크립트, 서비스워커, 인라인 없음, connect 는 API 만.
      frame-ancestors 는 meta 로 전달하면 브라우저가 무시하고 콘솔 오류만 낸다 (GitHub Pages 라 헤더 불가) → reader.js 가 window.top 검사로 프레임 렌더를 막는다 -->
 <meta http-equiv="Content-Security-Policy"
-  content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src http://localhost:8799 https://api.hyunhak.com; font-src 'self'; base-uri 'none'; form-action 'none'">
+  content="default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; frame-src blob:; connect-src http://localhost:8799 https://api.hyunhak.com; font-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="no-referrer">
 <title>현학적 연구소, 보안 뷰어</title>
 <style>
