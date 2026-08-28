@@ -419,9 +419,22 @@
   });
 
   // ---------- 인쇄 (공식 경로) ----------
+  // 숨은 iframe + contentWindow.print() 는 Safari/Firefox 가 PDF 대신 부모 문서(빈 면)를
+  // 인쇄 대상으로 잡는다 → 새 탭에 스탬프 PDF 를 열고 그 탭에서 인쇄하는 단일 경로.
+  // 팝업 차단 회피: 클릭 제스처 안에서 동기로 창을 먼저 열고, 응답 후 blob 으로 이동만 한다.
   function doPrint() {
     if (state.printing) return; state.printing = true;
     printBtn.disabled = true; printBtn.textContent = "인쇄본 준비 중…";
+    var w = window.open("", "_blank");
+    if (w) {
+      try {
+        w.document.title = "인쇄본 준비 중";
+        var msg = w.document.createElement("p");
+        msg.textContent = "인쇄본 준비 중입니다. 몇 초 걸립니다.";
+        msg.style.cssText = "font:14px sans-serif;padding:24px";
+        w.document.body.appendChild(msg);
+      } catch (e) {}
+    }
     var idem = "web-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
     fetch(API + "/api/reader/print", {
       method: "POST", credentials: "include",
@@ -432,13 +445,20 @@
       return r.blob();
     }).then(function (blob) {
       var url = URL.createObjectURL(blob);
-      var f = el("iframe");
-      f.style.position = "fixed"; f.style.right = "0"; f.style.bottom = "0";
-      f.style.width = "0"; f.style.height = "0"; f.style.border = "0";
-      f.src = url; document.body.appendChild(f);
-      f.onload = function () { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (e) {} };
+      if (w && !w.closed) {
+        w.location.replace(url);
+        showToast("새 탭에 인쇄본을 열었습니다. 그 화면에서 인쇄(⌘P)해 주세요", 5000);
+      } else {
+        // 팝업이 차단된 경우의 보조 경로 (Chromium 은 iframe 인쇄가 동작한다)
+        var f = el("iframe");
+        f.style.position = "fixed"; f.style.right = "0"; f.style.bottom = "0";
+        f.style.width = "0"; f.style.height = "0"; f.style.border = "0";
+        f.src = url; document.body.appendChild(f);
+        f.onload = function () { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (e) {} };
+      }
       printBtn.textContent = "인쇄";
     }).catch(function (e) {
+      if (w && !w.closed) { try { w.close(); } catch (e2) {} }
       showToast(e.message || "인쇄에 실패했습니다", 3500);
       printBtn.textContent = "인쇄";
     }).finally(function () { state.printing = false; printBtn.disabled = false; });
