@@ -39,7 +39,15 @@
 .submit{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;padding-bottom:var(--s6)}
 .submit .btn{width:auto}
 .submit .note{flex:1;min-width:220px}
-@media (max-width:600px){.pass .opts{grid-template-columns:1fr}}
+/* 회원 구분 세그먼트 (학생 | 강사) */
+.mtype{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mtype input{position:absolute;opacity:0;pointer-events:none}
+.mtype label{display:block;padding:14px 16px;border:1px solid var(--hair);border-radius:6px;background:var(--card);cursor:pointer;transition:border-color .2s var(--ease),box-shadow .2s var(--ease)}
+.mtype label .t{font-size:15px;font-weight:700}
+.mtype label small{display:block;margin-top:4px;font-size:12.5px;color:var(--gray)}
+.mtype input:checked+label{border-color:var(--ink);box-shadow:0 0 0 3px rgba(49,46,46,.08)}
+.mtype input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
+@media (max-width:600px){.pass .opts{grid-template-columns:1fr}.mtype{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="v2">
@@ -140,6 +148,35 @@
 
     <section class="step form">
       <h2><span class="no">3</span>정보 입력</h2>
+      <div class="field">
+        <label id="mtypeLb">회원 구분</label>
+        <div class="mtype" role="radiogroup" aria-labelledby="mtypeLb">
+          <span><input type="radio" name="mtype" id="mt-stu" value="student" checked>
+            <label for="mt-stu"><span class="t">학생회원</span><small>수험생, 학부모. 가이드북과 스튜디오 응시</small></label></span>
+          <span><input type="radio" name="mtype" id="mt-tea" value="teacher">
+            <label for="mt-tea"><span class="t">강사회원</span><small>학원, 지도 강사. 단체 이용 안내를 받는 창구</small></label></span>
+        </div>
+        <span class="help">가입 후 구분 변경은 admin@hyunhak.com 으로 문의해 주세요</span>
+      </div>
+      <div class="pair" id="stuFields">
+        <div class="field">
+          <label for="sch">학교 <small style="font-weight:400;color:var(--gray)">선택</small></label>
+          <input id="sch" type="text" autocomplete="organization" placeholder="예: 판곡고등학교">
+          <span class="help">재학 중인 학교. 맞춤 안내에만 씁니다</span>
+        </div>
+        <div class="field">
+          <label for="grd">학년 <small style="font-weight:400;color:var(--gray)">선택</small></label>
+          <select id="grd">
+            <option value="">선택 안 함</option>
+            <option>고1</option><option>고2</option><option>고3</option><option>N수</option><option>기타</option>
+          </select>
+        </div>
+      </div>
+      <div class="field" id="teaFields" hidden>
+        <label for="acd">소속 학원 <small style="font-weight:400;color:var(--gray)">선택</small></label>
+        <input id="acd" type="text" autocomplete="organization" placeholder="예: OO학원">
+        <span class="help">단체 이용 안내와 상담에 씁니다</span>
+      </div>
       <div class="pair">
         <div class="field">
           <label for="nm">이름</label>
@@ -215,6 +252,21 @@ document.addEventListener('DOMContentLoaded', async function(){
   $('#ck-all').addEventListener('change',function(){boxes.forEach(function(b){b.checked=$('#ck-all').checked})});
   boxes.forEach(function(b){b.addEventListener('change',function(){$('#ck-all').checked=boxes.every(function(x){return x.checked})})});
 
+  // 회원 구분 토글 — 학생 = 학교·학년 / 강사 = 소속 학원 (서버 저장은 둘 다 school 필드)
+  function mtypeVal(){ var r=document.querySelector('input[name="mtype"]:checked'); return r?r.value:'student'; }
+  function profileBody(){
+    var t=mtypeVal();
+    return { member_type:t,
+      school:(t==='teacher'?$('#acd').value:$('#sch').value).trim(),
+      grade:t==='teacher'?'':$('#grd').value };
+  }
+  [].slice.call(document.querySelectorAll('input[name="mtype"]')).forEach(function(r){
+    r.addEventListener('change',function(){
+      var tea=mtypeVal()==='teacher';
+      $('#stuFields').hidden=tea; $('#teaFields').hidden=!tea;
+    });
+  });
+
   // ── 일반 가입 ──
   if(!social){
     HH.oauthButtons($('#socs'), next);
@@ -229,7 +281,9 @@ document.addEventListener('DOMContentLoaded', async function(){
       if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
       var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중';
       try{
+        var pb=profileBody();
         await HH.api('/api/auth/signup',{method:'POST',body:JSON.stringify({email:email,password:pw,name:name,phone:phone,
+          member_type:pb.member_type, school:pb.school, grade:pb.grade,
           agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked, agree_age:$('#ck-age').checked,
           marketing_opt_in:$('#ck-mkt').checked})});
         location.href=next;
@@ -273,8 +327,10 @@ document.addEventListener('DOMContentLoaded', async function(){
     if(!name) return alert('이름을 입력해 주세요');
     btn.disabled=true; btn.textContent='가입 중';
     try{
+      var pb=profileBody();
       var r=await HH.api('/api/auth/oauth/complete',{method:'POST',body:JSON.stringify({
-        name:name, phone:phone, agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked,
+        name:name, phone:phone, member_type:pb.member_type, school:pb.school, grade:pb.grade,
+        agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked,
         agree_age:$('#ck-age').checked, marketing_opt_in:$('#ck-mkt').checked})});
       location.href=r.next||next;
     }catch(e){ show(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent=label+'로 가입 완료'; }

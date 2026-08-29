@@ -148,8 +148,14 @@ document.addEventListener('DOMContentLoaded', function(){
     if(sku==='envelope-mock') return '<a class="thumb" href="store.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
     return '<a class="thumb" href="studio.html"><span class="thumb-txt">'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>';
   }
+  // 1개 한정 상품 (서버도 400 으로 막지만, 화면에서 수량 조절을 없애 마찰을 줄인다)
+  // = PDF 소장판(guide-*-pdf)과 전권 번들(guide-all-*). 권리가 계정 결속이라 2개가 의미 없다
+  function single(it){ return /^guide-(all-view|all-pdf|.+-pdf)$/.test(String(it.sku||'')); }
   function render(){
     var items=HH.cart(), rows=document.getElementById('cartRows');
+    var fixed=false;
+    items.forEach(function(x){ if(single(x)&&x.qty!==1){ x.qty=1; fixed=true; } });
+    if(fixed) HH.saveCart(items);
     document.getElementById('cartEmpty').hidden=items.length>0;
     document.getElementById('cartNote').hidden=items.length===0;
     var go=document.getElementById('toCheckout');
@@ -159,7 +165,9 @@ document.addEventListener('DOMContentLoaded', function(){
       return '<li class="line">'+thumb(it)
         +'<div><p class="t">'+esc(it.title)+'</p>'
         +'<p class="m">'+(it.ship?'실물 배송':'디지털, 결제 즉시 열림')+'</p>'
-        +'<div class="ops"><span class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="수량 줄이기">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="수량 늘리기">+</button></span>'
+        +'<div class="ops">'+(single(it)
+          ?'<span class="qty" aria-label="수량">1개, 계정당 1개</span>'
+          :'<span class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="수량 줄이기">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="수량 늘리기">+</button></span>')
         +'<button type="button" class="tlink" data-rm="'+i+'">빼기</button></div></div>'
         +'<p class="p">'+HH.won(it.price*it.qty)+'</p></li>';
     }).join('');
