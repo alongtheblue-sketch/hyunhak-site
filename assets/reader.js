@@ -17,7 +17,7 @@
       searchBtn = $("searchBtn"), toast = $("toast");
 
   var slug = new URLSearchParams(location.search).get("slug");
-  var state = { token: null, pages: 0, email: "", drawn: {}, printing: false,
+  var state = { token: null, pages: 0, email: "", drawn: {}, printing: false, dead: false,
                 toc: [], search: false, wraps: [], cur: 1, zoom: 2,
                 hits: [], hitIdx: -1, hitPages: {}, reqSeq: 0, searchCtl: null };
   var ZOOMS = [640, 760, 900, 1040, 1200, 1400, 1600];
@@ -47,7 +47,8 @@
       });
     } catch (e) {}
   }
-  function block(text) { curtain.textContent = text; curtain.style.display = "flex"; }
+  // terminal latch (Codex r3): block 뒤 IntersectionObserver 재진입이 새 reopen 주기를 시작하지 못하게 잠근다
+  function block(text) { state.dead = true; curtain.textContent = text; curtain.style.display = "flex"; }
 
   // ---------- v3: 동시 세션 밀려남(409) ----------
   // 서버가 401 대신 409 를 주는 이유: 401 은 reopen() 이 조용히 재발급해 상한이 무력화된다.
@@ -55,6 +56,7 @@
   var evictShown = false;
   function evictOverlay(text) {
     if (evictShown) return; evictShown = true;
+    state.dead = true;   // 밀려난 상태도 terminal — 재진입은 버튼(새로고침)만
     var ov = el("div", "evict");
     ov.style.cssText = "position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(22,20,19,.93);color:#fff;text-align:center;padding:28px;font-size:16px;line-height:1.6";
     ov.appendChild(el("p", null, text || "다른 기기에서 열람을 시작하여 이 기기의 열람이 중단되었습니다."));
@@ -160,7 +162,7 @@
   }
   // 지연 로드: 화면 근처 페이지만 fetch (전량 선수집 방지)
   function loadInto(wrap, p, retried) {
-    if (state.drawn[p]) return;
+    if (state.dead || state.drawn[p]) return;
     state.drawn[p] = true;
     var res = window.devicePixelRatio > 1.3 ? 2400 : 1600;
     fetchPage(p, res).then(function (r) {
@@ -423,6 +425,7 @@
     qTimer = setTimeout(function () { runSearch(q, false); }, 300);
   }
   function runSearch(q, retried) {
+    if (state.dead) return;
     if (state.searchCtl) state.searchCtl.abort();
     var ctl = new AbortController(); state.searchCtl = ctl;
     var seq = ++state.reqSeq;
