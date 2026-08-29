@@ -184,14 +184,16 @@ document.addEventListener('DOMContentLoaded', async function(){
   document.getElementById('whoName').textContent = st.member.name || st.member.email;
   document.getElementById('whoSince').textContent = st.member.email;
 
-  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'단위 전권 이용권', download:'디지털 자료', trial:'맛보기'};
+  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'단위 전권 이용권', download:'디지털 자료', file_download:'PDF 소장판', trial:'맛보기'};
   var rows = (st.entitlements||[]).map(function(e){
     var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
-    // 디지털 자료(download)는 보안 뷰어로 열람, 스튜디오 이용권은 응시 흐름으로 분기
+    // 디지털 자료(download)는 보안 뷰어로 열람, 소장판(file_download)은 스탬프 PDF 내려받기, 스튜디오 이용권은 응시 흐름으로 분기
     var op;
+    var slug=(meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,'');
     if(e.kind==='download'){
-      var slug=(meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,'');
       op='<a class="btn sm" href="reader.html?slug='+encodeURIComponent(slug)+'">열람하기</a>';
+    } else if(e.kind==='file_download'){
+      op='<button type="button" class="btn sm dlgo" data-slug="'+esc(slug)+'">PDF 내려받기</button>';
     } else {
       op='<button type="button" class="btn sm sgo">응시하러 가기</button>';
     }
@@ -211,6 +213,29 @@ document.addEventListener('DOMContentLoaded', async function(){
     ev.preventDefault();
     try{ var r=await HH.api('/api/studio/token',{method:'POST'}); window.open(r.url,'_blank','noopener'); }
     catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
+  })});
+  // 소장판 내려받기 — 스탬프 PDF (계정 각인, 수 초 소요).
+  // 멱등 idem 은 성공 전까지 sessionStorage 보존: 응답 단절 후 재클릭이 새 발급으로 집계되지 않게 (Codex r1 #11)
+  document.querySelectorAll('.dlgo').forEach(function(b){b.addEventListener('click', async function(){
+    if(b.disabled) return; b.disabled=true; var t0=b.textContent; b.textContent='소장본 준비 중…';
+    var ik='hh_dl_idem_'+b.dataset.slug, idem=null;
+    try{ idem=sessionStorage.getItem(ik); }catch(e){}
+    if(!idem){ idem='my-'+b.dataset.slug+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
+      try{ sessionStorage.setItem(ik,idem); }catch(e){} }
+    try{
+      var res=await fetch(HH.API+'/api/reader/download',{method:'POST',credentials:'include',
+        headers:{'Content-Type':'application/json'},body:JSON.stringify({slug:b.dataset.slug,idem:idem})});
+      if(!res.ok){ var d=await res.json().catch(function(){return{}}); throw new Error(d.error||('오류 '+res.status)); }
+      if((res.headers.get('content-type')||'').indexOf('application/pdf')!==0) throw new Error('응답이 PDF 가 아닙니다');
+      var blob=await res.blob();
+      var u=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=u; a.download='hyunhak-'+b.dataset.slug+'.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(u); }, 60000);
+      try{ sessionStorage.removeItem(ik); }catch(e){}
+    }catch(e){ alert(e.message||'내려받기에 실패했습니다'); }
+    finally{ b.disabled=false; b.textContent=t0; }
   })});
 
   var ST={pending:'결제 대기',paid:'결제 완료',failed:'실패',canceled:'취소',refunded:'환불'};
