@@ -49,6 +49,30 @@
   }
   function block(text) { curtain.textContent = text; curtain.style.display = "flex"; }
 
+  // ---------- v3: 동시 세션 밀려남(409) ----------
+  // 서버가 401 대신 409 를 주는 이유: 401 은 reopen() 이 조용히 재발급해 상한이 무력화된다.
+  // 재진입은 사람 손(버튼 클릭 → 새로고침 → open 재등록)으로만 — 이 마찰이 규모 통제의 본체.
+  var evictShown = false;
+  function evictOverlay(text) {
+    if (evictShown) return; evictShown = true;
+    var ov = el("div", "evict");
+    ov.style.cssText = "position:fixed;inset:0;z-index:80;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;background:rgba(22,20,19,.93);color:#fff;text-align:center;padding:28px;font-size:16px;line-height:1.6";
+    ov.appendChild(el("p", null, text || "다른 기기에서 열람을 시작하여 이 기기의 열람이 중단되었습니다."));
+    var bt = el("button", null, "이 기기에서 계속 보기");
+    bt.style.cssText = "padding:10px 24px;font-size:15px;cursor:pointer";
+    bt.addEventListener("click", function () { location.reload(); });
+    ov.appendChild(bt);
+    document.body.appendChild(ov);
+  }
+  // v3: 페이지 열람 거부 응답 분기 — 409 = 밀려남, 일일 예산 code = 종일 차단, 그 외 429 = 속도 초과(회복 가능)
+  // 문자열 매칭 대신 서버의 기계 판별 code 필드로 분기 (Codex E-1)
+  function pageDenied(status, d) {
+    var text = String((d && d.error) || "");
+    if (status === 409) { evictOverlay(text); return; }
+    if (d && (d.code === "daily_limit" || d.code === "doc_limit")) block(text);
+    else showToast(text || "열람 속도가 너무 빠릅니다. 잠시 후 다시 스크롤해 주세요.");
+  }
+
   // ---------- 공통 ----------
   function el(tag, cls, text) {
     var e = document.createElement(tag);
@@ -70,13 +94,24 @@
   }
   // 토큰 만료 시 재발급 (세션 살아있는 동안). singleflight: 동시 401 이 /open 발급 한도를 소진하지 않게 (Codex r1 #14)
   var refreshing = null;
+  // auto:true = 자동 갱신 표식 — 서버는 밀려난 세션의 auto 를 409 로 거부한다 (사람 손 재진입만, Codex A-3)
+  // 실패는 throw 로 전파 — 옛 토큰으로 재시도하는 무한 루프 차단 (Codex A-4)
   function reopen() {
     if (refreshing) return refreshing;
     refreshing = fetch(API + "/api/reader/open", {
       method: "POST", credentials: "include",
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug }),
-    }).then(function (r) { return r.json(); }).then(function (d) {
-      if (d.token) state.token = d.token; else block("세션이 만료되었습니다. 다시 로그인해 주세요.");
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, auto: true }),
+    }).then(function (r) {
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        if (d.token) { state.token = d.token; return; }
+        if (r.status === 409) evictOverlay(String(d.error || ""));
+        else block(String(d.error || "세션이 만료되었습니다. 다시 로그인해 주세요."));
+        throw new Error("reopen " + r.status);
+      });
+    }).catch(function (e) {
+      // 네트워크 실패도 빈 화면 대신 terminal 안내 (Codex r2 #5)
+      if (!e || String(e.message).indexOf("reopen ") !== 0) block("연결에 실패했습니다. 네트워크 확인 후 새로고침해 주세요.");
+      throw e;
     }).finally(function () { refreshing = null; });
     return refreshing;
   }
@@ -124,12 +159,23 @@
     return w;
   }
   // 지연 로드: 화면 근처 페이지만 fetch (전량 선수집 방지)
-  function loadInto(wrap, p) {
+  function loadInto(wrap, p, retried) {
     if (state.drawn[p]) return;
     state.drawn[p] = true;
     var res = window.devicePixelRatio > 1.3 ? 2400 : 1600;
     fetchPage(p, res).then(function (r) {
-      if (r.status === 401) { state.drawn[p] = false; return reopen().then(function () { loadInto(wrap, p); }); }
+      if (r.status === 401) {
+        state.drawn[p] = false;
+        if (retried) {   // 재발급 후에도 401 = 빈 화면 대신 terminal 안내로 중단 (Codex A-4, r2 #5)
+          block("세션이 만료되었습니다. 다시 로그인해 주세요.");
+          throw new Error("page " + p + " 401 twice");
+        }
+        return reopen().then(function () { loadInto(wrap, p, true); });
+      }
+      if (r.status === 409 || r.status === 429) {
+        state.drawn[p] = false;
+        return r.json().catch(function () { return {}; }).then(function (d) { pageDenied(r.status, d); });
+      }
       if (!r.ok) throw new Error("page " + p + " " + r.status);
       return r.blob();
     }).then(function (blob) {
@@ -392,7 +438,8 @@
       if (!d || seq !== state.reqSeq) return;
       if (d._status === 200) { renderHits(d); return; }
       resetHits();
-      if (d._status === 429) findMsg.textContent = String(d.error || "검색이 너무 잦습니다. 잠시 후 다시 시도해 주세요.");
+      if (d._status === 409) { evictOverlay(String(d.error || "")); findMsg.textContent = "열람이 중단되었습니다."; }
+      else if (d._status === 429) findMsg.textContent = String(d.error || "검색이 너무 잦습니다. 잠시 후 다시 시도해 주세요.");
       else if (d._status === 404) findMsg.textContent = "이 자료는 본문 검색을 지원하지 않습니다.";
       else if (d._status === 503) findMsg.textContent = "검색 색인을 준비하는 중입니다. 잠시 후 다시 시도해 주세요.";
       else findMsg.textContent = String(d.error || "검색에 실패했습니다.");
