@@ -166,6 +166,7 @@
     state.drawn[p] = true;
     var res = window.devicePixelRatio > 1.3 ? 2400 : 1600;
     fetchPage(p, res).then(function (r) {
+      if (state.dead) return;   // dead 전에 출발한 응답의 늦은 reopen 재시작 차단 (Codex r4 nit)
       if (r.status === 401) {
         state.drawn[p] = false;
         if (retried) {   // 재발급 후에도 401 = 빈 화면 대신 terminal 안내로 중단 (Codex A-4, r2 #5)
@@ -434,7 +435,7 @@
       method: "POST", headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ slug: slug, q: q }), signal: ctl.signal,
     }).then(function (r) {
-      if (seq !== state.reqSeq) return null;
+      if (state.dead || seq !== state.reqSeq) return null;
       if (r.status === 401 && !retried) return reopen().then(function () { if (seq === state.reqSeq) runSearch(q, true); return null; });
       return r.json().then(function (d) { d._status = r.status; return d; });
     }).then(function (d) {
