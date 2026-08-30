@@ -42,10 +42,11 @@ R3 "reader shell non-browser", 액션 Managed Challenge:
 
 - `python3 _tools/edge_smoke.py` 를 돌려 GPTBot 403 과 Googlebot 200, OAI-SearchBot 200 을 포함한 전건 PASS 를 확인한다.
 - `python3 _tools/indexnow_ping.py` 로 Bing 과 네이버에 IndexNow 제출.
-- 개발자 쿠키: 브라우저(ego-browser 포함)로 https://api.hyunhak.com/admin/dev-cookie 1회 방문 (Access 로그인) → hh_dev 90일
+- 개발자 쿠키: 브라우저(ego-browser 포함)로 https://api.hyunhak.com/admin/dev-cookie 1회 방문 (Access 로그인) → hh_dev 30일 (전역 Domain 우회 비밀이라 수명 축소, Codex aigate REQ10)
 
 ## 남은 후속 (별건)
 
 - 학교별 FAQ 3문항 + FAQPage JSON-LD (GEO 인용 단위)는 다음 세션에서 만든다.
 - 네이버 서치어드바이저 등록 확인 + 2주 후 ai_referrals 와 AI Crawl Control 첫 계측 리포트
 - GH Pages 리포는 롤백 원점이라 당분간 그대로 두고, 엣지 구성이 안정화된 뒤에 Pages 비활성을 검토한다.
+- workers.dev 원점은 워커가 보호층 셸을 403 으로 막고 전 응답 noindex 를 싣는다 (Codex aigate REQ11). 컷오버 검증이 끝나면 wrangler.toml `workers_dev = false` 재배포로 원점 자체를 닫는 것을 검토한다.

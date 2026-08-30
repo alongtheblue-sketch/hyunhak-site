@@ -216,17 +216,19 @@
       return true;
     };
     return apiFetch("/api/lecture/renew", { method: "POST", body: JSON.stringify({ sid: S.sid }) }).then(function (d) {
-      if (d._status === 200 && d.token) { S.reopening = false; return apply(d); }
+      if (d._status === 200 && d.token) { S.reopening = false; if (S.evicted) { showEvicted(); return false; } return apply(d); }
       if (d._status === 401) { S.reopening = false; block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
       // L-5: 밀려난 세션 — open 폴백으로 조용히 재진입하면 상한이 무력화된다
       if (d._status === 409 && d.code === "evicted") { S.reopening = false; showEvicted(); return false; }
       // r2 R8: renew 가 429/5xx 로 도는 사이 beat 가 evicted 래치를 세웠으면 open 폴백이 사람 클릭 없이
       // 슬롯을 재점유한다 — 폴백 직전 래치 재검사
       if (S.evicted) { S.reopening = false; showEvicted(); return false; }
-      return apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d2) {
+      return apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id, sig: automationSignals() }) }).then(function (d2) {
         S.reopening = false;
         if (d2._status === 401) { block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
         if (d2._status !== 200 || !d2.token) { showError(d2.error || "영상을 다시 열지 못했습니다."); return false; }
+        // r3 REQ6: /open 이 진행되는 동안 beat 가 evicted 래치를 세웠으면 사람 클릭 없이 재점유하지 않는다
+        if (S.evicted) { showEvicted(); return false; }
         return apply(d2);
       });
     }).catch(function () { S.reopening = false; return false; });
@@ -249,7 +251,7 @@
   // 이 경로로 돌아온다 (reopen 은 래치에 즉시 반환이라 빈 플레이어로 고착된다, Codex 후속 r1 #16)
   function evictReopen() {
     var at = P.v.currentTime || S.lastT;
-    apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d) {
+    apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id, sig: automationSignals() }) }).then(function (d) {
       if (d._status === 401) { block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return; }
       if (d._status !== 200 || !d.token) { showError(d.error || "다시 열지 못했습니다."); return; }
       S.evicted = false; stage("");
@@ -537,7 +539,15 @@
       else { pl.style.filter = ""; S.closed = false; }
     });
     // 런타임 자동화 재검사(지연 주입 대비)
-    setInterval(function () { if (!S.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") { v.pause(); block("지원하지 않는 접속 환경입니다."); } }, 4000);
+    setInterval(function () {
+      if (!S.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") {
+        // 서버 신고 (aigate REQ14): 지연 주입 자동화도 경고·정지 파이프라인과 감사 원장에 들어가야 한다.
+        // 캡처·제재 원장은 리더와 공용이라 /api/reader/event 를 그대로 쓴다 (slug 없음 = 문서 미지정).
+        try { fetch(API + "/api/reader/event", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ platform: "web", kind: "automation" }), keepalive: true }); } catch (e) {}
+        v.pause(); block("지원하지 않는 접속 환경입니다.");
+      }
+    }, 4000);
   }
   function bindTabs() {
     var sel = function (which) {

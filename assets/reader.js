@@ -102,7 +102,7 @@
     if (refreshing) return refreshing;
     refreshing = fetch(API + "/api/reader/open", {
       method: "POST", credentials: "include",
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, auto: true }),
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, auto: true, sig: automationSignals() }),
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (d) {
         if (d.token) { state.token = d.token; return; }
@@ -646,9 +646,11 @@
     if (document.hidden) { stage.style.filter = "blur(22px)"; }
     else { stage.style.filter = ""; }
   });
-  // 런타임 자동화 재검사(지연 주입 대비)
+  // 런타임 자동화 재검사(지연 주입 대비). state.token 게이트 (aigate B3):
+  // 초기 /open 응답(exempt 설정)보다 먼저 돌면 한 페이지 로드가 open 판정 + event 로 2회 계수되고
+  // 예외 계정도 dead 로 고착된다 — 토큰을 받은 뒤부터만 재검사한다 (그 전 신호는 /open 의 sig 가 나른다).
   setInterval(function () {
-    if (!state.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") {
+    if (state.token && !state.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") {
       reportEvent("automation"); block("지원하지 않는 접속 환경입니다.");
     }
   }, 4000);

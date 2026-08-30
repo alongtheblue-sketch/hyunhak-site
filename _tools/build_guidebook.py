@@ -194,6 +194,14 @@ def price_of(cat, e):
 def _pdf_prices():
     import seo_common as _C
     status = _C.load_products_status(required=True)
+    # 짝 있는 낱권 -pdf(기저 guide-<slug> 가 digital)의 type 이 digital_file 이 아니면 정합 붕괴 —
+    # 조용히 버튼만 빼면 SEO(JSON-LD offer)와 지면이 서로 다른 이야기를 한다 (Codex r3 REQ8). 빌드를 세운다.
+    # 전권 번들(guide-all-pdf 등 기저가 번들형)은 낱권 버튼 대상이 아니라 검사 밖.
+    bad = [sku for sku, r in status.items()
+           if sku.endswith("-pdf") and r.get("status") == "active" and r.get("type") != "digital_file"
+           and status.get(sku[:-4], {}).get("type") == "digital"]
+    if bad:
+        sys.exit(f"products_status 정합 붕괴: active -pdf 의 type 이 digital_file 이 아님 → {', '.join(sorted(bad))}")
     return {sku: int(r["price"]) for sku, r in status.items()
             if sku.endswith("-pdf") and r.get("status") == "active"
             and r.get("type") == "digital_file" and r.get("price") is not None}

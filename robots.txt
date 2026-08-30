@@ -17,13 +17,21 @@ User-agent: YouBot
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Disallow: /cart.html
+Disallow: /cart
 Disallow: /checkout.html
+Disallow: /checkout
 Disallow: /join.html
+Disallow: /join
 Disallow: /lecture.html
+Disallow: /lecture
 Disallow: /login.html
+Disallow: /login
 Disallow: /my.html
+Disallow: /my
 Disallow: /pay_done.html
+Disallow: /pay_done
 Disallow: /reader.html
+Disallow: /reader
 Disallow: /_tools/
 
 # 사용자 대행 fetcher (허용 — 사람이 물어본 페이지를 읽어 답한다)
@@ -36,13 +44,21 @@ User-agent: Google-CloudVertexBot
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Disallow: /cart.html
+Disallow: /cart
 Disallow: /checkout.html
+Disallow: /checkout
 Disallow: /join.html
+Disallow: /join
 Disallow: /lecture.html
+Disallow: /lecture
 Disallow: /login.html
+Disallow: /login
 Disallow: /my.html
+Disallow: /my
 Disallow: /pay_done.html
+Disallow: /pay_done
 Disallow: /reader.html
+Disallow: /reader
 Disallow: /_tools/
 
 # 모델 학습 크롤러 (전면 거부)
@@ -70,13 +86,21 @@ User-agent: *
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 Allow: /
 Disallow: /cart.html
+Disallow: /cart
 Disallow: /checkout.html
+Disallow: /checkout
 Disallow: /join.html
+Disallow: /join
 Disallow: /lecture.html
+Disallow: /lecture
 Disallow: /login.html
+Disallow: /login
 Disallow: /my.html
+Disallow: /my
 Disallow: /pay_done.html
+Disallow: /pay_done
 Disallow: /reader.html
+Disallow: /reader
 Disallow: /_tools/
 
 Sitemap: https://hyunhak.com/sitemap.xml

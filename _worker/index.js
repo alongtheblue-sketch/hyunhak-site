@@ -17,7 +17,14 @@ const ENGINE_HOSTS = {
   "gemini.google.com": "gemini",
   "duckduckgo.com": "duckduckgo", "you.com": "you", "search.brave.com": "brave", "kagi.com": "kagi",
 };
-const ENGINE_UTM = ["chatgpt", "perplexity", "claude", "copilot", "gemini"];
+// utm 은 정확 일치 allowlist 만 (aigate REQ13) — includes() 는 notchatgpt 류 오염과 임의 문자열(PII 포함) 저장 경로였다.
+// 저장값도 원문이 아니라 정규화된 엔진명이다.
+const ENGINE_UTM = {
+  "chatgpt": "chatgpt", "chatgpt.com": "chatgpt", "openai": "chatgpt",
+  "perplexity": "perplexity", "perplexity.ai": "perplexity",
+  "claude": "claude", "claude.ai": "claude",
+  "copilot": "copilot", "gemini": "gemini",
+};
 
 function engineOf(request, url) {
   let refHost = "";
@@ -26,8 +33,17 @@ function engineOf(request, url) {
     if (refHost === h || refHost.endsWith("." + h)) return { engine: name, refHost, utm: "" };
   }
   const utm = (url.searchParams.get("utm_source") || "").toLowerCase();
-  for (const k of ENGINE_UTM) if (utm.includes(k)) return { engine: k, refHost, utm };
-  return null;
+  const eng = ENGINE_UTM[utm];
+  return eng ? { engine: eng, refHost, utm: eng } : null;
+}
+
+// 유입 원장 쓰기 예산 (aigate REQ13) — isolate 당 분당 상한. 성공 HTML GET 반복으로 D1 쓰기를
+// 무제한 유발하는 경로의 역압. isolate 재기동 시 리셋되는 근사 예산이면 충분하다 (원장은 통계 용도).
+let logBudget = { min: "", n: 0 };
+function underLogBudget() {
+  const k = new Date().toISOString().slice(0, 16);
+  if (k !== logBudget.min) logBudget = { min: k, n: 0 };
+  return ++logBudget.n <= 120;
 }
 
 function isHtmlPath(p) { return p.endsWith("/") || p.endsWith(".html") || !/\.[A-Za-z0-9]+$/.test(p); }
@@ -57,10 +73,12 @@ function withHeaders(res, path, urlPath) {
   if (path && path.endsWith(".html")) {
     h.set("X-Content-Type-Options", "nosniff");
     h.set("Referrer-Policy", "strict-origin-when-cross-origin");
-    if (SHELL_NOINDEX.has(urlPath)) {
+    // 판정 키 = 해석된 자산 경로 (aigate REQ12) — /reader 같은 확장자 없는 별칭도 /reader.html 로 판정된다
+    const key = path;
+    if (SHELL_NOINDEX.has(key)) {
       h.set("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
       h.set("Cache-Control", "private, no-store");
-    } else if (PRIVATE_NOINDEX.has(urlPath)) {
+    } else if (PRIVATE_NOINDEX.has(key)) {
       h.set("X-Robots-Tag", "noindex, nofollow");
       h.set("Cache-Control", "private, no-store");
     } else if (!h.has("Cache-Control")) {
@@ -77,21 +95,29 @@ export default {
       url.hostname = APEX;
       return Response.redirect(url.toString(), 301);
     }
+    // workers.dev 등 비정식 호스트 (aigate REQ11): 존 밖이라 WAF·AI bot policies 가 안 걸린다.
+    // 공개 지면은 noindex 로 서빙(컷오버 전 스모크 용도 유지), 보호층 셸은 아예 내지 않는다.
+    const offZone = url.hostname !== APEX;
     try {
       const { res, path } = await resolve(env, request, url);
-      if (res.status === 404 && isHtmlPath(url.pathname)) {
+      if (offZone && path && (SHELL_NOINDEX.has(path) || PRIVATE_NOINDEX.has(path)))
+        return new Response("Not available on this host", { status: 403, headers: { "X-Robots-Tag": "noindex" } });
+      if (res.status === 404) {
+        // GH Pages 와 동일: 모든 404 는 404.html 본문 (비 HTML 경로 포함, aigate NIT1)
         const nf = await fetchAsset(env, request, url, "/404.html");
         return withHeaders(new Response(nf.body, { status: 404, headers: nf.headers }), "/404.html", url.pathname);
       }
-      if (path && path.endsWith(".html") && res.status === 200 && env.DB && (request.method === "GET")) {
+      if (!offZone && path && path.endsWith(".html") && res.status === 200 && env.DB && (request.method === "GET")) {
         const e = engineOf(request, url);
-        if (e) ctx.waitUntil(
+        if (e && underLogBudget()) ctx.waitUntil(
           env.DB.prepare("INSERT INTO ai_referrals(ts,path,engine,ref_host,utm) VALUES(?,?,?,?,?)")
             .bind(new Date().toISOString(), url.pathname.slice(0, 200), e.engine, e.refHost.slice(0, 100), e.utm.slice(0, 60)).run()
-            .catch(() => {})
+            .catch((err) => console.log("ai_referrals fail", String(err).slice(0, 200)))   // 결손 탐지 로그 (aigate NIT2)
         );
       }
-      return withHeaders(res, path, url.pathname);
+      const out = withHeaders(res, path, url.pathname);
+      if (offZone) out.headers.set("X-Robots-Tag", "noindex, nofollow");   // 비정식 호스트 사본 색인 차단
+      return out;
     } catch (err) {
       // 워커 결함이 사이트를 내리지 않게: 자산 직접 서빙으로 후퇴
       return env.ASSETS.fetch(request);

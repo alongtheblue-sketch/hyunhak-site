@@ -180,6 +180,8 @@ def build_graph(m, rel, e, page_html):
                         o["price"] = p["price"]
             base = offers[0].get("sku")
             pdf = PRODUCTS.get(base + "-pdf") if base else None
+            if pdf and pdf.get("type") != "digital_file":   # 오타입 -pdf 는 광고하지 않는다 (r3 REQ8 — 빌더 게이트와 정합)
+                pdf = None
             if pdf and all(o.get("sku") != base + "-pdf" for o in offers):
                 offers.append({"name": "PDF 소장판 (파일 내려받기)", "price": pdf.get("price"),
                                "sku": base + "-pdf", "availability": db_avail(pdf)})
