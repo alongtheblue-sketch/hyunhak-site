@@ -202,6 +202,8 @@ document.addEventListener('DOMContentLoaded', async function(){
       + '<div class="hh-popup-body">'
       + '<p>가이드북은 결제 즉시 브라우저 보안 리더로 열람하실 수 있으며, 열람 기간은 구매일부터 3개월입니다.</p>'
       + '<p>인쇄는 권당 3회까지 가능합니다.</p>'
+      // 전자상거래법 제17조 제6항: 청약철회 제한 사실을 구매 화면에 표시 (약관 제6조 ③ 과 같은 문장, 2026-08-30 AIG-5)
+      + '<p>열람을 시작한 뒤에는 청약철회가 제한됩니다(전자상거래법 제17조 제2항). 열람을 시작하기 전에는 취소할 수 있습니다.</p>'
       // 담긴 상품에 맞는 고지 (r2 R13): 소장판 구매자에게 "원본 미제공"만 보여주면 실제 제공 형태를 오고지한다
       + (items.some(function(x){ return /^guide-.*-pdf$/.test(String(x.sku||'')); })
           ? '<p>PDF 소장판은 워터마크(구매 계정 이메일, 시리얼)가 새겨진 파일을 발급해 소장하실 수 있습니다.</p>'
@@ -226,7 +228,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   var hasDigital = items.some(function(x){return !x.ship});
   $('#refundNote').textContent = '결제와 동시에 주문이 확정됩니다. '
     + (needShip ? '실물은 출고 전 취소 시 전액 환불되며, 출고 후에는 수령 7일 이내 미훼손 기준으로 반품하실 수 있습니다. ' : '')
-    + (hasDigital ? '디지털 상품(이용권, PDF)은 열람 시작 전까지 취소할 수 있고, 열람이 시작되면 청약철회가 제한됩니다. ' : '')
+    + (hasDigital ? '디지털 상품(이용권, PDF)은 제공이 시작되기 전까지 취소할 수 있고, 제공이 시작된 뒤에는 청약철회가 제한됩니다(전자상거래법 제17조 제2항). '
+        + '제공 시작 시점은 가이드북 열람 상품은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오 이용권은 응시를 시작한 때입니다. ' : '')
     + '전자상거래법의 청약철회 규정이 적용됩니다.';
   if(st.member.name && !$('#nm').value) $('#nm').value = st.member.name;
 
