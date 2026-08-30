@@ -99,7 +99,7 @@
   var S = {                      // 세션 상태
     id: lectureId, token: null, sid: null, dur: 0, chapters: [], bookmarks: [], email: "", vtt: false,
     rate: 1, resume: 0, viewCount: 0, title: "",
-    lastT: 0, watched: 0, evs: [], beatTimer: null, idleTimer: null, wmTimer: null, retries: 0, wasPlaying: false,
+    lastT: 0, watched: 0, evs: [], beatTimer: null, idleTimer: null, wmTimer: null, retries: 0, wasPlaying: false, evicted: false,
     trackUrl: null, ccOn: false, reopening: false, curCh: -1, closed: false,
   };
   var P = {};                    // DOM 참조
@@ -203,6 +203,7 @@
   // 토큰 만료·연결 오류 복구: renew(같은 회차 유지) → 실패 시 open. 같은 위치에서 소스 교체.
   // 갱신 뒤 자동 재생은 사용자 제스처가 끊겨 거부될 수 있으므로 거부되면 큰 재생 버튼으로 돌아간다 (iOS)
   function reopen(reason) {
+    if (S.evicted) return Promise.resolve(false); // L-5: 밀려난 상태의 자동 복구 금지 — 사람 손 재진입만
     if (S.reopening) return Promise.resolve(false);
     S.reopening = true;
     var at = P.v.currentTime || S.lastT, playing = !P.v.paused;
@@ -216,6 +217,8 @@
     return apiFetch("/api/lecture/renew", { method: "POST", body: JSON.stringify({ sid: S.sid }) }).then(function (d) {
       if (d._status === 200 && d.token) { S.reopening = false; return apply(d); }
       if (d._status === 401) { S.reopening = false; block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
+      // L-5: 밀려난 세션 — open 폴백으로 조용히 재진입하면 상한이 무력화된다
+      if (d._status === 409 && d.code === "evicted") { S.reopening = false; showEvicted(); return false; }
       return apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d2) {
         S.reopening = false;
         if (d2._status === 401) { block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
@@ -227,6 +230,22 @@
 
   // ---------- 상태 카드 ----------
   function stage(html) { P.stage.innerHTML = html; P.stage.hidden = !html; }
+  // L-5 (2026-08-30): 동시 3기기 한도에 밀려난 상태 — 재생 정지 + 오버레이, 재개는 버튼(사람 손)으로만
+  function showEvicted() {
+    if (S.evicted) return;
+    S.evicted = true;
+    stopBeat(); P.v.pause();
+    stage('<div class="box"><h2>다른 기기에서 시청을 시작했습니다</h2><p>동시 시청은 계정당 3기기까지입니다. 이 기기에서 계속 보려면 아래 버튼을 눌러 주세요.</p><div class="row"><button type="button" class="btn" id="evictBtn">이 기기에서 계속 보기</button><a class="btn ghost" href="lecture.html">내 강의</a></div></div>');
+    $("evictBtn").addEventListener("click", function () {
+      var at = P.v.currentTime || S.lastT;
+      apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d) {
+        if (d._status !== 200 || !d.token) { showError(d.error || "다시 열지 못했습니다."); return; }
+        S.evicted = false; stage("");
+        S.token = d.token; S.sid = d.session_id; S.seq = Math.max(S.seq || 0, Number(d.seq) || 0);
+        loadSource(at);
+      });
+    });
+  }
   function showBigPlay() {
     stage('<button type="button" class="bigplay" id="bigPlay" aria-label="재생">' + ICON.play + "</button>");
     $("bigPlay").addEventListener("click", function () { stage(""); P.v.play().catch(function () {}); });
@@ -411,12 +430,16 @@
     S.lastT = t;
   }
   function flushBeat(final) {
-    if (!S.sid || S.closed) return;
+    if (!S.sid || S.closed || S.evicted) return;
     S.seq = (S.seq || 0) + 1;   // 단조 순번: 서버가 역순·재전송을 버린다
     var body = JSON.stringify({ sid: S.sid, seq: S.seq, pos: Math.round((P.v.currentTime || 0) * 100) / 100, watched: Math.round(S.watched * 100) / 100, rate: S.rate, ev: S.evs.splice(0, 50) });
     S.watched = 0;
     var p = fetch(API + "/api/lecture/beat", { method: "POST", credentials: "include", keepalive: true, headers: { "Content-Type": "text/plain;charset=UTF-8" }, body: body });
-    if (!final) p.then(function (r) { if (r.status === 401) block("로그인이 만료되었습니다. 다시 로그인해 주세요."); }).catch(function () {});
+    if (!final) p.then(function (r) {
+      if (r.status === 401) block("로그인이 만료되었습니다. 다시 로그인해 주세요.");
+      // L-5: 밀려난 기기 — seq stale 409 와는 code 로 구분 (stale 은 무해라 기존처럼 무시)
+      if (r.status === 409) r.json().then(function (j) { if (j && j.code === "evicted") showEvicted(); }).catch(function () {});
+    }).catch(function () {});
   }
   function startBeat() { stopBeat(); S.beatTimer = setInterval(function () { flushBeat(); }, BEAT_SEC * 1000); }
   function stopBeat() { clearInterval(S.beatTimer); S.beatTimer = null; }
