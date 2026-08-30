@@ -23,29 +23,8 @@ import seo_common as C
 PRODUCTS_STATUS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products_status.json")
 
 
-SNAPSHOT_MAX_AGE_DAYS = 14  # 낡은 snapshot 으로 빌드하면 DB 가격·판매상태 변경이 무기한 미반영 (Codex 후속 r1 #24)
-
-
-def load_products_status():
-    try:
-        with open(PRODUCTS_STATUS_PATH, encoding="utf-8") as f:
-            data = json.load(f)
-    except OSError:
-        return {}  # snapshot 없음 = 오프라인 빌드 (manifest 값 그대로, 종전과 동일)
-    # snapshot 이 있는데 깨졌거나 낡았으면 조용한 회귀 대신 빌드를 세운다
-    import datetime
-    try:
-        gen = datetime.datetime.fromisoformat(data["generated_at"])
-        products = {r["sku"]: r for r in data["products"]}
-    except (ValueError, KeyError, TypeError) as e:
-        sys.exit(f"products_status.json 손상({e}) — bash _tools/export_products_status.sh 로 재실측 후 빌드")
-    age = datetime.datetime.now(datetime.timezone.utc) - gen
-    if age.days > SNAPSHOT_MAX_AGE_DAYS:
-        sys.exit(f"products_status.json 이 {age.days}일 경과 — bash _tools/export_products_status.sh 로 재실측 후 빌드")
-    return products
-
-
-PRODUCTS = load_products_status()
+# 로더는 seo_common 공용 (Codex 후속 r1 #24 낡음 게이트, r2 R11 소비처 공통화, r2 N1 미래·내림 구멍)
+PRODUCTS = C.load_products_status()
 
 
 def db_avail(p):

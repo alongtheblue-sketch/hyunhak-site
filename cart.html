@@ -144,7 +144,9 @@ document.addEventListener('DOMContentLoaded', function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function thumb(it){
     var sku=String(it.sku||'');
-    if(sku.indexOf('guide-')===0) return '<a class="thumb" href="guidebook/'+encodeURIComponent(sku.slice(6))+'.html"><img src="assets/covers/'+encodeURIComponent(sku.slice(6))+'.jpg" alt="" width="56" height="79"></a>';
+    // 전권 번들은 목록면으로, 소장판(-pdf)은 원권 표지로 — sku 그대로 slug 를 만들면 존재하지 않는 면·표지 404 (r2 R12)
+    if(sku.indexOf('guide-all')===0) return '<a class="thumb" href="guidebook/index.html"><img src="assets/photo/art_figure.png" alt="" width="56" height="79"></a>';
+    if(sku.indexOf('guide-')===0){ var slug=sku.slice(6).replace(/-pdf$/,''); return '<a class="thumb" href="guidebook/'+encodeURIComponent(slug)+'.html"><img src="assets/covers/'+encodeURIComponent(slug)+'.jpg" alt="" width="56" height="79"></a>'; }
     if(sku==='envelope-mock') return '<a class="thumb" href="store.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
     return '<a class="thumb" href="studio.html"><span class="thumb-txt">'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>';
   }

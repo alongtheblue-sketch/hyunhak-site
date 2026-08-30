@@ -216,3 +216,35 @@ def clean_text(s):
     s = re.sub(r"\s*,\s*,", ",", s)
     s = re.sub(r"\s+", " ", s).strip()
     return s
+
+# ---------- 원격 D1 products snapshot (READER-FOLLOWUP 3 / Codex 후속 r2 R11) ----------
+# export_products_status.sh 가 만드는 실측 원장. 소비처(seo_inject, build_guidebook)가 공용으로 쓴다.
+# 부재 = {} (required=True 면 정지) / 손상·낡음(14일)·미래 시각 = 빌드 정지 — 낡은 가격·판매상태로
+# 조용히 굽는 회귀를 소비처 공통으로 차단한다. 나이 비교는 timedelta 전체(초 단위) — days 내림이
+# 15일째를 통과시키거나 미래 timestamp 가 무기한 통과하는 구멍을 막는다 (r2 N1).
+SNAPSHOT_MAX_AGE_DAYS = 14
+PRODUCTS_STATUS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products_status.json")
+
+
+def load_products_status(required=False):
+    import datetime
+    import sys as _sys
+    try:
+        with open(PRODUCTS_STATUS_PATH, encoding="utf-8") as f:
+            data = json.load(f)
+    except OSError:
+        if required:
+            _sys.exit("products_status.json 부재 — bash _tools/export_products_status.sh 로 실측 후 빌드")
+        return {}
+    try:
+        gen = datetime.datetime.fromisoformat(data["generated_at"])
+        products = {r["sku"]: r for r in data["products"]}
+    except (ValueError, KeyError, TypeError) as e:
+        _sys.exit(f"products_status.json 손상({e}) — bash _tools/export_products_status.sh 로 재실측 후 빌드")
+    age = datetime.datetime.now(datetime.timezone.utc) - gen
+    if age > datetime.timedelta(days=SNAPSHOT_MAX_AGE_DAYS):
+        _sys.exit(f"products_status.json {age.days}일 경과 — bash _tools/export_products_status.sh 로 재실측 후 빌드")
+    if age < datetime.timedelta(minutes=-5):
+        _sys.exit("products_status.json generated_at 이 미래 시각 — 재실측 후 빌드")
+    return products
+

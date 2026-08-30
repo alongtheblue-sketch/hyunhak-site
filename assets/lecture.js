@@ -219,6 +219,9 @@
       if (d._status === 401) { S.reopening = false; block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
       // L-5: 밀려난 세션 — open 폴백으로 조용히 재진입하면 상한이 무력화된다
       if (d._status === 409 && d.code === "evicted") { S.reopening = false; showEvicted(); return false; }
+      // r2 R8: renew 가 429/5xx 로 도는 사이 beat 가 evicted 래치를 세웠으면 open 폴백이 사람 클릭 없이
+      // 슬롯을 재점유한다 — 폴백 직전 래치 재검사
+      if (S.evicted) { S.reopening = false; showEvicted(); return false; }
       return apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d2) {
         S.reopening = false;
         if (d2._status === 401) { block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }

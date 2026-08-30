@@ -189,14 +189,14 @@ def price_of(cat, e):
 
 
 # 개별 PDF 소장판 가격 = 원격 D1 실측 snapshot (2026-08-30 건우 결재: 상세면에 소장판 담기 버튼 신설 —
-# JSON-LD 가 선언한 -pdf offer 의 실구매 동선. snapshot 에 active 로 없으면 버튼을 만들지 않는다)
+# JSON-LD 가 선언한 -pdf offer 의 실구매 동선). 로더 = seo_common 공용 strict 게이트 (r2 R11):
+# 부재·손상·낡음이면 빌드가 서고, type 이 digital_file 이 아닌 -pdf 는 버튼을 만들지 않는다.
 def _pdf_prices():
-    try:
-        data = json.loads(Path(__file__).with_name("products_status.json").read_text(encoding="utf-8"))
-        return {r["sku"]: int(r["price"]) for r in data["products"]
-                if r["sku"].endswith("-pdf") and r.get("status") == "active" and r.get("price") is not None}
-    except (OSError, ValueError, KeyError, TypeError):
-        return {}
+    import seo_common as _C
+    status = _C.load_products_status(required=True)
+    return {sku: int(r["price"]) for sku, r in status.items()
+            if sku.endswith("-pdf") and r.get("status") == "active"
+            and r.get("type") == "digital_file" and r.get("price") is not None}
 
 
 PDF_PRICES = _pdf_prices()
