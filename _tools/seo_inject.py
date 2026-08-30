@@ -225,7 +225,7 @@ def build_graph(m, rel, e, page_html):
         graph.append(art)
 
     faq = list(e.get("faq") or [])
-    if t == "faq":
+    if t == "faq" or rel.startswith("guidebook/"):   # 학교별 FAQ 3문항 (build_guidebook faq_of, 2026-08-30)
         faq = faq or C.extract_faq(page_html)
     if faq:
         graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [

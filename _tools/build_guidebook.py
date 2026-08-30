@@ -298,19 +298,71 @@ def _strat_sec_html(mv):
             '    <ol class="strat rv">\n' + "\n".join(out) + '\n    </ol>' + tail + '\n  </section>')
 
 
+def _eun(word):
+    """은/는 조사: 마지막 한글 음절의 받침 유무 (괄호, 공백 등 뒤꼬리는 건너뛴다)."""
+    for ch in reversed(str(word)):
+        o = ord(ch)
+        if 0xAC00 <= o <= 0xD7A3:
+            return "은" if (o - 0xAC00) % 28 else "는"
+        if ch.isdigit():
+            return "은" if ch in "013678" else "는"
+        if ch.isalpha():
+            return "는"
+    return "는"
+
+
+def faq_of(e, mv, price, sale, pdfp):
+    """학교별 FAQ 3문항 (GEO 인용 단위, 2026-08-30). 값은 meta v3 와 카탈로그에서만 뽑는다.
+    근거 없는 문장은 만들지 않는다: 항목이 비면 그 문장을 생략한다. 반환 = [{"q","a"}] (seo_inject 가 details.faq 에서 FAQPage 로 추출)."""
+    name = e["name"]
+    forms = [f["form"] for f in mv.get("forms", []) if f.get("has")]
+    tracks = mv.get("tracks", [])
+    years = mv.get("years")
+    a1 = (f"{name} 2027 면접은 전형에 따라 {', '.join(forms)} 형태로 나뉩니다. " if forms
+          else f"{name} 면접 형태는 전형마다 다릅니다. ")
+    if tracks:
+        a1 += "전형별로 보면 " + ", ".join(f"{clean(t['track'])}{_eun(clean(t['track']))} {clean(t['form'])}" for t in tracks[:4]) + "입니다. "
+    a1 += "가이드북 1부에서 지원 전형의 면접 형태를 판정하고, 2부에서 전형별 제원을 읽습니다."
+    qn = e.get("questions") or mv.get("questions")
+    a2 = (f"선배 후기 {years[0]}~{years[1]}년 관측에서 회수한 기출 {qn}건을 " if (years and qn)
+          else "선배 후기에서 회수한 기출을 ")
+    units = mv.get("units_n")
+    a2 += (f"{units}개 모집단위, " if units else "") + f"{len(e['types'])}개 질문 유형으로 나눠 실었습니다. "
+    rules = mv.get("rules")
+    a2 += (f"4부에는 생기부 기재를 질문으로 바꾸는 전환 규칙 {rules}개가 실제 질문, 꼬리질문과 함께 실려 있습니다." if rules
+           else "4부에는 생기부 기재를 질문으로 바꾸는 전환 규칙이 실려 있습니다.")
+    pages = mv.get("pages")
+    a3 = f"{name} 2027 면접 가이드북은 " + (f"{pages}면이며 " if pages else "") + "결제 후 마이페이지의 보안 리더로 바로 열람합니다. 열람 기간은 구매일부터 3개월, 인쇄는 권당 3회이고 원본 파일은 제공하지 않습니다. "
+    if sale:
+        a3 += f"가격은 보안 리더 열람판 {won(price)}" + (f", PDF 소장판 {won(pdfp)}" if pdfp else "") + "입니다. 열람을 시작하기 전에는 취소할 수 있습니다."
+    else:
+        a3 += "지금은 보안 리더 준비 중이며, 판매 개시는 공지로 알립니다."
+    return [{"q": f"{name} 면접은 어떤 형태인가요?", "a": a1},
+            {"q": f"{name} 면접 기출 질문은 몇 건이며 어떻게 정리했나요?", "a": a2},
+            {"q": f"{name} 가이드북은 어떻게 열람하고 가격은 얼마인가요?", "a": a3}]
+
+
+def _faq_html(name, faq):
+    rows = "\n".join(f'      <details class="faq"><summary>{esc(x["q"])}</summary><div class="a"><p>{esc(x["a"])}</p></div></details>'
+                      for x in faq)
+    return ('  <section class="sec">\n'
+            f'    <div class="sh rv"><div><h2>자주 묻는 질문</h2><p>{esc(name)} 면접과 이 가이드북에 대해.</p></div></div>\n'
+            '    <div class="faqp rv">\n' + rows + '\n    </div>\n  </section>')
+
+
 def render_page(cat, items, i, meta):
     e = items[i]
     mv = meta[e["slug"]]
     name = e["name"]
     price = price_of(cat, e)
     sale = bool(e.get("onsale", True))
+    pdfp = PDF_PRICES.get(e["sku"] + "-pdf")
     h1 = f"{name} 2027 면접 가이드북"
     title = f"{h1}, 현학적 연구소"
     years = f'{mv["years"][0]}~{mv["years"][1]}' if mv.get("years") else "복수 연도"
     lede = (f"{name} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙. "
             f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.")
     if sale:
-        pdfp = PDF_PRICES.get(e["sku"] + "-pdf")
         pdf_btn = (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기, {won(pdfp)}</button>\n      '
                    if pdfp else "")
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
@@ -346,6 +398,7 @@ def render_page(cat, items, i, meta):
          "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
          "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),
          "__STRAT_SEC__": _strat_sec_html(mv),
+         "__FAQ__": _faq_html(name, faq_of(e, mv, price, sale, pdfp)),
          "__TYPE_CHIPS__": type_chips,
          "__PRICE_CLS__": "price" if sale else "price mute",
          "__SAMPLES__": samples,
