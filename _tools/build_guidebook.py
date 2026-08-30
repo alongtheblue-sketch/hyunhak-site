@@ -188,6 +188,20 @@ def price_of(cat, e):
     return e["price"] if e.get("price") is not None else cat["price"]
 
 
+# 개별 PDF 소장판 가격 = 원격 D1 실측 snapshot (2026-08-30 건우 결재: 상세면에 소장판 담기 버튼 신설 —
+# JSON-LD 가 선언한 -pdf offer 의 실구매 동선. snapshot 에 active 로 없으면 버튼을 만들지 않는다)
+def _pdf_prices():
+    try:
+        data = json.loads(Path(__file__).with_name("products_status.json").read_text(encoding="utf-8"))
+        return {r["sku"]: int(r["price"]) for r in data["products"]
+                if r["sku"].endswith("-pdf") and r.get("status") == "active" and r.get("price") is not None}
+    except (OSError, ValueError, KeyError, TypeError):
+        return {}
+
+
+PDF_PRICES = _pdf_prices()
+
+
 def _part_of(page, dividers):
     """면 번호가 속한 부 (1~5). 간지 면 자신도 그 부에 속한다."""
     part = 0
@@ -296,13 +310,18 @@ def render_page(cat, items, i, meta):
     lede = (f"{name} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙. "
             f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.")
     if sale:
+        pdfp = PDF_PRICES.get(e["sku"] + "-pdf")
+        pdf_btn = (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기, {won(pdfp)}</button>\n      '
+                   if pdfp else "")
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
-                f'      <a class="btn ghost" href="../cart.html">장바구니 보기</a>')
+                f'      {pdf_btn}<a class="btn ghost" href="../cart.html">장바구니 보기</a>')
         badge = '<span class="badge seal">판매 중</span>'
-        note = "결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 열람 시작 전 취소 가능."
+        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 열람 시작 전 취소 가능."
+                + (" PDF 소장판은 워터마크 파일을 발급해 소장." if pdfp else ""))
         final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 3개월."
         final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
-                      f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
+                      + (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기</button>' if pdfp else "")
+                      + f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
     else:
         acts = ('<span class="btn" aria-disabled="true">입고 예정</span>\n'
                 '      <a class="btn ghost" href="index.html">판매 중인 가이드북</a>')
