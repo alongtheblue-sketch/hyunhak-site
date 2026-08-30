@@ -231,20 +231,27 @@
   // ---------- 상태 카드 ----------
   function stage(html) { P.stage.innerHTML = html; P.stage.hidden = !html; }
   // L-5 (2026-08-30): 동시 3기기 한도에 밀려난 상태 — 재생 정지 + 오버레이, 재개는 버튼(사람 손)으로만
+  function evictOverlay() {
+    stage('<div class="box"><h2>다른 기기에서 시청을 시작했습니다</h2><p>동시 시청은 계정당 3기기까지입니다. 이 기기에서 계속 보려면 아래 버튼을 눌러 주세요.</p><div class="row"><button type="button" class="btn" id="evictBtn">이 기기에서 계속 보기</button><a class="btn ghost" href="lecture.html">내 강의</a></div></div>');
+    $("evictBtn").addEventListener("click", evictReopen);
+  }
   function showEvicted() {
     if (S.evicted) return;
     S.evicted = true;
     stopBeat(); P.v.pause();
-    stage('<div class="box"><h2>다른 기기에서 시청을 시작했습니다</h2><p>동시 시청은 계정당 3기기까지입니다. 이 기기에서 계속 보려면 아래 버튼을 눌러 주세요.</p><div class="row"><button type="button" class="btn" id="evictBtn">이 기기에서 계속 보기</button><a class="btn ghost" href="lecture.html">내 강의</a></div></div>');
-    $("evictBtn").addEventListener("click", function () {
-      var at = P.v.currentTime || S.lastT;
-      apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d) {
-        if (d._status !== 200 || !d.token) { showError(d.error || "다시 열지 못했습니다."); return; }
-        S.evicted = false; stage("");
-        S.token = d.token; S.sid = d.session_id; S.seq = Math.max(S.seq || 0, Number(d.seq) || 0);
-        loadSource(at);
-      });
-    });
+    evictOverlay();
+  }
+  // 밀려난 상태의 재진입 — open 성공 때만 래치를 푼다. 실패(429/5xx) 시 오류 카드의 "다시 시도" 도
+  // 이 경로로 돌아온다 (reopen 은 래치에 즉시 반환이라 빈 플레이어로 고착된다, Codex 후속 r1 #16)
+  function evictReopen() {
+    var at = P.v.currentTime || S.lastT;
+    apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id }) }).then(function (d) {
+      if (d._status === 401) { block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return; }
+      if (d._status !== 200 || !d.token) { showError(d.error || "다시 열지 못했습니다."); return; }
+      S.evicted = false; stage("");
+      S.token = d.token; S.sid = d.session_id; S.seq = Math.max(S.seq || 0, Number(d.seq) || 0);
+      loadSource(at);
+    }).catch(function () { showError("네트워크 상태를 확인한 뒤 다시 시도해 주세요."); });
   }
   function showBigPlay() {
     stage('<button type="button" class="bigplay" id="bigPlay" aria-label="재생">' + ICON.play + "</button>");
@@ -258,7 +265,7 @@
   }
   function showError(msg) {
     stage('<div class="box"><h2>재생에 문제가 있습니다</h2><p>' + esc(msg) + '</p><div class="row"><button type="button" class="btn" id="errRetry">다시 시도</button></div></div>');
-    $("errRetry").addEventListener("click", function () { stage(""); S.retries = 0; reopen(); });
+    $("errRetry").addEventListener("click", function () { stage(""); S.retries = 0; if (S.evicted) evictReopen(); else reopen(); });
   }
 
   // ---------- 워터마크 ----------
@@ -390,7 +397,9 @@
     var i = RATES.indexOf(S.rate); if (i < 0) i = RATES.indexOf(1);
     i = Math.max(0, Math.min(RATES.length - 1, i + dir)); setRate(RATES[i]);
   }
-  function togglePlay() { if (P.v.paused) { stage(""); P.v.play().catch(function () {}); } else P.v.pause(); }
+  // L-5: 밀려난 상태에선 재생 조작을 받지 않는다 — Space/K·컨트롤이 오버레이를 지우고 기존 소스를
+  // 이어 재생하면 상한이 무력화된다 (Codex 후속 r1 #11). 재개는 evictReopen(사람 손)만.
+  function togglePlay() { if (S.evicted) return; if (P.v.paused) { stage(""); P.v.play().catch(function () {}); } else P.v.pause(); }
   function toggleFs() {
     var el = P.player;
     if (document.fullscreenElement || el.classList.contains("fs-css")) {
@@ -447,7 +456,8 @@
   // ---------- 바인딩 ----------
   function bindPlayer() {
     var v = P.v, pl = P.player;
-    v.addEventListener("play", function () { P.bPlay.innerHTML = ICON.pause; P.bPlay.setAttribute("aria-label", "일시정지"); pl.classList.add("playing"); pushEv("play", v.currentTime); startBeat(); idleReset(); S.lastT = v.currentTime; });
+    // 밀려난 상태의 어떤 경로(챕터 점프, 책갈피 점프, 큰 재생 버튼)로도 재생이 시작되면 즉시 되돌린다 (r1 #11)
+    v.addEventListener("play", function () { if (S.evicted) { v.pause(); evictOverlay(); return; } P.bPlay.innerHTML = ICON.pause; P.bPlay.setAttribute("aria-label", "일시정지"); pl.classList.add("playing"); pushEv("play", v.currentTime); startBeat(); idleReset(); S.lastT = v.currentTime; });
     v.addEventListener("pause", function () { P.bPlay.innerHTML = ICON.play; P.bPlay.setAttribute("aria-label", "재생"); pl.classList.remove("playing", "idle"); if (!v.ended) pushEv("pause", v.currentTime); stopBeat(); flushBeat(); });
     v.addEventListener("ended", function () { pushEv("ended", S.dur || v.duration || v.currentTime); stopBeat(); flushBeat(); stage('<div class="box"><h2>강의를 끝까지 보셨습니다</h2><p>다음에 열면 처음부터 시작합니다.</p><div class="row"><button type="button" class="btn" id="againBtn">다시 보기</button><a class="btn ghost" href="lecture.html">내 강의</a></div></div>'); $("againBtn").addEventListener("click", function () { stage(""); seekTo(0, "again"); v.play().catch(function () {}); }); });
     v.addEventListener("timeupdate", function () { accumulate(); updateUi(); });
