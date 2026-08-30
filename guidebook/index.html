@@ -108,8 +108,8 @@
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>가이드북</span></nav>
     <h1 class="rv">학교별 2027 면접 가이드북</h1>
-    <p class="lede rv">면접 후기와 공식 요강으로 재구성한 학교별 면접의 실제, 38권. 권당 33,000원이며, 구매 후 보안 리더로 열람하실 수 있습니다. 파일로 소장하실 분을 위한 PDF 소장판(권당 110,000원, 구매 계정 각인)은 각 권 페이지에서 담을 수 있습니다. 가나다 순입니다.</p>
-     <!-- aeo --><p class="aeo-answer">학교별 2027 면접 가이드북은 대학별 실제 질문, 전형별 면접 제원과 생기부 전환 규칙을 담았습니다. 권당 33,000원이며 회원은 보안 리더로 열람합니다. PDF 소장판은 권당 110,000원입니다.</p><!-- /aeo -->
+    <p class="lede rv">면접 후기와 공식 요강으로 재구성한 학교별 면접의 실제, 38권. 권당 33,000원이며, 구매 후 보안 리더로 열람하실 수 있습니다. 가나다 순입니다.</p>
+     <!-- aeo --><p class="aeo-answer">학교별 2027 면접 가이드북은 대학별 실제 질문, 전형별 면접 제원과 생기부 전환 규칙을 담았습니다. 권당 33,000원이며 회원은 보안 리더로 열람합니다.</p><!-- /aeo -->
 </div>
     <div class="facts rv">
       <div><b>38</b><span>권, 38권 판매 중</span></div>
@@ -146,6 +146,7 @@
           <b>전권 열람권 627,000원</b> <small>(개별 합산 1,254,000원)</small>, 38권 보안 뷰어 열람<br>
           <b>전권 PDF 소장판 2,090,000원</b> <small>(개별 합산 4,180,000원)</small>, 38권 파일 내려받기와 열람, 구매 계정 각인
         </p>
+        <p style="margin-top:8px;font-size:13px;color:var(--gray)">보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
       </div>
       <div class="acts" style="flex-direction:column;justify-content:center">
         <button type="button" class="btn" data-cart-sku="guide-all-view" data-cart-title="2027 면접 가이드북 전권 열람권, 38권" data-cart-price="627000">전권 열람권 담기</button>
@@ -232,8 +233,8 @@ var HH_GB=[{"slug":"dgist","sku":"guide-dgist","name":"DGIST(대구경북과학�
   q.addEventListener('input',render); render();
   if(qs){grid.scrollIntoView({block:'start'})}
   // 리빌, 모바일 메뉴, 헤더 검색 pill(q1 → q2) 위임 = assets/app.js 공통
-  // 담기: 카드가 재렌더되므로 위임 바인딩 (전권 카드는 정적이지만 같은 위임을 문서 레벨로)
-  document.addEventListener('click',function(ev){var el=ev.target.closest('[data-cart-sku]');if(!el||!window.HH)return;ev.preventDefault();
+  // 담기: 카드가 재렌더되므로 위임 바인딩
+  grid.addEventListener('click',function(ev){var el=ev.target.closest('[data-cart-sku]');if(!el||!window.HH)return;ev.preventDefault();
     HH.addToCart({sku:el.dataset.cartSku,title:el.dataset.cartTitle,price:+el.dataset.cartPrice,qty:1,ship:false});
     if(confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?'))location.href='../cart.html'});
 })();
