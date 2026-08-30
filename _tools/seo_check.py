@@ -225,6 +225,49 @@ def main():
             fails.append(f"sitemap 잉여: {u}")
     R.add("(d) sitemap == 색인 페이지", fails, warns, len(want))
 
+    # (e2) robots.txt 3범주 (build_sitemap.py 의 목록과 실제 파일 대조 — 학습봇 전면 거부, 검색봇 허용 + noindex 경로 Disallow, Content-Signal)
+    fails, warns = [], []
+    import build_sitemap as BS
+    rb_path = os.path.join(C.ROOT, "robots.txt")
+    if not os.path.exists(rb_path):
+        fails.append("robots.txt 없음")
+    else:
+        groups, cur = [], None
+        for ln in open(rb_path, encoding="utf-8").read().splitlines():
+            ln = ln.strip()
+            if not ln or ln.startswith("#"):
+                cur = None; continue
+            k, _, v = ln.partition(":"); k, v = k.strip().lower(), v.strip()
+            if k == "user-agent":
+                if cur is None or cur["rules"]:
+                    cur = {"agents": [], "rules": []}; groups.append(cur)
+                cur["agents"].append(v)
+            elif k == "sitemap":
+                cur = None
+            elif cur is not None:
+                cur["rules"].append((k, v))
+        by_agent = {}
+        for g in groups:
+            for a in g["agents"]:
+                by_agent[a.lower()] = g["rules"]
+        want_dis = set(BS.robots_disallows(m))
+        for b in BS.TRAIN_BOTS:
+            r = by_agent.get(b.lower())
+            if r is None: fails.append(f"학습봇 미등재: {b}")
+            elif ("disallow", "/") not in r or ("allow", "/") in r: fails.append(f"학습봇 {b}: Disallow: / 아님")
+            elif not any(k == "content-signal" and "ai-train=no" in v for k, v in r): fails.append(f"학습봇 {b}: Content-Signal ai-train=no 없음")
+        for b in BS.SEARCH_BOTS + BS.AGENT_BOTS + ["*"]:
+            r = by_agent.get(b.lower())
+            if r is None: fails.append(f"허용봇 미등재: {b}"); continue
+            if ("allow", "/") not in r or ("disallow", "/") in r: fails.append(f"허용봇 {b}: Allow: / 아님")
+            got_dis = {f"Disallow: {v}" for k, v in r if k == "disallow"}
+            for d in sorted(want_dis - got_dis): fails.append(f"허용봇 {b}: {d} 누락")
+            if not any(k == "content-signal" and "ai-input=yes" in v and "ai-train=no" in v for k, v in r):
+                fails.append(f"허용봇 {b}: Content-Signal search/ai-input=yes, ai-train=no 없음")
+        if f"Sitemap: {C.base_url(m)}/sitemap.xml" not in open(rb_path, encoding="utf-8").read():
+            fails.append("Sitemap 라인 없음")
+    R.add("(e2) robots 3범주", fails, warns, len(BS.TRAIN_BOTS) + len(BS.SEARCH_BOTS) + len(BS.AGENT_BOTS) + 1)
+
     # (e) title 유일, description
     fails, warns = [], []
     titles = {}

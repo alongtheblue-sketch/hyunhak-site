@@ -1,0 +1,18 @@
+# 업로드 제외 (Workers static assets). 공개 자산만 올린다.
+_worker/
+_tools/
+_docs/
+_design/
+design/
+outputs/
+.git/
+.gitignore
+.assetsignore
+wrangler.toml
+CNAME
+node_modules/
+.wrangler/
+__pycache__/
+*.py
+*.pyc
+.DS_Store

@@ -1,3 +1,5 @@
 __pycache__/
 *.pyc
 design/_gen/
+.wrangler/
+node_modules/

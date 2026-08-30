@@ -579,19 +579,21 @@
     if (!slug) { fail("잘못된 접근입니다."); return; }
     // 프레임 안 렌더 금지 (meta CSP 의 frame-ancestors 는 브라우저가 무시한다. Codex r1 #15)
     try { if (window.top !== window.self) { block("프레임 안에서는 열 수 없습니다. hyunhak.com 에서 직접 열어 주세요."); return; } } catch (e) { block("프레임 안에서는 열 수 없습니다."); return; }
+    // 자동화 신호는 서버에 실어 보내 서버가 판정한다 (2026-08-30): 예외 회원(automation_exempt, 개발자 QA)은 토큰을 받고,
+    // 그 외는 토큰 없이 403 code=automation 으로 막힌다. 신호 2개 이상이어도 토큰 발급 전이라 본문은 새지 않는다.
     var sig = automationSignals();
-    if (sig.length >= 2) { reportEvent("automation"); block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
 
     fetch(API + "/api/reader/open", {
       method: "POST", credentials: "include",
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug }),
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, sig: sig }),
     }).then(function (r) {
       if (r.status === 401) { location.href = "login.html?next=" + encodeURIComponent("reader.html?slug=" + slug); throw "redirect"; }
       return r.json().then(function (d) { d._status = r.status; return d; });
     }).then(function (d) {
+      if (d._status === 403 && d.code === "automation") { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
       if (d._status === 403) { fail("구매 후 열람할 수 있는 자료입니다."); return; }
       if (!d.token) { fail(String(d.error || "열 수 없습니다.")); return; }
-      state.token = d.token; state.pages = d.pages; state.email = String(d.email || "");
+      state.token = d.token; state.pages = d.pages; state.email = String(d.email || ""); state.exempt = !!d.exempt;
       state.toc = Array.isArray(d.toc) ? d.toc : []; state.search = !!d.search;
       if (Array.isArray(d.size) && d.size.length === 2 && d.size[0] > 0 && d.size[1] > 0)
         document.documentElement.style.setProperty("--pgar", d.size[0] + " / " + d.size[1]);
@@ -646,7 +648,7 @@
   });
   // 런타임 자동화 재검사(지연 주입 대비)
   setInterval(function () {
-    if (automationSignals().length >= 2 && curtain.style.display !== "flex") {
+    if (!state.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") {
       reportEvent("automation"); block("지원하지 않는 접속 환경입니다.");
     }
   }, 4000);

@@ -1,0 +1,28 @@
+# hyunhak.com 정적 사이트 (Workers static assets). 2026-08-30 GitHub Pages 에서 이전.
+# 배포 = _tools/deploy.sh (빌드 → clean 확인 → wrangler deploy → 엣지 스모크 → IndexNow).
+# 라우트는 존 DNS 가 프록시(주황 구름)일 때만 산다. 되돌리기 = DNS 프록시 끄기(회색 구름) → GitHub Pages 가 다시 받는다.
+name = "hyunhak-site"
+main = "_worker/index.js"
+compatibility_date = "2026-08-01"
+workers_dev = true
+
+routes = [
+  { pattern = "hyunhak.com/*", zone_name = "hyunhak.com" },
+  { pattern = "www.hyunhak.com/*", zone_name = "hyunhak.com" },
+]
+
+[assets]
+directory = "."
+binding = "ASSETS"
+html_handling = "none"          # .html canonical 을 그대로 둔다 (auto 모드는 /about.html → /about 307 로 canonical 전부 바꿈)
+not_found_handling = "none"     # 404 는 워커가 404.html 로
+run_worker_first = true
+
+# 답변엔진 유입 원장 (ai_referrals) — api 와 같은 DB
+[[d1_databases]]
+binding = "DB"
+database_name = "hyunhak"
+database_id = "4ca5634e-28dc-47f2-a188-3171c9d2490b"
+
+[observability]
+enabled = true

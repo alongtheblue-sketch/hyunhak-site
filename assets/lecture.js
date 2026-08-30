@@ -105,6 +105,7 @@
   var P = {};                    // DOM 참조
 
   function buildViewer(d) {
+    S.exempt = !!d.exempt;
     S.token = d.token; S.sid = d.session_id; S.seq = Number(d.seq) || 0; S.dur = Number(d.duration_sec) || 0; S.chapters = d.chapters || []; S.bookmarks = d.bookmarks || [];
     S.email = d.email || ""; S.vtt = !!d.vtt; S.rate = Number(d.rate) || 1; S.resume = Number(d.resume_sec) || 0; S.viewCount = d.view_count || 1; S.title = d.title || "";
     titleEl.textContent = d.title || "강의";
@@ -536,7 +537,7 @@
       else { pl.style.filter = ""; S.closed = false; }
     });
     // 런타임 자동화 재검사(지연 주입 대비)
-    setInterval(function () { if (automationSignals().length >= 2 && curtain.style.display !== "flex") { v.pause(); block("지원하지 않는 접속 환경입니다."); } }, 4000);
+    setInterval(function () { if (!S.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") { v.pause(); block("지원하지 않는 접속 환경입니다."); } }, 4000);
   }
   function bindTabs() {
     var sel = function (which) {
@@ -552,10 +553,11 @@
   function notice(h, p, acts) { view.innerHTML = '<div class="notice"><h2>' + h + "</h2><p>" + p + '</p><div class="acts">' + (acts || '<a class="btn ghost sm" href="lecture.html">내 강의</a><a class="btn ghost sm" href="my.html">마이페이지</a>') + "</div></div>"; }
   function boot() {
     if (!lectureId) return renderList();
+    // 자동화 신호는 서버가 판정한다 (2026-08-30): 예외 회원(automation_exempt)은 통과, 그 외는 토큰 없이 403 code=automation
     var sig = automationSignals();
-    if (sig.length >= 2) { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
-    apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: lectureId }) }).then(function (d) {
+    apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: lectureId, sig: sig }) }).then(function (d) {
       if (d._status === 401) return loginRedirect();
+      if (d._status === 403 && d.code === "automation") { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
       if (d._status === 403) return notice("이용권이 있는 회원만 시청할 수 있습니다", "이 강의는 해당 지문 이용권이나 강의 상품에 포함됩니다. 구매한 계정으로 로그인했는지 확인해 주세요.", '<a class="btn sm" href="studio.html">면접 스튜디오 이용권</a><a class="btn ghost sm" href="lecture.html">내 강의</a>');
       if (d._status === 404) return notice("강의를 찾을 수 없습니다", "주소가 바뀌었거나 공개가 끝난 강의입니다.");
       if (d._status === 409) return notice("영상을 준비하고 있습니다", d.has_script ? "대본은 준비되었고 영상을 제작하는 중입니다. 공개되면 이 자리에서 바로 재생됩니다. 공개 일정은 확정되지 않았습니다." : "이 강의는 아직 제작 전입니다. 공개되면 이 자리에서 바로 재생됩니다.");

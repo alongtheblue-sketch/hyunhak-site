@@ -67,15 +67,39 @@ def build_sitemap(m, pages):
     return "\n".join(lines) + "\n"
 
 
-def build_robots(m):
-    lines = ["User-agent: *", "Allow: /"]
+# ---------- robots.txt: 크롤러 3범주 분리 (2026-08-30 AI 접근통제 + GEO) ----------
+# 공개층(이 사이트의 모든 색인 페이지)은 "인용해도 된다"가 정책이다. 검색 색인봇과 사용자 대행 fetcher 는 허용하고
+# 모델 학습 크롤러만 전면 거부한다. 보호층(가이드북 본문, 인강, 스튜디오)은 로그인 뒤라 robots 의 대상이 아니다.
+# robots 는 권고이고 강제는 Cloudflare 존 정책(AI bot policies + WAF 룰)이 한다. 목록 갱신 시 seo_check (e2) 가 같이 검사한다.
+SEARCH_BOTS = ["Googlebot", "Googlebot-Image", "Bingbot", "Yeti", "Daum", "Applebot",
+               "OAI-SearchBot", "Claude-SearchBot", "PerplexityBot", "DuckAssistBot", "YouBot"]
+AGENT_BOTS = ["ChatGPT-User", "Claude-User", "Perplexity-User", "Meta-ExternalFetcher", "MistralAI-User", "Google-CloudVertexBot"]
+TRAIN_BOTS = ["GPTBot", "ClaudeBot", "anthropic-ai", "CCBot", "Google-Extended", "Applebot-Extended", "Bytespider",
+              "meta-externalagent", "Amazonbot", "cohere-ai", "Diffbot", "omgili", "ImagesiftBot", "AI2Bot", "PanguBot", "Timpibot"]
+SIGNAL_PUBLIC = "Content-Signal: search=yes, ai-input=yes, ai-train=no"
+SIGNAL_TRAIN = "Content-Signal: search=no, ai-input=no, ai-train=no"
+
+
+def robots_disallows(m):
+    out = []
     for rel in C.list_pages():
         e = C.resolve_entry(m, rel)
         if e and e["noindex"] and rel != "404.html":
             if rel == "insta.html": continue   # meta noindex 로 충분 — IG/FB 링크 미리보기 크롤러(robots 준수)의 og 수집 허용
-            lines.append(f"Disallow: /{rel}")
-    lines.append("Disallow: /_tools/")
-    lines.append("")
+            out.append(f"Disallow: /{rel}")
+    out.append("Disallow: /_tools/")
+    return out
+
+
+def build_robots(m):
+    dis = robots_disallows(m)
+    lines = ["# 현학적 연구소 robots.txt — _tools/build_sitemap.py 가 생성한다 (직접 편집 금지)",
+             "# 공개 페이지 = 검색 색인과 답변엔진 인용 허용(search, ai-input). 모델 학습(ai-train)만 거부.",
+             "# 본문(가이드북, 인강, 스튜디오)은 로그인 뒤 보안 리더에 있어 여기 없다.", ""]
+    lines += ["# 검색 색인봇 (허용)"] + [f"User-agent: {b}" for b in SEARCH_BOTS] + [SIGNAL_PUBLIC, "Allow: /"] + dis + [""]
+    lines += ["# 사용자 대행 fetcher (허용 — 사람이 물어본 페이지를 읽어 답한다)"] + [f"User-agent: {b}" for b in AGENT_BOTS] + [SIGNAL_PUBLIC, "Allow: /"] + dis + [""]
+    lines += ["# 모델 학습 크롤러 (전면 거부)"] + [f"User-agent: {b}" for b in TRAIN_BOTS] + [SIGNAL_TRAIN, "Disallow: /", ""]
+    lines += ["# 그 외"] + ["User-agent: *", SIGNAL_PUBLIC, "Allow: /"] + dis + [""]
     lines.append(f"Sitemap: {C.base_url(m)}/sitemap.xml")
     return "\n".join(lines) + "\n"
 

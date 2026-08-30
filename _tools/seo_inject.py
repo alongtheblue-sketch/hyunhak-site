@@ -189,7 +189,7 @@ def build_graph(m, rel, e, page_html):
         if sch.get("sku"):
             prod["sku"] = sch["sku"]
         if sch.get("about"):
-            prod["about"] = {"@type": "CollegeOrUniversity", "name": sch["about"]}
+            prod["about"] = {"@type": sch.get("about_type", "CollegeOrUniversity"), "name": sch["about"]}
         delivery = sch.get("delivery", "digital")
         ret = return_policy(m, delivery)
         out = []
@@ -217,7 +217,7 @@ def build_graph(m, rel, e, page_html):
                "url": url, "mainEntityOfPage": {"@id": url + "#webpage"}, "image": image,
                "author": {"@id": org_id(m)}, "publisher": {"@id": org_id(m)}, "inLanguage": lang}
         if sch.get("about"):
-            art["about"] = {"@type": "CollegeOrUniversity", "name": sch["about"]}
+            art["about"] = {"@type": sch.get("about_type", "CollegeOrUniversity"), "name": sch["about"]}   # about_type: 비대학 페이지(b2b 등)는 manifest 가 지정
         if e.get("date_published"):
             art["datePublished"] = e["date_published"]
         if e.get("date_modified"):
