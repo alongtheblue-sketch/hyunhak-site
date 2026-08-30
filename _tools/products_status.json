@@ -1,0 +1,473 @@
+{
+ "generated_at": "2026-08-30T02:59:30.329467+00:00",
+ "products": [
+  {
+   "sku": "guide-ajou",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-ajou-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-all-pdf",
+   "status": "active",
+   "price": 2090000,
+   "type": "bundle_file"
+  },
+  {
+   "sku": "guide-all-view",
+   "status": "active",
+   "price": 627000,
+   "type": "bundle_view"
+  },
+  {
+   "sku": "guide-catholic",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-catholic-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-cau",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-cau-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-dankook",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-dankook-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-dgist",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-dgist-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-donga",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-donga-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-dongduk",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-dongduk-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-dongguk",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-dongguk-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-duksung",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-duksung-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-ewha",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-ewha-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-gachon",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-gachon-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-hanyang-erica",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-hanyang-erica-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-hongik",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-hongik-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-hufs",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-hufs-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-incheon",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-incheon-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-inha",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-inha-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-khu",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-khu-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-knu",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-knu-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-konkuk",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-konkuk-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-kookmin",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-kookmin-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-korea",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-korea-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-kwangwoon",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-kwangwoon-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-kyonggi",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-kyonggi-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-myongji",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-myongji-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-pknu",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-pknu-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-pusan",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-pusan-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-sahmyook",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-sahmyook-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-sejong",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-sejong-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-seoultech",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-seoultech-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-skku",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-skku-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-snu",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-snu-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-sookmyung",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-sookmyung-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-soongsil",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-soongsil-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-sungshin",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-sungshin-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-swu",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-swu-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-ulsan",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-ulsan-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-uos",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-uos-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  },
+  {
+   "sku": "guide-yonsei",
+   "status": "active",
+   "price": 33000,
+   "type": "digital"
+  },
+  {
+   "sku": "guide-yonsei-pdf",
+   "status": "active",
+   "price": 110000,
+   "type": "digital_file"
+  }
+ ]
+}

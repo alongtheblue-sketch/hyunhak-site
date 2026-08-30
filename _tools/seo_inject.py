@@ -9,10 +9,33 @@ manifest.title 이 <title> 과 다르면 <title> 텍스트를 manifest 로 맞�
 사용: python3 _tools/seo_inject.py [--dry-run] [--only path.html,...]
 """
 import json
+import os
 import re
 import sys
 
 import seo_common as C
+
+# READER-FOLLOWUP 3 (2026-08-30): JSON-LD availability DB 연동.
+# products_status.json = 원격 D1 products 실측 내보내기 (export_products_status.sh 가 생성).
+# 있으면 offer 의 availability 와 price 를 DB 값으로 덮고, 소장판(-pdf) offer 가 manifest 에 빠졌으면 채운다.
+# 없으면 manifest 값 그대로 (오프라인 빌드 무해). 수기 카드가 재빌드에 소실되던 함정과 같은 계열이라
+# 소장판 offer 는 manifest 가 아니라 DB 를 원장으로 삼는다.
+PRODUCTS_STATUS_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "products_status.json")
+
+
+def load_products_status():
+    try:
+        with open(PRODUCTS_STATUS_PATH, encoding="utf-8") as f:
+            return {r["sku"]: r for r in json.load(f)["products"]}
+    except (OSError, ValueError, KeyError, TypeError):
+        return {}
+
+
+PRODUCTS = load_products_status()
+
+
+def db_avail(p):
+    return "InStock" if p.get("status") == "active" else "OutOfStock"
 
 DUP_PATTERNS = [
     re.compile(r'[ \t]*<link[^>]*rel=["\']canonical["\'][^>]*>[ \t]*\r?\n?', re.I),
@@ -154,6 +177,19 @@ def build_graph(m, rel, e, page_html):
         offers = sch.get("offers")
         if not offers and sch.get("price") is not None:
             offers = [{"name": sch.get("offer_name"), "price": sch["price"], "sku": sch.get("sku")}]
+        if PRODUCTS and offers:
+            offers = [dict(o) for o in offers]
+            for o in offers:
+                p = PRODUCTS.get(o.get("sku"))
+                if p:
+                    o["availability"] = db_avail(p)
+                    if p.get("price") is not None:
+                        o["price"] = p["price"]
+            base = offers[0].get("sku")
+            pdf = PRODUCTS.get(base + "-pdf") if base else None
+            if pdf and all(o.get("sku") != base + "-pdf" for o in offers):
+                offers.append({"name": "PDF 소장판 (파일 내려받기)", "price": pdf.get("price"),
+                               "sku": base + "-pdf", "availability": db_avail(pdf)})
         prod = {"@type": "Product", "@id": url + "#product", "name": sch.get("product_name") or title,
                 "description": desc, "url": url, "image": image,
                 "brand": {"@type": "Brand", "name": site["name"]}}
