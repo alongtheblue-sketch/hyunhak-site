@@ -92,7 +92,11 @@ def main():
         if isinstance(prods, dict):
             prods = prods.get("products", [])
         by = {p.get("sku"): p for p in prods}
-        n_guide = sum(1 for p in prods if str(p.get("sku", "")).startswith("guide-"))
+        # guide- 접두는 기본 38 + 소장판 -pdf 38 + 번들 2 = 78 이라 전부 세면 38 단언이 상시 거짓 FAIL.
+        # 세는 대상은 학교별 기본 상품만 (2026-08-31 정정)
+        n_guide = sum(1 for p in prods if str(p.get("sku", "")).startswith("guide-")
+                      and not str(p.get("sku", "")).endswith("-pdf")
+                      and not str(p.get("sku", "")).startswith("guide-all"))
         n_pass = sum(1 for p in prods if str(p.get("sku", "")).startswith("pass-") and p.get("price") == 396000)
         print(f"products guide={n_guide} pass396k={n_pass} passage={by.get('passage-single', {}).get('price')}")
         if n_guide != 38: fails.append(f"guide active {n_guide} != 38")
