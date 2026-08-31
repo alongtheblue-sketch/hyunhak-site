@@ -1,0 +1,94 @@
+/* ============================================================
+   현학적 연구소 「읽은 사람」 프로필 컴포넌트 (시안 3안)
+   2026-08-31 초안. 승인 후 base.css v2 스코프에 병합.
+   토큰 = base.css :root 그대로. 신규 색 0, 신규 폰트 0.
+   ============================================================ */
+
+/* ---------- 공통 골격 ---------- */
+:where(body.v2) .maker{border-radius:6px;overflow:hidden}
+:where(body.v2) .maker .eyebrow{margin-bottom:var(--s4)}
+:where(body.v2) .maker .nm{font-size:clamp(26px,2.7vw,34px);font-weight:700;letter-spacing:-0.025em;line-height:1.2}
+:where(body.v2) .maker .nm small{display:inline-block;margin-left:12px;font-family:var(--serif);font-weight:300;font-size:16px;letter-spacing:.06em;color:var(--gray);vertical-align:baseline}
+:where(body.v2) .maker .num{font-family:var(--serif);font-weight:300;font-variant-numeric:tabular-nums;line-height:.9;letter-spacing:-0.03em}
+:where(body.v2) .maker .num em{display:block;font-style:normal;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--gray);margin-top:var(--s3)}
+
+/* ---------- A안 판권면 (권고) : 楮紙 + 괘선 원장 ---------- */
+:where(body.v2) .maker.a{background:var(--mat);padding:var(--s7);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--s8);align-items:start}
+:where(body.v2) .maker.a dl{margin-top:var(--s5);display:grid;grid-template-columns:104px minmax(0,1fr)}
+:where(body.v2) .maker.a dt{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gray);padding:14px 0;border-top:1px solid var(--hair)}
+:where(body.v2) .maker.a dd{font-size:15px;line-height:1.7;color:var(--ink);padding:13px 0;border-top:1px solid var(--hair)}
+:where(body.v2) .maker.a dd b{font-weight:700}
+:where(body.v2) .maker.a dd .tn{font-variant-numeric:tabular-nums}
+:where(body.v2) .maker.a .colo{margin-top:var(--s4);font-size:12px;color:var(--gray);letter-spacing:.04em}
+:where(body.v2) .maker.a .colo .han{font-family:var(--serif);font-weight:300}
+:where(body.v2) .maker.a .side{display:grid;justify-items:center;align-content:start;gap:var(--s4);padding-top:var(--s2)}
+:where(body.v2) .maker.a .num{font-size:clamp(120px,12vw,168px);color:var(--ink)}
+:where(body.v2) .maker.a .seal{width:44px;height:44px;border:1.5px solid var(--seal);color:var(--seal);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:22px;border-radius:2px}
+
+/* ---------- B안 명함 : 玄褐 밴드 + 金泥 락업 + 楮紙 정보 ---------- */
+:where(body.v2) .maker.b{background:var(--brown);color:var(--paper-2);padding:var(--s8) var(--s7);display:grid;grid-template-columns:minmax(0,4fr) minmax(0,7fr) auto;gap:var(--s7);align-items:center}
+:where(body.v2) .maker.b .lockup{color:var(--gold);display:grid;gap:var(--s3);justify-items:start}
+:where(body.v2) .maker.b .lockup svg{width:64px;height:auto}
+:where(body.v2) .maker.b .lockup b{font-family:var(--serif);font-weight:700;font-size:19px;letter-spacing:-0.01em}
+:where(body.v2) .maker.b .who .eyebrow{color:rgba(239,233,220,.62)}
+:where(body.v2) .maker.b .nm{color:var(--paper-2)}
+:where(body.v2) .maker.b .nm small{color:rgba(239,233,220,.62)}
+:where(body.v2) .maker.b .rows{margin-top:var(--s4);display:grid;gap:10px;font-size:15px;line-height:1.6}
+:where(body.v2) .maker.b .rows span{display:block;border-top:1px solid rgba(239,233,220,.22);padding-top:10px}
+:where(body.v2) .maker.b .rows .tn{font-variant-numeric:tabular-nums}
+:where(body.v2) .maker.b .vert{writing-mode:vertical-rl;font-family:var(--serif);font-weight:300;font-size:15px;letter-spacing:.42em;color:rgba(239,233,220,.55);align-self:stretch;display:flex;align-items:flex-start}
+
+/* ---------- C안 자(尺) : 13년 눈금자 ---------- */
+:where(body.v2) .maker.c{background:var(--card);border:1px solid var(--hairs);padding:var(--s7)}
+:where(body.v2) .maker.c .ruler{margin-top:var(--s6);border-top:2px solid var(--ink);display:grid;grid-template-columns:repeat(13,1fr);position:relative}
+:where(body.v2) .maker.c .ruler::after{content:"";position:absolute;top:0;right:0;width:2px;height:12px;background:var(--seal)}
+:where(body.v2) .maker.c .ruler i{font-style:normal;font-size:12px;font-weight:600;color:var(--gray);font-variant-numeric:tabular-nums;padding-top:10px;position:relative;text-align:center}
+:where(body.v2) .maker.c .ruler i::before{content:"";position:absolute;top:0;left:0;width:1px;height:8px;background:var(--hair)}
+:where(body.v2) .maker.c .ruler i:last-child{color:var(--seal);font-weight:700}
+
+:where(body.v2) .maker.c .cap13{margin-top:var(--s3);display:flex;justify-content:flex-end;font-size:13px;color:var(--ink)}
+:where(body.v2) .maker.c .cap13 b{font-weight:700}
+:where(body.v2) .maker.c .cols{margin-top:var(--s6);display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
+:where(body.v2) .maker.c .cols div{border-top:1px solid var(--hair);padding-top:var(--s3)}
+:where(body.v2) .maker.c .cols h4{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gray)}
+:where(body.v2) .maker.c .cols p{font-size:15px;line-height:1.7;margin-top:8px;color:var(--ink)}
+
+/* ---------- 홈 컴팩트 밴드 (A안 축약) ---------- */
+:where(body.v2) .makerband{background:var(--card);border:1px solid var(--hairs);box-shadow:0 8px 24px rgba(49,46,46,.06);border-radius:6px;padding:var(--s5) var(--s6);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--s6);align-items:center}
+:where(body.v2) .makerband .num{font-family:var(--serif);font-weight:300;font-size:56px;line-height:.9;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+:where(body.v2) .makerband .num em{display:block;font-style:normal;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--gray);margin-top:8px}
+:where(body.v2) .makerband p{font-size:15px;line-height:1.7;color:var(--ink);max-width:44em}
+:where(body.v2) .makerband p b{font-weight:700}
+:where(body.v2) .makerband .tlink{white-space:nowrap}
+
+/* ---------- 반응형 ---------- */
+@media (max-width:900px){
+  :where(body.v2) .maker.a{grid-template-columns:1fr;gap:var(--s5);padding:var(--s5)}
+  :where(body.v2) .maker.a .side{grid-auto-flow:column;justify-content:start;align-items:center;gap:var(--s5);order:-1}
+  :where(body.v2) .maker.a .num{font-size:96px}
+  :where(body.v2) .maker.b{grid-template-columns:1fr;gap:var(--s5);padding:var(--s6) var(--s5)}
+  :where(body.v2) .maker.b .vert{writing-mode:horizontal-tb;letter-spacing:.3em}
+  :where(body.v2) .maker.c{padding:var(--s5)}
+  :where(body.v2) .maker.c .ruler i{font-size:10px}
+  :where(body.v2) .maker.c .cols{grid-template-columns:1fr}
+  :where(body.v2) .makerband{grid-template-columns:auto minmax(0,1fr);gap:var(--s4);padding:var(--s4) var(--s4)}
+  :where(body.v2) .makerband .tlink{grid-column:2}
+}
+
+/* ---------- 약력(cv) 리스트 (2026-08-31 17:29 건우 약력 반영) ---------- */
+:where(body.v2) .maker .career{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+:where(body.v2) .maker.a .career li{font-size:14px;line-height:1.6;color:var(--body);padding-left:14px;position:relative}
+:where(body.v2) .maker.a .career li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;background:var(--gray)}
+:where(body.v2) .maker.b{grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,5fr) auto}
+:where(body.v2) .maker.b .career{font-size:13.5px;line-height:1.55;color:rgba(239,233,220,.78);align-self:center}
+:where(body.v2) .maker.b .career li{border-top:1px solid rgba(239,233,220,.18);padding-top:8px}
+:where(body.v2) .maker.b .career li:first-child{border-top:0;padding-top:0}
+:where(body.v2) .maker.c .cols.two{grid-template-columns:minmax(0,2fr) minmax(0,3fr)}
+:where(body.v2) .maker.c .cols h4+p+h4{margin-top:var(--s4)}
+:where(body.v2) .maker.c .career li{font-size:14px;line-height:1.6;color:var(--body)}
+:where(body.v2) .maker.c .career li+li{border-top:1px solid var(--hairs);padding-top:8px}
+@media (max-width:900px){
+  :where(body.v2) .maker.b{grid-template-columns:1fr}
+  :where(body.v2) .maker.b .who{order:-1}
+  :where(body.v2) .maker.c .cols.two{grid-template-columns:1fr}
+}

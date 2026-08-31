@@ -268,6 +268,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) footer a{display:inline-block;padding:12px 0;margin:-12px 0}
 :where(body.v2) footer a:hover{color:var(--ink)}
 :where(body.v2) footer .biz{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--hairs);font-size:12px;display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
+/* 전역 img 규칙에 height:auto 가 없어, 330px 사업자 정보가 좁은 폭에서 세로로 눌린다 (2026-08-31) */
+:where(body.v2) footer .biz img{height:auto}
 
 /* 모바일 고정 바 */
 :where(body.v2) .fix{display:none}
@@ -508,3 +510,45 @@ body.v2{background:var(--ink)}
   :where(body.v2) .hh-popup{place-items:end center;padding:0}
   :where(body.v2) .hh-popup-card{width:100%;border-radius:12px 12px 0 0;max-height:80vh}
 }
+
+/* ═══ [2c] 「읽은 사람」 제작자 프로필 (2026-08-31 건우 픽 A 판권면). profile.css 시안에서 A안과 홈 밴드만 승격, B/C 시안 규칙은 미반입 ═══ */
+/* 주의: 시안의 .side 는 위 :where(body.v2) .side (sticky) 와 충돌 → .mk-side 로 개명. 신규 색 0, 신규 폰트 0 */
+:where(body.v2) .maker{border-radius:6px;overflow:hidden}
+:where(body.v2) .maker .eyebrow{margin-bottom:var(--s4)}
+:where(body.v2) .maker .nm{font-size:clamp(26px,2.7vw,34px);font-weight:700;letter-spacing:-0.025em;line-height:1.2}
+:where(body.v2) .maker .nm small{display:inline-block;margin-left:12px;font-family:var(--serif);font-weight:300;font-size:16px;letter-spacing:.06em;color:var(--gray);vertical-align:baseline}
+:where(body.v2) .maker .num{font-family:var(--serif);font-weight:300;font-variant-numeric:tabular-nums;line-height:.9;letter-spacing:-0.03em}
+:where(body.v2) .maker .num em{display:block;font-style:normal;font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.14em;color:var(--gray);margin-top:var(--s3)}
+
+:where(body.v2) .maker.a{background:var(--mat);padding:var(--s7);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--s8);align-items:start}
+:where(body.v2) .maker.a dl{margin-top:var(--s5);display:grid;grid-template-columns:104px minmax(0,1fr)}
+:where(body.v2) .maker.a dt{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gray);padding:14px 0;border-top:1px solid var(--hair)}
+:where(body.v2) .maker.a dd{font-size:15px;line-height:1.7;color:var(--ink);padding:13px 0;border-top:1px solid var(--hair)}
+:where(body.v2) .maker.a dd b{font-weight:700}
+:where(body.v2) .maker.a dd .tn{font-variant-numeric:tabular-nums}
+:where(body.v2) .maker.a .colo{margin-top:var(--s4);font-size:12px;color:var(--gray);letter-spacing:.04em}
+:where(body.v2) .maker.a .colo .han{font-family:var(--serif);font-weight:300}
+:where(body.v2) .maker.a .mk-side{display:grid;justify-items:center;align-self:stretch;align-content:space-between;gap:var(--s4);padding-top:var(--s2)}
+:where(body.v2) .maker.a .num{font-size:clamp(120px,12vw,168px);color:var(--ink)}
+:where(body.v2) .maker.a .seal{width:44px;height:44px;border:1.5px solid var(--seal);color:var(--seal);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:22px;border-radius:2px}
+:where(body.v2) .maker .career{display:grid;gap:8px;list-style:none;margin:0;padding:0}
+:where(body.v2) .maker.a .career li{font-size:14px;line-height:1.6;color:var(--body);padding-left:14px;position:relative}
+:where(body.v2) .maker.a .career li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;background:var(--gray)}
+
+:where(body.v2) .makerband{background:var(--card);border:1px solid var(--hairs);box-shadow:0 8px 24px rgba(49,46,46,.06);border-radius:6px;padding:var(--s5) var(--s6);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--s6);align-items:center}
+:where(body.v2) .makerband .num{font-family:var(--serif);font-weight:300;font-size:56px;line-height:.9;letter-spacing:-0.03em;font-variant-numeric:tabular-nums}
+:where(body.v2) .makerband .num em{display:block;font-style:normal;font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--gray);margin-top:8px}
+:where(body.v2) .makerband p{font-size:15px;line-height:1.7;color:var(--ink);max-width:44em}
+:where(body.v2) .makerband p b{font-weight:700}
+:where(body.v2) .makerband .tlink{white-space:nowrap}
+
+@media (max-width:900px){
+  :where(body.v2) .maker.a{grid-template-columns:1fr;gap:var(--s5);padding:var(--s5)}
+  :where(body.v2) .maker.a .mk-side{grid-auto-flow:column;justify-content:start;align-items:center;align-self:auto;gap:var(--s5);order:-1}
+  :where(body.v2) .maker.a .num{font-size:96px}
+  :where(body.v2) .makerband{grid-template-columns:auto minmax(0,1fr);gap:var(--s4);padding:var(--s4) var(--s4)}
+  :where(body.v2) .makerband .tlink{grid-column:2}
+}
+
+/* 상품 2종 (봉투 모의고사 판매 중단 2026-08-31). .cards 는 3열 고정이라 2장이면 한 칸이 빈다 */
+:where(body.v2) .cards.n2{grid-template-columns:repeat(2,1fr)}

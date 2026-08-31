@@ -63,7 +63,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -75,7 +75,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="store.html">봉투 모의고사</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html" aria-current="page">장바구니</a></div>
   </nav>
 </header>
@@ -87,7 +87,7 @@
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>장바구니</span></nav>
     <h1>장바구니</h1>
-    <p class="lede">이용권과 가이드북은 결제 즉시 열리고, 봉투 모의고사만 배송.</p>
+    <p class="lede">이용권과 가이드북은 결제 즉시 열립니다.</p>
    </div>
   </div>
 </section>
@@ -118,19 +118,19 @@
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="store.html">봉투 모의고사</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
-        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><img src="assets/bizinfo.png" alt="사업자 정보" width="159" height="63" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><img src="assets/bizinfo.png" alt="사업자 정보" width="330" height="168" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
   </div>
 </footer>
 
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // 전권 번들은 목록면으로, 소장판(-pdf)은 원권 표지로 — sku 그대로 slug 를 만들면 존재하지 않는 면·표지 404 (r2 R12)
     if(sku.indexOf('guide-all')===0) return '<a class="thumb" href="guidebook/index.html"><img src="assets/photo/art_figure.png" alt="" width="56" height="79"></a>';
     if(sku.indexOf('guide-')===0){ var slug=sku.slice(6).replace(/-pdf$/,''); return '<a class="thumb" href="guidebook/'+encodeURIComponent(slug)+'.html"><img src="assets/covers/'+encodeURIComponent(slug)+'.jpg" alt="" width="56" height="79"></a>'; }
-    if(sku==='envelope-mock') return '<a class="thumb" href="store.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
+    if(sku==='envelope-mock') return '<a class="thumb" href="index.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
     return '<a class="thumb" href="studio.html"><span class="thumb-txt">'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>';
   }
   // 1개 한정 상품 (서버도 400 으로 막지만, 화면에서 수량 조절을 없애 마찰을 줄인다)

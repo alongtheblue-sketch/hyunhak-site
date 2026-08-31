@@ -41,7 +41,7 @@ def main():
     s, b = get(SITE + "/")
     t = b.decode("utf-8", "ignore")
     # 홈 마커 = 플랫폼 v2 (2026-08-26). 구 전람 v1 마커(heroFilm, 3400ms)는 폐기
-    for needle in ['<body class="v2">', "og_aigen.jpg", 'id="tiles"', "assets/covers/snu.jpg", "영어 봉투 모의고사 8회분 세트"]:
+    for needle in ['<body class="v2">', "og_aigen.jpg", 'id="tiles"', "assets/covers/snu.jpg"]:
         ok = needle in t
         print(f"home {'ok' if ok else 'MISSING'} {needle}")
         if not ok:
@@ -94,11 +94,10 @@ def main():
         by = {p.get("sku"): p for p in prods}
         n_guide = sum(1 for p in prods if str(p.get("sku", "")).startswith("guide-"))
         n_pass = sum(1 for p in prods if str(p.get("sku", "")).startswith("pass-") and p.get("price") == 396000)
-        print(f"products guide={n_guide} pass396k={n_pass} passage={by.get('passage-single', {}).get('price')} envelope={by.get('envelope-mock', {}).get('title')}")
+        print(f"products guide={n_guide} pass396k={n_pass} passage={by.get('passage-single', {}).get('price')}")
         if n_guide != 38: fails.append(f"guide active {n_guide} != 38")
         if n_pass != 8: fails.append(f"pass 396,000 {n_pass} != 8")
         if by.get("passage-single", {}).get("price") != 33000: fails.append("passage-single 33,000 아님")
-        if "8회분" not in str(by.get("envelope-mock", {}).get("title", "")): fails.append("envelope 8회분 세트 아님")
     print("FAIL" if fails else "PASS", fails)
     sys.exit(1 if fails else 0)
 

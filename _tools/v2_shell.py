@@ -11,15 +11,14 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
           'M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>')
 
 # (href, label, 현재 페이지 매칭 키) — 키가 '/' 로 끝나면 디렉토리 prefix 매칭
-# 앞 4 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 6개가 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
+# 앞 2 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
 GNB = [
     ("guidebook/index.html", "가이드북", ("guidebook/",)),
     ("studio.html", "면접 스튜디오", ("studio.html",)),
-    ("store.html", "봉투 모의고사", ("store.html",)),
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
 ]
-GNB_GROUP_BREAK = 3   # 이 인덱스 항목부터 부가 묶음 (파는 것 3, 부가 2 — 무료 아카이브 폐지 2026-08-26)
+GNB_GROUP_BREAK = 2   # 이 인덱스 항목부터 부가 묶음 (파는 것 2, 부가 2 — 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
     ("index.html#find", "대학 찾기", (), False, "find"),
@@ -112,7 +111,7 @@ def footer(rel):
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오, 영어 봉투 모의고사.</p>
+        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
@@ -121,10 +120,10 @@ def footer(rel):
       </div>
       <div>
         <h4>고객센터</h4>
-        <ul><li>이메일 admin@hyunhak.com</li><li>배송 평일 오후 2시 이전 주문 당일 출고</li><li>배송비 3,000원, 5만원 이상 무료</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
+        <ul><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><img src="{p}assets/bizinfo.png" alt="사업자 정보" width="159" height="63" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="{p}terms.html">이용약관</a> &nbsp; <a href="{p}privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><img src="{p}assets/bizinfo.png" alt="사업자 정보" width="330" height="168" loading="lazy" decoding="async"><nav aria-label="법적 고지"><a href="{p}terms.html">이용약관</a> &nbsp; <a href="{p}privacy.html">개인정보처리방침</a></nav></div>
   </div>
 </footer>'''
 
