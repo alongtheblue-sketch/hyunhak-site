@@ -1,0 +1,4 @@
+# GitHub Pages(Jekyll) 게시 제외 — 워커 설정 파일은 정적 공개 대상이 아니다 (2026-08-31, DNS 프록시 전 GH Pages 서빙 구간의 노출 차단).
+# 밑줄 디렉토리(_worker, _tools, _docs)는 Jekyll 기본 제외라 여기 없다.
+exclude:
+  - wrangler.toml

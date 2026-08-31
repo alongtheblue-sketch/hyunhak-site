@@ -16,3 +16,4 @@ __pycache__/
 *.py
 *.pyc
 .DS_Store
+_config.yml
