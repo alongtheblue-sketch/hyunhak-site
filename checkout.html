@@ -249,6 +249,8 @@ document.addEventListener('DOMContentLoaded', async function(){
   // 결제사가 둘이다. 토스는 위젯이 결제수단 화면을 그려 주고, 포트원에는 그런 위젯이 없어
   // 우리가 직접 그린다. 두 드라이버가 같은 계약(ready/setAmount/requestPayment)을 만족하므로
   // 아래 결제 버튼 처리는 어느 쪽이든 한 벌로 돈다.
+  function digits(v){ return String(v == null ? '' : v).replace(/\D/g, ''); }
+
   function loadScript(src){
     return new Promise(function(res, rej){
       var el = document.createElement('script'); el.src = src; el.async = true;
@@ -297,12 +299,18 @@ document.addEventListener('DOMContentLoaded', async function(){
       async ready(){
         await loadScript('https://cdn.portone.io/v2/browser-sdk.js');
         if(!window.PortOne) throw new Error('결제 모듈을 불러오지 못했습니다');
+        // 이니시스 V2 일반결제는 구매자 휴대폰 번호가 필수다. 없으면 결제창이 열리지 않는다.
+        // 가상계좌 입금 안내도 이 번호로 가므로 저장된 값이 있어도 확인할 수 있게 항상 보여 준다.
+        var savedPhone = digits((needShip && $('#ph') ? $('#ph').value : '') || member.phone || '');
         $('#payment-method').innerHTML =
           '<fieldset class="pgm"><legend>결제 수단</legend>' +
           METHODS.map(function(m, i){
             return '<label><input type="radio" name="pgm" value="' + m.v + '"' + (i===0?' checked':'') + '> '
               + esc(m.label) + (m.note ? ' <span class="note">' + esc(m.note) + '</span>' : '') + '</label>';
-          }).join('') + '</fieldset>';
+          }).join('') + '</fieldset>'
+          + '<div class="field pgphone"><label for="pgPhone">휴대폰 번호</label>'
+          + '<input id="pgPhone" type="tel" autocomplete="tel" inputmode="numeric" value="' + esc(savedPhone) + '">'
+          + '<span class="help">결제 확인과 가상계좌 입금 안내를 받는 번호입니다. 숫자만</span></div>';
         $('#payment-method').addEventListener('change', function(ev){
           if(ev.target && ev.target.name === 'pgm') picked = ev.target.value;
         });
@@ -312,10 +320,23 @@ document.addEventListener('DOMContentLoaded', async function(){
           + '<a href="privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 동의하고 결제합니다.</label>';
       },
       setAmount: function(){ return Promise.resolve(); },   // 포트원은 결제 호출 시점에 금액을 넘긴다
-      async requestPayment(order){
+      // 입력 검증은 주문 생성 전에 부른다. 결제 호출 직전에만 두면 약관 미동의나 번호 누락으로
+      // 막힐 때마다 pending 주문이 하나씩 쌓인다 (2026-09-01 로컬 실측).
+      precheck: function(){
         if(!$('#pgAgree') || !$('#pgAgree').checked){
           var err = new Error('약관에 동의해 주세요'); err.code = 'AGREEMENT_REQUIRED'; throw err;
         }
+        var phone = digits($('#pgPhone') ? $('#pgPhone').value : '');
+        if(phone.length < 10 || phone.length > 11){
+          var errp = new Error('휴대폰 번호를 숫자 10자리에서 11자리로 입력해 주세요');
+          errp.code = 'PHONE_REQUIRED';
+          if($('#pgPhone')) $('#pgPhone').focus();
+          throw errp;
+        }
+        return phone;
+      },
+      async requestPayment(order){
+        var phone = this.precheck();
         var req = {
           storeId: cfg.portoneStoreId,
           channelKey: cfg.portoneChannelKey,
@@ -325,7 +346,7 @@ document.addEventListener('DOMContentLoaded', async function(){
           currency: 'CURRENCY_KRW',
           payMethod: picked,
           redirectUrl: location.origin + '/pay_done.html',
-          customer: { customerId: member.id, email: member.email, fullName: member.name || undefined }
+          customer: { customerId: member.id, email: member.email, fullName: member.name || undefined, phoneNumber: phone }
         };
         if(picked === 'VIRTUAL_ACCOUNT') req.virtualAccount = { accountExpiry: { validHours: 72 } };
         var res = await PortOne.requestPayment(req);
@@ -363,6 +384,11 @@ document.addEventListener('DOMContentLoaded', async function(){
       shipping={ name:$('#nm').value.trim(), phone:$('#ph').value.trim(), zip:$('#zip').value.trim(),
                  addr1:$('#ad1').value.trim(), addr2:$('#ad2').value.trim() };
       if(!shipping.name||!shipping.phone||!shipping.zip||!shipping.addr1) return alert('배송지 정보를 입력해 주세요');
+    }
+    // 결제사 입력 요건(약관 동의, 휴대폰 번호)은 주문을 만들기 전에 본다
+    if(driver && driver.precheck){
+      try{ driver.precheck(); }
+      catch(pe){ return alert(pe.message || '결제 정보를 확인해 주세요'); }
     }
     btn.disabled=true; btn.textContent='주문 생성 중';
     try{
