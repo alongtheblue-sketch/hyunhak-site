@@ -3,3 +3,4 @@ __pycache__/
 design/_gen/
 .wrangler/
 node_modules/
+*.bak*

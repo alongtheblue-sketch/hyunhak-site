@@ -119,16 +119,25 @@ document.addEventListener('DOMContentLoaded', async function(){
     return;
   }
 
-  var paymentKey = q.get('paymentKey'), orderId = q.get('orderId'), amount = parseInt(q.get('amount'), 10);
-  if (!paymentKey || !orderId || !amount) {
+  // 결제사마다 돌아오는 파라미터 이름이 다르다.
+  //   토스   ?paymentKey=&orderId=&amount=
+  //   포트원 ?paymentId=&transactionId=   (금액을 주지 않는다)
+  // 금액은 어차피 서버가 DB 값으로만 승인하므로, 없으면 응답에서 받아 표시한다.
+  var paymentKey = q.get('paymentKey') || q.get('transactionId');
+  var orderId = q.get('orderId') || q.get('paymentId');
+  var amount = parseInt(q.get('amount'), 10);
+  if (!Number.isInteger(amount)) amount = null;
+  if (!orderId) {
     h.textContent = '잘못된 접근입니다';
     sub.textContent = '결제 창을 통해서만 열리는 화면입니다.';
     acts.hidden = false; acts.innerHTML = '<a class="btn" href="index.html">처음으로 <span class="ar" aria-hidden="true">→</span></a>';
     return;
   }
   try {
-    var r = await HH.api('/api/payments/confirm', { method: 'POST',
-      body: JSON.stringify({ paymentKey: paymentKey, orderId: orderId, amount: amount }) });
+    var reqBody = { paymentKey: paymentKey, orderId: orderId };
+    if (amount !== null) reqBody.amount = amount;          // 토스 경로만 클라이언트 금액 대조를 겸한다
+    var r = await HH.api('/api/payments/confirm', { method: 'POST', body: JSON.stringify(reqBody) });
+    if (amount === null) amount = r.amount;                // 포트원 경로는 서버가 확정한 금액으로 표시
     try { localStorage.removeItem('hh_cart_v1'); } catch(e) {}
     if (r.status === 'waiting_deposit') {
       var va = r.vaccount || {};

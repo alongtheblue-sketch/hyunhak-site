@@ -27,7 +27,6 @@
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
-<script src="https://js.tosspayments.com/v2/standard"></script>
 <style>
 /* 결제 전용 */
 .lay{padding-top:0}
@@ -37,6 +36,10 @@
 .addr .zipline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:end}
 .addr .zipline .btn{margin-bottom:var(--s4)}
 .pay #payment-method,.pay #agreement{background:var(--card);border-radius:6px;padding:var(--s2)}
+.pay .pgm{border:0;margin:0;padding:0}.pay .pgm legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.pay .pgm label,.pay .agree{display:flex;align-items:center;gap:.5rem;padding:.55rem 0;cursor:pointer}
+.pay .pgm label+label{border-top:1px solid var(--line)}
+.pay .pgm .note{color:var(--muted);font-size:.86em}
 .pay #agreement{margin-top:var(--s3)}
 .bill .item{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:14px;border-top:1px solid var(--hairs)}
 .bill .item span:first-child{color:var(--body)}
@@ -86,7 +89,7 @@
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="cart.html">장바구니</a><span aria-hidden="true">/</span><span>결제</span></nav>
     <h1>결제</h1>
-    <p class="lede">토스페이먼츠 결제창. 카드, 계좌이체, 간편결제.</p>
+    <p class="lede">카드, 계좌이체, 가상계좌로 결제합니다.</p>
    </div>
   </div>
 </section>
@@ -200,7 +203,7 @@ document.addEventListener('DOMContentLoaded', async function(){
       + '<p class="hh-popup-kind">구매 전 안내</p>'
       + '<h2 id="gbNoticeTitle" class="hh-popup-title">가이드북 열람 안내</h2>'
       + '<div class="hh-popup-body">'
-      + '<p>가이드북은 결제 즉시 브라우저 보안 리더로 열람하실 수 있으며, 열람 기간은 구매일부터 3개월입니다.</p>'
+      + '<p>가이드북은 결제 즉시 브라우저 보안 리더로 열람하실 수 있으며, 열람 기간은 구매일부터 1개월입니다.</p>'
       + '<p>인쇄는 권당 3회까지 가능합니다.</p>'
       // 전자상거래법 제17조 제6항: 청약철회 제한 사실을 구매 화면에 표시 (약관 제6조 ③ 과 같은 문장, 2026-08-30 AIG-5)
       + '<p>열람을 시작한 뒤에는 청약철회가 제한됩니다(전자상거래법 제17조 제2항). 열람을 시작하기 전에는 취소할 수 있습니다.</p>'
@@ -243,20 +246,110 @@ document.addEventListener('DOMContentLoaded', async function(){
   $('#sumTotal').textContent = HH.won(total);
   $('#payBtn').textContent = HH.won(total)+' 결제';
 
-  // 위젯 초기화 실패(설정 API, SDK 로드, 키 문제) 시 무반응 버튼 방지: 성공 전까지 비활성 + 안내
-  var widgets;
+  // 결제사가 둘이다. 토스는 위젯이 결제수단 화면을 그려 주고, 포트원에는 그런 위젯이 없어
+  // 우리가 직접 그린다. 두 드라이버가 같은 계약(ready/setAmount/requestPayment)을 만족하므로
+  // 아래 결제 버튼 처리는 어느 쪽이든 한 벌로 돈다.
+  function loadScript(src){
+    return new Promise(function(res, rej){
+      var el = document.createElement('script'); el.src = src; el.async = true;
+      el.onload = res; el.onerror = function(){ rej(new Error('결제 모듈을 불러오지 못했습니다')); };
+      document.head.appendChild(el);
+    });
+  }
+
+  function tossDriver(cfg, member){
+    var widgets = null;
+    return {
+      async ready(amount){
+        await loadScript('https://js.tosspayments.com/v2/standard');
+        if(typeof TossPayments !== 'function') throw new Error('결제 모듈을 불러오지 못했습니다');
+        widgets = TossPayments(cfg.tossClientKey).widgets({ customerKey: member.id });
+        await widgets.setAmount({ currency:'KRW', value: amount });
+        await Promise.all([
+          widgets.renderPaymentMethods({ selector:'#payment-method' }),
+          widgets.renderAgreement({ selector:'#agreement' })
+        ]);
+      },
+      setAmount: function(amount){ return widgets.setAmount({ currency:'KRW', value: amount }); },
+      requestPayment: function(order){
+        return widgets.requestPayment({
+          orderId: order.orderId,
+          orderName: order.orderName,
+          successUrl: location.origin + '/pay_done.html',
+          failUrl: location.origin + '/pay_done.html?fail=1',
+          customerEmail: member.email,
+          customerName: member.name || undefined
+        });
+      }
+    };
+  }
+
+  function portoneDriver(cfg, member){
+    // 바로오픈(KG이니시스)에서 열리는 수단은 셋이다. 간편결제와 할부는 카드사 심사가
+    // 끝나기 전까지 열리지 않으므로 화면에도 올리지 않는다.
+    var METHODS = [
+      { v:'CARD',            label:'카드',        note:'일시불' },
+      { v:'TRANSFER',        label:'실시간 계좌이체', note:'' },
+      { v:'VIRTUAL_ACCOUNT', label:'가상계좌',    note:'입금이 확인되면 지급됩니다' }
+    ];
+    var picked = 'CARD';
+    return {
+      async ready(){
+        await loadScript('https://cdn.portone.io/v2/browser-sdk.js');
+        if(!window.PortOne) throw new Error('결제 모듈을 불러오지 못했습니다');
+        $('#payment-method').innerHTML =
+          '<fieldset class="pgm"><legend>결제 수단</legend>' +
+          METHODS.map(function(m, i){
+            return '<label><input type="radio" name="pgm" value="' + m.v + '"' + (i===0?' checked':'') + '> '
+              + esc(m.label) + (m.note ? ' <span class="note">' + esc(m.note) + '</span>' : '') + '</label>';
+          }).join('') + '</fieldset>';
+        $('#payment-method').addEventListener('change', function(ev){
+          if(ev.target && ev.target.name === 'pgm') picked = ev.target.value;
+        });
+        $('#agreement').innerHTML =
+          '<label class="agree"><input type="checkbox" id="pgAgree"> '
+          + '<a href="terms.html" target="_blank" rel="noopener">이용약관</a>과 '
+          + '<a href="privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 동의하고 결제합니다.</label>';
+      },
+      setAmount: function(){ return Promise.resolve(); },   // 포트원은 결제 호출 시점에 금액을 넘긴다
+      async requestPayment(order){
+        if(!$('#pgAgree') || !$('#pgAgree').checked){
+          var err = new Error('약관에 동의해 주세요'); err.code = 'AGREEMENT_REQUIRED'; throw err;
+        }
+        var req = {
+          storeId: cfg.portoneStoreId,
+          channelKey: cfg.portoneChannelKey,
+          paymentId: order.orderId,          // 주문번호를 결제 식별자로 그대로 쓴다 (조회 키가 하나)
+          orderName: order.orderName,
+          totalAmount: order.amount,
+          currency: 'CURRENCY_KRW',
+          payMethod: picked,
+          redirectUrl: location.origin + '/pay_done.html',
+          customer: { customerId: member.id, email: member.email, fullName: member.name || undefined }
+        };
+        if(picked === 'VIRTUAL_ACCOUNT') req.virtualAccount = { accountExpiry: { validHours: 72 } };
+        var res = await PortOne.requestPayment(req);
+        // 모바일은 redirectUrl 로 떠나고, PC 는 결과를 돌려준다. 확정 경로를 한 곳으로 모으려고
+        // PC 도 같은 주소로 보낸다 (승인 검증이 pay_done 한 곳에만 있게).
+        if(res && res.code){
+          var e2 = new Error(res.message || '결제를 시작하지 못했습니다'); e2.code = res.code; throw e2;
+        }
+        location.href = '/pay_done.html?paymentId=' + encodeURIComponent(order.orderId)
+          + (res && res.txId ? '&transactionId=' + encodeURIComponent(res.txId) : '');
+      }
+    };
+  }
+
+  // 초기화 실패(설정 API, SDK 로드, 키 문제) 시 무반응 버튼 방지: 성공 전까지 비활성 + 안내
+  var driver;
   $('#payBtn').disabled = true;
   try{
     var cfg = await HH.api('/api/config');
-    if(!/^test_/.test(cfg.tossClientKey)) $('#testNote').style.display='none';
-    if(typeof TossPayments!=='function') throw new Error('결제 모듈을 불러오지 못했습니다');
-    var toss = TossPayments(cfg.tossClientKey);
-    widgets = toss.widgets({ customerKey: st.member.id });
-    await widgets.setAmount({ currency:'KRW', value: total });
-    await Promise.all([
-      widgets.renderPaymentMethods({ selector:'#payment-method' }),
-      widgets.renderAgreement({ selector:'#agreement' })
-    ]);
+    // 테스트 여부는 서버가 판정해 내려준다 (포트원은 상점 ID 로 구분이 안 되고 채널 단위다)
+    var isTest = !!cfg.testMode;
+    if(!isTest) $('#testNote').style.display='none';
+    driver = cfg.provider === 'portone' ? portoneDriver(cfg, st.member) : tossDriver(cfg, st.member);
+    await driver.ready(total);
     widgetReady = true; syncPayBtn();
   }catch(e){
     $('#payment-method').innerHTML = '<p class="note" role="alert">결제 수단을 불러오지 못했습니다. 새로고침 후 다시 시도하시고, 반복되면 admin@hyunhak.com 으로 알려 주세요.</p>';
@@ -289,21 +382,15 @@ document.addEventListener('DOMContentLoaded', async function(){
           return '<p class="item"><span>'+esc(it.title)+', '+it.qty+(it.ship?'부':'건')+'</span><span>'+HH.won(it.price*it.qty)+'</span></p>'}).join('');
         $('#sumTotal').textContent = HH.won(total);
         btn.disabled = false; btn.textContent = HH.won(total) + ' 결제';
-        await widgets.setAmount({ currency:'KRW', value: total });
+        await driver.setAmount(total);
         alert('상품 가격이 변경되어 결제 금액이 ' + HH.won(total) + ' 입니다. 품목 금액을 확인하신 뒤 다시 눌러 주세요.');
         return;
       }
-      await widgets.setAmount({ currency:'KRW', value: order.amount });
-      await widgets.requestPayment({
-        orderId: order.orderId,
-        orderName: order.orderName,
-        successUrl: location.origin + '/pay_done.html',
-        failUrl: location.origin + '/pay_done.html?fail=1',
-        customerEmail: st.member.email,
-        customerName: st.member.name || undefined
-      });
+      await driver.setAmount(order.amount);
+      await driver.requestPayment(order);
     }catch(e){
-      if(e && e.code === 'USER_CANCEL') {} else alert(e.message||'결제를 시작하지 못했습니다');
+      var canceled = e && (e.code === 'USER_CANCEL' || /취소|cancel/i.test(String(e.code||'') + ' ' + String(e.message||'')));
+      if(canceled) {} else alert(e.message||'결제를 시작하지 못했습니다');
       btn.disabled=false; btn.textContent=HH.won(total)+' 결제';
     }
   });
