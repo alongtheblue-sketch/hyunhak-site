@@ -1,0 +1,54 @@
+변경 39 / nav 없음 0 / 레거시 0
+변경 39
+변경 0
+-- 60면 처리, 39면 기록
+sitemap.xml 50 URL / robots.txt / llms.txt / llms-full.txt 기록
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
+v2_check: files=57 fails=0
+e0206ef89ab79720
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.127.1
+────────────────────
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+🌀 Building list of assets...
+✨ Read 5952 files from the assets directory /Users/gregory/Workspace/hyunhak-site
+🌀 Starting asset upload...
+🌀 Found 1 new or modified static asset to upload. Proceeding with upload...
++ /checkout.html
+Uploaded 1 of 1 asset
+✨ Success! Uploaded 1 file (649 already uploaded) (1.20 sec)
+
+Total Upload: 5.03 KiB / gzip: 1.84 KiB
+Your Worker has access to the following bindings:
+Binding                   Resource         
+env.DB (hyunhak)          D1 Database      
+env.ASSETS                Assets           
+
+Uploaded hyunhak-site (6.14 sec)
+Deployed hyunhak-site triggers (2.23 sec)
+  https://hyunhak-site.alongtheblue.workers.dev
+  hyunhak.com/* (zone name: hyunhak.com)
+  www.hyunhak.com/* (zone name: hyunhak.com)
+Current Version ID: 4278398c-5bff-428f-bf61-a15d5aecb56a
+PASS / 200 html                         200
+PASS /guidebook/ index                  200
+PASS /guidebook → 301 슬래시               301 https://hyunhak.com/guidebook/
+PASS /guidebook/korea.html 200          200
+PASS /faq 확장자 없는 경로                     200
+PASS robots GPTBot 그룹                   200
+PASS llms.txt                           200
+PASS reader.html X-Robots-Tag noindex   noindex, nofollow, noarchive, nosnippet
+PASS my.html noindex                    noindex, nofollow
+PASS 404 페이지                            404
+PASS _tools 비공개                         404
+PASS wrangler.toml 비공개                  404
+PASS www → apex 301                     301 https://hyunhak.com/
+PASS Googlebot UA 200                   200
+PASS GPTBot UA 차단(403)                  403
+PASS OAI-SearchBot UA 통과(200)           200
+FAIL 0 / WARN 0 / 16 항목
+indexnow 200 (50 urls)

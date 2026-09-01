@@ -1,0 +1,130 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.127.1
+────────────────────
+
+Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+🌀 Building list of assets...
+✨ Read 5543 files from the assets directory /Users/gregory/Workspace/hyunhak-site
+🌀 Starting asset upload...
+🌀 Found 650 new or modified static assets to upload. Proceeding with upload...
++ /e5278045a9f0ef121042898bc0aefedc.txt
++ /insta.html
++ /assets/preview/sahmyook/p14.webp
++ /assets/preview/hanyang-erica/p12.webp
++ /reader.html
++ /assets/preview/ewha/p37.webp
++ /assets/preview/skku/p27.webp
++ /assets/preview/dongguk/p16.webp
++ /assets/preview/duksung/p13.webp
++ /assets/preview/korea/p32.webp
++ /assets/preview/dankook/p15.webp
++ /assets/preview/sejong/p36.webp
++ /assets/preview/soongsil/p35.webp
++ /assets/preview/pknu/p38.webp
++ /notice.html
++ /assets/preview/dgist/p11.webp
++ /assets/preview/myongji/p37.webp
++ /assets/preview/skku/p13.webp
++ /assets/preview/sejong/p13.webp
++ /assets/preview/knu/p40.webp
++ /assets/preview/dongguk/p24.webp
++ /assets/preview/duksung/p12.webp
++ /assets/preview/sahmyook/p06.webp
++ /assets/preview/incheon/p21.webp
++ /assets/preview/khu/p25.webp
++ /assets/preview/duksung/p06.webp
++ /assets/preview/konkuk/p21.webp
++ /assets/preview/dankook/p06.webp
++ /assets/preview/kookmin/p06.webp
++ /assets/preview/kyonggi/p21.webp
++ /assets/preview/sejong/p21.webp
++ /assets/preview/dongguk/p06.webp
++ /assets/preview/soongsil/p21.webp
++ /assets/preview/duksung/p10.webp
++ /assets/preview/kyonggi/p06.webp
++ /assets/preview/kwangwoon/p12.webp
++ /assets/preview/ajou/p14.webp
++ /assets/preview/korea/p14.webp
++ /assets/preview/dongduk/p10.webp
++ /assets/preview/dongguk/p25.webp
++ /assets/bizinfo.png
++ /assets/preview/kwangwoon/p06.webp
++ /assets/preview/ulsan/p16.webp
++ /assets/preview/swu/p06.webp
++ /assets/preview/ewha/p22.webp
++ /assets/preview/dongduk/p03.webp
++ /assets/preview/dongduk/p11.webp
++ /assets/preview/ewha/p03.webp
++ /assets/preview/dongduk/p04.webp
++ /assets/preview/hongik/p25.webp
++ /assets/preview/skku/p03.webp
++ /assets/preview/gachon/p04.webp
++ /assets/preview/dgist/p04.webp
++ /assets/preview/hanyang-erica/p04.webp
++ /assets/preview/knu/p41.webp
++ /assets/preview/inha/p17.webp
++ /assets/preview/korea/p22.webp
++ /assets/preview/inha/p06.webp
++ /assets/preview/ajou/p24.webp
++ /assets/preview/hufs/p06.webp
++ /assets/preview/catholic/p19.webp
++ /assets/preview/hufs/p04.webp
++ /assets/preview/cau/p06.webp
++ /assets/preview/pknu/p04.webp
++ /assets/preview/yonsei/p04.webp
++ /assets/preview/donga/p06.webp
++ /assets/preview/myongji/p22.webp
++ /assets/preview/kyonggi/p20.webp
++ /assets/preview/donga/p04.webp
++ /assets/preview/korea/p20.webp
++ /assets/preview/incheon/p04.webp
++ /assets/preview/sejong/p37.webp
++ /assets/preview/korea/p03.webp
++ /assets/preview/catholic/p06.webp
++ /assets/preview/ajou/p23.webp
++ /assets/preview/ulsan/p04.webp
++ /assets/preview/dgist/p16.webp
++ /assets/preview/khu/p03.webp
++ /assets/preview/ajou/p06.webp
++ /assets/preview/dongguk/p23.webp
++ /assets/preview/snu/p25.webp
++ /assets/preview/dongguk/p03.webp
++ /assets/preview/sejong/p04.webp
++ /assets/preview/sookmyung/p06.webp
++ /assets/preview/myongji/p21.webp
++ /assets/preview/soongsil/p06.webp
++ /assets/preview/ulsan/p24.webp
++ /assets/preview/pknu/p03.webp
++ /assets/preview/dgist/p17.webp
++ /assets/preview/hufs/p03.webp
++ /assets/preview/kwangwoon/p03.webp
++ /assets/preview/gachon/p03.webp
++ /assets/preview/ewha/p15.webp
++ /assets/preview/pknu/p24.webp
++ /assets/preview/dankook/p09.webp
++ /about.html
++ /assets/preview/sejong/p06.webp
++ /assets/preview/knu/p24.webp
++ /assets/preview/duksung/p09.webp
++ /assets/preview/sejong/p22.webp
+   (truncating changed assets log, set `WRANGLER_LOG=debug` environment variable to see full diff)
+Uploaded 216 of 650 assets
+Uploaded 433 of 650 assets
+Uploaded 650 of 650 assets
+✨ Success! Uploaded 650 files (9.27 sec)
+
+Total Upload: 5.03 KiB / gzip: 1.84 KiB
+Your Worker has access to the following bindings:
+Binding                   Resource         
+env.DB (hyunhak)          D1 Database      
+env.ASSETS                Assets           
+
+Uploaded hyunhak-site (15.12 sec)
+Deployed hyunhak-site triggers (1.97 sec)
+  https://hyunhak-site.alongtheblue.workers.dev
+  hyunhak.com/* (zone name: hyunhak.com)
+  www.hyunhak.com/* (zone name: hyunhak.com)
+Current Version ID: 365b9b4f-32b5-4cdf-8800-b19cd22308e9
