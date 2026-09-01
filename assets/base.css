@@ -270,6 +270,10 @@ body.v2{background:var(--ink)}
 :where(body.v2) footer .biz{margin-top:var(--s5);padding-top:var(--s3);border-top:1px solid var(--hairs);font-size:12px;display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
 /* 전역 img 규칙에 height:auto 가 없어, 330px 사업자 정보가 좁은 폭에서 세로로 눌린다 (2026-08-31) */
 :where(body.v2) footer .biz img{height:auto}
+/* 사업자 정보 = 텍스트 (2026-09-01 건우 결재). 구 이미지(bizinfo.png)는 PG 심사 크롤러가
+   글자를 못 읽어 '사업자 정보 미표기'로 반려되는 원인이었다. 화면은 구 이미지와 같은
+   12px / --gray / 줄간 1.75 / 330px 폭을 유지한다. address 기본 기울임만 끈다. */
+:where(body.v2) footer .bizinfo{font-style:normal;line-height:1.75;max-width:330px;word-break:keep-all}
 
 /* 모바일 고정 바 */
 :where(body.v2) .fix{display:none}
