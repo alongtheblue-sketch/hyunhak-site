@@ -1,0 +1,2681 @@
+{
+ "generated_at": "2026-09-02T00:00:00Z",
+ "catalog_hash": "7cb4c2e5ba55a69f92f28f4a6f7ce9237448c3d6de4b99fb889babffca92b32b",
+ "units": [
+  {
+   "code": "korea-hum",
+   "sku": "pass-korea-hum",
+   "univ": "고려대학교",
+   "univ_short": "고려대",
+   "track": "2027 학생부종합 계열적합전형 | 인문",
+   "label": "고려대 계열적합 인문",
+   "price": 396000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "korea_2027_h01",
+     "n": 1,
+     "title": "기억은 어떻게 기록이 되는가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 1,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 2,
+      "합계": 6
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h02",
+     "n": 2,
+     "title": "이름은 누구의 것인가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 1,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 2,
+      "합계": 6
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h03",
+     "n": 3,
+     "title": "놀이는 어떻게 문화가 되는가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 1,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h04",
+     "n": 4,
+     "title": "문자의 문턱",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h05",
+     "n": 5,
+     "title": "속도는 무엇을 싣고 달리는가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h06",
+     "n": 6,
+     "title": "빌린 틀로 지은 옷",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h07",
+     "n": 7,
+     "title": "웃음은 어디를 향하는가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h08",
+     "n": 8,
+     "title": "다시 세운 집은 그 집인가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h09",
+     "n": 9,
+     "title": "선물이 남기는 빚",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h10",
+     "n": 10,
+     "title": "경계에 선 사람은 무엇을 보는가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h11",
+     "n": 11,
+     "title": "임자를 만나야 값이 되는가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h12",
+     "n": 12,
+     "title": "읽지 말라는 책",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h13",
+     "n": 13,
+     "title": "아첨과 격식 사이",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h14",
+     "n": 14,
+     "title": "함께 부르는 노래",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h15",
+     "n": 15,
+     "title": "끊어진 것을 잇는 법",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 1,
+      "개념_전이_거리": 4,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h16",
+     "n": 16,
+     "title": "뉴스가 비추는 위험의 크기",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 1,
+      "합계": 6
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h17",
+     "n": 17,
+     "title": "묶음과 낱",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 1,
+      "합계": 6
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h18",
+     "n": 18,
+     "title": "성공 사례가 말해 주지 않는 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h19",
+     "n": 19,
+     "title": "질문이 만든 다수",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h20",
+     "n": 20,
+     "title": "발생의 기록, 점검의 기록",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h21",
+     "n": 21,
+     "title": "순위표의 양 끝",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_h22",
+     "n": 22,
+     "title": "측정소 앞의 맑은 공기",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h23",
+     "n": 23,
+     "title": "꾸중 다음 날의 점수",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 2,
+      "합계": 12
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h24",
+     "n": 24,
+     "title": "8분 안에 도착한다는 것",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h25",
+     "n": 25,
+     "title": "정확한 검사가 전하는 잘못된 소식",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 2,
+      "합계": 12
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h26",
+     "n": 26,
+     "title": "어느 병원이 더 안전한가",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 14
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h27",
+     "n": 27,
+     "title": "삼 년 앞선 곡선",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 15
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h28",
+     "n": 28,
+     "title": "커트라인 양쪽의 학생들",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h29",
+     "n": 29,
+     "title": "바늘을 돌려도 폭풍우는 온다",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 15
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_h30",
+     "n": 30,
+     "title": "온라인 광장과 기울어진 저울",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 15
+     },
+     "passages": 7,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "korea-sci",
+   "sku": "pass-korea-sci",
+   "univ": "고려대학교",
+   "univ_short": "고려대",
+   "track": "2027 학생부종합 계열적합전형 | 자연",
+   "label": "고려대 계열적합 자연",
+   "price": 396000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "korea_2027_s01",
+     "n": 1,
+     "title": "제자리로 돌아오는 길",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s02",
+     "n": 2,
+     "title": "차이가 사라질 때까지",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 1,
+      "합계": 6
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s03",
+     "n": 3,
+     "title": "맞서는 두 힘이 만드는 멈춤",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s04",
+     "n": 4,
+     "title": "박자가 맞는 순간",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s05",
+     "n": 5,
+     "title": "키우는 힘과 잠재우는 힘",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s06",
+     "n": 6,
+     "title": "웅성거림을 뚫고 오는 소리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s07",
+     "n": 7,
+     "title": "통과시키는 것과 붙잡는 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s08",
+     "n": 8,
+     "title": "작은 흔들림이 벽이 되기까지",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s09",
+     "n": 9,
+     "title": "장터고개의 날씨",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s10",
+     "n": 10,
+     "title": "달라져도 남는 값",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s11",
+     "n": 11,
+     "title": "왕복과 편도",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s12",
+     "n": 12,
+     "title": "한 박자 늦게 도착하는 것들",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s13",
+     "n": 13,
+     "title": "커지는 몸집과 좁아지는 창",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s14",
+     "n": 14,
+     "title": "지나침과 모자람의 저울",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s15",
+     "n": 15,
+     "title": "혼자일 때는 없던 것",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s16",
+     "n": 16,
+     "title": "자연과 사회를 관통하는 구조 읽기",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 2,
+      "합계": 7
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": true
+    },
+    {
+     "id": "korea_2027_s17",
+     "n": 17,
+     "title": "돌아오는 것들의 시간표",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 2,
+      "합계": 7
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s18",
+     "n": 18,
+     "title": "같은 양, 다른 몰림",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 2,
+      "개념_전이_거리": 1,
+      "합계": 6
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s19",
+     "n": 19,
+     "title": "앞이 있어야 뒤가 있다",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 9
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s20",
+     "n": 20,
+     "title": "가로막는 힘이 지키는 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s21",
+     "n": 21,
+     "title": "곡선이 눕는 자리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s22",
+     "n": 22,
+     "title": "여섯 장면의 공통 구조",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s23",
+     "n": 23,
+     "title": "기울어져 있어야 움직인다",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s24",
+     "n": 24,
+     "title": "부분의 전념과 전체의 완성",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s25",
+     "n": 25,
+     "title": "끝이 다음 시작의 재료가 되는 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s26",
+     "n": 26,
+     "title": "흩어진 것들이 하나가 될 때",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s27",
+     "n": 27,
+     "title": "낱낱은 몰라도 전체는 안다",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s28",
+     "n": 28,
+     "title": "쉽게 바뀌지 않는 것들",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s29",
+     "n": 29,
+     "title": "남는 것은 어디로 가는가",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    },
+    {
+     "id": "korea_2027_s30",
+     "n": 30,
+     "title": "한 자리에서 만날 때",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "자료_수리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 6,
+     "questions": 3,
+     "prep_seconds": 1260,
+     "interview_seconds": 420,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "yonsei-hum",
+   "sku": "pass-yonsei-hum",
+   "univ": "연세대학교",
+   "univ_short": "연세대",
+   "track": "2027 학생부종합 활동우수형 | 인문 통합",
+   "label": "연세대 활동우수 인문통합",
+   "price": 396000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_2027_h01",
+     "n": 1,
+     "title": "선택지의 양과 행복의 관계",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 1,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_h02",
+     "n": 2,
+     "title": "잣대의 같음과 출발의 같음",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_h03",
+     "n": 3,
+     "title": "점수를 믿는 일과 사람을 믿는 일",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_h04",
+     "n": 4,
+     "title": "보정으로 돌아오지 않는 목소리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 4,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_h05",
+     "n": 5,
+     "title": "존중의 대상은 누가 정하는가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_h06",
+     "n": 6,
+     "title": "이름을 지운 뒤에 남는 비용",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h07",
+     "n": 7,
+     "title": "보전이 셈하는 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h08",
+     "n": 8,
+     "title": "예측 알고리즘과 책임 귀속의 공백",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 4,
+      "관점_간_긴장도": 4,
+      "합계": 16
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h09",
+     "n": 9,
+     "title": "지워진 기록과 견줄 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h10",
+     "n": 10,
+     "title": "사람의 몫으로 남는 자리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h11",
+     "n": 11,
+     "title": "수치가 만들어지는 자리와 옮겨지는 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h12",
+     "n": 12,
+     "title": "거리가 시키는 일",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h13",
+     "n": 13,
+     "title": "오지 않은 사람을 대신 말하는 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h14",
+     "n": 14,
+     "title": "오르는 값과 내리는 만족",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h15",
+     "n": 15,
+     "title": "허락된 여백과 정하는 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h16",
+     "n": 16,
+     "title": "적중과 반복 사이",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h17",
+     "n": 17,
+     "title": "되갚는 벌과 돌려보내는 벌",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h18",
+     "n": 18,
+     "title": "값은 그대로인데 그림이 달라질 때",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h19",
+     "n": 19,
+     "title": "이어져 온 것과 이어졌다고 말해진 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h20",
+     "n": 20,
+     "title": "돌봄을 재는 자",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h21",
+     "n": 21,
+     "title": "알리는 일과 믿게 하는 일",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 4,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h22",
+     "n": 22,
+     "title": "눈금이 멈추는 곳",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h23",
+     "n": 23,
+     "title": "도움의 형태를 정하는 자리",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 1,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h24",
+     "n": 24,
+     "title": "달라진 사람을 같은 사람이라 부를 때",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h25",
+     "n": 25,
+     "title": "비어 있는 자리를 세는 일",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h26",
+     "n": 26,
+     "title": "여럿을 센 값이 한 사람에게 놓일 때",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 4,
+      "관점_간_긴장도": 4,
+      "합계": 16
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h27",
+     "n": 27,
+     "title": "표가 겪고 나온 것",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h28",
+     "n": 28,
+     "title": "계산대 앞에서 밝힌 뜻",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h29",
+     "n": 29,
+     "title": "옮겨진 말이 제자리를 찾았다고 말할 때",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 4,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_h30",
+     "n": 30,
+     "title": "한 대씩 늘어난 것과 한꺼번에 달라진 것",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "yonsei-sci",
+   "sku": "pass-yonsei-sci",
+   "univ": "연세대학교",
+   "univ_short": "연세대",
+   "track": "2027 학생부종합 활동우수형 | 자연",
+   "label": "연세대 활동우수 자연",
+   "price": 396000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_2027_s01",
+     "n": 1,
+     "title": "모여 있는 값과 놓여 있는 자리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_s02",
+     "n": 2,
+     "title": "다시 해 본 자리에서 남는 것",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_s03",
+     "n": 3,
+     "title": "손잡이가 늘어날 때 줄어드는 것",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_s04",
+     "n": 4,
+     "title": "어긋난 값이 겨누는 자리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_s05",
+     "n": 5,
+     "title": "잡히지 않은 것과 자리가 없는 것",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_2027_s06",
+     "n": 6,
+     "title": "규칙이 붙잡은 것과 계획이 지운 것",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 1,
+      "합계": 6
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s07",
+     "n": 7,
+     "title": "미리 적어 둔 조건과 나중에 붙는 이름",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s08",
+     "n": 8,
+     "title": "등급이 옮겨 갈 때 남겨진 조건",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s09",
+     "n": 9,
+     "title": "나란히 움직인 두 기록",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s10",
+     "n": 10,
+     "title": "결론 옆에 남겨 둔 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s11",
+     "n": 11,
+     "title": "고른 위험과 떠안은 위험",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s12",
+     "n": 12,
+     "title": "나눈 뒤에 생겨난 목록",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s13",
+     "n": 13,
+     "title": "남는 양과 쓸 수 있는 몫",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s14",
+     "n": 14,
+     "title": "자주 맞히는 모형과 고칠 수 있는 모형",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s15",
+     "n": 15,
+     "title": "고른 물음과 견준 대상",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s16",
+     "n": 16,
+     "title": "늘린 수와 줄지 않는 몫",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s17",
+     "n": 17,
+     "title": "지운 값이 말하던 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s18",
+     "n": 18,
+     "title": "갱신을 접어 넣은 설계",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s19",
+     "n": 19,
+     "title": "목록보다 먼저 읽어야 할 것",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s20",
+     "n": 20,
+     "title": "확률이 얹히는 두 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s21",
+     "n": 21,
+     "title": "저울에 오르는 것과 문턱을 넘는 것",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s22",
+     "n": 22,
+     "title": "덜어낸 조건과 남긴 표지",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s23",
+     "n": 23,
+     "title": "기록의 시점과 앎의 시점",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 4,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s24",
+     "n": 24,
+     "title": "찾아지는 자연과 정해지는 자연",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 2,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s25",
+     "n": 25,
+     "title": "함께 쓰기로 한 눈금",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s26",
+     "n": 26,
+     "title": "맞춰 둔 자리와 물어본 자리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 4,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s27",
+     "n": 27,
+     "title": "물음을 고른 손과 답을 세운 절차",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s28",
+     "n": 28,
+     "title": "겨냥을 좁히는 길과 쓰임을 정하는 길",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s29",
+     "n": 29,
+     "title": "지운 항목과 미룬 시점",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 3,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_2027_s30",
+     "n": 30,
+     "title": "빛이 실어 온 것과 흔적이 남긴 것",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_구성_단계수": 2,
+      "자료_해석_부하": 1,
+      "관점_간_긴장도": 1,
+      "합계": 6
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "yonsei-intl",
+   "sku": "pass-yonsei-intl",
+   "univ": "연세대학교",
+   "univ_short": "연세대",
+   "track": "2027 학생부종합 국제형",
+   "label": "연세대 국제형",
+   "price": 396000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_intl_2027_i01",
+     "n": 1,
+     "title": "언어는 생각을 빚는가 실어 나르는가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "다_다층성": 1,
+      "영어_지문_부하": 1,
+      "관점_간_긴장도": 1,
+      "합계": 4
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_intl_2027_i02",
+     "n": 2,
+     "title": "지역 문화를 지키는 관광, 소비하는 관광",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "다_다층성": 2,
+      "영어_지문_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_intl_2027_i03",
+     "n": 3,
+     "title": "낯선 예절을 읽는 두 가지 방식",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 1,
+      "영어_지문_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_intl_2027_i04",
+     "n": 4,
+     "title": "고향은 장소인가 관계인가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "다_다층성": 2,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_intl_2027_i05",
+     "n": 5,
+     "title": "세계로 간 국수, 섞이는 맛과 지워지는 맛",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "다_다층성": 1,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i06",
+     "n": 6,
+     "title": "국가대표의 자격은 어디서 오는가",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 2,
+      "영어_지문_부하": 1,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i07",
+     "n": 7,
+     "title": "자동 번역 시대의 외국어 학습",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "다_다층성": 2,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i08",
+     "n": 8,
+     "title": "같은 날을 기억하는 두 방식",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 2,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i09",
+     "n": 9,
+     "title": "도움에 붙는 조건의 정당성",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 1,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i10",
+     "n": 10,
+     "title": "24시간 도시의 자유와 소진",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 2,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i11",
+     "n": 11,
+     "title": "문화재는 만든 이의 것인가 지킨 이의 것인가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 2,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i12",
+     "n": 12,
+     "title": "모두의 언어와 마지막 화자의 낱말",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 3,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i13",
+     "n": 13,
+     "title": "국경을 모르는 질병, 국경 안에 갇힌 대응",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_intl_2027_i14",
+     "n": 14,
+     "title": "기후 책임, 쌓인 양으로 묻는가 흐르는 양으로 묻는가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 2,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i15",
+     "n": 15,
+     "title": "인권의 보편성과 공동체의 관습",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 3,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i16",
+     "n": 16,
+     "title": "역사 교과서는 사실을 적는가 기억을 고르는가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i17",
+     "n": 17,
+     "title": "국경을 넘는 원격 노동, 기회인가 경쟁인가",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 2,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i18",
+     "n": 18,
+     "title": "환대의 의무와 감당의 조건",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 3,
+      "영어_지문_부하": 2,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i19",
+     "n": 19,
+     "title": "모두의 시계, 누구의 시간",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i20",
+     "n": 20,
+     "title": "예술의 도발과 공동체가 긋는 선",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i21",
+     "n": 21,
+     "title": "가치의 전파는 계몽인가 지배인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i22",
+     "n": 22,
+     "title": "국민 됨은 물려받는 것인가 서약하는 것인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 4,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i23",
+     "n": 23,
+     "title": "무역의 이익은 어디에 쌓이는가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 3,
+      "영어_지문_부하": 4,
+      "관점_간_긴장도": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i24",
+     "n": 24,
+     "title": "국제 규범은 주권 위에 설 수 있는가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 3,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i25",
+     "n": 25,
+     "title": "조상의 잘못은 누구의 몫인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 4,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 3,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i26",
+     "n": 26,
+     "title": "물에 잠기는 마을과 불이 켜지는 도시",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "다_다층성": 4,
+      "영어_지문_부하": 3,
+      "관점_간_긴장도": 4,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i27",
+     "n": 27,
+     "title": "만인의 규격과 주인 있는 망",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 3,
+      "영어_지문_부하": 4,
+      "관점_간_긴장도": 3,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i28",
+     "n": 28,
+     "title": "데이터는 어느 나라의 것인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 3,
+      "영어_지문_부하": 4,
+      "관점_간_긴장도": 4,
+      "합계": 15
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i29",
+     "n": 29,
+     "title": "주인 없는 곳은 먼저 닿은 사람의 것인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 4,
+      "영어_지문_부하": 4,
+      "관점_간_긴장도": 3,
+      "합계": 15
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_intl_2027_i30",
+     "n": 30,
+     "title": "소속이 먼저인가 연대가 먼저인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "다_다층성": 4,
+      "영어_지문_부하": 4,
+      "관점_간_긴장도": 4,
+      "합계": 16
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "explain_script": false
+    }
+   ]
+  }
+ ]
+}
