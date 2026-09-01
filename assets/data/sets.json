@@ -1,6 +1,6 @@
 {
  "generated_at": "2026-09-02T00:00:00Z",
- "catalog_hash": "7cb4c2e5ba55a69f92f28f4a6f7ce9237448c3d6de4b99fb889babffca92b32b",
+ "catalog_hash": "be69c219855a8053ea391849a3096079a563757b5f8424b0010404bbe2dcef1e",
  "units": [
   {
    "code": "korea-hum",
@@ -1236,7 +1236,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h08",

@@ -89,14 +89,19 @@ def build():
             has_script = os.path.exists(script_path)
             hash_parts.append("%s:script=%d" % (set_id, 1 if has_script else 0))
 
+            n_passages, n_questions = len(data.get("passages", [])), len(data.get("questions", []))
+            if n_passages < 1 or n_questions < 1:
+                sys.exit("%s 의 제시문 %d편, 문제 %d개다. 둘 다 1 이상이어야 한다."
+                         % (set_id, n_passages, n_questions))
+
             entry = {
                 "id": data.get("id"),
                 "n": n,
                 "title": normalize_title(data.get("title") or ""),
                 "difficulty": meta.get("difficulty"),
                 "axes": meta.get("difficulty_axes", {}),
-                "passages": len(data.get("passages", [])),
-                "questions": len(data.get("questions", [])),
+                "passages": n_passages,
+                "questions": n_questions,
                 "prep_seconds": data.get("prep_seconds"),
             }
             if data.get("interview_seconds") is not None:
@@ -132,6 +137,8 @@ def self_check(catalog):
         ("id 중복", 0, len(ids) - len(set(ids))),
         ("id 정규식 적합", 150, sum(1 for i in ids if SET_ID_RE.match(i or ""))),
         ("제목 빈 값", 0, sum(1 for s in all_sets if not (s["title"] or "").strip())),
+        ("제시문 1편 이상", 150, sum(1 for s in all_sets if s["passages"] >= 1)),
+        ("문제 1개 이상", 150, sum(1 for s in all_sets if s["questions"] >= 1)),
         ("제목 em대시, 가운뎃점", 0,
          sum(1 for s in all_sets if any(c in s["title"] for c in EM_DASHES + MIDDLE_DOTS))),
         ("단위별 30세트", 5, sum(1 for u in catalog["units"] if u["set_count"] == 30)),
