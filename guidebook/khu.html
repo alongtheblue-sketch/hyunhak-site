@@ -24,20 +24,20 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
 /* 가이드북 상품 면 v3 (2026-08-26, 현학적 연구소 편집본), build_guidebook.render_page 가 채운다 */
-.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding:var(--s4) 0 var(--s6)}
-.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:6px;padding:var(--s6) var(--s5);position:relative}
-.prod .cover img{width:min(340px,84%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:0 24px 48px rgba(49,46,46,.28);border-radius:3px}
-.prod .cover .volchip{position:absolute;top:14px;left:16px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--gray)}
+.prod{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s7);align-items:start;padding-block:var(--s4) var(--s6)}
+.prod .cover{margin:0;display:grid;place-items:center;background:var(--mat);border-radius:var(--r-md);padding:var(--s6) var(--s5);position:relative}
+.prod .cover img{width:min(340px,84%);height:auto;aspect-ratio:210/297;object-fit:cover;box-shadow:var(--shadow-2);border-radius:var(--r-sm)}
+.prod .cover .volchip{position:absolute;top:14px;left:16px;font-size:var(--t-xs);font-weight:600;letter-spacing:.08em;color:var(--gray)}
 .buy{position:sticky;top:96px}
 .buy .top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .buy .price{display:block;margin-top:var(--s3);font-size:var(--t-h2)}
-.buy .price small{display:block;margin:6px 0 0;font-size:13px;font-weight:500}
+.buy .price small{display:block;margin:6px 0 0;font-size:var(--t-sm);font-weight:500}
 .buy .spec{margin-top:var(--s3);display:flex;flex-direction:column}
-.buy .spec li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--hairs);font-size:14px}
+.buy .spec li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:1px solid var(--hairs);font-size:var(--t-sm)}
 .buy .spec li span:first-child{color:var(--gray);flex:none}
 .buy .spec li span:last-child{text-align:right}
 .buy .acts{margin-top:var(--s4);display:flex;flex-direction:column;gap:10px}
@@ -49,50 +49,50 @@
 .pvs{display:flex;gap:16px;overflow-x:auto;padding:6px 4px 20px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
 .pv{flex:0 0 clamp(210px,25vw,290px);scroll-snap-align:start;position:relative;margin:0}
 .pv a{display:block}
-.pv img{width:100%;height:auto;border:1px solid var(--hairs);border-radius:4px;box-shadow:0 12px 28px rgba(49,46,46,.16);background:var(--card)}
-.pv figcaption{margin-top:8px;font-size:12px;color:var(--gray);display:flex;justify-content:space-between;gap:8px}
-.pv .lk{position:absolute;left:10px;bottom:44px;font-size:11px;font-weight:600;letter-spacing:.04em;background:rgba(49,46,46,.86);color:var(--paper);padding:5px 9px;border-radius:3px}
-.pvnote{font-size:13px;color:var(--gray);margin-top:2px}
+.pv img{width:100%;height:auto;border:1px solid var(--hairs);border-radius:var(--r-sm);box-shadow:var(--shadow-2);background:var(--card)}
+.pv figcaption{margin-top:8px;font-size:var(--t-xs);color:var(--gray);display:flex;justify-content:space-between;gap:8px}
+.pv .lk{position:absolute;left:10px;bottom:44px;font-size:var(--t-xs);font-weight:600;letter-spacing:.04em;background:rgba(49,46,46,.86);color:var(--paper);padding:5px 9px;border-radius:var(--r-sm)}
+.pvnote{font-size:var(--t-sm);color:var(--gray);margin-top:2px}
 /* 5부 구조 */
 .parts{display:flex;flex-direction:column}
 .parts .p5{display:grid;grid-template-columns:72px minmax(0,1fr);gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--hairs);align-items:baseline}
 .parts .p5:last-child{border-bottom:1px solid var(--hairs)}
 .parts .no{font-size:clamp(28px,3vw,40px);font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1}
 .parts h3{font-size:var(--t-h4);margin:0}
-.parts .d{margin-top:6px;font-size:14px;color:var(--body);max-width:64ch}
+.parts .d{margin-top:6px;font-size:var(--t-sm);color:var(--body);max-width:64ch}
 /* 면접 형태 판정 */
 .forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-.forms .f{border:1px solid var(--hair);border-radius:6px;padding:14px 16px;background:var(--card)}
+.forms .f{border:1px solid var(--hair);border-radius:var(--r-md);padding:14px 16px;background:var(--card)}
 .forms .f.off{opacity:.45;background:none}
-.forms .f b{display:block;font-size:15px}
-.forms .f span{display:block;margin-top:4px;font-size:12.5px;color:var(--gray)}
+.forms .f b{display:block;font-size:var(--t-base)}
+.forms .f span{display:block;margin-top:4px;font-size:var(--t-sm);color:var(--gray)}
 .forms .f.on span{color:var(--seal);font-weight:600}
 .trk{margin-top:var(--s4)}
-.trk li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;padding:11px 0;border-top:1px solid var(--hairs);font-size:14px}
+.trk li{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:16px;padding:11px 0;border-top:1px solid var(--hairs);font-size:var(--t-sm)}
 .trk li:last-child{border-bottom:1px solid var(--hairs)}
 .trk .t{font-weight:600}
 .trk .f{color:var(--body)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
-.chips span{font-size:12.5px;border:1px solid var(--hair);border-radius:999px;padding:4px 11px;color:var(--body);background:var(--card)}
+.chips span{font-size:var(--t-sm);border:1px solid var(--hair);border-radius:999px;padding:4px 11px;color:var(--body);background:var(--card)}
 /* 규칙 티저 */
 .rules3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.rules3 .r{border:1px solid var(--hair);border-radius:6px;padding:16px;background:var(--card)}
-.rules3 .r .cd{font-size:12px;font-weight:700;letter-spacing:.08em;color:var(--seal)}
-.rules3 .r .ar{font-size:12.5px;color:var(--gray);margin-left:8px}
-.rules3 .r p{margin-top:8px;font-size:14px;line-height:1.65}
+.rules3 .r{border:1px solid var(--hair);border-radius:var(--r-md);padding:16px;background:var(--card)}
+.rules3 .r .cd{font-size:var(--t-xs);font-weight:700;letter-spacing:.08em;color:var(--seal)}
+.rules3 .r .ar{font-size:var(--t-sm);color:var(--gray);margin-left:8px}
+.rules3 .r p{margin-top:8px;font-size:var(--t-sm);line-height:1.65}
 .rules3 .r p b{font-weight:600}
-.rlock{margin-top:var(--s3);font-size:13px;color:var(--gray)}
+.rlock{margin-top:var(--s3);font-size:var(--t-sm);color:var(--gray)}
 /* 유형 표, 맛보기 (v2 유지) */
 .gbd{max-width:860px}
 .gbd .sec{padding:var(--s7) 0 0}
 .taste li{padding:16px 0;border-top:1px solid var(--hairs)}
 .taste li:last-child{border-bottom:1px solid var(--hairs)}
-.taste .ty{font-size:12px;font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
-.taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:16px;line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
+.taste .ty{font-size:var(--t-xs);font-weight:600;letter-spacing:.06em;color:var(--gray);display:block}
+.taste .q{margin-top:8px;font-family:var(--serif);font-weight:500;font-size:var(--t-base);line-height:1.75;letter-spacing:-0.01em;overflow-wrap:anywhere}
 .tastenote{margin-top:var(--s3)}
-.strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:15px;display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
+.strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:var(--t-base);display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
 .strat li:last-child{border-bottom:1px solid var(--hairs)}
-.strat .sn{font-size:12px;font-weight:700;letter-spacing:.06em;color:var(--seal);font-variant-numeric:tabular-nums}
+.strat .sn{font-size:var(--t-xs);font-weight:700;letter-spacing:.06em;color:var(--seal);font-variant-numeric:tabular-nums}
 .after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
 .after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
 @media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}.pv{flex-basis:66vw}.trk li{grid-template-columns:1fr}}
@@ -114,7 +114,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
+      <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">제시문 면접 스튜디오</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -126,7 +126,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">면접 스튜디오</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
+    <a href="../guidebook/index.html" class="on" aria-current="page">가이드북</a><a href="../studio.html">제시문 면접 스튜디오</a><a href="../library.html" class="gap">자료실</a><a href="../about.html">연구소</a>
     <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -320,12 +320,12 @@
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
+        <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">면접 스튜디오</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
+        <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">제시문 면접 스튜디오</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
