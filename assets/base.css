@@ -714,14 +714,15 @@ body.v2{background:var(--ink)}
   /* 목록이 길어 난이도 필터가 스크롤과 함께 사라졌다. 헤더 아래에 고정한다 */
   :where(body.v2) .setnav{position:sticky;top:var(--hd-h-sm);z-index:30;background:var(--paper);padding:var(--s2) 0;border-bottom:var(--rule)}
   :where(body.v2) .sets thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-  :where(body.v2) .sets tr{display:grid;grid-template-columns:auto 1fr;gap:var(--s1) var(--s3);padding:var(--s4) 0;border-bottom:var(--rule)}
+  :where(body.v2) .sets tr{display:grid;grid-template-columns:auto 1fr auto;gap:var(--s1) var(--s3);padding:var(--s3) 0;border-bottom:var(--rule)}
   :where(body.v2) .sets td{border:0;padding:0;display:block}
   :where(body.v2) .sets td::before{content:attr(data-l);display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:2px}
   :where(body.v2) .sets .c-no{grid-row:1;grid-column:1}:where(body.v2) .sets .c-no::before{content:none}
-  :where(body.v2) .sets .c-t{grid-row:1;grid-column:2;min-width:0}:where(body.v2) .sets .c-t::before{content:none}
-  :where(body.v2) .sets .c-d{grid-row:2;grid-column:2}:where(body.v2) .sets .c-x{grid-row:3;grid-column:2}
-  :where(body.v2) .sets .c-s{grid-row:4;grid-column:2}
-  :where(body.v2) .sets .c-a{grid-row:5;grid-column:2;text-align:left;margin-top:var(--s2)}:where(body.v2) .sets .c-a::before{content:none}
+  :where(body.v2) .sets .c-t{grid-row:1;grid-column:2/span 2;min-width:0}:where(body.v2) .sets .c-t::before{content:none}
+  :where(body.v2) .sets .c-d{grid-row:2;grid-column:2/span 2}
+  :where(body.v2) .sets .c-x{grid-row:3;grid-column:2}
+  :where(body.v2) .sets .c-s{grid-row:3;grid-column:3;text-align:right}
+  :where(body.v2) .sets .c-a{grid-row:4;grid-column:2/span 2;text-align:left;margin-top:var(--s2)}:where(body.v2) .sets .c-a::before{content:none}
 }
 /* 강의 목록 (lecture.html 목록 모드): 단위 그룹 + 준비 중 슬롯 */
 :where(body.v2) .lgrp{margin-top:var(--s6)}

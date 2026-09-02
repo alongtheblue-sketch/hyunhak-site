@@ -129,7 +129,7 @@ def build_llms(m, pages):
     for rel, e in sorted(pages, key=lambda x: x[0]):
         if rel.startswith("programs/"):
             out.append(f"- [{e['title']}]({C.canonical_url(m, rel)}): {e['description']}")
-    out += ["", "## 학교별 2027 면접 가이드북"]
+    out += ["", "## 학교별 2027 서류기반면접 가이드북"]
     for rel, e in sorted(pages, key=lambda x: x[0]):
         if rel.startswith("guidebook/") and rel != "guidebook/index.html":
             out.append(f"- [{e['title']}]({C.canonical_url(m, rel)})")
