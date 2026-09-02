@@ -1,4 +1,4 @@
-/* 현학적 연구소 인강 뷰어 — 커스텀 컨트롤(배속, 목차 점프, 책갈피), 이어보기, 시청 행동 원장(beat), 계정 워터마크.
+/* 현학적 연구소 인강 뷰어. 커스텀 컨트롤(배속, 목차 점프, 책갈피), 이어보기, 시청 행동 원장(beat), 계정 워터마크.
    서버 = hyunhak-api src/lecture.js. 설계 = hyunhak-api/docs/LECTURE_VIEWER_DESIGN_20260828.md §4.
    원칙: 영상 URL 은 세션 결속 토큰 없이는 쓸모없고, 워터마크는 DOM 오버레이라 지워도 서버 원장이 남는다. */
 (function () {
@@ -9,11 +9,16 @@
   var view = $("view"), titleEl = $("title"), metaEl = $("meta"), crumbNow = $("crumbNow"), toastEl = $("toast"), curtain = $("curtain");
   var params = new URLSearchParams(location.search);
   var lectureId = params.get("id");
-  // 목록 진입 인자 (PLAN s30 Task 5): ?unit=<단위코드> 또는 ?set=<세트 id>. set 만 오면 단위는 id 접두로 푼다
+  // 목록 진입 인자 (PLAN s30 Task 5): ?unit=<단위코드> 또는 ?set=<세트 id>. set 만 오면 단위는 id 접두로 푼다.
+  // 쿼리, 카탈로그, API 어디서 온 값이든 계약(HH.SET_ID_RE, HH.UNITS)을 통과한 것만 그린다 (Codex r1 #1, #2)
+  var okSetId = window.HH.okSetId, okUnit = window.HH.okUnit, intIn = window.HH.intIn;
   var UNIT_OF = [[/^korea_2027_h/, "korea-hum"], [/^korea_2027_s/, "korea-sci"], [/^yonsei_2027_h/, "yonsei-hum"], [/^yonsei_2027_s/, "yonsei-sci"], [/^yonsei_intl_2027_i/, "yonsei-intl"]];
-  function unitOfSet(id) { for (var i = 0; i < UNIT_OF.length; i++) if (UNIT_OF[i][0].test(String(id || ""))) return UNIT_OF[i][1]; return null; }
-  var setParam = params.get("set") || null;
-  var unitParam = params.get("unit") || (setParam ? unitOfSet(setParam) : null);
+  function unitOfSet(id) { if (!okSetId(id)) return null; for (var i = 0; i < UNIT_OF.length; i++) if (UNIT_OF[i][0].test(String(id))) return UNIT_OF[i][1]; return null; }
+  var rawSet = params.get("set"), rawUnit = params.get("unit");
+  var setParam = okSetId(rawSet) ? rawSet : null;
+  var unitParam = okUnit(rawUnit) ? rawUnit : (setParam ? unitOfSet(setParam) : null);
+  // 인자가 왔는데 계약 밖이면 그 단위의 것을 하나도 그리지 않고 못 찾음으로 끝낸다
+  var badParam = (rawUnit !== null && !okUnit(rawUnit)) || (rawSet !== null && !okSetId(rawSet));
 
   var RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
   var BEAT_SEC = 15;            // 재생 중 진도 송신 주기
@@ -68,11 +73,11 @@
   // ================= 목록 (id 없이 진입) =================
   // 단위별 그룹(공통, 단위 강의, 세트 해설) + 준비 중 슬롯 + ?unit= ?set= 진입 + 상단 "N편 공개" 요약.
   // 공개 편수는 /api/lectures/summary 실값만 쓴다 (L-6, L-12: "포함" 단정 금지). 세트 30편은 assets/data/sets.json.
-  var MIRAE = /-mirae-/;
-  function num2(n) { return String(n).padStart(2, "0"); }
+  function num2(n) { return String(intIn(n, 0, 99, 0)).padStart(2, "0"); }
+  function n0(v, hi) { return intIn(v, 0, hi == null ? 9999 : hi, 0); }
   function loadSets() {
     return fetch("assets/data/sets.json").then(function (r) { return r.json(); })
-      .then(function (d) { return (d.units || []).filter(function (u) { return !MIRAE.test(u.sku || ""); }); })
+      .then(function (d) { return (d.units || []).filter(function (u) { return okUnit(u.code); }); })   // 허용 단위 5종만 (미래캠 제외)
       .catch(function () { return []; });
   }
   function summary(q) { return apiFetch("/api/lectures/summary?" + q).then(function (d) { return d._status === 200 ? d : null; }).catch(function () { return null; }); }
@@ -83,7 +88,7 @@
     else if (!l.entitled) st.push('<span class="badge line">이용권 필요</span>');
     else if (p && p.completed) st.push('<span class="badge">완료</span>');
     if (l.duration_sec) st.push("<span>" + fmt(l.duration_sec) + "</span>");
-    if (p) { st.push("<span>" + p.view_count + "회 시청</span>"); if (p.position_sec > 0 && !p.completed) st.push("<span>" + fmt(p.position_sec) + " 부터 이어보기</span>"); }
+    if (p) { st.push("<span>" + n0(p.view_count) + "회 시청</span>"); if (p.position_sec > 0 && !p.completed) st.push("<span>" + fmt(p.position_sec) + " 부터 이어보기</span>"); }
     return st.join("");
   }
   function actionOf(l, unit) {
@@ -96,7 +101,7 @@
   }
   function row(l, n, unit) {
     var p = l.progress, pct = 0;
-    if (p && l.duration_sec) pct = Math.min(100, Math.round(p.position_sec / l.duration_sec * 100));
+    if (p && l.duration_sec) pct = intIn(Math.round(n0(p.position_sec) / n0(l.duration_sec, 100000) * 100), 0, 100, 0);
     var slot = l.status !== "ready";
     return '<div class="' + (slot ? "slot" : "row") + '"' + (slot ? ' aria-disabled="true"' : "") + '><span class="n">' + esc(n) + '</span>'
       + '<span><span class="t">' + esc(l.title) + '</span>' + (l.subtitle ? '<span class="m"><span>' + esc(l.subtitle) + '</span></span>' : "")
@@ -131,7 +136,7 @@
       // COPY.md §6 뷰어 상단 요약: N편 공개, 순차 업로드 + 공개 기준일(summary.as_of)을 목록 위에
       metaEl.innerHTML = '<span class="badge line">' + esc(label) + "</span><span>" + esc(lecText(r)) + "</span>"
         + (sm && sm.as_of ? '<span class="mono">공개 기준일 ' + esc(sm.as_of) + "</span>" : "")
-        + (u ? "<span>단위 지문 " + u.set_count + "편</span>" : "")
+        + (u ? "<span>단위 지문 " + n0(u.set_count, 999) + "편</span>" : "")
         + (pubMissing ? "<span>공개 상태는 지금 확인할 수 없습니다</span>" : "")
         + (loggedIn ? "<span>시청 위치는 계정에 저장됩니다</span>" : '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>');
     });
@@ -151,8 +156,8 @@
 
   function renderAllView(all, units, loggedIn) {
     titleEl.textContent = "내 강의"; crumbNow.textContent = "내 강의";
+    // 허용 단위 5종만 축이 된다. API 가 미등록 unit_code 를 주어도 새 그룹을 만들지 않는다 (Codex r1 #2)
     var codes = units.map(function (u) { return u.code; });
-    all.forEach(function (l) { if (l.unit_code && codes.indexOf(l.unit_code) < 0) codes.push(l.unit_code); });
     Promise.all(codes.map(function (c) { return summary("unit=" + encodeURIComponent(c) + "&kind=passage"); })).then(function (sms) {
       var any = sms.some(function (x) { return !!x; });
       var ready = sms.reduce(function (s2, x) { return s2 + ((x && x.ready) || 0); }, 0);
@@ -178,7 +183,7 @@
       if (!ls.length) return;
       ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
       html += group(esc(u ? u.label : c), cnt(ls.filter(function (l) { return l.status === "ready"; }).length, ls.filter(function (l) { return l.status !== "ready"; }).length),
-        '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(c) + '">단위 전체 보기, 세트 ' + (u ? u.set_count : 30) + "편</a>",
+        '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(c) + '">단위 전체 보기, 세트 ' + (u ? n0(u.set_count, 999) : 30) + "편</a>",
         ls.map(function (l, i) { return row(l, num2(l.seq || i + 1), c); }).join(""));
     });
     var rest = units.filter(function (u) { return !all.some(function (l) { return l.unit_code === u.code; }); });
@@ -186,10 +191,49 @@
     view.innerHTML = html + "</div>";
   }
 
+  // 비회원, 또는 회원 목록을 받지 못한 경우의 기본 화면. 5 단위 공개 목록을 나란히 세운다 (Codex r1 #13).
+  // 로그인 면으로 튕기지 않으므로 API 장애가 로그인 요구로 보이지 않는다
+  function renderPublicView(all, units, apiUp) {
+    titleEl.textContent = "해설 강의"; crumbNow.textContent = "해설 강의";
+    var readyN = all.filter(function (l) { return l.status === "ready"; }).length;
+    metaEl.innerHTML = "<span>" + esc(apiUp ? lecText(readyN) : "공개 상태는 지금 확인할 수 없습니다") + "</span>"
+      + '<i class="sep" aria-hidden="true"></i>'
+      + '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>';
+    var html = '<div class="lecl">';
+    var common = all.filter(function (l) { return l.kind === "common"; });
+    if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), null); }).join(""));
+    units.forEach(function (u) {
+      var total = n0(u.set_count, 999);
+      var ls = all.filter(function (l) { return l.unit_code === u.code; });
+      ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
+      var rdy = ls.filter(function (l) { return l.status === "ready"; }).length;
+      var body = ls.length ? ls.map(function (l, i) { return row(l, num2(l.seq || i + 1), u.code); }).join("")
+        : '<p class="note">' + (apiUp ? "공개된 해설 강의가 아직 없습니다. 단위 전체 보기에서 준비 중 슬롯을 봅니다." : "공개 상태를 지금 확인할 수 없습니다. 단위 전체 보기에서 세트 목록을 봅니다.") + "</p>";
+      html += group(esc(u.label), apiUp ? cnt(rdy, Math.max(0, total - rdy)) : "",
+        '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">단위 전체 보기, 세트 ' + total + "편</a>", body);
+    });
+    view.innerHTML = html + "</div>";
+  }
+  // 5 단위 공개 목록 병렬 조회. 200 인 응답만 합치고, 하나도 200 이 아니면 apiUp false
+  function publicAll(codes) {
+    return Promise.all(codes.map(function (c) {
+      return apiFetch("/api/lectures/public?unit=" + encodeURIComponent(c)).catch(function () { return { _status: 0 }; });
+    })).then(function (rs) {
+      var out = [], up = false;
+      rs.forEach(function (d) { if (d && d._status === 200) { up = true; (d.lectures || []).forEach(function (l) { out.push(l); }); } });
+      return { lectures: out, up: up };
+    });
+  }
+
   function renderList() {
     titleEl.textContent = "내 강의";
     crumbNow.textContent = "내 강의";
     metaEl.textContent = "불러오는 중입니다.";
+    if (badParam) {
+      metaEl.textContent = "";
+      notice("찾을 수 없는 강의 목록입니다", "주소의 단위나 세트 값이 계약과 맞지 않습니다. 아래에서 다시 골라 주세요.");
+      return;
+    }
     Promise.all([
       // API 가 닿지 않아도 ?unit= 공개 화면은 sets.json 만으로 선다. 형제 두 호출과 같은 방어를 둔다.
       apiFetch("/api/lectures").catch(function () { return { _status: 0 }; }),
@@ -197,12 +241,12 @@
       unitParam ? apiFetch("/api/lectures/public?unit=" + encodeURIComponent(unitParam)).catch(function () { return { _status: 0 }; }) : Promise.resolve(null),
     ]).then(function (res) {
       var mine = res[0], units = res[1], pubd = res[2];
-      var apiDown = mine._status === 0;                       // 네트워크 실패. 401 응답과 구분한다
-      var loggedIn = !apiDown && mine._status !== 401;
+      var loggedIn = mine._status === 200;   // 200 만 회원 목록으로 인정한다. 5xx 를 로그인 성공으로 읽지 않는다
       if (!loggedIn && !unitParam) {
-        // 단위 인자가 없으면 그릴 공개 목록이 없다. API 장애를 로그인 요구로 오인해 내보내지 않는다
-        if (apiDown) { view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; metaEl.textContent = ""; return; }
-        return loginRedirect();
+        // 회원 목록이 없으면 공개 목록으로 내려간다 (로그인 면으로 튕기지 않는다)
+        return publicAll(units.map(function (u) { return u.code; })).then(function (pl) {
+          renderPublicView(pl.lectures.filter(function (l) { return !l.unit_code || okUnit(l.unit_code); }), units, pl.up);
+        });
       }
       var mineList = loggedIn ? (mine.lectures || []) : [];
       var pubList = pubd && pubd._status === 200 ? (pubd.lectures || []) : null;   // null = 공개 API 없음 (상태 미상)
@@ -211,7 +255,9 @@
       var byId = {};
       (pubList || []).forEach(function (l) { byId[l.id] = Object.assign({}, l, { entitled: false }); });
       mineList.forEach(function (l) { byId[l.id] = Object.assign(byId[l.id] || {}, l); });
-      var all = Object.keys(byId).map(function (k) { return byId[k]; });
+      // 허용 단위 5종 밖의 unit_code 는 버린다. 미래캠 노출 경로를 열지 않는다 (Codex r1 #2)
+      var all = Object.keys(byId).map(function (k) { return byId[k]; })
+        .filter(function (l) { return !l.unit_code || okUnit(l.unit_code); });
       if (unitParam) renderUnitView(unitParam, all, units, loggedIn, pubMissing);
       else renderAllView(all, units, loggedIn);
     }).catch(function (e) { console.error(e); view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; });
@@ -229,7 +275,7 @@
   function buildViewer(d) {
     S.exempt = !!d.exempt;
     S.token = d.token; S.sid = d.session_id; S.seq = Number(d.seq) || 0; S.dur = Number(d.duration_sec) || 0; S.chapters = d.chapters || []; S.bookmarks = d.bookmarks || [];
-    S.email = d.email || ""; S.vtt = !!d.vtt; S.rate = Number(d.rate) || 1; S.resume = Number(d.resume_sec) || 0; S.viewCount = d.view_count || 1; S.title = d.title || "";
+    S.email = d.email || ""; S.vtt = !!d.vtt; S.rate = Number(d.rate) || 1; S.resume = Number(d.resume_sec) || 0; S.viewCount = intIn(d.view_count, 1, 99999, 1); S.title = d.title || "";
     titleEl.textContent = d.title || "강의";
     crumbNow.textContent = d.title || "강의";
     metaEl.innerHTML = '<span class="badge line">' + esc(KINDS[d.kind] || d.kind) + "</span>"
@@ -323,10 +369,10 @@
     for (var i = 0; i < tt.length; i++) tt[i].mode = S.ccOn ? "showing" : "hidden";
     if (P.bCc) { P.bCc.classList.toggle("on", S.ccOn); P.bCc.setAttribute("aria-pressed", S.ccOn ? "true" : "false"); }
   }
-  // 토큰 만료·연결 오류 복구: renew(같은 회차 유지) → 실패 시 open. 같은 위치에서 소스 교체.
+  // 토큰 만료와 연결 오류 복구: renew(같은 회차 유지) 후 실패 시 open. 같은 위치에서 소스 교체.
   // 갱신 뒤 자동 재생은 사용자 제스처가 끊겨 거부될 수 있으므로 거부되면 큰 재생 버튼으로 돌아간다 (iOS)
   function reopen(reason) {
-    if (S.evicted) return Promise.resolve(false); // L-5: 밀려난 상태의 자동 복구 금지 — 사람 손 재진입만
+    if (S.evicted) return Promise.resolve(false); // L-5: 밀려난 상태의 자동 복구 금지, 사람 손 재진입만
     if (S.reopening) return Promise.resolve(false);
     S.reopening = true;
     var at = P.v.currentTime || S.lastT, playing = !P.v.paused;
@@ -340,10 +386,10 @@
     return apiFetch("/api/lecture/renew", { method: "POST", body: JSON.stringify({ sid: S.sid }) }).then(function (d) {
       if (d._status === 200 && d.token) { S.reopening = false; if (S.evicted) { showEvicted(); return false; } return apply(d); }
       if (d._status === 401) { S.reopening = false; block("로그인이 만료되었습니다. 다시 로그인해 주세요."); return false; }
-      // L-5: 밀려난 세션 — open 폴백으로 조용히 재진입하면 상한이 무력화된다
+      // L-5: 밀려난 세션. open 폴백으로 조용히 재진입하면 상한이 무력화된다
       if (d._status === 409 && d.code === "evicted") { S.reopening = false; showEvicted(); return false; }
       // r2 R8: renew 가 429/5xx 로 도는 사이 beat 가 evicted 래치를 세웠으면 open 폴백이 사람 클릭 없이
-      // 슬롯을 재점유한다 — 폴백 직전 래치 재검사
+      // 슬롯을 재점유한다. 폴백 직전 래치 재검사
       if (S.evicted) { S.reopening = false; showEvicted(); return false; }
       return apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: S.id, sig: automationSignals() }) }).then(function (d2) {
         S.reopening = false;
@@ -358,7 +404,7 @@
 
   // ---------- 상태 카드 ----------
   function stage(html) { P.stage.innerHTML = html; P.stage.hidden = !html; }
-  // L-5 (2026-08-30): 동시 3기기 한도에 밀려난 상태 — 재생 정지 + 오버레이, 재개는 버튼(사람 손)으로만
+  // L-5 (2026-08-30): 동시 3기기 한도에 밀려난 상태. 재생 정지 + 오버레이, 재개는 버튼(사람 손)으로만
   function evictOverlay() {
     stage('<div class="box"><h2>다른 기기에서 시청을 시작했습니다</h2><p>동시 시청은 계정당 3기기까지입니다. 이 기기에서 계속 보려면 아래 버튼을 눌러 주세요.</p><div class="row"><button type="button" class="btn" id="evictBtn">이 기기에서 계속 보기</button><a class="btn ghost" href="lecture.html">내 강의</a></div></div>');
     $("evictBtn").addEventListener("click", evictReopen);
@@ -369,7 +415,7 @@
     stopBeat(); P.v.pause();
     evictOverlay();
   }
-  // 밀려난 상태의 재진입 — open 성공 때만 래치를 푼다. 실패(429/5xx) 시 오류 카드의 "다시 시도" 도
+  // 밀려난 상태의 재진입. open 성공 때만 래치를 푼다. 실패(429/5xx) 시 오류 카드의 "다시 시도" 도
   // 이 경로로 돌아온다 (reopen 은 래치에 즉시 반환이라 빈 플레이어로 고착된다, Codex 후속 r1 #16)
   function evictReopen() {
     var at = P.v.currentTime || S.lastT;
@@ -525,7 +571,7 @@
     var i = RATES.indexOf(S.rate); if (i < 0) i = RATES.indexOf(1);
     i = Math.max(0, Math.min(RATES.length - 1, i + dir)); setRate(RATES[i]);
   }
-  // L-5: 밀려난 상태에선 재생 조작을 받지 않는다 — Space/K·컨트롤이 오버레이를 지우고 기존 소스를
+  // L-5: 밀려난 상태에선 재생 조작을 받지 않는다. Space/K 와 컨트롤이 오버레이를 지우고 기존 소스를
   // 이어 재생하면 상한이 무력화된다 (Codex 후속 r1 #11). 재개는 evictReopen(사람 손)만.
   function togglePlay() { if (S.evicted) return; if (P.v.paused) { stage(""); P.v.play().catch(function () {}); } else P.v.pause(); }
   function toggleFs() {
@@ -568,13 +614,13 @@
   }
   function flushBeat(final) {
     if (!S.sid || S.closed || S.evicted) return;
-    S.seq = (S.seq || 0) + 1;   // 단조 순번: 서버가 역순·재전송을 버린다
+    S.seq = (S.seq || 0) + 1;   // 단조 순번: 서버가 역순과 재전송을 버린다
     var body = JSON.stringify({ sid: S.sid, seq: S.seq, pos: Math.round((P.v.currentTime || 0) * 100) / 100, watched: Math.round(S.watched * 100) / 100, rate: S.rate, ev: S.evs.splice(0, 50) });
     S.watched = 0;
     var p = fetch(API + "/api/lecture/beat", { method: "POST", credentials: "include", keepalive: true, headers: { "Content-Type": "text/plain;charset=UTF-8" }, body: body });
     if (!final) p.then(function (r) {
       if (r.status === 401) block("로그인이 만료되었습니다. 다시 로그인해 주세요.");
-      // L-5: 밀려난 기기 — seq stale 409 와는 code 로 구분 (stale 은 무해라 기존처럼 무시)
+      // L-5: 밀려난 기기. seq stale 409 와는 code 로 구분 (stale 은 무해라 기존처럼 무시)
       if (r.status === 409) r.json().then(function (j) { if (j && j.code === "evicted") showEvicted(); }).catch(function () {});
     }).catch(function () {});
   }
@@ -628,10 +674,13 @@
     bar.addEventListener("pointerup", function (e) { if (!dragging) return; dragging = false; bar.classList.remove("drag"); seekTo(frac(e) * (S.dur || v.duration || 0), "bar"); });
     bar.addEventListener("pointercancel", function () { dragging = false; bar.classList.remove("drag"); });
 
-    // 키보드 (입력 중은 제외)
+    // 키보드. 인터랙티브 요소에 초점이 있으면 전역 단축키를 걸지 않는다. 탭의 Space, 링크의 Enter 를
+    // 플레이어가 가로채면 키보드 사용자가 그 요소를 쓸 수 없다 (Codex r1 #16)
+    var INTERACTIVE = "input,textarea,select,button,a[href],[role=tab],[contenteditable=''],[contenteditable=true]";
     document.addEventListener("keydown", function (e) {
-      var tag = (e.target.tagName || "").toLowerCase();
-      if (tag === "input" || tag === "textarea" || e.metaKey || e.ctrlKey || e.altKey) return;
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      var t = e.target;
+      if (t && t.closest && t.closest(INTERACTIVE)) return;
       var k = e.key;
       if (k === " " || k === "k") { e.preventDefault(); togglePlay(); }
       else if (k === "ArrowLeft") { e.preventDefault(); seekTo(v.currentTime - 5, "key"); }
@@ -663,8 +712,8 @@
     // 런타임 자동화 재검사(지연 주입 대비)
     setInterval(function () {
       if (!S.exempt && automationSignals().length >= 2 && curtain.style.display !== "flex") {
-        // 서버 신고 (aigate REQ14): 지연 주입 자동화도 경고·정지 파이프라인과 감사 원장에 들어가야 한다.
-        // 캡처·제재 원장은 리더와 공용이라 /api/reader/event 를 그대로 쓴다 (slug 없음 = 문서 미지정).
+        // 서버 신고 (aigate REQ14): 지연 주입 자동화도 경고와 정지 파이프라인, 감사 원장에 들어가야 한다.
+        // 캡처와 제재 원장은 리더와 공용이라 /api/reader/event 를 그대로 쓴다 (slug 없음 = 문서 미지정).
         try { fetch(API + "/api/reader/event", { method: "POST", credentials: "include", headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ platform: "web", kind: "automation" }), keepalive: true }); } catch (e) {}
         v.pause(); block("지원하지 않는 접속 환경입니다.");
@@ -690,7 +739,7 @@
     apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: lectureId, sig: sig }) }).then(function (d) {
       if (d._status === 401) return loginRedirect();
       if (d._status === 403 && d.code === "automation") { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
-      if (d._status === 403) return notice("이용권이 있는 회원만 시청할 수 있습니다", "이 강의는 해당 지문 이용권이나 강의 상품에 포함됩니다. 구매한 계정으로 로그인했는지 확인해 주세요.", '<a class="btn sm" href="studio.html">면접 스튜디오 이용권</a><a class="btn ghost sm" href="lecture.html">내 강의</a>');
+      if (d._status === 403) return notice("이용권이 있는 회원만 시청할 수 있습니다", "이 강의는 해당 지문 이용권이나 강의 상품에 포함됩니다. 구매한 계정으로 로그인했는지 확인해 주세요.", '<a class="btn sm" href="studio.html">제시문 면접 스튜디오 이용권</a><a class="btn ghost sm" href="lecture.html">내 강의</a>');
       if (d._status === 404) return notice("강의를 찾을 수 없습니다", "주소가 바뀌었거나 공개가 끝난 강의입니다.");
       if (d._status === 409) return notice("영상을 준비하고 있습니다", d.has_script ? "대본은 준비되었고 영상을 제작하는 중입니다. 공개되면 이 자리에서 바로 재생됩니다. 공개 일정은 확정되지 않았습니다." : "이 강의는 아직 제작 전입니다. 공개되면 이 자리에서 바로 재생됩니다.");
       if (d._status === 429) return notice("잠시 후 다시 시도해 주세요", "열람 요청이 잠시 많았습니다.");

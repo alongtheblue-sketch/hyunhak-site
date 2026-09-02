@@ -243,9 +243,9 @@ document.addEventListener('DOMContentLoaded', async function(){
   document.getElementById('whoSince').textContent = st.member.email;
 
   var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'단위 전권 이용권', download:'디지털 자료', file_download:'PDF 소장판', trial:'맛보기'};
-  var BD_TITLE = {'guide-all-view':'2027 면접 가이드북 전권 열람권','guide-all-pdf':'2027 면접 가이드북 전권 PDF 소장판'};
+  var BD_TITLE = {'guide-all-view':'2027 서류기반면접 가이드북 전권 열람권','guide-all-pdf':'2027 서류기반면접 가이드북 전권 PDF 소장판'};
   function slugOf(meta){ return (meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,''); }
-  // 전권 번들 구매분(meta.bundle)은 권당 권리 행이 최대 76행 — 번들당 1카드로 묶는다 (DESIGN_v5 §2-2)
+  // 전권 번들 구매분(meta.bundle)은 권당 권리 행이 최대 76행이라 번들당 1카드로 묶는다 (DESIGN_v5 §2-2)
   var bundles={}, singles=[], lectureEnts=[];
   (st.entitlements||[]).forEach(function(e){
     var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
@@ -283,18 +283,24 @@ document.addEventListener('DOMContentLoaded', async function(){
     } else if(e.kind==='file_download'){
       op='<button type="button" class="btn sm dlgo" data-slug="'+esc(slug)+'">PDF 내려받기</button>';
     } else {
-      op='<button type="button" class="btn sm sgo">응시하러 가기</button>';
+      // 이 카드가 가리키는 세트를 토큰 요청에 실어 보낸다 (세트를 여럿 가진 회원이 두 번째 세트를 바로 쓴다)
+      op='<button type="button" class="btn sm sgo"'+(HH.okSetId(meta.set_id)?' data-set-id="'+esc(meta.set_id)+'"':'')+'>응시하러 가기</button>';
     }
     return '<div class="subcard"><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'
-      +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?', 잔여 응시 '+e.uses_left+'회':'')
+      +'<p class="st">'+esc(KIND[e.kind]||e.kind)+(e.uses_left!=null?', 잔여 응시 '+HH.intIn(e.uses_left,0,9999,0)+'회':'')
       +(e.expires_at?', '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p></div>'
       +'<div class="ops">'+op+'</div></div>';
   }));
   if(st.trial_available)
     rows.push('<div class="subcard"><div><p class="nm">제시문 면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
       +'<div class="ops"><button type="button" class="btn sm sgo">응시하러 가기</button></div></div>');
+  // 강의 권리만 있는 회원에게 "이용권이 없습니다" 를 보이면 산 것이 사라진 것으로 읽힌다.
+  // 빈 상태는 보유한 상품 권리 전체로 판정한다 (Codex r1 #14)
+  if(!rows.length&&lectureEnts.length)
+    rows.push('<div class="subcard"><div><p class="nm">해설 강의 이용권</p><p class="st">응시 이용권 없이 해설 강의 권리만 보유하고 있습니다. 아래 내 강의에서 공개 편수를 봅니다.</p></div>'
+      +'<div class="ops"><a class="btn sm" href="lecture.html">내 강의</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   if(!rows.length)
-    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주세요.</p></div>'
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 서류기반면접 가이드북을 담아 주세요.</p></div>'
       +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
 
@@ -316,6 +322,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     var codes=Object.keys(owned).filter(function(c){ return !/-mirae-/.test(c); });
     var setIds=Object.keys(ownedSets).filter(function(id){ return !owned[unitOfSet(id)]; });   // 단위 전권이 덮는 세트는 중복 표시하지 않는다
     if(!codes.length&&!setIds.length){
+      document.getElementById('myLecSum').textContent='보유한 단위나 세트가 없습니다';   // 자리표시 문안이 남으면 수를 못 읽은 것으로 보인다
       box.innerHTML='<div class="subcard"><div><p class="nm">보유한 단위가 없습니다</p><p class="st">단위 전권이나 세트를 고른 지문 낱권을 구매하면 해설 강의의 공개 편수가 여기에 표시됩니다.</p></div><div class="ops"><a class="btn ghost sm" href="lecture.html?unit=korea-hum">세트 목록 보기</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>';
       return;
     }
@@ -335,15 +342,21 @@ document.addEventListener('DOMContentLoaded', async function(){
     });
     box.innerHTML=cards.join('');
     // COPY.md §6: 보유 단위 공개 N편, 준비 중 M편 (단위 전권 기준 합계)
-    var N=0,M=0; codes.forEach(function(c,i){ var u=unitOf(c), sm=sums[i], total=u?u.set_count:30; if(sm){ N+=(sm.ready||0); M+=Math.max(0,total-(sm.ready||0)); } });
-    if(codes.length&&(N||M)) document.getElementById('myLecSum').textContent='보유 단위 공개 '+N+'편, 준비 중 '+M+'편. 이어보기로 바로 이동합니다';
+    // 단위 전권과 세트 낱권을 함께 센다. 세트 권리만 있는 회원의 합계가 0 으로 보이지 않게 한다 (Codex r1 #14)
+    var N=0,M=0; codes.forEach(function(c,i){ var u=unitOf(c), sm=sums[i], total=u?HH.intIn(u.set_count,0,999,0):30; if(sm){ N+=HH.intIn(sm.ready,0,999,0); M+=Math.max(0,total-HH.intIn(sm.ready,0,999,0)); } });
+    setIds.forEach(function(id,i){ var sm=ssums[i]; if(sm){ if(HH.intIn(sm.ready,0,999,0)>0) N+=1; else M+=1; } });
+    if((codes.length||setIds.length)&&(N||M)) document.getElementById('myLecSum').textContent='보유 단위와 세트 공개 '+N+'편, 준비 중 '+M+'편. 이어보기로 바로 이동합니다';
   })();
+  // 한 주문으로 세트를 여럿 사면 서버는 가장 오래된 studio 권리를 고른다. 카드가 가리키는 세트를
+  // set_id 로 넘겨 그 권리를 고르게 한다. 인자가 없으면 서버 현행 동작 그대로다 (역호환)
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
     ev.preventDefault();
-    try{ var r=await HH.api('/api/studio/token',{method:'POST'}); window.open(r.url,'_blank','noopener'); }
+    var sid=this.dataset.setId||'';
+    var opt=HH.okSetId(sid)?{method:'POST',body:JSON.stringify({set_id:sid})}:{method:'POST'};
+    try{ var r=await HH.api('/api/studio/token',opt); window.open(r.url,'_blank','noopener'); }
     catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
   })});
-  // 소장판 내려받기 — 스탬프 PDF (계정 각인, 수 초 소요).
+  // 소장판 내려받기, 스탬프 PDF (계정 각인, 수 초 소요).
   // 멱등 idem 은 성공 전까지 sessionStorage 보존: 응답 단절 후 재클릭이 새 발급으로 집계되지 않게 (Codex r1 #11)
   document.querySelectorAll('.dlgo').forEach(function(b){b.addEventListener('click', async function(){
     if(b.disabled) return; b.disabled=true; var t0=b.textContent; b.textContent='소장본 준비 중…';
@@ -380,7 +393,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     }).join('');
   }catch(e){}
 
-  // 수신 설정 — 방침과 약관이 "마이페이지에서 언제든 해지" 를 약속하므로 실제 수단이 있어야 한다
+  // 수신 설정. 방침과 약관이 "마이페이지에서 언제든 해지" 를 약속하므로 실제 수단이 있어야 한다
   var mkt = document.getElementById('mktOpt'), mktMsg = document.getElementById('mktMsg');
   var MKT_BASE = '주문과 결제, 이용권 만료 안내는 수신 설정과 무관하게 보냅니다.';
   mkt.checked = !!st.member.marketing_opt_in;
@@ -424,7 +437,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     catch(e){ pfMsg.textContent=(e.message||'저장하지 못했습니다')+'.'; }
   });
 
-  // ── 강사 열람 동의 (B2B Phase 2 — 배정 시점 개별 동의, privacy.html 제3자 제공 표와 동기) ──
+  // ── 강사 열람 동의 (B2B Phase 2, 배정 시점 개별 동의. privacy.html 제3자 제공 표와 동기) ──
   if(!isTeacher){
     (async function(){
       var blk=document.getElementById('b2bBlk'), list=document.getElementById('b2bList');
@@ -463,7 +476,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     })();
   }
 
-  // ── 비밀번호 변경 — 소셜 전용 계정(has_password false)은 폼 대신 안내 ──
+  // ── 비밀번호 변경. 소셜 전용 계정(has_password false)은 폼 대신 안내 ──
   if(st.member.has_password===false){
     document.getElementById('pwFields').hidden=true;
     document.getElementById('pwBtn').hidden=true;

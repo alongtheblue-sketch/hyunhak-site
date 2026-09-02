@@ -43,8 +43,9 @@ SET_ID_RE = re.compile(r"^(korea_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(
 # 난이도 폐쇄 어휘. 원천 실측이 네 값이라 최상을 포함한다 (2026-09-02 실측: 하 30, 중 50, 상 50, 최상 20)
 DIFFICULTY_VOCAB = ("하", "중", "상", "최상")
 
-EM_DASHES = ("—", "―")            # em dash, horizontal bar
-MIDDLE_DOTS = ("·", "‧", "・", "ㆍ")  # 가운뎃점 계열
+# 검출 대상 문자를 소스에 직접 적으면 이 파일이 자기 규칙에 걸린다. 코드포인트로 적는다.
+EM_DASHES = ("\u2014", "\u2015")                            # em dash, horizontal bar
+MIDDLE_DOTS = ("\u00b7", "\u2027", "\u30fb", "\u318d")      # 가운뎃점 계열 4종
 
 
 def normalize_title(text):
@@ -79,6 +80,10 @@ def build():
             raw = open(path, "rb").read()
             hash_parts.append("%s:%s" % (set_id, hashlib.sha256(raw).hexdigest()))
             data = json.loads(raw.decode("utf-8"))
+            # 파일명에서 만든 id 와 JSON 안의 id 가 다르면 두 유효 id 가 뒤바뀌어도 self_check 를 통과한다.
+            # 여기서 막고, 아래 출력 id 는 파일명 기준 set_id 를 쓴다.
+            if data.get("id") != set_id:
+                sys.exit("세트 id 불일치: %s 의 내부 id 는 %r" % (path, data.get("id")))
             meta = data.get("bank_meta", {})
             if univ is None:
                 univ, track = data.get("univ"), data.get("track")
@@ -95,7 +100,7 @@ def build():
                          % (set_id, n_passages, n_questions))
 
             entry = {
-                "id": data.get("id"),
+                "id": set_id,
                 "n": n,
                 "title": normalize_title(data.get("title") or ""),
                 "difficulty": meta.get("difficulty"),

@@ -1,4 +1,4 @@
-/* 현학적 연구소 — 공용 프론트 (세션·장바구니·네비 상태) */
+/* 현학적 연구소 공용 프론트 (세션, 장바구니, 네비 상태) */
 (function () {
   const API = location.hostname === "localhost" || location.protocol === "file:"
     ? "http://localhost:8799" : "https://api.hyunhak.com";
@@ -14,12 +14,50 @@
     return data;
   }
 
-  function rawCart() {
-    try { return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
+  // 세트 id 계약 (PLAN 1-D, 서버와 같은 문자열): 5 단위 x 01~30.
+  // 쿼리, 카탈로그, localStorage 어디서 온 값이든 이 정규식을 통과한 것만 화면과 주문 body 에 쓴다.
+  const SET_ID_RE = /^(korea_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(0[1-9]|[12][0-9]|30)$/;
+  const UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl"];
+  const okSetId = (v) => SET_ID_RE.test(String(v == null ? "" : v));
+  const okUnit = (v) => UNITS.indexOf(String(v == null ? "" : v)) >= 0;
+  // 서버는 주문 1건에 같은 product 를 10줄까지 받는다. 11번째 줄은 주문 전체를 400 으로 떨어뜨린다
+  const LINE_MAX = 10;
+
+  // 유한 정수 강제 + 범위 절단. 화면에 넣는 수는 전부 이 함수를 지난다
+  function intIn(v, lo, hi, dflt) {
+    const n = Number(v);
+    if (!Number.isFinite(n)) return dflt;
+    const i = Math.trunc(n);
+    return i < lo ? lo : (i > hi ? hi : i);
   }
-  // 구 studio.html 이 set_id 없이 담은 낱권 줄. 서버가 passage-single 에 set_id 를 필수로 요구해
-  // 이 줄 하나가 주문 전체를 400 으로 떨어뜨린다. 읽는 쪽에서 걸러 결제 경로에 닿지 않게 한다.
-  function staleLine(x) { return String((x && x.sku) || "") === "passage-single" && !(x && x.set_id); }
+  // localStorage 는 사용자가 고칠 수 있다. 읽는 즉시 스키마를 강제해 화면과 주문 body 양쪽을 지킨다.
+  // 규격에 안 맞는 줄은 통째로 버린다 (수량에 문자열이 박혀 innerHTML 로 흘러가는 경로 차단)
+  function normLine(x) {
+    if (!x || typeof x !== "object" || Array.isArray(x)) return null;
+    const sku = String(x.sku == null ? "" : x.sku);
+    if (!/^[A-Za-z0-9_-]{2,64}$/.test(sku)) return null;
+    const line = {
+      sku: sku,
+      title: String(x.title == null ? "" : x.title).slice(0, 160),
+      price: intIn(x.price, 0, 100000000, 0),
+      qty: intIn(x.qty, 1, LINE_MAX, 1),
+      ship: !!x.ship,
+    };
+    // set_id 는 낱권에만 붙는다. 서버가 다른 상품의 set_id 를 400 으로 막으므로 조작된 줄 하나가
+    // 주문 전체를 떨어뜨리지 않게 여기서 떼어 낸다
+    if (line.sku === "passage-single" && okSetId(x.set_id)) line.set_id = String(x.set_id);
+    if (line.set_id) line.qty = 1;   // 세트 결속 낱권은 줄마다 수량 1 (서버가 강제한다)
+    return line;
+  }
+  function rawCart() {
+    let v;
+    try { v = JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
+    if (!Array.isArray(v)) return [];   // 배열이 아니면 통째로 버린다 (객체면 filter 에서 예외가 난다)
+    return v.map(normLine).filter((x) => x !== null);
+  }
+  // 세트가 지정되지 않았거나 계약 밖 set_id 를 단 낱권 줄. 서버가 passage-single 에 set_id 를 필수로
+  // 요구해 이 줄 하나가 주문 전체를 400 으로 떨어뜨린다. 읽는 쪽에서 걸러 결제 경로에 닿지 않게 한다.
+  function staleLine(x) { return String((x && x.sku) || "") === "passage-single" && !okSetId(x && x.set_id); }
   function cart() { return rawCart().filter((x) => !staleLine(x)); }
   // 저장본까지 한 번 정리하고 정리한 줄 수를 돌려준다 (장바구니 면이 안내 한 줄을 띄운다)
   function pruneCart() {
@@ -34,14 +72,26 @@
   }
   // 같은 sku 라도 set_id 가 다르면 별 줄 (PLAN s30: passage-single 은 세트 결속, 줄마다 수량 1)
   function sameLine(a, b) { return a.sku === b.sku && String(a.set_id || "") === String(b.set_id || ""); }
-  function addToCart(item) { // {sku,title,price,qty,ship,set_id}
+  // {sku,title,price,qty,ship,set_id} 를 받아 {ok, reason, message} 를 돌려준다.
+  // 담기를 거절하는 세 경우(규격 밖 sku, 세트 없는 낱권, 같은 상품 10줄 초과)는 부르는 면이 안내를 띄운다
+  function addToCart(item) {
+    const line = normLine(Object.assign({ qty: 1 }, item));
+    if (!line) return { ok: false, reason: "sku", message: "담을 수 없는 상품입니다." };
+    if (line.sku === "passage-single" && !line.set_id)
+      return { ok: false, reason: "set", message: "지문 낱권은 지문 목록에서 세트를 고른 뒤 담아 주세요." };
     const items = cart();
-    const line = Object.assign({ qty: 1 }, item);
-    if (!line.set_id) delete line.set_id;
     const hit = items.find((x) => sameLine(x, line));
-    if (hit) hit.qty = line.set_id ? 1 : Math.min(10, hit.qty + (item.qty || 1));
-    else items.push(line.set_id ? Object.assign(line, { qty: 1 }) : line);
+    if (hit) {
+      hit.qty = line.set_id ? 1 : intIn(hit.qty + intIn(item.qty, 1, LINE_MAX, 1), 1, LINE_MAX, 1);
+      saveCart(items);
+      return { ok: true };
+    }
+    if (items.filter((x) => x.sku === line.sku).length >= LINE_MAX)
+      return { ok: false, reason: "limit",
+        message: "같은 상품은 " + LINE_MAX + "줄까지 담을 수 있습니다. 먼저 결제하시거나 장바구니에서 줄을 빼 주세요." };
+    items.push(line);
     saveCart(items);
+    return { ok: true };
   }
   function cartTotal() { return cart().reduce((s, x) => s + x.price * x.qty, 0); }
 
@@ -52,7 +102,7 @@
     return _me;
   }
 
-  // ── 간편 로그인 (구글·카카오·네이버) ──
+  // ── 간편 로그인 (구글, 카카오, 네이버) ──
   let _cfg = null;
   async function config() {
     if (_cfg) return _cfg;
@@ -94,7 +144,8 @@
     naver: '<svg viewBox="0 0 18 18" width="15" height="15" aria-hidden="true"><path fill="#fff" d="M11.13 9.6 6.63 3H3v12h3.87V8.4l4.5 6.6H15V3h-3.87z"/></svg>',
   };
 
-  const won = (n) => Number(n || 0).toLocaleString("ko-KR") + "원";
+  // 금액 표기. 유한 정수만 통과시켜 화면에 NaN 이나 문자열이 그대로 실리지 않게 한다
+  const won = (n) => intIn(n, 0, 100000000, 0).toLocaleString("ko-KR") + "원";
 
   async function updateNav() {
     // 전람 v1(.nav .aux) 과 플랫폼 v2(.util nav, .hd .aux) 헤더를 함께 갱신 (2026-08-26)
@@ -231,7 +282,7 @@
     try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
   }
   async function showPopup() {
-    if (document.body.dataset.noPopup !== undefined) return;   // body[data-no-popup] = 결제·리더 화면 제외
+    if (document.body.dataset.noPopup !== undefined) return;   // body[data-no-popup] = 결제, 리더 화면 제외
     let data;
     try { data = await api("/api/notices/active?kind=popup"); } catch { return; }
     const items = Array.isArray(data) ? data : (data.items || data.notices || []);
@@ -274,5 +325,6 @@
   addEventListener("resize", markScrollableTables);
 
   window.HH = { API, api, me, cart, pruneCart, saveCart, addToCart, cartTotal, won, updateNav,
-    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml };
+    config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml,
+    SET_ID_RE, UNITS, LINE_MAX, okSetId, okUnit, intIn };
 })();

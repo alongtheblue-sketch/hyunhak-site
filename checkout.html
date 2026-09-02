@@ -396,8 +396,9 @@ document.addEventListener('DOMContentLoaded', async function(){
     btn.disabled=true; btn.textContent='주문 생성 중';
     try{
       var order = await HH.api('/api/orders',{method:'POST',body:JSON.stringify({
-        // 세트 결속 낱권은 set_id 를 함께 보낸다 (서버 검증: passage-single 은 set_id 필수, 줄마다 qty 1)
-        items: items.map(function(x){var it={sku:x.sku, qty:x.qty}; if(x.set_id) it.set_id=x.set_id; return it;}), shipping: shipping,
+        // 세트 결속 낱권은 set_id 를 함께 보낸다 (서버 검증: passage-single 은 set_id 필수, 줄마다 qty 1).
+        // 마지막 관문에서도 계약을 다시 본다. 손댄 localStorage 값이 주문 body 로 흐르지 않게 한다
+        items: items.map(function(x){var it={sku:x.sku, qty:x.qty}; if(HH.okSetId(x.set_id)) it.set_id=x.set_id; return it;}), shipping: shipping,
         replace_order_id: window.__hhPendingOrder || undefined })});   // r3 REQ2: 재확인 재생성 시 직전 pending 폐기
       window.__hhPendingOrder = order.orderId;
       // r2 B10 + r3 REQ1: 총액만이 아니라 품목 단가까지 대조한다. 두 품목이 같은 액수만큼 오르내려
@@ -407,9 +408,14 @@ document.addEventListener('DOMContentLoaded', async function(){
       if (order.amount !== total || itemDrift) {
         items.forEach(function(x){ if (priceBySku[x.sku] != null) x.price = priceBySku[x.sku]; });
         if (HH.saveCart) HH.saveCart(items);   // 저장 카트에도 서버 단가 반영 (다음 화면 표시 정합)
+        // 품목만 고치고 소계와 배송비를 두면 요약이 서로 안 맞는 수를 보인다. 보정가로 요약을 통째로 다시 그린다
         total = order.amount;
+        sub = items.reduce(function(s,x){return s+x.price*x.qty},0);
+        shipFee = needShip ? Math.max(0, total - sub) : 0;   // 총액은 서버 확정값, 잔액이 배송비
         $('#sumRows').innerHTML = items.map(function(it){
           return '<p class="item"><span>'+esc(it.title)+', '+it.qty+(it.ship?'부':'건')+'</span><span>'+HH.won(it.price*it.qty)+'</span></p>'}).join('');
+        $('#sumDl').innerHTML = '<div><dt>상품</dt><dd>'+HH.won(sub)+'</dd></div>'
+          + (needShip ? '<div><dt>배송</dt><dd>'+HH.won(shipFee)+'</dd></div>' : '');
         $('#sumTotal').textContent = HH.won(total);
         btn.disabled = false; btn.textContent = HH.won(total) + ' 결제';
         await driver.setAmount(total);
