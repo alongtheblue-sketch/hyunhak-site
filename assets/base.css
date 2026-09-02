@@ -92,7 +92,7 @@ img,svg,video{display:block;max-width:100%;height:auto}
 :where(body.v2) .mono,:where(body.v2) .num,:where(body.v2) .k,:where(body.v2) .no{font-family:var(--mono)}
 /* 로고 심볼: currentColor SVG 만. 배경 텍스처 PNG 금지 */
 :where(body.v2) .sym{color:currentColor}
-/* 리빌 — transform/opacity 만, reduced-motion 시 즉시 표시 */
+/* 리빌: transform 과 opacity 만, reduced-motion 시 즉시 표시 */
 :where(body.v2) .rv{opacity:0;transform:translateY(18px);transition:opacity var(--dur-3) var(--ease),transform var(--dur-3) var(--ease)}
 :where(body.v2) .rv.in{opacity:1;transform:none}
 @media (prefers-reduced-motion:reduce){
@@ -111,11 +111,11 @@ body.v2{background:var(--ink)}
 :where(body.v2) .sheet{background:var(--paper);border-radius:var(--r-lg);overflow:clip;position:relative}
 
 /* 유틸바 */
-:where(body.v2) .util{display:flex;justify-content:space-between;align-items:center;min-height:40px;padding:0 var(--gut);
+:where(body.v2) .util{display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:0 var(--gut);
   font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);border-bottom:var(--rule)}
 :where(body.v2) .util .han{font-family:var(--serif);font-weight:300;font-size:var(--t-sm);letter-spacing:.06em}
 :where(body.v2) .util nav{display:flex;gap:var(--s4)}
-:where(body.v2) .util nav a{display:inline-flex;align-items:center;min-height:40px;font-family:var(--sans);letter-spacing:0;font-size:var(--t-sm)}
+:where(body.v2) .util nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font-family:var(--sans);letter-spacing:0;font-size:var(--t-sm)}
 :where(body.v2) .util nav a:hover{color:var(--ink)}
 
 /* 헤더 */
@@ -296,7 +296,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) footer .han{font-family:var(--serif);font-weight:300;color:var(--ink);letter-spacing:.06em}
 :where(body.v2) footer ul{display:flex;flex-direction:column;gap:2px}
 :where(body.v2) footer li{min-height:32px;display:flex;align-items:center}
-:where(body.v2) footer a{display:inline-flex;align-items:center;min-height:var(--tap)}
+:where(body.v2) footer a{display:inline-flex;align-items:center;min-height:var(--tap);min-width:44px}
 :where(body.v2) footer a:hover{color:var(--ink)}
 :where(body.v2) footer .biz{margin-top:var(--s5);padding-top:var(--s3);border-top:var(--rule);font-size:var(--t-xs);display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
 :where(body.v2) footer .biz img{height:auto}
@@ -457,7 +457,7 @@ body.v2{background:var(--ink)}
 /* 표 */
 :where(body.v2) .tblwrap{overflow-x:auto;margin-top:var(--s4);border-top:2px solid var(--ink)}
 :where(body.v2) .tblwrap .atbl.wide{min-width:1080px} /* 8열+ 제원표: 셀 세로 파열 대신 가로 스크롤 */
-/* 실제로 넘치는 표만 app.js 가 .scrollx 부여 — 가장자리 그림자로 더 있음을 알리고, 초점 링을 남긴다 */
+/* 실제로 넘치는 표만 app.js 가 .scrollx 부여. 가장자리 그림자로 더 있음을 알리고, 초점 링을 남긴다 */
 :where(body.v2) .tblwrap.scrollx{background:linear-gradient(90deg,var(--paper) 30%,transparent),linear-gradient(90deg,transparent,var(--paper) 70%) 100% 0,
   radial-gradient(farthest-side at 0 50%,rgba(49,46,46,.16),transparent),radial-gradient(farthest-side at 100% 50%,rgba(49,46,46,.16),transparent) 100% 0;
   background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
@@ -702,7 +702,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .lv.top i b.f{background:var(--seal)}
 :where(body.v2) .setnav{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between;margin:var(--s4) 0 var(--s3)}
 :where(body.v2) .chips{display:flex;flex-wrap:wrap;gap:var(--s1)}
-:where(body.v2) .chips button{min-height:44px;padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--body);border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2) .chips button{min-height:44px;min-width:44px;padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--body);border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
 :where(body.v2) .setmore{display:flex;justify-content:center;margin-top:var(--s4)}
 :where(body.v2) .setmore:empty{display:none}

@@ -4,7 +4,7 @@
 //   1 document.documentElement.scrollWidth <= innerWidth
 //   2 getBoundingClientRect().right > innerWidth + 1 인 보이는 요소 0 (overflow:hidden 이 가린 이탈까지 잡는다)
 //   3 좌우 잉크 여백 대칭 (텍스트 노드와 그림의 최좌 잉크 vs 최우 잉크) 1px 이내
-//   4 390 에서 최소변 44px 미만 인터랙티브 요소, 그리고 렌더된 font-size 종수 (타입 사다리 실측)
+//   4 높이 또는 폭이 44px 미만인 인터랙티브 요소, 그리고 렌더된 font-size 종수 (타입 사다리 실측)
 // my.html 과 lecture.html 회원 목록은 로그인 세션이 필요하므로 API 응답을 스텁한다 (레이아웃 측정 목적, 값은 가짜).
 import { chromium } from '/Users/gregory/Workspace/iruri_6mo_thumb/node_modules/playwright/index.mjs';
 const [out, base, w, ...paths] = process.argv.slice(2);
@@ -82,7 +82,7 @@ for (const p of paths) {
       if (r.width === 0 && r.height === 0) continue;
       if (skip(el) || hidden(el)) continue;
       if (el.matches('input[type=checkbox],input[type=radio]')) { const host = el.closest('label') || el.closest('.check'); if (host) r = host.getBoundingClientRect(); }
-      if (r.height < 44 && r.width < 44) small.push((el.textContent || el.tagName).trim().slice(0, 16) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height));
+      if (r.height < 44 || r.width < 44) small.push((el.textContent || el.tagName).trim().slice(0, 16) + ' ' + Math.round(r.width) + 'x' + Math.round(r.height));
     }
     const h1 = document.querySelector('h1'); const h1cs = h1 ? getComputedStyle(h1) : null;
     const duo = document.querySelector('#p1 .duo');
@@ -95,7 +95,8 @@ for (const p of paths) {
   });
   const name = p.replace(/\.html.*$/, '').replace(/\//g, '_');
   await pg.screenshot({ path: `${out}/live_${name}_${w}.png`, fullPage: true });
-  const pass = m.ok1 && m.overN === 0 && Math.abs(m.inkL - m.inkR) <= 1;
+  // 판정에 작은 대상, 금지 문자, JS 오류를 포함한다. 재던 값을 PASS 가 무시하면 게이트가 아니다 (Codex r1 #17)
+  const pass = m.ok1 && m.overN === 0 && Math.abs(m.inkL - m.inkR) <= 1 && m.smallN === 0 && m.dots === 0 && errs.length === 0;
   console.log(JSON.stringify({ p, w: +w, pass, ...m, errors: errs }));
   await pg.close();
 }
