@@ -394,10 +394,14 @@ body.v2{background:var(--ink)}
 :where(body.v2) .total span:first-child{font-size:var(--t-sm);color:rgba(var(--paper-rgb),.72)}
 :where(body.v2) .total .won{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;letter-spacing:-0.02em;font-variant-numeric:tabular-nums}
 
-/* 폼 */
+/* 폼. 입력 상자 규칙에서 라디오와 체크박스를 뺀다 (최종 리뷰 site Important 1).
+   시각 숨김(position:absolute;opacity:0) 라디오에 width:100% 가 걸리면 상자가 포함 블록 폭으로 늘어나
+   정적 위치에서 오른쪽으로 삐져 나간다. 구판은 모바일 .sheet{overflow:hidden} 이 그 상자를 잘라
+   가렸고, 모바일 overflow:visible 로 바꾸면서 join.html 390 폭 scrollWidth 가 394 가 됐다.
+   계측기는 opacity:0 요소를 hidden 으로 건너뛰어 over 0 으로 보고하므로 scrollWidth 판정만 잡는다. */
 :where(body.v2) .field{display:flex;flex-direction:column;gap:8px;margin-bottom:var(--s4)}
 :where(body.v2) .field label{font-size:var(--t-sm);font-weight:600}
-:where(body.v2) .field input,:where(body.v2) .field select,:where(body.v2) .field textarea{font:inherit;font-size:var(--t-base);color:var(--ink);background:var(--card);border:1px solid var(--hair);border-radius:var(--r-md);min-height:var(--tap);padding:0 16px;width:100%;outline:none;transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
+:where(body.v2) .field input:not([type=radio]):not([type=checkbox]),:where(body.v2) .field select,:where(body.v2) .field textarea{font:inherit;font-size:var(--t-base);color:var(--ink);background:var(--card);border:1px solid var(--hair);border-radius:var(--r-md);min-height:var(--tap);padding:0 16px;width:100%;outline:none;transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
 :where(body.v2) .field textarea{padding:14px 16px;min-height:120px;line-height:1.6}
 :where(body.v2) .field input:focus,:where(body.v2) .field select:focus,:where(body.v2) .field textarea:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(49,46,46,.08)}
 :where(body.v2) .field input:focus-visible,:where(body.v2) .field select:focus-visible,:where(body.v2) .field textarea:focus-visible{outline:none}
@@ -414,7 +418,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .check input[type=radio]:checked{box-shadow:inset 0 0 0 4px var(--paper)}
 :where(body.v2) .check label{flex:1;cursor:pointer}
 :where(body.v2) .check small{display:block;font-size:var(--t-sm);color:var(--gray);margin-top:2px}
-:where(body.v2) .check .view{margin-left:auto;flex:none;display:inline-flex;align-items:center;min-height:44px;font-size:var(--t-sm);color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:0 var(--s2)}
+:where(body.v2) .check .view{margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font-size:var(--t-sm);color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:0 var(--s2)}
 :where(body.v2) .check .view:hover{color:var(--ink)}
 :where(body.v2) .ckfoot{margin:14px 0 0;font-size:var(--t-sm);line-height:1.6;color:var(--gray)}
 :where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:var(--r-md);background:rgba(188,53,41,.06);border-left:3px solid var(--seal);font-size:var(--t-sm);line-height:var(--lh-body)}

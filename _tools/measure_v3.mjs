@@ -1,5 +1,5 @@
 // v3 반응형 실측 (PLAN s30 Task 5 게이트). Playwright channel chrome.
-//   node _tools/measure_v3.mjs <shots_dir> <base_url> <width> <path...>
+//   node _tools/measure_v3.mjs <shots_dir> <base_url> <width> [path...]   (면 생략 = DEFAULT_PATHS)
 // 판정 4종을 한 번에 잰다 (감사 AUDIT.md D1~D5 의 재발 방지):
 //   1 document.documentElement.scrollWidth <= innerWidth
 //   2 getBoundingClientRect().right > innerWidth + 1 인 보이는 요소 0 (overflow:hidden 이 가린 이탈까지 잡는다)
@@ -7,7 +7,14 @@
 //   4 높이 또는 폭이 44px 미만인 인터랙티브 요소, 그리고 렌더된 font-size 종수 (타입 사다리 실측)
 // my.html 과 lecture.html 회원 목록은 로그인 세션이 필요하므로 API 응답을 스텁한다 (레이아웃 측정 목적, 값은 가짜).
 import { chromium } from '/Users/gregory/Workspace/iruri_6mo_thumb/node_modules/playwright/index.mjs';
-const [out, base, w, ...paths] = process.argv.slice(2);
+// 게이트 대상 면의 단일 출처. 인자로 면을 주지 않으면 이 목록을 쓴다.
+// join.html 과 login.html 은 최종 리뷰 site Important 1 로 넣었다. 가입 면의 시각 숨김 라디오가
+// 390 폭에서 4px 이탈했는데 그 면이 목록 밖이라 게이트가 못 잡았다. 계측기가 opacity:0 요소를
+// hidden 으로 건너뛰는 규칙은 그대로 두고, scrollWidth 판정이 그 이탈을 잡는다.
+// programs/*.html 은 base.css 를 링크하지 않는 구 LP 라 v3 게이트 대상이 아니다 (Task 5 브리프).
+const DEFAULT_PATHS = ['index.html', 'studio.html', 'lecture.html', 'my.html', 'guidebook/index.html', 'join.html', 'login.html'];
+const [out, base, w, ...argPaths] = process.argv.slice(2);
+const paths = argPaths.length ? argPaths : DEFAULT_PATHS;
 const b = await chromium.launch({ channel: 'chrome' });
 const ctx = await b.newContext({ viewport: { width: +w, height: 900 }, deviceScaleFactor: 1 });
 const STUB = {
@@ -18,6 +25,9 @@ const STUB = {
       { kind: 'studio_passage', meta: JSON.stringify({ sku: 'passage-single', title: '지문 낱권, 이름은 누구의 것인가', set_id: 'yonsei_2027_h03' }), uses_left: 5, expires_at: null },
       { kind: 'lecture', meta: JSON.stringify({ set_id: 'yonsei_2027_h03' }), uses_left: null, expires_at: '2027-09-02T00:00:00.000Z' },
       { kind: 'download', meta: JSON.stringify({ slug: 'korea', title: '고려대학교 2027 서류기반면접 가이드북' }), uses_left: null, expires_at: '2026-10-02T00:00:00.000Z' },
+      // 판매 중단된 구 학교 전권. 이용권 카드에는 서지만 내 강의 단위 카드에는 서지 않아야 한다
+      // (5단위 어휘 밖 sku 를 단위 코드로 역추적하면 강의 0편인 가짜 카드가 선다, 최종 리뷰 site).
+      { kind: 'studio_school', meta: JSON.stringify({ sku: 'pass-yonsei', title: '연세대학교 전권 이용권' }), uses_left: null, expires_at: null },
     ] },
   lectures: { lectures: [
     { id: 'lec_c1', kind: 'common', unit_code: null, passage_set_id: null, seq: 1, title: '제시문 면접의 규격과 채점', subtitle: '공통', duration_sec: 1264, status: 'ready', entitled: true, progress: { view_count: 2, position_sec: 300, completed: false } },
