@@ -114,7 +114,8 @@
   <h1>질문 4,766개, <span class="nb">대학별 가이드북 38권</span><br>연세대 고려대 <span class="nb">제시문 150세트 응시</span></h1>
   <div class="lede2">
     <p>가이드북 38권은 <b>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기</b>에서 고른 <b class="nb">질문 4,766개</b>와 <b class="nb">생기부 전환 규칙 1,790개</b>를 문항마다 출처와 함께 싣습니다.</p>
-    <p>스튜디오는 <span class="nb">연세대 준비 8분</span>과 <span class="nb">고려대 준비 21분</span> 규격 그대로 촬영 응시하고, 한 지문마다 <b class="nb">5회 응시</b>와 전사, 진단, 구술체 재구성의 <b class="nb">첨삭 3단</b>을 받습니다.</p>
+    <p class="more" id="ledeMore">스튜디오는 <span class="nb">연세대 준비 8분</span>과 <span class="nb">고려대 준비 21분</span> 규격 그대로 촬영 응시하고, 한 지문마다 <b class="nb">5회 응시</b>와 전사, 진단, 구술체 재구성의 <b class="nb">첨삭 3단</b>을 받습니다.</p>
+    <button type="button" class="tlink fold" data-fold aria-expanded="false" aria-controls="ledeMore">더 보기</button>
   </div>
   <div class="cta"><a class="btn" href="guidebook/index.html">지원 대학 가이드북 보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 시작</a></div>
   <div class="duo">
@@ -191,7 +192,7 @@
   <p class="folio"><b>卷四</b><span>근거와 규정</span><span class="r">4</span></p>
   <div class="sh"><div><h2 class="t">근거와 규정</h2><p>추정 문항 없이 출처 있는 질문만. 규정은 약관 그대로.</p></div></div>
   <div class="why">
-    <div><h3>관측 기록</h3><p>대학이 공개한 모집요강과 합격 후기에서 관측된 질문만 수록했습니다. 추정 문항은 싣지 않았습니다.</p></div>
+    <div><h3>출처 있는 질문만</h3><p>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 고른 질문 <b>4,766개</b>만 실었습니다. 추정으로 만든 문항은 없습니다.</p></div>
     <div><h3>보안 리더</h3><p>가이드북은 브라우저 보안 리더로 열람하실 수 있습니다. 원본 다운로드 없이 워터마크 열람으로 제공되며, 인쇄는 권당 3회까지 가능합니다.</p></div>
     <div><h3>첨삭 3단</h3><p>전사, 진단, 재구성을 회차마다 첨부.</p></div>
     <div><h3>환불 규정</h3><p>디지털 상품은 열람 시작 전까지 취소하실 수 있습니다. 실물은 수령 후 7일 이내 반품 가능하며, 반송비는 3,000원입니다.</p></div>
@@ -466,6 +467,9 @@ var HH_GB=[{"slug":"dgist","name":"DGIST(대구경북과학기술원)","short":"
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var id='#'+e.target.id;idx.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===id)})})},{rootMargin:'-40% 0px -50% 0px'});
     idx.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
   }
+  // D1 A (건우 2026-09-02): 720px 미만에서 리드 2문장째 접기. fold-ready 는 여기서만 붙인다 (JS 없으면 전문 노출)
+  var ld=document.querySelector('.lede2'), fb=ld&&ld.querySelector('[data-fold]');
+  if(ld&&fb){ ld.classList.add('fold-ready'); fb.addEventListener('click',function(){ var o=ld.classList.toggle('open'); fb.setAttribute('aria-expanded',o?'true':'false'); fb.textContent=o?'접기':'더 보기'; }); }
   // 히어로 1차 CTA 스튜디오 = 체험 응시 1회 (studio.html trialGo 와 같은 흐름)
   var ht=document.getElementById('heroTrial');
   if(ht&&window.HH) ht.addEventListener('click', async function(ev){

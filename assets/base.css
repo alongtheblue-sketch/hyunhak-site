@@ -623,6 +623,14 @@ body.v2{background:var(--ink)}
 :where(body.v2) .lede2 b,:where(body.v2) .pagehead .lede b,:where(body.v2) .entry .spec b{font-weight:700;color:var(--ink)}
 :where(body.v2) .entry>p{color:var(--ink);font-weight:500}
 :where(body.v2) .nb{white-space:nowrap}
+/* D1 A (건우 2026-09-02): 720px 미만에서 리드 2문장째 접기. .fold-ready 는 JS 가 붙인다 (무JS = 전문 노출). 버튼은 .tlink 탭 높이 그대로 */
+:where(body.v2) .lede2 .fold{display:none;min-width:var(--tap);justify-content:flex-start;background:none;border:0;padding:0;font:inherit;font-size:var(--t-sm);font-weight:600;color:var(--ink);cursor:pointer}
+:where(body.v2) .lede2 .fold:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+@media (max-width:719.98px){
+  :where(body.v2) .lede2.fold-ready .fold{display:inline-flex}
+  :where(body.v2) .lede2.fold-ready:not(.open) .more{display:none}
+}
+:where(body.v2) .why p b{font-weight:700;color:var(--ink)}
 /* 2상품 병립 */
 :where(body.v2) .duo{display:grid;grid-template-columns:1fr;margin-top:var(--s5);border-top:var(--rule-strong)}
 @media (min-width:820px){:where(body.v2) .duo{grid-template-columns:1fr 1fr}}
