@@ -101,7 +101,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="cta" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -159,7 +159,7 @@ document.addEventListener('DOMContentLoaded', async function(){
       + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'
       + (r.receipt ? '<div><dt>영수증</dt><dd><a class="tlink" target="_blank" rel="noopener" href="' + esc(r.receipt) + '">보기</a></dd></div>' : '');
     acts.hidden = false;
-    acts.innerHTML = '<a class="btn" href="my.html">마이페이지 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="studio.html">면접 스튜디오</a>';
+    acts.innerHTML = '<a class="btn" href="my.html">마이페이지 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="studio.html">제시문 면접 스튜디오</a>';
   } catch (e) {
     h.textContent = '승인에 실패했습니다';
     sub.textContent = e.message || '결제 승인에 실패했습니다. 금액이 빠져나갔다면 자동 취소됩니다.';

@@ -132,9 +132,13 @@ def fix(rel):
     p = prefix_of(rel)
     out = []
     for h, l, keys, pri, icon in FIX:
-        cls = " ".join(c for c in (("pri" if pri else ""), ("on" if _on(rel, keys) else "")) if c)
+        # cta = 전환 유도 채움, on + aria-current = 현재 위치. 둘을 갈라야 다른 면에서도
+        # 가이드북 항목이 활성으로 읽히는 일이 없다 (라이브 재채점 보완 2)
+        on = _on(rel, keys)
+        cls = " ".join(c for c in (("cta" if pri else ""), ("on" if on else "")) if c)
         href = "#grid" if (pri and rel == "guidebook/index.html") else p + h
-        out.append(f'<a{" class=" + chr(34) + cls + chr(34) if cls else ""} href="{href}">{_fi(icon)}{l}</a>')
+        attrs = (f' class="{cls}"' if cls else "") + (' aria-current="page"' if on else "")
+        out.append(f'<a{attrs} href="{href}">{_fi(icon)}{l}</a>')
     return '<nav class="fix" aria-label="모바일 바로가기">' + "".join(out) + "</nav>"
 
 
