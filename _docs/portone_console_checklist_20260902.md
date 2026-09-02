@@ -18,7 +18,7 @@
 | 10 | Store ID | integration/ready | store-84534eb1… = 라이브 config 일치 | 완료 | 없음 |
 | 11 | V2 API Secret | integration/ready | hyunhakapi, 09-01 생성, 무기한. 라이브 주입 완료(SW-1) | 완료 | 없음 |
 | 12 | 웹훅 V2 테스트 URL | webhook/readme-v2 | https://api.hyunhak.com/api/payments/webhook, application/json, 버전 2024-04-25 | 완료 | SW-2 닫음 |
-| 13 | 웹훅 V2 테스트 시크릿 | webhook/readme-v2 | Secret 1 발급(1/2), 값은 마스킹 | 완료 | PC-1 호출 테스트로 라이브 시크릿 짝 검증(건우 OK 시) |
+| 13 | 웹훅 V2 테스트 시크릿 | webhook/readme-v2 | Secret 1 발급(1/2), 값은 마스킹. **12:35 호출 테스트 = 서명 있는 POST 1건에 서버 200 (tail 실측)** = 라이브 시크릿과 짝 일치 | 완료 | 없음 |
 | 14 | 웹훅 V2 실연동 URL | webhook/readme-v2 | 비어 있음 → **09-02 12:2x 세션 등록** (동일 URL, 재조회로 확인, 채증 live_after_save.jpg) | 완료 | 없음 |
 | 15 | 웹훅 V2 실연동 시크릿 | webhook/readme-v2 | 없음 | 대기 | PC-3 개통 시 발급, 테스트 시크릿 재사용 금지 |
 | 16 | 웹훅 V1 | 콘솔 | URL 없음 | 해당없음 | V2 사용 |
@@ -33,6 +33,7 @@
 | 25 | 정산 계좌, 세금계산서 | 콘솔 | 별도 메뉴 없음(PG 계약 단계) | 대기 | KG 계약서 작성 시 |
 
 ## 집행 기록
+- 09-02 12:35 웹훅 호출 테스트 1회(건우 OK). tail = POST → 200, exceptions 0. webhook_logs 1행 남음.
 - 09-02 12:2x 웹훅 V2 실연동 URL 등록 1건. 가역(빈 값으로 되돌리면 원복). 실연동 채널이 없어 라이브 웹훅은 아직 발생하지 않고, 발생해도 시크릿 미주입이라 서버가 401 로 끊는다.
 - 그 외 변경 0. 시크릿 값은 어디에도 기록하지 않았다.
 
