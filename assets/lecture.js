@@ -192,37 +192,58 @@
   }
 
   // 비회원, 또는 회원 목록을 받지 못한 경우의 기본 화면. 5 단위 공개 목록을 나란히 세운다 (Codex r1 #13).
-  // 로그인 면으로 튕기지 않으므로 API 장애가 로그인 요구로 보이지 않는다
-  function renderPublicView(all, units, apiUp) {
+  // 로그인 면으로 튕기지 않으므로 API 장애가 로그인 요구로 보이지 않는다.
+  // 공개, 준비 편수는 세트 해설(kind passage) 행만 센다 (Codex r2 #19). 준비 편수의 모수가 단위 세트 수
+  // (set_count)라 공통, 단위 강의를 섞으면 회원 목록 경로의 summary(kind=passage) 와 다른 값이 나온다.
+  var UNIT_DOWN_CNT = "이용 불가";
+  var UNIT_DOWN_NOTE = "이 단위의 공개 상태를 지금 확인할 수 없습니다. 잠시 후 다시 확인해 주세요. 단위 전체 보기에서 세트 목록을 봅니다.";
+  function isReady(l) { return l.status === "ready"; }
+  function passageOf(list) { return list.filter(function (l) { return l.kind === "passage"; }); }
+  // states = publicAll 이 준 단위별 {code, ok, lectures}. 실패한 단위는 공개 0편이 아니라 이용 불가로 적는다 (Codex r2 #20)
+  function renderPublicView(states, units) {
     titleEl.textContent = "해설 강의"; crumbNow.textContent = "해설 강의";
-    var readyN = all.filter(function (l) { return l.status === "ready"; }).length;
+    var byCode = {};
+    states.forEach(function (s2) { byCode[s2.code] = s2; });
+    var okStates = states.filter(function (s2) { return s2.ok; });
+    var apiUp = okStates.length > 0, allOk = okStates.length === states.length;
+    var okAll = [];
+    okStates.forEach(function (s2) { s2.lectures.forEach(function (l) { okAll.push(l); }); });
+    var readyN = passageOf(okAll).filter(isReady).length;
     metaEl.innerHTML = "<span>" + esc(apiUp ? lecText(readyN) : "공개 상태는 지금 확인할 수 없습니다") + "</span>"
+      + (apiUp && !allOk ? "<span>일부 단위는 지금 확인할 수 없습니다</span>" : "")
       + '<i class="sep" aria-hidden="true"></i>'
       + '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>';
     var html = '<div class="lecl">';
-    var common = all.filter(function (l) { return l.kind === "common"; });
-    if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), null); }).join(""));
+    var common = okAll.filter(function (l) { return l.kind === "common"; });
+    if (common.length) html += group("공통 강의", cnt(common.filter(isReady).length, common.filter(function (l) { return !isReady(l); }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), null); }).join(""));
     units.forEach(function (u) {
       var total = n0(u.set_count, 999);
-      var ls = all.filter(function (l) { return l.unit_code === u.code; });
+      var more = '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">단위 전체 보기, 세트 ' + total + "편</a>";
+      var st = byCode[u.code];
+      if (!st || !st.ok) {   // 조회 실패 단위: 편수를 적지 않고 이용 불가로 표시한다
+        html += group(esc(u.label), UNIT_DOWN_CNT, more, '<p class="note">' + UNIT_DOWN_NOTE + "</p>");
+        return;
+      }
+      var ls = st.lectures.slice();
       ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
-      var rdy = ls.filter(function (l) { return l.status === "ready"; }).length;
+      var rdy = passageOf(ls).filter(isReady).length;
       var body = ls.length ? ls.map(function (l, i) { return row(l, num2(l.seq || i + 1), u.code); }).join("")
-        : '<p class="note">' + (apiUp ? "공개된 해설 강의가 아직 없습니다. 단위 전체 보기에서 준비 중 슬롯을 봅니다." : "공개 상태를 지금 확인할 수 없습니다. 단위 전체 보기에서 세트 목록을 봅니다.") + "</p>";
-      html += group(esc(u.label), apiUp ? cnt(rdy, Math.max(0, total - rdy)) : "",
-        '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">단위 전체 보기, 세트 ' + total + "편</a>", body);
+        : '<p class="note">공개된 해설 강의가 아직 없습니다. 단위 전체 보기에서 준비 중 슬롯을 봅니다.</p>';
+      html += group(esc(u.label), cnt(rdy, Math.max(0, total - rdy)), more, body);
     });
     view.innerHTML = html + "</div>";
   }
-  // 5 단위 공개 목록 병렬 조회. 200 인 응답만 합치고, 하나도 200 이 아니면 apiUp false
+  // 5 단위 공개 목록 병렬 조회. 단위별 {code, ok, lectures} 를 그대로 들고 온다 (Codex r2 #20).
+  // 하나가 200 이라고 나머지 단위를 정상으로 보지 않는다. 허용 단위 5종 밖의 unit_code 는 여기서 버린다
   function publicAll(codes) {
     return Promise.all(codes.map(function (c) {
-      return apiFetch("/api/lectures/public?unit=" + encodeURIComponent(c)).catch(function () { return { _status: 0 }; });
-    })).then(function (rs) {
-      var out = [], up = false;
-      rs.forEach(function (d) { if (d && d._status === 200) { up = true; (d.lectures || []).forEach(function (l) { out.push(l); }); } });
-      return { lectures: out, up: up };
-    });
+      return apiFetch("/api/lectures/public?unit=" + encodeURIComponent(c))
+        .catch(function () { return { _status: 0 }; })
+        .then(function (d) {
+          var ok = !!d && d._status === 200 && Array.isArray(d.lectures);
+          return { code: c, ok: ok, lectures: ok ? d.lectures.filter(function (l) { return !l.unit_code || okUnit(l.unit_code); }) : [] };
+        });
+    }));
   }
 
   function renderList() {
@@ -244,8 +265,8 @@
       var loggedIn = mine._status === 200;   // 200 만 회원 목록으로 인정한다. 5xx 를 로그인 성공으로 읽지 않는다
       if (!loggedIn && !unitParam) {
         // 회원 목록이 없으면 공개 목록으로 내려간다 (로그인 면으로 튕기지 않는다)
-        return publicAll(units.map(function (u) { return u.code; })).then(function (pl) {
-          renderPublicView(pl.lectures.filter(function (l) { return !l.unit_code || okUnit(l.unit_code); }), units, pl.up);
+        return publicAll(units.map(function (u) { return u.code; })).then(function (states) {
+          renderPublicView(states, units);
         });
       }
       var mineList = loggedIn ? (mine.lectures || []) : [];
