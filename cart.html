@@ -25,21 +25,22 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-/* 장바구니 전용 */
+/* 장바구니 전용 (v3). 크기는 토큰만 */
 .lay{padding-top:0}
-.lines li{border-top:1px solid var(--hair)}
-.lines li:last-child{border-bottom:1px solid var(--hair)}
-.line{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s3) 4px}
-.line .thumb{width:56px;height:79px;border-radius:2px;background:var(--mat);display:grid;place-items:center;overflow:hidden;box-shadow:0 4px 12px rgba(49,46,46,.18)}
+.lines li{border-top:var(--rule-strong)}
+.lines li:last-child{border-bottom:var(--rule-strong)}
+.line{display:grid;grid-template-columns:56px minmax(0,1fr) auto;gap:var(--s3);align-items:center;padding:var(--s3) var(--s1)}
+.line .thumb{width:56px;height:79px;border-radius:var(--r-sm);background:var(--mat);display:grid;place-items:center;overflow:hidden;box-shadow:inset 0 0 0 1px var(--hairs)}
 .line .thumb img{width:100%;height:100%;object-fit:cover}
-.line .thumb-txt{font-size:11px;font-weight:600;line-height:1.4;color:var(--gray);text-align:center;padding:4px}
-.line .t{font-size:16px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
-.line .m{margin-top:4px;font-size:13px;color:var(--gray)}
+.line .thumb-txt{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;line-height:1.4;color:var(--gray);text-align:center;padding:4px}
+.line .t{font-size:var(--t-base);font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.line .m{margin-top:4px;font-size:var(--t-sm);color:var(--gray)}
+.line .m .mono{font-size:var(--t-xs);margin-left:6px}
 .line .ops{margin-top:12px;display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
-.line .p{text-align:right;font-weight:700;font-size:16px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.line .p{font-family:var(--mono);text-align:right;font-weight:500;font-size:var(--t-base);font-variant-numeric:tabular-nums;white-space:nowrap}
 .memberline{margin-top:var(--s3)}
 .keep{margin-top:var(--s5)}
 .bill .btn{width:100%;margin-top:var(--s4)}
@@ -63,7 +64,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -75,7 +76,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html" aria-current="page">장바구니</a></div>
   </nav>
 </header>
@@ -96,7 +97,7 @@
   <section class="items">
     <ol class="lines" id="cartRows"></ol>
     <p class="note memberline" id="cartNote" hidden>디지털 상품은 결제 즉시 마이페이지에서 열림. 실물 상품만 배송 대상.</p>
-    <div class="empty" id="cartEmpty" hidden>담긴 상품이 없습니다. 가이드북, 스튜디오, 스토어에서 담아 주세요.</div>
+    <div class="empty" id="cartEmpty" hidden>담긴 상품이 없습니다. 가이드북과 스튜디오에서 담아 주세요.</div>
     <p class="keep"><a class="btn ghost sm" href="guidebook/index.html">가이드북 더 보기 <span class="ar" aria-hidden="true">→</span></a></p>
   </section>
 
@@ -118,12 +119,12 @@
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
+        <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -152,7 +153,8 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   // 1개 한정 상품 (서버도 400 으로 막지만, 화면에서 수량 조절을 없애 마찰을 줄인다)
   // = PDF 소장판(guide-*-pdf)과 전권 번들(guide-all-*). 권리가 계정 결속이라 2개가 의미 없다
-  function single(it){ return /^guide-(all-view|all-pdf|.+-pdf)$/.test(String(it.sku||'')); }
+  // 세트 결속 낱권(passage-single + set_id)도 줄마다 1 (서버가 qty 1 강제, 세트마다 별 줄)
+  function single(it){ return /^guide-(all-view|all-pdf|.+-pdf)$/.test(String(it.sku||'')) || (String(it.sku||'')==='passage-single' && !!it.set_id); }
   function render(){
     var items=HH.cart(), rows=document.getElementById('cartRows');
     var fixed=false;
@@ -166,9 +168,9 @@ document.addEventListener('DOMContentLoaded', function(){
     rows.innerHTML=items.map(function(it,i){
       return '<li class="line">'+thumb(it)
         +'<div><p class="t">'+esc(it.title)+'</p>'
-        +'<p class="m">'+(it.ship?'실물 배송':'디지털, 결제 즉시 열림')+'</p>'
+        +'<p class="m">'+(it.ship?'실물 배송':'디지털, 결제 즉시 열림')+(it.set_id?', 응시 5회<span class="mono">'+esc(it.set_id)+'</span>':'')+'</p>'
         +'<div class="ops">'+(single(it)
-          ?'<span class="qty" aria-label="수량">1개, 계정당 1개</span>'
+          ?'<span class="qty" aria-label="수량">'+(it.set_id?'1개, 지문 1편':'1개, 계정당 1개')+'</span>'
           :'<span class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="수량 줄이기">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="수량 늘리기">+</button></span>')
         +'<button type="button" class="tlink" data-rm="'+i+'">빼기</button></div></div>'
         +'<p class="p">'+HH.won(it.price*it.qty)+'</p></li>';

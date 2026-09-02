@@ -21,11 +21,15 @@
     try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch {}
     updateNav();
   }
-  function addToCart(item) { // {sku,title,price,qty,ship}
+  // 같은 sku 라도 set_id 가 다르면 별 줄 (PLAN s30: passage-single 은 세트 결속, 줄마다 수량 1)
+  function sameLine(a, b) { return a.sku === b.sku && String(a.set_id || "") === String(b.set_id || ""); }
+  function addToCart(item) { // {sku,title,price,qty,ship,set_id}
     const items = cart();
-    const hit = items.find((x) => x.sku === item.sku);
-    if (hit) hit.qty = Math.min(10, hit.qty + (item.qty || 1));
-    else items.push(Object.assign({ qty: 1 }, item));
+    const line = Object.assign({ qty: 1 }, item);
+    if (!line.set_id) delete line.set_id;
+    const hit = items.find((x) => sameLine(x, line));
+    if (hit) hit.qty = line.set_id ? 1 : Math.min(10, hit.qty + (item.qty || 1));
+    else items.push(line.set_id ? Object.assign(line, { qty: 1 }) : line);
     saveCart(items);
   }
   function cartTotal() { return cart().reduce((s, x) => s + x.price * x.qty, 0); }

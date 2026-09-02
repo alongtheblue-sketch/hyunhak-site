@@ -25,27 +25,29 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-/* 결제 전용 */
+/* 결제 전용 (v3). 크기는 토큰만 */
 .lay{padding-top:0}
-.blk{margin-bottom:var(--s7)}
-.blk h2{font-size:var(--t-h3);font-weight:700;letter-spacing:-0.02em;margin-bottom:var(--s4)}
-.blk h2 .no{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font-size:13px;font-weight:700;margin-right:10px;vertical-align:3px}
+.blk{margin-bottom:var(--s6)}
+.blk h2{font-size:var(--t-h3);margin-bottom:var(--s4)}
+.blk h2 .no{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:var(--t-sm);font-weight:500;margin-right:10px;vertical-align:3px}
 .addr .zipline{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:end}
 .addr .zipline .btn{margin-bottom:var(--s4)}
-.pay #payment-method,.pay #agreement{background:var(--card);border-radius:6px;padding:var(--s2)}
+.pay #payment-method,.pay #agreement{background:var(--card);border-radius:var(--r-md);padding:var(--s2)}
 .pay .pgm{border:0;margin:0;padding:0}.pay .pgm legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.pay .pgm label,.pay .agree{display:flex;align-items:center;gap:.5rem;padding:.55rem 0;cursor:pointer}
-.pay .pgm label+label{border-top:1px solid var(--line)}
-.pay .pgm .note{color:var(--muted);font-size:.86em}
+.pay .pgm label,.pay .agree{display:flex;align-items:center;gap:.5rem;min-height:var(--tap);padding:0 var(--s2);cursor:pointer;font-size:var(--t-base)}
+.pay .pgm label+label{border-top:var(--rule)}
+.pay .pgm .note{color:var(--gray);font-size:var(--t-sm)}
 .pay #agreement{margin-top:var(--s3)}
-.bill .item{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:14px;border-top:1px solid var(--hairs)}
+.pay .pgphone{margin:var(--s3) var(--s2) 0}
+.bill .item{display:flex;justify-content:space-between;gap:16px;padding:10px 0;font-size:var(--t-sm);border-top:var(--rule);max-width:none}
 .bill .item span:first-child{color:var(--body)}
+.bill .item span:last-child{font-family:var(--mono)}
 .bill .item:first-child{border-top:0}
 .bill .btn{width:100%;margin-top:var(--s4)}
-.bill .stub{margin-top:12px;font-size:12.5px;color:var(--seal)}
+.bill .stub{margin-top:12px;font-size:var(--t-sm);color:var(--seal)}
 .bill .rule{margin-top:var(--s3)}
 </style>
 </head>
@@ -65,7 +67,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -77,7 +79,7 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -154,12 +156,12 @@
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
+        <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -393,7 +395,8 @@ document.addEventListener('DOMContentLoaded', async function(){
     btn.disabled=true; btn.textContent='주문 생성 중';
     try{
       var order = await HH.api('/api/orders',{method:'POST',body:JSON.stringify({
-        items: items.map(function(x){return {sku:x.sku, qty:x.qty}}), shipping: shipping,
+        // 세트 결속 낱권은 set_id 를 함께 보낸다 (서버 검증: passage-single 은 set_id 필수, 줄마다 qty 1)
+        items: items.map(function(x){var it={sku:x.sku, qty:x.qty}; if(x.set_id) it.set_id=x.set_id; return it;}), shipping: shipping,
         replace_order_id: window.__hhPendingOrder || undefined })});   // r3 REQ2: 재확인 재생성 시 직전 pending 폐기
       window.__hhPendingOrder = order.orderId;
       // r2 B10 + r3 REQ1: 총액만이 아니라 품목 단가까지 대조 — 두 품목이 같은 액수만큼 오르내려
