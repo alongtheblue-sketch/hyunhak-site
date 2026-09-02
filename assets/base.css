@@ -720,9 +720,17 @@ body.v2{background:var(--ink)}
   :where(body.v2) .sets .c-no{grid-row:1;grid-column:1}:where(body.v2) .sets .c-no::before{content:none}
   :where(body.v2) .sets .c-t{grid-row:1;grid-column:2/span 2;min-width:0}:where(body.v2) .sets .c-t::before{content:none}
   :where(body.v2) .sets .c-d{grid-row:2;grid-column:2/span 2}
+  :where(body.v2) .sets .c-x{grid-row:3;grid-column:2/span 2}
+  :where(body.v2) .sets .c-s{grid-row:4;grid-column:2/span 2}
+  :where(body.v2) .sets .c-a{grid-row:5;grid-column:2/span 2;text-align:left;margin-top:var(--s2)}:where(body.v2) .sets .c-a::before{content:none}
+}
+/* 전화 폭에서만 축 요약과 해설 강의를 한 줄 좌우로 나눈다. 라벨 한 벌이 줄어 행이 287 에서
+   223px 이 되고 390 문서 높이가 12,593 에서 11,953px 로 내려간다(기준 12,000).
+   560px 이상에서는 둘 사이가 너무 벌어져 짝으로 읽히지 않으므로 쌓은 형태를 쓴다. */
+@media (max-width:560px){
   :where(body.v2) .sets .c-x{grid-row:3;grid-column:2}
   :where(body.v2) .sets .c-s{grid-row:3;grid-column:3;text-align:right}
-  :where(body.v2) .sets .c-a{grid-row:4;grid-column:2/span 2;text-align:left;margin-top:var(--s2)}:where(body.v2) .sets .c-a::before{content:none}
+  :where(body.v2) .sets .c-a{grid-row:4;grid-column:2/span 2}
 }
 /* 강의 목록 (lecture.html 목록 모드): 단위 그룹 + 준비 중 슬롯 */
 :where(body.v2) .lgrp{margin-top:var(--s6)}
