@@ -1639,7 +1639,7 @@
           "path": "/"
         },
         {
-          "name": "면접 스튜디오",
+          "name": "제시문 면접 스튜디오",
           "path": "/studio.html"
         },
         {
@@ -1682,7 +1682,7 @@
           "path": "/"
         },
         {
-          "name": "면접 스튜디오",
+          "name": "제시문 면접 스튜디오",
           "path": "/studio.html"
         },
         {
@@ -1742,7 +1742,7 @@
       "answer": ""
     },
     "studio.html": {
-      "title": "면접 스튜디오, 현학적 연구소",
+      "title": "제시문 면접 스튜디오, 현학적 연구소",
       "description": "학교별 기출 제시문으로 온라인으로 치르는 대입 면접 스튜디오. 지문 1편 33,000원에 5회 응시, 응시 단위 전권 396,000원. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.",
       "type": "product",
       "priority": 0.9,
@@ -1753,7 +1753,7 @@
           "path": "/"
         },
         {
-          "name": "면접 스튜디오",
+          "name": "제시문 면접 스튜디오",
           "path": "/studio.html"
         }
       ],
@@ -1788,24 +1788,6 @@
             "name": "연세대 국제 전권 이용권",
             "price": 396000,
             "sku": "pass-yonsei-intl",
-            "offer_url": "/studio.html"
-          },
-          {
-            "name": "연세대 미래 자율융합 디자인 전권 이용권",
-            "price": 396000,
-            "sku": "pass-yonsei-mirae-design",
-            "offer_url": "/studio.html"
-          },
-          {
-            "name": "연세대 미래 첨단 보건 전권 이용권",
-            "price": 396000,
-            "sku": "pass-yonsei-mirae-health",
-            "offer_url": "/studio.html"
-          },
-          {
-            "name": "연세대 미래 국제 전권 이용권",
-            "price": 396000,
-            "sku": "pass-yonsei-mirae-intl",
             "offer_url": "/studio.html"
           },
           {

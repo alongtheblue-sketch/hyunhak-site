@@ -8,7 +8,7 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
 /* 가이드북 목록 전용 (공통 phead, lay, side, box 는 base.css [2b]) */
@@ -16,29 +16,28 @@
 .bar .in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
 .bar .tabs{border-bottom:0}
 .bar .search{height:44px;min-width:260px;background:var(--card)}
-.bar .cnt{font-size:13px;color:var(--gray);white-space:nowrap}
-.lay{grid-template-columns:minmax(0,1fr) 300px}
-.side{top:148px}
+.bar .cnt{font-size:var(--t-sm);color:var(--gray);white-space:nowrap}
+.side{top:calc(var(--hd-h) + 76px)}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
-.gb{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.06);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.gb:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(49,46,46,.1)}
+.gb{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
+.gb:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px var(--hair)}
 .gb.ready{background:transparent;border:1px solid var(--hairs);box-shadow:none}
 .gb .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
 .gb .top .head,.gb .top h3{min-width:0}   /* 학교명이 길면 뱃지를 카드 밖으로 밀어내던 것 */
-.gb h3{font-size:17px;font-weight:700;letter-spacing:-0.02em;line-height:1.3}
-.gb h3 small{display:block;font-size:12px;font-weight:500;color:var(--gray);margin-top:2px}
-.gb .m{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums;display:flex;gap:12px}
+.gb h3{font-size:var(--t-base);font-weight:700;letter-spacing:-0.02em;line-height:1.3}
+.gb h3 small{display:block;font-size:var(--t-xs);font-weight:500;color:var(--gray);margin-top:2px}
+.gb .m{font-size:var(--t-sm);color:var(--gray);font-variant-numeric:tabular-nums;display:flex;gap:12px}
 .gb .m span::before{content:"";display:inline-block;width:5px;height:5px;background:var(--hair);border-radius:50%;margin-right:7px;vertical-align:2px}
 .gb .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--hairs)}
-.gb .pr .price{font-size:17px}   /* 색은 base.css 의 .price(朱印) 를 따른다, 목록만 먹색 쓰던 드리프트 해소 */
+.gb .pr .price{font-size:var(--t-base)}   /* 색은 base.css 의 .price(朱印) 를 따른다, 목록만 먹색 쓰던 드리프트 해소 */
 .gb .head{display:flex;gap:14px;align-items:flex-start}
-.gb .pr .w{font-size:14px;font-weight:600;color:var(--gray)}
+.gb .pr .w{font-size:var(--t-sm);font-weight:600;color:var(--gray)}
 .gb .acts{display:flex;gap:8px}
 .gb .acts .btn{flex:1}
 .gb .top .badge{white-space:nowrap;flex:none}
-.box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm)}
 .box ol li{display:flex;gap:10px;align-items:baseline}
-.box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
+.box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:var(--t-xs);font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
 .empty{grid-column:1/-1}
 @media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){
@@ -98,11 +97,11 @@
       <div>
         <h2>38권 전권, 절반 값으로</h2>
         <p>전 대학을 준비하는 학원과 다권 수요를 위한 전권 상품입니다. 개별 구매 합산의 정확히 절반입니다.</p>
-        <p style="margin-top:10px;font-size:14px">
+        <p style="margin-top:10px;font-size:var(--t-sm)">
           <b>전권 열람권 627,000원</b> <small>(개별 합산 1,254,000원)</small>, 38권 보안 뷰어 열람<br>
           <b>전권 PDF 소장판 2,090,000원</b> <small>(개별 합산 4,180,000원)</small>, 38권 파일 내려받기와 열람, 구매 계정 각인
         </p>
-        <p style="margin-top:8px;font-size:13px;color:var(--gray)">보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
+        <p style="margin-top:8px;font-size:var(--t-sm);color:var(--gray)">보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
       </div>
       <div class="acts" style="flex-direction:column;justify-content:center">
         <button type="button" class="btn" data-cart-sku="guide-all-view" data-cart-title="2027 면접 가이드북 전권 열람권, 38권" data-cart-price="627000">전권 열람권 담기</button>

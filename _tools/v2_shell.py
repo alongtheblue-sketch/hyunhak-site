@@ -14,7 +14,7 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
 # 앞 2 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
 GNB = [
     ("guidebook/index.html", "가이드북", ("guidebook/",)),
-    ("studio.html", "면접 스튜디오", ("studio.html",)),
+    ("studio.html", "제시문 면접 스튜디오", ("studio.html",)),
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
 ]
@@ -111,7 +111,7 @@ def footer(rel):
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
+        <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
