@@ -9,6 +9,11 @@
   var view = $("view"), titleEl = $("title"), metaEl = $("meta"), crumbNow = $("crumbNow"), toastEl = $("toast"), curtain = $("curtain");
   var params = new URLSearchParams(location.search);
   var lectureId = params.get("id");
+  // 목록 진입 인자 (PLAN s30 Task 5): ?unit=<단위코드> 또는 ?set=<세트 id>. set 만 오면 단위는 id 접두로 푼다
+  var UNIT_OF = [[/^korea_2027_h/, "korea-hum"], [/^korea_2027_s/, "korea-sci"], [/^yonsei_2027_h/, "yonsei-hum"], [/^yonsei_2027_s/, "yonsei-sci"], [/^yonsei_intl_2027_i/, "yonsei-intl"]];
+  function unitOfSet(id) { for (var i = 0; i < UNIT_OF.length; i++) if (UNIT_OF[i][0].test(String(id || ""))) return UNIT_OF[i][1]; return null; }
+  var setParam = params.get("set") || null;
+  var unitParam = params.get("unit") || (setParam ? unitOfSet(setParam) : null);
 
   var RATES = [0.75, 1, 1.25, 1.5, 1.75, 2];
   var BEAT_SEC = 15;            // 재생 중 진도 송신 주기
@@ -61,38 +66,141 @@
   };
 
   // ================= 목록 (id 없이 진입) =================
+  // 단위별 그룹(공통, 단위 강의, 세트 해설) + 준비 중 슬롯 + ?unit= ?set= 진입 + 상단 "N편 공개" 요약.
+  // 공개 편수는 /api/lectures/summary 실값만 쓴다 (L-6, L-12: "포함" 단정 금지). 세트 30편은 assets/data/sets.json.
+  var MIRAE = /-mirae-/;
+  function num2(n) { return String(n).padStart(2, "0"); }
+  function loadSets() {
+    return fetch("assets/data/sets.json").then(function (r) { return r.json(); })
+      .then(function (d) { return (d.units || []).filter(function (u) { return !MIRAE.test(u.sku || ""); }); })
+      .catch(function () { return []; });
+  }
+  function summary(q) { return apiFetch("/api/lectures/summary?" + q).then(function (d) { return d._status === 200 ? d : null; }).catch(function () { return null; }); }
+  function lecText(ready) { return ready > 0 ? "해설 강의 " + ready + "편 공개, 순차 업로드" : "해설 강의 공개 준비 중, 순차 업로드"; }
+  function badges(l) {
+    var p = l.progress, st = [];
+    if (l.status !== "ready") st.push('<span class="badge mute">준비 중</span>');
+    else if (!l.entitled) st.push('<span class="badge line">이용권 필요</span>');
+    else if (p && p.completed) st.push('<span class="badge">완료</span>');
+    if (l.duration_sec) st.push("<span>" + fmt(l.duration_sec) + "</span>");
+    if (p) { st.push("<span>" + p.view_count + "회 시청</span>"); if (p.position_sec > 0 && !p.completed) st.push("<span>" + fmt(p.position_sec) + " 부터 이어보기</span>"); }
+    return st.join("");
+  }
+  function actionOf(l, unit) {
+    if (l.status === "ready" && l.entitled) {
+      var p = l.progress;
+      return '<a class="btn sm" href="lecture.html?id=' + encodeURIComponent(l.id) + '">' + (p && p.position_sec > 0 && !p.completed ? "이어보기" : "시청") + "</a>";
+    }
+    if (l.status === "ready") return '<a class="btn ghost sm" href="studio.html' + (unit ? "?unit=" + encodeURIComponent(unit) : "") + '">이용권</a>';
+    return '<span class="n">업로드 예정</span>';   // 준비 중 뱃지는 meta 줄에 이미 있다. 클릭 대상 없음
+  }
+  function row(l, n, unit) {
+    var p = l.progress, pct = 0;
+    if (p && l.duration_sec) pct = Math.min(100, Math.round(p.position_sec / l.duration_sec * 100));
+    var slot = l.status !== "ready";
+    return '<div class="' + (slot ? "slot" : "row") + '"' + (slot ? ' aria-disabled="true"' : "") + '><span class="n">' + esc(n) + '</span>'
+      + '<span><span class="t">' + esc(l.title) + '</span>' + (l.subtitle ? '<span class="m"><span>' + esc(l.subtitle) + '</span></span>' : "")
+      + '<span class="m">' + badges(l) + "</span>"
+      + (p && pct > 0 ? '<span class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></span>' : "") + "</span>"
+      + '<span class="a">' + actionOf(l, unit) + "</span></div>";
+  }
+  function emptySlot(set) {
+    return '<div class="slot" aria-disabled="true"><span class="n">' + num2(set.n) + '</span><span><span class="t">' + esc(set.title) + '</span><span class="m"><span class="badge mute">준비 중</span><span>해설 강의 업로드 예정</span></span></span><span class="a"><span class="n">업로드 예정</span></span></div>';
+  }
+  function group(title, cntHtml, moreHtml, rowsHtml) {
+    return '<section class="lgrp"><div class="gh"><h2>' + title + "</h2>" + (cntHtml ? '<span class="cnt">' + cntHtml + "</span>" : "") + (moreHtml ? '<span class="more">' + moreHtml + "</span>" : "") + '</div><div class="toc">' + rowsHtml + "</div></section>";
+  }
+  function cnt(ready, prep) { return "공개 <b>" + ready + "</b> 준비 <b>" + prep + "</b>"; }
+
+  function renderUnitView(unit, all, units, loggedIn, pubMissing) {
+    var u = units.find(function (x) { return x.code === unit; });
+    var label = u ? u.label : unit;
+    titleEl.textContent = label + " 해설 강의"; crumbNow.textContent = label;
+    var common = all.filter(function (l) { return l.kind === "common"; });
+    var unitLecs = all.filter(function (l) { return l.kind === "unit" && l.unit_code === unit; });
+    var pass = all.filter(function (l) { return l.kind === "passage" && l.unit_code === unit; });
+    var sets = u ? u.sets.slice() : [];
+    if (setParam) {
+      sets = sets.filter(function (s2) { return s2.id === setParam; });
+      if (!sets.length) sets = [{ id: setParam, n: Number((setParam.match(/(\d\d)$/) || [0, 0])[1]) || 0, title: setParam }];
+    }
+    var readyN = pass.filter(function (l) { return l.status === "ready"; }).length;
+    summary("unit=" + encodeURIComponent(unit) + "&kind=passage").then(function (sm) {
+      var r = sm ? (sm.ready || 0) : readyN;
+      metaEl.innerHTML = '<span class="badge line">' + esc(label) + "</span><span>" + esc(lecText(r)) + "</span>"
+        + (u ? "<span>단위 지문 " + u.set_count + "편</span>" : "")
+        + (pubMissing ? "<span>공개 상태는 지금 확인할 수 없습니다</span>" : "")
+        + (loggedIn ? "<span>시청 위치는 계정에 저장됩니다</span>" : '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>');
+    });
+    var html = '<div class="lecl">';
+    if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), unit); }).join(""));
+    if (unitLecs.length) html += group("단위 강의", cnt(unitLecs.filter(function (l) { return l.status === "ready"; }).length, unitLecs.filter(function (l) { return l.status !== "ready"; }).length), "", unitLecs.map(function (l, i) { return row(l, num2(l.seq || i + 1), unit); }).join(""));
+    var rows = "", prep = 0, rdy = 0;
+    sets.forEach(function (set) {
+      var ls = pass.filter(function (l) { return l.passage_set_id === set.id; });
+      if (!ls.length) { prep++; rows += emptySlot(set); return; }
+      ls.forEach(function (l) { if (l.status === "ready") rdy++; else prep++; rows += row(l, num2(set.n), unit); });
+    });
+    var more = setParam ? '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(unit) + '">단위 전체 보기</a>' : '<a class="tlink" href="studio.html?unit=' + encodeURIComponent(unit) + '">지문 목록과 이용권</a>';
+    html += group(setParam ? "세트 해설, 지문 1편" : "세트 해설", cnt(rdy, prep), more, rows || '<p class="note">이 단위의 세트 목록을 불러오지 못했습니다.</p>');
+    view.innerHTML = html + "</div>";
+  }
+
+  function renderAllView(all, units, loggedIn) {
+    titleEl.textContent = "내 강의"; crumbNow.textContent = "내 강의";
+    var codes = units.map(function (u) { return u.code; });
+    all.forEach(function (l) { if (l.unit_code && codes.indexOf(l.unit_code) < 0) codes.push(l.unit_code); });
+    Promise.all(codes.map(function (c) { return summary("unit=" + encodeURIComponent(c) + "&kind=passage"); })).then(function (sms) {
+      var any = sms.some(function (x) { return !!x; });
+      var ready = sms.reduce(function (s2, x) { return s2 + ((x && x.ready) || 0); }, 0);
+      metaEl.innerHTML = "<span>" + esc(any ? lecText(ready) : "해설 강의 공개 편수는 단위 목록에서 확인") + "</span><span>이용권 범위의 강의를 한곳에서 봅니다. 시청 위치는 계정에 저장되어 다른 기기에서도 이어집니다.</span>";
+    });
+    if (!all.length) {
+      view.innerHTML = '<div class="notice"><h2>아직 등록된 강의가 없습니다</h2><p>강의가 공개되면 이 자리에 나타납니다. 단위별 세트 목록과 준비 중 슬롯은 아래에서 봅니다.</p><div class="acts">'
+        + units.map(function (u) { return '<a class="btn ghost sm" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">' + esc(u.label) + "</a>"; }).join("")
+        + '<a class="btn ghost sm" href="my.html">마이페이지</a></div></div>';
+      return;
+    }
+    var html = '<div class="lecl">';
+    var common = all.filter(function (l) { return l.kind === "common"; });
+    if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), null); }).join(""));
+    codes.forEach(function (c) {
+      var ls = all.filter(function (l) { return l.unit_code === c; });
+      var u = units.find(function (x) { return x.code === c; });
+      if (!ls.length) return;
+      ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
+      html += group(esc(u ? u.label : c), cnt(ls.filter(function (l) { return l.status === "ready"; }).length, ls.filter(function (l) { return l.status !== "ready"; }).length),
+        '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(c) + '">단위 전체 보기, 세트 ' + (u ? u.set_count : 30) + "편</a>",
+        ls.map(function (l, i) { return row(l, num2(l.seq || i + 1), c); }).join(""));
+    });
+    var rest = units.filter(function (u) { return !all.some(function (l) { return l.unit_code === u.code; }); });
+    if (rest.length) html += '<div class="units-more">' + rest.map(function (u) { return '<a class="btn ghost sm" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">' + esc(u.label) + " 세트 목록</a>"; }).join("") + "</div>";
+    view.innerHTML = html + "</div>";
+  }
+
   function renderList() {
     titleEl.textContent = "내 강의";
     crumbNow.textContent = "내 강의";
-    metaEl.textContent = "이용권 범위의 해설 강의와 공통 강의를 한곳에서 봅니다. 시청 위치는 계정에 저장되어 다른 기기에서도 이어집니다.";
-    apiFetch("/api/lectures").then(function (d) {
-      if (d._status === 401) return loginRedirect();
-      var ls = d.lectures || [];
-      if (!ls.length) { view.innerHTML = '<div class="notice"><h2>아직 등록된 강의가 없습니다</h2><p>강의가 공개되면 이 자리에 나타납니다.</p><p class="acts"><a class="btn ghost sm" href="my.html">마이페이지</a></p></div>'; return; }
-      var groups = {};
-      ls.forEach(function (l) { (groups[l.kind] = groups[l.kind] || []).push(l); });
-      var html = '<div class="lecl">';
-      ["common", "unit", "passage"].forEach(function (k) {
-        if (!groups[k]) return;
-        html += "<h2>" + esc(KINDS[k] || k) + "</h2>";
-        groups[k].forEach(function (l) {
-          var p = l.progress, st = [], pct = 0;
-          if (l.status !== "ready") st.push('<span class="badge mute">준비 중</span>');
-          else if (!l.entitled) st.push('<span class="badge line">이용권 필요</span>');
-          else if (p && p.completed) st.push('<span class="badge">완료</span>');
-          if (l.duration_sec) st.push("<span>" + fmt(l.duration_sec) + "</span>");
-          if (l.unit_code) st.push("<span>" + esc(l.unit_code) + "</span>");
-          if (p) { st.push("<span>" + p.view_count + "회 시청</span>"); if (p.position_sec > 0 && !p.completed) st.push("<span>" + fmt(p.position_sec) + " 부터 이어보기</span>"); if (l.duration_sec) pct = Math.min(100, Math.round(p.position_sec / l.duration_sec * 100)); }
-          var canOpen = l.status === "ready" && l.entitled;
-          html += '<div class="lrow"><div><p class="t">' + esc(l.title) + '</p><p class="m">' + st.join("") + "</p>"
-            + (p && pct > 0 ? '<div class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></div>' : "") + "</div>"
-            + (canOpen ? '<a class="btn sm" href="lecture.html?id=' + encodeURIComponent(l.id) + '">' + (p && p.position_sec > 0 && !p.completed ? "이어보기" : "시청") + "</a>"
-              : '<a class="btn ghost sm" aria-disabled="true">' + (l.status !== "ready" ? "준비 중" : "이용권 필요") + "</a>")
-            + "</div>";
-        });
-      });
-      view.innerHTML = html + "</div>";
-    }).catch(function () { view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; });
+    metaEl.textContent = "불러오는 중입니다.";
+    Promise.all([
+      apiFetch("/api/lectures"),
+      loadSets(),
+      unitParam ? apiFetch("/api/lectures/public?unit=" + encodeURIComponent(unitParam)).catch(function () { return { _status: 0 }; }) : Promise.resolve(null),
+    ]).then(function (res) {
+      var mine = res[0], units = res[1], pubd = res[2];
+      var loggedIn = mine._status !== 401;
+      if (!loggedIn && !unitParam) return loginRedirect();
+      var mineList = loggedIn ? (mine.lectures || []) : [];
+      var pubList = pubd && pubd._status === 200 ? (pubd.lectures || []) : null;   // null = 공개 API 없음 (상태 미상)
+      var pubMissing = !!unitParam && pubList === null;
+      // 병합: id 기준. 공개 목록은 status 원천, 회원 목록은 entitled 와 progress 원천
+      var byId = {};
+      (pubList || []).forEach(function (l) { byId[l.id] = Object.assign({}, l, { entitled: false }); });
+      mineList.forEach(function (l) { byId[l.id] = Object.assign(byId[l.id] || {}, l); });
+      var all = Object.keys(byId).map(function (k) { return byId[k]; });
+      if (unitParam) renderUnitView(unitParam, all, units, loggedIn, pubMissing);
+      else renderAllView(all, units, loggedIn);
+    }).catch(function (e) { console.error(e); view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; });
   }
 
   // ================= 뷰어 =================
@@ -117,14 +225,14 @@
 
     view.innerHTML =
       '<div class="lay2">' +
-        '<div>' +
+        '<div class="stagecol">' +
           '<div class="player" id="player" tabindex="0" aria-label="강의 플레이어. 스페이스 재생, 좌우 화살표 5초 이동, 대괄호로 배속">' +
             '<video id="v" playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate nofullscreen noremoteplayback"></video>' +
             '<div class="wm" aria-hidden="true"><span class="w1"></span><span class="w2"></span><span class="w3"></span></div>' +
             '<div class="stage" id="stage"></div>' +
             '<div class="ctl" id="ctl">' +
               '<div class="bar" id="bar" role="slider" aria-label="재생 위치" aria-valuemin="0" aria-valuemax="' + Math.round(S.dur) + '" aria-valuenow="0" tabindex="-1">' +
-                '<div class="rail"></div><div class="buf" id="buf"></div><div class="played" id="played"></div><div id="ticks"></div><div id="marks"></div><div class="knob" id="knob"></div><div class="tip" id="tip"></div>' +
+                '<div class="track"></div><div class="buf" id="buf"></div><div class="played" id="played"></div><div id="ticks"></div><div id="marks"></div><div class="knob" id="knob"></div><div class="tip" id="tip"></div>' +
               '</div>' +
               '<div class="row2">' +
                 '<button type="button" class="ib" id="bPlay" aria-label="재생">' + ICON.play + '</button>' +

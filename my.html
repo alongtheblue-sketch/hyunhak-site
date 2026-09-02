@@ -25,38 +25,39 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&display=swap"></noscript>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css">
 <style>
-/* 마이페이지 전용 */
+/* 마이페이지 전용 (v3). 크기는 토큰만 */
 .lay{padding-top:0}
-.who{font-size:var(--t-h4);font-weight:700;letter-spacing:-0.02em}
-.since{margin-top:4px;font-size:13px;color:var(--gray);overflow-wrap:anywhere}
+.who{font-size:var(--t-h4);font-weight:var(--w-head);letter-spacing:var(--tr-head)}
+.since{margin-top:4px;font-size:var(--t-sm);color:var(--gray);overflow-wrap:anywhere}
 .menu2{margin-top:var(--s3);display:flex;flex-direction:column}
-.menu2 a{padding:12px 0;font-size:14px;font-weight:600;border-top:1px solid var(--hairs);display:flex;align-items:center;gap:10px}
+.menu2 a{min-height:var(--tap);font-size:var(--t-sm);font-weight:600;border-top:var(--rule);display:flex;align-items:center;gap:10px}
 .menu2 a.cur::after{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);align-self:center}
 .menu2 a:hover{color:var(--gray)}
-.out{margin-top:var(--s3);padding-top:var(--s3);border-top:1px solid var(--hairs)}
-.blk{margin-bottom:var(--s7)}
+.out{margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
+.blk{margin-bottom:var(--s6)}
 .blk .sh{margin-bottom:var(--s4)}
 .subcards{display:grid;gap:var(--s3)}
-.subcard{background:var(--card);border-radius:6px;box-shadow:0 8px 24px rgba(49,46,46,.08);padding:var(--s4);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:center}
-.subcard .nm{font-size:17px;font-weight:700;letter-spacing:-0.01em;line-height:1.3}
-.subcard .st{margin-top:6px;font-size:13px;color:var(--gray)}
+.subcard{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);padding:var(--s4);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:center}
+.subcard .nm{font-size:var(--t-base);font-weight:700;letter-spacing:-0.01em;line-height:1.3}
+.subcard .st{margin-top:6px;font-size:var(--t-sm);color:var(--gray)}
 .subcard .st b{color:var(--seal);font-weight:600}
+.subcard .st .mono{font-size:var(--t-xs)}
 .subcard .ops{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.orders li{border-top:1px solid var(--hair)}
-.orders li:last-child{border-bottom:1px solid var(--hair)}
-.orders .row{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:var(--s3);align-items:baseline;padding:14px 4px;font-size:14.5px}
-.orders .d{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums}
+.orders li{border-top:var(--rule-strong)}
+.orders li:last-child{border-bottom:var(--rule-strong)}
+.orders .row{display:grid;grid-template-columns:100px minmax(0,1fr) auto;gap:var(--s3);align-items:baseline;padding:14px var(--s1);font-size:var(--t-sm)}
+.orders .d{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
 .orders .t{font-weight:600}
-.orders .s{font-size:13px;color:var(--gray);text-align:right;white-space:nowrap}
+.orders .s{font-size:var(--t-sm);color:var(--gray);text-align:right;white-space:nowrap}
 .orders .s.red{color:var(--seal)}
 .pfgrid{display:grid;grid-template-columns:1fr 160px;gap:12px;margin-top:8px}
 .pwgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
 .bd-list{margin-top:10px;display:grid;gap:8px}
-.bd-list .r{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:13.5px;border-top:1px solid var(--hairs);padding-top:8px}
-details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:8px}
+.bd-list .r{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:var(--t-sm);border-top:var(--rule);padding-top:8px}
+details.bd summary{cursor:pointer;font-size:var(--t-sm);color:var(--gray);margin-top:8px;min-height:44px;display:flex;align-items:center}
 @media (max-width:700px){.subcard{grid-template-columns:1fr}.orders .row{grid-template-columns:1fr;gap:4px}.orders .s{text-align:left}.pfgrid,.pwgrid{grid-template-columns:1fr}}
 </style>
 </head>
@@ -76,7 +77,7 @@ details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -88,7 +89,7 @@ details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -114,7 +115,7 @@ details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:
         <a class="cur" href="my.html" aria-current="page">한눈에</a>
         <a href="library.html">자료실</a>
         <a href="lecture.html">내 강의</a>
-        <a href="studio.html">면접 스튜디오</a>
+        <a href="studio.html">제시문 면접 스튜디오</a>
       </nav>
       <p class="out"><button type="button" class="tlink" id="logoutBtn">로그아웃</button></p>
     </div>
@@ -136,8 +137,9 @@ details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:
       <div class="sh"><div><h2>자료실</h2><p>구매하신 가이드북은 보안 리더로 열람하실 수 있습니다</p></div><a class="tlink" href="library.html">자료실로 가기</a></div>
     </div>
 
-    <div class="blk">
-      <div class="sh"><div><h2>내 강의</h2><p>이용권 범위의 해설 강의를 배속, 목차, 책갈피로 시청합니다. 시청 위치는 계정에 저장됩니다</p></div><a class="tlink" href="lecture.html">내 강의로 가기</a></div>
+    <div class="blk" id="lecBlk">
+      <div class="sh"><div><h2>내 강의</h2><p>보유 단위의 해설 강의 공개 편수와 준비 중 편수. 시청 위치는 계정에 저장됩니다</p></div><a class="tlink" href="lecture.html">내 강의로 가기</a></div>
+      <div class="subcards" id="myLec"><div class="empty">불러오는 중</div></div>
     </div>
 
     <div class="blk">
@@ -211,12 +213,12 @@ details.bd summary{cursor:pointer;font-size:13.5px;color:var(--gray);margin-top:
     <div class="g">
       <div>
         <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
-        <p>대입 면접 전문. 학교별 면접 가이드북, 제시문 면접 스튜디오.</p>
+        <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h4>바로가기</h4>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
         <h4>고객센터</h4>
@@ -244,10 +246,13 @@ document.addEventListener('DOMContentLoaded', async function(){
   var BD_TITLE = {'guide-all-view':'2027 면접 가이드북 전권 열람권','guide-all-pdf':'2027 면접 가이드북 전권 PDF 소장판'};
   function slugOf(meta){ return (meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,''); }
   // 전권 번들 구매분(meta.bundle)은 권당 권리 행이 최대 76행 — 번들당 1카드로 묶는다 (DESIGN_v5 §2-2)
-  var bundles={}, singles=[];
+  var bundles={}, singles=[], lectureEnts=[];
   (st.entitlements||[]).forEach(function(e){
     var meta={}; try{meta=JSON.parse(e.meta||'{}')}catch(err){}
     e._meta=meta;
+    // 인강 권리 행(kind lecture, studio 권리 id + _lec, meta unit_code 또는 set_id)은 응시 카드가 아니다.
+    // 아래 "내 강의" 섹션의 근거로만 쓴다 (Task 1 리뷰 Important 2)
+    if(e.kind==='lecture'){ lectureEnts.push(e); return; }
     if(meta.bundle){ var g=bundles[meta.bundle]=bundles[meta.bundle]||{view:[],file:[]};
       g[e.kind==='file_download'?'file':'view'].push(e); }
     else singles.push(e);
@@ -286,12 +291,50 @@ document.addEventListener('DOMContentLoaded', async function(){
       +'<div class="ops">'+op+'</div></div>';
   }));
   if(st.trial_available)
-    rows.push('<div class="subcard"><div><p class="nm">면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
+    rows.push('<div class="subcard"><div><p class="nm">제시문 면접 스튜디오 맛보기</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
       +'<div class="ops"><button type="button" class="btn sm sgo">응시하러 가기</button></div></div>');
   if(!rows.length)
     rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 학교별 가이드북을 담아 주세요.</p></div>'
       +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
+
+  // ── 내 강의: 보유 단위별 공개/준비 편수 + 바로가기 (공개 편수 = /api/lectures/summary 실값) ──
+  (async function(){
+    var box=document.getElementById('myLec');
+    var units=[]; try{ units=((await (await fetch('assets/data/sets.json')).json()).units||[]).filter(function(u){return !/-mirae-/.test(u.sku||'')}); }catch(e){}
+    var UNIT_OF=[[/^korea_2027_h/,'korea-hum'],[/^korea_2027_s/,'korea-sci'],[/^yonsei_2027_h/,'yonsei-hum'],[/^yonsei_2027_s/,'yonsei-sci'],[/^yonsei_intl_2027_i/,'yonsei-intl']];
+    function unitOfSet(id){ for(var i=0;i<UNIT_OF.length;i++) if(UNIT_OF[i][0].test(String(id||''))) return UNIT_OF[i][1]; return null; }
+    function unitOf(code){ return units.find(function(u){return u.code===code})||null; }
+    function setOf(id){ for(var i=0;i<units.length;i++){ var hit=(units[i].sets||[]).find(function(x){return x.id===id}); if(hit) return {set:hit,unit:units[i]}; } return null; }
+    function until(e){ return e&&e.expires_at ? esc(String(e.expires_at).slice(0,10))+' 까지' : ''; }
+    function lecText(ready,total){ return ready>0 ? '공개 '+ready+'편, 준비 중 '+Math.max(0,total-ready)+'편' : '공개 준비 중, 준비 중 '+total+'편'; }
+    var owned={}, ownedSets={};
+    lectureEnts.forEach(function(e){ var m=e._meta||{}; if(m.unit_code){ if(!owned[m.unit_code]) owned[m.unit_code]=e; } else if(m.set_id){ if(!ownedSets[m.set_id]) ownedSets[m.set_id]=e; } });
+    // 인강 행이 없는 구 단위 전권 권리도 단위 근거로 (역호환)
+    singles.forEach(function(e){ if(e.kind==='studio_school'){ var c=String((e._meta||{}).sku||'').replace(/^pass-/,''); if(c&&!owned[c]) owned[c]=e; } });
+    var cards=[];
+    var codes=Object.keys(owned).filter(function(c){ return !/-mirae-/.test(c); });
+    var setIds=Object.keys(ownedSets).filter(function(id){ return !owned[unitOfSet(id)]; });   // 단위 전권이 덮는 세트는 중복 표시하지 않는다
+    if(!codes.length&&!setIds.length){
+      box.innerHTML='<div class="subcard"><div><p class="nm">보유한 단위가 없습니다</p><p class="st">단위 전권이나 세트를 고른 지문 낱권을 구매하면 해설 강의의 공개 편수가 여기에 표시됩니다.</p></div><div class="ops"><a class="btn ghost sm" href="lecture.html?unit=korea-hum">세트 목록 보기</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>';
+      return;
+    }
+    var sums=await Promise.all(codes.map(function(c){ return HH.api('/api/lectures/summary?unit='+encodeURIComponent(c)+'&kind=passage').catch(function(){return null}); }));
+    codes.forEach(function(c,i){
+      var u=unitOf(c), sm=sums[i], total=u?u.set_count:30;
+      cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의</p>'
+        +'<p class="st">'+(sm?esc(lecText(sm.ready||0,total)):'공개 편수를 지금 확인할 수 없습니다')+(until(owned[c])?', '+until(owned[c]):'')+'</p></div>'
+        +'<div class="ops"><a class="btn sm" href="lecture.html?unit='+encodeURIComponent(c)+'">내 강의</a><a class="btn ghost sm" href="studio.html?unit='+encodeURIComponent(c)+'">지문 목록</a></div></div>');
+    });
+    var ssums=await Promise.all(setIds.map(function(id){ return HH.api('/api/lectures/summary?set='+encodeURIComponent(id)+'&kind=passage').catch(function(){return null}); }));
+    setIds.forEach(function(id,i){
+      var hit=setOf(id), sm=ssums[i], title=hit?hit.set.title:id;
+      cards.push('<div class="subcard"><div><p class="nm">'+esc(title)+' 해설</p>'
+        +'<p class="st">'+(hit?esc(hit.unit.label)+', ':'')+(sm?(sm.ready>0?'해설 강의 공개':'해설 강의 준비 중'):'상태를 지금 확인할 수 없습니다')+'<span class="mono">'+esc(id)+'</span>'+(until(ownedSets[id])?', '+until(ownedSets[id]):'')+'</p></div>'
+        +'<div class="ops"><a class="btn sm" href="lecture.html?set='+encodeURIComponent(id)+'">내 강의</a></div></div>');
+    });
+    box.innerHTML=cards.join('');
+  })();
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
     ev.preventDefault();
     try{ var r=await HH.api('/api/studio/token',{method:'POST'}); window.open(r.url,'_blank','noopener'); }
