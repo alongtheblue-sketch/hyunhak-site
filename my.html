@@ -319,7 +319,10 @@ document.addEventListener('DOMContentLoaded', async function(){
     // 인강 행이 없는 구 단위 전권 권리도 단위 근거로 (역호환)
     singles.forEach(function(e){ if(e.kind==='studio_school'){ var c=String((e._meta||{}).sku||'').replace(/^pass-/,''); if(c&&!owned[c]) owned[c]=e; } });
     var cards=[];
-    var codes=Object.keys(owned).filter(function(c){ return !/-mirae-/.test(c); });
+    // 허용 단위 5종만 단위 카드가 된다 (Global 4). 판매 중단된 구 학교 전권(pass-yonsei, pass-korea)이나
+    // 미래캠 sku 를 단위 코드로 역추적하면 강의가 0편인 가짜 단위 카드가 선다. 이용권 카드(passList)는
+    // 그대로 둔다, 산 것이 사라져 보이면 안 된다.
+    var codes=Object.keys(owned).filter(function(c){ return HH.okUnit(c); });
     var setIds=Object.keys(ownedSets).filter(function(id){ return !owned[unitOfSet(id)]; });   // 단위 전권이 덮는 세트는 중복 표시하지 않는다
     if(!codes.length&&!setIds.length){
       document.getElementById('myLecSum').textContent='보유한 단위나 세트가 없습니다';   // 자리표시 문안이 남으면 수를 못 읽은 것으로 보인다

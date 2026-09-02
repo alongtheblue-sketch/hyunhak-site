@@ -117,6 +117,12 @@
     return '<section class="lgrp"><div class="gh"><h2>' + title + "</h2>" + (cntHtml ? '<span class="cnt">' + cntHtml + "</span>" : "") + (moreHtml ? '<span class="more">' + moreHtml + "</span>" : "") + '</div><div class="toc">' + rowsHtml + "</div></section>";
   }
   function cnt(ready, prep) { return "공개 <b>" + ready + "</b> 준비 <b>" + prep + "</b>"; }
+  // 조회 실패는 상태 미상으로 적는다. 공개 0편으로 읽지 않는다 (Codex r2 #20, studio.html 의 pub() 주석과 같은 규칙).
+  // 공개 화면과 ?unit= 화면이 같은 문구를 쓴다. 뒤 문장은 화면마다 갈 곳이 달라 따로 붙인다.
+  var UNIT_DOWN_CNT = "이용 불가";
+  var UNIT_DOWN_NOTE = "이 단위의 공개 상태를 지금 확인할 수 없습니다. 잠시 후 다시 확인해 주세요.";
+  var UNIT_DOWN_MORE = " 단위 전체 보기에서 세트 목록을 봅니다.";
+  var UNIT_DOWN_META = "공개 상태는 지금 확인할 수 없습니다";
 
   function renderUnitView(unit, all, units, loggedIn, pubMissing) {
     var u = units.find(function (x) { return x.code === unit; });
@@ -131,26 +137,40 @@
       if (!sets.length) sets = [{ id: setParam, n: Number((setParam.match(/(\d\d)$/) || [0, 0])[1]) || 0, title: setParam }];
     }
     var readyN = pass.filter(function (l) { return l.status === "ready"; }).length;
+    // 비회원인데 공개 API 조회가 실패하면 status 원천이 없다. 그 상태를 0편으로 읽으면 세트 30개가 전부
+    // "준비 중" 으로 서고 상단이 "공개 준비 중" 이 되어, 실제로 공개된 세트가 있는 단위까지 준비 중으로 보인다.
+    // 공개 화면(renderPublicView)에 이미 들어간 규칙을 여기에도 둔다 (최종 리뷰 site Important 2).
+    // 회원은 mine 이 status 원천이라 종전 경로 그대로다.
+    var down = pubMissing && !loggedIn;
+    var loginLink = '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>';
+    if (down) {
+      metaEl.innerHTML = '<span class="badge line">' + esc(label) + "</span><span>" + esc(UNIT_DOWN_META) + "</span>"
+        + (u ? "<span>단위 지문 " + n0(u.set_count, 999) + "편</span>" : "") + loginLink;
+    } else {
     summary("unit=" + encodeURIComponent(unit) + "&kind=passage").then(function (sm) {
       var r = sm ? (sm.ready || 0) : readyN;
       // COPY.md §6 뷰어 상단 요약: N편 공개, 순차 업로드 + 공개 기준일(summary.as_of)을 목록 위에
       metaEl.innerHTML = '<span class="badge line">' + esc(label) + "</span><span>" + esc(lecText(r)) + "</span>"
         + (sm && sm.as_of ? '<span class="mono">공개 기준일 ' + esc(sm.as_of) + "</span>" : "")
         + (u ? "<span>단위 지문 " + n0(u.set_count, 999) + "편</span>" : "")
-        + (pubMissing ? "<span>공개 상태는 지금 확인할 수 없습니다</span>" : "")
-        + (loggedIn ? "<span>시청 위치는 계정에 저장됩니다</span>" : '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>');
+        + (pubMissing ? "<span>" + esc(UNIT_DOWN_META) + "</span>" : "")
+        + (loggedIn ? "<span>시청 위치는 계정에 저장됩니다</span>" : loginLink);
     });
+    }
     var html = '<div class="lecl">';
     if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), unit); }).join(""));
     if (unitLecs.length) html += group("단위 강의", cnt(unitLecs.filter(function (l) { return l.status === "ready"; }).length, unitLecs.filter(function (l) { return l.status !== "ready"; }).length), "", unitLecs.map(function (l, i) { return row(l, num2(l.seq || i + 1), unit); }).join(""));
     var rows = "", prep = 0, rdy = 0;
-    sets.forEach(function (set) {
+    if (!down) sets.forEach(function (set) {
       var ls = pass.filter(function (l) { return l.passage_set_id === set.id; });
       if (!ls.length) { prep++; rows += emptySlot(set); return; }
       ls.forEach(function (l) { if (l.status === "ready") rdy++; else prep++; rows += row(l, num2(set.n), unit); });
     });
     var more = setParam ? '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(unit) + '">단위 전체 보기</a>' : '<a class="tlink" href="studio.html?unit=' + encodeURIComponent(unit) + '">지문 목록과 이용권</a>';
-    html += group(setParam ? "세트 해설, 지문 1편" : "세트 해설", cnt(rdy, prep), more, rows || '<p class="note">이 단위의 세트 목록을 불러오지 못했습니다.</p>');
+    var gtitle = setParam ? "세트 해설, 지문 1편" : "세트 해설";
+    // 상태 미상이면 편수를 적지 않는다. 준비 중 슬롯도 세우지 않는다 (공개 화면과 같은 UNIT_DOWN 표시).
+    html += down ? group(gtitle, UNIT_DOWN_CNT, more, '<p class="note">' + UNIT_DOWN_NOTE + "</p>")
+      : group(gtitle, cnt(rdy, prep), more, rows || '<p class="note">이 단위의 세트 목록을 불러오지 못했습니다.</p>');
     view.innerHTML = html + "</div>";
   }
 
@@ -195,8 +215,6 @@
   // 로그인 면으로 튕기지 않으므로 API 장애가 로그인 요구로 보이지 않는다.
   // 공개, 준비 편수는 세트 해설(kind passage) 행만 센다 (Codex r2 #19). 준비 편수의 모수가 단위 세트 수
   // (set_count)라 공통, 단위 강의를 섞으면 회원 목록 경로의 summary(kind=passage) 와 다른 값이 나온다.
-  var UNIT_DOWN_CNT = "이용 불가";
-  var UNIT_DOWN_NOTE = "이 단위의 공개 상태를 지금 확인할 수 없습니다. 잠시 후 다시 확인해 주세요. 단위 전체 보기에서 세트 목록을 봅니다.";
   function isReady(l) { return l.status === "ready"; }
   function passageOf(list) { return list.filter(function (l) { return l.kind === "passage"; }); }
   // states = publicAll 이 준 단위별 {code, ok, lectures}. 실패한 단위는 공개 0편이 아니라 이용 불가로 적는다 (Codex r2 #20)
@@ -209,7 +227,7 @@
     var okAll = [];
     okStates.forEach(function (s2) { s2.lectures.forEach(function (l) { okAll.push(l); }); });
     var readyN = passageOf(okAll).filter(isReady).length;
-    metaEl.innerHTML = "<span>" + esc(apiUp ? lecText(readyN) : "공개 상태는 지금 확인할 수 없습니다") + "</span>"
+    metaEl.innerHTML = "<span>" + esc(apiUp ? lecText(readyN) : UNIT_DOWN_META) + "</span>"
       + (apiUp && !allOk ? "<span>일부 단위는 지금 확인할 수 없습니다</span>" : "")
       + '<i class="sep" aria-hidden="true"></i>'
       + '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>';
@@ -221,7 +239,7 @@
       var more = '<a class="tlink" href="lecture.html?unit=' + encodeURIComponent(u.code) + '">단위 전체 보기, 세트 ' + total + "편</a>";
       var st = byCode[u.code];
       if (!st || !st.ok) {   // 조회 실패 단위: 편수를 적지 않고 이용 불가로 표시한다
-        html += group(esc(u.label), UNIT_DOWN_CNT, more, '<p class="note">' + UNIT_DOWN_NOTE + "</p>");
+        html += group(esc(u.label), UNIT_DOWN_CNT, more, '<p class="note">' + UNIT_DOWN_NOTE + UNIT_DOWN_MORE + "</p>");
         return;
       }
       var ls = st.lectures.slice();
