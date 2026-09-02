@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-30T02:59:30.329467+00:00",
+ "generated_at": "2026-09-02T22:13:35.687342+00:00",
  "products": [
   {
    "sku": "guide-ajou",
@@ -16,13 +16,13 @@
   {
    "sku": "guide-all-pdf",
    "status": "active",
-   "price": 2090000,
+   "price": 1705000,
    "type": "bundle_file"
   },
   {
    "sku": "guide-all-view",
    "status": "active",
-   "price": 627000,
+   "price": 511500,
    "type": "bundle_view"
   },
   {
@@ -63,13 +63,13 @@
   },
   {
    "sku": "guide-dgist",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-dgist-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -159,13 +159,13 @@
   },
   {
    "sku": "guide-hongik",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-hongik-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -219,13 +219,13 @@
   },
   {
    "sku": "guide-knu",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-knu-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -255,13 +255,13 @@
   },
   {
    "sku": "guide-korea",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-korea-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -303,13 +303,13 @@
   },
   {
    "sku": "guide-pknu",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-pknu-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -363,13 +363,13 @@
   },
   {
    "sku": "guide-skku",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-skku-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   },
@@ -459,13 +459,13 @@
   },
   {
    "sku": "guide-yonsei",
-   "status": "active",
+   "status": "inactive",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-yonsei-pdf",
-   "status": "active",
+   "status": "inactive",
    "price": 110000,
    "type": "digital_file"
   }

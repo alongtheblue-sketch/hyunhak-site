@@ -1,0 +1,10 @@
+{"id": "hero_a", "hf_id": "2e649ed8-30b7-4043-850f-74ff5da79980", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:17:06.517627", "status": "submitted", "purpose": "히어로 A: 남색 소책자 5권 더미와 펼친 면, 좌측 60% 여백"}
+{"id": "hero_b", "hf_id": "87718701-d118-498d-be00-45afc2d5d358", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:17:07.386062", "status": "submitted", "purpose": "히어로 B: 소책자 1권 세워둔 정물, 우측 60% 여백"}
+{"id": "hero_c", "hf_id": "b673ddcc-1c61-43f3-be79-0dc2da302897", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:17:08.364546", "status": "submitted", "purpose": "히어로 C: 벼루와 붓, 소책자 1권, 좌상 55% 여백"}
+{"id": "p1_forms", "hf_id": "e9cf387c-1521-45ed-ab18-fb42da6ac79a", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:17:09.252617", "status": "submitted", "purpose": "1부 문제 제기: 빈 면접실, 의자 셋과 하나"}
+{"id": "p2_spec", "hf_id": "d41c93cd-672b-46b8-a69e-551f01079224", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:17:10.037473", "status": "submitted", "purpose": "2부 제원과 인재상: 공식 문서 더미와 루페"}
+{"id": "p3_archive", "hf_id": "0ed6ea3e-3c1a-4ad4-a794-d6827b0adf25", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:18:56.177326", "status": "submitted", "purpose": "3부 실제로 나온 질문: 카드 목록함 서랍"}
+{"id": "p4_rules", "hf_id": "7a1a0a77-e40c-439d-8807-e810cab31619", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:18:57.072274", "status": "submitted", "purpose": "4부 절정: 한 줄에 그은 주홍 붓 밑줄과 빈 메모 카드"}
+{"id": "p5_shelf", "hf_id": "0f264f11-7cea-4e0f-8a1f-e28253dfec41", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:18:57.924189", "status": "submitted", "purpose": "5부 특징과 전략: 남색 소책자 31권 책장, 한 권 반쯤 뽑힘"}
+{"id": "p6_editor", "hf_id": "799eabb4-2b2f-43cb-8f92-cf3b76130255", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:18:58.848276", "status": "submitted", "purpose": "신뢰: 편집자의 밤 책상, 교정지와 벼루"}
+{"id": "p7_reader", "hf_id": "6b999e86-035c-4958-8de5-f823593bb277", "model": "gpt_image_2", "cost": 8.5, "ts": "2026-09-03T06:18:59.766787", "status": "submitted", "purpose": "형태: 보안 리더 태블릿과 소책자"}

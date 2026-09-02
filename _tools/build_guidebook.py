@@ -340,7 +340,7 @@ def faq_of(e, mv, price, sale, pdfp):
     a2 += (f"4부에는 생기부 기재를 질문으로 바꾸는 전환 규칙 {rules}개가 실제 질문, 꼬리질문과 함께 실려 있습니다." if rules
            else "4부에는 생기부 기재를 질문으로 바꾸는 전환 규칙이 실려 있습니다.")
     pages = mv.get("pages")
-    a3 = f"{name} 2027 면접 가이드북은 " + (f"{pages}면이며 " if pages else "") + "결제 후 마이페이지의 보안 리더로 바로 열람합니다. 열람 기간은 구매일부터 3개월, 인쇄는 권당 3회이고 원본 파일은 제공하지 않습니다. "
+    a3 = f"{name} 2027 면접 가이드북은 " + (f"{pages}면이며 " if pages else "") + "결제 후 마이페이지의 보안 리더로 바로 열람합니다. 열람 기간은 구매일부터 1개월, 인쇄는 권당 3회이고 원본 파일은 제공하지 않습니다. "
     if sale:
         a3 += f"가격은 보안 리더 열람판 {won(price)}" + (f", PDF 소장판 {won(pdfp)}" if pdfp else "") + "입니다. 열람을 시작하기 전에는 취소할 수 있습니다."
     else:
@@ -376,9 +376,9 @@ def render_page(cat, items, i, meta):
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
                 f'      {pdf_btn}<a class="btn ghost" href="../cart.html">장바구니 보기</a>')
         badge = '<span class="badge seal">판매 중</span>'
-        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 열람 시작 전 취소 가능."
+        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 1개월. 열람 시작 전 취소 가능."
                 + (" PDF 소장판은 워터마크 파일을 발급해 소장." if pdfp else ""))
-        final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 3개월."
+        final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 1개월."
         final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
                       + (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기</button>' if pdfp else "")
                       + f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')

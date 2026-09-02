@@ -1,0 +1,28 @@
+{
+  "model": "gpt_image_2",
+  "cap_credits": 110.0,
+  "common": {"quality": "high", "resolution": "2k"},
+  "style": "Editorial still-life photograph. Warm off-white Korean hanji mulberry paper surface with visible long fibres. Low raking light from the left, soft long shadows. Matte surfaces, no gloss, no HDR. Muted palette: cream paper, warm near-black ink, deep navy blue matte booklet covers, at most one small vermilion red accent. Plain navy covers with nothing printed on them. No people, no hands, no faces, no silhouettes. No text, no letters, no numbers, no logos, no readable characters or symbols anywhere. Large format camera look, f/11, deep even focus, natural colour.",
+  "jobs": [
+    {"id": "hero_a", "aspect_ratio": "16:9", "purpose": "히어로 A: 남색 소책자 5권 더미와 펼친 면, 좌측 60% 여백",
+     "prompt": "Overhead top-down view. A neat stack of five slim navy blue booklets sits in the right third of the frame; the top one lies open to a spread of blank cream pages with faint ruled lines and a thin navy ribbon bookmark. A black fountain pen rests diagonally across the open page. The left sixty percent of the frame is bare hanji paper, reserved empty space for a headline."},
+    {"id": "hero_b", "aspect_ratio": "16:9", "purpose": "히어로 B: 소책자 1권 세워둔 정물, 우측 60% 여백",
+     "prompt": "Low three-quarter angle at desk height. One slim navy blue booklet stands upright, slightly turned, on hanji paper against a warm cream plaster wall; a soft band of morning window light falls diagonally across it. The right sixty percent of the frame is empty paper and wall, reserved for a headline. Shallow depth of field on the wall."},
+    {"id": "hero_c", "aspect_ratio": "16:9", "purpose": "히어로 C: 벼루와 붓, 소책자 1권, 좌상 55% 여백",
+     "prompt": "Overhead top-down. On hanji paper a black inkstone with wet ink, a calligraphy brush resting across it, and beside them a single closed navy blue booklet aligned square to the frame. The objects are pushed to the lower right corner; the upper left fifty-five percent is bare paper reserved for a headline."},
+    {"id": "p1_forms", "aspect_ratio": "3:2", "purpose": "1부 문제 제기: 빈 면접실, 의자 셋과 하나",
+     "prompt": "An empty university interview room seen from the candidate's side. A long pale oak table with three empty wooden chairs behind it, and one lone chair in the foreground facing them. Tall windows on the left with thin white curtains, morning light pooling on the wooden floor. Nothing on the table except one closed navy blue folder. Calm and quiet."},
+    {"id": "p2_spec", "aspect_ratio": "3:2", "purpose": "2부 제원과 인재상: 공식 문서 더미와 루페",
+     "prompt": "Overhead close-up. A short stack of official-looking cream documents with faint blank ruled lines and one embossed circular seal impression without any characters, a navy blue paper folder underneath, and a brass magnifying loupe resting on the top sheet."},
+    {"id": "p3_archive", "aspect_ratio": "3:2", "purpose": "3부 실제로 나온 질문: 카드 목록함 서랍",
+     "prompt": "A wall of old wooden library card-catalogue drawers, one drawer pulled halfway out revealing a dense row of blank cream index cards with tiny navy tabs. Warm side light, faint dust in the air, shallow depth of field. No labels on the drawer fronts."},
+    {"id": "p4_rules", "aspect_ratio": "3:2", "purpose": "4부 절정: 한 줄에 그은 주홍 붓 밑줄과 빈 메모 카드",
+     "prompt": "Overhead close-up on hanji. An open cream page with faint blank ruled lines; one single line is underlined with a confident stroke of vermilion red brush ink, still slightly wet. The red-tipped brush lies beside the page. Next to it a small blank cream note card angled toward the underlined line. Dramatic raking light and long shadows."},
+    {"id": "p5_shelf", "aspect_ratio": "3:2", "purpose": "5부 특징과 전략: 남색 소책자 31권 책장, 한 권 반쯤 뽑힘",
+     "prompt": "Eye-level view of a wooden bookshelf holding a tight row of about thirty identical slim navy blue booklets with plain blank spines; one booklet is pulled halfway out and casts a small shadow. Warm side light, shallow depth of field toward the ends of the row."},
+    {"id": "p6_editor", "aspect_ratio": "3:2", "purpose": "신뢰: 편집자의 밤 책상, 교정지와 벼루",
+     "prompt": "An editor's desk at night. Spread proof sheets of blank ruled cream paper with a few vermilion correction marks made of short strokes and small circles only, a black inkstone and brush, a pair of round reading glasses folded on the sheets, one warm desk lamp lighting the scene from the upper left, the rest of the room in soft darkness."},
+    {"id": "p7_reader", "aspect_ratio": "3:2", "purpose": "형태: 보안 리더 태블릿과 소책자",
+     "prompt": "Overhead. On hanji a slim tablet lies flat beside a closed navy blue booklet. The tablet screen shows a softly out-of-focus cream document layout made of blurred blank blocks and rules, nothing legible. A thin navy ribbon crosses one corner. Raking light, matte reflections only."}
+  ]
+}

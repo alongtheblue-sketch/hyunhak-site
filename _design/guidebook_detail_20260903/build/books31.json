@@ -1,0 +1,250 @@
+[
+ {
+  "slug": "ajou",
+  "sku": "guide-ajou",
+  "name": "아주대학교",
+  "subtitle": "111면, 질문 153건, 보안 리더 열람",
+  "detail_url": "/guidebook/ajou.html",
+  "cover": "아주대학교.jpg"
+ },
+ {
+  "slug": "catholic",
+  "sku": "guide-catholic",
+  "name": "가톨릭대학교",
+  "subtitle": "31면, 질문 97건, 보안 리더 열람",
+  "detail_url": "/guidebook/catholic.html",
+  "cover": "가톨릭대학교.jpg"
+ },
+ {
+  "slug": "cau",
+  "sku": "guide-cau",
+  "name": "중앙대학교",
+  "subtitle": "38면, 질문 102건, 보안 리더 열람",
+  "detail_url": "/guidebook/cau.html",
+  "cover": "중앙대학교.jpg"
+ },
+ {
+  "slug": "dongguk",
+  "sku": "guide-dongguk",
+  "name": "동국대학교",
+  "subtitle": "36면, 질문 143건, 보안 리더 열람",
+  "detail_url": "/guidebook/dongguk.html",
+  "cover": "동국대학교.jpg"
+ },
+ {
+  "slug": "ewha",
+  "sku": "guide-ewha",
+  "name": "이화여자대학교",
+  "subtitle": "36면, 질문 119건, 보안 리더 열람",
+  "detail_url": "/guidebook/ewha.html",
+  "cover": "이화여자대학교.jpg"
+ },
+ {
+  "slug": "gachon",
+  "sku": "guide-gachon",
+  "name": "가천대학교",
+  "subtitle": "34면, 질문 107건, 보안 리더 열람",
+  "detail_url": "/guidebook/gachon.html",
+  "cover": "가천대학교.jpg"
+ },
+ {
+  "slug": "hufs",
+  "sku": "guide-hufs",
+  "name": "한국외국어대학교",
+  "subtitle": "36면, 질문 138건, 보안 리더 열람",
+  "detail_url": "/guidebook/hufs.html",
+  "cover": "한국외국어대학교.jpg"
+ },
+ {
+  "slug": "inha",
+  "sku": "guide-inha",
+  "name": "인하대학교",
+  "subtitle": "40면, 질문 124건, 보안 리더 열람",
+  "detail_url": "/guidebook/inha.html",
+  "cover": "인하대학교.jpg"
+ },
+ {
+  "slug": "khu",
+  "sku": "guide-khu",
+  "name": "경희대학교",
+  "subtitle": "37면, 질문 119건, 보안 리더 열람",
+  "detail_url": "/guidebook/khu.html",
+  "cover": "경희대학교.jpg"
+ },
+ {
+  "slug": "konkuk",
+  "sku": "guide-konkuk",
+  "name": "건국대학교(서울)",
+  "subtitle": "33면, 질문 93건, 보안 리더 열람",
+  "detail_url": "/guidebook/konkuk.html",
+  "cover": "건국대학교(서울).jpg"
+ },
+ {
+  "slug": "kookmin",
+  "sku": "guide-kookmin",
+  "name": "국민대학교",
+  "subtitle": "32면, 질문 121건, 보안 리더 열람",
+  "detail_url": "/guidebook/kookmin.html",
+  "cover": "국민대학교.jpg"
+ },
+ {
+  "slug": "kwangwoon",
+  "sku": "guide-kwangwoon",
+  "name": "광운대학교",
+  "subtitle": "96면, 질문 111건, 보안 리더 열람",
+  "detail_url": "/guidebook/kwangwoon.html",
+  "cover": "광운대학교.jpg"
+ },
+ {
+  "slug": "kyonggi",
+  "sku": "guide-kyonggi",
+  "name": "경기대학교",
+  "subtitle": "31면, 질문 115건, 보안 리더 열람",
+  "detail_url": "/guidebook/kyonggi.html",
+  "cover": "경기대학교.jpg"
+ },
+ {
+  "slug": "myongji",
+  "sku": "guide-myongji",
+  "name": "명지대학교",
+  "subtitle": "34면, 질문 131건, 보안 리더 열람",
+  "detail_url": "/guidebook/myongji.html",
+  "cover": "명지대학교.jpg"
+ },
+ {
+  "slug": "pusan",
+  "sku": "guide-pusan",
+  "name": "부산대학교",
+  "subtitle": "35면, 질문 103건, 보안 리더 열람",
+  "detail_url": "/guidebook/pusan.html",
+  "cover": "부산대학교.jpg"
+ },
+ {
+  "slug": "sejong",
+  "sku": "guide-sejong",
+  "name": "세종대학교",
+  "subtitle": "32면, 질문 101건, 보안 리더 열람",
+  "detail_url": "/guidebook/sejong.html",
+  "cover": "세종대학교.jpg"
+ },
+ {
+  "slug": "seoultech",
+  "sku": "guide-seoultech",
+  "name": "서울과학기술대학교",
+  "subtitle": "30면, 질문 107건, 보안 리더 열람",
+  "detail_url": "/guidebook/seoultech.html",
+  "cover": "서울과학기술대학교.jpg"
+ },
+ {
+  "slug": "snu",
+  "sku": "guide-snu",
+  "name": "서울대학교",
+  "subtitle": "38면, 질문 106건, 보안 리더 열람",
+  "detail_url": "/guidebook/snu.html",
+  "cover": "서울대학교.jpg"
+ },
+ {
+  "slug": "sookmyung",
+  "sku": "guide-sookmyung",
+  "name": "숙명여자대학교",
+  "subtitle": "30면, 질문 92건, 보안 리더 열람",
+  "detail_url": "/guidebook/sookmyung.html",
+  "cover": "숙명여자대학교.jpg"
+ },
+ {
+  "slug": "soongsil",
+  "sku": "guide-soongsil",
+  "name": "숭실대학교",
+  "subtitle": "31면, 질문 81건, 보안 리더 열람",
+  "detail_url": "/guidebook/soongsil.html",
+  "cover": "숭실대학교.jpg"
+ },
+ {
+  "slug": "sungshin",
+  "sku": "guide-sungshin",
+  "name": "성신여자대학교",
+  "subtitle": "35면, 질문 111건, 보안 리더 열람",
+  "detail_url": "/guidebook/sungshin.html",
+  "cover": "성신여자대학교.jpg"
+ },
+ {
+  "slug": "uos",
+  "sku": "guide-uos",
+  "name": "서울시립대학교",
+  "subtitle": "42면, 질문 111건, 보안 리더 열람",
+  "detail_url": "/guidebook/uos.html",
+  "cover": "서울시립대학교.jpg"
+ },
+ {
+  "slug": "dankook",
+  "sku": "guide-dankook",
+  "name": "단국대학교(죽전)",
+  "subtitle": "32면, 질문 18건, 보안 리더 열람",
+  "detail_url": "/guidebook/dankook.html",
+  "cover": "단국대학교(죽전).jpg"
+ },
+ {
+  "slug": "duksung",
+  "sku": "guide-duksung",
+  "name": "덕성여자대학교",
+  "subtitle": "20면, 질문 41건, 보안 리더 열람",
+  "detail_url": "/guidebook/duksung.html",
+  "cover": "덕성여자대학교.jpg"
+ },
+ {
+  "slug": "dongduk",
+  "sku": "guide-dongduk",
+  "name": "동덕여자대학교",
+  "subtitle": "20면, 질문 42건, 보안 리더 열람",
+  "detail_url": "/guidebook/dongduk.html",
+  "cover": "동덕여자대학교.jpg"
+ },
+ {
+  "slug": "donga",
+  "sku": "guide-donga",
+  "name": "동아대학교",
+  "subtitle": "36면, 질문 136건, 보안 리더 열람",
+  "detail_url": "/guidebook/donga.html",
+  "cover": "동아대학교.jpg"
+ },
+ {
+  "slug": "sahmyook",
+  "sku": "guide-sahmyook",
+  "name": "삼육대학교",
+  "subtitle": "18면, 질문 12건, 보안 리더 열람",
+  "detail_url": "/guidebook/sahmyook.html",
+  "cover": "삼육대학교.jpg"
+ },
+ {
+  "slug": "swu",
+  "sku": "guide-swu",
+  "name": "서울여자대학교",
+  "subtitle": "59면, 질문 55건, 보안 리더 열람",
+  "detail_url": "/guidebook/swu.html",
+  "cover": "서울여자대학교.jpg"
+ },
+ {
+  "slug": "ulsan",
+  "sku": "guide-ulsan",
+  "name": "울산대학교",
+  "subtitle": "35면, 질문 132건, 보안 리더 열람",
+  "detail_url": "/guidebook/ulsan.html",
+  "cover": "울산대학교.jpg"
+ },
+ {
+  "slug": "incheon",
+  "sku": "guide-incheon",
+  "name": "인천대학교",
+  "subtitle": "43면, 질문 133건, 보안 리더 열람",
+  "detail_url": "/guidebook/incheon.html",
+  "cover": "인천대학교.jpg"
+ },
+ {
+  "slug": "hanyang-erica",
+  "sku": "guide-hanyang-erica",
+  "name": "한양대학교(ERICA)",
+  "subtitle": "17면, 질문 11건, 보안 리더 열람",
+  "detail_url": "/guidebook/hanyang-erica.html",
+  "cover": "한양대학교(ERICA).jpg"
+ }
+]
