@@ -10,7 +10,7 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
           '<rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z '
           'M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/></g></svg>')
 
-# (href, label, 현재 페이지 매칭 키) — 키가 '/' 로 끝나면 디렉토리 prefix 매칭
+# (href, label, 현재 페이지 매칭 키). 키가 '/' 로 끝나면 디렉토리 prefix 매칭
 # 앞 2 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
 GNB = [
     ("guidebook/index.html", "가이드북", ("guidebook/",)),
@@ -18,7 +18,7 @@ GNB = [
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
 ]
-GNB_GROUP_BREAK = 2   # 이 인덱스 항목부터 부가 묶음 (파는 것 2, 부가 2 — 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
+GNB_GROUP_BREAK = 2   # 이 인덱스 항목부터 부가 묶음 (파는 것 2, 부가 2. 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
     ("index.html#find", "대학 찾기", (), False, "find"),
@@ -26,7 +26,7 @@ FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("my.html", "MY", ("my.html",), False, "my"),
 ]
 
-# 모바일 바 아이콘 (선 1.8, currentColor — 자리표시 사각 <i> 대체)
+# 모바일 바 아이콘 (선 1.8, currentColor. 자리표시 사각 <i> 대체)
 FIX_ICONS = {
     "home": '<path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/>',
     "find": '<circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/>',
@@ -39,7 +39,7 @@ def _fi(key):
     return ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" '
             f'aria-hidden="true">{FIX_ICONS[key]}</svg>')
 
-# 기존 블록 인식은 속성이 붙어도 잡아야 한다 — <div class="util" data-x="1"> 을 못 알아보면
+# 기존 블록 인식은 속성이 붙어도 잡아야 한다. <div class="util" data-x="1"> 을 못 알아보면
 # 자리표시만 채워지고 낡은 셸이 남아 헤더가 둘이 된다 (s17 Codex 적발).
 SHELL_RE = re.compile(r'(?:<!--v2:shell-->|<div\b[^>]*\bclass="[^"]*\butil\b[^"]*"[^>]*>.*?</header>)', re.S)
 FOOTER_RE = re.compile(r'(?:<!--v2:footer-->|<footer\b[^>]*>.*?</footer>)', re.S)
@@ -148,10 +148,10 @@ def _sub_guarded(regex, maker, s, rel, name, max_span=20000):
     if not ms:
         return s
     if len(ms) > 1:
-        raise SystemExit(f"{rel}: {name} 블록/자리표시 {len(ms)}개 — 1개만 허용 (중복 주입 위험)")
+        raise SystemExit(f"{rel}: {name} 블록/자리표시 {len(ms)}개, 1개만 허용 (중복 주입 위험)")
     m = ms[0]
     if m.end() - m.start() > max_span:
-        raise SystemExit(f"{rel}: {name} 매치 스팬 {m.end() - m.start()}B — 정규식이 본문을 삼킨 것으로 판단, 중단")
+        raise SystemExit(f"{rel}: {name} 매치 스팬 {m.end() - m.start()}B, 정규식이 본문을 삼킨 것으로 판단해 중단")
     return s[:m.start()] + maker(rel) + s[m.end():]
 
 

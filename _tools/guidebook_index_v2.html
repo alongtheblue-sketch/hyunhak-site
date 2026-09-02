@@ -63,7 +63,7 @@
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>가이드북</span></nav>
-    <h1 class="rv">학교별 2027 면접 가이드북</h1>
+    <h1 class="rv">학교별 2027 서류기반면접 가이드북</h1>
     <p class="lede rv">공식 요강과 면접 후기에서 고른 학교별 면접의 실제, __N__권. 입시 컨설턴트 13년차 편집이며 권당 __PRICE__원, 구매 후 보안 리더로 열람하실 수 있습니다. 가나다 순입니다.</p>
    </div>
     <div class="facts rv">
@@ -104,8 +104,8 @@
         <p style="margin-top:8px;font-size:var(--t-sm);color:var(--gray)">보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
       </div>
       <div class="acts" style="flex-direction:column;justify-content:center">
-        <button type="button" class="btn" data-cart-sku="guide-all-view" data-cart-title="2027 면접 가이드북 전권 열람권, 38권" data-cart-price="627000">전권 열람권 담기</button>
-        <button type="button" class="btn ghost" data-cart-sku="guide-all-pdf" data-cart-title="2027 면접 가이드북 전권 PDF 소장판, 38권" data-cart-price="2090000">전권 PDF 소장판 담기</button>
+        <button type="button" class="btn" data-cart-sku="guide-all-view" data-cart-title="2027 서류기반면접 가이드북 전권 열람권, 38권" data-cart-price="627000">전권 열람권 담기</button>
+        <button type="button" class="btn ghost" data-cart-sku="guide-all-pdf" data-cart-title="2027 서류기반면접 가이드북 전권 PDF 소장판, 38권" data-cart-price="2090000">전권 PDF 소장판 담기</button>
       </div>
     </div>
   </div>
@@ -154,7 +154,7 @@ var HH_GB=__HH_GB__;
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     var pr=o.sale?'<span class="price">__PRICE__원</span>':'<span class="w">준비 중</span>';
-    var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
+    var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
     return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>2027학년도 대비</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
   }
   function render(){
