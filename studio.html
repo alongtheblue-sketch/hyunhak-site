@@ -74,21 +74,21 @@
 
 <main id="main">
 
-<!-- copy:studio-head (COPY.md 로 교체 예정) -->
+<!-- 페이지 머리 문안 = COPY.md §4 -->
 <section class="phead tight">
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>제시문 면접 스튜디오</span></nav>
-    <h1>제시문 면접 스튜디오</h1>
-    <p class="lede">연세대와 고려대의 기출 제시문으로 온라인 촬영 응시. 응시 단위 5곳, 단위마다 지문 30편. 지문 1편에 5회 응시, 회차마다 전사, 진단, 구술체 재구성의 첨삭 세 단. 제시문 해제는 13년차 입시 컨설턴트가 직접.</p>
+    <h1>기출 제시문 150세트, 실전 규격 촬영 응시</h1>
+    <p class="lede">연세대는 준비 8분과 답변 5분, 고려대는 준비 21분과 발화 7분입니다. 스튜디오는 그 시간을 그대로 재현해 촬영 응시하고, 한 지문에 5회까지 응시하며 회차마다 전사와 진단과 구술체 재구성 세 단을 마이페이지에 첨부합니다.</p>
   <!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 과정입니다. 지문 1편 33,000원, 응시 단위 전권 396,000원.</p><!-- /aeo -->
 </div>
-    <div class="acts"><a class="btn" href="#units">단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="#sets">지문 낱권 고르기</a><a class="tlink" href="#trialGo" id="trialGo">회원 체험 응시 1회</a></div>
-    <div class="facts">
-      <div><b>5</b><span>응시 단위</span></div>
-      <div><b>150</b><span>지문, 단위마다 30편</span></div>
+    <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="#trialGo" id="trialGo">체험 응시 1회 시작</a><a class="tlink" href="#sets">세트 표 보기</a></div>
+    <div class="facts lbl">
       <div><b>5</b><span>지문당 응시 횟수</span></div>
-      <div><b>3</b><span>첨삭 단계</span></div>
+      <div><b>3</b><span>첨삭 단계, 전사와 진단과 재구성</span></div>
+      <div><b>12</b><span>이용권 유효 개월</span></div>
+      <div><b>150</b><span>응시 세트, 5개 단위 각 30편</span></div>
     </div>
   </div>
 </section>
@@ -108,7 +108,7 @@
 
 <div class="pages">
 
-<!-- 지면 1. 응시 단위 5. 카드는 assets/data/sets.json 으로 그린다. copy:unit-cards -->
+<!-- 지면 1. 응시 단위 5. 카드는 assets/data/sets.json 으로 그리고 문안은 COPY.md §3 -->
 <section class="page" id="units">
   <p class="folio"><b>卷一</b><span>응시 단위</span><span class="r">1</span></p>
   <h2 class="t">응시 단위 5곳</h2>
@@ -121,7 +121,7 @@
 <section class="page" id="sets">
   <p class="folio"><b>卷二</b><span>지문 목록</span><span class="r">2</span></p>
   <h2 class="t" id="setsTitle">지문 목록, 단위마다 30편</h2>
-  <p class="note">지문 낱권 33,000원, 응시 5회. 난이도는 하, 중, 상, 최상 네 단으로 표기합니다. 해설 강의 상태는 열람 시점 기준입니다.</p>
+  <p class="note">150세트 난이도는 하 30, 중 50, 상 50, 최상 20. 세트마다 단위별 4개 축 점수를 함께 표기합니다.</p>
   <div class="tabs wrapx" id="unitTabs" role="tablist" aria-label="응시 단위" style="margin-top:var(--s4)"></div>
   <div class="setnav">
     <div class="chips" id="lvChips" role="group" aria-label="난이도 필터">
@@ -137,7 +137,7 @@
     <thead><tr><th scope="col">번호</th><th scope="col">제목</th><th scope="col">난이도</th><th scope="col">축 요약</th><th scope="col">해설 강의</th><th scope="col">담기</th></tr></thead>
     <tbody id="setRows"></tbody>
   </table>
-  <p class="note" style="margin-top:var(--s3)">담기를 누르면 장바구니에 들어가고, 결제 후 마이페이지에서 응시합니다. 축 요약의 네 값은 제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리입니다.</p>
+  <p class="note" style="margin-top:var(--s3)">담기는 그 세트 1편 33,000원. 응시 5회가 붙고, 해설 강의는 공개된 편만 열람합니다. 축 요약의 네 값은 제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리입니다.</p>
 </section>
 
 <!-- 지면 3. 이용권 두 가지 -->
@@ -169,7 +169,7 @@
         <li><span>유효 기간</span><span>구매일부터 12개월</span></li>
       </ul>
       <p class="deal">낱권으로 30편이면 990,000원. 전권은 396,000원, <b>60% 적습니다.</b></p>
-      <div class="acts"><a class="btn" href="#units">단위 고르기 <span class="ar" aria-hidden="true">→</span></a></div>
+      <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a></div>
     </div>
   </div>
 </section>
@@ -218,11 +218,11 @@
   </div>
 </section>
 
-<!-- copy:cta -->
+<!-- 마지막 CTA 라벨 = COPY.md §1 §2 -->
 <section class="page">
   <div class="final">
     <div><h2>지문 하나로 시작</h2><p>낱권 33,000원, 단위 전권 396,000원. 회원 체험 응시 1회.</p></div>
-    <div class="acts"><a class="btn" href="#units">단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="guidebook/index.html">가이드북 보기</a></div>
+    <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="guidebook/index.html">가이드북 보기</a></div>
   </div>
 </section>
 
@@ -268,22 +268,29 @@ document.addEventListener('DOMContentLoaded', function(){
   function lecText(ready){ return ready>0 ? ready+'편 공개, 순차 업로드' : '공개 준비 중, 순차 업로드'; }
   function num2(n){ return String(n).padStart(2,'0'); }
 
-  // ── 단위 카드 5 (sets.json) ──
+  // ── 단위 카드 5 (sets.json + COPY.md §3 문안) ──
+  var COPY={ 'korea-hum':['고려대 계열적합 인문','준비 21분, 발화 7분. 3문항 한 번에'], 'korea-sci':['고려대 계열적합 자연','준비 21분, 발화 7분. 자연 계열 30세트'],
+    'yonsei-hum':['연세대 활동우수 인문통합','준비 8분, 답변 5분. 관점 사이 관계 구성'], 'yonsei-sci':['연세대 활동우수 자연','준비 8분, 답변 5분. 자연 계열 30세트'],
+    'yonsei-intl':['연세대 국제형','준비 8분, 답변 5분. 영어 제시문 포함'] };
+  // 해설 강의 상태 3분기 (COPY §3-3). N 은 /api/lectures/summary 실값, 기준일은 응답 as_of
+  function lecStatus(r,total){ var n=r.ready||0; if(n<=0) return '해설 강의 준비 중'; if(n>=total) return '해설 강의 '+total+'편 전편 공개'; return '해설 강의 '+n+'편 공개, 순차 업로드'; }
   function renderUnits(){
     document.getElementById('unitCards').innerHTML=units.map(function(u,i){
+      var c=COPY[u.code]||[u.label,u.track];
       return '<article class="unit" id="u-'+esc(u.code)+'"><span class="kn">'+num2(i+1)+'</span>'
-        +'<h3>'+esc(u.univ)+' '+esc(u.label.replace(u.univ_short+' ',''))+'</h3>'
-        +'<p class="sub">'+esc(u.track)+', '+esc(u.code)+'</p>'
-        +'<dl class="dl"><dt>지문</dt><dd>'+u.set_count+'편</dd><dt>기간</dt><dd>12개월</dd><dt>해설 강의</dt><dd data-lec="'+esc(u.code)+'">공개 편수 확인 중</dd></dl>'
+        +'<h3>'+esc(c[0])+'</h3>'
+        +'<p class="sub">'+esc(c[1])+'</p>'
+        +'<ul class="spec"><li>지문 '+u.set_count+'편</li><li>5회 응시</li><li>12개월</li></ul>'
+        +'<p class="lec"><span data-lec="'+esc(u.code)+'">해설 강의 상태 확인 중</span></p>'
         +'<div class="foot"><span class="price">'+HH.won(u.price)+'</span>'
-        +'<span style="display:flex;gap:var(--s2);flex-wrap:wrap"><a class="btn ghost sm" href="#sets" data-unit-go="'+esc(u.code)+'">지문 보기</a>'
-        +'<button type="button" class="btn ghost sm" data-cart-sku="'+esc(u.sku)+'" data-cart-title="'+esc(u.label)+' 전권 이용권" data-cart-price="'+u.price+'">담기</button></span></div></article>';
+        +'<span style="display:flex;gap:var(--s2);flex-wrap:wrap"><a class="btn ghost sm" href="#sets" data-unit-go="'+esc(u.code)+'">세트 보기</a>'
+        +'<button type="button" class="btn ghost sm" data-cart-sku="'+esc(u.sku)+'" data-cart-title="'+esc(c[0])+' 전권 이용권" data-cart-price="'+u.price+'">담기</button></span></div></article>';
     }).join('');
     units.forEach(function(u){
       HH.api('/api/lectures/summary?unit='+encodeURIComponent(u.code)+'&kind=passage').then(function(r){
-        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.textContent=lecText(r.ready||0); });
+        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.innerHTML=esc(lecStatus(r,u.set_count))+(r.as_of?'<span class="asof">'+esc(r.as_of)+' 기준</span>':''); });
       }).catch(function(){
-        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.textContent='공개 편수는 내 강의에서 확인'; });
+        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.textContent='해설 강의 상태는 내 강의에서 확인'; });
       });
     });
   }

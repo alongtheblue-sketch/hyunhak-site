@@ -79,7 +79,7 @@
   function lecText(ready) { return ready > 0 ? "해설 강의 " + ready + "편 공개, 순차 업로드" : "해설 강의 공개 준비 중, 순차 업로드"; }
   function badges(l) {
     var p = l.progress, st = [];
-    if (l.status !== "ready") st.push('<span class="badge mute">준비 중</span>');
+    if (l.status !== "ready") st.push("<span>" + SLOT_TEXT + "</span>");   // COPY.md §6: 뱃지는 행 끝 하나만
     else if (!l.entitled) st.push('<span class="badge line">이용권 필요</span>');
     else if (p && p.completed) st.push('<span class="badge">완료</span>');
     if (l.duration_sec) st.push("<span>" + fmt(l.duration_sec) + "</span>");
@@ -92,7 +92,7 @@
       return '<a class="btn sm" href="lecture.html?id=' + encodeURIComponent(l.id) + '">' + (p && p.position_sec > 0 && !p.completed ? "이어보기" : "시청") + "</a>";
     }
     if (l.status === "ready") return '<a class="btn ghost sm" href="studio.html' + (unit ? "?unit=" + encodeURIComponent(unit) : "") + '">이용권</a>';
-    return '<span class="n">업로드 예정</span>';   // 준비 중 뱃지는 meta 줄에 이미 있다. 클릭 대상 없음
+    return '<span class="badge mute" aria-disabled="true">준비 중</span>';   // 클릭 대상 없음, 뱃지만 (COPY.md §6)
   }
   function row(l, n, unit) {
     var p = l.progress, pct = 0;
@@ -104,8 +104,9 @@
       + (p && pct > 0 ? '<span class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></span>' : "") + "</span>"
       + '<span class="a">' + actionOf(l, unit) + "</span></div>";
   }
+  var SLOT_TEXT = "준비 중. 공개되면 추가 비용 없이 이 이용권으로 시청합니다.";   // COPY.md §6 준비 중 슬롯
   function emptySlot(set) {
-    return '<div class="slot" aria-disabled="true"><span class="n">' + num2(set.n) + '</span><span><span class="t">' + esc(set.title) + '</span><span class="m"><span class="badge mute">준비 중</span><span>해설 강의 업로드 예정</span></span></span><span class="a"><span class="n">업로드 예정</span></span></div>';
+    return '<div class="slot" aria-disabled="true"><span class="n">' + num2(set.n) + '</span><span><span class="t">' + esc(set.title) + '</span><span class="m"><span>' + SLOT_TEXT + '</span></span></span><span class="a"><span class="badge mute" aria-disabled="true">준비 중</span></span></div>';
   }
   function group(title, cntHtml, moreHtml, rowsHtml) {
     return '<section class="lgrp"><div class="gh"><h2>' + title + "</h2>" + (cntHtml ? '<span class="cnt">' + cntHtml + "</span>" : "") + (moreHtml ? '<span class="more">' + moreHtml + "</span>" : "") + '</div><div class="toc">' + rowsHtml + "</div></section>";
@@ -127,7 +128,9 @@
     var readyN = pass.filter(function (l) { return l.status === "ready"; }).length;
     summary("unit=" + encodeURIComponent(unit) + "&kind=passage").then(function (sm) {
       var r = sm ? (sm.ready || 0) : readyN;
+      // COPY.md §6 뷰어 상단 요약: N편 공개, 순차 업로드 + 공개 기준일(summary.as_of)을 목록 위에
       metaEl.innerHTML = '<span class="badge line">' + esc(label) + "</span><span>" + esc(lecText(r)) + "</span>"
+        + (sm && sm.as_of ? '<span class="mono">공개 기준일 ' + esc(sm.as_of) + "</span>" : "")
         + (u ? "<span>단위 지문 " + u.set_count + "편</span>" : "")
         + (pubMissing ? "<span>공개 상태는 지금 확인할 수 없습니다</span>" : "")
         + (loggedIn ? "<span>시청 위치는 계정에 저장됩니다</span>" : '<span><a class="tlink" href="login.html?next=' + encodeURIComponent("lecture.html" + location.search) + '">로그인</a>하면 이용권 범위에서 시청합니다</span>');
@@ -153,7 +156,10 @@
     Promise.all(codes.map(function (c) { return summary("unit=" + encodeURIComponent(c) + "&kind=passage"); })).then(function (sms) {
       var any = sms.some(function (x) { return !!x; });
       var ready = sms.reduce(function (s2, x) { return s2 + ((x && x.ready) || 0); }, 0);
-      metaEl.innerHTML = "<span>" + esc(any ? lecText(ready) : "해설 강의 공개 편수는 단위 목록에서 확인") + "</span><span>이용권 범위의 강의를 한곳에서 봅니다. 시청 위치는 계정에 저장되어 다른 기기에서도 이어집니다.</span>";
+      var asOf = (sms.find(function (x) { return x && x.as_of; }) || {}).as_of;
+      metaEl.innerHTML = "<span>" + esc(any ? lecText(ready) : "해설 강의 공개 편수는 단위 목록에서 확인") + "</span>"
+        + (asOf ? '<span class="mono">공개 기준일 ' + esc(asOf) + "</span>" : "")
+        + "<span>이용권 범위의 강의를 한곳에서 봅니다. 시청 위치는 계정에 저장되어 다른 기기에서도 이어집니다.</span>";
     });
     if (!all.length) {
       view.innerHTML = '<div class="notice"><h2>아직 등록된 강의가 없습니다</h2><p>강의가 공개되면 이 자리에 나타납니다. 단위별 세트 목록과 준비 중 슬롯은 아래에서 봅니다.</p><div class="acts">'

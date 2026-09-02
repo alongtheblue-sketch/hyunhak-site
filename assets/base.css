@@ -631,6 +631,17 @@ body.v2{background:var(--ink)}
 :where(body.v2) .entry figure{margin:0;position:relative;box-shadow:inset 0 0 0 1px var(--hairs);border-radius:var(--r-sm);overflow:hidden}
 :where(body.v2) .entry figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
 :where(body.v2) .entry figure .ai{position:absolute;right:8px;bottom:8px}
+:where(body.v2) .entry .spec,:where(body.v2) .unit .spec{display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm);color:var(--body)}
+:where(body.v2) .entry .spec li,:where(body.v2) .unit .spec li{display:flex;gap:8px;align-items:flex-start}
+:where(body.v2) .entry .spec li::before,:where(body.v2) .unit .spec li::before{content:"";flex:none;width:14px;height:14px;margin-top:4px;border-radius:50%;background:var(--mat);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14'%3E%3Cpath d='M3.5 7.2l2.3 2.3 4.7-4.8' stroke='%23312E2E' stroke-width='1.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+:where(body.v2) .entry .prices{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);align-items:baseline}
+:where(body.v2) .entry .aux{font-size:var(--t-sm);color:var(--gray);margin-top:2px}
+:where(body.v2) .hero .cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s4)}
+:where(body.v2) .unit .lec{grid-column:2;font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+:where(body.v2) .unit .lec .asof{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-left:6px}
+:where(body.v2) .unit .spec{grid-column:2;margin-top:var(--s2)}
+:where(body.v2) .facts.lbl b{font-size:var(--t-h2)}
 :where(body.v2) .dl{display:grid;grid-template-columns:auto 1fr;gap:6px var(--s4);font-size:var(--t-sm);align-items:baseline}
 :where(body.v2) .dl dt{color:var(--gray)}
 :where(body.v2) .dl dd{color:var(--body);font-variant-numeric:tabular-nums}

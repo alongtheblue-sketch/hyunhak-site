@@ -29,7 +29,7 @@
 <link rel="stylesheet" href="assets/base.css">
 <style>
 /* 홈 전용 (v3 판본). 여백은 --gut 과 .wrap 만, 크기는 토큰만 */
-.hero h1{max-width:14em}
+.hero h1{font-size:var(--t-h2)}   /* COPY.md §1: 헤드라인 두 줄을 같은 크기로, 어느 줄도 접히지 않게. display 단은 색인 레일 옆 782px 안에서 4줄로 접힌다 (1280 실측) */
 .pages .steps,.pages .why{grid-template-columns:repeat(2,1fr)}
 .pages .tiles{grid-template-columns:repeat(3,1fr)}
 .find .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end}
@@ -107,37 +107,39 @@
 
 <div class="pages">
 
-<!-- 지면 1. 히어로, 2상품 병립. copy:hero (COPY.md 로 교체 예정) -->
+<!-- 지면 1. 히어로, 2상품 병립. 문안 = _design/v3_20260902/COPY.md §1 §2 (2026-09-02) -->
 <section class="page hero" id="p1">
   <p class="folio"><b>卷一</b><span>두 상품</span><span class="r">1</span></p>
-  <h1>서류기반면접 가이드북과 제시문 면접 스튜디오</h1>
-  <p class="lede2">두 상품은 서로 다른 전형을 맡습니다.</p>
+  <span class="eyebrow">2027 대입 면접</span>
+  <h1>질문 4,766개, 대학별 가이드북 38권<br>연세대 고려대 제시문 150세트 응시</h1>
+  <p class="lede2">가이드북 38권은 대학이 공개한 자료에서 고른 질문 4,766개와 생기부 전환 규칙 1,790개를 문항마다 출처와 함께 싣습니다. 스튜디오는 연세대 준비 8분과 고려대 준비 21분 규격 그대로 촬영 응시하고, 한 지문마다 5회 응시와 전사, 진단, 구술체 재구성의 첨삭 3단을 받습니다.</p>
+  <div class="cta"><a class="btn" href="guidebook/index.html">지원 대학 가이드북 보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 시작</a></div>
   <div class="duo">
-    <!-- copy:entry-guidebook -->
     <article class="entry">
-      <p class="k">상품 하나</p>
+      <p class="k">카드 A</p>
       <h2>서류기반면접 가이드북</h2>
       <div class="covers"><img src="assets/covers/korea.jpg" alt="" width="210" height="297"><img src="assets/covers/snu.jpg" alt="서울대학교 2027 서류기반면접 가이드북 표지" width="210" height="297" fetchpriority="high"><img src="assets/covers/skku.jpg" alt="" width="210" height="297"></div>
-      <p>관측된 질문만 싣고 문항마다 출처를 표기했습니다. 지원 대학 한 곳의 면접 준비를 한 권에 담았습니다. 결제 후 보안 리더로 열람합니다.</p>
-      <dl class="dl">
-        <dt>발간</dt><dd>38개 대학, 합계 1,389면</dd>
-        <dt>수록</dt><dd>질문 4,766문항, 문항마다 출처 표기</dd>
-        <dt>전환 규칙</dt><dd>생기부에서 질문을 뽑는 규칙 1,790개</dd>
-      </dl>
-      <div class="foot"><span class="price">33,000원<span class="u">권당</span></span><a class="btn" href="guidebook/index.html">가이드북 고르기</a></div>
+      <p>지원 대학 면접 준비를 한 권에</p>
+      <ul class="spec">
+        <li>38개 대학 38권, 본문 1,389면</li>
+        <li>수록 질문 4,766개, 문항마다 출처</li>
+        <li>생기부 질문 전환 규칙 1,790개</li>
+        <li>보안 리더 열람, 인쇄 권당 3회</li>
+      </ul>
+      <div class="foot"><span class="price">33,000원<span class="u">권당, 38개 대학 전권 판매 중</span></span><a class="btn" href="guidebook/index.html">가이드북 고르기</a></div>
     </article>
-    <!-- copy:entry-studio -->
     <article class="entry">
-      <p class="k">상품 둘</p>
+      <p class="k">카드 B</p>
       <h2>제시문 면접 스튜디오</h2>
       <figure><img src="assets/photo/campus_collage.jpg" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" width="1200" height="800" loading="lazy"></figure>
-      <p>연세대와 고려대 제시문 면접은 응시 장면을 녹화해 전사, 진단, 재구성 순으로 첨삭합니다. 지문 1편에 5회 응시합니다.</p>
-      <dl class="dl">
-        <dt>응시 단위</dt><dd>5곳, 단위마다 지문 30편</dd>
-        <dt>응시</dt><dd>지문 1편에 5회, 회차마다 전사와 진단</dd>
-        <dt>해설 강의</dt><dd id="lecSum">공개 편수 확인 중</dd>
-      </dl>
-      <div class="foot"><span class="price">396,000원<span class="u">응시 단위 전권</span></span><a class="btn" href="studio.html">스튜디오 들어가기</a></div>
+      <p>연세대 고려대 기출로 촬영 응시</p>
+      <ul class="spec">
+        <li>5개 응시 단위, 단위마다 30세트</li>
+        <li>지문 1편에 5회, 실전형 1 연습형 4</li>
+        <li>회차마다 전사, 진단, 구술체 재구성</li>
+        <li>해설 강의는 편별로 순차 공개</li>
+      </ul>
+      <div class="foot"><span class="prices"><span class="price">33,000원<span class="u">지문 1편</span></span><span class="price">396,000원<span class="u">단위 전권</span></span><span class="aux">낱권 30편 990,000원 대비 60% 적음</span></span><a class="btn" href="studio.html#units">응시 단위 고르기</a></div>
     </article>
   </div>
 </section>
@@ -169,44 +171,9 @@
   </div>
 </section>
 
-<!-- 상품 2종 카드. copy:card-guidebook, copy:card-studio -->
-<section class="page" id="products">
-  <p class="folio"><b>卷一</b><span>상품 2종</span><span class="r">3</span></p>
-  <div class="sh"><div><h2 class="t">상품 2종</h2><p>서류기반면접 가이드북과 제시문 면접 스튜디오. 필요한 것만 두 가지.</p></div></div>
-  <div class="cards n2">
-    <article class="card">
-      <div class="bd">
-        <h3>서류기반면접 가이드북</h3>
-        <p>지원 대학 한 곳의 면접 준비를 한 권에. 구매 후 보안 리더로 열람.</p>
-        <ul class="spec">
-          <li>면접 기본 제원, 유형 판정, 평가항목 매핑</li>
-          <li>실제로 나온 질문과 예상 질문, 문항마다 출처 표기</li>
-          <li>생기부에서 질문 뽑는 전환 규칙 1,790개(38권 합계)</li>
-        </ul>
-        <div class="pr"><span class="price">33,000원<span class="u">권당</span></span></div>
-      </div>
-      <div class="ft"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a></div>
-    </article>
-    <article class="card">
-      <div class="bd">
-        <h3>제시문 면접 스튜디오</h3>
-        <p>연세대, 고려대 기출 제시문으로 촬영 응시. 지문 1편에 5회, 회차마다 첨삭 세 단.</p>
-        <ul class="spec">
-          <li>실전형 응시 1회, 연습형 재응시 4회</li>
-          <li>회차마다 전사, 진단, 구술체 재구성</li>
-          <li>5개 응시 단위, 단위마다 세트 30</li>
-          <li id="lecSum2">해설 강의 공개 편수 확인 중</li>
-        </ul>
-        <div class="pr"><span class="price">33,000원<span class="u">지문 1편</span></span><span class="price">396,000원<span class="u">응시 단위 전권</span></span></div>
-      </div>
-      <div class="ft"><a class="btn" href="studio.html">스튜디오 들어가기 <span class="ar" aria-hidden="true">→</span></a></div>
-    </article>
-  </div>
-</section>
-
 <!-- 지면 3. 응시 절차 -->
 <section class="page" id="flow">
-  <p class="folio"><b>卷三</b><span>응시 절차</span><span class="r">4</span></p>
+  <p class="folio"><b>卷三</b><span>응시 절차</span><span class="r">3</span></p>
   <div class="sh"><div><h2 class="t">스튜디오 응시 절차</h2><p>지문 1편, 응시 5회</p></div><a class="tlink" href="studio.html">스튜디오 들어가기</a></div>
   <div class="steps">
     <div class="step"><span class="no">01</span><h3>지문 선택</h3><p>낱권이면 지문 1편, 전권이면 그 단위 지문 전량.</p></div>
@@ -218,7 +185,7 @@
 
 <!-- 지면 4. 근거와 규정 -->
 <section class="page" id="why">
-  <p class="folio"><b>卷四</b><span>근거와 규정</span><span class="r">5</span></p>
+  <p class="folio"><b>卷四</b><span>근거와 규정</span><span class="r">4</span></p>
   <div class="sh"><div><h2 class="t">근거와 규정</h2><p>추정 문항 없이 출처 있는 질문만. 규정은 약관 그대로.</p></div></div>
   <div class="why">
     <div><h3>관측 기록</h3><p>대학이 공개한 모집요강과 합격 후기에서 관측된 질문만 수록했습니다. 추정 문항은 싣지 않았습니다.</p></div>
@@ -232,7 +199,7 @@
   <h2 class="sr">만든 사람</h2>
   <div class="makerband">
     <div class="num" aria-hidden="true">13<em>년차</em></div>
-    <p><b>입시 컨설턴트 13년차, 고려대학교 영어교육과 졸업.</b> 38개 대학의 공개 자료에서 고른 질문 4,766개와 가이드북 38권. 편집 기준은 전권 동일.</p>
+    <p>가이드북 38권과 스튜디오 제시문 해제를 13년차 입시 컨설턴트 한 사람이 같은 기준으로 편집합니다. 고려대학교 영어교육과 졸업.</p>
     <a class="tlink" href="about.html">만든 사람 보기</a>
   </div>
 </section>
@@ -419,7 +386,7 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
 
 <!-- 지면 5. 자주 묻는 질문, 공지 -->
 <section class="page" id="faq">
-  <p class="folio"><b>卷五</b><span>자주 묻는 질문</span><span class="r">6</span></p>
+  <p class="folio"><b>卷五</b><span>자주 묻는 질문</span><span class="r">5</span></p>
   <div class="two">
     <div>
       <div class="sh"><div><h2 class="t">자주 묻는 질문</h2></div></div>
@@ -437,11 +404,11 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
   </div>
 </section>
 
-<!-- copy:cta -->
+<!-- 마지막 CTA 라벨 = COPY.md §2 카드 CTA -->
 <section class="page">
   <div class="final">
     <div><h2>지원 대학부터 고르기</h2><p>38개 대학 가이드북, 응시 단위 5곳 스튜디오</p></div>
-    <div class="acts"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html">스튜디오 들어가기</a></div>
+    <div class="acts"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html#units">응시 단위 고르기</a></div>
   </div>
 </section>
 
@@ -496,17 +463,15 @@ var HH_GB=[{"slug":"dgist","name":"DGIST(대구경북과학기술원)","short":"
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var id='#'+e.target.id;idx.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')===id)})})},{rootMargin:'-40% 0px -50% 0px'});
     idx.forEach(function(a){var t=document.querySelector(a.getAttribute('href'));if(t)io.observe(t)});
   }
-  // 해설 강의 공개 편수 = /api/lectures/summary 실값 (L-6, L-12: "포함" 단정 금지, N편 공개 형만)
-  var UNITS=['korea-hum','korea-sci','yonsei-hum','yonsei-sci','yonsei-intl'];
-  function lecText(ready){ return ready>0 ? '해설 강의 '+ready+'편 공개, 순차 업로드' : '해설 강의 공개 준비 중, 순차 업로드'; }
-  function setLec(t){ var a=document.getElementById('lecSum'), b=document.getElementById('lecSum2'); if(a) a.textContent=t.replace(/^해설 강의 /,''); if(b) b.textContent=t; }
-  if(window.HH){
-    Promise.all(UNITS.map(function(u){return HH.api('/api/lectures/summary?unit='+u+'&kind=passage').catch(function(){return null})})).then(function(rs){
-      if(rs.every(function(r){return !r})){ setLec('해설 강의 공개 편수는 스튜디오에서 확인'); return; }
-      var ready=rs.reduce(function(s,r){return s+((r&&r.ready)||0)},0);
-      setLec(lecText(ready));
-    });
-  }
+  // 히어로 1차 CTA 스튜디오 = 체험 응시 1회 (studio.html trialGo 와 같은 흐름)
+  var ht=document.getElementById('heroTrial');
+  if(ht&&window.HH) ht.addEventListener('click', async function(ev){
+    ev.preventDefault();
+    var st=await HH.me();
+    if(!st.member){ location.href='join.html?next=studio.html'; return; }
+    try{ var r=await HH.api('/api/studio/token',{method:'POST'}); window.open(r.url,'_blank','noopener'); }
+    catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
+  });
   // 공지 3건 (API). 실패하거나 0건이면 공지 전체 링크만 남긴다
   var nr=document.getElementById('noticeRows');
   if(nr&&window.HH){HH.api('/api/notices?kind=notice&limit=3').then(function(data){
