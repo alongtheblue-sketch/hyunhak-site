@@ -38,12 +38,12 @@
 .how dl{display:grid;grid-template-columns:160px minmax(0,1fr);max-width:880px}
 .how dt{font-size:13px;font-weight:600;letter-spacing:.04em;color:var(--gray);padding:18px 0;border-top:1px solid var(--hairs)}
 .how dd{font-size:15px;line-height:1.8;color:var(--body);padding:16px 0 20px;border-top:1px solid var(--hairs)}
-.name .lab{grid-template-columns:minmax(0,2fr) minmax(0,3fr);align-items:start}
-.name table{width:100%;border-collapse:collapse;font-size:14.5px;margin-top:var(--s3)}
-.name td,.name th{text-align:left;padding:12px 0;border-top:1px solid var(--hairs);vertical-align:top}
-.name th{font-weight:500;font-family:var(--serif);font-size:24px;width:120px;line-height:1.2}
-.name .no{color:var(--gray)}
-.name .yes{color:var(--seal)}
+.film .brandfilm{margin:0;background:var(--mat);border-radius:var(--r-md);overflow:hidden}
+.film video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
+.film figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;padding:var(--s3) var(--s4);font-size:13px;color:var(--gray)}
+.film figcaption b{font-family:var(--serif);font-size:18px;color:var(--ink);margin-right:6px}
+.film .aigen{color:var(--gray)}
+.film .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @media (max-width:900px){.intro{grid-template-columns:1fr;gap:var(--s5)}.two-up{grid-template-columns:1fr}.how dl{grid-template-columns:1fr}.how dt{padding-bottom:4px}.how dd{border-top:0;padding-top:0}}
 </style>
 </head>
@@ -169,19 +169,17 @@
   </div>
 </section>
 
-<section class="sec tight name" id="name">
+<section class="sec tight film" id="name">
   <div class="wrap">
-    <div class="lab rv">
-      <div>
-        <span class="eyebrow">이름에 쓰는 글자</span>
-        <blockquote>현학적의 현은 검을 현 <b>玄</b>. 『천자문』 첫 구절 天地玄黃의 그 글자이며, 『설문해자』는 "검되 붉은 기가 도는 것"과 "그윽하고 멂"으로 풉니다. 사전의 현학적(衒學的, 학식을 뽐냄)과는 다른 글자.</blockquote>
-        <p class="more" style="font-size:14px;color:var(--body);line-height:1.7">로고의 선비는 이목구비를 비워 두었습니다. 그 자리에 읽는 사람이 들어갑니다.</p>
-      </div>
-      <table>
-        <tr><th class="yes">玄學的</th><td>검을 현, 배울 학. 아득히 깊은 배움. <span class="yes">이 표기를 씁니다</span></td></tr>
-        <tr><th class="no">衒學的</th><td>자랑할 현. 학식을 뽐냄. <span class="no">쓰지 않습니다</span></td></tr>
-      </table>
-    </div>
+    <figure class="brandfilm rv">
+      <video poster="assets/video/brand_60s_poster.png" muted loop playsinline preload="metadata"
+             aria-label="현학적 연구소 브랜드 영상, 60초" aria-describedby="film-tx">
+        <source src="assets/video/brand_60s_aigen.webm" type="video/webm">
+        <source src="assets/video/brand_60s_aigen.mp4" type="video/mp4">
+      </video>
+      <p id="film-tx" class="vh">영상 자막 원문. 검을 현 玄. 검되 붉은 기가 도는 것, 그윽하고 멂. 대학이 먼저 공개한 자료. 모집요강, 선행학습영향평가 보고서, 수험생 후기. 38권, 1,389면. 수록 질문 4,766. 말하는 장면을 촬영해 첨삭. 연세대, 고려대 제시문 면접 스튜디오. 현학적 연구소, 玄學的 研究所, hyunhak.com.</p>
+      <figcaption><span><b>玄</b> 검을 현. 아득히 깊은 배움. 자랑할 현 衒學的과는 다른 글자</span><span class="aigen">다섯 컷 중 붓, 자료, 면접실 세 컷과 음악은 AI 생성. 표지와 로고는 공식 자산</span></figcaption>
+    </figure>
   </div>
 </section>
 

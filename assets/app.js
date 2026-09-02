@@ -328,3 +328,13 @@
     config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml,
     SET_ID_RE, UNITS, LINE_MAX, okSetId, okUnit, intIn };
 })();
+
+// 브랜드 영상 슬롯: 기본은 정지 포스터(reduced-first). 모션 무감 선호가 아닐 때만 자동재생
+(function(){
+  var films=document.querySelectorAll('.film video');
+  if(!films.length) return;
+  films.forEach(function(v){v.controls=true});   // 정지 수단은 항상(WCAG 2.2.2, 5초 초과 자동 움직임)
+  if(matchMedia('(prefers-reduced-motion: no-preference)').matches){
+    films.forEach(function(v){v.autoplay=true;v.play().catch(function(){})});
+  }
+})();
