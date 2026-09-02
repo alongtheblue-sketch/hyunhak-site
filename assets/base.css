@@ -617,6 +617,12 @@ body.v2{background:var(--ink)}
 :where(body.v2) .page .note{margin-top:var(--s2)}
 /* 도입부: 드롭캡 없음 (건우 지시 2026-09-02). 보통 크기 본문 */
 :where(body.v2) .lede2{font-size:var(--t-md);line-height:1.6;color:var(--body);max-width:var(--measure)}
+/* 줄바꿈과 볼드 (건우 지시 2026-09-02): 문장마다 한 단락, 숫자와 출처 문구만 잉크색 700, 숫자 단위는 줄 중간에서 안 끊김 */
+:where(body.v2) .lede2 p{margin:0}
+:where(body.v2) .lede2 p+p{margin-top:var(--s2)}
+:where(body.v2) .lede2 b,:where(body.v2) .pagehead .lede b,:where(body.v2) .entry .spec b{font-weight:700;color:var(--ink)}
+:where(body.v2) .entry>p{color:var(--ink);font-weight:500}
+:where(body.v2) .nb{white-space:nowrap}
 /* 2상품 병립 */
 :where(body.v2) .duo{display:grid;grid-template-columns:1fr;margin-top:var(--s5);border-top:var(--rule-strong)}
 @media (min-width:820px){:where(body.v2) .duo{grid-template-columns:1fr 1fr}}
