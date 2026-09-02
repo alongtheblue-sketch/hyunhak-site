@@ -137,7 +137,8 @@
     <thead><tr><th scope="col">번호</th><th scope="col">제목</th><th scope="col">난이도</th><th scope="col">축 요약</th><th scope="col">해설 강의</th><th scope="col">담기</th></tr></thead>
     <tbody id="setRows"></tbody>
   </table>
-  <p class="note" style="margin-top:var(--s3)">담기는 그 세트 1편 33,000원. 응시 5회가 붙고, 해설 강의는 공개된 편만 열람합니다. 축 요약의 네 값은 제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리입니다.</p>
+  <div class="setmore" id="setMore"></div>
+  <p class="note" style="margin-top:var(--s3)">담기는 그 세트 1편 33,000원. 응시 5회가 붙고, 해설 강의는 공개된 편만 열람합니다. <span id="axNote"></span></p>
 </section>
 
 <!-- 지면 3. 이용권 두 가지 -->
@@ -253,7 +254,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="cta" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -261,8 +262,17 @@ document.addEventListener('DOMContentLoaded', function(){
   var esc=HH.esc;
   var PRICE_UNIT=396000, PRICE_SET=33000;
   var LV=['하','중','상','최상'];
-  var AX={'제시문_추상도':'추상','연쇄_통합_폭':'통합','자료_수리_부하':'자료','개념_전이_거리':'전이'};
-  var units=[], cur=null, lv='', pubCache={};
+  // 축 어휘는 단위마다 다르다 (sets.json 실집계 9종, 세트마다 4축 + 합계).
+  // 표 셀은 축약, 안내문은 온전한 이름. 사전에 없는 키는 밑줄만 공백으로 바꿔 그대로 보여 준다.
+  var AX={
+    '제시문_추상도':['추상','제시문 추상도'], '연쇄_통합_폭':['통합','연쇄 통합 폭'],
+    '자료_수리_부하':['수리','자료 수리 부하'], '개념_전이_거리':['전이','개념 전이 거리'],
+    '관계_구성_단계수':['관계','관계 구성 단계수'], '자료_해석_부하':['해석','자료 해석 부하'],
+    '관점_간_긴장도':['긴장','관점 간 긴장도'], '다_다층성':['다층','[다] 다층성'],
+    '영어_지문_부하':['영어','영어 지문 부하']
+  };
+  function axName(k,i){ var v=AX[k]; return v?v[i]:String(k).replace(/_/g,' '); }
+  var units=[], cur=null, lv='', pubCache={}, PAGE_STEP=10, shown=0;
   var params=new URLSearchParams(location.search);
 
   function lecText(ready){ return ready>0 ? ready+'편 공개, 순차 업로드' : '공개 준비 중, 순차 업로드'; }
@@ -315,14 +325,30 @@ document.addEventListener('DOMContentLoaded', function(){
     for(var i=0;i<4;i++) dots+='<b'+(i<=k?' class="f"':'')+'></b>';
     return '<span class="lv'+(d==='최상'?' top':'')+'"><i aria-hidden="true">'+dots+'</i>'+esc(d)+'</span>';
   }
+  // 세트가 가진 축 키를 그대로 순회한다 (하드코딩 맵을 훑으면 어휘가 다른 단위에서 값이 조용히 빠진다)
   function axesHtml(a){
-    var parts=[]; Object.keys(AX).forEach(function(k){ if(a&&a[k]!=null) parts.push(AX[k]+' <span class="n">'+a[k]+'</span>'); });
-    return parts.join(', ')+(a&&a['합계']!=null?', 합 <span class="n">'+a['합계']+'</span>':'');
+    if(!a) return '';
+    var parts=[];
+    Object.keys(a).forEach(function(k){ if(k==='합계'||a[k]==null) return; parts.push(esc(axName(k,0))+' <span class="n">'+esc(a[k])+'</span>'); });
+    return parts.join(', ')+(a['합계']!=null?', 합 <span class="n">'+esc(a['합계'])+'</span>':'');
   }
-  function renderRows(){
+  // 안내문은 지금 보고 있는 단위의 축 이름으로 쓴다 (단위마다 어휘가 다르다)
+  function axNoteText(u){
+    var first=u&&u.sets&&u.sets[0]&&u.sets[0].axes;
+    if(!first) return '';
+    var names=Object.keys(first).filter(function(k){ return k!=='합계'; }).map(function(k){ return axName(k,1); });
+    if(!names.length) return '';
+    return '축 요약의 네 값은 '+names.join(', ')+'입니다.';
+  }
+  // 좁은 폭에서는 30행이 8,595px 라 한 번에 다 그리지 않는다 (더 보기로 10편씩). 넓은 폭은 전량.
+  function pageStep(){ return window.matchMedia('(max-width:860px)').matches ? PAGE_STEP : 30; }
+  function renderRows(keep){
     var u=units.find(function(x){return x.code===cur}); if(!u) return;
     document.getElementById('setsTitle').textContent=u.label+', 지문 '+u.set_count+'편';
-    var list=u.sets.filter(function(s){ return !lv||s.difficulty===lv; });
+    document.getElementById('axNote').textContent=axNoteText(u);
+    var all=u.sets.filter(function(s){ return !lv||s.difficulty===lv; });
+    if(!keep) shown=pageStep();
+    var list=all.slice(0, Math.min(shown, all.length));
     var tb=document.getElementById('setRows');
     tb.innerHTML=list.map(function(s){
       return '<tr data-set="'+esc(s.id)+'"><td class="c-no">'+num2(s.n)+'</td>'
@@ -332,7 +358,9 @@ document.addEventListener('DOMContentLoaded', function(){
         +'<td class="c-s" data-l="해설 강의"><span class="badge mute" data-st="'+esc(s.id)+'">확인 중</span></td>'
         +'<td class="c-a"><button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-set-id="'+esc(s.id)+'" data-cart-title="지문 낱권, '+esc(s.title)+'" data-cart-price="'+PRICE_SET+'">담기</button></td></tr>';
     }).join('')||'<tr class="nohit"><td colspan="6">이 난이도의 지문이 없습니다.</td></tr>';
-    document.getElementById('setSum').textContent=list.length+' / '+u.set_count+'편'+(lv?', 난이도 '+lv:'');
+    document.getElementById('setSum').textContent=list.length+' / '+all.length+'편'+(lv?', 난이도 '+lv:'')+', 단위 '+u.set_count+'편';
+    var rest=all.length-list.length, more=document.getElementById('setMore');
+    more.innerHTML=rest>0 ? '<button type="button" class="btn ghost sm" id="setMoreBtn">지문 '+Math.min(PAGE_STEP,rest)+'편 더 보기, 남은 '+rest+'편</button>' : '';
     pub(cur).then(function(m){
       list.forEach(function(s){
         var el=tb.querySelector('[data-st="'+s.id+'"]'); if(!el) return;
@@ -351,6 +379,11 @@ document.addEventListener('DOMContentLoaded', function(){
   document.getElementById('lvChips').addEventListener('click', function(ev){
     var b=ev.target.closest('[data-lv]'); if(!b) return;
     lv=b.dataset.lv; document.querySelectorAll('#lvChips button').forEach(function(x){ x.setAttribute('aria-pressed', x===b?'true':'false'); }); renderRows();
+  });
+  document.getElementById('setMore').addEventListener('click', function(ev){
+    if(!ev.target.closest('#setMoreBtn')) return;
+    shown+=PAGE_STEP; renderRows(true);
+    var btn=document.getElementById('setMoreBtn'); if(btn) btn.focus();
   });
   document.addEventListener('click', function(ev){
     var go=ev.target.closest('[data-unit-go]'); if(go){ ev.preventDefault(); selectUnit(go.dataset.unitGo, true); return; }
