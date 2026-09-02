@@ -157,8 +157,10 @@
       var any = sms.some(function (x) { return !!x; });
       var ready = sms.reduce(function (s2, x) { return s2 + ((x && x.ready) || 0); }, 0);
       var asOf = (sms.find(function (x) { return x && x.as_of; }) || {}).as_of;
+      // 공개 기준일 span 이 없으면 앞뒤 두 문장이 붙어 한 문장으로 읽힌다. 문안은 그대로 두고 구분 괘선을 세운다
       metaEl.innerHTML = "<span>" + esc(any ? lecText(ready) : "해설 강의 공개 편수는 단위 목록에서 확인") + "</span>"
         + (asOf ? '<span class="mono">공개 기준일 ' + esc(asOf) + "</span>" : "")
+        + '<i class="sep" aria-hidden="true"></i>'
         + "<span>이용권 범위의 강의를 한곳에서 봅니다. 시청 위치는 계정에 저장되어 다른 기기에서도 이어집니다.</span>";
     });
     if (!all.length) {
@@ -189,13 +191,19 @@
     crumbNow.textContent = "내 강의";
     metaEl.textContent = "불러오는 중입니다.";
     Promise.all([
-      apiFetch("/api/lectures"),
+      // API 가 닿지 않아도 ?unit= 공개 화면은 sets.json 만으로 선다. 형제 두 호출과 같은 방어를 둔다.
+      apiFetch("/api/lectures").catch(function () { return { _status: 0 }; }),
       loadSets(),
       unitParam ? apiFetch("/api/lectures/public?unit=" + encodeURIComponent(unitParam)).catch(function () { return { _status: 0 }; }) : Promise.resolve(null),
     ]).then(function (res) {
       var mine = res[0], units = res[1], pubd = res[2];
-      var loggedIn = mine._status !== 401;
-      if (!loggedIn && !unitParam) return loginRedirect();
+      var apiDown = mine._status === 0;                       // 네트워크 실패. 401 응답과 구분한다
+      var loggedIn = !apiDown && mine._status !== 401;
+      if (!loggedIn && !unitParam) {
+        // 단위 인자가 없으면 그릴 공개 목록이 없다. API 장애를 로그인 요구로 오인해 내보내지 않는다
+        if (apiDown) { view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; metaEl.textContent = ""; return; }
+        return loginRedirect();
+      }
       var mineList = loggedIn ? (mine.lectures || []) : [];
       var pubList = pubd && pubd._status === 200 ? (pubd.lectures || []) : null;   // null = 공개 API 없음 (상태 미상)
       var pubMissing = !!unitParam && pubList === null;

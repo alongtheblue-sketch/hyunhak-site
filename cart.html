@@ -41,6 +41,7 @@
 .line .m .mono{font-size:var(--t-xs);margin-left:6px}
 .line .ops{margin-top:12px;display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
 .line .p{font-family:var(--mono);text-align:right;font-weight:500;font-size:var(--t-base);font-variant-numeric:tabular-nums;white-space:nowrap}
+.stale{margin-bottom:var(--s3);padding:var(--s3);color:var(--ink);border-left:3px solid var(--seal);background:var(--mat);border-radius:var(--r-sm);max-width:none}
 .memberline{margin-top:var(--s3)}
 .keep{margin-top:var(--s5)}
 .bill .btn{width:100%;margin-top:var(--s4)}
@@ -95,6 +96,7 @@
 
 <div class="wrap lay">
   <section class="items">
+    <p class="note stale" id="cartStale" role="status" hidden></p>
     <ol class="lines" id="cartRows"></ol>
     <p class="note memberline" id="cartNote" hidden>디지털 상품은 결제 즉시 마이페이지에서 열림. 실물 상품만 배송 대상.</p>
     <div class="empty" id="cartEmpty" hidden>담긴 상품이 없습니다. 가이드북과 스튜디오에서 담아 주세요.</div>
@@ -137,7 +139,7 @@
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="pri" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="cta" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script>
@@ -145,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   function thumb(it){
     var sku=String(it.sku||'');
-    // 전권 번들은 목록면으로, 소장판(-pdf)은 원권 표지로 — sku 그대로 slug 를 만들면 존재하지 않는 면·표지 404 (r2 R12)
+    // 전권 번들은 목록면으로, 소장판(-pdf)은 원권 표지로. sku 그대로 slug 를 만들면 존재하지 않는 면과 표지 404 (r2 R12)
     if(sku.indexOf('guide-all')===0) return '<a class="thumb" href="guidebook/index.html"><img src="assets/photo/art_figure.png" alt="" width="56" height="79"></a>';
     if(sku.indexOf('guide-')===0){ var slug=sku.slice(6).replace(/-pdf$/,''); return '<a class="thumb" href="guidebook/'+encodeURIComponent(slug)+'.html"><img src="assets/covers/'+encodeURIComponent(slug)+'.jpg" alt="" width="56" height="79"></a>'; }
     if(sku==='envelope-mock') return '<a class="thumb" href="index.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
@@ -189,6 +191,13 @@ document.addEventListener('DOMContentLoaded', function(){
   document.getElementById('toCheckout').addEventListener('click', function(ev){
     if(this.getAttribute('aria-disabled')==='true') ev.preventDefault();
   });
+  // 세트 정보 없는 구 낱권 줄은 서버가 주문 전체를 거절한다. 먼저 빼고 한 줄로 알린다.
+  var dropped=HH.pruneCart();
+  if(dropped){
+    var s=document.getElementById('cartStale');
+    s.innerHTML='세트가 지정되지 않은 지문 낱권 '+dropped+'줄을 장바구니에서 뺐습니다. <a class="tlink" href="studio.html#sets">지문 목록</a>에서 세트를 골라 다시 담아 주세요.';
+    s.hidden=false;
+  }
   render();
 });
 </script>

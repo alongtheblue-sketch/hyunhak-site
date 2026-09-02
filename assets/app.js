@@ -14,8 +14,19 @@
     return data;
   }
 
-  function cart() {
+  function rawCart() {
     try { return JSON.parse(localStorage.getItem(CART_KEY) || "[]"); } catch { return []; }
+  }
+  // 구 studio.html 이 set_id 없이 담은 낱권 줄. 서버가 passage-single 에 set_id 를 필수로 요구해
+  // 이 줄 하나가 주문 전체를 400 으로 떨어뜨린다. 읽는 쪽에서 걸러 결제 경로에 닿지 않게 한다.
+  function staleLine(x) { return String((x && x.sku) || "") === "passage-single" && !(x && x.set_id); }
+  function cart() { return rawCart().filter((x) => !staleLine(x)); }
+  // 저장본까지 한 번 정리하고 정리한 줄 수를 돌려준다 (장바구니 면이 안내 한 줄을 띄운다)
+  function pruneCart() {
+    const all = rawCart(), kept = all.filter((x) => !staleLine(x));
+    const dropped = all.length - kept.length;
+    if (dropped) saveCart(kept);
+    return dropped;
   }
   function saveCart(items) {
     try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch {}
@@ -95,7 +106,13 @@
       const cartLink = aux.querySelector('a[href$="cart.html"]');
       if (cartLink) cartLink.textContent = n ? `장바구니 ${n}` : "장바구니";
       const loginLink = aux.querySelector('a[href$="login.html"]');
-      if (loginLink && st.member) { loginLink.textContent = st.member.name || "마이페이지"; loginLink.href = loginLink.href.replace("login.html", "my.html"); }
+      if (loginLink && st.member) {
+        loginLink.textContent = st.member.name || "마이페이지";
+        loginLink.href = loginLink.href.replace("login.html", "my.html");
+        // 링크가 마이페이지로 바뀌면 현재 위치 표기도 따라간다. 다른 면에서는 속성을 남기지 않는다
+        if (/(^|\/)my\.html$/.test(location.pathname)) loginLink.setAttribute("aria-current", "page");
+        else loginLink.removeAttribute("aria-current");
+      }
     });
   }
 
@@ -256,6 +273,6 @@
   document.addEventListener("DOMContentLoaded", markScrollableTables);
   addEventListener("resize", markScrollableTables);
 
-  window.HH = { API, api, me, cart, saveCart, addToCart, cartTotal, won, updateNav,
+  window.HH = { API, api, me, cart, pruneCart, saveCart, addToCart, cartTotal, won, updateNav,
     config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml };
 })();
