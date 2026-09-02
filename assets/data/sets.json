@@ -1,6 +1,6 @@
 {
  "generated_at": "2026-09-02T00:00:00Z",
- "catalog_hash": "be69c219855a8053ea391849a3096079a563757b5f8424b0010404bbe2dcef1e",
+ "catalog_hash": "1d57706297ed3ee2198b8cb0eb382c525b6b65afa9e7cfe6529f7e41061d1b0f",
  "units": [
   {
    "code": "korea-hum",
@@ -119,7 +119,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h07",
@@ -137,7 +137,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h08",
@@ -155,7 +155,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h09",
@@ -173,7 +173,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h10",
@@ -191,7 +191,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h11",
@@ -209,7 +209,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h12",
@@ -227,7 +227,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h13",
@@ -245,7 +245,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h14",
@@ -263,7 +263,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h15",
@@ -281,7 +281,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h16",
@@ -299,7 +299,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h17",
@@ -317,7 +317,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h18",
@@ -335,7 +335,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h19",
@@ -353,7 +353,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h20",
@@ -371,7 +371,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h21",
@@ -407,7 +407,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h23",
@@ -425,7 +425,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h24",
@@ -443,7 +443,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h25",
@@ -461,7 +461,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h26",
@@ -479,7 +479,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h27",
@@ -497,7 +497,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h28",
@@ -515,7 +515,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h29",
@@ -533,7 +533,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_h30",
@@ -551,7 +551,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     }
    ]
   },
@@ -654,7 +654,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s06",
@@ -690,7 +690,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s08",
@@ -708,7 +708,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s09",
@@ -726,7 +726,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s10",
@@ -744,7 +744,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s11",
@@ -762,7 +762,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s12",
@@ -780,7 +780,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s13",
@@ -798,7 +798,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s14",
@@ -816,7 +816,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s15",
@@ -834,7 +834,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s16",
@@ -870,7 +870,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s18",
@@ -888,7 +888,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s19",
@@ -906,7 +906,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s20",
@@ -924,7 +924,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s21",
@@ -942,7 +942,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s22",
@@ -960,7 +960,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s23",
@@ -978,7 +978,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s24",
@@ -996,7 +996,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s25",
@@ -1014,7 +1014,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s26",
@@ -1032,7 +1032,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s27",
@@ -1050,7 +1050,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s28",
@@ -1068,7 +1068,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s29",
@@ -1086,7 +1086,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "korea_2027_s30",
@@ -1104,7 +1104,7 @@
      "questions": 3,
      "prep_seconds": 1260,
      "interview_seconds": 420,
-     "explain_script": false
+     "explain_script": true
     }
    ]
   },
@@ -1219,7 +1219,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h07",
@@ -1253,7 +1253,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h09",
@@ -1270,7 +1270,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h10",
@@ -1287,7 +1287,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h11",
@@ -1304,7 +1304,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h12",
@@ -1321,7 +1321,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h13",
@@ -1338,7 +1338,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h14",
@@ -1355,7 +1355,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h15",
@@ -1372,7 +1372,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h16",
@@ -1389,7 +1389,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h17",
@@ -1406,7 +1406,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h18",
@@ -1423,7 +1423,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h19",
@@ -1440,7 +1440,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h20",
@@ -1457,7 +1457,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h21",
@@ -1474,7 +1474,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h22",
@@ -1491,7 +1491,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h23",
@@ -1508,7 +1508,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h24",
@@ -1525,7 +1525,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h25",
@@ -1542,7 +1542,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h26",
@@ -1559,7 +1559,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h27",
@@ -1576,7 +1576,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h28",
@@ -1593,7 +1593,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h29",
@@ -1610,7 +1610,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_h30",
@@ -1627,7 +1627,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     }
    ]
   },
@@ -1742,7 +1742,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s07",
@@ -1759,7 +1759,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s08",
@@ -1776,7 +1776,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s09",
@@ -1793,7 +1793,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s10",
@@ -1810,7 +1810,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s11",
@@ -1827,7 +1827,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s12",
@@ -1844,7 +1844,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s13",
@@ -1861,7 +1861,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s14",
@@ -1878,7 +1878,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s15",
@@ -1895,7 +1895,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s16",
@@ -1912,7 +1912,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s17",
@@ -1929,7 +1929,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s18",
@@ -1946,7 +1946,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s19",
@@ -1963,7 +1963,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s20",
@@ -1980,7 +1980,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s21",
@@ -1997,7 +1997,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s22",
@@ -2014,7 +2014,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s23",
@@ -2031,7 +2031,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s24",
@@ -2048,7 +2048,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s25",
@@ -2065,7 +2065,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s26",
@@ -2082,7 +2082,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s27",
@@ -2099,7 +2099,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s28",
@@ -2116,7 +2116,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s29",
@@ -2133,7 +2133,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_2027_s30",
@@ -2150,7 +2150,7 @@
      "passages": 4,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     }
    ]
   },
@@ -2248,7 +2248,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i06",
@@ -2265,7 +2265,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i07",
@@ -2282,7 +2282,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i08",
@@ -2299,7 +2299,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i09",
@@ -2316,7 +2316,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i10",
@@ -2333,7 +2333,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i11",
@@ -2350,7 +2350,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i12",
@@ -2367,7 +2367,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i13",
@@ -2401,7 +2401,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i15",
@@ -2418,7 +2418,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i16",
@@ -2435,7 +2435,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i17",
@@ -2452,7 +2452,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i18",
@@ -2469,7 +2469,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i19",
@@ -2486,7 +2486,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i20",
@@ -2503,7 +2503,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i21",
@@ -2520,7 +2520,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i22",
@@ -2537,7 +2537,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i23",
@@ -2554,7 +2554,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i24",
@@ -2571,7 +2571,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i25",
@@ -2588,7 +2588,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i26",
@@ -2605,7 +2605,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i27",
@@ -2622,7 +2622,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i28",
@@ -2639,7 +2639,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i29",
@@ -2656,7 +2656,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     },
     {
      "id": "yonsei_intl_2027_i30",
@@ -2673,7 +2673,7 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
-     "explain_script": false
+     "explain_script": true
     }
    ]
   }
