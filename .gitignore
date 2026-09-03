@@ -4,3 +4,6 @@ design/_gen/
 .wrangler/
 node_modules/
 *.bak*
+
+# 배포 세대 마커 (deploy.sh 가 배포 직전 쓰고 지움, 2026-09-04)
+_gen.txt
