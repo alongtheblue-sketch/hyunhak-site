@@ -28,11 +28,11 @@ if m:
     <div class="herosay">
       <div class="prodcta" aria-label="두 상품 바로 가기">
         <div class="pc">
-          <span class="k">서류기반면접 가이드북</span>
+          <span class="k">서류기반면접 가이드북<br><span class="pr">권당 33,000원</span></span>
           <div class="bs"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="programs/guidebook.html">지원대학 가이드북이란?</a></div>
         </div>
         <div class="pc">
-          <span class="k">제시문 면접 스튜디오</span>
+          <span class="k">제시문 면접 스튜디오<br><span class="pr">단위 전권 495,000원</span></span>
           <div class="bs"><a class="btn" href="studio.html#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="programs/studio.html">면접 스튜디오란?</a></div>
           <a class="tlink" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 시작 <span class="ar" aria-hidden="true">→</span></a>
         </div>
@@ -56,21 +56,22 @@ CSS = '''/* 2026-09-03 건우 지시: 卷 레일 제거(단일 열), 히어로 =
 .book{grid-template-columns:1fr}
 @media (min-width:1000px){.page{padding-left:0}}
 .hero .herotop{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5);align-items:start}
-@media (min-width:900px){.hero .herotop{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4) var(--s6);align-items:start}.hero .herohead{grid-column:1/-1}}
+@media (min-width:900px){.hero .herotop{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3) var(--s6);align-items:start}.hero .herohead{grid-column:1/-1}}
 @media (max-width:899.98px){.hero .herofilm{order:-1}}
 .hero .herofilm{margin:0;position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden;box-shadow:0 18px 40px rgba(49,46,46,.18)}
 .hero .herofilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
-.hero .vpause{position:absolute;right:10px;bottom:10px;min-height:var(--tap);padding:0 14px;border:1px solid rgba(239,233,220,.6);border-radius:999px;background:rgba(49,46,46,.55);color:var(--paper);font:500 12px/1 var(--mono);cursor:pointer}
-.hero .vpause:hover{background:rgba(49,46,46,.85)}
+.hero .vpause{position:absolute;right:10px;bottom:10px;min-height:var(--tap);padding:0 14px;border:1px solid rgba(239,233,220,.6);border-radius:999px;background:rgba(49,46,46,.92);color:var(--paper);font:500 12px/1 var(--mono);cursor:pointer}
+.hero .vpause:hover{background:var(--ink)}
 .hero .vpause:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
 .hero .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.hero .prodcta{display:grid;grid-template-columns:1fr;gap:var(--s4);margin:var(--s4) 0;padding:var(--s4) 0;border-top:var(--rule);border-bottom:var(--rule)}
+.hero .prodcta{display:grid;grid-template-columns:1fr;gap:var(--s4);margin:var(--s3) 0 var(--s4);padding:var(--s4) 0;border-top:var(--rule);border-bottom:var(--rule)}
 @media (min-width:600px){.hero .prodcta{grid-template-columns:1fr 1fr}}
 .hero .prodcta .k{display:block;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s2)}
 .hero .prodcta .bs{display:flex;flex-wrap:wrap;gap:var(--s2)}
 .hero .prodcta .tlink{margin-top:var(--s2)}
+@supports (grid-template-rows:subgrid){@media (min-width:600px){.hero .prodcta{grid-template-rows:repeat(3,auto)}.hero .prodcta .pc{display:grid;grid-template-rows:subgrid;grid-row:span 3;align-content:start}.hero .prodcta .k{align-self:end}}}
 @media (max-width:899.98px){.hero .herotop{gap:var(--s3)}.hero .herohead h1{margin-bottom:0}}
-@media (max-width:599.98px){.hero .prodcta{gap:var(--s3);margin:0 0 var(--s3);padding:var(--s3) 0}}
+@media (max-width:599.98px){.hero .prodcta{gap:var(--s3);margin:0 0 var(--s3);padding:var(--s3) 0}.hero .folio{display:none}.hero .prodcta .k br{display:none}.hero .prodcta .k .pr::before{content:", "}}
 '''
 n_css = 0
 if '.hero .herotop{' not in t:

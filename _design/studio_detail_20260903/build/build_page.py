@@ -624,8 +624,8 @@ def main():
     assert '{{' not in h, [l for l in h.splitlines() if '{{' in l][:3]
     out = (SITE_ROOT / 'programs' / 'studio.html') if MODE == 'site' else OUT / OUTNAME
     if MODE == 'site':
-        # og:image 1200x630 = 리포트 실물 화면 상단(여섯 축 도형 + 문항 채점). AI 정물(std_desk) 대체, 2026-09-03 건우 지시
-        og = Image.open(SHOTS / 'report_korea.png').convert('RGB').crop((0, BAR, 2560, 1600))
+        # og:image 1200x630 = 준비 시간 실물 화면 상단(제시문 + 타이머). AI 정물(std_desk) 대체, 2026-09-03 건우 지시
+        og = Image.open(SHOTS / 'prep_korea.png').convert('RGB').crop((0, BAR, 2560, 1600))   # critic P2: 리포트 화면은 낙제 점수(20/100)가 지배 요소. 준비 시간 화면(제시문 + 21분 타이머)으로
         og = og.resize((1200, round(og.height * 1200 / og.width)), Image.LANCZOS).crop((0, 0, 1200, 630))
         og.save(SITE_ROOT / 'assets' / 'photo' / 'std' / 'std_og.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
     out.write_text(h, encoding='utf-8')

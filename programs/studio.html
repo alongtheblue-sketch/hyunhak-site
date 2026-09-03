@@ -76,7 +76,7 @@ p{max-width:var(--measure);color:var(--body)}
 .btn .arr{font-family:var(--mono);font-weight:400}
 .ink .btn{background:var(--paper);color:var(--ink)}
 .ink .btn:hover{background:var(--card)}
-.tl{display:inline-flex;align-items:center;min-height:var(--tap);gap:var(--s2);border-bottom:1px solid var(--hair);color:var(--ink);font-weight:500}
+.tl{display:inline-flex;align-items:center;gap:6px;min-height:48px;font-weight:600;font-size:var(--t-sm);color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink);text-decoration-thickness:1px;text-underline-offset:5px}  /* 2026-09-03 critic P1: 탭박스 하단 hair 룰(글자에서 18px, 1.72:1) → 글자 밑줄(ink) */
 .ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
 .blk h3,.two h3{font-size:var(--t-sm);font-family:var(--mono);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
 .blk ul li{position:relative;padding-left:var(--s3);margin-bottom:var(--s2);line-height:1.6;color:var(--body)}
@@ -396,6 +396,11 @@ p{max-width:var(--measure);color:var(--body)}
 .part{scroll-margin-top:var(--s5)}
 @media (max-width:900px){.split.one .forms{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.split.one .forms{grid-template-columns:1fr}}
+
+/* 2026-09-03 critic P2: 다섯 단계 카드 링크 신호를 카드 바닥에 정렬, 글자 13px. 문제 절 카드 테두리 대비 */
+.rail li a{display:flex;flex-direction:column;align-items:flex-start}
+.rail .go{margin-top:auto;padding-top:var(--s3);font-size:var(--t-sm)}
+.split.one .forms li{border-color:rgba(244,239,227,.38)}
 </style>
 </head>
 <body>
