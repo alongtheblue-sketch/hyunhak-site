@@ -116,7 +116,7 @@ def unit_card(u):
     href = f'{SITE}/studio.html?unit={u["code"]}#units' if MODE == 'data' else f'../studio.html?unit={u["code"]}#units'
     return (f'<li class="unit rv"><span class="mono">{esc(u["label"].split()[0])}</span><h3>{esc(title)}</h3><p class="sub">{esc(sub)}</p>'
             f'<dl><dt>지문</dt><dd>{u["set_count"]}편</dd><dt>난이도</dt><dd>{esc(lv_txt)}</dd><dt>축</dt><dd>{esc(", ".join(axes))}</dd></dl>'
-            f'<ul class="ex">{titles}</ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="{href}">이 단위 보기</a></li>')
+            f'<ul class="ex">{titles}</ul><a class="tl" href="{href}">이 단위 보기</a></li>')
 
 UNITS = '\n'.join(unit_card(next(u for u in units if u['code'] == c)) for c in ORDER)
 TOTAL_SETS = sum(u['set_count'] for u in units)
@@ -558,7 +558,7 @@ HTML = r"""<!DOCTYPE html>
       <div class="txt rv">
         <p class="kicker">응시 단위 다섯, 지문 150편</p>
         <h2 class="h2">지원 단위부터 고르기</h2>
-        <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p>
+        <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편, 전권 495,000원에 풀이법 인강 포함, 다섯 단위 같은 값. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p><!-- GS-24-5: 전권가는 카드 5장에 반복하지 않고 여기 한 번 -->
       </div>
       <figure class="vis rv">{{IMG_CAMPUS}}<figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은&nbsp;바 없습니다.</figcaption></figure>
     </div>

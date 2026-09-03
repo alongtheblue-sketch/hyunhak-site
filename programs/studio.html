@@ -32,7 +32,7 @@
 <style>
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);--paper-rgb:244,239,227;
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
@@ -69,6 +69,8 @@ h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
 p{max-width:var(--measure);color:var(--body)}
 .ink p{color:var(--paper-2)}
 .mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
+/* GS-24-3(스튜디오 동일 적용): JetBrains Mono 에 한글이 없어 한글 라벨의 공백만 mono 폭(0.584em). 한글이 드는 mono 요소의 공백을 Pretendard 폭(0.235em) 으로 */
+.mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.rail .go,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.cmp th,.cmp td:first-child,.diff .d,.close .won,.viscap,.scrcap,.quote .src,.tiles .d,.revs .stp,.issues .tag,.ladder th,.unit dt,.vis .zl,.bk .mt{word-spacing:-.35em}
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
 .kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
 .ink .kicker{color:var(--paper-2);opacity:.8}
@@ -370,13 +372,13 @@ p{max-width:var(--measure);color:var(--body)}
 .unit .sub{font-size:var(--t-sm);color:var(--gray)}
 .unit dl{display:grid;grid-template-columns:auto 1fr;gap:var(--s1) var(--s3);font-size:var(--t-sm);margin-top:var(--s2)}
 .unit dt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);padding-top:.25em}
-.unit dd{line-height:1.5}
+.unit dd{line-height:1.55}  /* critic s44 P2-5: 한글 행간 하한 */
 .unit .ex{margin-top:var(--s2);border-top:var(--rule);padding-top:var(--s2)}
 .unit .ex li{font-size:var(--t-sm);line-height:1.5;display:flex;gap:var(--s2);margin-top:var(--s1)}
 .unit .ex .lv{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);flex:none;width:2.4em;padding-top:.2em}
 .unit .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h4);color:var(--seal);margin-top:auto;padding-top:var(--s3);white-space:nowrap}
 .unit .won small{display:block;white-space:normal;font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:0;margin-top:2px}  /* nowrap 상속으로 1000px+ 카드 밖 19~21px 넘침 (critic P1-1, 2026-09-03) */
-.unit .tl{margin-top:var(--s2);align-self:flex-start}
+.unit .tl{margin-top:auto;padding-top:var(--s3);align-self:flex-start}  /* GS-24-5: 카드 안 .won 을 걷어 링크가 바닥 정렬을 이어받는다 */
 @media (max-width:1000px){
   .units{grid-template-columns:repeat(2,minmax(0,1fr))}
   .units li:last-child{grid-column:span 2}
@@ -436,12 +438,12 @@ p{max-width:var(--measure);color:var(--body)}
 .rail.anchor li.core .bd{display:flex;flex-direction:column;align-items:flex-start;height:100%}
 .rail.anchor li.core .bd p{font-size:var(--t-base)}
 .rail.anchor li.core .bd .pg{margin-top:var(--s3)}
-.rail.anchor .tail{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s3);width:100%;margin-top:auto;padding-top:var(--s3);border-top:var(--rule)}
+.rail.anchor .tail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* critic s44 P2-2: 바닥 규칙선은 3·5단계에만 있어 2/5, 걷어서 0/5. GS-24-5: 3단계 카드만 링크가 오른쪽(225px)에 있어 5장 중 1장 이탈. .foot 과 같은 세로 배열로 정렬, DOM 은 그대로(S5 카드 변주 유지) */
 .rail.anchor .tail .pg,.rail.anchor .tail .go{margin-top:0;padding-top:0}
-.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:var(--rule)}  /* GS-17 must_fix ①: 카드5 pg→go 순 복구, 바닥 규칙선 래퍼는 .tail(가로 한 줄) 과 다른 .foot(세로) */
+.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* GS-17 must_fix ①: 카드5 pg→go 순 복구, 바닥 규칙선 래퍼는 .tail(가로 한 줄) 과 다른 .foot(세로) */
 .rail.anchor .foot .pg,.rail.anchor .foot .go{margin-top:0;padding-top:0}
 .part .sample.strip{margin-top:0;margin-bottom:var(--s6);padding:var(--s4) 0;background:transparent;border-left:0;border-right:0;border-radius:0}
-.part#p2 .body,.part#p3 .body{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}  /* GS-17 must_fix ②③: p3 4:8 철회(증거 화면 ≥400px), p5 는 기본 5:7 */
+.part#p2 .body,.part#p3 .body,.part#p2 .head,.part#p3 .head{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}  /* critic s44 P2-1: head 를 body 트랙에 맞춰 제목 좌변 79.3px 어긋남 해소 */  /* GS-17 must_fix ②③: p3 4:8 철회(증거 화면 ≥400px), p5 는 기본 5:7 */
 .part#p5 .sample{margin-top:0;margin-bottom:var(--s6)}
 .part#p3{padding-block:var(--s7) var(--s8)}
 .part#p5{padding-block:var(--s8) var(--s9)}
@@ -464,10 +466,10 @@ p{max-width:var(--measure);color:var(--body)}
 @media (max-width:900px){
   body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
   .buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60;
-    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(244,239,227,.96);
+    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
-  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--gray)}
-  .buybar .nm{font-size:var(--t-xs);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--hair)}
+  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}  /* critic s44 P2(가이드북 면 지적, 두 면 동일): 반투명 바 위 대비 4.60 → --body 6.9, 라벨 11 → 12px */
+  .buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}  /* GS-24-5: 탭 단서 밑줄을 --hair 에서 먹색으로(GS-23 확대 안내와 같은 처분) */
   .buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;
     color:var(--seal);white-space:nowrap}
   .buybar .btn{flex:none;min-height:52px;padding:0 var(--s4);gap:var(--s2);font-size:var(--t-sm);border-radius:var(--r-md)}
@@ -877,16 +879,16 @@ p{max-width:var(--measure);color:var(--body)}
       <div class="txt rv">
         <p class="kicker">응시 단위 다섯, 지문 150편</p>
         <h2 class="h2">지원 단위부터 고르기</h2>
-        <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p>
+        <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편, 전권 495,000원에 풀이법 인강 포함, 다섯 단위 같은 값. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p><!-- GS-24-5: 전권가는 카드 5장에 반복하지 않고 여기 한 번 -->
       </div>
       <figure class="vis rv"><img src="../assets/photo/std/std_campus.jpg" width="1200" height="800" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" loading="lazy" decoding="async"><figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은&nbsp;바 없습니다.</figcaption></figure>
     </div>
     <ul class="units">
-      <li class="unit rv"><span class="mono">연세대</span><h3>연세대 활동우수 인문통합</h3><p class="sub">준비 8분, 답변 5분. 관점 사이 관계 구성</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 관계 구성 단계수, 자료 해석 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">하</span>선택지의 양과 행복의 관계</li><li><span class="lv">중</span>잣대의 같음과 출발의 같음</li><li><span class="lv">중</span>점수를 믿는 일과 사람을 믿는 일</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=yonsei-hum#units">이 단위 보기</a></li>
-<li class="unit rv"><span class="mono">연세대</span><h3>연세대 활동우수 자연</h3><p class="sub">준비 8분, 답변 5분. 자연 계열 30세트</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 관계 구성 단계수, 자료 해석 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">중</span>모여 있는 값과 놓여 있는 자리</li><li><span class="lv">상</span>다시 해 본 자리에서 남는 것</li><li><span class="lv">상</span>손잡이가 늘어날 때 줄어드는 것</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=yonsei-sci#units">이 단위 보기</a></li>
-<li class="unit rv"><span class="mono">연세대</span><h3>연세대 국제형</h3><p class="sub">준비 8분, 답변 5분. 영어 제시문 포함</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 10, 중 10, 상 10</dd><dt>축</dt><dd>제시문 추상도, 다층, 영어 지문 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">하</span>언어는 생각을 빚는가 실어 나르는가</li><li><span class="lv">하</span>지역 문화를 지키는 관광, 소비하는 관광</li><li><span class="lv">하</span>낯선 예절을 읽는 두 가지 방식</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=yonsei-intl#units">이 단위 보기</a></li>
-<li class="unit rv"><span class="mono">고려대</span><h3>고려대 계열적합 인문</h3><p class="sub">준비 21분, 발화 7분. 3문항 한 번에</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리</dd></dl><ul class="ex"><li><span class="lv">하</span>기억은 어떻게 기록이 되는가</li><li><span class="lv">하</span>이름은 누구의 것인가</li><li><span class="lv">하</span>놀이는 어떻게 문화가 되는가</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=korea-hum#units">이 단위 보기</a></li>
-<li class="unit rv"><span class="mono">고려대</span><h3>고려대 계열적합 자연</h3><p class="sub">준비 21분, 발화 7분. 자연 계열 30세트</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리</dd></dl><ul class="ex"><li><span class="lv">하</span>제자리로 돌아오는 길</li><li><span class="lv">하</span>차이가 사라질 때까지</li><li><span class="lv">중</span>맞서는 두 힘이 만드는 멈춤</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=korea-sci#units">이 단위 보기</a></li>
+      <li class="unit rv"><span class="mono">연세대</span><h3>연세대 활동우수 인문통합</h3><p class="sub">준비 8분, 답변 5분. 관점 사이 관계 구성</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 관계 구성 단계수, 자료 해석 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">하</span>선택지의 양과 행복의 관계</li><li><span class="lv">중</span>잣대의 같음과 출발의 같음</li><li><span class="lv">중</span>점수를 믿는 일과 사람을 믿는 일</li></ul><a class="tl" href="../studio.html?unit=yonsei-hum#units">이 단위 보기</a></li>
+<li class="unit rv"><span class="mono">연세대</span><h3>연세대 활동우수 자연</h3><p class="sub">준비 8분, 답변 5분. 자연 계열 30세트</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 관계 구성 단계수, 자료 해석 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">중</span>모여 있는 값과 놓여 있는 자리</li><li><span class="lv">상</span>다시 해 본 자리에서 남는 것</li><li><span class="lv">상</span>손잡이가 늘어날 때 줄어드는 것</li></ul><a class="tl" href="../studio.html?unit=yonsei-sci#units">이 단위 보기</a></li>
+<li class="unit rv"><span class="mono">연세대</span><h3>연세대 국제형</h3><p class="sub">준비 8분, 답변 5분. 영어 제시문 포함</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 10, 중 10, 상 10</dd><dt>축</dt><dd>제시문 추상도, 다층, 영어 지문 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">하</span>언어는 생각을 빚는가 실어 나르는가</li><li><span class="lv">하</span>지역 문화를 지키는 관광, 소비하는 관광</li><li><span class="lv">하</span>낯선 예절을 읽는 두 가지 방식</li></ul><a class="tl" href="../studio.html?unit=yonsei-intl#units">이 단위 보기</a></li>
+<li class="unit rv"><span class="mono">고려대</span><h3>고려대 계열적합 인문</h3><p class="sub">준비 21분, 발화 7분. 3문항 한 번에</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리</dd></dl><ul class="ex"><li><span class="lv">하</span>기억은 어떻게 기록이 되는가</li><li><span class="lv">하</span>이름은 누구의 것인가</li><li><span class="lv">하</span>놀이는 어떻게 문화가 되는가</li></ul><a class="tl" href="../studio.html?unit=korea-hum#units">이 단위 보기</a></li>
+<li class="unit rv"><span class="mono">고려대</span><h3>고려대 계열적합 자연</h3><p class="sub">준비 21분, 발화 7분. 자연 계열 30세트</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 연쇄 통합 폭, 자료 수리 부하, 개념 전이 거리</dd></dl><ul class="ex"><li><span class="lv">하</span>제자리로 돌아오는 길</li><li><span class="lv">하</span>차이가 사라질 때까지</li><li><span class="lv">중</span>맞서는 두 힘이 만드는 멈춤</li></ul><a class="tl" href="../studio.html?unit=korea-sci#units">이 단위 보기</a></li>
     </ul>
   </div>
 </section>

@@ -184,7 +184,7 @@ def biz_block():
 
 CSS = r"""
 :root{
-  --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
+  --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;--paper-rgb:244,239,227;
   --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
@@ -213,9 +213,12 @@ table{border-collapse:collapse;width:100%}
 .wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
 h1,h2,h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
 h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
+.forms h3,.aud h3,.pr h3,.rail h3,.flow h3,.price h3{font-weight:700;text-wrap:inherit}  /* GS-24-4: h2 직후 h4 21곳을 h3 로 승격(스튜디오 S2 와 동일). h4 계산값(weight 700, text-wrap 은 body 상속) 유지로 시각 불변 */
 p{max-width:var(--measure);color:var(--body)}
 .ink p{color:var(--paper-2)}
 .mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
+/* GS-24-3: JetBrains Mono 에 한글이 없어 한글 라벨의 공백만 mono 폭(0.584em) 으로 찍혀 Pretendard 공백(0.235em) 의 2.4~3.0배. 한글이 드는 mono 요소의 공백을 -.35em 으로 Pretendard 폭에 맞춘다(계측 probe_s44.mjs monoKo) */
+.mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.zoom figcaption,.pgv .cap,.bk .mt,.cmp th,.cmp td:first-child,.diff .d,.close .won{word-spacing:-.35em}  /* .buybar .nm 은 sans 라 제외(s44 실측: 포함하면 "보안리더열람,권당" 으로 붙음) */
 .c,.facts b .c{display:inline-block;width:.34em;margin:0;font:inherit;color:inherit;text-align:center;text-indent:-.095em}  /* GS-17 G3 잉크 수리: 0.6em 글리프가 .34em 상자를 넘치면 Chrome 은 start 정렬이라 center 무효(refute 2건, 34px 간격 8.0/1.25px). text-indent -.095em 로 잉크를 상자 왼쪽으로 옮겨 앞뒤 간격을 숫자 간격(4.5px)과 맞춘다. JetBrains Mono 쉼표는 숫자와 같은 0.6em 고정폭. 상자를 .34em(숫자폭의 0.57)으로 좁힌다. 숫자는 Mono 유지(건우 09-02). .facts span{display:block;font-size:13px} 이 span.c 를 잡아 줄을 끊으므로 .facts b .c 로 이겨 font/color/margin 을 부모값으로 되돌린다 */
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
 .kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
@@ -230,6 +233,10 @@ p{max-width:var(--measure);color:var(--body)}
 .btn{display:inline-flex;align-items:center;gap:var(--s3);min-height:var(--tap);padding:0 var(--s4);background:var(--ink);color:var(--paper);
   font-weight:700;border-radius:var(--r-md);transition:transform .24s var(--ease),background .24s}
 .btn:hover{background:var(--brown);transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}  /* GS-22-4: 보조 CTA 는 테두리(가이드 §07 버튼 행). 목록 우회로가 밑줄 글자만이라 안 띈다는 학부모 페르소나 지적 */
+.btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}  /* GS-24-6: 스킵 링크(스튜디오와 동일) */
+.skip:focus{left:0}
 .btn .arr{font-family:var(--mono);font-weight:400}
 .ink .btn{background:var(--paper);color:var(--ink)}
 .ink .btn:hover{background:var(--card)}
@@ -287,7 +294,7 @@ p{max-width:var(--measure);color:var(--body)}
 .split.rev .txt{order:2}
 .forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .forms li{border:1px solid rgba(244,239,227,.22);border-radius:var(--r-md);padding:var(--s4)}
-.forms h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
+.forms h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .forms p{font-size:var(--t-sm);line-height:1.65}
 .forms .mono{display:block;margin-bottom:var(--s2);opacity:.7}
 .after{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(244,239,227,.22);font-size:var(--t-h4);line-height:1.55;max-width:28em}
@@ -296,13 +303,13 @@ p{max-width:var(--measure);color:var(--body)}
 .aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .aud li{border-top:2px solid var(--ink);padding-top:var(--s4)}
 .aud .mono{display:block;color:var(--gray);margin-bottom:var(--s2)}
-.aud h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
+.aud h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .aud p{font-size:var(--t-md);line-height:1.7}
 
 /* 만든 사람 */
 .pr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .pr li{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
-.pr h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
+.pr h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .pr p{font-size:var(--t-md);line-height:1.7}
 .pr .mono{display:block;color:var(--seal);margin-bottom:var(--s2)}
 
@@ -312,7 +319,7 @@ p{max-width:var(--measure);color:var(--body)}
 .rail li.core{border-top-color:var(--seal);background:var(--card);border-left:var(--rule);border-right:var(--rule);border-bottom:var(--rule);padding:var(--s4);border-radius:0 0 var(--r-md) var(--r-md)}
 .rail .n{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .rail li.core .n{color:var(--seal)}
-.rail h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
+.rail h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .rail p{font-size:var(--t-md);line-height:1.7}
 .rail .pg{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2);display:block}
 .openers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
@@ -388,12 +395,15 @@ p{max-width:var(--measure);color:var(--body)}
 /* 형태와 가격 */
 .price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .price>li{background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
-.price h4{font-size:var(--t-h4)}
+.price h3{font-size:var(--t-h4)}
 .price .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h2);color:var(--seal);line-height:1.1;margin-top:var(--s2);white-space:nowrap}
 .price .won small{font-size:var(--t-sm);color:var(--gray);margin-left:4px;font-family:var(--sans)}
 .price .won.two{font-size:var(--t-h2);margin-top:var(--s2)}
 .price .calc{font-size:var(--t-base);line-height:1.6;color:var(--ink);max-width:none;margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
 .price .calc+.calc{margin-top:var(--s1);padding-top:0;border-top:0}
+.price .alt{font-size:var(--t-md);color:var(--body);line-height:1.5;margin-top:var(--s1)}  /* GS-22-1: 둘째 상품 값은 먹색, 본문 크기. 朱印 은 카드마다 하나 */
+.price .alt b{font-family:var(--mono);font-weight:500;font-size:var(--t-base);color:var(--ink);white-space:nowrap}
+.pricenote{font-size:var(--t-base);line-height:1.65;color:var(--body);margin-top:var(--s4);max-width:var(--measure)}  /* GS-22-2: 절반 근거는 카드 밖 주석 16px (G1 하한). critic s44 P2: 행 65.5자 → 본문 measure 36em */
 .price ul{margin-top:var(--s2)}
 .price .pricefoot{font-size:var(--t-cap);color:var(--gray);line-height:1.6;margin-top:var(--s2);padding-top:var(--s2);border-top:var(--rule)}
 .price ul li{font-size:var(--t-md);color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
@@ -401,7 +411,7 @@ p{max-width:var(--measure);color:var(--body)}
 .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5)}
 .flow li{border-top:var(--rule-strong);padding-top:var(--s3)}
 .flow .n{font-family:var(--mono);font-size:var(--t-xs);color:var(--seal);display:block;margin-bottom:var(--s1)}
-.flow h4{font-size:var(--t-base);margin-bottom:var(--s1)}
+.flow h3{font-size:var(--t-base);margin-bottom:var(--s1)}
 .flow p{font-size:var(--t-sm)}
 
 /* 31권 */
@@ -409,7 +419,7 @@ p{max-width:var(--measure);color:var(--body)}
 .bk img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14);transition:transform .3s var(--ease)}
 .bk:hover img{transform:translateY(-4px)}
 .bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4;word-break:keep-all;height:2.8em}  /* 캡션 행 높이 고정: 대학명 2행분 */
-.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:2px;word-break:keep-all;line-height:1.6;height:1.6em}  /* 면수 질문수 1행분 */
+.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);margin-top:2px;word-break:keep-all;line-height:1.6;height:1.6em}  /* 면수 질문수 1행분. GS-24-6: 구매 변별 정보라 문서 최소 11px 에서 12px 로 */
 
 /* FAQ */
 .faq{margin-top:var(--s5);border-top:var(--rule-strong)}
@@ -482,6 +492,7 @@ p{max-width:var(--measure);color:var(--body)}
   .rule dt{padding-top:var(--s2)}
   .rail li.core{padding:var(--s3)}
   .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}
+  .grid>.bk:last-child:nth-child(3n+1){grid-column:1/-1;justify-self:center;width:calc((100% - 2*var(--s2))/3)}  /* GS-24-6: 31권은 3열에서 마지막 행이 1장. 홀로 남는 타일은 같은 폭으로 가운데에 */
   .cmp td:first-child{width:22%}
   .cmp td:nth-child(2){width:34%}
   .top .tag{display:none}
@@ -503,6 +514,23 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 @media (min-width:901px){.part:not(.rev) .body{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 .closecovers{gap:var(--s2)}
 .closecovers img{box-shadow:0 14px 32px rgba(0,0,0,.55);outline:1px solid rgba(239,233,220,.16)}
+
+/* ---- GS-24-6: 900px 이하 하단 구매 바 2칸(스튜디오 GS-17 B 와 동일 구조). 왼쪽 가격 한 줄(#format 앵커), 오른쪽 1차 CTA 복제 玄墨 fill 하나. 배경은 --paper-rgb 토큰 ---- */
+.buybar{display:none}
+@media (max-width:900px){
+  body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
+  .buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60;
+    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96);
+    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
+  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}  /* critic s44 P2: 반투명 바 위 대비 4.60 → --body 6.9 */
+  .buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}
+  .buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;color:var(--seal);white-space:nowrap}
+  .buybar .btn{flex:none;min-height:52px;padding:0 var(--s4);gap:var(--s2);font-size:var(--t-sm);border-radius:var(--r-md)}
+}
+@media (max-width:360px){
+  .buybar .btn{padding:0 var(--s3)}
+}
+
 """
 
 HTML = r"""<!DOCTYPE html>
@@ -522,6 +550,7 @@ HTML = r"""<!DOCTYPE html>
      IntersectionObserver 미지원 폴백은 이미 있으므로 남은 구멍은 스크립트 차단 하나뿐이라 noscript 로 막는다. -->
 </head>
 <body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
 
 <header class="top">
   <div class="wrap">
@@ -575,9 +604,9 @@ HTML = r"""<!DOCTYPE html>
         <h2 class="h2">같은 “면접”이라는 이름, 준비 방법이 다른 세 시험</h2>
         <p class="lede" style="margin-top:var(--s4)">대입 면접 자료 대부분이 면접을 한 덩어리로 다룹니다. 내 생활기록부가 문제지인 시험과 면접장에서 받은 글이 문제지인 시험은 준비할 것이 처음부터 다른데도 그렇습니다.</p>
         <ul class="forms">
-          <li><span class="mono">형태 1</span><h4>서류기반</h4><p>내 생활기록부가 문제지. 면접관이 기재 내용을 읽고 그 자리에서 묻는 시험입니다. 이 책의 3부와 4부가 이 형태를 위한 것.</p></li>
-          <li><span class="mono">형태 2</span><h4>제시문</h4><p>면접장에서 받은 글과 문제를 두고 묻는 시험. 생활기록부는 보지 않고, 논술에 가까워 준비 방법이 완전히 다릅니다.</p></li>
-          <li><span class="mono">형태 3</span><h4>MMI</h4><p>여러 방을 차례로 돌며 방마다 다른 상황 과제에 답하는 형태. 의약학 계열에서 쓰며 생활기록부 면접과는 다른 시험.</p></li>
+          <li><span class="mono">형태 1</span><h3>서류기반</h3><p>내 생활기록부가 문제지. 면접관이 기재 내용을 읽고 그 자리에서 묻는 시험입니다. 이 책의 3부와 4부가 이 형태를 위한 것.</p></li>
+          <li><span class="mono">형태 2</span><h3>제시문</h3><p>면접장에서 받은 글과 문제를 두고 묻는 시험. 생활기록부는 보지 않고, 논술에 가까워 준비 방법이 완전히 다릅니다.</p></li>
+          <li><span class="mono">형태 3</span><h3>MMI</h3><p>여러 방을 차례로 돌며 방마다 다른 상황 과제에 답하는 형태. 의약학 계열에서 쓰며 생활기록부 면접과는 다른 시험.</p></li>
         </ul>
         <p class="after">지원 전형이 어느 형태인지 모른 채 시작한 준비는 방향부터 어긋납니다. 이 책의 첫 면이 형태 판정인 이유.</p>
       </div>
@@ -593,9 +622,9 @@ HTML = r"""<!DOCTYPE html>
       <h2 class="h2">서류기반 면접을 앞둔 학생, 그 순서를 잡아 주려는 사람</h2>
     </div>
     <ul class="aud">
-      <li class="rv"><span class="mono">학생</span><h4>학생부종합전형 지원자</h4><p>면접이 서류기반인 전형에 지원하는 학생. 3부에서 막히는 유형을 찾고 4부 규칙으로 내 질문지를 만드는 사람.</p></li>
-      <li class="rv"><span class="mono">학부모</span><h4>준비 순서를 잡아 주려는 학부모</h4><p>1부와 2부만 읽어도 자녀가 어느 시험을 준비하는지, 대학이 무엇을 본다고 밝혔는지가 잡힙니다.</p></li>
-      <li class="rv"><span class="mono">학교, 학원</span><h4>여러 학생을 같은 기준으로 지도하는 곳</h4><p>31권이 같은 다섯 부 구조라 학생이 바뀌어도 지도 순서가 같습니다. 전권 열람과 좌석 단위는 문의 이메일로.</p></li>
+      <li class="rv"><span class="mono">학생</span><h3>학생부종합전형 지원자</h3><p>면접이 서류기반인 전형에 지원하는 학생. 3부에서 막히는 유형을 찾고 4부 규칙으로 내 질문지를 만드는 사람.</p></li>
+      <li class="rv"><span class="mono">학부모</span><h3>준비 순서를 잡아 주려는 학부모</h3><p>1부와 2부만 읽어도 자녀가 어느 시험을 준비하는지, 대학이 무엇을 본다고 밝혔는지가 잡힙니다.</p></li>
+      <li class="rv"><span class="mono">학교, 학원</span><h3>여러 학생을 같은 기준으로 지도하는 곳</h3><p>31권이 같은 다섯 부 구조라 학생이 바뀌어도 지도 순서가 같습니다. 전권 열람과 좌석 단위는 문의 이메일로.</p></li>
     </ul>
   </div>
 </section>
@@ -607,13 +636,13 @@ HTML = r"""<!DOCTYPE html>
       <p class="kicker">만든 사람과 기준</p>
       <h2 class="h2">한 사람, 같은 기준, 31권</h2>
       <p class="lede" style="margin-top:var(--s4)">13년차 입시 컨설턴트 한 사람이 31권 전권을 같은 기준으로 편집합니다. 고려대학교 영어교육과 졸업.</p>
-      <p class="tolist"><a class="tl" href="#books">31개 대학 목록 보기</a></p>
+      <p class="tolist"><a class="btn ghost" href="#books">31개 대학 목록 보기 <span class="arr">↓</span></a></p>
     </div>
     <ul class="pr rv">
-      <li><span class="mono">원칙 1</span><h4>지어낸 질문 없음</h4><p>모든 질문은 선배 후기에서 회수한 실제 질문. 질문 끝에 모집단위와 연도를 적습니다.</p></li>
-      <li><span class="mono">원칙 2</span><h4>공식 요강 원문 대조</h4><p>2027학년도 모집요강과 대학 공식 진술을 원문으로 인용하고 근거를 표기.</p></li>
-      <li><span class="mono">원칙 3</span><h4>규칙은 역추적</h4><p>실제로 나온 질문에서 기재와 질문의 관계를 되짚어 규칙으로 만듭니다. 추정 문항 0건.</p></li>
-      <li><span class="mono">원칙 4</span><h4>판을 밝힘</h4><p>2027 대비판 VOL 표기. 권마다 면수와 질문 수를 공개.</p></li>
+      <li><span class="mono">원칙 1</span><h3>지어낸 질문 없음</h3><p>모든 질문은 선배 후기에서 회수한 실제 질문. 질문 끝에 모집단위와 연도를 적습니다.</p></li>
+      <li><span class="mono">원칙 2</span><h3>공식 요강 원문 대조</h3><p>2027학년도 모집요강과 대학 공식 진술을 원문으로 인용하고 근거를 표기.</p></li>
+      <li><span class="mono">원칙 3</span><h3>규칙은 역추적</h3><p>실제로 나온 질문에서 기재와 질문의 관계를 되짚어 규칙으로 만듭니다. 추정 문항 0건.</p></li>
+      <li><span class="mono">원칙 4</span><h3>판을 밝힘</h3><p>2027 대비판 VOL 표기. 권마다 면수와 질문 수를 공개.</p></li>
     </ul>
   </div>
 </section>
@@ -627,11 +656,11 @@ HTML = r"""<!DOCTYPE html>
       <p class="lede" style="margin-top:var(--s4)">표지의 차례가 곧 준비 순서입니다. 앞의 세 부는 4부를 내 것으로 만들기 위한 준비이고 4부가 본론, 5부는 대학별 차이의 반영. 31권 전권이 같은 다섯 부로 짜여 있습니다.</p>
     </div>
     <ol class="rail">
-      <li class="rv"><span class="n">1부</span><h4>내 면접은 어느 형태인가</h4><p>지원 전형 확정. 1부 표에서 내 전형의 면접 형태 확인. 형태가 다르면 준비 방법이 다릅니다.</p><span class="pg">서류기반, 제시문, MMI 판정</span></li>
-      <li class="rv"><span class="n">2부</span><h4>이 대학은 무엇을 묻는가</h4><p>내 전형의 제원과 이 대학이 찾는 학생 읽기. 내 전형 줄만 읽어도 충분한 표.</p><span class="pg">전형별 제원, 공식 인재상</span></li>
-      <li class="rv"><span class="n">3부</span><h4>실제로 나온 질문</h4><p>기출을 유형별로 훑으며 막히는 질문에 표시. 처음부터 답을 쓰지 않는 것이 요령.</p><span class="pg">선배 후기에서 회수한 기출</span></li>
-      <li class="rv core"><span class="n">4부, 본론</span><h4>내 생기부에서 질문 뽑기</h4><p>규칙으로 내 생기부에서 질문 뽑기. 여기가 이 책의 본론.</p><span class="pg">기재를 질문으로 바꾸는 규칙</span></li>
-      <li class="rv"><span class="n">5부</span><h4>이 대학의 특징과 준비 전략</h4><p>이 대학만의 차이와 거기서 나온 준비 전략 읽기.</p><span class="pg">타 대학 대비 차이, 전략</span></li>
+      <li class="rv"><span class="n">1부</span><h3>내 면접은 어느 형태인가</h3><p>지원 전형 확정. 1부 표에서 내 전형의 면접 형태 확인. 형태가 다르면 준비 방법이 다릅니다.</p><span class="pg">서류기반, 제시문, MMI 판정</span></li>
+      <li class="rv"><span class="n">2부</span><h3>이 대학은 무엇을 묻는가</h3><p>내 전형의 제원과 이 대학이 찾는 학생 읽기. 내 전형 줄만 읽어도 충분한 표.</p><span class="pg">전형별 제원, 공식 인재상</span></li>
+      <li class="rv"><span class="n">3부</span><h3>실제로 나온 질문</h3><p>기출을 유형별로 훑으며 막히는 질문에 표시. 처음부터 답을 쓰지 않는 것이 요령.</p><span class="pg">선배 후기에서 회수한 기출</span></li>
+      <li class="rv core"><span class="n">4부, 본론</span><h3>내 생기부에서 질문 뽑기</h3><p>규칙으로 내 생기부에서 질문 뽑기. 여기가 이 책의 본론.</p><span class="pg">기재를 질문으로 바꾸는 규칙</span></li>
+      <li class="rv"><span class="n">5부</span><h3>이 대학의 특징과 준비 전략</h3><p>이 대학만의 차이와 거기서 나온 준비 전략 읽기.</p><span class="pg">타 대학 대비 차이, 전략</span></li>
     </ol>
     <ul class="openers">
       {{OPEN}}
@@ -844,22 +873,25 @@ HTML = r"""<!DOCTYPE html>
         <h2 class="h2">결제 후 마이페이지에서 바로 열람</h2>
         <p class="lede" style="margin-top:var(--s4)">브라우저 보안 리더로 열람. 워터마크는 열람 계정마다 다르게 찍히고 인쇄는 권당 3회. 열지 않은 권은 공급받은 날부터 7일 이내에 청약철회하실 수 있습니다.</p>
         <ol class="flow">
-          <li><span class="n">01</span><h4>지원 대학 고르기</h4><p>가나다 순 목록에서 한 권 또는 여러 권.</p></li>
-          <li><span class="n">02</span><h4>결제</h4><p>부가세 포함 가격. 청약철회는 열지 않은 권에 한해 7일 이내.</p></li>
-          <li><span class="n">03</span><h4>보안 리더 열람</h4><p>마이페이지에서 바로 열림. 기기 제한 없음.</p></li>
+          <li><span class="n">01</span><h3>지원 대학 고르기</h3><p>가나다 순 목록에서 한 권 또는 여러 권.</p></li>
+          <li><span class="n">02</span><h3>결제</h3><p>부가세 포함 가격. 청약철회는 열지 않은 권에 한해 7일 이내.</p></li>
+          <li><span class="n">03</span><h3>보안 리더 열람</h3><p>마이페이지에서 바로 열림. 기기 제한 없음.</p></li>
         </ol>
       </div>
     </div>
+    <!-- GS-22-1: 전권 카드는 열람 전권 하나만 朱印 크기로, PDF 소장판 전권은 먹색 한 줄로 내려 두 상품의 위계를 가른다.
+         GS-22-2: 절반 소구는 카드 밖 주석으로 내리고 카드 안은 권당 단가로 말한다(합산 표기는 유지, 문안 완화).
+         GS-22-3: 권마다 분량이 달라도 값이 같은 이유를 열람판 카드 한 줄로.  GS-24-2: 세 카드 내용량을 맞춰 죽은 하단을 없앤다(계측 probe_s44.mjs priceCards). -->
     <ul class="price rv">
-      <li><h4>보안 리더 열람판</h4><div class="won">33<span class="c">,</span>000<small>원, 권당</small></div>
-        <ul><li>열람 기간 구매일부터 1개월</li><li>인쇄 권당 3회, 원본 파일 비제공</li><li>열지 않은 권은 7일 이내 청약철회</li></ul></li>
-      <li><h4>PDF 소장판</h4><div class="won">110<span class="c">,</span>000<small>원, 권당</small></div>
-        <ul><li>워터마크 파일 발급, 구매 계정 각인</li><li>파일 내려받기와 열람</li></ul></li>
-      <li><h4>31개 대학 전권</h4><div class="won two">511<span class="c">,</span>500<small>원, 열람</small></div><div class="won two">1<span class="c">,</span>705<span class="c">,</span>000<small>원, PDF</small></div>
-        <p class="calc">권당 33,000원 × 31권 = 1,023,000원의 절반</p>
-        <p class="calc">PDF는 110,000원 × 31권 = 3,410,000원의 절반</p>
-        <ul><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul><p class="pricefoot">합산 금액은 따로 파는 상품이 아닙니다.</p></li>
+      <li><h3>보안 리더 열람판</h3><div class="won">33<span class="c">,</span>000<small>원, 권당</small></div>
+        <ul><li>열람 기간 구매일부터 1개월</li><li>인쇄 권당 3회, 원본 파일 비제공</li><li>열지 않은 권은 7일 이내 청약철회</li><li>면수와 질문 수는 권마다 다르고, 값은 어느 대학이든 한 권에 같습니다</li></ul></li>
+      <li><h3>PDF 소장판</h3><div class="won">110<span class="c">,</span>000<small>원, 권당</small></div>
+        <ul><li>워터마크 파일 발급, 구매 계정 각인</li><li>파일 내려받기와 열람</li><li>발급 전에는 7일 이내 청약철회</li><li>파일이 발급된 뒤에는 청약철회가 제한됩니다</li></ul></li>
+      <li><h3>31개 대학 전권</h3><div class="won two">511<span class="c">,</span>500<small>원, 열람 전권</small></div>
+        <p class="alt">PDF 소장판 전권 <b>1<span class="c">,</span>705<span class="c">,</span>000원</b></p>
+        <ul><li>열람 전권은 권당 16,500원, PDF 전권은 권당 55,000원</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li><li>환불액은 열지 않은 권수 비율로 산정</li></ul></li>
     </ul>
+    <p class="pricenote rv">전권 값은 낱권 값을 31권 더한 금액의 절반입니다. 열람 33,000원 × 31권 = 1,023,000원, PDF 110,000원 × 31권 = 3,410,000원. 두 합산 금액은 낱권 값을 더한 수이며 따로 파는 상품이 아닙니다.</p>
   </div>
 </section>
 
@@ -875,7 +907,8 @@ HTML = r"""<!DOCTYPE html>
       <details><summary>내 지원 대학이 목록에 없으면</summary><div class="a">현재 판매 목록은 31개 대학. 목록에 없는 대학은 문의 이메일로 알려 주시면 준비 상황을 답합니다.</div></details>
       <details><summary>제시문 면접이나 MMI 준비에도 쓸 수 있나</summary><div class="a">1부와 2부의 형태 판정과 제원은 모든 형태에 해당. 3부와 4부는 서류기반 면접을 위한 것이라, 제시문 면접은 별도 상품인 제시문 면접 스튜디오 쪽이 맞습니다.</div></details>
       <details><summary>질문은 어디서 가져왔나</summary><div class="a">대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 회수한 실제 질문만 수록. 추정으로 만든 문항은 없고 질문마다 모집단위와 연도를 적었습니다.</div></details>
-      <details><summary>여러 권을 사면</summary><div class="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로, 33,000원 × 31권 = 1,023,000원의 절반입니다. PDF 소장판 전권 1,705,000원은 110,000원 × 31권 = 3,410,000원의 절반입니다. 1,023,000원과 3,410,000원은 합산 금액이며 따로 파는 상품이 아닙니다. 학교와 학원 단위 좌석은 문의 이메일로.</div></details>
+      <details><summary>여러 권을 사면</summary><div class="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로 권당 16,500원이고, 낱권 값을 31권 더한 1,023,000원의 절반입니다. PDF 소장판 전권 1,705,000원은 권당 55,000원으로 낱권 합산 3,410,000원의 절반입니다. 두 합산 금액은 낱권 값을 더한 수이며 따로 파는 상품이 아닙니다. 학교와 학원 단위 좌석은 문의 이메일로.</div></details>
+      <details><summary>얇은 권도 값이 같나</summary><div class="a">같습니다. 면수와 질문 수는 대학이 공개한 자료와 회수된 후기의 양에 따라 다르고, 값은 어느 대학이든 한 권 33,000원입니다. 권마다 면수와 질문 수를 목록에 적어 두었으니 구매 전 확인하실 수 있습니다.</div></details>
       <details><summary>환불은</summary><div class="a">가이드북은 가분적 디지털 콘텐츠입니다. 아직 열지 않은 권은 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 이미 연 권은 제공이 개시되어 전자상거래법 제17조 제2항 제5호에 따라 청약철회가 제한됩니다. 31권 전권의 환불액은 잔여 권수 비율로 산정합니다. 구매 전 지면 미리보기로 내용을 확인하실 수 있습니다.</div></details>
     </div>
   </div>
@@ -905,6 +938,12 @@ HTML = r"""<!DOCTYPE html>
       <p style="margin-top:var(--s3)">표지와 들어가는 면은 판매본 지면의 실제 렌더. 발행 {{DATE}}.</p></div>
   </div>
 </footer>
+
+<!-- 모바일 하단 구매 바 (900px 이하 상시). 왼쪽 가격 한 줄(#format 앵커), 오른쪽은 히어로 1차 CTA 의 복제 玄墨 fill 한 개. GS-24-6 buybar, 스튜디오 GS-17 B 와 같은 구조. 가이드 §07 v1.2 예외 명문화 -->
+<div class="buybar" role="region" aria-label="가이드북 가격과 구매">
+  <a class="lab" href="#format"><span class="nm">보안 리더 열람, 권당</span><span class="won">33<span class="c">,</span>000원</span></a>
+  <a class="btn" href="{{GB}}">지원 대학 고르기 <span class="arr">→</span></a>
+</div>
 
 <script>
 (function(){

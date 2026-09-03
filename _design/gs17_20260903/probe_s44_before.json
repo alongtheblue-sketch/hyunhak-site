@@ -1,0 +1,369 @@
+{
+ "label": "before",
+ "base": "http://127.0.0.1:8934/",
+ "ts": "2026-09-03T16:46:57.790Z",
+ "gb1440": {
+  "monoKo": {
+   "nodes": 35,
+   "koChars": 602,
+   "maxRatio": 2.99,
+   "minRatio": 2.44,
+   "bySel": {
+    "span.tag": 1,
+    "p.kicker": 2,
+    "span.pg": 5,
+    "p.openers-cap": 1,
+    "p.sub": 5,
+    "span.cap": 5,
+    "h3": 5,
+    "span": 5,
+    "th": 3,
+    "span.src": 2,
+    "p.won": 1
+   },
+   "sample": [
+    {
+     "sel": "span.tag",
+     "ko": 12,
+     "fs": 11,
+     "space": 7.27,
+     "sansSpace": 2.58,
+     "ratio": 2.82,
+     "text": "생기부 면접 가이드북 2027 대비판"
+    },
+    {
+     "sel": "p.kicker",
+     "ko": 12,
+     "fs": 11,
+     "space": 7.72,
+     "sansSpace": 2.58,
+     "ratio": 2.99,
+     "text": "대학별 생기부 면접 가이드북"
+    },
+    {
+     "sel": "span.pg",
+     "ko": 9,
+     "fs": 11,
+     "space": 6.42,
+     "sansSpace": 2.58,
+     "ratio": 2.49,
+     "text": "서류기반, 제시문, MMI 판정"
+    },
+    {
+     "sel": "span.pg",
+     "ko": 10,
+     "fs": 11,
+     "space": 6.42,
+     "sansSpace": 2.58,
+     "ratio": 2.49,
+     "text": "전형별 제원, 공식 인재상"
+    },
+    {
+     "sel": "span.pg",
+     "ko": 11,
+     "fs": 11,
+     "space": 6.42,
+     "sansSpace": 2.58,
+     "ratio": 2.49,
+     "text": "선배 후기에서 회수한 기출"
+    },
+    {
+     "sel": "span.pg",
+     "ko": 12,
+     "fs": 11,
+     "space": 6.42,
+     "sansSpace": 2.58,
+     "ratio": 2.49,
+     "text": "기재를 질문으로 바꾸는 규칙"
+    }
+   ]
+  },
+  "priceCards": [
+   {
+    "h": 424,
+    "dead": 208,
+    "deadPct": 49,
+    "kids": 3
+   },
+   {
+    "h": 424,
+    "dead": 231,
+    "deadPct": 54.5,
+    "kids": 3
+   },
+   {
+    "h": 424,
+    "dead": 1,
+    "deadPct": 0.2,
+    "kids": 7
+   }
+  ],
+  "headingJumps": [
+   "h2→h4 \"서류기반\"",
+   "h2→h4 \"학생부종합전형 지원자\"",
+   "h2→h4 \"지어낸 질문 없음\"",
+   "h2→h4 \"내 면접은 어느 형태인가\"",
+   "h2→h4 \"지원 대학 고르기\""
+  ],
+  "headingCounts": {
+   "h1": 1,
+   "h2": 14,
+   "h4": 21,
+   "h3": 10
+  },
+  "mtFontSize": 11,
+  "skipLink": false,
+  "tolist": {
+   "cls": "tl",
+   "h": 48,
+   "bg": "rgba(0, 0, 0, 0)",
+   "border": "1px solid rgba(49, 46, 46, 0.4)"
+  }
+ },
+ "gb390": {
+  "fixedSticky": [],
+  "gridTiles": 31,
+  "gridCols": 3,
+  "lastRowTiles": 1,
+  "priceCards": [
+   {
+    "h": 205,
+    "dead": 1
+   },
+   {
+    "h": 182,
+    "dead": 1
+   },
+   {
+    "h": 377,
+    "dead": 1
+   }
+  ],
+  "docH": 25002
+ },
+ "st1440": {
+  "grids": {
+   ".hero .wrap": {
+    "tracks": [
+     488,
+     464
+    ],
+    "kids": [
+     {
+      "sel": "div.say",
+      "boxW": 488,
+      "inkW": 452,
+      "emptyPx": 36
+     },
+     {
+      "sel": "div.stage",
+      "boxW": 464,
+      "inkW": 464,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p1 .body": {
+    "tracks": [
+     397,
+     555
+    ],
+    "kids": [
+     {
+      "sel": "div.vis.rv",
+      "boxW": 397,
+      "inkW": 397,
+      "emptyPx": 0
+     },
+     {
+      "sel": "div.txt.rv",
+      "boxW": 555,
+      "inkW": 555,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p2 .body": {
+    "tracks": [
+     476,
+     476
+    ],
+    "kids": [
+     {
+      "sel": "div.vis.rv",
+      "boxW": 476,
+      "inkW": 476,
+      "emptyPx": 0
+     },
+     {
+      "sel": "div.txt.rv",
+      "boxW": 476,
+      "inkW": 476,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p3 .body": {
+    "tracks": [
+     476,
+     476
+    ],
+    "kids": [
+     {
+      "sel": "div.vis.rv",
+      "boxW": 476,
+      "inkW": 476,
+      "emptyPx": 0
+     },
+     {
+      "sel": "div.txt.rv",
+      "boxW": 476,
+      "inkW": 476,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p4 .body": {
+    "tracks": [
+     397,
+     555
+    ],
+    "kids": [
+     {
+      "sel": "div.vis.rv",
+      "boxW": 555,
+      "inkW": 555,
+      "emptyPx": 0
+     },
+     {
+      "sel": "div.txt.rv",
+      "boxW": 397,
+      "inkW": 397,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p5 .body": {
+    "tracks": [
+     397,
+     555
+    ],
+    "kids": [
+     {
+      "sel": "div.vis.rv",
+      "boxW": 397,
+      "inkW": 397,
+      "emptyPx": 0
+     },
+     {
+      "sel": "div.txt.rv",
+      "boxW": 555,
+      "inkW": 555,
+      "emptyPx": 0
+     }
+    ]
+   },
+   "#p1 .head": {
+    "tracks": [
+     397,
+     555
+    ],
+    "kids": [
+     {
+      "sel": "div.num",
+      "boxW": 397,
+      "inkW": 134,
+      "emptyPx": 263
+     },
+     {
+      "sel": "div.",
+      "boxW": 555,
+      "inkW": 242,
+      "emptyPx": 313
+     }
+    ]
+   },
+   "#p5 .head": {
+    "tracks": [
+     397,
+     555
+    ],
+    "kids": [
+     {
+      "sel": "div.num",
+      "boxW": 397,
+      "inkW": 134,
+      "emptyPx": 263
+     },
+     {
+      "sel": "div.",
+      "boxW": 555,
+      "inkW": 228,
+      "emptyPx": 327
+     }
+    ]
+   }
+  },
+  "skipLink": true,
+  "unitWonCount": 5,
+  "buybarNmDecoColor": "rgb(49, 46, 46)",
+  "goLeftOffset": {
+   "pivot": 225,
+   "others": [
+    0,
+    0,
+    0
+   ]
+  }
+ },
+ "nojs": {
+  "about.html": {
+   "rv": 15,
+   "hidden": 15
+  },
+  "b2b.html": {
+   "rv": 9,
+   "hidden": 9
+  },
+  "faq.html": {
+   "rv": 6,
+   "hidden": 6
+  },
+  "library.html": {
+   "rv": 7,
+   "hidden": 7
+  },
+  "notice.html": {
+   "rv": 5,
+   "hidden": 5
+  },
+  "privacy.html": {
+   "rv": 4,
+   "hidden": 4
+  },
+  "support.html": {
+   "rv": 5,
+   "hidden": 5
+  },
+  "terms.html": {
+   "rv": 4,
+   "hidden": 4
+  },
+  "guidebook/index.html": {
+   "rv": 9,
+   "hidden": 9
+  },
+  "guidebook/ewha.html": {
+   "rv": 26,
+   "hidden": 26
+  },
+  "programs/studio.html": {
+   "rv": 52,
+   "hidden": 0
+  },
+  "programs/guidebook.html": {
+   "rv": 80,
+   "hidden": 0
+  }
+ }
+}

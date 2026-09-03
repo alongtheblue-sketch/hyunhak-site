@@ -1,7 +1,7 @@
 
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);--paper-rgb:244,239,227;
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
@@ -38,6 +38,8 @@ h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
 p{max-width:var(--measure);color:var(--body)}
 .ink p{color:var(--paper-2)}
 .mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
+/* GS-24-3(스튜디오 동일 적용): JetBrains Mono 에 한글이 없어 한글 라벨의 공백만 mono 폭(0.584em). 한글이 드는 mono 요소의 공백을 Pretendard 폭(0.235em) 으로 */
+.mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.rail .go,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.cmp th,.cmp td:first-child,.diff .d,.close .won,.viscap,.scrcap,.quote .src,.tiles .d,.revs .stp,.issues .tag,.ladder th,.unit dt,.vis .zl,.bk .mt{word-spacing:-.35em}
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
 .kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
 .ink .kicker{color:var(--paper-2);opacity:.8}
@@ -339,13 +341,13 @@ p{max-width:var(--measure);color:var(--body)}
 .unit .sub{font-size:var(--t-sm);color:var(--gray)}
 .unit dl{display:grid;grid-template-columns:auto 1fr;gap:var(--s1) var(--s3);font-size:var(--t-sm);margin-top:var(--s2)}
 .unit dt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);padding-top:.25em}
-.unit dd{line-height:1.5}
+.unit dd{line-height:1.55}  /* critic s44 P2-5: 한글 행간 하한 */
 .unit .ex{margin-top:var(--s2);border-top:var(--rule);padding-top:var(--s2)}
 .unit .ex li{font-size:var(--t-sm);line-height:1.5;display:flex;gap:var(--s2);margin-top:var(--s1)}
 .unit .ex .lv{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);flex:none;width:2.4em;padding-top:.2em}
 .unit .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h4);color:var(--seal);margin-top:auto;padding-top:var(--s3);white-space:nowrap}
 .unit .won small{display:block;white-space:normal;font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:0;margin-top:2px}  /* nowrap 상속으로 1000px+ 카드 밖 19~21px 넘침 (critic P1-1, 2026-09-03) */
-.unit .tl{margin-top:var(--s2);align-self:flex-start}
+.unit .tl{margin-top:auto;padding-top:var(--s3);align-self:flex-start}  /* GS-24-5: 카드 안 .won 을 걷어 링크가 바닥 정렬을 이어받는다 */
 @media (max-width:1000px){
   .units{grid-template-columns:repeat(2,minmax(0,1fr))}
   .units li:last-child{grid-column:span 2}
@@ -405,12 +407,12 @@ p{max-width:var(--measure);color:var(--body)}
 .rail.anchor li.core .bd{display:flex;flex-direction:column;align-items:flex-start;height:100%}
 .rail.anchor li.core .bd p{font-size:var(--t-base)}
 .rail.anchor li.core .bd .pg{margin-top:var(--s3)}
-.rail.anchor .tail{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:var(--s2) var(--s3);width:100%;margin-top:auto;padding-top:var(--s3);border-top:var(--rule)}
+.rail.anchor .tail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* critic s44 P2-2: 바닥 규칙선은 3·5단계에만 있어 2/5, 걷어서 0/5. GS-24-5: 3단계 카드만 링크가 오른쪽(225px)에 있어 5장 중 1장 이탈. .foot 과 같은 세로 배열로 정렬, DOM 은 그대로(S5 카드 변주 유지) */
 .rail.anchor .tail .pg,.rail.anchor .tail .go{margin-top:0;padding-top:0}
-.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:var(--rule)}  /* GS-17 must_fix ①: 카드5 pg→go 순 복구, 바닥 규칙선 래퍼는 .tail(가로 한 줄) 과 다른 .foot(세로) */
+.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* GS-17 must_fix ①: 카드5 pg→go 순 복구, 바닥 규칙선 래퍼는 .tail(가로 한 줄) 과 다른 .foot(세로) */
 .rail.anchor .foot .pg,.rail.anchor .foot .go{margin-top:0;padding-top:0}
 .part .sample.strip{margin-top:0;margin-bottom:var(--s6);padding:var(--s4) 0;background:transparent;border-left:0;border-right:0;border-radius:0}
-.part#p2 .body,.part#p3 .body{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}  /* GS-17 must_fix ②③: p3 4:8 철회(증거 화면 ≥400px), p5 는 기본 5:7 */
+.part#p2 .body,.part#p3 .body,.part#p2 .head,.part#p3 .head{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}  /* critic s44 P2-1: head 를 body 트랙에 맞춰 제목 좌변 79.3px 어긋남 해소 */  /* GS-17 must_fix ②③: p3 4:8 철회(증거 화면 ≥400px), p5 는 기본 5:7 */
 .part#p5 .sample{margin-top:0;margin-bottom:var(--s6)}
 .part#p3{padding-block:var(--s7) var(--s8)}
 .part#p5{padding-block:var(--s8) var(--s9)}
@@ -433,10 +435,10 @@ p{max-width:var(--measure);color:var(--body)}
 @media (max-width:900px){
   body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
   .buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60;
-    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(244,239,227,.96);
+    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96);
     -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
-  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--gray)}
-  .buybar .nm{font-size:var(--t-xs);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--hair)}
+  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}  /* critic s44 P2(가이드북 면 지적, 두 면 동일): 반투명 바 위 대비 4.60 → --body 6.9, 라벨 11 → 12px */
+  .buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}  /* GS-24-5: 탭 단서 밑줄을 --hair 에서 먹색으로(GS-23 확대 안내와 같은 처분) */
   .buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;
     color:var(--seal);white-space:nowrap}
   .buybar .btn{flex:none;min-height:52px;padding:0 var(--s4);gap:var(--s2);font-size:var(--t-sm);border-radius:var(--r-md)}

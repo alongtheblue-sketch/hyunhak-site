@@ -12,6 +12,7 @@ python3 _tools/build_guidebook.py build >/dev/null
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_fonts.py
+python3 _tools/apply_noscript_rv.py   # 3c GS-24-1 스크립트 차단 시 .rv 폴백(base.css 면 전부, 멱등)
 python3 _tools/apply_analytics.py
 tail1 python3 _tools/seo_inject.py
 tail1 python3 _tools/build_sitemap.py

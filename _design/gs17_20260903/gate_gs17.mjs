@@ -48,6 +48,22 @@ async function open(path, width, height = 900) {
   return pg;
 }
 
+// s44 G8/S8 공용: JetBrains Mono 로 계산된 텍스트 노드(한글 ≥ 8자) 의 공백 폭 대 Pretendard 공백 폭
+const MONO_KO_EVAL = () => {
+    const tmp = document.createElement('span'); tmp.style.cssText = "position:absolute;left:-9999px;top:0;font-family:'Pretendard Variable','Pretendard',sans-serif;white-space:pre"; tmp.textContent = ' '; document.body.appendChild(tmp);
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT); const rows = []; let n;
+    while ((n = walker.nextNode())) {
+      const el = n.parentElement; if (!el || /^(SCRIPT|STYLE|NOSCRIPT)$/.test(el.tagName) || __g.hidden(el)) continue;
+      if (!/JetBrains/.test(getComputedStyle(el).fontFamily.split(',')[0])) continue;
+      const ko = (n.data.match(/[가-힣]/g) || []).length; if (ko < 8) continue;
+      const si = n.data.indexOf(' '); if (si < 0) continue;
+      const fs = parseFloat(getComputedStyle(el).fontSize); tmp.style.fontSize = fs + 'px'; const ss = tmp.getBoundingClientRect().width;
+      const r = document.createRange(); r.setStart(n, si); r.setEnd(n, si + 1); const sp = r.getBoundingClientRect().width;
+      rows.push({ sel: __g.sel(el), ko, fs, ratio: +(sp / ss).toFixed(2), text: __g.txt(el, 24) });
+    }
+    tmp.remove(); return rows;
+};
+
 const items = [];
 const push = (id, metric, value, target, pass, detail) => items.push({ id, metric, value, target, pass, detail });
 
@@ -110,6 +126,19 @@ const push = (id, metric, value, target, pass, detail) => items.push({ id, metri
     return { jumps, counts, hiddenHeads: heads.filter(h => __g.hidden(h)).length };
   });
   push('S2', 'studio: h1~h6 문서 순서에서 hN 다음 h(N+2) 이상이 오는 도약 수', s2.jumps.length, '0', s2.jumps.length === 0, { jumps: s2.jumps, headingCounts: s2.counts, hiddenHeadings: s2.hiddenHeads });
+
+  const s7 = await pg.evaluate(() => {
+    const won = document.querySelectorAll('#units .unit .won').length;
+    const gos = [...document.querySelectorAll('#parts .rail > li .go')].map(g => ({ card: __g.txt(g.closest('li').querySelector('.n'), 10), core: g.closest('li').classList.contains('core'), left: Math.round(g.getBoundingClientRect().left - g.closest('li').getBoundingClientRect().left) }));
+    const lefts = [...new Set(gos.filter(g => !g.core).map(g => g.left))];   // core(4단계) 는 2열 grid 라 링크가 오른쪽 열, 의도된 변주. 나머지 4장(pivot 포함) 이 같은 자리여야 한다
+    return { unitWon: won, gos, distinctLefts: lefts };
+  });
+  push('S7', 'studio 1440: #units 카드 안 .won 수 ; #parts 카드(core 제외 4장)의 "실제 화면 보기" 링크 왼쪽 오프셋 종수', { unitWon: s7.unitWon, distinctGoLefts: s7.distinctLefts.length }, 'unitWon = 0 AND distinctGoLefts = 1', s7.unitWon === 0 && s7.distinctLefts.length === 1, s7);
+
+  // S8 (s44, G8 과 같은 식을 스튜디오에도): mono 한글 공백 비율
+  const s8 = await pg.evaluate(MONO_KO_EVAL);
+  const s8max = s8.length ? Math.max(...s8.map(r => r.ratio)) : null;
+  push('S8', 'studio 1440: JetBrains Mono 텍스트 노드(한글 ≥ 8자)의 공백 폭 / 같은 크기 Pretendard 공백 폭, 최대 비율', s8max, '≤ 1.6 AND 노드 ≥ 1', s8.length > 0 && s8max <= 1.6, { nodes: s8.length, worst: [...s8].sort((a, z) => z.ratio - a.ratio).slice(0, 8) });
 
   const s3 = await pg.evaluate(() => {
     const tables = [...document.querySelectorAll('table')];
@@ -238,11 +267,36 @@ const push = (id, metric, value, target, pass, detail) => items.push({ id, metri
     }
     return found;
   });
-  const g1card = g1.filter(f => f.inPriceCard);
-  const g1ok = g1card.length > 0 && g1card.every(f => f.fontSize >= 16 && f.cardWonFs.length && f.siblingWonFs.flat().every(v => f.cardWonFs.every(c => c === v)));
-  push('G1', 'guidebook: "절반" 텍스트 요소 font-size ; 같은 .price>li 카드의 .won font-size ; 형제 카드 .won font-size',
-    g1card.length ? { halfFs: g1card.map(f => f.fontSize), cardWonFs: g1card[0].cardWonFs, siblingWonFs: g1card[0].siblingWonFs } : null,
-    'halfFs ≥ 16 AND cardWonFs = siblingWonFs', g1ok, { matches: g1 });
+  // s44 GS-22-1·2: 절반 문장은 .price 카드 밖 .pricenote 로 내려갔다. 하한 16px 은 그대로 재고, 카드 위계는 카드마다 첫 .won(1차 값) 크기가 같고 둘째 값(.alt b)은 1차보다 작아야 한다.
+  const g1hier = await pg.evaluate(() => {
+    const cards = [...document.querid ? [] : document.querySelectorAll('.price > li')];
+    return cards.map(c => { const w = c.querySelector('.won'); const alt = c.querySelector('.alt b'); return { primaryFs: w ? +parseFloat(getComputedStyle(w).fontSize).toFixed(1) : null, altFs: alt ? +parseFloat(getComputedStyle(alt).fontSize).toFixed(1) : null, altColor: alt ? getComputedStyle(alt).color : null, primaryColor: w ? getComputedStyle(w).color : null, wonCount: c.querySelectorAll('.won').length }; });
+  });
+  const g1half = g1.filter(f => f.fontSize < 16);
+  const prim = g1hier.map(c => c.primaryFs);
+  const g1ok = g1.length > 0 && g1half.length === 0 && g1hier.length === 3 && prim.every(v => v === prim[0]) && g1hier.every(c => c.wonCount === 1 && (c.altFs == null || c.altFs < c.primaryFs));
+  push('G1', 'guidebook: "절반" 텍스트 요소 font-size 전건 ; .price>li 세 카드의 1차 값(.won) font-size 동일 ; 카드당 .won 1개 ; 둘째 값(.alt b) 은 1차보다 작음',
+    { halfFs: g1.map(f => f.fontSize), primaryFs: prim, altFs: g1hier.map(c => c.altFs), wonPerCard: g1hier.map(c => c.wonCount) },
+    'halfFs 전건 ≥ 16 AND primaryFs 동일 AND wonPerCard 전건 1 AND altFs < primaryFs', g1ok, { matches: g1, cards: g1hier });
+
+  // G5 (s44 GS-24-4): 제목 도약 0 (S2 와 같은 식)
+  const g5 = await pg.evaluate(() => {
+    const heads = [...document.querySelectorAll('h1,h2,h3,h4,h5,h6')]; const jumps = [];
+    for (let i = 1; i < heads.length; i++) { const a = +heads[i - 1].tagName[1], c = +heads[i].tagName[1]; if (c > a + 1) jumps.push(`h${a} "${__g.txt(heads[i - 1], 24)}" → h${c} "${__g.txt(heads[i], 24)}"`); }
+    const counts = {}; for (const h of heads) counts[h.tagName.toLowerCase()] = (counts[h.tagName.toLowerCase()] || 0) + 1;
+    return { jumps, counts };
+  });
+  push('G5', 'guidebook: h1~h6 문서 순서에서 hN 다음 h(N+2) 이상이 오는 도약 수', g5.jumps.length, '0', g5.jumps.length === 0, g5);
+
+  // G7 (s44 GS-24-2): .price>li 카드 죽은 하단 = 카드 바닥(패딩 제외) - 마지막 자식 바닥. 카드 높이의 15% 이하
+  const g7 = await pg.evaluate(() => [...document.querySelectorAll('.price > li')].map(li => { const r = li.getBoundingClientRect(); const cs = getComputedStyle(li); const kids = [...li.children]; const last = kids[kids.length - 1]; const dead = r.bottom - parseFloat(cs.paddingBottom) - (last ? last.getBoundingClientRect().bottom : r.top); return { h: Math.round(r.height), dead: Math.round(dead), deadPct: +(dead / r.height * 100).toFixed(1) }; }));
+  const g7max = Math.max(...g7.map(c => c.deadPct));
+  push('G7', 'guidebook 1440: .price>li 카드 죽은 하단 비율 최대(%)', g7max, '≤ 15', g7.length === 3 && g7max <= 15, { cards: g7 });
+
+  // G8 (s44 GS-24-3): JetBrains Mono 로 계산된 텍스트 노드 중 한글 8자 이상인 노드의 공백 폭 / 같은 크기 Pretendard 공백 폭. 최대 1.6 이하(kicker 는 자간 .10em 이 공백에도 붙어 1.5)
+  const g8 = await pg.evaluate(MONO_KO_EVAL);
+  const g8max = g8.length ? Math.max(...g8.map(r => r.ratio)) : null;
+  push('G8', 'guidebook 1440: JetBrains Mono 텍스트 노드(한글 ≥ 8자)의 공백 폭 / 같은 크기 Pretendard 공백 폭, 최대 비율', g8max, '≤ 1.6 AND 노드 ≥ 1', g8.length > 0 && g8max <= 1.6, { nodes: g8.length, worst: [...g8].sort((a, z) => z.ratio - a.ratio).slice(0, 8) });
 
   const g3 = await pg.evaluate(() => {
     const fam = el => getComputedStyle(el).fontFamily.split(',')[0].replace(/['"]/g, '');
@@ -291,6 +345,15 @@ const push = (id, metric, value, target, pass, detail) => items.push({ id, metri
   const g4a = await pg.evaluate(g4Eval);
   const pg4b = await open('programs/guidebook.html', 390, 844);
   const g4b = await pg4b.evaluate(g4Eval);
+  const g6 = await pg4b.evaluate(async () => {
+    const fixed = [...document.querySelectorAll('body *')].filter(el => /fixed|sticky/.test(getComputedStyle(el).position) && getComputedStyle(el).display !== 'none' && el.getBoundingClientRect().height > 0).map(el => __g.sel(el));
+    window.scrollTo(0, innerHeight * 3); await new Promise(r => setTimeout(r, 300));
+    const links = [...document.querySelectorAll('a')].filter(a => /guidebook|checkout|cart|#format/.test(a.getAttribute('href') || '') || /고르기|구매|결제/.test(a.textContent)).filter(a => { const r = a.getBoundingClientRect(); return r.top >= 0 && r.bottom <= innerHeight && r.width > 0 && !__g.hidden(a); }).map(a => __g.sel(a) + ' "' + __g.txt(a, 14) + '"');
+    const skip = !!document.querySelector('a.skip[href="#main"]');
+    window.scrollTo(0, 0);
+    return { fixedSticky: fixed, buyLinkVisibleAfter3Screens: links.length > 0, seen: links, skipLink: skip };
+  });
+  push('G6', 'guidebook 390: position fixed|sticky 요소 수 ; 3×innerHeight 스크롤 뒤 뷰포트 안 구매 링크 존재 ; 스킵 링크', { fixedSticky: g6.fixedSticky.length, buyLinkVisibleAfter3Screens: g6.buyLinkVisibleAfter3Screens, skipLink: g6.skipLink }, 'fixedSticky ≥ 1 AND buyLinkVisibleAfter3Screens = true AND skipLink = true', g6.fixedSticky.length >= 1 && g6.buyLinkVisibleAfter3Screens && g6.skipLink, g6);
   await pg4b.close();
   const v1440 = g4One(g4a), v390 = g4One(g4b);
   const g4pass = v1440.pass && v390.pass;
@@ -357,9 +420,26 @@ const push = (id, metric, value, target, pass, detail) => items.push({ id, metri
   push('A2', '세 면 body.innerText 에 "사업자등록번호" 와 "통신판매업" 둘 다 존재 (index.html = 검출기 양성 대조군)', Object.fromEntries(Object.entries(pages).map(([k, p]) => [k, !!(p && p.biz && p.mail)])), '세 면 모두 true; index 미검출이면 검출기 결함 FAIL', controlOk && all, { pages, positiveControlIndex: controlOk ? 'PASS' : 'DETECTOR_DEFECT' });
 }
 
+// ---------------------------------------------------------------- A3 (s44 GS-24-1): 스크립트 차단 시 base.css 면 .rv 비가시 0
+{
+  const nctx = await b.newContext({ viewport: { width: 1440, height: 900 }, javaScriptEnabled: false });
+  const pages = ['about.html', 'b2b.html', 'faq.html', 'library.html', 'notice.html', 'privacy.html', 'support.html', 'terms.html', 'guidebook/index.html', 'guidebook/ewha.html', 'programs/studio.html', 'programs/guidebook.html'];
+  const res = {}; let hiddenTotal = 0, rvTotal = 0;
+  for (const p of pages) {
+    const pg = await nctx.newPage(); let err = null;
+    try { await pg.goto(PAGE_URLS[p] || (base + p), { waitUntil: 'load', timeout: 30000 }); } catch (e) { err = String(e).slice(0, 60); }
+    const r = err ? { err } : await pg.evaluate(() => { const all = [...document.querySelectorAll('.rv')]; return { rv: all.length, hidden: all.filter(e => parseFloat(getComputedStyle(e).opacity) < 0.5).length }; });
+    res[p] = r; if (!err) { hiddenTotal += r.hidden; rvTotal += r.rv; }
+    await pg.close();
+  }
+  await nctx.close();
+  const errs = Object.values(res).filter(r => r.err).length;
+  push('A3', '스크립트 차단(javaScriptEnabled false) 12면: .rv 요소 중 opacity < .5 비가시 수 합', hiddenTotal, '0 (rv 총수 ≥ 1, 오류 면 0)', hiddenTotal === 0 && rvTotal > 0 && errs === 0, { pages: res, rvTotal });
+}
+
 await b.close();
 
-const order = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'G1', 'G2', 'G3', 'G4', 'A1', 'A2'];
+const order = ['S1', 'S2', 'S3', 'S4', 'S5', 'S6', 'S7', 'S8', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'A1', 'A2', 'A3'];
 items.sort((a, z) => order.indexOf(a.id) - order.indexOf(z.id));
 const out = { label, base, items, ts_note: { ts: new Date().toISOString(), tool: 'playwright channel=chrome headless, deviceScaleFactor 1', viewports: 'S1 390x844 ; G2 901/960/1000/1024/1030 x900 ; A1 390x844 + 1440x900 ; 나머지 1440x900', fonts: Object.fromEntries(Object.entries(fontNote).filter(([k]) => k.includes('@'))), pageErrors: pageErrs, passSummary: { pass: items.filter(i => i.pass === true).length, fail: items.filter(i => i.pass === false).length, null: items.filter(i => i.pass === null).length } } };
 const json = JSON.stringify(out, null, 1);
