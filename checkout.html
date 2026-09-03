@@ -91,7 +91,7 @@
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="cart.html">장바구니</a><span aria-hidden="true">/</span><span>결제</span></nav>
     <h1>결제</h1>
-    <p class="lede">카드, 계좌이체, 가상계좌로 결제합니다.</p>
+    <p class="lede">카드(일시불)로 결제합니다. 계좌이체, 가상계좌, 할부는 카드사 심사가 끝나는 대로 열립니다.</p>
    </div>
   </div>
 </section>
@@ -290,12 +290,12 @@ document.addEventListener('DOMContentLoaded', async function(){
   }
 
   function portoneDriver(cfg, member){
-    // 바로오픈(KG이니시스)에서 열리는 수단은 셋이다. 간편결제와 할부는 카드사 심사가
-    // 끝나기 전까지 열리지 않으므로 화면에도 올리지 않는다.
+    // 바로오픈(KG이니시스) 기간에는 카드 일시불만 열린다(포트원 2026-09-03 안내). 계좌이체,
+    // 가상계좌, 간편결제, 할부는 카드사 심사가 끝난 뒤 이 목록에 되살린다.
+    //   { v:'TRANSFER',        label:'실시간 계좌이체', note:'' },
+    //   { v:'VIRTUAL_ACCOUNT', label:'가상계좌',    note:'입금이 확인되면 지급됩니다' }
     var METHODS = [
-      { v:'CARD',            label:'카드',        note:'일시불' },
-      { v:'TRANSFER',        label:'실시간 계좌이체', note:'' },
-      { v:'VIRTUAL_ACCOUNT', label:'가상계좌',    note:'입금이 확인되면 지급됩니다' }
+      { v:'CARD',            label:'카드',        note:'일시불' }
     ];
     var picked = 'CARD';
     return {
@@ -303,7 +303,7 @@ document.addEventListener('DOMContentLoaded', async function(){
         await loadScript('https://cdn.portone.io/v2/browser-sdk.js');
         if(!window.PortOne) throw new Error('결제 모듈을 불러오지 못했습니다');
         // 이니시스 V2 일반결제는 구매자 휴대폰 번호가 필수다. 없으면 결제창이 열리지 않는다.
-        // 가상계좌 입금 안내도 이 번호로 가므로 저장된 값이 있어도 확인할 수 있게 항상 보여 준다.
+        // 저장된 값이 있어도 확인할 수 있게 항상 보여 준다.
         var savedPhone = digits((needShip && $('#ph') ? $('#ph').value : '') || member.phone || '');
         $('#payment-method').innerHTML =
           '<fieldset class="pgm"><legend>결제 수단</legend>' +
@@ -313,7 +313,7 @@ document.addEventListener('DOMContentLoaded', async function(){
           }).join('') + '</fieldset>'
           + '<div class="field pgphone"><label for="pgPhone">휴대폰 번호</label>'
           + '<input id="pgPhone" type="tel" autocomplete="tel" inputmode="numeric" value="' + esc(savedPhone) + '">'
-          + '<span class="help">결제 확인과 가상계좌 입금 안내를 받는 번호입니다. 숫자만</span></div>';
+          + '<span class="help">결제 확인을 받는 번호입니다. 숫자만</span></div>';
         $('#payment-method').addEventListener('change', function(ev){
           if(ev.target && ev.target.name === 'pgm') picked = ev.target.value;
         });
