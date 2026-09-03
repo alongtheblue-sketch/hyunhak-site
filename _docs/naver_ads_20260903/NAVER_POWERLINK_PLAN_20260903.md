@@ -179,6 +179,6 @@
 | SA API | "API 서비스를 이용하고 있지 않습니다" → 서비스 신청 모달(약관) 열고 끝까지 스크롤. 동의 체크 + 서비스 신청 클릭은 auto-mode 분류기 차단 → task space 15 를 건우에게 넘김 → **건우 21:42 신청 완료, "현재 API 서비스를 이용 중입니다" + 검색광고 Key 발급**(키 값은 세션 미열람, 건우 시크릿 보관) | sa/tool/api 21:43 |
 | 그룹 공통 설정 | G0 실측 = 하루예산 사용 안 함, 매체 일부 매체(네이버 및 검색 포털), 성과 기반 노출. 건우 "권고사항대로" = 확장 검색 OFF 유지 확정 | sa/adgroups/…542 |
 | 콘솔 경로 추가 | 도구 하위 = 키워드 도구 tool/keyword-planner, 전환 추적 관리 tool/analytics, 대량 관리 tool/bulk, SA API tool/api. 비즈채널 = sa/channels. 사이드바 라벨 클릭은 첫 하위로 이동, 하위 목록은 오른쪽 chevron(x≈236) 클릭으로 펼침 | 21:2x |
-| 사이트와 api 배포 | 세션 원격 쓰기(D1 --remote, wrangler deploy) 분류기 차단 → `~/Workspace/go_hyunhak_launch_deploy_20260903.sh` (DRY 게이트 전건 통과, site a75fd55 = 9608ebd + 약관 제6조 4항 3영업일 개정 + 본 원장 편입, detached worktree 빌드 rc 0) | 건우 `!` 실행 |
+| 사이트와 api 배포 | 세션 원격 쓰기(D1 --remote, wrangler deploy) 분류기 차단 → `~/Workspace/go_hyunhak_launch_deploy_20260903.sh` (DRY 게이트 전건 통과, site a75fd55 = 9608ebd + 약관 제6조 4항 3영업일 개정 + 본 원장 편입, detached worktree 빌드 rc 0) → **건우 실행 2회로 완료(21:39 D1 표 3 + api 92d0e1b9, 21:4x site b2ccd593)**. 엣지 스모크 16/16, IndexNow 53, 세대 마커 6종 전건, GA4 collect 204. 랜딩 URL 은 이번 배포로 support 200 추가 | 스크립트 stdout 21:4x |
 
 콘솔 경로: ads.naver.com/manage/ad-accounts/836025/sa/campaigns/cmp-a001-01-000000011047766 (구 manage.searchad.naver.com 경로는 404). 대량 관리 = 도구 > 대량 관리 > 대량 등록/수정/삭제, 작업 유형을 바꾸면 첨부 파일이 초기화되고 input.files 는 앱이 읽은 뒤 비워지므로 화면 파일명으로 판정.
