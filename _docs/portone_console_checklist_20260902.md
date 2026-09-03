@@ -33,6 +33,7 @@
 | 25 | 정산 계좌, 세금계산서 | 콘솔 | 별도 메뉴 없음(PG 계약 단계) | 대기 | KG 계약서 작성 시 |
 
 ## 집행 기록
+- 09-03 18:3x 사이트 배포(건우 `!` deploy.sh, 분류기 차단으로 세션 집행 불가). HEAD 18d26ba, wrangler 버전 b31c8756, 자산 11 갱신, 스모크 16/16 PASS. 라이브 실측 = checkout METHODS CARD 만, lede 카드(일시불), FAQ 카드만 문장 2곳, 로컬과 바이트 동일.
 - 09-03 18:18 실연동 웹훅 호출 테스트 2회(1회는 tail 미가동, 2회째 tail 채증). 서명 검증 통과 200. webhook_logs 2행 남음.
 - 09-03 18:2x secret 3종 주입 (PORTONE_CHANNEL_KEY=실연동 채널키, PORTONE_WEBHOOK_SECRET=클립보드 파이프, PG_TEST_MODE=0). /api/config 실측 = channelKey fcce…, testMode false. 무서명 웹훅 POST 401.
 - 09-03 18:1x 실연동 채널 추가 1건 (세션이 이름·MID·과세 채움, signkey·INIAPI 키는 건우 직접 입력·저장). 키 값은 기록하지 않았다. 채널키(공개값)만 9행에.
