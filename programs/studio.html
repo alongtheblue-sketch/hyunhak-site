@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>제시문 면접 스튜디오 소개, 현학적 연구소</title>
@@ -359,7 +357,7 @@ p{max-width:var(--measure);color:var(--body)}
 .unit .ex li{font-size:var(--t-sm);line-height:1.5;display:flex;gap:var(--s2);margin-top:var(--s1)}
 .unit .ex .lv{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);flex:none;width:2.4em;padding-top:.2em}
 .unit .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h4);color:var(--seal);margin-top:auto;padding-top:var(--s3);white-space:nowrap}
-.unit .won small{font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:4px}
+.unit .won small{display:block;white-space:normal;font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:0;margin-top:2px}  /* nowrap 상속으로 1000px+ 카드 밖 19~21px 넘침 (critic P1-1, 2026-09-03) */
 .unit .tl{margin-top:var(--s2);align-self:flex-start}
 @media (max-width:1000px){
   .units{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -397,14 +395,16 @@ p{max-width:var(--measure);color:var(--body)}
 </header>
 
 <main id="main">
-<!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 다섯 단계 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원.</p><!-- /aeo -->
 <!-- 도입 -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="say pagehead">
+    <div class="say">
+    <div class="pagehead">
       <p class="kicker">연세대와 고려대 제시문 면접 스튜디오</p>
       <h1>기출 제시문 150세트,<br>실전 규격 촬영 응시</h1>
       <p class="lede">연세대는 준비 8분과 답변 5분, 고려대는 준비 21분과 발화 7분. 그 시간을 그대로 재현해 촬영 응시합니다. 회차마다 전사와 진단과 구술체 재구성 세 단이 돌아옵니다.</p>
+  <!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 다섯 단계 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원.</p><!-- /aeo -->
+</div>
       <div class="cta">
         <a class="btn" href="../studio.html#units">응시 단위 고르기 <span class="arr">→</span></a>
         <a class="tl" href="#parts">응시 한 회의 순서 먼저 보기</a>

@@ -271,7 +271,7 @@ p{max-width:var(--measure);color:var(--body)}
 /* 부 섹션 */
 .part{padding-block:var(--s8);border-top:var(--rule)}
 .part .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
-.part .num{font-family:var(--mono);font-weight:500;font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;color:var(--ink);opacity:.14}
+.part .num{font-family:var(--mono);font-weight:500;font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;color:var(--ink);opacity:.55}  /* 대비 3.2:1, 종전 .14 = 1.29:1 (critic P2 접근성, 스튜디오 동일) */
 .part.core .num{color:var(--seal);opacity:.85}
 .part h2{font-size:var(--t-h1)}
 .part .sub{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);margin-top:var(--s2)}
@@ -455,10 +455,12 @@ HTML = r"""<!DOCTYPE html>
 <section class="hero" id="top">
   {{HERO_BG}}
   <div class="wrap">
-    <div class="say pagehead">
+    <div class="say">
+    <div class="pagehead">
       <p class="kicker">대학별 생기부 면접 가이드북</p>
       <h1>면접관의 다음 질문,<br>이미 내 생기부 안에</h1>
       <p class="lede">31개 대학 31권. 선배 후기 2017년부터 2026년까지의 관측과 2027학년도 공식 요강을 한 사람이 같은 기준으로 다시 짠 편집본.</p>
+    </div>
       <div class="cta">
         <a class="btn" href="{{GB}}">지원 대학 가이드북 고르기 <span class="arr">→</span></a>
         <a class="tl" href="#parts">다섯 부 구성 먼저 보기</a>

@@ -163,10 +163,12 @@ HTML = r"""<!DOCTYPE html>
 <!-- 도입 -->
 <section class="hero" id="top">
   <div class="wrap">
-    <div class="say pagehead">
+    <div class="say">
+    <div class="pagehead">
       <p class="kicker">연세대와 고려대 제시문 면접 스튜디오</p>
       <h1>기출 제시문 150세트,<br>실전 규격 촬영 응시</h1>
       <p class="lede">연세대는 준비 8분과 답변 5분, 고려대는 준비 21분과 발화 7분. 그 시간을 그대로 재현해 촬영 응시합니다. 회차마다 전사와 진단과 구술체 재구성 세 단이 돌아옵니다.</p>
+    </div>
       <div class="cta">
         <a class="btn" href="{{UNITS_URL}}">응시 단위 고르기 <span class="arr">→</span></a>
         <a class="tl" href="#parts">응시 한 회의 순서 먼저 보기</a>
