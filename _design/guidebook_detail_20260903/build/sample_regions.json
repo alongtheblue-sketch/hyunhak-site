@@ -1,0 +1,187 @@
+{
+ "A": {
+  "variant": "A",
+  "page": 18,
+  "title": "4부 교과학습 규칙 면",
+  "file": "pages/sample_A_p18.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 5.96,
+    "y": 4.33,
+    "w": 67.37,
+    "h": 16.76,
+    "label": "영역 이름과 규칙 한 건. 언제, 질문 틀, 꼬리질문, 평가 축"
+   },
+   {
+    "x": 5.96,
+    "y": 51.08,
+    "w": 67.37,
+    "h": 14.65,
+    "label": "실험 기재가 있을 때의 규칙. 4부 표본으로 든 그 규칙"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_A_zoom.jpg",
+   "size": [
+    696,
+    360
+   ],
+   "rect_pt": [
+    42.5,
+    436.9,
+    262.0,
+    546.2
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 316,
+   "test_hangul": 0,
+   "char_ratio": 0.0,
+   "clean_words": 77,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 316,
+   "test_hangul": 316,
+   "char_ratio": 1.0,
+   "clean_words": 77,
+   "test_words_matched": 77,
+   "word_ratio": 1.0
+  }
+ },
+ "B": {
+  "variant": "B",
+  "page": 14,
+  "title": "3부 실제로 나온 질문 면",
+  "file": "pages/sample_B_p14.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 5.96,
+    "y": 16.93,
+    "w": 48.91,
+    "h": 9.41,
+    "label": "유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도"
+   },
+   {
+    "x": 5.96,
+    "y": 57.81,
+    "w": 55.68,
+    "h": 9.41,
+    "label": "전공지식확인 91건, 17.9%. 첫 두 질문"
+   },
+   {
+    "x": 5.96,
+    "y": 77.88,
+    "w": 40.53,
+    "h": 3.14,
+    "label": "한 줄 질문. 전자공학과, 2021년"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_B_zoom.jpg",
+   "size": [
+    1002,
+    224
+   ],
+   "rect_pt": [
+    42.5,
+    493.7,
+    362.0,
+    558.9
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 803,
+   "test_hangul": 62,
+   "char_ratio": 0.077,
+   "clean_words": 147,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 803,
+   "test_hangul": 803,
+   "char_ratio": 1.0,
+   "clean_words": 147,
+   "test_words_matched": 147,
+   "word_ratio": 1.0
+  }
+ },
+ "C": {
+  "variant": "C",
+  "page": 31,
+  "title": "5부 준비 전략 면",
+  "file": "pages/sample_C_p31.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 5.96,
+    "y": 11.86,
+    "w": 40.53,
+    "h": 3.59,
+    "label": "절 제목"
+   },
+   {
+    "x": 10.88,
+    "y": 57.24,
+    "w": 77.6,
+    "h": 9.81,
+    "label": "40초 답변 훈련. 근거가 붙은 행동 한 줄"
+   },
+   {
+    "x": 10.88,
+    "y": 78.91,
+    "w": 77.6,
+    "h": 11.86,
+    "label": "꼬리질문 2단 대비. 확인된 꼬리 15건에서 나온 규칙"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_C_zoom.jpg",
+   "size": [
+    1395,
+    235
+   ],
+   "rect_pt": [
+    72.0,
+    488.9,
+    520.0,
+    557.4
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 709,
+   "test_hangul": 31,
+   "char_ratio": 0.044,
+   "clean_words": 198,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 709,
+   "test_hangul": 709,
+   "char_ratio": 1.0,
+   "clean_words": 198,
+   "test_words_matched": 198,
+   "word_ratio": 1.0
+  }
+ }
+}

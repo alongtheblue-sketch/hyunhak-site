@@ -181,6 +181,18 @@ p{max-width:var(--measure);color:var(--body)}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
 .rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
 .rule dd.q{font-family:var(--serif);font-size:var(--t-h4)}
+.pgcols{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:start;margin-top:var(--s2)}
+.pg{position:relative;margin:0}
+.pg img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.14)}
+.pg .mk{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--seal);color:var(--paper);font-family:var(--mono);font-size:var(--t-sm);font-weight:500;display:grid;place-items:center;box-shadow:0 0 0 3px var(--card)}
+.lg ol{list-style:none;display:grid;gap:var(--s3)}
+.lg li{display:grid;grid-template-columns:26px 1fr;gap:var(--s3);align-items:start}
+.lg li .n{width:26px;height:26px;border-radius:50%;background:var(--seal);color:var(--paper);font-family:var(--mono);font-size:var(--t-sm);font-weight:500;display:grid;place-items:center}
+.lg li p{font-size:var(--t-sm);line-height:1.6;color:var(--body);padding-top:3px}
+.zoom{margin:var(--s5) 0 0}
+.zoom img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff}
+.zoom figcaption{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-top:var(--s2)}
+.lg .note{margin-top:var(--s4);font-size:var(--t-sm);color:var(--gray);line-height:1.6;border-top:var(--rule);padding-top:var(--s3)}
 .rule dd .slot{background:var(--mat);border-radius:2px;padding:0 .25em;font-family:var(--mono);font-size:.82em;color:var(--brown)}
 .core .why{border-color:var(--hair)}
 .part.core{background:var(--card)}
@@ -275,7 +287,7 @@ p{max-width:var(--measure);color:var(--body)}
   .split.rev .txt{order:0}
   .part .head,.part .body{grid-template-columns:1fr;gap:var(--s5)}
   .part.rev .body .vis{order:0}
-  .sample .cols,.qs{grid-template-columns:1fr}
+  .sample .cols,.qs,.pgcols{grid-template-columns:1fr}
   .sample{padding:var(--s4)}
   .part .num{font-size:clamp(48px,10vw,72px)}
   .steps,.diff{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -550,14 +562,16 @@ p{max-width:var(--measure);color:var(--body)}
           <div class="why"><p>3부의 기출은 그해 지원자의 생기부에서 나온 질문입니다. 내 생기부에 같은 기재가 없으면 같은 질문은 나오지 않습니다.</p><p>4부의 규칙은 이 대학이 생활기록부의 어떤 기재를 보고 어떤 질문을 만들었는지를 실제 질문에서 되짚은 것. 내 생기부를 펴 놓고 해당되는 규칙마다 질문을 만들면 그 목록이 내 예상 질문지.</p></div></div>
       </div>
     </div>
-    <div class="sample rv">
-          <div class="cap"><span>지면 표본, 4부 교과학습 규칙 한 장</span><span>가천대학교 판</span></div>
-          <dl class="rule">
-            <dt>언제</dt><dd>세특에 실험 수행이 기재됨</dd>
-            <dt>질문 틀</dt><dd class="q"><span class="slot">{실험명}</span> 실험을 했는데 다시 한번 설명해 주실 수 있나요?</dd>
-            <dt>이어질 꼬리질문</dt><dd>그 법칙 말고 다른 법칙 아는 것 또 없나요?</dd>
-            <dt>평가 축</dt><dd>진학의지 中 탐구학습경험 / 학업역량 中 탐구력</dd>
-          </dl>
+    <div class="sample pgs rv">
+          <div class="cap"><span>판매본 지면 한 면 그대로, 4부 교과학습 규칙 면</span><span>가천대학교 판 18면</span></div>
+          <div class="pgcols">
+            <figure class="pg"><a href="../assets/photo/gbd/gbd_sample_A.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_A.jpg" width="1241" height="1754" alt="가천대학교 판 18면, 4부 교과학습 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:12.71%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:58.41%" aria-hidden="true">2</span></figure>
+            <div class="lg">
+              <ol><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 언제, 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>실험 기재가 있을 때의 규칙. 4부 표본으로 든 그 규칙</p></li></ol>
+              <figure class="zoom"><img src="../assets/photo/gbd/gbd_sample_A_zoom.jpg" width="696" height="360" alt="표본 면 2번 칸 확대" loading="lazy" decoding="async"><figcaption>2번 칸 확대</figcaption></figure>
+              <p class="note">선명한 2칸만 판매본 그대로. 흐린 부분은 구매 뒤 보안 리더에서 전부 열립니다.</p>
+            </div>
+          </div>
     </div>
     <ol class="steps rv">
       <li><span class="n">01</span><p>내 생활기록부를 펴 놓기.</p></li>

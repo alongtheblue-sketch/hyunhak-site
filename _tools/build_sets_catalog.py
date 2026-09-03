@@ -20,7 +20,7 @@ OUT_PATH = os.path.join(SITE_ROOT, "assets", "data", "sets.json")
 SCRIPT_SETS_DIR = os.path.join(HOME, "Workspace", "interview_meta_lecture_2027", "scripts", "sets")
 
 GENERATED_AT = "2026-09-02T00:00:00Z"
-PRICE = 396000
+PRICE = 495000   # 2026-09-03 건우 결재 GS-8a: 인강 포함 495,000 (종전 396,000)
 SINGLE_PRICE = 33000
 
 # 단위 5종 정의. bank_dir = 은행 저장소, prefix = 세트 id 접두, script_bank = 해설 대본 디렉토리명

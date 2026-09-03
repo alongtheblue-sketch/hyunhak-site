@@ -9,7 +9,7 @@
    "univ_short": "고려대",
    "track": "2027 학생부종합 계열적합전형 | 인문",
    "label": "고려대 계열적합 인문",
-   "price": 396000,
+   "price": 495000,
    "single_price": 33000,
    "set_count": 30,
    "sets": [
@@ -562,7 +562,7 @@
    "univ_short": "고려대",
    "track": "2027 학생부종합 계열적합전형 | 자연",
    "label": "고려대 계열적합 자연",
-   "price": 396000,
+   "price": 495000,
    "single_price": 33000,
    "set_count": 30,
    "sets": [
@@ -1115,7 +1115,7 @@
    "univ_short": "연세대",
    "track": "2027 학생부종합 활동우수형 | 인문 통합",
    "label": "연세대 활동우수 인문통합",
-   "price": 396000,
+   "price": 495000,
    "single_price": 33000,
    "set_count": 30,
    "sets": [
@@ -1638,7 +1638,7 @@
    "univ_short": "연세대",
    "track": "2027 학생부종합 활동우수형 | 자연",
    "label": "연세대 활동우수 자연",
-   "price": 396000,
+   "price": 495000,
    "single_price": 33000,
    "set_count": 30,
    "sets": [
@@ -2161,7 +2161,7 @@
    "univ_short": "연세대",
    "track": "2027 학생부종합 국제형",
    "label": "연세대 국제형",
-   "price": 396000,
+   "price": 495000,
    "single_price": 33000,
    "set_count": 30,
    "sets": [

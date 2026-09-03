@@ -2,7 +2,7 @@
 """면접 가이드북 공통 상세페이지 조립기 (v2 구조: SB7 순서, 절정 4부 50~65%).
 
 입력  gen/<id>_aigen.png (힉스필드 gpt_image_2), covers/<대학명>.jpg (clean PDF 1면 렌더),
-      pages/gachon_p*.jpg (부 들어가는 면 렌더), build/books31.json
+      pages/gachon_p*.jpg (부 들어가는 면 렌더), pages/sample_<본>_p*.jpg + build/sample_regions.json (표본 면, make_sample_page.py), build/books31.json
 출력  out/면접가이드북_공통상세페이지_v1.html (독립 HTML, 이미지 전부 data URI)
 규범  hyunhak-site/assets/base.css v3 토큰. 표제 Pretendard 800, 본문 16px, 계기값 JetBrains Mono, 세리프는 인용만.
       朱印은 가격과 표식 점에만. 1차 CTA 한 종류(지원 대학 가이드북 고르기).
@@ -23,9 +23,12 @@ IMG = {
     'p4': 'p4_rules', 'p5': 'p5_shelf', 'trust': 'p6_editor', 'format': 'p7_reader', 'close': 'hero_a',
 }
 OUTNAME = '면접가이드북_공통상세페이지_v1.html'
+SAMPLE = 'A'                       # 4부 표본 면 본. A=4부 규칙 p18 / B=3부 기출 p14 / C=5부 전략 p31
 for a in sys.argv[1:]:
     if a.startswith('out='):
         OUTNAME = a[4:]
+    elif a.startswith('sample='):
+        SAMPLE = a[7:]
     elif a == 'mode=site':
         MODE = 'site'
     elif '=' in a:
@@ -106,6 +109,36 @@ FAN = '\n'.join(
 OPEN = '\n'.join(
     f'<li class="rv"><img src="{data_uri(PG / (f + ".jpg"), 720, 80, name="gbd_" + f)[0]}" width="360" height="509" alt="{cap}" loading="lazy" decoding="async"><span>{cap}</span></li>'
     for f, cap in OPENERS)
+
+
+
+def sample_block(key):
+    """4부 표본: 판매본 한 면을 그대로. 선명 칸은 make_sample_page.py 가 픽셀에 구운 것만 보인다."""
+    reg = json.loads((ROOT / 'build' / 'sample_regions.json').read_text())[key]
+    uri, (w, h) = data_uri(ROOT / reg['file'], 1241, 84, name=f'gbd_sample_{key}')
+    zuri, (zw, zh) = data_uri(ROOT / reg['zoom']['file'], 1000, 86, name=f'gbd_sample_{key}_zoom')
+    regs = reg['regions']
+    zy = (reg['zoom']['rect_pt'][1] - 7) / 841.89 * 100
+    zi = min(range(len(regs)), key=lambda i: abs(regs[i]['y'] - zy)) + 1
+    marks = ''.join(f'<span class="mk" style="left:{r["x"]:.2f}%;top:{r["y"] + r["h"] / 2:.2f}%" aria-hidden="true">{i + 1}</span>'
+                    for i, r in enumerate(regs))
+    legend = ''.join(f'<li><span class="n">{i + 1}</span><p>{r["label"]}</p></li>' for i, r in enumerate(regs))
+    n = len(regs)
+    img = f'<img src="{uri}" width="{w}" height="{h}" alt="가천대학교 판 {reg["page"]}면, {reg["title"]}. 표시한 {n}칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async">'
+    if MODE == 'site':
+        img = f'<a href="{uri}" target="_blank" rel="noopener" aria-label="표본 면 크게 보기">{img}</a>'
+    return f'''<div class="sample pgs rv">
+          <div class="cap"><span>판매본 지면 한 면 그대로, {reg["title"]}</span><span>가천대학교 판 {reg["page"]}면</span></div>
+          <div class="pgcols">
+            <figure class="pg">{img}{marks}</figure>
+            <div class="lg">
+              <ol>{legend}</ol>
+              <figure class="zoom"><img src="{zuri}" width="{zw}" height="{zh}" alt="표본 면 {zi}번 칸 확대" loading="lazy" decoding="async"><figcaption>{zi}번 칸 확대</figcaption></figure>
+              <p class="note">선명한 {n}칸만 판매본 그대로. 흐린 부분은 구매 뒤 보안 리더에서 전부 열립니다.</p>
+            </div>
+          </div>
+    </div>'''
+
 
 CSS = r"""
 :root{
@@ -263,6 +296,18 @@ p{max-width:var(--measure);color:var(--body)}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
 .rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
 .rule dd.q{font-family:var(--serif);font-size:var(--t-h4)}
+.pgcols{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:start;margin-top:var(--s2)}
+.pg{position:relative;margin:0}
+.pg img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.14)}
+.pg .mk{position:absolute;transform:translate(-50%,-50%);width:26px;height:26px;border-radius:50%;background:var(--seal);color:var(--paper);font-family:var(--mono);font-size:var(--t-sm);font-weight:500;display:grid;place-items:center;box-shadow:0 0 0 3px var(--card)}
+.lg ol{list-style:none;display:grid;gap:var(--s3)}
+.lg li{display:grid;grid-template-columns:26px 1fr;gap:var(--s3);align-items:start}
+.lg li .n{width:26px;height:26px;border-radius:50%;background:var(--seal);color:var(--paper);font-family:var(--mono);font-size:var(--t-sm);font-weight:500;display:grid;place-items:center}
+.lg li p{font-size:var(--t-sm);line-height:1.6;color:var(--body);padding-top:3px}
+.zoom{margin:var(--s5) 0 0}
+.zoom img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff}
+.zoom figcaption{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-top:var(--s2)}
+.lg .note{margin-top:var(--s4);font-size:var(--t-sm);color:var(--gray);line-height:1.6;border-top:var(--rule);padding-top:var(--s3)}
 .rule dd .slot{background:var(--mat);border-radius:2px;padding:0 .25em;font-family:var(--mono);font-size:.82em;color:var(--brown)}
 .core .why{border-color:var(--hair)}
 .part.core{background:var(--card)}
@@ -357,7 +402,7 @@ p{max-width:var(--measure);color:var(--body)}
   .split.rev .txt{order:0}
   .part .head,.part .body{grid-template-columns:1fr;gap:var(--s5)}
   .part.rev .body .vis{order:0}
-  .sample .cols,.qs{grid-template-columns:1fr}
+  .sample .cols,.qs,.pgcols{grid-template-columns:1fr}
   .sample{padding:var(--s4)}
   .part .num{font-size:clamp(48px,10vw,72px)}
   .steps,.diff{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -634,15 +679,7 @@ HTML = r"""<!DOCTYPE html>
           <div class="why"><p>3부의 기출은 그해 지원자의 생기부에서 나온 질문입니다. 내 생기부에 같은 기재가 없으면 같은 질문은 나오지 않습니다.</p><p>4부의 규칙은 이 대학이 생활기록부의 어떤 기재를 보고 어떤 질문을 만들었는지를 실제 질문에서 되짚은 것. 내 생기부를 펴 놓고 해당되는 규칙마다 질문을 만들면 그 목록이 내 예상 질문지.</p></div></div>
       </div>
     </div>
-    <div class="sample rv">
-          <div class="cap"><span>지면 표본, 4부 교과학습 규칙 한 장</span><span>가천대학교 판</span></div>
-          <dl class="rule">
-            <dt>언제</dt><dd>세특에 실험 수행이 기재됨</dd>
-            <dt>질문 틀</dt><dd class="q"><span class="slot">{실험명}</span> 실험을 했는데 다시 한번 설명해 주실 수 있나요?</dd>
-            <dt>이어질 꼬리질문</dt><dd>그 법칙 말고 다른 법칙 아는 것 또 없나요?</dd>
-            <dt>평가 축</dt><dd>진학의지 中 탐구학습경험 / 학업역량 中 탐구력</dd>
-          </dl>
-    </div>
+    {{SAMPLE}}
     <ol class="steps rv">
       <li><span class="n">01</span><p>내 생활기록부를 펴 놓기.</p></li>
       <li><span class="n">02</span><p>영역별로 해당되는 규칙 찾기.</p></li>
@@ -814,6 +851,7 @@ def main():
     html = html.replace('{{IMG_TRUST}}', img_tag('trust', 1400, '편집자의 밤 책상'))
     html = html.replace('{{IMG_FORMAT}}', img_tag('format', 1400, '보안 리더 태블릿과 소책자'))
     html = html.replace('{{IMG_CLOSE}}', img_tag('close', 1400, '남색 소책자 더미'))
+    html = html.replace('{{SAMPLE}}', sample_block(SAMPLE))
     html = html.replace('{{DATE}}', datetime.date.today().isoformat())
     html = (html.replace('{{HOME}}', link('/')).replace('{{GB}}', link('/guidebook/'))
             .replace('{{FAVICON}}', '../assets/favicon_32.png' if MODE == 'site' else 'https://www.hyunhak.com/assets/favicon_32.png'))
