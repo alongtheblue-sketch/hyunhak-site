@@ -15,6 +15,7 @@ python3 _tools/apply_fonts.py
 python3 _tools/apply_analytics.py
 tail1 python3 _tools/seo_inject.py
 tail1 python3 _tools/build_sitemap.py
+tail1 python3 _tools/build_rss.py
 tail1 python3 _tools/seo_check.py
 head1 python3 _tools/v2_check.py
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16
