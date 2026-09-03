@@ -525,7 +525,7 @@ HTML = r"""<!DOCTYPE html>
         <h2 class="h2">지원 단위부터 고르기</h2>
         <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p>
       </div>
-      <figure class="vis rv">{{IMG_CAMPUS}}<figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은 바 없습니다.</figcaption></figure>
+      <figure class="vis rv">{{IMG_CAMPUS}}<figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은&nbsp;바 없습니다.</figcaption></figure>
     </div>
     <ul class="units">
       {{UNITS}}

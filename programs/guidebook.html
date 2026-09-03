@@ -28,13 +28,13 @@
 <style>
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.24);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
   --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px;
   --gut:clamp(20px,4vw,56px);--container:1120px;
-  --t-xs:11px;--t-sm:13px;--t-base:16px;
+  --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px;
   --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px);
   --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px;
   --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px;
@@ -128,13 +128,13 @@ p{max-width:var(--measure);color:var(--body)}
 .aud li{border-top:2px solid var(--ink);padding-top:var(--s4)}
 .aud .mono{display:block;color:var(--gray);margin-bottom:var(--s2)}
 .aud h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.aud p{font-size:14px;line-height:1.7}
+.aud p{font-size:var(--t-md);line-height:1.7}
 
 /* 만든 사람 */
 .pr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .pr li{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
 .pr h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.pr p{font-size:var(--t-sm);line-height:1.65}
+.pr p{font-size:var(--t-md);line-height:1.7}
 .pr .mono{display:block;color:var(--seal);margin-bottom:var(--s2)}
 
 /* 다섯 부 */
@@ -144,12 +144,12 @@ p{max-width:var(--measure);color:var(--body)}
 .rail .n{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .rail li.core .n{color:var(--seal)}
 .rail h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.rail p{font-size:14px;line-height:1.7}
+.rail p{font-size:var(--t-md);line-height:1.7}
 .rail .pg{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2);display:block}
 .openers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
 .openers img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14)}
 .openers span{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2)}
-.openers-cap{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);letter-spacing:.06em;margin-top:var(--s4)}
+.openers-cap{font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);letter-spacing:.06em;margin-top:var(--s4)}
 
 /* 부 섹션 */
 .part{padding-block:var(--s8);border-top:var(--rule)}
@@ -174,7 +174,7 @@ p{max-width:var(--measure);color:var(--body)}
 .qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
 .qs li{padding:var(--s3) 0 0;border-top:var(--rule)}
 .qs .q{font-size:var(--t-base)}
-.qs .src{font-family:var(--mono);font-size:12px;color:var(--gray);display:block;margin-top:var(--s1)}
+.qs .src{font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);display:block;margin-top:var(--s1)}
 .rule{display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);max-width:56em}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
 .rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
@@ -224,7 +224,8 @@ p{max-width:var(--measure);color:var(--body)}
 .price .won small{font-size:var(--t-sm);color:var(--gray);margin-left:4px;font-family:var(--sans)}
 .price .won.two{font-size:var(--t-h4);margin-top:var(--s1)}
 .price ul{margin-top:var(--s2)}
-.price ul li{font-size:14px;color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
+.price .pricefoot{font-size:var(--t-cap);color:var(--gray);line-height:1.6;margin-top:var(--s2);padding-top:var(--s2);border-top:var(--rule)}
+.price ul li{font-size:var(--t-md);color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
 .price ul li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
 .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5)}
 .flow li{border-top:var(--rule-strong);padding-top:var(--s3)}
@@ -317,7 +318,7 @@ p{max-width:var(--measure);color:var(--body)}
 .pgv .pg{position:relative;border:var(--rule);border-radius:var(--r-md);overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.12)}
 .pgv .pg img{display:block;width:100%;height:auto;border-radius:0}
 .pgv figcaption{margin-top:var(--s3)}
-.pgv .cap{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
+.pgv .cap{display:block;font-family:var(--mono);font-size:var(--t-cap);letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
 ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
@@ -668,7 +669,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <li><h4>PDF 소장판</h4><div class="won">110,000<small>원, 권당</small></div>
         <ul><li>워터마크 파일 발급, 구매 계정 각인</li><li>파일 내려받기와 열람</li></ul></li>
       <li><h4>31개 대학 전권</h4><div class="won two">511,500<small>원, 열람</small></div><div class="won two">1,705,000<small>원, PDF</small></div>
-        <ul><li>권당 33,000원 × 31권 = 1,023,000원의 절반</li><li>PDF는 110,000원 × 31권 = 3,410,000원의 절반</li><li>합산 금액은 따로 파는 상품이 아닙니다</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul></li>
+        <ul><li>권당 33,000원 × 31권 = 1,023,000원의 절반</li><li>PDF는 110,000원 × 31권 = 3,410,000원의 절반</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul><p class="pricefoot">합산 금액은 따로 파는 상품이 아닙니다.</p></li>
     </ul>
   </div>
 </section>

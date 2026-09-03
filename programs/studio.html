@@ -28,13 +28,13 @@
 <style>
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.24);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
   --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px;
   --gut:clamp(20px,4vw,56px);--container:1120px;
-  --t-xs:11px;--t-sm:13px;--t-base:16px;
+  --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px;
   --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px);
   --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px;
   --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px;
@@ -55,7 +55,7 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}
 .skip:focus{left:0}
 .pricenote{font-size:var(--t-sm);color:var(--gray);margin-top:var(--s3)}
-.viscap{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--gray);line-height:1.6;margin-top:var(--s2)}
+.viscap{font-family:var(--mono);font-size:var(--t-cap);letter-spacing:.04em;color:var(--gray);line-height:1.6;margin-top:var(--s2)}
 .ink :focus-visible{outline-color:var(--paper)}
 .wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
 h1,h2,h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
@@ -213,10 +213,10 @@ p{max-width:var(--measure);color:var(--body)}
 /* 형태와 가격 */
 .price{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .price>li.pick{border-color:var(--seal)}
-.price>li.pick .tag{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:0;color:var(--paper);background:var(--seal);border-radius:2px;padding:3px 7px;margin-bottom:var(--s1)}
+.price>li.pick .tag{position:absolute;top:var(--s3);right:var(--s3);font-size:var(--t-cap);font-weight:600;letter-spacing:0;color:var(--paper);background:var(--seal);border-radius:2px;padding:3px 7px;margin-bottom:var(--s1)}
 .price>li.pick .btn{background:var(--seal)}
 .price>li.pick .btn:hover{background:#A32C22}
-.price>li{background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+.price>li{position:relative;background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
 .price>li .btn{margin-top:auto;align-self:flex-start;padding-top:0;padding-bottom:0}
 .price>li ul{margin-bottom:var(--s3)}
 .price h4{font-size:var(--t-h4)}
@@ -801,7 +801,7 @@ p{max-width:var(--measure);color:var(--body)}
         <h2 class="h2">지원 단위부터 고르기</h2>
         <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p>
       </div>
-      <figure class="vis rv"><img class="" src="../assets/photo/std/std_campus.jpg" width="1200" height="800" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" loading="lazy" decoding="async"><figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은 바 없습니다.</figcaption></figure>
+      <figure class="vis rv"><img class="" src="../assets/photo/std/std_campus.jpg" width="1200" height="800" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" loading="lazy" decoding="async"><figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은&nbsp;바 없습니다.</figcaption></figure>
     </div>
     <ul class="units">
       <li class="unit rv"><span class="mono">연세대</span><h4>연세대 활동우수 인문통합</h4><p class="sub">준비 8분, 답변 5분. 관점 사이 관계 구성</p><dl><dt>지문</dt><dd>30편</dd><dt>난이도</dt><dd>하 5, 중 10, 상 10, 최상 5</dd><dt>축</dt><dd>제시문 추상도, 관계 구성 단계수, 자료 해석 부하, 관점 간 긴장도</dd></dl><ul class="ex"><li><span class="lv">하</span>선택지의 양과 행복의 관계</li><li><span class="lv">중</span>잣대의 같음과 출발의 같음</li><li><span class="lv">중</span>점수를 믿는 일과 사람을 믿는 일</li></ul><span class="won">495,000<small>원, 전권. 인강 포함</small></span><a class="tl" href="../studio.html?unit=yonsei-hum#units">이 단위 보기</a></li>
