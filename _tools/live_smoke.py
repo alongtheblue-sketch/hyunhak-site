@@ -19,6 +19,21 @@ def get(url, timeout=20):
         return -1, str(e).encode()
 
 
+def status_noredirect(url, timeout=20):
+    """리다이렉트를 따라가지 않고 (상태코드, Location) 을 돌려준다. 철거 면 301 판정용 (2026-09-04)."""
+    import urllib.request, urllib.error
+    class _NoRedirect(urllib.request.HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None
+    opener = urllib.request.build_opener(_NoRedirect, urllib.request.ProxyHandler({}))
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (Macintosh) hyunhak-smoke"})
+    try:
+        with opener.open(req, timeout=timeout) as r:
+            return r.status, r.headers.get("Location", "")
+    except urllib.error.HTTPError as e:
+        return e.code, e.headers.get("Location", "")
+
+
 def main():
     fails = []
     st, body = get(SITE + "/sitemap.xml")
@@ -68,7 +83,7 @@ def main():
     print(f"guidebook/snu 면수통계잔존={page_stat}")
     if page_stat:
         fails.append("guidebook/snu N면, 잔존")
-    # 2026-08-27 go-live 후 세계: 전권 38 onsale (ajou 포함), 푸터 = 래스터 사업자 정보
+    # 2026-08-27 go-live 후 세계: 판매 31권 onsale (ajou 포함, 비판매 7권은 09-04 철거), 푸터 = 래스터 사업자 정보
     s, b = get(SITE + "/guidebook/ajou.html"); t = b.decode("utf-8", "ignore")
     ok_cart = 'data-cart-sku="guide-ajou"' in t
     print(f"guidebook/ajou {s} 담기버튼={ok_cart} 준비중잔존={'준비 중' in t}")
@@ -104,6 +119,18 @@ def main():
         if n_pass != 5: fails.append(f"pass 495,000 {n_pass} != 5")
         if by.get("lecture-common", {}).get("price") != 220000: fails.append("lecture-common 220,000 아님")
         if by.get("passage-single", {}).get("price") != 33000: fails.append("passage-single 33,000 아님")
+    # 2026-09-04 비판매 7권 철거: 면은 목록으로 301, 목록에는 준비 중 0 과 31권
+    for slug in ["knu", "korea", "skku", "yonsei", "dgist", "pknu", "hongik"]:
+        st, loc = status_noredirect(SITE + f"/guidebook/{slug}.html")
+        ok = st == 301 and loc.endswith("/guidebook/index.html")
+        print(f"removed guidebook/{slug} {st} -> {loc or '-'} {'OK' if ok else 'FAIL'}")
+        if not ok:
+            fails.append(f"guidebook/{slug} 301 아님 ({st} {loc})")
+    s, b = get(SITE + "/guidebook/index.html"); t = b.decode("utf-8", "ignore")
+    n_gb = len(re.findall(r'"slug":"', t))
+    print(f"guidebook/index {s} HH_GB={n_gb} 준비중잔존={'준비 중' in t}")
+    if s != 200 or n_gb != 31 or "준비 중" in t:
+        fails.append(f"guidebook/index 31권 목록 아님 ({s}, {n_gb}, 준비 중 {'준비 중' in t})")
     print("FAIL" if fails else "PASS", fails)
     sys.exit(1 if fails else 0)
 

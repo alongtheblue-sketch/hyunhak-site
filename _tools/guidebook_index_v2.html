@@ -81,7 +81,6 @@
     <div class="tabs" role="tablist" aria-label="판매 상태">
       <button role="tab" aria-selected="true" data-f="all">전체 <span>__N__</span></button>
       <button role="tab" aria-selected="false" data-f="sale">판매 중 <span>__SALE__</span></button>
-      <button role="tab" aria-selected="false" data-f="ready">준비 중 <span>__READY__</span></button>
     </div>
     <form class="search" role="search" onsubmit="return false">
       <label for="q2" class="ph">대학 이름</label>
@@ -133,7 +132,7 @@
 <section class="sec tight">
   <div class="wrap">
     <div class="final rv">
-      <div><h2>준비 중인 대학은 공지로</h2><p>판매 개시와 갱신을 공지에 기록합니다.</p></div>
+      <div><h2>대학 추가와 갱신은 공지로</h2><p>새 대학의 판매 개시와 판 갱신을 공지에 기록합니다.</p></div>
       <div class="acts"><a class="btn" href="../notice.html">공지 보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="../studio.html">제시문 면접 스튜디오</a></div>
     </div>
   </div>
@@ -154,13 +153,13 @@ var HH_GB=__HH_GB__;
   var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),tabs=document.querySelectorAll('.bar [role=tab]'),q=document.getElementById('q2'),f='all';
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
-    var pr=o.sale?'<span class="price">__PRICE__원</span>':'<span class="w">준비 중</span>';
-    var act=o.sale?'<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>':'<a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
-    return '<article class="gb'+(o.sale?'':' ready')+'" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+(o.sale?'<span class="badge seal">판매 중</span>':'<span class="badge mute">준비 중</span>')+'</div><div class="m"><span>2027학년도 대비</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
+    var pr='<span class="price">__PRICE__원</span>';
+    var act='<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
+    return '<article class="gb" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+'<span class="badge seal">판매 중</span>'+'</div><div class="m"><span>2027학년도 대비</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
   }
   function render(){
     var kw=(q.value||'').trim();
-    var list=HH_GB.filter(function(o){return (f==='all'||(f==='sale'&&o.sale)||(f==='ready'&&!o.sale))&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
+    var list=HH_GB.filter(function(o){return (f==='all'||f==='sale')&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
     grid.innerHTML=list.map(card).join('')||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
     cnt.textContent=list.length+'권';
   }
