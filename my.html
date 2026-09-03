@@ -58,7 +58,37 @@
 .bd-list{margin-top:10px;display:grid;gap:8px}
 .bd-list .r{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:var(--t-sm);border-top:var(--rule);padding-top:8px}
 details.bd summary{cursor:pointer;font-size:var(--t-sm);color:var(--gray);margin-top:8px;min-height:44px;display:flex;align-items:center}
-@media (max-width:700px){.subcard{grid-template-columns:1fr}.orders .row{grid-template-columns:1fr;gap:4px}.orders .s{text-align:left}.pfgrid,.pwgrid{grid-template-columns:1fr}}
+.orders .s .tlink{margin-left:8px;min-height:0;font-size:var(--t-sm)}
+.orders .s .badge{margin-left:8px;vertical-align:middle}
+/* 환불 요청 모달 (dialog). 색과 곡률과 간격은 hh-popup 과 같은 토큰 */
+dialog.rf{width:min(680px,calc(100% - 40px));margin:auto;padding:0;border:0;background:var(--paper);color:var(--ink);border-radius:var(--r-md);box-shadow:var(--shadow-2);max-height:86vh;overflow:auto}
+dialog.rf::backdrop{background:rgba(49,46,46,.42)}
+.rf .in{padding:var(--s5) var(--s5) var(--s4)}
+.rf .kind{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:12px}
+.rf .kind::before{content:"";display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:8px;vertical-align:1px}
+.rf h2{font-size:var(--t-h3)}
+.rf .pol{margin-top:14px;font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+.rf .pol p+p{margin-top:8px}
+.rf .pol a{text-decoration:underline;text-underline-offset:4px}
+.rf .tw{overflow-x:auto;margin-top:var(--s4);border-top:2px solid var(--ink)}
+.rf .tbl{min-width:0}
+.rf .tbl th,.rf .tbl td{padding-right:10px}
+.rf .tbl td.c{white-space:nowrap}
+.rf .tbl td.no{color:var(--gray)}
+.rf .tbl .ck{width:22px;height:22px;margin:0;vertical-align:middle}
+.rf .sum{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:var(--rule-strong);font-size:var(--t-sm);max-width:none}
+.rf .sum b{font-family:var(--mono);font-weight:500}
+.rf .lim{font-size:var(--t-xs);font-family:var(--mono);color:var(--gray);margin-top:6px}
+.rf .field{margin:var(--s4) 0 0}
+.rf .cnt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);text-align:right;max-width:none}
+.rf .foot{margin-top:var(--s4);padding-top:var(--s3);border-top:var(--rule);display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.rf .foot .ops{display:flex;gap:var(--s3);align-items:center}
+.rf .msg{font-size:var(--t-sm);color:var(--gray);min-height:1.5em;max-width:none}
+.rf .msg.err{color:var(--seal)}
+.rf .state{margin-top:var(--s4);padding:var(--s4);background:var(--mat);border-radius:var(--r-md);font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);max-width:none}
+.rf .state .badge{margin-right:8px}
+@media (max-width:700px){.subcard{grid-template-columns:1fr}.orders .row{grid-template-columns:1fr;gap:4px}.orders .s{text-align:left;white-space:normal}.pfgrid,.pwgrid{grid-template-columns:1fr}
+  dialog.rf{width:100%;max-width:100%;margin:auto 0 0;max-height:82vh;border-radius:var(--r-lg) var(--r-lg) 0 0}.rf .in{padding:var(--s4)}.rf .tbl{font-size:var(--t-xs)}}
 </style>
 </head>
 <body class="v2">
@@ -205,6 +235,27 @@ details.bd summary{cursor:pointer;font-size:var(--t-sm);color:var(--gray);margin
     </div>
   </section>
 </div>
+
+<dialog class="rf" id="rfDlg" aria-labelledby="rfTitle">
+  <div class="in">
+    <p class="kind">환불 요청</p>
+    <h2 id="rfTitle">환불 규정 안내</h2>
+    <div class="pol">
+      <p>① 가이드북과 인강, 스튜디오는 가분적 디지털 콘텐츠입니다. 이미 연 권, 재생한 강의, 응시한 지문, 발급된 PDF 소장판은 제공이 개시되어 단순 변심에 따른 청약철회가 제한됩니다(전자상거래법 제17조 제2항 제5호, 이용약관 제6조). 제공 개시 시점은 가이드북은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오는 응시를 시작한 때입니다.</p>
+      <p>② 아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문은 공급받은 날부터 7일 이내에 청약철회하실 수 있고, 그만큼 환불됩니다. 표시 내용과 실제가 다르거나 계약과 다르게 이행된 경우에는 공급받은 날부터 3개월, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회하실 수 있습니다(전자상거래법 제17조 제3항).</p>
+      <p>③ 청약철회는 요청을 보내신 때에 효력이 생기며 연구소의 승인을 요건으로 하지 않습니다. 환불 대금은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드리고, 환급이 늦어지면 지연이자를 더해 지급합니다(전자상거래법 제18조 제2항).</p>
+      <p><a href="terms.html">이용약관 제6조 보기</a></p>
+    </div>
+    <div id="rfBody"><p class="msg">환불 가능 여부를 확인하는 중</p></div>
+    <div id="rfForm" hidden>
+      <div class="field"><label for="rfReason">환불 사유</label><textarea id="rfReason" rows="4" maxlength="500" placeholder="1자 이상 500자 이내"></textarea><p class="cnt"><span id="rfCnt">0</span>/500</p></div>
+    </div>
+    <div class="foot">
+      <p class="msg" id="rfMsg" role="status" aria-live="polite"></p>
+      <div class="ops"><button type="button" class="tlink" id="rfClose">닫기</button><button type="button" class="btn sm" id="rfSend" hidden>환불 요청 보내기</button></div>
+    </div>
+  </div>
+</dialog>
 
 </main>
 
@@ -384,17 +435,141 @@ document.addEventListener('DOMContentLoaded', async function(){
   })});
 
   var ST={pending:'결제 대기',paid:'결제 완료',failed:'실패',canceled:'취소',refunded:'환불'};
+  // 청약철회 요청 상태 배지. 접수 직후와 existing_request 둘 다 이 표로 그린다 (법률 검토 2026-09-03: "청약철회 접수(처리 중)")
+  var RFST={pending:'청약철회 접수(처리 중)',approved:'청약철회 확인, 환급 중',refunded:'환불 완료',rejected:'청약철회 제한 안내',canceled:'요청 취소'};
+  function rfBadge(status){ return ' <span class="badge line rfst">'+esc(RFST[status]||('환불 요청 '+status))+'</span>'; }
+  var ol = document.getElementById('orderRows');
   try{
     var od = await HH.api('/api/orders');
-    var ol = document.getElementById('orderRows');
     document.getElementById('orderEmpty').hidden = od.orders.length>0;
     ol.innerHTML = od.orders.map(function(o){
-      return '<li><div class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
+      // 결제 완료 주문에만 환불 요청 텍스트링크. 주문 응답에 refund_request 가 실려 오면 버튼 대신 상태 배지
+      var rf='';
+      if(o.status==='paid'&&o.id) rf = (o.refund_request&&o.refund_request.status) ? rfBadge(o.refund_request.status)
+        : ', <button type="button" class="tlink rfgo" data-id="'+esc(o.id)+'">환불 요청</button>';
+      return '<li data-oid="'+esc(o.id||'')+'"><div class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
         +'<span class="t">'+esc(o.items.map(function(i){return i.title+(i.qty>1?' x'+i.qty:'')}).join(', '))+', '+HH.won(o.amount)+'</span>'
         +'<span class="s'+(o.status==='paid'?'':' red')+'">'+(ST[o.status]||o.status)
-        +(o.receipt_url?', <a class="tlink" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+'</span></div></li>';
+        +(o.receipt_url?', <a class="tlink" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+rf+'</span></div></li>';
     }).join('');
+    // 주문 응답에 요청 상태가 없으면 주문별로 최신 요청을 물어 배지로 바꾼다. 실패하면 버튼을 그대로 둔다 (모달에서 다시 확인)
+    od.orders.filter(function(o){ return o.status==='paid'&&o.id&&!o.refund_request; }).forEach(function(o){
+      HH.api('/api/orders/'+encodeURIComponent(o.id)+'/refund-request').then(function(r){
+        if(r&&r.id&&r.status) rowBadge(o.id, r.status);
+      }).catch(function(){});
+    });
   }catch(e){}
+  function rowBadge(oid, status){
+    var li=ol.querySelector('li[data-oid="'+String(oid).replace(/"/g,'')+'"]'); if(!li) return;
+    var b=li.querySelector('.rfgo');
+    if(b){ var sp=document.createElement('span'); sp.innerHTML=rfBadge(status); b.replaceWith(sp.firstElementChild); }
+    else { var old=li.querySelector('.rfst'); if(old){ old.textContent=RFST[status]||('환불 요청 '+status); } }
+  }
+
+  // ── 환불 요청 모달 (dialog). 상태 4종 = 확인 중 / 요청 가능(표+사유) / 이미 접수됨(existing_request) / 확인 실패(폴백 문구) ──
+  (function(){
+    var dlg=document.getElementById('rfDlg'), body=document.getElementById('rfBody'), form=document.getElementById('rfForm');
+    var reason=document.getElementById('rfReason'), cnt=document.getElementById('rfCnt'), send=document.getElementById('rfSend');
+    var msg=document.getElementById('rfMsg'), closeBtn=document.getElementById('rfClose');
+    var cur=null, opener=null;
+    var FALLBACK='환불 가능 여부를 지금 확인할 수 없습니다. 주문번호와 사유를 admin@hyunhak.com 으로 보내 주시면 같은 규정으로 처리합니다. 청약철회 효력은 보내신 때에 생깁니다.';
+    function setMsg(t,err){ msg.textContent=t||''; msg.classList.toggle('err',!!err); }
+    function d10(v){ return v?esc(String(v).slice(0,10)):''; }
+    function openedText(it){
+      var t=String(it.type||'');
+      if(/file/.test(t)) return it.opened?'발급됨':'미발급';
+      if(/lecture/.test(t)) return it.opened?'재생함':'미재생';
+      if(/studio|pass|trial/.test(t)) return it.opened?'응시 시작':'미응시';
+      return it.opened?'열람 시작':'미열람';
+    }
+    function limitText(it){
+      if(it.eligible) return '청약철회 가능';
+      if(it.reason) return esc(it.reason);
+      return it.opened?'제공 개시':'기한 경과';
+    }
+    function stateBox(html){ body.innerHTML='<div class="state">'+html+'</div>'; form.hidden=true; send.hidden=true; }
+    function sumUp(){
+      var s=0; body.querySelectorAll('.ck:checked').forEach(function(c){ s+=HH.intIn(c.dataset.amt,0,100000000,0); });
+      var el=document.getElementById('rfSum'); if(el) el.textContent=HH.won(s);
+      return s;
+    }
+    function render(e){
+      if(e.existing_request&&e.existing_request.id){
+        var ex=e.existing_request;
+        stateBox('<span class="badge line">'+esc(RFST[ex.status]||ex.status||'')+'</span>'
+          +'이 주문에는 이미 보낸 청약철회 요청이 있습니다. 요청일 '+d10(ex.requested_at)+'. 처리 결과는 결제 수단으로 확인하실 수 있고, 문의는 admin@hyunhak.com 으로 보내 주세요.');
+        rowBadge(cur.id, ex.status||'pending');
+        return;
+      }
+      var items=Array.isArray(e.items)?e.items:[];
+      var anyOk=items.some(function(it){return it.eligible;});
+      var rows=items.map(function(it){
+        var amt=HH.intIn(it.unit_price,0,100000000,0)*HH.intIn(it.qty,1,99,1);
+        return '<tr'+(it.eligible?'':' class="no"')+'><td class="c">'+(it.eligible?'<input type="checkbox" class="ck" checked data-id="'+esc(it.id)+'" data-amt="'+amt+'" aria-label="'+esc(it.title)+' 선택">':'')+'</td>'
+          +'<td>'+esc(it.title)+(HH.intIn(it.qty,1,99,1)>1?' x'+HH.intIn(it.qty,1,99,1):'')+'</td>'
+          +'<td class="c">'+openedText(it)+(it.opened&&it.opened_at?' '+d10(it.opened_at):'')+'</td>'
+          +'<td class="c'+(it.eligible?'':' no')+'">'+limitText(it)+'</td>'
+          +'<td class="num">'+HH.won(amt)+'</td></tr>';
+      }).join('');
+      body.innerHTML='<div class="tw"><table class="tbl"><thead><tr><th class="c"></th><th>상품</th><th>열람 여부</th><th>제한 사유</th><th class="num">금액</th></tr></thead><tbody>'
+        +(rows||'<tr><td colspan="5">주문에 담긴 상품이 없습니다</td></tr>')+'</tbody></table></div>'
+        +'<p class="sum"><span>선택한 상품의 환불 금액</span><b id="rfSum"></b></p>'
+        +(e.window_until?'<p class="lim">청약철회 가능 기한 '+d10(e.window_until)+' 까지 (공급받은 날부터 '+HH.intIn(e.policy&&e.policy.deadline_days,1,60,7)+'일)</p>':'')
+        +(anyOk?'':'<div class="state">이 주문에는 지금 청약철회할 수 있는 상품이 없습니다. 제공이 개시되었거나 기한이 지난 상품은 단순 변심으로 환불되지 않습니다. 표시 내용과 실제가 다른 경우에는 admin@hyunhak.com 으로 보내 주세요.</div>');
+      body.querySelectorAll('.ck').forEach(function(c){ c.addEventListener('change', sumUp); });
+      sumUp();
+      form.hidden=!anyOk; send.hidden=!anyOk;
+    }
+    async function open(id, btn){
+      opener=btn; cur={id:id};
+      body.innerHTML='<p class="msg">환불 가능 여부를 확인하는 중</p>'; form.hidden=true; send.hidden=true; send.disabled=false;
+      reason.value=''; cnt.textContent='0'; setMsg('');
+      if(!dlg.showModal){ alert('이 브라우저에서는 환불 요청 창을 열 수 없습니다. admin@hyunhak.com 으로 주문번호와 사유를 보내 주세요.'); return; }
+      dlg.showModal(); closeBtn.focus();
+      try{ var e=await HH.api('/api/orders/'+encodeURIComponent(id)+'/refund-eligibility'); cur.elig=e; render(e); }
+      catch(err){ stateBox(esc(FALLBACK)); }
+    }
+    function close(){ if(dlg.open) dlg.close(); }
+    dlg.addEventListener('close', function(){ if(opener&&document.body.contains(opener)) opener.focus(); opener=null; });
+    dlg.addEventListener('click', function(ev){ if(ev.target===dlg) close(); });   // 바깥(backdrop) 클릭 = 닫기
+    // 포커스 트랩: Tab 이 모달 밖으로 나가지 않는다 (showModal 의 inert 에 더해 Tab 순환을 명시). ESC 는 dialog 기본 cancel
+    dlg.addEventListener('keydown', function(ev){
+      if(ev.key!=='Tab') return;
+      var f=Array.prototype.filter.call(dlg.querySelectorAll('button,[href],input,select,textarea,[tabindex]:not([tabindex="-1"])'), function(el){ return !el.disabled&&!el.hidden&&el.offsetParent!==null; });
+      if(!f.length) return;
+      var first=f[0], last=f[f.length-1];
+      if(ev.shiftKey&&document.activeElement===first){ ev.preventDefault(); last.focus(); }
+      else if(!ev.shiftKey&&document.activeElement===last){ ev.preventDefault(); first.focus(); }
+    });
+    closeBtn.addEventListener('click', close);
+    reason.addEventListener('input', function(){ cnt.textContent=String(reason.value.length); });
+    send.addEventListener('click', async function(){
+      if(!cur) return;
+      var ids=Array.prototype.map.call(body.querySelectorAll('.ck:checked'), function(c){ return c.dataset.id; });
+      var txt=reason.value.trim();
+      if(!ids.length) return setMsg('환불할 상품을 하나 이상 골라 주세요.', true);
+      if(!txt) return setMsg('환불 사유를 적어 주세요.', true);
+      if(txt.length>500) return setMsg('사유는 500자 이내로 적어 주세요.', true);
+      send.disabled=true; setMsg('보내는 중');
+      try{
+        var r=await HH.api('/api/orders/'+encodeURIComponent(cur.id)+'/refund-request',{method:'POST',body:JSON.stringify({reason:txt,item_ids:ids})});
+        var st=(r&&r.status)||'pending';
+        rowBadge(cur.id, st);
+        stateBox('<span class="badge line">'+esc(RFST[st]||st)+'</span>청약철회 요청을 접수했습니다. 효력은 지금 생겼고, 환불 대금 '+HH.won(r&&r.refundable_amount!=null?r.refundable_amount:sumUp())+'은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드립니다.'+(r&&r.id?' 접수번호 '+esc(r.id)+'.':''));
+        setMsg(''); closeBtn.focus();
+      }catch(err){
+        if(err.status===409){ setMsg('이미 보낸 청약철회 요청이 있습니다. 상태를 다시 불러옵니다.', true);
+          try{ var e2=await HH.api('/api/orders/'+encodeURIComponent(cur.id)+'/refund-eligibility'); render(e2); }catch(e3){} }
+        else if(err.status===400) setMsg((err.message||'입력 내용을 확인해 주세요')+'.', true);
+        else setMsg('지금은 접수할 수 없습니다. 주문번호와 사유를 admin@hyunhak.com 으로 보내 주세요.', true);
+        send.disabled=false;
+      }
+    });
+    ol.addEventListener('click', function(ev){
+      var b=ev.target.closest('.rfgo'); if(!b) return;
+      ev.preventDefault(); open(b.dataset.id, b);
+    });
+  })();
 
   // 수신 설정. 방침과 약관이 "마이페이지에서 언제든 해지" 를 약속하므로 실제 수단이 있어야 한다
   var mkt = document.getElementById('mktOpt'), mktMsg = document.getElementById('mktMsg');
