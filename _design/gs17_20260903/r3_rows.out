@@ -1,0 +1,36 @@
+[1440] H=16984
+  top      top=   57 h=  721 pct=0.3 pad=0px/0px
+  section  top=  778 h=  145 pct=4.6 pad=0px/0px
+  problem  top=  923 h=  862 pct=5.4 pad=128px/128px
+  who      top= 1786 h=  546 pct=10.5 pad=128px/128px
+  trust    top= 2332 h=  759 pct=13.7 pad=128px/128px
+  parts    top= 3091 h= 1186 pct=18.2 pad=128px/128px
+  p1       top= 4277 h= 1179 pct=25.2 pad=96px/96px
+  p2       top= 5456 h= 1575 pct=32.1 pad=96px/96px
+  p3       top= 7032 h= 1577 pct=41.4 pad=96px/96px
+  p4       top= 8608 h= 2294 pct=50.7 pad=96px/96px
+  p5       top=10903 h= 1590 pct=64.2 pad=72px/72px
+  books    top=12492 h= 1292 pct=73.6 pad=72px/72px
+  diff     top=13784 h=  730 pct=81.2 pad=72px/72px
+  format   top=14514 h=  973 pct=85.5 pad=72px/72px
+  faq      top=15487 h=  583 pct=91.2 pad=72px/72px
+  close    top=16070 h=  586 pct=94.6 pad=72px/72px
+  footer   top=16656 h=  328 pct=98.1 pad=40px/40px
+[390] H=25002
+  top      top=   57 h=  913 pct=0.2 pad=0px/0px
+  section  top=  970 h=  279 pct=3.9 pad=0px/0px
+  problem  top= 1249 h= 1203 pct=5 pad=96px/96px
+  who      top= 2452 h=  873 pct=9.8 pad=128px/128px
+  trust    top= 3326 h= 1245 pct=13.3 pad=128px/128px
+  parts    top= 4571 h= 1899 pct=18.3 pad=96px/96px
+  p1       top= 6469 h= 1712 pct=25.9 pad=96px/96px
+  p2       top= 8181 h= 1988 pct=32.7 pad=96px/96px
+  p3       top=10169 h= 2148 pct=40.7 pad=96px/96px
+  p4       top=12317 h= 3120 pct=49.3 pad=96px/96px
+  p5       top=15437 h= 2202 pct=61.7 pad=72px/72px
+  books    top=17640 h= 2955 pct=70.6 pad=72px/72px
+  diff     top=20595 h= 1032 pct=82.4 pad=72px/72px
+  format   top=21627 h= 1595 pct=86.5 pad=72px/72px
+  faq      top=23222 h=  566 pct=92.9 pad=72px/72px
+  close    top=23788 h=  769 pct=95.1 pad=72px/72px
+  footer   top=24557 h=  444 pct=98.2 pad=40px/40px

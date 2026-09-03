@@ -1,0 +1,139 @@
+[zl 1440] shots=5 그림 상자와 겹치는 라벨=5
+[zl 390] shots=5 그림 상자와 겹치는 라벨=5
+{
+ "label": "before",
+ "out": {
+  "390": {
+   "n": 5,
+   "overlapping": 5,
+   "rows": [
+    {
+     "sel": "p1-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 7143,
+     "imgBottom": 7175,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p2-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 9426,
+     "imgBottom": 9458,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p3-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 11670,
+     "imgBottom": 11702,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p4-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 13149,
+     "imgBottom": 13181,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p5-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 16723,
+     "imgBottom": 16755,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    }
+   ]
+  },
+  "1440": {
+   "n": 5,
+   "overlapping": 5,
+   "rows": [
+    {
+     "sel": "p1-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 4809,
+     "imgBottom": 4841,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p2-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 6495,
+     "imgBottom": 6527,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p3-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 7973,
+     "imgBottom": 8005,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p4-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 9137,
+     "imgBottom": 9169,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    },
+    {
+     "sel": "p5-shot",
+     "zl": [
+      81,
+      25
+     ],
+     "zlTop": 11303,
+     "imgBottom": 11335,
+     "overlapPx": 2017,
+     "inside": true,
+     "zlVisible": true
+    }
+   ]
+  }
+ }
+}

@@ -1,0 +1,3 @@
+[run_gate] port 8931 busy -> 8933
+[run_gate] server pid 83566 port 8933
+[run_gate] server 83566 stopped, port 8933 free (gate rc=0)

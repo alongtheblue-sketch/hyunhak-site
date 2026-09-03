@@ -1,0 +1,5 @@
+[G4 1440] H=16984 books off=12492 rect=12492 pct=73.6/73.6 match=true | p4 off=8608 rect=8608 pct=50.7/50.7 match=true
+[G4 390] H=25002 books off=17640 rect=17640 pct=70.6/70.6 match=true | p4 off=12317 rect=12317 pct=49.3/49.3 match=true
+[order 1440] top > (no id) > problem > who > trust > parts > p1 > p2 > p3 > p4 > p5 > books > diff > format > faq > close
+[bg 1440] problem:rgb(49, 46, 46) | who:rgba(0, 0, 0, 0) | trust:rgb(235, 228, 212) | parts:rgba(0, 0, 0, 0) | p1:rgba(0, 0, 0, 0) | p2:rgba(0, 0, 0, 0) | p3:rgba(0, 0, 0, 0) | p4:rgb(251, 247, 238) | p5:rgba(0, 0, 0, 0) | books:rgb(235, 228, 212) | diff:rgba(0, 0, 0, 0) | format:rgb(235, 228, 212) | faq:rgba(0, 0, 0, 0) | close:rgb(49, 46, 46)
+[bg 1440] consecutive-same=3 parts=p1 rgba(0, 0, 0, 0); p1=p2 rgba(0, 0, 0, 0); p2=p3 rgba(0, 0, 0, 0)

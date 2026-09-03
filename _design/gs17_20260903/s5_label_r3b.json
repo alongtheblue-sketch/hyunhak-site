@@ -1,0 +1,139 @@
+[zl 1440] shots=5 그림 상자와 겹치는 라벨=0
+[zl 390] shots=5 그림 상자와 겹치는 라벨=0
+{
+ "label": "r3b",
+ "out": {
+  "390": {
+   "n": 5,
+   "overlapping": 0,
+   "rows": [
+    {
+     "sel": "p1-shot",
+     "zl": [
+      350,
+      19
+     ],
+     "zlTop": 7184,
+     "imgBottom": 7175,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p2-shot",
+     "zl": [
+      350,
+      19
+     ],
+     "zlTop": 9495,
+     "imgBottom": 9486,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p3-shot",
+     "zl": [
+      350,
+      19
+     ],
+     "zlTop": 11765,
+     "imgBottom": 11756,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p4-shot",
+     "zl": [
+      350,
+      19
+     ],
+     "zlTop": 13271,
+     "imgBottom": 13262,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p5-shot",
+     "zl": [
+      350,
+      19
+     ],
+     "zlTop": 16873,
+     "imgBottom": 16864,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    }
+   ]
+  },
+  "1440": {
+   "n": 5,
+   "overlapping": 0,
+   "rows": [
+    {
+     "sel": "p1-shot",
+     "zl": [
+      397,
+      19
+     ],
+     "zlTop": 4850,
+     "imgBottom": 4841,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p2-shot",
+     "zl": [
+      476,
+      19
+     ],
+     "zlTop": 6536,
+     "imgBottom": 6527,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p3-shot",
+     "zl": [
+      476,
+      19
+     ],
+     "zlTop": 8014,
+     "imgBottom": 8005,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p4-shot",
+     "zl": [
+      555,
+      19
+     ],
+     "zlTop": 9178,
+     "imgBottom": 9169,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    },
+    {
+     "sel": "p5-shot",
+     "zl": [
+      397,
+      19
+     ],
+     "zlTop": 11344,
+     "imgBottom": 11335,
+     "overlapPx": 0,
+     "inside": false,
+     "zlVisible": true
+    }
+   ]
+  }
+ }
+}

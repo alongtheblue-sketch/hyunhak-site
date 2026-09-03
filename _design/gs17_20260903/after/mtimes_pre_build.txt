@@ -1,0 +1,8 @@
+1788431601 80009 programs/studio.html
+1788431601 72175 programs/guidebook.html
+1788427850 103304 assets/photo/std/std_og.jpg
+1788427850 95476 assets/photo/gbd/gbd_og.jpg
+      38
+1788427849 99180 assets/covers/ajou.jpg
+1788427849 92278 assets/covers/catholic.jpg
+1788427849 90421 assets/covers/cau.jpg

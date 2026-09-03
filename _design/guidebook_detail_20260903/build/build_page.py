@@ -7,7 +7,7 @@
 규범  hyunhak-site/assets/base.css v3 토큰. 표제 Pretendard 800, 본문 16px, 계기값 JetBrains Mono, 세리프는 인용만.
       朱印은 가격과 표식 점에만. 1차 CTA 한 종류(지원 대학 가이드북 고르기).
 """
-import base64, io, json, pathlib, sys, datetime
+import base64, io, json, pathlib, sys, datetime, re
 from PIL import Image
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -167,6 +167,21 @@ def sample_block(key):
     </div>'''
 
 
+
+# GS-17 A2: 사업자 문단은 빌드 시 index.html 의 <div class="biz"> 블록을 그대로 승계한다(세 면 drift 방지). 못 읽으면 빌드 중단(fail closed).
+BIZ_RE = re.compile(r'<div class="biz">(?:(?!<div\b).)*?</div>', re.S)
+
+
+def biz_block():
+    src = (SITE_ROOT / 'index.html').read_text(encoding='utf-8')
+    m = BIZ_RE.search(src)
+    if not m or '사업자등록번호' not in m.group(0) or '통신판매업' not in m.group(0):
+        raise SystemExit('GS-17 A2: index.html 에서 <div class="biz"> 블록을 읽지 못함. 빌드 중단')
+    blk = m.group(0)
+    for p in ('terms.html', 'privacy.html'):
+        blk = blk.replace(f'href="{p}"', f'href="../{p}"' if MODE == 'site' else f'href="{SITE}/{p}"')
+    return blk
+
 CSS = r"""
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
@@ -201,12 +216,15 @@ h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
 p{max-width:var(--measure);color:var(--body)}
 .ink p{color:var(--paper-2)}
 .mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
+.c,.facts b .c{display:inline-block;width:.34em;margin:0;font:inherit;color:inherit;text-align:center;text-indent:-.095em}  /* GS-17 G3 잉크 수리: 0.6em 글리프가 .34em 상자를 넘치면 Chrome 은 start 정렬이라 center 무효(refute 2건, 34px 간격 8.0/1.25px). text-indent -.095em 로 잉크를 상자 왼쪽으로 옮겨 앞뒤 간격을 숫자 간격(4.5px)과 맞춘다. JetBrains Mono 쉼표는 숫자와 같은 0.6em 고정폭. 상자를 .34em(숫자폭의 0.57)으로 좁힌다. 숫자는 Mono 유지(건우 09-02). .facts span{display:block;font-size:13px} 이 span.c 를 잡아 줄을 끊으므로 .facts b .c 로 이겨 font/color/margin 을 부모값으로 되돌린다 */
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
 .kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
 .ink .kicker{color:var(--paper-2);opacity:.8}
 .h2{font-size:var(--t-h1);max-width:22em}
 .lede{font-size:var(--t-h4);line-height:1.6;max-width:30em}
 .sec{padding-block:var(--s9)}
+/* 절정(4부) 뒤 절 5개(p5 diff format faq close)만 여백을 한 단계 내린다. 마크업의 late 클래스로 지정 */
+.sec.late,.part.late{padding-block:var(--s7)}
 .ink{background:var(--ink);color:var(--paper)}
 .mat{background:var(--mat)}
 .btn{display:inline-flex;align-items:center;gap:var(--s3);min-height:var(--tap);padding:0 var(--s4);background:var(--ink);color:var(--paper);
@@ -217,6 +235,7 @@ p{max-width:var(--measure);color:var(--body)}
 .ink .btn:hover{background:var(--card)}
 .tl{display:inline-flex;align-items:center;min-height:var(--tap);gap:var(--s2);border-bottom:1px solid var(--hair);color:var(--ink);font-weight:500}
 .ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
+.tolist{margin-top:var(--s4)}
 .blk h3,.two h3{font-size:var(--t-sm);font-family:var(--mono);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
 .blk ul li{position:relative;padding-left:var(--s3);margin-bottom:var(--s2);line-height:1.6;color:var(--body)}
 .blk ul li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:var(--ink)}
@@ -245,6 +264,14 @@ p{max-width:var(--measure);color:var(--body)}
 .fan.f2{transform:translateX(-50%)}
 .fan.f3{transform:translateX(-50%) rotate(7deg) translateX(50%)}
 .fan.f4{transform:translateX(-50%) rotate(14deg) translateX(100%)}
+/* GS-17 G2: 901~1100px 은 .fan 폭이 clamp 하한 136px 에 걸리고 stage 열이 좁아 f4 우측이 뷰포트를 넘는다(1024 에서 right 1037, 901 에서 +42.5).
+   바깥 두 장 ∓70%/±10deg, 안쪽 두 장 ∓35%/±5deg 로 펼침만 0.7 배(좌우 대칭 유지). 실측 901~1100 전 폭 f4.right ≤ W-7.8. ≤900 규칙과 1440 배치는 그대로 */
+@media (min-width:901px) and (max-width:1100px){
+  .fan.f0{transform:translateX(-50%) rotate(-10deg) translateX(-70%)}
+  .fan.f1{transform:translateX(-50%) rotate(-5deg) translateX(-35%)}
+  .fan.f3{transform:translateX(-50%) rotate(5deg) translateX(35%)}
+  .fan.f4{transform:translateX(-50%) rotate(10deg) translateX(70%)}
+}
 
 /* 계기 띠 */
 .facts{border-bottom:var(--rule);background:var(--card)}
@@ -364,7 +391,9 @@ p{max-width:var(--measure);color:var(--body)}
 .price h4{font-size:var(--t-h4)}
 .price .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h2);color:var(--seal);line-height:1.1;margin-top:var(--s2);white-space:nowrap}
 .price .won small{font-size:var(--t-sm);color:var(--gray);margin-left:4px;font-family:var(--sans)}
-.price .won.two{font-size:var(--t-h4);margin-top:var(--s1)}
+.price .won.two{font-size:var(--t-h2);margin-top:var(--s2)}
+.price .calc{font-size:var(--t-base);line-height:1.6;color:var(--ink);max-width:none;margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
+.price .calc+.calc{margin-top:var(--s1);padding-top:0;border-top:0}
 .price ul{margin-top:var(--s2)}
 .price .pricefoot{font-size:var(--t-cap);color:var(--gray);line-height:1.6;margin-top:var(--s2);padding-top:var(--s2);border-top:var(--rule)}
 .price ul li{font-size:var(--t-md);color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
@@ -376,11 +405,11 @@ p{max-width:var(--measure);color:var(--body)}
 .flow p{font-size:var(--t-sm)}
 
 /* 31권 */
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:var(--s4) var(--s3);margin-top:var(--s6)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:var(--s3);margin-top:var(--s4)}
 .bk img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14);transition:transform .3s var(--ease)}
 .bk:hover img{transform:translateY(-4px)}
-.bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4}
-.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:2px}
+.bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4;word-break:keep-all;height:2.8em}  /* 캡션 행 높이 고정: 대학명 2행분 */
+.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:2px;word-break:keep-all;line-height:1.6;height:1.6em}  /* 면수 질문수 1행분 */
 
 /* FAQ */
 .faq{margin-top:var(--s5);border-top:var(--rule-strong)}
@@ -398,10 +427,15 @@ p{max-width:var(--measure);color:var(--body)}
 .close img,.close .ph{width:100%;border-radius:var(--r-md)}
 
 /* 푸터 */
-.ft{padding-block:var(--s6);border-top:var(--rule);font-size:var(--t-sm);color:var(--gray)}
+.ft{padding-block:var(--s5);border-top:var(--rule);font-size:var(--t-sm);color:var(--gray)}
 .ft .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5)}
 .ft b{color:var(--ink);font-weight:700;display:block;margin-bottom:var(--s2)}
 .ft p{font-size:var(--t-sm);line-height:1.7;max-width:none}
+/* GS-17 A2: index.html 푸터 사업자 블록(address.bizinfo + nav) 승계 */
+.ft .biz{margin-top:var(--s2)}
+.ft .bizinfo{font-style:normal;font-size:var(--t-cap);line-height:1.6;max-width:none;word-break:keep-all}
+.ft .biz nav{margin-top:0;font-size:var(--t-cap);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}  /* GS-17 A2 회귀 수리: index.html(base.css:305) 과 같은 flex 행 */
+.ft .biz nav a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:underline;text-underline-offset:3px}  /* 탭 표적 44px(faq A1 과 같은 기준). 종전 41x14, 81x14 */
 
 @media (prefers-reduced-motion:no-preference){
   .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
@@ -482,6 +516,10 @@ HTML = r"""<!DOCTYPE html>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="icon" href="{{FAVICON}}">
 <style>{{CSS}}</style>
+<noscript><style>.rv{opacity:1;transform:none}</style></noscript><!-- critic r3b P1: .rv 는 @media(prefers-reduced-motion:no-preference) 안에서 opacity 0 으로 시작하고
+     .in 부여는 본문 끝 인라인 스크립트뿐이다. 스크립트를 막으면 히어로 아래가 통째로 빈다
+     (가이드북 실측 = #books 32/32, #format 2/2, #close 2/2 비가시 = 카탈로그와 가격과 CTA 소실).
+     IntersectionObserver 미지원 폴백은 이미 있으므로 남은 구멍은 스크립트 차단 하나뿐이라 noscript 로 막는다. -->
 </head>
 <body>
 
@@ -519,8 +557,8 @@ HTML = r"""<!DOCTYPE html>
   <div class="wrap">
     <ul>
       <li><b>31<small>개 대학</small></b><span>2027 대비판 판매 중</span></li>
-      <li><b>1,178<small>면</small></b><span>31권 본문 합계</span></li>
-      <li><b>3,065<small>건</small></b><span>수록된 실제 질문</span></li>
+      <li><b>1<span class="c">,</span>178<small>면</small></b><span>31권 본문 합계</span></li>
+      <li><b>3<span class="c">,</span>065<small>건</small></b><span>수록된 실제 질문</span></li>
       <li><b>5<small>부</small></b><span>읽는 순서 그대로 준비 순서</span></li>
       <li><b>2017<small>~26</small></b><span>선배 후기 관측 기간</span></li>
       <li><b>2027<small>요강</small></b><span>공식 모집요강 대조</span></li>
@@ -569,6 +607,7 @@ HTML = r"""<!DOCTYPE html>
       <p class="kicker">만든 사람과 기준</p>
       <h2 class="h2">한 사람, 같은 기준, 31권</h2>
       <p class="lede" style="margin-top:var(--s4)">13년차 입시 컨설턴트 한 사람이 31권 전권을 같은 기준으로 편집합니다. 고려대학교 영어교육과 졸업.</p>
+      <p class="tolist"><a class="tl" href="#books">31개 대학 목록 보기</a></p>
     </div>
     <ul class="pr rv">
       <li><span class="mono">원칙 1</span><h4>지어낸 질문 없음</h4><p>모든 질문은 선배 후기에서 회수한 실제 질문. 질문 끝에 모집단위와 연도를 적습니다.</p></li>
@@ -730,7 +769,7 @@ HTML = r"""<!DOCTYPE html>
 </section>
 
 <!-- 5부 -->
-<section class="part" id="p5">
+<section class="part late" id="p5">
   <div class="wrap">
     <div class="head rv">
       <div class="num">05</div>
@@ -761,8 +800,22 @@ HTML = r"""<!DOCTYPE html>
   </div>
 </section>
 
+<!-- 31권 -->
+<section class="sec mat late" id="books">
+  <div class="wrap">
+    <div class="rv">
+      <p class="kicker">현재 판매 목록, 가나다 순</p>
+      <h2 class="h2">지원 대학부터 고르기</h2>
+      <p class="lede" style="margin-top:var(--s4)">31개 대학 31권. 표지를 누르면 그 대학의 지면 미리보기와 형태 판정표가 있는 상세 면으로 갑니다.</p>
+    </div>
+    <div class="grid">
+      {{GRID}}
+    </div>
+  </div>
+</section>
+
 <!-- 하강, 순서의 차이 -->
-<section class="sec mat" id="diff">
+<section class="sec late" id="diff">
   <div class="wrap">
     <div class="rv">
       <p class="kicker">준비 순서의 차이</p>
@@ -783,7 +836,7 @@ HTML = r"""<!DOCTYPE html>
 </section>
 
 <!-- 형태와 가격 -->
-<section class="sec" id="format">
+<section class="sec mat late" id="format">
   <div class="wrap">
     <div class="split one">
       <div class="txt rv">
@@ -798,32 +851,21 @@ HTML = r"""<!DOCTYPE html>
       </div>
     </div>
     <ul class="price rv">
-      <li><h4>보안 리더 열람판</h4><div class="won">33,000<small>원, 권당</small></div>
+      <li><h4>보안 리더 열람판</h4><div class="won">33<span class="c">,</span>000<small>원, 권당</small></div>
         <ul><li>열람 기간 구매일부터 1개월</li><li>인쇄 권당 3회, 원본 파일 비제공</li><li>열지 않은 권은 7일 이내 청약철회</li></ul></li>
-      <li><h4>PDF 소장판</h4><div class="won">110,000<small>원, 권당</small></div>
+      <li><h4>PDF 소장판</h4><div class="won">110<span class="c">,</span>000<small>원, 권당</small></div>
         <ul><li>워터마크 파일 발급, 구매 계정 각인</li><li>파일 내려받기와 열람</li></ul></li>
-      <li><h4>31개 대학 전권</h4><div class="won two">511,500<small>원, 열람</small></div><div class="won two">1,705,000<small>원, PDF</small></div>
-        <ul><li>권당 33,000원 × 31권 = 1,023,000원의 절반</li><li>PDF는 110,000원 × 31권 = 3,410,000원의 절반</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul><p class="pricefoot">합산 금액은 따로 파는 상품이 아닙니다.</p></li>
+      <li><h4>31개 대학 전권</h4><div class="won two">511<span class="c">,</span>500<small>원, 열람</small></div><div class="won two">1<span class="c">,</span>705<span class="c">,</span>000<small>원, PDF</small></div>
+        <p class="calc">권당 33,000원 × 31권 = 1,023,000원의 절반</p>
+        <p class="calc">PDF는 110,000원 × 31권 = 3,410,000원의 절반</p>
+        <ul><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul><p class="pricefoot">합산 금액은 따로 파는 상품이 아닙니다.</p></li>
     </ul>
   </div>
 </section>
 
-<!-- 31권 -->
-<section class="sec mat" id="books">
-  <div class="wrap">
-    <div class="rv">
-      <p class="kicker">현재 판매 목록, 가나다 순</p>
-      <h2 class="h2">지원 대학부터 고르기</h2>
-      <p class="lede" style="margin-top:var(--s4)">31개 대학 31권. 표지를 누르면 그 대학의 지면 미리보기와 형태 판정표가 있는 상세 면으로 갑니다.</p>
-    </div>
-    <div class="grid">
-      {{GRID}}
-    </div>
-  </div>
-</section>
 
 <!-- FAQ -->
-<section class="sec" id="faq">
+<section class="sec late" id="faq">
   <div class="wrap">
     <div class="rv">
       <p class="kicker">자주 묻는 질문</p>
@@ -840,14 +882,14 @@ HTML = r"""<!DOCTYPE html>
 </section>
 
 <!-- 결말 -->
-<section class="sec ink close" id="close">
+<section class="sec ink close late" id="close">
   <div class="wrap">
     <div class="rv">
       <p class="kicker">2027 대비판</p>
       <h2>면접에서 나올 질문, 오늘 내 생기부에서</h2>
       <p class="lede" style="margin-top:var(--s4)">지원 대학을 고르면 그 대학의 다섯 부가 열립니다. 형태 판정에서 시작해 내 예상 질문지로 끝나는 순서 그대로.</p>
       <div class="cta" style="margin-top:var(--s5)"><a class="btn" href="{{GB}}">지원 대학 가이드북 고르기 <span class="arr">→</span></a></div>
-      <p class="won">권당 33,000원, 보안 리더 열람 1개월</p>
+      <p class="won">권당 33<span class="c">,</span>000원, 보안 리더 열람 1개월</p>
     </div>
     <div class="vis rv">{{IMG_CLOSE}}</div>
   </div>
@@ -859,7 +901,7 @@ HTML = r"""<!DOCTYPE html>
     <div><b>현학적 연구소 <span style="font-family:var(--serif);font-weight:500;color:var(--gray)">玄學的 硏究所</span></b>
       <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.<br>www.hyunhak.com &nbsp; admin@hyunhak.com</p></div>
     <div><b>사업자 정보</b>
-      <p>상호 현학적 연구소 / 대표 현건우 / 사업자등록번호 293-38-01827 / 통신판매업 신고 면제대상<br>서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동, H 타워) / 전화 070-8098-0671</p>
+      {{BIZ}}
       <p style="margin-top:var(--s3)">표지와 들어가는 면은 판매본 지면의 실제 렌더. 발행 {{DATE}}.</p></div>
   </div>
 </footer>
@@ -902,6 +944,8 @@ def main():
         out = SITE_ROOT / 'programs' / 'guidebook.html'
     else:
         out = OUT / OUTNAME
+    html = html.replace('{{BIZ}}', biz_block())
+    assert '{{BIZ}}' not in html
     out.write_text(html, encoding='utf-8')
     print(out, f"{out.stat().st_size/1e6:.2f} MB", 'MODE', MODE, 'IMG', IMG)
 

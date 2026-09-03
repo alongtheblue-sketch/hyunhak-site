@@ -1,0 +1,8 @@
+target = #books 의 직전 형제 = #p5 AND 직후 형제 = #diff AND booksPct < 80.9(HEAD 무회귀) AND 47.8 ≤ p4Pct ≤ 65 — 1440 과 390 양쪽
+[1440] as-is(r3)            기대=true 실측=true OK | books p5<#books<diff 73.6% p4 50.7%
+[1440] HEAD 재현(#faq 앞)      기대=false 실측=false OK | books format<#books<faq 83.6% p4 50.7% | 직전 형제 = format (기대 p5) ; 직후 형제 = faq (기대 diff) ; booksPct 83.6 ≥ HEAD 80.9
+[1440] r2 재현(#p4 앞)         기대=false 실측=false OK | books p3<#books<p4 50.7% p4 58.3% | 직전 형제 = p3 (기대 p5) ; 직후 형제 = p4 (기대 diff)
+[390] as-is(r3)            기대=true 실측=true OK | books p5<#books<diff 70.6% p4 49.3%
+[390] HEAD 재현(#faq 앞)      기대=false 실측=false OK | books format<#books<faq 81.1% p4 49.3% | 직전 형제 = format (기대 p5) ; 직후 형제 = faq (기대 diff) ; booksPct 81.1 ≥ HEAD 80.9
+[390] r2 재현(#p4 앞)         기대=false 실측=false OK | books p3<#books<p4 49.3% p4 61.1% | 직전 형제 = p3 (기대 p5) ; 직후 형제 = p4 (기대 diff)
+대조군 6/6 전건 기대대로

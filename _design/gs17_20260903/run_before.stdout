@@ -1,0 +1,814 @@
+{
+ "label": "before",
+ "base": "http://127.0.0.1:8933/",
+ "items": [
+  {
+   "id": "S1",
+   "metric": "studio 390: position sticky|fixed 요소 수 ; 3×innerHeight 스크롤 뒤 뷰포트 안 구매 링크(href checkout|cart|#units 또는 문구 응시|구매|신청) 존재",
+   "value": {
+    "fixedSticky": 0,
+    "buyLinkVisibleAfter3Screens": false
+   },
+   "target": "fixedSticky ≥ 1 AND buyLinkVisibleAfter3Screens = true",
+   "pass": false,
+   "detail": {
+    "fixedSticky": [],
+    "seenAfter3Screens": [],
+    "buyLinkTotal": 12,
+    "buyLinkDocY": [
+     "a.btn \"응시 단위 고르기 →\" y=519",
+     "a.tl \"응시 한 회의 순서 먼저 \" y=591",
+     "a \"5단계재응시와 순위지문마다\" y=6412",
+     "a.btn \"지문 고르기 →\" y=20187",
+     "a.btn \"응시 단위 고르기 →\" y=20548",
+     "a.tl \"이 단위 보기\" y=22378",
+     "a.tl \"이 단위 보기\" y=22784",
+     "a.tl \"이 단위 보기\" y=23172",
+     "a.tl \"이 단위 보기\" y=23578",
+     "a.tl \"이 단위 보기\" y=23984",
+     "a.btn \"응시 단위 고르기 →\" y=25276",
+     "a.tl \"회원 체험 응시 1회\" y=25277"
+    ],
+    "scrolledTo": 2532,
+    "innerHeight": 844,
+    "docHeight": 26226
+   }
+  },
+  {
+   "id": "S2",
+   "metric": "studio: h1~h6 문서 순서에서 hN 다음 h(N+2) 이상이 오는 도약 수",
+   "value": 6,
+   "target": "0",
+   "pass": false,
+   "detail": {
+    "jumps": [
+     "h2 \"혼자 하는 제시문 면접 연습이 멈추는 자리\" → h4 \"“네 편 요약은 다 했는데, 뭘 물었는지는 \"",
+     "h2 \"연세대와 고려대 제시문 면접을 앞둔 학생과 \" → h4 \"연세대 활동우수형과 국제형, 고려대 계열적합\"",
+     "h2 \"한 사람, 같은 기준, 150세트\" → h4 \"기출 규격 실측\"",
+     "h2 \"응시 한 회, 다섯 단계 그대로 준비 순서\" → h4 \"세트 고르기\"",
+     "h2 \"회원 체험 응시 1회, 그다음은 지문 하나로\" → h4 \"회원 가입과 체험 응시\"",
+     "h2 \"지원 단위부터 고르기\" → h4 \"연세대 활동우수 인문통합\""
+    ],
+    "headingCounts": {
+     "h1": 1,
+     "h2": 14,
+     "h4": 28,
+     "h3": 11
+    },
+    "hiddenHeadings": 0
+   }
+  },
+  {
+   "id": "S3",
+   "metric": "studio: table 수, caption 없는 table 수, scope 없는 th 수",
+   "value": {
+    "tables": 5,
+    "tablesNoCaption": 5,
+    "thTotal": 24,
+    "thNoScope": 24
+   },
+   "target": "tablesNoCaption = 0 AND thNoScope = 0",
+   "pass": false,
+   "detail": {
+    "tables": [
+     "table.setlist in section#p1.part",
+     "table in section#p2.part.rev",
+     "table in section#p2.part.rev",
+     "table.ladder in section#p5.part",
+     "table.cmp.rv.in in section#diff.sec.mat"
+    ],
+    "thNoScopeSample": [
+     "단위",
+     "연세대 활동우수 인문통 rowspan=3",
+     "연세대 활동우수 자연 rowspan=3",
+     "연세대 국제형 rowspan=3",
+     "고려대 계열적합 인문 rowspan=3",
+     "고려대 계열적합 자연 rowspan=3"
+    ]
+   }
+  },
+  {
+   "id": "S4",
+   "metric": "studio: --seal 토큰 색을 color|background|border 로 가진 요소 수, 역할별(price / kicker_dot(::before) / tag / cta / other / other_pseudo)",
+   "value": {
+    "price": 8,
+    "kicker_dot": 11,
+    "tag": 3,
+    "cta": 1,
+    "other": 22,
+    "other_pseudo": 6
+   },
+   "target": "미정 (규칙 에이전트가 정함)",
+   "pass": null,
+   "detail": {
+    "token": "#BC3529",
+    "sealRgb": "rgb(188, 53, 41)",
+    "byRole": {
+     "price": [
+      "div.won [color] \"33,000원, 지문 1편\"",
+      "div.won [color] \"495,000원, 단위 1곳, 인\"",
+      "div.won [color] \"220,000원, 인강만\"",
+      "span.won [color] \"495,000원, 전권. 인강 포\"",
+      "span.won [color] \"495,000원, 전권. 인강 포\"",
+      "span.won [color] \"495,000원, 전권. 인강 포\"",
+      "span.won [color] \"495,000원, 전권. 인강 포\"",
+      "span.won [color] \"495,000원, 전권. 인강 포\""
+     ],
+     "kicker_dot": [
+      "p.kicker::before \"연세대와 고려대 제시문 면접 스튜\"",
+      "p.kicker::before \"시작하기 전에\"",
+      "p.kicker::before \"이 스튜디오가 맞는 사람\"",
+      "p.kicker::before \"만든 사람과 기준\"",
+      "p.kicker::before \"이 스튜디오가 하는 일\"",
+      "p.kicker::before \"이 스튜디오의 본론\"",
+      "p.kicker::before \"준비 순서의 차이\"",
+      "p.kicker::before \"받는 방법과 가격\"",
+      "p.kicker::before \"응시 단위 다섯, 지문 150편\"",
+      "p.kicker::before \"자주 묻는 질문\"",
+      "p.kicker::before \"2027 대비\""
+     ],
+     "tag": [
+      "span.tag [color+border] \"질문 미응답\"",
+      "span.tag [color+border] \"근거 부족\"",
+      "span.tag [bg] \"권하는 구성\""
+     ],
+     "cta": [
+      "a.btn [bg] \"응시 단위 고르기 →\""
+     ],
+     "other": [
+      "span.mono [color] \"원칙 1\"",
+      "span.mono [color] \"원칙 2\"",
+      "span.mono [color] \"원칙 3\"",
+      "span.mono [color] \"원칙 4\"",
+      "div.quote.rv.in [border] \"“수험생이 제시문들의 논리를 읽어\"",
+      "li.rv.core.in [border] \"4단계, 본론전사, 채점, 첨삭 \"",
+      "span.n [color] \"4단계, 본론\"",
+      "div.num [color] \"04\"",
+      "span.stp [color] \"1단, 전사록 정리\"",
+      "span.stp [color] \"2단, 진단 5건 중 2건\"",
+      "p.fx [border] \"차별의 방식(제도적 법적 대 사회\"",
+      "p.fx [border] \"[나]의 우생학과 1924년 이민\"",
+      "span.stp [color] \"3단, 구술체 재구성 첫 단락\"",
+      "span.n [color] \"01\"",
+      "span.n [color] \"02\"",
+      "span.n [color] \"03\"",
+      "span.n [color] \"04\"",
+      "span.n [color] \"01\"",
+      "span.n [color] \"02\"",
+      "span.n [color] \"03\"",
+      "li.pick [border] \"권하는 구성응시 단위 전권495,\"",
+      "div.won.two [color] \"좌석 5개부터, 문의\""
+     ],
+     "other_pseudo": [
+      "td::before [bg] \"지원 단위의 규격 그대로 저작한 \"",
+      "td::before [bg] \"준비 8분 또는 21분, 답변 5\"",
+      "td::before [bg] \"전면 카메라 앞에서 소리 내어 답\"",
+      "td::before [bg] \"루브릭 대조와 밴드와 인용 근거와\"",
+      "td::before [bg] \"진단 여섯 유형과 내 답변 위에 \"",
+      "td::before [bg] \"같은 지문 5회 사다리, 순위로 \""
+     ]
+    }
+   }
+  },
+  {
+   "id": "S5",
+   "metric": "studio: #parts .rail>li>a 5장과 section.part>.wrap 5개의 자식 DOM 시그니처(태그.클래스, rv/in 제외) 동일 최대 반복 수",
+   "value": {
+    "cards": 5,
+    "parts": 4
+   },
+   "target": "cards ≤ 2 AND parts ≤ 2",
+   "pass": false,
+   "detail": {
+    "nCards": 5,
+    "nParts": 5,
+    "depth2Rep": {
+     "cards": 5,
+     "parts": 1
+    },
+    "cardSignaturesDepth1": [
+     "span.n,h4,p,span.pg,span.go",
+     "span.n,h4,p,span.pg,span.go",
+     "span.n,h4,p,span.pg,span.go",
+     "span.n,h4,p,span.pg,span.go",
+     "span.n,h4,p,span.pg,span.go"
+    ],
+    "partSignaturesDepth1": [
+     "div.head,div.body,div.sample",
+     "div.head,div.body,div.sample",
+     "div.head,div.body,div.sample",
+     "div.head,div.body,div.sample,ol.steps",
+     "div.head,div.body,div.sample"
+    ],
+    "partSignaturesDepth2": [
+     "div.head(div.num,div),div.body(div.vis,div.txt),div.sample(div.cap,table.setlist)",
+     "div.head(div.num,div),div.body(div.vis,div.txt),div.sample(div.cap,div.cols)",
+     "div.head(div.num,div),div.body(div.vis,div.txt),div.sample(div.cap,ul.tiles)",
+     "div.head(div.num,div),div.body(div.vis,div.txt),div.sample(div.cap,div.revs),ol.steps(li,li,li,li)",
+     "div.head(div.num,div),div.body(div.vis,div.txt),div.sample(div.cap,table.ladder)"
+    ]
+   }
+  },
+  {
+   "id": "S6",
+   "metric": "studio 1440: .hero 하위 요소 중 transform 에 rotate|skew|matrix3d|perspective 가 있는 요소 수",
+   "value": 3,
+   "target": "0",
+   "pass": false,
+   "detail": {
+    "at1440": [
+     "div.scr.s0 rotate/skew .scr.s0{transform:rotate(-1.5deg)}",
+     "div.scr.s1 rotate/skew .scr.s1{transform:rotate(0.6deg)}",
+     "div.scr.s2 rotate/skew .scr.s2{transform:rotate(-0.8deg)}"
+    ],
+    "at390": [
+     "div.scr.s0 rotate/skew",
+     "div.scr.s1 rotate/skew",
+     "div.scr.s2 rotate/skew"
+    ]
+   }
+  },
+  {
+   "id": "G1",
+   "metric": "guidebook: \"절반\" 텍스트 요소 font-size ; 같은 .price>li 카드의 .won font-size ; 형제 카드 .won font-size",
+   "value": {
+    "halfFs": [
+     14,
+     14
+    ],
+    "cardWonFs": [
+     21.6,
+     21.6
+    ],
+    "siblingWonFs": [
+     [
+      34
+     ],
+     [
+      34
+     ]
+    ]
+   },
+   "target": "halfFs ≥ 16 AND cardWonFs = siblingWonFs",
+   "pass": false,
+   "detail": {
+    "matches": [
+     {
+      "sel": "li",
+      "text": "권당 33,000원 × 31권 = 1,023,000원의 절반",
+      "fontSize": 14,
+      "inPriceCard": true,
+      "cardWonFs": [
+       21.6,
+       21.6
+      ],
+      "siblingWonFs": [
+       [
+        34
+       ],
+       [
+        34
+       ]
+      ]
+     },
+     {
+      "sel": "li",
+      "text": "PDF는 110,000원 × 31권 = 3,410,000원의 절반",
+      "fontSize": 14,
+      "inPriceCard": true,
+      "cardWonFs": [
+       21.6,
+       21.6
+      ],
+      "siblingWonFs": [
+       [
+        34
+       ],
+       [
+        34
+       ]
+      ]
+     },
+     {
+      "sel": "div.a",
+      "text": "권당 33,000원. 31개 대학 전권 열람은 511,500원으로, 33,000원 × 31권 = 1,023,",
+      "fontSize": 16,
+      "inPriceCard": false,
+      "cardWonFs": null,
+      "siblingWonFs": null
+     }
+    ]
+   }
+  },
+  {
+   "id": "G2",
+   "metric": "guidebook 901/960/1000/1024/1030: .hero .fan 표지 5장 중 getBoundingClientRect().right > innerWidth 인 장 수(전 폭 합)",
+   "value": 5,
+   "target": "0",
+   "pass": false,
+   "detail": {
+    "perWidth": {
+     "901": [
+      "fan f4 right=943.5 W=901"
+     ],
+     "960": [
+      "fan f4 right=988.5 W=960"
+     ],
+     "1000": [
+      "fan f4 right=1019 W=1000"
+     ],
+     "1024": [
+      "fan f4 right=1037.3 W=1024"
+     ],
+     "1030": [
+      "fan f4 right=1041.9 W=1030"
+     ]
+    },
+    "allRights": {
+     "901": [
+      "fan f0:633.1",
+      "fan f1:699.1",
+      "fan f2:767.1",
+      "fan f3:857.5",
+      "fan f4:943.5"
+     ],
+     "960": [
+      "fan f0:678.1",
+      "fan f1:744",
+      "fan f2:812",
+      "fan f3:902.5",
+      "fan f4:988.5"
+     ],
+     "1000": [
+      "fan f0:708.6",
+      "fan f1:774.5",
+      "fan f2:842.5",
+      "fan f3:933",
+      "fan f4:1019"
+     ],
+     "1024": [
+      "fan f0:726.9",
+      "fan f1:792.8",
+      "fan f2:860.8",
+      "fan f3:951.3",
+      "fan f4:1037.3"
+     ],
+     "1030": [
+      "fan f0:731.4",
+      "fan f1:797.4",
+      "fan f2:865.4",
+      "fan f3:955.8",
+      "fan f4:1041.9"
+     ]
+    }
+   }
+  },
+  {
+   "id": "G3",
+   "metric": "guidebook: /\\d{1,3}(\\s*,\\s*\\d{3})+/ 에 맞는 mono 요소 텍스트의 Range 실측 쉼표폭/숫자폭 최대 비율, 쉼표 앞뒤 공백 건수",
+   "value": {
+    "maxCommaDigitRatio": 1.001,
+    "wsAroundCommaCount": 0,
+    "monoElements": 7,
+    "monoFontLoaded": true
+   },
+   "target": "maxCommaDigitRatio ≤ 0.6 AND wsAroundCommaCount = 0 (JetBrains Mono 미로드면 pass=null)",
+   "pass": false,
+   "detail": {
+    "elementsMatched": 12,
+    "monoRows": [
+     {
+      "sel": "div.won",
+      "seg": "110,000",
+      "family": "JetBrains Mono",
+      "fontSize": 34,
+      "commaW": 20.23,
+      "digitW": 20.22,
+      "ratio": 1.001,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "b",
+      "seg": "1,178",
+      "family": "JetBrains Mono",
+      "fontSize": 34,
+      "commaW": 19.73,
+      "digitW": 19.73,
+      "ratio": 1,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "b",
+      "seg": "3,065",
+      "family": "JetBrains Mono",
+      "fontSize": 34,
+      "commaW": 19.73,
+      "digitW": 19.73,
+      "ratio": 1,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "div.won",
+      "seg": "33,000",
+      "family": "JetBrains Mono",
+      "fontSize": 34,
+      "commaW": 20.22,
+      "digitW": 20.22,
+      "ratio": 1,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "div.won.two",
+      "seg": "511,500",
+      "family": "JetBrains Mono",
+      "fontSize": 21.6,
+      "commaW": 12.78,
+      "digitW": 12.78,
+      "ratio": 1,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "div.won.two",
+      "seg": "1,705,000",
+      "family": "JetBrains Mono",
+      "fontSize": 21.6,
+      "commaW": 12.78,
+      "digitW": 12.78,
+      "ratio": 1,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "p.won",
+      "seg": "33,000",
+      "family": "JetBrains Mono",
+      "fontSize": 21.6,
+      "commaW": 12.78,
+      "digitW": 12.78,
+      "ratio": 1,
+      "wsAroundComma": false
+     }
+    ],
+    "nonMonoRows": [
+     {
+      "sel": "p.aeo-answer",
+      "seg": "33,000",
+      "family": "Pretendard Variable",
+      "fontSize": 13,
+      "commaW": 3.13,
+      "digitW": 7.81,
+      "ratio": 0.4,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "li",
+      "seg": "33,000",
+      "family": "Pretendard Variable",
+      "fontSize": 14,
+      "commaW": 3.39,
+      "digitW": 8.42,
+      "ratio": 0.403,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "li",
+      "seg": "110,000",
+      "family": "Pretendard Variable",
+      "fontSize": 14,
+      "commaW": 3.38,
+      "digitW": 8.42,
+      "ratio": 0.401,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "div.a",
+      "seg": "33,000",
+      "family": "Pretendard Variable",
+      "fontSize": 16,
+      "commaW": 0,
+      "digitW": 9.66,
+      "ratio": 0,
+      "wsAroundComma": false
+     },
+     {
+      "sel": "p",
+      "seg": "12, 402",
+      "family": "Pretendard Variable",
+      "fontSize": 13,
+      "commaW": 3.13,
+      "digitW": 7.81,
+      "ratio": 0.4,
+      "wsAroundComma": true
+     }
+    ]
+   }
+  },
+  {
+   "id": "G4",
+   "metric": "guidebook 1440: #books offsetTop / document.scrollHeight (%)",
+   "value": 80.9,
+   "target": "≤ 60",
+   "pass": false,
+   "detail": {
+    "top": 14297,
+    "scrollHeight": 17669,
+    "pct": 80.9,
+    "next": "section#faq.sec \"자주 묻는 질문 가이드북에 대해 내 지원 대\"",
+    "prev": "section#format.sec"
+   }
+  },
+  {
+   "id": "A1",
+   "metric": "faq 390 과 1440: 보이는 인터랙티브 요소(a,button,summary,input,select,textarea,[role=button],[tabindex]) 중 폭 또는 높이 44px 미만 수",
+   "value": {
+    "at390": 10,
+    "at1440": 10
+   },
+   "target": "0 (양 폭)",
+   "pass": false,
+   "detail": {
+    "at390": {
+     "total": 105,
+     "excluded": 15,
+     "exclWhy": {
+      "hidden": 0,
+      "zero": 14,
+      "offscreen": 0,
+      "srOnly": 1
+     },
+     "tabindexNeg1Skipped": 0,
+     "small": [
+      {
+       "sel": "a",
+       "text": "가이드북",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "면접 스튜디오",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "결제",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "환불",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "열람 기간과 기기",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "PDF 소장판",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "계정",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "학원 스쿨 플랜",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "인강",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "연구소",
+       "w": 302,
+       "h": 42,
+       "inlineText": false
+      }
+     ]
+    },
+    "at1440": {
+     "total": 105,
+     "excluded": 12,
+     "exclWhy": {
+      "hidden": 0,
+      "zero": 11,
+      "offscreen": 0,
+      "srOnly": 1
+     },
+     "tabindexNeg1Skipped": 0,
+     "small": [
+      {
+       "sel": "a",
+       "text": "가이드북",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "면접 스튜디오",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "결제",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "환불",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "열람 기간과 기기",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "PDF 소장판",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "계정",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "학원 스쿨 플랜",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "인강",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      },
+      {
+       "sel": "a",
+       "text": "연구소",
+       "w": 272,
+       "h": 42,
+       "inlineText": false
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "A2",
+   "metric": "세 면 body.innerText 에 \"사업자등록번호\" 와 \"통신판매업\" 둘 다 존재 (index.html = 검출기 양성 대조군)",
+   "value": {
+    "index.html": true,
+    "programs/studio.html": true,
+    "programs/guidebook.html": true
+   },
+   "target": "세 면 모두 true; index 미검출이면 검출기 결함 FAIL",
+   "pass": true,
+   "detail": {
+    "pages": {
+     "index.html": {
+      "biz": true,
+      "mail": true,
+      "where": "div.biz"
+     },
+     "programs/studio.html": {
+      "biz": true,
+      "mail": true,
+      "where": "footer"
+     },
+     "programs/guidebook.html": {
+      "biz": true,
+      "mail": true,
+      "where": "footer"
+     }
+    },
+    "positiveControlIndex": "PASS"
+   }
+  }
+ ],
+ "ts_note": {
+  "ts": "2026-09-03T11:01:46.604Z",
+  "tool": "playwright channel=chrome headless, deviceScaleFactor 1",
+  "viewports": "S1 390x844 ; G2 901/960/1000/1024/1030 x900 ; A1 390x844 + 1440x900 ; 나머지 1440x900",
+  "fonts": {
+   "programs/studio.html@390": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "S6@390": [
+    "div.scr.s0 rotate/skew",
+    "div.scr.s1 rotate/skew",
+    "div.scr.s2 rotate/skew"
+   ],
+   "programs/studio.html@1440": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@1440": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@901": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@960": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@1000": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@1024": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "programs/guidebook.html@1030": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "faq.html@390": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "faq.html@1440": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   },
+   "index.html@1440": {
+    "mono": true,
+    "serif": true,
+    "sans": true
+   }
+  },
+  "pageErrors": {
+   "programs/studio.html@390": [],
+   "programs/studio.html@1440": [],
+   "programs/guidebook.html@1440": [],
+   "programs/guidebook.html@901": [],
+   "programs/guidebook.html@960": [],
+   "programs/guidebook.html@1000": [],
+   "programs/guidebook.html@1024": [],
+   "programs/guidebook.html@1030": [],
+   "faq.html@390": [],
+   "faq.html@1440": [],
+   "index.html@1440": []
+  },
+  "passSummary": {
+   "pass": 1,
+   "fail": 10,
+   "null": 1
+  }
+ }
+}
