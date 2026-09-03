@@ -1,0 +1,291 @@
+{
+ "campaign": "cmp-a001-01-000000011047766",
+ "bizchannel": "bsn-a001-00-000000014883450",
+ "registered_at": "2026-09-03T20:20~20:50+09:00",
+ "settings": {
+  "daily_budget": "제한없음",
+  "media": "검색 지면 네이버 및 검색 포털 매체만(파트너·추천/콘텐츠 제외)",
+  "pc_mobile": "전체",
+  "match": "일치 검색(확장검색 OFF)",
+  "ad_rotation": "성과 기반 노출"
+ },
+ "groups": [
+  {
+   "name": "G0_대입면접일반",
+   "id": "grp-a001-01-000000072767542",
+   "base_bid": 350,
+   "url": "https://hyunhak.com/guidebook/index.html"
+  },
+  {
+   "name": "G1_기출질문",
+   "id": "grp-a001-01-000000072767553",
+   "base_bid": 350,
+   "url": "https://hyunhak.com/guidebook/index.html"
+  },
+  {
+   "name": "G2_학원컨설팅",
+   "id": "grp-a001-01-000000072767554",
+   "base_bid": 400,
+   "url": "https://hyunhak.com/programs/guidebook.html"
+  },
+  {
+   "name": "G3_학종서류",
+   "id": "grp-a001-01-000000072767557",
+   "base_bid": 400,
+   "url": "https://hyunhak.com/programs/guidebook.html"
+  },
+  {
+   "name": "G4_의대",
+   "id": "grp-a001-01-000000072767558",
+   "base_bid": 400,
+   "url": "https://hyunhak.com/guidebook/index.html"
+  },
+  {
+   "name": "U_ajou",
+   "id": "grp-a001-01-000000072767566",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/ajou.html"
+  },
+  {
+   "name": "U_catholic",
+   "id": "grp-a001-01-000000072767569",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/catholic.html"
+  },
+  {
+   "name": "U_cau",
+   "id": "grp-a001-01-000000072767582",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/cau.html"
+  },
+  {
+   "name": "U_dankook",
+   "id": "grp-a001-01-000000072767592",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/dankook.html"
+  },
+  {
+   "name": "U_donga",
+   "id": "grp-a001-01-000000072767600",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/donga.html"
+  },
+  {
+   "name": "U_dongduk",
+   "id": "grp-a001-01-000000072767605",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/dongduk.html"
+  },
+  {
+   "name": "U_dongguk",
+   "id": "grp-a001-01-000000072767640",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/dongguk.html"
+  },
+  {
+   "name": "U_duksung",
+   "id": "grp-a001-01-000000072767665",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/duksung.html"
+  },
+  {
+   "name": "U_ewha",
+   "id": "grp-a001-01-000000072767669",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/ewha.html"
+  },
+  {
+   "name": "U_gachon",
+   "id": "grp-a001-01-000000072767705",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/gachon.html"
+  },
+  {
+   "name": "U_hanyang-erica",
+   "id": "grp-a001-01-000000072767724",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/hanyang-erica.html"
+  },
+  {
+   "name": "U_hufs",
+   "id": "grp-a001-01-000000072767728",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/hufs.html"
+  },
+  {
+   "name": "U_incheon",
+   "id": "grp-a001-01-000000072767747",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/incheon.html"
+  },
+  {
+   "name": "U_inha",
+   "id": "grp-a001-01-000000072767753",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/inha.html"
+  },
+  {
+   "name": "U_khu",
+   "id": "grp-a001-01-000000072767758",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/khu.html"
+  },
+  {
+   "name": "U_konkuk",
+   "id": "grp-a001-01-000000072767763",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/konkuk.html"
+  },
+  {
+   "name": "U_kookmin",
+   "id": "grp-a001-01-000000072767768",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/kookmin.html"
+  },
+  {
+   "name": "U_korea",
+   "id": "grp-a001-01-000000072767772",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/programs/korea.html"
+  },
+  {
+   "name": "U_kwangwoon",
+   "id": "grp-a001-01-000000072767776",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/kwangwoon.html"
+  },
+  {
+   "name": "U_kyonggi",
+   "id": "grp-a001-01-000000072767785",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/kyonggi.html"
+  },
+  {
+   "name": "U_myongji",
+   "id": "grp-a001-01-000000072767862",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/myongji.html"
+  },
+  {
+   "name": "U_pusan",
+   "id": "grp-a001-01-000000072767885",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/pusan.html"
+  },
+  {
+   "name": "U_sahmyook",
+   "id": "grp-a001-01-000000072767890",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/sahmyook.html"
+  },
+  {
+   "name": "U_sejong",
+   "id": "grp-a001-01-000000072767895",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/sejong.html"
+  },
+  {
+   "name": "U_seoultech",
+   "id": "grp-a001-01-000000072767911",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/seoultech.html"
+  },
+  {
+   "name": "U_snu",
+   "id": "grp-a001-01-000000072767915",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/snu.html"
+  },
+  {
+   "name": "U_sookmyung",
+   "id": "grp-a001-01-000000072767919",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/sookmyung.html"
+  },
+  {
+   "name": "U_soongsil",
+   "id": "grp-a001-01-000000072767925",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/soongsil.html"
+  },
+  {
+   "name": "U_sungshin",
+   "id": "grp-a001-01-000000072767929",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/sungshin.html"
+  },
+  {
+   "name": "U_swu",
+   "id": "grp-a001-01-000000072767934",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/swu.html"
+  },
+  {
+   "name": "U_ulsan",
+   "id": "grp-a001-01-000000072767964",
+   "base_bid": 500,
+   "url": "https://hyunhak.com/guidebook/ulsan.html"
+  },
+  {
+   "name": "U_uos",
+   "id": "grp-a001-01-000000072767984",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/guidebook/uos.html"
+  },
+  {
+   "name": "U_yonsei",
+   "id": "grp-a001-01-000000072767993",
+   "base_bid": 700,
+   "url": "https://hyunhak.com/programs/yonsei.html"
+  }
+ ],
+ "bulk_jobs": [
+  {
+   "name": "현학_키워드121_20260903",
+   "type": "키워드 등록",
+   "status": "취소됨",
+   "requested": 121,
+   "note": "건우 지시 20:38 대입 무관 5개 제외로 취소"
+  },
+  {
+   "name": "현학_키워드116_20260903",
+   "type": "키워드 등록",
+   "status": "완료",
+   "requested": 116,
+   "success": 116,
+   "fail": 0,
+   "file": "upload_keywords_v2_20260903.csv"
+  },
+  {
+   "name": "현학_소재76_20260903",
+   "type": "단일형 소재 등록",
+   "status": "완료",
+   "requested": 76,
+   "success": 75,
+   "fail": 1,
+   "file": "upload_ads_20260903.csv",
+   "fail_reason": "덕성여대 덕성인재전형Ⅱ 면접: 영어와 한국어, 일부 특수문자만 허용(로마 숫자 Ⅱ)",
+   "result": "upload_ads_20260903_Result.csv"
+  },
+  {
+   "name": "현학_소재fix1_20260903",
+   "type": "단일형 소재 등록",
+   "status": "완료",
+   "requested": 1,
+   "success": 1,
+   "fail": 0,
+   "file": "upload_ads_fix1_20260903.csv",
+   "note": "제목 Ⅱ→2, ads_v2.csv 반영"
+  }
+ ],
+ "totals": {
+  "groups": 38,
+  "keywords": 116,
+  "ads": 76
+ },
+ "residual": {
+  "schedule_06_24": "미적용(분류기 차단, L-11)",
+  "bizchannel": "PC/모바일 검토중(20:4x)",
+  "conversion_tracking": "신청 가능한 사이트 없음(L-9)"
+ }
+}
