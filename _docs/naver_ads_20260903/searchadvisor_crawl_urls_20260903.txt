@@ -1,0 +1,47 @@
+# 네이버 서치어드바이저 웹 페이지 수집 요청 목록 (2026-09-03, 사이트 https://hyunhak.com)
+# 입력 형식 = 전체 URL. 응답 code 0 = 접수, FAIL_ALREADY_CRAWLED = 이미 접수됨(중복). 일일 한도 50건이라 판매 외 7권(연세·고려·성균관·경북·DGIST·부경·홍익)은 제외.
+# 21:55 접수 완료 1건: https://hyunhak.com/support.html
+https://hyunhak.com/faq.html
+https://hyunhak.com/terms.html
+https://hyunhak.com/privacy.html
+https://hyunhak.com/
+https://hyunhak.com/about.html
+https://hyunhak.com/guidebook/
+https://hyunhak.com/programs/guidebook.html
+https://hyunhak.com/programs/studio.html
+https://hyunhak.com/programs/korea.html
+https://hyunhak.com/programs/yonsei.html
+https://hyunhak.com/studio.html
+https://hyunhak.com/notice.html
+https://hyunhak.com/b2b.html
+https://hyunhak.com/guidebook/ajou.html
+https://hyunhak.com/guidebook/catholic.html
+https://hyunhak.com/guidebook/cau.html
+https://hyunhak.com/guidebook/dongguk.html
+https://hyunhak.com/guidebook/ewha.html
+https://hyunhak.com/guidebook/gachon.html
+https://hyunhak.com/guidebook/hufs.html
+https://hyunhak.com/guidebook/inha.html
+https://hyunhak.com/guidebook/khu.html
+https://hyunhak.com/guidebook/konkuk.html
+https://hyunhak.com/guidebook/kookmin.html
+https://hyunhak.com/guidebook/kwangwoon.html
+https://hyunhak.com/guidebook/kyonggi.html
+https://hyunhak.com/guidebook/myongji.html
+https://hyunhak.com/guidebook/pusan.html
+https://hyunhak.com/guidebook/sejong.html
+https://hyunhak.com/guidebook/seoultech.html
+https://hyunhak.com/guidebook/snu.html
+https://hyunhak.com/guidebook/sookmyung.html
+https://hyunhak.com/guidebook/soongsil.html
+https://hyunhak.com/guidebook/sungshin.html
+https://hyunhak.com/guidebook/uos.html
+https://hyunhak.com/guidebook/dankook.html
+https://hyunhak.com/guidebook/duksung.html
+https://hyunhak.com/guidebook/dongduk.html
+https://hyunhak.com/guidebook/donga.html
+https://hyunhak.com/guidebook/sahmyook.html
+https://hyunhak.com/guidebook/swu.html
+https://hyunhak.com/guidebook/ulsan.html
+https://hyunhak.com/guidebook/incheon.html
+https://hyunhak.com/guidebook/hanyang-erica.html
