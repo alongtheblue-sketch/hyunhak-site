@@ -19,8 +19,35 @@
   }
   function okEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
   function statusBadge(st) {
-    var cls = st === 'answered' ? 'badge line' : (st === 'closed' ? 'badge mute' : 'badge seal');
+    // 주인(--seal)은 면에서 1점만 쓴다 (환불 규정 제목 인장). 상태 배지는 먹색 3단
+    var cls = st === 'answered' ? 'badge' : (st === 'closed' ? 'badge mute' : 'badge line');
     return '<span class="' + cls + '">' + esc(STATUS[st] || st || '') + '</span>';
+  }
+
+  // ── 목차 rail 현재 위치 (IntersectionObserver, 먹색 밑줄) ──
+  function initSpy() {
+    var nav = document.querySelector('.menu2[data-spy]');
+    if (!nav || !('IntersectionObserver' in window)) return;
+    var links = Array.prototype.slice.call(nav.querySelectorAll('a[href^="#"]'));
+    var secs = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); }).filter(Boolean);
+    if (!secs.length) return;
+    function set(id) {
+      links.forEach(function (a) {
+        var on = a.getAttribute('href') === '#' + id;
+        a.classList.toggle('cur', on);
+        if (on) a.setAttribute('aria-current', 'location'); else a.removeAttribute('aria-current');
+      });
+    }
+    function pick() {
+      // 헤더 아래 기준선을 지난 절 중 가장 아래 것. 아직 아무 절도 지나지 않았으면 첫 절
+      var line = (parseInt(getComputedStyle(document.documentElement).getPropertyValue('--hd-h'), 10) || 72) + 40;
+      var best = null, bestTop = -Infinity;
+      secs.forEach(function (s) { var t = s.getBoundingClientRect().top; if (t <= line && t > bestTop) { best = s; bestTop = t; } });
+      set((best || secs[0]).id);
+    }
+    var io = new IntersectionObserver(pick, { rootMargin: '-72px 0px -55% 0px', threshold: [0, 0.2, 0.5, 1] });
+    secs.forEach(function (s) { io.observe(s); });
+    pick();
   }
 
   var member = null;
@@ -197,6 +224,7 @@
     member = st && st.member ? st.member : null;
     initForm();
     initThread();
+    initSpy();
     loadNotices();
     await loadMine();
     var want = new URLSearchParams(location.search).get('inq');

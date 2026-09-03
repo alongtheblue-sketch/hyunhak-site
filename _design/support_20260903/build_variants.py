@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """고객센터(support.html) 레이아웃 3안 + 본체 조립기 (2026-09-03).
    같은 콘텐츠 조각을 A(세로 단일 컬럼 편집 문서형), B(좌측 rail 목차 + 우측 본문형), C(상단 카드 3열 + 아래 2단형) 로 조립한다.
-   support.html 본체 = C 안 구조. 셸(유틸바, 헤더, 푸터, 모바일 바)은 _tools/v2_shell.py 에서 그대로 가져와 apply_* 재실행과 바이트가 같다.
+   support.html 본체 = B 안 구조 (critic 33/45, 2026-09-03. 종전 C 23/45). 셸(유틸바, 헤더, 푸터, 모바일 바)은 _tools/v2_shell.py 에서 그대로 가져와 apply_* 재실행과 바이트가 같다.
    실행: python3 _design/support_20260903/build_variants.py  (사이트 루트 기준 상대경로 자동)"""
 import os, sys
 
@@ -41,7 +41,7 @@ CSS = """/* 고객센터 전용. 크기는 토큰만 */
 .sup .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s4)}
 .sup .acts{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
 .sup .msgs{font-size:var(--t-sm);color:var(--gray);min-height:1.5em;max-width:none}
-.sup .msgs.err{color:var(--seal)}
+.sup .msgs.err{color:var(--ink);font-weight:600}
 .sup .who{font-size:var(--t-sm);color:var(--gray);margin-bottom:var(--s3)}
 .sup .pn{margin-bottom:var(--s4);border-top:var(--rule-strong);border-bottom:var(--rule-strong)}
 .sup .pn summary{list-style:none;cursor:pointer;min-height:var(--tap);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:var(--t-sm);font-weight:600}
@@ -50,7 +50,9 @@ CSS = """/* 고객센터 전용. 크기는 토큰만 */
 .sup .pn[open] summary::after{content:"\\2212"}
 .sup .pn .body{padding:0 0 var(--s3);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
 .sup .pn .body p+p{margin-top:6px}
-.sup .pn .check{border-top:var(--rule);border-bottom:0;padding-bottom:12px}
+.sup .agree{margin-bottom:var(--s4);border-bottom:var(--rule-strong)}
+.sup .agree input{width:24px;height:24px}
+.sup .agree label span{font-weight:600}
 .sup .done{background:var(--mat);border-radius:var(--r-md);padding:var(--s4);margin-top:var(--s3)}
 .sup .done .k{display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:8px}
 .sup .done .no{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;letter-spacing:.02em}
@@ -75,10 +77,19 @@ CSS = """/* 고객센터 전용. 크기는 토큰만 */
 .sup .quick{display:flex;gap:var(--s4);flex-wrap:wrap;margin-bottom:var(--s6);padding-bottom:var(--s3);border-bottom:var(--rule-strong)}
 .sup .docno{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .sup .doc .blk{padding-top:var(--s4);border-top:var(--rule-strong)}
+/* 서체 위계: h1 세리프 800, h2 이하 700 (design-critic P2-4). 주인은 환불 규정 제목 인장 1점 (P2-3) */
+.sup-head h1{font-family:var(--serif);font-weight:800}
+.sup .sh h2,.sup .panel h2,.sup .th h3{font-weight:700}
+.sup #refund h2::before{content:"";display:inline-block;width:8px;height:8px;background:var(--seal);border-radius:50%;margin-right:10px;vertical-align:middle}
+/* rail 은 DOM 상 본문 뒤에 두고 데스크톱에서만 좌측 칸으로 (P1-3: 390 에서 목차가 폼 앞을 막지 않는다) */
+.sup.lay.rev>.main{grid-column:2;grid-row:1}
+.sup.lay.rev>.side{grid-column:1;grid-row:1}
+@media (max-width:900px){.sup.lay.rev>.main,.sup.lay.rev>.side{grid-column:auto;grid-row:auto}}
 .menu2{display:flex;flex-direction:column}
 .menu2 a{min-height:var(--tap);font-size:var(--t-sm);font-weight:600;border-top:var(--rule);display:flex;align-items:center;gap:10px}
 .menu2 a:first-child{border-top:0}
 .menu2 a:hover{color:var(--gray)}
+.menu2 a.cur{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--ink)}
 @media (max-width:700px){.sup .grid2{grid-template-columns:1fr}.sup .rows a{grid-template-columns:1fr;gap:4px}.sup .quick{gap:var(--s2) var(--s3)}}"""
 
 
@@ -111,7 +122,7 @@ def head(p, title, extra_css=""):
 def pagehead(p):
     return f'''<main id="main">
 
-<section class="phead tight">
+<section class="phead tight sup-head">
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="{p}index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>고객센터</span></nav>
@@ -142,8 +153,8 @@ def pn_block():
     ps = "".join(f"<p>{t}</p>" for t in PRIVACY_NOTICE)
     return f'''        <details class="pn" id="inqPn"><summary>개인정보 수집 안내</summary>
           <div class="body">{ps}</div>
-          <div class="check" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><label for="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label></div>
         </details>
+        <div class="check agree" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><label for="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label></div>
 '''
 
 
@@ -249,12 +260,13 @@ def layout_A(p, rel):
     return head(p, "고객센터 A안 세로 단일 컬럼, 현학적 연구소") + V.shell(rel) + "\n\n" + body + tail(p, rel)
 
 
-def layout_B(p, rel):
-    """좌측 rail 목차 + 우측 본문형. rail 은 sticky, 본문은 절 순서대로."""
+def layout_B(p, rel, title="고객센터 B안 좌측 rail 목차, 현학적 연구소"):
+    """좌측 rail 목차 + 우측 본문형 (design-critic 33/45 채택안). DOM 은 본문이 먼저, rail 은 데스크톱 grid 로 좌측.
+       목차 5앵커 = 자기 페이지, 약관 링크는 #refund 하단 .tlink 1곳만 (P0-2)."""
     rail = f'''  <aside class="side">
     <div class="box rv">
       <h3>목차</h3>
-      <nav class="menu2" aria-label="고객센터 목차">
+      <nav class="menu2" data-spy aria-label="고객센터 목차">
         <a href="#inquiry">1:1 문의</a>
         <a href="#mineBlk">내 문의</a>
         <a href="#notices">최근 공지</a>
@@ -266,15 +278,14 @@ def layout_B(p, rel):
       <h3>다른 도움</h3>
       <nav class="menu2" aria-label="다른 도움">
         <a href="{p}faq.html">자주 묻는 질문</a>
-        <a href="{p}terms.html">이용약관</a>
         <a href="{p}notice.html">공지</a>
       </nav>
     </div>
   </aside>
 '''
-    body = pagehead(p) + '\n<div class="wrap lay rev sup">\n' + rail + '  <section class="main">\n' \
-        + inquiry(p) + mine(p) + notices(p) + contact(p) + refund(p) + '  </section>\n</div>\n'
-    return head(p, "고객센터 B안 좌측 rail 목차, 현학적 연구소") + V.shell(rel) + "\n\n" + body + tail(p, rel)
+    body = pagehead(p) + '\n<div class="wrap lay rev sup">\n  <section class="main">\n' \
+        + inquiry(p) + mine(p) + notices(p) + contact(p) + refund(p) + '  </section>\n' + rail + '</div>\n'
+    return head(p, title) + V.shell(rel) + "\n\n" + body + tail(p, rel)
 
 
 def layout_C(p, rel, title="고객센터, 현학적 연구소"):
@@ -293,8 +304,9 @@ def write(rel, s):
 
 if __name__ == "__main__":
     d = "_design/support_20260903/"
-    write(d + "A.html", layout_A("../../", d + "A.html"))
-    write(d + "B.html", layout_B("../../", d + "B.html"))
-    write(d + "C.html", layout_C("../../", d + "C.html", "고객센터 C안 카드 3열 + 2단, 현학적 연구소"))
-    if "--site" in sys.argv:
-        write("support.html", layout_C("", "support.html"))
+    if "--site" in sys.argv:   # 본체 = B 안 구조 (2026-09-03 critic 33/45). 3안 파일은 채점된 원본이라 다시 쓰지 않는다
+        write("support.html", layout_B("", "support.html", "고객센터, 현학적 연구소"))
+    else:
+        write(d + "A.html", layout_A("../../", d + "A.html"))
+        write(d + "B.html", layout_B("../../", d + "B.html"))
+        write(d + "C.html", layout_C("../../", d + "C.html", "고객센터 C안 카드 3열 + 2단, 현학적 연구소"))

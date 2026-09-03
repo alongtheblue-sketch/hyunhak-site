@@ -26,7 +26,7 @@
 .sup .grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s4)}
 .sup .acts{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap}
 .sup .msgs{font-size:var(--t-sm);color:var(--gray);min-height:1.5em;max-width:none}
-.sup .msgs.err{color:var(--seal)}
+.sup .msgs.err{color:var(--ink);font-weight:600}
 .sup .who{font-size:var(--t-sm);color:var(--gray);margin-bottom:var(--s3)}
 .sup .pn{margin-bottom:var(--s4);border-top:var(--rule-strong);border-bottom:var(--rule-strong)}
 .sup .pn summary{list-style:none;cursor:pointer;min-height:var(--tap);display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:var(--t-sm);font-weight:600}
@@ -35,7 +35,9 @@
 .sup .pn[open] summary::after{content:"\2212"}
 .sup .pn .body{padding:0 0 var(--s3);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
 .sup .pn .body p+p{margin-top:6px}
-.sup .pn .check{border-top:var(--rule);border-bottom:0;padding-bottom:12px}
+.sup .agree{margin-bottom:var(--s4);border-bottom:var(--rule-strong)}
+.sup .agree input{width:24px;height:24px}
+.sup .agree label span{font-weight:600}
 .sup .done{background:var(--mat);border-radius:var(--r-md);padding:var(--s4);margin-top:var(--s3)}
 .sup .done .k{display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:8px}
 .sup .done .no{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;letter-spacing:.02em}
@@ -60,10 +62,19 @@
 .sup .quick{display:flex;gap:var(--s4);flex-wrap:wrap;margin-bottom:var(--s6);padding-bottom:var(--s3);border-bottom:var(--rule-strong)}
 .sup .docno{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .sup .doc .blk{padding-top:var(--s4);border-top:var(--rule-strong)}
+/* 서체 위계: h1 세리프 800, h2 이하 700 (design-critic P2-4). 주인은 환불 규정 제목 인장 1점 (P2-3) */
+.sup-head h1{font-family:var(--serif);font-weight:800}
+.sup .sh h2,.sup .panel h2,.sup .th h3{font-weight:700}
+.sup #refund h2::before{content:"";display:inline-block;width:8px;height:8px;background:var(--seal);border-radius:50%;margin-right:10px;vertical-align:middle}
+/* rail 은 DOM 상 본문 뒤에 두고 데스크톱에서만 좌측 칸으로 (P1-3: 390 에서 목차가 폼 앞을 막지 않는다) */
+.sup.lay.rev>.main{grid-column:2;grid-row:1}
+.sup.lay.rev>.side{grid-column:1;grid-row:1}
+@media (max-width:900px){.sup.lay.rev>.main,.sup.lay.rev>.side{grid-column:auto;grid-row:auto}}
 .menu2{display:flex;flex-direction:column}
 .menu2 a{min-height:var(--tap);font-size:var(--t-sm);font-weight:600;border-top:var(--rule);display:flex;align-items:center;gap:10px}
 .menu2 a:first-child{border-top:0}
 .menu2 a:hover{color:var(--gray)}
+.menu2 a.cur{text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:2px;text-decoration-color:var(--ink)}
 @media (max-width:700px){.sup .grid2{grid-template-columns:1fr}.sup .rows a{grid-template-columns:1fr;gap:4px}.sup .quick{gap:var(--s2) var(--s3)}}
 </style>
 </head>
@@ -102,7 +113,7 @@
 
 <main id="main">
 
-<section class="phead tight">
+<section class="phead tight sup-head">
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>고객센터</span></nav>
@@ -113,22 +124,16 @@
   </div>
 </section>
 
-<div class="wrap sup">
-  <section class="cards top rv" aria-label="안내">
-    <article class="card"><div class="bd"><span class="eyebrow">01</span><h3>1:1 문의</h3><p>분류와 제목, 내용을 적어 보내면 접수번호가 발급됩니다. 회원은 내 문의 목록에서 답변을 봅니다.</p><a class="tlink" href="#inquiry">문의 보내기 →</a></div></article>
-    <article class="card"><div class="bd"><span class="eyebrow">02</span><h3>자주 묻는 질문</h3><p>가이드북과 스튜디오, 결제와 환불, 열람 기기, 계정, 스쿨 플랜, 인강 문답을 모았습니다.</p><a class="tlink" href="faq.html">문답 보기 →</a></div></article>
-    <article class="card"><div class="bd"><span class="eyebrow">03</span><h3>환불 규정</h3><p>열지 않은 상품은 공급받은 날부터 7일 이내에 청약철회할 수 있습니다. 요청은 마이페이지 주문 내역에서 보냅니다.</p><a class="tlink" href="terms.html">이용약관 제6조 →</a></div></article>
-  </section>
-  <div class="two">
-    <div>
+<div class="wrap lay rev sup">
+  <section class="main">
     <section class="blk" id="inquiry">
       <div class="sh"><div><h2>1:1 문의</h2><p>영업일 기준 순차 답변</p></div></div>
       <form id="inqForm" novalidate>
         <p class="who" id="inqWho" hidden></p>
         <details class="pn" id="inqPn"><summary>개인정보 수집 안내</summary>
           <div class="body"><p>문의를 받고 답하기 위해 아래 정보를 수집합니다.</p><p>목적: 문의 접수와 답변, 처리 기록의 보관</p><p>항목: 이름, 이메일, 문의 내용</p><p>보유 기간: 답변을 마친 뒤 1년. 거래에 관한 불만과 분쟁 처리 기록은 전자상거래법 제6조에 따라 3년간 보관합니다.</p><p>거부할 권리: 동의를 거부하실 수 있습니다. 다만 이름과 이메일이 없으면 답을 보내 드릴 수 없습니다.</p><p>문의 내용에는 주민등록번호, 성적표처럼 민감한 정보를 적지 말아 주세요. 만 14세 미만은 법정대리인의 동의를 받은 뒤 문의해 주세요.</p></div>
-          <div class="check" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><label for="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label></div>
         </details>
+        <div class="check agree" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><label for="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label></div>
         <div class="grid2" id="inqGuest">
           <div class="field"><label for="inqEmail">이메일</label><input id="inqEmail" type="email" autocomplete="email" placeholder="답변을 받을 주소"></div>
           <div class="field"><label for="inqName">이름</label><input id="inqName" type="text" autocomplete="name" placeholder="선택"></div>
@@ -161,8 +166,6 @@
         <p class="back"><button type="button" class="tlink" id="thBack">목록으로</button></p>
       </article>
     </section>
-    </div>
-    <aside>
     <section class="blk" id="notices">
       <div class="sh"><div><h2>최근 공지</h2></div><a class="tlink" href="notice.html">공지 전체 →</a></div>
       <ul class="notice" id="ntcList"></ul>
@@ -182,8 +185,26 @@
       <p>① 가이드북과 인강, 스튜디오는 가분적 디지털 콘텐츠입니다. 이미 연 권, 재생한 강의, 응시한 지문, 발급된 PDF 소장판은 제공이 개시되어 단순 변심에 따른 청약철회가 제한됩니다(전자상거래법 제17조 제2항 제5호, 이용약관 제6조). 제공 개시 시점은 가이드북은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오는 응시를 시작한 때입니다.</p><p>② 아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문은 공급받은 날부터 7일 이내에 청약철회하실 수 있고, 그만큼 환불됩니다. 표시 내용과 실제가 다르거나 계약과 다르게 이행된 경우에는 공급받은 날부터 3개월, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회하실 수 있습니다(전자상거래법 제17조 제3항).</p><p>③ 청약철회는 요청을 보내신 때에 효력이 생기며 연구소의 승인을 요건으로 하지 않습니다. 환불 대금은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드리고, 환급이 늦어지면 지연이자를 더해 지급합니다(전자상거래법 제18조 제2항).</p>
       <a class="tlink" href="terms.html">이용약관 제6조 전문 →</a>
     </section>
-    </aside>
-  </div>
+  </section>
+  <aside class="side">
+    <div class="box rv">
+      <h3>목차</h3>
+      <nav class="menu2" data-spy aria-label="고객센터 목차">
+        <a href="#inquiry">1:1 문의</a>
+        <a href="#mineBlk">내 문의</a>
+        <a href="#notices">최근 공지</a>
+        <a href="#contact">연락처</a>
+        <a href="#refund">환불 규정 요약</a>
+      </nav>
+    </div>
+    <div class="box rv">
+      <h3>다른 도움</h3>
+      <nav class="menu2" aria-label="다른 도움">
+        <a href="faq.html">자주 묻는 질문</a>
+        <a href="notice.html">공지</a>
+      </nav>
+    </div>
+  </aside>
 </div>
 
 </main>
