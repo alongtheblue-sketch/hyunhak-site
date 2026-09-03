@@ -18,3 +18,6 @@ __pycache__/
 .DS_Store
 _config.yml
 *.bak*
+
+# detached worktree 배포에서 .git 은 gitdir 포인터 파일이라 자산으로 실렸다 (2026-09-03 라이브 /.git 200 실측). 디렉터리든 파일이든 제외
+.git
