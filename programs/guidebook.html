@@ -28,7 +28,7 @@
 <style>
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.12);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.24);
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
@@ -128,7 +128,7 @@ p{max-width:var(--measure);color:var(--body)}
 .aud li{border-top:2px solid var(--ink);padding-top:var(--s4)}
 .aud .mono{display:block;color:var(--gray);margin-bottom:var(--s2)}
 .aud h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.aud p{font-size:var(--t-sm);line-height:1.65}
+.aud p{font-size:14px;line-height:1.7}
 
 /* 만든 사람 */
 .pr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
@@ -144,7 +144,7 @@ p{max-width:var(--measure);color:var(--body)}
 .rail .n{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .rail li.core .n{color:var(--seal)}
 .rail h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.rail p{font-size:var(--t-sm);line-height:1.65}
+.rail p{font-size:14px;line-height:1.7}
 .rail .pg{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2);display:block}
 .openers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
 .openers img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14)}
@@ -174,7 +174,7 @@ p{max-width:var(--measure);color:var(--body)}
 .qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
 .qs li{padding:var(--s3) 0 0;border-top:var(--rule)}
 .qs .q{font-size:var(--t-base)}
-.qs .src{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);display:block;margin-top:var(--s1)}
+.qs .src{font-family:var(--mono);font-size:12px;color:var(--gray);display:block;margin-top:var(--s1)}
 .rule{display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);max-width:56em}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
 .rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
@@ -224,7 +224,7 @@ p{max-width:var(--measure);color:var(--body)}
 .price .won small{font-size:var(--t-sm);color:var(--gray);margin-left:4px;font-family:var(--sans)}
 .price .won.two{font-size:var(--t-h4);margin-top:var(--s1)}
 .price ul{margin-top:var(--s2)}
-.price ul li{font-size:var(--t-sm);color:var(--body);line-height:1.6;position:relative;padding-left:var(--s3)}
+.price ul li{font-size:14px;color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
 .price ul li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
 .flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5)}
 .flow li{border-top:var(--rule-strong);padding-top:var(--s3)}
@@ -317,7 +317,7 @@ p{max-width:var(--measure);color:var(--body)}
 .pgv .pg{position:relative;border:var(--rule);border-radius:var(--r-md);overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.12)}
 .pgv .pg img{display:block;width:100%;height:auto;border-radius:0}
 .pgv figcaption{margin-top:var(--s3)}
-.pgv .cap{display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
+.pgv .cap{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
 ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
@@ -668,7 +668,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <li><h4>PDF 소장판</h4><div class="won">110,000<small>원, 권당</small></div>
         <ul><li>워터마크 파일 발급, 구매 계정 각인</li><li>파일 내려받기와 열람</li></ul></li>
       <li><h4>31개 대학 전권</h4><div class="won two">511,500<small>원, 열람</small></div><div class="won two">1,705,000<small>원, PDF</small></div>
-        <ul><li>개별 합산의 절반</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul></li>
+        <ul><li>권당 33,000원 × 31권 = 1,023,000원의 절반</li><li>PDF는 110,000원 × 31권 = 3,410,000원의 절반</li><li>합산 금액은 따로 파는 상품이 아닙니다</li><li>여러 대학에 지원하는 학생, 학교와 학원 단위</li></ul></li>
     </ul>
   </div>
 </section>
@@ -728,7 +728,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <details><summary>내 지원 대학이 목록에 없으면</summary><div class="a">현재 판매 목록은 31개 대학. 목록에 없는 대학은 문의 이메일로 알려 주시면 준비 상황을 답합니다.</div></details>
       <details><summary>제시문 면접이나 MMI 준비에도 쓸 수 있나</summary><div class="a">1부와 2부의 형태 판정과 제원은 모든 형태에 해당. 3부와 4부는 서류기반 면접을 위한 것이라, 제시문 면접은 별도 상품인 제시문 면접 스튜디오 쪽이 맞습니다.</div></details>
       <details><summary>질문은 어디서 가져왔나</summary><div class="a">대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 회수한 실제 질문만 수록. 추정으로 만든 문항은 없고 질문마다 모집단위와 연도를 적었습니다.</div></details>
-      <details><summary>여러 권을 사면</summary><div class="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로 개별 합산의 절반. 학교와 학원 단위 좌석은 문의 이메일로.</div></details>
+      <details><summary>여러 권을 사면</summary><div class="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로, 33,000원 × 31권 = 1,023,000원의 절반입니다. PDF 소장판 전권 1,705,000원은 110,000원 × 31권 = 3,410,000원의 절반입니다. 1,023,000원과 3,410,000원은 합산 금액이며 따로 파는 상품이 아닙니다. 학교와 학원 단위 좌석은 문의 이메일로.</div></details>
       <details><summary>환불은</summary><div class="a">디지털 상품은 열람 시작 전까지 전액 취소 가능. 열람을 시작한 뒤에는 취소되지 않습니다.</div></details>
     </div>
   </div>

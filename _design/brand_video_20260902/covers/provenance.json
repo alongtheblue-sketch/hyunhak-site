@@ -1,0 +1,22 @@
+{
+  "chosen": [
+    "snu",
+    "ewha",
+    "khu",
+    "pusan",
+    "cau",
+    "hufs",
+    "uos",
+    "inha"
+  ],
+  "missing_pick": [],
+  "cover_px": [
+    382,
+    540
+  ],
+  "strip_w": 3308,
+  "pan_px": 1508,
+  "px_per_sec": 125.7,
+  "source_dir": "/Users/gregory/Workspace/interview_guidebook_2027/dist_hyunhak_clean",
+  "dpi": 200
+}

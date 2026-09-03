@@ -1,0 +1,35 @@
+{
+  "out": "assets/photo/campus_collage.jpg",
+  "source_dir": "/Users/gregory/Workspace/interview_guidebook_2027/dist_hyunhak_clean",
+  "dpi": 150,
+  "bands": [
+    {
+      "pdf": "연세대학교(서울)_2027면접가이드북.pdf",
+      "src_band": [
+        409,
+        808
+      ],
+      "dst": [
+        0,
+        395
+      ]
+    },
+    {
+      "pdf": "고려대학교(서울)_2027면접가이드북.pdf",
+      "src_band": [
+        429,
+        828
+      ],
+      "dst": [
+        404,
+        800
+      ]
+    }
+  ],
+  "seam_rgb": [
+    241,
+    235,
+    221
+  ],
+  "note": "워터마크 없는 원천에서만 뜬다. 옛 판(assets/covers/*.jpg, 38권 시절)에서 자르면 타일이 딸려 온다"
+}

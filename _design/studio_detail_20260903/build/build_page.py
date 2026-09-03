@@ -502,7 +502,7 @@ HTML = r"""<!DOCTYPE html>
       <li><h4>지문 낱권</h4><div class="won">33,000<small>원, 지문 1편</small></div>
         <ul><li>응시 5회에 회차마다 세 단 첨삭</li><li>그 세트 풀이법 인강 1편 포함</li><li>응시 영상 보관과 다시 보기</li><li>응시 12개월, 인강 3개월</li></ul>
         <a class="btn" href="{{UNITS_URL}}">지문 고르기 <span class="arr">→</span></a></li>
-      <li><h4>응시 단위 전권</h4><div class="won">495,000<small>원, 단위 1곳, 인강 포함</small></div>
+      <li class="pick"><span class="tag">권하는 구성</span><h4>응시 단위 전권</h4><div class="won">495,000<small>원, 단위 1곳, 인강 포함</small></div>
         <ul><li>그 단위 지문 30편에 지문마다 5회</li><li>세트별 풀이법 인강 30편과 공통 풀이 인강 포함</li><li>기간 안의 추가 지문 포함</li><li>응시 12개월, 인강 3개월</li><li>낱권 33,000원 × 30편 = 990,000원. 전권 495,000원이면 한 편에 16,500원, 인강까지</li></ul>
         <a class="btn" href="{{UNITS_URL}}">응시 단위 고르기 <span class="arr">→</span></a></li>
       <li><h4>공통 풀이 인강</h4><div class="won">220,000<small>원, 인강만</small></div>
@@ -525,7 +525,7 @@ HTML = r"""<!DOCTYPE html>
         <h2 class="h2">지원 단위부터 고르기</h2>
         <p class="lede" style="margin-top:var(--s4)">단위마다 지문 30편. 단위를 누르면 그 단위의 지문 목록과 담기가 있는 스튜디오 면으로 갑니다.</p>
       </div>
-      <div class="vis rv">{{IMG_CAMPUS}}</div>
+      <figure class="vis rv">{{IMG_CAMPUS}}<figcaption class="viscap">표지 일러스트를 옮긴 그림입니다. 각 대학과 제휴하거나 후원받은 바 없습니다.</figcaption></figure>
     </div>
     <ul class="units">
       {{UNITS}}

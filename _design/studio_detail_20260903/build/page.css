@@ -1,7 +1,7 @@
 
 :root{
   --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.12);
+  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.28);--hairs:rgba(49,46,46,.24);
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
   --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
   --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
@@ -28,6 +28,7 @@ table{border-collapse:collapse;width:100%}
 .skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}
 .skip:focus{left:0}
 .pricenote{font-size:var(--t-sm);color:var(--gray);margin-top:var(--s3)}
+.viscap{font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--gray);line-height:1.6;margin-top:var(--s2)}
 .ink :focus-visible{outline-color:var(--paper)}
 .wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
 h1,h2,h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
@@ -184,6 +185,10 @@ p{max-width:var(--measure);color:var(--body)}
 
 /* 형태와 가격 */
 .price{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
+.price>li.pick{border-color:var(--seal)}
+.price>li.pick .tag{align-self:flex-start;font-size:12px;font-weight:600;letter-spacing:0;color:var(--paper);background:var(--seal);border-radius:2px;padding:3px 7px;margin-bottom:var(--s1)}
+.price>li.pick .btn{background:var(--seal)}
+.price>li.pick .btn:hover{background:#A32C22}
 .price>li{background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
 .price>li .btn{margin-top:auto;align-self:flex-start;padding-top:0;padding-bottom:0}
 .price>li ul{margin-bottom:var(--s3)}

@@ -25,7 +25,7 @@
   --brown:#3B2C20;      /* 玄褐 */
   --gold:#D0AC6E;       /* 金泥, 玄墨 바탕 위에서만 */
   --hair:rgba(49,46,46,.28);
-  --hairs:rgba(49,46,46,.12);
+  --hairs:rgba(49,46,46,.24);
   --paper-rgb:244,239,227;
   /* 서체: A안. 세리프는 워드마크와 인용만, 모노는 숫자와 라벨과 가격 */
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
