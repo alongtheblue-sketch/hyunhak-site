@@ -312,6 +312,18 @@ p{max-width:var(--measure);color:var(--body)}
   .top .tag{display:none}
   .hero h1{font-size:clamp(30px,9vw,38px)}
 }
+
+/* 2026-09-03 건우 지시: AI 정물 0장. 부 절 = 실물 면 표본(pgv), 문제·형태 절 = 단일 열, 마무리 = 실물 표지 */
+.split.one{grid-template-columns:1fr}
+.pgv{margin:0}
+.pgv .pg{position:relative;border:var(--rule);border-radius:var(--r-md);overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.12)}
+.pgv .pg img{display:block;width:100%;height:auto;border-radius:0}
+.pgv figcaption{margin-top:var(--s3)}
+.pgv .cap{display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
+ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
+.closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
+.close .vis{align-self:center}
 </style>
 </head>
 <body>
@@ -326,7 +338,7 @@ p{max-width:var(--measure);color:var(--body)}
 <main id="main">
 <!-- 도입 -->
 <section class="hero" id="top">
-  <img class="bg" src="../assets/photo/gbd/gbd_hero_c.jpg" width="2000" height="1131" alt="" decoding="async" fetchpriority="high">
+  
   <div class="wrap">
     <div class="say">
     <div class="pagehead">
@@ -367,7 +379,7 @@ p{max-width:var(--measure);color:var(--body)}
 <!-- 문제 -->
 <section class="sec ink" id="problem">
   <div class="wrap">
-    <div class="split">
+    <div class="split one">
       <div class="txt rv">
         <p class="kicker">시작하기 전에</p>
         <h2 class="h2">같은 “면접”이라는 이름, 준비 방법이 다른 세 시험</h2>
@@ -378,10 +390,6 @@ p{max-width:var(--measure);color:var(--body)}
           <li><span class="mono">형태 3</span><h4>MMI</h4><p>여러 방을 차례로 돌며 방마다 다른 상황 과제에 답하는 형태. 의약학 계열에서 쓰며 생활기록부 면접과는 다른 시험.</p></li>
         </ul>
         <p class="after">지원 전형이 어느 형태인지 모른 채 시작한 준비는 방향부터 어긋납니다. 이 책의 첫 면이 형태 판정인 이유.</p>
-      </div>
-      <div class="vis rv">
-        <img class="" src="../assets/photo/gbd/gbd_p1_forms.jpg" width="1400" height="930" alt="빈 면접실, 의자 셋과 하나" loading="lazy" decoding="async">
-        
       </div>
     </div>
   </div>
@@ -454,7 +462,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div><h2>내 면접은 어느 형태인가</h2><p class="sub">서류기반 | 제시문 | MMI, 전형별 형태 판정</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_hero_b.jpg" width="1400" height="792" alt="남색 소책자 한 권" loading="lazy" decoding="async"></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_D.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_D.jpg" width="1000" height="735" alt="가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:27.08%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:69.62%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 4면 상단, 1부 면접 형태 판정 면</span><ol class="lg"><li><span class="n">1</span><p>세 형태 중 서류기반. 정의와 이 대학에 있음 표시</p></li><li><span class="n">2</span><p>전형별 형태 판정표. 가천바람개비전형은 서류확인형</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -487,7 +495,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div><h2>이 대학은 무엇을 묻는가</h2><p class="sub">전형별 제원 | 이 대학이 찾는 학생</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_p2_spec.jpg" width="1400" height="930" alt="공식 문서 더미와 루페" loading="lazy" decoding="async"></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_E.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_E.jpg" width="1000" height="1413" alt="가천대학교 판 7면, 2부 학과별 인재상 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:11.20%;top:8.15%" aria-hidden="true">1</span><span class="mk" style="left:11.12%;top:21.55%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 7면, 2부 학과별 인재상 면</span><ol class="lg"><li><span class="n">1</span><p>확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록</p></li><li><span class="n">2</span><p>간호학과 82건. 확인하는 것과 실제 질문 두 건</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -520,7 +528,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div><h2>실제로 나온 질문</h2><p class="sub">선배 후기에서 회수한 기출, 유형별, 모집단위와 연도</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_p3_archive.jpg" width="1400" height="930" alt="카드 목록함 서랍" loading="lazy" decoding="async"></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_B.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_B.jpg" width="1000" height="1413" alt="가천대학교 판 14면, 3부 실제로 나온 질문 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:21.63%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:62.52%" aria-hidden="true">2</span><span class="mk" style="left:5.96%;top:79.45%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 14면, 3부 실제로 나온 질문 면</span><ol class="lg"><li><span class="n">1</span><p>유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도</p></li><li><span class="n">2</span><p>전공지식확인 91건, 17.9%. 첫 두 질문</p></li><li><span class="n">3</span><p>한 줄 질문. 전자공학과, 2021년</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -552,7 +560,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div><p class="kicker">이 책의 본론</p><h2>내 생기부에서 질문 뽑기</h2><p class="sub">생기부 기재를 질문으로 바꾸는 규칙</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_p4_rules.jpg" width="1400" height="930" alt="한 줄에 그은 주홍 붓 밑줄" loading="lazy" decoding="async"></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_F.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_F.jpg" width="1000" height="1413" alt="가천대학교 판 22면, 4부 창의적 체험활동 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:11.63%" aria-hidden="true">1</span><span class="mk" style="left:7.74%;top:26.20%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 22면, 4부 창의적 체험활동 규칙 면</span><ol class="lg"><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>영재학급, 심화과정 기재 때의 규칙</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -592,7 +600,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div><h2>이 대학의 특징과 준비 전략</h2><p class="sub">타 대학 대비 차이 | 준비 전략</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_p5_shelf.jpg" width="1400" height="930" alt="남색 소책자 책장" loading="lazy" decoding="async"></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_C.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_C.jpg" width="1000" height="1413" alt="가천대학교 판 31면, 5부 준비 전략 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:13.65%" aria-hidden="true">1</span><span class="mk" style="left:10.88%;top:62.15%" aria-hidden="true">2</span><span class="mk" style="left:10.88%;top:84.84%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 31면, 5부 준비 전략 면</span><ol class="lg"><li><span class="n">1</span><p>절 제목</p></li><li><span class="n">2</span><p>40초 답변 훈련. 근거가 붙은 행동 한 줄</p></li><li><span class="n">3</span><p>꼬리질문 2단 대비. 확인된 꼬리 15건에서 나온 규칙</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -640,7 +648,7 @@ p{max-width:var(--measure);color:var(--body)}
 <!-- 형태와 가격 -->
 <section class="sec" id="format">
   <div class="wrap">
-    <div class="split">
+    <div class="split one">
       <div class="txt rv">
         <p class="kicker">받는 방법과 가격</p>
         <h2 class="h2">결제 후 마이페이지에서 바로 열람</h2>
@@ -651,7 +659,6 @@ p{max-width:var(--measure);color:var(--body)}
           <li><span class="n">03</span><h4>보안 리더 열람</h4><p>마이페이지에서 바로 열림. 기기 제한 없음.</p></li>
         </ol>
       </div>
-      <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_p7_reader.jpg" width="1400" height="930" alt="보안 리더 태블릿과 소책자" loading="lazy" decoding="async"></div>
     </div>
     <ul class="price rv">
       <li><h4>보안 리더 열람판</h4><div class="won">33,000<small>원, 권당</small></div>
@@ -735,7 +742,7 @@ p{max-width:var(--measure);color:var(--body)}
       <div class="cta" style="margin-top:var(--s5)"><a class="btn" href="../guidebook/index.html">지원 대학 가이드북 고르기 <span class="arr">→</span></a></div>
       <p class="won">권당 33,000원, 보안 리더 열람 1개월</p>
     </div>
-    <div class="vis rv"><img class="" src="../assets/photo/gbd/gbd_hero_a.jpg" width="1400" height="792" alt="남색 소책자 더미" loading="lazy" decoding="async"></div>
+    <div class="vis rv"><div class="closecovers" aria-hidden="true"><img src="../assets/covers/snu.jpg" alt="" width="280" height="396" loading="lazy" decoding="async"><img src="../assets/covers/ewha.jpg" alt="" width="280" height="396" loading="lazy" decoding="async"><img src="../assets/covers/khu.jpg" alt="" width="280" height="396" loading="lazy" decoding="async"></div></div>
   </div>
 </section>
 </main>

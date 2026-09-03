@@ -357,3 +357,15 @@ p{max-width:var(--measure);color:var(--body)}
   .openers{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
   .tabshot{display:none}
 }
+
+/* 2026-09-03 건우 지시: 문제 절 AI 정물 제거 → 단일 열, 네 문장 카드 4열. 다섯 단계 카드 = 아래 실물 화면 절로 가는 링크 */
+.split.one{grid-template-columns:1fr}
+.split.one .forms{grid-template-columns:repeat(4,minmax(0,1fr))}
+.rail li a{display:block;height:100%;color:inherit;text-decoration:none}
+.rail li a:hover h4,.rail li a:focus-visible h4{color:var(--seal)}
+.rail li a:focus-visible{outline:2px solid var(--seal);outline-offset:4px;border-radius:4px}
+.rail .go{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s3);font-family:var(--mono);font-size:var(--t-xs);color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease)}
+.rail li a:hover .go{color:var(--seal);border-color:var(--seal)}
+.part{scroll-margin-top:var(--s5)}
+@media (max-width:900px){.split.one .forms{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.split.one .forms{grid-template-columns:1fr}}

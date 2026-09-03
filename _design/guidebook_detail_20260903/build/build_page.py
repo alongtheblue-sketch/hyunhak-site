@@ -102,6 +102,8 @@ GRID = '\n'.join(
     f'<a class="bk rv" href="{book_href(b)}"><img src="{cover_uri(b["name"], 280, 74)}" alt="{b["name"]} 2027 면접 가이드북 표지" width="280" height="396" loading="lazy" decoding="async"><span class="nm">{b["name"]}</span><span class="mt">{b["subtitle"].replace(", 보안 리더 열람", "")}</span></a>'
     for b in books)
 
+CLOSE_COVERS = '<div class="closecovers" aria-hidden="true">' + ''.join(f'<img src="{cover_uri(n, 280, 74)}" alt="" width="280" height="396" loading="lazy" decoding="async">' for n in HERO_COVERS[:3]) + '</div>'
+
 FAN = '\n'.join(
     f'<img class="fan f{i}" src="{cover_uri(n, 480, 82)}" alt="{n} 가이드북 표지" width="480" height="679" decoding="async">'
     for i, n in enumerate(HERO_COVERS))
@@ -110,6 +112,31 @@ OPEN = '\n'.join(
     f'<li class="rv"><img src="{data_uri(PG / (f + ".jpg"), 720, 80, name="gbd_" + f)[0]}" width="360" height="509" alt="{cap}" loading="lazy" decoding="async"><span>{cap}</span></li>'
     for f, cap in OPENERS)
 
+PART_CROP = {'D': 0.52}   # 1부 p4 는 본문이 상단 45% 에서 끝나는 짧은 면. 아래 빈 여백을 잘라 상단만 싣는다(문구에 '상단' 병기)
+
+
+def part_vis(key):
+    """부 절 시각 = 판매본 실물 면 한 장(선명 칸 2~3, 나머지는 픽셀에 구운 블러) + 칸 배지 + 범례. AI 정물 대체(2026-09-03 건우 지시)."""
+    reg = json.loads((ROOT / 'build' / 'sample_regions.json').read_text())[key]
+    crop = PART_CROP.get(key, 1.0)
+    src = ROOT / reg['file']
+    if crop < 1:
+        im = Image.open(src).convert('RGB')
+        im = im.crop((0, 0, im.width, round(im.height * crop)))
+        src = ROOT / 'pages' / f'{reg["file"].rsplit("/", 1)[-1].rsplit(".", 1)[0]}_top.jpg'
+        im.save(src, 'JPEG', quality=90, optimize=True)
+    uri, (w, h) = data_uri(src, 1000, 82, name=f'gbd_sample_{key}')
+    regs = reg['regions']
+    marks = ''.join(f'<span class="mk" style="left:{r["x"]:.2f}%;top:{(r["y"] + r["h"] / 2) / crop:.2f}%" aria-hidden="true">{i + 1}</span>'
+                    for i, r in enumerate(regs))
+    legend = ''.join(f'<li><span class="n">{i + 1}</span><p>{r["label"]}</p></li>' for i, r in enumerate(regs))
+    n = len(regs)
+    where = f'가천대학교 판 {reg["page"]}면' + (' 상단' if crop < 1 else '')
+    img = f'<img src="{uri}" width="{w}" height="{h}" alt="{where}, {reg["title"]}. 표시한 {n}칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async">'
+    if MODE == 'site':
+        img = f'<a href="{uri}" target="_blank" rel="noopener" aria-label="표본 면 크게 보기">{img}</a>'
+    return (f'<figure class="pgv"><div class="pg">{img}{marks}</div>'
+            f'<figcaption><span class="cap">판매본 지면 그대로. {where}, {reg["title"]}</span><ol class="lg">{legend}</ol></figcaption></figure>')
 
 
 def sample_block(key):
@@ -427,6 +454,18 @@ p{max-width:var(--measure);color:var(--body)}
   .top .tag{display:none}
   .hero h1{font-size:clamp(30px,9vw,38px)}
 }
+
+/* 2026-09-03 건우 지시: AI 정물 0장. 부 절 = 실물 면 표본(pgv), 문제·형태 절 = 단일 열, 마무리 = 실물 표지 */
+.split.one{grid-template-columns:1fr}
+.pgv{margin:0}
+.pgv .pg{position:relative;border:var(--rule);border-radius:var(--r-md);overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.12)}
+.pgv .pg img{display:block;width:100%;height:auto;border-radius:0}
+.pgv figcaption{margin-top:var(--s3)}
+.pgv .cap{display:block;font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-bottom:var(--s2);line-height:1.6}
+ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
+.closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+.closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
+.close .vis{align-self:center}
 """
 
 HTML = r"""<!DOCTYPE html>
@@ -489,7 +528,7 @@ HTML = r"""<!DOCTYPE html>
 <!-- 문제 -->
 <section class="sec ink" id="problem">
   <div class="wrap">
-    <div class="split">
+    <div class="split one">
       <div class="txt rv">
         <p class="kicker">시작하기 전에</p>
         <h2 class="h2">같은 “면접”이라는 이름, 준비 방법이 다른 세 시험</h2>
@@ -500,10 +539,6 @@ HTML = r"""<!DOCTYPE html>
           <li><span class="mono">형태 3</span><h4>MMI</h4><p>여러 방을 차례로 돌며 방마다 다른 상황 과제에 답하는 형태. 의약학 계열에서 쓰며 생활기록부 면접과는 다른 시험.</p></li>
         </ul>
         <p class="after">지원 전형이 어느 형태인지 모른 채 시작한 준비는 방향부터 어긋납니다. 이 책의 첫 면이 형태 판정인 이유.</p>
-      </div>
-      <div class="vis rv">
-        {{IMG_PROBLEM}}
-        
       </div>
     </div>
   </div>
@@ -747,7 +782,7 @@ HTML = r"""<!DOCTYPE html>
 <!-- 형태와 가격 -->
 <section class="sec" id="format">
   <div class="wrap">
-    <div class="split">
+    <div class="split one">
       <div class="txt rv">
         <p class="kicker">받는 방법과 가격</p>
         <h2 class="h2">결제 후 마이페이지에서 바로 열람</h2>
@@ -758,7 +793,6 @@ HTML = r"""<!DOCTYPE html>
           <li><span class="n">03</span><h4>보안 리더 열람</h4><p>마이페이지에서 바로 열림. 기기 제한 없음.</p></li>
         </ol>
       </div>
-      <div class="vis rv">{{IMG_FORMAT}}</div>
     </div>
     <ul class="price rv">
       <li><h4>보안 리더 열람판</h4><div class="won">33,000<small>원, 권당</small></div>
@@ -840,30 +874,28 @@ HTML = r"""<!DOCTYPE html>
 
 
 def main():
-    hero_uri, (hw, hh) = gen_img('hero', 2000, 74)
-    hero_bg = f'<img class="bg" src="{hero_uri}" width="{hw}" height="{hh}" alt="" decoding="async" fetchpriority="high">' if hero_uri else '<div class="ph bg"><span></span></div>'
+    hero_bg = ''   # AI 정물 배경 제거(2026-09-03 건우 지시). 히어로는 실물 표지 다섯 권만
     html = (HTML.replace('{{CSS}}', CSS).replace('{{HERO_BG}}', hero_bg).replace('{{FAN}}', FAN)
             .replace('{{GRID}}', GRID).replace('{{OPEN}}', OPEN))
-    html = html.replace('{{IMG_PROBLEM}}', img_tag('problem', 1400, '빈 면접실, 의자 셋과 하나'))
-    html = html.replace('{{IMG_P1}}', img_tag('p1', 1400, '남색 소책자 한 권'))
-    html = html.replace('{{IMG_P2}}', img_tag('p2', 1400, '공식 문서 더미와 루페'))
-    html = html.replace('{{IMG_P3}}', img_tag('p3', 1400, '카드 목록함 서랍'))
-    html = html.replace('{{IMG_P4}}', img_tag('p4', 1400, '한 줄에 그은 주홍 붓 밑줄'))
-    html = html.replace('{{IMG_P5}}', img_tag('p5', 1400, '남색 소책자 책장'))
-    html = html.replace('{{IMG_TRUST}}', img_tag('trust', 1400, '편집자의 밤 책상'))
-    html = html.replace('{{IMG_FORMAT}}', img_tag('format', 1400, '보안 리더 태블릿과 소책자'))
-    html = html.replace('{{IMG_CLOSE}}', img_tag('close', 1400, '남색 소책자 더미'))
+    # 부 절 시각 = 실물 면(1부 D p4, 2부 E p7, 3부 B p14, 4부 F p22 창체, 5부 C p31). 4부 본론 표본 블록(A p18)은 별도 유지. AI 정물 0장(2026-09-03)
+    html = html.replace('{{IMG_PROBLEM}}', '')
+    for key, var in (('p1', 'D'), ('p2', 'E'), ('p3', 'B'), ('p4', 'F'), ('p5', 'C')):
+        html = html.replace('{{IMG_' + key.upper() + '}}', part_vis(var))
+    html = html.replace('{{IMG_TRUST}}', '')
+    html = html.replace('{{IMG_FORMAT}}', '')
+    html = html.replace('{{IMG_CLOSE}}', CLOSE_COVERS)
     html = html.replace('{{SAMPLE}}', sample_block(SAMPLE))
     html = html.replace('{{DATE}}', datetime.date.today().isoformat())
     html = (html.replace('{{HOME}}', link('/')).replace('{{GB}}', link('/guidebook/'))
             .replace('{{FAVICON}}', '../assets/favicon_32.png' if MODE == 'site' else 'https://www.hyunhak.com/assets/favicon_32.png'))
     if MODE == 'site':
-        # og:image 1200x630 = 히어로 우측 정물 중심 크롭
-        im = Image.open(GEN / f"{IMG['hero']}_aigen.png").convert('RGB')
-        w, h = im.size; tw, th = 1200, 630
-        scale = max(tw / w, th / h); im = im.resize((round(w * scale), round(h * scale)), Image.LANCZOS)
-        w, h = im.size; left = w - tw; top = (h - th) // 2
-        im.crop((left, top, left + tw, top + th)).save(SITE_ROOT / 'assets' / 'photo' / 'gbd' / 'gbd_og.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
+        # og:image 1200x630 = 실물 표지 네 권을 한지 바탕에(AI 정물 대체, 2026-09-03)
+        og = Image.new('RGB', (1200, 630), (244, 239, 227))
+        ch = 520; cw = round(ch * 595 / 842); gap = (1200 - 4 * cw) // 5
+        for i, n in enumerate(HERO_COVERS[:4]):
+            c = Image.open(COV / f"{n}.jpg").convert('RGB').resize((cw, ch), Image.LANCZOS)
+            og.paste(c, (gap + i * (cw + gap), (630 - ch) // 2))
+        og.save(SITE_ROOT / 'assets' / 'photo' / 'gbd' / 'gbd_og.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
         out = SITE_ROOT / 'programs' / 'guidebook.html'
     else:
         out = OUT / OUTNAME

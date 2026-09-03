@@ -90,7 +90,6 @@ IMG = {
 }
 STAGE = {k: shot('stage_' + k, f, box, 1100, 76) for k, f, box in
          [('report', 'report_korea.png', (0, BAR, 2560, 1600)), ('brief', 'brief_korea_full.png', (0, BAR, 2560, 1480)), ('prep', 'prep_korea.png', (0, BAR, 2560, 1600))]}
-DESK = photo('desk', 'studio_desk_aigen.jpg', 1600, 76)
 CAMPUS = photo('campus', 'campus_collage.jpg', 1200, 80)
 
 # 단위 카드 (sets.json 실값)
@@ -197,7 +196,7 @@ HTML = r"""<!DOCTYPE html>
 <!-- 문제 -->
 <section class="sec ink" id="problem">
   <div class="wrap">
-    <div class="split">
+    <div class="split one">
       <div class="txt rv">
         <p class="kicker">시작하기 전에</p>
         <h2 class="h2">혼자 하는 제시문 면접 연습이 멈추는 자리</h2>
@@ -209,9 +208,6 @@ HTML = r"""<!DOCTYPE html>
           <li><span class="mono">복기 부재</span><h4>“열 세트를 풀었는데 뭐가 틀렸는지 모르겠어요.”</h4><p>혼자 연습하면 채점이 없습니다. 같은 실수의 반복.</p></li>
         </ul>
         <p class="after">네 문장의 공통 원인은 독해력이 아닙니다. 시험장의 시간 규격 안에서 소리 내어 말해 볼 자리와 말한 것을 돌려받을 자리가 없었다는 것입니다.</p>
-      </div>
-      <div class="vis rv">
-        {{IMG_DESK}}
       </div>
     </div>
   </div>
@@ -262,16 +258,12 @@ HTML = r"""<!DOCTYPE html>
       <p class="lede" style="margin-top:var(--s4)">세트를 고르고 준비하고 답변을 촬영합니다. 리포트를 받고 다시 응시합니다. 앞의 세 단계는 시험장을 옮겨 놓은 것이고 4단계가 이 스튜디오의 본론, 5단계는 그 리포트로 다음 회차를 정하는 자리입니다.</p>
     </div>
     <ol class="rail">
-      <li class="rv"><span class="n">1단계</span><h4>세트 고르기</h4><p>다섯 단위 150세트. 난이도와 네 축 점수를 보고 고릅니다.</p><span class="pg">기출 규격 제시문 은행</span></li>
-      <li class="rv"><span class="n">2단계</span><h4>준비 시간</h4><p>제시문과 발문을 읽고 메모. 연세 8분과 고려 21분이 그대로 흐릅니다.</p><span class="pg">실전 규격 타이머</span></li>
-      <li class="rv"><span class="n">3단계</span><h4>답변 촬영</h4><p>전면 카메라로 촬영하며 소리 내어 답변. 실전형은 시간 배분도 스스로.</p><span class="pg">녹화, 전사, 태도 신호</span></li>
-      <li class="rv core"><span class="n">4단계, 본론</span><h4>전사, 채점, 첨삭 세 단</h4><p>말한 그대로 전사한 뒤 루브릭으로 채점하고 진단과 구술체 재구성을 붙입니다.</p><span class="pg">리포트가 응시 직후 열림</span></li>
-      <li class="rv"><span class="n">5단계</span><h4>재응시와 순위</h4><p>지문마다 5회. 막힌 문항만 연습형으로 다시 한 뒤 실전형으로 확인.</p><span class="pg">5회 사다리, 랭킹 3축</span></li>
+      <li class="rv"><a href="#p1"><span class="n">1단계</span><h4>세트 고르기</h4><p>다섯 단위 150세트. 난이도와 네 축 점수를 보고 고릅니다.</p><span class="pg">기출 규격 제시문 은행</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></a></li>
+      <li class="rv"><a href="#p2"><span class="n">2단계</span><h4>준비 시간</h4><p>제시문과 발문을 읽고 메모. 연세 8분과 고려 21분이 그대로 흐릅니다.</p><span class="pg">실전 규격 타이머</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></a></li>
+      <li class="rv"><a href="#p3"><span class="n">3단계</span><h4>답변 촬영</h4><p>전면 카메라로 촬영하며 소리 내어 답변. 실전형은 시간 배분도 스스로.</p><span class="pg">녹화, 전사, 태도 신호</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></a></li>
+      <li class="rv core"><a href="#p4"><span class="n">4단계, 본론</span><h4>전사, 채점, 첨삭 세 단</h4><p>말한 그대로 전사한 뒤 루브릭으로 채점하고 진단과 구술체 재구성을 붙입니다.</p><span class="pg">리포트가 응시 직후 열림</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></a></li>
+      <li class="rv"><a href="#p5"><span class="n">5단계</span><h4>재응시와 순위</h4><p>지문마다 5회. 막힌 문항만 연습형으로 다시 한 뒤 실전형으로 확인.</p><span class="pg">5회 사다리, 랭킹 3축</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></a></li>
     </ol>
-    <ul class="openers">
-      {{OPEN}}
-    </ul>
-    <p class="openers-cap">스튜디오 실제 화면. 고려대 계열적합 인문 K-H17 세트. 데모 응시 리포트는 가상 학생의 실채점 결과.</p>
   </div>
 </section>
 
@@ -610,7 +602,7 @@ def main():
             setrows.append(f'<tr>{th}<td>{esc(s["title"])}</td><td class="r">{esc(s["difficulty"])}</td></tr>')
     h = HTML.replace('{{CSS}}', CSS).replace('{{STAGE}}', stage).replace('{{OPEN}}', open_html).replace('{{UNITS}}', UNITS)
     h = h.replace('{{SETROWS}}', '\n            '.join(setrows))
-    h = (h.replace('{{IMG_DESK}}', img(DESK, '빈 책상 위의 노트북과 링 라이트, 의자'))
+    h = (h
           .replace('{{IMG_HOME}}', img(IMG['home'], '세트 고르기 화면, 고려대 계열적합 인문 세트 목록'))
           .replace('{{IMG_PREP}}', img(IMG['prep'], '준비 시간 화면, 제시문과 21분 타이머와 답변 메모'))
           .replace('{{IMG_ANSWER}}', img(IMG['answer'], '답변 촬영 화면, 세 문항과 7분 타이머와 녹화 표시'))
@@ -631,6 +623,11 @@ def main():
           .replace('{{DATE}}', datetime.date.today().isoformat()))
     assert '{{' not in h, [l for l in h.splitlines() if '{{' in l][:3]
     out = (SITE_ROOT / 'programs' / 'studio.html') if MODE == 'site' else OUT / OUTNAME
+    if MODE == 'site':
+        # og:image 1200x630 = 리포트 실물 화면 상단(여섯 축 도형 + 문항 채점). AI 정물(std_desk) 대체, 2026-09-03 건우 지시
+        og = Image.open(SHOTS / 'report_korea.png').convert('RGB').crop((0, BAR, 2560, 1600))
+        og = og.resize((1200, round(og.height * 1200 / og.width)), Image.LANCZOS).crop((0, 0, 1200, 630))
+        og.save(SITE_ROOT / 'assets' / 'photo' / 'std' / 'std_og.jpg', 'JPEG', quality=82, optimize=True, progressive=True)
     out.write_text(h, encoding='utf-8')
     print(out, f"{out.stat().st_size/1e6:.2f} MB", 'MODE', MODE, 'sets', TOTAL_SETS, LV_ALL)
 

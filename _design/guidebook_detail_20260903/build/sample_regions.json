@@ -183,5 +183,176 @@
    "test_words_matched": 198,
    "word_ratio": 1.0
   }
+ },
+ "D": {
+  "variant": "D",
+  "page": 4,
+  "title": "1부 면접 형태 판정 면",
+  "file": "pages/sample_D_p4.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 5.96,
+    "y": 11.74,
+    "w": 81.87,
+    "h": 4.68,
+    "label": "세 형태 중 서류기반. 정의와 이 대학에 있음 표시"
+   },
+   {
+    "x": 5.96,
+    "y": 31.93,
+    "w": 56.0,
+    "h": 8.55,
+    "label": "전형별 형태 판정표. 가천바람개비전형은 서류확인형"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_D_zoom.jpg",
+   "size": [
+    1002,
+    202
+   ],
+   "rect_pt": [
+    42.5,
+    276.0,
+    362.0,
+    334.0
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 259,
+   "test_hangul": 10,
+   "char_ratio": 0.039,
+   "clean_words": 72,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 259,
+   "test_hangul": 259,
+   "char_ratio": 1.0,
+   "clean_words": 72,
+   "test_words_matched": 72,
+   "word_ratio": 1.0
+  }
+ },
+ "E": {
+  "variant": "E",
+  "page": 7,
+  "title": "2부 학과별 인재상 면",
+  "file": "pages/sample_E_p7.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 11.2,
+    "y": 4.16,
+    "w": 72.44,
+    "h": 7.98,
+    "label": "확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록"
+   },
+   {
+    "x": 11.12,
+    "y": 12.71,
+    "w": 30.38,
+    "h": 17.67,
+    "label": "간호학과 82건. 확인하는 것과 실제 질문 두 건"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_E_zoom.jpg",
+   "size": [
+    536,
+    347
+   ],
+   "rect_pt": [
+    73.0,
+    144.0,
+    240.0,
+    249.0
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 929,
+   "test_hangul": 15,
+   "char_ratio": 0.016,
+   "clean_words": 259,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 929,
+   "test_hangul": 929,
+   "char_ratio": 1.0,
+   "clean_words": 259,
+   "test_words_matched": 259,
+   "word_ratio": 1.0
+  }
+ },
+ "F": {
+  "variant": "F",
+  "page": 22,
+  "title": "4부 창의적 체험활동 규칙 면",
+  "file": "pages/sample_F_p22.jpg",
+  "size": [
+   1241,
+   1754
+  ],
+  "dpi": 150,
+  "sigma": 7,
+  "regions": [
+   {
+    "x": 5.96,
+    "y": 4.16,
+    "w": 62.37,
+    "h": 14.94,
+    "label": "영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축"
+   },
+   {
+    "x": 7.74,
+    "y": 20.18,
+    "w": 59.95,
+    "h": 12.03,
+    "label": "영재학급, 심화과정 기재 때의 규칙"
+   }
+  ],
+  "zoom": {
+   "file": "pages/sample_F_zoom.jpg",
+   "size": [
+    1085,
+    294
+   ],
+   "rect_pt": [
+    53.2,
+    66.0,
+    400.0,
+    154.0
+   ]
+  },
+  "leak_blurred": {
+   "clean_hangul": 361,
+   "test_hangul": 0,
+   "char_ratio": 0.0,
+   "clean_words": 83,
+   "test_words_matched": 0,
+   "word_ratio": 0.0
+  },
+  "leak_control_unblurred": {
+   "clean_hangul": 361,
+   "test_hangul": 361,
+   "char_ratio": 1.0,
+   "clean_words": 83,
+   "test_words_matched": 83,
+   "word_ratio": 1.0
+  }
  }
 }
