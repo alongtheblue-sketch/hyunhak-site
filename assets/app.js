@@ -84,6 +84,7 @@
     if (hit) {
       hit.qty = line.set_id ? 1 : intIn(hit.qty + intIn(item.qty, 1, LINE_MAX, 1), 1, LINE_MAX, 1);
       saveCart(items);
+      trackAdd(line);
       return { ok: true };
     }
     if (items.filter((x) => x.sku === line.sku).length >= LINE_MAX)
@@ -91,8 +92,13 @@
         message: "같은 상품은 " + LINE_MAX + "줄까지 담을 수 있습니다. 먼저 결제하시거나 장바구니에서 줄을 빼 주세요." };
     items.push(line);
     saveCart(items);
+    trackAdd(line);
     return { ok: true };
   }
+  // 전환 계측(2026-09-04): HH_TRACK 는 apply_analytics 가 head 에 정의(GA4 + Meta 픽셀 동시 발화). 없으면 조용히 건너뛴다
+  function lineItem(x) { return { item_id: x.sku, item_name: x.title, price: x.price, quantity: x.qty || 1 }; }
+  function track(name, params) { try { if (window.HH_TRACK) HH_TRACK(name, params); } catch (e) {} }
+  function trackAdd(line) { track("add_to_cart", { currency: "KRW", value: line.price * (line.qty || 1), items: [lineItem(line)] }); }
   function cartTotal() { return cart().reduce((s, x) => s + x.price * x.qty, 0); }
 
   let _me = null;
@@ -198,6 +204,20 @@
         else location.href = prefix + "guidebook/index.html?q=" + encodeURIComponent(q1.value.trim());
       });
     }
+    // 전환 계측: 가이드북 상품 면 조회(view_item), 결제 면 진입(begin_checkout, 장바구니 비면 생략), 스튜디오 체험 응시 시작(generate_lead)
+    try {
+      const path = location.pathname;
+      if (/\/guidebook\/(?!index\.html$)[A-Za-z0-9_-]+\.html$/.test(path)) {
+        const buy = document.querySelector(".buy [data-cart-sku]") || document.querySelector("[data-cart-sku]");
+        if (buy) track("view_item", { currency: "KRW", value: +buy.dataset.cartPrice || 0, items: [{ item_id: buy.dataset.cartSku, item_name: buy.dataset.cartTitle, price: +buy.dataset.cartPrice || 0, quantity: 1 }] });
+      }
+      if (/(^|\/)checkout\.html$/.test(path)) {
+        const lines = cart();
+        if (lines.length) track("begin_checkout", { currency: "KRW", value: cartTotal(), items: lines.map(lineItem) });
+      }
+      const tg = document.getElementById("trialGo");
+      if (tg) tg.addEventListener("click", function () { track("generate_lead", { content: "studio_trial" }); });
+    } catch (e) {}
   });
   // ── 공지 팝업 (2026-08-23) ──
   // 정책: 관리자가 게시한 popup 중 노출 기간 안의 것을 최대 1건 띄운다.
