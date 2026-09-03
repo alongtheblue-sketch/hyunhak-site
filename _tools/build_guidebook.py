@@ -4,7 +4,7 @@
 서브커맨드
   refresh  원천(interview_guidebook_2027/export/site/*.json + PDF 면수)을 읽어
            _tools/guidebook_catalog.json 을 재박제한다. 가격(price) 필드는 보존.
-  build    카탈로그만 읽어 guidebook/index.html + guidebook/<slug>.html 38 개를 쓴다 (플랫폼 v2 템플릿 2종).
+  build    카탈로그만 읽어 guidebook/index.html + 판매 중(onsale) 권만 guidebook/<slug>.html 로 쓴다 (비판매는 면 자체를 만들지 않는다, 2026-09-04 건우 지시). 플랫폼 v2 템플릿 2종.
   verify   산출 검증: 멱등(재생성 바이트 동일), 상대 링크 실재, <style> 금지 속성,
            hex 색상, 금지 문자, 명단(roster) 문자열 0 건.
   seo      검색 유입 축(SEARCH 표 + 유형별 골격)으로 _tools/seo_manifest.json 의 guidebook/ 39면
@@ -713,7 +713,7 @@ def build_to(out_dir):
     missing = [s for s, _ in SLUGS if s not in meta]
     if missing:
         sys.exit(f"meta v3 누락 {len(missing)}권: {missing[:5]}")
-    items = sorted(cat["items"], key=lambda e: e["name"])
+    items = sorted([e for e in cat["items"] if e.get("onsale", True)], key=lambda e: e["name"])   # 비판매 제외 (2026-09-04)
     out_dir.mkdir(parents=True, exist_ok=True)
     written = []
     p = out_dir / "index.html"
@@ -735,13 +735,13 @@ def cmd_build(args):
 
 
 def cmd_seo(args):
-    """seo_manifest.json 의 guidebook/<slug>.html 38면 + guidebook/index.html 의 title/description/answer 를 유형별 골격으로 재박제."""
+    """seo_manifest.json 의 guidebook/<slug>.html 판매 중 면 + guidebook/index.html 의 title/description/answer 를 유형별 골격으로 재박제."""
     import seo_common as _C
     cat = json.load(open(CATALOG, encoding="utf-8"))
     meta = load_meta()
     ground_check(meta)
     m = _C.load_manifest()
-    items = sorted(cat["items"], key=lambda e: e["name"])
+    items = sorted([e for e in cat["items"] if e.get("onsale", True)], key=lambda e: e["name"])   # 비판매 제외 (2026-09-04)
     rows = []
     for e in items:
         rel = f"guidebook/{e['slug']}.html"
@@ -772,8 +772,9 @@ ALLOWED_HEX = {"#312e2e", "#f6f2e9", "#696561", "#bc3529", "#f1ebdd", "#efe9dc",
 def cmd_verify(args):
     fails = []
     files = sorted(OUT.glob("*.html"))
-    if len(files) != len(SLUGS) + 1:
-        fails.append(f"파일 수 {len(files)} != {len(SLUGS) + 1}")
+    n_sale = sum(1 for e in json.load(open(CATALOG, encoding="utf-8"))["items"] if e.get("onsale", True))
+    if len(files) != n_sale + 1:
+        fails.append(f"파일 수 {len(files)} != {n_sale + 1} (판매 중 + index)")
     # 멱등
     with tempfile.TemporaryDirectory() as td:
         tmp = Path(td) / "guidebook"

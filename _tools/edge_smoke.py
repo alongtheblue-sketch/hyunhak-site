@@ -30,7 +30,7 @@ def chk(name, ok, detail, warn=False):
 s, h, b = get("/"); chk("/ 200 html", s == 200 and b"<html" in b.lower() or b"<!doctype" in b.lower(), f"{s}")
 s, h, b = get("/guidebook/"); chk("/guidebook/ index", s == 200, f"{s}")
 s, h, b = get("/guidebook", follow=False); chk("/guidebook → 301 슬래시", s == 301 and h.get("Location", "").endswith("/guidebook/"), f"{s} {h.get('Location')}")
-s, h, b = get("/guidebook/korea.html"); chk("/guidebook/korea.html 200", s == 200, f"{s}")
+s, h, b = get("/guidebook/snu.html"); chk("/guidebook/snu.html 200", s == 200, f"{s}")   # korea 는 09-04 철거(301)
 s, h, b = get("/faq"); chk("/faq 확장자 없는 경로", s == 200, f"{s}")
 s, h, b = get("/robots.txt"); chk("robots GPTBot 그룹", s == 200 and b"GPTBot" in b and b"Content-Signal" in b, f"{s}")
 s, h, b = get("/llms.txt"); chk("llms.txt", s == 200, f"{s}")

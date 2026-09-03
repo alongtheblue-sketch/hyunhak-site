@@ -4,6 +4,17 @@
 
 const APEX = "hyunhak.com";
 
+// 2026-09-04 철거 면: 비판매 7권(경북, 고려, 성균관, 연세, DGIST, 부경, 홍익)은 면을 내리고 목록으로 301 (색인과 외부 링크에 남은 URL 수습).
+const REMOVED_GUIDEBOOK = new Set([
+  "/guidebook/knu.html",
+  "/guidebook/korea.html",
+  "/guidebook/skku.html",
+  "/guidebook/yonsei.html",
+  "/guidebook/dgist.html",
+  "/guidebook/pknu.html",
+  "/guidebook/hongik.html",
+]);
+
 // 보호층 셸: 색인 금지 + 캐시 금지. 본문은 api 뒤에 있으므로 셸 자체는 비어 있지만 헤더로 한 번 더 못박는다.
 const SHELL_NOINDEX = new Set(["/reader.html", "/lecture.html"]);
 const PRIVATE_NOINDEX = new Set(["/my.html", "/cart.html", "/checkout.html", "/pay_done.html", "/join.html", "/login.html"]);
@@ -94,6 +105,11 @@ export default {
     if (url.hostname === "www." + APEX) {
       url.hostname = APEX;
       return Response.redirect(url.toString(), 301);
+    }
+    {
+      const p0 = url.pathname.replace(/\/$/, "");
+      const k = p0.endsWith(".html") ? p0 : p0 + ".html";
+      if (REMOVED_GUIDEBOOK.has(k)) { url.pathname = "/guidebook/index.html"; url.search = ""; return Response.redirect(url.toString(), 301); }
     }
     // workers.dev 등 비정식 호스트 (aigate REQ11): 존 밖이라 WAF·AI bot policies 가 안 걸린다.
     // 공개 지면은 noindex 로 서빙(컷오버 전 스모크 용도 유지), 보호층 셸은 아예 내지 않는다.

@@ -1,6 +1,6 @@
 #!/bin/sh
 # 사이트 빌드 파이프라인 (순서 고정). 2회 연속 실행 시 트리 해시 동일 = 멱등.
-#   1 가이드북 38권 생성 → 1b 아카이브 26면 v2 변환(멱등) → 2 nav/footer 통일(v2 셸) → 3 폰트 비차단 → 3b 분석 태그(GA4, 네이버 로그분석) → 4 SEO/AEO 주입 → 5 sitemap/robots/llms → 6 검증(seo_check + v2_check)
+#   1 가이드북 판매 31권 생성(비판매 7권은 면 없음, 2026-09-04) → 1b 아카이브 26면 v2 변환(멱등) → 2 nav/footer 통일(v2 셸) → 3 폰트 비차단 → 3b 분석 태그(GA4, 네이버 로그분석) → 4 SEO/AEO 주입 → 5 sitemap/robots/llms → 6 검증(seo_check + v2_check)
 # build_guidebook.py verify 는 후공정(3,4) 전 원본 기준이라 본 파이프라인 이후엔 FAIL 이 정상. 멱등 증명은 본 스크립트의 해시 비교로 한다.
 set -e
 cd "$(dirname "$0")/.."
