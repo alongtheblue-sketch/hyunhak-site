@@ -1,1967 +1,1986 @@
 {
- "site": {
-  "base_url": "https://hyunhak.com",
-  "name": "현학적 연구소",
-  "alternate_name": "玄學的 硏究所",
-  "logo": "/assets/photo/art_figure.png",
-  "default_image": "/assets/photo/og_aigen.jpg",
-  "locale": "ko_KR",
-  "language": "ko-KR",
-  "email": "admin@hyunhak.com",
-  "twitter_card": "summary_large_image",
-  "skip_inject": [
-   "reader.html"
-  ],
-  "planned_paths": [],
-  "llms": {
-   "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 제시문 면접 스튜디오와 학교별 2027 서류기반면접 가이드북 31권을 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
-   "products": [
-    {
-     "name": "학교별 2027 서류기반면접 가이드북 (디지털, 31권)",
-     "path": "/guidebook/",
-     "price": "1권 33,000원 (보안 리더 열람, 원본 PDF 비제공)",
-     "desc": "대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북."
+  "site": {
+    "base_url": "https://hyunhak.com",
+    "name": "현학적 연구소",
+    "alternate_name": "玄學的 硏究所",
+    "logo": "/assets/photo/art_figure.png",
+    "default_image": "/assets/photo/og_aigen.jpg",
+    "locale": "ko_KR",
+    "language": "ko-KR",
+    "email": "admin@hyunhak.com",
+    "twitter_card": "summary_large_image",
+    "skip_inject": [
+      "reader.html"
+    ],
+    "planned_paths": [],
+    "llms": {
+      "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 제시문 면접 스튜디오와 학교별 2027 서류기반면접 가이드북 31권을 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
+      "products": [
+        {
+          "name": "학교별 2027 서류기반면접 가이드북 (디지털, 31권)",
+          "path": "/guidebook/",
+          "price": "1권 33,000원 (보안 리더 열람, 원본 PDF 비제공)",
+          "desc": "대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북."
+        },
+        {
+          "name": "제시문 면접 스튜디오 (연세대, 고려대)",
+          "path": "/studio.html",
+          "price": "단위 전권 495,000원(인강 포함), 지문 1편 33,000원(응시 5회), 공통 풀이 인강 220,000원",
+          "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."
+        }
+      ],
+      "free": [],
+      "keywords": [
+        "연세대 면접",
+        "고려대 계열적합 면접",
+        "제시문 면접",
+        "구술면접",
+        "대입 면접 준비",
+        "면접 기출",
+        "성균관대 면접",
+        "면접가이드북",
+        "학종 면접 질문"
+      ],
+      "contact": "admin@hyunhak.com"
     },
-    {
-     "name": "제시문 면접 스튜디오 (연세대, 고려대)",
-     "path": "/studio.html",
-     "price": "단위 전권 495,000원(인강 포함), 지문 1편 33,000원(응시 5회), 공통 풀이 인강 220,000원",
-     "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."
+    "merchant": {
+      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신.",
+      "country": "KR",
+      "shipping_fee": 3000,
+      "free_shipping_over": 50000,
+      "physical_return_days": 7,
+      "physical_return_fees": "ReturnShippingFees",
+      "physical_return_fee_amount": 3000,
+      "physical_transit_days_min": 1,
+      "physical_transit_days_max": 3,
+      "physical_handling_days_min": 0,
+      "physical_handling_days_max": 1
     }
-   ],
-   "free": [],
-   "keywords": [
-    "연세대 면접",
-    "고려대 계열적합 면접",
-    "제시문 면접",
-    "구술면접",
-    "대입 면접 준비",
-    "면접 기출",
-    "성균관대 면접",
-    "면접가이드북",
-    "학종 면접 질문"
-   ],
-   "contact": "admin@hyunhak.com"
   },
-  "merchant": {
-   "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신.",
-   "country": "KR",
-   "shipping_fee": 3000,
-   "free_shipping_over": 50000,
-   "physical_return_days": 7,
-   "physical_return_fees": "ReturnShippingFees",
-   "physical_return_fee_amount": 3000,
-   "physical_transit_days_min": 1,
-   "physical_transit_days_max": 3,
-   "physical_handling_days_min": 0,
-   "physical_handling_days_max": 1
+  "defaults": {
+    "guidebook/*": {
+      "_note": "학교별 2027 서류기반면접 가이드북 31권 판매(면 38 생성) (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        }
+      ],
+      "schema": {
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": null,
+            "sku": null
+          }
+        ]
+      }
+    },
+    "programs/*": {
+      "_note": "제시문 면접 스튜디오 학교별 LP. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원. 2026-09-03 가격 개편.",
+      "type": "product",
+      "priority": 0.9,
+      "changefreq": "monthly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        }
+      ],
+      "schema": {
+        "offers": [
+          {
+            "name": "학교 전권",
+            "price": 330000,
+            "sku": null
+          },
+          {
+            "name": "지문 1편 (응시 5회)",
+            "price": 22000,
+            "sku": null
+          }
+        ]
+      }
+    }
+  },
+  "pages": {
+    "404.html": {
+      "title": "현학적 연구소, 없는 면",
+      "description": "요청하신 주소의 면을 찾지 못했습니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "찾는 면이 없습니다",
+          "path": "/404.html"
+        }
+      ],
+      "answer": ""
+    },
+    "about.html": {
+      "title": "검을 현 玄, 현학적 연구소",
+      "description": "검을 현 玄, 아득히 깊은 배움. 고려대학교 영어교육과를 나온 입시 컨설턴트 13년차가 모집요강과 수험생 후기 관측으로 만드는 서류기반면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오.",
+      "type": "utility",
+      "noindex": false,
+      "priority": 0.6,
+      "changefreq": "monthly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "연구소 소개",
+          "path": "/about.html"
+        }
+      ],
+      "answer": "현학적 연구소는 대입 면접 자료를 만드는 곳으로, 모집요강, 선행학습영향평가 보고서, 수험생 후기에서 모은 질문으로 가이드북 31권과 연세대, 고려대 스튜디오를 입시 컨설턴트 13년차가 편집합니다."
+    },
+    "cart.html": {
+      "title": "장바구니, 현학적 연구소",
+      "description": "현학적 연구소 장바구니입니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "장바구니",
+          "path": "/cart.html"
+        }
+      ],
+      "answer": ""
+    },
+    "checkout.html": {
+      "title": "결제, 현학적 연구소",
+      "description": "현학적 연구소 스토어 결제 화면입니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "결제",
+          "path": "/checkout.html"
+        }
+      ],
+      "answer": ""
+    },
+    "faq.html": {
+      "title": "자주 묻는 질문, 현학적 연구소",
+      "description": "서류기반면접 가이드북 열람 방식, 제시문 면접 스튜디오 응시와 첨삭, 가격과 환불, 자료 출처에 대한 답을 모았습니다. 현학적 연구소 자주 묻는 질문.",
+      "type": "faq",
+      "noindex": false,
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "자주 묻는 질문",
+          "path": "/faq.html"
+        }
+      ],
+      "answer": "가이드북은 구매 후 보안 리더로 열람하며 원본 파일은 제공하지 않습니다. 스튜디오는 지문 1편에 5회 응시하고 회차마다 첨삭이 붙습니다."
+    },
+    "guidebook/ajou.html": {
+      "title": "아주대 ACE전형, ACE전형 의학과 면접 가이드북 2027, 기출 190문과 생기부 질문 규칙 62개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "아주대학교 2027 면접 가이드북",
+          "path": "/guidebook/ajou.html"
+        }
+      ],
+      "schema": {
+        "about": "아주대학교",
+        "product_name": "아주대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-ajou"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "아주대 ACE전형, ACE전형 의학과 면접 가이드북. 선배 후기 2020~2025 기출 190문, 생기부 질문 규칙 62개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "아주대 ACE전형 면접은 서류기반 면접, ACE전형 의학과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 190문과 생기부 질문 규칙 62개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/ajou.jpg"
+    },
+    "guidebook/catholic.html": {
+      "title": "가톨릭대 잠재능력우수자면접전형, 학교장추천전형 의예과 면접 가이드북 2027, 기출 147문과 생기부 질문 규칙 59개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "가톨릭대학교 2027 면접 가이드북",
+          "path": "/guidebook/catholic.html"
+        }
+      ],
+      "schema": {
+        "about": "가톨릭대학교",
+        "product_name": "가톨릭대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-catholic"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "가톨릭대 잠재능력우수자면접전형, 학교장추천전형 의예과 면접 가이드북. 기출 147문, 생기부 질문 규칙 59개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "가톨릭대 잠재능력우수자면접전형 면접은 서류기반 면접, 학교장추천전형 의예과 면접은 서류기반과 인적성 제시문 혼합 면접입니다. 기출 147문, 생기부 질문 규칙 59개, 권당 33,000원.",
+      "image": "/assets/covers/catholic.jpg"
+    },
+    "guidebook/cau.html": {
+      "title": "중앙대 CAU탐구형인재, 융합형인재 의학부 면접 가이드북 2027, 기출 131문과 생기부 질문 규칙 59개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "중앙대학교 2027 면접 가이드북",
+          "path": "/guidebook/cau.html"
+        }
+      ],
+      "schema": {
+        "about": "중앙대학교",
+        "product_name": "중앙대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-cau"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "중앙대 CAU탐구형인재, 융합형인재 의학부 면접 가이드북. 선배 후기 2017~2026 기출 131문, 생기부 질문 규칙 59개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "중앙대 CAU탐구형인재와 융합형인재 의학부 면접은 모두 서류기반 면접입니다. 기출 131문과 생기부 질문 규칙 59개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/cau.jpg"
+    },
+    "guidebook/dankook.html": {
+      "title": "단국대 DKU인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 18문과 생기부 질문 규칙 20개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "단국대학교(죽전) 2027 면접 가이드북",
+          "path": "/guidebook/dankook.html"
+        }
+      ],
+      "schema": {
+        "about": "단국대학교(죽전)",
+        "product_name": "단국대학교(죽전) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-dankook"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "단국대 DKU인재(면접형), SW인재 서류기반 면접 가이드북. 선배 후기 2025 기출 18문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "단국대 DKU인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 18문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/dankook.jpg"
+    },
+    "guidebook/dgist.html": {
+      "title": "DGIST 과학인재전형 면접 가이드북 2027 판 준비 중, 기출 124문과 생기부 질문 규칙 53개 구성",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "DGIST(대구경북과학기술원) 2027 면접 가이드북",
+          "path": "/guidebook/dgist.html"
+        }
+      ],
+      "schema": {
+        "about": "DGIST(대구경북과학기술원)",
+        "product_name": "DGIST(대구경북과학기술원) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-dgist"
+          }
+        ]
+      },
+      "description": "DGIST 과학인재전형 면접 가이드북 2027 판은 준비 중입니다. 선배 후기 2017~2024 기출 124문, 생기부 질문 규칙 53개 구성. 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "DGIST 과학인재전형 면접 가이드북 2027 판은 준비 중이며 판매 개시는 공지로 알립니다. 기출 124문과 생기부 질문 규칙 53개 구성.",
+      "image": "/assets/covers/dgist.jpg"
+    },
+    "guidebook/donga.html": {
+      "title": "동아대 잠재능력우수자 면접 가이드북 2027, 서류기반 면접 기출 161문과 생기부 질문 규칙 48개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "동아대학교 2027 면접 가이드북",
+          "path": "/guidebook/donga.html"
+        }
+      ],
+      "schema": {
+        "about": "동아대학교",
+        "product_name": "동아대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-donga"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "동아대 잠재능력우수자 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 161문, 생기부 질문 규칙 48개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "동아대 잠재능력우수자 면접은 서류기반 면접입니다. 이 가이드북은 기출 161문과 생기부 질문 규칙 48개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/donga.jpg"
+    },
+    "guidebook/dongduk.html": {
+      "title": "동덕여대 동덕창의리더전형 면접 가이드북 2027, 서류기반 면접 기출 43문과 생기부 질문 규칙 20개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "동덕여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/dongduk.html"
+        }
+      ],
+      "schema": {
+        "about": "동덕여자대학교",
+        "product_name": "동덕여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-dongduk"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "동덕여대 동덕창의리더전형 서류기반 면접 가이드북. 선배 후기 2020~2026 기출 43문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "동덕여대 동덕창의리더전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 43문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/dongduk.jpg"
+    },
+    "guidebook/dongguk.html": {
+      "title": "동국대 Do Dream 면접 가이드북 2027, 서류기반 면접 기출 176문과 생기부 질문 규칙 59개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "동국대학교 2027 면접 가이드북",
+          "path": "/guidebook/dongguk.html"
+        }
+      ],
+      "schema": {
+        "about": "동국대학교",
+        "product_name": "동국대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-dongguk"
+          }
+        ]
+      },
+      "description": "동국대 Do Dream 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 176문, 생기부 질문 규칙 59개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "동국대 Do Dream 면접은 서류기반 면접입니다. 이 가이드북은 기출 176문과 생기부 질문 규칙 59개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/dongguk.jpg"
+    },
+    "guidebook/duksung.html": {
+      "title": "덕성여대 덕성인재전형Ⅱ 면접 가이드북 2027, 서류기반 면접 기출 42문과 생기부 질문 규칙 20개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "덕성여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/duksung.html"
+        }
+      ],
+      "schema": {
+        "about": "덕성여자대학교",
+        "product_name": "덕성여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-duksung"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "덕성여대 덕성인재전형Ⅱ 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 42문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "덕성여대 덕성인재전형Ⅱ 면접은 서류기반 면접입니다. 이 가이드북은 기출 42문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/duksung.jpg"
+    },
+    "guidebook/ewha.html": {
+      "title": "이화여대 미래인재전형(면접형) 면접 가이드북 2027, 서류기반 면접 기출 152문과 생기부 질문 규칙 50개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "이화여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/ewha.html"
+        }
+      ],
+      "schema": {
+        "about": "이화여자대학교",
+        "product_name": "이화여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-ewha"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "이화여대 미래인재전형(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 152문, 생기부 질문 규칙 50개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "이화여대 미래인재전형(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 152문과 생기부 질문 규칙 50개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/ewha.jpg"
+    },
+    "guidebook/gachon.html": {
+      "title": "가천대 가천바람개비, 가천의약학 면접 가이드북 2027, 기출 142문과 생기부 질문 규칙 54개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "가천대학교 2027 면접 가이드북",
+          "path": "/guidebook/gachon.html"
+        }
+      ],
+      "schema": {
+        "about": "가천대학교",
+        "product_name": "가천대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-gachon"
+          }
+        ]
+      },
+      "description": "가천대 가천바람개비, 가천의약학 면접 가이드북. 전형별 판정표, 선배 후기 2020~2026 기출 142문, 생기부 질문 규칙 54개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "가천대 가천바람개비와 가천의약학 면접은 모두 서류기반 면접입니다. 기출 142문과 생기부 질문 규칙 54개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/gachon.jpg"
+    },
+    "guidebook/hanyang-erica.html": {
+      "title": "한양대 ERICA 학생부종합(면접형) 면접 가이드북 2027, 서류기반 면접 기출 11문과 생기부 질문 규칙 20개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "한양대학교(ERICA) 2027 면접 가이드북",
+          "path": "/guidebook/hanyang-erica.html"
+        }
+      ],
+      "schema": {
+        "about": "한양대학교(ERICA)",
+        "product_name": "한양대학교(ERICA) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-hanyang-erica"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "한양대 ERICA 학생부종합(면접형) 서류기반 면접 가이드북. 선배 후기 2020 기출 11문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "한양대 ERICA 학생부종합(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 11문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/hanyang-erica.jpg"
+    },
+    "guidebook/hongik.html": {
+      "title": "홍익대 미술우수자전형 면접 가이드북 2027 판 준비 중, 기출 49문과 생기부 질문 규칙 35개 구성",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "홍익대학교(서울) 2027 면접 가이드북",
+          "path": "/guidebook/hongik.html"
+        }
+      ],
+      "schema": {
+        "about": "홍익대학교(서울)",
+        "product_name": "홍익대학교(서울) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-hongik"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "홍익대 미술우수자전형 면접 가이드북 2027 판은 준비 중입니다. 선배 후기 2022~2025 기출 49문, 생기부 질문 규칙 35개 구성. 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "홍익대 미술우수자전형 면접 가이드북 2027 판은 준비 중이며 판매 개시는 공지로 알립니다. 기출 49문과 생기부 질문 규칙 35개 구성.",
+      "image": "/assets/covers/hongik.jpg"
+    },
+    "guidebook/hufs.html": {
+      "title": "한국외대 학생부종합전형(면접형) 면접 가이드북 2027, 서류기반 면접 기출 167문과 생기부 질문 규칙 53개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "한국외국어대학교 2027 면접 가이드북",
+          "path": "/guidebook/hufs.html"
+        }
+      ],
+      "schema": {
+        "about": "한국외국어대학교",
+        "product_name": "한국외국어대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-hufs"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "한국외대 학생부종합전형(면접형) 서류기반 면접 가이드북. 기출 167문, 생기부 질문 규칙 53개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "한국외대 학생부종합전형(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 167문과 생기부 질문 규칙 53개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/hufs.jpg"
+    },
+    "guidebook/incheon.html": {
+      "title": "인천대 자기추천전형, INU교과전형 면접 가이드북 2027, 학종과 교과 면접 기출 154문과 생기부 질문 규칙 44개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "인천대학교 2027 면접 가이드북",
+          "path": "/guidebook/incheon.html"
+        }
+      ],
+      "schema": {
+        "about": "인천대학교",
+        "product_name": "인천대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-incheon"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "인천대 자기추천전형(학종), INU교과전형(교과) 면접 가이드북. 기출 154문, 생기부 질문 규칙 44개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "인천대 자기추천전형 면접은 서류기반 면접, INU교과전형 면접은 제시문 면접(공통문제형)입니다. 기출 154문과 생기부 질문 규칙 44개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/incheon.jpg"
+    },
+    "guidebook/index.html": {
+      "title": "대학별 면접 가이드북 2027, 31개 대학 면접 기출과 생기부 질문 규칙, 권당 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        }
+      ],
+      "schema": {
+        "list_dir": "guidebook/",
+        "list_name": "학교별 2027 서류기반면접 가이드북"
+      },
+      "type": "hub",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "description": "대학별 면접 가이드북 2027, 31개 대학 판매 중. 전형별 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "대학별 면접 가이드북 2027은 31개 대학, 권당 33,000원입니다. 대학마다 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략을 담았고 보안 리더로 열람합니다."
+    },
+    "guidebook/inha.html": {
+      "title": "인하대 인하미래인재(면접형), 의예과 면접 가이드북 2027, 기출 148문과 생기부 질문 규칙 69개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "인하대학교 2027 면접 가이드북",
+          "path": "/guidebook/inha.html"
+        }
+      ],
+      "schema": {
+        "about": "인하대학교",
+        "product_name": "인하대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-inha"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "인하대 인하미래인재(면접형), 의예과 면접 가이드북. 선배 후기 2017~2025 기출 148문, 생기부 질문 규칙 69개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "인하대 인하미래인재(면접형)과 의예과 면접은 모두 서류기반 면접입니다. 기출 148문과 생기부 질문 규칙 69개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/inha.jpg"
+    },
+    "guidebook/khu.html": {
+      "title": "경희대 네오르네상스전형 면접 가이드북 2027, 서류기반 면접 기출 172문과 생기부 질문 규칙 52개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "경희대학교 2027 면접 가이드북",
+          "path": "/guidebook/khu.html"
+        }
+      ],
+      "schema": {
+        "about": "경희대학교",
+        "product_name": "경희대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-khu"
+          }
+        ]
+      },
+      "description": "경희대 네오르네상스전형 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 172문, 생기부 질문 규칙 52개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "경희대 네오르네상스전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 172문과 생기부 질문 규칙 52개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/khu.jpg"
+    },
+    "guidebook/knu.html": {
+      "title": "경북대 지역인재전형 면접 가이드북 2027 판 준비 중, 기출 162문과 생기부 질문 규칙 48개 구성",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "경북대학교 2027 면접 가이드북",
+          "path": "/guidebook/knu.html"
+        }
+      ],
+      "schema": {
+        "about": "경북대학교",
+        "product_name": "경북대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-knu"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "경북대 지역인재전형 면접 가이드북 2027 판은 준비 중입니다. 선배 후기 2017~2026 기출 162문, 생기부 질문 규칙 48개 구성. 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "경북대 지역인재전형 면접 가이드북 2027 판은 준비 중이며 판매 개시는 공지로 알립니다. 기출 162문과 생기부 질문 규칙 48개 구성.",
+      "image": "/assets/covers/knu.jpg"
+    },
+    "guidebook/konkuk.html": {
+      "title": "건국대 KU자기추천 면접 가이드북 2027, 서류기반 면접 기출 120문과 생기부 질문 규칙 55개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "건국대학교(서울) 2027 면접 가이드북",
+          "path": "/guidebook/konkuk.html"
+        }
+      ],
+      "schema": {
+        "about": "건국대학교(서울)",
+        "product_name": "건국대학교(서울) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-konkuk"
+          }
+        ]
+      },
+      "description": "건국대 KU자기추천 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 120문, 생기부 질문 규칙 55개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "건국대 KU자기추천 면접은 서류기반 면접입니다. 이 가이드북은 기출 120문과 생기부 질문 규칙 55개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/konkuk.jpg"
+    },
+    "guidebook/kookmin.html": {
+      "title": "국민대 국민프런티어 면접 가이드북 2027, 서류기반 면접 기출 143문과 생기부 질문 규칙 60개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "국민대학교 2027 면접 가이드북",
+          "path": "/guidebook/kookmin.html"
+        }
+      ],
+      "schema": {
+        "about": "국민대학교",
+        "product_name": "국민대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-kookmin"
+          }
+        ]
+      },
+      "description": "국민대 국민프런티어, 국제인재 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 143문, 생기부 질문 규칙 60개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "국민대 국민프런티어 면접은 서류기반 면접입니다. 이 가이드북은 기출 143문과 생기부 질문 규칙 60개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/kookmin.jpg"
+    },
+    "guidebook/korea.html": {
+      "title": "고려대 계열적합전형 면접 준비, 2027 서류기반 가이드북 없음, 제시문 면접 스튜디오 안내",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "고려대학교(서울) 2027 면접 가이드북",
+          "path": "/guidebook/korea.html"
+        }
+      ],
+      "schema": {
+        "about": "고려대학교(서울)",
+        "product_name": "고려대학교(서울) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-korea"
+          }
+        ]
+      },
+      "description": "고려대 계열적합전형 면접은 제시문형이라 2027 서류기반 가이드북을 내지 않습니다. 기출 지문 응시와 촬영 첨삭의 고려대 제시문 면접 스튜디오로 안내합니다. 13년차 대치동 입시 컨설턴트 운영.",
+      "answer": "고려대 2027 서류기반 면접 가이드북은 없습니다. 계열적합전형 제시문 면접은 기출 지문 응시와 촬영 첨삭의 고려대 제시문 면접 스튜디오에서 준비합니다.",
+      "image": "/assets/covers/korea.jpg"
+    },
+    "guidebook/kwangwoon.html": {
+      "title": "광운대 광운참빛인재전형 I(면접형) 면접 가이드북 2027, 서류기반 면접 기출 148문과 생기부 질문 규칙 67개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "광운대학교 2027 면접 가이드북",
+          "path": "/guidebook/kwangwoon.html"
+        }
+      ],
+      "schema": {
+        "about": "광운대학교",
+        "product_name": "광운대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-kwangwoon"
+          }
+        ]
+      },
+      "description": "광운대 광운참빛인재전형 I(면접형) 서류기반 면접 가이드북. 기출 148문, 생기부 질문 규칙 67개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "광운대 광운참빛인재전형 I(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 148문과 생기부 질문 규칙 67개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/kwangwoon.jpg"
+    },
+    "guidebook/kyonggi.html": {
+      "title": "경기대 KGU학생부종합전형, 디자인학부 면접 가이드북 2027, 서류기반, 과제 발표 혼합형 전형별 판정과 기출 130문",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "경기대학교 2027 면접 가이드북",
+          "path": "/guidebook/kyonggi.html"
+        }
+      ],
+      "schema": {
+        "about": "경기대학교",
+        "product_name": "경기대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-kyonggi"
+          }
+        ]
+      },
+      "description": "경기대 KGU학생부종합전형, 디자인학부 면접 가이드북. 전형별 판정표, 기출 130문, 생기부 질문 규칙 49개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "경기대 KGU학생부종합전형 면접은 서류기반 면접, 디자인학부 면접은 과제 제시 발표와 서류기반 혼합 면접입니다. 전형별 판정표와 기출 130문, 생기부 질문 규칙 49개, 권당 33,000원.",
+      "image": "/assets/covers/kyonggi.jpg"
+    },
+    "guidebook/myongji.html": {
+      "title": "명지대 명지인재면접전형, 교과면접전형 면접 가이드북 2027, 학종과 교과 면접 기출 161문과 생기부 질문 규칙 55개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "명지대학교 2027 면접 가이드북",
+          "path": "/guidebook/myongji.html"
+        }
+      ],
+      "schema": {
+        "about": "명지대학교",
+        "product_name": "명지대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-myongji"
+          }
+        ]
+      },
+      "description": "명지대 명지인재면접전형(학종), 교과면접전형(교과) 면접 가이드북. 기출 161문, 생기부 질문 규칙 55개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "명지대 명지인재면접전형 면접은 서류기반 면접, 교과면접전형 면접은 인적성 면접(인성면접)입니다. 기출 161문과 생기부 질문 규칙 55개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/myongji.jpg"
+    },
+    "guidebook/pknu.html": {
+      "title": "부경대 학교생활우수인재 면접 가이드북 2027 판 준비 중, 기출 187문과 생기부 질문 규칙 55개 구성",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "부경대학교 2027 면접 가이드북",
+          "path": "/guidebook/pknu.html"
+        }
+      ],
+      "schema": {
+        "about": "부경대학교",
+        "product_name": "부경대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-pknu"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "부경대 학교생활우수인재 면접 가이드북 2027 판은 준비 중입니다. 선배 후기 2017~2021 기출 187문, 생기부 질문 규칙 55개 구성. 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "부경대 학교생활우수인재 면접 가이드북 2027 판은 준비 중이며 판매 개시는 공지로 알립니다. 기출 187문과 생기부 질문 규칙 55개 구성.",
+      "image": "/assets/covers/pknu.jpg"
+    },
+    "guidebook/pusan.html": {
+      "title": "부산대 학생부종합전형, 의예과 면접 가이드북 2027, 기출 139문과 생기부 질문 규칙 61개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "부산대학교 2027 면접 가이드북",
+          "path": "/guidebook/pusan.html"
+        }
+      ],
+      "schema": {
+        "about": "부산대학교",
+        "product_name": "부산대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-pusan"
+          }
+        ]
+      },
+      "description": "부산대 학생부종합전형, 의예과 면접 가이드북. 전형별 판정표, 선배 후기 2017~2026 기출 139문, 생기부 질문 규칙 61개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "부산대 학생부종합전형 면접은 서류기반 면접, 의예과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 139문과 생기부 질문 규칙 61개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/pusan.jpg"
+    },
+    "guidebook/sahmyook.html": {
+      "title": "삼육대 세움인재, 예체능인재 면접 가이드북 2027, 서류기반, 제시문 전형별 판정과 기출 18문",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "삼육대학교 2027 면접 가이드북",
+          "path": "/guidebook/sahmyook.html"
+        }
+      ],
+      "schema": {
+        "about": "삼육대학교",
+        "product_name": "삼육대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-sahmyook"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "삼육대 세움인재, 예체능인재 면접 가이드북. 전형별 형태 판정표, 선배 후기 2020~2024 기출 18문, 생기부 질문 규칙 18개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "삼육대 세움인재 면접은 서류기반 면접, 예체능인재 면접은 제시문 면접(선택형)과 개별질문입니다. 전형별 판정표와 기출 18문, 생기부 질문 규칙 18개, 권당 33,000원.",
+      "image": "/assets/covers/sahmyook.jpg"
+    },
+    "guidebook/sejong.html": {
+      "title": "세종대 세종인재전형(면접형), 창의소프트학부 면접 가이드북 2027, 서류기반, 제시문 혼합형 전형별 판정과 기출 145문",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "세종대학교 2027 면접 가이드북",
+          "path": "/guidebook/sejong.html"
+        }
+      ],
+      "schema": {
+        "about": "세종대학교",
+        "product_name": "세종대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-sejong"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "세종대 세종인재전형(면접형), 창의소프트학부 면접 가이드북. 전형별 판정표, 기출 145문, 생기부 질문 규칙 51개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "세종대 세종인재전형(면접형) 면접은 서류기반 면접, 창의소프트학부 면접은 제시문과 서류기반 혼합 면접입니다. 전형별 판정표와 기출 145문, 생기부 질문 규칙 51개, 권당 33,000원.",
+      "image": "/assets/covers/sejong.jpg"
+    },
+    "guidebook/seoultech.html": {
+      "title": "서울과기대 학교생활우수자전형 면접 가이드북 2027, 서류기반 면접 기출 151문과 생기부 질문 규칙 45개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "서울과학기술대학교 2027 면접 가이드북",
+          "path": "/guidebook/seoultech.html"
+        }
+      ],
+      "schema": {
+        "about": "서울과학기술대학교",
+        "product_name": "서울과학기술대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-seoultech"
+          }
+        ]
+      },
+      "description": "서울과기대 학교생활우수자전형 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 151문, 생기부 질문 규칙 45개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "서울과기대 학교생활우수자전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 151문과 생기부 질문 규칙 45개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/seoultech.jpg"
+    },
+    "guidebook/skku.html": {
+      "title": "성균관대 성균인재전형 면접 가이드북 2027 판 준비 중, 기출 81문과 생기부 질문 규칙 35개 구성",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "성균관대학교 2027 면접 가이드북",
+          "path": "/guidebook/skku.html"
+        }
+      ],
+      "schema": {
+        "about": "성균관대학교",
+        "product_name": "성균관대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-skku"
+          }
+        ]
+      },
+      "description": "성균관대 성균인재전형 면접 가이드북 2027 판은 준비 중입니다. 선배 후기 2018~2026 기출 81문, 생기부 질문 규칙 35개 구성. 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "성균관대 성균인재전형 면접 가이드북 2027 판은 준비 중이며 판매 개시는 공지로 알립니다. 기출 81문과 생기부 질문 규칙 35개 구성.",
+      "image": "/assets/covers/skku.jpg"
+    },
+    "guidebook/snu.html": {
+      "title": "서울대 지역균형전형, 일반전형 면접 가이드북 2027, 서류기반, 제시문, MMI 전형별 판정과 기출 134문",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "서울대학교 2027 면접 가이드북",
+          "path": "/guidebook/snu.html"
+        }
+      ],
+      "schema": {
+        "about": "서울대학교",
+        "product_name": "서울대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-snu"
+          }
+        ]
+      },
+      "description": "서울대 지역균형전형, 일반전형 면접 가이드북. 전형별 형태 판정표, 선배 후기 2017~2026 기출 134문, 생기부 질문 규칙 49개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "서울대 지역균형전형 면접은 서류기반 면접, 일반전형 면접은 제시문 면접, 의대 등은 MMI입니다. 전형별 판정표와 기출 134문, 생기부 질문 규칙 49개, 권당 33,000원.",
+      "image": "/assets/covers/snu.jpg"
+    },
+    "guidebook/sookmyung.html": {
+      "title": "숙명여대 숙명인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 114문과 생기부 질문 규칙 45개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "숙명여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/sookmyung.html"
+        }
+      ],
+      "schema": {
+        "about": "숙명여자대학교",
+        "product_name": "숙명여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-sookmyung"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "숙명여대 숙명인재(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 114문, 생기부 질문 규칙 45개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "숙명여대 숙명인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 114문과 생기부 질문 규칙 45개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/sookmyung.jpg"
+    },
+    "guidebook/soongsil.html": {
+      "title": "숭실대 SSU미래인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 165문과 생기부 질문 규칙 54개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "숭실대학교 2027 면접 가이드북",
+          "path": "/guidebook/soongsil.html"
+        }
+      ],
+      "schema": {
+        "about": "숭실대학교",
+        "product_name": "숭실대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-soongsil"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "숭실대 SSU미래인재(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2025 기출 165문, 생기부 질문 규칙 54개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "숭실대 SSU미래인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 165문과 생기부 질문 규칙 54개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/soongsil.jpg"
+    },
+    "guidebook/sungshin.html": {
+      "title": "성신여대 자기주도인재 면접 가이드북 2027, 서류기반 면접 기출 135문과 생기부 질문 규칙 66개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "성신여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/sungshin.html"
+        }
+      ],
+      "schema": {
+        "about": "성신여자대학교",
+        "product_name": "성신여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-sungshin"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "성신여대 자기주도인재 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 135문, 생기부 질문 규칙 66개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "성신여대 자기주도인재 면접은 서류기반 면접입니다. 이 가이드북은 기출 135문과 생기부 질문 규칙 66개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/sungshin.jpg"
+    },
+    "guidebook/swu.html": {
+      "title": "서울여대 바롬인재면접전형 면접 가이드북 2027, 서류기반 면접 기출 61문과 생기부 질문 규칙 20개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "서울여자대학교 2027 면접 가이드북",
+          "path": "/guidebook/swu.html"
+        }
+      ],
+      "schema": {
+        "about": "서울여자대학교",
+        "product_name": "서울여자대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-swu"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "서울여대 바롬인재면접전형 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 61문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "서울여대 바롬인재면접전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 61문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/swu.jpg"
+    },
+    "guidebook/ulsan.html": {
+      "title": "울산대 학생부종합(면접형), 의예과 면접 가이드북 2027, 기출 165문과 생기부 질문 규칙 48개, 33,000원",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "울산대학교 2027 면접 가이드북",
+          "path": "/guidebook/ulsan.html"
+        }
+      ],
+      "schema": {
+        "about": "울산대학교",
+        "product_name": "울산대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-ulsan"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "울산대 학생부종합(면접형), 의예과 면접 가이드북. 전형별 판정표, 선배 후기 2017~2025 기출 165문, 생기부 질문 규칙 48개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "울산대 학생부종합(면접형) 면접은 서류기반 면접, 의예과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 165문과 생기부 질문 규칙 48개를 담은 가이드북, 권당 33,000원.",
+      "image": "/assets/covers/ulsan.jpg"
+    },
+    "guidebook/uos.html": {
+      "title": "서울시립대 학생부종합전형Ⅰ(면접형) 면접 가이드북 2027, 서류기반 면접 기출 151문과 생기부 질문 규칙 53개",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "서울시립대학교 2027 면접 가이드북",
+          "path": "/guidebook/uos.html"
+        }
+      ],
+      "schema": {
+        "about": "서울시립대학교",
+        "product_name": "서울시립대학교 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-uos"
+          }
+        ]
+      },
+      "description": "서울시립대 학생부종합전형Ⅰ(면접형) 서류기반 면접 가이드북. 기출 151문, 생기부 질문 규칙 53개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "answer": "서울시립대 학생부종합전형Ⅰ(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 151문과 생기부 질문 규칙 53개를 담았고 권당 33,000원입니다.",
+      "image": "/assets/covers/uos.jpg"
+    },
+    "guidebook/yonsei.html": {
+      "title": "연세대 활동우수형 면접 준비, 2027 서류기반 가이드북 없음, 제시문 면접 스튜디오 안내",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "연세대학교(서울) 2027 면접 가이드북",
+          "path": "/guidebook/yonsei.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교(서울)",
+        "product_name": "연세대학교(서울) 2027 면접 가이드북",
+        "offers": [
+          {
+            "name": "디지털 가이드북 (보안 리더 열람)",
+            "price": 33000,
+            "sku": "guide-yonsei"
+          }
+        ],
+        "availability": "OutOfStock"
+      },
+      "description": "연세대 활동우수형 면접은 제시문형이라 2027 서류기반 가이드북을 내지 않습니다. 기출 지문 응시와 촬영 첨삭의 연세대 제시문 면접 스튜디오로 안내합니다. 13년차 대치동 입시 컨설턴트 운영.",
+      "answer": "연세대 2027 서류기반 면접 가이드북은 없습니다. 활동우수형 제시문 면접은 기출 지문 응시와 촬영 첨삭의 연세대 제시문 면접 스튜디오에서 준비합니다.",
+      "image": "/assets/covers/yonsei.jpg"
+    },
+    "index.html": {
+      "title": "현학적 연구소, 대학별 면접 가이드북 2027과 연세대 고려대 제시문 면접 스튜디오",
+      "description": "대학별 면접 가이드북 2027(31개 대학, 권당 33,000원)과 연세대, 고려대 제시문 면접 스튜디오를 운영합니다. 실제 기출과 생기부 질문 규칙, 13년차 대치동 입시 컨설턴트 편집.",
+      "type": "home",
+      "priority": 1.0,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        }
+      ],
+      "schema": {
+        "items": [
+          "programs/yonsei.html",
+          "programs/korea.html",
+          "studio.html",
+          "guidebook/index.html"
+        ]
+      },
+      "answer": ""
+    },
+    "insta.html": {
+      "title": "현학적 연구소 링크",
+      "description": "현학적 연구소 인스타그램 링크 허브. 서류기반면접 가이드북 31권, 제시문 면접 스튜디오, 공지와 FAQ.",
+      "type": "utility",
+      "priority": 0.1,
+      "changefreq": "monthly",
+      "noindex": true,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "링크",
+          "path": "/insta.html"
+        }
+      ],
+      "answer": ""
+    },
+    "join.html": {
+      "title": "가입, 현학적 연구소",
+      "description": "현학적 연구소 입회 화면입니다. 약관 동의, 본인인증, 정보 입력의 세 걸음으로 진행합니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "회원 가입",
+          "path": "/join.html"
+        }
+      ],
+      "answer": ""
+    },
+    "lecture.html": {
+      "title": "인강 뷰어, 현학적 연구소",
+      "description": "현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.",
+      "type": "utility",
+      "answer": "",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "마이페이지",
+          "path": "/my.html"
+        },
+        {
+          "name": "인강 뷰어",
+          "path": "/lecture.html"
+        }
+      ]
+    },
+    "library.html": {
+      "title": "자료실, 대학별 2027 면접가이드북 PDF | 현학적 연구소",
+      "description": "현학적 연구소 자료실. 학교별 2027 서류기반면접 가이드북 PDF 를 구매한 계정으로 보안 리더에서 열람합니다. 원본 파일은 내려받을 수 없습니다.",
+      "type": "hub",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "자료실",
+          "path": "/library.html"
+        }
+      ],
+      "answer": "자료실의 학교별 2027 서류기반면접 가이드북은 구매한 계정으로 보안 리더에서 열람하며, 원본 파일은 제공하지 않습니다."
+    },
+    "login.html": {
+      "title": "로그인, 현학적 연구소",
+      "description": "현학적 연구소 로그인 화면입니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "로그인",
+          "path": "/login.html"
+        }
+      ],
+      "answer": ""
+    },
+    "my.html": {
+      "title": "마이페이지, 현학적 연구소",
+      "description": "현학적 연구소 마이페이지입니다. 이용권과 열람, 예약, 주문을 한눈에 봅니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "내 정보",
+          "path": "/my.html"
+        }
+      ],
+      "answer": ""
+    },
+    "notice.html": {
+      "title": "공지, 현학적 연구소",
+      "description": "현학적 연구소 공지. 서류기반면접 가이드북 갱신 내역, 제시문 면접 스튜디오 일정, 결제와 열람에 관한 서비스 안내를 날짜순으로 게시합니다.",
+      "type": "utility",
+      "noindex": false,
+      "priority": 0.5,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "공지",
+          "path": "/notice.html"
+        }
+      ],
+      "answer": "현학적 연구소 공지는 가이드북 갱신, 스튜디오 일정, 서비스 변경 사항을 날짜순으로 기록합니다."
+    },
+    "pay_done.html": {
+      "title": "결제 확인, 현학적 연구소",
+      "description": "현학적 연구소 결제 확인 화면입니다.",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "결제를 확인하는 중입니다",
+          "path": "/pay_done.html"
+        }
+      ],
+      "answer": ""
+    },
+    "privacy.html": {
+      "title": "개인정보처리방침, 현학적 연구소",
+      "description": "현학적 연구소 개인정보처리방침. 수집 항목과 목적, 보유 기간, 처리 위탁, 학생 음성과 영상의 처리, 정보주체의 권리와 안전성 확보 조치를 안내합니다.",
+      "type": "legal",
+      "priority": 0.3,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "개인정보처리방침",
+          "path": "/privacy.html"
+        }
+      ],
+      "answer": ""
+    },
+    "programs/korea.html": {
+      "title": "고려대 계열적합전형 면접, 제시문 면접 스튜디오, 준비 21분 발화 7분 실전 규격",
+      "description": "고려대 계열적합전형 제시문 면접(인문, 자연)을 준비 21분, 발화 7분 실전 규격으로 응시하고 촬영 첨삭을 받는 스튜디오. 전권 495,000원 인강 포함, 13년차 대치동 입시 컨설턴트 운영.",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        },
+        {
+          "name": "고려대 제시문 면접 스튜디오",
+          "path": "/programs/korea.html"
+        }
+      ],
+      "schema": {
+        "product_name": "고려대학교 제시문 면접 스튜디오 (계열적합전형)",
+        "about": "고려대학교",
+        "offers": [
+          {
+            "name": "고려대 인문 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "고려대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "스튜디오 지문 이용권 1편 (응시 5회)",
+            "price": 33000,
+            "sku": "passage-single",
+            "offer_url": "/studio.html"
+          }
+        ]
+      },
+      "answer": ""
+    },
+    "programs/yonsei.html": {
+      "title": "연세대 활동우수형 면접, 제시문 면접 스튜디오, 준비 8분 답변 5분 실전 규격",
+      "description": "연세대 활동우수형 제시문 면접을 준비 8분, 답변 5분 실전 규격으로 응시하고 촬영 첨삭을 받는 스튜디오. 전권 495,000원 인강 포함, 13년차 대치동 입시 컨설턴트 운영.",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        },
+        {
+          "name": "연세대 제시문 면접 스튜디오",
+          "path": "/programs/yonsei.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대학교 제시문 면접 스튜디오 (활동우수형)",
+        "about": "연세대학교",
+        "offers": [
+          {
+            "name": "연세대 인문 통합 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 국제 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-intl",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "스튜디오 지문 이용권 1편 (응시 5회)",
+            "price": 33000,
+            "sku": "passage-single",
+            "offer_url": "/studio.html"
+          }
+        ]
+      },
+      "answer": ""
+    },
+    "reader.html": {
+      "title": "현학적 연구소, 보안 뷰어",
+      "description": "",
+      "type": "utility",
+      "noindex": true,
+      "priority": 0.1,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "현학적 연구소, 보안 뷰어",
+          "path": "/reader.html"
+        }
+      ],
+      "answer": ""
+    },
+    "studio.html": {
+      "title": "제시문 면접 스튜디오, 현학적 연구소",
+      "description": "학교별 기출로 온라인으로 치르는 대입 제시문 면접 스튜디오. 지문 1편 33,000원에 5회 응시, 단위 전권 495,000원 인강 포함. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.",
+      "type": "product",
+      "priority": 0.9,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        }
+      ],
+      "schema": {
+        "product_name": "제시문 면접 스튜디오",
+        "offers": [
+          {
+            "name": "고려대 인문 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "고려대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 인문 통합 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 국제 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-intl",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "스튜디오 지문 이용권 1편 (응시 5회)",
+            "price": 33000,
+            "sku": "passage-single",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "공통 풀이 인강",
+            "price": 220000,
+            "sku": "lecture-common",
+            "offer_url": "/studio.html#lecture"
+          }
+        ]
+      },
+      "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함."
+    },
+    "terms.html": {
+      "title": "이용약관, 현학적 연구소",
+      "description": "현학적 연구소 이용약관. 회원 가입, 제시문 면접 스튜디오 이용권과 가이드북 구매, 결제, 청약철회와 환불, 지식재산권에 관한 조건을 안내합니다.",
+      "type": "legal",
+      "priority": 0.3,
+      "changefreq": "yearly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "이용약관",
+          "path": "/terms.html"
+        }
+      ],
+      "answer": ""
+    },
+    "b2b.html": {
+      "title": "스쿨 플랜, 현학적 연구소",
+      "description": "학원과 단체를 위한 제시문 면접 스튜디오 스쿨 플랜. 연세대, 고려대 제시문 면접을 좌석 수에 따라 할인 도입하고, 강사 계정으로 학생 리포트를 관리합니다.",
+      "answer": "스쿨 플랜은 학원이 제시문 면접 스튜디오 좌석을 5개 이상 도입하는 플랜입니다. 추가 좌석 단가는 315,000원에서 240,000원까지 내려가고, 강사 계정과 학생 리포트 관리가 포함됩니다.",
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "monthly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        },
+        {
+          "name": "스쿨 플랜",
+          "path": "/b2b.html"
+        }
+      ],
+      "schema": {
+        "about": "제시문 면접 스튜디오 스쿨 플랜",
+        "about_type": "Service"
+      }
+    },
+    "programs/guidebook.html": {
+      "title": "대학별 생기부 면접 가이드북 2027 소개, 31개 대학 면접 기출과 생기부 질문 규칙",
+      "description": "대학별 생기부 면접 가이드북 2027 소개. 31개 대학 31권, 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략의 다섯 부. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "noindex": false,
+      "image": "/assets/photo/gbd/gbd_og.jpg",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "가이드북",
+          "path": "/guidebook/"
+        },
+        {
+          "name": "가이드북 소개",
+          "path": "/programs/guidebook.html"
+        }
+      ],
+      "schema": {
+        "product_name": "학교별 2027 서류기반면접 가이드북",
+        "offers": [
+          {
+            "name": "31개 대학 전권 열람권",
+            "price": 511500,
+            "sku": "guide-all-view",
+            "offer_url": "/guidebook/"
+          },
+          {
+            "name": "31개 대학 전권 PDF 소장판",
+            "price": 1705000,
+            "sku": "guide-all-pdf",
+            "offer_url": "/guidebook/"
+          }
+        ]
+      },
+      "answer": "대학별 생기부 면접 가이드북 2027은 31개 대학 31권, 다섯 부 구성입니다. 실제 기출과 생기부 질문 규칙을 담았고 권당 33,000원, 보안 리더로 열람합니다."
+    },
+    "programs/studio.html": {
+      "title": "연세대 고려대 제시문 면접 스튜디오 소개, 기출 150세트 촬영 응시와 세 단 첨삭",
+      "description": "연세대, 고려대 제시문 면접 스튜디오 소개. 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 다섯 단계. 단위 전권 495,000원 인강 포함, 13년차 대치동 입시 컨설턴트 운영.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "noindex": false,
+      "image": "/assets/photo/std/std_og.jpg",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "제시문 면접 스튜디오",
+          "path": "/studio.html"
+        },
+        {
+          "name": "과정 소개",
+          "path": "/programs/studio.html"
+        }
+      ],
+      "schema": {
+        "product_name": "제시문 면접 스튜디오",
+        "offers": [
+          {
+            "name": "고려대 인문 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "고려대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 인문 통합 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 국제 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-intl",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "스튜디오 지문 이용권 1편 (응시 5회)",
+            "price": 33000,
+            "sku": "passage-single",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "공통 풀이 인강",
+            "price": 220000,
+            "sku": "lecture-common",
+            "offer_url": "/studio.html#lecture"
+          }
+        ]
+      },
+      "answer": "제시문 면접 스튜디오는 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 다섯 단계 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원."
+    },
+    "support.html": {
+      "title": "고객센터, 현학적 연구소",
+      "description": "현학적 연구소 고객센터. 가이드북 열람과 스튜디오 응시에 관한 1:1 문의, 청약철회와 환불 규정, 결제 오류 처리, 자주 묻는 질문 안내를 한곳에 모았습니다.",
+      "type": "utility",
+      "noindex": false,
+      "priority": 0.5,
+      "changefreq": "monthly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "고객센터",
+          "path": "/support.html"
+        }
+      ],
+      "answer": "고객센터에서는 1:1 문의 접수, 환불 규정 안내, 자주 묻는 질문을 다룹니다. 문의는 admin@hyunhak.com 으로도 받습니다."
+    }
   }
- },
- "defaults": {
-  "guidebook/*": {
-   "_note": "학교별 2027 서류기반면접 가이드북 31권 판매(면 38 생성) (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
-   "type": "product",
-   "priority": 0.8,
-   "changefreq": "monthly",
-   "noindex": false,
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    }
-   ],
-   "schema": {
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": null,
-      "sku": null
-     }
-    ]
-   }
-  },
-  "programs/*": {
-   "_note": "제시문 면접 스튜디오 학교별 LP. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원. 2026-09-03 가격 개편.",
-   "type": "product",
-   "priority": 0.9,
-   "changefreq": "monthly",
-   "noindex": false,
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    }
-   ],
-   "schema": {
-    "offers": [
-     {
-      "name": "학교 전권",
-      "price": 330000,
-      "sku": null
-     },
-     {
-      "name": "지문 1편 (응시 5회)",
-      "price": 22000,
-      "sku": null
-     }
-    ]
-   }
-  }
- },
- "pages": {
-  "404.html": {
-   "title": "현학적 연구소, 없는 면",
-   "description": "요청하신 주소의 면을 찾지 못했습니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "찾는 면이 없습니다",
-     "path": "/404.html"
-    }
-   ],
-   "answer": ""
-  },
-  "about.html": {
-   "title": "검을 현 玄, 현학적 연구소",
-   "description": "검을 현 玄, 아득히 깊은 배움. 고려대학교 영어교육과를 나온 입시 컨설턴트 13년차가 모집요강과 수험생 후기 관측으로 만드는 서류기반면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오.",
-   "type": "utility",
-   "noindex": false,
-   "priority": 0.6,
-   "changefreq": "monthly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "연구소 소개",
-     "path": "/about.html"
-    }
-   ],
-   "answer": "현학적 연구소는 대입 면접 자료를 만드는 곳으로, 모집요강, 선행학습영향평가 보고서, 수험생 후기에서 모은 질문으로 가이드북 31권과 연세대, 고려대 스튜디오를 입시 컨설턴트 13년차가 편집합니다."
-  },
-  "cart.html": {
-   "title": "장바구니, 현학적 연구소",
-   "description": "현학적 연구소 장바구니입니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "장바구니",
-     "path": "/cart.html"
-    }
-   ],
-   "answer": ""
-  },
-  "checkout.html": {
-   "title": "결제, 현학적 연구소",
-   "description": "현학적 연구소 스토어 결제 화면입니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "결제",
-     "path": "/checkout.html"
-    }
-   ],
-   "answer": ""
-  },
-  "faq.html": {
-   "title": "자주 묻는 질문, 현학적 연구소",
-   "description": "서류기반면접 가이드북 열람 방식, 제시문 면접 스튜디오 응시와 첨삭, 가격과 환불, 자료 출처에 대한 답을 모았습니다. 현학적 연구소 자주 묻는 질문.",
-   "type": "faq",
-   "noindex": false,
-   "priority": 0.7,
-   "changefreq": "monthly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "자주 묻는 질문",
-     "path": "/faq.html"
-    }
-   ],
-   "answer": "가이드북은 구매 후 보안 리더로 열람하며 원본 파일은 제공하지 않습니다. 스튜디오는 지문 1편에 5회 응시하고 회차마다 첨삭이 붙습니다."
-  },
-  "guidebook/ajou.html": {
-   "title": "아주대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "아주대학교 2027 면접 가이드북",
-     "path": "/guidebook/ajou.html"
-    }
-   ],
-   "schema": {
-    "about": "아주대학교",
-    "product_name": "아주대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-ajou"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "아주대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "아주대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/ajou.jpg"
-  },
-  "guidebook/catholic.html": {
-   "title": "가톨릭대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "가톨릭대학교 2027 면접 가이드북",
-     "path": "/guidebook/catholic.html"
-    }
-   ],
-   "schema": {
-    "about": "가톨릭대학교",
-    "product_name": "가톨릭대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-catholic"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "가톨릭대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "가톨릭대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/catholic.jpg"
-  },
-  "guidebook/cau.html": {
-   "title": "중앙대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "중앙대학교 2027 면접 가이드북",
-     "path": "/guidebook/cau.html"
-    }
-   ],
-   "schema": {
-    "about": "중앙대학교",
-    "product_name": "중앙대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-cau"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "중앙대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "중앙대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/cau.jpg"
-  },
-  "guidebook/dankook.html": {
-   "title": "단국대학교(죽전) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "단국대학교(죽전) 2027 면접 가이드북",
-     "path": "/guidebook/dankook.html"
-    }
-   ],
-   "schema": {
-    "about": "단국대학교(죽전)",
-    "product_name": "단국대학교(죽전) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-dankook"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "단국대학교 죽전 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "단국대학교(죽전) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/dankook.jpg"
-  },
-  "guidebook/dgist.html": {
-   "title": "DGIST(대구경북과학기술원) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "DGIST(대구경북과학기술원) 2027 면접 가이드북",
-     "path": "/guidebook/dgist.html"
-    }
-   ],
-   "schema": {
-    "about": "DGIST(대구경북과학기술원)",
-    "product_name": "DGIST(대구경북과학기술원) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-dgist"
-     }
-    ]
-   },
-   "description": "DGIST 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "DGIST(대구경북과학기술원) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/dgist.jpg"
-  },
-  "guidebook/donga.html": {
-   "title": "동아대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "동아대학교 2027 면접 가이드북",
-     "path": "/guidebook/donga.html"
-    }
-   ],
-   "schema": {
-    "about": "동아대학교",
-    "product_name": "동아대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-donga"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "동아대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "동아대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/donga.jpg"
-  },
-  "guidebook/dongduk.html": {
-   "title": "동덕여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "동덕여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/dongduk.html"
-    }
-   ],
-   "schema": {
-    "about": "동덕여자대학교",
-    "product_name": "동덕여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-dongduk"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "동덕여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "동덕여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/dongduk.jpg"
-  },
-  "guidebook/dongguk.html": {
-   "title": "동국대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "동국대학교 2027 면접 가이드북",
-     "path": "/guidebook/dongguk.html"
-    }
-   ],
-   "schema": {
-    "about": "동국대학교",
-    "product_name": "동국대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-dongguk"
-     }
-    ]
-   },
-   "description": "동국대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "동국대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/dongguk.jpg"
-  },
-  "guidebook/duksung.html": {
-   "title": "덕성여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "덕성여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/duksung.html"
-    }
-   ],
-   "schema": {
-    "about": "덕성여자대학교",
-    "product_name": "덕성여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-duksung"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "덕성여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "덕성여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/duksung.jpg"
-  },
-  "guidebook/ewha.html": {
-   "title": "이화여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "이화여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/ewha.html"
-    }
-   ],
-   "schema": {
-    "about": "이화여자대학교",
-    "product_name": "이화여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-ewha"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "이화여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "이화여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/ewha.jpg"
-  },
-  "guidebook/gachon.html": {
-   "title": "가천대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "가천대학교 2027 면접 가이드북",
-     "path": "/guidebook/gachon.html"
-    }
-   ],
-   "schema": {
-    "about": "가천대학교",
-    "product_name": "가천대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-gachon"
-     }
-    ]
-   },
-   "description": "가천대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "가천대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/gachon.jpg"
-  },
-  "guidebook/hanyang-erica.html": {
-   "title": "한양대학교(ERICA) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "한양대학교(ERICA) 2027 면접 가이드북",
-     "path": "/guidebook/hanyang-erica.html"
-    }
-   ],
-   "schema": {
-    "about": "한양대학교(ERICA)",
-    "product_name": "한양대학교(ERICA) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-hanyang-erica"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "한양대학교(ERICA) 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "한양대학교(ERICA) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/hanyang-erica.jpg"
-  },
-  "guidebook/hongik.html": {
-   "title": "홍익대학교(서울) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "홍익대학교(서울) 2027 면접 가이드북",
-     "path": "/guidebook/hongik.html"
-    }
-   ],
-   "schema": {
-    "about": "홍익대학교(서울)",
-    "product_name": "홍익대학교(서울) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-hongik"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "홍익대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "홍익대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/hongik.jpg"
-  },
-  "guidebook/hufs.html": {
-   "title": "한국외국어대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "한국외국어대학교 2027 면접 가이드북",
-     "path": "/guidebook/hufs.html"
-    }
-   ],
-   "schema": {
-    "about": "한국외국어대학교",
-    "product_name": "한국외국어대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-hufs"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "한국외국어대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "한국외국어대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/hufs.jpg"
-  },
-  "guidebook/incheon.html": {
-   "title": "인천대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "인천대학교 2027 면접 가이드북",
-     "path": "/guidebook/incheon.html"
-    }
-   ],
-   "schema": {
-    "about": "인천대학교",
-    "product_name": "인천대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-incheon"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "인천대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "인천대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/incheon.jpg"
-  },
-  "guidebook/index.html": {
-   "title": "학교별 2027 서류기반면접 가이드북 31권, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    }
-   ],
-   "schema": {
-    "list_dir": "guidebook/",
-    "list_name": "학교별 2027 서류기반면접 가이드북"
-   },
-   "type": "hub",
-   "priority": 0.9,
-   "changefreq": "weekly",
-   "description": "학교별 2027 서류기반면접 가이드북 31권. 전형별 면접 제원과 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략을 담은 디지털 가이드북입니다. 1권 33,000원.",
-   "answer": "학교별 2027 서류기반면접 가이드북은 대학별 실제 질문, 전형별 면접 제원과 생기부 전환 규칙을 담았습니다. 권당 33,000원이며 회원은 보안 리더로 열람합니다."
-  },
-  "guidebook/inha.html": {
-   "title": "인하대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "인하대학교 2027 면접 가이드북",
-     "path": "/guidebook/inha.html"
-    }
-   ],
-   "schema": {
-    "about": "인하대학교",
-    "product_name": "인하대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-inha"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "인하대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "인하대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/inha.jpg"
-  },
-  "guidebook/khu.html": {
-   "title": "경희대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "경희대학교 2027 면접 가이드북",
-     "path": "/guidebook/khu.html"
-    }
-   ],
-   "schema": {
-    "about": "경희대학교",
-    "product_name": "경희대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-khu"
-     }
-    ]
-   },
-   "description": "경희대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "경희대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/khu.jpg"
-  },
-  "guidebook/knu.html": {
-   "title": "경북대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "경북대학교 2027 면접 가이드북",
-     "path": "/guidebook/knu.html"
-    }
-   ],
-   "schema": {
-    "about": "경북대학교",
-    "product_name": "경북대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-knu"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "경북대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "경북대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/knu.jpg"
-  },
-  "guidebook/konkuk.html": {
-   "title": "건국대학교(서울) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "건국대학교(서울) 2027 면접 가이드북",
-     "path": "/guidebook/konkuk.html"
-    }
-   ],
-   "schema": {
-    "about": "건국대학교(서울)",
-    "product_name": "건국대학교(서울) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-konkuk"
-     }
-    ]
-   },
-   "description": "건국대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "건국대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/konkuk.jpg"
-  },
-  "guidebook/kookmin.html": {
-   "title": "국민대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "국민대학교 2027 면접 가이드북",
-     "path": "/guidebook/kookmin.html"
-    }
-   ],
-   "schema": {
-    "about": "국민대학교",
-    "product_name": "국민대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-kookmin"
-     }
-    ]
-   },
-   "description": "국민대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "국민대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/kookmin.jpg"
-  },
-  "guidebook/korea.html": {
-   "title": "고려대학교(서울) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "고려대학교(서울) 2027 면접 가이드북",
-     "path": "/guidebook/korea.html"
-    }
-   ],
-   "schema": {
-    "about": "고려대학교(서울)",
-    "product_name": "고려대학교(서울) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-korea"
-     }
-    ]
-   },
-   "description": "고려대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "고려대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/korea.jpg"
-  },
-  "guidebook/kwangwoon.html": {
-   "title": "광운대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "광운대학교 2027 면접 가이드북",
-     "path": "/guidebook/kwangwoon.html"
-    }
-   ],
-   "schema": {
-    "about": "광운대학교",
-    "product_name": "광운대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-kwangwoon"
-     }
-    ]
-   },
-   "description": "광운대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "광운대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/kwangwoon.jpg"
-  },
-  "guidebook/kyonggi.html": {
-   "title": "경기대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "경기대학교 2027 면접 가이드북",
-     "path": "/guidebook/kyonggi.html"
-    }
-   ],
-   "schema": {
-    "about": "경기대학교",
-    "product_name": "경기대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-kyonggi"
-     }
-    ]
-   },
-   "description": "경기대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "경기대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/kyonggi.jpg"
-  },
-  "guidebook/myongji.html": {
-   "title": "명지대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "명지대학교 2027 면접 가이드북",
-     "path": "/guidebook/myongji.html"
-    }
-   ],
-   "schema": {
-    "about": "명지대학교",
-    "product_name": "명지대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-myongji"
-     }
-    ]
-   },
-   "description": "명지대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "명지대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/myongji.jpg"
-  },
-  "guidebook/pknu.html": {
-   "title": "부경대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "부경대학교 2027 면접 가이드북",
-     "path": "/guidebook/pknu.html"
-    }
-   ],
-   "schema": {
-    "about": "부경대학교",
-    "product_name": "부경대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-pknu"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "부경대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "부경대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/pknu.jpg"
-  },
-  "guidebook/pusan.html": {
-   "title": "부산대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "부산대학교 2027 면접 가이드북",
-     "path": "/guidebook/pusan.html"
-    }
-   ],
-   "schema": {
-    "about": "부산대학교",
-    "product_name": "부산대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-pusan"
-     }
-    ]
-   },
-   "description": "부산대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "부산대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/pusan.jpg"
-  },
-  "guidebook/sahmyook.html": {
-   "title": "삼육대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "삼육대학교 2027 면접 가이드북",
-     "path": "/guidebook/sahmyook.html"
-    }
-   ],
-   "schema": {
-    "about": "삼육대학교",
-    "product_name": "삼육대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-sahmyook"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "삼육대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "삼육대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/sahmyook.jpg"
-  },
-  "guidebook/sejong.html": {
-   "title": "세종대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "세종대학교 2027 면접 가이드북",
-     "path": "/guidebook/sejong.html"
-    }
-   ],
-   "schema": {
-    "about": "세종대학교",
-    "product_name": "세종대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-sejong"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "세종대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "세종대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/sejong.jpg"
-  },
-  "guidebook/seoultech.html": {
-   "title": "서울과학기술대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "서울과학기술대학교 2027 면접 가이드북",
-     "path": "/guidebook/seoultech.html"
-    }
-   ],
-   "schema": {
-    "about": "서울과학기술대학교",
-    "product_name": "서울과학기술대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-seoultech"
-     }
-    ]
-   },
-   "description": "서울과학기술대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "서울과학기술대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/seoultech.jpg"
-  },
-  "guidebook/skku.html": {
-   "title": "성균관대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "성균관대학교 2027 면접 가이드북",
-     "path": "/guidebook/skku.html"
-    }
-   ],
-   "schema": {
-    "about": "성균관대학교",
-    "product_name": "성균관대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-skku"
-     }
-    ]
-   },
-   "description": "성균관대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "성균관대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/skku.jpg"
-  },
-  "guidebook/snu.html": {
-   "title": "서울대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "서울대학교 2027 면접 가이드북",
-     "path": "/guidebook/snu.html"
-    }
-   ],
-   "schema": {
-    "about": "서울대학교",
-    "product_name": "서울대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-snu"
-     }
-    ]
-   },
-   "description": "서울대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "서울대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/snu.jpg"
-  },
-  "guidebook/sookmyung.html": {
-   "title": "숙명여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "숙명여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/sookmyung.html"
-    }
-   ],
-   "schema": {
-    "about": "숙명여자대학교",
-    "product_name": "숙명여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-sookmyung"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "숙명여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "숙명여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/sookmyung.jpg"
-  },
-  "guidebook/soongsil.html": {
-   "title": "숭실대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "숭실대학교 2027 면접 가이드북",
-     "path": "/guidebook/soongsil.html"
-    }
-   ],
-   "schema": {
-    "about": "숭실대학교",
-    "product_name": "숭실대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-soongsil"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "숭실대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "숭실대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/soongsil.jpg"
-  },
-  "guidebook/sungshin.html": {
-   "title": "성신여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "성신여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/sungshin.html"
-    }
-   ],
-   "schema": {
-    "about": "성신여자대학교",
-    "product_name": "성신여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-sungshin"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "성신여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "성신여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/sungshin.jpg"
-  },
-  "guidebook/swu.html": {
-   "title": "서울여자대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "서울여자대학교 2027 면접 가이드북",
-     "path": "/guidebook/swu.html"
-    }
-   ],
-   "schema": {
-    "about": "서울여자대학교",
-    "product_name": "서울여자대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-swu"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "서울여자대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "서울여자대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/swu.jpg"
-  },
-  "guidebook/ulsan.html": {
-   "title": "울산대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "울산대학교 2027 면접 가이드북",
-     "path": "/guidebook/ulsan.html"
-    }
-   ],
-   "schema": {
-    "about": "울산대학교",
-    "product_name": "울산대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-ulsan"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "울산대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "울산대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/ulsan.jpg"
-  },
-  "guidebook/uos.html": {
-   "title": "서울시립대학교 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "서울시립대학교 2027 면접 가이드북",
-     "path": "/guidebook/uos.html"
-    }
-   ],
-   "schema": {
-    "about": "서울시립대학교",
-    "product_name": "서울시립대학교 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-uos"
-     }
-    ]
-   },
-   "description": "서울시립대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "서울시립대학교 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/uos.jpg"
-  },
-  "guidebook/yonsei.html": {
-   "title": "연세대학교(서울) 2027 면접 가이드북, 현학적 연구소",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "연세대학교(서울) 2027 면접 가이드북",
-     "path": "/guidebook/yonsei.html"
-    }
-   ],
-   "schema": {
-    "about": "연세대학교(서울)",
-    "product_name": "연세대학교(서울) 2027 면접 가이드북",
-    "offers": [
-     {
-      "name": "디지털 가이드북 (보안 리더 열람)",
-      "price": 33000,
-      "sku": "guide-yonsei"
-     }
-    ],
-    "availability": "OutOfStock"
-   },
-   "description": "연세대학교 2027 면접 가이드북. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, 전형별 면접 제원과 준비 전략을 담았습니다. 보안 리더 열람.",
-   "answer": "연세대학교(서울) 2027 면접 가이드북은 전형별 면접 제원, 유형별 기출과 예상 질문, 답변 설계 순서를 담은 2027 대비 문서입니다. 33,000원, 보안 리더 열람.",
-   "image": "/assets/covers/yonsei.jpg"
-  },
-  "index.html": {
-   "title": "현학적 연구소",
-   "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 입시 컨설턴트 13년차가 만든 학교별 2027 서류기반면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오를 운영합니다.",
-   "type": "home",
-   "priority": 1.0,
-   "changefreq": "weekly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    }
-   ],
-   "schema": {
-    "items": [
-     "programs/yonsei.html",
-     "programs/korea.html",
-     "studio.html",
-     "guidebook/index.html"
-    ]
-   },
-   "answer": ""
-  },
-  "insta.html": {
-   "title": "현학적 연구소 링크",
-   "description": "현학적 연구소 인스타그램 링크 허브. 서류기반면접 가이드북 31권, 제시문 면접 스튜디오, 공지와 FAQ.",
-   "type": "utility",
-   "priority": 0.1,
-   "changefreq": "monthly",
-   "noindex": true,
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "링크",
-     "path": "/insta.html"
-    }
-   ],
-   "answer": ""
-  },
-  "join.html": {
-   "title": "가입, 현학적 연구소",
-   "description": "현학적 연구소 입회 화면입니다. 약관 동의, 본인인증, 정보 입력의 세 걸음으로 진행합니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "회원 가입",
-     "path": "/join.html"
-    }
-   ],
-   "answer": ""
-  },
-  "lecture.html": {
-   "title": "인강 뷰어, 현학적 연구소",
-   "description": "현학적 연구소 인강 뷰어입니다. 이용권 범위의 해설 강의를 배속, 목차 점프, 책갈피, 이어보기로 시청합니다.",
-   "type": "utility",
-   "answer": "",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "마이페이지",
-     "path": "/my.html"
-    },
-    {
-     "name": "인강 뷰어",
-     "path": "/lecture.html"
-    }
-   ]
-  },
-  "library.html": {
-   "title": "자료실, 대학별 2027 면접가이드북 PDF | 현학적 연구소",
-   "description": "현학적 연구소 자료실. 학교별 2027 서류기반면접 가이드북 PDF 를 구매한 계정으로 보안 리더에서 열람합니다. 원본 파일은 내려받을 수 없습니다.",
-   "type": "hub",
-   "priority": 0.8,
-   "changefreq": "weekly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "자료실",
-     "path": "/library.html"
-    }
-   ],
-   "answer": "자료실의 학교별 2027 서류기반면접 가이드북은 구매한 계정으로 보안 리더에서 열람하며, 원본 파일은 제공하지 않습니다."
-  },
-  "login.html": {
-   "title": "로그인, 현학적 연구소",
-   "description": "현학적 연구소 로그인 화면입니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "로그인",
-     "path": "/login.html"
-    }
-   ],
-   "answer": ""
-  },
-  "my.html": {
-   "title": "마이페이지, 현학적 연구소",
-   "description": "현학적 연구소 마이페이지입니다. 이용권과 열람, 예약, 주문을 한눈에 봅니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "내 정보",
-     "path": "/my.html"
-    }
-   ],
-   "answer": ""
-  },
-  "notice.html": {
-   "title": "공지, 현학적 연구소",
-   "description": "현학적 연구소 공지. 서류기반면접 가이드북 갱신 내역, 제시문 면접 스튜디오 일정, 결제와 열람에 관한 서비스 안내를 날짜순으로 게시합니다.",
-   "type": "utility",
-   "noindex": false,
-   "priority": 0.5,
-   "changefreq": "weekly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "공지",
-     "path": "/notice.html"
-    }
-   ],
-   "answer": "현학적 연구소 공지는 가이드북 갱신, 스튜디오 일정, 서비스 변경 사항을 날짜순으로 기록합니다."
-  },
-  "pay_done.html": {
-   "title": "결제 확인, 현학적 연구소",
-   "description": "현학적 연구소 결제 확인 화면입니다.",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "결제를 확인하는 중입니다",
-     "path": "/pay_done.html"
-    }
-   ],
-   "answer": ""
-  },
-  "privacy.html": {
-   "title": "개인정보처리방침, 현학적 연구소",
-   "description": "현학적 연구소 개인정보처리방침. 수집 항목과 목적, 보유 기간, 처리 위탁, 학생 음성과 영상의 처리, 정보주체의 권리와 안전성 확보 조치를 안내합니다.",
-   "type": "legal",
-   "priority": 0.3,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "개인정보처리방침",
-     "path": "/privacy.html"
-    }
-   ],
-   "answer": ""
-  },
-  "programs/korea.html": {
-   "title": "고려대 면접 21분",
-   "description": "고려대 계열적합전형 제시문 면접을 준비 21분과 발화 7분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 전권 495,000원 인강 포함, 낱권 33,000원.",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    },
-    {
-     "name": "고려대 제시문 면접 스튜디오",
-     "path": "/programs/korea.html"
-    }
-   ],
-   "schema": {
-    "product_name": "고려대학교 제시문 면접 스튜디오 (계열적합전형)",
-    "about": "고려대학교",
-    "offers": [
-     {
-      "name": "고려대 인문 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "고려대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 33000,
-      "sku": "passage-single",
-      "offer_url": "/studio.html"
-     }
-    ]
-   },
-   "answer": ""
-  },
-  "programs/yonsei.html": {
-   "title": "연세대 면접 8분",
-   "description": "연세대 활동우수형 제시문 면접을 준비 8분과 답변 5분의 실전 규격으로 훈련하는 온라인 면접 스튜디오. 기출 지문 해제와 촬영 첨삭, 전권 495,000원 인강 포함, 낱권 33,000원.",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    },
-    {
-     "name": "연세대 제시문 면접 스튜디오",
-     "path": "/programs/yonsei.html"
-    }
-   ],
-   "schema": {
-    "product_name": "연세대학교 제시문 면접 스튜디오 (활동우수형)",
-    "about": "연세대학교",
-    "offers": [
-     {
-      "name": "연세대 인문 통합 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 국제 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-intl",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 33000,
-      "sku": "passage-single",
-      "offer_url": "/studio.html"
-     }
-    ]
-   },
-   "answer": ""
-  },
-  "reader.html": {
-   "title": "현학적 연구소, 보안 뷰어",
-   "description": "",
-   "type": "utility",
-   "noindex": true,
-   "priority": 0.1,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "현학적 연구소, 보안 뷰어",
-     "path": "/reader.html"
-    }
-   ],
-   "answer": ""
-  },
-  "studio.html": {
-   "title": "제시문 면접 스튜디오, 현학적 연구소",
-   "description": "학교별 기출로 온라인으로 치르는 대입 제시문 면접 스튜디오. 지문 1편 33,000원에 5회 응시, 단위 전권 495,000원 인강 포함. 전면 카메라 녹화와 전사, 진단, 재구성의 첨삭 세 단.",
-   "type": "product",
-   "priority": 0.9,
-   "changefreq": "weekly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    }
-   ],
-   "schema": {
-    "product_name": "제시문 면접 스튜디오",
-    "offers": [
-     {
-      "name": "고려대 인문 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "고려대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 인문 통합 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 국제 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-intl",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 33000,
-      "sku": "passage-single",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "공통 풀이 인강",
-      "price": 220000,
-      "sku": "lecture-common",
-      "offer_url": "/studio.html#lecture"
-     }
-    ]
-   },
-   "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함."
-  },
-  "terms.html": {
-   "title": "이용약관, 현학적 연구소",
-   "description": "현학적 연구소 이용약관. 회원 가입, 제시문 면접 스튜디오 이용권과 가이드북 구매, 결제, 청약철회와 환불, 지식재산권에 관한 조건을 안내합니다.",
-   "type": "legal",
-   "priority": 0.3,
-   "changefreq": "yearly",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "이용약관",
-     "path": "/terms.html"
-    }
-   ],
-   "answer": ""
-  },
-  "b2b.html": {
-   "title": "스쿨 플랜, 현학적 연구소",
-   "description": "학원과 단체를 위한 제시문 면접 스튜디오 스쿨 플랜. 연세대, 고려대 제시문 면접을 좌석 수에 따라 할인 도입하고, 강사 계정으로 학생 리포트를 관리합니다.",
-   "answer": "스쿨 플랜은 학원이 제시문 면접 스튜디오 좌석을 5개 이상 도입하는 플랜입니다. 추가 좌석 단가는 315,000원에서 240,000원까지 내려가고, 강사 계정과 학생 리포트 관리가 포함됩니다.",
-   "type": "article",
-   "priority": 0.7,
-   "changefreq": "monthly",
-   "noindex": false,
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    },
-    {
-     "name": "스쿨 플랜",
-     "path": "/b2b.html"
-    }
-   ],
-   "schema": {
-    "about": "제시문 면접 스튜디오 스쿨 플랜",
-    "about_type": "Service"
-   }
-  },
-  "programs/guidebook.html": {
-   "title": "생기부 면접 가이드북 2027, 현학적 연구소",
-   "description": "대학별 생기부 면접 가이드북 2027 대비판 소개. 31개 대학 31권, 다섯 부 구성. 면접 형태 판정, 전형별 제원, 실제로 나온 질문, 내 생기부에서 질문 뽑는 규칙, 대학별 준비 전략.",
-   "type": "product",
-   "priority": 0.8,
-   "changefreq": "monthly",
-   "noindex": false,
-   "image": "/assets/photo/gbd/gbd_og.jpg",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "가이드북",
-     "path": "/guidebook/"
-    },
-    {
-     "name": "가이드북 소개",
-     "path": "/programs/guidebook.html"
-    }
-   ],
-   "schema": {
-    "product_name": "학교별 2027 서류기반면접 가이드북",
-    "offers": [
-     {
-      "name": "31개 대학 전권 열람권",
-      "price": 511500,
-      "sku": "guide-all-view",
-      "offer_url": "/guidebook/"
-     },
-     {
-      "name": "31개 대학 전권 PDF 소장판",
-      "price": 1705000,
-      "sku": "guide-all-pdf",
-      "offer_url": "/guidebook/"
-     }
-    ]
-   },
-   "answer": "생기부 면접 가이드북 2027은 31개 대학 31권, 다섯 부 구성입니다. 실제로 나온 질문과 내 생기부에서 질문을 뽑는 규칙을 담았고 권당 33,000원, 보안 리더로 열람합니다."
-  },
-  "programs/studio.html": {
-   "title": "제시문 면접 스튜디오 소개, 현학적 연구소",
-   "description": "제시문 면접 스튜디오 과정 소개. 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 전사, 진단, 구술체 재구성 세 단 첨삭을 받는 다섯 단계. 단위 전권 495,000원 인강 포함.",
-   "type": "product",
-   "priority": 0.8,
-   "changefreq": "monthly",
-   "noindex": false,
-   "image": "/assets/photo/std/std_og.jpg",
-   "breadcrumb": [
-    {
-     "name": "현학적 연구소",
-     "path": "/"
-    },
-    {
-     "name": "제시문 면접 스튜디오",
-     "path": "/studio.html"
-    },
-    {
-     "name": "과정 소개",
-     "path": "/programs/studio.html"
-    }
-   ],
-   "schema": {
-    "product_name": "제시문 면접 스튜디오",
-    "offers": [
-     {
-      "name": "고려대 인문 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "고려대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-korea-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 인문 통합 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-hum",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 자연 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-sci",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "연세대 국제 전권 이용권",
-      "price": 495000,
-      "sku": "pass-yonsei-intl",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "스튜디오 지문 이용권 1편 (응시 5회)",
-      "price": 33000,
-      "sku": "passage-single",
-      "offer_url": "/studio.html"
-     },
-     {
-      "name": "공통 풀이 인강",
-      "price": 220000,
-      "sku": "lecture-common",
-      "offer_url": "/studio.html#lecture"
-     }
-    ]
-   },
-   "answer": "제시문 면접 스튜디오는 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 다섯 단계 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원."
-  }
- }
 }
