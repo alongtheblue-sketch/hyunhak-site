@@ -59,7 +59,7 @@
  },
  "defaults": {
   "guidebook/*": {
-   "_note": "학교별 2027 서류기반면접 가이드북 38권 (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
+   "_note": "학교별 2027 서류기반면접 가이드북 31권 판매(면 38 생성) (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
    "type": "product",
    "priority": 0.8,
    "changefreq": "monthly",
@@ -1459,7 +1459,7 @@
   },
   "insta.html": {
    "title": "현학적 연구소 링크",
-   "description": "현학적 연구소 인스타그램 링크 허브. 서류기반면접 가이드북 38권, 제시문 면접 스튜디오, 공지와 FAQ.",
+   "description": "현학적 연구소 인스타그램 링크 허브. 서류기반면접 가이드북 31권, 제시문 면접 스튜디오, 공지와 FAQ.",
    "type": "utility",
    "priority": 0.1,
    "changefreq": "monthly",

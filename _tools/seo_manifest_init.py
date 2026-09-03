@@ -18,7 +18,7 @@ BASE = "https://hyunhak.com"
 HAND = {
     "index.html": {
         "title": "현학적 연구소",
-        "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 학교별 2027 면접 가이드북 38권과 연세대, 고려대 제시문 면접 스튜디오를 운영합니다.",
+        "description": "현학적 연구소는 대입 면접 준비를 다룹니다. 학교별 2027 면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오를 운영합니다.",
         "type": "home", "priority": 1.0, "changefreq": "weekly",
         "breadcrumb": [{"name": "현학적 연구소", "path": "/"}],
         "schema": {"items": ["programs/yonsei.html", "programs/korea.html", "studio.html", "guidebook/index.html", "store.html"]},
@@ -103,9 +103,9 @@ SITE = {
     "skip_inject": ["library.html", "my.html", "reader.html"],
     "planned_paths": [],
     "llms": {
-        "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 38권, 영어 봉투 모의고사 스토어를 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
+        "summary": "현학적 연구소(玄學的 硏究所)는 대입 면접 준비 서비스입니다. 연세대, 고려대 제시문 면접을 기출 지문 해제와 촬영 첨삭으로 훈련하는 면접 스튜디오, 학교별 2027 면접 가이드북 31권, 영어 봉투 모의고사 스토어를 운영합니다. 이름의 한자는 검을 현 玄을 씁니다(衒 아님).",
         "products": [
-            {"name": "학교별 2027 면접 가이드북 (디지털, 38권)", "path": "/guidebook/", "price": "1권 33,000원 (보안 리더 열람, 원본 PDF 비제공)",
+            {"name": "학교별 2027 면접 가이드북 (디지털, 31권)", "path": "/guidebook/", "price": "1권 33,000원 (보안 리더 열람, 원본 PDF 비제공)",
              "desc": "대학별 면접 제원, 유형 판정, 실제 기출 질문, 생기부 기반 예상 질문과 준비 전략. 보안 리더로 열람하는 디지털 가이드북."},
             {"name": "제시문 면접 스튜디오 (연세대, 고려대)", "path": "/studio.html", "price": "학교 전권 330,000원, 지문 1편 22,000원(응시 5회)",
              "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."},
@@ -120,7 +120,7 @@ SITE = {
 
 DEFAULTS = {
     "guidebook/*": {
-        "_note": "학교별 2027 면접 가이드북 38권 (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
+        "_note": "학교별 2027 면접 가이드북 31권 판매(면 38 생성) (디지털 상품). price/sku 는 init 이 페이지 data-cart-* 에서 읽음. guidebook/index.html 은 hub 로 개별 오버라이드.",
         "type": "product", "priority": 0.8, "changefreq": "monthly", "noindex": False,
         "breadcrumb": [{"name": "현학적 연구소", "path": "/"}, {"name": "가이드북", "path": "/guidebook/"}],
         "schema": {"offers": [{"name": "디지털 가이드북 (보안 리더 열람)", "price": None, "sku": None}]},
@@ -172,7 +172,7 @@ def build_entry(rel, s):
             entry.update({"type": "hub", "priority": 0.9, "changefreq": "weekly",
                           "breadcrumb": DEFAULTS[pat]["breadcrumb"],
                           "schema": {"list_dir": "guidebook/", "list_name": "학교별 2027 면접 가이드북"}})
-            desc = ("학교별 2027 면접 가이드북 38권. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, "
+            desc = ("학교별 2027 면접 가이드북 31권. 실제 질문과 생기부에서 질문을 뽑는 전환 규칙, "
                     "전형별 면접 제원과 준비 전략을 담았습니다. 1권 33,000원.")
     elif pat == "programs/*" and rel not in HAND:
         name = title or h1
