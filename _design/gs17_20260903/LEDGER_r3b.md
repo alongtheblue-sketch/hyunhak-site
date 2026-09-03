@@ -123,3 +123,26 @@ H2 에서 H4 건너뜀 5개 절, `#books .mt` 11px 위계 최하단, 390 마지�
 스튜디오 상승분은 렌즈 9(접근성) 4 → 5, P2 1번 소멸. 확대 안내 대비 5.04 → 11.73.
 朱印 요소 수는 9(1440)와 10(390)으로 불변 = 먹색 밑줄은 액센트 총량에 가산 0 이고 기존 링크 어휘에 흡수됐다.
 audience = 스튜디오 25.5/30, 가이드북 25.5/30. 둘 다 문턱 25 통과.
+
+## 11. 배포 (2026-09-04 01:2x)
+
+`sh _tools/deploy.sh` 실행. wrangler 가 6파일 업로드(sitemap.xml, rss.xml, faq.html, programs 2, std_stage_prep.jpg).
+
+**부분 실패 1건** = routes PUT 이 503(`upstream connect error`, Ray a35619b229f2a865). `set -e` 로 스크립트가 거기서 멈춰
+edge_smoke 와 IndexNow 는 수동으로 이어 돌렸다. 실측하니 서빙에는 영향이 없다.
+`wrangler.toml` 의 두 route 는 이미 같은 값으로 등록돼 있어 갱신 내용이 없었고, 실패해도 기존 route 가 살아 있다.
+apex 200, www 301, 새 판 서빙 전건 확인. 프록시 환경변수 경고가 함께 떴으므로 재발 시 `env -u` 4종으로 재시도한다.
+
+**라이브 채증 (hyunhak.com 직접 실측)**
+
+| 항목 | 배포 전 | 배포 후 |
+|---|---|---|
+| 게이트 12항목 | 해당 없음 | **12/12 PASS** (`baseline_live.json`) |
+| `#books` 자리 | format 뒤 faq 앞 | **p5 뒤 diff 앞** |
+| 발행일 | 2026-09-03 | **2026-09-04** |
+| noscript 폴백 | 없음 | **있음** |
+| 스크립트 차단 비가시 | studio 52/52, guidebook 80/80 | **0/52, 0/80** |
+| 확대 안내 상자 교차 | 해당 없음 | **1440 0/5, 390 0/5** |
+| measure_v3 3면 × 두 폭 | 해당 없음 | **6조건 전건 PASS** |
+| edge_smoke | 해당 없음 | **16항목 FAIL 0 WARN 0** |
+| IndexNow | 해당 없음 | **200, 53 URL** |
