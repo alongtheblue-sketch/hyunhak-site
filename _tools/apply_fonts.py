@@ -12,7 +12,7 @@ def conv(m):
 n = 0
 for p in sorted(glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True)):
     rel = os.path.relpath(p, ROOT)
-    if rel in SKIP or rel.startswith(("design/", "_design/", "_tools/")): continue
+    if rel in SKIP or rel.startswith(("design/", "_design/", "_docs/", "_tools/")): continue
     s = open(p, encoding="utf-8").read()
     t = PAT.sub(conv, s)
     # gstatic 를 먼저 넣고 그 뒤에 jsdelivr 를 끼운다. 종전 순서(jsdelivr 먼저)는 1회째에 gstatic 줄이 없어 jsdelivr 가 빠지고 2회째에야 들어갔다(build_all 1회·2회 해시 불일치, 2026-09-03 실측)

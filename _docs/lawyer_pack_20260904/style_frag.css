@@ -1,0 +1,91 @@
+/*FONTFACE*/
+@page { size: A4 portrait; margin: 20mm 19mm 22mm 19mm; }
+
+* { box-sizing: border-box; }
+
+body{
+  margin:0;
+  font-family:"PretendardEmb","Pretendard",sans-serif;
+  font-size:10.5pt;
+  line-height:1.65;
+  letter-spacing:-0.01em;
+  color:#111;
+  word-break:normal;
+  overflow-wrap:break-word;
+  line-break:strict;
+  -webkit-font-smoothing:antialiased;
+}
+
+p{ margin:0 0 7pt; text-align:justify; }
+strong,b{ font-weight:700; letter-spacing:-0.015em; }
+code{ font-family:"SFMono-Regular","Menlo",monospace; font-size:9.2pt; background:#f2f2f2; padding:0 3px; border-radius:2px; letter-spacing:0; }
+
+/* 문서 머리 */
+.dochead{ border-bottom:1.4pt solid #111; padding-bottom:10pt; margin-bottom:16pt; }
+.dochead .org{ font-size:9pt; letter-spacing:0.08em; color:#555; margin:0 0 6pt; }
+.dochead h1{
+  font-size:17pt; font-weight:700; letter-spacing:-0.04em; line-height:1.35;
+  margin:0 0 12pt;
+}
+.dochead h1 .sub{ display:block; font-size:13.5pt; font-weight:600; margin-top:3pt; }
+
+table.meta{ width:100%; border-collapse:collapse; font-size:10pt; line-height:1.6; }
+table.meta th{
+  width:52pt; text-align:left; font-weight:600; color:#444;
+  padding:2.5pt 0; vertical-align:top; white-space:nowrap;
+}
+table.meta td{ padding:2.5pt 0 2.5pt 8pt; vertical-align:top; text-align:left; }
+
+/* 부 구분 */
+h2.part{
+  font-size:13pt; font-weight:700; letter-spacing:-0.03em;
+  margin:0 0 4pt; padding:6pt 0 5pt;
+  border-top:1.2pt solid #111; border-bottom:0.6pt solid #111;
+  break-after:avoid; page-break-after:avoid;
+}
+h2.part + .src{ font-size:8.8pt; color:#666; margin:0 0 9pt; letter-spacing:0; }
+.newpage{ break-before:page; page-break-before:always; }
+
+h3{
+  font-size:11.5pt; font-weight:700; letter-spacing:-0.03em;
+  margin:12pt 0 5pt; break-after:avoid; page-break-after:avoid;
+}
+h4{
+  font-size:10.5pt; font-weight:700; letter-spacing:-0.02em;
+  margin:10pt 0 4pt; break-after:avoid; page-break-after:avoid;
+}
+
+ol,ul{ margin:5pt 0 7pt; padding-left:19pt; }
+li{ margin:0 0 2pt; text-align:justify; }
+ol.circ{ list-style:decimal; }
+ol.ho{ list-style:decimal; margin:4pt 0 4pt; padding-left:17pt; font-size:10pt; }
+ul.plain{ list-style:disc; }
+
+/* 표 */
+table.d{
+  width:100%; border-collapse:collapse; margin:8pt 0 9pt;
+  font-size:9.5pt; line-height:1.55;
+  break-inside:avoid; page-break-inside:avoid;
+}
+table.d th, table.d td{
+  border:0.6pt solid #8a8a8a; padding:4pt 6pt;
+  vertical-align:top; text-align:left;
+}
+table.d thead th{ background:#efefef; font-weight:700; letter-spacing:-0.02em; }
+table.d td:first-child, table.d th:first-child{ white-space:nowrap; }
+table.d.wide td:first-child{ white-space:normal; }
+
+/* 인용 조문 */
+blockquote{
+  margin:8pt 0 9pt; padding:5pt 0 5pt 13pt;
+  border-left:2pt solid #8a8a8a;
+  font-size:10.2pt; line-height:1.72;
+  break-inside:avoid; page-break-inside:avoid;
+  text-align:justify;
+}
+blockquote p{ margin:0; }
+blockquote p + p{ margin-top:6pt; }
+li > blockquote{ margin:5pt 0 6pt; }
+
+.note{ font-size:9.6pt; color:#444; margin-top:10pt; padding-top:6pt; border-top:0.6pt solid #bbb; }
+.tight{ margin-top:0; }

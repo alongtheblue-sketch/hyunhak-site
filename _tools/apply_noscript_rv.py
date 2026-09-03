@@ -11,7 +11,7 @@ PAT = re.compile(r'(<link rel="stylesheet" href="(?:\.\./)*assets/base\.css">)(?
 n = 0; seen = 0
 for p in sorted(glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True)):
     rel = os.path.relpath(p, ROOT)
-    if rel in SKIP or rel.startswith(("design/", "_design/", "_tools/", "node_modules/", ".wrangler/")) or '.bak' in rel: continue
+    if rel in SKIP or rel.startswith(("design/", "_design/", "_docs/", "_tools/", "node_modules/", ".wrangler/")) or '.bak' in rel: continue
     s = open(p, encoding="utf-8").read()
     if 'assets/base.css' not in s: continue
     seen += 1
