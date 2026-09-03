@@ -1,0 +1,5 @@
+{
+  "_note": "분석 태그 원장. apply_analytics.py 가 읽어 <!-- analytics:begin --> 블록을 head 에 주입한다. 값이 빈 문자열이면 그 태그는 넣지 않는다. GA4 = 측정 ID(G-), naver_wcs = 네이버 프리미엄 로그분석 공통 스크립트 ID(광고 계정 > 도구 > 프리미엄 로그분석).",
+  "ga4": "G-2ZM01XDLNT",
+  "naver_wcs": ""
+}
