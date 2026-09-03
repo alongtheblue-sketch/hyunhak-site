@@ -340,7 +340,7 @@ p{max-width:var(--measure);color:var(--body)}
   .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
 }
 @media (max-width:900px){
-  .stage{height:clamp(240px,58vw,420px);align-self:auto}
+  .stage{height:clamp(240px,69vw,640px);align-self:auto}  /* 420 고정 상한이 810~1000px 에서 .scr.s2 를 hero 밖 2~37px 로 밀어냄(critic v4 P1-2). 카드 높이=0.72×0.572×wrap, s2 top 40% → H ≥ 0.69×wrap */
   .scr{width:72%}
   .scr.s1{left:13%;top:20%}
   .scr.s2{left:26%;top:40%}

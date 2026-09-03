@@ -337,6 +337,10 @@ def inject_aeo(s, answer, rel, warnings):
         close = re.search(r"</" + ph.group(1) + ">", s[start:], re.I)
         if close:
             at = start + close.start()
+            # 닫는 태그 앞 들여쓰기를 걷고 줄 단위로 삽입. 종전(태그 바로 앞 삽입)은 새로 빌드한 면에서 1회째(들여쓰기 잔존)와 2회째 바이트가 달랐다. 이 형태가 종전 2회째(정상 상태)와 바이트 동일 (2026-09-03)
+            ls = s.rfind("\n", 0, at) + 1
+            if s[ls:at].strip() == "":
+                return s[:ls] + "  " + aeo + "\n" + s[at:]
             return s[:at] + "  " + aeo + "\n" + s[at:]
     return s[:mm.end()] + "\n" + aeo + s[mm.end():]
 
