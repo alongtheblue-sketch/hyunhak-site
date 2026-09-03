@@ -14,13 +14,13 @@
 | 6 | 하위 상점 | 콘솔 설정 | 없음 | 해당없음 | 단일 상점 |
 | 7 | 요금제 | subscription/opi | Free(월 거래 5천만 원까지 무료), 결제 담당자 등록 | 완료 | 없음 |
 | 8 | 채널 (테스트) | console/guide/channel-manage | 이니시스 테스트, inicis_v2, INIpayTest, 채널키 = 라이브 /api/config channelKey 와 동일 | 완료 | 없음 |
-| 9 | 채널 (실연동) | channel-manage, pg/v2/inicis-v2 | 등록된 채널 없음 | 대기 | PC-3 개통 후 실 MID 로 추가(과세구분 과세) |
+| 9 | 채널 (실연동) | channel-manage, pg/v2/inicis-v2 | **이니시스 실연동** (inicis_v2 V2, MID MOI0126978, signkey·INIAPI Key·IV 입력, 과세) = 건우 저장 09-03 18:1x. 채널키 channel-key-fcce091d-73e1-4139-8fed-739787cea6d7 | 완료 | 라이브 PORTONE_CHANNEL_KEY 교체(건우 `!`) |
 | 10 | Store ID | integration/ready | store-84534eb1… = 라이브 config 일치 | 완료 | 없음 |
 | 11 | V2 API Secret | integration/ready | hyunhakapi, 09-01 생성, 무기한. 라이브 주입 완료(SW-1) | 완료 | 없음 |
 | 12 | 웹훅 V2 테스트 URL | webhook/readme-v2 | https://api.hyunhak.com/api/payments/webhook, application/json, 버전 2024-04-25 | 완료 | SW-2 닫음 |
 | 13 | 웹훅 V2 테스트 시크릿 | webhook/readme-v2 | Secret 1 발급(1/2), 값은 마스킹. **12:35 호출 테스트 = 서명 있는 POST 1건에 서버 200 (tail 실측)** = 라이브 시크릿과 짝 일치 | 완료 | 없음 |
 | 14 | 웹훅 V2 실연동 URL | webhook/readme-v2 | 비어 있음 → **09-02 12:2x 세션 등록** (동일 URL, 재조회로 확인, 채증 live_after_save.jpg) | 완료 | 없음 |
-| 15 | 웹훅 V2 실연동 시크릿 | webhook/readme-v2 | 없음 | 대기 | PC-3 개통 시 발급, 테스트 시크릿 재사용 금지 |
+| 15 | 웹훅 V2 실연동 시크릿 | webhook/readme-v2 | Secret 1 발급(건우, 09-03 18:1x), 값 마스킹. 라이브 PORTONE_WEBHOOK_SECRET 주입(18:2x, 클립보드 → wrangler 파이프, 세션 미열람). 무서명 POST = 401 실측 | 완료 | **18:18:54 호출 테스트 = 서명 있는 POST(AHC/2.1, webhook-id msg-01a06690…) → 200, exceptions 0** (tail 채증 pg_evidence_20260903/webhook_live_call_test_tail_20260903.json) = 실연동 시크릿 짝 일치 |
 | 16 | 웹훅 V1 | 콘솔 | URL 없음 | 해당없음 | V2 사용 |
 | 17 | IP 화이트리스트 | 추가 설정 관리 | 규칙 없음 | 해당없음 | 미설정 유지(CF Workers 발신 IP 가변, 설정 시 API 호출 차단 위험) |
 | 18 | 스마트 라우팅 | 콘솔 | 그룹 없음 | 해당없음 | 단일 PG |
@@ -33,6 +33,9 @@
 | 25 | 정산 계좌, 세금계산서 | 콘솔 | 별도 메뉴 없음(PG 계약 단계) | 대기 | KG 계약서 작성 시 |
 
 ## 집행 기록
+- 09-03 18:18 실연동 웹훅 호출 테스트 2회(1회는 tail 미가동, 2회째 tail 채증). 서명 검증 통과 200. webhook_logs 2행 남음.
+- 09-03 18:2x secret 3종 주입 (PORTONE_CHANNEL_KEY=실연동 채널키, PORTONE_WEBHOOK_SECRET=클립보드 파이프, PG_TEST_MODE=0). /api/config 실측 = channelKey fcce…, testMode false. 무서명 웹훅 POST 401.
+- 09-03 18:1x 실연동 채널 추가 1건 (세션이 이름·MID·과세 채움, signkey·INIAPI 키는 건우 직접 입력·저장). 키 값은 기록하지 않았다. 채널키(공개값)만 9행에.
 - 09-02 12:35 웹훅 호출 테스트 1회(건우 OK). tail = POST → 200, exceptions 0. webhook_logs 1행 남음.
 - 09-02 12:2x 웹훅 V2 실연동 URL 등록 1건. 가역(빈 값으로 되돌리면 원복). 실연동 채널이 없어 라이브 웹훅은 아직 발생하지 않고, 발생해도 시크릿 미주입이라 서버가 401 로 끊는다.
 - 그 외 변경 0. 시크릿 값은 어디에도 기록하지 않았다.
