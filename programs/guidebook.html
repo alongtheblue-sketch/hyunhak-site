@@ -90,7 +90,6 @@ p{max-width:var(--measure);color:var(--body)}
 
 /* 히어로 */
 .hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
-.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(244,239,227,.97) 36%,rgba(244,239,227,.6) 56%,rgba(244,239,227,.06) 100%)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--s6);align-items:center;min-height:min(80vh,800px);padding-block:var(--s8)}
 .hero .say{position:relative;z-index:3;padding-right:var(--s4)}
@@ -117,7 +116,6 @@ p{max-width:var(--measure);color:var(--body)}
 .split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:start}
 .split.rev{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 .split.rev .txt{order:2}
-.split img,.split .ph{width:100%;border-radius:var(--r-md)}
 .forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .forms li{border:1px solid rgba(244,239,227,.22);border-radius:var(--r-md);padding:var(--s4)}
 .forms h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
@@ -324,6 +322,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
 .close .vis{align-self:center}
+/* critic P2(2026-09-03 v4): 비rev 부도 실물 면 열을 7fr 로(1·3·5부 397→555px). 마무리 표지는 잉크 바탕에서 보이게 */
+@media (min-width:901px){.part:not(.rev) .body{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
+.closecovers{gap:var(--s2)}
+.closecovers img{box-shadow:0 14px 32px rgba(0,0,0,.55);outline:1px solid rgba(239,233,220,.16)}
 </style>
 </head>
 <body>
@@ -462,7 +464,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <div><h2>내 면접은 어느 형태인가</h2><p class="sub">서류기반 | 제시문 | MMI, 전형별 형태 판정</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_D.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_D.jpg" width="1000" height="735" alt="가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:27.08%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:69.62%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 4면 상단, 1부 면접 형태 판정 면</span><ol class="lg"><li><span class="n">1</span><p>세 형태 중 서류기반. 정의와 이 대학에 있음 표시</p></li><li><span class="n">2</span><p>전형별 형태 판정표. 가천바람개비전형은 서류확인형</p></li></ol></figcaption></figure></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_D.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_D.jpg" width="1000" height="664" alt="가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:90.03%;top:29.96%" aria-hidden="true">1</span><span class="mk" style="left:64.16%;top:77.03%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>세 형태 중 서류기반. 정의와 이 대학에 있음 표시</p></li><li><span class="n">2</span><p>전형별 형태 판정표. 가천바람개비전형은 서류확인형</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -495,7 +497,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <div><h2>이 대학은 무엇을 묻는가</h2><p class="sub">전형별 제원 | 이 대학이 찾는 학생</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_E.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_E.jpg" width="1000" height="1413" alt="가천대학교 판 7면, 2부 학과별 인재상 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:11.20%;top:8.15%" aria-hidden="true">1</span><span class="mk" style="left:11.12%;top:21.55%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 7면, 2부 학과별 인재상 면</span><ol class="lg"><li><span class="n">1</span><p>확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록</p></li><li><span class="n">2</span><p>간호학과 82건. 확인하는 것과 실제 질문 두 건</p></li></ol></figcaption></figure></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_E.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_E.jpg" width="1000" height="1413" alt="가천대학교 판 7면, 2부 학과별 인재상 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:85.84%;top:8.15%" aria-hidden="true">1</span><span class="mk" style="left:43.70%;top:21.55%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 7면, 2부 학과별 인재상 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록</p></li><li><span class="n">2</span><p>간호학과 82건. 확인하는 것과 실제 질문 두 건</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -528,7 +530,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <div><h2>실제로 나온 질문</h2><p class="sub">선배 후기에서 회수한 기출, 유형별, 모집단위와 연도</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_B.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_B.jpg" width="1000" height="1413" alt="가천대학교 판 14면, 3부 실제로 나온 질문 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:21.63%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:62.52%" aria-hidden="true">2</span><span class="mk" style="left:5.96%;top:79.45%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 14면, 3부 실제로 나온 질문 면</span><ol class="lg"><li><span class="n">1</span><p>유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도</p></li><li><span class="n">2</span><p>전공지식확인 91건, 17.9%. 첫 두 질문</p></li><li><span class="n">3</span><p>한 줄 질문. 전자공학과, 2021년</p></li></ol></figcaption></figure></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_B.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_B.jpg" width="1000" height="1413" alt="가천대학교 판 14면, 3부 실제로 나온 질문 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:57.07%;top:21.63%" aria-hidden="true">1</span><span class="mk" style="left:63.84%;top:62.52%" aria-hidden="true">2</span><span class="mk" style="left:48.69%;top:79.45%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 14면, 3부 실제로 나온 질문 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도</p></li><li><span class="n">2</span><p>전공지식확인 91건, 17.9%. 첫 두 질문</p></li><li><span class="n">3</span><p>한 줄 질문. 전자공학과, 2021년</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -560,7 +562,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <div><p class="kicker">이 책의 본론</p><h2>내 생기부에서 질문 뽑기</h2><p class="sub">생기부 기재를 질문으로 바꾸는 규칙</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_F.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_F.jpg" width="1000" height="1413" alt="가천대학교 판 22면, 4부 창의적 체험활동 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:11.63%" aria-hidden="true">1</span><span class="mk" style="left:7.74%;top:26.20%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 22면, 4부 창의적 체험활동 규칙 면</span><ol class="lg"><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>영재학급, 심화과정 기재 때의 규칙</p></li></ol></figcaption></figure></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_F.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_F.jpg" width="1000" height="1413" alt="가천대학교 판 22면, 4부 창의적 체험활동 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:70.53%;top:11.63%" aria-hidden="true">1</span><span class="mk" style="left:69.89%;top:26.20%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 22면, 4부 창의적 체험활동 규칙 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>영재학급, 심화과정 기재 때의 규칙</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>
@@ -575,7 +577,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
     <div class="sample pgs rv">
           <div class="cap"><span>판매본 지면 한 면 그대로, 4부 교과학습 규칙 면</span><span>가천대학교 판 18면</span></div>
           <div class="pgcols">
-            <figure class="pg"><a href="../assets/photo/gbd/gbd_sample_A.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_A.jpg" width="1241" height="1754" alt="가천대학교 판 18면, 4부 교과학습 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:12.71%" aria-hidden="true">1</span><span class="mk" style="left:5.96%;top:58.41%" aria-hidden="true">2</span></figure>
+            <figure class="pg"><a href="../assets/photo/gbd/gbd_sample_A.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_A.jpg" width="1241" height="1754" alt="가천대학교 판 18면, 4부 교과학습 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:75.53%;top:12.71%" aria-hidden="true">1</span><span class="mk" style="left:75.53%;top:58.41%" aria-hidden="true">2</span></figure>
             <div class="lg">
               <ol><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 언제, 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>실험 기재가 있을 때의 규칙. 4부 표본으로 든 그 규칙</p></li></ol>
               <figure class="zoom"><img src="../assets/photo/gbd/gbd_sample_A_zoom.jpg" width="696" height="360" alt="표본 면 2번 칸 확대" loading="lazy" decoding="async"><figcaption>2번 칸 확대</figcaption></figure>
@@ -600,7 +602,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <div><h2>이 대학의 특징과 준비 전략</h2><p class="sub">타 대학 대비 차이 | 준비 전략</p></div>
     </div>
     <div class="body">
-      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_C.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_C.jpg" width="1000" height="1413" alt="가천대학교 판 31면, 5부 준비 전략 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:5.96%;top:13.65%" aria-hidden="true">1</span><span class="mk" style="left:10.88%;top:62.15%" aria-hidden="true">2</span><span class="mk" style="left:10.88%;top:84.84%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 31면, 5부 준비 전략 면</span><ol class="lg"><li><span class="n">1</span><p>절 제목</p></li><li><span class="n">2</span><p>40초 답변 훈련. 근거가 붙은 행동 한 줄</p></li><li><span class="n">3</span><p>꼬리질문 2단 대비. 확인된 꼬리 15건에서 나온 규칙</p></li></ol></figcaption></figure></div>
+      <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_C.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_C.jpg" width="1000" height="1413" alt="가천대학교 판 31면, 5부 준비 전략 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:48.69%;top:13.65%" aria-hidden="true">1</span><span class="mk" style="left:90.68%;top:62.15%" aria-hidden="true">2</span><span class="mk" style="left:90.68%;top:84.84%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 31면, 5부 준비 전략 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>절 제목</p></li><li><span class="n">2</span><p>40초 답변 훈련. 근거가 붙은 행동 한 줄</p></li><li><span class="n">3</span><p>꼬리질문 2단 대비. 확인된 꼬리 15건에서 나온 규칙</p></li></ol></figcaption></figure></div>
       <div class="txt rv">
         <div class="blk"><h3>이 부에 들어 있는 것</h3>
           <ul>

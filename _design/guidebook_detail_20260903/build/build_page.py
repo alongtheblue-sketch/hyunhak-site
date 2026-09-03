@@ -112,7 +112,7 @@ OPEN = '\n'.join(
     f'<li class="rv"><img src="{data_uri(PG / (f + ".jpg"), 720, 80, name="gbd_" + f)[0]}" width="360" height="509" alt="{cap}" loading="lazy" decoding="async"><span>{cap}</span></li>'
     for f, cap in OPENERS)
 
-PART_CROP = {'D': 0.52}   # 1부 p4 는 본문이 상단 45% 에서 끝나는 짧은 면. 아래 빈 여백을 잘라 상단만 싣는다(문구에 '상단' 병기)
+PART_CROP = {'D': 0.47}   # 1부 p4 는 본문이 상단 45% 에서 끝나는 짧은 면. 아래 빈 여백을 잘라 상단만 싣는다(문구에 '상단' 병기)
 
 
 def part_vis(key):
@@ -127,8 +127,8 @@ def part_vis(key):
         im.save(src, 'JPEG', quality=90, optimize=True)
     uri, (w, h) = data_uri(src, 1000, 82, name=f'gbd_sample_{key}')
     regs = reg['regions']
-    marks = ''.join(f'<span class="mk" style="left:{r["x"]:.2f}%;top:{(r["y"] + r["h"] / 2) / crop:.2f}%" aria-hidden="true">{i + 1}</span>'
-                    for i, r in enumerate(regs))
+    marks = ''.join(f'<span class="mk" style="left:{min(r["x"] + r["w"] + 2.2, 95):.2f}%;top:{(r["y"] + r["h"] / 2) / crop:.2f}%" aria-hidden="true">{i + 1}</span>'
+                    for i, r in enumerate(regs))   # critic P2: 칸 왼쪽 가장자리에 두면 첫 글자를 덮는다 → 칸 오른쪽 바깥 흐림 구역
     legend = ''.join(f'<li><span class="n">{i + 1}</span><p>{r["label"]}</p></li>' for i, r in enumerate(regs))
     n = len(regs)
     where = f'가천대학교 판 {reg["page"]}면' + (' 상단' if crop < 1 else '')
@@ -136,7 +136,7 @@ def part_vis(key):
     if MODE == 'site':
         img = f'<a href="{uri}" target="_blank" rel="noopener" aria-label="표본 면 크게 보기">{img}</a>'
     return (f'<figure class="pgv"><div class="pg">{img}{marks}</div>'
-            f'<figcaption><span class="cap">판매본 지면 그대로. {where}, {reg["title"]}</span><ol class="lg">{legend}</ol></figcaption></figure>')
+            f'<figcaption><span class="cap">판매본 지면 그대로. {where}, {reg["title"]}. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg">{legend}</ol></figcaption></figure>')
 
 
 def sample_block(key):
@@ -147,7 +147,7 @@ def sample_block(key):
     regs = reg['regions']
     zy = (reg['zoom']['rect_pt'][1] - 7) / 841.89 * 100
     zi = min(range(len(regs)), key=lambda i: abs(regs[i]['y'] - zy)) + 1
-    marks = ''.join(f'<span class="mk" style="left:{r["x"]:.2f}%;top:{r["y"] + r["h"] / 2:.2f}%" aria-hidden="true">{i + 1}</span>'
+    marks = ''.join(f'<span class="mk" style="left:{min(r["x"] + r["w"] + 2.2, 95):.2f}%;top:{r["y"] + r["h"] / 2:.2f}%" aria-hidden="true">{i + 1}</span>'
                     for i, r in enumerate(regs))
     legend = ''.join(f'<li><span class="n">{i + 1}</span><p>{r["label"]}</p></li>' for i, r in enumerate(regs))
     n = len(regs)
@@ -232,7 +232,6 @@ p{max-width:var(--measure);color:var(--body)}
 
 /* 히어로 */
 .hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
-.hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(244,239,227,.97) 36%,rgba(244,239,227,.6) 56%,rgba(244,239,227,.06) 100%)}
 .hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--s6);align-items:center;min-height:min(80vh,800px);padding-block:var(--s8)}
 .hero .say{position:relative;z-index:3;padding-right:var(--s4)}
@@ -259,7 +258,6 @@ p{max-width:var(--measure);color:var(--body)}
 .split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:start}
 .split.rev{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
 .split.rev .txt{order:2}
-.split img,.split .ph{width:100%;border-radius:var(--r-md)}
 .forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .forms li{border:1px solid rgba(244,239,227,.22);border-radius:var(--r-md);padding:var(--s4)}
 .forms h4{font-size:var(--t-h4);margin-bottom:var(--s2)}
@@ -466,6 +464,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
 .close .vis{align-self:center}
+/* critic P2(2026-09-03 v4): 비rev 부도 실물 면 열을 7fr 로(1·3·5부 397→555px). 마무리 표지는 잉크 바탕에서 보이게 */
+@media (min-width:901px){.part:not(.rev) .body{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
+.closecovers{gap:var(--s2)}
+.closecovers img{box-shadow:0 14px 32px rgba(0,0,0,.55);outline:1px solid rgba(239,233,220,.16)}
 """
 
 HTML = r"""<!DOCTYPE html>
