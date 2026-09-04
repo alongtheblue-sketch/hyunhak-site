@@ -21,4 +21,5 @@ tail1 python3 _tools/seo_check.py
 head1 python3 _tools/v2_check.py
 tail1 python3 _tools/guidebook_aeo_check.py   # 6b 답변엔진 대응 + 판매 방어선 (유료 본문 유출 0)
 tail1 python3 _tools/apply_checkout_legal.py --check   # 6c 결제 면에 실린 약관 전문이 원천과 같은가
+tail1 python3 _tools/apply_counts.py --check   # 6d 홈, about 의 문항 수와 면수가 meta v3 합과 같은가
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16
