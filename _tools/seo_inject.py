@@ -34,6 +34,7 @@ DUP_PATTERNS = [
     re.compile(r'[ \t]*<link[^>]*rel=["\']canonical["\'][^>]*>[ \t]*\r?\n?', re.I),
     re.compile(r'[ \t]*<meta[^>]*(?:property|name)=["\']og:[^"\']*["\'][^>]*>[ \t]*\r?\n?', re.I),
     re.compile(r'[ \t]*<meta[^>]*name=["\']description["\'][^>]*>[ \t]*\r?\n?', re.I),
+    re.compile(r'[ \t]*<meta[^>]*name=["\']keywords["\'][^>]*>[ \t]*\r?\n?', re.I),
     re.compile(r'[ \t]*<meta[^>]*name=["\']twitter:[^"\']*["\'][^>]*>[ \t]*\r?\n?', re.I),
     re.compile(r'[ \t]*<meta[^>]*name=["\']robots["\'][^>]*>[ \t]*\r?\n?', re.I),
     re.compile(r'[ \t]*<script[^>]*type=["\']application/ld\+json["\'][^>]*>.*?</script>[ \t]*\r?\n?', re.I | re.S),
@@ -201,6 +202,10 @@ def build_graph(m, rel, e, page_html):
         page["datePublished"] = e["date_published"]
     if e.get("date_modified"):
         page["dateModified"] = e["date_modified"]
+    # 검색어 배열 (manifest keywords). schema.org keywords 는 Text 라 쉼표 연결 1문자열로 싣는다 (2026-09-04)
+    kws = ", ".join(e.get("keywords") or [])
+    if kws:
+        page["keywords"] = kws
     graph.append(page)
 
     t = e["type"]
@@ -233,6 +238,8 @@ def build_graph(m, rel, e, page_html):
             if sch.get("about_same_as"):
                 prod["about"]["sameAs"] = sch["about_same_as"]
         prod["inLanguage"] = lang
+        if kws:
+            prod["keywords"] = kws
         if sch.get("audience"):
             prod["audience"] = {"@type": "EducationalAudience", "educationalRole": "student",
                                 "audienceType": sch["audience"]}
@@ -269,6 +276,8 @@ def build_graph(m, rel, e, page_html):
         art = {"@type": "Article", "@id": url + "#article", "headline": title, "description": desc,
                "url": url, "mainEntityOfPage": {"@id": url + "#webpage"}, "image": image,
                "author": {"@id": org_id(m)}, "publisher": {"@id": org_id(m)}, "inLanguage": lang}
+        if kws:
+            art["keywords"] = kws
         if sch.get("about"):
             art["about"] = {"@type": sch.get("about_type", "CollegeOrUniversity"), "name": sch["about"]}   # about_type: 비대학 페이지(b2b 등)는 manifest 가 지정
         if e.get("date_published"):
@@ -278,8 +287,8 @@ def build_graph(m, rel, e, page_html):
         graph.append(art)
 
     faq = list(e.get("faq") or [])
-    if t == "faq" or rel.startswith("guidebook/") or rel == "index.html":  # 학교별 FAQ 3문항 (build_guidebook faq_of, 2026-08-30) + 홈 4문항 (data-faq, 2026-08-31)
-        faq = faq or C.extract_faq(page_html)
+    # 지면에 details.faq 나 data-faq 쌍이 있으면 어느 면이든 FAQPage 로 싣는다 (구 faq/guidebook/index 한정 -> 전 면, 2026-09-04. 스튜디오 LP 와 소개 면의 FAQ 가 답변 엔진에 잡히도록)
+    faq = faq or C.extract_faq(page_html)
     if faq:
         graph.append({"@type": "FAQPage", "@id": url + "#faq", "mainEntity": [
             {"@type": "Question", "name": q["q"], "acceptedAnswer": {"@type": "Answer", "text": q["a"]}}
@@ -328,6 +337,8 @@ def build_block(m, rel, e, page_html):
     lines = [C.SEO_BEGIN,
              f'<link rel="canonical" href="{C.attr(url)}">',
              f'<meta name="description" content="{C.attr(desc)}">']
+    if e.get("keywords"):
+        lines.append(f'<meta name="keywords" content="{C.attr(", ".join(e["keywords"]))}">')
     if e["noindex"]:
         lines.append(f'<meta name="robots" content="{C.attr(e.get("robots", "noindex, follow"))}">')
     lines += [f'<meta property="og:type" content="{OG_TYPE.get(e["type"], "website")}">',
@@ -380,7 +391,11 @@ def inject_aeo(s, answer, rel, warnings):
     if not mm:
         warnings.append(f"{rel}: <main> 없음, aeo 단락 미삽입")
         return s
-    aeo = f'{C.AEO_BEGIN}<p class="aeo-answer">{C.attr(answer)}</p>{C.AEO_END}'
+    txt = C.attr(answer)
+    if rel.startswith("guidebook/"):
+        # 문장마다 한 줄 (2026-09-04 건우). 태그를 걷으면 마침표 뒤 공백이 남아 텍스트는 manifest answer 와 같다
+        txt = re.sub(r"\. (?=\S)", ". <br>", txt)
+    aeo = f'{C.AEO_BEGIN}<p class="aeo-answer">{txt}</p>{C.AEO_END}'
     # pagehead 가 main 안에 있으면 그 블록 끝(부제 뒤)에, 없으면 main 첫 자식으로
     ph = re.search(r'<(div|section) class="pagehead"[^>]*>', s[mm.end():], re.I)
     if ph:

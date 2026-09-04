@@ -62,7 +62,10 @@ def main():
         rows.append(r)
 
     # 같은 형태 대학 묶음이 참인지 원장에서 되유도해 대조한다 (지면끼리 대조하면 같이 틀려도 통과한다)
-    name2slug = {v["name"]: k for k, v in META.items() if isinstance(v, dict) and "name" in v}
+    sys.path.insert(0, str(ROOT / "_tools"))
+    import build_guidebook as B
+    # 앵커 문면 = "OO대학교 면접" (2026-09-04). 정식 명칭 규칙은 빌더 full_name 하나만 쓴다 (괄호 캠퍼스 처리 두 벌 금지)
+    name2slug = {B.full_name({"slug": k, "name": v["name"]}): k for k, v in META.items() if isinstance(v, dict) and "name" in v}
     def forms_on(mv):
         return {f["form"] for f in mv.get("forms", [])
                 if f.get("has") and "확인 필요" not in f["form"] and "과 " not in f["form"]}
@@ -79,7 +82,9 @@ def main():
         block = re.search(r'<div class="rel rv">(.*?)</div>', s2, re.S)
         for nm in re.findall(r">([^<]+)</a>", block.group(1) if block else ""):
             rel_n += 1
-            sl = name2slug.get(nm)
+            if not nm.endswith(" 면접"):
+                fails.append(f"{p.stem}: 관련 대학 앵커 '{nm}' 가 'OO대학교 면접' 꼴이 아님")
+            sl = name2slug.get(nm[:-3])
             if sl is None or forms_on(META[sl]) != mine:
                 fails.append(f"{p.stem}: 관련 대학 '{nm}' 의 면접 형태가 다름")
 

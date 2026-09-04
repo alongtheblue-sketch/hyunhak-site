@@ -9,6 +9,7 @@ SKIP="${SKIP_NAV:-}"   # 리더 세션 커밋(159b755) 후 전면 적용. reader
 tail1() { _o=$("$@"); printf '%s\n' "$_o" | tail -1; }
 head1() { _o=$("$@"); printf '%s\n' "$_o" | head -1; }
 python3 _tools/build_guidebook.py build >/dev/null
+python3 _tools/build_interview_hub.py >/dev/null   # 1c 38개 대학 면접 형태 판정표 (SEARCH 표 원장, 2026-09-04)
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_fonts.py
@@ -22,4 +23,5 @@ head1 python3 _tools/v2_check.py
 tail1 python3 _tools/guidebook_aeo_check.py   # 6b 답변엔진 대응 + 판매 방어선 (유료 본문 유출 0)
 tail1 python3 _tools/apply_checkout_legal.py --check   # 6c 결제 면에 실린 약관 전문이 원천과 같은가
 tail1 python3 _tools/apply_counts.py --check   # 6d 홈, about 의 문항 수와 면수가 meta v3 합과 같은가
+tail1 python3 _tools/seo_keyword_census.py   # 6e 면접 검색어 포획 (면당 필수 구절 + 계열별 커버리지, 2026-09-04)
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16

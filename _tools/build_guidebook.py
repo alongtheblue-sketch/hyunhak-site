@@ -154,6 +154,31 @@ SEARCH = {
     "hanyang-erica": {"u": "한양대 ERICA", "rep": [T("학생부종합(면접형)", "서류기반 면접")]},
     "hongik": {"u": "홍익대", "rep": [T("미술우수자전형", "제시문과 서류기반 혼합 면접")]},
 }
+FULLNAME = {"hanyang-erica": "한양대학교 ERICA"}   # 괄호 캠퍼스가 정체성을 가르는 대학만 유지. 나머지는 괄호를 뗀다 (건국대학교(서울) -> 건국대학교)
+ALIAS = {"yonsei": "연대", "korea": "고대"}       # 검색에서 실제로 쓰는 준말 (판정표 허브가 쓴다)
+
+
+def full_name(e):
+    return FULLNAME.get(e["slug"]) or re.sub(r"\(.*?\)", "", e["name"]).strip()
+
+
+def kw_of(e):
+    """면 하나가 잡을 검색어. seo_inject 가 meta keywords 와 JSON-LD keywords 에 그대로 싣는다 (2026-09-04 건우).
+    값은 SEARCH 표에서만 유도한다. 순서 = 대학 단독형, 정식 명칭형, 전형명형, 준비 유형형, 일반형."""
+    s = SEARCH[e["slug"]]
+    U, full = s["u"], full_name(e)
+    tracks = [x["n"] for x in s["rep"]] + [s[k]["n"] for k in ("med", "edu", "alt") if k in s]
+    out = [f"{U} 면접", f"{full} 면접"] + [f"{U} {t} 면접" for t in tracks]
+    out += [f"{U} 서류기반 면접", f"{U} 생기부 면접", f"{U} 면접 기출문제", f"{U} 면접 예상문제",
+            f"{U} 면접컨설팅", f"{U} 모의면접", f"{U} 면접 가이드북 2027",
+            "서류기반 면접", "생기부 면접", "대입 면접 준비", "면접 예상 질문"]
+    seen, uniq = set(), []
+    for k in out:
+        if k not in seen:
+            seen.add(k); uniq.append(k)
+    return uniq
+
+
 SEO_TYPES = {"a": "서류기반 단일", "b": "의약학 병기", "c": "제시문/MMI 병행", "d": "교과 면접 병행",
              "e1": "비판매, 스튜디오 안내", "e2": "비판매, 2027 판 준비 중", "f": "스튜디오 LP"}
 
@@ -225,7 +250,7 @@ def seo_texts(e, mv, cat):
     r12 = R1 + (f", {R2}" if R2 else "")
     au = f"{AUTHOR} 편집"
     if kind == "a":
-        title = f"{U} {R1} 면접 가이드북 2027, 서류기반 면접 기출 {q}문과 생기부 질문 규칙 {r}개"
+        title = f"{U} 면접 가이드북 2027, {r12} 서류기반 면접 기출 {q}문과 생기부 질문 규칙 {r}개"
         desc = _fit([
             f"{U} {r12} 서류기반 면접 가이드북. 선배 후기 {y} 기출 {q}문과 생기부에서 질문을 뽑는 규칙 {r}개, 전형별 제원과 준비 전략. 권당 {price}, {au}.",
             f"{U} {r12} 서류기반 면접 가이드북. 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개, 전형별 제원과 준비 전략. 권당 {price}, {au}.",
@@ -236,7 +261,8 @@ def seo_texts(e, mv, cat):
         answer = f"{U} {R1} 면접은 {F1}입니다. 이 가이드북은 기출 {q}문과 생기부 질문 규칙 {r}개를 담았고 권당 {price}입니다."
     elif kind == "b":
         M, FM = s["med"]["n"], s["med"]["f"]
-        title = f"{U} {R1}, {M} 면접 가이드북 2027, 기출 {q}문과 생기부 질문 규칙 {r}개, {price}"
+        title = (f"{U} 면접 가이드북 2027, {R1}, {M} 서류기반 면접 기출 {q}문과 생기부 질문 규칙 {r}개" if F1 == FM
+                 else f"{U} 면접 가이드북 2027, {R1} 서류기반 면접과 {M} 면접, 기출 {q}문과 생기부 질문 규칙 {r}개")
         desc = _fit([
             f"{U} {R1} 면접과 {M} 면접을 한 권에. 전형별 면접 형태 판정표, 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개, 준비 전략. 권당 {price}, {au}.",
             f"{U} {R1} 면접과 {M} 면접을 한 권에. 전형별 면접 형태 판정표, 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개. 권당 {price}, {au}.",
@@ -253,7 +279,7 @@ def seo_texts(e, mv, cat):
             ], 40, 110)
     elif kind == "c":
         A, FA, K = s["alt"]["n"], s["alt"]["f"], s["alt"]["k"]
-        title = f"{U} {R1}, {A} 면접 가이드북 2027, 서류기반, {K} 전형별 판정과 기출 {q}문"
+        title = f"{U} 면접 가이드북 2027, {R1} 서류기반 면접과 {A} {K}, 전형별 판정과 기출 {q}문"
         desc = _fit([
             f"{U} 면접은 전형에 따라 갈립니다. {R1}{_eun(R1)} {F1}, {A}{_eun(A)} {FA}. 전형별 판정표와 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개. 권당 {price}, {au}.",
             f"{U} {R1}{_eun(R1)} {F1}, {A}{_eun(A)} {FA}. 전형별 판정표, 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개. 권당 {price}, {au}.",
@@ -266,7 +292,7 @@ def seo_texts(e, mv, cat):
         ], 40, 110)
     elif kind == "d":
         E, FE = s["edu"]["n"], s["edu"]["f"]
-        title = f"{U} {R1}, {E} 면접 가이드북 2027, 학종과 교과 면접 기출 {q}문과 생기부 질문 규칙 {r}개"
+        title = f"{U} 면접 가이드북 2027, {R1} 서류기반 면접과 {E} 교과 면접 기출 {q}문과 생기부 질문 규칙 {r}개"
         desc = _fit([
             f"{U} {R1}(학종)과 {E}(교과)의 면접 형태를 전형별로 판정합니다. 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개, 준비 전략. 권당 {price}, {au}.",
             f"{U} {R1}(학종)과 {E}(교과)의 면접 형태를 전형별로 판정합니다. 선배 후기 {y} 기출 {q}문, 생기부 질문 규칙 {r}개. 권당 {price}, {au}.",
@@ -311,14 +337,16 @@ def seo_hub_texts(cat, items, meta):
     R = sum(meta[e["slug"]]["rules"] for e in sale)
     au = f"{AUTHOR} 편집"
     return {"type": "hub", "rep": f"{n}개 대학, 기출 {Q:,}문, 규칙 {R:,}개 (meta v3 합, 지면 미인용)",
-            "title": f"대학별 면접 가이드북 2027, {n}개 대학 면접 기출과 생기부 질문 규칙, 권당 {price}",
+            "title": f"대학별 서류기반 면접 가이드북 2027, {n}개 대학 면접 기출문제와 생기부 예상 질문 규칙, 권당 {price}",
             # 총 문항 수는 싣지 않는다: 홈과 about 은 2026-09-04 L-7 로 meta v3 합(3,934문, 1,139면)에 맞췄으나
             # (_tools/apply_counts.py 가 원장에서 유도해 박제), description 은 70~110자 게이트라 복원은 별건이다.
             "description": _fit([
-                f"대학별 면접 가이드북 2027, {n}개 대학 판매 중. 대학마다 전형별 면접 형태 판정, 선배 후기 실제 기출, 생기부에서 질문을 뽑는 규칙, 준비 전략. 권당 {price}, {au}.",
-                f"대학별 면접 가이드북 2027, {n}개 대학 판매 중. 전형별 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략. 권당 {price}, {au}.",
+                f"대학별 서류기반 면접(생기부 면접) 가이드북 2027, {n}개 대학 판매 중. 전형별 면접 형태 판정, 면접 기출문제, 생기부 예상 질문 규칙, 준비 전략. 권당 {price}, {au}.",
+                f"대학별 서류기반 면접 가이드북 2027, {n}개 대학 판매 중. 면접 형태 판정, 면접 기출문제, 생기부 예상 질문 규칙. 권당 {price}, {au}.",
             ], 70, 110),
-            "answer": f"대학별 면접 가이드북 2027은 {n}개 대학, 권당 {price}입니다. 대학마다 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략을 담았고 보안 리더로 열람합니다."}
+            "answer": f"대학별 서류기반 면접 가이드북 2027은 {n}개 대학, 권당 {price}입니다. 대학마다 면접 형태 판정, 면접 기출문제, 생기부 예상 질문 규칙, 준비 전략을 담았습니다.",
+            "keywords": ["대학별 면접 가이드북 2027", "서류기반 면접", "생기부 면접", "학종 면접", "대입 면접 준비", "면접 기출문제", "면접 예상문제",
+                         "면접 예상 질문", "대학 면접 질문 유형", "생기부 면접 질문"]}
 
 
 
@@ -617,7 +645,8 @@ def faq_of(e, mv, price, sale, pdfp):
     ys = f"{y0}~{y1}년" if y0 != y1 else f"{y0}년"
     q, r, units, ntypes = mv["questions"], mv["rules"], mv.get("units_n"), len(e["types"])
     units_s = f"{units}개 모집단위, " if units else ""
-    q1 = f"{name} {R1} 면접은 어떤 형태인가요?"
+    full = full_name(e)   # 괄호 캠퍼스를 뗀 정식 명칭 (건국대학교(서울) -> 건국대학교). 검색어는 이 형태로 들어온다
+    q1 = f"{full} {R1} 면접은 어떤 형태인가요?"
     if slug in STUDIO:
         pas, single = studio_prices(slug)
         faq = [(q1, a1),
@@ -626,8 +655,10 @@ def faq_of(e, mv, price, sale, pdfp):
                (f"{name}{_eun(name)} 왜 2027 가이드북이 없나요?", f"{R1} 면접이 제시문형이라 서류기반 가이드북 대신 기출 지문으로 응시하고 촬영 첨삭을 받는 제시문 면접 스튜디오를 운영합니다."),
                (f"{name} 면접은 어디서 준비하나요?", f"{U} 제시문 면접 스튜디오에서 기출 지문 응시와 촬영 첨삭을 받습니다. 전권 {won(pas)} 인강 포함, 지문 1편 {won(single)}.")]
     else:
-        a2 = f"선배 후기 {ys}에서 회수한 기출 {q}문을 {units_s}{ntypes}개 유형으로 나눠 3부에 실었습니다."
-        a3 = f"4부에 전환 규칙 {r}개가 있습니다. 규칙마다 생기부 기재 조건과 실제 질문, 꼬리질문이 붙습니다."
+        a2 = _fit([f"선배 후기 {ys}에서 회수한 {U} 면접 기출문제 {q}문을 {units_s}{ntypes}개 유형으로 나눠 3부에 실었습니다.",
+                   f"선배 후기 {ys}에서 회수한 {U} 면접 기출문제 {q}문을 {ntypes}개 유형으로 나눠 3부에 실었습니다."], 40, 110)
+        a3 = _fit([f"4부의 전환 규칙 {r}개가 내 생기부 기재를 {U} 면접 예상 질문으로 바꿉니다. 규칙마다 기재 조건과 실제 기출, 꼬리질문이 붙습니다.",
+                   f"4부의 전환 규칙 {r}개가 내 생기부 기재를 {U} 면접 예상 질문으로 바꿉니다. 규칙마다 실제 기출과 꼬리질문이 붙습니다."], 40, 110)
         if sale:
             q4 = "가격과 열람 기간은 어떻게 되나요?"
             a4 = (f"보안 리더 열람판 {won(price)}" + (f", PDF 소장판 {won(pdfp)}" if pdfp else "")
@@ -635,16 +666,16 @@ def faq_of(e, mv, price, sale, pdfp):
         else:
             q4 = "2027 판은 언제 판매하나요?"
             a4 = f"{name} 2027 판은 보안 리더 준비 중입니다. 판매 개시는 공지에 기록하며, 판매 중인 다른 대학 가이드북은 권당 {won(price)}입니다."
-        faq = [(q1, a1), (f"{name} 면접 기출은 몇 문항 실려 있나요?", a2), ("생기부에서 질문을 뽑는 규칙은 몇 개인가요?", a3), (q4, a4)]
+        faq = [(q1, a1), (f"{U} {R1} 면접 기출문제는 몇 문항 실려 있나요?", a2), (f"{U} 면접 예상문제는 생기부에서 어떻게 뽑나요?", a3), (q4, a4)]
         # 검색과 답변 엔진에서 실제로 들어오는 갈래를 5문 더 (2026-09-04). 값은 meta v3 와 카탈로그에만 근거한다.
         on = set(_forms_on(mv))
         has = lambda k: any(k in x for x in on)
-        faq.append((f"{name} 면접에 제시문이 나오나요?",
+        faq.append((f"{full} 면접에 제시문이 나오나요?",
                     _fit([f"{U} 면접에 제시문은 {'있습니다' if has('제시문') else '없습니다'}, MMI는 {'있습니다' if has('MMI') else '없습니다'}. 1부 판정표가 전형별로 형태를 가릅니다.",
                           f"{U} 면접에 제시문은 {'있습니다' if has('제시문') else '없습니다'}. MMI는 {'있습니다' if has('MMI') else '없습니다'}. 1부에서 전형별 형태를 판정합니다."], 40, 110)))
         tys = [clean(t) for t in (e.get("types") or [])][:3]
         if tys:
-            faq.append((f"{name} 면접은 어떤 유형의 질문이 나오나요?",
+            faq.append((f"{full} 면접은 어떤 유형의 질문이 나오나요?",
                         _fit([f"{', '.join(tys)} 등 {ntypes}개 유형입니다. 3부가 유형별로 실제로 나온 질문을 모아 싣습니다.",
                               f"{', '.join(tys[:2])} 등 {ntypes}개 유형입니다. 3부가 유형별로 실제 질문을 싣습니다."], 40, 110)))
         areas = [clean(a) for a in (mv.get("rule_areas") or [])]
@@ -660,6 +691,15 @@ def faq_of(e, mv, price, sale, pdfp):
             faq.append(("인쇄하거나 파일로 저장할 수 있나요?",
                         _fit([f"보안 리더 열람판은 계정당 3회까지 인쇄할 수 있고 원본 파일은 제공하지 않습니다." + (f" 파일이 필요하면 PDF 소장판 {won(pdfp)}입니다." if pdfp else ""),
                               "보안 리더 열람판은 계정당 3회까지 인쇄할 수 있습니다. 원본 파일은 제공하지 않습니다."], 40, 110)))
+            # 검색어가 "OO대 서류기반 면접", "OO대 면접컨설팅", "OO대 모의면접" 으로도 들어온다 (2026-09-04 건우). 없는 상품은 없다고 말한다.
+            faq.append((f"{U} 서류기반 면접은 어떻게 준비하나요?",
+                        _fit([f"{U} {R1} 면접은 서류기반 면접(생기부 면접)으로 내 생기부가 문제지입니다. 1부 판정, 2부 제원, 3부 기출, 4부 규칙, 5부 전략 순서로 준비합니다.",
+                              f"{U} {R1} 면접은 서류기반 면접(생기부 면접)입니다. 1부 판정, 2부 제원, 3부 기출, 4부 규칙, 5부 전략 순서로 준비합니다.",
+                              f"{U} 서류기반 면접(생기부 면접)은 내 생기부가 문제지입니다. 1부 판정, 2부 제원, 3부 기출, 4부 규칙, 5부 전략 순서로 준비합니다."], 40, 110)))
+            faq.append((f"{U} 면접컨설팅이나 {U} 모의면접도 하나요?",
+                        _fit([f"{U} {R1} 면접은 서류기반이라 별도 면접컨설팅 없이 가이드북의 기출과 예상 질문 규칙으로 준비합니다. 모의면접 스튜디오는 연세대, 고려대 제시문 면접만 운영합니다.",
+                              f"{U} {R1} 면접은 서류기반이라 가이드북의 기출과 예상 질문 규칙으로 준비합니다. 모의면접 스튜디오는 연세대, 고려대 제시문 면접만 운영합니다.",
+                              f"{U} 면접컨설팅과 모의면접은 따로 없고 서류기반 면접은 이 가이드북으로 준비합니다. 스튜디오는 연세대, 고려대 제시문 면접만 운영합니다."], 40, 110)))
     for qq, aa in faq:
         if not 40 <= len(aa) <= 110 or any(ch in qq + aa for ch in ("·", "—")):
             sys.exit(f"{slug} FAQ 답 {len(aa)}자 또는 금지 문자: {qq} / {aa}")
@@ -730,7 +770,7 @@ def _related_html(items, i, meta, cur_forms):
         return ""
     near = sorted(out, key=lambda o: abs(items.index(o) - i))[:6]
     near.sort(key=lambda o: items.index(o))
-    links = "\n".join(f'      <a class="tlink" href="{o["slug"]}.html">{esc(o["name"])}</a>' for o in near)
+    links = "\n".join(f'      <a class="tlink" href="{o["slug"]}.html">{esc(full_name(o))} 면접</a>' for o in near)   # 앵커 = "OO대학교 면접" (내부 링크 문면도 검색어, 2026-09-04)
     label = ", ".join(cur_forms)
     return ('  <section class="sec">\n'
             f'    <div class="sh rv"><div><h2>{esc(label)} 면접을 보는 다른 대학</h2>'
@@ -757,8 +797,10 @@ def render_page(cat, items, i, meta):
     title = seo_texts(e, mv, cat)["title"]   # manifest 와 같은 골격 (seo 서브커맨드가 같은 함수로 박제)
     studio = e["slug"] in STUDIO
     years = f'{mv["years"][0]}~{mv["years"][1]}' if mv.get("years") else "복수 연도"
-    lede = (f"{name} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙. "
-            f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.")
+    # 문장마다 한 줄 (2026-09-04 건우). 폭 상한은 템플릿 CSS 가 걷어 컨테이너 폭으로 동적 줄바꿈된다
+    lede = "<br>".join(esc(x) for x in (
+        f"{full_name(e)} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙.",
+        f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본."))
     if sale:
         pdf_btn = (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기, {won(pdfp)}</button>\n      '
                    if pdfp else "")
@@ -799,7 +841,7 @@ def render_page(cat, items, i, meta):
                          for s in e["samples"])
     prev_e = items[i - 1] if i > 0 else None
     next_e = items[i + 1] if i + 1 < len(items) else None
-    m = {"__TITLE__": esc(title), "__NAME__": esc(name), "__H1__": esc(h1), "__LEDE__": esc(lede), "__SLUG__": e["slug"],
+    m = {"__TITLE__": esc(title), "__NAME__": esc(name), "__H1__": esc(h1), "__LEDE__": lede, "__SLUG__": e["slug"],
          "__SKU__": esc(e["sku"]), "__VOL__": str(mv.get("vol") or ""), "__YEARS__": years,
          "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}",
          "__TRACKS_N__": str(len(mv.get("spec_tracks", [])) or len(mv.get("tracks", []))),
@@ -911,11 +953,12 @@ def cmd_seo(args):
         sch["audience"] = "대학 면접을 준비하는 고등학생과 수험생"
         sch["properties"] = {"면 수": f"{mv['pages']}면", "수록 기출": f"{mv['questions']}문",
                              "생기부 질문 규칙": f"{mv['rules']}개"}
+        upd["keywords"] = kw_of(e)
         m["pages"][rel].update(upd)
         rows.append((rel, t))
     hub = seo_hub_texts(cat, items, meta)
     m["pages"]["guidebook/index.html"].update({"title": hub["title"], "description": hub["description"], "answer": hub["answer"],
-                                               "date_modified": CONTENT_DATE, "speakable": [".aeo-answer"]})
+                                               "keywords": hub["keywords"], "date_modified": CONTENT_DATE, "speakable": [".aeo-answer"]})
     rows.append(("guidebook/index.html", hub))
     titles = [t["title"] for _, t in rows]
     if len(set(titles)) != len(titles):

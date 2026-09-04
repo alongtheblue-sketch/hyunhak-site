@@ -120,7 +120,7 @@ def build_llms(m, pages):
         for p in L["free"]:
             out.append(f"- [{p['name']}]({C.abs_url(m, p['path'])}): {p['desc']}")
     out += ["", "## 핵심 페이지"]
-    core = ["index.html", "studio.html", "guidebook/index.html",
+    core = ["index.html", "interview.html", "studio.html", "guidebook/index.html",
             "library.html", "about.html", "faq.html", "notice.html", "terms.html", "privacy.html"]
     for rel in core:
         if rel in by_path:

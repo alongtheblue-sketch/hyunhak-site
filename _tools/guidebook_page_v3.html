@@ -88,6 +88,8 @@
 .after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
 .after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
 @media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}.pv{flex-basis:66vw}.trk li{grid-template-columns:1fr}}
+/* 폭 상한 해제 (2026-09-04 건우): 칸이 넓은데 36em 에서 접히던 문단(lede, 답변, note, 맛보기, FAQ 답, 절 부제)을 컨테이너 폭으로 동적 줄바꿈. lede 와 답변은 빌더가 문장 경계에 <br> */
+main p,.sh p,.phead .lede,.aeo-answer,details.faq .a,.parts .d{max-width:none}
 </style>
 </head>
 <body class="v2">
@@ -161,6 +163,7 @@ __TRACKS__
     <div class="chips rv" aria-label="전형별 제원 항목">
 __SPEC_CHIPS__
     </div>
+    <p class="note rv" style="margin-top:var(--s4)"><a class="tlink" href="../interview.html">38개 대학 전형별 면접 형태 판정표, 서류기반 면접과 제시문 면접 <span class="ar" aria-hidden="true">→</span></a></p>
   </section>
 
   <section class="sec">
