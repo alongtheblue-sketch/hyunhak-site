@@ -49,6 +49,25 @@ def org_id(m):
     return C.base_url(m) + "/#organization"
 
 
+def person_id(m):
+    return C.base_url(m) + "/#author"
+
+
+def founder_node(m):
+    """about.html 과 footer 사업자 정보에 이미 실린 사람만 노드로 만든다. manifest 미기재면 None."""
+    f = m["site"].get("founder")
+    if not f or not f.get("name"):
+        return None
+    node = {"@type": "Person", "@id": person_id(m), "name": f["name"],
+            "url": C.base_url(m) + "/about.html", "worksFor": {"@id": org_id(m)}}
+    for key, prop in (("alternate_name", "alternateName"), ("job_title", "jobTitle"), ("description", "description")):
+        if f.get(key):
+            node[prop] = f[key]
+    if f.get("alumni_of"):
+        node["alumniOf"] = {"@type": "CollegeOrUniversity", "name": f["alumni_of"]}
+    return node
+
+
 def site_id(m):
     return C.base_url(m) + "/#website"
 
@@ -119,8 +138,8 @@ def return_policy(m, delivery):
         if days is None:
             return None
         pol["merchantReturnDays"] = days
-        pol["returnMethod"] = "https://schema.org/ReturnByMail"
         pol["returnFees"] = "https://schema.org/FreeReturn"
+        # returnMethod 생략: 디지털은 돌려보낼 물건이 없다 (terms 제6조에도 반송 수단 없음)
     return pol
 
 
@@ -139,8 +158,22 @@ def build_graph(m, rel, e, page_html):
            "logo": {"@type": "ImageObject", "url": C.abs_url(m, site["logo"])}}
     if site.get("email"):
         org["email"] = site["email"]
+    if site.get("telephone"):
+        org["telephone"] = site["telephone"]
+    if site.get("tax_id"):
+        org["taxID"] = site["tax_id"]
+    ad = site.get("address")
+    if ad:
+        org["address"] = {"@type": "PostalAddress", "streetAddress": ad["street"],
+                          "addressLocality": ad["locality"], "addressRegion": ad["region"],
+                          "addressCountry": ad.get("country", "KR")}
+    person = founder_node(m)
+    if person:
+        org["founder"] = {"@id": person_id(m)}
     org["sameAs"] = list(site.get("same_as", []))
     graph.append(org)
+    if person:
+        graph.append(person)
 
     graph.append({"@type": "WebSite", "@id": site_id(m), "url": C.base_url(m) + "/",
                   "name": site["name"], "alternateName": site["alternate_name"],
@@ -159,6 +192,11 @@ def build_graph(m, rel, e, page_html):
             "primaryImageOfPage": {"@type": "ImageObject", "url": image}}
     if bc_id:
         page["breadcrumb"] = {"@id": bc_id}
+    if person:
+        page["author"] = {"@id": person_id(m)}
+    page["publisher"] = {"@id": org_id(m)}
+    if e.get("speakable"):
+        page["speakable"] = {"@type": "SpeakableSpecification", "cssSelector": list(e["speakable"])}
     if e.get("date_published"):
         page["datePublished"] = e["date_published"]
     if e.get("date_modified"):
@@ -192,6 +230,17 @@ def build_graph(m, rel, e, page_html):
             prod["sku"] = sch["sku"]
         if sch.get("about"):
             prod["about"] = {"@type": sch.get("about_type", "CollegeOrUniversity"), "name": sch["about"]}
+            if sch.get("about_same_as"):
+                prod["about"]["sameAs"] = sch["about_same_as"]
+        prod["inLanguage"] = lang
+        if sch.get("audience"):
+            prod["audience"] = {"@type": "EducationalAudience", "educationalRole": "student",
+                                "audienceType": sch["audience"]}
+        if person:
+            prod["author"] = {"@id": person_id(m)}
+        if sch.get("properties"):
+            prod["additionalProperty"] = [{"@type": "PropertyValue", "name": k, "value": v}
+                                          for k, v in sch["properties"].items()]
         delivery = sch.get("delivery", "digital")
         ret = return_policy(m, delivery)
         out = []
@@ -207,6 +256,8 @@ def build_graph(m, rel, e, page_html):
                 offer["price"] = o["price"]
             if o.get("sku"):
                 offer["sku"] = o["sku"]
+            offer["itemCondition"] = "https://schema.org/NewCondition"
+            offer["seller"] = {"@id": org_id(m)}
             offer["shippingDetails"] = shipping_details(m, delivery, o.get("price"))
             if ret:
                 offer["hasMerchantReturnPolicy"] = dict(ret)

@@ -50,7 +50,7 @@
       "contact": "admin@hyunhak.com"
     },
     "merchant": {
-      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신.",
+      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신. 디지털은 제6조(열지 않은 권 공급일부터 7일 청약철회) 전사, 반송 수단이 없어 returnMethod 는 싣지 않는다.",
       "country": "KR",
       "shipping_fee": 3000,
       "free_shipping_over": 50000,
@@ -60,7 +60,24 @@
       "physical_transit_days_min": 1,
       "physical_transit_days_max": 3,
       "physical_handling_days_min": 0,
-      "physical_handling_days_max": 1
+      "physical_handling_days_max": 1,
+      "digital_return_category": "MerchantReturnFiniteReturnWindow",
+      "digital_return_days": 7
+    },
+    "address": {
+      "street": "테헤란로 70길 12, 402-941A호",
+      "locality": "강남구",
+      "region": "서울특별시",
+      "country": "KR"
+    },
+    "telephone": "+82-70-8098-0671",
+    "tax_id": "293-38-01827",
+    "founder": {
+      "name": "현건우",
+      "alternate_name": "현학자",
+      "job_title": "입시 컨설턴트",
+      "description": "입시 컨설턴트 13년차. 대학별 서류기반면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오를 한 사람이 편집한다.",
+      "alumni_of": "고려대학교"
     }
   },
   "defaults": {
@@ -244,11 +261,25 @@
             "sku": "guide-ajou"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.ajou.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "43면",
+          "수록 기출": "190문",
+          "생기부 질문 규칙": "62개"
+        }
       },
       "description": "아주대 ACE전형, ACE전형 의학과 면접 가이드북. 선배 후기 2020~2025 기출 190문, 생기부 질문 규칙 62개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "아주대 ACE전형 면접은 서류기반 면접, ACE전형 의학과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 190문과 생기부 질문 규칙 62개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/ajou.jpg"
+      "image": "/assets/covers/ajou.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/catholic.html": {
       "title": "가톨릭대 잠재능력우수자면접전형, 학교장추천전형 의예과 면접 가이드북 2027, 기출 147문과 생기부 질문 규칙 59개, 33,000원",
@@ -276,11 +307,25 @@
             "sku": "guide-catholic"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.catholic.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "40면",
+          "수록 기출": "147문",
+          "생기부 질문 규칙": "59개"
+        }
       },
       "description": "가톨릭대 잠재능력우수자면접전형, 학교장추천전형 의예과 면접 가이드북. 기출 147문, 생기부 질문 규칙 59개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "가톨릭대 잠재능력우수자면접전형 면접은 서류기반 면접, 학교장추천전형 의예과 면접은 서류기반과 인적성 제시문 혼합 면접입니다. 기출 147문, 생기부 질문 규칙 59개, 권당 33,000원.",
-      "image": "/assets/covers/catholic.jpg"
+      "image": "/assets/covers/catholic.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/cau.html": {
       "title": "중앙대 CAU탐구형인재, 융합형인재 의학부 면접 가이드북 2027, 기출 131문과 생기부 질문 규칙 59개, 33,000원",
@@ -308,11 +353,25 @@
             "sku": "guide-cau"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.cau.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "47면",
+          "수록 기출": "131문",
+          "생기부 질문 규칙": "59개"
+        }
       },
       "description": "중앙대 CAU탐구형인재, 융합형인재 의학부 면접 가이드북. 선배 후기 2017~2026 기출 131문, 생기부 질문 규칙 59개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "중앙대 CAU탐구형인재와 융합형인재 의학부 면접은 모두 서류기반 면접입니다. 기출 131문과 생기부 질문 규칙 59개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/cau.jpg"
+      "image": "/assets/covers/cau.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/dankook.html": {
       "title": "단국대 DKU인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 18문과 생기부 질문 규칙 20개",
@@ -340,11 +399,22 @@
             "sku": "guide-dankook"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "17면",
+          "수록 기출": "18문",
+          "생기부 질문 규칙": "20개"
+        }
       },
       "description": "단국대 DKU인재(면접형), SW인재 서류기반 면접 가이드북. 선배 후기 2025 기출 18문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "단국대 DKU인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 18문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/dankook.jpg"
+      "image": "/assets/covers/dankook.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/donga.html": {
       "title": "동아대 잠재능력우수자 면접 가이드북 2027, 서류기반 면접 기출 161문과 생기부 질문 규칙 48개",
@@ -372,11 +442,25 @@
             "sku": "guide-donga"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.donga.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "39면",
+          "수록 기출": "161문",
+          "생기부 질문 규칙": "48개"
+        }
       },
       "description": "동아대 잠재능력우수자 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 161문, 생기부 질문 규칙 48개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "동아대 잠재능력우수자 면접은 서류기반 면접입니다. 이 가이드북은 기출 161문과 생기부 질문 규칙 48개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/donga.jpg"
+      "image": "/assets/covers/donga.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/dongduk.html": {
       "title": "동덕여대 동덕창의리더전형 면접 가이드북 2027, 서류기반 면접 기출 43문과 생기부 질문 규칙 20개",
@@ -404,11 +488,25 @@
             "sku": "guide-dongduk"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.dongduk.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "18면",
+          "수록 기출": "43문",
+          "생기부 질문 규칙": "20개"
+        }
       },
       "description": "동덕여대 동덕창의리더전형 서류기반 면접 가이드북. 선배 후기 2020~2026 기출 43문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "동덕여대 동덕창의리더전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 43문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/dongduk.jpg"
+      "image": "/assets/covers/dongduk.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/dongguk.html": {
       "title": "동국대 Do Dream 면접 가이드북 2027, 서류기반 면접 기출 176문과 생기부 질문 규칙 59개",
@@ -435,11 +533,25 @@
             "price": 33000,
             "sku": "guide-dongguk"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.dongguk.edu"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "44면",
+          "수록 기출": "176문",
+          "생기부 질문 규칙": "59개"
+        }
       },
       "description": "동국대 Do Dream 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 176문, 생기부 질문 규칙 59개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "동국대 Do Dream 면접은 서류기반 면접입니다. 이 가이드북은 기출 176문과 생기부 질문 규칙 59개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/dongguk.jpg"
+      "image": "/assets/covers/dongguk.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/duksung.html": {
       "title": "덕성여대 덕성인재전형Ⅱ 면접 가이드북 2027, 서류기반 면접 기출 42문과 생기부 질문 규칙 20개",
@@ -467,11 +579,25 @@
             "sku": "guide-duksung"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.duksung.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "18면",
+          "수록 기출": "42문",
+          "생기부 질문 규칙": "20개"
+        }
       },
       "description": "덕성여대 덕성인재전형Ⅱ 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 42문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "덕성여대 덕성인재전형Ⅱ 면접은 서류기반 면접입니다. 이 가이드북은 기출 42문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/duksung.jpg"
+      "image": "/assets/covers/duksung.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/ewha.html": {
       "title": "이화여대 미래인재전형(면접형) 면접 가이드북 2027, 서류기반 면접 기출 152문과 생기부 질문 규칙 50개",
@@ -499,11 +625,25 @@
             "sku": "guide-ewha"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.ewha.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "42면",
+          "수록 기출": "152문",
+          "생기부 질문 규칙": "50개"
+        }
       },
       "description": "이화여대 미래인재전형(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 152문, 생기부 질문 규칙 50개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "이화여대 미래인재전형(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 152문과 생기부 질문 규칙 50개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/ewha.jpg"
+      "image": "/assets/covers/ewha.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/gachon.html": {
       "title": "가천대 가천바람개비, 가천의약학 면접 가이드북 2027, 기출 142문과 생기부 질문 규칙 54개, 33,000원",
@@ -530,11 +670,25 @@
             "price": 33000,
             "sku": "guide-gachon"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.gachon.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "40면",
+          "수록 기출": "142문",
+          "생기부 질문 규칙": "54개"
+        }
       },
       "description": "가천대 가천바람개비, 가천의약학 면접 가이드북. 전형별 판정표, 선배 후기 2020~2026 기출 142문, 생기부 질문 규칙 54개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "가천대 가천바람개비와 가천의약학 면접은 모두 서류기반 면접입니다. 기출 142문과 생기부 질문 규칙 54개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/gachon.jpg"
+      "image": "/assets/covers/gachon.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/hanyang-erica.html": {
       "title": "한양대 ERICA 학생부종합(면접형) 면접 가이드북 2027, 서류기반 면접 기출 11문과 생기부 질문 규칙 20개",
@@ -562,11 +716,25 @@
             "sku": "guide-hanyang-erica"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://erica.hanyang.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "15면",
+          "수록 기출": "11문",
+          "생기부 질문 규칙": "20개"
+        }
       },
       "description": "한양대 ERICA 학생부종합(면접형) 서류기반 면접 가이드북. 선배 후기 2020 기출 11문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "한양대 ERICA 학생부종합(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 11문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/hanyang-erica.jpg"
+      "image": "/assets/covers/hanyang-erica.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/hufs.html": {
       "title": "한국외대 학생부종합전형(면접형) 면접 가이드북 2027, 서류기반 면접 기출 167문과 생기부 질문 규칙 53개",
@@ -594,11 +762,25 @@
             "sku": "guide-hufs"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.hufs.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "43면",
+          "수록 기출": "167문",
+          "생기부 질문 규칙": "53개"
+        }
       },
       "description": "한국외대 학생부종합전형(면접형) 서류기반 면접 가이드북. 기출 167문, 생기부 질문 규칙 53개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "한국외대 학생부종합전형(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 167문과 생기부 질문 규칙 53개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/hufs.jpg"
+      "image": "/assets/covers/hufs.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/incheon.html": {
       "title": "인천대 자기추천전형, INU교과전형 면접 가이드북 2027, 학종과 교과 면접 기출 154문과 생기부 질문 규칙 44개",
@@ -626,11 +808,25 @@
             "sku": "guide-incheon"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.inu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "38면",
+          "수록 기출": "154문",
+          "생기부 질문 규칙": "44개"
+        }
       },
       "description": "인천대 자기추천전형(학종), INU교과전형(교과) 면접 가이드북. 기출 154문, 생기부 질문 규칙 44개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "인천대 자기추천전형 면접은 서류기반 면접, INU교과전형 면접은 제시문 면접(공통문제형)입니다. 기출 154문과 생기부 질문 규칙 44개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/incheon.jpg"
+      "image": "/assets/covers/incheon.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/index.html": {
       "title": "대학별 면접 가이드북 2027, 31개 대학 면접 기출과 생기부 질문 규칙, 권당 33,000원",
@@ -652,7 +848,11 @@
       "priority": 0.9,
       "changefreq": "weekly",
       "description": "대학별 면접 가이드북 2027, 31개 대학 판매 중. 전형별 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
-      "answer": "대학별 면접 가이드북 2027은 31개 대학, 권당 33,000원입니다. 대학마다 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략을 담았고 보안 리더로 열람합니다."
+      "answer": "대학별 면접 가이드북 2027은 31개 대학, 권당 33,000원입니다. 대학마다 면접 형태 판정, 실제 기출, 생기부 질문 규칙, 준비 전략을 담았고 보안 리더로 열람합니다.",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer"
+      ]
     },
     "guidebook/inha.html": {
       "title": "인하대 인하미래인재(면접형), 의예과 면접 가이드북 2027, 기출 148문과 생기부 질문 규칙 69개, 33,000원",
@@ -680,11 +880,25 @@
             "sku": "guide-inha"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.inha.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "48면",
+          "수록 기출": "148문",
+          "생기부 질문 규칙": "69개"
+        }
       },
       "description": "인하대 인하미래인재(면접형), 의예과 면접 가이드북. 선배 후기 2017~2025 기출 148문, 생기부 질문 규칙 69개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "인하대 인하미래인재(면접형)과 의예과 면접은 모두 서류기반 면접입니다. 기출 148문과 생기부 질문 규칙 69개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/inha.jpg"
+      "image": "/assets/covers/inha.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/khu.html": {
       "title": "경희대 네오르네상스전형 면접 가이드북 2027, 서류기반 면접 기출 172문과 생기부 질문 규칙 52개",
@@ -711,11 +925,25 @@
             "price": 33000,
             "sku": "guide-khu"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.khu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "45면",
+          "수록 기출": "172문",
+          "생기부 질문 규칙": "52개"
+        }
       },
       "description": "경희대 네오르네상스전형 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 172문, 생기부 질문 규칙 52개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "경희대 네오르네상스전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 172문과 생기부 질문 규칙 52개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/khu.jpg"
+      "image": "/assets/covers/khu.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/konkuk.html": {
       "title": "건국대 KU자기추천 면접 가이드북 2027, 서류기반 면접 기출 120문과 생기부 질문 규칙 55개",
@@ -742,11 +970,25 @@
             "price": 33000,
             "sku": "guide-konkuk"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.konkuk.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "40면",
+          "수록 기출": "120문",
+          "생기부 질문 규칙": "55개"
+        }
       },
       "description": "건국대 KU자기추천 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 120문, 생기부 질문 규칙 55개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "건국대 KU자기추천 면접은 서류기반 면접입니다. 이 가이드북은 기출 120문과 생기부 질문 규칙 55개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/konkuk.jpg"
+      "image": "/assets/covers/konkuk.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/kookmin.html": {
       "title": "국민대 국민프런티어 면접 가이드북 2027, 서류기반 면접 기출 143문과 생기부 질문 규칙 60개",
@@ -773,11 +1015,25 @@
             "price": 33000,
             "sku": "guide-kookmin"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.kookmin.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "39면",
+          "수록 기출": "143문",
+          "생기부 질문 규칙": "60개"
+        }
       },
       "description": "국민대 국민프런티어, 국제인재 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 143문, 생기부 질문 규칙 60개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "국민대 국민프런티어 면접은 서류기반 면접입니다. 이 가이드북은 기출 143문과 생기부 질문 규칙 60개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/kookmin.jpg"
+      "image": "/assets/covers/kookmin.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/kwangwoon.html": {
       "title": "광운대 광운참빛인재전형 I(면접형) 면접 가이드북 2027, 서류기반 면접 기출 148문과 생기부 질문 규칙 67개",
@@ -804,11 +1060,25 @@
             "price": 33000,
             "sku": "guide-kwangwoon"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.kw.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "41면",
+          "수록 기출": "148문",
+          "생기부 질문 규칙": "67개"
+        }
       },
       "description": "광운대 광운참빛인재전형 I(면접형) 서류기반 면접 가이드북. 기출 148문, 생기부 질문 규칙 67개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "광운대 광운참빛인재전형 I(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 148문과 생기부 질문 규칙 67개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/kwangwoon.jpg"
+      "image": "/assets/covers/kwangwoon.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/kyonggi.html": {
       "title": "경기대 KGU학생부종합전형, 디자인학부 면접 가이드북 2027, 서류기반, 과제 발표 혼합형 전형별 판정과 기출 130문",
@@ -835,11 +1105,25 @@
             "price": 33000,
             "sku": "guide-kyonggi"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.kyonggi.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "38면",
+          "수록 기출": "130문",
+          "생기부 질문 규칙": "49개"
+        }
       },
       "description": "경기대 KGU학생부종합전형, 디자인학부 면접 가이드북. 전형별 판정표, 기출 130문, 생기부 질문 규칙 49개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "경기대 KGU학생부종합전형 면접은 서류기반 면접, 디자인학부 면접은 과제 제시 발표와 서류기반 혼합 면접입니다. 전형별 판정표와 기출 130문, 생기부 질문 규칙 49개, 권당 33,000원.",
-      "image": "/assets/covers/kyonggi.jpg"
+      "image": "/assets/covers/kyonggi.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/myongji.html": {
       "title": "명지대 명지인재면접전형, 교과면접전형 면접 가이드북 2027, 학종과 교과 면접 기출 161문과 생기부 질문 규칙 55개",
@@ -866,11 +1150,25 @@
             "price": 33000,
             "sku": "guide-myongji"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.mju.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "42면",
+          "수록 기출": "161문",
+          "생기부 질문 규칙": "55개"
+        }
       },
       "description": "명지대 명지인재면접전형(학종), 교과면접전형(교과) 면접 가이드북. 기출 161문, 생기부 질문 규칙 55개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "명지대 명지인재면접전형 면접은 서류기반 면접, 교과면접전형 면접은 인적성 면접(인성면접)입니다. 기출 161문과 생기부 질문 규칙 55개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/myongji.jpg"
+      "image": "/assets/covers/myongji.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/pusan.html": {
       "title": "부산대 학생부종합전형, 의예과 면접 가이드북 2027, 기출 139문과 생기부 질문 규칙 61개, 33,000원",
@@ -897,11 +1195,25 @@
             "price": 33000,
             "sku": "guide-pusan"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.pusan.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "42면",
+          "수록 기출": "139문",
+          "생기부 질문 규칙": "61개"
+        }
       },
       "description": "부산대 학생부종합전형, 의예과 면접 가이드북. 전형별 판정표, 선배 후기 2017~2026 기출 139문, 생기부 질문 규칙 61개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "부산대 학생부종합전형 면접은 서류기반 면접, 의예과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 139문과 생기부 질문 규칙 61개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/pusan.jpg"
+      "image": "/assets/covers/pusan.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/sahmyook.html": {
       "title": "삼육대 세움인재, 예체능인재 면접 가이드북 2027, 서류기반, 제시문 전형별 판정과 기출 18문",
@@ -929,11 +1241,25 @@
             "sku": "guide-sahmyook"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.syu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "17면",
+          "수록 기출": "18문",
+          "생기부 질문 규칙": "18개"
+        }
       },
       "description": "삼육대 세움인재, 예체능인재 면접 가이드북. 전형별 형태 판정표, 선배 후기 2020~2024 기출 18문, 생기부 질문 규칙 18개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "삼육대 세움인재 면접은 서류기반 면접, 예체능인재 면접은 제시문 면접(선택형)과 개별질문입니다. 전형별 판정표와 기출 18문, 생기부 질문 규칙 18개, 권당 33,000원.",
-      "image": "/assets/covers/sahmyook.jpg"
+      "image": "/assets/covers/sahmyook.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/sejong.html": {
       "title": "세종대 세종인재전형(면접형), 창의소프트학부 면접 가이드북 2027, 서류기반, 제시문 혼합형 전형별 판정과 기출 145문",
@@ -961,11 +1287,25 @@
             "sku": "guide-sejong"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.sejong.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "41면",
+          "수록 기출": "145문",
+          "생기부 질문 규칙": "51개"
+        }
       },
       "description": "세종대 세종인재전형(면접형), 창의소프트학부 면접 가이드북. 전형별 판정표, 기출 145문, 생기부 질문 규칙 51개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "세종대 세종인재전형(면접형) 면접은 서류기반 면접, 창의소프트학부 면접은 제시문과 서류기반 혼합 면접입니다. 전형별 판정표와 기출 145문, 생기부 질문 규칙 51개, 권당 33,000원.",
-      "image": "/assets/covers/sejong.jpg"
+      "image": "/assets/covers/sejong.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/seoultech.html": {
       "title": "서울과기대 학교생활우수자전형 면접 가이드북 2027, 서류기반 면접 기출 151문과 생기부 질문 규칙 45개",
@@ -992,11 +1332,25 @@
             "price": 33000,
             "sku": "guide-seoultech"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.seoultech.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "34면",
+          "수록 기출": "151문",
+          "생기부 질문 규칙": "45개"
+        }
       },
       "description": "서울과기대 학교생활우수자전형 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 151문, 생기부 질문 규칙 45개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "서울과기대 학교생활우수자전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 151문과 생기부 질문 규칙 45개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/seoultech.jpg"
+      "image": "/assets/covers/seoultech.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/snu.html": {
       "title": "서울대 지역균형전형, 일반전형 면접 가이드북 2027, 서류기반, 제시문, MMI 전형별 판정과 기출 134문",
@@ -1023,11 +1377,25 @@
             "price": 33000,
             "sku": "guide-snu"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.snu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "45면",
+          "수록 기출": "134문",
+          "생기부 질문 규칙": "49개"
+        }
       },
       "description": "서울대 지역균형전형, 일반전형 면접 가이드북. 전형별 형태 판정표, 선배 후기 2017~2026 기출 134문, 생기부 질문 규칙 49개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "서울대 지역균형전형 면접은 서류기반 면접, 일반전형 면접은 제시문 면접, 의대 등은 MMI입니다. 전형별 판정표와 기출 134문, 생기부 질문 규칙 49개, 권당 33,000원.",
-      "image": "/assets/covers/snu.jpg"
+      "image": "/assets/covers/snu.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/sookmyung.html": {
       "title": "숙명여대 숙명인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 114문과 생기부 질문 규칙 45개",
@@ -1055,11 +1423,25 @@
             "sku": "guide-sookmyung"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.sookmyung.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "35면",
+          "수록 기출": "114문",
+          "생기부 질문 규칙": "45개"
+        }
       },
       "description": "숙명여대 숙명인재(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2026 기출 114문, 생기부 질문 규칙 45개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "숙명여대 숙명인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 114문과 생기부 질문 규칙 45개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/sookmyung.jpg"
+      "image": "/assets/covers/sookmyung.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/soongsil.html": {
       "title": "숭실대 SSU미래인재(면접형) 면접 가이드북 2027, 서류기반 면접 기출 165문과 생기부 질문 규칙 54개",
@@ -1087,11 +1469,25 @@
             "sku": "guide-soongsil"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.ssu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "39면",
+          "수록 기출": "165문",
+          "생기부 질문 규칙": "54개"
+        }
       },
       "description": "숭실대 SSU미래인재(면접형) 서류기반 면접 가이드북. 선배 후기 2017~2025 기출 165문, 생기부 질문 규칙 54개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "숭실대 SSU미래인재(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 165문과 생기부 질문 규칙 54개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/soongsil.jpg"
+      "image": "/assets/covers/soongsil.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/sungshin.html": {
       "title": "성신여대 자기주도인재 면접 가이드북 2027, 서류기반 면접 기출 135문과 생기부 질문 규칙 66개",
@@ -1119,11 +1515,25 @@
             "sku": "guide-sungshin"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.sungshin.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "44면",
+          "수록 기출": "135문",
+          "생기부 질문 규칙": "66개"
+        }
       },
       "description": "성신여대 자기주도인재 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 135문, 생기부 질문 규칙 66개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "성신여대 자기주도인재 면접은 서류기반 면접입니다. 이 가이드북은 기출 135문과 생기부 질문 규칙 66개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/sungshin.jpg"
+      "image": "/assets/covers/sungshin.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/swu.html": {
       "title": "서울여대 바롬인재면접전형 면접 가이드북 2027, 서류기반 면접 기출 61문과 생기부 질문 규칙 20개",
@@ -1151,11 +1561,25 @@
             "sku": "guide-swu"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.swu.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "19면",
+          "수록 기출": "61문",
+          "생기부 질문 규칙": "20개"
+        }
       },
       "description": "서울여대 바롬인재면접전형 서류기반 면접 가이드북. 선배 후기 2020~2025 기출 61문, 생기부 질문 규칙 20개, 준비 전략. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "서울여대 바롬인재면접전형 면접은 서류기반 면접입니다. 이 가이드북은 기출 61문과 생기부 질문 규칙 20개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/swu.jpg"
+      "image": "/assets/covers/swu.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/ulsan.html": {
       "title": "울산대 학생부종합(면접형), 의예과 면접 가이드북 2027, 기출 165문과 생기부 질문 규칙 48개, 33,000원",
@@ -1183,11 +1607,25 @@
             "sku": "guide-ulsan"
           }
         ],
-        "availability": "OutOfStock"
+        "availability": "OutOfStock",
+        "about_same_as": [
+          "https://www.ulsan.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "42면",
+          "수록 기출": "165문",
+          "생기부 질문 규칙": "48개"
+        }
       },
       "description": "울산대 학생부종합(면접형), 의예과 면접 가이드북. 전형별 판정표, 선배 후기 2017~2025 기출 165문, 생기부 질문 규칙 48개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "울산대 학생부종합(면접형) 면접은 서류기반 면접, 의예과 면접은 서류기반과 제시문 혼합 면접입니다. 기출 165문과 생기부 질문 규칙 48개를 담은 가이드북, 권당 33,000원.",
-      "image": "/assets/covers/ulsan.jpg"
+      "image": "/assets/covers/ulsan.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "guidebook/uos.html": {
       "title": "서울시립대 학생부종합전형Ⅰ(면접형) 면접 가이드북 2027, 서류기반 면접 기출 151문과 생기부 질문 규칙 53개",
@@ -1214,11 +1652,25 @@
             "price": 33000,
             "sku": "guide-uos"
           }
-        ]
+        ],
+        "about_same_as": [
+          "https://www.uos.ac.kr"
+        ],
+        "audience": "대학 면접을 준비하는 고등학생과 수험생",
+        "properties": {
+          "면 수": "44면",
+          "수록 기출": "151문",
+          "생기부 질문 규칙": "53개"
+        }
       },
       "description": "서울시립대 학생부종합전형Ⅰ(면접형) 서류기반 면접 가이드북. 기출 151문, 생기부 질문 규칙 53개. 권당 33,000원, 13년차 대치동 입시 컨설턴트 편집.",
       "answer": "서울시립대 학생부종합전형Ⅰ(면접형) 면접은 서류기반 면접입니다. 이 가이드북은 기출 151문과 생기부 질문 규칙 53개를 담았고 권당 33,000원입니다.",
-      "image": "/assets/covers/uos.jpg"
+      "image": "/assets/covers/uos.jpg",
+      "date_modified": "2026-09-04",
+      "speakable": [
+        ".aeo-answer",
+        ".keyfacts"
+      ]
     },
     "index.html": {
       "title": "현학적 연구소, 대학별 면접 가이드북 2027과 연세대 고려대 제시문 면접 스튜디오",

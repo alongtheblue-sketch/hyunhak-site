@@ -18,28 +18,38 @@
 .bar .search{height:44px;min-width:260px;background:var(--card)}
 .bar .cnt{font-size:var(--t-sm);color:var(--gray);white-space:nowrap}
 .side{top:calc(var(--hd-h) + 76px)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
-.gb{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);display:flex;flex-direction:column;gap:10px;padding:var(--s4);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
-.gb:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 1px var(--hair)}
-.gb.ready{background:transparent;border:1px solid var(--hairs);box-shadow:none}
-.gb .top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
-.gb .top .head,.gb .top h3{min-width:0}   /* 학교명이 길면 뱃지를 카드 밖으로 밀어내던 것 */
-.gb h3{font-size:var(--t-base);font-weight:700;letter-spacing:-0.02em;line-height:1.3}
-.gb h3 small{display:block;font-size:var(--t-xs);font-weight:500;color:var(--gray);margin-top:2px}
-.gb .m{font-size:var(--t-sm);color:var(--gray);font-variant-numeric:tabular-nums;display:flex;gap:12px}
-.gb .m span::before{content:"";display:inline-block;width:5px;height:5px;background:var(--hair);border-radius:50%;margin-right:7px;vertical-align:2px}
-.gb .pr{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:12px;border-top:1px solid var(--hairs)}
-.gb .pr .price{font-size:var(--t-base)}   /* 색은 base.css 의 .price(朱印) 를 따른다, 목록만 먹색 쓰던 드리프트 해소 */
-.gb .head{display:flex;gap:14px;align-items:flex-start}
-.gb .pr .w{font-size:var(--t-sm);font-weight:600;color:var(--gray)}
-.gb .acts{display:flex;gap:8px}
-.gb .acts .btn{flex:1}
-.gb .top .badge{white-space:nowrap;flex:none}
+/* 목록 행형 (2026-09-04 재설계). 31권은 값도 제원도 같아 비교 대상이 아니다.
+   판별 정보는 대학명 하나뿐이므로 이름을 단일 x축에 세우고 담기도 같은 x 에 고정한다.
+   구 3열 카드는 폭 200px 안에서 표지, 이름, 뱃지가 한 행을 다퉈 이름이 20px 로 눌렸다. */
+.grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
+/* 초성 머리는 고정하지 않는다. 위 필터 바가 이미 고정(데스크 72px, 900px 이하 187px)이라
+   겹쳤고(실측 데스크 12px, 모바일 77.8px), 둘을 쌓으면 모바일에서 화면 844px 중 227px 을
+   상시 점유한다. 여기서 하는 일은 훑을 때 눈이 짚을 마디를 내는 것이라 고정이 필요 없다. */
+.ini{grid-column:1/-1;display:flex;align-items:center;padding:var(--s4) var(--s2) 8px;
+     border-bottom:1px solid var(--hair);
+     font-family:var(--sans);font-size:var(--t-sm);font-weight:700;color:var(--gray);letter-spacing:.08em}
+.ini:first-child{padding-top:8px}
+.gb{display:grid;grid-template-columns:48px minmax(0,1fr) auto auto;gap:var(--s3);align-items:center;
+    padding:var(--s2);border-bottom:1px solid var(--hairs);transition:background .2s var(--ease)}
+.gb:hover{background:var(--card)}
+.gb .cv{width:48px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--hairs)}
+.gb h3{font-size:18px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}
+.gb h3 small{font-size:var(--t-sm);font-weight:500;color:var(--gray)}
+.gb .badge{justify-self:start}
+.gb .pr{font-size:var(--t-sm);line-height:1.5;color:var(--gray);font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.gb .acts{display:flex;gap:var(--s2);justify-self:end}
+.gb .acts .btn{min-height:44px;min-width:72px}
+.empty{grid-column:1/-1;padding:var(--s5) 0}
+@media (max-width:900px){
+  .gb{grid-template-columns:48px minmax(0,1fr);row-gap:var(--s2);padding:var(--s3) var(--s2)}
+  .gb .pr{grid-column:2;justify-self:start}
+  .gb .acts{grid-column:2;justify-self:stretch}
+  .gb .acts .btn{flex:1}
+}
 .box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm)}
 .box ol li{display:flex;gap:10px;align-items:baseline}
 .box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:var(--t-xs);font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
 .empty{grid-column:1/-1}
-@media (max-width:1100px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:900px){
   .bar{top:64px}
   .bar .in{flex-direction:column;align-items:stretch}
@@ -48,7 +58,6 @@
   .side{order:-1}
   .side .box.spec{display:none}
 }
-@media (max-width:600px){.grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="v2">
@@ -69,7 +78,7 @@
    </div>
     <div class="facts rv">
       <div><b>__N__</b><span>권, __SALE__권 판매 중</span></div>
-      <div><b>실제 질문</b><span>유형별 수록</span></div>
+      <div><b>2027</b><span>학년도 대비, 전권 판매 중</span></div>
       <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
       <div><b>__PRICE__</b><span>원, 권당</span></div>
     </div>
@@ -153,14 +162,32 @@ var HH_GB=__HH_GB__;
   var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),tabs=document.querySelectorAll('.bar [role=tab]'),q=document.getElementById('q2'),f='all';
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
-    var pr='<span class="price">__PRICE__원</span>';
+    // 표지 48px 은 표지 제목이 판독 한계 아래라 장식이다. 식별은 이름이 진다 (alt 비움).
     var act='<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
-    return '<article class="gb" id="'+o.slug+'"><div class="top"><div class="head"><img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="56" height="79" loading="lazy"><h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3></div>'+'<span class="badge seal">판매 중</span>'+'</div><div class="m"><span>2027학년도 대비</span></div><div class="pr">'+pr+'</div><div class="acts">'+act+'</div></article>';
+    return '<article class="gb" id="'+o.slug+'">'
+      +'<img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="210" height="297" loading="lazy">'
+      +'<h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
+      +'<span class="pr">__PRICE__원</span>'
+      +'<div class="acts">'+act+'</div></article>';
+  }
+  // 31행을 훑을 때 눈이 짚을 자리. 초성 단위로 묶는다.
+  var CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ'.split(''), CHO_G={'ㄲ':'ㄱ','ㄸ':'ㄷ','ㅃ':'ㅂ','ㅆ':'ㅅ','ㅉ':'ㅈ'};
+  function initial(name){
+    var c=name.charCodeAt(0);
+    if(c<0xAC00||c>0xD7A3) return '#';
+    var k=CHO[Math.floor((c-0xAC00)/588)];
+    return CHO_G[k]||k;
   }
   function render(){
     var kw=(q.value||'').trim();
     var list=HH_GB.filter(function(o){return (f==='all'||f==='sale')&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
-    grid.innerHTML=list.map(card).join('')||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
+    var prev='',html='';
+    list.forEach(function(o){
+      var ini=initial(o.name);
+      if(ini!==prev){html+='<div class="ini" aria-hidden="true">'+ini+'</div>';prev=ini;}
+      html+=card(o);
+    });
+    grid.innerHTML=html||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
     cnt.textContent=list.length+'권';
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');f=b.dataset.f;render()})});

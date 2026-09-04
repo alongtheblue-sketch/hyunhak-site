@@ -26,7 +26,7 @@
 <meta name="twitter:title" content="결제, 현학적 연구소">
 <meta name="twitter:description" content="현학적 연구소 스토어 결제 화면입니다.">
 <meta name="twitter:image" content="https://hyunhak.com/assets/photo/og_aigen.jpg">
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","sameAs":[]},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/checkout.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"결제","item":"https://hyunhak.com/checkout.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/checkout.html#webpage","url":"https://hyunhak.com/checkout.html","name":"결제, 현학적 연구소","description":"현학적 연구소 스토어 결제 화면입니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/checkout.html#breadcrumb"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://hyunhak.com/#organization","name":"현학적 연구소","alternateName":"玄學的 硏究所","url":"https://hyunhak.com/","logo":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/art_figure.png"},"email":"admin@hyunhak.com","telephone":"+82-70-8098-0671","taxID":"293-38-01827","address":{"@type":"PostalAddress","streetAddress":"테헤란로 70길 12, 402-941A호","addressLocality":"강남구","addressRegion":"서울특별시","addressCountry":"KR"},"founder":{"@id":"https://hyunhak.com/#author"},"sameAs":[]},{"@type":"Person","@id":"https://hyunhak.com/#author","name":"현건우","url":"https://hyunhak.com/about.html","worksFor":{"@id":"https://hyunhak.com/#organization"},"alternateName":"현학자","jobTitle":"입시 컨설턴트","description":"입시 컨설턴트 13년차. 대학별 서류기반면접 가이드북 31권과 연세대, 고려대 제시문 면접 스튜디오를 한 사람이 편집한다.","alumniOf":{"@type":"CollegeOrUniversity","name":"고려대학교"}},{"@type":"WebSite","@id":"https://hyunhak.com/#website","url":"https://hyunhak.com/","name":"현학적 연구소","alternateName":"玄學的 硏究所","publisher":{"@id":"https://hyunhak.com/#organization"},"inLanguage":"ko-KR"},{"@type":"BreadcrumbList","@id":"https://hyunhak.com/checkout.html#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"현학적 연구소","item":"https://hyunhak.com/"},{"@type":"ListItem","position":2,"name":"결제","item":"https://hyunhak.com/checkout.html"}]},{"@type":"WebPage","@id":"https://hyunhak.com/checkout.html#webpage","url":"https://hyunhak.com/checkout.html","name":"결제, 현학적 연구소","description":"현학적 연구소 스토어 결제 화면입니다.","isPartOf":{"@id":"https://hyunhak.com/#website"},"inLanguage":"ko-KR","primaryImageOfPage":{"@type":"ImageObject","url":"https://hyunhak.com/assets/photo/og_aigen.jpg"},"breadcrumb":{"@id":"https://hyunhak.com/checkout.html#breadcrumb"},"author":{"@id":"https://hyunhak.com/#author"},"publisher":{"@id":"https://hyunhak.com/#organization"}}]}</script>
 <!-- seo:end -->
 <link rel="icon" href="assets/favicon_32.png">
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
@@ -44,7 +44,12 @@
 .addr .zipline .btn{margin-bottom:var(--s4)}
 .pay #payment-method,.pay #agreement{background:var(--card);border-radius:var(--r-md);padding:var(--s2)}
 .pay .pgm{border:0;margin:0;padding:0}.pay .pgm legend{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
-.pay .pgm label,.pay .agree{display:flex;align-items:center;gap:.5rem;min-height:var(--tap);padding:0 var(--s2);cursor:pointer;font-size:var(--t-base)}
+.pay .pgm label{display:flex;align-items:center;gap:.5rem;min-height:var(--tap);padding:0 var(--s2);cursor:pointer;font-size:var(--t-base)}
+.pay .agree{display:flex;align-items:flex-start;gap:.6rem;min-height:var(--tap);padding:var(--s3) var(--s2);cursor:pointer;font-size:var(--t-base)}
+.pay .agree input{flex:none;margin-top:.28em;width:18px;height:18px;accent-color:var(--seal)}
+.pay .agree .t{line-height:var(--lh-ui)}   /* 문장 전체가 flex 항목 하나 */
+.pay .agree a,.legalbox .lgb-x{color:var(--link);font-weight:700;text-decoration:underline;text-underline-offset:2px;text-decoration-thickness:1.5px}
+.pay .agree a:hover,.legalbox .lgb-x:hover{color:var(--link-2)}
 .pay .pgm label+label{border-top:var(--rule)}
 .pay .pgm .note{color:var(--gray);font-size:var(--t-sm)}
 .pay #agreement{margin-top:var(--s3)}
@@ -56,6 +61,22 @@
 .bill .btn{width:100%;margin-top:var(--s4)}
 .bill .stub{margin-top:12px;font-size:var(--t-sm);color:var(--seal)}
 .bill .rule{margin-top:var(--s3)}
+/* 약관 전문 상자. 문면 원천은 terms.html 과 privacy.html, _tools/apply_checkout_legal.py 가 옮긴다 */
+.legalbox{margin-top:var(--s4);display:flex;flex-direction:column;gap:var(--s3)}
+.legalbox .lgb{border:1px solid var(--hair);border-radius:var(--r-md);background:var(--card);overflow:hidden}
+.legalbox .lgb-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px var(--s3);border-bottom:1px solid var(--hairs);background:var(--mat)}
+.legalbox .lgb-h h3{font-size:var(--t-sm);font-weight:700;letter-spacing:.04em;color:var(--ink);margin:0}
+.legalbox .lgb-x{font-size:var(--t-sm);white-space:nowrap}
+.legalbox .lgb-b{max-height:240px;overflow:auto;padding:var(--s3);font-size:var(--t-sm);line-height:1.8;max-width:none;overscroll-behavior:contain}
+.legalbox .lgb-b:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+.legalbox .lgb-b h3{font-size:var(--t-sm);font-weight:700;margin:var(--s4) 0 6px}
+.legalbox .lgb-b h4{font-size:var(--t-sm);font-weight:600;color:var(--ink);margin:var(--s3) 0 4px}
+.legalbox .lgb-b > :first-child{margin-top:0}
+.legalbox .lgb-b .updated{margin-top:var(--s4);padding-top:12px}
+.legalbox .lgb-b table{width:100%;border-collapse:collapse;font-size:var(--t-xs);margin:10px 0}
+.legalbox .lgb-b th,.legalbox .lgb-b td{border:1px solid var(--hairs);padding:6px 8px;text-align:left;vertical-align:top}
+.legalbox .lgb-b th{background:var(--mat);font-weight:600;color:var(--ink)}
+.legalbox .lgb-b .tblwrap{overflow-x:auto}
 </style>
 </head>
 <body class="v2" data-no-popup>
@@ -140,6 +161,249 @@
       <h2><span class="no">2</span>결제 수단</h2>
       <div id="payment-method"></div>
       <div id="agreement"></div>
+      <!-- legalbox:begin -->
+<div class="legalbox">
+  <section class="lgb">
+    <div class="lgb-h"><h3>이용약관</h3><a class="lgb-x" href="terms.html" target="_blank" rel="noopener">새 창에서 보기</a></div>
+    <div class="lgb-b prose" tabindex="0" role="region" aria-label="이용약관 전문">
+<h3>제1조 (목적)</h3>
+  <p>이 약관은 현학적 연구소(이하 "연구소")가 운영하는 웹사이트 hyunhak.com 에서 제공하는
+  면접 스튜디오, 스토어, 자료실 등 제반 서비스(이하 "서비스")의 이용 조건과 절차,
+  이용자와 연구소의 권리, 의무, 책임 사항을 정함을 목적으로 합니다.</p>
+
+  <h3>제2조 (정의)</h3>
+  <ol>
+    <li>"회원"은 이 약관에 동의하고 계정을 등록한 사람을 말합니다.</li>
+    <li>"이용권"은 면접 스튜디오의 지문 응시 권리(지문 낱권, 학교 전권)를 말합니다.</li>
+    <li>"디지털 콘텐츠"는 이용권, 가이드북 PDF 등 실물이 아닌 재화를 말합니다.</li>
+  </ol>
+
+  <h3>제3조 (약관의 게시와 개정)</h3>
+  <ol>
+    <li>연구소는 이 약관을 사이트 하단에 상시 게시합니다.</li>
+    <li>연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개정할 수 있으며,
+    개정 시 적용일자와 개정 사유를 밝혀 적용일 7일 전(이용자에게 불리한 개정은 30일 전)부터 공지합니다.</li>
+  </ol>
+
+  <h3 id="약관-age">제4조 (회원 가입과 계정)</h3>
+  <ol>
+    <li>가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는 만 14세 이상만 회원으로 받으며,
+    만 14세 미만의 가입 신청은 승낙하지 않습니다.</li>
+    <li>계정 정보의 관리 책임은 회원에게 있으며, 타인에게 계정을 양도, 대여할 수 없습니다.</li>
+    <li>신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회이며, 부정 취득(중복 계정 등)이
+    확인되면 회수할 수 있습니다.</li>
+  </ol>
+
+  <h3>제5조 (구매와 결제)</h3>
+  <ol>
+    <li>결제는 연구소가 계약한 전자결제대행사(포트원을 통한 KG이니시스와 NHN KCP)를 통해 처리합니다.</li>
+    <li>주문 금액은 서버에 등록된 판매가를 기준으로 확정하며, 표시 오류가 있는 경우
+    결제 전 고지 후 정정합니다.</li>
+    <li>실물 상품의 배송비는 3,000원이며 5만원 이상 주문 시 무료입니다.</li>
+  </ol>
+
+  <h3>제6조 (청약철회, 취소와 환불)</h3>
+  <ol>
+    <li>실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은 경우 청약철회할 수 있습니다.
+    단순 변심에 따른 청약철회의 반송 비용은 3,000원이며 구매자가 부담합니다.
+    상품 하자나 오배송인 경우에는 연구소가 부담합니다.</li>
+    <li>디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까지 청약철회할 수 있으며,
+    제공이 개시된 후에는 「전자상거래 등에서의 소비자보호에 관한 법률」 제17조 제2항에 따라
+    청약철회가 제한될 수 있습니다. 이 경우 가입, 구매 화면에 그 사실을 표시합니다.</li>
+    <li>제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품은 보안 리더에서 열람을 시작한 때,
+    PDF 소장판은 소장본 파일이 발급(내려받기)된 때, 스튜디오 이용권은 응시를 시작한 때입니다.
+    PDF 소장판은 파일 발급 후에는 청약철회가 제한됩니다.</li>
+    <li>출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드립니다.
+    환급이 늦어지면 지연이자를 더해 지급합니다(「전자상거래 등에서의 소비자보호에 관한 법률」 제18조 제2항).</li>
+  </ol>
+
+  <h3>제7조 (면접 스튜디오 이용)</h3>
+  <ol>
+    <li>스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채점과 첨삭 목적에만 사용하며,
+    보유 기간이 지나면 파기합니다. 상세 사항은 개인정보처리방침을 따릅니다.</li>
+    <li>지문 낱권 이용권은 지문 1편에 대해 5회 응시를 제공합니다.</li>
+    <li>채점 결과는 학습 참고용 평가이며, 실제 대학 면접의 결과를 보증하지 않습니다.</li>
+  </ol>
+
+  <h3>제8조 (지식재산권)</h3>
+  <ol>
+    <li>사이트와 자료실의 콘텐츠(가이드북 PDF 포함)에 대한 저작권은 연구소에 있습니다.</li>
+    <li>자료는 개인 학습 용도로만 사용할 수 있으며, 무단 전재, 재배포, 판매를 금합니다.</li>
+  </ol>
+
+  <h3>제8조의2 (가이드북 열람 서비스)</h3>
+  <ol>
+    <li>가이드북은 파일을 전달하지 않고 웹 열람 방식으로 제공하며, 구매한 계정으로만 열람할 수
+    있습니다. 열람 기간은 구매일부터 1개월입니다. 동시 열람은 계정당 3개 세션까지 허용하고,
+    초과하면 가장 오래된 세션이 자동 종료됩니다. 인터넷 강의의 동시 시청에도 같은 세션 한도를
+    적용합니다. 인쇄는 권당 3회까지 가능합니다.</li>
+    <li>회원은 다음 행위를 할 수 없습니다.
+      <ol>
+        <li>화면 촬영, 캡처, 화면 녹화 등 방법을 불문한 본문의 복제와 추출</li>
+        <li>무단 전재, 재배포, 판매, 공중송신</li>
+        <li>자동화 프로그램을 이용한 열람, 수집, 저장</li>
+        <li>계정의 판매, 대여 등 영리 목적의 공유</li>
+        <li>열람 제한, 워터마크 등 기술적 보호조치의 회피 또는 무력화</li>
+      </ol>
+    </li>
+    <li>제2항 위반이 확인되면 연구소는 사전 통지 후 열람 제한 또는 이용 정지를 할 수 있습니다.
+    위반이 중대하고 명백한 경우 통지와 동시에 조치한 뒤 지체 없이 소명 기회를 드립니다.
+    이 경우 민사상, 형사상 조치를 별도로 취할 수 있습니다.</li>
+    <li>이용 정지 시 위반 사실과 무관한 잔여 이용권은 이용하지 않은 부분에 비례하여 정산 후
+    환급하되, 위반으로 발생한 실손해와 부정이용 상당액은 공제할 수 있습니다.</li>
+    <li>위반으로 연구소에 손해가 발생하면 회원은 그 손해를 배상할 책임이 있습니다.</li>
+  </ol>
+
+  <h3>제9조 (서비스의 중단과 책임 제한)</h3>
+  <ol>
+    <li>연구소는 시스템 점검, 천재지변 등 부득이한 사유로 서비스를 일시 중단할 수 있습니다.</li>
+    <li>연구소의 고의 또는 중과실이 없는 한, 무료로 제공되는 서비스의 장애에 대해서는
+    책임을 지지 않습니다.</li>
+  </ol>
+
+  <h3>제10조 (광고성 정보의 전송)</h3>
+  <ol>
+    <li>연구소는 회원이 광고성 정보 수신에 동의한 경우에 한하여 새 자료, 강좌, 할인 안내를
+    이메일과 문자메시지로 보냅니다.</li>
+    <li>수신 동의는 선택 사항입니다. 동의하지 않거나 동의를 철회하더라도 회원 가입, 구매,
+    이용권 사용에 아무런 제한이 없습니다.</li>
+    <li>회원은 마이페이지에서 언제든 수신 동의를 철회할 수 있고, 철회한 시점부터 연구소는
+    광고성 정보를 보내지 않습니다.</li>
+    <li>주문 확인, 결제와 환불 안내, 이용권 만료 고지처럼 계약 이행에 필요한 통지는 광고성
+    정보가 아니며, 수신 동의 여부와 관계없이 발송합니다.</li>
+  </ol>
+
+  <h3>제11조 (분쟁 해결)</h3>
+  <p>서비스 이용과 관련한 분쟁은 연구소와 이용자가 성실히 협의하여 해결하며,
+  협의가 이루어지지 않는 경우 민사소송법상의 관할 법원에 제소합니다.</p>
+
+  <p class="updated">문서 버전: 2026-09-01. 시행일: 2026-09-01.</p>
+    </div>
+  </section>
+  <section class="lgb">
+    <div class="lgb-h"><h3>개인정보 처리방침</h3><a class="lgb-x" href="privacy.html" target="_blank" rel="noopener">새 창에서 보기</a></div>
+    <div class="lgb-b prose" tabindex="0" role="region" aria-label="개인정보 처리방침 전문">
+<h3>1. 수집하는 개인정보와 목적</h3>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>항목</th><th>수집 시점</th><th>목적</th><th>보유 기간</th></tr></thead>
+    <tbody>
+      <tr><td>이메일, 이름, 연락처, 비밀번호(암호화)</td><td>회원 가입</td><td>계정 식별, 주문, 이용권 관리, 공지</td><td>회원 탈퇴 시 지체 없이 파기</td></tr>
+      <tr><td>회원 구분(학생, 강사), 학교 또는 소속 학원, 학년 <small>(구분 외 선택 항목)</small></td><td>회원 가입, 마이페이지 수정</td><td>맞춤 안내, 단체 이용 상담</td><td>회원 탈퇴 시 지체 없이 파기</td></tr>
+      <tr><td>제공사 회원번호, 이메일, 닉네임</td><td>간편 로그인(카카오, 구글, 네이버)</td><td>계정 식별, 중복 가입 방지</td><td>회원 탈퇴 시 지체 없이 파기</td></tr>
+      <tr><td>동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라우저 정보)</td><td>약관 동의</td><td>동의 사실의 증빙</td><td>회원 탈퇴 시 파기. 광고성 정보 수신 동의 이력은 철회 후 6개월</td></tr>
+      <tr><td>배송지 주소, 수령인 정보</td><td>실물 상품 주문</td><td>상품 배송</td><td>전자상거래법에 따라 5년</td></tr>
+      <tr><td>결제 기록(결제수단 정보는 결제대행사가 보관)</td><td>결제</td><td>대금 정산, 환불</td><td>전자상거래법에 따라 5년</td></tr>
+      <tr><td>본인인증 결과값(CI)</td><td>본인인증(도입 시)</td><td>본인 확인, 중복 가입 방지</td><td>회원 탈퇴 시 파기</td></tr>
+      <tr><td>면접 스튜디오 답변 음성, 영상, 전사문</td><td>스튜디오 응시</td><td>채점, 첨삭, 리포트 생성</td><td>응시일로부터 90일 후 파기</td></tr>
+      <tr><td>접속 기록, 다운로드 기록</td><td>서비스 이용</td><td>부정 이용 방지, 통계</td><td>통신비밀보호법에 따라 3개월 이상</td></tr>
+      <tr><td>이메일, 워터마크 시리얼</td><td>가이드북 열람, 인쇄본과 소장판 발급</td><td>콘텐츠 보호 워터마크 표시, 유출 사본 추적</td><td>이용권 종료 후 5년</td></tr>
+      <tr><td>열람과 검색 기록(콘텐츠 ID, 시각, IP, 세션 수)</td><td>가이드북 열람</td><td>부정 이용 방지, 동시 접속 관리</td><td>180일</td></tr>
+      <tr><td>이름, 이메일, 문의 내용</td><td>비회원 1:1 문의</td><td>문의 접수와 답변, 처리 기록 보관</td><td>답변 완료 후 1년. 거래 관련 불만과 분쟁 처리 기록은 전자상거래법 제6조에 따라 3년</td></tr>
+      <tr><td>환불 요청 사유, 요청 시각, 판정 내역</td><td>마이페이지 환불 요청</td><td>청약철회 처리, 분쟁 대비</td><td>전자상거래법에 따라 5년</td></tr>
+      <tr><td>방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저 식별값, 광고 클릭 식별자, 상품 조회와 장바구니 담기, 결제 시작과 결제 완료(주문번호, 금액) 이벤트(Google 애널리틱스, 네이버 광고 로그분석, Meta 픽셀)</td><td>사이트 방문</td><td>방문 통계, 광고 성과 측정</td><td>Google 14개월(도구 설정값), Meta 는 Meta 데이터 정책에 따름</td></tr>
+      <tr><td>기술적 보호조치 위반 신호(캡처 시도 이벤트)</td><td>가이드북 열람</td><td>부정 이용 탐지, 유출 대응</td><td>365일</td></tr>
+      <tr><td>인쇄 이력(횟수, 시리얼, 시각)</td><td>가이드북 인쇄</td><td>인쇄 한도 관리, 유출 대응</td><td>마지막 인쇄 또는 이용권 종료 중 늦은 날부터 3년</td></tr>
+      <tr><td>강사 열람 판정 기록(강사와 학생 계정, 열람 자원, 허용 여부, 시각, IP)</td><td>스쿨 플랜 강사 열람</td><td>제3자 제공 사실의 증빙, 부정 열람 대응</td><td>1년</td></tr>
+    </tbody>
+  </table></div>
+  <p>연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며, 주민등록번호는 수집하지 않습니다.</p>
+
+  <h3>2. 처리 위탁과 제3자 제공</h3>
+  <ul>
+    <li>결제 처리: 포트원(KG이니시스, NHN KCP 결제 중개) (결제 승인, 정산)</li>
+    <li>인프라 운영: Cloudflare (웹 호스팅, 보안, 데이터베이스, 파일 저장)</li>
+    <li>본인인증(도입 시): NHN KCP (휴대폰 본인확인), 포트원 (인증 중개)</li>
+    <li>이메일 발송: Resend (인증 메일, 주문과 이용권 안내)</li>
+    <li>문자, 알림톡 발송(도입 시): 솔라피 (주문과 이용권 안내)</li>
+    <li>방문 통계와 광고 성과 측정: Google LLC (Google 애널리틱스), 네이버(주) (검색광고 로그분석), Meta Platforms Ireland Ltd. (Meta 픽셀, 인스타그램과 페이스북 광고 성과 측정)</li>
+  </ul>
+  <p>Google 애널리틱스 데이터는 Google LLC 의 미국 소재 서버로 이전되어 처리됩니다. 이전 항목은 방문 페이지,
+  유입 경로, 기기 종류, 쿠키 식별값이고 이전 시점은 페이지를 열 때 네트워크로 전송되며 보유 기간은 14개월입니다.
+  이름과 이메일 같은 개인 식별 정보는 이전하지 않습니다.</p>
+  <p>Meta 픽셀 데이터는 Meta Platforms Ireland Ltd.(아일랜드)와 Meta Platforms, Inc.(미국)의 서버로 이전되어 처리됩니다. 이전 항목은
+  방문 페이지, 유입 경로, 기기 종류, 브라우저 식별값(쿠키 _fbp)과 광고 클릭 식별자(fbclid), 상품 조회와 장바구니 담기, 결제 시작과
+  결제 완료(주문번호, 금액) 이벤트이고, 이전 시점은 페이지를 열거나 해당 동작을 할 때 네트워크로 전송됩니다. 이용 목적은 인스타그램과
+  페이스북 광고의 성과 측정이며 보유 기간은 Meta 데이터 정책(facebook.com/privacy/policy)에 따릅니다.
+  이름과 이메일 같은 개인 식별 정보는 이전하지 않습니다.</p>
+  <p>위 수탁자 외 제3자에게 개인정보를 제공하지 않습니다. 다만 아래의 경우 정보주체의
+  개별 동의를 받아 제3자에게 제공합니다. 법령에 근거한 요청은 예외로 합니다.</p>
+
+  <h4>제3자 제공 (스쿨 플랜 강사 열람)</h4>
+  <p>학원 단체 이용(스쿨 플랜)에서 담당 강사가 학생의 리포트를 열람하려면, 좌석 배정
+  시점에 학생 본인의 개별 동의를 받습니다. 가입 시 포괄 동의로 갈음하지 않습니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>제공받는 자</th><th>제공 항목</th><th>제공 목적</th><th>제공(열람) 기간</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>학생이 개별 동의한 계약 학원 소속의 담당 강사 계정 (동의 화면에 학원명 명시)</td>
+        <td>응시 이력, 첨삭 리포트</td>
+        <td>담당 강사의 학습 지도</td>
+        <td>동의 철회, 담당 해제, 강사 계정 회수, 시즌 종료 중 가장 이른 시점까지</td>
+      </tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li>답변 원본 음성과 영상, 기준 목소리를 포함한 생체 특징정보는 학원과 강사에게 제공하지 않습니다.</li>
+    <li>제공은 열람 방식으로만 이루어지며, 강사에게 파일을 전달하지 않습니다.</li>
+    <li>동의하지 않아도 본인의 서비스 이용에는 어떤 제한도 없습니다. 동의는 마이페이지에서
+    언제든 철회할 수 있으며, 철회 즉시 강사 열람이 차단됩니다.</li>
+  </ul>
+
+  <h3>3. 학생 음성, 영상의 처리</h3>
+  <p>면접 스튜디오의 답변 녹음, 녹화 파일은 채점과 첨삭에만 사용합니다.
+  음성 전사(STT)는 연구소가 직접 운영하는 장비에서 처리하며, 외부 클라우드 음성인식
+  서비스로 원본을 전송하지 않습니다. 파일은 보유 기간(90일)이 지나면 자동 파기합니다.</p>
+
+  <h3>4. 정보주체의 권리</h3>
+  <p>회원은 언제든 자신의 개인정보를 열람, 정정, 삭제, 처리정지 요청할 수 있습니다.
+  요청은 admin@hyunhak.com 으로 접수하며, 지체 없이 처리 결과를 알립니다.
+  회원 탈퇴는 마이페이지 또는 이메일로 요청할 수 있습니다.</p>
+
+  <h3>5. 안전성 확보 조치</h3>
+  <ul>
+    <li>비밀번호는 복호화할 수 없는 방식(PBKDF2)으로 암호화하여 저장합니다.</li>
+    <li>전 구간 HTTPS 암호화 통신을 적용합니다.</li>
+    <li>관리자 화면은 별도의 이중 인증 뒤에 둡니다.</li>
+    <li>결제카드 정보는 연구소 서버에 저장하지 않습니다(결제대행사 처리).</li>
+  </ul>
+
+  <h3>6. 쿠키와 방문 통계 도구</h3>
+  <p>로그인 상태 유지를 위한 필수 쿠키를 사용합니다. 방문 통계와 광고 성과 측정을 위해 Google 애널리틱스(GA4),
+  네이버 광고 로그분석, Meta 픽셀 스크립트를 사용합니다. 세 도구는 쿠키와 브라우저 식별값으로 방문 페이지, 유입 경로,
+  기기 종류, 상품 조회와 장바구니 담기, 결제 시작, 결제 완료 여부(주문번호, 결제 금액)를 수집하며 이름과 이메일 같은 개인 식별 정보는 전송하지 않습니다.
+  Google 애널리틱스의 데이터 보관 기간은 14개월로 설정합니다.</p>
+  <p>브라우저 설정에서 쿠키를 차단하거나 삭제할 수 있고, Google 애널리틱스 수집은
+  <a class="tlink" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google 애널리틱스 차단 브라우저 부가기능</a>으로,
+  Meta 픽셀 기반 맞춤 광고는 <a class="tlink" href="https://www.facebook.com/ads/preferences" target="_blank" rel="noopener">Meta 광고 설정</a>에서 거부할 수 있습니다.
+  차단해도 열람과 결제 등 서비스 이용에는 제한이 없습니다.</p>
+
+  <h3 id="방침-ads">7. 광고성 정보의 전송</h3>
+  <p>연구소는 회원이 <b>광고성 정보 수신에 동의한 경우에만</b> 새 자료, 강좌 개설, 할인 안내를
+  보냅니다. 동의는 가입 화면 또는 마이페이지에서 받으며, 동의하지 않아도 회원 가입과 서비스
+  이용에 아무런 제한이 없습니다.</p>
+  <div class="tblwrap"><table class="tbl">
+    <thead><tr><th>구분</th><th>내용</th></tr></thead>
+    <tbody>
+      <tr><td>전송자</td><td>현학적 연구소(대표 현건우), 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동, H 타워), admin@hyunhak.com</td></tr>
+      <tr><td>전송 수단</td><td>이메일, 문자메시지</td></tr>
+      <tr><td>전송 내용</td><td>신규 자료와 교재 안내, 강좌 개설과 일정, 할인과 행사 안내</td></tr>
+      <tr><td>수신 거부</td><td>마이페이지에서 즉시 해지. 각 메시지에 담긴 수신 거부 링크나 안내로도 해지</td></tr>
+      <tr><td>동의 확인</td><td>동의일로부터 2년마다, 동의 사실과 날짜, 유지와 철회 방법을 회원에게 알립니다</td></tr>
+    </tbody>
+  </table></div>
+  <p>수신 거부 또는 동의 철회 의사를 밝히면 그 시점부터 광고성 정보를 보내지 않습니다.
+  주문 확인, 결제 내역, 이용권 만료처럼 계약 이행에 필요한 안내는 광고성 정보가 아니므로
+  수신 동의 여부와 무관하게 발송합니다. 오후 9시부터 다음 날 오전 8시 사이에는 별도의 사전
+  동의를 받은 경우가 아니면 광고성 정보를 보내지 않습니다.</p>
+
+  <h3>8. 개인정보 보호책임자</h3>
+  <p>보호책임자: 현건우,  문의: admin@hyunhak.com</p>
+
+  <p class="updated">문서 버전: 2026-09-04. 시행일: 2026-09-04. (2026-09-01 판에 Meta 픽셀 수집 항목, 수탁자, 국외 이전, 거부 방법을 더함)</p>
+    </div>
+  </section>
+</div>
+<!-- legalbox:end -->
     </div>
   </section>
 
@@ -324,10 +588,11 @@ document.addEventListener('DOMContentLoaded', async function(){
         $('#payment-method').addEventListener('change', function(ev){
           if(ev.target && ev.target.name === 'pgm') picked = ev.target.value;
         });
+        // 조사가 앵커 사이에 끼면 flex 가 낱개 항목으로 갈라 gap 을 끼워 넣는다. 문장은 span 하나로.
         $('#agreement').innerHTML =
-          '<label class="agree"><input type="checkbox" id="pgAgree"> '
-          + '<a href="terms.html" target="_blank" rel="noopener">이용약관</a>과 '
-          + '<a href="privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 동의하고 결제합니다.</label>';
+          '<label class="agree"><input type="checkbox" id="pgAgree">'
+          + '<span class="t"><a href="terms.html" target="_blank" rel="noopener">이용약관</a>과 '
+          + '<a href="privacy.html" target="_blank" rel="noopener">개인정보 처리방침</a>에 동의하고 결제합니다.</span></label>';
       },
       setAmount: function(){ return Promise.resolve(); },   // 포트원은 결제 호출 시점에 금액을 넘긴다
       // 입력 검증은 주문 생성 전에 부른다. 결제 호출 직전에만 두면 약관 미동의나 번호 누락으로

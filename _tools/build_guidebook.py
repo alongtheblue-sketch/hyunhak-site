@@ -53,6 +53,46 @@ SAMPLE_LEN = 120
 # tracks/spec_tracks 문자열에 실재하는지 대조한다), f = 면접 형태 라벨 (meta tracks[].form 요약), k = title 용 형태 키워드.
 # 유형 판정 seo_type(): 스튜디오 2권(e1) -> 비판매 준비 중(e2) -> med(b) -> edu(d) -> alt(c) -> 서류기반 단일(a).
 # 유형별 title/description/answer 골격은 seo_texts() 에, 표는 _docs/SEO_TITLE_LEDGER_20260903.md 에.
+# 대학 공식 홈페이지. 답변 엔진이 "국민대학교"를 실제 기관으로 붙들게 하는 about.sameAs 원장.
+# 값은 추정이 아니라 실제로 열어 <title> 이나 본문에 대학명이 있는지로 확정했다 (30/31 확인,
+# 단국대는 우리 회선에서 응답이 없어 뺐다 — 없는 대학은 sameAs 를 싣지 않는다).
+UNIV_SITE = {
+    "ajou": "https://www.ajou.ac.kr",
+    "catholic": "https://www.catholic.ac.kr",
+    "cau": "https://www.cau.ac.kr",
+    "donga": "https://www.donga.ac.kr",
+    "dongduk": "https://www.dongduk.ac.kr",
+    "dongguk": "https://www.dongguk.edu",
+    "duksung": "https://www.duksung.ac.kr",
+    "ewha": "https://www.ewha.ac.kr",
+    "gachon": "https://www.gachon.ac.kr",
+    "hanyang-erica": "https://erica.hanyang.ac.kr",
+    "hufs": "https://www.hufs.ac.kr",
+    "incheon": "https://www.inu.ac.kr",
+    "inha": "https://www.inha.ac.kr",
+    "khu": "https://www.khu.ac.kr",
+    "konkuk": "https://www.konkuk.ac.kr",
+    "kookmin": "https://www.kookmin.ac.kr",
+    "kwangwoon": "https://www.kw.ac.kr",
+    "kyonggi": "https://www.kyonggi.ac.kr",
+    "myongji": "https://www.mju.ac.kr",
+    "pusan": "https://www.pusan.ac.kr",
+    "sahmyook": "https://www.syu.ac.kr",
+    "sejong": "https://www.sejong.ac.kr",
+    "seoultech": "https://www.seoultech.ac.kr",
+    "snu": "https://www.snu.ac.kr",
+    "sookmyung": "https://www.sookmyung.ac.kr",
+    "soongsil": "https://www.ssu.ac.kr",
+    "sungshin": "https://www.sungshin.ac.kr",
+    "swu": "https://www.swu.ac.kr",
+    "ulsan": "https://www.ulsan.ac.kr",
+    "uos": "https://www.uos.ac.kr",
+}
+
+# 지면에 싣고 JSON-LD dateModified 로 나가는 문서 갱신일. 내용이 바뀔 때만 손으로 올린다
+# (빌드할 때마다 자동으로 오늘로 바꾸면 안 바뀐 지면도 새 문서처럼 보인다).
+CONTENT_DATE = "2026-09-04"
+
 STUDIO = ("yonsei", "korea")
 AUTHOR = "13년차 대치동 입시 컨설턴트"   # about.html "대치OOO학원 부원장, 입시 컨설턴트 13년차" 근거
 
@@ -596,10 +636,106 @@ def faq_of(e, mv, price, sale, pdfp):
             q4 = "2027 판은 언제 판매하나요?"
             a4 = f"{name} 2027 판은 보안 리더 준비 중입니다. 판매 개시는 공지에 기록하며, 판매 중인 다른 대학 가이드북은 권당 {won(price)}입니다."
         faq = [(q1, a1), (f"{name} 면접 기출은 몇 문항 실려 있나요?", a2), ("생기부에서 질문을 뽑는 규칙은 몇 개인가요?", a3), (q4, a4)]
+        # 검색과 답변 엔진에서 실제로 들어오는 갈래를 5문 더 (2026-09-04). 값은 meta v3 와 카탈로그에만 근거한다.
+        on = set(_forms_on(mv))
+        has = lambda k: any(k in x for x in on)
+        faq.append((f"{name} 면접에 제시문이 나오나요?",
+                    _fit([f"{U} 면접에 제시문은 {'있습니다' if has('제시문') else '없습니다'}, MMI는 {'있습니다' if has('MMI') else '없습니다'}. 1부 판정표가 전형별로 형태를 가릅니다.",
+                          f"{U} 면접에 제시문은 {'있습니다' if has('제시문') else '없습니다'}. MMI는 {'있습니다' if has('MMI') else '없습니다'}. 1부에서 전형별 형태를 판정합니다."], 40, 110)))
+        tys = [clean(t) for t in (e.get("types") or [])][:3]
+        if tys:
+            faq.append((f"{name} 면접은 어떤 유형의 질문이 나오나요?",
+                        _fit([f"{', '.join(tys)} 등 {ntypes}개 유형입니다. 3부가 유형별로 실제로 나온 질문을 모아 싣습니다.",
+                              f"{', '.join(tys[:2])} 등 {ntypes}개 유형입니다. 3부가 유형별로 실제 질문을 싣습니다."], 40, 110)))
+        areas = [clean(a) for a in (mv.get("rule_areas") or [])]
+        if areas:
+            faq.append(("생기부의 어느 항목이 질문이 되나요?",
+                        _fit([f"{', '.join(areas[:3])} 등 {len(areas)}개 영역입니다. 4부 규칙이 영역마다 어떤 기재가 질문으로 바뀌는지 밝힙니다.",
+                              f"{', '.join(areas[:3])} 등 {len(areas)}개 영역입니다. 4부 규칙이 어떤 기재가 질문이 되는지 밝힙니다.",
+                              f"{', '.join(areas[:2])} 등 {len(areas)}개 영역입니다. 4부 규칙이 기재를 질문으로 바꿉니다."], 40, 110)))
+        if mv.get("previews"):
+            faq.append(("구매 전에 지면을 볼 수 있나요?",
+                        "표지와 각 부 들어가는 면은 선명하게, 본문은 흐림 처리로 판매본 그대로의 지면을 미리 보실 수 있습니다."))
+        if sale:
+            faq.append(("인쇄하거나 파일로 저장할 수 있나요?",
+                        _fit([f"보안 리더 열람판은 계정당 3회까지 인쇄할 수 있고 원본 파일은 제공하지 않습니다." + (f" 파일이 필요하면 PDF 소장판 {won(pdfp)}입니다." if pdfp else ""),
+                              "보안 리더 열람판은 계정당 3회까지 인쇄할 수 있습니다. 원본 파일은 제공하지 않습니다."], 40, 110)))
     for qq, aa in faq:
         if not 40 <= len(aa) <= 110 or any(ch in qq + aa for ch in ("·", "—")):
             sys.exit(f"{slug} FAQ 답 {len(aa)}자 또는 금지 문자: {qq} / {aa}")
     return [{"q": qq, "a": aa} for qq, aa in faq]
+
+
+def _forms_on(mv):
+    """이 대학에 실재하는 면접 형태 이름만. 복합 라벨과 '확인 필요'는 뺀다."""
+    out = []
+    for f in mv.get("forms", []):
+        n = f["form"]
+        if not f.get("has") or "확인 필요" in n or "과 " in n:
+            continue
+        out.append(clean(n))
+    return out
+
+
+def _facts(e, mv, cat, price, sale, pdfp):
+    """지면 상단 핵심 팩트. 답변 엔진이 통째로 인용할 수 있는 짧은 사실문만 싣는다.
+    전부 meta v3 와 카탈로그 실측값이고, 책 본문(질문 원문, 규칙 본문, 전략 본문)은 넣지 않는다."""
+    y0, y1 = mv.get("years", [None, None])
+    ys = f"{y0}~{y1}년" if y0 and y1 and y0 != y1 else (f"{y0}년" if y0 else "")
+    forms = _forms_on(mv)
+    tracks = [t for t in mv.get("tracks", []) if "해당 없음" not in t.get("form", "")]
+    rows = []
+    if forms:
+        rows.append(("면접 형태", ", ".join(forms)))
+    if tracks:
+        rows.append(("면접 있는 전형", f"{len(tracks)}개"))
+    rows.append(("실제 기출", f"{mv['questions']}문" + (f", 선배 후기 {ys} 관측" if ys else "")))
+    if mv.get("units_n"):
+        rows.append(("모집단위", f"{mv['units_n']}개"))
+    rows.append(("생기부 질문 규칙", f"{mv['rules']}개"))
+    n_types = len(e.get("types") or [])
+    if n_types:
+        rows.append(("질문 유형", f"{n_types}개"))
+    if mv.get("pages"):
+        rows.append(("분량", f"{mv['pages']}면, 다섯 부"))
+    if sale:
+        rows.append(("가격과 열람", f"{won(price)}, 보안 리더 열람 1개월"
+                                    + (f" (PDF 소장판 {won(pdfp)})" if pdfp else "")))
+    return rows
+
+
+def _facts_html(name, rows):
+    if not rows:
+        return ""
+    body = "\n".join(f'      <div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in rows)
+    return ('<section class="sec tight">\n  <div class="wrap">\n'
+            f'    <div class="sh rv"><div><h2>한눈에 보는 {esc(name)} 면접</h2>'
+            '<p>아래 수치는 이 책이 실제로 담고 있는 분량입니다.</p></div></div>\n'
+            '    <dl class="keyfacts rv">\n' + body + '\n    </dl>\n  </div>\n</section>')
+
+
+def _related_html(items, i, meta, cur_forms):
+    """같은 면접 형태를 쓰는 다른 대학. 지원자가 실제로 함께 보는 묶음이고,
+    검색 쪽에서는 같은 주제 지면끼리 묶이는 내부 링크가 된다."""
+    if not cur_forms:
+        return ""
+    cur = items[i]
+    out = []
+    for j, o in enumerate(items):
+        if j == i or not o.get("onsale", True) or o["slug"] in STUDIO:
+            continue
+        if set(_forms_on(meta[o["slug"]])) == set(cur_forms):
+            out.append(o)
+    if len(out) < 3:
+        return ""
+    near = sorted(out, key=lambda o: abs(items.index(o) - i))[:6]
+    near.sort(key=lambda o: items.index(o))
+    links = "\n".join(f'      <a class="tlink" href="{o["slug"]}.html">{esc(o["name"])}</a>' for o in near)
+    label = ", ".join(cur_forms)
+    return ('  <section class="sec">\n'
+            f'    <div class="sh rv"><div><h2>{esc(label)} 면접을 보는 다른 대학</h2>'
+            f'<p>{esc(cur["name"])}와 면접 형태가 같아 준비 방법이 겹치는 대학입니다.</p></div></div>\n'
+            '    <div class="rel rv">\n' + links + '\n    </div>\n  </section>')
 
 
 def _faq_html(name, faq, sub="이 가이드북"):
@@ -679,7 +815,11 @@ def render_page(cat, items, i, meta):
          "__SAMPLES__": samples,
          "__PREV__": (f'<a class="tlink" href="{prev_e["slug"]}.html">이전, {esc(prev_e["name"])}</a>' if prev_e else ""),
          "__NEXT__": (f'<a class="tlink" href="{next_e["slug"]}.html">다음, {esc(next_e["name"])}</a>' if next_e else ""),
-         "__FINAL_H2__": final_h2, "__FINAL_P__": esc(final_p), "__FINAL_ACTS__": final_acts}
+         "__FINAL_H2__": final_h2, "__FINAL_P__": esc(final_p), "__FINAL_ACTS__": final_acts,
+         "__FACTS__": _facts_html(name, _facts(e, mv, cat, price, sale, pdfp)),
+         "__RELATED__": _related_html(items, i, meta, _forms_on(mv)),
+         "__DATE_ISO__": CONTENT_DATE,
+         "__DATE_KO__": "{}년 {}월 {}일".format(*[int(x) for x in CONTENT_DATE.split("-")])}
     return fill(PAGE_TPL.read_text(encoding="utf-8"), m)
 
 
@@ -730,8 +870,18 @@ def cmd_build(args):
     if not CATALOG.exists():
         sys.exit("catalog 없음: 먼저 refresh")
     ground_check(load_meta())
+    before = {f.name: f.read_text(encoding="utf-8") for f in OUT.glob("*.html")}
     w = build_to(OUT)
+    # 이 생성기는 제자리에 덮어쓴다. nav, footer, 폰트, 분석 태그는 뒤 단계(apply_*)가 붙이는 것이라
+    # build 만 단독으로 돌리면 조용히 사라진다. 사라졌으면 여기서 소리내어 말한다.
+    marks = ("analytics:begin", 'class="fix"', "bizinfo", "pretendardvariable")
+    lost = sorted({m for n, old_html in before.items()
+                   for m in marks
+                   if m in old_html and m not in (OUT / n).read_text(encoding="utf-8")})
     print(f"build: {len(w)} files -> {OUT}")
+    if lost:
+        print(f"경고: 후공정 산물이 지워졌다 ({', '.join(lost)}). sh _tools/build_all.sh 로 복구할 것.",
+              file=sys.stderr)
 
 
 def cmd_seo(args):
@@ -748,10 +898,24 @@ def cmd_seo(args):
         if rel not in m["pages"]:
             sys.exit(f"manifest 미등재: {rel}")
         t = seo_texts(e, meta[e["slug"]], cat)
-        m["pages"][rel].update({"title": t["title"], "description": t["description"], "answer": t["answer"]})
+        mv = meta[e["slug"]]
+        upd = {"title": t["title"], "description": t["description"], "answer": t["answer"],
+               "date_modified": CONTENT_DATE,
+               "speakable": [".aeo-answer", ".keyfacts"]}
+        sch = m["pages"][rel].setdefault("schema", {})
+        # 대학 엔티티에 공식 주소를 달아 "국민대학교"가 어느 기관인지 못 박는다 (미확인 대학은 붙이지 않는다)
+        if e["slug"] in UNIV_SITE:
+            sch["about_same_as"] = [UNIV_SITE[e["slug"]]]
+        else:
+            sch.pop("about_same_as", None)
+        sch["audience"] = "대학 면접을 준비하는 고등학생과 수험생"
+        sch["properties"] = {"면 수": f"{mv['pages']}면", "수록 기출": f"{mv['questions']}문",
+                             "생기부 질문 규칙": f"{mv['rules']}개"}
+        m["pages"][rel].update(upd)
         rows.append((rel, t))
     hub = seo_hub_texts(cat, items, meta)
-    m["pages"]["guidebook/index.html"].update({"title": hub["title"], "description": hub["description"], "answer": hub["answer"]})
+    m["pages"]["guidebook/index.html"].update({"title": hub["title"], "description": hub["description"], "answer": hub["answer"],
+                                               "date_modified": CONTENT_DATE, "speakable": [".aeo-answer"]})
     rows.append(("guidebook/index.html", hub))
     titles = [t["title"] for _, t in rows]
     if len(set(titles)) != len(titles):

@@ -77,6 +77,14 @@
 .strat li{padding:11px 0;border-top:1px solid var(--hairs);font-size:var(--t-base);display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:baseline}
 .strat li:last-child{border-bottom:1px solid var(--hairs)}
 .strat .sn{font-size:var(--t-xs);font-weight:700;letter-spacing:.06em;color:var(--seal);font-variant-numeric:tabular-nums}
+/* 핵심 팩트: 답변 엔진이 통째로 인용하는 자리 */
+.keyfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 var(--s5);border-top:1px solid var(--hair)}
+.keyfacts > div{display:grid;grid-template-columns:minmax(0,88px) minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0;border-bottom:1px solid var(--hairs)}
+.keyfacts dt{font-size:var(--t-sm);color:var(--gray);font-weight:500}
+.keyfacts dd{font-size:var(--t-base);color:var(--ink);font-weight:600;line-height:1.5;letter-spacing:-0.015em;overflow-wrap:anywhere}
+/* 같은 형태의 다른 대학 */
+.rel{display:flex;flex-wrap:wrap;gap:8px 16px}
+.rel .tlink{font-size:var(--t-sm)}
 .after{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;align-items:center;padding:var(--s7) 0 var(--s5);border-top:1px solid var(--hair);margin-top:var(--s7)}
 .after .nb{display:flex;gap:var(--s4);flex-wrap:wrap}
 @media (max-width:900px){.prod{grid-template-columns:1fr;gap:var(--s5)}.buy{position:static}.prod .cover{padding:var(--s5)}.pv{flex-basis:66vw}.trk li{grid-template-columns:1fr}}
@@ -119,6 +127,8 @@
     <p class="note">__NOTE__</p>
   </div>
 </section>
+
+__FACTS__
 
 <section class="sec tight">
   <div class="wrap">
@@ -183,8 +193,10 @@ __STRAT_SEC__
 
 __FAQ__
 
+__RELATED__
+
   <div class="after rv">
-    <span class="note">현학적 연구소 편집본</span>
+    <span class="note">현학적 연구소 편집본, 최종 갱신 <time datetime="__DATE_ISO__">__DATE_KO__</time></span>
     <div class="nb">__PREV__<a class="tlink" href="index.html">전체 목록</a>__NEXT__</div>
   </div>
 </div>
