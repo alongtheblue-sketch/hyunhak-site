@@ -600,8 +600,13 @@
       titleEl.textContent = d.title || "현학적 연구소";
       document.title = (d.title || "현학적 연구소") + " — 보안 뷰어";
       whoEl.textContent = state.email;
-      printBtn.hidden = false;
-      printBtn.addEventListener("click", doPrint);
+      // 인쇄 한도 0 인 자료(체험판)는 버튼 자체를 띄우지 않는다. 서버는 403 으로 막지만
+      // 뷰어가 그것을 모르면 누를 때마다 실패하는 버튼이 남는다.
+      // 구 서버 응답에는 printable 이 없다 — 값이 없으면 종전대로 노출한다(하위 호환).
+      if (d.printable !== false) {
+        printBtn.hidden = false;
+        printBtn.addEventListener("click", doPrint);
+      }
       render();
     }).catch(function (e) { if (e !== "redirect") { fail("불러오지 못했습니다."); console.error(e); } });
   }
