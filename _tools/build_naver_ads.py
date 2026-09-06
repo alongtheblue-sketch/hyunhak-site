@@ -19,7 +19,7 @@ import build_guidebook as B   # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 BASE = "https://hyunhak.com"
-MAKER = "13년차 대치동 컨설턴트"   # 건우 2026-09-04 지시. about.html 대치 학원 부원장 근거
+MAKER = "13년차 대치동 컨설턴트"   # 건우 2026-09-04 지시. about.html 입시 컨설턴트 13년차 + 前 대치우리학원 출강 근거 (09-07 부원장 문구 삭제)
 TITLE_MAX, DESC_MAX = 15, 45
 BANNED = ("합격 보장", "합격보장", "최고", "1위", "유일", "무조건", "확실히")
 SHORT = {"hanyang-erica": "한양대ERICA", "seoultech": "서울과기대", "sookmyung": "숙명여대", "sungshin": "성신여대"}

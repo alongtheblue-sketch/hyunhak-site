@@ -94,7 +94,7 @@ UNIV_SITE = {
 CONTENT_DATE = "2026-09-04"
 
 STUDIO = ("yonsei", "korea")
-AUTHOR = "13년차 대치동 입시 컨설턴트"   # about.html "대치OOO학원 부원장, 입시 컨설턴트 13년차" 근거
+AUTHOR = "13년차 대치동 입시 컨설턴트"   # about.html "입시 컨설턴트 13년차" + 前 대치우리학원 출강 경력 근거 (09-07 부원장 문구 삭제)
 
 
 def T(n, f, k=None):
