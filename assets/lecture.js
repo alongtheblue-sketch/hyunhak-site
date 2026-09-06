@@ -176,6 +176,11 @@
     // 상태 미상이면 편수를 적지 않는다. 준비 중 슬롯도 세우지 않는다 (공개 화면과 같은 UNIT_DOWN 표시).
     html += down ? group(gtitle, UNIT_DOWN_CNT, more, '<p class="note">' + UNIT_DOWN_NOTE + "</p>")
       : group(gtitle, cnt(rdy, prep), more, rows || '<p class="note">이 단위의 세트 목록을 불러오지 못했습니다.</p>');
+    // 2026 기출 해설 1편 (LC-4 ②). 종전에는 gich 를 세어 놓고 그리지 않아 ?unit= 화면에 기출이 없었다 (2026-09-06 건우 "강의실에 기출이 없는데").
+    // 세트 낱권 화면(setParam)에서는 그 세트가 기출이 아닌 한 접는다.
+    if (gich.length && !setParam) html += group("2026 기출 해설", cnt(gich.filter(isReady).length, gich.filter(function (l) { return !isReady(l); }).length),
+      '<a class="tlink" href="lectures/' + encodeURIComponent(unit) + '.html">강좌 상세</a>',
+      gich.map(function (l, i) { return row(l, num2(l.seq || i + 1), unit); }).join(""));
     view.innerHTML = html + "</div>";
   }
 

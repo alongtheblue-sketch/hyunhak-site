@@ -662,7 +662,7 @@ def faq_of(e, mv, price, sale, pdfp):
         if sale:
             q4 = "가격과 열람 기간은 어떻게 되나요?"
             a4 = (f"보안 리더 열람판 {won(price)}" + (f", PDF 소장판 {won(pdfp)}" if pdfp else "")
-                  + "입니다. 열람 기간은 구매일부터 1개월, 인쇄는 권당 3회, 원본 파일은 제공하지 않습니다.")
+                  + "입니다. 열람 기간은 구매일부터 3개월, 인쇄는 권당 3회, 원본 파일은 제공하지 않습니다.")
         else:
             q4 = "2027 판은 언제 판매하나요?"
             a4 = f"{name} 2027 판은 보안 리더 준비 중입니다. 판매 개시는 공지에 기록하며, 판매 중인 다른 대학 가이드북은 권당 {won(price)}입니다."
@@ -739,7 +739,7 @@ def _facts(e, mv, cat, price, sale, pdfp):
     if mv.get("pages"):
         rows.append(("분량", f"{mv['pages']}면, 다섯 부"))
     if sale:
-        rows.append(("가격과 열람", f"{won(price)}, 보안 리더 열람 1개월"
+        rows.append(("가격과 열람", f"{won(price)}, 보안 리더 열람 3개월"
                                     + (f" (PDF 소장판 {won(pdfp)})" if pdfp else "")))
     return rows
 
@@ -807,13 +807,13 @@ def render_page(cat, items, i, meta):
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
                 f'      {pdf_btn}<a class="btn ghost" href="../cart.html">장바구니 보기</a>')
         badge = '<span class="badge seal">판매 중</span>'
-        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 1개월. 아직 열지 않은 권은 공급받은 날부터 7일 이내 청약철회 가능."
+        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 아직 열지 않은 권은 공급받은 날부터 7일 이내 청약철회 가능."
                 + (" PDF 소장판은 워터마크 파일을 발급해 소장." if pdfp else ""))
-        final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 1개월."
+        final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 3개월."
         final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
                       + (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기</button>' if pdfp else "")
                       + f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
-        price_block = f'<span class="price">{price:,}원<small>부가세 포함, 보안 리더 열람 1개월</small></span>'
+        price_block = f'<span class="price">{price:,}원<small>부가세 포함, 보안 리더 열람 3개월</small></span>'
     elif studio:
         # 연세대, 고려대 = 제시문형이라 2027 서류기반 판을 내지 않는다. 착지 = /programs/<slug>.html 면접 스튜디오 (2026-09-03).
         sr = SEARCH[e["slug"]]
@@ -834,7 +834,7 @@ def render_page(cat, items, i, meta):
         final_h2, final_p = "준비 중인 동안", "판매 중인 다른 대학 가이드북 먼저. 판매 개시는 공지로."
         final_acts = ('<a class="btn" href="index.html">판매 중인 가이드북 <span class="ar" aria-hidden="true">→</span></a>'
                       '<a class="btn ghost" href="../notice.html">공지 보기</a>')
-        price_block = f'<span class="price mute">{price:,}원<small>부가세 포함, 보안 리더 열람 1개월</small></span>'
+        price_block = f'<span class="price mute">{price:,}원<small>부가세 포함, 보안 리더 열람 3개월</small></span>'
     # 유형명 역시 export/site 계약을 사용한다. 카운트·관측 주석은 원류 단계에서 제외한다.
     type_chips = "\n".join(f'      <span>{esc(clean(label))}</span>' for label in e["types"])
     samples = "\n".join(f'      <li><span class="ty">{esc(clean(s["type"]))}</span><p class="q">{esc(clean(s["q"]))}</p></li>'

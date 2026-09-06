@@ -154,11 +154,30 @@
             + '<a class="btn ghost sm" href="' + href + '">강의 목록</a></div></article>';
         }
         if (common.length && common.some(function (l) { return l.entitled; })) cards.push(card("common", "공통 풀이", common, commonEnt, P + "lecture.html"));   // 권리 없는 회원은 none 상태로
+        // 2026 기출 해설: 권리 있는 편을 카드 하나에 행으로 세운다 (단위 카드 안에 묻히면 "기출이 없다"로 읽힌다, 2026-09-06 건우 지적).
+        // 시드 전권처럼 단위 강의 권리 없이 기출 passage 권리만 있는 회원도 여기서 바로 시청한다.
+        var gichMine = all.filter(function (l) { return l.unit_code === GICHUL_UNIT && l.entitled; });
+        gichMine.sort(function (a, b) { return (a.seq || 0) - (b.seq || 0); });
+        if (gichMine.length) cards.push(gichulCard(gichMine));
         us.forEach(function (u) {
           var ls = all.filter(function (l) { return l.unit_code === u.code || gichulOf(l, u.code); });
-          if (!ls.some(function (l) { return l.entitled; })) return;
+          // 단위 카드는 그 단위의 강의(단위 강의·세트 해설)에 권리가 있을 때만. 기출 1편만으로는 단위 카드를 세우지 않는다 (기출 카드가 맡는다)
+          if (!ls.some(function (l) { return l.entitled && l.unit_code === u.code; })) return;
           cards.push(card(u.code, u.label + " 풀이법 인강", ls, owned[u.code], P + "lecture.html?unit=" + encodeURIComponent(u.code)));
         });
+        function gichulCard(ls) {
+          var rows = ls.map(function (l) {
+            var p = l.progress || null, dur = l.duration_sec ? fmt(l.duration_sec) : "";
+            var ready = l.status === "ready";
+            var meta = "<span>" + esc(dur) + "</span>" + (p && p.completed ? '<span class="badge">완료</span>' : (p && p.position_sec > 0 ? "<span>" + fmtPos(p.position_sec) + " 부터 이어보기</span>" : (ready ? "<span>아직 보지 않음</span>" : "<span>준비 중</span>")));
+            var act = ready ? '<a class="btn sm" href="' + P + "lecture.html?id=" + encodeURIComponent(l.id) + '">' + (p && p.completed ? "다시 보기" : (p && p.position_sec > 0 ? "이어보기" : "시청")) + "</a>" : '<span class="badge mute" aria-disabled="true">준비 중</span>';
+            return '<div class="' + (ready ? "row" : "slot") + '" role="listitem" data-lec="' + esc(l.id) + '"><span class="n">' + esc(String(l.seq || "").padStart(2, "0")) + '</span><span><span class="t">' + esc(l.title) + '</span><span class="m">' + meta + "</span></span>" + '<span class="a">' + act + "</span></div>";
+          }).join("");
+          var done = ls.filter(function (l) { return l.progress && l.progress.completed; }).length;
+          return '<article class="cr gich"><div class="ch"><h2>2026 기출 해설</h2><span class="cnt">보유 <b>' + ls.length + "</b>편 완료 <b>" + done + "</b>편</span></div>"
+            + '<p class="st">단위 전권마다 그 대학 계열의 2026 기출 해설 1편이 딸려 있습니다. 응시 전에 한 번, 응시한 뒤에 한 번 보세요.</p>'
+            + '<div class="toc" role="list">' + rows + "</div></article>";
+        }
         var box = view.querySelector("#crCards");
         if (!cards.length) { view.setAttribute("data-state", "none"); }
         else box.innerHTML = cards.join("");

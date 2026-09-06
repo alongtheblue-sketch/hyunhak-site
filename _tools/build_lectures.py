@@ -301,6 +301,8 @@ CSS_ROOM = CSS_COMMON + '''
 @media (max-width:820px){.lecr .crcards{grid-template-columns:1fr}}
 .lecr .cr{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);padding:var(--s4);display:flex;flex-direction:column;gap:10px}
 .lecr .cr.off{opacity:.6}
+.lecr .cr.gich{grid-column:1/-1}
+.lecr .cr.gich .toc{margin-top:4px}
 .lecr .cr .ch{display:flex;justify-content:space-between;gap:12px;align-items:baseline;flex-wrap:wrap}
 .lecr .cr h2{font-size:var(--t-h4)}
 .lecr .cr .cnt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray)}
