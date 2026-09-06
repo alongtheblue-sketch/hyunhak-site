@@ -12,7 +12,6 @@ await pg.addInitScript(() => {
     { id: 'u1', kind: 'unit', unit_code: 'yonsei-hum', title: '단위1', status: 'ready', entitled: true, seq: 1, duration_sec: 600 }];
   let hh; Object.defineProperty(window, 'HH', { configurable: true, get() { return hh; }, set(v) { hh = v; hh.me = () => Promise.resolve({ member: { id: 'm1' }, entitlements: ents }); hh.api = (p) => (p === '/api/lectures') ? Promise.resolve({ lectures: lecs }) : Promise.reject(new Error('x')); } });
 });
-});
 await pg.goto(BASE + 'classroom.html', { waitUntil: 'load' }); await pg.waitForTimeout(600);
 out.f9 = await pg.evaluate(() => ({ state: document.getElementById('crView').getAttribute('data-state'), cards: [...document.querySelectorAll('#crCards .cr')].map(c => c.querySelector('h2').textContent + ' | ' + c.querySelector('.st').textContent) }));
 await pg.close();
