@@ -1,0 +1,21 @@
+// s3 잔여 3건 렌더 실측: faq §인강 착지, 인강실 게스트 문장, 320px 앵커 (로컬 8813)
+import { createRequire } from 'module'; const require = createRequire('/Users/gregory/Workspace/iruri_6mo_thumb/package.json');
+const { chromium } = require('playwright'); const b = await chromium.launch(); const out = {};
+let pg = await b.newPage({ viewport: { width: 1280, height: 800 } });
+await pg.goto('http://127.0.0.1:8813/faq.html', { waitUntil: 'load' });
+await pg.addStyleTag({ content: 'html{scroll-behavior:auto!important}.rv{opacity:1!important}' });
+out.faq_nav = await pg.evaluate(() => [...document.querySelectorAll('.side .toc a')].map(a => a.textContent.trim() + '>' + a.getAttribute('href')).join(' '));
+await pg.click('.side .toc a[href="#q-lecture"]'); await pg.waitForTimeout(300);
+out.faq_land = await pg.evaluate(() => { const h = document.getElementById('q-lecture'); const r = h.getBoundingClientRect(); const ds = [...h.parentElement.querySelectorAll('details')]; const i = ds.findIndex(d => d.previousElementSibling === h); const grp = []; let e = h.nextElementSibling; while (e && e.tagName === 'DETAILS') { grp.push(e.querySelector('summary').textContent); e = e.nextElementSibling; } return { top: Math.round(r.top), next_h2: e && e.textContent, n: grp.length, q: grp }; });
+await pg.close();
+pg = await b.newPage({ viewport: { width: 390, height: 844 } });
+await pg.goto('http://127.0.0.1:8813/classroom.html', { waitUntil: 'load' }); await pg.waitForTimeout(1500);
+out.classroom = await pg.evaluate(() => ({ state: document.getElementById('crView').getAttribute('data-state'), guest_p: document.querySelector('[data-for="guest"] .ot p').textContent }));
+await pg.close();
+pg = await b.newPage({ viewport: { width: 320, height: 700 } });
+await pg.goto('http://127.0.0.1:8813/lectures/korea-sci.html', { waitUntil: 'load' });
+await pg.addStyleTag({ content: 'html{scroll-behavior:auto!important}.rv{opacity:1!important}' });
+await pg.evaluate(() => window.scrollTo(0, 1500)); await pg.waitForTimeout(250);
+out.anch320 = await pg.evaluate(() => { const n = document.querySelector('.anch'); return { scrollW: n.scrollWidth, clientW: n.clientWidth, names: [...n.querySelectorAll('a')].map(a => (a.getAttribute('aria-label') || a.textContent).trim()), visible_b: [...n.querySelectorAll('a b')].filter(x => x.getBoundingClientRect().width > 2).length }; });
+await pg.locator('.anch').screenshot({ path: '_design/lecture_20260906/anch_320_s3.png' });
+await pg.close(); await b.close(); console.log(JSON.stringify(out, null, 1));

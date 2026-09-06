@@ -161,6 +161,7 @@ CSS_COMMON = '''/* 인강 상품면 공용 (2026-09-06). 크기는 토큰만, �
 .lec2 .anch a,.lec2 .anch a b{flex:0 0 auto}
 @media (max-width:480px){.lec2 .anch{gap:2px}.lec2 .anch a{padding:0 8px}.lec2 .anch a.pl{gap:0}.lec2 .anch a.pl b{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}}   /* 4항목이 한 줄(350px)에 들게. 가격 항목 상품명은 시각만 숨김(접근성 이름 유지) */
 @media (max-width:400px){.lec2 .anch{gap:0}.lec2 .anch a{font-size:12px}.lec2 .anch a b{font-size:10px}}
+@media (max-width:340px){.lec2 .anch a{gap:0;padding:0 7px}.lec2 .anch a b{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}}   /* 320px 폭: 卷 표식을 시각만 숨겨 4항목 233px 가 280px 안에 든다(종전 317px, 37px 가로 스크롤). 접근성 이름은 유지 */
 @media (max-width:820px){body.lec2 .fix a.cta{background:transparent;color:var(--gray)}}   /* 인강 면은 폴드 안 솔리드 행동 1개. 모바일 바 가이드북 채움 강등 */   /* 좁은 폭에서 항목이 수축해 卷 표식 b 폭이 0 이 되어 라벨 위에 겹쳐 그려짐 (Stage 3 실측 390: b 폭 0). 수축 금지, 넘치면 overflow-x 로 */
 .lec2 .tocmore[hidden]{display:none}
 .lec2 .tocfold{margin-top:var(--s2)}
@@ -316,7 +317,7 @@ def room_page():
   <div data-for="loading"><p class="note">불러오는 중입니다.</p></div>
   <noscript><div class="ot"><span class="eyebrow">스크립트 필요</span><h3>인강실은 스크립트가 켜진 브라우저에서 열립니다</h3><p>로그인 상태와 시청 기록을 불러오려면 JavaScript 가 필요합니다. 강좌 소개와 맛보기는 스크립트 없이 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div></noscript>
   <div data-for="guest">
-   <div class="ot"><span class="eyebrow">로그인 필요</span><h3>인강실은 로그인한 뒤 열립니다</h3><p>산 이용권의 강의와 이어보기 위치가 여기에 선다. 계정이 없으면 가입, 강의를 고르려면 강좌 목록.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="join.html">가입</a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
+   <div class="ot"><span class="eyebrow">로그인 필요</span><h3>인강실은 로그인한 뒤 열립니다</h3><p>산 이용권의 강의와 마지막으로 본 자리를 여기에서 엽니다. 계정이 없으면 먼저 가입하고, 강의를 아직 고르는 중이면 강좌 목록을 보세요.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="join.html">가입</a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
    <div class="guest">
     <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, 1분 15초</p></div>
     <div class="ot"><span class="eyebrow">인강 OT</span><h3>이 인강을 어떤 순서로 듣나</h3><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 대본을 먼저 공개합니다.</p>{order_svg()}<p style="margin-top:var(--s2)"><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
