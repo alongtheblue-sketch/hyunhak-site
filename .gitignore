@@ -7,3 +7,6 @@ node_modules/
 
 # 배포 세대 마커 (deploy.sh 가 배포 직전 쓰고 지움, 2026-09-04)
 _gen.txt
+
+# 로컬 측정용 http.server 로그 (세션 런타임 산출, 추적 안 함. 2026-09-06)
+_design/**/httpd.log
