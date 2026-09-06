@@ -20,6 +20,8 @@ Disallow: /cart.html
 Disallow: /cart
 Disallow: /checkout.html
 Disallow: /checkout
+Disallow: /classroom.html
+Disallow: /classroom
 Disallow: /join.html
 Disallow: /join
 Disallow: /lecture.html
@@ -47,6 +49,8 @@ Disallow: /cart.html
 Disallow: /cart
 Disallow: /checkout.html
 Disallow: /checkout
+Disallow: /classroom.html
+Disallow: /classroom
 Disallow: /join.html
 Disallow: /join
 Disallow: /lecture.html
@@ -89,6 +93,8 @@ Disallow: /cart.html
 Disallow: /cart
 Disallow: /checkout.html
 Disallow: /checkout
+Disallow: /classroom.html
+Disallow: /classroom
 Disallow: /join.html
 Disallow: /join
 Disallow: /lecture.html

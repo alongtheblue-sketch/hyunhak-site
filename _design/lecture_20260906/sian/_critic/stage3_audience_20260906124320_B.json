@@ -1,0 +1,29 @@
+{
+ "version": "v3.1-stage3",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/B.html",
+ "proxies": {
+  "P1_parent": {
+   "score": 8,
+   "verbatim_reaction": "들어가자마자 강의 화면이 떠서 아이 수업을 미리 보는 느낌이었고, 값과 포함 내역과 담기가 한 화면에 있어 결정이 빨랐습니다. 목차는 눌러야 나와서 43편이 진짜인지는 확인을 못 했어요.",
+   "role_persona_used": "고3 수험생 학부모 겸 결제자, 대치동 495,000원 인강 구매 검토"
+  },
+  "P2_competitor": {
+   "score": 5,
+   "verbatim_reaction": "우리 신규강좌 상세와 배치가 같아서 스크린샷을 나란히 두면 구분이 안 됩니다. 이 화면은 우리 팀이 반나절이면 재현합니다.",
+   "role_persona_used": "메가스터디 강좌 상세 담당 PM, 모방 저항성과 커리큘럼 열람 깊이 평가"
+  },
+  "P3_non_korean": {
+   "score": 5,
+   "verbatim_reaction": "Without the tiny header line I could not tell which country this course page belongs to. The layout looks like any global LMS product page.",
+   "role_persona_used": "non-Korean designer, 5-second identity guess without translation"
+  }
+ },
+ "total": 18,
+ "threshold_check": {
+  "P1_threshold": "≥5 OK",
+  "P2_threshold": "≥5 OK",
+  "P3_threshold": "≥5 OK",
+  "total_threshold": "≥25 FAIL"
+ }
+}

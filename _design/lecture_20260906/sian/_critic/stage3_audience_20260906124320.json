@@ -1,0 +1,29 @@
+{
+ "version": "v3.1-stage3",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/A.html",
+ "proxies": {
+  "P1_parent": {
+   "score": 7,
+   "verbatim_reaction": "43편 14시간 40분 3개월 495,000원이 한 줄 표로 먼저 보여서 뭘 사는지는 알겠는데, 담기 단추를 찾으려면 한 번 더 내려야 했어요. 아이한테 보여주기 전에 제가 먼저 스크롤을 했네요.",
+   "role_persona_used": "고3 수험생 학부모 겸 결제자, 대치동 495,000원 인강 구매 검토"
+  },
+  "P2_competitor": {
+   "score": 7,
+   "verbatim_reaction": "卷一 卷二 하는 판심 표기는 우리 팀 템플릿으로는 못 베낍니다. 다만 세트 해설이 8편만 걸려 있어 커리큘럼 열람은 우리 페이지가 아직 깊습니다.",
+   "role_persona_used": "메가스터디 강좌 상세 담당 PM, 모방 저항성과 커리큘럼 열람 깊이 평가"
+  },
+  "P3_non_korean": {
+   "score": 7,
+   "verbatim_reaction": "The 卷 marks and 玄學的 in the header read as a Korean study-house identity immediately, though four repeated Chinese numerals could also be mistaken for a Japanese book series.",
+   "role_persona_used": "non-Korean designer, 5-second identity guess without translation"
+  }
+ },
+ "total": 21,
+ "threshold_check": {
+  "P1_threshold": "≥5 OK",
+  "P2_threshold": "≥5 OK",
+  "P3_threshold": "≥5 OK",
+  "total_threshold": "≥25 FAIL"
+ }
+}

@@ -1,0 +1,55 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/B.html",
+ "lenses": {
+  "L1": {
+   "score": 4,
+   "evidence": "히어로 플레이어 포스터가 실제 강의 지면('오늘 챙겨 가실 게 세 개' 3행)을 노출해 절차 주장을 즉시 증명, 구매 CTA y=752 로 1280 폴드 안. 감점은 43편 목차가 탭 뒤 display:none 이라 규모 주장이 지면에서 미확인."
+  },
+  "L2": {
+   "score": 3,
+   "evidence": "mimac_newlec.png 의 플레이어 좌측 + 우측 요약 상자 배치를 거의 그대로 이식, 卷 folio 등 자사 관용 0건. 슬롭 #6 단일 hero+CTA 근접, p3 패널은 1fr 1fr 정확한 50:50(슬롭 #9)."
+  },
+  "L3": {
+   "score": 3,
+   "evidence": "h1 34px/44.88px 로 A·C 44px 대비 강등되고 그 아래 meta 13px 4항목이 바로 붙어, 계기값을 34px 로 세운 A facts 대비 표제 대비가 약함."
+  },
+  "L4": {
+   "score": 4,
+   "evidence": "hero2 1.5fr/1fr, 탭 sticky. 감점은 .tabs top:var(--hd-h)=72px 인데 390 헤더 실측 65px 라 7px 어긋남."
+  },
+  "L5": {
+   "score": 4,
+   "evidence": "동일 토큰, 朱印 2개소(가격, 맛보기 뱃지) + 탭 활성 border-bottom seal. 가격 5.34, 탭 라벨 gray 5.04 실측 AA 통과."
+  },
+  "L6": {
+   "score": 4,
+   "evidence": "패널별 실측 2049/3324/1856/1833px 로 4탭 밀도가 균질. 감점은 초기 DOM 에서 3패널 display:none 이라 43편 열람에 클릭 1회와 JS 가 필수."
+  },
+  "L7": {
+   "score": 2,
+   "evidence": "chips 3버튼 클릭 후 aria-pressed 가 ['true','false','false'] 그대로(실측) = 무동작 컨트롤 3개. 히어로 meta '30편 공개' 와 목차 43편 모순 공유."
+  },
+  "L8": {
+   "score": 4,
+   "evidence": "mega_lecture_detail.png 의 탭 3종·요약 상자·바로결제 열을 웹 상세 문법으로 이식, 맛보기 재생이 진입 즉시 가능. 390 에서 구매 CTA y=979 로 폴드(844) 밖."
+  },
+  "L9": {
+   "score": 3,
+   "evidence": "role=tab 4개 전부 aria-controls·tabindex 없음, 패널 4개 role=tabpanel·aria-labelledby 없음(실측), 화살표키 이동 없음. JS 미로드 시 목차·OT·FAQ 3면 소실."
+  }
+ },
+ "total": 31,
+ "minimum_check": {
+  "L1": "≥4 OK",
+  "L8": "≥3 OK",
+  "L9": "≥3 OK"
+ },
+ "release_recommendation": "PARTIAL_REWORK",
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}

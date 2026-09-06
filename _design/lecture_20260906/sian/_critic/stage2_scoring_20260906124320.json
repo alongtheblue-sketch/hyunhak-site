@@ -1,0 +1,55 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/A.html",
+ "lenses": {
+  "L1": {
+   "score": 4,
+   "evidence": "promise '준비 21분과 발화 7분' 이 卷一 표제 '21분을 절차로 만든다'(y=857, 34px/800)로 승격되고 steps 3장이 4/9/30 구성을 그대로 번역. 감점 사유는 전환 동사 '단위 전권 담기' 가 y=995 로 1280x900 폴드 밖(실측)."
+  },
+  "L2": {
+   "score": 4,
+   "evidence": "folio 卷一~卷四 + facts 4칸은 mega_lecture_detail.png 의 탭 3종 요약 상자와 형태가 겹치지 않음. 감점은 .steps.three 3열 카드가 슬롭 #5 균등 카드 그리드 경계선."
+  },
+  "L3": {
+   "score": 4,
+   "evidence": "h1 44px/58.08px(lh 1.32), lede 19.2px/1.6, 모노는 43·14h40m 계기값 전용. 감점은 .facts b 34px 가 h2.t 34px 와 같은 크기라 계기값과 표제 위계가 동률."
+  },
+  "L4": {
+   "score": 4,
+   "evidence": "1120px 컨테이너, 본문 max-width 36em, aside sticky top=hd-h+16. 감점은 세트 해설이 43편 중 8행만 실려 목차 지면 rows=21 로 잘림(실측)."
+  },
+  "L5": {
+   "score": 4,
+   "evidence": "朱印 #BC3529 사용 요소 2개(가격, 맛보기 뱃지)로 한정, 나머지는 ink #312E2E 와 gray #696561. 가격 대비 5.34, 본문 8.73 실측."
+  },
+  "L6": {
+   "score": 3,
+   "evidence": "1280 5086px, 390 7510px. 卷一~卷四 4면 리듬은 있으나 맛보기 卷三 가 y=3409, B 목차 패널 3324px 대비 총장 2.5배."
+  },
+  "L7": {
+   "score": 3,
+   "evidence": "히어로 facts 4번째 '30편 공개' 와 목차 그룹 합계 43(공개 4+9+30)이 모순. 히어로 ghost 라벨 '이용권 495,000원' 과 구매 상자 '단위 전권' 용어 불일치."
+  },
+  "L8": {
+   "score": 4,
+   "evidence": "breadcrumb + facts + sticky buybox 로 상거래 상세 문법 충족, 인터랙티브 48px 전건 통과. 감점은 mega 참조의 탭 3종에 대응하는 지면 내 이동 수단이 없어 43편 열람이 스크롤 5086px 뿐."
+  },
+  "L9": {
+   "score": 4,
+   "evidence": "측정 결과 44px 미만 인터랙티브 0건, JS 의존 0(details/summary 네이티브), 대비 ink/paper 11.73 gray/paper 5.04. 감점은 4면 앵커 nav 부재로 키보드 순차 스크롤 강제."
+  }
+ },
+ "total": 34,
+ "minimum_check": {
+  "L1": "≥4 OK",
+  "L8": "≥3 OK",
+  "L9": "≥3 OK"
+ },
+ "release_recommendation": "PARTIAL_REWORK",
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}

@@ -1,0 +1,10 @@
+import { chromium } from '/Users/gregory/Workspace/iruri_6mo_thumb/node_modules/playwright/index.mjs';
+const browser = await chromium.launch();
+const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+const pg = await ctx.newPage();
+await pg.goto('file:///Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/C.html', { waitUntil: 'load' });
+await pg.waitForTimeout(1200);
+const r = await pg.evaluate(() => { const out=[]; const vw=document.documentElement.clientWidth; for (const el of document.querySelectorAll('body *')) { const b=el.getBoundingClientRect(); if (b.right > vw+1 && b.width>0) out.push(el.tagName+'.'+(el.className||'').toString().slice(0,30)+' w='+Math.round(b.width)+' r='+Math.round(b.right)); } return { h: document.documentElement.scrollHeight, sw: document.documentElement.scrollWidth, over: out.slice(0,12) }; });
+console.log(JSON.stringify(r));
+await pg.screenshot({ path: 'C_390.png', fullPage: true });
+await browser.close();

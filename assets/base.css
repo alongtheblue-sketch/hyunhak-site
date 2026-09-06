@@ -340,7 +340,7 @@ body.v2{background:var(--ink)}
   :where(body.v2) .sec.tight{padding:var(--s6) 0}
   :where(body.v2) footer .g{grid-template-columns:1fr;gap:var(--s4)}
   body.v2{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
-  :where(body.v2) .fix{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:6px 8px calc(6px + env(safe-area-inset-bottom));
+  :where(body.v2) .fix{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:6px 8px calc(6px + env(safe-area-inset-bottom));
     background:rgba(var(--paper-rgb),.96);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
   :where(body.v2) .fix a{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;min-height:52px;border-radius:var(--r-md);font-size:var(--t-xs);font-weight:600;color:var(--gray)}
   :where(body.v2) .fix a svg{display:block;width:18px;height:18px;opacity:.85}

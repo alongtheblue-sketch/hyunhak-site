@@ -1,0 +1,29 @@
+{
+ "version": "v3.1-stage3",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/C.html",
+ "proxies": {
+  "P1_parent": {
+   "score": 6,
+   "verbatim_reaction": "강의 제목이 표로 쭉 나와서 뭘 배우는지는 보이는데, 상태 칸이 전부 공개라 왜 있는 칸인지 모르겠고 값은 왼쪽 아래에서 겨우 찾았습니다.",
+   "role_persona_used": "고3 수험생 학부모 겸 결제자, 대치동 495,000원 인강 구매 검토"
+  },
+  "P2_competitor": {
+   "score": 6,
+   "verbatim_reaction": "표 밀도는 우리 커리큘럼 페이지에 근접합니다. 다만 전 행이 같은 값인 열은 우리라면 삭제하고, 왼쪽 목차가 스크롤을 따라오지 않는 건 지적감입니다.",
+   "role_persona_used": "메가스터디 강좌 상세 담당 PM, 모방 저항성과 커리큘럼 열람 깊이 평가"
+  },
+  "P3_non_korean": {
+   "score": 6,
+   "verbatim_reaction": "A neutral table page. Nothing in the grid tells me this is Korean except the two Chinese characters in the top bar, and the mobile view lost the table structure.",
+   "role_persona_used": "non-Korean designer, 5-second identity guess without translation"
+  }
+ },
+ "total": 18,
+ "threshold_check": {
+  "P1_threshold": "≥5 OK",
+  "P2_threshold": "≥5 OK",
+  "P3_threshold": "≥5 OK",
+  "total_threshold": "≥25 FAIL"
+ }
+}

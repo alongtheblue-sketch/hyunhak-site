@@ -1,0 +1,55 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-09-06T03:43:20Z",
+ "deliverable_path": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/_design/lecture_20260906/sian/C.html",
+ "lenses": {
+  "L1": {
+   "score": 3,
+   "evidence": "첫 화면이 표(번호/제목/길이/상태, y=507)라 43편 카탈로그 서사가 promise 를 밀어냄. 근거 문단 '이 인강은' 은 y=2996, 맛보기는 y=2614 로 전환 서사가 지면 하단."
+  },
+  "L2": {
+   "score": 4,
+   "evidence": "좌측 260px sidenav + 표 3개는 mega_curriculum 계열 문법의 정직한 번역. 감점은 상태 열 23행 전건 '공개' 동일값(실측)으로 슬롭 #16 행정 표 잔재."
+  },
+  "L3": {
+   "score": 3,
+   "evidence": "표 셀 c-x 11px 모노 라벨이 23행 반복되고 제목 13~16px 와 격차가 좁아, 43행 스캔에서 제목 축이 라벨 축을 이기지 못함."
+  },
+  "L4": {
+   "score": 4,
+   "evidence": "260px + minmax(0,1fr) 2열, 표 border-collapse 에 괘선 토큰. 감점은 5열 중 상태 열이 전 행 동일값이라 열 하나가 잉크만 소모."
+  },
+  "L5": {
+   "score": 4,
+   "evidence": "동일 토큰, 朱印 2개소. 가격 5.34, 표 라벨 gray/paper 5.04, 본문 8.73 실측 AA 통과."
+  },
+  "L6": {
+   "score": 3,
+   "evidence": "1280 4449px, 390 6597px. 표 3개 연속 뒤 소개와 FAQ 라 밀도 리듬이 표 구간에서 단조, 맛보기 y=2614 까지 시각 휴지 없음."
+  },
+  "L7": {
+   "score": 2,
+   "evidence": "세트 해설 버튼 min-height:40px 2건(토큰 --tap:48px 위반, 실측), sidenav a.on 이 '공통 풀이' 에 하드코딩되어 스크롤과 무관하게 항상 활성, 빈 th 3개."
+  },
+  "L8": {
+   "score": 3,
+   "evidence": "390 에서 table/tbody/tr/td 를 display:block 으로 바꾸고 thead 를 display:none 처리해 표 시맨틱이 소실. 43행 열람이 이 지면의 핵심인데 모바일에서 표가 아님."
+  },
+  "L9": {
+   "score": 3,
+   "evidence": "40px 타깃 2건이 WCAG 2.5.5(44px)과 토큰 48px 둘 다 미달, 모바일 표 시맨틱 소실, sidenav aria-current 없음, 빈 th 3개로 열 이름 미부여."
+  }
+ },
+ "total": 29,
+ "minimum_check": {
+  "L1": "≥4 FAIL",
+  "L8": "≥3 OK",
+  "L9": "≥3 OK"
+ },
+ "release_recommendation": "PARTIAL_REWORK",
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}

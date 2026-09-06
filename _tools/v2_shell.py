@@ -15,14 +15,16 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
 GNB = [
     ("guidebook/index.html", "가이드북", ("guidebook/",)),
     ("studio.html", "제시문 면접 스튜디오", ("studio.html",)),
+    ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html")),
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
 ]
-GNB_GROUP_BREAK = 2   # 이 인덱스 항목부터 부가 묶음 (파는 것 2, 부가 2. 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
+GNB_GROUP_BREAK = 3   # 이 인덱스 항목부터 부가 묶음 (파는 것 3, 부가 2. 인강 신설 2026-09-06. 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
     ("index.html#find", "대학 찾기", (), False, "find"),
     ("guidebook/index.html", "가이드북", ("guidebook/",), True, "book"),
+    ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html"), False, "play"),
     ("my.html", "MY", ("my.html",), False, "my"),
 ]
 
@@ -32,6 +34,7 @@ FIX_ICONS = {
     "find": '<circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/>',
     "book": '<rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/>',
     "my": '<circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/>',
+    "play": '<circle cx="12" cy="12" r="8.4"/><path d="M10.3 9.1v5.8l4.8-2.9z"/>',
 }
 
 
