@@ -346,9 +346,9 @@ def room_page():
    <div class="band"><div><h2>목차표와 OT 대본</h2><p>강좌별 강의 목차표와 OT 대본은 자료실에 있습니다.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="library.html#lecdocs">인강 자료 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
   </div>
   <div data-for="none">
-   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h3>아직 들어온 강의가 없습니다</h3><p>단위 전권이나 지문 낱권을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
+   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h2>아직 들어온 강의가 없습니다</h2><p>단위 전권이나 지문 낱권을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
   </div>
-  <div data-for="down"><div class="ot"><span class="eyebrow">상태 미상</span><h3>강의 목록을 지금 불러올 수 없습니다</h3><p>잠시 후 다시 열어 주세요. 권리가 사라진 것이 아닙니다.</p></div></div>
+  <div data-for="down"><div class="ot"><span class="eyebrow">상태 미상</span><h2>강의 목록을 지금 불러올 수 없습니다</h2><p>잠시 후 다시 열어 주세요. 권리가 사라진 것이 아닙니다.</p></div></div>
  </div>
 </div>'''
     script = '<script>(function(){ var v=document.getElementById("crView"); if(!window.LEC){ v.setAttribute("data-state","down"); return; } LEC.classroom(v); setTimeout(function(){ if(v.getAttribute("data-state")==="loading") v.setAttribute("data-state","down"); }, 12000); })();</script>'
