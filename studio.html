@@ -462,6 +462,7 @@ document.addEventListener('DOMContentLoaded', function(){
     if(el.dataset.cartSku==='passage-single'&&!okSetId(sid)){ cartMsg('지문 낱권은 지문 목록에서 세트를 고른 뒤 담아 주세요.'); return; }
     var r=HH.addToCart({ sku: el.dataset.cartSku, set_id: okSetId(sid)?sid:undefined, title: el.dataset.cartTitle, price: +el.dataset.cartPrice, ship: el.dataset.cartShip === '1' });
     if(!r.ok){ cartMsg(r.message); return; }
+    if(r.already){ cartMsg(r.message); return; }   // 1개 한정 상품 재클릭 = 변경 없음. 담았다는 확인창 대신 안내만
     cartMsg('');
     if (confirm('장바구니에 담았습니다. 장바구니로 이동하시겠습니까?')) location.href = 'cart.html';
   });

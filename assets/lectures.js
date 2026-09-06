@@ -121,7 +121,7 @@
         if (all === null) { view.setAttribute("data-state", "down"); return; }
         view.setAttribute("data-state", "member");   // 데이터가 온 뒤에만 member. 그 전은 loading 이라 12초 가드가 전 경로를 덮는다
         var owned = {};
-        ents.forEach(function (e) { var m = e._meta || {}; if (m.unit_code && okUnit(m.unit_code)) { if (!owned[m.unit_code] || String(e.expires_at || "") > String(owned[m.unit_code].expires_at || "")) owned[m.unit_code] = e; } });
+        ents.forEach(function (e) { var m = e._meta || {}; if (m.unit_code && okUnit(m.unit_code)) { if (!owned[m.unit_code] || String(e.expires_at || "9999") > String(owned[m.unit_code].expires_at || "9999")) owned[m.unit_code] = e; /* 만료 없음("9999") 이 최상, 같은 단위에 무기한과 유기한 공존 시 무기한 유지 */ } });
         var common = all.filter(function (l) { return l.kind === "common"; });
         var commonCands = ents.filter(function (e) { return (e._meta || {}).scope === "common" || !((e._meta || {}).unit_code || (e._meta || {}).set_id); })
           .concat(Object.keys(owned).map(function (k) { return owned[k]; }));   // 직접 공통 권리 + 단위 전권 권리(공통 접근 포함, pay.js). 중첩 구매 시 둘 다 후보

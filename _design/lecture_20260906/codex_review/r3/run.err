@@ -1,0 +1,2 @@
+2026-09-06T05:34:56.421463Z ERROR codex_core::tools::router: error=timeout_ms must be at least 10000
+2026-09-06T05:37:26.162650Z ERROR codex_core::tools::router: error=timeout_ms must be at least 10000
