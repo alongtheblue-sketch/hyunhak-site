@@ -294,7 +294,7 @@ body.v2{background:var(--ink)}
 /* 푸터 */
 :where(body.v2) footer{padding:var(--s6) 0 var(--s6);border-top:var(--rule-strong);color:var(--gray);font-size:var(--t-sm)}
 :where(body.v2) footer .g{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s5)}
-:where(body.v2) footer h4{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--ink);margin-bottom:10px}
+:where(body.v2) footer h2{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--ink);margin-bottom:10px}
 :where(body.v2) footer .han{font-family:var(--serif);font-weight:300;color:var(--ink);letter-spacing:.06em}
 :where(body.v2) footer ul{display:flex;flex-direction:column;gap:2px}
 :where(body.v2) footer li{min-height:32px;display:flex;align-items:center}

@@ -113,16 +113,16 @@ def footer(rel):
   <div class="wrap">
     <div class="g">
       <div>
-        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <h2>현학적 연구소 <span class="han">玄學的 硏究所</span></h2>
         <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
-        <h4>바로가기</h4>
+        <h2>바로가기</h2>
         <ul>{links}</ul>
       </div>
       <div>
-        <h4>고객센터</h4>
+        <h2>고객센터</h2>
         <ul><li><a href="{p}support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
       </div>
     </div>

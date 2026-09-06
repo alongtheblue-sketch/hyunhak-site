@@ -34,6 +34,17 @@ SAMPLE = {"yonsei-hum": ("단위 강의 3편 480초 배분 발췌", "L1-3"), "yo
           "korea-hum": ("단위 강의 2편 자료해석 1 발췌", "L3-2"), "korea-sci": ("단위 강의 1편 직렬 구조 발췌", "L4-1"), "common": ("공통 풀이 2편 개수 계약 발췌", "L0-2")}
 SAMPLE_ID = {"yonsei-hum": "lec_unit_yonsei-hum_L1-3", "yonsei-sci": "lec_unit_yonsei-sci_L1-5", "yonsei-intl": "lec_unit_yonsei-intl_L2-1",
              "korea-hum": "lec_unit_korea-hum_L3-2", "korea-sci": "lec_unit_korea-sci_L4-1", "common": "lec_common_L0-2"}
+# 2026 기출 해설 세트: 단위 전권마다 그 대학 계열의 기출 세트 하나 (LC-4 ②, 2026-09-06 Codex r5). hyunhak-api src/pay.js GICHUL_SET_OF 와 같은 표
+GICHUL_SET_OF = {"korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl"}
+GICHUL_UNIT = "yeongo-gichul"
+# 맛보기 실길이. make_lecture_samples.py 가 절 시작에서 75초에 가장 가까운 완결 문장 끝까지 자르므로 편마다 1~5초 다르다 (LC-2 A, Codex r5 후속 (i))
+_SMP = json.load(open(os.path.join(ROOT, "assets/video/samples_manifest.json"), encoding="utf-8"))["samples"]
+
+
+def smp_len(code):
+    s = int(round(float(_SMP[code]["length_sec"])))
+    m, r = divmod(s, 60)
+    return f"{m}분 {r}초"
 
 
 def order_svg():
@@ -66,19 +77,20 @@ def fmt_total(sec):
 def by_kind(code):
     return {"unit": [l for l in LECS if l["kind"] == "unit" and l["unit_code"] == code],
             "passage": [l for l in LECS if l["kind"] == "passage" and l["unit_code"] == code],
-            "common": [l for l in LECS if l["kind"] == "common"]}
+            "common": [l for l in LECS if l["kind"] == "common"],
+            "gichul": [l for l in LECS if l["kind"] == "passage" and l["unit_code"] == GICHUL_UNIT and l.get("passage_set_id") == GICHUL_SET_OF.get(code)]}
 
 
 def courses():
     out = []
     for code in ORDER:
         u = UNITS[code]; k = by_kind(code)
-        n = len(k["common"]) + len(k["unit"]) + len(k["passage"])
+        n = len(k["common"]) + len(k["unit"]) + len(k["passage"]) + len(k["gichul"])
         sec = sum((l["duration_sec"] or 0) for g in k.values() for l in g)
         out.append({"code": code, "label": u["label"], "univ": UNIV[code], "track": TRACK[code], "sku": u["sku"], "price": u["price"],
                     "single": u["single_price"], "set_count": u["set_count"], "n": n, "sec": sec, "k": k, "spec": SPEC[code]})
     k = by_kind(None)
-    k["unit"], k["passage"] = [], []
+    k["unit"], k["passage"], k["gichul"] = [], [], []
     sec = sum((l["duration_sec"] or 0) for l in k["common"])
     out.append({"code": "common", "label": COMMON_TX, "univ": "common", "track": "common", "sku": "lecture-common", "price": 220000, "single": None,
                 "set_count": 0, "n": len(k["common"]), "sec": sec, "k": k, "spec": "다섯 단위 공통"})
@@ -188,6 +200,7 @@ CSS_LIST = CSS_COMMON + '''
 .lecp .cr .pr small{display:block;font-family:var(--sans);color:var(--gray);font-weight:400;font-size:var(--t-xs);margin-top:2px}
 @media (max-width:820px){.lecp .cr{grid-template-columns:1fr}.lecp .cr .acts{justify-content:flex-start}}
 .lecp .chips{margin-top:var(--s4)}
+.lecp .chips button[aria-pressed="true"]{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);font-weight:700}   /* 상태 표식은 테두리, 솔리드 채움은 주 행동 하나만 (critic NNN3) */
 .lecp .otgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);margin-top:var(--s4)}
 @media (max-width:820px){.lecp .otgrid{grid-template-columns:1fr}}
 .lecp .poster{position:relative;aspect-ratio:16/9;background:var(--ink);border-radius:var(--r-sm);overflow:hidden;box-shadow:inset 0 0 0 1px var(--hair);display:grid;place-items:center;color:var(--paper);text-align:center;padding:var(--s4)}
@@ -205,7 +218,7 @@ def list_page(cs):
     for i, c in enumerate(cs, 1):
         k = c["k"]
         comp = (f'<span><b>{c["n"]}편</b> 구성, {E(fmt_total(c["sec"]))}</span>'
-                + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}</span>' if c["code"] != "common" else '<span>다섯 단위 공통 절차 4편</span>')
+                + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}, 2026 기출 해설 {len(k["gichul"])}</span>' if c["code"] != "common" else '<span>다섯 단위 공통 절차 4편</span>')
                 + (f'<span class="pub" data-lec-summary="unit={c["code"]}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">{E(SNAP)} 스냅샷 기준 세트 해설 {len(k["passage"])}편</span>' if c["code"] != "common" else f'<span class="pub" data-lec-summary="kind=common" data-total="{len(k["common"])}">{E(SNAP)} 스냅샷 기준 {len(k["common"])}편</span>'))
         pr = (f'<span class="pr">{c["price"]:,}원<small>단위 전권, 인강 포함, 시청 3개월</small></span>' if c["code"] != "common" else f'<span class="pr">{c["price"]:,}원<small>인강만, 시청 3개월</small></span>')
         rows.append(f'''<article class="cr" data-univ="{c["univ"]}" data-track="{c["track"]}">
@@ -226,7 +239,7 @@ def list_page(cs):
     <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>인강</span></nav>
     <span class="eyebrow rv">인강</span>
     <h1 class="rv">풀이법 인강</h1>
-    <p class="lede rv">연세대, 고려대 제시문 면접의 풀이 절차를 강의로 잇습니다. 공통 풀이 4편, 단위 강의, 지문마다 한 편인 세트 해설. 단위 전권 이용권에 포함되고 구매일부터 3개월 시청합니다.</p>
+    <p class="lede rv">연세대, 고려대 제시문 면접의 풀이 절차를 강의로 잇습니다. 공통 풀이 4편, 단위 강의, 지문마다 한 편인 세트 해설, 2026 기출 해설 1편. 단위 전권 이용권에 포함되고 구매일부터 3개월 시청합니다.</p>
     <!-- aeo-slot -->
     <div class="acts rv"><a class="btn" href="#ot">인강 OT 와 맛보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="classroom.html">인강실</a></div>
    </div>
@@ -253,7 +266,7 @@ def list_page(cs):
     <ol class="steps4"><li>공통 풀이 4편을 먼저 다 듣습니다. 두 시간이 안 됩니다.</li><li>내 단위의 단위 강의를 응시 전에 듣습니다.</li><li>응시합니다. 첫 응시는 실전형 한 번, 첨삭을 받습니다.</li><li>그 지문의 세트 해설을 듣고 다시 응시합니다. 지문마다 반복이 30세트 사이클입니다.</li></ol>
     {order_svg()}
     <p style="margin-top:var(--s3);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
-   <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, 1분 15초. 강좌마다 맛보기가 한 편씩 있습니다.</p></div>
+   <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, {smp_len("common")}. 강좌마다 맛보기가 한 편씩 있습니다.</p></div>
   </div>
  </section>
 
@@ -315,12 +328,12 @@ def room_page():
 <div class="wrap" style="padding-bottom:var(--s8)">
  <div id="crView" data-state="loading" aria-live="polite">
   <div data-for="loading"><p class="note">불러오는 중입니다.</p></div>
-  <noscript><div class="ot"><span class="eyebrow">스크립트 필요</span><h3>인강실은 스크립트가 켜진 브라우저에서 열립니다</h3><p>로그인 상태와 시청 기록을 불러오려면 JavaScript 가 필요합니다. 강좌 소개와 맛보기는 스크립트 없이 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div></noscript>
+  <noscript><div class="ot"><span class="eyebrow">스크립트 필요</span><h2>인강실은 스크립트가 켜진 브라우저에서 열립니다</h2><p>로그인 상태와 시청 기록을 불러오려면 JavaScript 가 필요합니다. 강좌 소개와 맛보기는 스크립트 없이 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div></noscript>
   <div data-for="guest">
-   <div class="ot"><span class="eyebrow">로그인 필요</span><h3>인강실은 로그인한 뒤 열립니다</h3><p>산 이용권의 강의와 마지막으로 본 자리를 여기에서 엽니다. 계정이 없으면 먼저 가입하고, 강의를 아직 고르는 중이면 강좌 목록을 보세요.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="join.html">가입</a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
+   <div class="ot"><span class="eyebrow">로그인 필요</span><h2>인강실은 로그인한 뒤 열립니다</h2><p>산 이용권의 강의와 마지막으로 본 자리를 여기에서 엽니다. 계정이 없으면 먼저 가입하고, 강의를 아직 고르는 중이면 강좌 목록을 보세요.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="join.html">가입</a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
    <div class="guest">
-    <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, 1분 15초</p></div>
-    <div class="ot"><span class="eyebrow">인강 OT</span><h3>이 인강을 어떤 순서로 듣나</h3><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인하면 회원 무료 0강으로 목록 맨 위에 있습니다.</p>{order_svg()}<p style="margin-top:var(--s2)"><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
+    <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, {smp_len("common")}</p></div>
+    <div class="ot"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인하면 회원 무료 0강으로 목록 맨 위에 있습니다.</p>{order_svg()}<p style="margin-top:var(--s2)"><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
    </div>
   </div>
   <div data-for="member">
@@ -362,14 +375,14 @@ CSS_DETAIL = CSS_COMMON + '''
 .lecd .sticky{position:sticky;bottom:0;z-index:5;background:rgba(var(--paper-rgb),.96);backdrop-filter:blur(10px);border-top:var(--rule-strong);padding:10px 0;display:none}
 .lecd .sticky .in{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .lecd .sticky .pr{font-family:var(--mono);font-weight:500;color:var(--seal)}
-@media (max-width:820px){.lecd .sticky{display:block;bottom:calc(72px + env(safe-area-inset-bottom))}.lecd .sticky.off{display:none}}
+@media (max-width:820px){.lecd .sticky{display:block;position:fixed;left:0;right:0;bottom:calc(72px + env(safe-area-inset-bottom))}.lecd .sticky.off{display:none}body.lecd footer .wrap{padding-bottom:64px}}   /* 푸터까지 내려도 구매 경로가 남는다 (critic NNN4). 푸터 끝 줄은 바 높이만큼 띄운다 */
 '''
 
 
-def toc_rows(ls, sample_id, label_n=None, start=1, strip=None):
+def toc_rows(ls, sample_id, label_n=None, start=1, strip=None, noseq=False):
     out = []
     for i, l in enumerate(ls, start):
-        n = f"{l['seq'] or i:0>2}"   # D1 seq 그대로 (뷰어·인강실·맛보기 문구와 같은 번호. 결번은 인문/자연 트랙 분기의 사실)
+        n = f"{i:0>2}" if noseq else f"{l['seq'] or i:0>2}"   # D1 seq 그대로 (뷰어·인강실·맛보기 문구와 같은 번호. 결번은 인문/자연 트랙 분기의 사실). 기출 그룹은 단위 밖 순번이라 안 쓴다
         t, s2 = l["title"], l.get("subtitle") or ""
         if strip and l["kind"] == "passage" and s2:   # 세트 해설은 주제를 표제로, 정형구(단위명 NN번 세트 해설 강의)는 보조행으로
             t, s2 = s2, l["title"].replace(strip, "", 1)
@@ -415,6 +428,8 @@ def detail_page(c, cs):
         _seqs = [l["seq"] for l in k["unit"] if l.get("seq")]
         _gap = bool(_seqs) and (max(_seqs) - min(_seqs) + 1) != len(_seqs)   # 결번 = 인문/자연 트랙 분기(같은 번호 체계에서 다른 트랙 편)
         groups.append(group("단위 강의", f"구성 <b>{len(k['unit'])}</b>, {E(c['label'])}만" + (", 번호는 트랙 공통 순번이라 다른 트랙 편은 비어 있습니다" if _gap else ""), toc_rows(k["unit"], sid)))
+        if k["gichul"]:
+            groups.append(group("2026 기출 해설", f'구성 <b>{len(k["gichul"])}</b>, {E(c["label"])} 2026 기출 지문의 실전 해설. 단위 전권에 포함', toc_rows(k["gichul"], sid, noseq=True)))
         head, rest = k["passage"][:6], k["passage"][6:]
         rows = toc_rows(head, sid, strip=c["label"] + " ") + (f'<div class="tocmore" id="tocMore" role="presentation">{toc_rows(rest, sid, start=len(head) + 1, strip=c["label"] + " ")}</div>' if rest else "")
         after = (f'<p class="tocfold"><button type="button" class="tlink" data-tocmore aria-expanded="false" aria-controls="tocMore">세트 해설 {len(k["passage"])}편 전체 보기 <span class="ar" aria-hidden="true">→</span></button></p>' if rest else "")
@@ -427,14 +442,14 @@ def detail_page(c, cs):
  <nav class="crumb" aria-label="위치" style="padding-top:var(--s3)"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="../lectures.html">인강</a><span aria-hidden="true">/</span><span>{E(c["label"])}</span></nav>
  <div class="hero2">
   <div class="hcopy"><span class="eyebrow">{"공통 풀이" if is_common else "풀이법 인강"}</span><h1>{E(label)}</h1><p class="meta">{meta}</p><p class="lede">{E(INTRO[code][0].split(". ")[0])}.</p>{buy}</div>
-  <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline><source src="../assets/video/sample_{code}.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, 1분 15초. 로그인 없이 봅니다.</p></div>
+  <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline><source src="../assets/video/sample_{code}.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, {smp_len(code)}. 로그인 없이 봅니다.</p></div>
    <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다.</p>{order_svg()}<p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
  </div>
  <!-- aeo-slot -->
 </div>
 <div class="wrap">
  <nav class="anch" aria-label="지면 차례"><a href="#toc" aria-current="true"><b>卷一</b>강의 목차</a><a href="#intro"><b>卷二</b>이 인강은</a><a href="#faq"><b>卷三</b>묻는 것</a><a href="#plan" class="pl"><b>{"공통 풀이" if is_common else "단위 전권"}</b>{c["price"]:,}원</a></nav>
- <section class="page" id="toc"><p class="folio"><b>卷一</b><span>강의 목차</span><span class="r">1</span></p><h2 class="t">{c["n"]}편, {"한 묶음" if is_common else "세 묶음"}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
+ <section class="page" id="toc"><p class="folio"><b>卷一</b><span>강의 목차</span><span class="r">1</span></p><h2 class="t">{c["n"]}편, {"한 묶음" if is_common else ("네 묶음" if k["gichul"] else "세 묶음")}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
  <section class="page" id="intro"><p class="folio"><b>卷二</b><span>이 인강은</span><span class="r">2</span></p><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + "을 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><p class="folio"><b>卷三</b><span>묻는 것</span><span class="r">3</span></p><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
@@ -447,13 +462,17 @@ def detail_page(c, cs):
     script = f'''<script>
 (function(){{ if(!window.LEC) return; var S=["{E(sid)}"]; LEC.paintSummaries(document);
   var code={"null" if is_common else '"' + code + '"'};
-  Promise.all([code?LEC.pub(code):Promise.resolve(null), LEC.mine()]).then(function(r){{ var pubList=r[0], mineList=r[1];
+  Promise.all([code?LEC.pub(code):Promise.resolve(null), LEC.mine(), code?LEC.pubGichul(code):Promise.resolve(null)]).then(function(r){{ var pubList=r[0], mineList=r[1]; if(pubList&&r[2]) pubList=pubList.concat(r[2]);
     if(!code){{ LEC.paintRows(document, null, mineList, S); return; }}
     LEC.paintRows(document, pubList, mineList, S); }});
   var more=document.getElementById('tocMore'), fb=document.querySelector('[data-tocmore]');
   if(more&&fb){{ more.hidden=true; fb.addEventListener('click',function(){{ var open=more.hidden; more.hidden=!open; fb.setAttribute('aria-expanded', open?'true':'false'); fb.firstChild.textContent = open ? '세트 해설 접기 ' : fb.getAttribute('data-label'); }}); fb.setAttribute('data-label', fb.firstChild.textContent); }}
   var links=[].slice.call(document.querySelectorAll('.anch a[href^="#"]')).filter(function(a){{ return a.getAttribute('href')!=='#plan'; }}), secs=links.map(function(a){{ return document.querySelector(a.getAttribute('href')); }}), bar=document.querySelector('.anch');
-  function spy(){{ var off=(bar?bar.getBoundingClientRect().bottom:120)+8, cur=0; secs.forEach(function(s,i){{ if(s&&s.getBoundingClientRect().top<=off) cur=i; }}); links.forEach(function(a,i){{ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }}); }}
+  var hold=0;
+  function setCur(cur){{ links.forEach(function(a,i){{ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }}); }}
+  // 착지 임계: 절 top 은 scroll-margin(바 아래 56px) 에 서므로 바 아래 16px 까지를 현재 절로 본다. 클릭 뒤 0.8초는 클릭한 절로 고정한다 (critic NNN2)
+  function spy(){{ if(Date.now()<hold) return; var off=(bar?bar.getBoundingClientRect().bottom:120)+16, cur=0; secs.forEach(function(s,i){{ if(s&&s.getBoundingClientRect().top<=off) cur=i; }}); setCur(cur); }}
+  links.forEach(function(a,i){{ a.addEventListener('click', function(){{ setCur(i); hold=Date.now()+800; setTimeout(function(){{ hold=0; spy(); }}, 850); }}); }});
   window.addEventListener('scroll', spy, {{passive:true}}); spy();
   var plan=document.getElementById('plan'), stk=document.querySelector('.sticky');
   if(plan&&stk&&'IntersectionObserver' in window){{ new IntersectionObserver(function(es){{ stk.classList.toggle('off', es[0].isIntersecting); }}, {{threshold:0.2}}).observe(plan); }}

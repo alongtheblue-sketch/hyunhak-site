@@ -270,16 +270,16 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
   <div class="wrap">
     <div class="g">
       <div>
-        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <h2>현학적 연구소 <span class="han">玄學的 硏究所</span></h2>
         <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
-        <h4>바로가기</h4>
+        <h2>바로가기</h2>
         <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="lectures.html">인강</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
       </div>
       <div>
-        <h4>고객센터</h4>
+        <h2>고객센터</h2>
         <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
@@ -368,6 +368,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     var units=[]; try{ units=((await (await fetch('assets/data/sets.json')).json()).units||[]).filter(function(u){return !/-mirae-/.test(u.sku||'')}); }catch(e){}
     var UNIT_OF=[[/^korea_2027_h/,'korea-hum'],[/^korea_2027_s/,'korea-sci'],[/^yonsei_2027_h/,'yonsei-hum'],[/^yonsei_2027_s/,'yonsei-sci'],[/^yonsei_intl_2027_i/,'yonsei-intl']];
     function unitOfSet(id){ for(var i=0;i<UNIT_OF.length;i++) if(UNIT_OF[i][0].test(String(id||''))) return UNIT_OF[i][1]; return null; }
+    var GICHUL_OF={'korea-hum':1,'korea-sci':1,'yonsei-hum':1,'yonsei-sci':1,'yonsei-intl':1};   // 단위 전권마다 2026 기출 해설 1편 (LC-4 ②, 2026-09-06)
     function unitOf(code){ return units.find(function(u){return u.code===code})||null; }
     function setOf(id){ for(var i=0;i<units.length;i++){ var hit=(units[i].sets||[]).find(function(x){return x.id===id}); if(hit) return {set:hit,unit:units[i]}; } return null; }
     function until(e){ return e&&e.expires_at ? esc(String(e.expires_at).slice(0,10))+' 까지' : ''; }
@@ -391,7 +392,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     codes.forEach(function(c,i){
       var u=unitOf(c), sm=sums[i], total=u?u.set_count:30;
       cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의</p>'
-        +'<p class="st">'+(sm?esc(lecText(sm.ready||0,total)):'공개 편수를 지금 확인할 수 없습니다')+(until(owned[c])?', '+until(owned[c]):'')+'</p></div>'
+        +'<p class="st">'+(sm?esc(lecText(sm.ready||0,total)):'공개 편수를 지금 확인할 수 없습니다')+(GICHUL_OF[c]?', 2026 기출 해설 1편':'')+(until(owned[c])?', '+until(owned[c]):'')+'</p></div>'
         +'<div class="ops"><a class="btn sm" href="lecture.html?unit='+encodeURIComponent(c)+'">강의 목록</a><a class="btn ghost sm" href="studio.html?unit='+encodeURIComponent(c)+'">지문 목록</a></div></div>');
     });
     var ssums=await Promise.all(setIds.map(function(id){ return HH.api('/api/lectures/summary?set='+encodeURIComponent(id)+'&kind=passage').catch(function(){return null}); }));

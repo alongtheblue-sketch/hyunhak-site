@@ -14,6 +14,10 @@
   var okSetId = window.HH.okSetId, okUnit = window.HH.okUnit, intIn = window.HH.intIn;
   var UNIT_OF = [[/^korea_2027_h/, "korea-hum"], [/^korea_2027_s/, "korea-sci"], [/^yonsei_2027_h/, "yonsei-hum"], [/^yonsei_2027_s/, "yonsei-sci"], [/^yonsei_intl_2027_i/, "yonsei-intl"]];
   function unitOfSet(id) { if (!okSetId(id)) return null; for (var i = 0; i < UNIT_OF.length; i++) if (UNIT_OF[i][0].test(String(id))) return UNIT_OF[i][1]; return null; }
+  // 2026 기출 해설 1편 = 단위 전권에 일대일 편입 (LC-4 ②, 2026-09-06). 단위 그룹 안에 그 대학 계열 편 하나. 여섯 번째 단위 축은 만들지 않는다. hyunhak-api pay.js 와 같은 표
+  var GICHUL_UNIT = "yeongo-gichul", GICHUL_OF = { "korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl" };
+  function gichulOf(l, code) { return l.unit_code === GICHUL_UNIT && l.passage_set_id === GICHUL_OF[code]; }
+  function isGichul(l) { return l.unit_code === GICHUL_UNIT && Object.keys(GICHUL_OF).some(function (c) { return GICHUL_OF[c] === l.passage_set_id; }); }
   var rawSet = params.get("set"), rawUnit = params.get("unit");
   var setParam = okSetId(rawSet) ? rawSet : null;
   var unitParam = okUnit(rawUnit) ? rawUnit : (setParam ? unitOfSet(setParam) : null);
@@ -131,6 +135,7 @@
     var common = all.filter(function (l) { return l.kind === "common"; });
     var unitLecs = all.filter(function (l) { return l.kind === "unit" && l.unit_code === unit; });
     var pass = all.filter(function (l) { return l.kind === "passage" && l.unit_code === unit; });
+    var gich = all.filter(function (l) { return gichulOf(l, unit); });
     var sets = u ? u.sets.slice() : [];
     if (setParam) {
       sets = sets.filter(function (s2) { return s2.id === setParam; });
@@ -198,7 +203,7 @@
     var common = all.filter(function (l) { return l.kind === "common"; });
     if (common.length) html += group("공통 강의", cnt(common.filter(function (l) { return l.status === "ready"; }).length, common.filter(function (l) { return l.status !== "ready"; }).length), "", common.map(function (l, i) { return row(l, num2(l.seq || i + 1), null); }).join(""));
     codes.forEach(function (c) {
-      var ls = all.filter(function (l) { return l.unit_code === c; });
+      var ls = all.filter(function (l) { return l.unit_code === c || gichulOf(l, c); });
       var u = units.find(function (x) { return x.code === c; });
       if (!ls.length) return;
       ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
@@ -244,7 +249,7 @@
       }
       var ls = st.lectures.slice();
       ls.sort(function (a, b) { return (a.kind === "unit" ? 0 : 1) - (b.kind === "unit" ? 0 : 1) || (a.seq || 0) - (b.seq || 0); });
-      var rdy = passageOf(ls).filter(isReady).length;
+      var rdy = passageOf(ls).filter(isReady).filter(function (l) { return l.unit_code !== GICHUL_UNIT; }).length;   // 세트 30편 모수에 기출 1편을 섞지 않는다
       var body = ls.length ? ls.map(function (l, i) { return row(l, num2(l.seq || i + 1), u.code); }).join("")
         : '<p class="note">공개된 해설 강의가 아직 없습니다. 단위 전체 보기에서 준비 중 슬롯을 봅니다.</p>';
       html += group(esc(u.label), cnt(rdy, Math.max(0, total - rdy)), more, body);
@@ -254,6 +259,13 @@
   // 5 단위 공개 목록 병렬 조회. 단위별 {code, ok, lectures} 를 그대로 들고 온다 (Codex r2 #20).
   // 하나가 200 이라고 나머지 단위를 정상으로 보지 않는다. 허용 단위 5종 밖의 unit_code 는 여기서 버린다
   function publicAll(codes) {
+    return Promise.all([publicAllUnits(codes), apiFetch("/api/lectures/public?unit=" + GICHUL_UNIT).catch(function () { return { _status: 0 }; })]).then(function (r) {
+      var states = r[0], g = r[1] && r[1]._status === 200 && Array.isArray(r[1].lectures) ? r[1].lectures : [];
+      states.forEach(function (s2) { if (!s2.ok) return; g.forEach(function (l) { if (gichulOf(l, s2.code)) s2.lectures.push(l); }); });
+      return states;
+    });
+  }
+  function publicAllUnits(codes) {
     return Promise.all(codes.map(function (c) {
       return apiFetch("/api/lectures/public?unit=" + encodeURIComponent(c))
         .catch(function () { return { _status: 0 }; })
@@ -278,8 +290,9 @@
       apiFetch("/api/lectures").catch(function () { return { _status: 0 }; }),
       loadSets(),
       unitParam ? apiFetch("/api/lectures/public?unit=" + encodeURIComponent(unitParam)).catch(function () { return { _status: 0 }; }) : Promise.resolve(null),
+      unitParam && GICHUL_OF[unitParam] ? apiFetch("/api/lectures/public?unit=" + GICHUL_UNIT).catch(function () { return { _status: 0 }; }) : Promise.resolve(null),
     ]).then(function (res) {
-      var mine = res[0], units = res[1], pubd = res[2];
+      var mine = res[0], units = res[1], pubd = res[2], pubg = res[3];
       var loggedIn = mine._status === 200;   // 200 만 회원 목록으로 인정한다. 5xx 를 로그인 성공으로 읽지 않는다
       if (!loggedIn && !unitParam) {
         // 회원 목록이 없으면 공개 목록으로 내려간다 (로그인 면으로 튕기지 않는다)
@@ -293,10 +306,11 @@
       // 병합: id 기준. 공개 목록은 status 원천, 회원 목록은 entitled 와 progress 원천
       var byId = {};
       (pubList || []).forEach(function (l) { byId[l.id] = Object.assign({}, l, { entitled: false }); });
+      if (pubg && pubg._status === 200) (pubg.lectures || []).forEach(function (l) { if (gichulOf(l, unitParam)) byId[l.id] = Object.assign({}, l, { entitled: false }); });
       mineList.forEach(function (l) { byId[l.id] = Object.assign(byId[l.id] || {}, l); });
       // 허용 단위 5종 밖의 unit_code 는 버린다. 미래캠 노출 경로를 열지 않는다 (Codex r1 #2)
       var all = Object.keys(byId).map(function (k) { return byId[k]; })
-        .filter(function (l) { return !l.unit_code || okUnit(l.unit_code); });
+        .filter(function (l) { return !l.unit_code || okUnit(l.unit_code) || isGichul(l); });   // 기출은 단위 전권에 묶인 세트만 (미래캠 노출 경로는 그대로 닫힘)
       if (unitParam) renderUnitView(unitParam, all, units, loggedIn, pubMissing);
       else renderAllView(all, units, loggedIn);
     }).catch(function (e) { console.error(e); view.innerHTML = '<div class="notice"><h2>목록을 불러오지 못했습니다</h2><p>잠시 후 다시 시도해 주세요.</p></div>'; });

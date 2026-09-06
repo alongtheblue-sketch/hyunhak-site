@@ -1,0 +1,6 @@
+{"common":{"stem":"L0-2_개수계약","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0},
+ "yonsei-hum":{"stem":"L1-3_480초배분","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0},
+ "yonsei-sci":{"stem":"L1-5_자연밑줄기준","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0},
+ "yonsei-intl":{"stem":"L2-1_층위차이","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0},
+ "korea-hum":{"stem":"L3-2_자료해석1_표","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0},
+ "korea-sci":{"stem":"L4-1_직렬구조","section":1,"target_sec":75,"tol_sec":5,"poster_offset_sec":1.0}}

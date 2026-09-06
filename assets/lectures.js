@@ -8,6 +8,9 @@
   var HH = window.HH;
   var P = (document.body.getAttribute("data-p") || "");   // 하위 디렉토리 면은 "../"
   var UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl"];
+  // 2026 기출 해설 1편 = 단위 전권에 일대일 편입 (LC-4 ②, 2026-09-06). 단위 카드 안에 그 대학 계열 편 하나만 얹고 여섯 번째 단위는 만들지 않는다. hyunhak-api pay.js 와 같은 표
+  var GICHUL_UNIT = "yeongo-gichul", GICHUL_OF = { "korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl" };
+  function gichulOf(l, code) { return l.unit_code === GICHUL_UNIT && l.passage_set_id === GICHUL_OF[code]; }
   function okUnit(v) { return UNITS.indexOf(String(v == null ? "" : v)) >= 0; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function n0(v, hi) { var n = Number(v); if (!isFinite(n) || n < 0) return 0; n = Math.trunc(n); return hi != null && n > hi ? hi : n; }
@@ -40,6 +43,13 @@
       .then(function (d) { return Array.isArray(d.lectures) ? d.lectures : null; })
       .catch(function () { delete _pub[code]; return null; });
     return _pub[code];
+  }
+  // 기출 해설 공개 목록에서 그 단위에 묶인 편 하나만 (공개 API 는 unit_code 로만 거른다)
+  function pubGichul(code) {
+    if (!GICHUL_OF[code]) return Promise.resolve(null);
+    return HH.api("/api/lectures/public?unit=" + GICHUL_UNIT)
+      .then(function (d) { return Array.isArray(d.lectures) ? d.lectures.filter(function (l) { return gichulOf(l, code); }) : null; })
+      .catch(function () { return null; });
   }
   function summary(q) {
     if (_sum[q]) return _sum[q];
@@ -145,7 +155,7 @@
         }
         if (common.length && common.some(function (l) { return l.entitled; })) cards.push(card("common", "공통 풀이", common, commonEnt, P + "lecture.html"));   // 권리 없는 회원은 none 상태로
         us.forEach(function (u) {
-          var ls = all.filter(function (l) { return l.unit_code === u.code; });
+          var ls = all.filter(function (l) { return l.unit_code === u.code || gichulOf(l, u.code); });
           if (!ls.some(function (l) { return l.entitled; })) return;
           cards.push(card(u.code, u.label + " 풀이법 인강", ls, owned[u.code], P + "lecture.html?unit=" + encodeURIComponent(u.code)));
         });
@@ -178,5 +188,5 @@
     var cnt = 0; try { cnt = HH.cart().filter(function (x) { return x.sku === el.dataset.cartSku; }).reduce(function (s, x) { return s + (x.qty || 1); }, 0); } catch (e) {}
     msg.innerHTML = '담았습니다' + (cnt > 1 ? ' (' + cnt + '개)' : '') + '. <a href="' + P + 'cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a>';
   });
-  window.LEC = { units: units, pub: pub, summary: summary, mine: mine, paintRows: paintRows, paintSummaries: paintSummaries, classroom: classroom, fmt: fmt, statusText: statusText, esc: esc, okUnit: okUnit, P: P };
+  window.LEC = { units: units, pub: pub, pubGichul: pubGichul, summary: summary, mine: mine, paintRows: paintRows, paintSummaries: paintSummaries, classroom: classroom, fmt: fmt, statusText: statusText, esc: esc, okUnit: okUnit, P: P };
 })();

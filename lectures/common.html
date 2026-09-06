@@ -104,7 +104,7 @@
 .lecd .sticky{position:sticky;bottom:0;z-index:5;background:rgba(var(--paper-rgb),.96);backdrop-filter:blur(10px);border-top:var(--rule-strong);padding:10px 0;display:none}
 .lecd .sticky .in{display:flex;justify-content:space-between;align-items:center;gap:12px}
 .lecd .sticky .pr{font-family:var(--mono);font-weight:500;color:var(--seal)}
-@media (max-width:820px){.lecd .sticky{display:block;bottom:calc(72px + env(safe-area-inset-bottom))}.lecd .sticky.off{display:none}}
+@media (max-width:820px){.lecd .sticky{display:block;position:fixed;left:0;right:0;bottom:calc(72px + env(safe-area-inset-bottom))}.lecd .sticky.off{display:none}body.lecd footer .wrap{padding-bottom:64px}}   /* 푸터까지 내려도 구매 경로가 남는다 (critic NNN4). 푸터 끝 줄은 바 높이만큼 띄운다 */
 
 </style>
 </head>
@@ -148,7 +148,7 @@
 <div class="acts"><button type="button" class="btn" data-cart-sku="lecture-common" data-cart-title="공통 풀이 인강" data-cart-price="220000">담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
 <p class="alt">응시까지 하려면 단위 전권 495,000원에 이 4편이 들어 있습니다. <a href="../studio.html#plans">이용권 세 가지</a></p></div></div>
-  <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_common.jpg" playsinline><source src="../assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, 1분 15초. 로그인 없이 봅니다.</p></div>
+  <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_common.jpg" playsinline><source src="../assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, 1분 14초. 로그인 없이 봅니다.</p></div>
    <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다.</p><svg class="order" viewBox="0 0 672 132" role="img" aria-label="듣는 순서. 공통 풀이 4편, 단위 강의, 응시, 세트 해설, 그리고 다시 응시. 응시와 세트 해설을 지문마다 반복한다" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="34" width="144" height="64" rx="4"/><text class="k" x="20" y="52">1</text><text x="20" y="72">공통 풀이</text><text class="sub" x="20" y="89">4편, 먼저 전부</text><path d="M154 66h20m-6-5 6 5-6 5" /><rect x="176" y="34" width="144" height="64" rx="4"/><text class="k" x="188" y="52">2</text><text x="188" y="72">단위 강의</text><text class="sub" x="188" y="89">내 단위만, 응시 전</text><path d="M322 66h20m-6-5 6 5-6 5" /><rect x="344" y="34" width="144" height="64" rx="4"/><text class="k" x="356" y="52">3</text><text x="356" y="72">응시</text><text class="sub" x="356" y="89">실전형 1회, 첨삭</text><path d="M490 66h20m-6-5 6 5-6 5" /><rect x="512" y="34" width="144" height="64" rx="4"/><text class="k" x="524" y="52">4</text><text x="524" y="72">세트 해설</text><text class="sub" x="524" y="89">그 지문 1편, 응시 뒤</text><path class="loop" d="M584 98v14c0 6-4 10-10 10H426c-6 0-10-4-10-10v-14m0 0-5 6m5-6 5 6" stroke-dasharray="3 4"/></g><text class="k" x="500" y="128" text-anchor="middle">다시 응시, 지문마다 반복</text></svg><p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
  </div>
  <!-- aeo-slot -->
@@ -170,16 +170,16 @@
   <div class="wrap">
     <div class="g">
       <div>
-        <h4>현학적 연구소 <span class="han">玄學的 硏究所</span></h4>
+        <h2>현학적 연구소 <span class="han">玄學的 硏究所</span></h2>
         <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
         <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
-        <h4>바로가기</h4>
+        <h2>바로가기</h2>
         <ul><li><a href="../guidebook/index.html">가이드북</a></li><li><a href="../studio.html">제시문 면접 스튜디오</a></li><li><a href="../lectures.html">인강</a></li><li><a href="../library.html">자료실</a></li><li><a href="../about.html">연구소</a></li></ul>
       </div>
       <div>
-        <h4>고객센터</h4>
+        <h2>고객센터</h2>
         <ul><li><a href="../support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="../faq.html">자주 묻는 질문</a></li><li><a href="../notice.html">공지</a></li><li><a href="../terms.html">환불 규정</a></li></ul>
       </div>
     </div>
@@ -193,13 +193,17 @@
 <script>
 (function(){ if(!window.LEC) return; var S=["lec_common_L0-2"]; LEC.paintSummaries(document);
   var code=null;
-  Promise.all([code?LEC.pub(code):Promise.resolve(null), LEC.mine()]).then(function(r){ var pubList=r[0], mineList=r[1];
+  Promise.all([code?LEC.pub(code):Promise.resolve(null), LEC.mine(), code?LEC.pubGichul(code):Promise.resolve(null)]).then(function(r){ var pubList=r[0], mineList=r[1]; if(pubList&&r[2]) pubList=pubList.concat(r[2]);
     if(!code){ LEC.paintRows(document, null, mineList, S); return; }
     LEC.paintRows(document, pubList, mineList, S); });
   var more=document.getElementById('tocMore'), fb=document.querySelector('[data-tocmore]');
   if(more&&fb){ more.hidden=true; fb.addEventListener('click',function(){ var open=more.hidden; more.hidden=!open; fb.setAttribute('aria-expanded', open?'true':'false'); fb.firstChild.textContent = open ? '세트 해설 접기 ' : fb.getAttribute('data-label'); }); fb.setAttribute('data-label', fb.firstChild.textContent); }
   var links=[].slice.call(document.querySelectorAll('.anch a[href^="#"]')).filter(function(a){ return a.getAttribute('href')!=='#plan'; }), secs=links.map(function(a){ return document.querySelector(a.getAttribute('href')); }), bar=document.querySelector('.anch');
-  function spy(){ var off=(bar?bar.getBoundingClientRect().bottom:120)+8, cur=0; secs.forEach(function(s,i){ if(s&&s.getBoundingClientRect().top<=off) cur=i; }); links.forEach(function(a,i){ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }); }
+  var hold=0;
+  function setCur(cur){ links.forEach(function(a,i){ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }); }
+  // 착지 임계: 절 top 은 scroll-margin(바 아래 56px) 에 서므로 바 아래 16px 까지를 현재 절로 본다. 클릭 뒤 0.8초는 클릭한 절로 고정한다 (critic NNN2)
+  function spy(){ if(Date.now()<hold) return; var off=(bar?bar.getBoundingClientRect().bottom:120)+16, cur=0; secs.forEach(function(s,i){ if(s&&s.getBoundingClientRect().top<=off) cur=i; }); setCur(cur); }
+  links.forEach(function(a,i){ a.addEventListener('click', function(){ setCur(i); hold=Date.now()+800; setTimeout(function(){ hold=0; spy(); }, 850); }); });
   window.addEventListener('scroll', spy, {passive:true}); spy();
   var plan=document.getElementById('plan'), stk=document.querySelector('.sticky');
   if(plan&&stk&&'IntersectionObserver' in window){ new IntersectionObserver(function(es){ stk.classList.toggle('off', es[0].isIntersecting); }, {threshold:0.2}).observe(plan); }
