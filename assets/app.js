@@ -32,6 +32,8 @@
   }
   // localStorage 는 사용자가 고칠 수 있다. 읽는 즉시 스키마를 강제해 화면과 주문 body 양쪽을 지킨다.
   // 규격에 안 맞는 줄은 통째로 버린다 (수량에 문자열이 박혀 innerHTML 로 흘러가는 경로 차단)
+  // 1개 한정 SKU (서버 pay.js: digital_file, bundle_view, bundle_file, lecture_common 은 qty≠1 → 400). cart.html single() 과 같은 집합
+  const SINGLE_SKU = /^(guide-(all-view|all-pdf|.+-pdf)|lecture-common)$/;
   function normLine(x) {
     if (!x || typeof x !== "object" || Array.isArray(x)) return null;
     const sku = String(x.sku == null ? "" : x.sku);
@@ -46,7 +48,7 @@
     // set_id 는 낱권에만 붙는다. 서버가 다른 상품의 set_id 를 400 으로 막으므로 조작된 줄 하나가
     // 주문 전체를 떨어뜨리지 않게 여기서 떼어 낸다
     if (line.sku === "passage-single" && okSetId(x.set_id)) line.set_id = String(x.set_id);
-    if (line.set_id) line.qty = 1;   // 세트 결속 낱권은 줄마다 수량 1 (서버가 강제한다)
+    if (line.set_id || SINGLE_SKU.test(line.sku)) line.qty = 1;   // 세트 결속 낱권과 1개 한정 상품(소장판, 전권 번들, 공통 풀이 인강)은 수량 1 (서버가 400 으로 강제한다)
     return line;
   }
   function rawCart() {
@@ -82,7 +84,8 @@
     const items = cart();
     const hit = items.find((x) => sameLine(x, line));
     if (hit) {
-      hit.qty = line.set_id ? 1 : intIn(hit.qty + intIn(item.qty, 1, LINE_MAX, 1), 1, LINE_MAX, 1);
+      if (line.set_id || SINGLE_SKU.test(line.sku)) return { ok: true, already: true, message: "이미 담겨 있습니다. 이 상품은 1개만 구매합니다." };   // 수량 증가 없음, 결제 400 예방
+      hit.qty = intIn(hit.qty + intIn(item.qty, 1, LINE_MAX, 1), 1, LINE_MAX, 1);
       saveCart(items);
       trackAdd(line);
       return { ok: true };

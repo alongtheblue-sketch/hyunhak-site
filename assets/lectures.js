@@ -123,8 +123,9 @@
         var owned = {};
         ents.forEach(function (e) { var m = e._meta || {}; if (m.unit_code && okUnit(m.unit_code)) { if (!owned[m.unit_code] || String(e.expires_at || "") > String(owned[m.unit_code].expires_at || "")) owned[m.unit_code] = e; } });
         var common = all.filter(function (l) { return l.kind === "common"; });
-        var commonEnt = ents.find(function (e) { return (e._meta || {}).scope === "common" || !((e._meta || {}).unit_code || (e._meta || {}).set_id); })
-          || Object.keys(owned).map(function (k) { return owned[k]; }).sort(function (a, b) { return String(b.expires_at || "").localeCompare(String(a.expires_at || "")); })[0] || null;   // 단위 전권 권리도 공통 접근을 준다 (pay.js). 만료일은 가장 늦은 것
+        var commonCands = ents.filter(function (e) { return (e._meta || {}).scope === "common" || !((e._meta || {}).unit_code || (e._meta || {}).set_id); })
+          .concat(Object.keys(owned).map(function (k) { return owned[k]; }));   // 직접 공통 권리 + 단위 전권 권리(공통 접근 포함, pay.js). 중첩 구매 시 둘 다 후보
+        var commonEnt = commonCands.sort(function (a, b) { return String(b.expires_at || "9999").localeCompare(String(a.expires_at || "9999")); })[0] || null;   // 만료 없음 > 가장 늦은 만료
         var cards = [], recent = [];
         all.forEach(function (l) { if (l.progress && l.progress.updated_at) recent.push(l); });
         recent.sort(function (a, b) { return String(b.progress.updated_at).localeCompare(String(a.progress.updated_at)); });
@@ -173,6 +174,7 @@
     if (!msg) { msg = document.createElement("p"); msg.className = "cartmsg note"; msg.setAttribute("role", "status"); msg.setAttribute("aria-live", "polite"); box.insertAdjacentElement("afterend", msg); }
     if (!r.ok) { msg.textContent = r.message || "담지 못했습니다."; return; }
     if (HH.updateNav) { try { HH.updateNav(); } catch (e) {} }
+    if (r.already) { msg.innerHTML = esc(r.message) + ' <a href="' + P + 'cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a>'; return; }
     var cnt = 0; try { cnt = HH.cart().filter(function (x) { return x.sku === el.dataset.cartSku; }).reduce(function (s, x) { return s + (x.qty || 1); }, 0); } catch (e) {}
     msg.innerHTML = '담았습니다' + (cnt > 1 ? ' (' + cnt + '개)' : '') + '. <a href="' + P + 'cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a>';
   });

@@ -159,7 +159,7 @@ CSS_COMMON = '''/* 인강 상품면 공용 (2026-09-06). 크기는 토큰만, �
 .lec2 .anch a:hover{color:var(--ink)}
 @media (max-width:900px){.lec2 .anch{top:var(--hd-h-sm)}.lec2 .anch a{padding:0 10px}}
 .lec2 .anch a,.lec2 .anch a b{flex:0 0 auto}
-@media (max-width:480px){.lec2 .anch{gap:2px}.lec2 .anch a{padding:0 8px}.lec2 .anch a.pl b{display:none}}   /* 4항목이 한 줄(350px)에 들게. 가격 항목은 값만 */
+@media (max-width:480px){.lec2 .anch{gap:2px}.lec2 .anch a{padding:0 8px}.lec2 .anch a.pl{gap:0}.lec2 .anch a.pl b{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}}   /* 4항목이 한 줄(350px)에 들게. 가격 항목 상품명은 시각만 숨김(접근성 이름 유지) */
 @media (max-width:400px){.lec2 .anch{gap:0}.lec2 .anch a{font-size:12px}.lec2 .anch a b{font-size:10px}}
 @media (max-width:820px){body.lec2 .fix a.cta{background:transparent;color:var(--gray)}}   /* 인강 면은 폴드 안 솔리드 행동 1개. 모바일 바 가이드북 채움 강등 */   /* 좁은 폭에서 항목이 수축해 卷 표식 b 폭이 0 이 되어 라벨 위에 겹쳐 그려짐 (Stage 3 실측 390: b 폭 0). 수축 금지, 넘치면 overflow-x 로 */
 .lec2 .tocmore[hidden]{display:none}
@@ -411,7 +411,9 @@ def detail_page(c, cs):
         groups.append(group("공통 풀이", f"구성 <b>{len(k['common'])}</b>", toc_rows(k["common"], sid)))
     else:
         groups.append(group("공통 풀이", f"구성 <b>{len(k['common'])}</b>, 다섯 단위 공통", toc_rows(k["common"], sid), f'<a class="tlink" href="common.html">공통 풀이 인강 면</a>'))
-        groups.append(group("단위 강의", f"구성 <b>{len(k['unit'])}</b>, {E(c['label'])}만", toc_rows(k["unit"], sid)))
+        _seqs = [l["seq"] for l in k["unit"] if l.get("seq")]
+        _gap = bool(_seqs) and (max(_seqs) - min(_seqs) + 1) != len(_seqs)   # 결번 = 인문/자연 트랙 분기(같은 번호 체계에서 다른 트랙 편)
+        groups.append(group("단위 강의", f"구성 <b>{len(k['unit'])}</b>, {E(c['label'])}만" + (", 번호는 트랙 공통 순번이라 다른 트랙 편은 비어 있습니다" if _gap else ""), toc_rows(k["unit"], sid)))
         head, rest = k["passage"][:6], k["passage"][6:]
         rows = toc_rows(head, sid, strip=c["label"] + " ") + (f'<div class="tocmore" id="tocMore" role="presentation">{toc_rows(rest, sid, start=len(head) + 1, strip=c["label"] + " ")}</div>' if rest else "")
         after = (f'<p class="tocfold"><button type="button" class="tlink" data-tocmore aria-expanded="false" aria-controls="tocMore">세트 해설 {len(k["passage"])}편 전체 보기 <span class="ar" aria-hidden="true">→</span></button></p>' if rest else "")
