@@ -39,6 +39,13 @@ s, h, b = get("/my.html"); chk("my.html noindex", "noindex" in h.get("X-Robots-T
 s, h, b = get("/없는페이지"); chk("404 페이지", s == 404, f"{s}")
 s, h, b = get("/_tools/seo_manifest.json"); chk("_tools 비공개", s == 404, f"{s}")
 s, h, b = get("/wrangler.toml"); chk("wrangler.toml 비공개", s == 404, f"{s}")
+# 자산 바이트 범위 (2026-09-07): iOS Safari 는 서버 byte-range 미지원이면 mp4 를 "오류" 로 끝낸다 (Workers static assets 바인딩은 Range 를 무시 → 워커 withRange 가 206 을 낸다)
+_r = urllib.request.Request(BASE + "/assets/video/brand_60s_aigen.mp4", headers={"User-Agent": "Mozilla/5.0 (iPhone) hyunhak-smoke", "Range": "bytes=0-1023"})
+try:
+    _x = opener.open(_r, timeout=20); _s, _h, _n = _x.status, dict(_x.headers), len(_x.read())
+except urllib.error.HTTPError as _e:
+    _s, _h, _n = _e.code, dict(_e.headers), len(_e.read())
+chk("brand mp4 Range → 206 (iOS 재생)", _s == 206 and _n == 1024 and _h.get("Content-Range", "").startswith("bytes 0-1023/"), f"{_s} len={_n} cr={_h.get('Content-Range', '-')}")
 if BASE.endswith("hyunhak.com"):
     s, h, b = get("/", base="https://www.hyunhak.com", follow=False); chk("www → apex 301", s == 301 and "hyunhak.com" in h.get("Location", ""), f"{s} {h.get('Location')}")
     s, h, b = get("/", ua="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"); chk("Googlebot UA 200", s == 200, f"{s}")
