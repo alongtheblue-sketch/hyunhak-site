@@ -1,0 +1,13 @@
+{
+ "worktree": "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906",
+ "events": 134,
+ "exec": 102,
+ "outside_hard": [],
+ "outside_soft": [
+  {
+   "path": "/Users/gregory/.agents/skills/mengto-design/library/codex/audit-verify-explain-grade-5/SKILL.md",
+   "token_hits": 0
+  }
+ ],
+ "pass": true
+}

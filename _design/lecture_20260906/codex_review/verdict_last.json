@@ -1,0 +1,184 @@
+{
+ "verdict": "NO_GO",
+ "summary_ko": "P0로 가격·SKU·이용기간 계약이 확정 스펙과 충돌하고, 고려대 자연 40편이 30편으로 표시되며 목록 총 시간이 약 5시간 부풀려집니다. 상세 6면의 담기 버튼도 동작하지 않고 인강실 인증·권리 처리, 무JS 폴백, 영상 자막에 P1 결함이 있습니다. 내부 링크·sitemap·canonical과 빌드 순서는 정적 점검상 일치했고 중대한 XSS나 비공개 자산 노출은 찾지 못했습니다.",
+ "findings": [
+  {
+   "id": "F1",
+   "axis": 1,
+   "severity": "P0",
+   "file": "_design/lecture_20260906/codex_review/LECTURE_SPEC_20260827_readonly.md",
+   "line": 23,
+   "claim": "확정 스펙의 공통 50,000원·lec-common, 단위 인강 150,000원, pass 396,000원 모델과 판매면의 공통 220,000원·lecture-common, pass 495,000원 모델이 충돌한다.",
+   "evidence": "스펙 23-25행 ‘공통 인강 50,000 / … 각 150,000’, ‘pass-* 8종(396,000)’; lectures/common.html:140 ‘data-cart-sku=\"lecture-common\" … data-cart-price=\"220000\"’; lectures/yonsei-hum.html:140 ‘data-cart-price=\"495000\"’.",
+   "fix": "최신 결재 가격·SKU·판매모델을 하나로 확정하고 스펙, 상품 원천, HTML, 장바구니와 JSON-LD를 함께 맞춘다."
+  },
+  {
+   "id": "F2",
+   "axis": 1,
+   "severity": "P0",
+   "file": "lectures/common.html",
+   "line": 138,
+   "claim": "판매면은 인강 이용기간을 3개월로 약속하지만 확정 스펙은 신규 구매 12개월을 의무화하고 현행값은 NULL이라고 적어 권리 계약이 일치하지 않는다.",
+   "evidence": "‘구매일부터 3개월’; LECTURE_SPEC:11 ‘신규 구매 … 12개월 expires_at 기록 의무’, 91행 ‘기존 코드가 expires_at을 쓰지 않아 NULL’.",
+   "fix": "실제 결제 후 생성되는 entitlement 만료 규칙을 확정한 뒤 전 판매면과 SEO 문구를 같은 기간으로 갱신한다."
+  },
+  {
+   "id": "F3",
+   "axis": 1,
+   "severity": "P0",
+   "file": "lectures/korea-sci.html",
+   "line": 138,
+   "claim": "고려대 자연은 실제 40편인데 data-total과 AEO가 30편이라 API가 ready=40을 반환해도 화면에는 ‘30편 전편 공개’가 표시된다.",
+   "evidence": "‘data-total=\"30\">세트 해설 40편’; assets/lectures.js:106-109는 ‘total || sm.total’을 사용하고, 같은 면 132행과 seo_manifest:3158도 ‘세트 해설 30편’이다.",
+   "fix": "data-total과 AEO를 카탈로그 40편으로 생성하고 런타임에서는 API의 sm.total을 우선한다."
+  },
+  {
+   "id": "F4",
+   "axis": 1,
+   "severity": "P0",
+   "file": "_tools/build_lectures.py",
+   "line": 211,
+   "claim": "목록의 196개 고유 강의는 225,847초인 62시간 44분인데 공통 강의 시간이 다섯 번 합산되어 68시간으로 표시된다.",
+   "evidence": "210행은 ‘공통 4편은 한 번만 센다’며 편수를 중복 제거하지만 211행은 ‘sum(c[\"sec\"] …)’이고, 77행의 각 c[\"sec\"]에는 공통 강의가 포함된다.",
+   "fix": "총 시간도 lecture id 기준 고유 행을 한 번씩만 합산해 다시 생성한다."
+  },
+  {
+   "id": "F5",
+   "axis": 1,
+   "severity": "P0",
+   "file": "_design/lecture_20260906/codex_review/LECTURE_SPEC_20260827_readonly.md",
+   "line": 58,
+   "claim": "카탈로그와 상세면의 연세 인문 5편·고려 인문 9편·고려 자연 8편 단위 강의가 확정 스펙의 6편·7편·7편과 다르다.",
+   "evidence": "스펙 58-60행은 고려 인문 7강, 고려 자연 7강, 연세 인문 6강이고 각 상세면 146행은 각각 9편, 8편, 5편으로 생성돼 있다.",
+   "fix": "변경된 강의 구성이 승인된 것인지 확정해 스펙을 개정하거나 카탈로그와 판매면을 승인 편수로 복원한다."
+  },
+  {
+   "id": "F6",
+   "axis": 1,
+   "severity": "P1",
+   "file": "lectures.html",
+   "line": 13,
+   "claim": "검색 제목은 201편을 내세우지만 같은 면의 판매 목록은 196편이며 나머지 기출 5편은 아직 목록에 올리지 않는다고 적혀 있다.",
+   "evidence": "13행 ‘해설 강의 201편’; 154행 ‘196편 구성’; 195행 ‘2026 기출 해설 강의는 이용권 경로가 정해지면 이 목록에 올립니다.’",
+   "fix": "판매 목록에 포함하는 동일한 강의 집합에서 제목과 본문 편수를 산출하고 공개 편수 하드코딩을 제거한다."
+  },
+  {
+   "id": "F7",
+   "axis": 2,
+   "severity": "P1",
+   "file": "assets/app.js",
+   "line": 107,
+   "claim": "인증 API의 네트워크 오류와 5xx·403이 모두 비회원으로 변환되어 로그인 회원도 인강실에서 ‘로그인 필요’를 보게 된다.",
+   "evidence": "‘catch { _me = { member: null }; }’; assets/lectures.js:116-117은 member가 없으면 즉시 data-state를 guest로 바꾼다.",
+   "fix": "401만 비회원으로 처리하고 네트워크·5xx·403은 상태를 보존해 인강실의 down 또는 별도 오류 상태로 보낸다."
+  },
+  {
+   "id": "F8",
+   "axis": 2,
+   "severity": "P1",
+   "file": "assets/lectures.js",
+   "line": 144,
+   "claim": "로그인만 한 무권리 회원에게도 공통 강의 카드를 ‘수강 중인 강좌’에 추가해 보유 이용권 없음 상태가 나오지 않는다.",
+   "evidence": "‘if (common.length) cards.push(…)’는 entitled 검사가 없지만 147행의 단위 카드는 ‘ls.some(function (l) { return l.entitled; })’를 요구하며, API 계약 181행은 모든 행에 entitled 값을 붙인다.",
+   "fix": "공통 카드도 common.some(l => l.entitled)일 때만 추가하고 카드가 없으면 none 상태를 표시한다."
+  },
+  {
+   "id": "F9",
+   "axis": 2,
+   "severity": "P1",
+   "file": "assets/lectures.js",
+   "line": 119,
+   "claim": "인강실은 entitlement의 직렬화된 meta를 파싱하지 않고 존재하지 않는 _meta를 읽어 단위·공통 범위와 만료일 연결을 잃는다.",
+   "evidence": "119-126행은 st.entitlements를 그대로 받은 뒤 ‘e._meta || {}’를 읽지만, my.html:309-310은 ‘JSON.parse(e.meta||'{}')’ 후 ‘e._meta=meta’로 변환한다.",
+   "fix": "classroom 진입 시 e.meta를 안전하게 파싱해 _meta를 만든 뒤 scope·unit_code·set_id와 expires_at을 연결한다."
+  },
+  {
+   "id": "F10",
+   "axis": 4,
+   "severity": "P1",
+   "file": "lectures/yonsei-hum.html",
+   "line": 140,
+   "claim": "상세 6면의 실제 담기 버튼에는 로드되는 스크립트 어디에도 클릭 처리기가 없어 상품이 장바구니에 담기지 않는다.",
+   "evidence": "‘<button type=\"button\" … data-cart-sku=\"pass-yonsei-hum\" …>’; 상세 inline 181-190행은 요약·목차·스크롤만 처리하고 assets/app.js와 assets/lectures.js에도 data-cart 클릭 위임이 없다.",
+   "fix": "검증된 dataset으로 HH.addToCart를 호출하고 성공·실패 안내를 제공하는 공용 클릭 위임을 추가한다."
+  },
+  {
+   "id": "F11",
+   "axis": 4,
+   "severity": "P1",
+   "file": "lectures.html",
+   "line": 149,
+   "claim": "SEO 후공정이 목록 AEO 문단을 CTA flex 안에 넣고 상세 6면에서는 wrap 밖에 넣어 새 상품면 레이아웃을 구조적으로 깨뜨린다.",
+   "evidence": "‘<div class=\"acts rv\">…<!-- aeo --><p class=\"aeo-answer\">’; lectures/common.html:132는 <main> 직후 AEO가 나오고 그 뒤에야 <div class=\"wrap\">가 시작된다.",
+   "fix": "생성 HTML에 명시적 AEO 슬롯을 두고 seo_inject가 그 슬롯에만 삽입하도록 한다."
+  },
+  {
+   "id": "F12",
+   "axis": 6,
+   "severity": "P1",
+   "file": "classroom.html",
+   "line": 145,
+   "claim": "JavaScript가 없거나 런타임 파일 로드가 실패하면 인강실이 영구히 ‘불러오는 중’에 머물고 로그인·맛보기·강좌목록 폴백은 숨겨진다.",
+   "evidence": "‘<div id=\"crView\" data-state=\"loading\">’; 83-84행 CSS는 data-state와 맞지 않는 모든 data-for를 숨기며 상태 전환은 191행의 LEC.classroom 호출뿐이다.",
+   "fix": "기본 HTML에는 오류·로그인·강좌 링크를 노출하고 JS가 정상 시작된 뒤에만 loading 상태로 전환하거나 noscript 폴백을 제공한다."
+  },
+  {
+   "id": "F13",
+   "axis": 6,
+   "severity": "P1",
+   "file": "_tools/build_lectures.py",
+   "line": 403,
+   "claim": "목록·인강실·상세 6면의 맛보기 영상 8개 모두 HTML 자막 track이나 연결된 대본이 없다.",
+   "evidence": "244, 309, 403행의 video는 ‘<source …></video>’로 바로 닫히며, lectures.html:198은 맛보기로 ‘말하는 속도’를 확인한다고 명시한다.",
+   "fix": "각 맛보기에 한국어 WebVTT track을 기본 자막으로 연결하고 접근 가능한 텍스트 대본 링크도 제공한다."
+  },
+  {
+   "id": "F14",
+   "axis": 6,
+   "severity": "P1",
+   "file": "_tools/build_lectures.py",
+   "line": 429,
+   "claim": "상세 6면의 스크롤 스파이는 문서 앞쪽의 #plan을 링크 배열 마지막에 두어 목차 이후 대부분 구간에서 ‘이용권’을 aria-current로 잘못 표시한다.",
+   "evidence": "376행에서 #plan이 hero 안에 먼저 생성되고 409행 nav에서는 마지막이며, 429행 루프가 offsetTop 조건을 만족할 때마다 cur를 뒤 인덱스로 덮어쓴다.",
+   "fix": "현재 위치 이하 요소 중 offsetTop이 가장 큰 대상을 고르거나 문서 순서 기반 IntersectionObserver로 교체한다."
+  }
+ ],
+ "axes_checked": {
+  "1": "P0: 가격·SKU·기간 계약, 고려대 자연 편수와 총시간이 충돌했으며 상세별 카탈로그 시간은 맞지만 단위 편수는 스펙과 다르다.",
+  "2": "세 GET 경로·메서드·쿼리·응답 필드는 라우터 계약과 맞지만 total 우선순위, 인증 실패와 entitlement 처리에 결함이 있다.",
+  "3": "API 삽입값은 escape·수치화·URL 인코딩되고 유료 열람은 서버 권리검사를 거치며 noindex와 공개 맛보기 범위도 명시돼 중대 보안 결함은 찾지 못했다.",
+  "4": "변경 생산 HTML의 href·src·poster·fragment 4,355건은 누락 0이고 manifest·sitemap·canonical도 맞지만 담기 기능과 AEO 배치가 깨졌다.",
+  "5": "빌더에는 시각·난수·파일시스템 순회 의존이 없고 build_all.sh 13-20행이 생성→nav/footer→SEO→sitemap 순서를 고정한다.",
+  "6": "details·앵커 본문은 무JS에서도 남고 autoplay는 없지만 인강실 무JS 고착, 자막 누락과 잘못된 스크롤 스파이가 있다."
+ },
+ "files_read": [
+  "_tools/build_lectures.py",
+  "_tools/lecture_catalog.json",
+  "assets/lectures.js",
+  "lectures.html",
+  "lectures/yonsei-hum.html",
+  "lectures/yonsei-sci.html",
+  "lectures/yonsei-intl.html",
+  "lectures/korea-hum.html",
+  "lectures/korea-sci.html",
+  "lectures/common.html",
+  "classroom.html",
+  "library.html",
+  "_tools/v2_shell.py",
+  "assets/base.css",
+  "index.html",
+  "studio.html",
+  "my.html",
+  "lecture.html",
+  "_tools/seo_manifest.json",
+  "sitemap.xml",
+  "_tools/build_all.sh",
+  "_design/lecture_20260906/codex_review/api_lecture_contract_readonly.js",
+  "_design/lecture_20260906/codex_review/api_index_readonly.js",
+  "_design/lecture_20260906/codex_review/LECTURE_SPEC_20260827_readonly.md",
+  "assets/data/sets.json",
+  "assets/app.js",
+  "assets/lecture.js",
+  "_tools/seo_inject.py"
+ ]
+}

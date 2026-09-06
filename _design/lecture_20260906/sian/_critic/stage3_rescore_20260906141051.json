@@ -1,0 +1,68 @@
+{
+ "version": "v3.1-stage3",
+ "timestamp": "2026-09-06T05:10:51Z",
+ "deliverable_path": "http://127.0.0.1:8813/lectures/yonsei-hum.html",
+ "deliverable_files": [
+  "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/lectures/yonsei-hum.html",
+  "/Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/lectures.html"
+ ],
+ "usecase_declared": "돈 내고 사는 온라인 강좌 상품 상세면. 목차와 맛보기 영상이 붙은 판매면 (카드뉴스·포스터 아님)",
+ "captures": [
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_detail_1280_fold.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_detail_1280_full.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_detail_390_fold.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_detail_390_full.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_list_1280_fold.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_list_1280_full.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_list_390_fold.png",
+  "_design/lecture_20260906/sian/_critic/stage3_rescore_list_390_full.png"
+ ],
+ "proxies": {
+  "P1_parent": {
+   "score": 8,
+   "breakdown": { "three_second_rule": 3, "no_discomfort": 2, "trust": 3 },
+   "evidence": [
+    "3초 3/3 — 390 첫 화면 안에 상품명, 39편 12시간 2분 시청 3개월, 495,000원, 단위 전권 담기 단추가 전부 들어온다. 스크롤 0회로 뭘 얼마에 파는지 읽힌다.",
+    "불쾌감 2/3 — 390 폭에서 화면 위에 따라붙는 줄의 항목 4개가 4개 다 글자 겹침. 특히 단위 전권 과 495,000원 이 포개져 판독 불가. 1280 폭에서는 같은 줄이 깨끗해 휴대폰 전용 흠.",
+    "신뢰감 3/4 — 39편 제목과 분 단위, 낱권 33,000원, 공통 4편 220,000원, 사업자등록번호 대표자 강남구 주소 070 전화 환불 규정까지 있다. 반면 495,000원 앞에 미리 볼 수 있는 건 1분 15초 1편뿐이고 가르치는 사람이 이 면에 한 번도 안 나온다."
+   ],
+   "verbatim_reaction": "첫 화면에서 뭘 얼마에 파는지랑 담는 단추까지 한 번에 보여서 좋았어요. 39편 제목이랑 몇 분짜리인지 다 적혀 있어 세어 볼 수 있고 맨 아래 사업자번호랑 전화번호도 있고요. 그런데 휴대폰으로 목차까지 내려가니까 위에 따라오는 줄에서 단위 전권 하고 495,000원 이 겹쳐 찍혀서 못 읽겠더라고요. 49만원 내기 전에 미리 볼 수 있는 게 1분 15초 하나뿐이고 누가 가르치는지가 안 나와서 그건 좀 망설여져요.",
+   "role_persona_used": "40대 중반 학부모, 고3 자녀, 495,000원 결제자. 휴대폰 우선 열람"
+  },
+  "P2_competitor": {
+   "score": 9,
+   "breakdown": { "identifiability": 5, "imitation_resistance": 2, "category_recall": 2 },
+   "evidence": [
+    "식별 5/5 — 국내 강좌 상세 10건 옆에 깔면 이 한 장만 종이색 바탕에 강사 얼굴 0, 쿠폰 띠 0, 남은 기간 카운트 0. 구별 표식 6종(卷一 卷二 卷三 + 쪽 번호 1 2 3, 玄學的 研究所 한자 표기, 종이색 바탕에 빨강은 가격과 맛보기에만, 강의 인트로 화면 판형, OT 4단계 손그림 도해, 자간 벌린 작은 라벨).",
+    "모방 저항 2/3 — 종이색과 검정 글자 겉모습은 우리 팀이 2주면 비슷하게 깐다. 못 베끼는 건 480초 6구간 배분 도해와 39편 목차 실물, 즉 상품 자체.",
+    "카테고리 기억 2/2 — 한 달 뒤 10건 중 얼굴 없이 종이 같던 한 곳 으로 떠올려진다. 표식이 1개가 아니라 6개 겹쳐 있다."
+   ],
+   "verbatim_reaction": "우리 강좌 상세 10개를 나란히 깔면 이 한 장만 결이 다릅니다. 종이색 바탕에 강사 얼굴도 쿠폰 띠도 없고 卷一 卷二에 쪽 번호까지 붙은 건 우리 쪽 판형에 없는 물건입니다. 다만 겉모습은 2주면 비슷하게 깔 수 있고 못 베끼는 건 480초 배분 도해하고 39편 목차 자체입니다. 세트 해설은 30편 중 6편만 펼쳐 놔서 목차 훑는 깊이는 아직 우리가 낫습니다.",
+   "role_persona_used": "경쟁 인강사 강좌 상세 담당 PM. 메가스터디 대성마이맥 등 10건 모집단 대비 식별 모방 기억 평가"
+  },
+  "P3_non_korean": {
+   "score": 9,
+   "breakdown": { "visual_keyword_guess": 4, "korean_sign_overload": 2, "identity_evaporation": 3 },
+   "evidence": [
+    "키워드 4/5 — 교육과 정성 2개는 5초에 잡힌다(재생 단추 + 번호 붙은 긴 목록 + 20 18 19 같은 길이값 = 강의 목록, 광고 띠 0 + 종이색 = 공들여 만든 것). 한국 1개는 본문 글자에서만 오고 상단 표식(玄學的 研究所, 卷)은 일본 쪽으로 끌어당겨 절반짜리.",
+    "한국 기호 과다 2/2 — 한지 무늬 0, 붓 획 0, 빨간 낙관 0, 원문자 0, 낫표 0. 한자는 표식과 卷 셋뿐이고 빨강은 가격과 맛보기에만.",
+    "아이덴티티 증발 3/3 — 완전 서구 톤으로 증발하지 않았다. 본문 전면이 한글이고 다루는 대상이 한국 대학 이름이라 위치가 확정된다."
+   ],
+   "verbatim_reaction": "Five seconds in: a cream page, a play button, one long numbered list with time values, and a single big red number in a box. I read it as a Korean online course you pay for, and it feels carefully put together rather than sold at me. The small mark at the top and the repeated 卷 characters still pull toward Japanese, so the Korea read comes from the body script, not from the emblem.",
+   "role_persona_used": "한글 모르는 영어권 독자, 5초 노출 후 단서 3개 추측"
+  }
+ },
+ "total": 26,
+ "prior_total": 21,
+ "delta_vs_prior": 5,
+ "threshold_check": {
+  "P1_threshold": "≥5 OK",
+  "P2_threshold": "≥5 OK",
+  "P3_threshold": "≥5 OK",
+  "total_threshold": "≥25 PASS"
+ },
+ "verdict": "외부 시선 PASS (Stage 3 PASS, critic 통합판정 입력. 릴리스 결정권은 critic)",
+ "competitor_flag_note": "해당 없음. Proxy 2 가 9점으로 최고점이라 경쟁사 일관 flag 조건(전략 신호) 미성립. 최저점은 Proxy 1(8) 이며 사유는 390 폭 단일 결함.",
+ "single_residual_defect": "390 폭 화면 상단 고정 줄 4개 항목 전부 글자 겹침(단위 전권 x 495,000원 판독 불가). 1280 폭 정상. Proxy 1 불쾌감 축 -1 의 유일 사유.",
+ "bias_warning": "maestro 셀프 점수 미전달로 Δ 산출 불가"
+}

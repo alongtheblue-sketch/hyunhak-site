@@ -24,7 +24,6 @@
     if (total && ready >= total) return "해설 강의 " + total + "편 전편 공개";
     return "해설 강의 " + ready + "편 공개, 순차 업로드";
   }
-  var UNIT_DOWN = "공개 상태는 지금 확인할 수 없습니다";
 
   var _units = null, _pub = {}, _mine = null, _sum = {};
   function units() {
@@ -105,8 +104,8 @@
     Array.prototype.forEach.call(els, function (el) {
       var q = el.getAttribute("data-lec-summary"), total = n0(el.getAttribute("data-total"), 999) || null;
       summary(q).then(function (sm) {
-        if (!sm) { el.textContent = UNIT_DOWN; return; }
-        el.innerHTML = esc(statusText(sm.ready, total || sm.total)) + (sm.as_of ? ' <span class="mono">' + esc(sm.as_of) + " 기준</span>" : "");
+        if (!sm) { return; }  // 미도달 = 정적 스냅샷 문안(날짜 병기) 그대로 둔다. 오류 문안으로 덮지 않는다
+        el.innerHTML = esc(statusText(sm.ready, sm.total || total)) + (sm.as_of ? ' <span class="mono">' + esc(sm.as_of) + " 기준</span>" : "");
       });
     });
   }
@@ -114,16 +113,18 @@
   // ---------- 인강실 ----------
   function classroom(view) {
     HH.me(true).then(function (st) {
-      if (!st || !st.member) { view.setAttribute("data-state", "guest"); return; }
-      view.setAttribute("data-state", "member");
+      if (!st || !st.member) { view.setAttribute("data-state", st && st.error ? "down" : "guest"); return; }   // 401 만 비회원, 네트워크와 5xx 는 down
       var ents = (st.entitlements || []).filter(function (e) { return e.kind === "lecture"; });
+      ents.forEach(function (e) { if (!e._meta) { var m = {}; try { m = JSON.parse(e.meta || "{}"); } catch (err) {} e._meta = m; } });   // /api/auth/me 는 meta 를 문자열로 준다 (my.html 과 같은 변환)
       Promise.all([units(), mine()]).then(function (r) {
         var us = r[0], all = r[1];
         if (all === null) { view.setAttribute("data-state", "down"); return; }
+        view.setAttribute("data-state", "member");   // 데이터가 온 뒤에만 member. 그 전은 loading 이라 12초 가드가 전 경로를 덮는다
         var owned = {};
         ents.forEach(function (e) { var m = e._meta || {}; if (m.unit_code && okUnit(m.unit_code)) { if (!owned[m.unit_code] || String(e.expires_at || "") > String(owned[m.unit_code].expires_at || "")) owned[m.unit_code] = e; } });
         var common = all.filter(function (l) { return l.kind === "common"; });
-        var commonEnt = ents.find(function (e) { return (e._meta || {}).scope === "common" || !((e._meta || {}).unit_code || (e._meta || {}).set_id); });
+        var commonEnt = ents.find(function (e) { return (e._meta || {}).scope === "common" || !((e._meta || {}).unit_code || (e._meta || {}).set_id); })
+          || Object.keys(owned).map(function (k) { return owned[k]; }).sort(function (a, b) { return String(b.expires_at || "").localeCompare(String(a.expires_at || "")); })[0] || null;   // 단위 전권 권리도 공통 접근을 준다 (pay.js). 만료일은 가장 늦은 것
         var cards = [], recent = [];
         all.forEach(function (l) { if (l.progress && l.progress.updated_at) recent.push(l); });
         recent.sort(function (a, b) { return String(b.progress.updated_at).localeCompare(String(a.progress.updated_at)); });
@@ -141,7 +142,7 @@
             + '<div class="acts">' + (last && !last.progress.completed ? '<a class="btn sm" href="' + P + "lecture.html?id=" + encodeURIComponent(last.id) + '">이어보기, ' + esc(last.title).slice(0, 28) + "</a>" : "")
             + '<a class="btn ghost sm" href="' + href + '">강의 목록</a></div></article>';
         }
-        if (common.length) cards.push(card("common", "공통 풀이", common, commonEnt, P + "lecture.html"));
+        if (common.length && common.some(function (l) { return l.entitled; })) cards.push(card("common", "공통 풀이", common, commonEnt, P + "lecture.html"));   // 권리 없는 회원은 none 상태로
         us.forEach(function (u) {
           var ls = all.filter(function (l) { return l.unit_code === u.code; });
           if (!ls.some(function (l) { return l.entitled; })) return;
@@ -154,7 +155,7 @@
         if (rb) {
           var rows = recent.slice(0, 6).map(function (l) {
             var p = l.progress, pct = l.duration_sec ? n0(Math.round(n0(p.position_sec) / n0(l.duration_sec, 100000) * 100), 100) : 0;
-            return '<div class="row" data-lec="' + esc(l.id) + '"><span class="n">' + esc(String(l.seq || "").padStart(2, "0")) + '</span><span><span class="t">' + esc(l.title) + '</span><span class="m"><span>' + esc(String(p.updated_at).slice(0, 10)) + "</span>" + (p.completed ? '<span class="badge">완료</span>' : "<span>" + fmtPos(p.position_sec) + " 부터</span>") + "</span>" + (pct > 0 && !p.completed ? '<span class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></span>' : "") + '</span><span class="a"><a class="btn sm" href="' + P + "lecture.html?id=" + encodeURIComponent(l.id) + '">' + (p.completed ? "다시 보기" : "이어보기") + "</a></span></div>";
+            return '<div class="row" role="listitem" data-lec="' + esc(l.id) + '"><span class="n">' + esc(String(l.seq || "").padStart(2, "0")) + '</span><span><span class="t">' + esc(l.title) + '</span><span class="m"><span>' + esc(String(p.updated_at).slice(0, 10)) + "</span>" + (p.completed ? '<span class="badge">완료</span>' : "<span>" + fmtPos(p.position_sec) + " 부터</span>") + "</span>" + (pct > 0 && !p.completed ? '<span class="prog" aria-hidden="true"><i style="width:' + pct + '%"></i></span>' : "") + '</span><span class="a"><a class="btn sm" href="' + P + "lecture.html?id=" + encodeURIComponent(l.id) + '">' + (p.completed ? "다시 보기" : "이어보기") + "</a></span></div>";
           });
           rb.innerHTML = rows.length ? rows.join("") : '<p class="note">아직 시청 기록이 없습니다. 강의 목록에서 첫 편을 여세요.</p>';
         }
@@ -162,5 +163,18 @@
     });
   }
 
+  // ---------- 담기: [data-cart-sku] 클릭 위임 (studio.html 과 같은 HH.addToCart. confirm 대신 버튼 옆 안내와 장바구니 링크) ----------
+  document.addEventListener("click", function (ev) {
+    var el = ev.target && ev.target.closest ? ev.target.closest("[data-cart-sku]") : null;
+    if (!el || !window.HH || !HH.addToCart) return;
+    ev.preventDefault();
+    var r = HH.addToCart({ sku: el.dataset.cartSku, title: el.dataset.cartTitle, price: +el.dataset.cartPrice, set_id: el.dataset.setId || undefined });
+    var box = el.closest(".acts") || el.parentNode, msg = box.nextElementSibling && box.nextElementSibling.classList.contains("cartmsg") ? box.nextElementSibling : null;
+    if (!msg) { msg = document.createElement("p"); msg.className = "cartmsg note"; msg.setAttribute("role", "status"); msg.setAttribute("aria-live", "polite"); box.insertAdjacentElement("afterend", msg); }
+    if (!r.ok) { msg.textContent = r.message || "담지 못했습니다."; return; }
+    if (HH.updateNav) { try { HH.updateNav(); } catch (e) {} }
+    var cnt = 0; try { cnt = HH.cart().filter(function (x) { return x.sku === el.dataset.cartSku; }).reduce(function (s, x) { return s + (x.qty || 1); }, 0); } catch (e) {}
+    msg.innerHTML = '담았습니다' + (cnt > 1 ? ' (' + cnt + '개)' : '') + '. <a href="' + P + 'cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a>';
+  });
   window.LEC = { units: units, pub: pub, summary: summary, mine: mine, paintRows: paintRows, paintSummaries: paintSummaries, classroom: classroom, fmt: fmt, statusText: statusText, esc: esc, okUnit: okUnit, P: P };
 })();

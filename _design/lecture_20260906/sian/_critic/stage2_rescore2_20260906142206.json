@@ -1,0 +1,179 @@
+{
+ "version": "v3.1-stage2-rescore2",
+ "timestamp": "2026-09-06T14:22:06",
+ "deliverable_path": "http://127.0.0.1:8813/lectures/yonsei-hum.html (build: /Users/gregory/Workspace/_wt/hyunhak-site-lecture-20260906/lectures/yonsei-hum.html)",
+ "usecase_g1": "01 전환(온라인 강좌 상품 상세면, 상거래) + 04 정보(39편 목차 열람) 복합. 좌표계=화면 px 반응형(1280x900 / 390x844). 지배차원=색(강조색 단1색 CTA). 부 대상 lectures.html=목록면, classroom.html=인강실 비회원",
+ "router_line": "§1 트리거=인강 상품 상세면 2차 수정판 재채점 · §2 분기 이루리=N(현학적 연구소)/매체=웹 상거래 상세면 반응형/형용사=X · §3 OS Read=expertise_v3 SOP + v4 용도앵커(G1~G4, §2 G6, §3 L1~L7, §4 WCAG 실측강제) · §4 QA Q-K PASS · §5 dual-call 없음(Stage 3 범위 밖) · §6 저장=_design/lecture_20260906/sian/_critic/",
+ "five_elements_K": "자간 본문 -0.012em / 표제 -0.032em · 행간 본문 1.75(28/16) · 8pt grid (8/16/24/40/56/72) · 비율 hero2 1.5:1(586.5/391), 영상 16:9 실측 1.778 · scale 11/11.5/13/14/16/19.2/25.6/34/44 (약 1.2~1.333 등비)",
+ "stage1_gates": {
+  "G1_render": "PASS — 12개 캡처 전건 렌더. 지배색=paper rgb(244,239,227) 상세면 full 72.4%(1280)/64.3%(390), 고유색 3,449/3,719종, 텍스트 노드 201/197개 실측. 공백이 아니라 의도된 지본색 여백(clip-path·export 실패 아님)",
+  "G2_deliverability": "PASS — TODO/FIXME/lorem ipsum/dolor sit/테스트용/더미/dummy grep 0건 (lectures/*.html 6면 + lectures.html + classroom.html + assets/)",
+  "G3_safe_margin": "N/A — 인쇄 매체 아님(화면 px)",
+  "G4_font_embed": "N/A(PDF 아님) — computed font-family = Pretendard Variable(본문) / JetBrains Mono(계기값) 정상 해석, 캡처에서 495,000원 모노 렌더 확인",
+  "G5_integrity": "PASS — HTTP 200, pageerror 0건 × 8면(상세 6 + 목록 + 인강실) × 2폭. requestfailed 는 api.hyunhak.com·www.google-analytics.com(오프라인 계측 환경)뿐",
+  "G6_ratio_overflow": "PASS — scrollWidth==clientWidth 전건(1280/1280, 390/390), 뷰포트 초과 요소 0건 × 8면, video aspect-ratio 실측 1.778(16:9), 최대 헤드 44px(<100px 거대헤드 미해당), 한글 본문 lh 1.75(≥1.55 floor), h1 ls -0.032em & lh 1.32(받침충돌 구간 ls≤-0.035em AND lh≤1.10 미해당)",
+  "verdict": "PASS — Stage 2 진입"
+ },
+ "lenses": {
+  "L1": {
+   "score": 4,
+   "criticality": "★★★★★ P0",
+   "evidence": "핵심 동사 3개 전건 시각 번역. (1) 담기 = '단위 전권 담기 →' 1280 y=730 bottom=778 < 900, 390 y=653 bottom=701 < 844, 두 폭 모두 폴드 내 유일 솔리드 채움. (2) 절차 = promise '준비 8분과 답변 5분' 이 lede y=445 → 卷二 h2 '준비 8분, 답변 5분을 절차로 만든다' 34px 로 승격. (3) 순서 = OT SVG 4박스 + 점선 loop(공통 풀이→단위 강의→응시→세트 해설). 390 폴드 재구성 확인: h1 y=184(구 y=903) → meta → lede → 가격 → CTA 완결 시퀀스. 감점=(a) 390 폴드에 증거 이미지 0(hmedia y=812), 카피가 약속한 '맛보기 로그인 없이 봅니다'가 첫 화면에 미노출. (b) 세트 해설 30행 표제가 공통 접두 14자 + 공통 접미로 평균 26자 중 54% 가 boilerplate 라 '지문마다 한 편' 이라는 30편 개별성 약속이 시각적으로 30개 동일 행으로 제시됨"
+  },
+  "L2": {
+   "score": 5,
+   "criticality": "★★★★☆",
+   "evidence": "1차 재채점의 유일 감점(.steps.three 3열 균등 카드 328.531px×3)이 실측 해소: grid-template-columns '1017.62px' 단일 열, 각 .step 이 '200px 793.625px' 라벨열+본문열 행. 카드 3개 195px → 행 3개 각 92px. 시그니처 = folio 卷一~卷三 + 朱印 #BC3529 + JetBrains Mono 계기값 + 손그림형 order SVG(loop stroke-dasharray 3 4) + 한자 병기(玄學的 硏究所, 브랜드 정체성 자체). 한국 인강 시장 관례 미사용 실측: 강사 인물 히어로 0, 별점 0, 카운트다운 0, 그라디언트 배너 0, '1위/최고/보장' grep 0건. 잔존 관례=이용권 배지 38회 반복, FAQ 네이티브 details 아코디언"
+  },
+  "L3": {
+   "score": 4,
+   "criticality": "★★★★★",
+   "evidence": "N3 3중 동률 해소 실측: 1280 h1 44px/800 > #toc h2.t 34px/800 > .buybox .price 25.6px/500(JetBrains Mono) 3단 분리, 390 은 31 > 26 > 22. 토큰 --t-h1 clamp(31px,4.0vw,44px) / --t-h2 clamp(26,2.7vw,34) / --t-h3 clamp(22,2.0vw,28). scale 11/11.5/13/14/16/19.2/25.6/34/44 (1.2~1.333). 본문 16px lh 1.75, measure 576px=36자/줄, keep-all. AEO 문단 폭 1120px(86자) → 468px(36자) 로 교정. 감점=(a) H2 두 등급 공존: OT 카드 h2 19.2px 와 절 표제 h2 34px 가 1.77배 차, 동시에 h2 19.2px == h3 19.2px 로 h2/h3 시각 등급 붕괴. (b) 세트 해설 30행에서 16px/700 이 공통 접두 '연세대 활동우수 인문통합 '(14자, 평균 26자의 54%)에 실리고 변별 정보인 주제문('선택지의 양과 행복의 관계')은 13px 회색 — 卷一 1821px(지면 38%)에서 정보 위계 역전"
+  },
+  "L4": {
+   "score": 4,
+   "criticality": "★★★★☆",
+   "evidence": "wrap 1120px, hero2 gtc '586.562px 391.047px'(1.5:1) gap 40px, section padding 56/72, 토큰 8/16/24/40/56/72 전부 8 배수. 390 폴드 가림 실측 141px(16.7%) → 65px(7.7%): sticky 구매바가 buybox 가시 중 display:none, nav.fix(y=779~844)만 잔존. scroll-margin-top 128px(1280)/121px(390) 이 헤더 72/65 + 앵커바 48 과 정합. 절 배분 卷一 1821 : 卷二 700 : 卷三 594 = 2.6:1:0.85(구 3.5:1:1). 감점=(a) .anch 는 네 항목을 동급으로 제시하나 지면은 2.6:1:0.85. (b) 卷二 끝 y≈628 행 구분선과 y≈700 절 경계선이 72px 간격으로 병존, 사이에 요소 0 — 고아 구분선"
+  },
+  "L5": {
+   "score": 4,
+   "criticality": "★★★★☆",
+   "evidence": "토큰 ink #312E2E / paper #F4EFE3 / card #FBF7EE / gray #696561 / body #4A4644 / seal #BC3529. 朱印 배치 = .price 495,000원(25.6px 모노, 대비 5.34) + aria-current 밑줄 + 맛보기 배지 + OT SVG loop, 채운 면적 0px². 용도 01 지배차원=색인데 강조색이 가격에만 있고 CTA 는 ink rgb(49,46,46). 다만 v8 L1 강조축 단일성은 채움 단일성으로 충족: 1280 폴드 솔리드 2개 중 구매의도 1개(나머지는 헤더 검색 글리프 44x44), 390 폴드 솔리드 정확히 1개 — nav.fix '가이드북' 채움이 rgb(49,46,46) → rgba(0,0,0,0) 로 강등됨. 감점=(a) 행동이 색이 아니라 채움 단일성으로만 표시. (b) 같은 강등이 lectures.html·classroom.html 에 미전파: 두 면 390 폴드에서 '가이드북'(x=159,y=786,72x52)이 여전히 솔리드 rgb(49,46,46)"
+  },
+  "L6": {
+   "score": 4,
+   "criticality": "★★★☆☆",
+   "evidence": "총장 1280 4791px(1차 5074, Δ-283 / 원본 5086, Δ-295), 390 6615px(1차 7260, Δ-645 / 원본 7510, Δ-895). 세트 해설 초기 노출 10행 → 6행 실측: #toc .row 39개 중 초기 가시 15개(4+5+6), [data-tocmore] 클릭 시 39개 전량 + 4791→6986px, 버튼 라벨 '세트 해설 접기 →' aria-expanded=true. 절 높이 卷一 1821(구 2187) : 卷二 700 : 卷三 594. 감점=卷一 1821px 중 30행이 동일 리듬(각 행 91~93px, 표제 16px/700 + 주제 13px + 분 13px + 배지) 으로 밀도 변화 0, 지면 최대 블록에 리듬 단절 부재"
+  },
+  "L7": {
+   "score": 4,
+   "criticality": "★★★☆☆",
+   "evidence": "해소 4건 실측. (1) 편수 39 = hero meta = h2.t '39편, 세 묶음' = .cnt 4+5+30 = JSON-LD, 6면 전건(43=4+9+30, 52=4+8+40, common 4). (2) N5 서수 결번 해소: 6면 전 그룹 01..N 연속, 결번 0(hum 4/5/30, sci 4/5/30, intl 4/5/30, korea-hum 4/9/30, korea-sci 4/8/40, common 4). (3) N6 해소: api.hyunhak.com requestfailed 상태에서 hero meta 가 정적 스냅샷 '세트 해설 30편, 2026-09-06 스냅샷 기준' 유지(6면 전건). (4) 자막 .vtt 6개 실재(1,847~2,025 bytes, 실 한국어 cue). 잔존=(a) data-cart-title '연세대 활동우수 인문통합 전권 이용권' 이 '단위' 탈락 — 지면 .buybox .k 및 JSON-LD offer name '단위 전권 이용권 (인강 포함)' 과 불일치, 장바구니 면에 노출됨. (b) 행 배지 '이용권' 38회로 제3 표기 병존. (c) track kind='subtitles'(WCAG 1.2.2 동일 언어 음성은 captions). (d) 재클릭 시 qty 1→2 인데 안내 문구는 동일 '담았습니다', 수량 미표시"
+  },
+  "L8": {
+   "score": 4,
+   "criticality": "★★★★☆ P1",
+   "evidence": "상거래 상세 문법 충족: breadcrumb, JSON-LD @graph 7노드(Organization·Person·WebSite·BreadcrumbList·WebPage·Product+Offer price 495000 KRW InStock·FAQPage 3문), og:type=product, 폴드 내 buybox 양 폭. N1 해소 실측(scroll-behavior auto 강제 + 320ms 대기): aria-current 가 1280 y=0~2600 卷一 → 3400 卷二 → 3891 卷三, 390 y=4200 卷二 로 이동, #plan 은 지시자 집합에서 분리됨(구 전건 4번째 고정). N2 해소: scroll-margin-top 128/121, #toc·#intro·#faq 착지 시 folio 卷 표식 top 184 bottom 216, 앵커바 bottom 128 → 가림 0px(구 80~120px). 모바일 바 IntersectionObserver 실측: buybox 가시(sy 0/300/600) display:none → sy 1200~4200 block(y=703,390x69) → buybox 복귀 시 다시 none. 데스크톱 구매 경로 지속: .anch sticky top 72px 가 sy 900 부터 고정, '단위 전권 495,000원' 링크 4791px 전 구간 노출. 6면 구조 동일(h1 44/31, h2 34/26, price 25.6/22, anch 4, folio 3, smt 128/121, CTA 폴드 내, track ko, 오류 0, overflow 0). 감점=(a) 1280 에서 卷三 클릭 후 지시자가 卷二 표시 — spy 임계 120 과 scroll-margin 128 의 8px 경계 어긋남. (b) 채움 강등 미전파로 lectures.html 390 폴드에 솔리드 2개('인강 OT 와 맛보기' + '가이드북')"
+  },
+  "L9": {
+   "score": 3,
+   "criticality": "★★★★☆ P1",
+   "evidence": "대비 실측(srgb 상대휘도 + 조상 alpha 전 스택 합성, v4 §4 자체추정 금지 준수): 상세면 1280 텍스트 노드 201개 중 미달 0(최소 4.97 = seal #BC3529 on paper #F4EFE3, 11px 맛보기 배지), 390 197/0(최소 4.70 = nav.fix '홈' 11px on rgb(236,231,220)), lectures.html 168/0·164/0, classroom.html 41/0·37/0. h1 11.73 lede 8.13 price 5.34 gray 5.04. 해소 3건: N7 heading 순서 H1 선두 복귀(H1→H2 OT→H2 목차→H3×3→H2 卷二→H3×3→H2 卷三), N1 거짓 aria-current 제거, N2 착지 가림 0. lang=ko, h1 1개, alt 누락 img 0, prefers-reduced-motion 규칙 존재, FAQ 네이티브 details/summary, 포커스 링 2px solid #312E2E offset 3px(14 stop 중 12). 윤리 게이트 통과: '1위/최고/합격보장/NO.1' grep 0건, 사업자등록번호 293-38-01827·통신판매업 신고 면제 근거·환불 규정 명시. 감점 3건 모두 AA 급=(a) 헤더 검색 input 포커스 표시 전무 — outline '3px none', box-shadow none, border 0px, background transparent 가 포커스 전후 동일(WCAG 2.4.7), 3면 공통 헤더. (b) 1280 hero 가 .hcopy order:2 / .hmedia order:1 이라 포커스가 우측 열 구매 버튼(x=782)을 거쳐 좌측 열 영상(x=131)으로 역행 — 시각 좌→우 순서와 불일치(WCAG 2.4.3·1.3.2), N4 DOM 재배치로 신규 발생, 390(order 0/0)은 무영향. (c) .cartmsg role=status 가 클릭과 같은 tick 에 DOM 삽입되고 포커스는 버튼에 잔류 → '담았습니다' 상태 통지 불확실(WCAG 4.1.3). 추가 저severity=(d) 목차 39행이 DIV.row 이고 ul/ol/li/role=list 전부 0 — 항목 수 미전달. (e) lectures.html 강좌 제목 링크 270x23·239x23 로 높이 23<24"
+  }
+ },
+ "total": 36,
+ "prior_total": 31,
+ "prior_prior_total": 34,
+ "delta": 5,
+ "minimum_check": {
+  "L1": "4 ≥4 OK (P0 통과)",
+  "L8": "4 ≥3 OK",
+  "L9": "3 ≥3 OK (하한 정확히 충족, 여유 0)"
+ },
+ "release_recommendation": "CONDITIONAL_RELEASE",
+ "verdict_band": "36~40 출판 가능 — 부록A 상 릴리스 구간. 단 L9 가 하한 3 에 정확히 걸려 있고 미해소 3건이 전부 WCAG AA 급이라 조건부. 조건 3건(검색 input 포커스 링·1280 hero order 역행·cartmsg 사전 배치) 해소 시 무조건 릴리스",
+ "fix_status": [
+  {"lens":"L1","prior_reason":"전환 동사 '단위 전권 담기' 가 y=995 로 1280x900 폴드 밖","status":"resolved","evidence":"getBoundingClientRect 실측 1280 CTA y=730 bottom=778 < 900, 390 buybox CTA y=653 bottom=701 < 844. 1차 재채점 시점에도 해소, 본 판에서 유지"},
+  {"lens":"L2","prior_reason":".steps.three 3열 균등 카드가 슬롭 균등 카드 그리드 경계선","status":"resolved","evidence":"grid-template-columns '328.531px 328.547px 328.531px' → '1017.62px' 단일 열. 각 .step 이 display grid '200px 793.625px' 라벨열+본문열, 행 3개 y=3255/3348/3440 각 1018x92(구 329x195 카드)"},
+  {"lens":"L3","prior_reason":"h1 이 --t-h2 로 강등되어 h1==h2==price 34px 3중 동률","status":"resolved","evidence":"h1 44px/800 > h2.t 34px/800 > price 25.6px/500 (390: 31>26>22). --t-h1 clamp(31px,4.0vw,44px) 복귀, price 는 --t-h3 clamp(22,2.0vw,28) 로 하강. lectures.html h1 44px 와 동률화되어 목록면>상세면 역전도 해소"},
+  {"lens":"L4","prior_reason":"세트 해설이 목차에서 잘림 + 390 폴드 141px 가림","status":"resolved","evidence":"39/39행 DOM 존재, 초기 15행(4+5+6) 노출, [data-tocmore] 로 39행 전량(4791→6986px). 390 폴드 가림 141px → 65px(nav.fix 만, sticky 바는 buybox 가시 중 display:none)"},
+  {"lens":"L6","prior_reason":"총장 1280 5086px / 390 7510px 로 B 목차 패널 3324px 대비 2.5배","status":"partially_resolved","evidence":"1280 4791px(Δ-295), 390 6615px(Δ-895), 卷一 2187→1821px. 세트 해설 초기 10행→6행이 원인. 그러나 4791px 는 여전히 3324px 의 1.44배이고 펼치면 6986px"},
+  {"lens":"L7","prior_reason":"히어로 편수 모순 + '이용권'/'단위 전권' 4갈래 용어","status":"partially_resolved","evidence":"편수 6면 전건 일치. 용어는 .anch '단위 전권 495,000원' / .buybox .k '단위 전권 이용권' / CTA '단위 전권 담기' / JSON-LD offer '단위 전권 이용권 (인강 포함)' 4곳 통일. 잔존 2곳=data-cart-title '…전권 이용권'(단위 탈락) + 행 배지 '이용권' 38회"},
+  {"lens":"L8","prior_reason":"지면 내 이동 수단 부재로 39편 열람이 스크롤뿐","status":"resolved","evidence":".anch sticky top 72/65px, 링크 4개 각 min-height 48px, sy 900 부터 고정 노출. 6면 전건 동일. 부속 결함 N1·N2 도 본 판에서 해소"},
+  {"lens":"L9","prior_reason":"4면 앵커 nav 부재로 키보드 순차 스크롤 강제","status":"resolved","evidence":"앵커 nav 실재, Tab 12~14번째 stop 으로 진입, 타깃 48px, 착지 가림 0px, aria-current 정상 이동"}
+ ],
+ "n_status": [
+  {"id":"N1","lens":"L8,L9","prior":"aria-current 가 4번째 '이용권 495,000원' 에 영구 고정","status":"resolved","evidence":"scroll-behavior auto 강제 + 320ms 대기 스윕. 1280 sy 0/300/600/1200/1800/2600 → 卷一, 3400 → 卷二, 3891 → 卷三. 390 sy 4200 → 卷二. #plan 은 지시자 집합에서 분리(전 구간 '-'). 잔존 residual=1280 에서 卷三 클릭 착지(sy 3477) 시 지시자가 卷二 — spy 임계 120 과 scroll-margin 128 의 8px 경계 어긋남"},
+  {"id":"N2","lens":"L8,L9","prior":"앵커 착지 오프셋 부재로 절 머리가 sticky 바 뒤로 가림","status":"resolved","evidence":"scroll-margin-top auto → 128px(1280)/121px(390). #toc·#intro·#faq 착지 시 섹션 top=128/121, 앵커바 bottom=128/121, folio 卷 표식 top 184 bottom 216 → 가림 0px(구 #toc 120px·#faq 99px·#intro 80px·390 #toc 113px)"},
+  {"id":"N3","lens":"L3","prior":"h1 이 --t-h2 로 강등되어 h1==h2==price 3중 동률","status":"resolved","evidence":"1280 44/34/25.6px, 390 31/26/22px. 6면 전건 동일"},
+  {"id":"N4","lens":"L1,L5,L8","prior":"390 폴드 솔리드 CTA 2개(24px 간격) + 상품 h1 y=903 폴드 밖","status":"resolved","evidence":"h1 y=184 폴드 내. 390 폴드 솔리드 채움 정확히 1개('단위 전권 담기 →' x=44,y=653,302x48) — nav.fix '가이드북' 이 rgb(49,46,46) → rgba(0,0,0,0). sticky 바는 buybox 가시 구간 display:none, sy≥1200 block(y=703), buybox 복귀 시 none 으로 회귀. hero 는 .hcopy order:2 / .hmedia order:1 로 재배치(부작용은 신규 NN2)"},
+  {"id":"N5","lens":"L7","prior":"단위 강의 서수 결번(hum 05, sci 04)","status":"resolved","evidence":"6면 전 그룹 표시 번호 01..N 연속. hum 공통01-04·단위01-05·세트01-30, sci 동일, intl 동일, korea-hum 4/9/30, korea-sci 4/8/40, common 4. 결번 0"},
+  {"id":"N6","lens":"L7","prior":"summary API 미도달 시 hero meta 가 '공개 상태는 지금 확인할 수 없습니다' 로 대체","status":"resolved","evidence":"api.hyunhak.com requestfailed 상태에서 6면 전건 정적 스냅샷 유지. yonsei-hum '39편 12시간 2분 시청 3개월 세트 해설 30편, 2026-09-06 스냅샷 기준'"},
+  {"id":"N7","lens":"L9","prior":"heading 순서 역전 — H3(OT 카드)가 H1 앞","status":"resolved","evidence":"DOM 시퀀스 H1 → H2(이 인강을 어떤 순서로 듣나) → H2(39편, 세 묶음) → H3×3(공통 풀이·단위 강의·세트 해설) → H2(준비 8분…) → H3×3 → H2(자주 묻는 것). 목차 그룹이 h2→h3 로 하강. 잔존 residual=H2 두 등급(19.2px 대 34px, 1.77배)이 같은 레벨에 공존, 동시에 h2 19.2px == h3 19.2px"}
+ ],
+ "new_findings": [
+  {"id":"NN1","lens":"L9","desc":"헤더 검색 input 포커스 표시 전무","evidence":"포커스 전후 computed 동일: outline '3px none', box-shadow 'none', border-width 0px, background rgba(0,0,0,0). Tab 10번째 stop 에서 시각 지시 0. WCAG 2.4.7 Focus Visible AA. 3면 공통 헤더 컴포넌트","severity":"medium","status":"new"},
+  {"id":"NN2","lens":"L9,L4","desc":"1280 hero CSS order 로 포커스 순서가 시각 순서를 역행","evidence":".hcopy order:2(x=758 우측) / .hmedia order:1(x=131 좌측), DOM 은 hcopy 먼저. Tab 14번째가 구매 버튼(x=782)이고 영상(x=131)은 그 뒤 — 시각 좌→우와 반대. WCAG 2.4.3·1.3.2. N4 DOM 재배치의 부작용. 390 은 order 0/0 이라 무영향","severity":"medium","status":"new"},
+  {"id":"NN3","lens":"L9","desc":"장바구니 상태 통지가 라이브 리전 사후 삽입","evidence":"클릭 전 .cartmsg DOM 부재(null), 클릭 후 role=status 요소가 텍스트와 같은 tick 에 삽입. aria-live 속성 없음, activeElement 는 버튼에 잔류. 라이브 리전이 내용과 동시 생성되면 SR 통지가 불확실. WCAG 4.1.3","severity":"medium","status":"new"},
+  {"id":"NN4","lens":"L3,L1,L7","desc":"세트 해설 30행 표제의 54% 가 공통 boilerplate 인데 최대 웨이트를 점유","evidence":"30행 공통 접두 '연세대 활동우수 인문통합 ' 14자 + 공통 접미 '번 세트 해설 강의', 평균 표제 26자 대비 접두만 54%. 변별 정보는 2자리 숫자뿐이고 실제 주제('선택지의 양과 행복의 관계')는 13px 회색 보조행. 16px/700 이 정보량 0 문자열에 배정, 卷一 1821px = 지면 38%","severity":"medium","status":"new"},
+  {"id":"NN5","lens":"L9","desc":"목차 39행에 리스트 시맨틱 부재","evidence":"#toc 내 ul 0, ol 0, li 0, role=list 0. 행은 DIV.row(data-lec, data-seq). 보조기술에 '목록, 39개 항목' 미전달","severity":"low","status":"new"},
+  {"id":"NN6","lens":"L7","desc":"장바구니 페이로드 용어가 지면과 불일치","evidence":"data-cart-title '연세대 활동우수 인문통합 전권 이용권' 에서 '단위' 탈락. 지면 .buybox .k 및 JSON-LD offer name 은 '단위 전권 이용권 (인강 포함)'. 6면 전건 동일 패턴. 행 배지 '이용권' 38회로 제3 표기","severity":"low","status":"new"},
+  {"id":"NN7","lens":"L5,L8","desc":"모바일 바 채움 강등이 상세면에만 적용","evidence":"상세면 390 nav.fix '가이드북' bg rgba(0,0,0,0). 그러나 lectures.html 390 과 classroom.html 390 에서는 동일 요소가 x=159,y=786,72x52 솔리드. lectures.html 390 폴드는 솔리드 2개('인강 OT 와 맛보기 →' + '가이드북')","severity":"low","status":"new"},
+  {"id":"NN8","lens":"L9","desc":"lectures.html 강좌 제목 링크 타깃 높이 23px","evidence":"6개 강좌 제목 링크 270x23·239x23·187x23·239x23·239x23·103x23, 높이 23 < 24 하한. 1차 재채점에서도 지적, 미변경","severity":"low","status":"carried"},
+  {"id":"NN9","lens":"L7,L9","desc":"자막 track 이 subtitles kind","evidence":"6면 전건 <track kind='subtitles' srclang='ko' label='한국어' default>. 동일 언어 음성 자막은 WCAG 1.2.2 상 captions 가 정본(비음성 정보 포함 의무)","severity":"low","status":"new"},
+  {"id":"NN10","lens":"L7","desc":"담기 재클릭 시 수량 증가가 화면에 미반영","evidence":"1회 클릭 hh_cart_v1 qty:1, 2회 클릭 qty:2. 안내 문구는 두 번 다 '담았습니다. 장바구니로 →' 동일, 수량 표시 없음, 헤더 장바구니 배지 없음(null)","severity":"low","status":"new"}
+ ],
+ "cta_singularity": {
+  "1280": {
+   "viewport": "1280x900",
+   "state": "초기 로드(scrollY=0)",
+   "purchase_intent_solid_cta_count": 1,
+   "primary": {"text":"단위 전권 담기 →","x":782,"y":730,"w":343,"h":48,"bg":"rgb(49, 46, 46)","source":".buybox .acts .btn"},
+   "other_solid_in_fold": [{"text":"→ (헤더 검색 submit)","x":1103,"y":73,"w":44,"h":44,"bg":"rgb(49, 46, 46)","note":"유틸리티 글리프 44x44, 구매 의도 아님"}],
+   "sticky_bar": "display:none (1280 은 미디어쿼리로 비노출, 전 스크롤 구간)",
+   "scrolled_state": "sy 1000/2000/3000/3891 에서 폴드 내 솔리드 = 헤더 검색 글리프뿐. 구매 경로는 .anch sticky(top 72px, sy 900 부터 고정)의 '단위 전권 495,000원' 링크가 4791px 전 구간 담당",
+   "verdict": "PASS — 구매 의도 솔리드 CTA 정확히 1개, 경쟁 채움 없음"
+  },
+  "390": {
+   "viewport": "390x844",
+   "state": "초기 로드(scrollY=0)",
+   "purchase_intent_solid_cta_count": 1,
+   "primary": {"text":"단위 전권 담기 →","x":44,"y":653,"w":302,"h":48,"bg":"rgb(49, 46, 46)","source":".buybox .acts .btn"},
+   "other_solid_in_fold": [],
+   "h1_in_fold": {"y":184,"h":82,"fs":"31px","in_fold":true,"prior":"y=903 폴드 밖"},
+   "sticky_bar_while_buybox_visible": {"sy0":"display:none, class 'sticky off'","sy300":"none","sy600":"none","buybox_rect":{"y":400,"h":372}},
+   "sticky_bar_after_scroll": {"sy1200~4200":"display:block, rect x=0 y=703 390x69","cta":{"text":"단위 전권 담기","x":266,"y":714,"w":104,"h":48,"bg":"rgb(49, 46, 46)"},"labels":["495,000원","단위 전권 담기"],"solid_in_fold_at_that_state":1},
+   "sticky_bar_back_to_buybox": "display:none, class 'sticky off' — 재진입 시 정상 회귀",
+   "nav_fix": {"rect":{"y":779,"h":65},"cta_fills":"5개 전부 rgba(0, 0, 0, 0) — 구 '가이드북' rgb(49,46,46) 솔리드에서 강등","fold_coverage":"65/844 = 7.7% (구 141px 16.7%)"},
+   "verdict": "PASS — 초기 로드·스크롤 후 두 상태 모두 폴드 내 솔리드 채움 정확히 1개. N4 시각 단일성 FAIL 해소"
+  }
+ },
+ "secondary_pages": {
+  "lectures.html": "1280 3824px / 390 5640px, pageerror 0, 대비 미달 0/168·0/164(최소 4.97·4.70), 가로 overflow 0, h1 44px(상세면 h1 과 동률로 역전 해소). folio 0·.anch 부재(목록면 구조, 상세면과 다름은 용도 적합). 감점 2=강좌 제목 링크 6개 높이 23px(<24 하한) 미개선 / 390 폴드 솔리드 2개('인강 OT 와 맛보기 →' x=20,y=471,175x48 + '가이드북' x=159,y=786,72x52) — 채움 강등 미전파",
+  "classroom.html": "1280 1218px / 390 1669px(구 1651/2327), pageerror 0, 대비 미달 0/41·0/37. 비회원 폴드는 h1 '인강실' 44px + 단일 행동. 1280 폴드 솔리드는 헤더 검색 글리프뿐, 390 은 '가이드북' 솔리드 1개(NN7). crumb '인강' 22x44 타깃 잔존"
+ },
+ "six_page_structural_identity": {
+  "checked": ["yonsei-hum","yonsei-sci","yonsei-intl","korea-hum","korea-sci","common"],
+  "identical": "h1 44px/31px · h2.t 34px/26px · price 25.6px/22px · .anch 링크 4개 · folio 3개 · scroll-margin-top 128px/121px · buybox CTA 폴드 내(양 폭) · track kind=subtitles srclang=ko · pageerror 0 · 가로 overflow 0 · 서수 연속 — 12개 조합 전건 동일",
+  "differs": "총장 1280 4791/4763/4763/5072/5086/3325px, 390 6615/6615/6553/7139/7289/4519px. 편수 39/39/39/43/52/4(.cnt 4+5+30 / 4+5+30 / 4+5+30 / 4+9+30 / 4+8+40 / 4). common 은 가격 220,000원·data-cart-title '공통 풀이 인강'",
+  "verdict": "구조 동일성 확인 — 1면 심층 채점 결과가 6면에 전이 가능"
+ },
+ "bias_self_check": {
+  "blind_protocol": "PASS — maestro 셀프 점수 미제공·미열람 상태에서 독립 산출. 의뢰문에 '셀프 점수는 알려주지 않는다' 명시 확인",
+  "prior_json_role": "1차 재채점 JSON 은 fix_status 8건·new_findings N1~N7 의 대조 항목으로만 사용. 이전 점수 31·34 는 delta 계산에만 사용하고 렌즈 점수는 본 판 실측에서 재산출",
+  "upward_delta_scrutiny": "+5 는 렌즈 6개 상향(L2 4→5, L3 3→4, L6 3→4, L7 3→4, L8 3→4) 과 3개 동결(L1 4, L4 4, L5 4, L9 3)의 합. 각 상향은 1차 감점 사유의 실측 소멸에 1:1 대응(L2=gtc 3열→1열, L3=44/34/25.6 3단, L6=Δ-283/-645 및 10행→6행, L7=서수 결번 0·스냅샷 유지, L8=spy 스윕 이동·착지 가림 0). 사유 소멸 없이 올린 렌즈 0개",
+  "downward_guard": "수리로 새로 생긴 결함 2건(NN2 order 역행, NN4 는 기존이나 본 판 최초 계량)을 상향분에서 차감해 L1·L4·L5·L9 를 동결. L9 는 해소 3건과 신규 3건이 동수 AA 급이라 3 유지",
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true,
+  "self_correction_logged": "1차 판과 동일한 대비 계산 함정 재발생: 첫 스크립트가 조상 배경을 최초 1개만 찾아 흰색에 합성해 SPAN.ar 1.13, 두 번째가 시작점을 부모로 잡아 BUTTON.btn 1.07 거짓 FAIL 산출. 요소 자신부터 루트까지 전 배경을 수집해 역순 합성하도록 교정 후 8개 면·폭 조합 전건 미달 0 확정. v4 §4 'WCAG 자체추정 금지' 적용",
+  "smooth_scroll_guard": "의뢰 지시대로 스크롤 실측 전 html{scroll-behavior:auto!important} 주입 + 각 위치 280~400ms 대기. 1차 재채점의 aria-current 전건 고정 판정이 smooth 잔류 때문이었는지 확인하려 동일 조건에서 재측정했고, 본 판 지시자 이동은 auto 강제 상태의 값",
+  "measured_not_estimated": "모든 좌표·크기·대비·총장·채움색·서수·편수는 Playwright getBoundingClientRect / getComputedStyle / localStorage 실측 또는 소스 정규식 계수"
+ },
+ "measurement_artifacts": {
+  "harness": "rs2_main.mjs(타이포·CTA·sticky·목차·대비 1차), rs2_spy.mjs(scroll-behavior auto 스파이 스윕 + 착지 + sticky 3상태), rs2_x.mjs(steps 내부·JSON-LD·담기 클릭·tab), rs2_ctr.mjs(전 스택 alpha 합성 대비 3면×2폭), rs2_six.mjs(6면 구조 동일성), rs2_toc.mjs(행 시맨틱·서수·펼침), rs2_tab.mjs(로드 직후 tab 순서·hero order), rs2_focus.mjs(포커스 지시·cartmsg·qty), rs2_sec.mjs(부 대상 2면·데스크톱 CTA 지속), rs2_stick.mjs(.anch 고정), rs2_mid.mjs(중단 캡처). Playwright chromium, 1280x900 / 390x844, .rv opacity 강제 후 캡처",
+  "captures": [
+   "rescore2_detail_1280_fold.png","rescore2_detail_1280_full.png","rescore2_detail_390_fold.png","rescore2_detail_390_full.png",
+   "rescore2_detail_1280_toc.png","rescore2_detail_1280_tocmid.png","rescore2_detail_1280_intro.png","rescore2_detail_1280_faq.png",
+   "rescore2_list_1280_fold.png","rescore2_list_1280_full.png","rescore2_list_390_fold.png","rescore2_list_390_full.png",
+   "rescore2_room_1280_fold.png","rescore2_room_1280_full.png","rescore2_room_390_fold.png","rescore2_room_390_full.png"
+  ]
+ },
+ "repair_directives": {
+  "to_maestro": [
+   "L9 조건 1 (NN1): 헤더 검색 input 에 포커스 링 선언. 현재 outline 'none' 이 전역 리셋에 걸려 있고 대체 지시가 없음. 다른 stop 과 동일한 2px solid #312E2E offset 3px 로 통일",
+   "L9 조건 2 (NN2): 1280 hero 의 order:2/order:1 을 되돌리고 시각 배치는 grid-template-areas 나 direction 이 아닌 열 지정으로 해결. 포커스가 좌측 영상 → 우측 카피 순서가 되도록",
+   "L9 조건 3 (NN3): .cartmsg 를 빈 role=status 컨테이너로 지면에 사전 배치하고 클릭 시 텍스트만 주입. 수량 병기(NN10)도 같은 문안에",
+   "L3/L1 (NN4): 세트 해설 30행 표제에서 공통 접두 14자와 공통 접미를 그룹 표제로 올리고, 행의 16px/700 자리에 변별 주제문을 놓는다. 근원=06 message→visual (변별 정보의 기표 배정)",
+   "L5/L8 (NN7): nav.fix 채움 강등을 상세면 스코프에서 전역 컴포넌트로 승격해 lectures.html·classroom.html 에 전파",
+   "L7 (NN6): data-cart-title 을 '단위 전권 이용권' 으로 통일, 행 배지 어휘도 대조",
+   "L8 (N1 residual): spy 임계 120 을 scroll-margin 128/121 과 동일 값으로 맞춰 卷三 클릭 착지 시 지시자 어긋남 제거"
+  ],
+  "to_director": [
+   "Phase 4 마감 회귀(Phase 2 회귀 불요 — 렌즈1 4점, 기획층 근원 결함 없음): _tools/build_lectures.py 템플릿 + 전역 헤더/하단바 컴포넌트 수정 후 6면 + lectures.html + classroom.html 재생성",
+   "재실행 후 본 하네스로 재측정할 값: 검색 input 포커스 전후 outline 차분 · 1280 hero computed order · .cartmsg 사전 존재 여부 · lectures/classroom 390 폴드 솔리드 수 · 卷三 클릭 후 aria-current"
+  ],
+  "root_planning_topic": "없음(렌즈1 4점, 렌즈9 3점). 미해소는 전부 craft·구현층. 굳이 꼽으면 06 message→visual 이 NN4 의 상류 — 30행 중 변별 정보를 어느 기표에 실을지의 결정이 누락"
+ },
+ "stage3_status": "미실시 — 본 의뢰 범위는 Stage 1 게이트 + Stage 2 9렌즈 재채점"
+}

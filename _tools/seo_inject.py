@@ -396,6 +396,10 @@ def inject_aeo(s, answer, rel, warnings):
         # 문장마다 한 줄 (2026-09-04 건우). 태그를 걷으면 마침표 뒤 공백이 남아 텍스트는 manifest answer 와 같다
         txt = re.sub(r"\. (?=\S)", ". <br>", txt)
     aeo = f'{C.AEO_BEGIN}<p class="aeo-answer">{txt}</p>{C.AEO_END}'
+    # 지면이 <!-- aeo-slot --> 을 두면 그 줄 바로 아래 같은 들여쓰기로 삽입 (2026-09-06, 인강 상품면. flex 안·wrap 밖 삽입 회피). 슬롯은 남겨 재실행 시 같은 바이트
+    slot = re.search(r"^([ \t]*)<!-- aeo-slot -->[ \t]*$", s, re.M)
+    if slot:
+        return s[:slot.end()] + "\n" + slot.group(1) + aeo + s[slot.end():]
     # pagehead 가 main 안에 있으면 그 블록 끝(부제 뒤)에, 없으면 main 첫 자식으로
     ph = re.search(r'<(div|section) class="pagehead"[^>]*>', s[mm.end():], re.I)
     if ph:

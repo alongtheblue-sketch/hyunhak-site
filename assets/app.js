@@ -104,7 +104,7 @@
   let _me = null;
   async function me(force) {
     if (_me !== null && !force) return _me;
-    try { _me = (await api("/api/auth/me")); } catch { _me = { member: null }; }
+    try { _me = (await api("/api/auth/me")); } catch (e) { _me = { member: null, error: (e && e.status === 401) ? null : ((e && e.status) || "network") }; }   // 401 = 비회원. 그 밖(네트워크, 5xx, 403)은 error 에 남겨 호출자가 가른다
     return _me;
   }
 
