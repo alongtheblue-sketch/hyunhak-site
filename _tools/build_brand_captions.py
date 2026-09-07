@@ -36,7 +36,7 @@ SEALED_SHA = "ea356fd5c5410216a8470ea38805b8e181b92ecacd0d9924ef2e41c27fb0931e"
 SEALED_DURATION = 59.958333
 # 자막 파일 자체의 봉인. 설계 원본(_design)은 저장소에 추적되지 않아 깨끗한 체크아웃이나 배포
 # 워크트리에는 없다. 그때는 자막을 다시 만드는 대신 이 해시로 대조한다.
-SEALED_VTT_SHA = "7a29de06916264d36670ae160b5a9cdc0985a4854fe1c3f10f5a22086c5a3ca1"
+SEALED_VTT_SHA = "739addc223819a1e1d9df24f28e7930dfd3dd6c535a941f2b7b18a470bac2319"
 
 XFADE = 0.5          # assemble.py 의 xfade duration
 T_IN = 0.6           # spec.json tokens.t_in
@@ -51,7 +51,9 @@ SPLIT_GAP = 0.2      # 두 자막 사이 간격
 
 # 타이틀 카드가 화면 어느 쪽에 붙는지. 자막은 반대쪽에 둔다 (spec.json 의 anchor).
 #   tl = 좌상단 → 자막은 아래(기본)   bl = 좌하단 → 자막은 위(line:0)
-ANCHOR_TO_CUE_SETTING = {"tl": "", "bl": " line:0"}
+# tl = 좌상단 타이틀 → 자막은 아래. 다만 맨 아래는 재생·자막 버튼 자리라 네 줄 위로 올린다.
+# bl = 좌하단 타이틀 → 자막은 맨 위.
+ANCHOR_TO_CUE_SETTING = {"tl": " line:-4", "bl": " line:0"}
 
 # 로고 컷: spec.json 에 없다. 배포본 화소 실측값.
 LOGO_CUES = [
