@@ -5,7 +5,7 @@
    이후에는 생성된 블록 자체를 정규식으로 다시 찾아 교체한다.
    2026-08-26 하위 페이지 v2 전개 (s16)."""
 import re, json, os
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 # 할인 행사 배너 (2026-09-07). 원천 = _tools/promo.json (id·rate·ends_at 은 API D1 promotions 행과 같아야 한다).
 # 빌드 시각이 ends_at 을 지나면 배너를 넣지 않는다 → 행사 뒤 첫 빌드가 배너를 걷는다. 그 전에는 지면 JS 가 서버 판정(null)으로 숨긴다.
@@ -57,11 +57,16 @@ def promo_strip(rel, p=None, price_note=True):
     except OSError:
         return ""
     sp = p.get("strip_price") if price_note else None
-    note = (f'<span class="lg"> {sp["prefix"]}<span class="p" data-list-price="{int(sp["list_price"])}">{_won(sp["list_price"])}</span>{sp["suffix"]}</span>'
+    note = (f'<span class="lg sans"> {sp["prefix"]}<span class="p" data-list-price="{int(sp["list_price"])}">{_won(sp["list_price"])}</span>{sp["suffix"]}</span>'
             if sp else "")
+    # 계기 띠(A3, critic 2026-09-07 38/45 RELEASE_OK) 의 시한 계기값 = ends_at 을 KST 로 "2026." + "09.30 23:59" (모바일은 연도 생략)
+    until_y = until_md = ""
+    if p.get("ends_at"):
+        t = datetime.fromisoformat(str(p["ends_at"]).replace("Z", "+00:00")).astimezone(timezone(timedelta(hours=9)))
+        until_y, until_md = t.strftime("%Y."), t.strftime("%m.%d %H:%M")
     return "\n" + tpl.format(p=prefix_of(rel), label=p["label"], label_sm=p.get("label_sm", p["label"]), link=p.get("link", "index.html"),
                               link_label=p.get("link_label", "자세히"), link_label_sm=p.get("link_label_sm", p.get("link_label", "자세히")),
-                              until=p.get("ends_at") or "", id=p["id"], rate=p["rate"], price_note=note)
+                              until=p.get("ends_at") or "", id=p["id"], rate=p["rate"], price_note=note, until_y=until_y, until_md=until_md)
 
 
 PROMO_BAND_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "promo_band.html")

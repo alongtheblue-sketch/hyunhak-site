@@ -186,7 +186,8 @@
   // 표기 숫자와 속성값이 다르면 낡은 지면이므로 손대지 않고 콘솔에 남긴다.
   function renderPromoPrices() {
     const p = promo();
-    if (p === undefined) return;   // 서버 판정을 못 받았으면 빌드 시각 상태 그대로 (배너 유지, 정가 표기)
+    // 서버 판정을 못 받았으면(undefined) 배너를 숨긴다: 할인을 광고하면서 어떤 가격도 안 깎인 화면이 나가는 것이 더 나쁘다 (critic P1-1).
+    // 가격 표기는 손대지 않는다 (정가 그대로). 판정 null(행사 없음)·만료도 숨긴다.
     document.querySelectorAll("[data-promo]").forEach((el) => {
       const until = el.getAttribute("data-promo-until");
       const expired = until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until);
