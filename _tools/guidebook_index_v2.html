@@ -80,7 +80,7 @@
       <div><b>__N__</b><span>권, __SALE__권 판매 중</span></div>
       <div><b>2027</b><span>학년도 대비, 전권 판매 중</span></div>
       <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
-      <div><b>__PRICE__</b><span>원, 권당</span></div>
+      <div data-list-price="__PRICE_RAW__"><b>__PRICE__원</b><span>, 권당</span></div>
     </div>
   </div>
 </section>
@@ -107,8 +107,8 @@
         <h2>31권 전권, 절반 값으로</h2>
         <p>전 대학을 준비하는 학원과 다권 수요를 위한 전권 상품입니다.</p>
         <p style="margin-top:10px;font-size:var(--t-sm)">
-          <b>전권 열람권 511,500원</b> <small>(권당 33,000원 × 31권 = 1,023,000원의 절반)</small>, 31권 보안 뷰어 열람<br>
-          <b>전권 PDF 소장판 1,705,000원</b> <small>(권당 110,000원 × 31권 = 3,410,000원의 절반)</small>, 31권 파일 내려받기와 열람, 구매 계정 각인
+          <b data-list-price="511500">전권 열람권 511,500원</b> <small>(권당 33,000원 × 31권 = 1,023,000원의 절반)</small>, 31권 보안 뷰어 열람<br>
+          <b data-list-price="1705000">전권 PDF 소장판 1,705,000원</b> <small>(권당 110,000원 × 31권 = 3,410,000원의 절반)</small>, 31권 파일 내려받기와 열람, 구매 계정 각인
         </p>
         <p style="margin-top:8px;font-size:var(--t-sm);color:var(--gray)">1,023,000원과 3,410,000원은 낱권 31권의 합산 금액이며 따로 파는 상품이 아닙니다. 보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
       </div>
@@ -167,7 +167,7 @@ var HH_GB=__HH_GB__;
     return '<article class="gb" id="'+o.slug+'">'
       +'<img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="210" height="297" loading="lazy">'
       +'<h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
-      +'<span class="pr">__PRICE__원</span>'
+      +'<span class="pr" data-list-price="__PRICE_RAW__">__PRICE__원</span>'
       +'<div class="acts">'+act+'</div></article>';
   }
   // 31행을 훑을 때 눈이 짚을 자리. 초성 단위로 묶는다.

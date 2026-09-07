@@ -1020,7 +1020,7 @@ def render_page(cat, items, i, meta):
         f"{full_name(e)} 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙.",
         f"선배 후기 {years} 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본."))
     if sale:
-        pdf_btn = (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기, {won(pdfp)}</button>\n      '
+        pdf_btn = (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}" data-list-price="{pdfp}">PDF 소장판 담기, {won(pdfp)}</button>\n      '
                    if pdfp else "")
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
                 f'      {pdf_btn}<a class="btn ghost" href="../cart.html">장바구니 보기</a>')
@@ -1031,7 +1031,7 @@ def render_page(cat, items, i, meta):
         final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
                       + (f'<button type="button" class="btn ghost" data-cart-sku="{esc(e["sku"])}-pdf" data-cart-title="{esc(h1)} PDF 소장판" data-cart-price="{pdfp}">PDF 소장판 담기</button>' if pdfp else "")
                       + f'<a class="btn ghost" href="index.html">다른 대학 보기</a>')
-        price_block = f'<span class="price">{price:,}원<small>부가세 포함, 보안 리더 열람 3개월</small></span>'
+        price_block = f'<span class="price" data-list-price="{price}">{price:,}원<small>부가세 포함, 보안 리더 열람 3개월</small></span>'   # data-list-price = 할인 행사 표기 표식 (app.js renderPromoPrices, 2026-09-07)
     elif studio:
         # 연세대, 고려대 = 제시문형이라 2027 서류기반 판을 내지 않는다. 착지 = /programs/<slug>.html 면접 스튜디오 (2026-09-03).
         sr = SEARCH[e["slug"]]

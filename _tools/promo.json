@@ -1,0 +1,39 @@
+{
+  "_doc": "사이트 쪽 행사 표기 원천 (배너 문안, 종료 시각). 금액 판정 원천은 API D1 promotions(prm_2609_30) 이며 두 파일의 id, rate, ends_at 은 같아야 한다. v2_shell.py 가 빌드 시각 < ends_at 이고 published 일 때만 배너를 셸에 넣는다. 종료 뒤 빌드하면 배너가 사라지고, 그 전이라도 지면 JS 가 /api/config.promo 가 null 이면 숨긴다.",
+  "id": "prm_2609_30",
+  "rate": 30,
+  "label": "9월 30일까지 전 상품 30% 할인",
+  "starts_at": null,
+  "ends_at": "2026-09-30T23:59:59+09:00",
+  "link": "guidebook/index.html",
+  "link_label": "할인 적용 상품 보기",
+  "published": true,
+  "link_label_sm": "할인가 보기",
+  "strip_price": {
+    "prefix": "가이드북은 권당 ",
+    "list_price": 33000,
+    "suffix": "입니다."
+  },
+  "band": {
+    "until_text": "마감 2026년 9월 30일 23시 59분",
+    "foot": "할인가는 2026년 9월 30일 23시 59분까지 적용합니다.",
+    "rows": [
+      [
+        "서류기반면접 가이드북 권당",
+        33000
+      ],
+      [
+        "제시문 면접 스튜디오 단위 전권",
+        495000
+      ],
+      [
+        "인강",
+        220000
+      ],
+      [
+        "가이드북 전권 열람권",
+        511500
+      ]
+    ]
+  }
+}

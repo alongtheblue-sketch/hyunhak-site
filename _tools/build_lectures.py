@@ -220,7 +220,7 @@ def list_page(cs):
         comp = (f'<span><b>{c["n"]}편</b> 구성, {E(fmt_total(c["sec"]))}</span>'
                 + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}, 2026 기출 해설 {len(k["gichul"])}</span>' if c["code"] != "common" else '<span>다섯 단위 공통 절차 4편</span>')
                 + (f'<span class="pub" data-lec-summary="unit={c["code"]}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">{E(SNAP)} 스냅샷 기준 세트 해설 {len(k["passage"])}편</span>' if c["code"] != "common" else f'<span class="pub" data-lec-summary="kind=common" data-total="{len(k["common"])}">{E(SNAP)} 스냅샷 기준 {len(k["common"])}편</span>'))
-        pr = (f'<span class="pr">{c["price"]:,}원<small>단위 전권, 인강 포함, 시청 3개월</small></span>' if c["code"] != "common" else f'<span class="pr">{c["price"]:,}원<small>인강만, 시청 3개월</small></span>')
+        pr = (f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 인강 포함, 시청 3개월</small></span>' if c["code"] != "common" else f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 시청 3개월</small></span>')
         rows.append(f'''<article class="cr" data-univ="{c["univ"]}" data-track="{c["track"]}">
   <div><span class="kn">{E(c["spec"])}</span><h2><a href="lectures/{c["code"]}.html">{E(c["label"])}{"" if c["code"] == "common" else " 풀이법 인강"}</a></h2><p class="sub">{E(INTRO[c["code"]][0].split(". ")[1][:60] + "…") if c["code"] != "common" else "절차 시험, 개수 계약, 말하기 편집, 연습 시스템"}</p></div>
   <div class="comp">{comp}</div>
@@ -410,13 +410,13 @@ def detail_page(c, cs):
     intro = "".join(f"<p>{E(x)}</p>" for x in INTRO[code])
     # 구매 상자
     if not is_common:
-        buy = f'''<div class="buybox" id="plan"><p class="k">단위 전권 이용권</p><p class="price">{c["price"]:,}원<small>단위 전권, 응시 12개월, 인강 3개월</small></p>
+        buy = f'''<div class="buybox" id="plan"><p class="k">단위 전권 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 응시 12개월, 인강 3개월</small></p>
 <ul class="inc"><li><span>이 인강 {c["n"]}편</span><span>전부 포함</span></li><li><span>응시</span><span>지문 {c["set_count"]}편, 지문마다 5회</span></li><li><span>첨삭</span><span>전사, 진단, 재구성</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="{E(c["sku"])}" data-cart-title="{E(c["label"])} 전권 이용권" data-cart-price="{c["price"]}">단위 전권 담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
 <p class="alt">지문 낱권 {c["single"]:,}원에는 그 세트 해설 1편이 붙습니다. 공통 풀이 4편만 들으려면 <a href="common.html">220,000원</a>.</p></div>'''
     else:
-        buy = f'''<div class="buybox" id="plan"><p class="k">공통 풀이 이용권</p><p class="price">{c["price"]:,}원<small>인강만, 구매일부터 3개월</small></p>
+        buy = f'''<div class="buybox" id="plan"><p class="k">공통 풀이 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 구매일부터 3개월</small></p>
 <ul class="inc"><li><span>내용</span><span>공통 풀이 4편</span></li><li><span>시청</span><span>인강실, 배속과 책갈피</span></li><li><span>단위 전권</span><span>이미 포함</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="lecture-common" data-cart-title="공통 풀이 인강" data-cart-price="220000">담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
@@ -450,7 +450,7 @@ def detail_page(c, cs):
  <!-- aeo-slot -->
 </div>
 <div class="wrap">
- <nav class="anch" aria-label="지면 차례"><a href="#toc" aria-current="true"><b>卷一</b>강의 목차</a><a href="#intro"><b>卷二</b>이 인강은</a><a href="#faq"><b>卷三</b>묻는 것</a><a href="#plan" class="pl"><b>{"공통 풀이" if is_common else "단위 전권"}</b>{c["price"]:,}원</a></nav>
+ <nav class="anch" aria-label="지면 차례"><a href="#toc" aria-current="true"><b>卷一</b>강의 목차</a><a href="#intro"><b>卷二</b>이 인강은</a><a href="#faq"><b>卷三</b>묻는 것</a><a href="#plan" class="pl" data-list-price="{c["price"]}"><b>{"공통 풀이" if is_common else "단위 전권"}</b>{c["price"]:,}원</a></nav>
  <section class="page" id="toc"><p class="folio"><b>卷一</b><span>강의 목차</span><span class="r">1</span></p><h2 class="t">{c["n"]}편, {"한 묶음" if is_common else ("네 묶음" if k["gichul"] else "세 묶음")}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
  <section class="page" id="intro"><p class="folio"><b>卷二</b><span>이 인강은</span><span class="r">2</span></p><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + "을 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><p class="folio"><b>卷三</b><span>묻는 것</span><span class="r">3</span></p><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
@@ -460,7 +460,7 @@ def detail_page(c, cs):
  </div>
  <div style="margin-top:var(--s6)"><span class="eyebrow">다른 강좌</span><div style="display:flex;gap:8px;flex-wrap:wrap">{others}</div></div></section>
 </div>
-<div class="sticky"><div class="wrap in"><span class="pr">{c["price"]:,}원</span><a class="btn sm" href="#plan">{"담기" if is_common else "단위 전권 담기"}</a></div></div>'''
+<div class="sticky"><div class="wrap in"><span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원</span><a class="btn sm" href="#plan">{"담기" if is_common else "단위 전권 담기"}</a></div></div>'''
     script = f'''<script>
 (function(){{ if(!window.LEC) return; var S=["{E(sid)}"]; LEC.paintSummaries(document);
   var code={"null" if is_common else '"' + code + '"'};

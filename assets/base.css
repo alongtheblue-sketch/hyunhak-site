@@ -149,6 +149,143 @@ body.v2{background:var(--ink)}
 :where(body.v2) .strip .in .dot{width:6px;height:6px;background:var(--seal);border-radius:50%;display:inline-block;margin-right:10px;vertical-align:1px}
 :where(body.v2) .strip a{display:inline-flex;align-items:center;min-height:var(--tap);font-weight:600;white-space:nowrap}
 
+/* 할인 행사 가격 표기 (2026-09-07): [data-list-price] 안 첫 "N원" 을 app.js 가 정가 취소선(.was) + 현재가(.sale) 로 바꾼다.
+   .was 는 灰墨 얇게, .sale 은 부모 색 승계(가격 자리 朱印 규칙 그대로). 배너 본체 스타일 = 아래 .promo */
+:where(body.v2) s.was{color:var(--gray);font-weight:400;font-size:.72em;text-decoration:line-through;text-decoration-thickness:1px;letter-spacing:0}
+:where(body.v2) .sale{font-weight:inherit}
+
+/* ============ 30% 할인 행사 배너 추가 CSS (2026-09-07 design-director) ============
+   전제  assets/base.css 뒤에 로드한다. 병합할 때는 base.css 152행 주석이 가리키는 "아래 .promo" 자리에 그대로 붙는다.
+         신규 색 0, 신규 서체 0, 신규 곡률 0. 값은 base.css :root 토큰과 그 토큰이 정한 수만 쓴다.
+   범위  A = 전 페이지 상단 띠 .promo (각 페이지 header 닫는 태그 바로 다음 줄. v2_shell.py 가 교체하는 구간은
+         util 블록부터 header 닫는 태그까지라 그 밖에 두면 셸 재생성에 살아남는다).
+         B = 홈 첫 화면 프로모 밴드 .pband (index.html 히어로 herotop 다음, duo 바로 위).
+   실측  base.css 의 .strip 은 @media(max-width:900px) 에서 display:none 이다. 그래서 A 는 .strip 을 재사용하지
+         않고 별 클래스로 두고 모바일에서 살려 둔다.
+   가격  app.js renderPromoPrices 의 계약을 그대로 쓴다. 지면에는 정가만 적고 [data-list-price] 를 단다.
+         행사 중이면 app.js 가 그 안의 "N원" 을 s.was(정가 취소선) + span.sale(할인가) 로 바꾼다.
+         .sale 은 부모 색을 승계하므로 가격 칸(.p)에 朱印을 준다. 지면 숫자와 속성값이 다르면 app.js 가 손대지 않는다.
+   표시  app.js 는 [data-promo] 를 행사 밖이거나 data-promo-until 이 지나면 hidden 으로 감춘다. display 를 주는
+         컴포넌트는 UA 의 [hidden] 을 이기므로 아래 마지막 줄에서 다시 감춘다 (이 파일에서 유일한 !important).
+   충돌  .hd(헤더) .rows(강의 목록) 는 base.css 의 기존 컴포넌트라 쓰지 않는다. 밴드 머리 = .phd, 가격 줄 = .plist. */
+
+/* ─── 공통: 가격 칸 ─── */
+:where(body.v2) .promo .p,:where(body.v2) .pband .p{font-family:var(--mono);font-weight:500;letter-spacing:-0.01em;color:var(--seal)}
+:where(body.v2) .promo .n,:where(body.v2) .pband .n{font-family:var(--mono);font-weight:500;letter-spacing:-0.01em}
+:where(body.v2) .pband .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray)}
+
+/* ═══════ A. 전 페이지 상단 띠 (.promo) ═══════ */
+:where(body.v2) .promo .in{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
+  min-height:44px;font-size:var(--t-sm);line-height:var(--lh-ui)}
+:where(body.v2) .promo p{max-width:none;margin:0}
+:where(body.v2) .promo b{font-weight:600}
+:where(body.v2) .promo .dot{width:6px;height:6px;background:var(--seal);border-radius:50%;
+  display:inline-block;margin-right:10px;vertical-align:1px;flex:none}
+:where(body.v2) .promo a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;white-space:nowrap;
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
+:where(body.v2) .promo .sm{display:none}
+:where(body.v2) .promo s.was{font-size:var(--t-xs)}   /* 띠 본문이 13px 이라 base.css 의 .72em 을 그대로 두면 9.4px 이 된다. 11px 로 세운다 */
+
+/* A1 판심 바탕 */
+:where(body.v2) .promo.mat{background:var(--mat);border-bottom:var(--rule-strong)}
+:where(body.v2) .promo.mat a{text-decoration-color:var(--hair)}
+:where(body.v2) .promo.mat a:hover{color:var(--seal);text-decoration-color:var(--seal)}
+
+/* A2 먹 반전. 玄墨 위 朱印은 대비 2.36 이라 글자로 쓰지 않는다. 강조 한 점 = 金泥 6.29 */
+:where(body.v2) .promo.ink{background:var(--ink);color:var(--paper)}
+:where(body.v2) .promo.ink .g{color:var(--gold)}
+:where(body.v2) .promo.ink .p{color:var(--gold)}
+:where(body.v2) .promo.ink s.was{color:rgba(var(--paper-rgb),.62)}   /* 灰墨은 玄墨 위 2.33 이라 못 쓴다. 이 값은 5.53 */
+:where(body.v2) .promo.ink a{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
+:where(body.v2) .promo.ink a:hover{color:var(--gold);text-decoration-color:var(--gold)}
+
+/* A3 괘선만. 계기(모노) 등록 */
+:where(body.v2) .promo.rule{background:var(--paper);border-top:var(--rule);border-bottom:var(--rule-strong)}
+:where(body.v2) .promo.rule .in{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
+:where(body.v2) .promo.rule .lb{letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.v2) .promo.rule .sans{font-family:var(--sans);letter-spacing:-0.01em;margin-left:var(--s2);padding-left:var(--s3);border-left:var(--rule)}   /* 계기값과 문장 사이 괘선 한 줄 */
+:where(body.v2) .promo.rule .sans.sm{border-left:0;padding-left:0;margin-left:6px}
+:where(body.v2) .promo.rule a{font-family:var(--sans);letter-spacing:-0.01em;text-decoration-color:var(--hair)}
+:where(body.v2) .promo.rule a:hover{color:var(--seal);text-decoration-color:var(--seal)}
+
+@media (max-width:900px){
+  :where(body.v2) .promo .in{min-height:44px;gap:var(--s2)}
+  :where(body.v2) .promo .lg{display:none}
+  :where(body.v2) .promo .sm{display:inline}
+  :where(body.v2) .promo a{min-height:44px}   /* 5요소 §3.3 모바일 터치 타깃 하한 */
+  :where(body.v2) .promo .dot{margin-right:8px}
+}
+
+/* ═══════ B. 홈 첫 화면 프로모 밴드 (.pband) ═══════ */
+:where(body.v2) .pband{margin:var(--s5) 0 0}   /* 다음 형제 .duo 가 이미 margin-top var(--s5) 를 갖는다 */
+:where(body.v2) .pband h2{font-size:var(--t-h4);letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
+:where(body.v2) .pband .dot{width:6px;height:6px;background:var(--seal);border-radius:50%;
+  display:inline-block;margin-right:10px;vertical-align:4px;flex:none}
+:where(body.v2) .pband .lede{font-size:var(--t-sm);color:var(--body);max-width:var(--measure-narrow);margin-top:var(--s2)}
+:where(body.v2) .pband .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;color:var(--gray);margin-top:var(--s2)}
+:where(body.v2) .pband .plist{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
+:where(body.v2) .pband .plist li{display:flex;flex-direction:column;gap:var(--s1);padding-left:var(--s3);border-left:var(--rule)}
+:where(body.v2) .pband .plist .p{font-size:var(--t-h4)}
+:where(body.v2) .pband .go{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);font-weight:600;font-size:var(--t-sm);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--hair)}
+:where(body.v2) .pband .go:hover{color:var(--seal);text-decoration-color:var(--seal)}
+
+/* B1 판심 밴드: 문장 한 단 + 가격 네 칸 */
+:where(body.v2) .pband.mat{background:var(--mat);border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4)}
+:where(body.v2) .pband.mat .phd{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s4);
+  padding-bottom:var(--s4);margin-bottom:var(--s4);border-bottom:var(--rule)}
+
+/* B2 먹판 밴드: 玄墨 바탕, 金泥 한 점(30%) */
+:where(body.v2) .pband.ink{background:var(--ink);color:var(--paper);border-radius:var(--r-md);
+  padding:var(--s5);display:grid;grid-template-columns:minmax(0,1.414fr) minmax(0,1fr);gap:var(--s5)}   /* 1:√2 (5요소 §5.1 화이트리스트) */
+:where(body.v2) .pband.ink h2{font-size:var(--t-h3)}
+:where(body.v2) .pband.ink .rate{font-family:var(--mono);font-weight:500;font-size:var(--t-display);line-height:1;
+  letter-spacing:-0.03em;color:var(--gold);display:block;margin-bottom:var(--s3)}
+:where(body.v2) .pband.ink .lede,:where(body.v2) .pband.ink .until{color:rgba(var(--paper-rgb),.72)}
+:where(body.v2) .pband.ink .k{color:rgba(var(--paper-rgb),.62)}
+:where(body.v2) .pband.ink .plist{grid-template-columns:1fr;gap:var(--s3)}
+:where(body.v2) .pband.ink .plist li{border-left:0;border-top:1px solid rgba(var(--paper-rgb),.22);padding:var(--s2) 0 0}
+:where(body.v2) .pband.ink .p{color:var(--paper)}
+:where(body.v2) .pband.ink s.was{color:rgba(var(--paper-rgb),.62)}
+:where(body.v2) .pband.ink .go{color:var(--gold);text-decoration-color:rgba(208,172,110,.5)}
+:where(body.v2) .pband.ink .go:hover{text-decoration-color:var(--gold)}
+
+/* B3 괘선 표: 채움 0, 판본 등록 */
+:where(body.v2) .pband.rule{border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4) 0 var(--s3)}
+:where(body.v2) .pband.rule .phd{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s3)}
+:where(body.v2) .pband.rule table{width:100%;border-collapse:collapse}
+:where(body.v2) .pband.rule th,:where(body.v2) .pband.rule td{padding:10px 0;border-top:var(--rule);text-align:right;font-size:var(--t-sm)}
+:where(body.v2) .pband.rule thead th{border-top:0;padding-top:0;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.v2) .pband.rule th[scope=row]{text-align:left;font-weight:600;letter-spacing:-0.01em}
+:where(body.v2) .pband.rule thead th:first-child{text-align:left}
+:where(body.v2) .pband.rule td .p{font-size:var(--t-base)}
+:where(body.v2) .pband.rule tfoot td{border-top:var(--rule-strong);font-size:var(--t-xs);color:var(--gray);text-align:left;padding-top:8px}
+
+@media (max-width:900px){
+  :where(body.v2) .pband{margin:var(--s4) 0 0}
+  :where(body.v2) .pband .plist{grid-template-columns:repeat(2,1fr);gap:var(--s3) var(--s2)}
+  :where(body.v2) .pband.ink .plist{grid-template-columns:1fr}
+  :where(body.v2) .pband.mat{padding:var(--s3)}
+  :where(body.v2) .pband.mat .phd{flex-direction:column;align-items:flex-start;gap:var(--s2);padding-bottom:var(--s3);margin-bottom:var(--s3)}
+  :where(body.v2) .pband.ink{grid-template-columns:1fr;gap:var(--s4);padding:var(--s4)}
+  :where(body.v2) .pband.rule .phd{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+}
+@media (max-width:520px){
+  /* 좁은 폭에서는 네 칸을 네 줄로 눕힌다. 이름 왼쪽, 가격 오른쪽 (세로로 쌓으면 밴드가 두 배로 길어진다) */
+  :where(body.v2) .pband .plist{grid-template-columns:1fr;gap:0}
+  :where(body.v2) .pband .plist li{flex-direction:row;align-items:baseline;justify-content:space-between;gap:var(--s2);
+    padding:10px 0 0;border-left:0;border-top:var(--rule)}
+  :where(body.v2) .pband .plist li:first-child{border-top:0;padding-top:0}
+  :where(body.v2) .pband.ink .plist li{border-top:1px solid rgba(var(--paper-rgb),.22)}
+  :where(body.v2) .pband.ink .plist li:first-child{border-top:0}
+  :where(body.v2) .pband .plist .p{font-size:var(--t-base);text-align:right;white-space:nowrap;flex:none}   /* 정가와 할인가가 두 줄로 갈라지지 않게 한다 */
+  :where(body.v2) .pband .plist .k{flex:1 1 auto;min-width:0}
+}
+
+/* 행사 밖이면 app.js 가 [data-promo] 에 hidden 을 건다. display 를 준 컴포넌트가 UA 의 [hidden] 을 이기므로 되돌린다 */
+:where(body.v2) .promo[hidden],:where(body.v2) .pband[hidden]{display:none!important}
+
 /* 버튼 */
 :where(body.v2) .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--tap);padding-inline:var(--s4);
   background:var(--ink);color:var(--paper);font-weight:700;font-size:var(--t-sm);letter-spacing:-0.01em;border-radius:var(--r-sm);

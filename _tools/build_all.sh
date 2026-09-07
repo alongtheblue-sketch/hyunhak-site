@@ -13,6 +13,7 @@ python3 _tools/build_interview_hub.py >/dev/null   # 1c 38개 대학 면접 형�
 python3 _tools/build_lectures.py >/dev/null   # 1d 인강 상품면 9종 = 목록 1 + 강좌 상세 6 + 인강실 1 (sets.json + lecture_catalog.json 스냅샷, 2026-09-06)
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
+python3 _tools/apply_promo.py   # 2b 행사 배너: 상세 LP 4면 띠 + 홈 밴드 (v2 셸 밖 자리, _tools/promo.json 기간 안에서만. 2026-09-07)
 python3 _tools/apply_fonts.py
 python3 _tools/apply_noscript_rv.py   # 3c GS-24-1 스크립트 차단 시 .rv 폴백(base.css 면 전부, 멱등)
 python3 _tools/apply_analytics.py

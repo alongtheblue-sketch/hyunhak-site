@@ -1,0 +1,17 @@
+<section class="pband rule" data-promo="{id}" data-promo-until="{until}" aria-labelledby="promoT">
+  <div class="phd">
+    <div>
+      <h2 id="promoT"><i class="dot" aria-hidden="true"></i>{label}</h2>
+      <p class="until">{until_text}</p>
+    </div>
+    <a class="go" href="{p}{link}">{link_label} <span aria-hidden="true">→</span></a>
+  </div>
+  <table>
+    <caption class="sr">{rate}% 할인 적용 가격표. 정가 뒤에 할인가가 붙습니다.</caption>
+    <thead><tr><th scope="col">상품</th><th scope="col">정가와 할인가</th></tr></thead>
+    <tbody>
+{rows}
+    </tbody>
+    <tfoot><tr><td colspan="2">{foot}</td></tr></tfoot>
+  </table>
+</section>

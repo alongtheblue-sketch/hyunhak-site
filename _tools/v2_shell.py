@@ -4,7 +4,82 @@
    페이지 작성 시 자리표시 주석 <!--v2:shell--> <!--v2:footer--> <!--v2:fix--> 를 두면 첫 실행이 채우고,
    이후에는 생성된 블록 자체를 정규식으로 다시 찾아 교체한다.
    2026-08-26 하위 페이지 v2 전개 (s16)."""
-import re
+import re, json, os
+from datetime import datetime, timezone
+
+# 할인 행사 배너 (2026-09-07). 원천 = _tools/promo.json (id·rate·ends_at 은 API D1 promotions 행과 같아야 한다).
+# 빌드 시각이 ends_at 을 지나면 배너를 넣지 않는다 → 행사 뒤 첫 빌드가 배너를 걷는다. 그 전에는 지면 JS 가 서버 판정(null)으로 숨긴다.
+PROMO_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "promo.json")
+PROMO_TPL_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "promo_strip.html")
+
+
+def load_promo(now=None):
+    """published 이고 기간 안이면 dict, 아니면 None. 파일이 없거나 값이 이상하면 None (배너 없음이 안전한 쪽)."""
+    try:
+        with open(PROMO_PATH, encoding="utf-8") as f:
+            p = json.load(f)
+    except (OSError, ValueError):
+        return None
+    if not p.get("published") or not isinstance(p.get("rate"), int) or not (0 < p["rate"] < 100):
+        return None
+    now = now or datetime.now(timezone.utc)
+    for k in ("starts_at", "ends_at"):
+        v = p.get(k)
+        if v is None:
+            continue
+        try:
+            t = datetime.fromisoformat(str(v).replace("Z", "+00:00"))
+        except ValueError:
+            return None
+        if t.tzinfo is None:
+            return None
+        if k == "starts_at" and now < t:
+            return None
+        if k == "ends_at" and now > t:
+            return None
+    return p
+
+
+def _won(n):
+    return f"{int(n):,}원"
+
+
+def promo_strip(rel, p=None, price_note=True):
+    """셸 헤더 바로 아래 행사 배너 A1 「판심 띠」(design-director 2026-09-07, critic 채점 뒤 확정). 마크업 = _tools/promo_strip.html.
+       자리표시 {p} {label} {link} {link_label} {link_label_sm} {until} {id} {rate} {price_note}.
+       price_note = 정가 한 칸(data-list-price) 문장. app.js 가 없는 면(상세 LP)은 False 로 빼서 정가만 덩그러니 서지 않게 한다."""
+    p = p if p is not None else load_promo()
+    if not p:
+        return ""
+    try:
+        with open(PROMO_TPL_PATH, encoding="utf-8") as f:
+            tpl = f.read().strip()
+    except OSError:
+        return ""
+    sp = p.get("strip_price") if price_note else None
+    note = (f'<span class="lg"> {sp["prefix"]}<span class="p" data-list-price="{int(sp["list_price"])}">{_won(sp["list_price"])}</span>{sp["suffix"]}</span>'
+            if sp else "")
+    return "\n" + tpl.format(p=prefix_of(rel), label=p["label"], link=p.get("link", "index.html"),
+                              link_label=p.get("link_label", "자세히"), link_label_sm=p.get("link_label_sm", p.get("link_label", "자세히")),
+                              until=p.get("ends_at") or "", id=p["id"], rate=p["rate"], price_note=note)
+
+
+PROMO_BAND_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "promo_band.html")
+
+
+def promo_band(rel, p=None):
+    """홈 첫 화면 프로모 밴드 B3 「괘선 표」. 마크업 = _tools/promo_band.html, 행 = promo.json band.rows [[상품명, 정가], …]."""
+    p = p if p is not None else load_promo()
+    if not p or not p.get("band"):
+        return ""
+    with open(PROMO_BAND_PATH, encoding="utf-8") as f:
+        tpl = f.read().strip()
+    b = p["band"]
+    rows = "\n".join(f'      <tr><th scope="row">{name}</th><td><span class="p" data-list-price="{int(price)}">{_won(price)}</span></td></tr>'
+                      for name, price in b["rows"])
+    return tpl.format(p=prefix_of(rel), label=p["label"], link=p.get("link", "index.html"), link_label=p.get("link_label", "자세히"),
+                      until=p.get("ends_at") or "", id=p["id"], rate=p["rate"], until_text=b.get("until_text", ""), foot=b.get("foot", ""), rows=rows)
+
 
 SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor"><path d="M43 12 L57 12 L59 26 L41 26 Z"/>'
           '<rect x="4" y="26" width="92" height="6" rx="3"/><path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z '
@@ -44,7 +119,7 @@ def _fi(key):
 
 # 기존 블록 인식은 속성이 붙어도 잡아야 한다. <div class="util" data-x="1"> 을 못 알아보면
 # 자리표시만 채워지고 낡은 셸이 남아 헤더가 둘이 된다 (s17 Codex 적발).
-SHELL_RE = re.compile(r'(?:<!--v2:shell-->|<div\b[^>]*\bclass="[^"]*\butil\b[^"]*"[^>]*>.*?</header>)', re.S)
+SHELL_RE = re.compile(r'(?:<!--v2:shell-->|<div\b[^>]*\bclass="[^"]*\butil\b[^"]*"[^>]*>.*?</header>(?:\s*<aside\b[^>]*\bdata-promo\b[^>]*>.*?</aside>)?)', re.S)
 FOOTER_RE = re.compile(r'(?:<!--v2:footer-->|<footer\b[^>]*>.*?</footer>)', re.S)
 FIX_RE = re.compile(r'(?:<!--v2:fix-->|<nav\b[^>]*\bclass="[^"]*\bfix\b[^"]*"[^>]*>.*?</nav>)', re.S)
 
@@ -103,7 +178,7 @@ def shell(rel):
     {nav}
     <div class="aux"><a href="{p}login.html"{cur_login}>로그인</a><a href="{p}cart.html"{cur_cart}>장바구니</a></div>
   </nav>
-</header>'''
+</header>''' + promo_strip(rel)
 
 
 def footer(rel):

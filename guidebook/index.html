@@ -116,6 +116,12 @@
     <div class="aux"><a href="../login.html">로그인</a><a href="../cart.html">장바구니</a></div>
   </nav>
 </header>
+<aside class="promo mat" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내">
+  <div class="in wrap">
+    <p class="msg"><i class="dot" aria-hidden="true"></i><b>9월 30일까지 전 상품 30% 할인</b><span class="lg"> 가이드북은 권당 <span class="p" data-list-price="33000">33,000원</span>입니다.</span></p>
+    <a href="../guidebook/index.html"><span class="lg">할인 적용 상품 보기</span><span class="sm">할인가 보기</span><span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 <main id="main">
 
@@ -132,7 +138,7 @@
       <div><b>31</b><span>권, 31권 판매 중</span></div>
       <div><b>2027</b><span>학년도 대비, 전권 판매 중</span></div>
       <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
-      <div><b>33,000</b><span>원, 권당</span></div>
+      <div data-list-price="33000"><b>33,000원</b><span>, 권당</span></div>
     </div>
   </div>
 </section>
@@ -159,8 +165,8 @@
         <h2>31권 전권, 절반 값으로</h2>
         <p>전 대학을 준비하는 학원과 다권 수요를 위한 전권 상품입니다.</p>
         <p style="margin-top:10px;font-size:var(--t-sm)">
-          <b>전권 열람권 511,500원</b> <small>(권당 33,000원 × 31권 = 1,023,000원의 절반)</small>, 31권 보안 뷰어 열람<br>
-          <b>전권 PDF 소장판 1,705,000원</b> <small>(권당 110,000원 × 31권 = 3,410,000원의 절반)</small>, 31권 파일 내려받기와 열람, 구매 계정 각인
+          <b data-list-price="511500">전권 열람권 511,500원</b> <small>(권당 33,000원 × 31권 = 1,023,000원의 절반)</small>, 31권 보안 뷰어 열람<br>
+          <b data-list-price="1705000">전권 PDF 소장판 1,705,000원</b> <small>(권당 110,000원 × 31권 = 3,410,000원의 절반)</small>, 31권 파일 내려받기와 열람, 구매 계정 각인
         </p>
         <p style="margin-top:8px;font-size:var(--t-sm);color:var(--gray)">1,023,000원과 3,410,000원은 낱권 31권의 합산 금액이며 따로 파는 상품이 아닙니다. 보안 뷰어 열람 기간은 구매일부터 3개월입니다. PDF 소장판 파일은 발급 후 소장합니다.</p>
       </div>
@@ -238,7 +244,7 @@ var HH_GB=[{"slug":"gachon","sku":"guide-gachon","name":"가천대학교","short
     return '<article class="gb" id="'+o.slug+'">'
       +'<img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="210" height="297" loading="lazy">'
       +'<h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
-      +'<span class="pr">33,000원</span>'
+      +'<span class="pr" data-list-price="33000">33,000원</span>'
       +'<div class="acts">'+act+'</div></article>';
   }
   // 31행을 훑을 때 눈이 짚을 자리. 초성 단위로 묶는다.

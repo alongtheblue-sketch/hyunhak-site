@@ -42,6 +42,8 @@
       sku: sku,
       title: String(x.title == null ? "" : x.title).slice(0, 160),
       price: intIn(x.price, 0, 100000000, 0),
+      // 정가. 구 저장분(list_price 없음)은 담을 당시 정가였으므로 price 를 정가로 승계한다 (할인 행사 2026-09-07)
+      list_price: intIn(x.list_price == null ? x.price : x.list_price, 0, 100000000, 0),
       qty: intIn(x.qty, 1, LINE_MAX, 1),
       ship: !!x.ship,
     };
@@ -60,7 +62,7 @@
   // 세트가 지정되지 않았거나 계약 밖 set_id 를 단 낱권 줄. 서버가 passage-single 에 set_id 를 필수로
   // 요구해 이 줄 하나가 주문 전체를 400 으로 떨어뜨린다. 읽는 쪽에서 걸러 결제 경로에 닿지 않게 한다.
   function staleLine(x) { return String((x && x.sku) || "") === "passage-single" && !okSetId(x && x.set_id); }
-  function cart() { return rawCart().filter((x) => !staleLine(x)); }
+  function cart() { return rawCart().filter((x) => !staleLine(x)).map(repriceLine); }
   // 저장본까지 한 번 정리하고 정리한 줄 수를 돌려준다 (장바구니 면이 안내 한 줄을 띄운다)
   function pruneCart() {
     const all = rawCart(), kept = all.filter((x) => !staleLine(x));
@@ -93,7 +95,7 @@
     if (items.filter((x) => x.sku === line.sku).length >= LINE_MAX)
       return { ok: false, reason: "limit",
         message: "같은 상품은 " + LINE_MAX + "줄까지 담을 수 있습니다. 먼저 결제하시거나 장바구니에서 줄을 빼 주세요." };
-    items.push(line);
+    items.push(repriceLine(line));
     saveCart(items);
     trackAdd(line);
     return { ok: true };
@@ -115,8 +117,7 @@
   let _cfg = null;
   async function config() {
     if (_cfg) return _cfg;
-    try { _cfg = await api("/api/config"); } catch { _cfg = { oauth: {} }; }
-    return _cfg;
+    try { _cfg = await api("/api/config"); return _cfg; } catch { return { oauth: {}, _failed: true }; }   // 실패는 캐시하지 않는다 (다음 호출이 다시 시도)
   }
   const OAUTH_LABEL = { google: "구글", kakao: "카카오", naver: "네이버" };
   function oauthStart(provider, next) {
@@ -155,6 +156,92 @@
 
   // 금액 표기. 유한 정수만 통과시켜 화면에 NaN 이나 문자열이 그대로 실리지 않게 한다
   const won = (n) => intIn(n, 0, 100000000, 0).toLocaleString("ko-KR") + "원";
+
+  // ── 할인 행사 (2026-09-07) ──
+  // 원천은 서버 /api/config.promo 하나. 지면의 정가(data-list-price)와 장바구니 단가는 그 값을 따라 그리고,
+  // 결제 금액은 서버가 다시 센다(pay.js salePrice 와 같은 산식: 정가 × (100-rate)% 를 10원 단위 내림).
+  // _promo === undefined = 아직 모름(저장된 단가 유지) / null = 행사 없음 / 객체 = 행사 중
+  let _promo;
+  function promoActive(p, now) {
+    if (!p || !Number.isInteger(p.rate) || p.rate <= 0 || p.rate >= 100) return false;
+    const t = now || Date.now();
+    const st = p.starts_at ? Date.parse(p.starts_at) : null, en = p.ends_at ? Date.parse(p.ends_at) : null;
+    if (Number.isNaN(st) || Number.isNaN(en)) return false;
+    if (st !== null && t < st) return false;
+    if (en !== null && t > en) return false;
+    return true;
+  }
+  function promo() { return _promo === undefined ? undefined : (promoActive(_promo) ? _promo : null); }
+  function salePrice(price, p) {
+    const q = p === undefined ? promo() : p;
+    const n = intIn(price, 0, 100000000, 0);
+    return q ? Math.floor((n * (100 - q.rate)) / 1000) * 10 : n;
+  }
+  function repriceLine(line) {
+    const p = promo();
+    if (p !== undefined) line.price = salePrice(line.list_price, p);
+    return line;
+  }
+  // 지면 가격: [data-list-price] 안에서 처음 나오는 "N원" 텍스트를 정가 취소선 + 현재가로 바꾼다.
+  // 표기 숫자와 속성값이 다르면 낡은 지면이므로 손대지 않고 콘솔에 남긴다.
+  function renderPromoPrices() {
+    const p = promo();
+    if (p === undefined) return;   // 서버 판정을 못 받았으면 빌드 시각 상태 그대로 (배너 유지, 정가 표기)
+    document.querySelectorAll("[data-promo]").forEach((el) => {
+      const until = el.getAttribute("data-promo-until");
+      const expired = until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until);
+      el.hidden = !p || expired;
+    });
+    if (!p) return;
+    document.querySelectorAll("[data-list-price]").forEach((el) => {
+      if (el.dataset.promoApplied) return;
+      const list = intIn(el.dataset.listPrice, 0, 100000000, 0);
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, {
+        acceptNode: (n) => (n.parentElement && n.parentElement.closest("small,s,.sale") ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
+      });
+      let t;
+      while ((t = w.nextNode())) {
+        const m = t.data.match(/(\d{1,3}(?:,\d{3})+|\d+)원/);
+        if (!m) continue;
+        const shown = parseInt(m[1].replace(/,/g, ""), 10);
+        if (shown !== list) { console.warn("promo: 지면 가격과 data-list-price 불일치", shown, list, el); break; }
+        const frag = document.createDocumentFragment();
+        frag.appendChild(document.createTextNode(t.data.slice(0, m.index)));
+        const s0 = document.createElement("s"); s0.className = "was"; s0.textContent = won(list);
+        const b0 = document.createElement("span"); b0.className = "sale"; b0.textContent = won(salePrice(list, p));
+        frag.appendChild(s0); frag.appendChild(document.createTextNode(" ")); frag.appendChild(b0);
+        frag.appendChild(document.createTextNode(t.data.slice(m.index + m[0].length)));
+        t.parentNode.replaceChild(frag, t);
+        el.dataset.promoApplied = "1";
+        break;
+      }
+    });
+  }
+  // config 도착 → 저장 장바구니 단가 재계산 → 지면 갱신 → 면별 재렌더 신호(hh:promo)
+  async function loadPromo() {
+    let cfg = await config();
+    if (cfg._failed) { await new Promise((r) => setTimeout(r, 800)); cfg = await config(); }
+    if (cfg._failed) return undefined;   // 두 번 다 실패 = 미확정. 배너·가격·장바구니 단가 그대로
+    _promo = cfg.promo ? cfg.promo : null;
+    const items = cart();
+    saveCart(items);
+    renderPromoPrices();
+    try { document.dispatchEvent(new CustomEvent("hh:promo", { detail: { promo: promo() } })); } catch (e) {}
+    return promo();
+  }
+  // 스크립트가 나중에 그리는 가격(스튜디오 단위 카드, 가이드북 목록 행, 세트 표)도 같은 규칙으로. 적용 표식이 있어 재진입해도 두 번 그리지 않는다
+  function watchPromoPrices() {
+    if (!("MutationObserver" in window) || !promo()) return;
+    let queued = false;
+    new MutationObserver(() => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; renderPromoPrices(); });
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+  const promoReady = new Promise((resolve) => {
+    document.addEventListener("DOMContentLoaded", () => { loadPromo().then((p) => { watchPromoPrices(); resolve(p); }, () => resolve(null)); });
+  });
 
   async function updateNav() {
     // 전람 v1(.nav .aux) 과 플랫폼 v2(.util nav, .hd .aux) 헤더를 함께 갱신 (2026-08-26)
@@ -349,7 +436,8 @@
 
   window.HH = { API, api, me, cart, pruneCart, saveCart, addToCart, cartTotal, won, updateNav,
     config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml,
-    SET_ID_RE, UNITS, LINE_MAX, okSetId, okUnit, intIn };
+    SET_ID_RE, UNITS, LINE_MAX, okSetId, okUnit, intIn,
+    promo, promoActive, salePrice, renderPromoPrices, promoReady };
 })();
 
 // 브랜드 영상 슬롯: 기본은 정지 포스터(reduced-first). 모션 무감 선호가 아닐 때만 자동재생

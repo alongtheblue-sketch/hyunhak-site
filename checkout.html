@@ -111,6 +111,12 @@
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
+<aside class="promo mat" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내">
+  <div class="in wrap">
+    <p class="msg"><i class="dot" aria-hidden="true"></i><b>9월 30일까지 전 상품 30% 할인</b><span class="lg"> 가이드북은 권당 <span class="p" data-list-price="33000">33,000원</span>입니다.</span></p>
+    <a href="guidebook/index.html"><span class="lg">할인 적용 상품 보기</span><span class="sm">할인가 보기</span><span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 <main id="main">
 
@@ -456,6 +462,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   var st = await HH.me();
   if(!st.member){ location.href='login.html?next=checkout.html'; return; }
   HH.pruneCart();   // 세트 없는 구 낱권 줄은 주문 body 에 실리기 전에 뺀다 (장바구니를 거치지 않고 들어온 경우)
+  await HH.promoReady;   // 할인 행사 판정 뒤 정가→현재가 재계산된 장바구니로 시작 (서버 금액과 같은 산식, 2026-09-07)
   var items = HH.cart();
   if(!items.length){ location.href='cart.html'; return; }
 

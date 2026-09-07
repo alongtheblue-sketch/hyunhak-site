@@ -387,6 +387,20 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
      .in 부여는 본문 끝 인라인 스크립트뿐이다. 스크립트를 막으면 히어로 아래가 통째로 빈다
      (가이드북 실측 = #books 32/32, #format 2/2, #close 2/2 비가시 = 카탈로그와 가격과 CTA 소실).
      IntersectionObserver 미지원 폴백은 이미 있으므로 남은 구멍은 스크립트 차단 하나뿐이라 noscript 로 막는다. -->
+
+<style data-promo-css>
+/* 상세 LP(programs/*.html) 전용 행사 띠 A1 (base.css 미적재 면. 토큰은 LP :root 에 같은 이름, --lh-ui 는 없어 폴백) */
+.promo{background:var(--mat);border-bottom:var(--rule-strong)}
+.promo .in{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:44px;font-size:var(--t-sm,13px);line-height:var(--lh-ui,1.45)}
+.promo p{max-width:none;margin:0}
+.promo b{font-weight:600}
+.promo .dot{width:6px;height:6px;background:var(--seal);border-radius:50%;display:inline-block;margin-right:10px;vertical-align:1px;flex:none}
+.promo a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;white-space:nowrap;color:var(--ink);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--hair)}
+.promo a:hover{color:var(--seal);text-decoration-color:var(--seal)}
+.promo .sm{display:none}
+@media (max-width:900px){.promo .lg{display:none}.promo .sm{display:inline}.promo .dot{margin-right:8px}}
+.promo[hidden]{display:none!important}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">본문으로 건너뛰기</a>
@@ -397,6 +411,12 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
     <span class="tag">생기부 면접 가이드북 2027 대비판</span>
   </div>
 </header>
+<aside class="promo mat" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내">
+  <div class="in wrap">
+    <p class="msg"><i class="dot" aria-hidden="true"></i><b>9월 30일까지 전 상품 30% 할인</b></p>
+    <a href="../guidebook/index.html"><span class="lg">할인 적용 상품 보기</span><span class="sm">할인가 보기</span><span aria-hidden="true">→</span></a>
+  </div>
+</aside>
 
 <main id="main">
 <!-- 도입 -->
