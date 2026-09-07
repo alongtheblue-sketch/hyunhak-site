@@ -26,4 +26,6 @@ tail1 python3 _tools/apply_checkout_legal.py --check   # 6c 결제 면에 실린
 tail1 python3 _tools/apply_counts.py --check   # 6d 홈, about 의 문항 수와 면수가 meta v3 합과 같은가
 tail1 python3 _tools/seo_keyword_census.py   # 6e 면접 검색어 포획 (면당 필수 구절 + 계열별 커버리지, 2026-09-04)
 tail1 python3 _tools/build_samples.py --check   # 6f 상품면 지면 표본 13장이 현 판 clean PDF(sha)와 지면 참조에 맞는가 (2026-09-07 GB-V24-5 (C))
+tail1 python3 _tools/build_brand_captions.py --check   # 6g 브랜드 영상 자막이 현 배포본(sha 봉인)의 타이틀 시각과 맞는가 (2026-09-07)
+tail1 python3 _tools/caption_check.py   # 6h 사이트 영상 전건에 자막 트랙이 붙었고 그 파일이 실재하는가 (2026-09-07)
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16

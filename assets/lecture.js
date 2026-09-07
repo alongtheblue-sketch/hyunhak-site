@@ -322,11 +322,17 @@
   }
 
   // ================= 뷰어 =================
+  // 자막은 기본으로 켠다. 강의는 말이 내용이고, 소리를 못 켜는 자리에서 보는 학생이 있다.
+  // 끈 선택은 기기에 남겨 다음 강의에도 이어진다. 저장이 막힌 브라우저에서는 기본값으로 돌아간다.
+  var CC_KEY = "hh_lecture_cc";
+  function ccPref() { try { return localStorage.getItem(CC_KEY) !== "0"; } catch (e) { return true; } }
+  function ccSave(on) { try { localStorage.setItem(CC_KEY, on ? "1" : "0"); } catch (e) {} }
+
   var S = {                      // 세션 상태
     id: lectureId, token: null, sid: null, dur: 0, chapters: [], bookmarks: [], email: "", vtt: false,
     rate: 1, resume: 0, viewCount: 0, title: "",
     lastT: 0, watched: 0, evs: [], beatTimer: null, idleTimer: null, wmTimer: null, retries: 0, wasPlaying: false, evicted: false,
-    trackUrl: null, ccOn: false, reopening: false, curCh: -1, closed: false,
+    trackUrl: null, ccOn: ccPref(), reopening: false, curCh: -1, closed: false,
   };
   var P = {};                    // DOM 참조
 
@@ -712,7 +718,7 @@
     P.bFwd.addEventListener("click", function () { seekTo((v.currentTime || 0) + 10, "btn"); });
     P.bMute.addEventListener("click", function () { v.muted = !v.muted; });
     P.bBm.addEventListener("click", addBookmark);
-    if (P.bCc) P.bCc.addEventListener("click", function () { S.ccOn = !S.ccOn; applyCc(); });
+    if (P.bCc) P.bCc.addEventListener("click", function () { S.ccOn = !S.ccOn; ccSave(S.ccOn); applyCc(); });
     P.bFs.addEventListener("click", toggleFs);
     document.addEventListener("fullscreenchange", updateFsIcon);
     P.bRate.addEventListener("click", function () { var open = P.rateMenu.dataset.open === "1"; P.rateMenu.dataset.open = open ? "0" : "1"; P.bRate.setAttribute("aria-expanded", open ? "false" : "true"); });
@@ -750,7 +756,7 @@
       else if (k === "[") stepRate(-1);
       else if (k === "]") stepRate(1);
       else if (k === "b") { e.preventDefault(); addBookmark(); }   // 기본 동작을 막지 않으면 'b' 가 새 입력칸에 찍힌다 (e2e 실측)
-      else if (k === "c" && P.bCc) { S.ccOn = !S.ccOn; applyCc(); }
+      else if (k === "c" && P.bCc) { S.ccOn = !S.ccOn; ccSave(S.ccOn); applyCc(); }
       else if (k === "f") toggleFs();
       else if (k === "m") v.muted = !v.muted;
       else if (k === "Escape" && pl.classList.contains("fs-css")) toggleFs();

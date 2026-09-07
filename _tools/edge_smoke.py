@@ -46,6 +46,12 @@ try:
 except urllib.error.HTTPError as _e:
     _s, _h, _n = _e.code, dict(_e.headers), len(_e.read())
 chk("brand mp4 Range → 206 (iOS 재생)", _s == 206 and _n == 1024 and _h.get("Content-Range", "").startswith("bytes 0-1023/"), f"{_s} len={_n} cr={_h.get('Content-Range', '-')}")
+# 자막 실서빙 (2026-09-07): 파일이 올라가도 Content-Type 이 text/vtt 가 아니면 브라우저가 트랙을 버린다
+for _p in ("/assets/video/brand_60s_aigen.vtt", "/assets/video/sample_common.vtt"):
+    s, h, b = get(_p)
+    _ct = h.get("Content-Type", "-")
+    chk(f"자막 {_p.rsplit('/', 1)[-1]} 200 text/vtt", s == 200 and _ct.startswith("text/vtt") and b.lstrip().startswith(b"WEBVTT"), f"{s} {_ct}")
+s, h, b = get("/assets/video/samples_manifest.json"); chk("표본 빌드 원장 비공개", s == 404, f"{s}")
 if BASE.endswith("hyunhak.com"):
     s, h, b = get("/", base="https://www.hyunhak.com", follow=False); chk("www → apex 301", s == 301 and "hyunhak.com" in h.get("Location", ""), f"{s} {h.get('Location')}")
     s, h, b = get("/", ua="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"); chk("Googlebot UA 200", s == 200, f"{s}")

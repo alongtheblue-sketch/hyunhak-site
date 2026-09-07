@@ -70,9 +70,14 @@
 @media (max-width:899.98px){.hero .herofilm{order:-1}}
 .hero .herofilm{margin:0;position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden;box-shadow:0 18px 40px rgba(49,46,46,.18)}
 .hero .herofilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
-.hero .vpause{position:absolute;right:10px;bottom:10px;min-height:var(--tap);padding:0 14px;border:1px solid rgba(239,233,220,.6);border-radius:999px;background:rgba(49,46,46,.92);color:var(--paper);font:500 12px/1 var(--mono);cursor:pointer}
-.hero .vpause:hover{background:var(--ink)}
-.hero .vpause:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+.hero .vpause,.hero .vcc{position:absolute;bottom:10px;min-height:var(--tap);padding:0 14px;border:1px solid rgba(239,233,220,.6);border-radius:999px;background:rgba(49,46,46,.92);color:var(--paper);font:500 12px/1 var(--mono);cursor:pointer}
+.hero .vpause{right:10px}
+.hero .vcc{right:88px}
+.hero .vcc[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+.hero .vpause:hover,.hero .vcc:hover{background:var(--ink)}
+.hero .vcc[aria-pressed="true"]:hover{background:var(--paper)}
+.hero .vpause:focus-visible,.hero .vcc:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
+.hero .herofilm video::cue{background:rgba(49,46,46,.82);color:var(--paper);font:500 15px/1.45 var(--sans)}
 .hero .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .hero .prodcta{display:grid;grid-template-columns:1fr;gap:var(--s4);margin:var(--s3) 0 var(--s4);padding:var(--s4) 0;border-top:var(--rule);border-bottom:var(--rule)}
 @media (min-width:600px){.hero .prodcta{grid-template-columns:1fr 1fr}}
@@ -155,7 +160,9 @@
       <video autoplay muted loop playsinline preload="auto" poster="assets/video/brand_60s_poster.png" aria-label="현학적 연구소 브랜드 영상, 60초" aria-describedby="hero-film-tx">
         <source src="assets/video/brand_60s_aigen.webm" type="video/webm">
         <source src="assets/video/brand_60s_aigen.mp4" type="video/mp4">
+        <track kind="captions" srclang="ko" label="한국어" src="assets/video/brand_60s_aigen.vtt">
       </video>
+      <button type="button" class="vcc" aria-pressed="false">자막</button>
       <button type="button" class="vpause" aria-pressed="false">일시정지</button>
       <p id="hero-film-tx" class="vh">영상 자막 원문. 검을 현 玄. 검되 붉은 기가 도는 것. 그윽하고 멂. 대학이 먼저 공개한 자료. 모집요강, 선행학습영향평가 보고서, 수험생 후기. 31권, 1,198면. 수록 질문 3,865. 말하는 장면을 촬영해 첨삭. 연세대, 고려대 제시문 면접 스튜디오. 현학적 연구소, 玄學的 研究所, hyunhak.com.</p>
     </figure>
@@ -538,6 +545,19 @@ var HH_GB=[{"slug":"gachon","name":"가천대학교","short":"가천대","pages"
     if(v.dataset.paused){ delete v.dataset.paused; go(); b.textContent='일시정지'; b.setAttribute('aria-pressed','false'); }
     else { v.dataset.paused='1'; v.pause(); b.textContent='재생'; b.setAttribute('aria-pressed','true'); }
   });
+  // 자막: 이 영상은 말소리가 없고 뜻을 화면 글자가 나른다. 기본으로 켜면 그 글자와 두 겹이 되므로
+  // 켜고 끄는 손잡이를 준다. 고른 값은 기기에 남긴다.
+  var c=document.querySelector('.herofilm .vcc');
+  function tracks(){ return v.textTracks||[]; }
+  function setCc(on){
+    var t=tracks(); for(var i=0;i<t.length;i++) t[i].mode=on?'showing':'hidden';
+    if(c) c.setAttribute('aria-pressed',on?'true':'false');
+    try{ localStorage.setItem('hh_film_cc',on?'1':'0'); }catch(e){}
+  }
+  var want=false; try{ want=localStorage.getItem('hh_film_cc')==='1'; }catch(e){}
+  setCc(want);
+  v.addEventListener('loadedmetadata',function(){ setCc(c?c.getAttribute('aria-pressed')==='true':false); });
+  if(c) c.addEventListener('click',function(){ setCc(c.getAttribute('aria-pressed')!=='true'); });
 })();
 </script>
 </body>

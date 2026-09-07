@@ -21,3 +21,6 @@ _config.yml
 
 # detached worktree 배포에서 .git 은 gitdir 포인터 파일이라 자산으로 실렸다 (2026-09-03 라이브 /.git 200 실측). 디렉터리든 파일이든 제외
 .git
+
+# 맛보기 표본 빌드 원장. 빌더만 읽는다. 로컬 경로가 실려 있어 공개 자산으로 나가면 안 된다 (2026-09-07)
+assets/video/samples_manifest.json
