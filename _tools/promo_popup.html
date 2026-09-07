@@ -1,0 +1,42 @@
+<!-- 통합용 팝업 템플릿. 조판은 시안과 같은 함수에서 나온다(build_parts.py popup()).
+     자리표  {mod}   .pop 의 안 클래스 = pop--gwak | pop--muk | pop--simm  (도판 없는 회차는 pop--noimg 를 덧붙인다)
+             {rate} {label} {until_text} {promo_id} {ends_at} {img} {link_studio} {link_guidebook} {rows}
+             {p}     상대경로 접두. 뿌리 면은 "" , guidebook/ 아래 면은 "../"
+     행 형식 {rows} = <tr><th scope="row">이름</th><td><span data-list-price="33000">33,000원</span></td></tr> × N
+             지면에는 정가만 적는다. 할인가를 미리 적으면 app.js 가 그 안에서 한 번 더 치환해 두 번 찍힌다.
+     ★뿌리에 data-promo 를 달지 마라. app.js renderPromoPrices 가 행사 중이면 hidden 을 false 로 되돌려
+      새로고침마다 팝업이 뜬다. 노출 판정(세션 1회, 24시간 억제)은 이 템플릿을 붙이는 JS 몫이다.
+      [data-promo-until] 은 그 JS 가 만료를 스스로 보라고 남긴 값이고, app.js 가 읽는 것은 [data-list-price] 뿐이다.
+     붙일 JS  [data-ppop-back] 과 [data-ppop-close] 클릭 = 닫기 · [data-ppop-mute] = 24시간 억제 후 닫기
+             ESC · 포커스 트랩 · 포커스 복귀. app.js 353~394행 renderPopup 의 close/onKey 가 같은 일을 한다.
+             억제 키는 기존 계약 재사용 가능: localStorage hh_popup_mute_v1 에 {promo_id} 로 24시간.
+     첫 포커스 뿌리(tabindex -1) 또는 [data-ppop-close]. 두 자리 다 마크업에 있다.
+     ★공지 팝업 .hh-popup 과 z-index 90 을 공유한다. 한 화면에 둘이 겹치지 않게 하는 규칙이 필요하다(SELF_CHECK 결재 1). -->
+<div class="pdim" hidden id="promoPopup" data-promo-popup="{promo_id}" data-promo-until="{ends_at}"
+     role="dialog" aria-modal="true" aria-labelledby="ppopT" aria-describedby="ppopU" tabindex="-1">
+  <div class="pback" data-ppop-back></div>
+  <div class="pop {mod}" data-ppop-card>
+    <div class="pfr">
+      <div class="prib"><p class="k">행사 안내</p></div>
+      <button class="pclose" type="button" data-ppop-close aria-label="닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 L17 17 M17 7 L7 17" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square"/></svg></button>
+      <figure class="pkv"><img src="{img}" alt="" width="1600" height="686"></figure>
+      <div class="ptxt">
+        <span class="rate">{rate}</span>
+        <h2 id="ppopT">{label}</h2>
+        <p class="until" id="ppopU">{until_text}</p>
+      </div>
+      <div class="pbot">
+        <table class="ptbl">
+          <caption class="sr">{rate} 할인 적용 가격 예시. 정가 뒤에 할인가가 붙습니다.</caption>
+          <tbody>{rows}
+          </tbody>
+        </table>
+        <div class="pacts">
+          <a class="btn" href="{p}studio.html#plans" data-ppop-go="studio">{link_studio_label} <span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="{p}guidebook/index.html" data-ppop-go="guidebook">{link_guidebook_label}</a>
+        </div>
+        <p class="pfoot"><button type="button" class="tlink" data-ppop-mute>{mute_label}</button></p>
+      </div>
+    </div>
+  </div>
+</div>

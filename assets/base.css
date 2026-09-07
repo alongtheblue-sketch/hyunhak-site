@@ -895,3 +895,425 @@ body.v2{background:var(--ink)}
   :where(body.v2) .toc .row,:where(body.v2) .toc .slot{grid-template-columns:2.6em minmax(0,1fr)}
   :where(body.v2) .toc .a{grid-column:2;justify-content:flex-start}
 }
+
+/* ==== promo_popup_20260907 begin (design-director promo_popup.css + ranking.css 사본, 재병합 = 이 블록 교체) ==== */
+/* ============ 행사 팝업 모달 3안 (2026-09-07 design-director) ============
+   전제  assets/base.css 뒤에 로드한다. 신규 색 0, 신규 서체 0, 신규 곡률 0.
+         값은 base.css :root 토큰과 그 토큰에서 유도한 수만 쓴다.
+   범위  전 입구 면(index, studio, guidebook/index, lectures, library, about) 진입 시 1회.
+         결제와 리더 화면은 base.css 계약대로 body[data-no-popup] 로 제외한다.
+   계약  DOM 훅은 메인 세션이 준 계약 그대로다. 클래스만 이 파일이 정하고 속성과 id 는 손대지 않는다.
+         뿌리 #promoPopup[data-promo-popup][data-promo-until][role=dialog][aria-modal][aria-labelledby=ppopT][hidden]
+         딤 [data-ppop-back] · 카드 [data-ppop-card] · 제목 #ppopT
+         닫기 [data-ppop-close] · 오늘 하루 [data-ppop-mute] · 행동 [data-ppop-go=studio|guidebook]
+   ★주의 뿌리에 [data-promo] 를 달면 안 된다. app.js renderPromoPrices 가 행사 중이면 hidden 을 false 로 되돌려
+         새로고침마다 팝업이 뜬다. 팝업의 노출 판정은 세션 1회 규칙을 가진 메인 세션 JS 몫이고,
+         [data-promo-until] 은 그 JS 가 만료를 스스로 보라고 남긴 값이다. 가격 칸의 [data-list-price] 만 app.js 가 읽는다.
+   마크업 세 안이 같은 뼈대를 쓴다. [data-ppop-card] 의 자식 일곱이 순서 그대로 있고 배치만 안별로 다르다.
+         prib(머리 라벨) · close · pkv(도판) · ptxt(문안) · ptbl(가격) · pacts(행동) · pfoot(오늘 하루)
+         그래서 popup_tpl.html 하나로 세 안을 다 그린다. 안 교체 = 카드의 modifier 클래스 한 낱말.
+         도판이 없는 회차는 .pop--noimg 하나로 그 칸을 통째로 안 그린다.
+   층    사이트에는 이미 공지 팝업 .hh-popup 이 있다(base.css 665행, app.js 353행).
+         행사 팝업은 그 영구 층과 갈려야 하므로 여섯 자리를 모두 다르게 둔다.
+           폭 520 대 792~864 · 바탕 楮紙 대 지면/玄墨 · 곡률 4px 대 0 · 그림자 있음 대 없음
+           도판 0장 대 1장 · 딤 rgba(玄墨,.42) 대 rgba(玄墨,.72)
+   가격  지면에는 정가만 적고 [data-list-price] 를 단다. 행사 중이면 app.js 가 그 안의 "N원" 을
+         s.was(정가 취소선) + span.sale(할인가) 로 바꾼다. .sale 은 부모 색을 승계하므로 가격 칸에 朱印을 준다.
+   충돌  .hd .rows .kv .card .promo .pband 는 base.css 기존 컴포넌트라 쓰지 않는다.
+         이 파일의 새 이름 = .pdim .pback .pop .pfr .prib .pclose .pkv .ptxt .ptbl .pacts .pfoot
+   리터럴 px 는 두 곳뿐이며 각각 근거를 주석에 적었다: 딤 rgba(玄墨) 1곳 · 朱印 점 6px 1곳(base.css 149행과 동일값).
+   그 밖 모든 치수는 --s1~--s11 --tap --t-* --container 토큰과 그 토큰의 calc 유도다. */
+
+/* ═══════ 공통 ═══════ */
+:where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:var(--s4)}
+/* 공지 팝업 .hh-popup 이 z-index 90 이다. 같은 층에 둔다. 한 화면에 둘이 동시에 뜨지 않게 하는 것은 JS 몫(SELF_CHECK 결재 1) */
+:where(body.v2) .pback{position:absolute;inset:0;background:rgba(49,46,46,.72)}
+/* 玄墨 #312E2E 의 알파. base.css 선례 --hair .40, .hh-popup-back .42. .72 로 올린 이유 둘:
+   ① 공지 팝업 .42 와 딤 농도가 갈려 층이 구별된다 ② 지면 판 뒤로 楮紙 배경이 비쳐 판이 뜨는 것을 막는다 */
+
+:where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s5);
+  background:var(--card);color:var(--ink);
+  border-radius:0;box-shadow:none;          /* 판본 규범: 곡률 0, 그림자 0. 공지 팝업과 갈리는 자리 */
+  max-height:calc(100vh - var(--s6));overflow:auto;overscroll-behavior:contain}
+@supports (height:100dvh){:where(body.v2) .pop{max-height:calc(100dvh - var(--s6))}}
+
+:where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;min-height:var(--tap);max-width:none}
+:where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;
+  margin-right:10px;flex:none}   /* 朱印 1점. base.css 149행 공지 띠 점과 같은 6px. 안마다 한 역할로만 쓴다 */
+
+:where(body.v2) .pclose{position:absolute;top:0;right:0;width:var(--tap);height:var(--tap);
+  display:grid;place-items:center;color:var(--ink);z-index:2}
+:where(body.v2) .pclose svg{width:var(--s4);height:var(--s4)}
+:where(body.v2) .pclose:hover{color:var(--seal)}
+
+:where(body.v2) .pkv{margin:0;position:relative}
+:where(body.v2) .pkv .ph,:where(body.v2) .pkv img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover}
+:where(body.v2) .pkv .ph{display:grid;place-items:center;background:var(--mat);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2) .pkv .ph span{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.v2) .pop--noimg .pkv{display:none}   /* 도판 없는 회차. 나머지 칸은 그대로 선다 */
+
+:where(body.v2) .ptxt h2{font-size:var(--t-h3)}
+:where(body.v2) .ptxt .rate{display:none}   /* 계기 숫자는 먹판 안에서만 세운다. 지면에서는 표제가 이미 30%를 말한다 */
+:where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;
+  color:var(--gray);margin-top:var(--s2);max-width:none}
+
+/* 가격 예시 표: 세로 괘선 0, 헤더 채움 0, 얼룩말 줄 0 */
+:where(body.v2) .ptbl{width:100%;border-collapse:collapse}
+:where(body.v2) .ptbl th,:where(body.v2) .ptbl td{padding:var(--s2) 0;border-top:var(--rule);font-size:var(--t-sm)}
+:where(body.v2) .ptbl tr:first-child th,:where(body.v2) .ptbl tr:first-child td{border-top:var(--rule-strong)}
+:where(body.v2) .ptbl th[scope=row]{text-align:left;font-weight:600;letter-spacing:-0.01em}
+:where(body.v2) .ptbl td{text-align:right;white-space:nowrap}
+:where(body.v2) .ptbl [data-list-price]{font-family:var(--mono);font-weight:500;font-size:var(--t-base);
+  letter-spacing:-0.01em;color:var(--seal);font-variant-numeric:tabular-nums}
+:where(body.v2) .ptbl s.was{font-size:var(--t-xs)}   /* base.css 의 .72em 은 16px 안에서 11.5px. --t-xs 11px 로 세운다 */
+
+/* 행동 4. 커머스 확정 행동 둘만 잉크 사각, 나머지 둘은 텍스트 */
+/* 지면 묶음. 가격과 행동과 각주를 한 덩어리로 감싼다.
+   P1 P3 은 display:contents 라 배치에 아무 영향이 없고, P2 만 이 덩어리에 지면을 칠한다.
+   ★ border-collapse:collapse 인 table 은 CSS 규정상 자기 padding 이 0 이다. 그래서 표에 직접
+     여백을 주면 P2 에서 가격이 판 밖으로 붙어 나간다(첫 렌더 실측). 여백은 이 묶음이 갖는다 */
+:where(body.v2) .pbot{display:contents}
+:where(body.v2) .pacts{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);align-items:stretch}
+:where(body.v2) .pacts .btn{width:100%}
+:where(body.v2) .pfoot{display:flex;justify-content:flex-start;max-width:none}
+:where(body.v2) .pfoot .tlink{font-weight:500;color:var(--gray);text-decoration-color:var(--hairs)}
+:where(body.v2) .pfoot .tlink:hover{color:var(--ink);text-decoration-color:var(--hair)}
+
+/* ═══════ P1 「광곽 匡郭」 ═══════
+   임시 층 표지 = 사주쌍변, 곧 두 겹 괘선. 사이트 전역에 2겹 테두리는 0건이라 이 판만 갈린다.
+   바탕은 지면 --card 로 본판 楮紙보다 한 단 밝다. 玄墨/지면 12.58, 灰墨/지면 5.40, 朱印/지면 5.34.
+   도판은 21:9 띠. 16:9 로 두면 696폭에서 392px 이라 1280×900 화면에서 판이 890px 로 넘쳐 안에서 스크롤된다(실측) */
+:where(body.v2) .pop--gwak{max-width:calc(var(--container) / 1.414);   /* 1120 ÷ √2 = 792. 요구 720~880 안 */
+  background:var(--paper);box-shadow:inset 0 0 0 1px var(--hair)}
+/* 광곽 띠는 楮紙, 판면은 지면. 두 괘선 사이 8px 이 색으로도 갈려야 사주쌍변이 보인다.
+   두 겹을 같은 바탕에 그리면 1280 화면에서 두 줄이 한 줄로 뭉개진다(첫 렌더 실측).
+   띠 폭 16px = 792 의 2.0%. 8px(1.0%) 은 실제 화면에서 한 줄로 읽혔다 */
+:where(body.v2) .pop--gwak .pfr{margin:var(--s3);background:var(--card);
+  box-shadow:inset 0 0 0 1px var(--hair);
+  padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s4)}
+:where(body.v2) .pop--gwak .prib{margin-top:calc(var(--s3) * -1)}   /* 라벨의 48px 히트박스 위 여백을 판 여백과 겹친다 */
+:where(body.v2) .pop--gwak .pclose{top:var(--s3);right:var(--s3)}
+
+/* ═══════ P2 「먹판 墨板」 ═══════
+   임시 층 표지 = 玄墨 판 전면 반전. 공지 팝업은 楮紙라 명암이 통째로 갈린다.
+   ★ 玄墨을 카드 자체에 칠하고 아래쪽 세 칸에만 지면을 칠한다. 의사요소로 玄墨 띠를 그리면
+     그 한 줄이 어긋나는 순간 楮紙 글자가 지면 위에 남아 대비 1.07 이 된다(측정으로 잡은 실패 방향).
+     지금 구조는 무엇이 어긋나도 楮紙 글자가 玄墨 위(11.73)에 남는다.
+   玄墨 위에서 朱印 2.36 과 灰墨 2.33 은 못 쓴다. 강조 金泥 6.28, 보조 rgba(楮紙,.72) 6.87, 취소선 .62 = 5.55.
+   전역 :focus-visible 이 玄墨 아웃라인이라 玄墨 판 위에서 1.00 이 된다. 아래에서 楮紙로 되돌린다
+   (직전 배너 A2 가 이 자리에서 렌즈9 2점을 받았다. 같은 결함을 반복하지 않는다) */
+:where(body.v2) .pop--muk{max-width:calc(var(--container) * .75);   /* 1120 × 3/4 = 840. 요구 720~880 안 */
+  background:var(--ink);color:var(--paper)}
+:where(body.v2) .pop--muk .pfr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+  grid-template-areas:"rib rib" "kv txt" "bot bot";
+  column-gap:var(--pop-pad);align-items:center}
+:where(body.v2) .pop--muk .prib{grid-area:rib;padding:0 var(--pop-pad)}
+:where(body.v2) .pop--muk .prib .k{color:rgba(var(--paper-rgb),.62)}   /* 玄墨 위 5.55 */
+:where(body.v2) .pop--muk .prib .k::before{background:var(--gold)}     /* 玄墨 위 朱印 2.36 은 못 쓴다 */
+:where(body.v2) .pop--muk .pkv{grid-area:kv;padding:0 0 var(--pop-pad) var(--pop-pad)}
+:where(body.v2) .pop--muk .pkv .ph,:where(body.v2) .pop--muk .pkv img{aspect-ratio:1/1}
+:where(body.v2) .pop--muk .pkv .ph{background:var(--brown);box-shadow:inset 0 0 0 1px rgba(var(--paper-rgb),.22)}
+:where(body.v2) .pop--muk .pkv .ph span{color:rgba(var(--paper-rgb),.62)}
+:where(body.v2) .pop--muk .ptxt{grid-area:txt;padding:0 var(--pop-pad) var(--pop-pad) 0}
+:where(body.v2) .pop--muk.pop--noimg .pfr{grid-template-columns:minmax(0,1fr);
+  grid-template-areas:"rib" "txt" "bot"}
+:where(body.v2) .pop--muk.pop--noimg .ptxt{padding:0 var(--pop-pad) var(--pop-pad)}
+:where(body.v2) .pop--muk .ptxt .rate{display:block;font-family:var(--mono);font-weight:500;
+  font-size:var(--t-display);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;
+  color:var(--gold);margin-bottom:var(--s3)}
+:where(body.v2) .pop--muk .ptxt .until{color:rgba(var(--paper-rgb),.72)}   /* 玄墨 위 6.87 */
+/* 아래 묶음만 지면. 묶음이 여백을 갖고 표는 폭 100% 로 그 안에 든다 */
+:where(body.v2) .pop--muk .pbot{display:block;grid-area:bot;background:var(--card);color:var(--ink);
+  padding:var(--pop-pad)}
+:where(body.v2) .pop--muk .pacts{margin-top:var(--s4)}
+:where(body.v2) .pop--muk .pfoot{margin-top:var(--s3)}
+:where(body.v2) .pop--muk .pclose{color:var(--paper)}
+:where(body.v2) .pop--muk .pclose:hover{color:var(--gold)}
+:where(body.v2) .pop--muk .pclose:focus-visible,
+:where(body.v2) .pop--muk .prib :focus-visible,
+:where(body.v2) .pop--muk .ptxt :focus-visible{outline-color:var(--paper)}
+
+/* ═══════ P3 「판심 版心」 ═══════
+   임시 층 표지 = 왼쪽 세로 판심 밴드. 사이트의 띠와 밴드는 전부 수평이라 수직 축 자체가 갈리는 표지다.
+   판심 = 책판 가운데 접히는 칸. 거기에 이름을 세로로 적는 것이 판본의 문법이다.
+   읽는 차례도 셋 중 유일하게 문안이 도판보다 먼저다(grid 자리만 바꾼다. DOM 차례는 세 안이 같다).
+   도판은 2:1. 3:2 로 두면 752폭에서 501px 이라 판이 928px 로 넘친다(실측) */
+:where(body.v2) .pop--simm{max-width:calc(var(--container) / 1.414 + var(--s7));   /* 본문 792 + 판심 72 = 864 */
+  box-shadow:inset 0 0 0 1px var(--hair)}
+:where(body.v2) .pop--simm .pfr{display:grid;grid-template-columns:var(--s7) minmax(0,1fr);
+  grid-template-areas:"rib txt" "rib kv" "rib tbl" "rib act" "rib foot";
+  align-items:start;row-gap:var(--s4);padding:var(--pop-pad) var(--pop-pad) var(--pop-pad) 0}
+:where(body.v2) .pop--simm .prib{grid-area:rib;align-self:stretch;background:var(--mat);
+  border-right:var(--rule-strong);display:flex;flex-direction:column;align-items:center;
+  padding:var(--pop-pad) 0;margin:calc(var(--pop-pad) * -1) var(--pop-pad) calc(var(--pop-pad) * -1) 0}
+:where(body.v2) .pop--simm .prib .k{writing-mode:vertical-rl;font-family:var(--sans);font-size:var(--t-sm);
+  font-weight:600;letter-spacing:.14em;color:var(--body);min-height:0;min-width:var(--tap);justify-content:center}
+/* 灰墨/판심 4.56 은 AA 하한 위 0.06 뿐이다. 본문색 --body/판심 7.37 을 쓴다 */
+:where(body.v2) .pop--simm .prib .k::before{margin:0 0 var(--s3)}
+:where(body.v2) .pop--simm .pkv{grid-area:kv}
+:where(body.v2) .pop--simm .pkv .ph,:where(body.v2) .pop--simm .pkv img{aspect-ratio:2/1}
+:where(body.v2) .pop--simm .ptxt{grid-area:txt}
+:where(body.v2) .pop--simm .ptbl{grid-area:tbl}
+:where(body.v2) .pop--simm .pacts{grid-area:act}
+:where(body.v2) .pop--simm .pfoot{grid-area:foot}
+:where(body.v2) .pop--simm .pclose{top:0;right:0}
+
+/* ═══════ 900 미만 ═══════ */
+@media (max-width:900px){
+  :where(body.v2) .pop{--pop-pad:var(--s4)}
+  :where(body.v2) .pop--muk .pfr{grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"rib" "kv" "txt" "bot"}
+  :where(body.v2) .pop--muk .pkv{padding:0 var(--pop-pad) var(--s4)}
+  :where(body.v2) .pop--muk .pkv .ph,:where(body.v2) .pop--muk .pkv img{aspect-ratio:21/9}
+  /* 정사각 마스터를 좁은 폭에서 가운데 띠로 자른다. 세로 1:1 을 그대로 두면 판이 화면을 다 먹는다 */
+  :where(body.v2) .pop--muk .ptxt{padding:0 var(--pop-pad) var(--pop-pad)}
+}
+/* ═══════ 600 이하: P1 전폭 카드(가운데) · P2 하단 시트 · P3 하단 정렬 카드 ═══════ */
+@media (max-width:600px){
+  :where(body.v2) .pdim{padding:var(--s3)}
+  :where(body.v2) .ptxt h2{font-size:var(--t-h4)}
+  :where(body.v2) .pacts{grid-template-columns:1fr}
+  :where(body.v2) .pop--simm .pfr{grid-template-columns:minmax(0,1fr);
+    grid-template-areas:"rib" "txt" "kv" "tbl" "act" "foot";padding:0 var(--pop-pad) var(--pop-pad)}
+  :where(body.v2) .pop--simm .prib{border-right:0;border-bottom:var(--rule-strong);flex-direction:row;
+    align-items:center;justify-content:flex-start;padding:0 var(--pop-pad);
+    margin:0 calc(var(--pop-pad) * -1) var(--s2)}
+  :where(body.v2) .pop--simm .prib .k{writing-mode:horizontal-tb;font-family:var(--mono);font-weight:500;
+    font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--body);min-height:var(--tap)}
+  :where(body.v2) .pop--simm .prib .k::before{margin:0 10px 0 0}
+}
+/* 하단 배치. :has 미지원이면 가운데 정렬로 떨어진다. 기능 손실 0, 배치만 다르다 */
+@supports selector(:has(*)){
+  @media (max-width:600px){
+    :where(body.v2) .pdim:has(.pop--muk){padding:0;place-items:end stretch}
+    :where(body.v2) .pdim:has(.pop--muk) .pop{max-height:calc(100vh - var(--s5))}
+    :where(body.v2) .pdim:has(.pop--simm){place-items:end center}
+  }
+}
+
+/* 뿌리는 hidden 으로 시작하고 메인 세션 JS 가 연다. display 를 준 컴포넌트가 UA 의 [hidden] 을
+   이기므로 되돌린다 (이 파일 유일한 !important) */
+:where(body.v2) .pdim[hidden],:where(body.v2) [data-promo-popup][hidden]{display:none!important}
+
+/* ============ 응시 순위표 3안: 卷六 지면 + phead 응시 현황 + 홈 위젯 (2026-09-07 design-director) ============
+   전제  assets/base.css 뒤에 로드한다. 신규 색 0, 신규 서체 0, 신규 곡률 0.
+   범위  ① studio.html 새 지면 卷六 = section.page#ranking[data-rank-board] (卷五 다음, .pages 안)
+         ② studio.html phead 응시 현황 = [data-rank-summary]
+         ③ index.html 히어로 왼쪽 칸 위젯 = aside#rankWidget[data-rank-widget] (.herosay 안, .lede2 다음)
+   계약  DOM 훅은 메인 세션이 준 계약 그대로다. 클래스만 이 파일이 정하고 속성과 id 는 손대지 않는다.
+         [data-rank-tabs] > button[role=tab][data-unit] · [data-rank-views] > button[data-view=all|set|difficulty]
+         [data-rank-takers] [data-rank-scored] [data-rank-note] [data-rank-dist] > i[data-bin=0..9]
+         tbody[data-rank-rows] · template[data-rank-row] > td[data-c=rank|name|score|set|diff|at]
+         template[data-rank-group] > th[colspan=6][data-c=group] · p.foot[data-rank-foot]
+         [data-rank-summary] > div[data-unit] > b[data-rank-takers] · aside[data-rank-widget] > div[data-unit]
+   ★칸  표 칸 스타일은 클래스가 아니라 td[data-c=…] 에 건다. 계약이 바뀌면 CSS 가 같이 죽어서 조용히 낡지 않는다.
+   원천  GET /api/studio/ranking 하나. 실응시 원장만 그린다. 가공 인원 0.
+         난이도와 제목은 API 가 주지 않는다. set_id 로 assets/data/sets.json 에서 클라이언트가 붙인다.
+   층    순위표와 위젯은 영구 층이다. 그래서 본판 문법(卷 folio, 괘선, .facts, .tabs, .chips, .lv)을 그대로 쓰고
+         임시 층 표지(광곽, 玄墨 판, 판심 밴드)는 안별 강조로만 제한해 쓴다.
+   빈값  scored < 10 → [data-rank-dist] 를 hidden 으로 두고 [data-rank-note] 에 「집계 중」
+         takers 0 → 표와 분포를 다 감추고 [data-rank-note] 에 「아직 응시 기록이 없습니다」.
+         숫자 0 을 계기 자리에 크게 박지 않는다(0 명이라는 사실이 상품의 인상이 되면 안 된다).
+   단위수 sets.json 은 단위가 다섯이다(yonsei-intl 포함). 계약은 넷이다. 그래서 칸 수를 --rstat-n 로 받는다.
+         템플릿이 style="--rstat-n:4" 를 쓰고 다섯이 되면 5 로 바꾸면 된다. SELF_CHECK 결재 2.
+   충돌  base.css 의 .rows .row .card .kv .lgrp .plan 은 쓰지 않는다.
+         새 이름 = .rank .rmeta .rnote .rdist .rtbl .rgrp .rstat .rwid .rtop .specline
+   리터럴 px 는 괘선 1px(막대 바닥 포함)뿐. 그 밖은 --s* --t-* --tap 토큰과 그 calc 유도다. */
+
+/* ═══════ 공통 계기 ═══════ */
+:where(body.v2) .rank .rmeta{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);align-items:baseline;
+  margin-top:var(--s4);padding-bottom:var(--s3);border-bottom:var(--rule-strong)}
+:where(body.v2) .rank .rmeta .n{font-family:var(--mono);font-weight:500;font-size:var(--t-base);
+  letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+:where(body.v2) .rank .rmeta .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.v2) .rank .rmeta .as{margin-left:auto;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray)}
+:where(body.v2) .rank .rnote{font-size:var(--t-sm);color:var(--gray);padding:var(--s4) 0;
+  border-bottom:var(--rule);max-width:var(--measure)}
+:where(body.v2) .rank .rnote.big{padding:var(--s6) 0;text-align:center;font-size:var(--t-base);border-bottom:0}
+:where(body.v2) .rank .foot{margin-top:var(--s3);font-size:var(--t-sm);color:var(--gray);
+  line-height:var(--lh-body);max-width:var(--measure)}
+:where(body.v2) .rank .mine{margin-top:var(--s2)}
+
+/* ═══════ 점수 분포 10칸 ═══════ */
+:where(body.v2) .rdist{margin:var(--s4) 0 0;display:grid;gap:var(--s2)}
+:where(body.v2) .rdist[hidden]{display:none!important}   /* display 를 준 컴포넌트가 UA 의 [hidden] 을 이긴다 */
+:where(body.v2) .rdist .plot{display:grid;grid-template-columns:repeat(10,1fr);gap:var(--s1);
+  align-items:end;height:var(--s6);border-bottom:var(--rule-strong)}
+:where(body.v2) .rdist .plot i{display:block;background:var(--ink);min-height:1px;height:var(--v,1px)}
+:where(body.v2) .rdist .plot i.pk{background:var(--seal)}   /* 최빈 칸 하나만 朱印. 활성 표식 규칙 */
+:where(body.v2) .rdist .ax{display:flex;justify-content:space-between;font-family:var(--mono);
+  font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
+
+/* ═══════ 순위 표 ═══════ */
+:where(body.v2) .rtbl{width:100%;border-collapse:collapse;font-size:var(--t-sm);margin-top:var(--s4)}
+:where(body.v2) .rtbl th[scope=col]{font-family:var(--mono);text-align:left;font-weight:500;font-size:var(--t-xs);
+  letter-spacing:var(--tr-label);color:var(--gray);padding:0 var(--s3) var(--s2) 0;
+  border-bottom:var(--rule-strong);white-space:nowrap}
+:where(body.v2) .rtbl td{padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:var(--rule);vertical-align:baseline}
+:where(body.v2) .rtbl td[data-c=rank]{font-family:var(--mono);font-weight:500;color:var(--gray);width:1%;
+  white-space:nowrap;font-variant-numeric:tabular-nums}
+:where(body.v2) .rtbl tr:nth-child(-n+3) td[data-c=rank]{color:var(--ink)}
+:where(body.v2) .rtbl td[data-c=name]{font-weight:700;font-size:var(--t-base);color:var(--ink);white-space:nowrap}
+:where(body.v2) .rtbl td[data-c=score]{font-family:var(--mono);font-weight:500;font-size:var(--t-base);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+:where(body.v2) .rtbl td[data-c=set]{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);
+  letter-spacing:.04em;white-space:nowrap}
+:where(body.v2) .rtbl td[data-c=diff] .lv{font-size:var(--t-sm);font-weight:600}
+:where(body.v2) .rtbl td[data-c=at]{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);
+  text-align:right;padding-right:0;white-space:nowrap;font-variant-numeric:tabular-nums}
+:where(body.v2) .rtbl th[data-c=group]{text-align:left;font-size:var(--t-h4);font-weight:var(--w-head);
+  letter-spacing:var(--tr-head);padding:var(--s4) 0 var(--s2);border-bottom:var(--rule-strong)}
+:where(body.v2) .rtbl th[data-c=group] .cd{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
+  color:var(--seal);letter-spacing:.04em;margin-right:var(--s2)}
+:where(body.v2) .rtbl th[data-c=group] .cnt{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  color:var(--gray);letter-spacing:0;margin-left:var(--s3)}
+:where(body.v2) .rtbl tr[data-me]{background:var(--mat)}
+:where(body.v2) .rtbl tr[data-me] td[data-c=rank]{color:var(--seal)}
+:where(body.v2) .rtbl tr[data-me] td[data-c=at]{color:var(--body)}   /* 灰墨/판심 4.56 은 하한 위 0.06. 본문색 7.37 로 올린다 */
+:where(body.v2) .rtbl tr[data-me] td[data-c=set]{color:var(--body)}
+:where(body.v2) .rtbl tr[data-me] td[data-c=name]::after{content:"내 기록";font-family:var(--mono);
+  font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--seal);margin-left:var(--s2)}
+
+/* ═══════ phead 응시 현황 (기존 .facts.lbl 승계) ═══════ */
+:where(body.v2) .rstat{margin-top:var(--s4);grid-template-columns:repeat(var(--rstat-n,4),1fr)}
+:where(body.v2) .rstat .k{display:block;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  letter-spacing:var(--tr-label);color:var(--gray);margin:0 0 var(--s2)}
+/* base.css 의 .facts span{display:block;font-size:--t-sm;color:--gray;margin-top:6px} 는 <b> 안의 span 에도 걸린다.
+   그대로 두면 계기 숫자가 13px 灰墨 블록이 되어 "34" 와 "명" 이 두 줄로 갈리고 크기 위계가 죽는다(첫 렌더 실측).
+   먼저 <b> 안 모든 span 을 인라인 승계로 되돌리고, 단위 글자만 다시 작게 준다 */
+:where(body.v2) .facts.lbl.rstat b{font-size:var(--t-h4)}   /* 활동 계기는 상품 사양 계기(.facts b = --t-h2 34px)보다 한 단 아래.
+                                                     같은 크기면 「150 응시 세트」와 「2 명」이 같은 무게로 선다 (design-critic P0-1, 2026-09-07 실측 34==34).
+                                                     선택자를 3클래스로 올린 이유 = base.css 의 .facts.lbl b 가 (0,2,1) 이라
+                                                     .rstat b (0,1,1) 로는 뒤에 와도 지지 않는다. 실측으로 잡았다 */
+:where(body.v2) .rstat b span{display:inline;font-size:inherit;color:inherit;margin-top:0}
+:where(body.v2) .rstat b .u{font-family:var(--sans);font-size:var(--t-sm);font-weight:500;
+  color:var(--gray);letter-spacing:-0.01em;margin-left:6px}
+:where(body.v2) .rstat .none{display:block;font-family:var(--sans);font-size:var(--t-sm);font-weight:500;
+  color:var(--gray);line-height:var(--lh-ui);letter-spacing:-0.01em}
+:where(body.v2) .rstat span{margin-top:0}
+:where(body.v2) .rstat+.rslink{display:flex;justify-content:flex-end;max-width:none;border-bottom:var(--rule-strong)}
+/* max-width 를 풀지 않으면 base.css 의 p{max-width:36em} 이 오른쪽 정렬을 36em 안에서만 한다 */
+:where(body.v2) .rstat+.rslink .tlink{font-size:var(--t-sm)}
+
+/* ═══════ 홈 히어로 위젯 ═══════ */
+:where(body.v2) .rwid{margin-top:var(--s4)}
+:where(body.v2) .rwid[hidden]{display:none!important}   /* 전 단위 takers 합 0 이면 메인 세션이 hidden 을 건다 */
+:where(body.v2) .rwid .k{display:flex;align-items:center;font-family:var(--mono);font-size:var(--t-cap);
+  font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s2)}
+:where(body.v2) .rwid .list{border-top:var(--rule-strong)}
+:where(body.v2) .rwid [data-unit]{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:var(--s3);
+  align-items:baseline;padding:10px 0;border-bottom:var(--rule)}
+:where(body.v2) .rwid [data-unit] .u{font-size:var(--t-sm);font-weight:600;letter-spacing:-0.01em;min-width:0}
+:where(body.v2) .rwid [data-rank-takers]{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
+  color:var(--body);font-variant-numeric:tabular-nums;white-space:nowrap}
+:where(body.v2) .rwid [data-rank-top]{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
+  color:var(--seal);font-variant-numeric:tabular-nums;white-space:nowrap}
+:where(body.v2) .rwid [data-rank-top][hidden]{display:none}
+:where(body.v2) .rwid [data-rank-top] b{font-weight:500}
+:where(body.v2) .rwid .go{margin-top:var(--s2)}
+
+/* ═══════ R1 · W1 「괘선 表」 ═══════
+   응시 현황 = 기존 facts 4칸 아래 두 번째 줄로 병치. 위 줄은 상품 사양(5 3 12 150), 아래 줄은 응시 활동이다.
+   두 줄이 한 판으로 읽히되 아래 줄에만 순위표 링크가 붙어 갈린다.
+   지면은 채움 0, 곡률 0, 그림자 0. 卷二 지문 목록과 같은 표 문법이라 새로 배울 것이 없다 */
+:where(body.v2) .rank--gwak .rmeta{border-bottom:0;padding-bottom:0}
+:where(body.v2) .rank--gwak .rbox{box-shadow:inset 0 0 0 1px var(--hair);padding:var(--s4);margin-top:var(--s4)}
+:where(body.v2) .rank--gwak .rbox .rdist{margin-top:0}
+:where(body.v2) .rstat--gwak{border-top:0}   /* 위 facts 의 아래 괘선을 그대로 쓴다. 두 줄이 한 판 */
+:where(body.v2) .rwid--gwak .k::before{content:"";width:6px;height:6px;background:var(--seal);
+  border-radius:50%;margin-right:8px;flex:none}
+
+/* ═══════ R2 · W2 「먹판」 ═══════
+   상위 3 을 玄墨 판 세 칸으로 세우고 4위 아래는 괘선 표로 잇는다. 명암으로 위계를 만든다.
+   玄墨 위 朱印 2.36 灰墨 2.33 은 못 쓴다. 강조 金泥 6.28, 보조 rgba(楮紙,.72) 6.87 */
+:where(body.v2) .rtop{display:grid;grid-template-columns:repeat(3,1fr);background:var(--ink);
+  color:var(--paper);margin-top:var(--s4)}
+:where(body.v2) .rtop div{padding:var(--s4);border-left:1px solid rgba(var(--paper-rgb),.22)}
+:where(body.v2) .rtop div:first-child{border-left:0}
+:where(body.v2) .rtop .r{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
+  letter-spacing:var(--tr-label);color:var(--gold)}
+:where(body.v2) .rtop .n{display:block;font-weight:700;font-size:var(--t-h4);letter-spacing:var(--tr-head);margin-top:var(--s2)}
+:where(body.v2) .rtop .s{display:block;font-family:var(--mono);font-weight:500;font-size:var(--t-h2);
+  line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:var(--s1)}
+:where(body.v2) .rtop .m{display:flex;flex-wrap:wrap;gap:var(--s2);font-family:var(--mono);font-size:var(--t-xs);
+  color:rgba(var(--paper-rgb),.72);margin-top:var(--s2)}
+:where(body.v2) .rtop :focus-visible{outline-color:var(--paper)}
+:where(body.v2) .rstat--muk{background:var(--ink);color:var(--paper);border-top:0;border-bottom:0}
+:where(body.v2) .rstat--muk div+div{border-left:1px solid rgba(var(--paper-rgb),.22)}
+:where(body.v2) .rstat--muk .k{color:rgba(var(--paper-rgb),.62)}
+:where(body.v2) .rstat--muk b{color:var(--gold)}
+:where(body.v2) .rstat--muk b .u,:where(body.v2) .rstat--muk .none{color:rgba(var(--paper-rgb),.72)}
+:where(body.v2) .rstat--muk+.rslink{background:var(--ink);border-bottom:0;padding:0 var(--s3) var(--s3)}
+:where(body.v2) .rstat--muk+.rslink .tlink{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
+:where(body.v2) .rstat--muk+.rslink .tlink:hover{color:var(--gold);text-decoration-color:var(--gold)}
+:where(body.v2) .rstat--muk+.rslink :focus-visible{outline-color:var(--paper)}
+:where(body.v2) .rwid--muk{background:var(--ink);color:var(--paper);padding:var(--s4)}
+:where(body.v2) .rwid--muk .k{color:rgba(var(--paper-rgb),.62)}
+:where(body.v2) .rwid--muk .list{border-top-color:rgba(var(--paper-rgb),.22)}
+:where(body.v2) .rwid--muk [data-unit]{border-bottom-color:rgba(var(--paper-rgb),.22)}
+:where(body.v2) .rwid--muk [data-rank-takers]{color:rgba(var(--paper-rgb),.72)}
+:where(body.v2) .rwid--muk [data-rank-top]{color:var(--gold)}
+:where(body.v2) .rwid--muk .go{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
+:where(body.v2) .rwid--muk .go:hover{color:var(--gold);text-decoration-color:var(--gold)}
+:where(body.v2) .rwid--muk :focus-visible{outline-color:var(--paper)}
+
+/* ═══════ R3 · W3 「계기 計器」 ═══════
+   점수 분포를 지면 머리로 올려 계기판을 먼저 보이고 순위 표를 뒤에 둔다.
+   phead 에서는 응시 현황이 facts 자리를 대체하고 상품 사양 5 3 12 150 은 그 아래 한 줄 계기로 접는다 */
+:where(body.v2) .rank--gyegi .rdist{margin-top:var(--s5)}
+:where(body.v2) .rank--gyegi .rdist .plot{height:var(--s7)}
+:where(body.v2) .rank--gyegi .rmeta{border-bottom:0;padding-bottom:0}
+:where(body.v2) .rank--gyegi .rtbl{margin-top:var(--s5)}
+:where(body.v2) .specline{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s4);margin-top:var(--s3);
+  padding-top:var(--s3);border-top:var(--rule);font-family:var(--mono);font-size:var(--t-xs);color:var(--gray)}
+:where(body.v2) .specline b{font-weight:500;color:var(--ink)}
+:where(body.v2) .rwid--gyegi .list{display:grid;grid-template-columns:1fr 1fr;border-top:var(--rule-strong)}
+:where(body.v2) .rwid--gyegi [data-unit]{grid-template-columns:minmax(0,1fr);gap:var(--s1);
+  padding:var(--s3) var(--s3) var(--s3) 0}
+:where(body.v2) .rwid--gyegi [data-unit]:nth-child(even){padding-right:0;padding-left:var(--s3);border-left:var(--rule)}
+:where(body.v2) .rwid--gyegi [data-rank-takers]{font-size:var(--t-h4);color:var(--ink)}
+:where(body.v2) .rwid--gyegi .u{font-size:var(--t-cap);color:var(--gray);font-weight:500}
+
+/* ═══════ 좁은 폭 ═══════ */
+@media (max-width:900px){
+  :where(body.v2) .facts.rstat{grid-template-columns:repeat(2,1fr)}
+  :where(body.v2) .facts.rstat div:nth-child(-n+2){border-bottom:var(--rule)}
+  :where(body.v2) .facts.rstat div:nth-child(odd){border-left:0}
+  :where(body.v2) .rtop{grid-template-columns:1fr}
+  :where(body.v2) .rtop div{border-left:0;border-top:1px solid rgba(var(--paper-rgb),.22)}
+  :where(body.v2) .rtop div:first-child{border-top:0}
+}
+@media (max-width:860px){
+  /* 순위 표를 라벨 격자로 접는다. base.css .sets 가 쓰는 것과 같은 방식이라 두 표가 같게 움직인다 */
+  :where(body.v2) .rtbl thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  :where(body.v2) .rtbl tbody tr{display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+    gap:var(--s1) var(--s3);padding:var(--s3) 0;border-bottom:var(--rule)}
+  :where(body.v2) .rtbl td{border:0;padding:0;display:block}
+  :where(body.v2) .rtbl td[data-c=rank]{grid-row:1;grid-column:1;width:auto}
+  :where(body.v2) .rtbl td[data-c=name]{grid-row:1;grid-column:2}
+  :where(body.v2) .rtbl td[data-c=score]{grid-row:1;grid-column:3;text-align:right}
+  :where(body.v2) .rtbl td[data-c=set]{grid-row:2;grid-column:1}
+  :where(body.v2) .rtbl td[data-c=diff]{grid-row:2;grid-column:2}
+  :where(body.v2) .rtbl td[data-c=at]{grid-row:2;grid-column:3;text-align:right}
+  :where(body.v2) .rtbl tr[data-me]{padding-left:var(--s2);padding-right:var(--s2)}
+  :where(body.v2) .rtbl th[data-c=group]{display:block}
+}
+@media (max-width:600px){
+  :where(body.v2) .rwid--gyegi .list{grid-template-columns:1fr}
+  :where(body.v2) .rwid--gyegi [data-unit]:nth-child(even){padding-left:0;border-left:0}
+}
+
+/* 세 뿌리 모두 hidden 으로 시작한다. display 를 준 컴포넌트가 UA 의 [hidden] 을 이기므로 되돌린다.
+   [data-rank-summary] 는 .facts 가 display:grid 라 같은 함정에 걸린다. 데이터 도착 전 자리표가
+   보이지 않게 하려면 이 선택자가 반드시 함께 있어야 한다(2026-09-07 통합 실측, 메인 세션이 별도로 붙인 가드를
+   여기로 합쳐 사본 하나로 닫는다) */
+:where(body.v2) [data-rank-board][hidden],
+:where(body.v2) [data-rank-widget][hidden],
+:where(body.v2) [data-rank-summary][hidden]{display:none!important}
+
+/* --- 메인 세션 보강 (design 원천에 없다. 재병합은 merge_promo_css.py) --- */
+/* 행사 팝업이 열린 동안 본문 스크롤을 잠근다 (app.js openPromoPopup / closePromoPopup) */
+html.ppop-open{overflow:hidden}
+/* ==== promo_popup_20260907 end ==== */

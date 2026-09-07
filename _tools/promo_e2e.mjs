@@ -21,6 +21,25 @@ res.home_banner_text = await txt('aside[data-promo]');
 res.home_sale_count = await pg.locator('[data-list-price] .sale').count();
 res.home_hero_price = await txt('.prodcta .pc:first-child .pr');
 res.home_tile_price = await txt('#tiles .tile .p');
+// 행사 팝업 (2026-09-07): 서버 판정 뒤 열림, 초점이 안에, 버튼 2, 정가 취소선, 오늘 하루 보지 않기 → 새로고침 뒤 닫힘
+await pg.waitForTimeout(400);
+res.popup_open = await pg.locator('#promoPopup:not([hidden])').count();
+res.popup_focus_in = await pg.evaluate(() => { const r = document.getElementById('promoPopup'); return r && !r.hidden && r.contains(document.activeElement) ? 1 : 0; });
+res.popup_btns = await pg.evaluate(() => Array.from(document.querySelectorAll('#promoPopup [data-ppop-go]')).map(a => a.getAttribute('href')));
+res.popup_sale = await pg.locator('#promoPopup [data-list-price] .sale').count();
+await pg.screenshot({ path: `${out}/home_${mode}_popup.png`, fullPage: false });
+await pg.setViewportSize({ width: 390, height: 800 }); await pg.waitForTimeout(300);
+await pg.screenshot({ path: `${out}/home_${mode}_popup_390.png`, fullPage: false });
+await pg.setViewportSize({ width: 1280, height: 900 }); await pg.waitForTimeout(200);
+if (res.popup_open) { await pg.click('#promoPopup [data-ppop-mute]'); await pg.waitForTimeout(200); }
+res.popup_mute_key = await pg.evaluate(() => { try { return Object.keys(JSON.parse(localStorage.getItem('hh_popup_mute_v1') || '{}')).filter(k => k.startsWith('promo:')).length; } catch { return -1; } });
+await pg.evaluate(() => sessionStorage.removeItem('hh_popup_shown'));   // 세션 1회 표식은 걷고 억제 키만으로 닫힘을 잰다
+await go('index.html'); await pg.waitForTimeout(400);
+res.popup_after_mute = await pg.locator('#promoPopup:not([hidden])').count();
+// 홈 순위 위젯
+res.widget_visible = await pg.locator('#rankWidget:not([hidden])').count();
+res.widget_takers = await txt('#rankWidget [data-unit="yonsei-hum"] [data-rank-takers]');
+res.widget_top = await txt('#rankWidget [data-unit="yonsei-hum"] [data-rank-top] b');
 await pg.screenshot({ path: `${out}/home_${mode}.png`, fullPage: false });
 await pg.setViewportSize({ width: 390, height: 800 }); await pg.waitForTimeout(300);
 await pg.screenshot({ path: `${out}/home_${mode}_390.png`, fullPage: false });
@@ -33,6 +52,21 @@ await pg.waitForTimeout(600);
 res.studio_static_price = await txt('#p1 .price, .price');
 res.studio_unit_sale = await pg.locator('.unit .price .sale').count();
 res.studio_unit_price = await txt('.unit .price');
+// 순위표 (2026-09-07): 응시 현황 4칸 + 卷六 표. 탭 전환으로 비동의 회원만 있는 단위의 빈 상태를 잰다
+await pg.waitForSelector('#ranking:not([hidden])', { timeout: 8000 }).catch(() => {});
+await pg.waitForTimeout(300);
+const rowsOf = () => pg.evaluate(() => Array.from(document.querySelectorAll('#ranking [data-rank-rows] tr')).filter(tr => tr.querySelector('[data-c="rank"]')).map(tr => ['rank','name','score','set'].map(k => tr.querySelector('[data-c="'+k+'"]').textContent.trim())));
+res.rank_rows = await rowsOf();
+res.rank_summary = await txt('[data-rank-summary] [data-unit="yonsei-hum"] [data-rank-takers]');
+await pg.screenshot({ path: `${out}/studio_${mode}_ranking.png`, fullPage: false }).catch(() => {});
+await pg.evaluate(() => { const el = document.getElementById('ranking'); if (el) el.scrollIntoView(); });
+await pg.waitForTimeout(200);
+await pg.screenshot({ path: `${out}/studio_${mode}_ranking_board.png`, fullPage: false }).catch(() => {});
+const ksTab = pg.locator('#ranking [data-rank-tabs] [data-unit="korea-sci"]');
+if (await ksTab.count()) { await ksTab.click(); await pg.waitForTimeout(200); }
+res.rank_ks_takers = await txt('#ranking [data-rank-takers]');
+res.rank_ks_rows = (await rowsOf()).length;
+res.rank_ks_note = await txt('#ranking [data-rank-note]');
 
 await go('guidebook/gachon.html');
 res.gb_price = await txt('.buy .price');

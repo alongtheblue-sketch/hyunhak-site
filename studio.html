@@ -109,6 +109,15 @@
       <div><b>12</b><span>이용권 유효 개월</span></div>
       <div><b>150</b><span>응시 세트, 5개 단위 각 30편</span></div>
     </div>
+    <!-- 응시 현황 (2026-09-07, 순위표 R1 병치). 값은 assets/rank.js 가 /api/studio/ranking 으로 채운다 -->
+    <div class="facts lbl rstat rstat--gwak" data-rank-summary style="--rstat-n:4" aria-label="응시 현황" hidden>
+          <!-- 단위마다 한 칸. takers 0 이면 <b> 를 class="sr" 로 감추고 .none 문장을 쓴다 -->
+          <div data-unit="yonsei-hum"><span class="k">연세대 인문+통합</span><b><span data-rank-takers>-</span><span class="u">명</span></b></div>
+          <div data-unit="yonsei-sci"><span class="k">연세대 자연</span><b><span data-rank-takers>-</span><span class="u">명</span></b></div>
+          <div data-unit="korea-hum"><span class="k">고려대 인문</span><b><span data-rank-takers>-</span><span class="u">명</span></b></div>
+          <div data-unit="korea-sci"><span class="k">고려대 자연</span><b><span data-rank-takers>-</span><span class="u">명</span></b></div>
+        </div>
+        <p class="rslink"><a class="tlink" href="#ranking">순위표 보기 <span class="ar" aria-hidden="true">→</span></a></p>
   </div>
 </section>
 
@@ -121,6 +130,7 @@
     <a href="#plans"><span class="k">卷三</span><span>이용권</span></a>
     <a href="#ways"><span class="k">卷四</span><span>응시 방식</span></a>
     <a href="#faq"><span class="k">卷五</span><span>자주 묻는 질문</span></a>
+    <a href="#ranking"><span class="k">卷六</span><span>순위표</span></a>
   </div>
   <p class="foot">지문 낱권 33,000원, 응시 5회<br>응시 단위 전권 495,000원, 지문 30편, 인강 포함<br>공통 풀이 인강 220,000원. 응시 12개월, 인강 3개월</p>
 </nav>
@@ -255,6 +265,52 @@
   </div>
 </section>
 
+<!-- 지면 6. 응시 순위표 (2026-09-07). 원천 /api/studio/ranking 하나, 행은 마이페이지에서 공개를 켠 회원만. 렌더 = assets/rank.js -->
+<section class="page rank rank--gwak" id="ranking" data-rank-board hidden>
+  <p class="folio"><b>卷六</b><span>순위표</span><span class="r">6</span></p>
+  <h2 class="t">응시 순위표</h2>
+  <p class="note">응시한 회원의 실제 채점 결과만 싣습니다. 이름은 가운데 글자를 가립니다. 점수는 0에서 100. 세트 코드 뒤에 난이도를 붙입니다.</p>
+  <div class="tabs wrapx" role="tablist" data-rank-tabs aria-label="응시 단위" style="margin-top:var(--s4)">
+    <button type="button" role="tab" id="rt-yonsei-hum" aria-controls="rp-yonsei-hum" aria-selected="true"  data-unit="yonsei-hum">연세대 인문+통합<span>-</span></button>
+    <button type="button" role="tab" id="rt-yonsei-sci" aria-controls="rp-yonsei-sci" aria-selected="false" data-unit="yonsei-sci">연세대 자연<span>-</span></button>
+    <button type="button" role="tab" id="rt-korea-hum"  aria-controls="rp-korea-hum"  aria-selected="false" data-unit="korea-hum">고려대 인문<span>-</span></button>
+    <button type="button" role="tab" id="rt-korea-sci"  aria-controls="rp-korea-sci"  aria-selected="false" data-unit="korea-sci">고려대 자연<span>-</span></button>
+  </div>
+  <div class="setnav">
+    <div class="chips" role="group" data-rank-views aria-label="보기">
+      <button type="button" data-view="all" aria-pressed="true">전체</button>
+      <button type="button" data-view="set" aria-pressed="false">세트별</button>
+      <button type="button" data-view="difficulty" aria-pressed="false">난이도별</button>
+    </div>
+    <span class="setsum" data-rank-updated></span>
+  </div>
+
+  <!-- 단위마다 한 벌. JS 가 [data-unit] 로 골라 보인다 -->
+  <div class="rpanel" role="tabpanel" id="rp-yonsei-hum" aria-labelledby="rt-yonsei-hum" data-unit="yonsei-hum">
+    <h3 class="sr">연세대 인문+통합 응시 현황</h3>
+    <div class="rmeta">
+      <span class="k">응시 회원</span> <span class="n"><span data-rank-takers>-</span>명</span>
+      <span class="k">채점</span> <span class="n"><span data-rank-scored>-</span>회</span>
+      <span class="as" data-rank-generated></span>
+    </div>
+    <p class="rnote" data-rank-note hidden></p>
+    <div class="rdist" data-rank-dist role="img" aria-label="" hidden>
+      <div class="plot"><i data-bin="0"></i><i data-bin="1"></i><i data-bin="2"></i><i data-bin="3"></i><i data-bin="4"></i><i data-bin="5"></i><i data-bin="6"></i><i data-bin="7"></i><i data-bin="8"></i><i data-bin="9"></i></div>
+      <div class="ax"><span>0</span><span>50</span><span>100</span></div>
+    </div>
+    <table class="rtbl">
+      <caption class="sr">응시 순위 표. 순위, 이름, 점수, 세트 코드, 난이도, 응시 날짜.</caption>
+      <thead><tr><th scope="col">순위</th><th scope="col">이름</th><th scope="col">점수</th><th scope="col">세트</th><th scope="col">난이도</th><th scope="col">날짜</th></tr></thead>
+      <tbody data-rank-rows></tbody>
+    </table>
+    <p class="foot" data-rank-foot>응시 회원 수는 채점이 끝난 응시 기록이 있는 회원을 계정 기준으로 1명씩 센 값이며 운영진 계정과 점검용 계정은 제외합니다.</p>
+    <p class="mine"><a class="tlink" href="my.html">내 기록을 싣거나 내리려면 마이페이지 &gt; 순위표 공개 <span class="ar" aria-hidden="true">→</span></a></p>
+  </div>
+
+  <template data-rank-row><tr><td data-c="rank"></td><td data-c="name"></td><td data-c="score"></td><td data-c="set"></td><td data-c="diff"></td><td data-c="at"></td></tr></template>
+  <template data-rank-group><tr class="grow"><th colspan="6" data-c="group"></th></tr></template>
+</section>
+
 <!-- 마지막 CTA 라벨 = COPY.md §1 §2 -->
 <section class="page">
   <div class="final">
@@ -293,6 +349,7 @@
 <nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="cta" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="lectures.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M10.3 9.1v5.8l4.8-2.9z"/></svg>인강</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
+<script src="assets/rank.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var esc=HH.esc;
@@ -500,5 +557,36 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
+<!--promo:popup-->
+<div class="pdim" hidden id="promoPopup" data-promo-popup="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00"
+     role="dialog" aria-modal="true" aria-labelledby="ppopT" aria-describedby="ppopU" tabindex="-1">
+  <div class="pback" data-ppop-back></div>
+  <div class="pop pop--gwak pop--noimg" data-ppop-card>
+    <div class="pfr">
+      <div class="prib"><p class="k">행사 안내</p></div>
+      <button class="pclose" type="button" data-ppop-close aria-label="닫기"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 7 L17 17 M17 7 L7 17" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="square"/></svg></button>
+      <div class="ptxt">
+        <span class="rate">30%</span>
+        <h2 id="ppopT">9월 30일까지 전 상품을 정가에서 30% 할인합니다.</h2>
+        <p class="until" id="ppopU">마감 2026년 9월 30일 23시 59분</p>
+      </div>
+      <div class="pbot">
+        <table class="ptbl">
+          <caption class="sr">30% 할인 적용 가격 예시. 정가 뒤에 할인가가 붙습니다.</caption>
+          <tbody>
+            <tr><th scope="row">서류기반면접 가이드북 권당</th><td><span data-list-price="33000">33,000원</span></td></tr>
+            <tr><th scope="row">제시문 면접 스튜디오 단위 전권</th><td><span data-list-price="495000">495,000원</span></td></tr>
+          </tbody>
+        </table>
+        <div class="pacts">
+          <a class="btn" href="studio.html#plans" data-ppop-go="studio">면접 스튜디오 구매 바로가기 <span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="guidebook/index.html" data-ppop-go="guidebook">가이드북 바로가기</a>
+        </div>
+        <p class="pfoot"><button type="button" class="tlink" data-ppop-mute>오늘 하루 보지 않기</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!--/promo:popup-->
 </body>
 </html>

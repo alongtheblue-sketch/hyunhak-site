@@ -400,7 +400,77 @@
     const it = pickPopup(items);
     if (it) renderPopup(it);
   }
-  document.addEventListener("DOMContentLoaded", showPopup);
+  // ── 행사 팝업 (2026-09-07) ──
+  // 마크업은 빌드가 입구 면에 넣는다(_tools/apply_promo.py, #promoPopup[data-promo-popup=행사 id]). 여는 조건은 배너와 같은 서버 판정 하나:
+  // /api/config.promo 가 같은 id 로 살아 있을 때만. 판정 미확정·없음·만료 = 열지 않는다(할인 광고에 정가 화면 차단, critic P1-1).
+  // "오늘 하루 보지 않기" = 그 행사 id 를 KST 자정까지 억제(localStorage, 공지 팝업과 같은 저장소). 닫기 = 이 세션에서만 안 뜸.
+  // 공지 팝업과 한 세션에 하나만: 행사 팝업이 먼저 판정하고, 떴으면 공지 팝업은 건너뛴다.
+  function kstMidnight(now) {
+    const t = (now || Date.now()) + 9 * 3600 * 1000;
+    const d = new Date(t);
+    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1) - 9 * 3600 * 1000;
+  }
+  function promoPopupMuted(id) {
+    const m = popupMutes();
+    return !!(m["promo:" + id] && m["promo:" + id] > Date.now());
+  }
+  function mutePromoPopup(id) {
+    const m = popupMutes(); m["promo:" + id] = kstMidnight();
+    try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {}
+  }
+  function openPromoPopup(root, p) {
+    const prev = document.activeElement;
+    const focusables = () => Array.from(root.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter((el) => el.offsetParent !== null);
+    let closed = false;
+    const close = () => {
+      if (closed) return; closed = true;
+      root.hidden = true;
+      document.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("ppop-open");
+      if (prev && prev.focus) prev.focus();
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") return close();
+      if (e.key !== "Tab") return;
+      const f = focusables(); if (!f.length) return;
+      const first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    };
+    root.querySelectorAll("[data-ppop-close]").forEach((b) => b.addEventListener("click", close));
+    root.querySelectorAll("[data-ppop-back]").forEach((b) => b.addEventListener("click", close));
+    root.querySelectorAll("[data-ppop-mute]").forEach((b) => b.addEventListener("click", () => { mutePromoPopup(p.id); track("promo_popup_mute", { promo_id: p.id }); close(); }));
+    root.querySelectorAll("[data-ppop-go]").forEach((a) => a.addEventListener("click", () => track("promo_popup_click", { promo_id: p.id, target: a.dataset.ppopGo })));
+    root.hidden = false;
+    document.documentElement.classList.add("ppop-open");
+    document.addEventListener("keydown", onKey);
+    const first = root.querySelector("[data-ppop-close]") || focusables()[0];
+    if (first) first.focus();
+    try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
+    track("promo_popup_view", { promo_id: p.id });
+  }
+  // 반환 = 열었는가. 공지 팝업이 이 값을 보고 양보한다
+  async function showPromoPopup() {
+    if (document.body.dataset.noPopup !== undefined) return false;
+    const root = document.getElementById("promoPopup");
+    if (!root || !root.hasAttribute("data-promo-popup")) return false;
+    let p = null;
+    try { p = await promoReady; } catch { p = null; }
+    if (!p || p.id !== root.getAttribute("data-promo-popup")) return false;   // 지면의 행사와 서버의 행사가 다르면 열지 않는다
+    const until = root.getAttribute("data-promo-until");
+    if (until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until)) return false;
+    if (promoPopupMuted(p.id)) return false;
+    let shown = false;
+    try { shown = sessionStorage.getItem("hh_popup_shown") === "1"; } catch {}
+    if (shown) return false;
+    openPromoPopup(root, p);
+    return true;
+  }
+  document.addEventListener("DOMContentLoaded", async () => {
+    let opened = false;
+    try { opened = await showPromoPopup(); } catch { opened = false; }
+    if (!opened) showPopup();
+  });
 
   // 가로 스크롤 표: 실제로 넘칠 때만 키보드 초점과 이름을 준다 (WCAG 2.1.1, 1.3.1).
   // 넘치지 않는 표에 tabindex 를 걸면 불필요한 탭 정거장이 되므로 실측 후 부여한다.
@@ -438,7 +508,8 @@
   window.HH = { API, api, me, cart, pruneCart, saveCart, addToCart, cartTotal, won, updateNav,
     config, oauthStart, oauthButtons, OAUTH_LABEL, OAUTH_ERR, showPopup, pickPopup, esc, sanitizeHtml,
     SET_ID_RE, UNITS, LINE_MAX, okSetId, okUnit, intIn,
-    promo, promoActive, salePrice, renderPromoPrices, promoReady };
+    promo, promoActive, salePrice, renderPromoPrices, promoReady,
+    showPromoPopup, promoPopupMuted, kstMidnight };
 })();
 
 // 브랜드 영상 슬롯: 기본은 정지 포스터(reduced-first). 모션 무감 선호가 아닐 때만 자동재생

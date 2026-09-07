@@ -39,5 +39,39 @@
   "label_sm": "9월 30일까지 정가 30% 할인",
   "exclude": [
     "b2b.html"
-  ]
+  ],
+  "popup": {
+    "_doc": "행사 팝업(2026-09-07 건우). 입구 면 진입 시 1회, 서버 /api/config.promo 가 같은 id 로 살아 있을 때만 app.js 가 연다. pages 밖 면과 exclude 면에는 넣지 않는다. img 는 힉스필드 생성물(_aigen) 경로, 비면 이미지 칸 없는 변형으로 그린다. lines 와 img_alt 는 렌더되지 않는다: lines 는 rows(가격 표)와 until_text(마감 줄)가 같은 사실을 이미 구조로 말하고, 도판은 장식이라 alt=\"\" 다. 버튼과 억제 문안은 link_studio_label link_guidebook_label mute_label 로 템플릿에 실린다.",
+    "pages": [
+      "index.html",
+      "guidebook/index.html",
+      "studio.html",
+      "lectures.html",
+      "interview.html",
+      "about.html"
+    ],
+    "title": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
+    "lines": [
+      "가이드북 권당 33,000원, 스튜디오 단위 전권 495,000원의 정가에서 30%를 뺀 값으로 결제됩니다.",
+      "할인은 2026년 9월 30일 23시 59분에 끝나며, 그 뒤에는 정가로 판매합니다."
+    ],
+    "link_studio": "studio.html#plans",
+    "link_studio_label": "면접 스튜디오 구매 바로가기",
+    "link_guidebook": "guidebook/index.html",
+    "link_guidebook_label": "가이드북 바로가기",
+    "mute_label": "오늘 하루 보지 않기",
+    "img": "",
+    "img_alt": "",
+    "variant": "pop--gwak",
+    "rows": [
+      [
+        "서류기반면접 가이드북 권당",
+        33000
+      ],
+      [
+        "제시문 면접 스튜디오 단위 전권",
+        495000
+      ]
+    ]
+  }
 }

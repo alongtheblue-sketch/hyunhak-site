@@ -246,6 +246,16 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
       <p class="ckfoot" id="mktMsg" role="status" aria-live="polite">주문과 결제, 이용권 만료 안내는 수신 설정과 무관하게 보냅니다.</p>
     </div>
 
+    <div class="blk">
+      <div class="sh"><div><h2>순위표 공개</h2><p>면접 스튜디오 순위표에 내 기록을 보일지 고르는 곳</p></div></div>
+      <div class="check">
+        <input type="checkbox" id="rankOpt">
+        <label for="rankOpt"><span>순위표에 내 기록 공개
+          <small>스튜디오 면의 순위표에 가린 이름(김*우), 최고 점수, 응시한 세트 코드, 채점일이 실립니다. 선택 항목이며, 꺼도 채점과 첨삭과 리포트는 그대로 받습니다.</small></span></label>
+      </div>
+      <p class="ckfoot" id="rankMsg" role="status" aria-live="polite">응시 회원 수와 점수 분포는 이름 없이 집계하므로 이 설정과 무관합니다.</p>
+    </div>
+
     <div class="blk" id="b2bBlk" hidden>
       <div class="sh"><div><h2>강사 열람 동의</h2><p>학원 스쿨 플랜의 담당 강사가 내 응시 이력과 첨삭 리포트를 열람하는 데 대한 동의를 관리합니다</p></div></div>
       <div class="subcards" id="b2bList"></div>
@@ -671,6 +681,23 @@ document.addEventListener('DOMContentLoaded', async function(){
       mktMsg.textContent = (e.message||'저장하지 못했습니다') + '. 잠시 후 다시 시도해 주세요.';
     }
     mkt.disabled = false;
+  });
+
+  // 순위표 공개 (2026-09-07). 개인정보보호법 제17조: 다른 회원에게 보이는 공개는 응시 목적 밖이라 별도 동의로 켠다. 끄면 즉시 순위표에서 빠진다
+  var rk = document.getElementById('rankOpt'), rkMsg = document.getElementById('rankMsg');
+  var RK_BASE = '응시 회원 수와 점수 분포는 이름 없이 집계하므로 이 설정과 무관합니다.';
+  rk.checked = !!st.member.rank_public;
+  rk.addEventListener('change', async function(){
+    var want = rk.checked;
+    rk.disabled = true;
+    try{
+      await HH.api('/api/auth/me',{method:'PATCH',body:JSON.stringify({rank_public:want})});
+      rkMsg.textContent = (want?'공개를 저장했습니다. 다음 집계부터 순위표에 실립니다. ':'공개를 껐습니다. 다음 집계부터 순위표에서 빠집니다. ') + RK_BASE;
+    }catch(e){
+      rk.checked = !want;
+      rkMsg.textContent = (e.message||'저장하지 못했습니다') + '. 잠시 후 다시 시도해 주세요.';
+    }
+    rk.disabled = false;
   });
 
   document.getElementById('logoutBtn').addEventListener('click', async function(ev){
