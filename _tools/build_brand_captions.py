@@ -36,7 +36,7 @@ SEALED_SHA = "ea356fd5c5410216a8470ea38805b8e181b92ecacd0d9924ef2e41c27fb0931e"
 SEALED_DURATION = 59.958333
 # 자막 파일 자체의 봉인. 설계 원본(_design)은 저장소에 추적되지 않아 깨끗한 체크아웃이나 배포
 # 워크트리에는 없다. 그때는 자막을 다시 만드는 대신 이 해시로 대조한다.
-SEALED_VTT_SHA = "faf9347748025dd07b47626e0409b104aaed6c1a401fb8e2061859b48b2584a1"
+SEALED_VTT_SHA = "7a29de06916264d36670ae160b5a9cdc0985a4854fe1c3f10f5a22086c5a3ca1"
 
 XFADE = 0.5          # assemble.py 의 xfade duration
 T_IN = 0.6           # spec.json tokens.t_in
@@ -59,7 +59,9 @@ LOGO_CUES = [
     (55.0, 59.9, ["hyunhak.com"], " line:0"),
 ]
 
-MUSIC_CUE = (0.0, 2.0, ["[음악]"], "")
+# 음악 표시는 넣지 않는다. webm 에는 오디오 스트림이 아예 없고(vp9 단독) 두 지면 모두 muted 로
+# 재생하므로, 소리가 난다고 적으면 대부분의 시청 경로에서 거짓이 된다. 2026-09-07 ffprobe 실측.
+MUSIC_CUE = None
 
 
 def sha256(path):
@@ -132,7 +134,7 @@ def build():
     durs = stage_durations()
     off = cut_offsets(durs)
 
-    cues = [MUSIC_CUE]
+    cues = [MUSIC_CUE] if MUSIC_CUE else []
     for cut in spec["cuts"]:
         cid = cut["id"]
         base = off[cid]
