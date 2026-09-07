@@ -13,6 +13,7 @@
 가격: 카탈로그 최상위 "price" 한 곳이 전 권 기본값. 개별 항목 "price" 가 null 이면 상속.
 """
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -97,10 +98,16 @@ STUDIO = ("yonsei", "korea")
 AUTHOR = "13년차 대치동 입시 컨설턴트"   # about.html "입시 컨설턴트 13년차" + 前 대치우리학원 출강 경력 근거 (09-07 부원장 문구 삭제)
 
 
-def T(n, f, k=None):
+def T(n, f, k=None, u=None, none=False):
+    """SEARCH 항목. n 전형명(2027 공식 표기), f 면접 형태, k 제시문 병행 요약, u 면접이 있는 모집단위(전형 전체가 아닐 때),
+    none 은 "2027 면접 없음" 을 적는 행(비판매 hub 안내용, 원장 not_conducted 로 검증)."""
     d = {"n": n, "f": f}
     if k:
         d["k"] = k
+    if u:
+        d["u"] = list(u)
+    if none:
+        d["none"] = True
     return d
 
 
@@ -108,49 +115,48 @@ SEARCH = {
     "ajou": {"u": "아주대", "rep": [T("ACE전형", "서류기반 면접"), T("첨단융합인재전형", "서류기반 면접")],
              "med": T("ACE전형 의학과", "서류기반과 제시문 혼합 면접")},
     "catholic": {"u": "가톨릭대", "rep": [T("잠재능력우수자면접전형", "서류기반 면접"), T("학교장추천전형", "서류기반 면접")],
-                 "med": T("학교장추천전형 의예과", "서류기반과 인적성 제시문 혼합 면접")},
-    "cau": {"u": "중앙대", "rep": [T("CAU탐구형인재", "서류기반 면접"), T("성장형인재", "서류기반 면접")],
-            "med": T("융합형인재 의학부", "서류기반 면접")},
+                 "med": T("학교장추천전형 의예과", "면접 실시(2027 요강 단계별 전형, 형태 공식 미기재)")},
+    "cau": {"u": "중앙대", "rep": [T("탐구형인재전형", "서류기반 면접"), T("성장형인재", "서류기반 면접")],
+            "med": T("융합형인재(의학부)", "서류기반 면접")},
     "dongguk": {"u": "동국대", "rep": [T("Do Dream", "서류기반 면접"), T("불교추천인재", "서류기반 면접")]},
     "ewha": {"u": "이화여대", "rep": [T("미래인재전형(면접형)", "서류기반 면접"), T("예체능서류전형", "서류기반 면접")]},
     "gachon": {"u": "가천대", "rep": [T("가천바람개비", "서류기반 면접")], "med": T("가천의약학", "서류기반 면접")},
     "hufs": {"u": "한국외대", "rep": [T("학생부종합전형(면접형)", "서류기반 면접")]},
     "inha": {"u": "인하대", "rep": [T("인하미래인재(면접형)", "서류기반 면접")], "med": T("의예과", "서류기반 면접")},
     "khu": {"u": "경희대", "rep": [T("네오르네상스전형", "서류기반 면접")]},
-    "knu": {"u": "경북대", "rep": [T("지역인재전형", "서류기반 면접"), T("지역의사선발전형", "서류기반과 인적성 혼합 면접")]},
+    "knu": {"u": "경북대", "rep": [T("지역인재전형", "서류기반 면접")]},
     "konkuk": {"u": "건국대", "rep": [T("KU자기추천", "서류기반 면접")]},
     "kookmin": {"u": "국민대", "rep": [T("국민프런티어", "서류기반 면접"), T("국제인재", "서류기반 면접")]},
     "korea": {"u": "고려대", "rep": [T("계열적합전형", "제시문 면접"), T("고른기회전형", "제시문 면접")]},
-    "kwangwoon": {"u": "광운대", "rep": [T("광운참빛인재전형 I(면접형)", "서류기반 면접"), T("소프트웨어우수인재전형", "서류기반 면접")]},
+    "kwangwoon": {"u": "광운대", "rep": [T("광운참빛인재전형Ⅰ(면접형)", "서류기반 면접"), T("소프트웨어우수인재전형", "서류기반 면접")]},
     "kyonggi": {"u": "경기대", "rep": [T("KGU학생부종합전형", "서류기반 면접"), T("SW우수자전형", "서류기반 면접")],
                 "alt": T("디자인학부", "과제 제시 발표와 서류기반 혼합 면접", k="과제 발표 혼합형")},
     "myongji": {"u": "명지대", "rep": [T("명지인재면접전형", "서류기반 면접"), T("크리스천리더전형", "서류기반 면접")],
-                "edu": T("교과면접전형", "인적성 면접(인성면접)")},
+                "edu": T("교과면접전형", "면접 30%(학생부교과, 형태 공식 미기재)")},
     "pusan": {"u": "부산대", "rep": [T("학생부종합전형", "서류기반 면접"), T("지역인재전형", "서류기반 면접")],
               "med": T("의예과", "서류기반과 제시문 혼합 면접")},
     "sejong": {"u": "세종대", "rep": [T("세종인재전형(면접형)", "서류기반 면접")],
-               "alt": T("창의소프트학부", "제시문과 서류기반 혼합 면접", k="제시문 혼합형")},
+               "alt": T("세종인재전형(면접형) 창의소프트학부", "제시문과 서류기반 혼합 면접", k="제시문 혼합형")},
     "seoultech": {"u": "서울과기대", "rep": [T("학교생활우수자전형", "서류기반 면접"), T("창의융합인재전형", "서류기반 면접")]},
     "skku": {"u": "성균관대", "rep": [T("성균인재전형", "모집단위별로 서류기반, 혼합형, 제시문 면접"), T("과학인재전형", "제시문 면접(교과형)")]},
     "snu": {"u": "서울대", "rep": [T("지역균형전형", "서류기반 면접")],
             "alt": T("일반전형", "제시문 면접, 의대 등은 MMI", k="제시문, MMI")},
     "sookmyung": {"u": "숙명여대", "rep": [T("숙명인재(면접형)", "서류기반 면접"), T("소프트웨어인재전형", "서류기반 면접")]},
-    "soongsil": {"u": "숭실대", "rep": [T("SSU미래인재(면접형)", "서류기반 면접"), T("SW우수자", "서류기반 면접")]},
+    "soongsil": {"u": "숭실대", "rep": [T("SSU미래인재전형(면접형)", "서류기반 면접"), T("SW우수자", "서류기반 면접")]},
     "sungshin": {"u": "성신여대", "rep": [T("자기주도인재", "서류기반 면접")]},
-    "uos": {"u": "서울시립대", "rep": [T("학생부종합전형Ⅰ(면접형)", "서류기반 면접"), T("기회균형전형Ⅰ(면접형)", "서류기반 면접")]},
+    "uos": {"u": "서울시립대", "rep": [T("학생부종합전형Ⅰ(면접형)", "서류기반 면접"), T("기회균형전형Ⅰ", "서류기반 면접")]},
     "yonsei": {"u": "연세대", "rep": [T("활동우수형", "제시문 면접"), T("국제형", "제시문 면접(영어 제시문 가능)")]},
-    "dgist": {"u": "DGIST", "rep": [T("과학인재전형", "서류기반 면접")]},
-    "dankook": {"u": "단국대", "rep": [T("DKU인재(면접형)", "서류기반 면접"), T("SW인재", "서류기반 면접")]},
+    "dgist": {"u": "DGIST", "rep": [T("일반전형", "2027 면접 없음(서류 100%)", none=True)]},
+    "dankook": {"u": "단국대", "rep": [T("DKU인재(면접형)", "서류기반 면접")]},
     "duksung": {"u": "덕성여대", "rep": [T("덕성인재전형Ⅱ", "서류기반 면접")]},
     "dongduk": {"u": "동덕여대", "rep": [T("동덕창의리더전형", "서류기반 면접")]},
-    "donga": {"u": "동아대", "rep": [T("잠재능력우수자", "서류기반 면접"), T("학교생활우수자", "서류기반 면접")]},
-    "pknu": {"u": "부경대", "rep": [T("학교생활우수인재", "서류기반 면접"), T("창의인재", "제시문 면접(택일 구상형)")]},
+    "donga": {"u": "동아대", "rep": [T("잠재능력우수자", "서류기반 면접")]},
+    "pknu": {"u": "부경대", "rep": [T("학교생활우수인재", "2027 면접 없음(서류 100%)", none=True)]},
     "sahmyook": {"u": "삼육대", "rep": [T("세움인재", "서류기반 면접"), T("S/W인재", "서류기반 면접")],
-                 "alt": T("예체능인재", "제시문 면접(선택형)과 개별질문", k="제시문")},
+                 "alt": T("예체능인재", "면접 20%(실기/실적 전형, 형태 공식 미기재)", k="면접")},
     "swu": {"u": "서울여대", "rep": [T("바롬인재면접전형", "서류기반 면접"), T("SW융합인재", "서류기반 면접")]},
-    "ulsan": {"u": "울산대", "rep": [T("학생부종합(면접형)", "서류기반 면접")], "med": T("의예과", "서류기반과 제시문 혼합 면접"),
-              "edu": T("학생부교과 면접", "서류기반과 인적성 혼합 면접")},
-    "incheon": {"u": "인천대", "rep": [T("자기추천전형", "서류기반 면접")], "edu": T("INU교과전형", "제시문 면접(공통문제형)")},
+    "ulsan": {"u": "울산대", "rep": [T("잠재역량전형", "서류기반 면접", u=["아산아너스칼리지 자율전공학부", "간호학과"])], "med": T("의예과", "서류기반과 제시문 혼합 면접")},
+    "incheon": {"u": "인천대", "rep": [T("자기추천전형", "서류기반 면접")]},
     "hanyang-erica": {"u": "한양대 ERICA", "rep": [T("학생부종합(면접형)", "서류기반 면접")]},
     "hongik": {"u": "홍익대", "rep": [T("미술우수자전형", "제시문과 서류기반 혼합 면접")]},
 }
@@ -162,11 +168,14 @@ def full_name(e):
     return FULLNAME.get(e["slug"]) or re.sub(r"\(.*?\)", "", e["name"]).strip()
 
 
-def kw_of(e):
+def kw_of(e, mv=None):
     """면 하나가 잡을 검색어. seo_inject 가 meta keywords 와 JSON-LD keywords 에 그대로 싣는다 (2026-09-04 건우).
-    값은 SEARCH 표에서만 유도한다. 순서 = 대학 단독형, 정식 명칭형, 전형명형, 준비 유형형, 일반형."""
+    값은 SEARCH 표에서만 유도한다. 판매 면은 책 1부·2부 수록 전형만 (GB-V24-6 (d)). 순서 = 대학 단독형, 정식 명칭형, 전형명형, 준비 유형형, 일반형."""
     s = SEARCH[e["slug"]]
     U, full = s["u"], full_name(e)
+    if e.get("onsale", True) and e["slug"] not in STUDIO:
+        mv = load_meta().get(e["slug"], {}) if mv is None else mv
+        s = covered_search(s, coverage(mv, s))
     tracks = [x["n"] for x in s["rep"]] + [s[k]["n"] for k in ("med", "edu", "alt") if k in s]
     out = [f"{U} 면접", f"{full} 면접"] + [f"{U} {t} 면접" for t in tracks]
     out += [f"{U} 서류기반 면접", f"{U} 생기부 면접", f"{U} 면접 기출문제", f"{U} 면접 예상문제",
@@ -183,43 +192,169 @@ SEO_TYPES = {"a": "서류기반 단일", "b": "의약학 병기", "c": "제시�
              "e1": "비판매, 스튜디오 안내", "e2": "비판매, 2027 판 준비 중", "f": "스튜디오 LP"}
 
 
-def seo_type(slug, sale):
+def seo_type(slug, sale, s=None):
     if slug in STUDIO:
         return "e1"
     if not sale:
         return "e2"
-    s = SEARCH[slug]
+    s = SEARCH[slug] if s is None else s
     return "b" if "med" in s else "d" if "edu" in s else "c" if "alt" in s else "a"
 
 
+ROMAN_DIGIT = {"Ⅰ": "1", "Ⅱ": "2", "Ⅲ": "3", "Ⅳ": "4", "ⅰ": "1", "ⅱ": "2", "ⅲ": "3"}
+_LATIN_ROMAN = re.compile(r"(?<![A-Za-z])(IV|III|II|I)(?![A-Za-z])")
+
+
 def _norm(s):
-    return re.sub(r"[^가-힣A-Za-z0-9]", "", str(s))
+    """공백, 괄호, 구두점 무시. 로마숫자(Ⅰ/Ⅱ, 라틴 I/II)는 아라비아 숫자로 통일해 Ⅰ≠Ⅱ 를 보존한다."""
+    s = "".join(ROMAN_DIGIT.get(c, c) for c in str(s))
+    s = _LATIN_ROMAN.sub(lambda m: str({"I": 1, "II": 2, "III": 3, "IV": 4}[m.group(1)]), s)
+    return re.sub(r"[^가-힣A-Za-z0-9]", "", s)
 
 
-def ground_check(meta, search=None, slugs=None):
-    """SEARCH 표의 전형명이 meta v3 tracks/spec_tracks 문자열에 실재하는지 대조 (공백, 괄호, 로마숫자 무시).
-    v24 판(2026-09-07) 1부·2부는 2027 공식 요강의 면접 실시 전형만 싣는다. 거기 없고 08-28 판 표기(search_pool_legacy)에만
-    있는 이름은 경고로 돌려주고(반환값) 빌드는 세우지 않는다. 어느 쪽에도 없으면 선다. 정리 여부 = 결재 GB-V24-6."""
+def _norm_t(s):
+    """_norm + '전형' 접미 무시 (SSU미래인재(면접형) = SSU미래인재전형(면접형))."""
+    return _norm(s).replace("전형", "")
+
+
+def _track_match(name, track):
+    """SEARCH 전형명이 원장 track 이름에 해당하는가. 정규화 뒤 name 이 track 의 부분열이면 참(의예과 ⊂ 학생부종합전형(의예과))."""
+    a = _norm_t(name)
+    return bool(a) and a in _norm_t(track)
+
+
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_a58b7d76.json"
+LEDGER_SHA16 = "a58b7d765df8618e"
+EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
+EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
+
+
+def load_ledger(path=LEDGER_2027):
+    """2027 학종 공식 감사 원장(s14-v1, 38교, checked 2026-08-30). sha 핀 불일치면 정지."""
+    raw = Path(path).read_bytes()
+    sha = hashlib.sha256(raw).hexdigest()[:16]
+    if sha != LEDGER_SHA16:
+        sys.exit(f"2027 학종 원장 sha 불일치: {sha} (기대 {LEDGER_SHA16}) {path}")
+    d = json.loads(raw)
+    if d.get("academic_year") != 2027:
+        sys.exit("2027 학종 원장 academic_year 불일치")
+    return {u["univ"]: u for u in d["universities"]}
+
+
+def load_extra(path=EXTRA_OFFICIAL):
+    """원장 밖 전형의 공식 근거 원장. conducted 는 요강 인용(page, quote) 또는 ledger 참조와 form_evidence 가 있어야 한다."""
+    d = json.loads(Path(path).read_text(encoding="utf-8"))
+    out = []
+    for e in d["entries"]:
+        for k in ("slug", "name", "status", "checked"):
+            if not e.get(k):
+                sys.exit(f"search_official_extra: {k} 누락 {e.get('slug')} {e.get('name')}")
+        if e["status"] not in EXTRA_STATUS:
+            sys.exit(f"search_official_extra: status {e['status']!r} 은 {sorted(EXTRA_STATUS)} 중 하나여야 함 ({e['slug']} {e['name']})")
+        if e["status"] == "conducted":
+            if not e.get("form_evidence"):
+                sys.exit(f"search_official_extra: conducted 인데 form_evidence 없음 ({e['slug']} {e['name']})")
+            if not (e.get("quote") or str(e.get("source", "")).startswith("ledger:")):
+                sys.exit(f"search_official_extra: conducted 인데 요강 인용도 ledger 참조도 없음 ({e['slug']} {e['name']})")
+        out.append(e)
+    return out
+
+
+def _entries(s):
+    return [("rep", x) for x in s["rep"]] + [(k, s[k]) for k in ("med", "edu", "alt") if k in s]
+
+
+def _disp(x):
+    """상품 문구용 전형 표기. 면접이 일부 모집단위에만 있으면 괄호로 병기한다."""
+    return x["n"] + (f"({', '.join(x['u'])})" if x.get("u") else "")
+
+
+def official_check(search=None, slugs=None, ledger=None, extra=None):
+    """1층: SEARCH 전형명이 2027 에 실재하고 면접을 실시하는가. 2027 학종 원장(conducted) 또는 근거 원장(status conducted) 에 있어야 통과.
+    none 행("2027 면접 없음")은 반대로 원장 not_conducted 여야 통과. 원장 track 이 반대 상태이거나 근거 원장이
+    blocked/absent/pending 이거나 어디에도 없으면 정지(미분류 FAIL)."""
     search = SEARCH if search is None else search
     slugs = SLUGS if slugs is None else slugs
-    bad, legacy_only = [], []
+    ledger = load_ledger() if ledger is None else ledger
+    extra = load_extra() if extra is None else extra
+    univ_of = dict(slugs)
+    xmap = {(e["slug"], e["name"]): e for e in extra}
+    verdicts, bad = {}, []
     for slug, s in search.items():
-        pool = _norm(" ".join([t["track"] for t in meta[slug].get("tracks", [])] + list(meta[slug].get("spec_tracks", []))))
-        legacy = _norm(" ".join(meta[slug].get("search_pool_legacy", [])))
-        for x in s["rep"] + [s[k] for k in ("med", "edu", "alt") if k in s]:
-            n = _norm(x["n"])
-            if n in pool:
+        univ = univ_of.get(slug)
+        tracks = (ledger.get(univ) or {}).get("tracks", []) if univ else []
+        for _, x in _entries(s):
+            n = x["n"]
+            want = "not_conducted" if x.get("none") else "conducted"
+            hit = [t for t in tracks if _track_match(n, t["name"])]
+            xe = xmap.get((slug, n))
+            if hit:
+                st = [t.get("interview_status") for t in hit]
+                if all(v == want for v in st):
+                    verdicts[(slug, n)] = {"source": "ledger", "status": want, "tracks": [t["name"] for t in hit],
+                                           "basis": sorted({str(t.get("interview_basis")) for t in hit})}
+                    continue
+                bad.append(f"{slug}: {n!r} {'면접 없음 행' if x.get('none') else '면접 행'}인데 2027 원장 interview_status={st}")
                 continue
-            (legacy_only if n in legacy else bad).append(f"{slug}: {x['n']!r}")
+            if xe:
+                if xe["status"] == want:
+                    verdicts[(slug, n)] = {"source": "extra", "status": want, "page": xe.get("page"), "form_evidence": xe.get("form_evidence")}
+                    continue
+                bad.append(f"{slug}: {n!r} 근거 원장 status={xe['status']} ({str(xe.get('note', ''))[:60]})")
+                continue
+            bad.append(f"{slug}: {n!r} 2027 원장에도 근거 원장에도 없음(미분류)")
     if bad:
-        sys.exit("SEARCH 전형명이 meta v3 에 없음: " + "; ".join(bad))
+        sys.exit("SEARCH 공식 검증 실패(2027 요강 대조): " + "; ".join(bad))
     missing = [s for s, _ in slugs if s not in search]
     if missing:
         sys.exit(f"SEARCH 누락: {missing}")
-    if legacy_only:
-        print(f"경고: SEARCH 전형명 {len(legacy_only)}건이 현 판 1부·2부에 없고 08-28 판 표기(search_pool_legacy)로만 확인됨 "
-              f"(GB-V24-6): " + "; ".join(legacy_only), file=sys.stderr)
-    return legacy_only
+    return verdicts
+
+
+def coverage(mv, s):
+    """2층: SEARCH 항목별로 책 1부·2부(meta v3 tracks, spec_tracks = v24 qualifying)에 있는가. 비판매(빈 tracks)는 전부 False."""
+    pool = _norm_t(" ".join([t["track"] for t in mv.get("tracks", [])] + list(mv.get("spec_tracks", []))))
+    return {x["n"]: bool(pool) and not x.get("none") and _norm_t(x["n"]) in pool for _, x in _entries(s)}
+
+
+def covered_search(s, cov):
+    """상품 문구용 SEARCH: 책 1부·2부에 있는 전형만 남긴다. rep 가 비면 정지(판매 면인데 수록 전형이 없다)."""
+    out = {k: v for k, v in s.items() if k not in ("rep", "med", "edu", "alt")}
+    out["rep"] = [x for x in s["rep"] if cov.get(x["n"])]
+    for k in ("med", "edu", "alt"):
+        if k in s and cov.get(s[k]["n"]):
+            out[k] = s[k]
+    if not out["rep"]:
+        sys.exit(f"{s.get('u')}: 책 1부·2부 수록 전형이 SEARCH rep 에 없음 (상품 문구를 만들 수 없다)")
+    return out
+
+
+def scope_note(e, mv):
+    """상세면 수록 범위 고지. 책 1부·2부 기준 전형과, 2027 면접이 있으나 책 운영 설명에 없는 전형을 가른다."""
+    s = SEARCH[e["slug"]]
+    cov = coverage(mv, s)
+    book = [clean(t["track"]) for t in mv.get("tracks", [])] or [_disp(x) for _, x in _entries(s) if cov.get(x["n"])]
+    off = [_disp(x) for _, x in _entries(s) if not cov.get(x["n"])]
+    head = f"1부와 2부의 전형 제원과 판정은 {', '.join(book)} 기준입니다."
+    tail = f" {', '.join(off)} 면접은 2027 요강에 있으나 이 책의 운영 설명에는 없습니다." if off else ""
+    return head + tail + " 3부 기출은 전형이 아니라 모집단위와 연도별 과거 질문입니다."
+
+
+def ground_check(meta, search=None, slugs=None, ledger=None, extra=None):
+    """1층 공식 실재(official_check, 실패 시 정지) + 2층 수록 범위 안내. 반환 = 검증은 통과했으나 책 1부·2부 미수록인 전형(정보)."""
+    search = SEARCH if search is None else search
+    slugs = SLUGS if slugs is None else slugs
+    official_check(search=search, slugs=slugs, ledger=ledger, extra=extra)
+    off = []
+    for slug, s in search.items():
+        mv = meta.get(slug)
+        if not mv or not mv.get("tracks"):
+            continue
+        cov = coverage(mv, s)
+        off += [f"{slug}: {x['n']!r}" for _, x in _entries(s) if not cov.get(x["n"])]
+    if off:
+        print(f"정보: SEARCH 공식 검증 통과. 책 1부·2부 미수록 전형 {len(off)}건은 상품 문구에서 빼고 hub 에 표식: " + "; ".join(off), file=sys.stderr)
+    return off
 
 
 def _fit(cands, lo, hi):
@@ -251,13 +386,15 @@ def seo_texts(e, mv, cat):
     s = SEARCH[slug]
     U = s["u"]
     sale = bool(e.get("onsale", True))
-    kind = seo_type(slug, sale)
+    if sale and slug not in STUDIO:
+        s = covered_search(s, coverage(mv, s))   # 상품 문구는 책 1부·2부 수록 전형만 (GB-V24-6 (d))
+    kind = seo_type(slug, sale, s)
     q, r = mv["questions"], mv["rules"]
     y = f"{mv['years'][0]}~{mv['years'][1]}" if mv["years"][0] != mv["years"][1] else str(mv["years"][0])
     price = won(price_of(cat, e))
     reps = s["rep"]
-    R1, F1 = reps[0]["n"], reps[0]["f"]
-    R2 = reps[1]["n"] if len(reps) > 1 else ""
+    R1, F1 = _disp(reps[0]), reps[0]["f"]
+    R2 = _disp(reps[1]) if len(reps) > 1 else ""
     r12 = R1 + (f", {R2}" if R2 else "")
     au = f"{AUTHOR} 편집"
     if kind == "a":
@@ -271,7 +408,7 @@ def seo_texts(e, mv, cat):
         ], 70, 110)
         answer = f"{U} {R1} 면접은 {F1}입니다. 이 가이드북은 기출 {q}문과 생기부 질문 규칙 {r}개를 담았고 권당 {price}입니다."
     elif kind == "b":
-        M, FM = s["med"]["n"], s["med"]["f"]
+        M, FM = _disp(s["med"]), s["med"]["f"]
         title = (f"{U} 면접 가이드북 2027, {R1}, {M} 서류기반 면접 기출 {q}문과 생기부 질문 규칙 {r}개" if F1 == FM
                  else f"{U} 면접 가이드북 2027, {R1} 서류기반 면접과 {M} 면접, 기출 {q}문과 생기부 질문 규칙 {r}개")
         desc = _fit([
@@ -321,6 +458,13 @@ def seo_texts(e, mv, cat):
             f"{U} {R1} 면접은 제시문형이라 2027 서류기반 가이드북을 내지 않습니다. {U} 제시문 면접 스튜디오로 안내합니다. {AUTHOR} 운영.",
         ], 70, 110)
         answer = f"{U} 2027 서류기반 면접 가이드북은 없습니다. {R1} 제시문 면접은 기출 지문 응시와 촬영 첨삭의 {U} 제시문 면접 스튜디오에서 준비합니다."
+    elif reps[0].get("none"):  # e2, 2027 면접 없음 (DGIST, 부경대: 원장 not_conducted 로 검증된 행)
+        title = f"{U} 2027 수시 {R1} 면접 없음, 서류 100% 전형과 면접 가이드북 계획 안내"
+        desc = _fit([
+            f"{U} {R1}{_eun(R1)} 2027학년도 서류 100% 전형이라 면접이 없습니다. 이 면은 면접 가이드북 계획 안내면이며 발간 여부는 공지로 알립니다. {au}.",
+            f"{U} {R1}{_eun(R1)} 2027학년도 서류 100% 전형이라 면접이 없습니다. 가이드북 발간 여부는 공지로 알립니다. {au}.",
+        ], 70, 110)
+        answer = f"{U} {R1}{_eun(R1)} 2027학년도 서류 100% 전형이라 면접이 없습니다. 면접 가이드북 발간 여부는 공지로 알립니다."
     else:  # e2
         title = f"{U} {R1} 면접 가이드북 2027 판 준비 중, 기출 {q}문과 생기부 질문 규칙 {r}개 구성"
         desc = _fit([
@@ -695,9 +839,11 @@ def faq_of(e, mv, price, sale, pdfp):
     답 40~110자 (seo_check 의 AEO 범위와 동일, 범위 밖이면 정지). 반환 = [{"q","a"}] (seo_inject 가 details.faq 에서 FAQPage 로 추출)."""
     slug = e["slug"]
     s = SEARCH[slug]
+    if sale and slug not in STUDIO:
+        s = covered_search(s, coverage(mv, s))   # 상품 FAQ 는 책 1부·2부 수록 전형만
     name, U = e["name"], s["u"]
-    R1 = s["rep"][0]["n"]
-    forms = [(x["n"], x["f"]) for x in s["rep"][:2]] + [(s[k]["n"], s[k]["f"]) for k in ("med", "edu", "alt") if k in s]
+    R1 = _disp(s["rep"][0])
+    forms = [(_disp(x), x["f"]) for x in s["rep"][:2]] + [(_disp(s[k]), s[k]["f"]) for k in ("med", "edu", "alt") if k in s]
 
     def a1_of(n, tail=True):
         part = forms[:n]
@@ -919,6 +1065,7 @@ def render_page(cat, items, i, meta):
          "__TRACKS_N__": str(len(mv.get("spec_tracks", [])) or len(mv.get("tracks", []))),
          "__SPEC_N__": str(len(mv.get("spec_items", []))),
          "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note,
+         "__SCOPE__": (f'<p class="note scope rv">{esc(scope_note(e, mv))}</p>' if sale and not studio else ""),
          "__PREVIEWS__": _previews_html(mv), "__PARTS__": _parts_html(mv), "__PARTS_WORD__": _parts_word(mv), "__FORMS__": _forms_html(mv),
          "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
          "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),

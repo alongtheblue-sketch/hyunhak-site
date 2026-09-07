@@ -200,17 +200,25 @@ class PreviewsV24(unittest.TestCase):
 
 # ---------------------------------------------------------------- build_guidebook
 class GuidebookV24(unittest.TestCase):
-    def test_ground_check_legacy_pool_warns_not_exits(self):
+    def test_ground_check_official_then_coverage(self):
+        """1층 공식 실재(2027 원장·근거 원장) 실패 = 정지. 통과하면 2층 책 미수록 전형을 정보로 돌려준다 (GB-V24-6 (d), legacy 풀 폐지)."""
         import build_guidebook as B
-        search = {"x": {"u": "X", "rep": [{"n": "알파전형", "f": ""}]}}
+        ledger = {"X": {"tracks": [{"name": "알파전형", "interview_status": "conducted", "interview_basis": "record_based"},
+                                   {"name": "감마전형", "interview_status": "not_conducted", "interview_basis": "document_only"}]}}
+        extra = [{"slug": "x", "name": "델타전형", "status": "conducted", "checked": "2026-09-07", "form_evidence": "요강 p1 면접 30%", "quote": "델타전형 2단계 면접 30%"}]
         slugs = [("x", "X")]
         meta = {"x": {"tracks": [{"track": "베타전형", "form": "서류확인형"}], "spec_tracks": []}}
-        with self.assertRaises(SystemExit):
-            B.ground_check(meta, search=search, slugs=slugs)
-        meta["x"]["search_pool_legacy"] = ["알파전형"]
-        self.assertEqual(B.ground_check(meta, search=search, slugs=slugs), ["x: '알파전형'"])
+        gc = lambda search: B.ground_check(meta, search=search, slugs=slugs, ledger=ledger, extra=extra)
+        with self.assertRaises(SystemExit):   # 어디에도 없음
+            gc({"x": {"u": "X", "rep": [{"n": "없는전형", "f": ""}]}})
+        with self.assertRaises(SystemExit):   # 원장 not_conducted
+            gc({"x": {"u": "X", "rep": [{"n": "감마전형", "f": ""}]}})
+        with self.assertRaises(SystemExit):   # none 행인데 원장은 conducted
+            gc({"x": {"u": "X", "rep": [{"n": "알파전형", "f": "면접 없음", "none": True}]}})
+        self.assertEqual(gc({"x": {"u": "X", "rep": [{"n": "알파전형", "f": ""}, {"n": "델타전형", "f": ""}]}}), ["x: '알파전형'", "x: '델타전형'"])
+        self.assertEqual(gc({"x": {"u": "X", "rep": [{"n": "감마전형", "f": "면접 없음", "none": True}]}}), ["x: '감마전형'"])
         meta["x"]["tracks"].append({"track": "알파전형", "form": "서류확인형"})
-        self.assertEqual(B.ground_check(meta, search=search, slugs=slugs), [])
+        self.assertEqual(gc({"x": {"u": "X", "rep": [{"n": "알파전형", "f": ""}]}}), [])
 
     def test_parts_word_and_template_placeholder(self):
         import build_guidebook as B

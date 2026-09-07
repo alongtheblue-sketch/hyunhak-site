@@ -30,7 +30,9 @@ def _eun(w):
 
 
 def kind_of(form):
-    """형태 문자열 -> 배지 종류. 혼합, MMI 가 들어 있으면 mix, 제시문이면 pas, 그 외 서류기반이면 doc."""
+    """형태 문자열 -> 배지 종류. 면접 없음 = none, 혼합, MMI 가 들어 있으면 mix, 제시문이면 pas, 그 외 서류기반이면 doc."""
+    if "면접 없음" in form:
+        return "none"   # 2027 요강 서류 100% 전형 (비판매 hub 행, 원장 not_conducted 로 검증)
     if "혼합" in form or "MMI" in form or ("제시문" in form and "서류기반" in form):
         return "mix"
     if "제시문" in form:
@@ -40,7 +42,7 @@ def kind_of(form):
     return "etc"   # 인적성 면접 등. 혼합으로 뭉뚱그리지 않는다
 
 
-BADGE = {"doc": "서류기반", "pas": "제시문", "mix": "혼합, MMI", "etc": "인적성"}
+BADGE = {"doc": "서류기반", "pas": "제시문", "mix": "혼합, MMI", "etc": "인적성", "none": "면접 없음"}
 
 
 def load():
@@ -55,9 +57,10 @@ def load():
 
 
 def tracks_of(slug):
+    """hub 행 = 검증된 전 전형. 면접이 일부 모집단위에만 있으면 괄호로 병기(B._disp)."""
     s = B.SEARCH[slug]
-    out = [(x["n"], x["f"]) for x in s["rep"]]
-    out += [(s[k]["n"], s[k]["f"]) for k in ("med", "edu", "alt") if k in s]
+    out = [(B._disp(x), x["f"]) for x in s["rep"]]
+    out += [(B._disp(s[k]), s[k]["f"]) for k in ("med", "edu", "alt") if k in s]
     return out
 
 
@@ -66,6 +69,8 @@ def prep_link(e):
     U = B.SEARCH[slug]["u"]
     if slug in B.STUDIO:
         return f'<a class="tlink" href="programs/{slug}.html">{esc(U)} 제시문 면접 스튜디오</a>', "studio"
+    if all(x.get("none") for _, x in B._entries(B.SEARCH[slug])):
+        return '<span class="note">2027 면접 없음</span>', "none"
     if sale:
         return f'<a class="tlink" href="guidebook/{slug}.html">{esc(U)} 면접 가이드북 2027</a>', "sale"
     return '<span class="note">2027 판 준비 중</span>', "planned"
@@ -76,7 +81,17 @@ def sort_key(e):
     return (n[0].isascii(), n)
 
 
-def rows_html(items):
+def cov_mark(slug, n, meta, sale):
+    """책 1부·2부 수록 표식 (GB-V24-6 (d)). 판매 면만(비판매는 meta 에 08-28 판 tracks 가 남아 있어도 표식 없음).
+    미수록 = 2027 면접은 있으나 책 운영 설명에 없는 전형."""
+    mv = (meta or {}).get(slug) or {}
+    if not sale or not mv.get("tracks"):
+        return ""
+    on = B.coverage(mv, B.SEARCH[slug]).get(n)
+    return ' <small class="cov">책 수록</small>' if on else ' <small class="cov off">책 운영 설명 미수록</small>'
+
+
+def rows_html(items, meta=None):
     out = []
     for e in sorted(items.values(), key=sort_key):
         slug = e["slug"]
@@ -91,7 +106,7 @@ def rows_html(items):
             ucell = (f'<td class="u" rowspan="{len(tr)}">{esc(full)}<small>{esc(U)}{"(" + esc(alias) + ")" if alias else ""}</small></td>' if i == 0 else "")
             rcell = (f'<td class="r" rowspan="{len(tr)}">{link}</td>' if i == 0 else "")
             out.append(f'          <tr{cls} data-slug="{slug}" data-u="{esc(search_u)}">{ucell}<td>{esc(n)}</td>'
-                       f'<td class="f"><span class="badge {k}">{BADGE[k]}</span> {esc(f)}</td>{rcell}</tr>')
+                       f'<td class="f"><span class="badge {k}">{BADGE[k]}</span> {esc(f)}{cov_mark(slug, n, meta, bool(e.get("onsale", True)) and slug not in B.STUDIO)}</td>{rcell}</tr>')
     return "\n".join(out)
 
 
@@ -105,7 +120,9 @@ def univ_faq(items):
         head = f"{U}({alias})" if alias else U
         body = " ".join(f"{n}{_eun(n)} {f}" + ("입니다." if i == 0 else ".") for i, (n, f) in enumerate(tr))
         _, kind = prep_link(e)
-        if kind == "studio":
+        if kind == "none":
+            tail = " 2027학년도는 서류 100% 전형이라 면접 준비 자료가 없습니다."
+        elif kind == "studio":
             tail = f" 준비는 {U} 제시문 면접 스튜디오에서 기출 지문으로 모의면접을 봅니다."
         elif kind == "sale":
             tail = f" 준비는 {U} 면접 가이드북 2027의 기출과 생기부 예상 질문 규칙으로 합니다."
@@ -159,7 +176,7 @@ def build():
             sys.exit(f"FAQ 금지 문자: {q} / {a}")
     m = {"__TITLE__": esc(seo_entry(n, n_doc, n_sale)["title"]), "__LEDE__": lede,
          "__N__": str(n), "__T__": str(n_tracks), "__N_DOC__": str(n_doc), "__N_PAS__": str(n_pas), "__N_MIX__": str(n_mix),
-         "__N_SALE__": str(n_sale), "__ROWS__": rows_html(items),
+         "__N_SALE__": str(n_sale), "__ROWS__": rows_html(items, meta),
          "__FAQ_GENERIC__": faq_html(gen), "__FAQ_UNIV__": faq_html(uni)}
     html = B.fill(TPL.read_text(encoding="utf-8"), m)
     left = re.findall(r"__[A-Z_]+__", html)
