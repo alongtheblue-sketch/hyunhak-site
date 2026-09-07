@@ -36,7 +36,7 @@ SEALED_SHA = "ea356fd5c5410216a8470ea38805b8e181b92ecacd0d9924ef2e41c27fb0931e"
 SEALED_DURATION = 59.958333
 # 자막 파일 자체의 봉인. 설계 원본(_design)은 저장소에 추적되지 않아 깨끗한 체크아웃이나 배포
 # 워크트리에는 없다. 그때는 자막을 다시 만드는 대신 이 해시로 대조한다.
-SEALED_VTT_SHA = "173199a6e54e7efdbd836c5091d5f3abbbfb908761a1eef715199a2d9faa23ab"
+SEALED_VTT_SHA = "faf9347748025dd07b47626e0409b104aaed6c1a401fb8e2061859b48b2584a1"
 
 XFADE = 0.5          # assemble.py 의 xfade duration
 T_IN = 0.6           # spec.json tokens.t_in
@@ -112,7 +112,9 @@ def card_lines(cut):
             text = f'{text} {cut["glyph"]}'
         head.append(text)
     elif cut.get("headline_num"):
-        head.append(" ".join(num + unit for num, unit in cut["headline_num"]))
+        # 쉼표로 잇는다. 지면 문면 규약이고 apply_counts 의 면수 앵커도 이 형태를 본다.
+        # 그래서 필름이 태운 수치가 meta 원장과 어긋나면 면수 게이트가 먼저 빨강을 낸다.
+        head.append(", ".join(num + unit for num, unit in cut["headline_num"]))
     tail = [cut["sub"]] if cut.get("sub") else []
     return head, tail
 
