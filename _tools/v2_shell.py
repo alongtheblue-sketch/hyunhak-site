@@ -49,7 +49,7 @@ def promo_strip(rel, p=None, price_note=True):
        자리표시 {p} {label} {link} {link_label} {link_label_sm} {until} {id} {rate} {price_note}.
        price_note = 정가 한 칸(data-list-price) 문장. app.js 가 없는 면(상세 LP)은 False 로 빼서 정가만 덩그러니 서지 않게 한다."""
     p = p if p is not None else load_promo()
-    if not p:
+    if not p or rel in set(p.get("exclude") or []):   # exclude = 자체 가격표가 있는 면 (b2b 스쿨 플랜, COPY_REVIEW P0)
         return ""
     try:
         with open(PROMO_TPL_PATH, encoding="utf-8") as f:
@@ -59,7 +59,7 @@ def promo_strip(rel, p=None, price_note=True):
     sp = p.get("strip_price") if price_note else None
     note = (f'<span class="lg"> {sp["prefix"]}<span class="p" data-list-price="{int(sp["list_price"])}">{_won(sp["list_price"])}</span>{sp["suffix"]}</span>'
             if sp else "")
-    return "\n" + tpl.format(p=prefix_of(rel), label=p["label"], link=p.get("link", "index.html"),
+    return "\n" + tpl.format(p=prefix_of(rel), label=p["label"], label_sm=p.get("label_sm", p["label"]), link=p.get("link", "index.html"),
                               link_label=p.get("link_label", "자세히"), link_label_sm=p.get("link_label_sm", p.get("link_label", "자세히")),
                               until=p.get("ends_at") or "", id=p["id"], rate=p["rate"], price_note=note)
 

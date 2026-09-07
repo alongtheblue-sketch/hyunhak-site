@@ -1,8 +1,8 @@
 {
-  "_doc": "사이트 쪽 행사 표기 원천 (배너 문안, 종료 시각). 금액 판정 원천은 API D1 promotions(prm_2609_30) 이며 두 파일의 id, rate, ends_at 은 같아야 한다. v2_shell.py 가 빌드 시각 < ends_at 이고 published 일 때만 배너를 셸에 넣는다. 종료 뒤 빌드하면 배너가 사라지고, 그 전이라도 지면 JS 가 /api/config.promo 가 null 이면 숨긴다.",
+  "_doc": "사이트 쪽 행사 표기 원천 (배너 문안, 종료 시각). 금액 판정 원천은 API D1 promotions(prm_2609_30) 이며 두 파일의 id, rate, ends_at 은 같아야 한다. v2_shell.py 가 빌드 시각 < ends_at 이고 published 일 때만 배너를 셸에 넣는다. 종료 뒤 빌드하면 배너가 사라지고, 그 전이라도 지면 JS 가 /api/config.promo 가 null 이면 숨긴다. exclude = 띠를 넣지 않는 면(b2b.html 은 스쿨 플랜 좌석이 D1 상품이 아니고 자체 누진 할인표가 있어 '전 상품 30%' 와 충돌, COPY_REVIEW P0). 문안은 brand-voice-guardian COPY_REVIEW.md 권고 A/B (2026-09-07).",
   "id": "prm_2609_30",
   "rate": 30,
-  "label": "9월 30일까지 전 상품 30% 할인",
+  "label": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
   "starts_at": null,
   "ends_at": "2026-09-30T23:59:59+09:00",
   "link": "guidebook/index.html",
@@ -35,5 +35,9 @@
         511500
       ]
     ]
-  }
+  },
+  "label_sm": "9월 30일까지 정가 30% 할인",
+  "exclude": [
+    "b2b.html"
+  ]
 }
