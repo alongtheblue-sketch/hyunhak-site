@@ -1,0 +1,299 @@
+{
+ "edition": "v24",
+ "univ": "가천대학교",
+ "pdf": "/Users/gregory/Workspace/interview_guidebook_2027/dist_hyunhak_clean_2027final_v24_20260907/가천대학교_2027면접가이드북.pdf",
+ "pdf_sha16": "100417407367be5d",
+ "pages": 35,
+ "dpi": 150,
+ "sigma": 7,
+ "generated": "2026-09-07T13:24:22",
+ "openers": {
+  "toc": {
+   "file": "gbd_gachon_toc.jpg",
+   "page": 2,
+   "cap": "차례와 쓰는 법",
+   "w": 720,
+   "h": 1018,
+   "sha16": "641f42bb0251cf2e"
+  },
+  "part1": {
+   "file": "gbd_gachon_part1.jpg",
+   "page": 3,
+   "cap": "1부 들어가는 면",
+   "w": 720,
+   "h": 1018,
+   "sha16": "962880e7817607f6"
+  },
+  "part2": {
+   "file": "gbd_gachon_part2.jpg",
+   "page": 5,
+   "cap": "2부 들어가는 면",
+   "w": 720,
+   "h": 1018,
+   "sha16": "fb27ecec8a650d56"
+  },
+  "part3": {
+   "file": "gbd_gachon_part3.jpg",
+   "page": 11,
+   "cap": "3부 들어가는 면",
+   "w": 720,
+   "h": 1018,
+   "sha16": "32f3d738fc7cb8f5"
+  },
+  "part4": {
+   "file": "gbd_gachon_part4.jpg",
+   "page": 18,
+   "cap": "4부 들어가는 면",
+   "w": 720,
+   "h": 1018,
+   "sha16": "81fc05096befc802"
+  },
+  "part5": {
+   "file": "gbd_gachon_part5.jpg",
+   "page": 30,
+   "cap": "5부 들어가는 면",
+   "w": 720,
+   "h": 1018,
+   "sha16": "fb1ac1764b82b748"
+  }
+ },
+ "samples": {
+  "D": {
+   "file": "gbd_sample_D.jpg",
+   "page": 4,
+   "title": "1부 면접 형태 판정 면",
+   "crop": 0.47,
+   "w": 1000,
+   "h": 664,
+   "regions": [
+    {
+     "x": 5.96,
+     "y": 25.49,
+     "w": 81.79,
+     "h": 9.34,
+     "label": "세 형태 중 서류기반. 정의와 이 대학에 있음 표시"
+    },
+    {
+     "x": 5.96,
+     "y": 68.57,
+     "w": 54.79,
+     "h": 17.11,
+     "label": "전형별 형태 판정표. 가천바람개비전형은 서류확인형"
+    }
+   ],
+   "sha16": "1a6cec89a8fdb85a",
+   "leak": {
+    "control_hangul": 254,
+    "test_hangul": 8,
+    "char_ratio": 0.031,
+    "control_words": 70,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 0,
+    "bigram_n": 7,
+    "bigram_ratio": 0.0
+   }
+  },
+  "E": {
+   "file": "gbd_sample_E.jpg",
+   "page": 7,
+   "title": "2부 학과별 인재상 면",
+   "crop": 1.0,
+   "w": 1000,
+   "h": 1413,
+   "regions": [
+    {
+     "x": 11.2,
+     "y": 6.84,
+     "w": 72.28,
+     "h": 5.25,
+     "label": "확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록"
+    },
+    {
+     "x": 11.36,
+     "y": 12.94,
+     "w": 29.81,
+     "h": 17.33,
+     "label": "간호학과 82건. 확인하는 것과 실제 질문 두 건"
+    }
+   ],
+   "sha16": "947a75821f6be56c",
+   "leak": {
+    "control_hangul": 938,
+    "test_hangul": 16,
+    "char_ratio": 0.017,
+    "control_words": 260,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 0,
+    "bigram_n": 15,
+    "bigram_ratio": 0.0
+   }
+  },
+  "B": {
+   "file": "gbd_sample_B.jpg",
+   "page": 14,
+   "title": "3부 실제로 나온 질문 면",
+   "crop": 1.0,
+   "w": 1000,
+   "h": 1413,
+   "regions": [
+    {
+     "x": 5.96,
+     "y": 16.99,
+     "w": 56.89,
+     "h": 9.64,
+     "label": "유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도"
+    },
+    {
+     "x": 5.96,
+     "y": 43.84,
+     "w": 49.15,
+     "h": 9.64,
+     "label": "공동체와 인성 유형. 첫 두 질문"
+    },
+    {
+     "x": 8.06,
+     "y": 40.08,
+     "w": 33.6,
+     "h": 3.14,
+     "label": "한 줄 질문. 전자공학과, 2021년"
+    }
+   ],
+   "sha16": "9e548595e2d9fa1d",
+   "leak": {
+    "control_hangul": 643,
+    "test_hangul": 183,
+    "char_ratio": 0.285,
+    "control_words": 160,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 9,
+    "bigram_n": 182,
+    "bigram_ratio": 0.049
+   }
+  },
+  "A": {
+   "file": "gbd_sample_A.jpg",
+   "page": 19,
+   "title": "4부 교과학습 규칙 면",
+   "crop": 1.0,
+   "w": 1241,
+   "h": 1754,
+   "regions": [
+    {
+     "x": 11.2,
+     "y": 4.33,
+     "w": 65.83,
+     "h": 16.76,
+     "label": "영역 이름과 규칙 한 건. 언제, 질문 틀, 꼬리질문, 평가 축"
+    },
+    {
+     "x": 11.2,
+     "y": 51.08,
+     "w": 38.36,
+     "h": 14.65,
+     "label": "실험 기재가 있을 때의 규칙. 4부 표본으로 든 그 규칙"
+    }
+   ],
+   "sha16": "d6eb1fdcb9f8e941",
+   "leak": {
+    "control_hangul": 318,
+    "test_hangul": 0,
+    "char_ratio": 0.0,
+    "control_words": 77,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 0,
+    "bigram_n": 0,
+    "bigram_ratio": 0.0
+   },
+   "zoom": {
+    "file": "gbd_sample_A_zoom.jpg",
+    "region": 2,
+    "w": 682,
+    "h": 360,
+    "sha16": "c2100742fec16614"
+   }
+  },
+  "F": {
+   "file": "gbd_sample_F.jpg",
+   "page": 23,
+   "title": "4부 창의적 체험활동 규칙 면",
+   "crop": 1.0,
+   "w": 1000,
+   "h": 1413,
+   "regions": [
+    {
+     "x": 11.2,
+     "y": 4.33,
+     "w": 40.69,
+     "h": 14.65,
+     "label": "영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축"
+    },
+    {
+     "x": 12.97,
+     "y": 20.41,
+     "w": 59.63,
+     "h": 11.63,
+     "label": "영재학급, 심화과정 기재 때의 규칙"
+    }
+   ],
+   "sha16": "0583cafd50ba26bf",
+   "leak": {
+    "control_hangul": 356,
+    "test_hangul": 0,
+    "char_ratio": 0.0,
+    "control_words": 82,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 0,
+    "bigram_n": 0,
+    "bigram_ratio": 0.0
+   }
+  },
+  "C": {
+   "file": "gbd_sample_C.jpg",
+   "page": 31,
+   "title": "5부 공식 대비 범위와 전체 평균 대비 차이 면",
+   "crop": 1.0,
+   "w": 1000,
+   "h": 1413,
+   "regions": [
+    {
+     "x": 6.61,
+     "y": 4.33,
+     "w": 42.39,
+     "h": 3.59,
+     "label": "절 제목. 2027 공식 대비 범위"
+    },
+    {
+     "x": 11.36,
+     "y": 48.52,
+     "w": 79.05,
+     "h": 10.6,
+     "label": "전체 평균 대비 차이 6지표 중 4~6번. 면접시간 10분 계열 63.2% 대 전체 41.7%"
+    },
+    {
+     "x": 11.36,
+     "y": 58.38,
+     "w": 35.21,
+     "h": 8.67,
+     "label": "해석. 답변 1건당 40초 안팎"
+    }
+   ],
+   "sha16": "38bb381e81a19260",
+   "leak": {
+    "control_hangul": 816,
+    "test_hangul": 14,
+    "char_ratio": 0.017,
+    "control_words": 216,
+    "matched_words": 0,
+    "word_ratio": 0.0,
+    "bigram_hit": 0,
+    "bigram_n": 13,
+    "bigram_ratio": 0.0
+   }
+  }
+ }
+}

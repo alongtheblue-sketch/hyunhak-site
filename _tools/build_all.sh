@@ -25,4 +25,5 @@ tail1 python3 _tools/guidebook_aeo_check.py   # 6b 답변엔진 대응 + 판매 
 tail1 python3 _tools/apply_checkout_legal.py --check   # 6c 결제 면에 실린 약관 전문이 원천과 같은가
 tail1 python3 _tools/apply_counts.py --check   # 6d 홈, about 의 문항 수와 면수가 meta v3 합과 같은가
 tail1 python3 _tools/seo_keyword_census.py   # 6e 면접 검색어 포획 (면당 필수 구절 + 계열별 커버리지, 2026-09-04)
+tail1 python3 _tools/build_samples.py --check   # 6f 상품면 지면 표본 13장이 현 판 clean PDF(sha)와 지면 참조에 맞는가 (2026-09-07 GB-V24-5 (C))
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16
