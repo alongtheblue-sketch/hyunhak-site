@@ -39,7 +39,7 @@ EXEMPT = {}
 
 # 코드가 자막을 붙이는 자리. 파일과 그 안에 반드시 살아 있어야 하는 조각.
 WIRED = [
-    ("assets/lecture.js", ['tr.kind = "subtitles"', "/api/lecture/track"],
+    ("assets/lecture.js", ['tr.kind = "captions"', "/api/lecture/track", "ccPref()"],
      "회원 강의 플레이어. D1 vtt_key 로 트랙을 받아 Blob 으로 붙인다"),
 ]
 

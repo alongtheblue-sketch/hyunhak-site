@@ -21,6 +21,7 @@
 """
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -194,6 +195,46 @@ def selfcheck(cues, duration):
         sys.exit("자막 자체검사 실패:\n  " + "\n  ".join(bad))
 
 
+# 지면의 숨은 대본 문단. 자막과 같은 원장에서 나와야 둘이 어긋나지 않는다.
+TRANSCRIPT_SLOTS = [
+    ("index.html", "hero-film-tx"),
+    ("about.html", "film-tx"),
+]
+TRANSCRIPT_HEAD = "영상에 나오는 글자."
+
+
+def transcript(cues):
+    parts = [TRANSCRIPT_HEAD]
+    for _, _, lines, _ in cues:
+        for line in lines:
+            if line.startswith("["):      # 음악 표시는 대본이 아니다
+                continue
+            parts.append(line if line.endswith(".") else line + ".")
+    return " ".join(parts)
+
+
+def sync_transcript(text, check):
+    """지면의 대본 문단을 자막에서 파생시킨다. --check 면 대조만 한다."""
+    bad = []
+    for name, slot in TRANSCRIPT_SLOTS:
+        p = ROOT / name
+        body = p.read_text(encoding="utf-8")
+        pat = re.compile(r'(<p id="' + re.escape(slot) + r'"[^>]*>)(.*?)(</p>)', re.S)
+        m = pat.search(body)
+        if not m:
+            bad.append(f"{name}: id={slot} 문단 없음")
+            continue
+        if m.group(2) == text:
+            continue
+        if check:
+            bad.append(f"{name}: 대본 문단이 자막과 다르다")
+        else:
+            p.write_text(body[:m.start(2)] + text + body[m.end(2):], encoding="utf-8")
+            print(f"대본 문단 갱신: {name}#{slot}")
+    if bad:
+        sys.exit("대본 대조 실패:\n  " + "\n  ".join(bad))
+
+
 def main():
     check = "--check" in sys.argv
     if not VIDEO.exists():
@@ -212,15 +253,18 @@ def main():
     selfcheck(cues, duration)
     text = render(cues)
 
+    tx = transcript(cues)
     if check:
         if not OUT.exists():
             sys.exit(f"자막 파일 없음: {OUT}")
         cur = OUT.read_text(encoding="utf-8")
         if cur != text:
             sys.exit(f"자막 파일이 생성기 산출과 다르다: {OUT}. 생성기를 다시 돌릴 것")
-        print(f"자막 대조 통과: {OUT.name} 자막 {len(cues)}개")
+        sync_transcript(tx, True)
+        print(f"자막 대조 통과: {OUT.name} 자막 {len(cues)}개, 대본 문단 {len(TRANSCRIPT_SLOTS)}곳")
         return
     OUT.write_text(text, encoding="utf-8")
+    sync_transcript(tx, False)
     print(f"생성: {OUT.relative_to(ROOT)}  자막 {len(cues)}개  마지막 {cues[-1][1]:.3f}초 / 영상 {duration:.3f}초")
 
 

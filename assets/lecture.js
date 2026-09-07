@@ -415,7 +415,10 @@
     markRate();
   }
   // 자막: 교차 출처 <track> 은 CORS 헤더와 crossorigin 속성이 맞아야 해서, 본문을 가져와 Blob URL 로 붙인다
-  function loadTrack() {
+  // 한 번 실패했다고 자막을 영영 없애지 않는다. 되돌려 받을 길을 남긴다 (재시도 2회 + 버튼 유지)
+  function loadTrack(attempt) {
+    attempt = attempt || 0;
+    if (P.bCc) { P.bCc.hidden = false; P.bCc.removeAttribute("aria-disabled"); }
     fetch(API + "/api/lecture/track?id=" + encodeURIComponent(S.id) + "&t=" + encodeURIComponent(S.token), { credentials: "include" })
       .then(function (r) { if (!r.ok) throw new Error("track " + r.status); return r.text(); })
       .then(function (txt) {
@@ -423,15 +426,20 @@
         S.trackUrl = URL.createObjectURL(new Blob([txt], { type: "text/vtt" }));
         var old = P.v.querySelector("track"); if (old) old.remove();
         var tr = document.createElement("track");
-        tr.kind = "subtitles"; tr.srclang = "ko"; tr.label = "한국어"; tr.src = S.trackUrl;
+        tr.kind = "captions"; tr.srclang = "ko"; tr.label = "한국어"; tr.src = S.trackUrl;
         P.v.appendChild(tr);
         applyCc();
-      }).catch(function () { if (P.bCc) P.bCc.hidden = true; });
+      }).catch(function () {
+        if (attempt < 2) { setTimeout(function () { loadTrack(attempt + 1); }, 800 * (attempt + 1)); return; }
+        if (P.bCc) P.bCc.setAttribute("aria-disabled", "true");   // 눌러 다시 받을 수 있게 남긴다
+      });
   }
   function applyCc() {
     var tt = P.v.textTracks;
     for (var i = 0; i < tt.length; i++) tt[i].mode = S.ccOn ? "showing" : "hidden";
     if (P.bCc) { P.bCc.classList.toggle("on", S.ccOn); P.bCc.setAttribute("aria-pressed", S.ccOn ? "true" : "false"); }
+    // 자막이 켜지면 고정 워터마크를 자막 띠 위로 올린다 (lecture.html .player.cc .wm .w3)
+    if (P.player) P.player.classList.toggle("cc", S.ccOn);
   }
   // 토큰 만료와 연결 오류 복구: renew(같은 회차 유지) 후 실패 시 open. 같은 위치에서 소스 교체.
   // 갱신 뒤 자동 재생은 사용자 제스처가 끊겨 거부될 수 있으므로 거부되면 큰 재생 버튼으로 돌아간다 (iOS)
@@ -718,7 +726,10 @@
     P.bFwd.addEventListener("click", function () { seekTo((v.currentTime || 0) + 10, "btn"); });
     P.bMute.addEventListener("click", function () { v.muted = !v.muted; });
     P.bBm.addEventListener("click", addBookmark);
-    if (P.bCc) P.bCc.addEventListener("click", function () { S.ccOn = !S.ccOn; ccSave(S.ccOn); applyCc(); });
+    if (P.bCc) P.bCc.addEventListener("click", function () {
+      if (P.bCc.getAttribute("aria-disabled") === "true") { loadTrack(); return; }   // 실패한 트랙 다시 받기
+      S.ccOn = !S.ccOn; ccSave(S.ccOn); applyCc();
+    });
     P.bFs.addEventListener("click", toggleFs);
     document.addEventListener("fullscreenchange", updateFsIcon);
     P.bRate.addEventListener("click", function () { var open = P.rateMenu.dataset.open === "1"; P.rateMenu.dataset.open = open ? "0" : "1"; P.bRate.setAttribute("aria-expanded", open ? "false" : "true"); });

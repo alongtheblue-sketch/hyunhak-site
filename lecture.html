@@ -62,7 +62,9 @@
 .wm span{position:absolute;white-space:nowrap;transform:rotate(-22deg);transition:top 1.2s var(--ease),left 1.2s var(--ease)}
 .wm .w1{top:var(--wy1,18%);left:var(--wx1,12%)}
 .wm .w2{top:var(--wy2,62%);left:var(--wx2,58%)}
-.wm .w3{top:auto;bottom:46px;right:14px;left:auto;transform:none;color:rgba(var(--paper-rgb),.75);font-weight:500}
+.wm .w3{top:auto;bottom:46px;right:14px;left:auto;transform:none;color:rgba(var(--paper-rgb),.75);font-weight:500;transition:bottom .2s var(--ease)}
+.player.cc .wm .w3{bottom:96px}   /* 자막이 켜지면 자막 띠 위로 (lecture.js applyCc 가 .cc 를 건다) */
+.player.cc .wm .w2{top:var(--wy2,44%)}
 /* 중앙 상태 카드 */
 .stage{position:absolute;inset:0;z-index:3;display:grid;place-items:center;padding:var(--s4);text-align:center;color:var(--paper)}
 .stage[hidden]{display:none}
