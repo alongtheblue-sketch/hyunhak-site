@@ -11,10 +11,15 @@
                                        (상단 머리띠만 선명, 나머지는 복원 불가) — CSS 블러가 아니라 이미지 자체를 흐린다
   _tools/guidebook_meta_v3.json        권별 소구 수치와 구조 (질문 수, 규칙 수, 부 5개, 면접 형태, 전형, 유형, 규칙 코드, 전략 제목, 미리보기 목록)
 
-실행: ~/venvs/pdfbuild/bin/python _tools/build_previews.py [--only slug,slug] [--dry]
+실행: ~/venvs/pdfbuild/bin/python _tools/build_previews.py [--only slug,slug] [--dry] [--edition v21|v24]
 결정론: 같은 입력 = 같은 바이트 (PyMuPDF 렌더 + PIL, 시각 정보 없음).
+
+--edition v24 (2026-09-07 s51, GB-V24-5 (B)): 판매 정본 v24 31권. 원천 경로·수치·마크업 차이는 guidebook_sources.py.
+  v24 에 없는 권(비판매 7권)은 건너뛰고 기존 meta 항목을 그대로 둔다(meta 병합). 08-28 판 1부·2부 전형명은
+  search_pool_legacy 로 항목에 이월해 build_guidebook.ground_check 가 SEARCH 표를 계속 대조할 수 있게 한다.
 """
 import argparse
+import hashlib
 import html as htmlmod
 import io
 import json
@@ -27,6 +32,8 @@ from PIL import Image, ImageFilter
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from build_guidebook import SLUGS  # noqa: E402  (slug ↔ 학교명 단일 원천)
+from guidebook_sources import (V24_EDITION, counts_from_manifest, detect_profile,  # noqa: E402
+                               parse_rules_v24, parse_spec_v24, v24_inputs)
 
 SITE = Path(__file__).resolve().parent.parent
 GUIDEBOOK_SRC = Path("/Users/gregory/Workspace/interview_guidebook_2027")
@@ -55,17 +62,28 @@ def _t(s):
     return re.sub(r"\s+", " ", s).strip()
 
 
-def parse_html(univ, p, export_path):
-    s = p.read_text(encoding="utf-8").replace("⁠", "")
-    body = s[s.find("<body"):]
-    site_data = json.loads(export_path.read_text(encoding="utf-8"))
+def counts_from_export(univ, export_path):
+    site_data = json.loads(Path(export_path).read_text(encoding="utf-8"))
     counts = site_data.get("counts")
     if not isinstance(counts, dict):
         raise ValueError(f"{univ}: export/site counts 계약 누락")
     for key in ("questions", "rules"):
         if not isinstance(counts.get(key), int):
             raise ValueError(f"{univ}: export/site counts.{key} 정수 누락")
-    m = {"questions": counts["questions"], "rules": counts["rules"]}
+    return {"questions": counts["questions"], "rules": counts["rules"]}
+
+
+def parse_html(univ, p, counts):
+    """counts = {"questions", "rules"} (v24: manifest) 또는 export/site json 경로 (08-28 판)."""
+    if not isinstance(counts, dict):
+        counts = counts_from_export(univ, counts)
+    for key in ("questions", "rules"):
+        if not isinstance(counts.get(key), int):
+            raise ValueError(f"{univ}: counts.{key} 정수 누락")
+    s = p.read_text(encoding="utf-8").replace("⁠", "")
+    body = s[s.find("<body"):]
+    profile = detect_profile(body)
+    m = {"questions": counts["questions"], "rules": counts["rules"], "profile": profile}
     v = re.search(r"VOL\.(\d+)", body)
     m["vol"] = int(v.group(1)) if v else None
 
@@ -188,6 +206,10 @@ def parse_html(univ, p, export_path):
             strat = strat[:8]
     m["strategies"] = strat
     m["sections"] = [_t(x) for x in re.findall(r'<h2 class="sec">(.*?)</h2>', body, flags=re.S)]
+    if profile == "v24":
+        # 2-1 제원은 dcard/2-1 안 mtx, 4부 규칙은 p4-area/p4-intent/div.rule. 문서 첫 mtx(2-2 학과 표)·R코드 정규식은 v24 에 없다.
+        m["spec_tracks"], m["spec_items"] = parse_spec_v24(body)
+        m["rule_list"], m["rule_areas"] = parse_rules_v24(body)
     return m
 
 
@@ -252,27 +274,63 @@ def pick_pages(n_pages, dividers):
     return picks
 
 
-def build_one(slug, univ, dry=False):
-    pdf = PDF_DIR / f"{univ}_2027면접가이드북.pdf"
-    html_path = HTML_DIR / f"{univ}_R.html"
-    export_path = EXPORT_DIR / f"{univ}.json"
-    paths = {"pdf": pdf, "html": html_path, "export": export_path}
+def resolve_inputs(univ, edition):
+    """편집판별 입력 경로. v24 에 없는 권은 None (비판매 7권)."""
+    if edition == V24_EDITION:
+        inp = v24_inputs(univ)
+        if inp is None:
+            return None
+        return {"pdf": inp["pdf"], "html": inp["html"], "manifest": inp["manifest"], "winner_dir": inp["winner_dir"]}
+    return {"pdf": PDF_DIR / f"{univ}_2027면접가이드북.pdf", "html": HTML_DIR / f"{univ}_R.html",
+            "export": EXPORT_DIR / f"{univ}.json"}
+
+
+def merge_meta_entry(old, new):
+    """v24 항목을 기존 meta 에 얹는다. 08-28 판 1부·2부 전형명은 search_pool_legacy 로 한 번만 이월(이미 v24 면 보존)."""
+    new["edition"] = new.get("edition", V24_EDITION)
+    if old and old.get("edition") == V24_EDITION and "search_pool_legacy" in old:
+        new["search_pool_legacy"] = list(old["search_pool_legacy"])
+    elif old:
+        pool = {t["track"] for t in old.get("tracks", []) if t.get("track")} | {x for x in old.get("spec_tracks", []) if x}
+        new["search_pool_legacy"] = sorted(pool)
+    return new
+
+
+def build_one(slug, univ, dry=False, edition="v21"):
+    inputs = resolve_inputs(univ, edition)
+    if inputs is None:
+        return None
+    winner_dir = inputs.pop("winner_dir", None)
+    paths = {k: v for k, v in inputs.items()}
     missing = [f"{kind}={path}" for kind, path in paths.items() if not path.is_file()]
     if missing:
         raise FileNotFoundError(f"{univ}: 입력 경로 누락: {', '.join(missing)}")
     if dry:
-        return {"slug": slug, "name": univ,
+        return {"slug": slug, "name": univ, "edition": edition,
                 "paths": {kind: str(path) for kind, path in paths.items()}}
+    pdf, html_path = paths["pdf"], paths["html"]
+    if edition == V24_EDITION:
+        counts = counts_from_manifest(paths["manifest"])
+        manifest = json.loads(paths["manifest"].read_text(encoding="utf-8"))
+    else:
+        counts = paths["export"]
+        manifest = None
 
     doc = fitz.open(pdf)
     n = doc.page_count
     means = page_means(doc)
     dividers = [i + 1 for i, v in enumerate(means) if i >= 2 and v < DARK_MEAN]
-    if len(dividers) != 5:
-        print(f"  ⚠ {univ}: 간지 판정 {len(dividers)}건 (기대 5) means={['%.2f' % v for v in means]}")
-    meta = parse_html(univ, html_path, export_path)
+    meta = parse_html(univ, html_path, counts)
+    n_parts = len(meta.get("parts", []))
+    if len(dividers) != n_parts:
+        print(f"  ⚠ {univ}: 간지 판정 {len(dividers)}건 (HTML 부 {n_parts}) means={['%.2f' % v for v in means]}")
     meta.update({"slug": slug, "name": univ, "pages": n, "dividers": dividers,
                  "file": pdf.name, "bytes": pdf.stat().st_size})
+    if edition == V24_EDITION:
+        meta.update({"edition": V24_EDITION, "winner_dir": winner_dir,
+                     "generation_id": manifest.get("generation_id"),
+                     "source_html_sha256": hashlib.sha256(html_path.read_bytes()).hexdigest(),
+                     "source_pdf_sha256": hashlib.sha256(pdf.read_bytes()).hexdigest()})
     # 표지 jpg (596x842)
     cover = render(doc, 0, 596).resize((596, 842), Image.LANCZOS)
     cover.save(COVERS / f"{slug}.jpg", "JPEG", quality=COVER_Q, optimize=True, progressive=True)
@@ -298,31 +356,43 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--only", default="")
     ap.add_argument("--dry", action="store_true")
+    ap.add_argument("--edition", default="v21", choices=("v21", V24_EDITION))
     a = ap.parse_args()
     only = {x for x in a.only.split(",") if x}
-    out = {}
+    out, skipped = {}, []
     for slug, univ in SLUGS:
         if only and slug not in only:
             continue
+        r = build_one(slug, univ, dry=a.dry, edition=a.edition)
+        if r is None:
+            skipped.append(slug)
+            continue
         print(f"[{slug}] {univ}")
-        out[slug] = build_one(slug, univ, dry=a.dry)
+        out[slug] = r
         if a.dry:
-            print("  paths=ok (pdf, html, export)")
+            print("  paths=ok (" + ", ".join(r["paths"]) + ")")
         else:
-            print(f"  pages={out[slug]['pages']} q={out[slug]['questions']} rules={out[slug]['rules']} "
-                  f"dividers={out[slug]['dividers']} previews={len(out[slug].get('previews', []))}")
+            print(f"  pages={r['pages']} q={r['questions']} rules={r['rules']} "
+                  f"dividers={r['dividers']} previews={len(r.get('previews', []))}")
+    if skipped:
+        print(f"{a.edition} 에 없어 건너뜀 {len(skipped)}권: {', '.join(skipped)}")
     if a.dry:
-        print(f"dry: paths={len(out)}/{len(only) if only else len(SLUGS)} ok, render=0, writes=0")
-    elif not only:
+        want = len(only) if only else len(SLUGS)
+        print(f"dry: paths={len(out)}/{want} ok, skipped={len(skipped)}, render=0, writes=0")
+        return
+    if a.edition == V24_EDITION or only:
+        # 부분 실행·v24 는 기존 메타에 병합 (v24 밖 권은 기존 항목 유지)
+        cur = json.loads(META.read_text(encoding="utf-8")) if META.exists() else {}
+        for slug, m in out.items():
+            cur[slug] = merge_meta_entry(cur.get(slug), m) if a.edition == V24_EDITION else m
+        META.write_text(json.dumps(cur, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        total = sum(p["bytes"] for m in out.values() for p in m["previews"])
+        print(f"meta 병합 -> {META} ({len(out)} 권 갱신, 전체 {len(cur)} 권, 미리보기 "
+              f"{sum(len(m['previews']) for m in out.values())}면, {total/1e6:.1f} MB)")
+    else:
         META.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
         total = sum(p["bytes"] for m in out.values() for p in m["previews"])
         print(f"meta -> {META} ({len(out)} 권, 미리보기 {sum(len(m['previews']) for m in out.values())}면, {total/1e6:.1f} MB)")
-    elif only:
-        # 부분 실행은 기존 메타에 병합
-        cur = json.loads(META.read_text(encoding="utf-8")) if META.exists() else {}
-        cur.update(out)
-        META.write_text(json.dumps(cur, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-        print(f"meta 병합 -> {META}")
 
 
 if __name__ == "__main__":

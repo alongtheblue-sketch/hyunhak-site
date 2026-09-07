@@ -196,19 +196,30 @@ def _norm(s):
     return re.sub(r"[^가-힣A-Za-z0-9]", "", str(s))
 
 
-def ground_check(meta):
-    """SEARCH 표의 전형명이 meta v3 tracks/spec_tracks 문자열에 실재하는지 대조 (공백, 괄호, 로마숫자 무시)."""
-    bad = []
-    for slug, s in SEARCH.items():
+def ground_check(meta, search=None, slugs=None):
+    """SEARCH 표의 전형명이 meta v3 tracks/spec_tracks 문자열에 실재하는지 대조 (공백, 괄호, 로마숫자 무시).
+    v24 판(2026-09-07) 1부·2부는 2027 공식 요강의 면접 실시 전형만 싣는다. 거기 없고 08-28 판 표기(search_pool_legacy)에만
+    있는 이름은 경고로 돌려주고(반환값) 빌드는 세우지 않는다. 어느 쪽에도 없으면 선다. 정리 여부 = 결재 GB-V24-6."""
+    search = SEARCH if search is None else search
+    slugs = SLUGS if slugs is None else slugs
+    bad, legacy_only = [], []
+    for slug, s in search.items():
         pool = _norm(" ".join([t["track"] for t in meta[slug].get("tracks", [])] + list(meta[slug].get("spec_tracks", []))))
+        legacy = _norm(" ".join(meta[slug].get("search_pool_legacy", [])))
         for x in s["rep"] + [s[k] for k in ("med", "edu", "alt") if k in s]:
-            if _norm(x["n"]) not in pool:
-                bad.append(f"{slug}: {x['n']!r}")
+            n = _norm(x["n"])
+            if n in pool:
+                continue
+            (legacy_only if n in legacy else bad).append(f"{slug}: {x['n']!r}")
     if bad:
         sys.exit("SEARCH 전형명이 meta v3 에 없음: " + "; ".join(bad))
-    missing = [s for s, _ in SLUGS if s not in SEARCH]
+    missing = [s for s, _ in slugs if s not in search]
     if missing:
         sys.exit(f"SEARCH 누락: {missing}")
+    if legacy_only:
+        print(f"경고: SEARCH 전형명 {len(legacy_only)}건이 현 판 1부·2부에 없고 08-28 판 표기(search_pool_legacy)로만 확인됨 "
+              f"(GB-V24-6): " + "; ".join(legacy_only), file=sys.stderr)
+    return legacy_only
 
 
 def _fit(cands, lo, hi):
@@ -443,17 +454,72 @@ def extract(univ, src):
     }
 
 
+def extract_v24(univ):
+    """v24 판매 정본에서 카탈로그 항목. 유형명·표본 질문 = 승자 HTML 3부, 수치 = manifest, 면수 = clean PDF."""
+    from guidebook_sources import counts_from_manifest, text, type_label, v24_inputs
+    inp = v24_inputs(univ)
+    if inp is None:
+        raise FileNotFoundError(f"{univ}: v24 승자 없음")
+    missing = [k for k in ("html", "manifest", "clean_pdf") if not inp[k].is_file()]
+    if missing:
+        raise FileNotFoundError(f"{univ}: v24 입력 누락: {missing}")
+    counts = counts_from_manifest(inp["manifest"])
+    s = inp["html"].read_text(encoding="utf-8").replace("\u2060", "")
+    groups = re.findall(r'<div class="qgrp[^"]*">\s*<div class="gh">(.*?)</div>\s*<ol class="qs">\s*<li>(.*?)</li>', s, flags=re.S)
+    if len(groups) != counts["types"]:
+        raise ValueError(f"{univ}: 3부 군 {len(groups)} != manifest category_group_count {counts['types']}")
+    types, samples = [], []
+    for gh, li in groups:
+        t = type_label(gh)
+        if not t:
+            raise ValueError(f"{univ}: 군 제목이 비었다: {gh!r}")
+        types.append(t)
+        q = clean(text(re.sub(r'<span class="qm">.*?</span>', "", li, flags=re.S)))
+        if not q:
+            raise ValueError(f"{univ}: {t} 첫 질문이 비었다")
+        if len(q) > SAMPLE_LEN:
+            q = q[:SAMPLE_LEN].rstrip() + "…"
+        if len(samples) < SAMPLE_MAX:
+            samples.append({"type": t, "q": q})
+    return {
+        "name": univ,
+        "file": inp["clean_pdf"].name,
+        "pages": pdf_pages(inp["clean_pdf"]),
+        "questions": counts["questions"],
+        "rules": counts["rules"],
+        "types_n": counts["types"],
+        "types": types,
+        "samples": samples,
+        "edition": "v24",
+    }
+
+
 def cmd_refresh(args):
     src = Path(args.src).expanduser()
+    edition = getattr(args, "edition", "v21")
     old = json.load(open(CATALOG, encoding="utf-8")) if CATALOG.exists() else {}
     old_items = {e["slug"]: e for e in old.get("items", [])}
-    items = []
+    items, skipped = [], []
     for slug, univ in SLUGS:
-        e = extract(univ, src)
+        if edition == "v24":
+            from guidebook_sources import v24_inputs
+            if v24_inputs(univ) is None:
+                # v24 밖(비판매 7권)은 기존 항목 유지. 없으면 08-28 판 원천으로.
+                if slug in old_items:
+                    items.append(old_items[slug])
+                    skipped.append(slug)
+                    continue
+                e = extract(univ, src)
+            else:
+                e = extract_v24(univ)
+        else:
+            e = extract(univ, src)
         e = {"slug": slug, "sku": f"guide-{slug}", "price": old_items.get(slug, {}).get("price"),
              "onsale": old_items.get(slug, {}).get("onsale", True),
              "archive": slug in ARCHIVE, **e}
         items.append(e)
+    if skipped:
+        print(f"{edition} 밖이라 기존 항목 유지 {len(skipped)}권: {', '.join(skipped)}")
     cat = {
         "_note": "_tools/build_guidebook.py refresh 가 박제. price 최상위 1 곳 = 전 권 기본값, 항목 price null = 상속.",
         "year": 2027,
@@ -555,6 +621,7 @@ def _parts_html(mv):
         3: "선배 후기에서 회수한 실제 질문, 유형별, 모집단위와 연도",
         4: "생기부에서 질문 뽑는 전환 규칙",
         5: "타 대학 대비 차이｜준비 전략",
+        6: "학과가 다루는 문제와 면접 전에 연결해 둘 배경지식",   # v24 학과 배경지식 부 (광운·단국·서울시립·서울여대·아주)
     }
     for i, pt in enumerate(mv["parts"]):
         sub = subs.get(int(pt["no"]), "")
@@ -717,6 +784,11 @@ def _forms_on(mv):
     return out
 
 
+def _parts_word(mv):
+    """부 수 한글. v24 는 학과 배경지식 6부가 붙는 권이 5권(광운·단국·서울시립·서울여대·아주)."""
+    return "여섯" if len(mv.get("parts") or []) == 6 else "다섯"
+
+
 def _facts(e, mv, cat, price, sale, pdfp):
     """지면 상단 핵심 팩트. 답변 엔진이 통째로 인용할 수 있는 짧은 사실문만 싣는다.
     전부 meta v3 와 카탈로그 실측값이고, 책 본문(질문 원문, 규칙 본문, 전략 본문)은 넣지 않는다."""
@@ -737,7 +809,7 @@ def _facts(e, mv, cat, price, sale, pdfp):
     if n_types:
         rows.append(("질문 유형", f"{n_types}개"))
     if mv.get("pages"):
-        rows.append(("분량", f"{mv['pages']}면, 다섯 부"))
+        rows.append(("분량", f"{mv['pages']}면, {_parts_word(mv)} 부"))
     if sale:
         rows.append(("가격과 열람", f"{won(price)}, 보안 리더 열람 3개월"
                                     + (f" (PDF 소장판 {won(pdfp)})" if pdfp else "")))
@@ -847,7 +919,7 @@ def render_page(cat, items, i, meta):
          "__TRACKS_N__": str(len(mv.get("spec_tracks", [])) or len(mv.get("tracks", []))),
          "__SPEC_N__": str(len(mv.get("spec_items", []))),
          "__STATUS_BADGE__": badge, "__ACTS__": acts, "__NOTE__": note,
-         "__PREVIEWS__": _previews_html(mv), "__PARTS__": _parts_html(mv), "__FORMS__": _forms_html(mv),
+         "__PREVIEWS__": _previews_html(mv), "__PARTS__": _parts_html(mv), "__PARTS_WORD__": _parts_word(mv), "__FORMS__": _forms_html(mv),
          "__TRACKS__": _tracks_html(mv), "__SPEC_CHIPS__": _chips(mv.get("spec_items", []), 12),
          "__RULES3__": _rules3_html(mv), "__RULE_CHIPS__": _chips(mv.get("rule_areas", []), 14),
          "__STRAT_SEC__": _strat_sec_html(mv),
@@ -1033,6 +1105,8 @@ def main():
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("refresh")
     r.add_argument("--src", default=str(SRC_DEFAULT))
+    r.add_argument("--edition", default="v21", choices=("v21", "v24"),
+                   help="v24 = 2026-09-07 판매 정본(guidebook_sources.py). v24 밖 권은 기존 항목 유지")
     r.set_defaults(fn=cmd_refresh)
     b = sub.add_parser("build")
     b.set_defaults(fn=cmd_build)
