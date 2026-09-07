@@ -34,6 +34,9 @@ STAGE_DIR = ROOT / "_design/brand_video_20260902/out"
 
 SEALED_SHA = "ea356fd5c5410216a8470ea38805b8e181b92ecacd0d9924ef2e41c27fb0931e"
 SEALED_DURATION = 59.958333
+# 자막 파일 자체의 봉인. 설계 원본(_design)은 저장소에 추적되지 않아 깨끗한 체크아웃이나 배포
+# 워크트리에는 없다. 그때는 자막을 다시 만드는 대신 이 해시로 대조한다.
+SEALED_VTT_SHA = "173199a6e54e7efdbd836c5091d5f3abbbfb908761a1eef715199a2d9faa23ab"
 
 XFADE = 0.5          # assemble.py 의 xfade duration
 T_IN = 0.6           # spec.json tokens.t_in
@@ -203,6 +206,24 @@ TRANSCRIPT_SLOTS = [
 TRANSCRIPT_HEAD = "영상에 나오는 글자."
 
 
+def parse(text):
+    """자막 파일을 다시 큐 목록으로 읽는다. 설계 원본이 없는 트리에서 대본을 유도할 때 쓴다."""
+    cues, block = [], []
+    for line in text.split("\n")[1:] + [""]:
+        if line.strip() == "":
+            if len(block) >= 2 and "-->" in block[1]:
+                a, b = block[1].split("-->")
+                setting = ""
+                bb = b.strip().split(" ", 1)
+                if len(bb) == 2:
+                    setting = " " + bb[1]
+                cues.append((a.strip(), bb[0], block[2:], setting))
+            block = []
+        else:
+            block.append(line)
+    return cues
+
+
 def transcript(cues):
     parts = [TRANSCRIPT_HEAD]
     for _, _, lines, _ in cues:
@@ -248,6 +269,18 @@ def main():
     duration = probe_duration(VIDEO)
     if abs(duration - SEALED_DURATION) > 0.01:
         sys.exit(f"길이 불일치: 기대 {SEALED_DURATION} 실측 {duration}")
+
+    if not SPEC.exists() or not (STAGE_DIR / "stage_c1.mp4").exists():
+        if not check:
+            sys.exit(f"설계 원본 없음: {SPEC}. 자막을 다시 만들려면 원본이 있는 트리에서 돌릴 것")
+        if not OUT.exists():
+            sys.exit(f"자막 파일 없음: {OUT}")
+        got_vtt = sha256(OUT)
+        if got_vtt != SEALED_VTT_SHA:
+            sys.exit(f"자막 봉인 불일치\n  기대 {SEALED_VTT_SHA}\n  실측 {got_vtt}")
+        sync_transcript(transcript(parse(OUT.read_text(encoding="utf-8"))), True)
+        print(f"자막 봉인 대조 통과(설계 원본 없는 트리): {OUT.name}")
+        return
 
     cues = build()
     selfcheck(cues, duration)
