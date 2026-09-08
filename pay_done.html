@@ -83,7 +83,7 @@
 <div class="wrap">
   <div class="auth wide" id="box">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>결제 확인</span></nav>
-    <h1 id="h">결제를 확인하는 중</h1>
+    <h1 id="h" role="status" aria-live="polite">결제를 확인하는 중</h1>
     <p class="lede" id="sub">잠시만 기다려 주세요. 창을 닫지 말아 주세요.</p>
     <dl class="kv payline" id="lines" hidden></dl>
     <div class="acts" id="acts" hidden></div>
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     h.textContent = '결제가 완료되지 않았습니다';
     sub.textContent = q.get('message') || '결제가 중단되었습니다. 장바구니에서 다시 시도해 주세요.';
     acts.hidden = false;
-    acts.innerHTML = '<a class="btn" href="cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="index.html">처음으로</a>';
+    acts.innerHTML = '<a class="btn" href="index.html">처음으로</a><a class="tlink" href="mailto:admin@hyunhak.com">문의</a>';
     return;
   }
 
@@ -146,10 +146,35 @@ document.addEventListener('DOMContentLoaded', async function(){
     acts.hidden = false; acts.innerHTML = '<a class="btn" href="index.html">처음으로 <span class="ar" aria-hidden="true">→</span></a>';
     return;
   }
-  try {
-    var reqBody = { paymentKey: paymentKey, orderId: orderId };
-    if (amount !== null) reqBody.amount = amount;          // 토스 경로만 클라이언트 금액 대조를 겸한다
-    var r = await HH.api('/api/payments/confirm', { method: 'POST', body: JSON.stringify(reqBody) });
+  var reqBody = { paymentKey: paymentKey, orderId: orderId };
+  if (amount !== null) reqBody.amount = amount;
+  var confirmBody = JSON.stringify(reqBody);
+  var attempts = 0, inFlight = false, retryAt = 0;
+  function pending(){
+    h.textContent='승인 확인 중';
+    sub.hidden=true; lines.hidden=true; acts.hidden=false;
+    acts.innerHTML='<button type="button" class="btn" id="retryConfirm" disabled>다시 확인</button><a class="tlink" href="mailto:admin@hyunhak.com">문의</a>';
+    var retry=document.getElementById('retryConfirm');
+    // 최초 확인 외에 최대 다섯 번, 응답 후 3초를 기다린 뒤에만 재시도한다.
+    if(attempts<6) setTimeout(function(){ if(retry.isConnected) retry.disabled=false; }, Math.max(0,retryAt-Date.now()));
+    retry.addEventListener('click', confirmPayment);
+  }
+  async function confirmPayment(){
+    if(inFlight || attempts>=6 || Date.now()<retryAt) return;
+    inFlight=true; attempts++;
+    var retry=document.getElementById('retryConfirm');
+    if(retry) retry.disabled=true;
+    var controller=new AbortController();
+    var timer=setTimeout(function(){ controller.abort(); },10000);
+    try {
+    var r = await HH.api('/api/payments/confirm', { method: 'POST', body: confirmBody, signal:controller.signal });
+    if(r.status==='failed' || r.status==='canceled'){
+      var failure=new Error(r.error || '결제가 완료되지 않았습니다');
+      failure.status=402;
+      throw failure;
+    }
+    if(r.status!=='paid' && r.status!=='waiting_deposit') throw new Error();
+    sub.hidden=false;
     if (amount === null) amount = r.amount;                // 포트원 경로는 서버가 확정한 금액으로 표시
     try { localStorage.removeItem('hh_cart_v1'); } catch(e) {}
     if (r.status === 'waiting_deposit') {
@@ -179,11 +204,21 @@ document.addEventListener('DOMContentLoaded', async function(){
       if (window.wcs && window.wcs_add) { var _nasa = {}; _nasa['cnv'] = wcs.cnv('1', String(amount)); wcs_do(_nasa); }
     } catch (e) {}
   } catch (e) {
+    retryAt=Date.now()+3000;
+    // 일반 409는 미확정이다. 이미 실패한 주문을 재조회한 409만 서버 상태 문구로 구별한다.
+    var explicitFailure=e.status===402 || (e.status===409 && /^승인 불가 상태입니다: (failed|canceled)$/.test(e.message||''));
+    if(!explicitFailure){ pending(); return; }
     h.textContent = '승인에 실패했습니다';
+    sub.hidden = false;
     sub.textContent = e.message || '결제 승인에 실패했습니다. 금액이 빠져나갔다면 자동 취소됩니다.';
     acts.hidden = false;
     acts.innerHTML = '<a class="btn" href="cart.html">장바구니로 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="mailto:admin@hyunhak.com">문의</a>';
+  } finally {
+    clearTimeout(timer);
+    inFlight=false;
   }
+  }
+  await confirmPayment();
 });
 </script>
 </body>
