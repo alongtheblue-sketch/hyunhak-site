@@ -967,9 +967,9 @@ def _facts_html(name, rows):
         return ""
     body = "\n".join(f'      <div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>' for k, v in rows)
     return ('<section class="sec tight">\n  <div class="wrap">\n'
-            f'    <div class="sh rv"><div><h2>한눈에 보는 {esc(name)} 면접</h2>'
+            f'    <div class="sh"><div><h2>한눈에 보는 {esc(name)} 면접</h2>'
             '<p>아래 수치는 이 책이 실제로 담고 있는 분량입니다.</p></div></div>\n'
-            '    <dl class="keyfacts rv">\n' + body + '\n    </dl>\n  </div>\n</section>')
+            '    <dl class="keyfacts">\n' + body + '\n    </dl>\n  </div>\n</section>')
 
 
 def _related_html(items, i, meta, cur_forms):
@@ -1095,7 +1095,7 @@ def render_index(cat, items, meta):
     gb = [{"slug": e["slug"], "sku": e.get("sku") or f"guide-{e['slug']}", "name": e["name"],
            "short": e["name"].replace("학교", "").replace("(서울)", ""),
            "pages": meta[e["slug"]]["pages"], "q": meta[e["slug"]]["questions"], "r": meta[e["slug"]]["rules"],
-           "sale": bool(e.get("onsale", True))} for e in items]
+           "sale": bool(e.get("onsale", True)), "price": int(price_of(cat, e))} for e in items]
     h1 = "학교별 2027 면접 가이드북"
     fillmap = {"__TITLE__": esc(seo_hub_texts(cat, items, meta)["title"]), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
                "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}",

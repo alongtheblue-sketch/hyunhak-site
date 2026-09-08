@@ -35,7 +35,8 @@
 <link rel="stylesheet" href="assets/base.css"><noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <style>
 /* 공지 전용 */
-.lay{padding-top:0}
+:where(body.v2) .lay{padding-top:0;max-width:calc(var(--measure) + var(--gut) * 2);grid-template-columns:minmax(0,1fr)}
+:where(body.v2) .lay .side{position:static}
 .ntc .rows a{grid-template-columns:96px minmax(0,1fr) auto}
 .ntc .d{font-size:13px;color:var(--gray);font-variant-numeric:tabular-nums}
 .ntc .t{font-weight:600}

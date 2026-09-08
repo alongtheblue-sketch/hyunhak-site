@@ -11,13 +11,46 @@ import json
 import os
 import re
 import sys
-from urllib.parse import unquote, urlsplit
+import xml.etree.ElementTree as ET
+from urllib.parse import quote, unquote, urlsplit
 
 import seo_common as C
 
 DESC_MIN, DESC_MAX = 70, 110
 AEO_MIN, AEO_MAX = 40, 110
 BANNED = ("·", "—")
+
+
+def robots_path_matches(rule, url):
+    """Google 경로 매칭: 접두 일치, * 임의 문자열, 끝의 $ 종료.
+
+    생성기에서 기대 경로를 가져오지 않는다. 실제 sitemap URL에 적용한다.
+    쿼리는 매칭 대상이고 fragment는 크롤링 요청에 포함되지 않는다.
+    """
+    if not rule:
+        return False
+    parsed = urlsplit(url)
+    path = (parsed.path or "/") + ("?" + parsed.query if "?" in url.split("#", 1)[0] else "")
+    terminal = rule.endswith("$")
+    pattern = rule[:-1] if terminal else rule
+    # 비ASCII는 UTF-8 percent 인코딩, 비예약 ASCII만 디코딩한다.
+    # %2F 같은 예약 문자는 경로 구분자 /와 서로 다르게 매칭해야 한다.
+    def normalize(value):
+        value = quote(value, safe="/%!*'();:@&=+$,?[]~-._")
+        def percent(m):
+            char = chr(int(m[1], 16))
+            return char if char.isascii() and (char.isalnum() or char in "-._~") else m[0].upper()
+        return re.sub(r"%([0-9a-fA-F]{2})", percent, value)
+    path = normalize(path)
+    pattern = re.escape(normalize(pattern)).replace(r"\*", ".*")
+    return re.match("^" + pattern + (r"\Z" if terminal else ""), path) is not None
+
+
+def robots_disallows_url(rules, url):
+    """비공개 경로 보호 검사: 긴 일치 규칙 우선, 같은 길이면 Allow 우선."""
+    matched = [(len(v.rstrip("$").replace("*", "").encode("utf-8")), k == "allow")
+               for k, v in rules if k in ("allow", "disallow") and robots_path_matches(v, url)]
+    return bool(matched) and not max(matched)[1]
 
 
 class Report:
@@ -225,7 +258,7 @@ def main():
             fails.append(f"sitemap 잉여: {u}")
     R.add("(d) sitemap == 색인 페이지", fails, warns, len(want))
 
-    # (e2) robots.txt 3범주 (build_sitemap.py 의 목록과 실제 파일 대조 — 학습봇 전면 거부, 검색봇 허용 + noindex 경로 Disallow, Content-Signal)
+    # (e2) 봇 정책은 유지하고, 차단 경로는 실제 sitemap URL로 독립 검증한다.
     fails, warns = [], []
     import build_sitemap as BS
     rb_path = os.path.join(C.ROOT, "robots.txt")
@@ -234,23 +267,20 @@ def main():
     else:
         groups, cur = [], None
         for ln in open(rb_path, encoding="utf-8").read().splitlines():
-            ln = ln.strip()
-            if not ln or ln.startswith("#"):
-                cur = None; continue
+            ln = ln.split("#", 1)[0].strip()
+            if not ln:
+                continue
             k, _, v = ln.partition(":"); k, v = k.strip().lower(), v.strip()
             if k == "user-agent":
-                if cur is None or cur["rules"]:
+                if cur is None or any(k in ("allow", "disallow") for k, _ in cur["rules"]):
                     cur = {"agents": [], "rules": []}; groups.append(cur)
                 cur["agents"].append(v)
-            elif k == "sitemap":
-                cur = None
-            elif cur is not None:
+            elif cur is not None and k != "sitemap":
                 cur["rules"].append((k, v))
         by_agent = {}
         for g in groups:
             for a in g["agents"]:
-                by_agent[a.lower()] = g["rules"]
-        want_dis = set(BS.robots_disallows(m))
+                by_agent.setdefault(a.lower(), []).extend(g["rules"])
         for b in BS.TRAIN_BOTS:
             r = by_agent.get(b.lower())
             if r is None: fails.append(f"학습봇 미등재: {b}")
@@ -260,13 +290,46 @@ def main():
             r = by_agent.get(b.lower())
             if r is None: fails.append(f"허용봇 미등재: {b}"); continue
             if ("allow", "/") not in r or ("disallow", "/") in r: fails.append(f"허용봇 {b}: Allow: / 아님")
-            got_dis = {f"Disallow: {v}" for k, v in r if k == "disallow"}
-            for d in sorted(want_dis - got_dis): fails.append(f"허용봇 {b}: {d} 누락")
             if not any(k == "content-signal" and "ai-input=yes" in v and "ai-train=no" in v for k, v in r):
                 fails.append(f"허용봇 {b}: Content-Signal search/ai-input=yes, ai-train=no 없음")
+            # 생성기의 규칙 문자열 대신 비공개 페이지와 별칭 자체의 차단을 확인한다.
+            private = ["/_tools/seo_manifest.json"]
+            for rel, entry in entries.items():
+                if entry and entry["noindex"] and rel not in ("404.html", "insta.html"):
+                    private.append("/" + rel)
+                    if rel.endswith(".html"):
+                        private.append("/" + rel[:-5])
+            for path in private:
+                if not robots_disallows_url(r, path):
+                    fails.append(f"허용봇 {b}: 비공개 경로 차단 누락 {path}")
         if f"Sitemap: {C.base_url(m)}/sitemap.xml" not in open(rb_path, encoding="utf-8").read():
             fails.append("Sitemap 라인 없음")
     R.add("(e2) robots 3범주", fails, warns, len(BS.TRAIN_BOTS) + len(BS.SEARCH_BOTS) + len(BS.AGENT_BOTS) + 1)
+
+    # 학습봇의 전면 거부는 의도된 정책이다. 공개 접근 그룹의 어떤 Disallow도
+    # sitemap의 색인 URL과 겹치지 않아야 한다 (Allow 예외로 충돌을 숨기지 않는다).
+    fails, urls = [], []
+    if not os.path.exists(sm_path) or not os.path.exists(rb_path):
+        fails.append("sitemap.xml 또는 robots.txt 없음: URL 접근성 검사 불가")
+    else:
+        try:
+            root = ET.parse(sm_path).getroot()
+            urls = sorted({(n.text or "").strip() for n in root.findall("{*}url/{*}loc")})
+            if not urls or "" in urls:
+                fails.append("sitemap URL 목록이 비었거나 loc 값이 비어 있음")
+        except ET.ParseError as ex:
+            fails.append(f"sitemap.xml 파싱 실패: {ex}")
+        public_agents = {b.lower() for b in BS.SEARCH_BOTS + BS.AGENT_BOTS + ["*"]}
+        for group in groups:
+            agents = [a for a in group["agents"] if a.lower() in public_agents]
+            if not agents:
+                continue
+            disallows = {v for k, v in group["rules"] if k == "disallow" and v}
+            for url in urls:
+                hits = sorted(v for v in disallows if robots_path_matches(v, url))
+                if hits:
+                    fails.append(f"{url}: Disallow {', '.join(hits)} (봇: {', '.join(agents)})")
+    R.add("(e3) sitemap URL robots 접근성", fails, total=len(urls))
 
     # (e) title 유일, description
     fails, warns = [], []

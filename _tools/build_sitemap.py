@@ -89,7 +89,7 @@ def robots_disallows(m):
             out.append(f"Disallow: /{rel}")
             # 워커는 확장자 없는 별칭(/reader 등)도 같은 셸로 해석한다 — 별칭도 함께 막는다 (Codex aigate REQ12)
             if rel.endswith(".html"):
-                out.append(f"Disallow: /{rel[:-5]}")
+                out.append(f"Disallow: /{rel[:-5]}$")
     out.append("Disallow: /_tools/")
     return out
 
