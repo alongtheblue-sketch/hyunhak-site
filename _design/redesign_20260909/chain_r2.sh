@@ -1,6 +1,6 @@
 #!/bin/sh
 # R2 회수 게이트 사슬: build 2회 → 검증기 → 로컬 8791 서버 → after 캡처·계측 → verify_r2.mjs → style_gate → 서버 종료. 파이프 금지, 종료 코드 직접.
-W="$HOME/Workspace/_wt/hh-r2"; D="$W/_design/redesign_20260909"; cd "$W" || exit 9
+W="${W:-$HOME/Workspace/_wt/hh-r2}"; D="$W/_design/redesign_20260909"; cd "$W" || exit 9
 echo "===== build x2"; sh _tools/build_all.sh > "$D/gate_build1.log" 2>&1; r1=$?; h1=$(tail -1 "$D/gate_build1.log")
 sh _tools/build_all.sh > "$D/gate_build2.log" 2>&1; r2=$?; h2=$(tail -1 "$D/gate_build2.log")
 echo "build rc=$r1/$r2 hash=$h1/$h2 same=$([ "$h1" = "$h2" ] && echo yes || echo NO)"

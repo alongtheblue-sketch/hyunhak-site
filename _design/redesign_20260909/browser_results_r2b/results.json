@@ -1,0 +1,3158 @@
+{
+  "base": "http://127.0.0.1:8791/",
+  "findings": [
+    {
+      "result": "PASS",
+      "label": "404.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "404.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "404.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ajou.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ajou.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ajou.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/catholic.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/catholic.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/catholic.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/cau.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/cau.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/cau.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dankook.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dankook.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dankook.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongguk.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongguk.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongguk.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/duksung.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/duksung.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/duksung.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ewha.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ewha.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ewha.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/gachon.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/gachon.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/gachon.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hanyang-erica.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hanyang-erica.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hanyang-erica.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hufs.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hufs.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hufs.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/inha.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/inha.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/inha.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/khu.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/khu.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/khu.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/konkuk.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/konkuk.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/konkuk.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kwangwoon.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kwangwoon.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/kwangwoon.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kyonggi.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kyonggi.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kyonggi.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/myongji.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/myongji.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/myongji.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/pusan.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/pusan.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/pusan.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sahmyook.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sahmyook.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sahmyook.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/seoultech.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/seoultech.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/seoultech.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sookmyung.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sookmyung.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sookmyung.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sungshin.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sungshin.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/sungshin.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/swu.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/swu.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/swu.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/uos.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/uos.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/uos.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 390 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다.",
+        "expected": "대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다."
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 both card headings in first viewport",
+      "detail": [
+        {
+          "top": 258.15625,
+          "width": 350,
+          "height": 328.953125,
+          "headingTop": 305.90625
+        },
+        {
+          "top": 603.109375,
+          "width": 350,
+          "height": 328.953125,
+          "headingTop": 650.859375
+        }
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 two price rows per card in approved order",
+      "detail": [
+        [
+          "33000",
+          "511500"
+        ],
+        [
+          "495000",
+          "33000"
+        ]
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 find link belongs to guidebooks only",
+      "detail": {
+        "count": 1,
+        "hrefs": [
+          "guidebook/index.html"
+        ],
+        "gap": 16
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 find links gap at least 12px (temporary pair)",
+      "detail": {
+        "configured": 16,
+        "measured": 16
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 price band below fold",
+      "detail": 4403.171875
+    },
+    {
+      "result": "PASS",
+      "label": "home price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "home 390 promo single line",
+      "detail": {
+        "height": 18,
+        "line": 18
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 390 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 390 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "index.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 search label Pretendard",
+      "detail": "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "2027 대학별 서류기반 면접 가이드북",
+        "expected": "2027 대학별 서류기반 면접 가이드북"
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 primary fully in first viewport",
+      "detail": {
+        "x": 37,
+        "y": 513.921875,
+        "width": 96,
+        "height": 48
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html primary enabled",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html single primary",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 390 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/guidebook.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 374,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/korea.html 390 search label Pretendard",
+      "detail": "label.ph missing"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 search label Pretendard",
+      "detail": "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다",
+        "expected": "연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다"
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 primary fully in first viewport",
+      "detail": {
+        "x": 37,
+        "y": 707.09375,
+        "width": 96,
+        "height": 48
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html primary enabled",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html single primary",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 390 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/studio.html 390 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 374,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/yonsei.html 390 search label Pretendard",
+      "detail": "label.ph missing"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 390 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 390 overflow",
+      "detail": {
+        "document": 390,
+        "body": 390,
+        "viewport": 390
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 390 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "404.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "404.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "404.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "about.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "b2b.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "cart.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "checkout.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "classroom.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "faq.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ajou.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ajou.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/ajou.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/catholic.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/catholic.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/catholic.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/cau.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/cau.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/cau.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dankook.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dankook.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/dankook.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/donga.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongduk.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongguk.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/dongguk.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/dongguk.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/duksung.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/duksung.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/duksung.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ewha.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ewha.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/ewha.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/gachon.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/gachon.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/gachon.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hanyang-erica.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hanyang-erica.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/hanyang-erica.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hufs.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/hufs.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/hufs.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/incheon.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/index.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/inha.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/inha.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/inha.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/khu.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/khu.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/khu.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/konkuk.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/konkuk.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/konkuk.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kookmin.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kwangwoon.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kwangwoon.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/kwangwoon.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kyonggi.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/kyonggi.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/kyonggi.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/myongji.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/myongji.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/myongji.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/pusan.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/pusan.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/pusan.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sahmyook.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sahmyook.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/sahmyook.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sejong.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/seoultech.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/seoultech.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/seoultech.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/snu.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sookmyung.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sookmyung.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/sookmyung.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/soongsil.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sungshin.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sungshin.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/sungshin.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/swu.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/swu.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/swu.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/ulsan.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/uos.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "guidebook/uos.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "guidebook/uos.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 1280 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다.",
+        "expected": "대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다."
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 both card headings in first viewport",
+      "detail": [
+        {
+          "top": 282.734375,
+          "width": 496.8125,
+          "height": 404.25,
+          "headingTop": 338.484375
+        },
+        {
+          "top": 282.734375,
+          "width": 496.8125,
+          "height": 404.25,
+          "headingTop": 338.484375
+        }
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home equal card dimensions",
+      "detail": [
+        {
+          "top": 282.734375,
+          "width": 496.8125,
+          "height": 404.25,
+          "headingTop": 338.484375
+        },
+        {
+          "top": 282.734375,
+          "width": 496.8125,
+          "height": 404.25,
+          "headingTop": 338.484375
+        }
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 two price rows per card in approved order",
+      "detail": [
+        [
+          "33000",
+          "511500"
+        ],
+        [
+          "495000",
+          "33000"
+        ]
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home desktop both card CTAs in first viewport",
+      "detail": [
+        {
+          "top": 613.984375,
+          "bottom": 661.984375
+        },
+        {
+          "top": 613.984375,
+          "bottom": 661.984375
+        }
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 find link belongs to guidebooks only",
+      "detail": {
+        "count": 1,
+        "hrefs": [
+          "guidebook/index.html"
+        ],
+        "gap": 16
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 find links gap at least 12px (temporary pair)",
+      "detail": {
+        "configured": 16,
+        "measured": 16
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 price band below fold",
+      "detail": 2535.078125
+    },
+    {
+      "result": "PASS",
+      "label": "home price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "home 1280 promo single line",
+      "detail": {
+        "height": 18,
+        "line": 18
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 1280 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "index.html 1280 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "index.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "insta.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "interview.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "join.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lecture.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "lectures.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=korea-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?kind=common' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/common.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-hum.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/korea-sci.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-hum.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-intl.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "lectures/yonsei-sci.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "library.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "login.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "my.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "notice.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "pastexam.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "pay_done.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "privacy.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 search label Pretendard",
+      "detail": "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "2027 대학별 서류기반 면접 가이드북",
+        "expected": "2027 대학별 서류기반 면접 가이드북"
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 primary fully in first viewport",
+      "detail": {
+        "x": 281,
+        "y": 582.25,
+        "width": 96,
+        "height": 48
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html primary enabled",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html single primary",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html 1280 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/guidebook.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1264,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/korea.html 1280 search label Pretendard",
+      "detail": "label.ph missing"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/korea.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 search label Pretendard",
+      "detail": "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 H1 matches selected ledger copy",
+      "detail": {
+        "actual": "연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다",
+        "expected": "연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다"
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/studio.html 1280 primary fully in first viewport",
+      "detail": {
+        "x": 281,
+        "y": 771.8125,
+        "width": 96,
+        "height": 48
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html primary enabled",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html price contracts",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html single primary",
+      "detail": ""
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 .gnb destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html 1280 .fix destinations",
+      "detail": [
+        "/programs/guidebook.html",
+        "/programs/studio.html"
+      ]
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/studio.html 1280 console errors",
+      "detail": [
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED",
+        "console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.",
+        "console: Failed to load resource: net::ERR_FAILED"
+      ]
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1264,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/yonsei.html 1280 search label Pretendard",
+      "detail": "label.ph missing"
+    },
+    {
+      "result": "PASS",
+      "label": "programs/yonsei.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "reader.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "support.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 1280 HTTP",
+      "detail": 200
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 1280 overflow",
+      "detail": {
+        "document": 1280,
+        "body": 1280,
+        "viewport": 1280
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "terms.html 1280 console errors",
+      "detail": []
+    },
+    {
+      "result": "PASS",
+      "label": "index.html config blocked: no visible campaign, list prices unchanged",
+      "detail": {
+        "promoCount": 2,
+        "visible": 0,
+        "discounted": 0,
+        "unknown": true,
+        "configAttempts": 2
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "studio.html config blocked: no visible campaign, list prices unchanged",
+      "detail": {
+        "promoCount": 1,
+        "visible": 0,
+        "discounted": 0,
+        "unknown": true,
+        "configAttempts": 2
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/guidebook.html config blocked: no visible campaign, list prices unchanged",
+      "detail": {
+        "promoCount": 1,
+        "visible": 0,
+        "discounted": 0,
+        "unknown": true,
+        "configAttempts": 2
+      }
+    },
+    {
+      "result": "PASS",
+      "label": "programs/studio.html config blocked: no visible campaign, list prices unchanged",
+      "detail": {
+        "promoCount": 1,
+        "visible": 0,
+        "discounted": 0,
+        "unknown": true,
+        "configAttempts": 2
+      }
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/korea.html config blocked execution",
+      "detail": "HH.promoReady missing: this page does not load the shared app runtime"
+    },
+    {
+      "result": "FAIL",
+      "label": "programs/yonsei.html config blocked execution",
+      "detail": "HH.promoReady missing: this page does not load the shared app runtime"
+    }
+  ]
+}

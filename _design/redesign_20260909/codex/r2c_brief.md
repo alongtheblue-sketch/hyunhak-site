@@ -15,3 +15,7 @@
 ## 검증·보고
 - build_all 2회 해시 동일, 검증기 전건 PASS, style_gate 변경 html A/B, 금액 자기검사.
 - 마지막 줄 `IMPL_DONE files=<n> build_hash=<16hex> gates=<…> BLOCKED=<…>`.
+
+## 3. programs/studio.html 1280×800 첫 뷰포트에서 「담기」 버튼 하단이 800px 을 넘음 (본 세션 verify_r2 실측: y 771.8 + 48 = 819.8)
+- 수리: programs 상세 2면의 데스크톱 H1 크기(현 --t-h1 2줄) 또는 hero·구매 블록 상단 여백을 줄여 1280×800 에서 `#buy` primary 버튼 하단 ≤ 800px, 390×844 에서도 기존 조건 유지. 리터럴 px 금지, 토큰 사다리 안에서.
+- 검증: verify_r2 의 「primary fully in first viewport」 검사 PASS(BLOCKED 규약, 본 세션 실행). 아울러 verify_r2 에서 programs/korea·yonsei 는 공용 셸(label.ph·app.js)이 없는 면이므로 B1·promo 검사 대상에서 제외(skip 표기, FAIL 아님).
