@@ -1223,6 +1223,10 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) input{border-color:var(--edge)}
 :where(body.v2) .gb .acts .btn{box-shadow:var(--shadow-ui)}
 :where(body.v2) [data-list-price][data-list-price]{color:var(--ink)}
+/* 먹 바탕(.final·.promo.ink·.pband.ink·.invert) 안에서는 잉크-온-잉크가 되어 비가시(critic 09-09 P0: guidebook/index 전권 511,500·1,705,000 이 1.01:1). 종이색으로 뒤집고 할인가는 玄墨 위 전용 金泥 */
+:where(body.v2) :is(.final,.promo.ink,.pband.ink,.invert) [data-list-price][data-list-price]{color:var(--paper)}
+:where(body.v2) :is(.final,.promo.ink,.pband.ink,.invert) [data-list-price] .sale{color:var(--gold)}
+:where(body.v2) :is(.final,.promo.ink,.pband.ink,.invert) [data-list-price] .u,:where(body.v2) :is(.final,.promo.ink,.pband.ink,.invert) s.was{color:rgba(var(--paper-rgb),.6)}
 :where(body.v2) [data-list-price] .sale{color:var(--seal)}
 :where(body.v2) [data-list-price] .u{color:var(--gray)}
 :where(body.v2) s.was{font-size:var(--t-sm)}
