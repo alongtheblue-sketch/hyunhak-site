@@ -31,18 +31,15 @@ def ledger():
 
 # (파일, 정규식, 채울 키, 기대 매치 수). 정규식의 그룹 1 이 교체 대상 숫자다.
 ANCHORS = [
+    # 2026-09-08 브랜드 필름 v2 교체: v1 자막 대본(#hero-film-tx, #film-tx)의 '수록 질문 N.' '31권, N면' 앵커 4건 제거 (v2 텍스트 층은 수치를 싣지 않는다. 대본 문단은 build_brand_captions_v2.py 가 자막에서 파생)
     ("index.html", r"질문 ([\d,]+)개", "q", 2),
     ("index.html", r"질문 <b>([\d,]+)개</b>", "q", 2),
-    ("index.html", r"수록 질문 ([\d,]+)\.", "q", 1),
-    ("index.html", r"31권, ([\d,]+)면", "p", 1),
     ("index.html", r"본문 ([\d,]+)면", "p", 1),
     ("about.html", r"질문 ([\d,]+)개", "q", 2),
-    ("about.html", r"수록 질문 ([\d,]+)\.", "q", 1),
     ("about.html", r"<b>([\d,]+)</b><span>수록 질문</span>", "q", 1),
     ("about.html", r"가이드북, ([\d,]+)면", "p", 1),
     ("about.html", r"31권 ([\d,]+)면", "p", 1),
     ("about.html", r"31개 대학, ([\d,]+)면", "p", 1),
-    ("about.html", r"31권, ([\d,]+)면", "p", 1),
 ]
 
 
