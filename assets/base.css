@@ -4,7 +4,7 @@
    본문 16px, 숫자와 라벨과 가격 JetBrains Mono, 세리프는 워드마크와 인용에만).
    구성  [1] 토큰과 리셋: 전역 (색, 간격, 거터, 컨테이너, 괘선, 곡률, 그림자, 타입 사다리)
          [2] v3 시스템: :where(body.v2) 스코프. 페이지는 <body class="v2"> 로 선언한다 (클래스 이름은 v2 그대로)
-         [2b] 하위 페이지 컴포넌트, [2c] 제작자 프로필, [2d] v3 판본 컴포넌트 (卷 색인 레일, 지면, 2상품, 단위 카드, 세트 표, 강의 목록)
+         [2b] 하위 페이지 컴포넌트, [2c] 제작자 프로필, [2d] v3 판본 컴포넌트 (지면, 2상품, 단위 카드, 세트 표, 강의 목록)
    규범  좌우 여백 = --gut 과 .wrap 만. 히트박스는 음수 마진 없이 --tap 으로 상자를 키운다 (감사 D3, D5).
          타입 = 토큰 사다리만 (--t-xs sm base md h4 h3 h2 h1 display, 계기값 --t-mono). 리터럴 px 금지 (감사 D6, D7).
          곡률 = --r-md lg pill, 그림자 = --shadow-1(없음) --shadow-2. 위계는 괘선 --rule, --rule-strong 으로 (감사 D8, D9).
@@ -45,7 +45,6 @@
   --line:1px;
   --s-sec:var(--s8);
   --hd-h-sm:65px;        /* 900px 미만 헤더 실측 높이 (row 64 + 괘선 1) */
-  --rail-w:236px;
   /* 타입 사다리: 유동 display 한 값에서 1.22배씩 파생, 표시 크기의 비율도 일정하다. */
   --t-xs:12px;--t-cap:13px;--t-sm:13px;--t-base:16px;
   --t-display:clamp(43.24px,5.6vw,62px);
@@ -56,7 +55,6 @@
   --t-md:var(--t-h4);
   --t-lg:var(--t-h3);
   --t-mono:13px;         /* 계기값 전용 고정 크기 */
-  --t-folio:var(--t-mono);
   --w-head:800;
   --ease:cubic-bezier(.22,.68,0,1);
   --measure:36em;        /* 한글 본문 한 줄 상한 */
@@ -465,7 +463,6 @@ body.v2{background:var(--ink)}
   :where(body.v2) .util{display:none}
   :where(body.v2) .strip{display:none}
   :where(body.v2) .page.hero{padding-top:var(--s5)}
-  :where(body.v2) .page.hero .folio{margin-bottom:var(--s4)}
   :where(body.v2) .hd .row{grid-template-columns:auto 1fr;height:64px}   /* gnb 가 숨으면 2열. 빈 3열과 gap 이 메뉴 버튼을 거터에서 40px 떼어 놓았다 (390 실측) */
   :where(body.v2) .gnb,:where(body.v2) .hd .search{display:none}
   :where(body.v2) .menu{display:inline-flex;align-items:center;justify-content:center}
@@ -570,7 +567,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .ckfoot{margin:14px 0 0;font-size:var(--t-sm);line-height:1.6;color:var(--gray)}
 :where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:var(--r-md);background:rgba(49,46,46,.06);border-left:3px solid var(--ink);font-size:var(--t-sm);line-height:var(--lh-body)}
 :where(body.v2) .oauthmsg.info{background:var(--mat);border-left-color:var(--ink)}
-/* 진행 레일 (가입 단계). 이름은 .rail 이지만 [2d] 卷 색인 레일(nav.rail)과 별개다. 진행 레일은 span 자식이라 겹치지 않는다 */
+/* 진행 레일 (가입 단계). 이름은 .rail 이지만 기존 차례 레일과 별개다. 진행 레일은 span 자식이라 겹치지 않는다 */
 :where(body.v2) div.rail{display:flex;gap:4px;border-bottom:var(--rule-strong);margin-bottom:var(--s5);overflow-x:auto;counter-reset:rail}
 :where(body.v2) div.rail span{font-size:var(--t-sm);font-weight:600;color:var(--gray);padding:12px 14px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;display:flex;align-items:center;gap:8px}
 :where(body.v2) div.rail span::before{content:counter(rail);counter-increment:rail;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.06em;width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--hairs);display:inline-grid;place-items:center}
@@ -740,31 +737,11 @@ body.v2{background:var(--ink)}
 :where(body.v2) .cards.n2{grid-template-columns:repeat(2,1fr)}
 
 /* ═══ [2d] v3 판본 컴포넌트 (2026-09-02). preview_B.html 의 화면 1~4 를 라이브 셸 안으로 옮긴 것 ═══ */
-/* 卷 색인 레일 + 지면. .wrap 안에 두어 좌우 잉크가 헤더와 같은 거터선에 선다. 1000px 미만은 레일 없음 (critic 수리 1) */
+/* 지면은 .wrap의 공통 거터를 사용한다. */
 :where(body.v2) .book{display:grid;grid-template-columns:1fr;align-items:start}
-:where(body.v2) nav.rail{display:none}
-@media (min-width:1000px){
-  :where(body.v2) .book{grid-template-columns:var(--rail-w) minmax(0,1fr)}
-  :where(body.v2) nav.rail{display:flex;flex-direction:column;gap:var(--s5);position:sticky;top:var(--hd-h);align-self:start;
-    height:calc(100dvh - var(--hd-h));overflow:auto;padding:var(--s7) var(--s4) var(--s5) 0;border-right:var(--rule-strong)}
-}
-:where(body.v2) nav.rail .idx{display:flex;flex-direction:column}
-:where(body.v2) nav.rail .idx a{display:grid;grid-template-columns:2.6em 1fr;gap:var(--s2);align-items:baseline;min-height:var(--tap);padding:12px var(--s2);
-  font-size:var(--t-sm);color:var(--body);border-top:var(--rule);transition:background var(--dur-1) var(--ease)}
-:where(body.v2) nav.rail .idx a:first-child{border-top:0}
-:where(body.v2) nav.rail .idx a:hover{background:var(--paper-2)}
-:where(body.v2) nav.rail .idx a.on{color:var(--ink);font-weight:700;background:var(--paper-2)}
-:where(body.v2) nav.rail .idx a.on .k{color:var(--ink)}
-:where(body.v2) nav.rail .idx .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--gray);letter-spacing:var(--tr-label)}
-:where(body.v2) nav.rail .foot{margin-top:auto;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);line-height:1.7;padding:0 var(--s2)}
 :where(body.v2) .pages{min-width:0}
 :where(body.v2) .page{padding:var(--s-sec) 0;border-bottom:var(--rule-strong)}
 :where(body.v2) .page:last-child{border-bottom:0}
-@media (min-width:1000px){:where(body.v2) .page{padding:var(--s-sec) 0 var(--s-sec) var(--s6)}}
-:where(body.v2) .folio{display:flex;align-items:baseline;gap:var(--s3);font-family:var(--mono);font-size:var(--t-folio);font-weight:500;
-  letter-spacing:var(--tr-label);color:var(--gray);padding-bottom:var(--s2);border-bottom:var(--rule);margin-bottom:var(--s5);max-width:none}
-:where(body.v2) .folio b{font-weight:500;color:var(--ink)}
-:where(body.v2) .folio .r{margin-left:auto;font-variant-numeric:tabular-nums}
 :where(body.v2) .page h1{font-size:var(--t-display);margin-bottom:var(--s4)}
 :where(body.v2) .page h2.t{font-size:var(--t-h2)}
 :where(body.v2) .page .note{margin-top:var(--s2)}
@@ -1010,7 +987,7 @@ body.v2{background:var(--ink)}
    ★칸  표 칸 스타일은 클래스가 아니라 td[data-c=…] 에 건다. 계약이 바뀌면 CSS 가 같이 죽어서 조용히 낡지 않는다.
    원천  GET /api/studio/ranking 하나. 실응시 원장만 그린다. 가공 인원 0.
          난이도와 제목은 API 가 주지 않는다. set_id 로 assets/data/sets.json 에서 클라이언트가 붙인다.
-   층    순위표와 위젯은 영구 층이다. 그래서 본판 문법(卷 folio, 괘선, .facts, .tabs, .chips, .lv)을 그대로 쓰고
+   층    순위표와 위젯은 영구 층이다. 그래서 본판 문법(괘선, .facts, .tabs, .chips, .lv)을 그대로 쓰고
          임시 층 표지(광곽, 玄墨 판, 판심 밴드)는 안별 강조로만 제한해 쓴다.
    빈값  scored < 10 → [data-rank-dist] 를 hidden 으로 두고 [data-rank-note] 에 「집계 중」
          takers 0 → 표와 분포를 다 감추고 [data-rank-note] 에 「아직 응시 기록이 없습니다」.
@@ -1241,5 +1218,109 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .btn.ghost[data-list-price]:hover{background:var(--card);color:var(--ink)}
 :where(body.v2) .promo.ink [data-list-price],:where(body.v2) .pband.ink [data-list-price]{color:var(--paper)}
 :where(body.v2) .promo.ink .sale,:where(body.v2) .pband.ink .sale{color:var(--paper)}
-/* D23 인강실(classroom) 朱印 테두리 박스를 본판 괘선 문법으로 (W3 BASE_CSS_REQUEST 2026-09-08). 배지 .folio 는 생성기 잔여 */
+/* D23 인강실(classroom) 朱印 테두리 박스를 본판 괘선 문법으로 (W3 BASE_CSS_REQUEST 2026-09-08). 배지는 기존 생성기 기준 */
 .lec2.lecr .ot,.lec2.lecr .cr{border:var(--rule);border-radius:var(--r-md);box-shadow:var(--shadow-1)}
+
+/* R2: 같은 구성의 두 상품 카드와 상단 구매 표. 기존 색, 타입, 간격 토큰만 사용한다.
+   대비는 상단 B안 토큰과 동일: ink/card 13.23, body/card 9.18, seal/card 7.32,
+   gray/paper 5.04, edge/card 3.33. 핵심 선택과 CTA에는 리빌 지연을 두지 않는다. */
+:where(body.v2) .r2-promo{border-bottom:var(--rule-ui);background:var(--mat)}
+:where(body.v2) .r2-promo p{max-width:none;padding-block:var(--s2);font-size:var(--t-xs);line-height:var(--lh-ui);text-align:center}
+:where(body.v2) .r2-hero,:where(body.v2) .r2-intro{padding-block:var(--s4) var(--s3)}
+:where(body.v2) .r2-hero>h1{font-size:var(--t-h4);margin-bottom:var(--s1)}
+:where(body.v2) .r2-hero>p{max-width:none;font-size:var(--t-sm);color:var(--body)}
+:where(body.v2) .r2-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-top:var(--s4)}
+:where(body.v2) .r2-card{display:flex;flex-direction:column;background:var(--card);border:var(--rule-ui);border-radius:var(--r-md);padding:var(--s4)}
+:where(body.v2) .r2-card .r2-audience{font-size:var(--t-sm);font-weight:600;color:var(--body);margin-bottom:var(--s2)}
+:where(body.v2) .r2-card h2{font-size:var(--t-h3);margin-bottom:var(--s3)}
+:where(body.v2) .r2-card-copy{font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);margin-bottom:var(--s3)}
+:where(body.v2) .r2-card-copy p{max-width:none}
+:where(body.v2) .r2-card-copy p+p{margin-top:var(--s1)}
+:where(body.v2) .r2-card-price{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);border-top:var(--rule-ui);padding-block:var(--s2);margin-top:auto;font-size:var(--t-sm)}
+:where(body.v2) .r2-card-price b{font-family:var(--mono);font-size:var(--t-h4);text-align:right}
+:where(body.v2) .r2-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s2) var(--s4)}
+:where(body.v2) .r2-actions .btn{min-width:calc(var(--tap) * 2)}
+:where(body.v2) .r2-section{padding-block:var(--s5);border-top:var(--rule-ui)}
+:where(body.v2) .r2-section>h2{font-size:var(--t-h2);margin-bottom:var(--s3)}
+:where(body.v2) .r2-section>p+p{margin-top:var(--s2)}
+:where(body.v2) .r2-section p{color:var(--body)}
+:where(body.v2) .r2-section>.tlink{margin-top:var(--s3)}
+:where(body.v2) .r2-trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4)}
+:where(body.v2) .r2-trust dt{font-size:var(--t-sm);font-weight:700}
+:where(body.v2) .r2-trust dt a{display:flex;align-items:center;min-height:var(--tap);text-decoration:underline;text-underline-offset:var(--s1)}
+:where(body.v2) .r2-trust dd{font-size:var(--t-sm);color:var(--body);margin-top:var(--s1)}
+:where(body.v2) .r2-home-content .find .top{margin-top:var(--s3)}
+:where(body.v2) .r2-home-content .find .tabs{flex-wrap:wrap}
+:where(body.v2) .r2-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);margin-block:var(--s4)}
+:where(body.v2) .r2-steps li{border-top:var(--rule-ui);padding-top:var(--s3)}
+:where(body.v2) .r2-steps h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
+:where(body.v2) .r2-steps p{font-size:var(--t-sm)}
+:where(body.v2) .r2-maker{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5);align-items:start}
+:where(body.v2) .r2-maker p+p{margin-top:var(--s2)}
+:where(body.v2) .r2-maker .herofilm{position:relative;margin:0;background:var(--ink);border-radius:var(--r-md);overflow:hidden}
+:where(body.v2) .r2-maker .herofilm video{width:100%;aspect-ratio:16/9;object-fit:cover}
+:where(body.v2) .r2-maker :is(.vpause,.vcc){position:absolute;bottom:var(--s2);min-height:var(--tap);padding-inline:var(--s3);border:var(--rule-ui);border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font-size:var(--t-xs)}
+:where(body.v2) .r2-maker .vpause{right:var(--s2)}
+:where(body.v2) .r2-maker .vcc{right:calc(var(--tap) + var(--s5))}
+:where(body.v2) .r2-maker .vcc[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+:where(body.v2) .r2-maker :is(.vpause,.vcc):focus-visible{outline-color:var(--paper)}
+:where(body.v2) .r2-maker .herofilm:not([data-playing-enabled]) :is(.vpause,.vcc){display:none}
+:where(body.v2) .r2-maker .vh{position:absolute;width:var(--line);height:var(--line);overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:where(body.v2) .r2-maker video::cue{background:var(--ink);color:var(--paper);font-size:var(--t-sm)}
+:where(body.v2) .r2-faq dt{font-size:var(--t-base);font-weight:700;margin-top:var(--s4)}
+:where(body.v2) .r2-faq dd{font-size:var(--t-base);color:var(--body);margin-top:var(--s2);max-width:var(--measure)}
+:where(body.v2) .r2-links{display:flex;flex-wrap:wrap;gap:0 var(--s4);margin-top:var(--s2)}
+:where(body.v2) .r2-detail{padding-bottom:var(--s5)}
+:where(body.v2) .r2-intro h1{font-size:var(--t-h1);margin-bottom:var(--s2)}
+:where(body.v2) .r2-intro p{font-size:var(--t-sm);max-width:none;color:var(--body)}
+:where(body.v2) .r2-buy{border:var(--rule-ui);background:var(--card);border-radius:var(--r-md);padding:var(--s4);margin-bottom:var(--s5);scroll-margin-top:calc(var(--hd-h) + var(--s3))}
+:where(body.v2) .r2-buy h2{font-size:var(--t-h4);margin-bottom:var(--s2)}
+:where(body.v2) .r2-select{display:grid;gap:var(--s1);font-size:var(--t-sm);font-weight:600;margin-bottom:var(--s2)}
+:where(body.v2) .r2-select select{width:100%;min-height:var(--tap);border:var(--rule-ui);border-radius:var(--r-md);background:var(--card);color:var(--ink);font:inherit;font-size:var(--t-base);padding-inline:var(--s2)}
+:where(body.v2) .r2-buy fieldset{border:0;min-width:0;margin-bottom:var(--s3)}
+:where(body.v2) .r2-buy legend{font-size:var(--t-sm);margin-bottom:var(--s1)}
+:where(body.v2) .r2-plan-summary{font-size:var(--t-sm);color:var(--body);margin-bottom:var(--s3);line-height:var(--lh-ui)}
+:where(body.v2) .r2-plan-summary p{max-width:none}
+:where(body.v2) .r2-plan-summary [hidden]{display:none}
+:where(body.v2) .r2-price-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s2);align-items:center;min-height:var(--tap);border-top:var(--rule-ui);padding-block:var(--s2);font-size:var(--t-sm);cursor:pointer}
+:where(body.v2) .r2-price-row>span{display:flex;gap:var(--s2);align-items:center}
+:where(body.v2) .r2-price-row input{accent-color:var(--ink);flex:none}
+:where(body.v2) .r2-price-row b{font-family:var(--mono);font-size:var(--t-base);font-weight:500;text-align:right}
+:where(body.v2) .r2-buy-notes{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+:where(body.v2) .r2-buy-notes p{max-width:none}
+:where(body.v2) .r2-buy .tlink{font-size:var(--t-sm)}
+:where(body.v2) .r2-buy .r2-status{font-size:var(--t-sm);margin-top:var(--s1)}
+:where(body.v2) .r2-buy [data-cart-link][hidden]{display:none}
+:where(body.v2) .r2-buy :disabled{cursor:not-allowed;color:var(--gray)}
+:where(body.v2) .r2-buy .btn:disabled{color:var(--paper)}
+:where(body.v2) .r2-parts{display:grid;gap:var(--s2)}
+:where(body.v2) .r2-parts li{padding-block:var(--s2);border-bottom:var(--rule);font-size:var(--t-base)}
+:where(body.v2) .r2-section .openers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s5)}
+:where(body.v2) .r2-section .openers img{width:100%;height:auto;border:var(--rule-ui)}
+:where(body.v2) .r2-section .openers span{font-size:var(--t-sm)}
+:where(body.v2) .r2-samples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s5);align-items:start}
+:where(body.v2) .r2-samples .pg{position:relative;margin:0;border:var(--rule-ui)}
+:where(body.v2) .r2-samples img{width:100%;height:auto}
+:where(body.v2) .r2-samples .mk{position:absolute;display:grid;place-items:center;width:var(--s4);height:var(--s4);border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font-size:var(--t-xs);font-family:var(--mono);transform:translate(-50%,-50%)}
+:where(body.v2) .r2-samples figcaption,:where(body.v2) .r2-samples .cap,:where(body.v2) .r2-samples .note{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+:where(body.v2) .r2-samples .lg{margin-top:var(--s3);font-size:var(--t-sm)}
+:where(body.v2) .r2-samples .lg li{display:flex;gap:var(--s2);margin-top:var(--s2)}
+:where(body.v2) .r2-samples .n{font-family:var(--mono);flex:none}
+:where(body.v2) .r2-samples .pgs{grid-column:1/-1}
+:where(body.v2) .r2-samples .pgcols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-top:var(--s3)}
+@media (min-width:56.25em){
+  :where(body.v2) .r2-intro,:where(body.v2) .r2-detail>.r2-buy{max-width:48rem;margin-inline:auto}
+}
+@media (max-width:56.249em){
+  :where(body.v2) .r2-products{grid-template-columns:minmax(0,1fr);gap:var(--s3);margin-top:var(--s3)}
+  :where(body.v2) .r2-card{padding:var(--s3)}
+  :where(body.v2) .r2-card h2{font-size:var(--t-h3);margin-bottom:var(--s2)}
+  :where(body.v2) .r2-card-copy{margin-bottom:var(--s2)}
+  :where(body.v2) .r2-hero{padding-top:var(--s3)}
+  :where(body.v2) .r2-trust,:where(body.v2) .r2-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+  :where(body.v2) .r2-maker,:where(body.v2) .r2-samples,:where(body.v2) .r2-samples .pgcols{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .r2-intro h1{font-size:var(--t-h3)}
+  :where(body.v2) .r2-buy{padding:var(--s3)}
+  :where(body.v2) .r2-section .openers{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+  :where(body.v2) .r2-price-row b s.was{display:block}
+}

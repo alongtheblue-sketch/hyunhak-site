@@ -31,6 +31,9 @@ def popup_block(rel, p):
         tpl = f.read()
     tpl = re.sub(r"^\s*<!--.*?-->\s*", "", tpl, count=1, flags=re.S).strip()   # 머리 주석은 지면에 싣지 않는다
     pre = V.prefix_of(rel)
+    # 행사 문안은 그대로 두고 구매 링크만 R2 상세면의 구매 블록으로 연결한다.
+    tpl = tpl.replace('{p}studio.html#plans', '{p}programs/studio.html#buy')
+    tpl = tpl.replace('{p}guidebook/index.html', '{p}programs/guidebook.html#buy')
     img = pop.get("img") or ""
     mod = pop.get("variant") or "pop--gwak"
     if not img:
@@ -66,6 +69,9 @@ def apply_lp(s, rel, p):
     s = STYLE_RE.sub("", s, count=1)
     if not p:
         return s
+    if rel in {"programs/guidebook.html", "programs/studio.html"}:
+        # R2 상세면은 base.css와 공용 셸을 쓴다. 구 LP CSS를 재주입하지 않는다.
+        return s.replace('</header>', '</header>' + V.promo_strip(rel, p, price_note=False), 1)
     aside = V.promo_strip(rel, p, price_note=False)   # app.js 가 없는 면: 정가 문장을 빼고 문구 + 링크만
     if not aside:
         return s
@@ -90,9 +96,10 @@ def apply_home(s, p):
     band = V.promo_band("index.html", p)
     if not band:
         return s
-    if s.count('<div class="duo">') != 1:
-        raise SystemExit(f'index.html: <div class="duo"> {s.count(chr(60)+"div class=" + chr(34) + "duo" + chr(34) + ">")}개, 1개 기대')
-    return s.replace('<div class="duo">', band + '\n<div class="duo">', 1)
+    anchor = '<!--r2:promo-band-->'
+    if s.count(anchor) != 1:
+        raise SystemExit('index.html: R2 행사 가격표 자리표시는 1개여야 합니다')
+    return s.replace(anchor, band + '\n' + anchor, 1)
 
 
 def main():

@@ -33,84 +33,11 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="image" href="assets/video/brand_v2_hero_poster_aigen.jpg" fetchpriority="high">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.onload=null;this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
-<link rel="stylesheet" href="assets/base.css"><noscript><style>.rv{opacity:1;transform:none}</style></noscript>
-<style>
-/* 홈 전용 (v3 판본). 여백은 --gut 과 .wrap 만, 크기는 토큰만 */
-:where(body.v2) .page.hero h1{font-size:var(--t-h1);margin:0}
-.pages .steps,.pages .why{grid-template-columns:repeat(2,1fr)}
-.pages .tiles{grid-template-columns:repeat(3,1fr)}
-.find .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end}
-.find .lede{color:var(--gray);font-size:var(--t-sm);margin-top:6px}
-.find label{display:block;font-size:var(--t-sm);font-weight:600;margin-bottom:8px}
-.find .search{max-width:520px;padding-left:20px;padding-right:2px;background:var(--card)}
-.find .help{font-size:var(--t-sm);color:var(--gray);margin-top:8px}
-.find .tabs{margin-top:var(--s4)}
-.find .tiles{margin-top:var(--s4)}
-.find .more{margin-top:var(--s4);display:flex;justify-content:space-between;align-items:center;gap:var(--s3);flex-wrap:wrap;font-size:var(--t-sm);color:var(--gray)}
-.find .legend{display:flex;gap:14px}
-.find .legend .p{color:var(--ink);font-weight:600}
-.find .legend .p::before{content:"";display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:6px;vertical-align:1px}
-.find .empty{grid-column:1/-1;padding:var(--s3) 0;border:0;text-align:left}
-@media (max-width:900px){
-  .find .top{grid-template-columns:1fr;gap:var(--s3)}
-  .pages .tiles{grid-template-columns:repeat(2,1fr)}
-}
-@media (max-width:600px){
-  .pages .steps,.pages .why{grid-template-columns:1fr}
-}
-@media (max-width:420px){
-  .pages .tiles{grid-template-columns:1fr}
-}
-/* B안 홈: 제목과 리드를 왼쪽, 포스터와 폴리오를 오른쪽에 놓는다. */
-:where(body.v2) .book{grid-template-columns:1fr}
-:where(body.v2) .page{padding-left:0}
-:where(body.v2) .page.hero{padding-top:var(--s5);padding-bottom:var(--s5)}
-:where(body.v2) .hero .herotop{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4);align-items:start}
-:where(body.v2) .hero .eyebrow{font-size:var(--t-xs)}
-:where(body.v2) .hero .herohead{grid-row:1}
-:where(body.v2) .hero .herofilm{grid-row:2}
-:where(body.v2) .hero .herosay{grid-row:3}
-:where(body.v2) .hero .hero-folio{grid-row:4;margin:0;align-self:end}
-:where(body.v2) .hero .lede2{font-size:var(--t-base);max-width:var(--measure)}
-:where(body.v2) .hero .heroacts{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s4);margin-top:var(--s4)}
-:where(body.v2) .hero .herofilm{margin:0;position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden}
-:where(body.v2) .hero .herofilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
-:where(body.v2) .hero .vpause,:where(body.v2) .hero .vcc{position:absolute;bottom:var(--s2);min-height:var(--tap);padding:0 var(--s3);border:var(--rule-ui);border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font:500 var(--t-xs)/1 var(--mono);cursor:pointer}
-:where(body.v2) .hero .vpause{right:var(--s2)}
-:where(body.v2) .hero .vcc{right:calc(var(--tap) + var(--s5))}
-:where(body.v2) .hero .vcc[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
-:where(body.v2) .hero .vpause:focus-visible,:where(body.v2) .hero .vcc:focus-visible{outline-color:var(--paper)}
-:where(body.v2) .hero .herofilm video::cue{background:var(--ink);color:var(--paper);font:500 var(--t-sm)/1.45 var(--sans)}
-:where(body.v2) .hero .vh{position:absolute;width:var(--line);height:var(--line);overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-:where(body.v2) .hero .herofilm:not([data-playing-enabled]) :is(.vcc,.vpause){display:none}
-:where(body.v2) .hero .trust-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:var(--s5);border-top:var(--rule-ui);border-bottom:var(--rule-ui)}
-:where(body.v2) .trust-strip>div{padding:var(--s3);border-left:var(--rule-ui)}
-:where(body.v2) .trust-strip>div:first-child{border-left:0;padding-left:0}
-:where(body.v2) .trust-strip dt{font-size:var(--t-cap);font-weight:700;color:var(--ink)}
-:where(body.v2) .trust-strip dd{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
-:where(body.v2) .page.products .duo{margin-top:var(--s5)}
-:where(body.v2) .page.products>.pband{margin-top:0}
-@media (min-width:56.25em){
-  :where(body.v2) .hero .herotop{grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:var(--s3) var(--s5)}
-  :where(body.v2) .hero .herohead{grid-column:1;grid-row:1}
-  :where(body.v2) .hero .herosay{grid-column:1;grid-row:2 / 4}
-  :where(body.v2) .hero .herofilm{grid-column:2;grid-row:1 / 3}
-  :where(body.v2) .hero .hero-folio{grid-column:2;grid-row:3}
-}
-@media (max-width:56.249em){
-  :where(body.v2) .hero .trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
-  :where(body.v2) .trust-strip>div:nth-child(odd){border-left:0;padding-left:0}
-  :where(body.v2) .trust-strip>div:nth-child(n+3){border-top:var(--rule-ui)}
-}
-@supports (grid-template-rows:subgrid){@media (min-width:51.25em){
-  :where(body.v2) .page.products .duo{grid-template-rows:repeat(5,auto)}
-  :where(body.v2) .page.products .duo>.entry{grid-row:span 5}
-}}
-</style>
+<link rel="stylesheet" href="assets/base.css"><noscript><style>.rv{opacity:1;transform:none}</style></noscript><noscript></noscript>
+
 </head>
-<body class="v2">
+<body class="v2 r2-home">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <div class="frame"><div class="sheet">
 
@@ -130,7 +57,7 @@
       :where(body.v2) .hd .tools .aux a{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);font-size:var(--t-xs);white-space:nowrap}
     }
   </style>
-  <span class="han">玄學的 硏究所</span>
+  <span>현학적 연구소</span>
   <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
 </div>
 
@@ -141,7 +68,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
+      <a href="programs/guidebook.html">가이드북</a><a href="programs/studio.html">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -154,50 +81,14 @@
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
+    <a href="programs/guidebook.html">가이드북</a><a href="programs/studio.html">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
-<aside class="promo rule" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내">
-  <div class="in wrap">
-    <p class="msg"><i class="dot" aria-hidden="true"></i><b>30%</b> <span class="lb">할인</span> <b><span class="lg">2026.</span>09.30 23:59</b> <span class="lb lg">마감</span><span class="sm sans">마감입니다.</span><span class="lg sans"> 가이드북은 권당 <span class="p" data-list-price="33000">33,000원</span>입니다.</span></p>
-    <a href="guidebook/index.html"><span class="lg">할인 적용 상품 보기</span><span class="sm">할인가 보기</span><span aria-hidden="true">→</span></a>
-  </div>
-</aside>
+<aside class="promo r2-promo" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내"><div class="wrap"><p>9월 30일까지 전 상품을 정가에서 30% 할인합니다.</p></div></aside>
 
 
-<main id="main">
-<div class="wrap book">
-
-<div class="pages">
-
-<!-- 지면 1. 히어로, 2상품 병립. 문안 = _design/v3_20260902/COPY.md §1 §2 (2026-09-02) -->
-<section class="page hero" id="p1">
-  <div class="herotop">
-    <div class="herohead">
-      <span class="eyebrow">2027 면접</span>
-      <h1>면접은 대학마다 다릅니다.<br>그 대학의 요강과 기출로<br>준비합니다.</h1>
-    </div>
-    <figure class="herofilm">
-      <video muted loop playsinline preload="none" poster="assets/video/brand_v2_hero_poster_aigen.jpg" aria-label="현학적 연구소 브랜드 영상, 24초" aria-describedby="hero-film-tx">
-        <track kind="captions" srclang="ko" label="한국어" src="assets/video/brand_v2_hero_aigen.vtt">
-      </video>
-      <button type="button" class="vcc" aria-pressed="false">자막</button>
-      <button type="button" class="vpause" aria-pressed="false">일시정지</button>
-      <p id="hero-film-tx" class="vh">영상에 나오는 글자. 전사. 진단. 구술체 재구성. 첨삭 3단. 대학마다 한 권. 가이드북 31권. 현학적 연구소. 玄學的 研究所.</p>
-    </figure>
-    <div class="herosay">
-      <div class="lede2">
-        <p>31개 대학 서류기반 면접 가이드북과 연세대, 고려대 제시문 면접 스튜디오입니다.</p>
-        <p>가이드북은 대학 공개 자료와 면접 후기에서 고른 질문 3,865개, 스튜디오는 기출 제시문 150세트입니다.</p>
-      </div>
-      <div class="heroacts" aria-label="두 상품 바로 가기">
-        <a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a>
-        <a class="tlink" href="studio.html#units">응시 단위 고르기</a>
-        <a class="tlink" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 <span class="ar" aria-hidden="true">→</span></a>
-      </div>
-      <!-- 면접 스튜디오 응시 현황 위젯 (2026-09-07). 값은 assets/rank.js, 응시 0 이면 숨긴 채 둔다 -->
-      <aside class="rwid rwid--gwak" id="rankWidget" data-rank-widget hidden aria-label="면접 스튜디오 응시 현황">
+<main id="main" class="wrap r2-home-content"><section class="r2-hero" id="products"><h1><span data-copy="home_h1">대입 면접 준비</span></h1><p><span data-copy="home_lead">서류기반 면접 가이드북과 제시문 면접 스튜디오입니다.</span></p><div class="r2-products"><article class="r2-card" data-product="guidebook"><p class="r2-audience"><span data-copy="guide_audience">학종 서류기반 면접 준비생과 학부모</span></p><h2><span data-copy="guide_name">서류기반 면접 가이드북</span></h2><div class="r2-card-copy"><p><span data-copy="guide_card_1">31개 대학의 면접 질문과 준비 전략입니다.</span></p><p><span data-copy="guide_card_2">생기부에서 질문을 뽑는 전환 규칙을 담았습니다.</span></p><p><span data-copy="guide_count">수록 질문 <b>3,865개</b></span></p></div><div class="r2-card-price"><span><span data-copy="per_book">권당</span></span><b data-list-price="33000"><span data-copy="price_33000">33,000원</span></b></div><div class="r2-actions"><a class="btn" href="programs/guidebook.html#buy"><span data-copy="buy">구매</span></a><a class="tlink" href="programs/guidebook.html"><span data-copy="details">자세히</span></a></div></article><article class="r2-card" data-product="studio"><p class="r2-audience"><span data-copy="studio_audience">연세대와 고려대 제시문 면접 준비생</span></p><h2><span data-copy="studio_name">제시문 면접 스튜디오</span></h2><div class="r2-card-copy"><p><span data-copy="studio_card_1">기출 제시문 150세트로 촬영 응시합니다.</span></p><p><span data-copy="studio_card_2">지문마다 응시 5회와 첨삭 세 단을 제공합니다.</span></p></div><div class="r2-card-price"><span><span data-copy="per_passage">지문 1편</span></span><b data-list-price="33000"><span data-copy="price_33000">33,000원</span></b></div><div class="r2-actions"><a class="btn" href="programs/studio.html#buy"><span data-copy="buy">구매</span></a><a class="tlink" href="programs/studio.html"><span data-copy="details">자세히</span></a></div></article></div></section><section class="r2-section" id="why"><dl class="r2-trust" id="trust"><div><dt><a href="programs/guidebook.html#samples"><span data-copy="source_title">질문 3,865개</span></a></dt><dd><span data-copy="source_text">대학 공개 자료와 면접 후기에서 골랐습니다.</span></dd></div><div><dt><a href="terms.html"><span data-copy="withdraw_title">이용 전 청약철회</span></a></dt><dd><span data-copy="withdraw_text">이용 전 청약철회 조건은 이용약관 제6조에 따릅니다.</span></dd></div><div><dt><a href="programs/guidebook.html"><span data-copy="reader_title">보안 리더 열람</span></a></dt><dd><span data-copy="reader_text">기기 제한 없이 열람하며 권당 3회 인쇄합니다.</span></dd></div><div><dt><a href="about.html"><span data-copy="maker_title">만든 사람</span></a></dt><dd><span data-copy="maker_text">현학자가 두 상품을 같은 기준으로 편집합니다.</span></dd></div></dl></section><section class="r2-section" id="find"><h2><span data-copy="find_title">대학별로 찾기</span></h2><p><span data-copy="find_lead">지원 대학의 가이드북을 찾습니다.</span></p><div class="find"><div class="top"><form role="search" onsubmit="return false"><label for="q2"><span data-copy="find_label">대학 이름</span></label><div class="search"><input id="q2" type="search" autocomplete="off" aria-describedby="q2h"><button type="submit" aria-label="대학 찾기">→</button></div><p class="help" id="q2h"><span data-copy="find_help">대학 이름으로 검색합니다. 가나다 순입니다.</span></p></form></div><div class="tabs" role="tablist" aria-label="대학 필터"><button role="tab" aria-selected="true" data-f="all">전체 <span>31</span></button><button role="tab" aria-selected="false" data-f="sale">가이드북 판매 중 <span>31</span></button></div><div class="tiles" id="tiles" aria-live="polite"></div><div class="more"><a class="tlink" href="guidebook/index.html"><span data-copy="all_books">31개 대학 전체 보기</span></a><a class="tlink" href="programs/studio.html"><span data-copy="studio_link">스튜디오 상세 소개</span></a></div></div></section><section class="r2-section" id="flow"><h2><span data-copy="flow_title">스튜디오 응시 절차</span></h2><p><span data-copy="flow_lead">지문 1편에 5회까지 응시합니다.</span></p><ol class="r2-steps"><li><h3><span data-copy="flow_1_title">지문 선택</span></h3><p><span data-copy="flow_1">응시할 단위와 지문을 선택합니다.</span></p></li><li><h3><span data-copy="flow_2_title">실전형 응시</span></h3><p><span data-copy="flow_2">실제 고사장 규격으로 문항을 나누지 않고 응시합니다.</span></p></li><li><h3><span data-copy="flow_3_title">첨삭 세 단</span></h3><p><span data-copy="flow_3">전사, 오독과 비약 진단, 구술체 재구성을 제공합니다.</span></p></li><li><h3><span data-copy="flow_4_title">연습형 재응시</span></h3><p><span data-copy="flow_4">막힌 자리만 끊어 다시 응시합니다.</span></p></li></ol><a class="tlink" href="programs/studio.html"><span data-copy="studio_link">스튜디오 상세 소개</span></a><aside class="rwid rwid--gwak" id="rankWidget" data-rank-widget hidden aria-label="면접 스튜디오 응시 현황">
         <p class="k">응시 현황</p>
         <div class="list">
           <div data-unit="yonsei-hum"><span class="u">연세대 인문+통합</span><span class="n"><b data-rank-takers>-</b>명</span><span data-rank-top hidden>1위 <b>-</b>점</span></div>
@@ -206,34 +97,14 @@
           <div data-unit="korea-sci"><span class="u">고려대 자연</span><span class="n"><b data-rank-takers>-</b>명</span><span data-rank-top hidden>1위 <b>-</b>점</span></div>
         </div>
         <a class="tlink go" href="studio.html#ranking">스튜디오 순위표 <span class="ar" aria-hidden="true">→</span></a>
-      </aside>
-    </div>
-
-  <p class="folio hero-folio"><b>卷一</b><span>두 상품</span><span class="r">1</span></p>
-  </div>
-  <dl class="trust-strip">
-    <div><dt>질문 3,865개</dt><dd>대학 공개 자료와 후기 출처</dd></div>
-    <div><dt>이용 전 청약철회</dt><dd>공급일부터 7일 이내</dd></div>
-    <div><dt>보안 리더 열람</dt><dd>기기 무제한, 권당 인쇄 3회</dd></div>
-    <div><dt>입시 컨설턴트 13년차</dt><dd>한 사람이 같은 기준으로</dd></div>
-  </dl>
-</section>
-
-<!-- 지면 2. 자료와 질문의 출처 -->
-<section class="page" id="why">
-  <p class="folio"><b>卷二</b><span>자료와 질문의 출처</span><span class="r">2</span></p>
-  <div class="sh"><div><h2 class="t">자료와 질문의 출처</h2><p>추정 문항 없이 출처 있는 질문만. 규정은 약관 그대로.</p></div></div>
-  <div class="why">
-    <div><h3>출처 있는 질문만</h3><p>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 고른 질문 <b>3,865개</b>만 실었습니다. 추정으로 만든 문항은 없습니다.</p></div>
-    <div><h3>보안 리더</h3><p>가이드북은 브라우저 보안 리더로 열람하실 수 있습니다. 원본 다운로드 없이 워터마크 열람으로 제공되며, 인쇄는 권당 3회까지 가능합니다.</p></div>
-    <div><h3>첨삭 3단</h3><p>전사, 진단, 재구성을 회차마다 첨부.</p></div>
-    <div><h3>환불 규정</h3><p>디지털 상품은 가분적이라 아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문을 공급받은 날부터 7일 이내에 청약철회하실 수 있습니다. 실물은 수령 후 7일 이내 반품 가능하며, 반송비는 3,000원입니다.</p></div>
-  </div>
-</section>
-
-<!-- 지면 3. 두 상품 -->
-<section class="page products" id="products">
-  <p class="folio"><b>卷三</b><span>두 상품</span><span class="r">3</span></p>
+      </aside></section><section class="r2-section" id="maker"><h2><span data-copy="maker_title">만든 사람</span></h2><div class="r2-maker"><div><p><span data-copy="maker_bio">현학자는 입시 컨설턴트 13년차이며 고려대학교 영어교육과를 졸업했습니다.</span></p><p><span data-copy="maker_work">가이드북 31권과 스튜디오 150세트를 한 사람이 편집합니다.</span></p><p><span data-copy="guide_totals">가이드북은 31권이며 본문 1,198면입니다.</span></p><p><span data-copy="guide_questions">수록 질문 <b>3,865개</b>는 대학 공개 자료와 면접 후기에서 골랐습니다.</span></p><a class="tlink" href="about.html"><span data-copy="maker_link">학력과 경력 보기</span></a></div><figure class="herofilm">
+      <video muted loop playsinline preload="none" poster="assets/video/brand_v2_hero_poster_aigen.jpg" aria-label="현학적 연구소 브랜드 영상, 24초" aria-describedby="hero-film-tx">
+        <track kind="captions" srclang="ko" label="한국어" src="assets/video/brand_v2_hero_aigen.vtt">
+      </video>
+      <button type="button" class="vcc" aria-pressed="false">자막</button>
+      <button type="button" class="vpause" aria-pressed="false">일시정지</button>
+      <p id="hero-film-tx" class="vh">영상에 나오는 글자. 전사. 진단. 구술체 재구성. 첨삭 3단. 대학마다 한 권. 가이드북 31권. 현학적 연구소. 玄學的 研究所.</p>
+    </figure></div></section>
 <section class="pband rule" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-labelledby="promoT">
   <div class="phd">
     <div>
@@ -254,295 +125,8 @@
     <tfoot><tr><td colspan="2">할인가는 2026년 9월 30일 23시 59분까지 적용합니다.</td></tr></tfoot>
   </table>
 </section>
-<div class="duo">
-    <article class="entry">
-      <h2>서류기반면접 가이드북</h2>
-      <div class="covers"><img src="assets/covers/ewha.jpg" alt="" width="210" height="297"><img src="assets/covers/snu.jpg" alt="서울대학교 2027 서류기반면접 가이드북 표지" width="210" height="297" fetchpriority="high"><img src="assets/covers/khu.jpg" alt="" width="210" height="297"></div>
-      <p>지원 대학 면접 준비를 한 권에</p>
-      <ul class="spec">
-        <li><span><b>31</b>개 대학 31권, 본문 1,198면</span></li>
-        <li><span>수록 질문 <b>3,865개</b>, 문항마다 출처</span></li>
-        <li><span>생기부 기재를 질문으로 바꾸는 전환 규칙</span></li>
-        <li><span>보안 리더 열람, 인쇄 권당 <b>3회</b></span></li>
-      </ul>
-      <div class="foot"><span class="price" data-list-price="33000">33,000원<span class="u">권당, 31개 대학 전권 판매 중</span></span><a class="btn" href="guidebook/index.html">가이드북 고르기</a><a class="tlink" href="programs/guidebook.html">다섯 부 구성 소개 <span class="ar" aria-hidden="true">→</span></a></div>
-    </article>
-    <article class="entry">
-      <h2>제시문 면접 스튜디오</h2>
-      <figure><img src="assets/photo/campus_collage.jpg" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" width="1200" height="800" loading="lazy"></figure>
-      <p>연세대 고려대 기출로 촬영 응시</p>
-      <ul class="spec">
-        <li><span><b>5</b>개 응시 단위, 단위마다 <b>30</b>세트</span></li>
-        <li><span>지문 1편에 <b>5회</b>, 실전형 1 연습형 4</span></li>
-        <li><span>회차마다 전사, 진단, 구술체 재구성</span></li>
-        <li><span>풀이법 인강 포함, 편별로 순차 공개. <a href="lectures.html">인강 소개와 맛보기</a></span></li>
-      </ul>
-      <div class="foot"><span class="prices"><span class="price" data-list-price="33000">33,000원<span class="u">지문 1편</span></span><span class="price" data-list-price="495000">495,000원<span class="u">단위 전권, 인강 포함</span></span><span class="aux">낱권 33,000원 × 30편 = 990,000원</span></span><a class="btn" href="studio.html#units">응시 단위 고르기</a><a class="tlink" href="programs/studio.html">다섯 단계 과정 소개 <span class="ar" aria-hidden="true">→</span></a></div>
-    </article>
-  </div>
-</section>
-
-<!-- 지면 4. 대학별로 찾기 -->
-<section class="page" id="find">
-  <p class="folio"><b>卷四</b><span>대학별로 찾기</span><span class="r">4</span></p>
-  <div class="find">
-    <div class="top">
-      <div><h2 class="t">대학별로 찾기</h2><p class="lede">지원 대학 이름 하나로 가이드북과 스튜디오까지.</p></div>
-      <form role="search" onsubmit="return false">
-        <label for="q2">대학 이름</label>
-        <div class="search">
-          <input id="q2" type="search" autocomplete="off" aria-describedby="q2h">
-          <button type="submit" aria-label="대학 찾기">→</button>
-        </div>
-        <p class="help" id="q2h">예: 연세, 성균관. 가나다 순.</p>
-      </form>
-    </div>
-    <div class="tabs" role="tablist" aria-label="대학 필터">
-      <button role="tab" aria-selected="true" data-f="all">전체 <span>38</span></button>
-      <button role="tab" aria-selected="false" data-f="sale">가이드북 판매 중 <span>38</span></button>
-    </div>
-    <div class="tiles" id="tiles" aria-live="polite"></div>
-    <div class="more">
-      <div class="legend"><span class="p" data-list-price="33000">판매 중 33,000원</span></div>
-      <a class="btn ghost sm" href="guidebook/index.html">31개 대학 전체 보기 <span class="ar" aria-hidden="true">→</span></a>
-    </div>
-  </div>
-</section>
-
-<!-- 지면 5. 응시 절차 -->
-<section class="page" id="flow">
-  <p class="folio"><b>卷五</b><span>응시 절차</span><span class="r">5</span></p>
-  <div class="sh"><div><h2 class="t">스튜디오 응시 절차</h2><p>지문 1편, 응시 5회</p></div><a class="tlink" href="studio.html">스튜디오 들어가기</a></div>
-  <div class="steps">
-    <div class="step"><span class="no">01</span><h3>지문 선택</h3><p>낱권이면 지문 1편, 전권이면 그 단위 지문 전량.</p></div>
-    <div class="step"><span class="no">02</span><h3>실전형 응시</h3><p>문항을 나누지 않고 한 번에. 실제 고사장과 같은 규격.</p></div>
-    <div class="step"><span class="no">03</span><h3>첨삭 세 단</h3><p>말한 그대로 전사, 오독과 비약 진단, 구술체 재구성.</p></div>
-    <div class="step"><span class="no">04</span><h3>연습형 재응시</h3><p>막힌 자리만 끊어 다시. 지문 1편에 5회까지.</p></div>
-  </div>
-</section>
-
-<section class="page" id="maker">
-  <h2 class="sr">만든 사람</h2>
-  <div class="makerband">
-    <div class="num" aria-hidden="true">13<em>년차</em></div>
-    <p>가이드북 31권과 스튜디오 제시문 해제를 13년차 입시 컨설턴트 한 사람이 같은 기준으로 편집합니다. 고려대학교 영어교육과 졸업.</p>
-    <a class="tlink" href="about.html">만든 사람 보기</a>
-  </div>
-</section>
-
-<section class="page" id="lab">
-  <div class="lab">
-    <div class="mark" aria-hidden="true"><svg viewBox="0 0 1097 790" class="sym"><g transform="translate(0,790) scale(0.1,-0.1)" fill="currentColor" stroke="none"><path d="M6250 7871 c-172 -37 -326 -115 -372 -190 -20 -31 -23 -51 -24 -146
--1 -60 -9 -150 -17 -200 -16 -98 -81 -513 -128 -825 -16 -107 -32 -207 -35
--222 l-6 -28 -1236 -1 c-680 0 -1263 -4 -1295 -8 -66 -8 -80 -19 -80 -61 0
--22 11 -42 39 -71 59 -60 242 -201 253 -195 5 4 13 1 17 -5 5 -8 3 -9 -6 -4
--9 5 -11 4 -6 -4 4 -6 12 -9 17 -5 5 3 76 -42 157 -99 147 -105 348 -232 367
--232 6 0 107 -48 225 -107 187 -93 345 -160 430 -182 14 -4 -51 33 -145 81
--335 173 -575 363 -575 453 0 38 44 88 100 114 44 21 56 21 894 24 467 2 852
--1 856 -5 4 -4 2 -75 -3 -157 -17 -238 14 -403 103 -559 27 -47 48 -104 69
--186 36 -147 70 -219 166 -346 61 -82 84 -124 126 -230 61 -155 108 -251 199
--405 37 -63 84 -149 105 -190 l37 -74 33 89 c17 50 63 153 102 230 39 77 103
-214 143 305 39 91 99 207 132 258 85 132 134 242 168 379 30 121 72 345 65
-351 -2 2 -11 -22 -20 -54 -55 -202 -142 -391 -237 -518 -53 -71 -214 -212
--273 -240 -81 -39 -147 -17 -339 114 -124 84 -156 118 -186 197 -67 176 -150
-678 -124 750 13 38 69 67 188 96 182 46 252 52 573 52 l302 0 -52 18 c-85 30
--306 84 -397 99 l-85 13 185 5 c102 3 844 7 1650 8 940 2 1478 6 1502 13 58
-15 77 76 40 129 -41 60 -179 173 -381 313 l-56 39 60 -57 c80 -75 59 -63 -131
-80 -239 180 -546 381 -765 502 -76 42 -280 135 -285 130 -3 -2 28 -23 67 -47
-87 -52 281 -197 366 -274 117 -107 186 -242 164 -323 -27 -100 -197 -188 -468
--242 -132 -27 -284 -39 -553 -45 -226 -5 -226 -1 0 24 377 42 673 119 787 206
-50 38 39 47 -16 13 -101 -63 -295 -112 -556 -139 -55 -6 -276 -13 -491 -17
-l-390 -6 -38 309 c-20 170 -39 334 -42 364 -3 30 -18 159 -34 285 -16 127 -32
-285 -36 353 -6 102 -11 129 -28 155 -44 65 -160 120 -318 152 -109 21 -347 19
--458 -4z m352 -257 c103 -32 163 -66 182 -103 25 -48 81 -246 127 -449 24
--107 45 -190 46 -185 2 5 -10 80 -26 168 -16 88 -27 162 -25 164 6 6 63 -195
-161 -569 l99 -375 -440 -3 c-243 -1 -475 1 -516 6 l-75 7 90 34 c121 44 215
-68 352 87 98 14 134 15 241 5 69 -6 127 -9 129 -7 6 6 -112 44 -237 78 l-105
-28 119 -3 c109 -3 117 -2 85 10 l-34 13 40 -4 40 -4 -35 15 c-76 33 -227 64
--335 70 -107 5 -291 -13 -374 -37 -19 -5 -36 -9 -37 -7 -4 4 75 180 85 190 6
-6 7 -3 1 -27 -34 -151 109 208 151 379 25 100 35 290 20 368 -6 32 -20 79 -33
-105 -12 26 -22 52 -22 57 -2 33 208 26 326 -11z m311 -1791 c-7 -2 -19 -2 -25
-0 -7 3 -2 5 12 5 14 0 19 -2 13 -5z"/>
-<path d="M6962 6840 c0 -14 2 -19 5 -12 2 6 2 18 0 25 -3 6 -5 1 -5 -13z"/>
-<path d="M7857 5274 c-4 -4 -7 -24 -7 -44 0 -70 -42 -283 -72 -369 -34 -95
--93 -219 -144 -297 l-32 -52 -138 49 c-188 67 -197 75 -314 274 l-54 90 -13
--60 c-39 -172 -145 -456 -262 -700 -167 -348 -319 -591 -716 -1145 l-40 -55
-51 42 c65 54 430 428 509 521 33 39 64 71 68 71 5 1 18 11 29 24 l20 22 -14
--25 c-33 -57 -51 -80 -58 -75 -4 3 -14 -3 -21 -13 -13 -15 -12 -16 4 -3 9 7
-17 10 17 7 0 -8 -59 -97 -140 -211 -123 -173 -117 -171 50 15 171 190 287 350
-433 597 85 144 133 241 187 378 54 139 60 145 103 122 62 -34 147 -117 147
--144 0 -114 -857 -1231 -1274 -1660 l-60 -63 -111 60 c-133 70 -299 140 -418
-174 -70 20 -313 76 -332 76 -3 0 -2 -32 2 -72 5 -62 4 -71 -9 -65 -31 12 -239
-50 -244 45 -3 -3 7 -81 21 -173 14 -92 24 -169 22 -171 -2 -3 -16 5 -30 16
--56 44 -134 63 -257 63 -242 1 -468 -77 -633 -218 -69 -59 -126 -129 -114
--141 3 -3 58 21 123 54 66 33 124 57 130 55 6 -2 17 3 24 12 7 8 17 15 23 15
-5 0 -30 -42 -80 -92 -49 -51 -113 -129 -142 -172 -47 -69 -191 -343 -191 -363
-0 -3 20 20 45 53 201 260 297 364 423 454 171 122 292 166 437 157 74 -4 165
--30 165 -46 0 -4 -17 -15 -37 -25 -62 -29 -157 -101 -224 -170 -59 -60 -134
--170 -263 -391 -155 -264 -331 -446 -656 -681 -270 -194 -531 -318 -794 -378
--55 -13 -95 -25 -90 -28 14 -8 212 10 296 27 187 37 378 105 593 209 245 119
-425 233 755 480 104 78 219 158 257 178 l69 37 38 -45 38 -46 -33 -29 c-147
--128 -503 -378 -810 -569 -589 -367 -1294 -666 -1869 -795 -138 -31 -101 -31
-80 0 143 24 365 80 509 130 41 14 76 23 78 21 4 -4 -162 -70 -327 -130 -52
--19 -86 -35 -75 -35 37 -1 363 69 502 109 588 166 1274 488 1871 878 12 8 22
-12 22 9 0 -9 -219 -156 -400 -269 -222 -138 -365 -220 -565 -322 -82 -43 -140
--74 -129 -71 16 4 42 -9 96 -48 226 -161 504 -246 898 -272 57 -4 129 -2 180
-6 47 6 112 15 145 19 l60 7 -80 3 -80 2 125 14 c69 7 171 21 227 29 l103 16
-105 -30 c265 -76 509 -107 785 -98 217 7 327 19 429 49 l73 22 172 -22 c94
--12 261 -34 371 -48 123 -16 233 -24 285 -22 87 3 102 9 200 75 22 15 22 13
--5 -16 -23 -26 -25 -31 -9 -23 34 18 85 82 113 142 50 107 39 269 -24 370 -27
-43 -98 109 -155 145 -60 38 -60 24 -1 -19 61 -45 95 -84 126 -146 28 -56 50
--169 40 -208 -7 -24 -9 -19 -21 36 -17 81 -52 158 -95 207 -45 51 -135 109
--196 125 -26 7 -55 19 -63 26 -23 19 -184 22 -370 8 -191 -15 -319 -7 -383 25
--23 11 -42 19 -44 18 -1 -2 2 -55 8 -118 21 -219 -4 -365 -68 -390 -49 -20
--534 -16 -688 5 -146 20 -348 69 -474 115 -47 17 -86 29 -88 27 -5 -4 153 -72
-227 -98 160 -55 410 -102 680 -127 95 -8 86 -9 -100 -6 -155 2 -233 8 -320 24
--345 63 -626 176 -903 363 -67 44 -95 58 -112 54 -36 -9 -115 -103 -115 -137
-0 -38 59 -82 209 -157 135 -66 125 -61 120 -65 -2 -1 -94 0 -204 4 -215 7
--370 32 -530 84 -80 26 -325 142 -325 154 0 3 51 32 113 63 193 98 466 256
-617 356 80 54 324 232 543 397 220 165 407 306 418 314 16 12 29 9 101 -20 46
--18 123 -52 173 -77 79 -39 126 -69 278 -174 28 -20 53 -28 81 -28 45 0 69 12
-169 88 88 67 340 193 467 233 55 17 100 37 100 43 -1 32 -18 39 -91 34 -126
--9 -361 -100 -517 -201 l-69 -45 -7 52 c-9 81 -7 532 3 559 13 34 43 61 136
-122 214 141 544 277 848 350 195 47 248 55 254 38 3 -7 -9 -103 -26 -211 -17
--108 -32 -213 -33 -232 -3 -29 -7 -35 -33 -41 -16 -3 -48 -15 -70 -26 -25 -13
--77 -25 -137 -31 -54 -6 -117 -20 -142 -30 -40 -18 -48 -28 -81 -98 -50 -104
--47 -152 16 -255 72 -121 245 -276 343 -309 22 -7 64 -46 130 -120 111 -126
-299 -296 605 -548 390 -322 619 -482 836 -581 109 -50 127 -55 190 -56 69 0
-71 1 148 55 207 147 309 199 477 244 52 13 84 25 70 26 -24 2 -24 2 5 11 17 5
-86 19 155 31 184 32 440 30 600 -5 63 -14 124 -28 135 -31 11 -4 -24 16 -78
-42 -127 64 -288 101 -447 102 -30 0 -62 5 -70 11 -11 7 32 9 147 6 90 -2 162
--2 160 0 -10 9 -330 66 -502 88 -482 63 -596 84 -835 156 -74 22 -184 60 -245
-83 -123 48 -337 147 -332 153 2 2 26 -6 53 -18 97 -42 322 -120 459 -160 126
--36 475 -112 482 -105 2 2 -50 20 -114 40 -379 121 -883 350 -1181 537 -119
-75 -284 192 -333 236 l-37 34 28 56 c16 32 27 59 25 61 -7 8 -152 -108 -184
--148 -71 -90 -221 -109 -370 -48 -31 13 -26 13 70 10 112 -4 184 11 184 38 0
-12 -23 16 -120 21 -73 4 -140 13 -170 24 -57 20 -167 76 -161 82 2 2 27 -3 56
--11 114 -34 300 -29 388 11 l37 17 -125 7 c-175 10 -337 51 -392 100 l-23 20
-33 -5 c224 -38 429 -29 492 22 20 16 15 17 -122 17 -128 0 -153 3 -238 29
--130 38 -134 41 -85 62 29 12 84 19 197 25 209 10 238 20 238 86 0 45 14 43
-103 -17 88 -59 177 -151 248 -258 29 -43 108 -132 178 -202 134 -133 218 -189
-391 -260 184 -76 376 -95 545 -55 l80 19 -100 7 c-178 13 -363 76 -513 175
--129 85 -238 202 -370 396 -169 249 -288 367 -408 404 -29 10 -54 21 -54 25 0
-14 129 124 183 157 117 71 253 98 436 87 128 -7 142 2 58 43 -181 87 -484 60
--664 -59 -24 -16 -43 -26 -43 -24 0 3 9 64 21 136 11 72 18 133 15 136 -4 5
--52 -2 -167 -23 -26 -5 -27 -3 -39 64 -22 121 -9 244 45 417 25 83 48 155 50
-162 8 24 -24 1 -62 -45 -97 -115 -174 -256 -208 -377 -9 -33 -18 -107 -19
--165 -3 -91 -3 -95 3 -30 6 57 8 64 9 30 1 -25 5 -61 8 -80 l6 -35 -129 -31
-c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
-165 167 359 369 431 449 260 289 537 634 646 805 l42 65 29 -27 c45 -44 106
--142 225 -364 110 -207 197 -352 277 -464 62 -87 225 -274 287 -330 29 -26
-107 -98 172 -159 130 -121 139 -122 36 -6 -158 180 -354 430 -337 430 3 0 40
--44 83 -97 252 -314 653 -637 984 -795 98 -47 225 -98 242 -98 7 0 -31 25 -83
-56 -353 209 -745 576 -1011 947 -117 163 -212 326 -353 602 -65 127 -136 259
--159 295 -50 77 -157 207 -192 233 -19 15 -22 22 -13 38 16 30 160 133 242
-174 136 67 230 80 333 45 71 -24 61 -15 -71 67 -49 31 -117 76 -150 101 -93
-71 -441 423 -550 557 -122 149 -120 147 -128 139z m106 -1307 c17 -22 18 -30
-8 -40 -10 -10 -11 -8 -5 8 9 26 -44 -34 -191 -215 -201 -247 -406 -471 -666
--726 -183 -180 -241 -226 -93 -73 158 162 305 326 401 448 43 54 173 218 288
-364 116 147 216 265 224 264 8 -1 23 -14 34 -30z m-2437 -1253 c122 -31 281
--98 394 -164 47 -27 82 -50 79 -50 -4 0 -40 15 -80 34 -102 46 -282 108 -414
-142 -86 22 -104 30 -85 35 23 6 23 7 3 8 -27 1 -41 21 -15 21 11 0 64 -12 118
--26z m-168 -124 c303 -67 593 -167 750 -257 74 -43 218 -140 257 -174 l35 -31
-0 -314 c0 -173 -3 -314 -6 -314 -3 0 -49 27 -102 59 -143 88 -289 154 -449
-202 l-141 43 1 66 c1 55 -4 74 -26 112 -33 57 -88 82 -212 98 -128 16 -125 15
--184 64 l-55 45 -32 193 c-42 245 -42 238 -4 238 17 0 92 -14 168 -30z m-268
--468 c0 -44 22 -79 59 -94 14 -6 94 -14 178 -18 104 -5 166 -13 197 -25 74
--28 69 -31 -114 -74 -116 -27 -192 -34 -275 -23 -38 5 -71 8 -73 7 -11 -10 48
--46 92 -56 67 -16 261 -14 356 5 41 8 77 13 79 10 9 -9 -37 -35 -119 -64 -134
--49 -204 -62 -307 -58 -51 2 -93 2 -93 0 0 -2 25 -14 55 -28 78 -36 167 -41
-290 -15 54 11 101 19 103 17 1 -2 -30 -17 -70 -34 -98 -40 -217 -65 -284 -60
--54 5 -84 -8 -70 -31 12 -18 108 -34 175 -28 83 8 62 -8 -41 -29 -125 -26
--197 1 -290 107 l-53 61 -70 -6 c-39 -3 -90 -12 -114 -21 -57 -20 -56 -20 -32
-18 12 17 56 90 99 161 86 144 185 259 253 293 61 31 69 30 69 -15z m2220
--1532 c179 -9 210 -14 271 -45 118 -61 161 -151 128 -267 -11 -43 -35 -59
--124 -81 -97 -25 -183 -30 -310 -17 -120 12 -274 36 -282 44 -2 2 3 28 11 57
-22 73 20 193 -3 269 l-20 63 77 -8 c42 -3 156 -10 252 -15z"/>
-<path d="M5468 2703 c7 -3 16 -2 19 1 4 3 -2 6 -13 5 -11 0 -14 -3 -6 -6z"/>
-<path d="M5754 4808 c-38 -68 -80 -134 -94 -147 -31 -30 -142 -81 -263 -122
--226 -76 -359 -143 -514 -260 -58 -44 -106 -79 -108 -79 -2 0 -38 20 -80 46
--213 125 -459 234 -764 338 -201 69 -266 85 -146 37 75 -29 155 -70 141 -71
--4 0 -51 16 -103 35 -152 57 -469 133 -511 122 -11 -3 -8 -5 9 -6 39 -2 325
--85 420 -123 197 -77 437 -216 607 -351 100 -79 222 -188 232 -208 6 -11 0
--29 -21 -60 -17 -24 -95 -174 -175 -332 -80 -159 -170 -330 -201 -380 -291
--472 -736 -919 -1183 -1187 -88 -53 -81 -56 30 -12 179 69 437 224 628 374
-202 161 340 295 507 496 112 134 93 97 -34 -68 -36 -47 -126 -155 -200 -240
--147 -169 -140 -165 83 39 272 248 437 466 631 831 114 215 153 280 170 280
-20 0 60 -52 111 -148 26 -48 74 -134 107 -192 33 -58 89 -164 123 -236 69
--147 113 -202 188 -242 44 -23 63 -27 141 -27 101 0 145 15 200 70 58 58 70
-97 69 220 0 90 -4 120 -23 165 -33 80 -106 185 -184 265 l-68 70 61 -84 c103
--142 130 -212 130 -341 0 -66 -2 -72 -13 -55 -8 11 -24 54 -36 95 -31 101
--103 239 -171 324 -59 75 -231 239 -340 326 -36 28 -67 56 -69 62 -5 15 94
-105 180 165 41 28 151 92 244 142 l170 91 73 -148 c98 -197 200 -390 257 -487
-97 -164 265 -401 265 -374 0 14 -105 291 -143 376 -25 56 -48 112 -51 125 -7
-22 -6 22 8 -2 18 -30 21 -21 5 14 -7 14 -16 23 -22 19 -6 -3 -7 -1 -3 5 4 6
--9 43 -29 81 -19 39 -35 74 -35 78 0 4 25 -30 56 -77 71 -107 85 -122 43 -45
--48 89 -21 56 70 -85 45 -69 81 -122 81 -119 0 28 -84 267 -164 466 -91 228
--169 470 -196 611 -7 34 -16 62 -20 62 -4 0 -38 -55 -76 -122z"/>
-<path d="M6619 3493 c-13 -16 -12 -17 4 -4 9 7 17 15 17 17 0 8 -8 3 -21 -13z"/>
-<path d="M4229 2249 l-24 -20 28 17 c15 9 27 18 27 20 0 8 -8 4 -31 -17z"/>
-<path d="M3456 1999 c-35 -70 -36 -74 -36 -191 0 -246 -74 -394 -301 -598
--176 -160 -251 -235 -291 -294 -45 -65 -82 -150 -92 -211 l-7 -40 38 63 c42
-70 178 232 194 232 6 0 7 -6 2 -12 -4 -7 12 2 35 20 23 19 42 36 42 38 0 6
--19 -4 -45 -25 -12 -9 -8 -3 8 12 15 15 32 25 37 22 11 -7 222 135 312 209
-136 113 243 277 269 414 15 80 6 181 -25 291 -27 92 -52 134 -84 139 -16 3
--27 -11 -56 -69z"/>
-<path d="M9327 2050 c-43 -34 -105 -136 -118 -195 -28 -128 56 -282 227 -413
-68 -52 245 -153 256 -145 6 3 8 2 5 -4 -4 -6 5 -15 19 -22 14 -6 23 -7 19 -1
--3 6 1 7 9 4 9 -3 13 -10 10 -15 -3 -5 3 -6 12 -2 13 5 15 3 9 -7 -5 -9 -4
--11 3 -6 30 18 191 -99 258 -187 58 -77 103 -174 111 -238 6 -50 17 -63 25
--31 3 10 2 63 -3 117 -4 55 -5 104 -1 109 3 5 -1 6 -8 1 -10 -6 -12 -4 -7 10
-8 20 -28 87 -81 151 -45 55 -151 142 -296 245 -154 108 -297 244 -330 312 -27
-56 -60 186 -71 280 -3 31 -10 57 -14 57 -5 0 -20 -9 -34 -20z"/>
-<path d="M5550 1227 c-81 -30 -214 -135 -208 -164 5 -26 42 -31 183 -25 232 9
-474 -28 733 -113 195 -63 257 -98 387 -214 l40 -36 -40 43 c-41 44 -39 57 4
-20 24 -21 24 -21 -2 8 -15 17 -25 33 -22 36 7 7 -94 100 -148 136 -52 35 -38
-40 20 7 26 -15 64 -36 83 -47 l35 -20 -25 22 c-129 111 -262 182 -470 250
--265 88 -493 126 -570 97z m1055 -465 c-3 -3 -18 7 -33 23 l-27 28 33 -23 c18
--12 31 -25 27 -28z"/>
-<path d="M10181 854 c0 -11 3 -14 6 -6 3 7 2 16 -1 19 -3 4 -6 -2 -5 -13z"/>
-<path d="M2098 33 c6 -2 18 -2 25 0 6 3 1 5 -13 5 -14 0 -19 -2 -12 -5z"/></g></svg></div>
-    <div>
-      <span class="eyebrow">이름의 뜻</span>
-      <blockquote>검을 현 <b>玄</b>에 배울 학 <b>學</b>. 천자문 첫 구절 天地玄黃의 그 글자. 자랑할 현 衒과 다른 글자. 로고의 선비는 이목구비를 비워 둔 형상. 누구든 그 자리에.</blockquote>
-      <p class="more"><a class="tlink" href="about.html">연구소 소개</a></p>
-    </div>
-  </div>
-</section>
-
-<!-- 지면 6. 자주 묻는 질문, 공지 -->
-<section class="page" id="faq">
-  <p class="folio"><b>卷六</b><span>자주 묻는 질문</span><span class="r">6</span></p>
-  <div class="two">
-    <div>
-      <div class="sh"><div><h2 class="t">자주 묻는 질문</h2></div></div>
-      <dl class="faq">
-        <dt data-faq="q">가이드북은 어떻게 보나요</dt><dd data-faq="a">결제 후 마이페이지에서 보안 리더로 열람하실 수 있습니다. 기기 제한이 없습니다.</dd>
-        <dt data-faq="q">스튜디오 응시는 무엇을 준비하나요</dt><dd data-faq="a">카메라와 마이크가 있는 브라우저. 응시 시간은 대학 규격과 동일.</dd>
-        <dt data-faq="q">누가 만들었나요</dt><dd data-faq="a">현학자 玄學者, 입시 컨설턴트 13년차. 31권 전권과 스튜디오 제시문 해제를 한 사람이 같은 기준으로 편집합니다. 학력과 경력은 연구소 소개의 「읽은 사람」에.</dd>
-        <dt data-faq="q">환불은 어떻게 되나요</dt><dd data-faq="a">디지털은 열지 않은 권과 응시하지 않은 지문을 공급받은 날부터 7일 이내 청약철회, 실물은 수령 7일 이내 반품.</dd>
-        <dt data-faq="q">대입 면접컨설팅이나 모의면접도 하나요</dt><dd data-faq="a">별도 1:1 면접컨설팅 상품은 없습니다. 서류기반 면접(생기부 면접)은 대학별 가이드북으로, 연세대와 고려대 제시문 면접은 스튜디오에서 촬영 응시와 첨삭 세 단의 모의면접으로 준비합니다.</dd>
-        <dt data-faq="q">면접 기출문제와 예상문제는 어디에 있나요</dt><dd data-faq="a">가이드북 3부에 대학별 면접 기출문제가 유형별로, 4부에 내 생기부에서 면접 예상 질문을 뽑는 전환 규칙이 있습니다. 내 지원 전형이 서류기반인지 제시문인지는 <a href="interview.html">38개 대학 면접 형태 판정표</a>에서 확인합니다.</dd>
-      </dl>
-    </div>
-    <div>
-      <div class="sh"><div><h2 class="t">공지</h2></div><a class="tlink" href="notice.html">공지 전체</a></div>
-      <ul class="notice" id="noticeRows"><li><a href="notice.html"><span>공지 전체 보기</span></a></li></ul>
-    </div>
-  </div>
-</section>
-
-<!-- 마지막 CTA 라벨 = COPY.md §2 카드 CTA -->
-<section class="page">
-  <div class="final">
-    <div><h2>지원 대학부터 고르기</h2><p>31개 대학 가이드북, 응시 단위 5곳 스튜디오</p></div>
-    <div class="acts"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html#units">응시 단위 고르기</a></div>
-  </div>
-</section>
-
-</div>
-</div>
-</main>
+<!--r2:promo-band-->
+<section class="r2-section" id="faq"><h2><span data-copy="faq_title">자주 묻는 질문</span></h2><dl class="r2-faq"><dt><span data-copy="faq_read_q">가이드북 열람 방법</span></dt><dd><span data-copy="faq_read_a">결제 후 마이페이지에서 브라우저 보안 리더로 열람합니다.</span></dd><dt><span data-copy="faq_pick_q">서류기반 면접과 제시문 면접의 구분</span></dt><dd><span data-copy="faq_pick_a">지원 전형의 면접 형태는 38개 대학 면접 형태 판정표에서 확인합니다.</span></dd><dt><span data-copy="faq_source_q">가이드북에 수록한 질문</span></dt><dd><span data-copy="faq_source_a">질문 3,865개를 수록했습니다.</span></dd><dt><span data-copy="faq_refund_q">청약철회 조건</span></dt><dd><span data-copy="withdraw_text">이용 전 청약철회 조건은 이용약관 제6조에 따릅니다.</span></dd></dl><div class="r2-links"><a class="tlink" href="terms.html"><span data-copy="terms_link">이용약관 제6조 보기</span></a><a class="tlink" href="interview.html"><span data-copy="interview_link">면접 형태 판정표 보기</span></a><a class="tlink" href="faq.html"><span data-copy="faq_all">질문 전체 보기</span></a></div></section><section class="r2-section" id="notices"><h2><span data-copy="notice">공지</span></h2><p><span data-copy="notice_lead">대학 추가와 판 갱신은 공지에 기록합니다.</span></p><ul class="notice" id="noticeRows"><li><a class="tlink" href="notice.html"><span data-copy="notice_all">공지 전체 보기</span></a></li></ul></section></main>
 
 <footer>
   <script>document.currentScript.parentElement.classList.add('ft');</script>
@@ -562,7 +146,7 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -573,21 +157,21 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
       </div>
       <div>
         <h2>바로가기</h2>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="lectures.html">인강</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li><li><a href="b2b.html">스쿨 플랜</a></li></ul>
+        <ul><li><a href="programs/guidebook.html">가이드북</a></li><li><a href="programs/studio.html">제시문 면접 스튜디오</a></li><li><a href="lectures.html">인강</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li><li><a href="b2b.html">스쿨 플랜</a></li></ul>
       </div>
       <div>
         <h2>고객센터</h2>
         <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
+    <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
     </details>
   </div>
 </footer>
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a class="on" aria-current="page" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="studio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg>스튜디오</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a class="on" aria-current="page" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a href="programs/guidebook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="programs/studio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg>스튜디오</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script src="assets/rank.js" defer></script>
@@ -646,8 +230,8 @@ var HH_GB=[{"slug":"gachon","name":"가천대학교","short":"가천대","pages"
           </tbody>
         </table>
         <div class="pacts">
-          <a class="btn" href="studio.html#plans" data-ppop-go="studio">면접 스튜디오 구매 바로가기 <span class="ar" aria-hidden="true">→</span></a>
-          <a class="btn ghost" href="guidebook/index.html" data-ppop-go="guidebook">가이드북 바로가기</a>
+          <a class="btn" href="programs/studio.html#buy" data-ppop-go="studio">면접 스튜디오 구매 바로가기 <span class="ar" aria-hidden="true">→</span></a>
+          <a class="btn ghost" href="programs/guidebook.html#buy" data-ppop-go="guidebook">가이드북 바로가기</a>
         </div>
         <p class="pfoot"><button type="button" class="tlink" data-ppop-mute>오늘 하루 보지 않기</button></p>
       </div>

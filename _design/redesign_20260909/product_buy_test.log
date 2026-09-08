@@ -1,0 +1,11 @@
+PASS guide default and selected university reuse guide SKU
+PASS guide all-pass is not tied to selected university
+PASS studio selected unit creates its existing pass SKU
+PASS common lecture has its own price, period and no active unit selector
+PASS single passage navigates to real set selection without fabricating set_id
+PASS successful add announces success and exposes cart link
+PASS already present never announces a second successful add
+PASS HH rejection is reported without success
+PASS thrown storage or runtime error has a visible recovery link
+PASS changing product clears stale feedback
+product_buy_contract: checks=10 FAIL=0

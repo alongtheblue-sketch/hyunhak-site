@@ -1,0 +1,13 @@
+{
+  "ink/paper": 11.73,
+  "body/paper": 8.13,
+  "gray/paper": 5.04,
+  "seal/paper": 6.48,
+  "ink/card": 13.23,
+  "body/card": 9.18,
+  "seal/card": 7.32,
+  "gray/mat": 4.56,
+  "edge/paper": 3.2,
+  "edge/card": 3.33,
+  "edge/mat": 3.1
+}

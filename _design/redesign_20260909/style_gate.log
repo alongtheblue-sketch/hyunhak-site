@@ -1,0 +1,680 @@
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only _tools/guidebook_index_v2.html
+_tools/guidebook_index_v2.html:125:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 5문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only about.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only b2b.html
+b2b.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '55% (27/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+b2b.html:138:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 7문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only classroom.html
+classroom.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (11/16)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: C-12×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only faq.html
+faq.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '57% (58/101)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+faq.html:155:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 21문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/ajou.html
+guidebook/ajou.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (34/51)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/ajou.html:381:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/catholic.html
+guidebook/catholic.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (35/52)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/catholic.html:377:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/cau.html
+guidebook/cau.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (34/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/cau.html:377:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/dankook.html
+guidebook/dankook.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (34/51)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/dankook.html:373:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/donga.html
+guidebook/donga.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '64% (32/50)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/donga.html:383:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/dongduk.html
+guidebook/dongduk.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '65% (31/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/dongduk.html:372:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/dongguk.html
+guidebook/dongguk.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (33/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/dongguk.html:378:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/duksung.html
+guidebook/duksung.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '62% (30/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/duksung.html:372:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/ewha.html
+guidebook/ewha.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '64% (32/50)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/ewha.html:380:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/gachon.html
+guidebook/gachon.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '60% (32/53)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/gachon.html:285:112  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/gachon.html:360:59  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/gachon.html:380:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 C  |  게이트 S1 2건 S2 2건  |  권고 0건
+상위 규칙: C-8×2, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/hanyang-erica.html
+guidebook/hanyang-erica.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '60% (28/47)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/hanyang-erica.html:354:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/hufs.html
+guidebook/hufs.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (33/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/hufs.html:379:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/incheon.html
+guidebook/incheon.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '66% (31/47)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/incheon.html:379:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/index.html
+guidebook/index.html:199:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 5문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/inha.html
+guidebook/inha.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (35/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/inha.html:378:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/khu.html
+guidebook/khu.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (32/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/khu.html:377:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/konkuk.html
+guidebook/konkuk.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (32/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/konkuk.html:285:70  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/konkuk.html:356:54  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '가 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/konkuk.html:376:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 C  |  게이트 S1 2건 S2 2건  |  권고 0건
+상위 규칙: C-8×2, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/kookmin.html
+guidebook/kookmin.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (33/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/kookmin.html:353:78  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:355:68  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:355:93  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:356:83  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:357:60  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:359:80  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+guidebook/kookmin.html:375:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 C  |  게이트 S1 0건 S2 8건  |  권고 0건
+상위 규칙: C-11×6, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/kwangwoon.html
+guidebook/kwangwoon.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '62% (33/53)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/kwangwoon.html:385:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/kyonggi.html
+guidebook/kyonggi.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (34/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/kyonggi.html:286:123  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/kyonggi.html:356:57  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/kyonggi.html:358:63  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/kyonggi.html:379:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 D  |  게이트 S1 3건 S2 2건  |  권고 0건
+상위 규칙: C-8×3, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/myongji.html
+guidebook/myongji.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '67% (33/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/myongji.html:374:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/pusan.html
+guidebook/pusan.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (33/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/pusan.html:382:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/sahmyook.html
+guidebook/sahmyook.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '62% (31/50)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/sahmyook.html:368:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/sejong.html
+guidebook/sejong.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (34/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/sejong.html:380:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/seoultech.html
+guidebook/seoultech.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '68% (34/50)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/seoultech.html:376:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/snu.html
+guidebook/snu.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '63% (33/52)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/snu.html:285:124  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/snu.html:359:53  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/snu.html:360:57  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+guidebook/snu.html:378:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 D  |  게이트 S1 3건 S2 2건  |  권고 0건
+상위 규칙: C-8×3, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/sookmyung.html
+guidebook/sookmyung.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (35/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/sookmyung.html:380:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/soongsil.html
+guidebook/soongsil.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '73% (35/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/soongsil.html:377:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/sungshin.html
+guidebook/sungshin.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '64% (32/50)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/sungshin.html:379:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/swu.html
+guidebook/swu.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (34/48)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/swu.html:381:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/ulsan.html
+guidebook/ulsan.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '69% (34/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/ulsan.html:375:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only guidebook/uos.html
+guidebook/uos.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '65% (32/49)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+guidebook/uos.html:385:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 9문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only index.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only interview.html
+interview.html:256:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 11문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lecture.html
+lecture.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '56% (9/16)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: C-12×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures.html
+lectures.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '60% (21/35)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures.html:245:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/common.html
+lectures/common.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '71% (17/24)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/common.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 7문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/korea-hum.html
+lectures/korea-hum.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (16/23)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/korea-hum.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/korea-sci.html
+lectures/korea-sci.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (16/23)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/korea-sci.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/yonsei-hum.html
+lectures/yonsei-hum.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (16/23)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/yonsei-hum.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/yonsei-intl.html
+lectures/yonsei-intl.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (16/23)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/yonsei-intl.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only lectures/yonsei-sci.html
+lectures/yonsei-sci.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (16/23)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+lectures/yonsei-sci.html:186:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 6문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only library.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only notice.html
+notice.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '53% (8/15)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: C-12×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only pastexam.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only privacy.html
+privacy.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '56% (30/54)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+privacy.html:152:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 7문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건
+상위 규칙: C-12×1, E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only programs/guidebook.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only programs/korea.html
+programs/korea.html:164:98  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:186:30  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '가 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:222:126687  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:233:81  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '인가 공적인가'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:235:72  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '인가 공적인가'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:317:27  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/korea.html:371:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 8문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+programs/korea.html:386:73  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+
+[deliverable/general] 등급 D  |  게이트 S1 7건 S2 1건  |  권고 0건
+상위 규칙: C-8×7, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only programs/studio.html
+programs/studio.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (7/10)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: C-12×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only programs/yonsei.html
+programs/yonsei.html:65:70  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:72:27  [S2 K-4 게이트] 사물 비유·물활  ← '읽어내'
+    → 관찰 가능한 사실로 치환: 실제 일어난 일, 수치, 확인한 내용
+programs/yonsei.html:72:47  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:156:30  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '가 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/yonsei.html:191:25278  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '이며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:192:156480  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/yonsei.html:204:126  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:206:103  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:224:95  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/yonsei.html:266:52  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+programs/yonsei.html:287:27  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+programs/yonsei.html:341:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 8문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+programs/yonsei.html:356:73  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+
+[deliverable/general] 등급 D  |  게이트 S1 5건 S2 8건  |  권고 0건
+상위 규칙: C-11×6, C-8×5, K-4×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only studio.html
+studio.html:412:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'분' 류 5문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: E-2×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only support.html
+support.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '73% (16/22)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건
+상위 규칙: C-12×1
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only terms.html
+terms.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '63% (26/41)'
+    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%
+terms.html:134:39  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '이며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:141:36  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:157:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 7문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+terms.html:163:52  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:166:25  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '이며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:177:39  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:178:53  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+terms.html:218:43  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+
+[deliverable/general] 등급 C  |  게이트 S1 0건 S2 9건  |  권고 0건
+상위 규칙: C-11×7, C-12×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only _tools/program_guidebook_v2.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only _tools/program_studio_v2.html
+
+[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+exit=0
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only _tools/program_yonsei_v2.html
+_tools/program_yonsei_v2.html:65:70  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:72:27  [S2 K-4 게이트] 사물 비유·물활  ← '읽어내'
+    → 관찰 가능한 사실로 치환: 실제 일어난 일, 수치, 확인한 내용
+_tools/program_yonsei_v2.html:72:47  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:156:30  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '가 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_yonsei_v2.html:191:25278  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '이며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:192:156480  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_yonsei_v2.html:204:126  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하며,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:206:103  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:224:95  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_yonsei_v2.html:266:52  [S2 C-11 게이트] 연결어미 뒤 쉼표  ← '하고,'
+    → 쉼표 제거. 6회 이상이면 강한 신호
+_tools/program_yonsei_v2.html:287:27  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_yonsei_v2.html:341:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 8문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+_tools/program_yonsei_v2.html:356:73  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+
+[deliverable/general] 등급 D  |  게이트 S1 5건 S2 8건  |  권고 0건
+상위 규칙: C-11×6, C-8×5, K-4×1, E-2×1
+exit=1
+
+$ python3 /Users/gregory/unjang/_shared/style_gate/style_gate.py scan --gate-only _tools/program_korea_v2.html
+_tools/program_korea_v2.html:164:98  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:186:30  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '가 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:222:126687  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:233:81  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '인가 공적인가'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:235:72  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '인가 공적인가'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:317:27  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+_tools/program_korea_v2.html:371:0  [S2 E-2 게이트] 동일 종결어미 연속  ← "'니다' 류 8문장 연속"
+    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배
+_tools/program_korea_v2.html:386:73  [S1 C-8 게이트] 대구 공식 'A가 아니라 B'  ← '이 아니라'
+    → 한 번만 살리고 나머지는 비대칭 평서문, 직접 단언으로. 전멸 금지
+
+[deliverable/general] 등급 D  |  게이트 S1 7건 S2 1건  |  권고 0건
+상위 규칙: C-8×7, E-2×1
+exit=1

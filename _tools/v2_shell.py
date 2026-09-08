@@ -4,7 +4,7 @@
    페이지 작성 시 자리표시 주석 <!--v2:shell--> <!--v2:footer--> <!--v2:fix--> 를 두면 첫 실행이 채우고,
    이후에는 생성된 블록 자체를 정규식으로 다시 찾아 교체한다.
    2026-08-26 하위 페이지 v2 전개 (s16)."""
-import re, json, os
+import re, json, os, html
 from datetime import datetime, timezone, timedelta
 
 # 할인 행사 배너 (2026-09-07). 원천 = _tools/promo.json (id·rate·ends_at 은 API D1 promotions 행과 같아야 한다).
@@ -51,6 +51,12 @@ def promo_strip(rel, p=None, price_note=True):
     p = p if p is not None else load_promo()
     if not p or rel in set(p.get("exclude") or []):   # exclude = 자체 가격표가 있는 면 (b2b 스쿨 플랜, COPY_REVIEW P0)
         return ""
+    if rel in {"index.html", "programs/guidebook.html", "programs/studio.html"}:
+        # R2: 기존 행사 label 바이트를 한 줄로 제시한다. promo 원천은 변경하지 않는다.
+        return ('\n<aside class="promo r2-promo" data-promo="' + html.escape(p["id"], quote=True)
+                + '" data-promo-until="' + html.escape(p["ends_at"], quote=True)
+                + '" aria-label="할인 행사 안내"><div class="wrap"><p>'
+                + html.escape(p["label"]) + '</p></div></aside>')
     try:
         with open(PROMO_TPL_PATH, encoding="utf-8") as f:
             tpl = f.read().strip()
@@ -93,8 +99,8 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
 # (href, label, 현재 페이지 매칭 키). 키가 '/' 로 끝나면 디렉토리 prefix 매칭
 # 앞 2 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
 GNB = [
-    ("guidebook/index.html", "가이드북", ("guidebook/",)),
-    ("studio.html", "제시문 면접 스튜디오", ("studio.html",)),
+    ("programs/guidebook.html", "가이드북", ("guidebook/", "programs/guidebook.html")),
+    ("programs/studio.html", "제시문 면접 스튜디오", ("studio.html", "programs/studio.html")),
     ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html")),
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
@@ -104,8 +110,8 @@ GNB_GROUP_BREAK = 3   # 이 인덱스 항목부터 부가 묶음 (파는 것 3, 
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
     ("index.html#find", "대학 찾기", (), False, "find"),
-    ("guidebook/index.html", "가이드북", ("guidebook/",), False, "book"),
-    ("studio.html", "스튜디오", ("studio.html", "programs/studio.html", "programs/yonsei.html", "programs/korea.html"), False, "camera"),
+    ("programs/guidebook.html", "가이드북", ("guidebook/", "programs/guidebook.html"), False, "book"),
+    ("programs/studio.html", "스튜디오", ("studio.html", "programs/studio.html", "programs/yonsei.html", "programs/korea.html"), False, "camera"),
     ("my.html", "MY", ("my.html",), False, "my"),
 ]
 
@@ -174,7 +180,7 @@ def shell(rel):
       :where(body.v2) .hd .tools .aux a{{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);font-size:var(--t-xs);white-space:nowrap}}
     }}
   </style>
-  <span class="han">玄學的 硏究所</span>
+  <span>현학적 연구소</span>
   <nav aria-label="계정"><a href="{p}login.html"{cur_login}>로그인</a><a href="{p}cart.html"{cur_cart}>장바구니</a></nav>
 </div>
 
@@ -228,7 +234,7 @@ def footer(rel, compact=False):
     :where(body.v2.ft-compact) footer.ft .biz{{margin-top:var(--s3)}}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="{p}faq.html#q-pay">결제</a><a href="{p}terms.html">환불 규정</a><a href="{p}terms.html">이용약관</a><a href="{p}privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="{p}support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="{p}faq.html#q-pay">결제</a><a href="{p}terms.html">환불 규정</a><a href="{p}terms.html">이용약관</a><a href="{p}privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more"{disclosure}>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -246,7 +252,7 @@ def footer(rel, compact=False):
         <ul><li><a href="{p}support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
+    <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
     </details>
   </div>
 </footer>'''
@@ -267,6 +273,9 @@ def fix(rel):
 
 def _sub_guarded(regex, maker, s, rel, name, max_span=20000):
     """블록 교체 가드: 매치 0 = 무변경, 2+ = 실패(중복 셸 방지), 과대 스팬 = 정규식 과탐(본문 삼킴) 실패."""
+    # R2 발주에서 파일 무변경으로 지정한 면은 공용 셸도 기존 바이트를 유지한다.
+    if rel in {"404.html", "cart.html", "checkout.html", "join.html", "login.html", "my.html", "pay_done.html"}:
+        return s
     ms = list(regex.finditer(s))
     if not ms:
         return s

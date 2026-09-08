@@ -220,6 +220,9 @@ def write_manifest(n, n_doc, n_sale, items):
 
 
 def main():
+    # R2 두 상품 소개 면도 템플릿에서 생성한다. build_all의 단계 순서는 유지한다.
+    from build_programs import build as build_programs
+    build_programs()
     html, n, n_doc, n_sale, items = build()
     before = OUT.read_text(encoding="utf-8") if OUT.exists() else None
     # 후공정(nav, footer, seo, analytics)이 실린 기존 산출은 템플릿 원본과 달라 매번 다시 쓴다. 멱등성은 build_all.sh 2회 해시로 잰다

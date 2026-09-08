@@ -1,0 +1,436 @@
+[
+  {
+    "file": "_tools/guidebook_index_v2.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "about.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "b2b.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "classroom.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "faq.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/ajou.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/catholic.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/cau.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/dankook.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/donga.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/dongduk.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/dongguk.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/duksung.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/ewha.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/gachon.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 C  |  게이트 S1 2건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/hanyang-erica.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/hufs.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/incheon.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/index.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/inha.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/khu.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/konkuk.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 C  |  게이트 S1 2건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/kookmin.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 C  |  게이트 S1 0건 S2 8건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/kwangwoon.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/kyonggi.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 3건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/myongji.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/pusan.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/sahmyook.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/sejong.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/seoultech.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/snu.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 3건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/sookmyung.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/soongsil.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/sungshin.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/swu.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/ulsan.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "guidebook/uos.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "index.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "interview.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lecture.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/common.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/korea-hum.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/korea-sci.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/yonsei-hum.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/yonsei-intl.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "lectures/yonsei-sci.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "library.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "notice.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "pastexam.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "privacy.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 2건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "programs/guidebook.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "programs/korea.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 7건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "programs/studio.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "programs/yonsei.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 5건 S2 8건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "studio.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "support.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "terms.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 C  |  게이트 S1 0건 S2 9건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "_tools/program_guidebook_v2.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "_tools/program_studio_v2.html",
+    "exit": 0,
+    "grade": [
+      "[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "_tools/program_yonsei_v2.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 5건 S2 8건  |  권고 0건"
+    ]
+  },
+  {
+    "file": "_tools/program_korea_v2.html",
+    "exit": 1,
+    "grade": [
+      "[deliverable/general] 등급 D  |  게이트 S1 7건 S2 1건  |  권고 0건"
+    ]
+  }
+]

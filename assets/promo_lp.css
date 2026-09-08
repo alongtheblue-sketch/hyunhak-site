@@ -200,8 +200,6 @@ footer.foot:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .legal{margin-t
 @media(max-width:640px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).shots.g2h .shot .pane .clipwin img{min-width:580px}}
 @media(max-width:640px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).shots.g2h .shot .pane::after{content:"옆으로 밀어 원본 크기로 봅니다";display:block; font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--gray); padding-top:8px}}
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).shot{break-inside:avoid}}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *).folio{display:flex;justify-content:space-between;gap:16px; font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;color:var(--gray); padding-bottom:12px;margin-bottom:clamp(48px,6vw,72px); border-bottom:1px solid var(--hairs)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *).folio .fr{color:var(--seal)}
 section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--mat)}
 section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .cards > .cell{background:var(--mat)}
 section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .cards > .cell.mat,section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .pair .memo{background:var(--paper)}
@@ -239,8 +237,6 @@ section.blk.inkfull:where(html[data-lp~="exam"],html[data-lp~="exam"] *){backgro
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .flow .st .fno::after{background:rgba(246,242,233,.16)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .flow .st::after{background:var(--ink)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .loopback{color:rgba(246,242,233,.62)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .folio{border-bottom-color:rgba(246,242,233,.14);color:rgba(246,242,233,.66)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .folio .fr{color:rgba(246,242,233,.66)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .kicker{color:rgba(246,242,233,.82)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .flow .st .fno{color:rgba(246,242,233,.82)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .centerhead .lead{color:rgba(246,242,233,.74)}
@@ -511,15 +507,6 @@ p:where(html[data-lp~="modern"],html[data-lp~="modern"] *){max-width:var(--measu
   line-height:var(--lh-tight);letter-spacing:-.032em;
 }
 :where(body.v2).lp .hero h1 .thin{font-family:var(--sans);font-weight:var(--w-head);font-size:var(--t-base)}
-:where(body.v2).lp .hero-folio{
-  display:flex;align-items:center;justify-content:space-between;gap:var(--s4);
-  margin-block:var(--s5) var(--s4);padding-block:var(--s3);border-bottom:0;
-}
-:where(body.v2).lp .hero-folio .heroscroll{margin:0;font-size:var(--t-cap);letter-spacing:0}
-:where(body.v2).lp .hero-folio .sealmark{
-  display:block;flex:none;margin:0;writing-mode:horizontal-tb;
-  font-size:var(--t-sm);padding:var(--s2);transform:none;
-}
 :where(body.v2).lp .facts{--t-h2:clamp(26px,2.7vw,34px);border-bottom:var(--rule,1px solid var(--hairs));background:var(--card,var(--paper))}
 :where(body.v2).lp .facts ul{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);padding-block:var(--s5);list-style:none;margin:0}
 :where(body.v2).lp .facts li{min-width:0;border-left:var(--rule-strong,1px solid var(--hair));padding-left:var(--s3)}
