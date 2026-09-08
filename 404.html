@@ -11,6 +11,7 @@
 <!-- analytics:end -->
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>현학적 연구소, 없는 면</title>
+<script>(function(){try{var p=location.pathname;document.title=document.title+' '+p;if(typeof gtag==='function')gtag('event','page_not_found',{missing_path:p,ref_url:document.referrer||'(none)'});}catch(e){}})();</script>
 <!-- seo:begin -->
 <link rel="canonical" href="https://hyunhak.com/404.html">
 <meta name="description" content="요청하신 주소의 면을 찾지 못했습니다.">
@@ -101,6 +102,8 @@
     <span class="code">404</span>
     <h1>찾는 면이 없습니다</h1>
     <p class="lede">주소가 바뀌었거나 삭제된 면. 주소를 다시 확인하거나 아래에서 이동.</p>
+    <p class="lede" id="nf-path" hidden>요청한 주소: <code></code></p>
+    <script>(function(){try{var e=document.getElementById("nf-path");e.querySelector("code").textContent=location.pathname;e.hidden=false;}catch(x){}})();</script>
     <div class="acts">
       <a class="btn" href="/">처음으로 <span class="ar" aria-hidden="true">→</span></a>
       <a class="btn ghost" href="/guidebook/index.html">가이드북 목록</a>
