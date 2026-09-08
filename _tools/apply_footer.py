@@ -10,6 +10,17 @@ import v2_shell as V
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 EXCLUDE = {"reader.html", "insta.html"}
 F = re.compile(r'<footer\b[^>]*>.*?</footer>', re.S)
+# 짧은 본문 면만 두 행(법적 링크, 펼침 정보)으로 접는다. FAQ/고객센터는 긴 본문이라 제외.
+COMPACT = {"notice.html", "pay_done.html", "404.html", "cart.html", "login.html"}
+
+
+def compact_body(s, rel):
+    def replace(m):
+        classes = [c for c in m[2].split() if c != "ft-compact"]
+        if rel in COMPACT:
+            classes.append("ft-compact")
+        return m[1] + " ".join(classes) + m[3]
+    return re.sub(r'(<body\b[^>]*\bclass=")([^"]*)(")', replace, s, count=1)
 
 
 def main():
@@ -23,7 +34,7 @@ def main():
         s = open(path, encoding="utf-8").read()
         if '<body class="v2' not in s:
             print("v2 아님 (footer 미적용):", rel); continue
-        new = V.apply_footer(s, rel)
+        new = V.apply_footer(compact_body(s, rel), rel, compact=rel in COMPACT)
         new = V.apply_fix(new, rel)
         if not V.FOOTER_RE.search(s): print("footer 없음:", rel)
         fm = F.search(new)

@@ -98,13 +98,14 @@ GNB = [
     ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html")),
     ("library.html", "자료실", ("library.html",)),
     ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
+    ("b2b.html", "스쿨 플랜", ("b2b.html",)),
 ]
 GNB_GROUP_BREAK = 3   # 이 인덱스 항목부터 부가 묶음 (파는 것 3, 부가 2. 인강 신설 2026-09-06. 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
     ("index.html#find", "대학 찾기", (), False, "find"),
-    ("guidebook/index.html", "가이드북", ("guidebook/",), True, "book"),
-    ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html"), False, "play"),
+    ("guidebook/index.html", "가이드북", ("guidebook/",), False, "book"),
+    ("studio.html", "스튜디오", ("studio.html", "programs/studio.html", "programs/yonsei.html", "programs/korea.html"), False, "camera"),
     ("my.html", "MY", ("my.html",), False, "my"),
 ]
 
@@ -115,6 +116,7 @@ FIX_ICONS = {
     "book": '<rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/>',
     "my": '<circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/>',
     "play": '<circle cx="12" cy="12" r="8.4"/><path d="M10.3 9.1v5.8l4.8-2.9z"/>',
+    "camera": '<rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/>',
 }
 
 
@@ -157,6 +159,21 @@ def shell(rel):
     cur_cart = ' aria-current="page"' if rel == "cart.html" else ""
     cur_login = ' aria-current="page"' if rel == "login.html" else ""
     return f'''<div class="util">
+  <style>
+    :where(body.v2) .hd .tools .aux{{display:none}}
+    @media (min-width:56.251rem){{
+      :where(body.v2) .hd .row{{gap:var(--s2)}}
+      :where(body.v2) .hd .gnb{{gap:var(--s1)}}
+      :where(body.v2) .hd .gnb a{{font-size:var(--t-sm)}}
+      :where(body.v2) .hd .gnb a.gap{{margin-left:var(--s2)}}
+      :where(body.v2) .hd .search{{width:var(--s10)}}
+    }}
+    @media (max-width:56.25rem){{
+      :where(body.v2) .hd .row,:where(body.v2) .hd .tools{{gap:var(--s2)}}
+      :where(body.v2) .hd .tools .aux{{display:flex}}
+      :where(body.v2) .hd .tools .aux a{{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);font-size:var(--t-xs);white-space:nowrap}}
+    }}
+  </style>
   <span class="han">玄學的 硏究所</span>
   <nav aria-label="계정"><a href="{p}login.html"{cur_login}>로그인</a><a href="{p}cart.html"{cur_cart}>장바구니</a></nav>
 </div>
@@ -176,6 +193,7 @@ def shell(rel):
         <input id="q1" type="search" autocomplete="off">
         <button type="submit" aria-label="검색">→</button>
       </form>
+      <div class="aux"><a href="{p}cart.html"{cur_cart} aria-live="polite" aria-atomic="true">장바구니</a></div>
       <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
     </div>
   </div>
@@ -186,16 +204,38 @@ def shell(rel):
 </header>''' + promo_strip(rel)
 
 
-def footer(rel):
+def footer(rel, compact=False):
     p = prefix_of(rel)
     links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l, _ in GNB)
+    disclosure = "" if compact else " open"
+    # v2_check 의 정적 셸 계약은 속성 없는 <footer> 를 요구한다.
+    # 파싱 즉시 클래스만 부여해 footer.ft 스타일과 기존 검증 계약을 함께 유지한다.
     return f'''<footer>
+  <script>document.currentScript.parentElement.classList.add('ft');</script>
+  <style>
+    :where(body.v2) footer.ft{{border-color:var(--edge, var(--hair))}}
+    :where(body.v2) footer.ft .ft-legal{{display:flex;flex-wrap:wrap;gap:0 var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s4);border-bottom:var(--rule);border-color:var(--edge, var(--hair));color:var(--ink)}}
+    :where(body.v2) footer.ft .ft-legal a{{font-size:var(--t-xs)}}
+    :where(body.v2) footer.ft .ft-more>summary{{display:none}}
+    :where(body.v2) footer.ft .ft-contact{{margin-top:var(--s2)}}
+    :where(body.v2) footer.ft .biz{{font-size:var(--t-xs);color:var(--gray);border-color:var(--edge, var(--hair))}}
+    :where(body.v2) footer.ft .bizinfo{{font-size:var(--t-xs);color:var(--gray)}}
+    :where(body.v2.ft-compact) footer.ft{{padding-block:var(--s3)}}
+    :where(body.v2.ft-compact) footer.ft .ft-legal{{gap:0 var(--s2);padding-bottom:var(--s2);margin-bottom:0}}
+    :where(body.v2.ft-compact) footer.ft .ft-more>summary{{display:list-item;min-height:var(--tap);align-content:center;cursor:pointer;font-size:var(--t-xs);color:var(--ink)}}
+    :where(body.v2.ft-compact) footer.ft .g{{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}}
+    :where(body.v2.ft-compact) footer.ft .ft-brand{{grid-column:1/-1}}
+    :where(body.v2.ft-compact) footer.ft .biz{{margin-top:var(--s3)}}
+  </style>
   <div class="wrap">
+    <nav class="ft-legal" aria-label="법적 고지"><a href="{p}faq.html#q-pay">결제</a><a href="{p}terms.html">환불 규정</a><a href="{p}terms.html">이용약관</a><a href="{p}privacy.html">개인정보처리방침</a></nav>
+    <details class="ft-more"{disclosure}>
+    <summary>현학적 연구소</summary>
     <div class="g">
-      <div>
+      <div class="ft-brand">
         <h2>현학적 연구소 <span class="han">玄學的 硏究所</span></h2>
         <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
-        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+        <p class="ft-contact">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h2>바로가기</h2>
@@ -206,7 +246,8 @@ def footer(rel):
         <ul><li><a href="{p}support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address><nav aria-label="법적 고지"><a href="{p}terms.html">이용약관</a> &nbsp; <a href="{p}privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
+    </details>
   </div>
 </footer>'''
 
@@ -215,11 +256,10 @@ def fix(rel):
     p = prefix_of(rel)
     out = []
     for h, l, keys, pri, icon in FIX:
-        # cta = 전환 유도 채움, on + aria-current = 현재 위치. 둘을 갈라야 다른 면에서도
-        # 가이드북 항목이 활성으로 읽히는 일이 없다 (라이브 재채점 보완 2)
+        # primary 채움은 사용하지 않는다. 현재 위치만 on + aria-current 로 표시한다.
         on = _on(rel, keys)
         cls = " ".join(c for c in (("cta" if pri else ""), ("on" if on else "")) if c)
-        href = "#grid" if (pri and rel == "guidebook/index.html") else p + h
+        href = "#grid" if (h == "guidebook/index.html" and rel == "guidebook/index.html") else p + h
         attrs = (f' class="{cls}"' if cls else "") + (' aria-current="page"' if on else "")
         out.append(f'<a{attrs} href="{href}">{_fi(icon)}{l}</a>')
     return '<nav class="fix" aria-label="모바일 바로가기">' + "".join(out) + "</nav>"
@@ -243,8 +283,8 @@ def apply_shell(s, rel):
     return _sub_guarded(SHELL_RE, shell, s, rel, "shell")
 
 
-def apply_footer(s, rel):
-    return _sub_guarded(FOOTER_RE, footer, s, rel, "footer")
+def apply_footer(s, rel, compact=False):
+    return _sub_guarded(FOOTER_RE, lambda path: footer(path, compact), s, rel, "footer")
 
 
 def apply_fix(s, rel):
