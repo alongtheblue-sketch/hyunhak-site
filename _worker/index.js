@@ -1,5 +1,5 @@
 // hyunhak.com 정적 사이트 워커 (Workers static assets, run_worker_first).
-// 하는 일 다섯 가지: www → apex 301, 경로 해석(GitHub Pages 와 같은 규칙), 보호층 셸 헤더, 답변엔진 유입 원장, 자산 바이트 범위(206).
+// 하는 일 여섯 가지: www → apex 301, 구 URL 301 표(철거 면 수습), 경로 해석(GitHub Pages 와 같은 규칙), 보호층 셸 헤더, 답변엔진·없는 면 유입 원장, 자산 바이트 범위(206).
 // 콘텐츠 판단은 하지 않는다. 봇 차단은 Cloudflare 존 정책(AI bot policies, WAF 룰)이 맡고, 본 워커는 같은 바이트를 모두에게 낸다 (클로킹 금지).
 
 const APEX = "hyunhak.com";
@@ -14,6 +14,76 @@ const REMOVED_GUIDEBOOK = new Set([
   "/guidebook/pknu.html",
   "/guidebook/hongik.html",
 ]);
+
+// 2026-09-09 구 URL 301 표. GA4 「현학적 연구소, 없는 면」 51회(전체 1위)의 원인 = 08-26(f74ccfc) 철거한 면접 아카이브 26면 /interview/<slug>.html 과
+// 08-26~31 철거한 store·store_item·programs/skku 가 301 없이 내려가 답변엔진(ChatGPT-User, PerplexityBot)과 검색 색인에 남아 계속 불린다
+// (CF 8일 실측 korea 60 · hufs 41 · seoultech 13, 일별 증가). 키 = legacyKey() 정규화 경로, 값 = 실재 면의 절대 경로.
+// 목적지 실재와 삭제 면 전건 등재는 _tools/link_check.py 가 빌드마다 대조한다(누락 = FAIL). 쿼리는 보존한다(utm_source=chatgpt.com 이 목적지 ai_referrals 에 남게).
+const LEGACY_REDIRECTS = {
+  "/interview/index.html": "/interview.html",
+  "/interview/ajou.html": "/guidebook/ajou.html",
+  "/interview/catholic.html": "/guidebook/catholic.html",
+  "/interview/cau.html": "/guidebook/cau.html",
+  "/interview/dongguk.html": "/guidebook/dongguk.html",
+  "/interview/ewha.html": "/guidebook/ewha.html",
+  "/interview/gachon.html": "/guidebook/gachon.html",
+  "/interview/hufs.html": "/guidebook/hufs.html",
+  "/interview/inha.html": "/guidebook/inha.html",
+  "/interview/khu.html": "/guidebook/khu.html",
+  "/interview/konkuk.html": "/guidebook/konkuk.html",
+  "/interview/kookmin.html": "/guidebook/kookmin.html",
+  "/interview/kwangwoon.html": "/guidebook/kwangwoon.html",
+  "/interview/kyonggi.html": "/guidebook/kyonggi.html",
+  "/interview/myongji.html": "/guidebook/myongji.html",
+  "/interview/pusan.html": "/guidebook/pusan.html",
+  "/interview/sejong.html": "/guidebook/sejong.html",
+  "/interview/seoultech.html": "/guidebook/seoultech.html",
+  "/interview/snu.html": "/guidebook/snu.html",
+  "/interview/sookmyung.html": "/guidebook/sookmyung.html",
+  "/interview/soongsil.html": "/guidebook/soongsil.html",
+  "/interview/sungshin.html": "/guidebook/sungshin.html",
+  "/interview/uos.html": "/guidebook/uos.html",
+  "/interview/korea.html": "/programs/korea.html",     // 고려대 제시문 면접 스튜디오 상세
+  "/interview/yonsei.html": "/programs/yonsei.html",   // 연세대 제시문 면접 스튜디오 상세
+  "/interview/knu.html": "/interview.html",            // 비판매 대학 → 38개 대학 면접 형태 판정표
+  "/interview/skku.html": "/interview.html",
+  "/store.html": "/guidebook/index.html",              // 08-26 v2 플랫폼 전환 전 상점 면
+  "/store_item.html": "/guidebook/index.html",
+  "/programs/skku.html": "/studio.html",               // 08-27 성균관대 스튜디오 폐지
+  "/programs/index.html": "/programs/guidebook.html",  // 디렉터리 인덱스 없음 → 대표 소개면
+  "/programs.html": "/programs/guidebook.html",
+  "/lectures/index.html": "/lectures.html",
+};
+// GitHub Pages 해석과 같은 정규화: 디렉터리 → index.html, 확장자 없는 경로 → .html. 그 뒤 표를 찾는다.
+function legacyKey(pathname) {
+  if (pathname.endsWith("/")) return pathname + "index.html";
+  if (!/\.[A-Za-z0-9]+$/.test(pathname)) return pathname + ".html";
+  return pathname;
+}
+
+// 404 원장 UA 분류 (폐쇄 어휘: ai_user | ai_bot | search_bot | other_bot | browser | none). 원문 UA 는 저장하지 않는다.
+// 순서가 판정이다 — 사용자 대행 fetcher(ChatGPT-User)가 먼저, 그다음 AI 크롤러, 검색 색인봇, 그 외 봇·도구, 남는 것이 브라우저.
+const UA_CLASS = [
+  [/ChatGPT-User|Claude-User|Perplexity-User|Meta-ExternalFetcher|MistralAI-User|Google-CloudVertexBot/i, "ai_user"],
+  [/OAI-SearchBot|Claude-SearchBot|PerplexityBot|DuckAssistBot|YouBot|GPTBot|ClaudeBot|anthropic-ai|CCBot|Google-Extended|Bytespider|Amazonbot|meta-externalagent/i, "ai_bot"],
+  [/Googlebot|Bingbot|bingpreview|Yeti|Daum|Applebot|Slurp|NaverBot|kakaotalk-scrap|Yandex/i, "search_bot"],
+  [/bot|crawl|spider|scan|curl|wget|python|go-http|java|httpx|axios|node-fetch|okhttp|headless|smoke|audit|leakix|censys|zgrab|Prefetch Proxy|facebookexternalhit/i, "other_bot"],
+];
+function uaClass(ua) {
+  if (!ua) return "none";
+  for (const [re, c] of UA_CLASS) if (re.test(ua)) return c;
+  return "browser";
+}
+function refHostOf(request) {
+  try { return new URL(request.headers.get("Referer") || "").hostname.toLowerCase(); } catch { return ""; }
+}
+// 404 원장 쓰기 예산 — 스캐너가 분당 수백 건을 때리므로 isolate 당 분당 상한(통계 용도, 근사면 충분)
+let nfBudget = { min: "", n: 0 };
+function underNfBudget() {
+  const k = new Date().toISOString().slice(0, 16);
+  if (k !== nfBudget.min) nfBudget = { min: k, n: 0 };
+  return ++nfBudget.n <= 60;
+}
 
 // 보호층 셸: 색인 금지 + 캐시 금지. 본문은 api 뒤에 있으므로 셸 자체는 비어 있지만 헤더로 한 번 더 못박는다.
 const SHELL_NOINDEX = new Set(["/reader.html", "/lecture.html"]);
@@ -143,6 +213,18 @@ export default {
       const k = p0.endsWith(".html") ? p0 : p0 + ".html";
       if (REMOVED_GUIDEBOOK.has(k)) { url.pathname = "/guidebook/index.html"; url.search = ""; return Response.redirect(url.toString(), 301); }
     }
+    {
+      const to = LEGACY_REDIRECTS[legacyKey(url.pathname)];
+      if (to) { url.pathname = to; return Response.redirect(url.toString(), 301); }
+    }
+    if (url.pathname === "/favicon.ico") {
+      // 브라우저가 매 방문 자동 요청하는 경로. 404.html(12KB) 대신 아이콘 자산을 200 으로 낸다 (CF 8일 실측 60건)
+      const ico = await fetchAsset(env, request, url, "/assets/favicon_32.png");
+      if (ico.status === 200) {
+        const h = new Headers(ico.headers); h.set("Cache-Control", "public, max-age=86400");
+        return new Response(ico.body, { status: 200, headers: h });
+      }
+    }
     // workers.dev 등 비정식 호스트 (aigate REQ11): 존 밖이라 WAF·AI bot policies 가 안 걸린다.
     // 공개 지면은 noindex 로 서빙(컷오버 전 스모크 용도 유지), 보호층 셸은 아예 내지 않는다.
     const offZone = url.hostname !== APEX;
@@ -153,6 +235,13 @@ export default {
       if (res.status === 404) {
         // GH Pages 와 동일: 모든 404 는 404.html 본문 (비 HTML 경로 포함, aigate NIT1)
         const nf = await fetchAsset(env, request, url, "/404.html");
+        // 없는 면 원장 (2026-09-09): 경로·리퍼러 호스트·UA 분류만 (PII 없음). 다음 「없는 면」 유입은 _tools/not_found_report.py 로 즉시 특정한다.
+        // 표가 아직 없어도 waitUntil + catch 라 응답은 그대로 404 다 (DDL 은 hyunhak-api tools/migrate_not_found_20260909.sql).
+        if (!offZone && env.DB && request.method === "GET" && underNfBudget()) ctx.waitUntil(
+          env.DB.prepare("INSERT INTO not_found(ts,path,ref_host,ua_class) VALUES(?,?,?,?)")
+            .bind(new Date().toISOString(), url.pathname.slice(0, 200), refHostOf(request).slice(0, 100), uaClass(request.headers.get("User-Agent") || "")).run()
+            .catch((err) => console.log("not_found fail", String(err).slice(0, 200)))
+        );
         return withHeaders(new Response(nf.body, { status: 404, headers: nf.headers }), "/404.html", url.pathname);
       }
       if (!offZone && path && path.endsWith(".html") && res.status === 200 && env.DB && (request.method === "GET")) {
