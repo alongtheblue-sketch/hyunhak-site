@@ -50,6 +50,16 @@
 .cartmsg{margin-top:var(--s3);padding:var(--s3);color:var(--ink);border-left:3px solid var(--seal);background:var(--mat);border-radius:var(--r-md);max-width:none}
 @media (max-width:900px){.pages .plans{grid-template-columns:1fr}.pages .plans .plan.wide{display:flex}}
 @media (max-width:600px){.pages .steps{grid-template-columns:1fr}}
+
+:where(body.v2) .phead h1 span{white-space:nowrap}
+:where(body.v2) #plans>.deal{font-size:var(--t-sm);color:var(--ink);margin-bottom:var(--s4);max-width:none}
+:where(body.v2) .school-plan{margin-top:var(--s4)}
+:where(body.v2) .sets th{border-bottom:var(--rule-hd)}
+:where(body.v2) .sets td,:where(body.v2) .unit,:where(body.v2) .page,:where(body.v2) .box,:where(body.v2) .faq dt,:where(body.v2) .plan .inc li{border-color:var(--edge, var(--hair))}
+:where(body.v2) .plan:not(.pick){box-shadow:inset 0 0 0 var(--line) var(--edge, var(--hair))}
+:where(body.v2):has(#ranking[hidden]) a[href="#ranking"]{display:none}
+@media (max-width:56.25rem){:where(body.v2) .phead h1{font-size:var(--t-h3)}}
+@media (max-width:23rem){:where(body.v2) .phead h1{font-size:var(--t-h4)}}
 </style>
 </head>
 <body class="v2">
@@ -57,6 +67,21 @@
 <div class="frame"><div class="sheet">
 
 <div class="util">
+  <style>
+    :where(body.v2) .hd .tools .aux{display:none}
+    @media (min-width:56.251rem){
+      :where(body.v2) .hd .row{gap:var(--s2)}
+      :where(body.v2) .hd .gnb{gap:var(--s1)}
+      :where(body.v2) .hd .gnb a{font-size:var(--t-sm)}
+      :where(body.v2) .hd .gnb a.gap{margin-left:var(--s2)}
+      :where(body.v2) .hd .search{width:var(--s10)}
+    }
+    @media (max-width:56.25rem){
+      :where(body.v2) .hd .row,:where(body.v2) .hd .tools{gap:var(--s2)}
+      :where(body.v2) .hd .tools .aux{display:flex}
+      :where(body.v2) .hd .tools .aux a{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);font-size:var(--t-xs);white-space:nowrap}
+    }
+  </style>
   <span class="han">玄學的 硏究所</span>
   <nav aria-label="계정"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></nav>
 </div>
@@ -68,7 +93,7 @@
       현학적 연구소
     </a>
     <nav class="gnb" aria-label="주메뉴">
-      <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+      <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
     </nav>
     <div class="tools">
       <form class="search" role="search" onsubmit="return false">
@@ -76,11 +101,12 @@
         <input id="q1" type="search" autocomplete="off">
         <button type="submit" aria-label="검색">→</button>
       </form>
+      <div class="aux"><a href="cart.html" aria-live="polite" aria-atomic="true">장바구니</a></div>
       <button type="button" class="menu" aria-expanded="false" aria-controls="mnav">메뉴</button>
     </div>
   </div>
   <nav class="mnav" id="mnav" aria-label="모바일 메뉴">
-    <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a>
+    <a href="guidebook/index.html">가이드북</a><a href="studio.html" class="on" aria-current="page">제시문 면접 스튜디오</a><a href="lectures.html">인강</a><a href="library.html" class="gap">자료실</a><a href="about.html">연구소</a><a href="b2b.html">스쿨 플랜</a>
     <div class="aux"><a href="login.html">로그인</a><a href="cart.html">장바구니</a></div>
   </nav>
 </header>
@@ -98,8 +124,8 @@
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>제시문 면접 스튜디오</span></nav>
-    <h1>기출 제시문 150세트, <span class="nb">실전 규격 촬영 응시</span></h1>
-    <p class="lede">연세대는 <b class="nb">준비 8분과 답변 5분</b>, 고려대는 <b class="nb">준비 21분과 발화 7분</b>입니다.<br>스튜디오는 그 시간을 그대로 재현해 촬영 응시하고, 한 지문에 <b class="nb">5회</b>까지 응시하며 회차마다 전사와 진단과 구술체 재구성 <b class="nb">세 단</b>을 마이페이지에 첨부합니다.</p>
+    <h1><span>연세대, 고려대 제시문 면접을</span><br><span>실전 규격으로 연습합니다</span></h1>
+    <p class="lede">기출 제시문 150세트, 지문마다 5회 응시, 세 단 첨삭입니다.</p>
   <!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함.</p><!-- /aeo -->
 </div>
     <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn" href="#trialGo" id="trialGo">체험 응시 1회 시작</a><a class="tlink" href="#sets">세트 표 보기</a></div>
@@ -175,6 +201,7 @@
 <section class="page" id="plans">
   <p class="folio"><b>卷三</b><span>이용권</span><span class="r">3</span></p>
   <div class="sh"><div><h2 class="t">이용권 세 가지</h2><p>지문 1편 낱권, 응시 단위 전권, 공통 풀이 인강, 세 가지입니다. 부가세 포함 가격입니다.</p></div></div>
+  <p class="deal">낱권 33,000원 × 30편 = 990,000원. 전권은 495,000원, <b>한 편에 16,500원, 인강까지.</b> 990,000원은 합산 금액이며 따로 파는 상품이 아닙니다.</p>
   <div class="plans">
     <div class="plan">
       <h3>지문 낱권</h3>
@@ -201,7 +228,7 @@
         <li><span>인강</span><span>세트별 풀이법 30편, 공통 풀이 포함</span></li>
         <li><span>유효 기간</span><span>응시 12개월, 인강 3개월</span></li>
       </ul>
-      <p class="deal">낱권 33,000원 × 30편 = 990,000원. 전권은 495,000원, <b>한 편에 16,500원, 인강까지.</b> 990,000원은 합산 금액이며 따로 파는 상품이 아닙니다.</p>
+
       <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a></div>
     </div>
     <div class="plan wide" id="lecture">
@@ -217,6 +244,7 @@
       <div class="acts"><button type="button" class="btn ghost" data-cart-sku="lecture-common" data-cart-title="공통 풀이 인강" data-cart-price="220000">담기</button><a class="tlink" href="lectures/common.html">4편 소개와 맛보기 <span class="ar" aria-hidden="true">→</span></a></div>
     </div>
   </div>
+  <p class="note school-plan">학원과 단체는 좌석 수에 따라 할인되는 <a class="tlink" href="b2b.html">스쿨 플랜</a>으로 안내드립니다.</p>
 </section>
 
 <!-- 지면 4. 응시 방식과 절차 -->
@@ -226,7 +254,7 @@
   <div class="steps">
     <div class="step"><span class="no">실전 응시</span><h3>지문 1편당 5회</h3><p>학교의 실제 기출 제시문으로 응시. 문항을 나누지 않는 실전형과 하나씩 끊는 연습형, 한 지문에 다섯 번까지.</p></div>
     <div class="step"><span class="no">태도 기록</span><h3>전면 카메라 녹화</h3><p>응시 장면을 전면 카메라로 기록. 침묵의 길이, 답변의 완주, 개시 선언까지 응시 태도를 함께 남김.</p></div>
-    <div class="step"><span class="no">첨삭 세 단</span><h3>전사, 진단, 재구성</h3><p>말한 그대로를 받아 적고, 오독과 논리의 비약을 짚고, 같은 내용을 어떻게 말했어야 하는지 구술체로 다시 세움.</p></div>
+    <div class="step"><span class="no">첨삭 세 단</span><h3>전사, 진단, 재구성</h3><p>전사문을 대조해 자동으로 채점합니다.</p><p>말한 그대로를 받아 적고, 오독과 논리의 비약을 짚고, 같은 내용을 어떻게 말했어야 하는지 구술체로 다시 세움.</p></div>
     <div class="step"><span class="no">해설 강의</span><h3>세트마다 해설 슬롯</h3><p>지문 목록의 해설 강의 상태가 공개이면 이용권 범위 안에서 바로 시청. 준비 중이면 공개되는 대로 순차 업로드.</p></div>
   </div>
   <div class="sh" style="margin-top:var(--s6)"><div><h2 class="t">응시 절차</h2><p>지문 1편, 응시 5회</p></div></div>
@@ -324,29 +352,49 @@
 </main>
 
 <footer>
+  <script>document.currentScript.parentElement.classList.add('ft');</script>
+  <style>
+    :where(body.v2) footer.ft{border-color:var(--edge, var(--hair))}
+    :where(body.v2) footer.ft .ft-legal{display:flex;flex-wrap:wrap;gap:0 var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s4);border-bottom:var(--rule);border-color:var(--edge, var(--hair));color:var(--ink)}
+    :where(body.v2) footer.ft .ft-legal a{font-size:var(--t-xs)}
+    :where(body.v2) footer.ft .ft-more>summary{display:none}
+    :where(body.v2) footer.ft .ft-contact{margin-top:var(--s2)}
+    :where(body.v2) footer.ft .biz{font-size:var(--t-xs);color:var(--gray);border-color:var(--edge, var(--hair))}
+    :where(body.v2) footer.ft .bizinfo{font-size:var(--t-xs);color:var(--gray)}
+    :where(body.v2.ft-compact) footer.ft{padding-block:var(--s3)}
+    :where(body.v2.ft-compact) footer.ft .ft-legal{gap:0 var(--s2);padding-bottom:var(--s2);margin-bottom:0}
+    :where(body.v2.ft-compact) footer.ft .ft-more>summary{display:list-item;min-height:var(--tap);align-content:center;cursor:pointer;font-size:var(--t-xs);color:var(--ink)}
+    :where(body.v2.ft-compact) footer.ft .g{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
+    :where(body.v2.ft-compact) footer.ft .ft-brand{grid-column:1/-1}
+    :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
+  </style>
   <div class="wrap">
+    <nav class="ft-legal" aria-label="법적 고지"><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <details class="ft-more" open>
+    <summary>현학적 연구소</summary>
     <div class="g">
-      <div>
+      <div class="ft-brand">
         <h2>현학적 연구소 <span class="han">玄學的 硏究所</span></h2>
         <p>대입 면접 전문. 서류기반면접 가이드북, 제시문 면접 스튜디오.</p>
-        <p style="margin-top:8px">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
+        <p class="ft-contact">www.hyunhak.com &nbsp; admin@hyunhak.com</p>
       </div>
       <div>
         <h2>바로가기</h2>
-        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="lectures.html">인강</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li></ul>
+        <ul><li><a href="guidebook/index.html">가이드북</a></li><li><a href="studio.html">제시문 면접 스튜디오</a></li><li><a href="lectures.html">인강</a></li><li><a href="library.html">자료실</a></li><li><a href="about.html">연구소</a></li><li><a href="b2b.html">스쿨 플랜</a></li></ul>
       </div>
       <div>
         <h2>고객센터</h2>
         <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address><nav aria-label="법적 고지"><a href="terms.html">이용약관</a> &nbsp; <a href="privacy.html">개인정보처리방침</a></nav></div>
+    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
+    </details>
   </div>
 </footer>
 
 </div></div>
 
-<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a class="cta" href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a href="lectures.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M10.3 9.1v5.8l4.8-2.9z"/></svg>인강</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
+<nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="index.html#find"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/></svg>대학 찾기</a><a href="guidebook/index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a class="on" aria-current="page" href="studio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg>스튜디오</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
 <script src="assets/rank.js" defer></script>
