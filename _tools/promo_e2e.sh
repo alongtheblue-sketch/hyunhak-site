@@ -34,7 +34,8 @@ a=json.load(open(sys.argv[1])); e=json.load(open(sys.argv[2]))
 chk=[
  ("active 홈 배너 보임", a["home_banner_visible"]==1),
  ("active 홈 할인가 표기 ≥4", a["home_sale_count"]>=4),
- ("active 히어로 권당 23,100원", "23,100원" in (a["home_hero_price"] or "") and "33,000원" in (a["home_hero_price"] or "")),
+ ("active 본문 첫 가격 23,100원+정가 33,000원(재디자인: .prodcta 철거)", "23,100원" in (a["home_hero_price"] or "") and "33,000원" in (a["home_hero_price"] or "")),
+ ("active 스크롤 전 팝업 닫힘(재디자인 40% 게이팅)", a["popup_before_scroll"]==0),
  ("active 타일 23,100원", "23,100원" in (a["home_tile_price"] or "")),
  ("active 스튜디오 단위 카드 346,500원(늦은 렌더)", a["studio_unit_sale"]>=1 and "346,500원" in (a["studio_unit_price"] or "")),
  ("active 가이드북 23,100원 + PDF 77,000원", "23,100원" in (a["gb_price"] or "") and "77,000원" in (a["gb_pdf_btn"] or "")),

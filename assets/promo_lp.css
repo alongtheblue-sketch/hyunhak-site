@@ -2,11 +2,11 @@
 /* W5 extraction:begin */
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *):root{color-scheme: light; --ink:#312E2E; --paper:#F6F2E9; --gray:#696561; --seal:#BC3529; --mat:#F1EBDD; --body:#4A4644; --hair:rgba(49,46,46,.26); --hairs:rgba(49,46,46,.10); --ghost:rgba(49,46,46,.06); --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif; --sans:'Pretendard Variable','Pretendard',-apple-system,BlinkMacSystemFont, 'Apple SD Gothic Neo','Noto Sans KR',sans-serif; --mono:'IBM Plex Mono','SF Mono',ui-monospace,'Apple SD Gothic Neo',monospace; --hand:'Nanum Pen Script','Apple SD Gothic Neo','Noto Sans KR',cursive; --ease:cubic-bezier(.22,1,.36,1); --gut:clamp(20px,4vw,48px); --t-display:clamp(44px,7.6vw,108px); --t-h1:clamp(34px,4.8vw,66px); --t-h2:clamp(29px,3.8vw,54px); --t-h3:clamp(21px,2.4vw,31px); --t-h4:clamp(17px,1.9vw,23px); --sec:clamp(96px,11vw,176px);}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *)*{margin:0;padding:0;box-sizing:border-box}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)body{background:var(--paper);color:var(--ink);font-family:var(--sans); font-size:17px;line-height:1.8;letter-spacing:-0.015em;word-break:keep-all; overflow-wrap:anywhere; font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums; -webkit-font-smoothing:antialiased}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)a{color:inherit;text-decoration:none}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)img,:where(html[data-lp~="exam"],html[data-lp~="exam"] *)svg{display:block;max-width:100%}
+body:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--paper);color:var(--ink);font-family:var(--sans); font-size:17px;line-height:1.8;letter-spacing:-0.015em;word-break:keep-all; overflow-wrap:anywhere; font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums; -webkit-font-smoothing:antialiased}
+a:where(html[data-lp~="exam"],html[data-lp~="exam"] *){color:inherit;text-decoration:none}
+img:where(html[data-lp~="exam"],html[data-lp~="exam"] *),svg:where(html[data-lp~="exam"],html[data-lp~="exam"] *){display:block;max-width:100%}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *):focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)b,:where(html[data-lp~="exam"],html[data-lp~="exam"] *)strong{font-weight:600}
+b:where(html[data-lp~="exam"],html[data-lp~="exam"] *),strong:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-weight:600}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).grain{position:fixed;inset:0;z-index:6;pointer-events:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.19 0 0 0 0 0.18 0 0 0 0 0.18 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23g)'/%3E%3C/svg%3E");background-size:240px 240px;opacity:.05}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).wrap{max-width:1280px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gut); position:relative}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).u{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--gray); line-height:1.6}
@@ -14,25 +14,25 @@
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).ser{font-family:var(--serif)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).measure{max-width:44ch}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).wide{max-width:62ch}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk{padding:var(--sec) 0;border-top:1px solid var(--hair);position:relative; overflow:hidden}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.tight{padding-top:clamp(56px,6vw,88px)}
+section.blk:where(html[data-lp~="exam"],html[data-lp~="exam"] *){padding:var(--sec) 0;border-top:1px solid var(--hair);position:relative; overflow:hidden}
+section.blk.tight:where(html[data-lp~="exam"],html[data-lp~="exam"] *){padding-top:clamp(56px,6vw,88px)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).chno{position:absolute;top:clamp(16px,3vw,40px);right:calc(var(--gut) - 8px); font-family:var(--serif);font-weight:900;font-variant-numeric:tabular-nums; font-size:clamp(96px,15vw,216px);line-height:.8;letter-spacing:-0.04em; color:var(--ghost);pointer-events:none;user-select:none;z-index:0}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section .wrap > :not(.chno){position:relative;z-index:1}
+section:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .wrap > :not(.chno){position:relative;z-index:1}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).kicker{font-family:var(--mono);font-size:12px;letter-spacing:.22em; color:var(--seal);margin-bottom:24px;display:flex;align-items:center;gap:10px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).kicker::before{content:"";width:7px;height:7px;border-radius:50%; background:var(--seal);flex:none}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)h2.sec.big{font-size:clamp(32px,4.4vw,62px);line-height:1.16}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)h2.sec{font-family:var(--serif);font-weight:900;font-size:var(--t-h2); line-height:1.18;letter-spacing:-0.034em;margin-bottom:24px;text-wrap:balance}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)h3.sub{font-family:var(--serif);font-weight:700;font-size:var(--t-h3); line-height:1.3;letter-spacing:-0.026em;margin-bottom:16px}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)h4.min{font-family:var(--serif);font-weight:700;font-size:var(--t-h4); line-height:1.36;letter-spacing:-0.022em;margin-bottom:8px}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)p{color:var(--body);letter-spacing:-0.012em}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)p + p{margin-top:16px}
+h2.sec.big:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-size:clamp(32px,4.4vw,62px);line-height:1.16}
+h2.sec:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-family:var(--serif);font-weight:900;font-size:var(--t-h2); line-height:1.18;letter-spacing:-0.034em;margin-bottom:24px;text-wrap:balance}
+h3.sub:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-family:var(--serif);font-weight:700;font-size:var(--t-h3); line-height:1.3;letter-spacing:-0.026em;margin-bottom:16px}
+h4.min:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-family:var(--serif);font-weight:700;font-size:var(--t-h4); line-height:1.36;letter-spacing:-0.022em;margin-bottom:8px}
+p:where(html[data-lp~="exam"],html[data-lp~="exam"] *){color:var(--body);letter-spacing:-0.012em}
+p:where(html[data-lp~="exam"],html[data-lp~="exam"] *) + p{margin-top:16px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).lead{font-size:clamp(18px,1.6vw,20px);line-height:1.86;color:var(--body); max-width:46ch}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).lead b{color:var(--ink)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).small{font-size:14px;line-height:1.72;color:var(--gray);letter-spacing:-0.008em}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).cap{font-size:13px;line-height:1.62;color:var(--gray);letter-spacing:0}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).head2{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr); gap:clamp(28px,4.5vw,72px);align-items:end;margin-bottom:clamp(48px,6vw,80px)}
 @media(max-width:860px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).head2{grid-template-columns:1fr;gap:20px;align-items:start}}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)header.hero{padding:clamp(64px,8vw,128px) 0 0;position:relative;overflow:hidden}
+header.hero:where(html[data-lp~="exam"],html[data-lp~="exam"] *){padding:clamp(64px,8vw,128px) 0 0;position:relative;overflow:hidden}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).hero .heromega{position:absolute;top:clamp(8px,2vw,32px);left:50%; transform:translateX(16vw);font-family:var(--serif);font-weight:900; font-size:clamp(240px,42vw,620px);line-height:.78;letter-spacing:-0.04em; color:var(--ghost);pointer-events:none;user-select:none;z-index:0}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).hero .wrap{position:relative;z-index:1}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).hero h1{font-family:var(--serif);font-weight:900;font-size:var(--t-display); line-height:1.16;letter-spacing:-0.04em;margin:28px 0 32px;text-wrap:balance}
@@ -43,8 +43,8 @@
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).hero .herogrid .textlink{margin-top:clamp(32px,3vw,44px)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).herogrid{display:grid;grid-template-columns:minmax(0,1.24fr) minmax(0,.76fr); gap:clamp(32px,5vw,88px);align-items:start}
 @media(max-width:940px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).herogrid{grid-template-columns:1fr;gap:40px}}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)blockquote.pull.side{margin-top:8px;padding:0 0 0 clamp(20px,2.4vw,32px); border:0;border-left:1px solid var(--hair)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)blockquote.pull.side p{font-family:var(--serif);font-size:clamp(16px,1.5vw,18.5px); line-height:1.84;max-width:38ch}
+blockquote.pull.side:where(html[data-lp~="exam"],html[data-lp~="exam"] *){margin-top:8px;padding:0 0 0 clamp(20px,2.4vw,32px); border:0;border-left:1px solid var(--hair)}
+blockquote.pull.side:where(html[data-lp~="exam"],html[data-lp~="exam"] *) p{font-family:var(--serif);font-size:clamp(16px,1.5vw,18.5px); line-height:1.84;max-width:38ch}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).specrow{display:flex;flex-wrap:wrap;gap:0;margin:clamp(56px,6vw,88px) 0 0; border-top:1px solid var(--ink);border-bottom:1px solid var(--hair)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).specrow > div{flex:1 1 150px;padding:28px 0 24px 24px; border-left:1px solid var(--hairs)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).specrow > div:first-child{padding-left:0;border-left:0}
@@ -56,10 +56,10 @@
 @media(max-width:640px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).specrow > div:last-child:nth-child(odd){grid-column:1/-1}}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).heroscroll{display:flex;align-items:center;gap:12px;margin-top:clamp(40px,5vw,64px); font-family:var(--mono);font-size:11px;letter-spacing:.22em;color:var(--gray)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).heroscroll::after{content:"";flex:1;height:1px;background:var(--hairs)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)blockquote.pull{margin-top:clamp(48px,6vw,80px);padding:clamp(28px,3.6vw,44px) 0; border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)blockquote.pull p{font-family:var(--serif);font-size:clamp(19px,2vw,25px); line-height:1.72;letter-spacing:-0.02em;color:var(--ink);max-width:56ch; font-weight:600}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)blockquote.pull cite{display:block;margin-top:16px;font-style:normal; font-family:var(--mono);font-size:11.5px;color:var(--gray);letter-spacing:.06em}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.actdiv{background:var(--mat);border-top:3px solid var(--ink); padding:clamp(72px,9vw,136px) 0;position:relative;overflow:hidden}
+blockquote.pull:where(html[data-lp~="exam"],html[data-lp~="exam"] *){margin-top:clamp(48px,6vw,80px);padding:clamp(28px,3.6vw,44px) 0; border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+blockquote.pull:where(html[data-lp~="exam"],html[data-lp~="exam"] *) p{font-family:var(--serif);font-size:clamp(19px,2vw,25px); line-height:1.72;letter-spacing:-0.02em;color:var(--ink);max-width:56ch; font-weight:600}
+blockquote.pull:where(html[data-lp~="exam"],html[data-lp~="exam"] *) cite{display:block;margin-top:16px;font-style:normal; font-family:var(--mono);font-size:11.5px;color:var(--gray);letter-spacing:.06em}
+section.actdiv:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--mat);border-top:3px solid var(--ink); padding:clamp(72px,9vw,136px) 0;position:relative;overflow:hidden}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).actdiv .actno{position:absolute;top:50%;right:calc(var(--gut) - 8px); transform:translateY(-50%);font-family:var(--serif);font-weight:900; font-size:clamp(160px,26vw,380px);line-height:.8;letter-spacing:-0.04em; color:rgba(49,46,46,.07);pointer-events:none;user-select:none}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).actdiv .u{margin-bottom:28px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).actdiv h2{font-family:var(--serif);font-weight:900; font-size:clamp(30px,4.6vw,64px);line-height:1.22;letter-spacing:-0.036em; max-width:22ch;text-wrap:balance}
@@ -167,8 +167,8 @@
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).dl .r dt{color:var(--gray);font-size:13.5px;letter-spacing:.02em}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).dl .r dd{color:var(--ink)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).tbd{color:var(--seal);font-size:13.5px}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)footer.foot{border-top:1px solid var(--ink);padding:44px 0 72px}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)footer.foot .legal{margin-top:12px}
+footer.foot:where(html[data-lp~="exam"],html[data-lp~="exam"] *){border-top:1px solid var(--ink);padding:44px 0 72px}
+footer.foot:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .legal{margin-top:12px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).foot .brand{font-family:var(--serif);font-weight:700;font-size:16px; letter-spacing:-0.02em;display:flex;align-items:center;gap:8px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).foot .brand .seal{width:9px;height:9px;border-radius:50%;background:var(--seal)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).foot .note{margin-top:16px;font-size:12.5px;line-height:1.8;color:var(--gray); max-width:64ch}
@@ -200,18 +200,18 @@
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).shot{break-inside:avoid}}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).folio{display:flex;justify-content:space-between;gap:16px; font-family:var(--mono);font-size:11.5px;letter-spacing:.22em;color:var(--gray); padding-bottom:12px;margin-bottom:clamp(48px,6vw,72px); border-bottom:1px solid var(--hairs)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).folio .fr{color:var(--seal)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg{background:var(--mat)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .cards > .cell{background:var(--mat)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .cards > .cell.mat,:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .pair .memo{background:var(--paper)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .demohead{background:var(--paper)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .shot{background:var(--paper)}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.matbg .tb tbody tr:hover{background:var(--paper)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--mat)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .cards > .cell{background:var(--mat)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .cards > .cell.mat,section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .pair .memo{background:var(--paper)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .demohead{background:var(--paper)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .shot{background:var(--paper)}
+section.blk.matbg:where(html[data-lp~="exam"],html[data-lp~="exam"] *) .tb tbody tr:hover{background:var(--paper)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).centerhead{text-align:center;max-width:720px;margin:0 auto clamp(48px,6vw,80px); position:relative}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).centerhead .kicker{justify-content:center}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).centerhead h2.sec{margin-left:auto;margin-right:auto}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).centerhead .lead{max-width:40ch;margin:0 auto;text-align:center}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.slit{position:relative}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.slit::before{content:"";position:absolute;top:-5px;left:50%; width:8px;height:8px;margin-left:-4px;background:var(--seal); transform:rotate(45deg)}
+section.blk.slit:where(html[data-lp~="exam"],html[data-lp~="exam"] *){position:relative}
+section.blk.slit:where(html[data-lp~="exam"],html[data-lp~="exam"] *)::before{content:"";position:absolute;top:-5px;left:50%; width:8px;height:8px;margin-left:-4px;background:var(--seal); transform:rotate(45deg)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).voices{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,24px)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).voices .v{border:1px solid var(--hair);padding:clamp(28px,3vw,44px); position:relative;background:var(--paper)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).voices .v::before{content:"“";position:absolute;top:8px;left:16px; font-family:var(--serif);font-weight:900;font-size:clamp(64px,7vw,96px); line-height:1;color:var(--hairs)}
@@ -223,7 +223,7 @@
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).pivot::before{content:"";display:block;width:7px;height:7px;border-radius:50%; background:var(--seal);margin:0 auto 28px}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).pivot p{font-family:var(--serif);font-weight:900;font-size:clamp(23px,3vw,40px); line-height:1.5;letter-spacing:-0.03em;color:var(--ink);max-width:44ch; margin:0 auto;text-wrap:balance}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).pivot p b{color:var(--seal);font-weight:900}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk.inkfull{background:var(--ink);border-top-color:var(--ink);color:var(--paper)}
+section.blk.inkfull:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--ink);border-top-color:var(--ink);color:var(--paper)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull h2.sec{color:var(--paper)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .lead,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull p{color:rgba(246,242,233,.74)}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkfull .lead b{color:var(--paper)}
@@ -280,7 +280,7 @@
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).proc .p p{font-size:13.5px;line-height:1.68;color:var(--body)}
 @media(max-width:860px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).proc{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).proc{grid-template-columns:1fr}}
-:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.cta{background:var(--ink);color:var(--paper); padding:clamp(96px,12vw,176px) 0;margin-top:var(--sec); border-top:1px solid var(--ink);position:relative;overflow:hidden}
+section.cta:where(html[data-lp~="exam"],html[data-lp~="exam"] *){background:var(--ink);color:var(--paper); padding:clamp(96px,12vw,176px) 0;margin-top:var(--sec); border-top:1px solid var(--ink);position:relative;overflow:hidden}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).cta .ctamega{position:absolute;top:50%;right:-2vw;transform:translateY(-50%); font-family:var(--serif);font-weight:900; font-size:clamp(200px,30vw,480px);line-height:.8;letter-spacing:-0.04em; color:rgba(246,242,233,.045);pointer-events:none;user-select:none}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).cta .wrap{position:relative;z-index:1}
 :where(html[data-lp~="exam"],html[data-lp~="exam"] *).cta .ctagrid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); gap:clamp(40px,6vw,96px);align-items:start}
@@ -316,26 +316,26 @@
 @media(max-width:940px){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).sealmark,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).heroside .sealmark{display:none}}
 @media (prefers-reduced-motion: no-preference){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).rv{opacity:0;transform:translateY(28px); transition:opacity .9s var(--ease),transform .9s var(--ease)}}
 @media (prefers-reduced-motion: no-preference){:where(html[data-lp~="exam"],html[data-lp~="exam"] *).rv.on{opacity:1;transform:none}}
-@media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *)body{font-size:10.5pt;line-height:1.65;letter-spacing:-0.02em}}
-@media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.blk{padding:18mm 0;break-inside:auto}}
+@media print{body:where(html[data-lp~="exam"],html[data-lp~="exam"] *){font-size:10.5pt;line-height:1.65;letter-spacing:-0.02em}}
+@media print{section.blk:where(html[data-lp~="exam"],html[data-lp~="exam"] *){padding:18mm 0;break-inside:auto}}
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).demo,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).cards,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).flow,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).ba,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).bignums,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).who,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).proc,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).steps .sp,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).thesis .th{break-inside:avoid}}
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).act{display:none}}
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).grain,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).heromega,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).ctamega{display:none}}
 @media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *).rv{opacity:1 !important;transform:none !important}}
-@media print{:where(html[data-lp~="exam"],html[data-lp~="exam"] *)section.cta,:where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkband{background:var(--paper);color:var(--ink)}}
+@media print{section.cta:where(html[data-lp~="exam"],html[data-lp~="exam"] *),:where(html[data-lp~="exam"],html[data-lp~="exam"] *).inkband{background:var(--paper);color:var(--ink)}}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *)*{margin:0;padding:0;box-sizing:border-box}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--t-base);line-height:var(--lh-body); letter-spacing:var(--tr-body);word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty; font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)a{color:inherit;text-decoration:none}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)img{display:block;max-width:100%;height:auto}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)ul,:where(html[data-lp~="modern"],html[data-lp~="modern"] *)ol{list-style:none}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)table{border-collapse:collapse;width:100%}
+html:where(html[data-lp~="modern"],html[data-lp~="modern"] *){scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body:where(html[data-lp~="modern"],html[data-lp~="modern"] *){background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--t-base);line-height:var(--lh-body); letter-spacing:var(--tr-body);word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty; font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a:where(html[data-lp~="modern"],html[data-lp~="modern"] *){color:inherit;text-decoration:none}
+img:where(html[data-lp~="modern"],html[data-lp~="modern"] *){display:block;max-width:100%;height:auto}
+ul:where(html[data-lp~="modern"],html[data-lp~="modern"] *),ol:where(html[data-lp~="modern"],html[data-lp~="modern"] *){list-style:none}
+table:where(html[data-lp~="modern"],html[data-lp~="modern"] *){border-collapse:collapse;width:100%}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *):focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).ink :focus-visible{outline-color:var(--paper)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)h1,:where(html[data-lp~="modern"],html[data-lp~="modern"] *)h2,:where(html[data-lp~="modern"],html[data-lp~="modern"] *)h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *)p{max-width:var(--measure);color:var(--body)}
+h1:where(html[data-lp~="modern"],html[data-lp~="modern"] *),h2:where(html[data-lp~="modern"],html[data-lp~="modern"] *),h3:where(html[data-lp~="modern"],html[data-lp~="modern"] *){font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
+h4:where(html[data-lp~="modern"],html[data-lp~="modern"] *){font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
+p:where(html[data-lp~="modern"],html[data-lp~="modern"] *){max-width:var(--measure);color:var(--body)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).ink p{color:var(--paper-2)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
@@ -487,7 +487,7 @@
 @media (max-width:560px){:where(html[data-lp~="modern"],html[data-lp~="modern"] *).cmp td:nth-child(2){width:34%}}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).split.one{grid-template-columns:1fr}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).buybar{display:none}
-@media (max-width:900px){:where(html[data-lp~="modern"],html[data-lp~="modern"] *)body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}}
+@media (max-width:900px){body:where(html[data-lp~="modern"],html[data-lp~="modern"] *){padding-bottom:calc(80px + env(safe-area-inset-bottom))}}
 @media (max-width:900px){:where(html[data-lp~="modern"],html[data-lp~="modern"] *).buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60; padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96); -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}}
 @media (max-width:900px){:where(html[data-lp~="modern"],html[data-lp~="modern"] *).buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}}
 @media (max-width:900px){:where(html[data-lp~="modern"],html[data-lp~="modern"] *).buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}}

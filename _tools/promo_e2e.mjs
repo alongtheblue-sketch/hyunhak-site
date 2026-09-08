@@ -19,10 +19,13 @@ res.home_console = logs.slice();
 res.home_banner_visible = await pg.locator('aside[data-promo]:not([hidden])').count();
 res.home_banner_text = await txt('aside[data-promo]');
 res.home_sale_count = await pg.locator('[data-list-price] .sale').count();
-res.home_hero_price = await txt('.prodcta .pc:first-child .pr');
+// 재디자인: .prodcta 가격표 철거(히어로 = CTA 1 + 텍스트 링크 2), 본문 첫 [data-list-price](팝업·배너 밖)를 잰다
+res.home_hero_price = await pg.evaluate(() => { const el = [...document.querySelectorAll('main [data-list-price]')].find(e => !e.closest('#promoPopup') && !e.closest('aside[data-promo]')); return el ? [el.closest('section,div').className, el.textContent.replace(/\s+/g,' ').trim()].join(' | ') : null; });
 res.home_tile_price = await txt('#tiles .tile .p');
 // 행사 팝업 (2026-09-07): 서버 판정 뒤 열림, 초점이 안에, 버튼 2, 정가 취소선, 오늘 하루 보지 않기 → 새로고침 뒤 닫힘
-await pg.waitForTimeout(400);
+// 재디자인(2026-09-08 W1): 팝업은 서버 판정 뒤 첫 40% 스크롤 또는 8초 뒤 하단 시트로 연다 → 스크롤 전 닫힘을 재고 45% 스크롤로 트리거
+res.popup_before_scroll = await pg.locator('#promoPopup:not([hidden])').count();
+await pg.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight * 0.45)); await pg.waitForTimeout(900);
 res.popup_open = await pg.locator('#promoPopup:not([hidden])').count();
 res.popup_focus_in = await pg.evaluate(() => { const r = document.getElementById('promoPopup'); return r && !r.hidden && r.contains(document.activeElement) ? 1 : 0; });
 res.popup_btns = await pg.evaluate(() => Array.from(document.querySelectorAll('#promoPopup [data-ppop-go]')).map(a => a.getAttribute('href')));
