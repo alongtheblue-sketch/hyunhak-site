@@ -8,6 +8,9 @@
   const UNITS = ["yonsei-hum", "yonsei-sci", "korea-hum", "korea-sci"];
   const DIFF_ORDER = ["최상", "상", "중", "하"];
   const DIST_MIN = 10, GROUP_TOP = { set: 5, difficulty: 10 };
+  // 응시가 하나도 없으면 세 뿌리 모두 숨긴다. 0 을 크게 박지 않는다는 규칙은 여기 한 곳에만 적는다
+  // (2026-09-08 라이브 실측 = 전 단위 takers 0. 위젯만 지키고 순위표·응시 현황은 안 지키던 비대칭을 닫았다)
+  function totalTakers(data) { return UNITS.reduce((t, u) => t + n(((data.units || {})[u] || {}).takers), 0); }
   const rel = (function () { const m = location.pathname.match(/\/guidebook\/|\/lectures\/|\/programs\//); return m ? "../" : ""; })();
 
   async function loadRanking() {
@@ -27,17 +30,15 @@
 
   // ── 위젯 (홈) ──
   function renderWidget(root, data) {
-    let total = 0;
     UNITS.forEach((u) => {
       const x = data.units[u]; if (!x) return;
-      total += n(x.takers);
       const box = root.querySelector('[data-unit="' + u + '"]'); if (!box) return;
       const t = box.querySelector("[data-rank-takers]");
       if (t) { const wrap = t.parentElement; if (n(x.takers) === 0 && wrap) wrap.textContent = "기록 없음"; else t.textContent = fmt(x.takers); }
       const top = box.querySelector("[data-rank-top]");
       if (top) { const b = top.querySelector("b"); if (x.rows && x.rows.length && b) { b.textContent = n(x.rows[0].score); top.hidden = false; } else top.hidden = true; }
     });
-    root.hidden = total === 0;   // 응시가 하나도 없으면 위젯 자체를 감춘다 (0 명을 크게 보이지 않는다)
+    root.hidden = totalTakers(data) === 0;
   }
 
   // ── 순위표 (스튜디오) ──
@@ -138,7 +139,7 @@
     root.querySelectorAll("[data-rank-tabs] [data-unit]").forEach((b) => b.addEventListener("click", () => { unit = b.dataset.unit; renderBoard(root, data, sets, unit, view); }));
     root.querySelectorAll("[data-rank-views] [data-view]").forEach((b) => b.addEventListener("click", () => { view = b.dataset.view; renderBoard(root, data, sets, unit, view); }));
     renderBoard(root, data, sets, unit, view);
-    root.hidden = false;
+    root.hidden = totalTakers(data) === 0;
   }
 
   document.addEventListener("DOMContentLoaded", async () => {
@@ -149,7 +150,7 @@
     const data = await loadRanking();
     if (!data || !data.units) return;   // 서버 판정을 못 받으면 숨긴 채 둔다 (빈 표를 그리지 않는다)
     if (widget) renderWidget(widget, data);
-    if (summary) { renderSummary(summary, data); summary.hidden = false; }
+    if (summary) { renderSummary(summary, data); summary.hidden = totalTakers(data) === 0; }
     if (board) { const sets = await loadSets(); bindBoard(board, data, sets); }
     try { document.dispatchEvent(new CustomEvent("hh:ranking", { detail: data })); } catch (e) {}
   });
