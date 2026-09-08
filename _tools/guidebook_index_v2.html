@@ -11,52 +11,40 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="../assets/base.css">
 <style>
-/* 가이드북 목록 전용 (공통 phead, lay, side, box 는 base.css [2b]) */
-.bar{position:sticky;top:72px;z-index:30;background:rgba(246,242,233,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--hairs);padding:12px 0}
-.bar .in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
-.bar .tabs{border-bottom:0}
-.bar .search{height:44px;min-width:260px;background:var(--card)}
-.bar .cnt{font-size:var(--t-sm);color:var(--gray);white-space:nowrap}
-.side{top:calc(var(--hd-h) + 76px)}
-/* 목록 행형 (2026-09-04 재설계). 31권은 값도 제원도 같아 비교 대상이 아니다.
-   판별 정보는 대학명 하나뿐이므로 이름을 단일 x축에 세우고 담기도 같은 x 에 고정한다.
-   구 3열 카드는 폭 200px 안에서 표지, 이름, 뱃지가 한 행을 다퉈 이름이 20px 로 눌렸다. */
-.grid{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--hair)}
-/* 초성 머리는 고정하지 않는다. 위 필터 바가 이미 고정(데스크 72px, 900px 이하 187px)이라
-   겹쳤고(실측 데스크 12px, 모바일 77.8px), 둘을 쌓으면 모바일에서 화면 844px 중 227px 을
-   상시 점유한다. 여기서 하는 일은 훑을 때 눈이 짚을 마디를 내는 것이라 고정이 필요 없다. */
-.ini{grid-column:1/-1;display:flex;align-items:center;padding:var(--s4) var(--s2) 8px;
-     border-bottom:1px solid var(--hair);
-     font-family:var(--sans);font-size:var(--t-sm);font-weight:700;color:var(--gray);letter-spacing:.08em}
-.ini:first-child{padding-top:8px}
-.gb{display:grid;grid-template-columns:48px minmax(0,1fr) auto auto;gap:var(--s3);align-items:center;
-    padding:var(--s2);border-bottom:1px solid var(--hairs);transition:background .2s var(--ease)}
-.gb:hover{background:var(--card)}
-.gb .cv{width:48px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--hairs)}
-.gb h3{font-size:18px;font-weight:700;letter-spacing:-0.02em;line-height:1.3;display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;min-width:0}
-.gb h3 small{font-size:var(--t-sm);font-weight:500;color:var(--gray)}
-.gb .badge{justify-self:start}
-.gb .pr{font-size:var(--t-sm);line-height:1.5;color:var(--gray);font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
-.gb .acts{display:flex;gap:var(--s2);justify-self:end}
-.gb .acts .btn{min-height:44px;min-width:72px}
-.empty{grid-column:1/-1;padding:var(--s5) 0}
-@media (max-width:900px){
-  .gb{grid-template-columns:48px minmax(0,1fr);row-gap:var(--s2);padding:var(--s3) var(--s2)}
-  .gb .pr{grid-column:2;justify-self:start}
-  .gb .acts{grid-column:2;justify-self:stretch}
-  .gb .acts .btn{flex:1}
+/* 목록은 전폭, 구성과 환불 안내는 목록 뒤. 공통 토큰은 base.css에서 상속한다. */
+:where(body.v2) .bar{position:sticky;top:var(--hd-h);z-index:30;background:rgba(var(--paper-rgb),.96);border-bottom:var(--rule);padding:var(--s2) 0}
+:where(body.v2) .bar .in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
+:where(body.v2) .bar .tabs{border-bottom:0}
+:where(body.v2) .bar .search{height:var(--tap);min-width:min(100%,var(--rail-w));background:var(--card)}
+:where(body.v2) .bar .cnt{font-size:var(--t-sm);color:var(--gray);white-space:nowrap}
+:where(body.v2) .catalog{padding-block:var(--s4) var(--s6)}
+:where(body.v2) .grid{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s3) var(--s4)}
+:where(body.v2) .ini{grid-column:1/-1;padding:var(--s4) 0 var(--s2);border-bottom:var(--rule-hd,var(--rule-strong));font-size:var(--t-h3);font-weight:700;color:var(--ink)}
+:where(body.v2) .ini:first-child{padding-top:0}
+:where(body.v2) .gb{display:grid;grid-template-columns:var(--tap) minmax(0,1fr);gap:var(--s2) var(--s3);align-items:center;padding:var(--s3);border:var(--rule-strong);border-color:var(--edge,var(--hair));border-radius:var(--r-sm)}
+:where(body.v2) .gb:hover{background:var(--card)}
+:where(body.v2) .gb .cv{width:var(--tap);height:auto;aspect-ratio:210/297;object-fit:cover;border:var(--rule);border-radius:var(--r-sm)}
+:where(body.v2) .gb h3{font-size:var(--t-h4);font-weight:700;letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
+:where(body.v2) .gb h3 small{display:block;margin-top:var(--s1);font-size:var(--t-sm);font-weight:500;color:var(--gray)}
+:where(body.v2) .gb .pr{grid-column:2;font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--gray);font-family:var(--mono);font-variant-numeric:tabular-nums}
+:where(body.v2) .gb .pr s.was{font-size:var(--t-sm)}
+:where(body.v2) .gb .pr .sale{color:var(--seal)}
+:where(body.v2) .gb .acts{grid-column:2;display:flex;gap:var(--s2) var(--s3);align-items:center;flex-wrap:wrap}
+:where(body.v2) .gb .acts .btn{min-height:var(--tap);min-width:var(--s7)}
+:where(body.v2) .gb .acts .tlink{overflow-wrap:anywhere}
+:where(body.v2) .empty{grid-column:1/-1;padding:var(--s5) 0}
+:where(body.v2) .catalog-notes{padding-bottom:var(--s8)}
+:where(body.v2) .catalog-notes .side{position:static;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4)}
+:where(body.v2) .catalog-notes .box ol{counter-reset:c;display:flex;flex-direction:column;gap:var(--s2);font-size:var(--t-sm)}
+:where(body.v2) .catalog-notes .box ol li{display:flex;gap:var(--s2);align-items:baseline}
+:where(body.v2) .catalog-notes .box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:var(--t-xs);font-weight:700;letter-spacing:var(--tr-label);color:var(--gray);flex:none;width:var(--s4)}
+@media (min-width:56.25rem){
+  :where(body.v2) .grid,:where(body.v2) .catalog-notes .side{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
-.box ol{counter-reset:c;display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm)}
-.box ol li{display:flex;gap:10px;align-items:baseline}
-.box ol li::before{counter-increment:c;content:counter(c,decimal-leading-zero);font-size:var(--t-xs);font-weight:700;letter-spacing:.08em;color:var(--seal);flex:none;width:22px}
-.empty{grid-column:1/-1}
-@media (max-width:900px){
-  .bar{top:64px}
-  .bar .in{flex-direction:column;align-items:stretch}
-  .bar .search{min-width:0}
-  .lay{padding-top:var(--s5)}
-  .side{order:-1}
-  .side .box.spec{display:none}
+@media (max-width:56.25rem){
+  :where(body.v2) .bar{top:var(--hd-h-sm)}
+  :where(body.v2) .bar .in{flex-direction:column;align-items:stretch}
+  :where(body.v2) .bar .search{min-width:0}
 }
 </style>
 </head>
@@ -71,12 +59,12 @@
 <section class="phead">
   <div class="wrap">
    <div class="pagehead">
-    <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>가이드북</span></nav>
-    <h1 class="rv">학교별 2027 서류기반면접 가이드북</h1>
-    <p class="lede rv">공식 요강과 면접 후기에서 고른 학교별 서류기반 면접(생기부 면접)의 실제, 판매 중 __SALE__권. 입시 컨설턴트 13년차 편집이며 권당 __PRICE__원, 구매 후 보안 리더로 열람하실 수 있습니다. 가나다 순입니다.</p>
-    <p class="rv" style="margin-top:var(--s3)"><a class="tlink" href="../programs/guidebook.html">다섯 부 구성과 지면 표본 보기 <span class="ar" aria-hidden="true">→</span></a> &nbsp; <a class="tlink" href="../interview.html">38개 대학 면접 형태 판정표 <span class="ar" aria-hidden="true">→</span></a></p>
+    <nav class="crumb" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>가이드북</span></nav>
+    <h1>학교별 2027 서류기반면접 가이드북</h1>
+    <p class="lede">공식 요강과 면접 후기에서 고른 학교별 서류기반 면접(생기부 면접)의 실제, 판매 중 __SALE__권. 입시 컨설턴트 13년차 편집이며 권당 __PRICE__원, 구매 후 보안 리더로 열람하실 수 있습니다. 가나다 순입니다.</p>
+    <p style="margin-top:var(--s3)"><a class="tlink" href="../programs/guidebook.html">다섯 부 구성과 지면 표본 보기 <span class="ar" aria-hidden="true">→</span></a> &nbsp; <a class="tlink" href="../interview.html">38개 대학 면접 형태 판정표 <span class="ar" aria-hidden="true">→</span></a></p>
    </div>
-    <div class="facts rv">
+    <div class="facts">
       <div><b>__N__</b><span>권, __SALE__권 판매 중</span></div>
       <div><b>2027</b><span>학년도 대비, 전권 판매 중</span></div>
       <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
@@ -102,7 +90,7 @@
 
 <section class="sec tight" id="allpass">
   <div class="wrap">
-    <div class="final rv" style="align-items:stretch">
+    <div class="final" style="align-items:stretch">
       <div>
         <h2>31권 전권, 절반 값으로</h2>
         <p>전 대학을 준비하는 학원과 다권 수요를 위한 전권 상품입니다.</p>
@@ -120,8 +108,10 @@
   </div>
 </section>
 
-<div class="wrap lay">
+<div class="wrap catalog">
   <div class="grid" id="grid" data-search-target></div>
+</div>
+<div class="wrap catalog-notes">
   <aside class="side">
     <div class="box spec rv">
       <h3>한 권의 구성</h3>
@@ -160,14 +150,15 @@
 var HH_GB=__HH_GB__;
 (function(){
   var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),tabs=document.querySelectorAll('.bar [role=tab]'),q=document.getElementById('q2'),f='all';
+  var uniformPrice=HH_GB.every(function(o){return o.price===HH_GB[0].price});
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
     // 표지 48px 은 표지 제목이 판독 한계 아래라 장식이다. 식별은 이름이 진다 (alt 비움).
-    var act='<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="__PRICE_RAW__">담기</button><a class="btn ghost sm" href="'+o.slug+'.html">자세히</a>';
+    var act='<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="'+o.price+'">담기</button><a class="tlink" href="'+o.slug+'.html">'+o.name+' 자세히</a>';
     return '<article class="gb" id="'+o.slug+'">'
       +'<img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="210" height="297" loading="lazy">'
       +'<h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
-      +'<span class="pr" data-list-price="__PRICE_RAW__">__PRICE__원</span>'
+      +'<span class="pr" data-list-price="'+o.price+'"'+(uniformPrice?' hidden':'')+'>'+o.price.toLocaleString('ko-KR')+'원</span>'
       +'<div class="acts">'+act+'</div></article>';
   }
   // 31행을 훑을 때 눈이 짚을 자리. 초성 단위로 묶는다.

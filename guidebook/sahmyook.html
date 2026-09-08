@@ -51,6 +51,14 @@
 .buy .acts{margin-top:var(--s4);display:flex;flex-direction:column;gap:10px}
 .buy .acts .btn{width:100%}
 .buy .note{margin-top:var(--s3)}
+/* 구매 동작을 먼저 읽고, 출처 관측과 구성 및 열람 조건을 이어서 확인한다. */
+:where(body.v2) .prod{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}
+:where(body.v2) .prod .buy{position:static}
+:where(body.v2) .prod .buy .acts{margin-top:var(--s3)}
+:where(body.v2) .trust{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);padding-block:var(--s4);border-block:var(--rule-strong)}
+:where(body.v2) .trust h2{font-size:var(--t-h4);font-weight:700}
+:where(body.v2) .trust p{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+@media (max-width:56.25rem){:where(body.v2) .prod,:where(body.v2) .trust{grid-template-columns:minmax(0,1fr)}}
 /* 지면 미리보기 필름 */
 .pvwrap{position:relative}
 .pvwrap::after{content:"";position:absolute;top:0;bottom:20px;right:0;width:72px;pointer-events:none;background:linear-gradient(to right,rgba(246,242,233,0),var(--paper))}
@@ -160,51 +168,40 @@ main p,.sh p,.phead .lede,.aeo-answer,details.faq .a,.parts .d{max-width:none}
 <section class="phead tight">
   <div class="wrap">
    <div class="pagehead">
-    <nav class="crumb rv" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="index.html">가이드북</a><span aria-hidden="true">/</span><span>삼육대학교</span></nav>
-    <h1 class="rv">삼육대학교 2027 면접 가이드북</h1>
-    <p class="lede rv">삼육대학교 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙.<br>선배 후기 2021~2024 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.</p>
+    <nav class="crumb" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="index.html">가이드북</a><span aria-hidden="true">/</span><span>삼육대학교</span></nav>
+    <h1>삼육대학교 2027 면접 가이드북</h1>
+    <p class="lede">삼육대학교 면접에서 실제로 나온 질문과, 내 생기부에서 질문을 뽑는 전환 규칙.<br>선배 후기 2021~2024 관측과 2027 공식 요강으로 재구성한 현학적 연구소 편집본.</p>
   <!-- aeo --><p class="aeo-answer">삼육대 세움인재 면접은 서류기반 면접입니다. <br>이 가이드북은 기출 18문과 생기부 질문 규칙 18개를 담았고 권당 33,000원입니다.</p><!-- /aeo -->
 </div>
   </div>
 </section>
 
 <section class="wrap prod">
-  <figure class="cover rv"><span class="volchip">VOL.33</span><img src="../assets/covers/sahmyook.jpg" alt="삼육대학교 2027 면접 가이드북 표지" width="210" height="297" fetchpriority="high"></figure>
-  <div class="panel buy rv">
+  <div class="panel buy">
     <div class="top"><span class="eyebrow" style="margin:0">가이드북, guide-sahmyook</span><span class="badge seal">판매 중</span></div>
     <h2>삼육대학교 2027 면접 가이드북</h2>
     <span class="price" data-list-price="33000">33,000원<small>부가세 포함, 보안 리더 열람 3개월</small></span>
-    <ul class="spec">
-      <li><span>실제 질문</span><span>선배 후기 2021~2024 관측, 유형별 수록</span></li>
-      <li><span>전환 규칙</span><span>내 생기부에서 질문 뽑기, 꼬리질문까지</span></li>
-      <li><span>전형 분석</span><span>전형별 제원, 형태 판정표</span></li>
-      <li><span>형태</span><span>PDF, 브라우저 보안 리더</span></li>
-      <li><span>인쇄</span><span>계정당 3회, 원본 파일 비제공</span></li>
-    </ul>
     <div class="acts">
       <button type="button" class="btn" data-cart-sku="guide-sahmyook" data-cart-title="삼육대학교 2027 면접 가이드북" data-cart-price="33000">담기 <span class="ar" aria-hidden="true">→</span></button>
       <button type="button" class="btn ghost" data-cart-sku="guide-sahmyook-pdf" data-cart-title="삼육대학교 2027 면접 가이드북 PDF 소장판" data-cart-price="110000" data-list-price="110000">PDF 소장판 담기, 110,000원</button>
       <a class="btn ghost" href="../cart.html">장바구니 보기</a>
     </div>
-    <p class="note">결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 아직 열지 않은 권은 공급받은 날부터 7일 이내 청약철회 가능. PDF 소장판은 워터마크 파일을 발급해 소장.</p>
+    <ul class="spec">
+      <li><span>전환 규칙</span><span>내 생기부에서 질문 뽑기, 꼬리질문까지</span></li>
+      <li><span>전형 분석</span><span>전형별 제원, 형태 판정표</span></li>
+    </ul>
   </div>
+  <figure class="cover"><span class="volchip">VOL.33</span><img src="../assets/covers/sahmyook.jpg" alt="삼육대학교 2027 면접 가이드북 표지" width="210" height="297" fetchpriority="high"></figure>
 </section>
 
-<section class="sec tight">
-  <div class="wrap">
-    <div class="sh rv"><div><h2>한눈에 보는 삼육대학교 면접</h2><p>아래 수치는 이 책이 실제로 담고 있는 분량입니다.</p></div></div>
-    <dl class="keyfacts rv">
-      <div><dt>면접 형태</dt><dd>서류기반</dd></div>
-      <div><dt>면접 있는 전형</dt><dd>1개</dd></div>
-      <div><dt>실제 기출</dt><dd>18문, 선배 후기 2021~2024년 관측</dd></div>
-      <div><dt>모집단위</dt><dd>4개</dd></div>
-      <div><dt>생기부 질문 규칙</dt><dd>18개</dd></div>
-      <div><dt>질문 유형</dt><dd>4개</dd></div>
-      <div><dt>분량</dt><dd>18면, 다섯 부</dd></div>
-      <div><dt>가격과 열람</dt><dd>33,000원, 보안 리더 열람 3개월 (PDF 소장판 110,000원)</dd></div>
-    </dl>
-  </div>
-</section>
+<div class="wrap">
+  <section class="trust">
+    <div><h2>실제 질문</h2><p>선배 후기 2021~2024 관측, 유형별 수록</p></div>
+    <div><h2>다섯 부로 끝나는 구성</h2><p>표지의 차례 그대로입니다.</p></div>
+    <div><h2>형태</h2><p>PDF, 브라우저 보안 리더</p><p>인쇄</p><p>계정당 3회, 원본 파일 비제공</p></div>
+    <div><p class="note">결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 아직 열지 않은 권은 공급받은 날부터 7일 이내 청약철회 가능. PDF 소장판은 워터마크 파일을 발급해 소장.</p></div>
+  </section>
+</div>
 
 <section class="sec tight">
   <div class="wrap">
@@ -225,6 +222,22 @@ main p,.sh p,.phead .lede,.aeo-answer,details.faq .a,.parts .d{max-width:none}
       <figure class="pv"><a href="../assets/preview/sahmyook/p15.webp" target="_blank" rel="noopener" aria-label="5부 본문, 흐림 크게 보기"><img src="../assets/preview/sahmyook/p15.webp" alt="삼육대학교 가이드북 15면 5부 본문, 흐림" width="880" height="1245" loading="lazy"></a><span class="lk">구매 후 선명</span><figcaption><span>5부 본문, 흐림</span><span>p.15</span></figcaption></figure>
     </div></div>
     <p class="pvnote">각 지면 아래 숫자는 실제 면 번호입니다. 워터마크는 열람 계정마다 다르게 찍힙니다.</p>
+  </div>
+</section>
+
+<section class="sec tight">
+  <div class="wrap">
+    <div class="sh"><div><h2>한눈에 보는 삼육대학교 면접</h2><p>아래 수치는 이 책이 실제로 담고 있는 분량입니다.</p></div></div>
+    <dl class="keyfacts">
+      <div><dt>면접 형태</dt><dd>서류기반</dd></div>
+      <div><dt>면접 있는 전형</dt><dd>1개</dd></div>
+      <div><dt>실제 기출</dt><dd>18문, 선배 후기 2021~2024년 관측</dd></div>
+      <div><dt>모집단위</dt><dd>4개</dd></div>
+      <div><dt>생기부 질문 규칙</dt><dd>18개</dd></div>
+      <div><dt>질문 유형</dt><dd>4개</dd></div>
+      <div><dt>분량</dt><dd>18면, 다섯 부</dd></div>
+      <div><dt>가격과 열람</dt><dd>33,000원, 보안 리더 열람 3개월 (PDF 소장판 110,000원)</dd></div>
+    </dl>
   </div>
 </section>
 
