@@ -6,6 +6,7 @@ import re
 from pathlib import Path
 
 import v2_shell as V
+import r2_faq
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -44,6 +45,10 @@ def build():
         source = (HERE / f"program_{kind}_v2.html").read_text(encoding="utf-8")
         if kind == "guidebook":
             source = source.replace("__GUIDE_OPTIONS__", guide_options())
+        if kind in {"guidebook", "studio"}:
+            if source.count("__R2_FAQ__") != 1:
+                raise ValueError(f"{rel}: expected one R2 FAQ slot")
+            source = source.replace("__R2_FAQ__", r2_faq.render_faq(rel))
         source = render_copy(source)
         if kind in {"guidebook", "studio"}:
             source = V.apply_shell(source, rel)
@@ -52,6 +57,8 @@ def build():
         if re.search(r"__(?:C_|GUIDE_)", source):
             raise ValueError(f"{rel}: 치환되지 않은 자리표시")
         (ROOT / rel).write_text(source, encoding="utf-8")
+    home = ROOT / "index.html"
+    home.write_text(r2_faq.sync_home(home.read_text(encoding="utf-8")), encoding="utf-8")
 
 
 if __name__ == "__main__":

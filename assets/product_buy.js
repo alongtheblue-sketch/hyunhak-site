@@ -45,7 +45,8 @@
         qty: 1,
         ship: false
       });
-      status.textContent = !result.ok || result.already ? result.message : block.dataset.added;
+      status.textContent = result.reason === 'storage' ? block.dataset.failedStorage
+        : !result.ok || result.already ? result.message : block.dataset.added;
       cartLink.hidden = false;
     } catch (error) {
       status.textContent = block.dataset.failed;

@@ -71,13 +71,14 @@
     return dropped;
   }
   function saveCart(items) {
-    try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch {}
+    try { localStorage.setItem(CART_KEY, JSON.stringify(items)); } catch { return false; }
     updateNav();
+    return true;
   }
   // 같은 sku 라도 set_id 가 다르면 별 줄 (PLAN s30: passage-single 은 세트 결속, 줄마다 수량 1)
   function sameLine(a, b) { return a.sku === b.sku && String(a.set_id || "") === String(b.set_id || ""); }
   // {sku,title,price,qty,ship,set_id} 를 받아 {ok, reason, message} 를 돌려준다.
-  // 담기를 거절하는 세 경우(규격 밖 sku, 세트 없는 낱권, 같은 상품 10줄 초과)는 부르는 면이 안내를 띄운다
+  // 담기 거절(규격 밖 sku, 세트 없는 낱권, 같은 상품 10줄 초과, 저장 실패)은 부르는 면이 안내를 띄운다
   function addToCart(item) {
     const line = normLine(Object.assign({ qty: 1 }, item));
     if (!line) return { ok: false, reason: "sku", message: "담을 수 없는 상품입니다." };
@@ -88,7 +89,7 @@
     if (hit) {
       if (line.set_id || SINGLE_SKU.test(line.sku)) return { ok: true, already: true, message: "이미 담겨 있습니다. 이 상품은 1개만 구매합니다." };   // 수량 증가 없음, 결제 400 예방
       hit.qty = intIn(hit.qty + intIn(item.qty, 1, LINE_MAX, 1), 1, LINE_MAX, 1);
-      saveCart(items);
+      if (!saveCart(items)) return { ok: false, reason: "storage", message: "브라우저 저장소에 장바구니를 저장하지 못했습니다. 저장소 설정과 여유 공간을 확인해 주세요." };
       trackAdd(line);
       return { ok: true };
     }
@@ -96,7 +97,7 @@
       return { ok: false, reason: "limit",
         message: "같은 상품은 " + LINE_MAX + "줄까지 담을 수 있습니다. 먼저 결제하시거나 장바구니에서 줄을 빼 주세요." };
     items.push(repriceLine(line));
-    saveCart(items);
+    if (!saveCart(items)) return { ok: false, reason: "storage", message: "브라우저 저장소에 장바구니를 저장하지 못했습니다. 저장소 설정과 여유 공간을 확인해 주세요." };
     trackAdd(line);
     return { ok: true };
   }

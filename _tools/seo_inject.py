@@ -14,6 +14,7 @@ import re
 import sys
 
 import seo_common as C
+import r2_faq
 
 # READER-FOLLOWUP 3 (2026-08-30): JSON-LD availability DB 연동.
 # products_status.json = 원격 D1 products 실측 내보내기 (export_products_status.sh 가 생성).
@@ -286,7 +287,7 @@ def build_graph(m, rel, e, page_html):
             art["dateModified"] = e["date_modified"]
         graph.append(art)
 
-    faq = list(e.get("faq") or [])
+    faq = r2_faq.faq_pairs(rel) if rel in r2_faq.PAGE_KEYS else list(e.get("faq") or [])
     # 지면에 details.faq 나 data-faq 쌍이 있으면 어느 면이든 FAQPage 로 싣는다 (구 faq/guidebook/index 한정 -> 전 면, 2026-09-04. 스튜디오 LP 와 소개 면의 FAQ 가 답변 엔진에 잡히도록)
     faq = faq or C.extract_faq(page_html)
     if faq:
@@ -352,7 +353,14 @@ def build_block(m, rel, e, page_html):
               f'<meta name="twitter:title" content="{C.attr(title)}">',
               f'<meta name="twitter:description" content="{C.attr(desc)}">',
               f'<meta name="twitter:image" content="{C.attr(image)}">']
-    ld = json.dumps(build_graph(m, rel, e, page_html), ensure_ascii=False, separators=(",", ":"))
+    graph = build_graph(m, rel, e, page_html)
+    ld = json.dumps(graph, ensure_ascii=False, separators=(",", ":"))
+    if rel in r2_faq.PAGE_KEYS:
+        # apply_counts counts raw HTML text, including script contents. Escape only
+        # the new FAQ node so visible counts stay stable; decoded FAQ text is identical.
+        faq_node = next(node for node in graph["@graph"] if node["@type"] == "FAQPage")
+        ld = ld.replace(json.dumps(faq_node, ensure_ascii=False, separators=(",", ":")),
+                        json.dumps(faq_node, ensure_ascii=True, separators=(",", ":")), 1)
     ld = ld.replace("</", "<\\/")
     lines.append(f'<script type="application/ld+json">{ld}</script>')
     lines.append(C.SEO_END)

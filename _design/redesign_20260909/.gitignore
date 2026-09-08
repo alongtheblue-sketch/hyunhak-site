@@ -3,3 +3,5 @@ after/
 codex/r2_run.log
 http*.log
 http*.pid
+rd7_sheets/
+browser_results*/

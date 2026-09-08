@@ -28,6 +28,7 @@
 | 홈과 상세 공통 / cart | `cart` | 장바구니 보기 | C1 | 7 |
 | 홈과 상세 공통 / added | `added` | 장바구니에 담았습니다. | C1 | 12 |
 | 홈과 상세 공통 / cart_failed | `cart_failed` | 장바구니 처리 중 오류가 발생했습니다. 장바구니를 확인해 주세요. | C1 | 36 |
+| 상세면과 HH 공통 / cart_failed_storage | `cart_failed_storage` | 브라우저 저장소에 장바구니를 저장하지 못했습니다. 저장소 설정과 여유 공간을 확인해 주세요. | C1 | 51 |
 | 홈 / source_title | `source_title` | 질문 3,865개 | G5 | 9 |
 | 홈 / source_text | `source_text` | 대학 공개 자료와 면접 후기에서 골랐습니다. | G5 | 24 |
 | 홈과 상세 공통 / withdraw_title | `withdraw_title` | 이용 전 청약철회 | G8 C3 | 9 |

@@ -8,13 +8,14 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 const require = createRequire(import.meta.url);
 const root = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
-const out = path.join(root, '_design/redesign_20260909/browser_results_r2b');
+const out = path.join(root, '_design/redesign_20260909/browser_results_r2c');
 const manifest = JSON.parse(await readFile(path.join(root, '_tools/seo_manifest.json'), 'utf8'));
 const pages = Object.keys(manifest.pages).sort();
 const ledger = await readFile(path.join(root, '_design/redesign_20260909/copy_ledger_v6.md'), 'utf8');
 const expectedCopy = Object.fromEntries([...ledger.matchAll(/^\| [^|]+ \| `([^`]+)` \| ([^|]+) \|/gm)].map(m => [m[1], m[2].trim()]));
 const campaign = JSON.parse(await readFile(path.join(root, '_tools/promo.json'), 'utf8'));
 const programPages = ['programs/guidebook.html', 'programs/studio.html', 'programs/korea.html', 'programs/yonsei.html'];
+const separateShellPages = new Set(['programs/korea.html', 'programs/yonsei.html']);
 const normalize = value => value.replace(/\s+/g, ' ').trim();
 const findings = [];
 let server, browser, base;
@@ -92,7 +93,9 @@ try {
         await page.evaluate(() => window.scrollTo(0, 0));
         const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, body: document.body.scrollWidth, viewport: innerWidth }));
         check(widths.document <= widths.viewport && widths.body <= widths.viewport, `${rel} ${viewport.width} overflow`, widths);
-        if (programPages.includes(rel)) {
+        if (separateShellPages.has(rel)) {
+          findings.push({ result: 'SKIP', label: `${rel} ${viewport.width} search label Pretendard`, detail: 'Separate LP shell has no shared label.ph or app.js (R2c scope).' });
+        } else if (programPages.includes(rel)) {
           const labels = page.locator('label.ph');
           const font = await labels.count() === 1 ? await labels.evaluate(n => getComputedStyle(n).fontFamily) : null;
           check(font?.includes('Pretendard'), `${rel} ${viewport.width} search label Pretendard`, font ?? 'label.ph missing');
@@ -153,6 +156,10 @@ try {
   }
   // 별도 로컬 실패 레그: config 요청을 실제 중단하고 두 번 실패한 뒤 행사/팝업 0개를 확인한다.
   for (const rel of ['index.html', 'studio.html', ...programPages]) {
+    if (separateShellPages.has(rel)) {
+      findings.push({ result: 'SKIP', label: `${rel} config blocked promo check`, detail: 'Separate LP shell does not load the shared app.js promo runtime (R2c scope).' });
+      continue;
+    }
     const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
     let configAttempts = 0;
     await context.route('**/api/config', async route => { configAttempts++; await route.abort('failed'); });

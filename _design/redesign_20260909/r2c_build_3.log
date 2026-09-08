@@ -1,0 +1,25 @@
+정보: SEARCH 공식 검증 통과. 책 1부·2부 미수록 전형 20건은 상품 문구에서 빼고 hub 에 표식: catholic: '학교장추천전형'; catholic: '학교장추천전형 의예과'; dongguk: '불교추천인재'; ewha: '예체능서류전형'; gachon: '가천의약학'; kookmin: '국제인재'; kwangwoon: '소프트웨어우수인재전형'; kyonggi: '디자인학부'; myongji: '크리스천리더전형'; myongji: '교과면접전형'; pusan: '지역인재전형'; pusan: '의예과'; sejong: '세종인재전형(면접형) 창의소프트학부'; snu: '일반전형'; uos: '기회균형전형Ⅰ'; dgist: '일반전형'; pknu: '학교생활우수인재'; sahmyook: 'S/W인재'; sahmyook: '예체능인재'; ulsan: '의예과'
+경고: 후공정 산물이 지워졌다 (analytics:begin, bizinfo, class="fix"). sh _tools/build_all.sh 로 복구할 것.
+정보: SEARCH 공식 검증 통과. 책 1부·2부 미수록 전형 20건은 상품 문구에서 빼고 hub 에 표식: catholic: '학교장추천전형'; catholic: '학교장추천전형 의예과'; dongguk: '불교추천인재'; ewha: '예체능서류전형'; gachon: '가천의약학'; kookmin: '국제인재'; kwangwoon: '소프트웨어우수인재전형'; kyonggi: '디자인학부'; myongji: '크리스천리더전형'; myongji: '교과면접전형'; pusan: '지역인재전형'; pusan: '의예과'; sejong: '세종인재전형(면접형) 창의소프트학부'; snu: '일반전형'; uos: '기회균형전형Ⅰ'; dgist: '일반전형'; pknu: '학교생활우수인재'; sahmyook: 'S/W인재'; sahmyook: '예체능인재'; ulsan: '의예과'
+[build_lectures] 상품 구성에서 제외한 OT 1편: lec_common_L0-0
+변경 41 / nav 없음 0 / 레거시 0
+변경 41
+promo 적용: LP 4 + 홈 1 + 팝업 6 / 변경 3 ['guidebook/index.html', 'lectures.html', 'interview.html'] / 행사 중
+변경 41
+base.css 면 63 변경 35
+analytics 주입 41 ga4=G-2ZM01XDLNT meta_pixel=1788228408971711 wcs=없음
+-- 66면 처리, 43면 기록
+sitemap.xml 55 URL / robots.txt / llms.txt / llms-full.txt 기록
+rss.xml 55 항목 기록
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
+v2_check: files=61 fails=0
+면 31 / FAIL 0건
+최신 (terms a05229cb3d39, privacy f037c605661e)
+지면 = 원장 (낡음 0)
+seo_keyword_census: 가이드북 31/31면 전 구절, 계열 22/22 / FAIL 0건
+build_samples --check: 표본 12장 + 확대 1 / FAIL 0건 (v24 PDF 100417407367be5d)
+[full] 자막 봉인 대조 통과(설계 원본 없는 트리)
+자막 게이트 통과: 영상 배선 11건, 면제 0건
+link_check: 면 66 · sitemap 55 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
+worker_check: FAIL 0 / 27 항목
+7ea411bde5e0380d
