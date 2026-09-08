@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """할인 행사 배너를 v2 셸 밖 자리에 넣는다 (2026-09-07).
    ① 상세 LP 4면(programs/*.html): <header class="top"> 를 쓰고 base.css 를 안 실어 apply_nav 가 못 닿는다 → 첫 </header> 뒤 띠(A1, 가격 문장 없음) + </head> 앞 <style data-promo-css>(_tools/promo_lp.css).
-   ② 홈(index.html): 히어로 다음, <div class="duo"> 바로 앞에 밴드 B3(괘선 표, _tools/promo_band.html).
+   ② 홈(index.html): 卷三 상품 구역, <div class="duo"> 바로 앞에 밴드 B3(괘선 표, _tools/promo_band.html).
    원천 = _tools/promo.json (v2_shell.load_promo 와 같은 판정). 멱등: 넣은 블록을 정규식으로 찾아 교체, 행사 밖이면 걷는다.
    python3 _tools/apply_promo.py [--check]   --check = 바꿀 것이 있으면 rc 1"""
 import re, sys, os, glob, html
@@ -82,6 +82,8 @@ def apply_lp(s, rel, p):
 
 
 def apply_home(s, p):
+    # 상단 공지는 바로 앞 행사 띠 한 층으로 통합한다. 해당 홈 블록만 제거한다.
+    s = re.sub(r'<div class="strip"><div class="in wrap">.*?</div></div>\n?', "", s, count=1, flags=re.S)
     s = BAND_RE.sub("", s, count=1)
     if not p:
         return s

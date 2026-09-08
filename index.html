@@ -37,7 +37,7 @@
 <link rel="stylesheet" href="assets/base.css"><noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <style>
 /* 홈 전용 (v3 판본). 여백은 --gut 과 .wrap 만, 크기는 토큰만 */
-.hero h1{font-size:var(--t-h2)}   /* COPY.md §1: 헤드라인 두 줄을 같은 크기로, 어느 줄도 접히지 않게. display 단은 색인 레일 옆 782px 안에서 4줄로 접힌다 (1280 실측) */
+:where(body.v2) .page.hero h1{font-size:var(--t-h1);margin:0}
 .pages .steps,.pages .why{grid-template-columns:repeat(2,1fr)}
 .pages .tiles{grid-template-columns:repeat(3,1fr)}
 .find .top{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);align-items:end}
@@ -62,32 +62,51 @@
 @media (max-width:420px){
   .pages .tiles{grid-template-columns:1fr}
 }
-/* 2026-09-03 건우 지시: 卷 레일 제거(단일 열), 히어로 = 브랜드 영상 + 두 상품 4버튼 */
-.book{grid-template-columns:1fr}
-@media (min-width:1000px){.page{padding-left:0}}
-.hero .herotop{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s5);align-items:start}
-@media (min-width:900px){.hero .herotop{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3) var(--s6);align-items:start}.hero .herohead{grid-column:1/-1}}
-@media (max-width:899.98px){.hero .herofilm{order:-1}}
-.hero .herofilm{margin:0;position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden;box-shadow:0 18px 40px rgba(49,46,46,.18)}
-.hero .herofilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
-.hero .vpause,.hero .vcc{position:absolute;bottom:10px;min-height:var(--tap);padding:0 14px;border:1px solid rgba(239,233,220,.6);border-radius:999px;background:rgba(49,46,46,.92);color:var(--paper);font:500 12px/1 var(--mono);cursor:pointer}
-.hero .vpause{right:10px}
-.hero .vcc{right:88px}
-.hero .vcc[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
-.hero .vpause:hover,.hero .vcc:hover{background:var(--ink)}
-.hero .vcc[aria-pressed="true"]:hover{background:var(--paper)}
-.hero .vpause:focus-visible,.hero .vcc:focus-visible{outline:2px solid var(--paper);outline-offset:2px}
-.hero .herofilm video::cue{background:rgba(49,46,46,.82);color:var(--paper);font:500 15px/1.45 var(--sans)}
-.hero .vh{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.hero .prodcta{display:grid;grid-template-columns:1fr;gap:var(--s4);margin:var(--s3) 0 var(--s4);padding:var(--s4) 0;border-top:var(--rule);border-bottom:var(--rule)}
-@media (min-width:600px){.hero .prodcta{grid-template-columns:1fr 1fr}}
-.hero .prodcta .k{display:block;font-family:var(--mono);font-size:var(--t-cap);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s2)}
-.hero .prodcta .bs{display:grid;grid-template-columns:1fr;gap:var(--s2)}   /* 버튼 4개 같은 폭 (2026-09-04 건우). 두 열이 1fr 1fr 이라 열 폭 = 버튼 폭, 뷰포트가 바뀌어도 넷이 같다. 가로 2열은 340px 열에서 "지원대학 가이드북이란?" 이 접혀 적층 */
-.hero .prodcta .bs .btn{width:100%}
-.hero .prodcta .tlink{margin-top:var(--s2)}
-@supports (grid-template-rows:subgrid){@media (min-width:600px){.hero .prodcta{grid-template-rows:repeat(3,auto)}.hero .prodcta .pc{display:grid;grid-template-rows:subgrid;grid-row:span 3;align-content:start}.hero .prodcta .k{align-self:end}}}
-@media (max-width:899.98px){.hero .herotop{gap:var(--s3)}.hero .herohead h1{margin-bottom:0}}
-@media (max-width:599.98px){.hero .prodcta{gap:var(--s3);margin:0 0 var(--s3);padding:var(--s3) 0}.hero .folio{display:none}.hero .prodcta .k br{display:none}.hero .prodcta .k .pr::before{content:", "}}
+/* B안 홈: 제목과 리드를 왼쪽, 포스터와 폴리오를 오른쪽에 놓는다. */
+:where(body.v2) .book{grid-template-columns:1fr}
+:where(body.v2) .page{padding-left:0}
+:where(body.v2) .page.hero{padding-top:var(--s5);padding-bottom:var(--s5)}
+:where(body.v2) .hero .herotop{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4);align-items:start}
+:where(body.v2) .hero .eyebrow{font-size:var(--t-xs)}
+:where(body.v2) .hero .herohead{grid-row:1}
+:where(body.v2) .hero .herofilm{grid-row:2}
+:where(body.v2) .hero .herosay{grid-row:3}
+:where(body.v2) .hero .hero-folio{grid-row:4;margin:0;align-self:end}
+:where(body.v2) .hero .lede2{font-size:var(--t-base);max-width:var(--measure)}
+:where(body.v2) .hero .heroacts{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2) var(--s4);margin-top:var(--s4)}
+:where(body.v2) .hero .herofilm{margin:0;position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden}
+:where(body.v2) .hero .herofilm video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--ink)}
+:where(body.v2) .hero .vpause,:where(body.v2) .hero .vcc{position:absolute;bottom:var(--s2);min-height:var(--tap);padding:0 var(--s3);border:var(--rule-ui);border-radius:var(--r-pill);background:var(--ink);color:var(--paper);font:500 var(--t-xs)/1 var(--mono);cursor:pointer}
+:where(body.v2) .hero .vpause{right:var(--s2)}
+:where(body.v2) .hero .vcc{right:calc(var(--tap) + var(--s5))}
+:where(body.v2) .hero .vcc[aria-pressed="true"]{background:var(--paper);color:var(--ink)}
+:where(body.v2) .hero .vpause:focus-visible,:where(body.v2) .hero .vcc:focus-visible{outline-color:var(--paper)}
+:where(body.v2) .hero .herofilm video::cue{background:var(--ink);color:var(--paper);font:500 var(--t-sm)/1.45 var(--sans)}
+:where(body.v2) .hero .vh{position:absolute;width:var(--line);height:var(--line);overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+:where(body.v2) .hero .herofilm:not([data-playing-enabled]) :is(.vcc,.vpause){display:none}
+:where(body.v2) .hero .trust-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:var(--s5);border-top:var(--rule-ui);border-bottom:var(--rule-ui)}
+:where(body.v2) .trust-strip>div{padding:var(--s3);border-left:var(--rule-ui)}
+:where(body.v2) .trust-strip>div:first-child{border-left:0;padding-left:0}
+:where(body.v2) .trust-strip dt{font-size:var(--t-cap);font-weight:700;color:var(--ink)}
+:where(body.v2) .trust-strip dd{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+:where(body.v2) .page.products .duo{margin-top:var(--s5)}
+:where(body.v2) .page.products>.pband{margin-top:0}
+@media (min-width:56.25em){
+  :where(body.v2) .hero .herotop{grid-template-columns:minmax(0,1.618fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;gap:var(--s3) var(--s5)}
+  :where(body.v2) .hero .herohead{grid-column:1;grid-row:1}
+  :where(body.v2) .hero .herosay{grid-column:1;grid-row:2 / 4}
+  :where(body.v2) .hero .herofilm{grid-column:2;grid-row:1 / 3}
+  :where(body.v2) .hero .hero-folio{grid-column:2;grid-row:3}
+}
+@media (max-width:56.249em){
+  :where(body.v2) .hero .trust-strip{grid-template-columns:repeat(2,minmax(0,1fr))}
+  :where(body.v2) .trust-strip>div:nth-child(odd){border-left:0;padding-left:0}
+  :where(body.v2) .trust-strip>div:nth-child(n+3){border-top:var(--rule-ui)}
+}
+@supports (grid-template-rows:subgrid){@media (min-width:51.25em){
+  :where(body.v2) .page.products .duo{grid-template-rows:repeat(5,auto)}
+  :where(body.v2) .page.products .duo>.entry{grid-row:span 5}
+}}
 </style>
 </head>
 <body class="v2">
@@ -129,7 +148,6 @@
   </div>
 </aside>
 
-<div class="strip"><div class="in wrap"><span><i class="dot" aria-hidden="true"></i><b>2027 서류기반면접 가이드북 31권 판매 중</b>. 제시문 면접 스튜디오 응시 단위 5곳 개설.</span><a href="guidebook/index.html">판매 목록 →</a></div></div>
 
 <main id="main">
 <div class="wrap book">
@@ -138,29 +156,29 @@
 
 <!-- 지면 1. 히어로, 2상품 병립. 문안 = _design/v3_20260902/COPY.md §1 §2 (2026-09-02) -->
 <section class="page hero" id="p1">
-  <p class="folio"><b>卷一</b><span>두 상품</span><span class="r">1</span></p>
   <div class="herotop">
     <div class="herohead">
-      <span class="eyebrow">2027 대입 면접</span>
-      <h1>질문 3,865개, <span class="nb">대학별 가이드북 31권</span><br>연세대 고려대 <span class="nb">제시문 150세트 응시</span></h1>
+      <span class="eyebrow">2027 대입면접</span>
+      <h1>면접은 대학마다 다릅니다.<br>그 대학의 요강과 기출로<br>준비합니다.</h1>
     </div>
+    <figure class="herofilm">
+      <video muted loop playsinline preload="none" poster="assets/video/brand_v2_hero_poster_aigen.jpg" aria-label="현학적 연구소 브랜드 영상, 24초" aria-describedby="hero-film-tx">
+        <track kind="captions" srclang="ko" label="한국어" src="assets/video/brand_v2_hero_aigen.vtt">
+      </video>
+      <button type="button" class="vcc" aria-pressed="false">자막</button>
+      <button type="button" class="vpause" aria-pressed="false">일시정지</button>
+      <p id="hero-film-tx" class="vh">영상에 나오는 글자. 전사. 진단. 구술체 재구성. 첨삭 3단. 대학마다 한 권. 가이드북 31권. 현학적 연구소. 玄學的 研究所.</p>
+    </figure>
     <div class="herosay">
-      <div class="prodcta" aria-label="두 상품 바로 가기">
-        <div class="pc">
-          <span class="k">서류기반면접 가이드북<br><span class="pr" data-list-price="33000">권당 33,000원</span></span>
-          <div class="bs"><a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="programs/guidebook.html">지원대학 가이드북이란?</a></div>
-        </div>
-        <div class="pc">
-          <span class="k">제시문 면접 스튜디오<br><span class="pr" data-list-price="495000">단위 전권 495,000원</span></span>
-          <div class="bs"><a class="btn" href="studio.html#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="programs/studio.html">면접 스튜디오란?</a></div>
-          <a class="tlink" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 시작 <span class="ar" aria-hidden="true">→</span></a>
-        </div>
-      </div>
       <div class="lede2">
-    <p>가이드북 31권은 <b>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기</b>에서 고른 <b>질문 3,865개</b>를 모집단위와 연도, 출처와 함께 싣고, 4부에서 <b>내 생기부에서 질문을 뽑는 전환 규칙</b>으로 잇습니다.</p>
-    <p class="more" id="ledeMore">스튜디오는 <span>연세대 준비 8분</span>과 <span>고려대 준비 21분</span> 규격 그대로 촬영 응시하고, 한 지문마다 <b>5회 응시</b>와 전사, 진단, 구술체 재구성의 <b>첨삭 3단</b>을 받습니다.</p>
-    <button type="button" class="tlink fold" data-fold aria-expanded="false" aria-controls="ledeMore">더 보기</button>
-  </div>
+        <p>31개 대학 서류기반 면접 가이드북과 연세대, 고려대 제시문 면접 스튜디오입니다.</p>
+        <p>가이드북은 대학 공개 자료와 면접 후기에서 고른 질문 3,865개로, 스튜디오는 기출 제시문 150세트로 만들었습니다.</p>
+      </div>
+      <div class="heroacts" aria-label="두 상품 바로 가기">
+        <a class="btn" href="guidebook/index.html">가이드북 고르기 <span class="ar" aria-hidden="true">→</span></a>
+        <a class="tlink" href="studio.html#units">응시 단위 고르기</a>
+        <a class="tlink" href="studio.html#trialGo" id="heroTrial">체험 응시 1회 <span class="ar" aria-hidden="true">→</span></a>
+      </div>
       <!-- 면접 스튜디오 응시 현황 위젯 (2026-09-07). 값은 assets/rank.js, 응시 0 이면 숨긴 채 둔다 -->
       <aside class="rwid rwid--gwak" id="rankWidget" data-rank-widget hidden aria-label="면접 스튜디오 응시 현황">
         <p class="k">응시 현황</p>
@@ -173,18 +191,33 @@
         <a class="tlink go" href="studio.html#ranking">스튜디오 순위표 <span class="ar" aria-hidden="true">→</span></a>
       </aside>
     </div>
-    <figure class="herofilm">
-      <video autoplay muted loop playsinline preload="auto" poster="assets/video/brand_v2_hero_poster_aigen.jpg" aria-label="현학적 연구소 브랜드 영상, 24초" aria-describedby="hero-film-tx">
-        <source src="assets/video/brand_v2_hero_aigen.webm" type="video/webm">
-        <source src="assets/video/brand_v2_hero_aigen.mp4" type="video/mp4">
-        <track kind="captions" srclang="ko" label="한국어" src="assets/video/brand_v2_hero_aigen.vtt">
-      </video>
-      <button type="button" class="vcc" aria-pressed="false">자막</button>
-      <button type="button" class="vpause" aria-pressed="false">일시정지</button>
-      <p id="hero-film-tx" class="vh">영상에 나오는 글자. 전사. 진단. 구술체 재구성. 첨삭 3단. 대학마다 한 권. 가이드북 31권. 현학적 연구소. 玄學的 研究所.</p>
-    </figure>
+
+  <p class="folio hero-folio"><b>卷一</b><span>두 상품</span><span class="r">1</span></p>
   </div>
-  <section class="pband rule" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-labelledby="promoT">
+  <dl class="trust-strip">
+    <div><dt>질문 3,865개</dt><dd>대학 공개 자료와 후기 출처</dd></div>
+    <div><dt>청약철회</dt><dd>제공 개시 전까지 가능</dd></div>
+    <div><dt>보안 리더 열람</dt><dd>기기 제한 없음, 인쇄 3회</dd></div>
+    <div><dt>13년차 편집</dt><dd>한 사람이 같은 기준으로</dd></div>
+  </dl>
+</section>
+
+<!-- 지면 2. 근거와 규정 -->
+<section class="page" id="why">
+  <p class="folio"><b>卷二</b><span>근거와 규정</span><span class="r">2</span></p>
+  <div class="sh"><div><h2 class="t">무엇을 근거로 만들었나</h2><p>추정 문항 없이 출처 있는 질문만. 규정은 약관 그대로.</p></div></div>
+  <div class="why">
+    <div><h3>출처 있는 질문만</h3><p>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 고른 질문 <b>3,865개</b>만 실었습니다. 추정으로 만든 문항은 없습니다.</p></div>
+    <div><h3>보안 리더</h3><p>가이드북은 브라우저 보안 리더로 열람하실 수 있습니다. 원본 다운로드 없이 워터마크 열람으로 제공되며, 인쇄는 권당 3회까지 가능합니다.</p></div>
+    <div><h3>첨삭 3단</h3><p>전사, 진단, 재구성을 회차마다 첨부.</p></div>
+    <div><h3>환불 규정</h3><p>디지털 상품은 가분적이라 아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문을 공급받은 날부터 7일 이내에 청약철회하실 수 있습니다. 실물은 수령 후 7일 이내 반품 가능하며, 반송비는 3,000원입니다.</p></div>
+  </div>
+</section>
+
+<!-- 지면 3. 두 상품 -->
+<section class="page products" id="products">
+  <p class="folio"><b>卷三</b><span>두 상품</span><span class="r">3</span></p>
+<section class="pband rule" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-labelledby="promoT">
   <div class="phd">
     <div>
       <h2 id="promoT"><i class="dot" aria-hidden="true"></i>9월 30일까지 전 상품을 정가에서 30% 할인합니다.</h2>
@@ -194,7 +227,7 @@
   </div>
   <table>
     <caption class="sr">30% 할인 적용 가격표. 정가 뒤에 할인가가 붙습니다.</caption>
-    <thead><tr><th scope="col">상품</th><th scope="col">정가와 할인가</th></tr></thead>
+    <thead class="price-head"><tr><th scope="col">상품</th><th scope="col">정가와 할인가</th></tr></thead>
     <tbody>
       <tr><th scope="row">서류기반면접 가이드북 권당</th><td><span class="p" data-list-price="33000">33,000원</span></td></tr>
       <tr><th scope="row">제시문 면접 스튜디오 단위 전권</th><td><span class="p" data-list-price="495000">495,000원</span></td></tr>
@@ -206,37 +239,35 @@
 </section>
 <div class="duo">
     <article class="entry">
-      <p class="k">카드 A</p>
       <h2>서류기반면접 가이드북</h2>
       <div class="covers"><img src="assets/covers/ewha.jpg" alt="" width="210" height="297"><img src="assets/covers/snu.jpg" alt="서울대학교 2027 서류기반면접 가이드북 표지" width="210" height="297" fetchpriority="high"><img src="assets/covers/khu.jpg" alt="" width="210" height="297"></div>
       <p>지원 대학 면접 준비를 한 권에</p>
       <ul class="spec">
-        <li><span><b>31개 대학 31권</b>, 본문 1,198면</span></li>
+        <li><span><b>31</b>개 대학 31권, 본문 1,198면</span></li>
         <li><span>수록 질문 <b>3,865개</b>, 문항마다 출처</span></li>
-        <li><span>생기부 기재를 질문으로 바꾸는 <b>전환 규칙</b></span></li>
+        <li><span>생기부 기재를 질문으로 바꾸는 전환 규칙</span></li>
         <li><span>보안 리더 열람, 인쇄 권당 <b>3회</b></span></li>
       </ul>
       <div class="foot"><span class="price" data-list-price="33000">33,000원<span class="u">권당, 31개 대학 전권 판매 중</span></span><a class="btn" href="guidebook/index.html">가이드북 고르기</a><a class="tlink" href="programs/guidebook.html">다섯 부 구성 소개 <span class="ar" aria-hidden="true">→</span></a></div>
     </article>
     <article class="entry">
-      <p class="k">카드 B</p>
       <h2>제시문 면접 스튜디오</h2>
       <figure><img src="assets/photo/campus_collage.jpg" alt="연세대학교 언더우드관과 고려대학교 정문 일러스트" width="1200" height="800" loading="lazy"></figure>
       <p>연세대 고려대 기출로 촬영 응시</p>
       <ul class="spec">
-        <li><span><b>5개 응시 단위</b>, 단위마다 30세트</span></li>
+        <li><span><b>5</b>개 응시 단위, 단위마다 <b>30</b>세트</span></li>
         <li><span>지문 1편에 <b>5회</b>, 실전형 1 연습형 4</span></li>
-        <li><span>회차마다 <b>전사, 진단, 구술체 재구성</b></span></li>
-        <li><span><b>풀이법 인강 포함</b>, 편별로 순차 공개. <a href="lectures.html">인강 소개와 맛보기</a></span></li>
+        <li><span>회차마다 전사, 진단, 구술체 재구성</span></li>
+        <li><span>풀이법 인강 포함, 편별로 순차 공개. <a href="lectures.html">인강 소개와 맛보기</a></span></li>
       </ul>
       <div class="foot"><span class="prices"><span class="price" data-list-price="33000">33,000원<span class="u">지문 1편</span></span><span class="price" data-list-price="495000">495,000원<span class="u">단위 전권, 인강 포함</span></span><span class="aux">낱권 33,000원 × 30편 = 990,000원</span></span><a class="btn" href="studio.html#units">응시 단위 고르기</a><a class="tlink" href="programs/studio.html">다섯 단계 과정 소개 <span class="ar" aria-hidden="true">→</span></a></div>
     </article>
   </div>
 </section>
 
-<!-- 지면 2. 대학별로 찾기 -->
+<!-- 지면 4. 대학별로 찾기 -->
 <section class="page" id="find">
-  <p class="folio"><b>卷二</b><span>대학별로 찾기</span><span class="r">2</span></p>
+  <p class="folio"><b>卷四</b><span>대학별로 찾기</span><span class="r">4</span></p>
   <div class="find">
     <div class="top">
       <div><h2 class="t">대학별로 찾기</h2><p class="lede">지원 대학 이름 하나로 가이드북과 스튜디오까지.</p></div>
@@ -261,27 +292,15 @@
   </div>
 </section>
 
-<!-- 지면 3. 응시 절차 -->
+<!-- 지면 5. 응시 절차 -->
 <section class="page" id="flow">
-  <p class="folio"><b>卷三</b><span>응시 절차</span><span class="r">3</span></p>
+  <p class="folio"><b>卷五</b><span>응시 절차</span><span class="r">5</span></p>
   <div class="sh"><div><h2 class="t">스튜디오 응시 절차</h2><p>지문 1편, 응시 5회</p></div><a class="tlink" href="studio.html">스튜디오 들어가기</a></div>
   <div class="steps">
     <div class="step"><span class="no">01</span><h3>지문 선택</h3><p>낱권이면 지문 1편, 전권이면 그 단위 지문 전량.</p></div>
     <div class="step"><span class="no">02</span><h3>실전형 응시</h3><p>문항을 나누지 않고 한 번에. 실제 고사장과 같은 규격.</p></div>
     <div class="step"><span class="no">03</span><h3>첨삭 세 단</h3><p>말한 그대로 전사, 오독과 비약 진단, 구술체 재구성.</p></div>
     <div class="step"><span class="no">04</span><h3>연습형 재응시</h3><p>막힌 자리만 끊어 다시. 지문 1편에 5회까지.</p></div>
-  </div>
-</section>
-
-<!-- 지면 4. 근거와 규정 -->
-<section class="page" id="why">
-  <p class="folio"><b>卷四</b><span>근거와 규정</span><span class="r">4</span></p>
-  <div class="sh"><div><h2 class="t">근거와 규정</h2><p>추정 문항 없이 출처 있는 질문만. 규정은 약관 그대로.</p></div></div>
-  <div class="why">
-    <div><h3>출처 있는 질문만</h3><p>대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 고른 질문 <b>3,865개</b>만 실었습니다. 추정으로 만든 문항은 없습니다.</p></div>
-    <div><h3>보안 리더</h3><p>가이드북은 브라우저 보안 리더로 열람하실 수 있습니다. 원본 다운로드 없이 워터마크 열람으로 제공되며, 인쇄는 권당 3회까지 가능합니다.</p></div>
-    <div><h3>첨삭 3단</h3><p>전사, 진단, 재구성을 회차마다 첨부.</p></div>
-    <div><h3>환불 규정</h3><p>디지털 상품은 가분적이라 아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문을 공급받은 날부터 7일 이내에 청약철회하실 수 있습니다. 실물은 수령 후 7일 이내 반품 가능하며, 반송비는 3,000원입니다.</p></div>
   </div>
 </section>
 
@@ -474,9 +493,9 @@ c-231 -57 -586 -206 -758 -320 -33 -21 -67 -43 -75 -48 -8 -5 120 128 285 295
   </div>
 </section>
 
-<!-- 지면 5. 자주 묻는 질문, 공지 -->
+<!-- 지면 6. 자주 묻는 질문, 공지 -->
 <section class="page" id="faq">
-  <p class="folio"><b>卷五</b><span>자주 묻는 질문</span><span class="r">5</span></p>
+  <p class="folio"><b>卷六</b><span>자주 묻는 질문</span><span class="r">6</span></p>
   <div class="two">
     <div>
       <div class="sh"><div><h2 class="t">자주 묻는 질문</h2></div></div>
@@ -550,9 +569,6 @@ var HH_GB=[{"slug":"gachon","name":"가천대학교","short":"가천대","pages"
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');f=b.dataset.f;render()})});
   q.addEventListener('input',render); render();
-  // D1 A (건우 2026-09-02): 720px 미만에서 리드 2문장째 접기. fold-ready 는 여기서만 붙인다 (JS 없으면 전문 노출)
-  var ld=document.querySelector('.lede2'), fb=ld&&ld.querySelector('[data-fold]');
-  if(ld&&fb){ ld.classList.add('fold-ready'); fb.addEventListener('click',function(){ var o=ld.classList.toggle('open'); fb.setAttribute('aria-expanded',o?'true':'false'); fb.textContent=o?'접기':'더 보기'; }); }
   // 히어로 1차 CTA 스튜디오 = 체험 응시 1회 (studio.html trialGo 와 같은 흐름)
   var ht=document.getElementById('heroTrial');
   if(ht&&window.HH) ht.addEventListener('click', async function(ev){
@@ -570,34 +586,7 @@ var HH_GB=[{"slug":"gachon","name":"가천대학교","short":"가천대","pages"
       return '<li><a href="notice.html?id='+encodeURIComponent(it.id)+'"><span>'+HH.esc(it.title||'')+'</span><time datetime="'+d+'">'+d.replace(/-/g,'.')+'</time></a></li>'}).join('')}).catch(function(){})}
 })();
 </script>
-<script>
-// 히어로 브랜드 영상: 항상 자동 무한 재생(muted). 자동재생이 막히면 첫 상호작용·가시성 복귀에서 재시도. 일시정지 버튼 = WCAG 2.2.2 정지 수단
-(function(){
-  var v=document.querySelector('.herofilm video'), b=document.querySelector('.herofilm .vpause'); if(!v) return;
-  v.muted=true; v.defaultMuted=true;
-  function go(){ if(v.dataset.paused) return; var p=v.play(); if(p&&p.catch) p.catch(function(){}); }
-  go(); v.addEventListener('canplay',go,{once:true});
-  document.addEventListener('visibilitychange',function(){ if(!document.hidden) go(); });
-  ['pointerdown','keydown','touchstart'].forEach(function(ev){ document.addEventListener(ev,function(){ if(v.paused) go(); },{once:true,passive:true}); });
-  if(b) b.addEventListener('click',function(){
-    if(v.dataset.paused){ delete v.dataset.paused; go(); b.textContent='일시정지'; b.setAttribute('aria-pressed','false'); }
-    else { v.dataset.paused='1'; v.pause(); b.textContent='재생'; b.setAttribute('aria-pressed','true'); }
-  });
-  // 자막: 이 영상은 말소리가 없고 뜻을 화면 글자가 나른다. 기본으로 켜면 그 글자와 두 겹이 되므로
-  // 켜고 끄는 손잡이를 준다. 고른 값은 기기에 남긴다.
-  var c=document.querySelector('.herofilm .vcc');
-  function tracks(){ return v.textTracks||[]; }
-  function setCc(on){
-    var t=tracks(); for(var i=0;i<t.length;i++) t[i].mode=on?'showing':'hidden';
-    if(c) c.setAttribute('aria-pressed',on?'true':'false');
-    try{ localStorage.setItem('hh_film_cc',on?'1':'0'); }catch(e){}
-  }
-  var want=false; try{ want=localStorage.getItem('hh_film_cc')==='1'; }catch(e){}
-  setCc(want);
-  v.addEventListener('loadedmetadata',function(){ setCc(c?c.getAttribute('aria-pressed')==='true':false); });
-  if(c) c.addEventListener('click',function(){ setCc(c.getAttribute('aria-pressed')!=='true'); });
-})();
-</script>
+
 <!--promo:popup-->
 <div class="pdim" hidden id="promoPopup" data-promo-popup="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00"
      role="dialog" aria-modal="true" aria-labelledby="ppopT" aria-describedby="ppopU" tabindex="-1">

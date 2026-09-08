@@ -1,33 +1,35 @@
 /* ============ 현학적 연구소 사이트 시스템 v3 「판본 (板本)」 ============
    2026-09-02 design v3 (PLAN s30 Task 5). 레이아웃 = B안 판본(_design/v3_20260902/tokens_B.css, preview_B.html),
-   서체 = A안 계기(tokens_A.css 서체 토큰과 1.2 사다리. 건우 지시 2026-09-02: 표제와 본문 Pretendard, 표제 굵기 800,
+   서체 = A안 계기(tokens_A.css 서체 토큰과 1.22 사다리. 건우 지시 2026-09-02: 표제와 본문 Pretendard, 표제 굵기 800,
    본문 16px, 숫자와 라벨과 가격 JetBrains Mono, 세리프는 워드마크와 인용에만).
    구성  [1] 토큰과 리셋: 전역 (색, 간격, 거터, 컨테이너, 괘선, 곡률, 그림자, 타입 사다리)
          [2] v3 시스템: :where(body.v2) 스코프. 페이지는 <body class="v2"> 로 선언한다 (클래스 이름은 v2 그대로)
          [2b] 하위 페이지 컴포넌트, [2c] 제작자 프로필, [2d] v3 판본 컴포넌트 (卷 색인 레일, 지면, 2상품, 단위 카드, 세트 표, 강의 목록)
    규범  좌우 여백 = --gut 과 .wrap 만. 히트박스는 음수 마진 없이 --tap 으로 상자를 키운다 (감사 D3, D5).
          타입 = 토큰 사다리만 (--t-xs sm base md h4 h3 h2 h1 display, 계기값 --t-mono). 리터럴 px 금지 (감사 D6, D7).
-         곡률 = --r-sm md lg pill, 그림자 = --shadow-1(없음) --shadow-2. 위계는 괘선 --rule, --rule-strong 으로 (감사 D8, D9).
+         곡률 = --r-md lg pill, 그림자 = --shadow-1(없음) --shadow-2. 위계는 괘선 --rule, --rule-strong 으로 (감사 D8, D9).
          표제 행간 --lh-tight 1.32 (감사 D10). 본문 --measure, text-wrap pretty (감사 D4).
    금지  전역 요소 셀렉터 추가 (08-21 POINT-A 사고). [2] 이하는 body 클래스 스코프 안에서만 */
 
 /* ═══════ [1] 토큰과 리셋 (전역) ═══════ */
 :root{
-  /* 색: B안. 종이를 한 단계 눅였다. 대비(WCAG 상대휘도) ink/paper 11.73, body/paper 8.13, gray/paper 5.04, seal/paper 4.97, gray/mat 4.56 */
+  /* 색: B안 종이와 표. WCAG 상대휘도, edge 는 각 배경에 alpha .55 합성 후 계산.
+     ink/paper 11.73, body/paper 8.13, gray/paper 5.04, seal/paper 6.48, ink/card 13.23, body/card 9.18, gray/mat 4.56, seal/mat 5.87, seal/card 7.32, card/paper 1.13, edge/paper 3.20, edge/card 3.33, edge/mat 3.10 */
   --ink:#312E2E;        /* 玄墨 */
   --paper:#F4EFE3;      /* 楮紙 본판 */
   --paper-2:#EDE7D8;
   --mat:#EBE4D4;        /* 판심 바탕 */
-  --card:#FBF7EE;       /* 지면 */
+  --card:#FFFDF8;       /* 지면 */
   --gray:#696561;       /* 灰墨 */
   --body:#4A4644;       /* 본문 */
-  --seal:#BC3529;       /* 朱印, 가격과 인장과 활성 표식에만 */
+  --seal:#9E2B22;       /* 朱印, 가격과 인장에만 */
   --brown:#3B2C20;      /* 玄褐 */
   --gold:#D0AC6E;       /* 金泥, 玄墨 바탕 위에서만 */
-  --link:#1B4E9B;       /* 하이퍼링크. card 대비 7.53, paper 대비 7.01 */
+  --link:#1B4E9B;       /* 하이퍼링크. card 대비 7.92, paper 대비 7.01 */
   --link-2:#123E8C;
   --hair:rgba(49,46,46,.40);
   --hairs:rgba(49,46,46,.24);
+  --edge:rgba(49,46,46,.55); /* UI 경계 */
   --paper-rgb:244,239,227;
   /* 서체: A안. 세리프는 워드마크와 인용만, 모노는 숫자와 라벨과 가격 */
   --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
@@ -39,15 +41,18 @@
   --container:1120px;
   --frame:14px;
   --hd-h:72px;
+  --util-h:32px;--promo-h:44px;
+  --line:1px;
+  --s-sec:var(--s8);
   --hd-h-sm:65px;        /* 900px 미만 헤더 실측 높이 (row 64 + 괘선 1) */
   --rail-w:236px;
-  /* 타입 사다리: A안 1.2배. 11 13 16 + 유동 5단. --t-md 와 --t-lg 는 유동 단의 별칭이라 인접 충돌이 없다 */
-  --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px;
-  --t-h4:clamp(19px,1.5vw,23px);
-  --t-h3:clamp(22px,2.0vw,28px);
-  --t-h2:clamp(26px,2.7vw,34px);
-  --t-h1:clamp(31px,4.0vw,44px);
-  --t-display:clamp(38px,5.6vw,62px);
+  /* 타입 사다리: 유동 display 한 값에서 1.22배씩 파생, 표시 크기의 비율도 일정하다. */
+  --t-xs:12px;--t-cap:13px;--t-sm:13px;--t-base:16px;
+  --t-display:clamp(43.24px,5.6vw,62px);
+  --t-h1:calc(var(--t-display) / 1.22);
+  --t-h2:calc(var(--t-h1) / 1.22);
+  --t-h3:calc(var(--t-h2) / 1.22);
+  --t-h4:calc(var(--t-h3) / 1.22);
   --t-md:var(--t-h4);
   --t-lg:var(--t-h3);
   --t-mono:13px;         /* 계기값 전용 고정 크기 */
@@ -57,12 +62,15 @@
   --measure:36em;        /* 한글 본문 한 줄 상한 */
   --measure-narrow:26em;
   --tap:48px;            /* 한글 터치 타겟 하한 */
-  --r-sm:2px;--r-md:4px;--r-lg:8px;--r-pill:999px;
+  --r-md:4px;--r-lg:8px;--r-pill:999px;
   --radius:var(--r-md);
   --shadow-1:none;       /* 그림자 대신 괘선 */
   --shadow-2:0 1px 0 rgba(49,46,46,.06),0 12px 28px rgba(49,46,46,.07);
   --rule:1px solid var(--hairs);
   --rule-strong:1px solid var(--hair);
+  --rule-ui:1px solid var(--edge);
+  --rule-hd:2px solid var(--ink);
+  --shadow-ui:inset 0 0 0 1px var(--edge);
   --lh-body:1.75;
   --lh-tight:1.32;
   --lh-ui:1.5;
@@ -113,16 +121,16 @@ body.v2{background:var(--ink)}
 :where(body.v2) .sheet{background:var(--paper);border-radius:var(--r-lg);overflow:clip;position:relative}
 
 /* 유틸바 */
-:where(body.v2) .util{display:flex;justify-content:space-between;align-items:center;min-height:44px;padding:0 var(--gut);
+:where(body.v2) .util{display:flex;justify-content:space-between;align-items:center;height:var(--util-h);padding:0 var(--gut);
   font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);border-bottom:var(--rule)}
 :where(body.v2) .util .han{font-family:var(--serif);font-weight:300;font-size:var(--t-sm);letter-spacing:.06em}
 :where(body.v2) .util nav{display:flex;gap:var(--s4)}
-:where(body.v2) .util nav a{display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font-family:var(--sans);letter-spacing:0;font-size:var(--t-sm)}
+:where(body.v2) .util nav a{display:inline-flex;align-items:center;justify-content:center;min-height:calc(var(--util-h) - var(--line));min-width:var(--tap);font-family:var(--sans);letter-spacing:0;font-size:var(--t-sm)}
 :where(body.v2) .util nav a:hover{color:var(--ink)}
 
 /* 헤더 */
 :where(body.v2) .hd{position:sticky;top:0;z-index:40;background:rgba(var(--paper-rgb),.94);backdrop-filter:blur(10px);border-bottom:var(--rule)}
-:where(body.v2) .hd .row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--s5);height:var(--hd-h)}
+:where(body.v2) .hd .row{display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:var(--s5);height:calc(var(--hd-h) - var(--line))}
 :where(body.v2) .brand{display:flex;align-items:center;gap:10px;min-height:var(--tap);font-family:var(--serif);font-weight:700;font-size:var(--t-base);letter-spacing:-0.02em}
 :where(body.v2) .brand svg{width:28px;height:28px;flex:none}
 :where(body.v2) .gnb{display:flex;gap:clamp(12px,1.6vw,24px);justify-content:center;flex-wrap:nowrap}
@@ -132,7 +140,7 @@ body.v2{background:var(--ink)}
   box-shadow:inset 0 -2px 0 transparent;white-space:nowrap;flex:0 0 auto;transition:box-shadow var(--dur-1) var(--ease)}
 :where(body.v2) .gnb a:hover,:where(body.v2) .gnb a.on{box-shadow:inset 0 -2px 0 var(--ink)}
 :where(body.v2) .hd .tools{display:flex;align-items:center;gap:var(--s3);justify-self:end}
-:where(body.v2) .search{display:flex;align-items:center;height:var(--tap);box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-pill);background:var(--card);padding:0 2px 0 18px;width:clamp(180px,17vw,240px);flex:0 1 auto}
+:where(body.v2) .search{display:flex;align-items:center;height:var(--tap);box-shadow:var(--shadow-ui);border-radius:var(--r-pill);background:var(--card);padding:0 2px 0 18px;width:clamp(180px,17vw,240px);flex:0 1 auto}
 :where(body.v2) .search .ph{font-size:var(--t-sm);color:var(--gray);white-space:nowrap;margin-right:8px}
 :where(body.v2) .search input{border:0;background:transparent;font:inherit;font-size:var(--t-base);color:var(--ink);width:100%;outline:none;min-height:44px}
 :where(body.v2) .search input:focus-visible{outline:none}
@@ -150,9 +158,9 @@ body.v2{background:var(--ink)}
 :where(body.v2) .strip a{display:inline-flex;align-items:center;min-height:var(--tap);font-weight:600;white-space:nowrap}
 
 /* 할인 행사 가격 표기 (2026-09-07): [data-list-price] 안 첫 "N원" 을 app.js 가 정가 취소선(.was) + 현재가(.sale) 로 바꾼다.
-   .was 는 灰墨 얇게, .sale 은 부모 색 승계(가격 자리 朱印 규칙 그대로). 배너 본체 스타일 = 아래 .promo */
-:where(body.v2) s.was{color:var(--gray);font-weight:400;font-size:.72em;text-decoration:line-through;text-decoration-thickness:1px;letter-spacing:0}
-:where(body.v2) .sale{font-weight:inherit}
+   .was 는 灰墨 얇게, .sale 값만 朱印, 부모의 가격 설명은 본문색. 배너 본체 스타일 = 아래 .promo */
+:where(body.v2) s.was{color:var(--gray);font-weight:400;font-size:var(--t-sm);text-decoration:line-through;text-decoration-thickness:1px;letter-spacing:0}
+:where(body.v2) .sale{font-weight:inherit;color:var(--seal)}
 
 /* ============ 30% 할인 행사 배너 추가 CSS (2026-09-07 design-director) ============
    전제  assets/base.css 뒤에 로드한다. 병합할 때는 base.css 152행 주석이 가리키는 "아래 .promo" 자리에 그대로 붙는다.
@@ -164,7 +172,7 @@ body.v2{background:var(--ink)}
          않고 별 클래스로 두고 모바일에서 살려 둔다.
    가격  app.js renderPromoPrices 의 계약을 그대로 쓴다. 지면에는 정가만 적고 [data-list-price] 를 단다.
          행사 중이면 app.js 가 그 안의 "N원" 을 s.was(정가 취소선) + span.sale(할인가) 로 바꾼다.
-         .sale 은 부모 색을 승계하므로 가격 칸(.p)에 朱印을 준다. 지면 숫자와 속성값이 다르면 app.js 가 손대지 않는다.
+         .sale 값에만 朱印을 준다. 지면 숫자와 속성값이 다르면 app.js 가 손대지 않는다.
    표시  app.js 는 [data-promo] 를 행사 밖이거나 data-promo-until 이 지나면 hidden 으로 감춘다. display 를 주는
          컴포넌트는 UA 의 [hidden] 을 이기므로 아래 마지막 줄에서 다시 감춘다 (이 파일에서 유일한 !important).
    충돌  .hd(헤더) .rows(강의 목록) 는 base.css 의 기존 컴포넌트라 쓰지 않는다. 밴드 머리 = .phd, 가격 줄 = .plist. */
@@ -176,43 +184,43 @@ body.v2{background:var(--ink)}
 
 /* ═══════ A. 전 페이지 상단 띠 (.promo) ═══════ */
 :where(body.v2) .promo .in{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);
-  min-height:44px;font-size:var(--t-sm);line-height:var(--lh-ui)}
+  height:calc(var(--promo-h) - var(--line));font-size:var(--t-sm);line-height:var(--lh-ui)}
 :where(body.v2) .promo p{max-width:none;margin:0}
 :where(body.v2) .promo b{font-weight:600}
 :where(body.v2) .promo .dot{width:6px;height:6px;background:var(--seal);border-radius:50%;
   display:inline-block;margin-right:10px;vertical-align:1px;flex:none}
-:where(body.v2) .promo a{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-weight:600;white-space:nowrap;
+:where(body.v2) .promo a{display:inline-flex;align-items:center;gap:var(--s2);min-height:calc(var(--promo-h) - var(--line));font-weight:600;white-space:nowrap;
   text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px}
 :where(body.v2) .promo .sm{display:none}
-:where(body.v2) .promo s.was{font-size:var(--t-xs)}   /* 띠 본문이 13px 이라 base.css 의 .72em 을 그대로 두면 9.4px 이 된다. 11px 로 세운다 */
+:where(body.v2) .promo s.was{font-size:var(--t-sm)}   /* 정가는 본문 소형 토큰으로 고정 */
 
 /* A1 판심 바탕 */
 :where(body.v2) .promo.mat{background:var(--mat);border-bottom:var(--rule-strong)}
 :where(body.v2) .promo.mat a{text-decoration-color:var(--hair)}
-:where(body.v2) .promo.mat a:hover{color:var(--seal);text-decoration-color:var(--seal)}
+:where(body.v2) .promo.mat a:hover{color:var(--ink);text-decoration-color:var(--ink)}
 
-/* A2 먹 반전. 玄墨 위 朱印은 대비 2.36 이라 글자로 쓰지 않는다. 강조 한 점 = 金泥 6.29 */
+/* A2 먹 반전. 玄墨 위 朱印은 대비 1.81 이라 글자로 쓰지 않는다. 金泥는 .invert 안에서만 쓴다 */
 :where(body.v2) .promo.ink{background:var(--ink);color:var(--paper)}
-:where(body.v2) .promo.ink .g{color:var(--gold)}
-:where(body.v2) .promo.ink .p{color:var(--gold)}
+:where(body.v2) .promo.ink .g{color:var(--paper)}
+:where(body.v2) .promo.ink .p{color:var(--paper)}
 :where(body.v2) .promo.ink s.was{color:rgba(var(--paper-rgb),.62)}   /* 灰墨은 玄墨 위 2.33 이라 못 쓴다. 이 값은 5.53 */
 :where(body.v2) .promo.ink a{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
-:where(body.v2) .promo.ink a:hover{color:var(--gold);text-decoration-color:var(--gold)}
+:where(body.v2) .promo.ink a:hover{color:var(--paper);text-decoration-color:var(--paper)}
 
 /* A3 괘선만. 계기(모노) 등록 */
-:where(body.v2) .promo.rule{background:var(--paper);border-top:var(--rule);border-bottom:var(--rule-strong)}
+:where(body.v2) .promo.rule{background:var(--paper);border-bottom:var(--rule-strong)}
 :where(body.v2) .promo.rule .in{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
 :where(body.v2) .promo.rule .lb{letter-spacing:var(--tr-label);color:var(--gray)}
 :where(body.v2) .promo.rule .sans{font-family:var(--sans);letter-spacing:-0.01em;margin-left:var(--s2);padding-left:var(--s3);border-left:var(--rule)}   /* 계기값과 문장 사이 괘선 한 줄 */
 :where(body.v2) .promo.rule .sans.sm{border-left:0;padding-left:0;margin-left:6px}
 :where(body.v2) .promo.rule a{font-family:var(--sans);letter-spacing:-0.01em;text-decoration-color:var(--hair)}
-:where(body.v2) .promo.rule a:hover{color:var(--seal);text-decoration-color:var(--seal)}
+:where(body.v2) .promo.rule a:hover{color:var(--ink);text-decoration-color:var(--ink)}
 
 @media (max-width:900px){
-  :where(body.v2) .promo .in{min-height:44px;gap:var(--s2)}
+  :where(body.v2) .promo .in{min-height:calc(var(--promo-h) - var(--line));gap:var(--s2)}
   :where(body.v2) .promo .lg{display:none}
   :where(body.v2) .promo .sm{display:inline}
-  :where(body.v2) .promo a{min-height:44px}   /* 5요소 §3.3 모바일 터치 타깃 하한 */
+  :where(body.v2) .promo a{min-height:calc(var(--promo-h) - var(--line))}   /* 5요소 §3.3 모바일 터치 타깃 하한 */
   :where(body.v2) .promo .dot{margin-right:8px}
 }
 
@@ -228,7 +236,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pband .plist .p{font-size:var(--t-h4)}
 :where(body.v2) .pband .go{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);font-weight:600;font-size:var(--t-sm);
   text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;text-decoration-color:var(--hair)}
-:where(body.v2) .pband .go:hover{color:var(--seal);text-decoration-color:var(--seal)}
+:where(body.v2) .pband .go:hover{color:var(--ink);text-decoration-color:var(--ink)}
 
 /* B1 판심 밴드: 문장 한 단 + 가격 네 칸 */
 :where(body.v2) .pband.mat{background:var(--mat);border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4)}
@@ -240,15 +248,15 @@ body.v2{background:var(--ink)}
   padding:var(--s5);display:grid;grid-template-columns:minmax(0,1.414fr) minmax(0,1fr);gap:var(--s5)}   /* 1:√2 (5요소 §5.1 화이트리스트) */
 :where(body.v2) .pband.ink h2{font-size:var(--t-h3)}
 :where(body.v2) .pband.ink .rate{font-family:var(--mono);font-weight:500;font-size:var(--t-display);line-height:1;
-  letter-spacing:-0.03em;color:var(--gold);display:block;margin-bottom:var(--s3)}
+  letter-spacing:-0.03em;color:var(--paper);display:block;margin-bottom:var(--s3)}
 :where(body.v2) .pband.ink .lede,:where(body.v2) .pband.ink .until{color:rgba(var(--paper-rgb),.72)}
 :where(body.v2) .pband.ink .k{color:rgba(var(--paper-rgb),.62)}
 :where(body.v2) .pband.ink .plist{grid-template-columns:1fr;gap:var(--s3)}
 :where(body.v2) .pband.ink .plist li{border-left:0;border-top:1px solid rgba(var(--paper-rgb),.22);padding:var(--s2) 0 0}
 :where(body.v2) .pband.ink .p{color:var(--paper)}
 :where(body.v2) .pband.ink s.was{color:rgba(var(--paper-rgb),.62)}
-:where(body.v2) .pband.ink .go{color:var(--gold);text-decoration-color:rgba(208,172,110,.5)}
-:where(body.v2) .pband.ink .go:hover{text-decoration-color:var(--gold)}
+:where(body.v2) .pband.ink .go{color:var(--paper);text-decoration-color:rgba(208,172,110,.5)}
+:where(body.v2) .pband.ink .go:hover{text-decoration-color:var(--paper)}
 
 /* B3 괘선 표: 채움 0, 판본 등록 */
 :where(body.v2) .pband.rule{border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4) 0 var(--s3)}
@@ -288,13 +296,13 @@ body.v2{background:var(--ink)}
 
 /* 버튼 */
 :where(body.v2) .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:var(--tap);padding-inline:var(--s4);
-  background:var(--ink);color:var(--paper);font-weight:700;font-size:var(--t-sm);letter-spacing:-0.01em;border-radius:var(--r-sm);
+  background:var(--ink);color:var(--paper);font-weight:700;font-size:var(--t-sm);letter-spacing:-0.01em;border-radius:var(--r-md);
   transition:background var(--dur-1) var(--ease),transform var(--dur-1) var(--ease)}
 :where(body.v2) .btn:hover{background:var(--brown)}
 :where(body.v2) .btn:active{transform:scale(.985)}
 :where(body.v2) .btn .ar{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:rgba(var(--paper-rgb),.14);font-weight:500;transition:transform var(--dur-2) var(--ease)}
 :where(body.v2) .btn:hover .ar{transform:translateX(3px)}
-:where(body.v2) .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--hair)}
+:where(body.v2) .btn.ghost{background:transparent;color:var(--ink);box-shadow:var(--shadow-ui)}
 :where(body.v2) .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 :where(body.v2) .btn.ghost .ar{background:rgba(49,46,46,.08)}
 :where(body.v2) .btn.sm{padding-inline:var(--s3)}
@@ -304,8 +312,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) .tlink:hover{color:var(--gray);text-decoration-color:var(--gray)}
 
 /* 뱃지(인장), 가격, 상태. 뱃지는 라벨이라 모노 */
-:where(body.v2) .badge{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.06em;line-height:1;padding:6px 8px;background:var(--ink);color:var(--paper);border-radius:var(--r-sm);white-space:nowrap}
-:where(body.v2) .badge.seal{background:transparent;color:var(--seal);box-shadow:inset 0 0 0 1px rgba(188,53,41,.42)}
+:where(body.v2) .badge{display:inline-flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.06em;line-height:1;padding:6px 8px;background:var(--ink);color:var(--paper);border-radius:var(--r-md);white-space:nowrap}
+:where(body.v2) .badge.seal{background:transparent;color:var(--seal);box-shadow:inset 0 0 0 1px rgba(158,43,34,.42)}
 :where(body.v2) .badge.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--hair)}
 :where(body.v2) .badge.mute{background:transparent;color:var(--gray);box-shadow:inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .price{font-family:var(--mono);font-weight:500;color:var(--seal);font-size:var(--t-md);letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
@@ -335,18 +343,18 @@ body.v2{background:var(--ink)}
 :where(body.v2) .bracket{position:relative}
 
 /* 탭 */
-:where(body.v2) .tabs{display:flex;gap:var(--s1);border-bottom:var(--rule-strong);overflow-x:auto;min-width:0;max-width:100%}
+:where(body.v2) .tabs{display:flex;gap:var(--s1);border-bottom:var(--rule-ui);overflow-x:auto;min-width:0;max-width:100%}
 :where(body.v2) .tabs button{font-weight:600;font-size:var(--t-sm);color:var(--gray);padding:0 var(--s3);min-height:var(--tap);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;transition:color var(--dur-1) var(--ease)}
 :where(body.v2) .tabs button:hover{color:var(--ink)}
-:where(body.v2) .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--seal)}
+:where(body.v2) .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--ink)}
 :where(body.v2) .tabs.wrapx{flex-wrap:wrap;overflow:visible}
 :where(body.v2) .tabs button span,:where(body.v2) .tabs button b{font-family:var(--mono);font-weight:500;font-size:var(--t-xs);color:var(--gray);margin-left:6px;font-variant-numeric:tabular-nums}
 
 /* 대학 타일 */
 :where(body.v2) .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
-:where(body.v2) .tile{display:flex;flex-direction:column;gap:6px;background:var(--card);box-shadow:inset 0 0 0 1px var(--hairs);border-radius:var(--r-md);padding:var(--s3);min-height:var(--tap);
+:where(body.v2) .tile{display:flex;flex-direction:column;gap:6px;background:var(--card);box-shadow:var(--shadow-ui);border-radius:var(--r-md);padding:var(--s3);min-height:var(--tap);
   transition:box-shadow var(--dur-1) var(--ease)}
-:where(body.v2) .tile:hover{box-shadow:inset 0 0 0 1px var(--hair)}
+:where(body.v2) .tile:hover{box-shadow:var(--shadow-ui)}
 :where(body.v2) .tile .n{font-weight:700;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
 :where(body.v2) .tile .n small{font-weight:500;font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .m{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
@@ -365,7 +373,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .card img{width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
 :where(body.v2) .card figure .badge{position:absolute;top:12px;left:12px}
 :where(body.v2) .card figure .ai{position:absolute;right:12px;bottom:10px}
-:where(body.v2) .ai{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink);letter-spacing:.04em;background:rgba(var(--paper-rgb),.92);padding:3px 7px;border-radius:var(--r-sm)}
+:where(body.v2) .ai{font-family:var(--mono);font-size:var(--t-xs);color:var(--ink);letter-spacing:.04em;background:rgba(var(--paper-rgb),.92);padding:3px 7px;border-radius:var(--r-md)}
 :where(body.v2) .card .bd{padding:var(--s4) var(--s4) var(--s3);display:flex;flex-direction:column;gap:10px;flex:1}
 :where(body.v2) .card h3{font-size:var(--t-h4)}
 :where(body.v2) .card p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--body);max-width:var(--measure-narrow)}
@@ -492,11 +500,11 @@ body.v2{background:var(--ink)}
 
 /* 실물 표지 (V6 수리: AI 목업 대신 실제 표지 렌더). v3 = 판본식 나란히 놓기, 부채꼴 회전 없음 */
 :where(body.v2) .covers{display:flex;gap:10px;align-items:flex-end;position:relative}
-:where(body.v2) .covers>img{width:30%;max-width:96px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-sm);
+:where(body.v2) .covers>img{width:30%;max-width:96px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-md);
   box-shadow:0 1px 0 rgba(49,46,46,.10),inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .covers>img:nth-child(2){transform:translateY(-10px)}
 :where(body.v2) .covers .badge{position:absolute;top:0;right:0}
-:where(body.v2) .cv{width:56px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-sm);box-shadow:inset 0 0 0 1px var(--hairs);flex:none}
+:where(body.v2) .cv{width:56px;height:auto;aspect-ratio:210/297;object-fit:cover;border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);flex:none}
 
 /* AEO 직답 단락 (seo_inject 가 .pagehead 끝에 넣는다) */
 :where(body.v2) .aeo-answer{font-size:var(--t-sm);line-height:var(--lh-body);color:var(--gray);margin-top:var(--s3);max-width:var(--measure)}
@@ -517,7 +525,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .lay.rev{grid-template-columns:260px minmax(0,1fr)}
 :where(body.v2) .lay.narrow{max-width:760px;grid-template-columns:1fr}
 :where(body.v2) .side{position:sticky;top:calc(var(--hd-h) + var(--s4));display:flex;flex-direction:column;gap:var(--s3)}
-:where(body.v2) .box{background:var(--mat);border-radius:var(--r-md);padding:var(--s4)}
+:where(body.v2) .box{background:var(--mat);border:var(--rule-ui);border-radius:var(--r-md);padding:var(--s4)}
 :where(body.v2) .box h3{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:10px}
 :where(body.v2) .box p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body)}
 :where(body.v2) .box p+p{margin-top:8px}
@@ -540,18 +548,18 @@ body.v2{background:var(--ink)}
    계측기는 opacity:0 요소를 hidden 으로 건너뛰어 over 0 으로 보고하므로 scrollWidth 판정만 잡는다. */
 :where(body.v2) .field{display:flex;flex-direction:column;gap:8px;margin-bottom:var(--s4)}
 :where(body.v2) .field label{font-size:var(--t-sm);font-weight:600}
-:where(body.v2) .field input:not([type=radio]):not([type=checkbox]),:where(body.v2) .field select,:where(body.v2) .field textarea{font:inherit;font-size:var(--t-base);color:var(--ink);background:var(--card);border:1px solid var(--hair);border-radius:var(--r-md);min-height:var(--tap);padding:0 16px;width:100%;outline:none;transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
+:where(body.v2) .field input:not([type=radio]):not([type=checkbox]),:where(body.v2) .field select,:where(body.v2) .field textarea{font:inherit;font-size:var(--t-base);color:var(--ink);background:var(--card);border:var(--rule-ui);border-radius:var(--r-md);min-height:var(--tap);padding:0 16px;width:100%;outline:none;transition:border-color var(--dur-1) var(--ease),box-shadow var(--dur-1) var(--ease)}
 :where(body.v2) .field textarea{padding:14px 16px;min-height:120px;line-height:1.6}
 :where(body.v2) .field input:focus,:where(body.v2) .field select:focus,:where(body.v2) .field textarea:focus{border-color:var(--ink);box-shadow:0 0 0 3px rgba(49,46,46,.08)}
 :where(body.v2) .field input:focus-visible,:where(body.v2) .field select:focus-visible,:where(body.v2) .field textarea:focus-visible{outline:none}
 :where(body.v2) .field input::placeholder{color:var(--gray)}
 :where(body.v2) .field .help{font-size:var(--t-sm);color:var(--gray);line-height:1.6}
-:where(body.v2) .field .err{font-size:var(--t-sm);color:var(--seal)}
+:where(body.v2) .field .err{font-size:var(--t-sm);color:var(--ink)}
 :where(body.v2) .pair{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s4)}
 :where(body.v2) .check{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:var(--rule);cursor:pointer;font-size:var(--t-sm);line-height:1.5}
 :where(body.v2) .check.all{border-top:2px solid var(--ink);font-weight:700}
 :where(body.v2) .check:last-of-type{border-bottom:var(--rule)}
-:where(body.v2) .check input{appearance:none;width:22px;height:22px;flex:none;margin-top:1px;border:1px solid var(--hair);border-radius:var(--r-md);background:var(--card);cursor:pointer}
+:where(body.v2) .check input{appearance:none;width:22px;height:22px;flex:none;margin-top:1px;border:var(--rule-ui);border-radius:var(--r-md);background:var(--card);cursor:pointer}
 :where(body.v2) .check input:checked{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--ink)}
 :where(body.v2) .check input[type=radio],:where(body.v2) .check input[type=radio]:checked{border-radius:50%;background-image:none}
 :where(body.v2) .check input[type=radio]:checked{box-shadow:inset 0 0 0 4px var(--paper)}
@@ -560,13 +568,13 @@ body.v2{background:var(--ink)}
 :where(body.v2) .check .view{margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font-size:var(--t-sm);color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:0 var(--s2)}
 :where(body.v2) .check .view:hover{color:var(--ink)}
 :where(body.v2) .ckfoot{margin:14px 0 0;font-size:var(--t-sm);line-height:1.6;color:var(--gray)}
-:where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:var(--r-md);background:rgba(188,53,41,.06);border-left:3px solid var(--seal);font-size:var(--t-sm);line-height:var(--lh-body)}
+:where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:var(--r-md);background:rgba(49,46,46,.06);border-left:3px solid var(--ink);font-size:var(--t-sm);line-height:var(--lh-body)}
 :where(body.v2) .oauthmsg.info{background:var(--mat);border-left-color:var(--ink)}
 /* 진행 레일 (가입 단계). 이름은 .rail 이지만 [2d] 卷 색인 레일(nav.rail)과 별개다. 진행 레일은 span 자식이라 겹치지 않는다 */
 :where(body.v2) div.rail{display:flex;gap:4px;border-bottom:var(--rule-strong);margin-bottom:var(--s5);overflow-x:auto;counter-reset:rail}
 :where(body.v2) div.rail span{font-size:var(--t-sm);font-weight:600;color:var(--gray);padding:12px 14px;border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;display:flex;align-items:center;gap:8px}
 :where(body.v2) div.rail span::before{content:counter(rail);counter-increment:rail;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.06em;width:20px;height:20px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--hairs);display:inline-grid;place-items:center}
-:where(body.v2) div.rail span.cur{color:var(--ink);border-bottom-color:var(--seal)}
+:where(body.v2) div.rail span.cur{color:var(--ink);border-bottom-color:var(--ink)}
 :where(body.v2) div.rail span.cur::before{background:var(--ink);color:var(--paper);box-shadow:none}
 
 /* 간편 로그인 (제공사 색은 각 사 가이드라인) */
@@ -574,7 +582,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .socwrap .or{display:flex;align-items:center;gap:14px;margin-bottom:var(--s3);font-size:var(--t-sm);color:var(--gray)}
 :where(body.v2) .socwrap .or::before,:where(body.v2) .socwrap .or::after{content:"";flex:1;height:1px;background:var(--hairs)}
 :where(body.v2) .socs{display:flex;flex-direction:column;gap:10px}
-:where(body.v2) .soc{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:var(--tap);padding:0 48px;border:1px solid var(--hair);border-radius:var(--r-md);background:var(--card);font-size:var(--t-base);font-weight:600;color:var(--ink);cursor:pointer;transition:opacity var(--dur-1) var(--ease),transform var(--dur-1) var(--ease)}
+:where(body.v2) .soc{position:relative;display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:var(--tap);padding:0 48px;border:var(--rule-ui);border-radius:var(--r-md);background:var(--card);font-size:var(--t-base);font-weight:600;color:var(--ink);cursor:pointer;transition:opacity var(--dur-1) var(--ease),transform var(--dur-1) var(--ease)}
 :where(body.v2) .soc svg{position:absolute;left:18px;top:50%;transform:translateY(-50%)}
 :where(body.v2) .soc:hover{opacity:.85}
 :where(body.v2) .soc:active{transform:scale(.99)}
@@ -604,7 +612,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .tblwrap.scrollx{background:linear-gradient(90deg,var(--paper) 30%,transparent),linear-gradient(90deg,transparent,var(--paper) 70%) 100% 0,
   radial-gradient(farthest-side at 0 50%,rgba(49,46,46,.16),transparent),radial-gradient(farthest-side at 100% 50%,rgba(49,46,46,.16),transparent) 100% 0;
   background-repeat:no-repeat;background-size:40px 100%,40px 100%,14px 100%,14px 100%;background-attachment:local,local,scroll,scroll}
-:where(body.v2) .tblwrap.scrollx:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+:where(body.v2) .tblwrap.scrollx:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 :where(body.v2) .tblnote{font-size:var(--t-xs);color:var(--gray);margin:var(--s4) 0 -8px}
 :where(body.v2) .tblwrap .atbl.wide th{white-space:nowrap}
 :where(body.v2) .tbl{border-collapse:collapse;width:100%;min-width:520px;font-size:var(--t-sm)}
@@ -626,7 +634,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .prose a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--hair)}
 :where(body.v2) .prose blockquote{font-family:var(--serif);border-left:2px solid var(--hair);padding:4px 0 4px 18px;color:var(--gray);font-size:var(--t-base);margin:16px 0}
 :where(body.v2) .prose b{color:var(--ink)}
-:where(body.v2) .prose .mark{color:var(--seal)}
+:where(body.v2) .prose .mark{color:var(--ink)}
 :where(body.v2) .prose .tblwrap{margin:16px 0}
 :where(body.v2) .prose .updated{margin-top:var(--s7);padding-top:var(--s3);border-top:var(--rule-strong);font-size:var(--t-sm);color:var(--gray)}
 
@@ -647,7 +655,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .plan h3{font-size:var(--t-h3)}
 :where(body.v2) .plan .who{font-size:var(--t-sm);color:var(--gray);margin-top:-8px}
 :where(body.v2) .plan .price{font-size:var(--t-h2)}
-:where(body.v2) .plan .deal{font-size:var(--t-sm);color:var(--seal);margin-top:-6px}
+:where(body.v2) .plan .deal{font-size:var(--t-sm);color:var(--ink);margin-top:-6px}
 :where(body.v2) .plan .deal b{font-weight:700}
 :where(body.v2) .plan .inc{display:flex;flex-direction:column}
 :where(body.v2) .plan .inc li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-top:var(--rule);font-size:var(--t-sm)}
@@ -674,7 +682,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .hh-popup-link{margin-top:16px}
 :where(body.v2) .hh-popup-foot{margin-top:var(--s4);padding-top:var(--s3);border-top:var(--rule);display:flex;justify-content:space-between;align-items:center;gap:16px}
 :where(body.v2) .hh-popup-mute{font-size:var(--t-sm);color:var(--gray);display:flex;align-items:center;gap:8px;cursor:pointer;min-height:44px}
-:where(body.v2) .hh-popup-mute input{appearance:none;width:18px;height:18px;border:1px solid var(--hair);border-radius:var(--r-sm);margin:0;cursor:pointer;background:var(--card)}
+:where(body.v2) .hh-popup-mute input{appearance:none;width:18px;height:18px;border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card)}
 :where(body.v2) .hh-popup-mute input:checked{background:var(--ink);border-color:var(--ink)}
 :where(body.v2) .hh-popup-close{font-size:var(--t-sm);font-weight:600;min-height:44px;padding:0 16px;box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-md)}
 :where(body.v2) .hh-popup-close:hover{background:var(--ink);color:var(--paper);box-shadow:none}
@@ -708,7 +716,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .maker.a .colo .han{font-family:var(--serif);font-weight:300}
 :where(body.v2) .maker.a .mk-side{display:grid;justify-items:center;align-self:stretch;align-content:space-between;gap:var(--s4);padding-top:var(--s2)}
 :where(body.v2) .maker.a .num{font-size:clamp(96px,10vw,140px);color:var(--ink)}
-:where(body.v2) .maker.a .seal{width:44px;height:44px;box-shadow:inset 0 0 0 1.5px var(--seal);color:var(--seal);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:var(--t-h4);border-radius:var(--r-sm)}
+:where(body.v2) .maker.a .seal{width:44px;height:44px;box-shadow:inset 0 0 0 1.5px var(--seal);color:var(--seal);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:var(--t-h4);border-radius:var(--r-md)}
 :where(body.v2) .maker .career{display:grid;gap:8px;list-style:none;margin:0;padding:0}
 :where(body.v2) .maker.a .career li{font-size:var(--t-sm);line-height:1.6;color:var(--body);padding-left:14px;position:relative}
 :where(body.v2) .maker.a .career li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;background:var(--gray)}
@@ -746,13 +754,13 @@ body.v2{background:var(--ink)}
 :where(body.v2) nav.rail .idx a:first-child{border-top:0}
 :where(body.v2) nav.rail .idx a:hover{background:var(--paper-2)}
 :where(body.v2) nav.rail .idx a.on{color:var(--ink);font-weight:700;background:var(--paper-2)}
-:where(body.v2) nav.rail .idx a.on .k{color:var(--seal)}
+:where(body.v2) nav.rail .idx a.on .k{color:var(--ink)}
 :where(body.v2) nav.rail .idx .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--gray);letter-spacing:var(--tr-label)}
 :where(body.v2) nav.rail .foot{margin-top:auto;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);line-height:1.7;padding:0 var(--s2)}
 :where(body.v2) .pages{min-width:0}
-:where(body.v2) .page{padding:var(--s6) 0 var(--s7);border-bottom:var(--rule-strong)}
+:where(body.v2) .page{padding:var(--s-sec) 0;border-bottom:var(--rule-strong)}
 :where(body.v2) .page:last-child{border-bottom:0}
-@media (min-width:1000px){:where(body.v2) .page{padding:var(--s7) 0 var(--s8) var(--s6)}}
+@media (min-width:1000px){:where(body.v2) .page{padding:var(--s-sec) 0 var(--s-sec) var(--s6)}}
 :where(body.v2) .folio{display:flex;align-items:baseline;gap:var(--s3);font-family:var(--mono);font-size:var(--t-folio);font-weight:500;
   letter-spacing:var(--tr-label);color:var(--gray);padding-bottom:var(--s2);border-bottom:var(--rule);margin-bottom:var(--s5);max-width:none}
 :where(body.v2) .folio b{font-weight:500;color:var(--ink)}
@@ -770,7 +778,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .nb{white-space:nowrap}
 /* D1 A (건우 2026-09-02): 720px 미만에서 리드 2문장째 접기. .fold-ready 는 JS 가 붙인다 (무JS = 전문 노출). 버튼은 .tlink 탭 높이 그대로 */
 :where(body.v2) .lede2 .fold{display:none;min-width:var(--tap);justify-content:flex-start;background:none;border:0;padding:0;font:inherit;font-size:var(--t-sm);font-weight:600;color:var(--ink);cursor:pointer}
-:where(body.v2) .lede2 .fold:focus-visible{outline:2px solid var(--seal);outline-offset:2px}
+:where(body.v2) .lede2 .fold:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
 @media (max-width:719.98px){
   :where(body.v2) .lede2.fold-ready .fold{display:inline-flex}
   :where(body.v2) .lede2.fold-ready:not(.open) .more{display:none}
@@ -797,7 +805,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .entry .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray)}
 :where(body.v2) .entry h2{font-size:var(--t-h3)}
 :where(body.v2) .entry p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--body);max-width:var(--measure-narrow)}
-:where(body.v2) .entry figure{margin:0;position:relative;box-shadow:inset 0 0 0 1px var(--hairs);border-radius:var(--r-sm);overflow:hidden}
+:where(body.v2) .entry figure{margin:0;position:relative;box-shadow:inset 0 0 0 1px var(--hairs);border-radius:var(--r-md);overflow:hidden}
 :where(body.v2) .entry figure img{width:100%;aspect-ratio:16/9;object-fit:cover}
 :where(body.v2) .entry figure .ai{position:absolute;right:8px;bottom:8px}
 :where(body.v2) .entry .spec,:where(body.v2) .unit .spec{display:flex;flex-direction:column;gap:6px;font-size:var(--t-sm);color:var(--body)}
@@ -823,7 +831,7 @@ body.v2{background:var(--ink)}
   :where(body.v2) .unit{padding:var(--s4) var(--s4) var(--s4) 0}
   :where(body.v2) .unit:nth-child(even){padding:var(--s4) 0 var(--s4) var(--s4);border-left:var(--rule)}
 }
-:where(body.v2) .unit .kn{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;color:var(--seal);line-height:1.1;grid-row:span 3}
+:where(body.v2) .unit .kn{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;color:var(--ink);line-height:1.1;grid-row:span 3}
 :where(body.v2) .unit h3{font-size:var(--t-h4)}
 :where(body.v2) .unit .sub{font-size:var(--t-sm);color:var(--gray);grid-column:2;max-width:none}
 :where(body.v2) .unit .dl{grid-column:2;margin-top:var(--s2)}
@@ -842,7 +850,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .lv i{display:flex;gap:3px;transform:translateY(-1px)}
 :where(body.v2) .lv i b{width:8px;height:8px;border-radius:50%;box-shadow:inset 0 0 0 1px var(--hair)}
 :where(body.v2) .lv i b.f{background:var(--ink);box-shadow:none}
-:where(body.v2) .lv.top i b.f{background:var(--seal)}
+:where(body.v2) .lv.top i b.f{background:var(--ink)}
 :where(body.v2) .setnav{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between;margin:var(--s4) 0 var(--s3)}
 :where(body.v2) .chips{display:flex;flex-wrap:wrap;gap:var(--s1)}
 :where(body.v2) .chips button{min-height:44px;min-width:44px;padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--body);border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
@@ -887,7 +895,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .toc .m{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);margin-top:2px;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray)}
 :where(body.v2) .toc .m .badge{margin-right:2px}
 :where(body.v2) .toc .prog{display:block;height:3px;background:var(--mat);border-radius:var(--r-pill);margin-top:8px;max-width:320px;overflow:hidden}
-:where(body.v2) .toc .prog i{display:block;height:100%;background:var(--seal)}
+:where(body.v2) .toc .prog i{display:block;height:100%;background:var(--ink)}
 :where(body.v2) .toc .slot{color:var(--gray);background-image:repeating-linear-gradient(135deg,rgba(49,46,46,.035) 0 1px,transparent 1px 9px)}
 :where(body.v2) .toc .slot .t{color:var(--gray);font-weight:500}
 :where(body.v2) .toc .a{display:flex;gap:var(--s2);align-items:center;justify-content:flex-end}
@@ -909,23 +917,16 @@ body.v2{background:var(--ink)}
    ★주의 뿌리에 [data-promo] 를 달면 안 된다. app.js renderPromoPrices 가 행사 중이면 hidden 을 false 로 되돌려
          새로고침마다 팝업이 뜬다. 팝업의 노출 판정은 세션 1회 규칙을 가진 메인 세션 JS 몫이고,
          [data-promo-until] 은 그 JS 가 만료를 스스로 보라고 남긴 값이다. 가격 칸의 [data-list-price] 만 app.js 가 읽는다.
-   마크업 세 안이 같은 뼈대를 쓴다. [data-ppop-card] 의 자식 일곱이 순서 그대로 있고 배치만 안별로 다르다.
-         prib(머리 라벨) · close · pkv(도판) · ptxt(문안) · ptbl(가격) · pacts(행동) · pfoot(오늘 하루)
-         그래서 popup_tpl.html 하나로 세 안을 다 그린다. 안 교체 = 카드의 modifier 클래스 한 낱말.
-         도판이 없는 회차는 .pop--noimg 하나로 그 칸을 통째로 안 그린다.
-   층    사이트에는 이미 공지 팝업 .hh-popup 이 있다(base.css 665행, app.js 353행).
-         행사 팝업은 그 영구 층과 갈려야 하므로 여섯 자리를 모두 다르게 둔다.
-           폭 520 대 792~864 · 바탕 楮紙 대 지면/玄墨 · 곡률 4px 대 0 · 그림자 있음 대 없음
-           도판 0장 대 1장 · 딤 rgba(玄墨,.42) 대 rgba(玄墨,.72)
-   가격  지면에는 정가만 적고 [data-list-price] 를 단다. 행사 중이면 app.js 가 그 안의 "N원" 을
-         s.was(정가 취소선) + span.sale(할인가) 로 바꾼다. .sale 은 부모 색을 승계하므로 가격 칸에 朱印을 준다.
+   마크업은 기존 행사 문구와 상품행을 유지한다. 현재 .pop--gwak 한 안만 사용한다.
+         도판이 없는 회차는 .pop--noimg 로 숨긴다. 하단 시트는 단일 경계와 45vh 내부 스크롤을 쓴다.
+   가격  지면에는 정가와 [data-list-price] 를 두고 app.js 가 .was 와 .sale 을 만든다. .sale 값에만 朱印을 준다.
    충돌  .hd .rows .kv .card .promo .pband 는 base.css 기존 컴포넌트라 쓰지 않는다.
          이 파일의 새 이름 = .pdim .pback .pop .pfr .prib .pclose .pkv .ptxt .ptbl .pacts .pfoot
    리터럴 px 는 두 곳뿐이며 각각 근거를 주석에 적었다: 딤 rgba(玄墨) 1곳 · 朱印 점 6px 1곳(base.css 149행과 동일값).
    그 밖 모든 치수는 --s1~--s11 --tap --t-* --container 토큰과 그 토큰의 calc 유도다. */
 
 /* ═══════ 공통 ═══════ */
-:where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:var(--s4)}
+:where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:end center;padding:0 var(--gut)}
 /* 공지 팝업 .hh-popup 이 z-index 90 이다. 같은 층에 둔다. 한 화면에 둘이 동시에 뜨지 않게 하는 것은 JS 몫(SELF_CHECK 결재 1) */
 :where(body.v2) .pback{position:absolute;inset:0;background:rgba(49,46,46,.72)}
 /* 玄墨 #312E2E 의 알파. base.css 선례 --hair .40, .hh-popup-back .42. .72 로 올린 이유 둘:
@@ -933,9 +934,9 @@ body.v2{background:var(--ink)}
 
 :where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s5);
   background:var(--card);color:var(--ink);
-  border-radius:0;box-shadow:none;          /* 판본 규범: 곡률 0, 그림자 0. 공지 팝업과 갈리는 자리 */
-  max-height:calc(100vh - var(--s6));overflow:auto;overscroll-behavior:contain}
-@supports (height:100dvh){:where(body.v2) .pop{max-height:calc(100dvh - var(--s6))}}
+  border-radius:var(--r-lg) var(--r-lg) 0 0;box-shadow:var(--shadow-1);
+  max-height:45vh;overflow:auto;overscroll-behavior:contain}
+@supports (height:100dvh){:where(body.v2) .pop{max-height:min(45vh,45dvh)}}
 
 :where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
   letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;min-height:var(--tap);max-width:none}
@@ -945,7 +946,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pclose{position:absolute;top:0;right:0;width:var(--tap);height:var(--tap);
   display:grid;place-items:center;color:var(--ink);z-index:2}
 :where(body.v2) .pclose svg{width:var(--s4);height:var(--s4)}
-:where(body.v2) .pclose:hover{color:var(--seal)}
+:where(body.v2) .pclose:hover{color:var(--ink)}
 
 :where(body.v2) .pkv{margin:0;position:relative}
 :where(body.v2) .pkv .ph,:where(body.v2) .pkv img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover}
@@ -966,7 +967,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .ptbl td{text-align:right;white-space:nowrap}
 :where(body.v2) .ptbl [data-list-price]{font-family:var(--mono);font-weight:500;font-size:var(--t-base);
   letter-spacing:-0.01em;color:var(--seal);font-variant-numeric:tabular-nums}
-:where(body.v2) .ptbl s.was{font-size:var(--t-xs)}   /* base.css 의 .72em 은 16px 안에서 11.5px. --t-xs 11px 로 세운다 */
+:where(body.v2) .ptbl s.was{font-size:var(--t-sm)}   /* 정가는 본문 소형 토큰으로 고정 */
 
 /* 행동 4. 커머스 확정 행동 둘만 잉크 사각, 나머지 둘은 텍스트 */
 /* 지면 묶음. 가격과 행동과 각주를 한 덩어리로 감싼다.
@@ -980,120 +981,19 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pfoot .tlink{font-weight:500;color:var(--gray);text-decoration-color:var(--hairs)}
 :where(body.v2) .pfoot .tlink:hover{color:var(--ink);text-decoration-color:var(--hair)}
 
-/* ═══════ P1 「광곽 匡郭」 ═══════
-   임시 층 표지 = 사주쌍변, 곧 두 겹 괘선. 사이트 전역에 2겹 테두리는 0건이라 이 판만 갈린다.
-   바탕은 지면 --card 로 본판 楮紙보다 한 단 밝다. 玄墨/지면 12.58, 灰墨/지면 5.40, 朱印/지면 5.34.
-   도판은 21:9 띠. 16:9 로 두면 696폭에서 392px 이라 1280×900 화면에서 판이 890px 로 넘쳐 안에서 스크롤된다(실측) */
-:where(body.v2) .pop--gwak{max-width:calc(var(--container) / 1.414);   /* 1120 ÷ √2 = 792. 요구 720~880 안 */
-  background:var(--paper);box-shadow:inset 0 0 0 1px var(--hair)}
-/* 광곽 띠는 楮紙, 판면은 지면. 두 괘선 사이 8px 이 색으로도 갈려야 사주쌍변이 보인다.
-   두 겹을 같은 바탕에 그리면 1280 화면에서 두 줄이 한 줄로 뭉개진다(첫 렌더 실측).
-   띠 폭 16px = 792 의 2.0%. 8px(1.0%) 은 실제 화면에서 한 줄로 읽혔다 */
-:where(body.v2) .pop--gwak .pfr{margin:var(--s3);background:var(--card);
-  box-shadow:inset 0 0 0 1px var(--hair);
-  padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s4)}
-:where(body.v2) .pop--gwak .prib{margin-top:calc(var(--s3) * -1)}   /* 라벨의 48px 히트박스 위 여백을 판 여백과 겹친다 */
-:where(body.v2) .pop--gwak .pclose{top:var(--s3);right:var(--s3)}
-
-/* ═══════ P2 「먹판 墨板」 ═══════
-   임시 층 표지 = 玄墨 판 전면 반전. 공지 팝업은 楮紙라 명암이 통째로 갈린다.
-   ★ 玄墨을 카드 자체에 칠하고 아래쪽 세 칸에만 지면을 칠한다. 의사요소로 玄墨 띠를 그리면
-     그 한 줄이 어긋나는 순간 楮紙 글자가 지면 위에 남아 대비 1.07 이 된다(측정으로 잡은 실패 방향).
-     지금 구조는 무엇이 어긋나도 楮紙 글자가 玄墨 위(11.73)에 남는다.
-   玄墨 위에서 朱印 2.36 과 灰墨 2.33 은 못 쓴다. 강조 金泥 6.28, 보조 rgba(楮紙,.72) 6.87, 취소선 .62 = 5.55.
-   전역 :focus-visible 이 玄墨 아웃라인이라 玄墨 판 위에서 1.00 이 된다. 아래에서 楮紙로 되돌린다
-   (직전 배너 A2 가 이 자리에서 렌즈9 2점을 받았다. 같은 결함을 반복하지 않는다) */
-:where(body.v2) .pop--muk{max-width:calc(var(--container) * .75);   /* 1120 × 3/4 = 840. 요구 720~880 안 */
-  background:var(--ink);color:var(--paper)}
-:where(body.v2) .pop--muk .pfr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);
-  grid-template-areas:"rib rib" "kv txt" "bot bot";
-  column-gap:var(--pop-pad);align-items:center}
-:where(body.v2) .pop--muk .prib{grid-area:rib;padding:0 var(--pop-pad)}
-:where(body.v2) .pop--muk .prib .k{color:rgba(var(--paper-rgb),.62)}   /* 玄墨 위 5.55 */
-:where(body.v2) .pop--muk .prib .k::before{background:var(--gold)}     /* 玄墨 위 朱印 2.36 은 못 쓴다 */
-:where(body.v2) .pop--muk .pkv{grid-area:kv;padding:0 0 var(--pop-pad) var(--pop-pad)}
-:where(body.v2) .pop--muk .pkv .ph,:where(body.v2) .pop--muk .pkv img{aspect-ratio:1/1}
-:where(body.v2) .pop--muk .pkv .ph{background:var(--brown);box-shadow:inset 0 0 0 1px rgba(var(--paper-rgb),.22)}
-:where(body.v2) .pop--muk .pkv .ph span{color:rgba(var(--paper-rgb),.62)}
-:where(body.v2) .pop--muk .ptxt{grid-area:txt;padding:0 var(--pop-pad) var(--pop-pad) 0}
-:where(body.v2) .pop--muk.pop--noimg .pfr{grid-template-columns:minmax(0,1fr);
-  grid-template-areas:"rib" "txt" "bot"}
-:where(body.v2) .pop--muk.pop--noimg .ptxt{padding:0 var(--pop-pad) var(--pop-pad)}
-:where(body.v2) .pop--muk .ptxt .rate{display:block;font-family:var(--mono);font-weight:500;
-  font-size:var(--t-display);line-height:1;letter-spacing:-0.03em;font-variant-numeric:tabular-nums;
-  color:var(--gold);margin-bottom:var(--s3)}
-:where(body.v2) .pop--muk .ptxt .until{color:rgba(var(--paper-rgb),.72)}   /* 玄墨 위 6.87 */
-/* 아래 묶음만 지면. 묶음이 여백을 갖고 표는 폭 100% 로 그 안에 든다 */
-:where(body.v2) .pop--muk .pbot{display:block;grid-area:bot;background:var(--card);color:var(--ink);
-  padding:var(--pop-pad)}
-:where(body.v2) .pop--muk .pacts{margin-top:var(--s4)}
-:where(body.v2) .pop--muk .pfoot{margin-top:var(--s3)}
-:where(body.v2) .pop--muk .pclose{color:var(--paper)}
-:where(body.v2) .pop--muk .pclose:hover{color:var(--gold)}
-:where(body.v2) .pop--muk .pclose:focus-visible,
-:where(body.v2) .pop--muk .prib :focus-visible,
-:where(body.v2) .pop--muk .ptxt :focus-visible{outline-color:var(--paper)}
-
-/* ═══════ P3 「판심 版心」 ═══════
-   임시 층 표지 = 왼쪽 세로 판심 밴드. 사이트의 띠와 밴드는 전부 수평이라 수직 축 자체가 갈리는 표지다.
-   판심 = 책판 가운데 접히는 칸. 거기에 이름을 세로로 적는 것이 판본의 문법이다.
-   읽는 차례도 셋 중 유일하게 문안이 도판보다 먼저다(grid 자리만 바꾼다. DOM 차례는 세 안이 같다).
-   도판은 2:1. 3:2 로 두면 752폭에서 501px 이라 판이 928px 로 넘친다(실측) */
-:where(body.v2) .pop--simm{max-width:calc(var(--container) / 1.414 + var(--s7));   /* 본문 792 + 판심 72 = 864 */
-  box-shadow:inset 0 0 0 1px var(--hair)}
-:where(body.v2) .pop--simm .pfr{display:grid;grid-template-columns:var(--s7) minmax(0,1fr);
-  grid-template-areas:"rib txt" "rib kv" "rib tbl" "rib act" "rib foot";
-  align-items:start;row-gap:var(--s4);padding:var(--pop-pad) var(--pop-pad) var(--pop-pad) 0}
-:where(body.v2) .pop--simm .prib{grid-area:rib;align-self:stretch;background:var(--mat);
-  border-right:var(--rule-strong);display:flex;flex-direction:column;align-items:center;
-  padding:var(--pop-pad) 0;margin:calc(var(--pop-pad) * -1) var(--pop-pad) calc(var(--pop-pad) * -1) 0}
-:where(body.v2) .pop--simm .prib .k{writing-mode:vertical-rl;font-family:var(--sans);font-size:var(--t-sm);
-  font-weight:600;letter-spacing:.14em;color:var(--body);min-height:0;min-width:var(--tap);justify-content:center}
-/* 灰墨/판심 4.56 은 AA 하한 위 0.06 뿐이다. 본문색 --body/판심 7.37 을 쓴다 */
-:where(body.v2) .pop--simm .prib .k::before{margin:0 0 var(--s3)}
-:where(body.v2) .pop--simm .pkv{grid-area:kv}
-:where(body.v2) .pop--simm .pkv .ph,:where(body.v2) .pop--simm .pkv img{aspect-ratio:2/1}
-:where(body.v2) .pop--simm .ptxt{grid-area:txt}
-:where(body.v2) .pop--simm .ptbl{grid-area:tbl}
-:where(body.v2) .pop--simm .pacts{grid-area:act}
-:where(body.v2) .pop--simm .pfoot{grid-area:foot}
-:where(body.v2) .pop--simm .pclose{top:0;right:0}
-
-/* ═══════ 900 미만 ═══════ */
-@media (max-width:900px){
-  :where(body.v2) .pop{--pop-pad:var(--s4)}
-  :where(body.v2) .pop--muk .pfr{grid-template-columns:minmax(0,1fr);
-    grid-template-areas:"rib" "kv" "txt" "bot"}
-  :where(body.v2) .pop--muk .pkv{padding:0 var(--pop-pad) var(--s4)}
-  :where(body.v2) .pop--muk .pkv .ph,:where(body.v2) .pop--muk .pkv img{aspect-ratio:21/9}
-  /* 정사각 마스터를 좁은 폭에서 가운데 띠로 자른다. 세로 1:1 을 그대로 두면 판이 화면을 다 먹는다 */
-  :where(body.v2) .pop--muk .ptxt{padding:0 var(--pop-pad) var(--pop-pad)}
-}
-/* ═══════ 600 이하: P1 전폭 카드(가운데) · P2 하단 시트 · P3 하단 정렬 카드 ═══════ */
-@media (max-width:600px){
-  :where(body.v2) .pdim{padding:var(--s3)}
-  :where(body.v2) .ptxt h2{font-size:var(--t-h4)}
+/* B안 하단 시트: 단일 경계, 최대 45vh. 카피와 상품행은 스크롤 안에서 전부 제공한다. */
+:where(body.v2) .pop--gwak{max-width:var(--container);background:var(--card);border:var(--rule-ui);border-bottom:0;--pop-pad:var(--s3)}
+:where(body.v2) .pop--gwak .pfr{margin:0;padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s2)}
+:where(body.v2) .pop--gwak .prib .k{min-height:var(--s4)}
+:where(body.v2) .pop--gwak .ptxt{padding-right:var(--tap)}
+:where(body.v2) .pop--gwak .ptxt h2{font-size:var(--t-h4)}
+:where(body.v2) .pop--gwak .pclose{top:var(--s2);right:var(--s2)}
+@media (max-width:37.5em){
+  :where(body.v2) .pdim{padding:0}
   :where(body.v2) .pacts{grid-template-columns:1fr}
-  :where(body.v2) .pop--simm .pfr{grid-template-columns:minmax(0,1fr);
-    grid-template-areas:"rib" "txt" "kv" "tbl" "act" "foot";padding:0 var(--pop-pad) var(--pop-pad)}
-  :where(body.v2) .pop--simm .prib{border-right:0;border-bottom:var(--rule-strong);flex-direction:row;
-    align-items:center;justify-content:flex-start;padding:0 var(--pop-pad);
-    margin:0 calc(var(--pop-pad) * -1) var(--s2)}
-  :where(body.v2) .pop--simm .prib .k{writing-mode:horizontal-tb;font-family:var(--mono);font-weight:500;
-    font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--body);min-height:var(--tap)}
-  :where(body.v2) .pop--simm .prib .k::before{margin:0 10px 0 0}
-}
-/* 하단 배치. :has 미지원이면 가운데 정렬로 떨어진다. 기능 손실 0, 배치만 다르다 */
-@supports selector(:has(*)){
-  @media (max-width:600px){
-    :where(body.v2) .pdim:has(.pop--muk){padding:0;place-items:end stretch}
-    :where(body.v2) .pdim:has(.pop--muk) .pop{max-height:calc(100vh - var(--s5))}
-    :where(body.v2) .pdim:has(.pop--simm){place-items:end center}
-  }
+  :where(body.v2) .ptbl td{white-space:normal}
 }
 
-/* 뿌리는 hidden 으로 시작하고 메인 세션 JS 가 연다. display 를 준 컴포넌트가 UA 의 [hidden] 을
-   이기므로 되돌린다 (이 파일 유일한 !important) */
 :where(body.v2) .pdim[hidden],:where(body.v2) [data-promo-popup][hidden]{display:none!important}
 
 /* ============ 응시 순위표 3안: 卷六 지면 + phead 응시 현황 + 홈 위젯 (2026-09-07 design-director) ============
@@ -1142,7 +1042,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .rdist .plot{display:grid;grid-template-columns:repeat(10,1fr);gap:var(--s1);
   align-items:end;height:var(--s6);border-bottom:var(--rule-strong)}
 :where(body.v2) .rdist .plot i{display:block;background:var(--ink);min-height:1px;height:var(--v,1px)}
-:where(body.v2) .rdist .plot i.pk{background:var(--seal)}   /* 최빈 칸 하나만 朱印. 활성 표식 규칙 */
+:where(body.v2) .rdist .plot i.pk{background:var(--ink)}   /* 최빈 칸 하나만 진한 먹색 */
 :where(body.v2) .rdist .ax{display:flex;justify-content:space-between;font-family:var(--mono);
   font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
 
@@ -1166,15 +1066,15 @@ body.v2{background:var(--ink)}
 :where(body.v2) .rtbl th[data-c=group]{text-align:left;font-size:var(--t-h4);font-weight:var(--w-head);
   letter-spacing:var(--tr-head);padding:var(--s4) 0 var(--s2);border-bottom:var(--rule-strong)}
 :where(body.v2) .rtbl th[data-c=group] .cd{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
-  color:var(--seal);letter-spacing:.04em;margin-right:var(--s2)}
+  color:var(--ink);letter-spacing:.04em;margin-right:var(--s2)}
 :where(body.v2) .rtbl th[data-c=group] .cnt{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
   color:var(--gray);letter-spacing:0;margin-left:var(--s3)}
 :where(body.v2) .rtbl tr[data-me]{background:var(--mat)}
-:where(body.v2) .rtbl tr[data-me] td[data-c=rank]{color:var(--seal)}
+:where(body.v2) .rtbl tr[data-me] td[data-c=rank]{color:var(--ink)}
 :where(body.v2) .rtbl tr[data-me] td[data-c=at]{color:var(--body)}   /* 灰墨/판심 4.56 은 하한 위 0.06. 본문색 7.37 로 올린다 */
 :where(body.v2) .rtbl tr[data-me] td[data-c=set]{color:var(--body)}
 :where(body.v2) .rtbl tr[data-me] td[data-c=name]::after{content:"내 기록";font-family:var(--mono);
-  font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--seal);margin-left:var(--s2)}
+  font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--ink);margin-left:var(--s2)}
 
 /* ═══════ phead 응시 현황 (기존 .facts.lbl 승계) ═══════ */
 :where(body.v2) .rstat{margin-top:var(--s4);grid-template-columns:repeat(var(--rstat-n,4),1fr)}
@@ -1209,7 +1109,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .rwid [data-rank-takers]{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
   color:var(--body);font-variant-numeric:tabular-nums;white-space:nowrap}
 :where(body.v2) .rwid [data-rank-top]{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;
-  color:var(--seal);font-variant-numeric:tabular-nums;white-space:nowrap}
+  color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 :where(body.v2) .rwid [data-rank-top][hidden]{display:none}
 :where(body.v2) .rwid [data-rank-top] b{font-weight:500}
 :where(body.v2) .rwid .go{margin-top:var(--s2)}
@@ -1233,7 +1133,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .rtop div{padding:var(--s4);border-left:1px solid rgba(var(--paper-rgb),.22)}
 :where(body.v2) .rtop div:first-child{border-left:0}
 :where(body.v2) .rtop .r{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
-  letter-spacing:var(--tr-label);color:var(--gold)}
+  letter-spacing:var(--tr-label);color:var(--paper)}
 :where(body.v2) .rtop .n{display:block;font-weight:700;font-size:var(--t-h4);letter-spacing:var(--tr-head);margin-top:var(--s2)}
 :where(body.v2) .rtop .s{display:block;font-family:var(--mono);font-weight:500;font-size:var(--t-h2);
   line-height:1.1;letter-spacing:-0.02em;font-variant-numeric:tabular-nums;margin-top:var(--s1)}
@@ -1243,20 +1143,20 @@ body.v2{background:var(--ink)}
 :where(body.v2) .rstat--muk{background:var(--ink);color:var(--paper);border-top:0;border-bottom:0}
 :where(body.v2) .rstat--muk div+div{border-left:1px solid rgba(var(--paper-rgb),.22)}
 :where(body.v2) .rstat--muk .k{color:rgba(var(--paper-rgb),.62)}
-:where(body.v2) .rstat--muk b{color:var(--gold)}
+:where(body.v2) .rstat--muk b{color:var(--paper)}
 :where(body.v2) .rstat--muk b .u,:where(body.v2) .rstat--muk .none{color:rgba(var(--paper-rgb),.72)}
 :where(body.v2) .rstat--muk+.rslink{background:var(--ink);border-bottom:0;padding:0 var(--s3) var(--s3)}
 :where(body.v2) .rstat--muk+.rslink .tlink{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
-:where(body.v2) .rstat--muk+.rslink .tlink:hover{color:var(--gold);text-decoration-color:var(--gold)}
+:where(body.v2) .rstat--muk+.rslink .tlink:hover{color:var(--paper);text-decoration-color:var(--paper)}
 :where(body.v2) .rstat--muk+.rslink :focus-visible{outline-color:var(--paper)}
 :where(body.v2) .rwid--muk{background:var(--ink);color:var(--paper);padding:var(--s4)}
 :where(body.v2) .rwid--muk .k{color:rgba(var(--paper-rgb),.62)}
 :where(body.v2) .rwid--muk .list{border-top-color:rgba(var(--paper-rgb),.22)}
 :where(body.v2) .rwid--muk [data-unit]{border-bottom-color:rgba(var(--paper-rgb),.22)}
 :where(body.v2) .rwid--muk [data-rank-takers]{color:rgba(var(--paper-rgb),.72)}
-:where(body.v2) .rwid--muk [data-rank-top]{color:var(--gold)}
+:where(body.v2) .rwid--muk [data-rank-top]{color:var(--paper)}
 :where(body.v2) .rwid--muk .go{color:var(--paper);text-decoration-color:rgba(var(--paper-rgb),.5)}
-:where(body.v2) .rwid--muk .go:hover{color:var(--gold);text-decoration-color:var(--gold)}
+:where(body.v2) .rwid--muk .go:hover{color:var(--paper);text-decoration-color:var(--paper)}
 :where(body.v2) .rwid--muk :focus-visible{outline-color:var(--paper)}
 
 /* ═══════ R3 · W3 「계기 計器」 ═══════
@@ -1315,5 +1215,25 @@ body.v2{background:var(--ink)}
 
 /* --- 메인 세션 보강 (design 원천에 없다. 재병합은 merge_promo_css.py) --- */
 /* 행사 팝업이 열린 동안 본문 스크롤을 잠근다 (app.js openPromoPopup / closePromoPopup) */
+/* 규범 예외: 모달의 문서 스크롤 잠금은 body 밖 html 에 있어야 한다. JS 는 v2 에서만 이 클래스를 적용한다. */
 html.ppop-open{overflow:hidden}
 /* ==== promo_popup_20260907 end ==== */
+
+/* B안 공용 경계와 가격: 설명 문장에 가격색이 상속되지 않게 한다. */
+:where(body.v2) input{border-color:var(--edge)}
+:where(body.v2) .gb .acts .btn{box-shadow:var(--shadow-ui)}
+:where(body.v2) [data-list-price][data-list-price]{color:var(--ink)}
+:where(body.v2) [data-list-price] .sale{color:var(--seal)}
+:where(body.v2) [data-list-price] .u{color:var(--gray)}
+:where(body.v2) s.was{font-size:var(--t-sm)}
+:where(body.v2) .promo s.was,:where(body.v2) .ptbl s.was{font-size:var(--t-sm)}
+:where(body.v2) .invert{background:var(--ink);color:var(--paper)}
+:where(body.v2) .invert [data-list-price]{color:var(--paper)}
+:where(body.v2) .invert [data-list-price] .sale,:where(body.v2) .invert .g{color:var(--gold)}
+
+:where(body.v2) .pband .price-head{border-top:var(--rule-hd)}
+
+/* 가격이 든 버튼은 hover 에도 밝은 바탕을 유지해 정가와 할인가 대비를 보존한다. */
+:where(body.v2) .btn.ghost[data-list-price]:hover{background:var(--card);color:var(--ink)}
+:where(body.v2) .promo.ink [data-list-price],:where(body.v2) .pband.ink [data-list-price]{color:var(--paper)}
+:where(body.v2) .promo.ink .sale,:where(body.v2) .pband.ink .sale{color:var(--paper)}

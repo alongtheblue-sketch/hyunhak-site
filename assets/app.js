@@ -349,6 +349,45 @@
     walk(doc.body);
     return doc.body.innerHTML;
   }
+  // 공지와 행사 모달의 제목 초점, Tab 순환, 배경 비활성화와 복귀를 같은 함수로 처리한다.
+  function popupFocus(root, title, dismiss) {
+    const previous = document.activeElement;
+    const locked = document.documentElement.classList.contains("ppop-open");
+    const background = Array.from(document.body.children).filter((el) => el !== root && !el.contains(root) && !/^(SCRIPT|STYLE|LINK)$/.test(el.tagName));
+    const inertBefore = background.map((el) => el.hasAttribute("inert"));
+    let closed = false;
+    root.setAttribute("tabindex", "-1");
+    if (title) title.setAttribute("tabindex", "-1");
+    const initial = title || root;
+    const focusables = () => Array.from(root.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])'))
+      .filter((el) => el.tabIndex >= 0 && !el.closest('[hidden],[inert]') && el.getClientRects().length);
+    const close = () => {
+      if (closed) return;
+      closed = true;
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("focusin", onFocus);
+      background.forEach((el, i) => { if (!inertBefore[i]) el.removeAttribute("inert"); });
+      if (!locked) document.documentElement.classList.remove("ppop-open");
+      dismiss();
+      if (previous && previous.isConnected && previous.focus) previous.focus({ preventScroll: true });
+    };
+    const onKey = (e) => {
+      if (e.key === "Escape") { e.preventDefault(); close(); return; }
+      if (e.key !== "Tab") return;
+      const f = focusables(), i = f.indexOf(document.activeElement);
+      if (!f.length) { e.preventDefault(); initial.focus({ preventScroll: true }); return; }
+      if (i < 0 || (e.shiftKey && i === 0) || (!e.shiftKey && i === f.length - 1)) {
+        e.preventDefault(); (e.shiftKey ? f[f.length - 1] : f[0]).focus();
+      }
+    };
+    const onFocus = (e) => { if (!root.contains(e.target)) initial.focus({ preventScroll: true }); };
+    background.forEach((el) => el.setAttribute("inert", ""));
+    if (document.body.classList.contains("v2")) document.documentElement.classList.add("ppop-open");
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("focusin", onFocus);
+    initial.focus({ preventScroll: true });
+    return close;
+  }
   function renderPopup(it) {
     const root = document.createElement("div");
     root.className = "hh-popup";
@@ -370,26 +409,12 @@
         "</div>" +
       "</div>";
     document.body.appendChild(root);
-    const opener = document.activeElement;
-    const focusables = () => Array.from(root.querySelectorAll("a[href],button,input,[tabindex]:not([tabindex='-1'])"));
-    const close = () => {
+    const close = popupFocus(root, root.querySelector("#hhPopupTitle"), () => {
       if (root.querySelector("#hhPopupMute").checked) mutePopup(it.id, 24);
       root.remove();
-      document.removeEventListener("keydown", onKey);
-      if (opener && opener.focus) opener.focus();   // 포커스 복귀
-    };
-    const onKey = (e) => {
-      if (e.key === "Escape") return close();
-      if (e.key !== "Tab") return;                       // 포커스 트랩
-      const f = focusables(); if (!f.length) return;
-      const first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    };
+    });
     root.querySelector("#hhPopupClose").addEventListener("click", close);
     root.querySelector(".hh-popup-back").addEventListener("click", close);
-    document.addEventListener("keydown", onKey);
-    root.querySelector("#hhPopupClose").focus();
     try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
   }
   async function showPopup() {
@@ -398,7 +423,7 @@
     try { data = await api("/api/notices/active?kind=popup"); } catch { return; }
     const items = Array.isArray(data) ? data : (data.items || data.notices || []);
     const it = pickPopup(items);
-    if (it) renderPopup(it);
+    if (it && !document.querySelector('.hh-popup, #promoPopup:not([hidden])')) renderPopup(it);
   }
   // ── 행사 팝업 (2026-09-07) ──
   // 마크업은 빌드가 입구 면에 넣는다(_tools/apply_promo.py, #promoPopup[data-promo-popup=행사 id]). 여는 조건은 배너와 같은 서버 판정 하나:
@@ -419,52 +444,64 @@
     try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {}
   }
   function openPromoPopup(root, p) {
-    const prev = document.activeElement;
-    const focusables = () => Array.from(root.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter((el) => el.offsetParent !== null);
-    let closed = false;
-    const close = () => {
-      if (closed) return; closed = true;
-      root.hidden = true;
-      document.removeEventListener("keydown", onKey);
-      document.documentElement.classList.remove("ppop-open");
-      if (prev && prev.focus) prev.focus();
-    };
-    const onKey = (e) => {
-      if (e.key === "Escape") return close();
-      if (e.key !== "Tab") return;
-      const f = focusables(); if (!f.length) return;
-      const first = f[0], last = f[f.length - 1];
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    };
+    root.hidden = false;
+    const close = popupFocus(root, root.querySelector("#ppopT"), () => { root.hidden = true; });
     root.querySelectorAll("[data-ppop-close]").forEach((b) => b.addEventListener("click", close));
     root.querySelectorAll("[data-ppop-back]").forEach((b) => b.addEventListener("click", close));
     root.querySelectorAll("[data-ppop-mute]").forEach((b) => b.addEventListener("click", () => { mutePromoPopup(p.id); track("promo_popup_mute", { promo_id: p.id }); close(); }));
     root.querySelectorAll("[data-ppop-go]").forEach((a) => a.addEventListener("click", () => track("promo_popup_click", { promo_id: p.id, target: a.dataset.ppopGo })));
-    root.hidden = false;
-    document.documentElement.classList.add("ppop-open");
-    document.addEventListener("keydown", onKey);
-    const first = root.querySelector("[data-ppop-close]") || focusables()[0];
-    if (first) first.focus();
     try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
     track("promo_popup_view", { promo_id: p.id });
   }
-  // 반환 = 열었는가. 공지 팝업이 이 값을 보고 양보한다
-  async function showPromoPopup() {
-    if (document.body.dataset.noPopup !== undefined) return false;
-    const root = document.getElementById("promoPopup");
-    if (!root || !root.hasAttribute("data-promo-popup")) return false;
-    let p = null;
-    try { p = await promoReady; } catch { p = null; }
-    if (!p || p.id !== root.getAttribute("data-promo-popup")) return false;   // 지면의 행사와 서버의 행사가 다르면 열지 않는다
+  // 첫 40% 스크롤 또는 DOMContentLoaded 뒤 8초. 둘 중 먼저 도달하면 나머지를 정리한다.
+  function promoTrigger() {
+    let finish, timer;
+    const promise = new Promise((resolve) => {
+      let done = false;
+      finish = (ready) => {
+        if (done) return;
+        done = true; clearTimeout(timer);
+        window.removeEventListener("scroll", onScroll);
+        resolve(ready);
+      };
+      const onScroll = () => {
+        const page = document.scrollingElement || document.documentElement;
+        const distance = page.scrollHeight - window.innerHeight;
+        if (distance > 0 && page.scrollTop / distance >= .4) finish(true);
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      timer = setTimeout(() => finish(true), 8000);
+    });
+    return { promise, cancel: () => finish(false) };
+  }
+  function canOpenPromoPopup(root) {
+    const p = promo();
+    if (document.body.dataset.noPopup !== undefined || !p || p.id !== root.getAttribute("data-promo-popup")) return false;
     const until = root.getAttribute("data-promo-until");
     if (until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until)) return false;
     if (promoPopupMuted(p.id)) return false;
-    let shown = false;
-    try { shown = sessionStorage.getItem("hh_popup_shown") === "1"; } catch {}
-    if (shown) return false;
-    openPromoPopup(root, p);
-    return true;
+    try { if (sessionStorage.getItem("hh_popup_shown") === "1") return false; } catch {}
+    return !document.querySelector('.hh-popup, #promoPopup:not([hidden])');
+  }
+  let promoPopupPending = null;
+  async function attemptPromoPopup() {
+    if (document.body.dataset.noPopup !== undefined) return false;
+    const root = document.getElementById("promoPopup");
+    if (!root || !root.hasAttribute("data-promo-popup")) return false;
+    const trigger = promoTrigger();
+    try {
+      await promoReady;
+      if (!canOpenPromoPopup(root)) return false;
+      if (!await trigger.promise || !canOpenPromoPopup(root)) return false;
+      openPromoPopup(root, promo());
+      return true;
+    } finally { trigger.cancel(); }
+  }
+  // 공지가 행사 판정과 지연 노출을 기다리게 하여 두 모달이 겹치지 않는다.
+  async function showPromoPopup() {
+    if (promoPopupPending) return promoPopupPending;
+    promoPopupPending = attemptPromoPopup();
+    try { return await promoPopupPending; } finally { promoPopupPending = null; }
   }
   document.addEventListener("DOMContentLoaded", async () => {
     let opened = false;
@@ -520,4 +557,69 @@
   if(matchMedia('(prefers-reduced-motion: no-preference)').matches){
     films.forEach(function(v){v.autoplay=true;v.play().catch(function(){})});
   }
+})();
+
+// 홈 브랜드 필름: 데스크톱에서 데이터 절약과 모션 감소가 꺼져 있을 때만 영상 소스를 연결한다.
+(function () {
+  const figure = document.querySelector('.herofilm'), video = figure && figure.querySelector('video');
+  if (!video) return;
+  const wide = matchMedia('(min-width:900px)');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+  const connection = navigator.connection;
+  const pause = figure.querySelector('.vpause'), cc = figure.querySelector('.vcc');
+  const eligible = () => wide.matches && !reduce.matches && !(connection && connection.saveData);
+  video.muted = true; video.defaultMuted = true;
+  function play() {
+    if (!eligible() || video.dataset.paused || document.hidden) return;
+    const playing = video.play();
+    if (playing && playing.catch) playing.catch(() => {});
+  }
+  function setCc(on) {
+    Array.from(video.textTracks || []).forEach((track) => { track.mode = on ? 'showing' : 'hidden'; });
+    if (cc) cc.setAttribute('aria-pressed', on ? 'true' : 'false');
+    try { localStorage.setItem('hh_film_cc', on ? '1' : '0'); } catch (e) {}
+  }
+  function sync() {
+    if (!eligible()) {
+      video.pause();
+      video.removeAttribute('autoplay');
+      figure.removeAttribute('data-playing-enabled');
+      if (video.querySelector('source') || video.hasAttribute('src')) {
+        video.querySelectorAll('source').forEach((source) => source.remove());
+        video.removeAttribute('src'); video.load();
+      }
+      return;
+    }
+    if (!video.querySelector('source')) {
+      ['webm', 'mp4'].forEach((format) => {
+        const source = document.createElement('source');
+        source.src = 'assets/video/brand_v2_hero_aigen.' + format;
+        source.type = 'video/' + format;
+        video.insertBefore(source, video.querySelector("track"));
+      });
+      video.load();
+    }
+    figure.setAttribute('data-playing-enabled', '');
+    video.autoplay = !video.dataset.paused;
+    play();
+  }
+  let want = false;
+  try { want = localStorage.getItem('hh_film_cc') === '1'; } catch (e) {}
+  setCc(want);
+  video.addEventListener('loadedmetadata', () => setCc(cc ? cc.getAttribute('aria-pressed') === 'true' : false));
+  video.addEventListener('canplay', play);
+  document.addEventListener('visibilitychange', play);
+  ['pointerdown', 'keydown', 'touchstart'].forEach((event) => document.addEventListener(event, play, { once: true, passive: true }));
+  if (pause) pause.addEventListener('click', () => {
+    if (!eligible()) return;
+    if (video.dataset.paused) {
+      delete video.dataset.paused; play(); pause.textContent = '일시정지'; pause.setAttribute('aria-pressed', 'false');
+    } else {
+      video.dataset.paused = '1'; video.pause(); pause.textContent = '재생'; pause.setAttribute('aria-pressed', 'true');
+    }
+  });
+  if (cc) cc.addEventListener('click', () => setCc(cc.getAttribute('aria-pressed') !== 'true'));
+  wide.addEventListener('change', sync); reduce.addEventListener('change', sync);
+  if (connection && connection.addEventListener) connection.addEventListener('change', sync);
+  sync();
 })();
