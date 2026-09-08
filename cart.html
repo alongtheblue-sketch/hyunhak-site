@@ -142,7 +142,7 @@
       <div class="total"><span>결제 예정</span><span class="won" id="billTotal">0원</span></div>
       <p class="note free">배송비는 3,000원이며, 실물 5만원 이상이면 무료입니다.</p>
       <a class="btn" href="checkout.html" id="toCheckout">결제로 <span class="ar" aria-hidden="true">→</span></a>
-      <p class="note">아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문은 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 카드(일시불)로 결제합니다.</p>
+      <p class="note">상품별 청약철회 조건은 <a href="terms.html">이용약관</a>에서 확인하실 수 있습니다. 카드(일시불)로 결제합니다.</p>
     </div>
   </aside>
 </div>
@@ -239,7 +239,7 @@ document.addEventListener('DOMContentLoaded', function(){
     rows.querySelectorAll('button[data-i]').forEach(function(b){b.addEventListener('click',function(){
       var index=+b.dataset.i;
       var buttons=Array.from(b.closest('.line').querySelectorAll('.ops button'));
-      var nextIndex=buttons.indexOf(b)+1;
+      var nextIndex=buttons.indexOf(b);   // 같은 자리(−/+)로 복귀. +1 은 재렌더 뒤 빼기 버튼에 초점이 가 Enter 연타로 삭제됐다(2026-09-09 X1 P1)
       var it=HH.cart();var x=it[index];x.qty=Math.max(1,Math.min(10,x.qty+ +b.dataset.d));HH.saveCart(it);render();
       var row=rows.children[index];
       var target=row && row.querySelectorAll('.ops button')[nextIndex];
