@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lp="modern">
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -33,179 +33,49 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="icon" href="../assets/favicon_32.png">
+<link rel="stylesheet" href="../assets/promo_lp.css">
 <style>
-:root{
-  --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;--paper-rgb:244,239,227;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);
-  --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
-  --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
-  --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
-  --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px;
-  --gut:clamp(20px,4vw,56px);--container:1120px;
-  --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px;
-  --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px);
-  --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px;
-  --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px;
-  --rule:1px solid var(--hairs);--rule-strong:1px solid var(--hair);
-  --lh-body:1.75;--lh-tight:1.32;--tr-body:-0.012em;--tr-head:-0.032em;--tr-label:.10em;
-  --ease:cubic-bezier(.22,.68,0,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--t-base);line-height:var(--lh-body);
-  letter-spacing:var(--tr-body);word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty;
-  font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%;height:auto}
-ul,ol{list-style:none}
-table{border-collapse:collapse;width:100%}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.ink :focus-visible{outline-color:var(--paper)}
-.wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
-h1,h2,h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
-h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
-.forms h3,.aud h3,.pr h3,.rail h3,.flow h3,.price h3{font-weight:700;text-wrap:inherit}  /* GS-24-4: h2 직후 h4 21곳을 h3 로 승격(스튜디오 S2 와 동일). h4 계산값(weight 700, text-wrap 은 body 상속) 유지로 시각 불변 */
-p{max-width:var(--measure);color:var(--body)}
-.ink p{color:var(--paper-2)}
-.mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
-/* GS-24-3: JetBrains Mono 에 한글이 없어 한글 라벨의 공백만 mono 폭(0.584em) 으로 찍혀 Pretendard 공백(0.235em) 의 2.4~3.0배. 한글이 드는 mono 요소의 공백을 -.35em 으로 Pretendard 폭에 맞춘다(계측 probe_s44.mjs monoKo) */
-.mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.zoom figcaption,.pgv .cap,.bk .mt,.cmp th,.cmp td:first-child,.diff .d,.close .won{word-spacing:-.35em}  /* .buybar .nm 은 sans 라 제외(s44 실측: 포함하면 "보안리더열람,권당" 으로 붙음) */
-.c,.facts b .c{display:inline-block;width:.34em;margin:0;font:inherit;color:inherit;text-align:center;text-indent:-.095em}  /* GS-17 G3 잉크 수리: 0.6em 글리프가 .34em 상자를 넘치면 Chrome 은 start 정렬이라 center 무효(refute 2건, 34px 간격 8.0/1.25px). text-indent -.095em 로 잉크를 상자 왼쪽으로 옮겨 앞뒤 간격을 숫자 간격(4.5px)과 맞춘다. JetBrains Mono 쉼표는 숫자와 같은 0.6em 고정폭. 상자를 .34em(숫자폭의 0.57)으로 좁힌다. 숫자는 Mono 유지(건우 09-02). .facts span{display:block;font-size:13px} 이 span.c 를 잡아 줄을 끊으므로 .facts b .c 로 이겨 font/color/margin 을 부모값으로 되돌린다 */
+:root{--ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;--paper-rgb:244,239,227; --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24); --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif; --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif; --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace; --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px; --gut:clamp(20px,4vw,56px);--container:1120px; --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px; --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px); --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px; --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px; --rule:1px solid var(--hairs);--rule-strong:1px solid var(--hair); --lh-body:1.75;--lh-tight:1.32;--tr-body:-0.012em;--tr-head:-0.032em;--tr-label:.10em; --ease:cubic-bezier(.22,.68,0,1);}
+.forms h3,.aud h3,.pr h3,.rail h3,.flow h3,.price h3{font-weight:700;text-wrap:inherit}
+.mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.zoom figcaption,.pgv .cap,.bk .mt,.cmp th,.cmp td:first-child,.diff .d,.close .won{word-spacing:-.35em}
+.c,.facts b .c{display:inline-block;width:.34em;margin:0;font:inherit;color:inherit;text-align:center;text-indent:-.095em}
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
-.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
-.ink .kicker{color:var(--paper-2);opacity:.8}
-.h2{font-size:var(--t-h1);max-width:22em}
-.lede{font-size:var(--t-h4);line-height:1.6;max-width:30em}
-.sec{padding-block:var(--s9)}
-/* 절정(4부) 뒤 절 5개(p5 diff format faq close)만 여백을 한 단계 내린다. 마크업의 late 클래스로 지정 */
 .sec.late,.part.late{padding-block:var(--s7)}
-.ink{background:var(--ink);color:var(--paper)}
-.mat{background:var(--mat)}
-.btn{display:inline-flex;align-items:center;gap:var(--s3);min-height:var(--tap);padding:0 var(--s4);background:var(--ink);color:var(--paper);
-  font-weight:700;border-radius:var(--r-md);transition:transform .24s var(--ease),background .24s}
-.btn:hover{background:var(--brown);transform:translateY(-1px)}
-.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}  /* GS-22-4: 보조 CTA 는 테두리(가이드 §07 버튼 행). 목록 우회로가 밑줄 글자만이라 안 띈다는 학부모 페르소나 지적 */
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
 .btn.ghost:hover{background:var(--ink);color:var(--paper)}
-.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}  /* GS-24-6: 스킵 링크(스튜디오와 동일) */
-.skip:focus{left:0}
-.btn .arr{font-family:var(--mono);font-weight:400}
 .ink .btn{background:var(--paper);color:var(--ink)}
 .ink .btn:hover{background:var(--card)}
 .tl{display:inline-flex;align-items:center;min-height:var(--tap);gap:var(--s2);border-bottom:1px solid var(--hair);color:var(--ink);font-weight:500}
-.ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
 .tolist{margin-top:var(--s4)}
 .blk h3,.two h3{font-size:var(--t-sm);font-family:var(--mono);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
-.blk ul li{position:relative;padding-left:var(--s3);margin-bottom:var(--s2);line-height:1.6;color:var(--body)}
-.blk ul li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:var(--ink)}
-.why{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
-.why p+p{margin-top:var(--s3)}
-
-/* 상단 띠 */
-.top{border-bottom:var(--rule);background:var(--paper)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:var(--s3)}
-.brand{display:inline-flex;align-items:baseline;gap:var(--s2);font-weight:800;letter-spacing:var(--tr-head);min-height:var(--tap);padding-block:10px}
-.brand .han{font-family:var(--serif);font-weight:500;font-size:var(--t-sm);color:var(--gray);letter-spacing:.08em}
 .top .tag{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);letter-spacing:.06em}
-
-/* 히어로 */
-.hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
 .hero::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(244,239,227,.97) 36%,rgba(244,239,227,.6) 56%,rgba(244,239,227,.06) 100%)}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--s6);align-items:center;min-height:min(80vh,800px);padding-block:var(--s8)}
-.hero .say{position:relative;z-index:3;padding-right:var(--s4)}
-.hero .aeo-answer{font-size:var(--t-sm);color:var(--gray);margin-top:var(--s4);max-width:34em}
 .hero h1{font-size:var(--t-display);max-width:13em;margin:var(--s3) 0 var(--s4)}
-.hero .cta{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:center;margin-top:var(--s5)}
-.stage{position:relative;height:clamp(280px,32vw,460px);align-self:start;margin-top:var(--s3)}
-.fan{position:absolute;width:clamp(136px,12.5vw,186px);height:auto;left:var(--fan-x,56%);bottom:0;transform-origin:50% 100%;box-shadow:0 18px 40px rgba(49,46,46,.28),0 2px 0 rgba(49,46,46,.1);border-radius:2px}
-.fan.f0{transform:translateX(-50%) rotate(-14deg) translateX(-100%)}
-.fan.f1{transform:translateX(-50%) rotate(-7deg) translateX(-50%)}
-.fan.f2{transform:translateX(-50%)}
-.fan.f3{transform:translateX(-50%) rotate(7deg) translateX(50%)}
-.fan.f4{transform:translateX(-50%) rotate(14deg) translateX(100%)}
-/* GS-17 G2: 901~1100px 은 .fan 폭이 clamp 하한 136px 에 걸리고 stage 열이 좁아 f4 우측이 뷰포트를 넘는다(1024 에서 right 1037, 901 에서 +42.5).
-   바깥 두 장 ∓70%/±10deg, 안쪽 두 장 ∓35%/±5deg 로 펼침만 0.7 배(좌우 대칭 유지). 실측 901~1100 전 폭 f4.right ≤ W-7.8. ≤900 규칙과 1440 배치는 그대로 */
-@media (min-width:901px) and (max-width:1100px){
-  .fan.f0{transform:translateX(-50%) rotate(-10deg) translateX(-70%)}
-  .fan.f1{transform:translateX(-50%) rotate(-5deg) translateX(-35%)}
-  .fan.f3{transform:translateX(-50%) rotate(5deg) translateX(35%)}
-  .fan.f4{transform:translateX(-50%) rotate(10deg) translateX(70%)}
-}
-
-/* 계기 띠 */
-.facts{border-bottom:var(--rule);background:var(--card)}
-.facts ul{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);padding-block:var(--s5)}
-.facts li{border-left:var(--rule-strong);padding-left:var(--s3)}
-.facts b{display:block;font-family:var(--mono);font-weight:500;font-size:var(--t-h2);line-height:1.1;letter-spacing:-.02em;white-space:nowrap}
-.facts b small{font-size:var(--t-sm);margin-left:2px;color:var(--gray)}
-.facts span{display:block;font-size:var(--t-sm);color:var(--gray);margin-top:var(--s1)}
-
-/* 문제 */
-.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:start}
-.split.rev{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-.split.rev .txt{order:2}
-.forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.forms li{border:1px solid rgba(244,239,227,.22);border-radius:var(--r-md);padding:var(--s4)}
+@media (min-width:901px) and (max-width:1100px){.fan.f0{transform:translateX(-50%) rotate(-10deg) translateX(-70%)}}
+@media (min-width:901px) and (max-width:1100px){.fan.f1{transform:translateX(-50%) rotate(-5deg) translateX(-35%)}}
+@media (min-width:901px) and (max-width:1100px){.fan.f3{transform:translateX(-50%) rotate(5deg) translateX(35%)}}
+@media (min-width:901px) and (max-width:1100px){.fan.f4{transform:translateX(-50%) rotate(10deg) translateX(70%)}}
 .forms h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.forms p{font-size:var(--t-sm);line-height:1.65}
-.forms .mono{display:block;margin-bottom:var(--s2);opacity:.7}
-.after{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(244,239,227,.22);font-size:var(--t-h4);line-height:1.55;max-width:28em}
-
-/* 맞는 사람 */
-.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.aud li{border-top:2px solid var(--ink);padding-top:var(--s4)}
-.aud .mono{display:block;color:var(--gray);margin-bottom:var(--s2)}
 .aud h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .aud p{font-size:var(--t-md);line-height:1.7}
-
-/* 만든 사람 */
-.pr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.pr li{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
 .pr h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .pr p{font-size:var(--t-md);line-height:1.7}
 .pr .mono{display:block;color:var(--seal);margin-bottom:var(--s2)}
-
-/* 다섯 부 */
-.rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.rail li{position:relative;padding-top:var(--s4);border-top:2px solid var(--ink)}
 .rail li.core{border-top-color:var(--seal);background:var(--card);border-left:var(--rule);border-right:var(--rule);border-bottom:var(--rule);padding:var(--s4);border-radius:0 0 var(--r-md) var(--r-md)}
 .rail .n{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .rail li.core .n{color:var(--seal)}
 .rail h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .rail p{font-size:var(--t-md);line-height:1.7}
 .rail .pg{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2);display:block}
-.openers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
-.openers img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14)}
 .openers span{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2)}
 .openers-cap{font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);letter-spacing:.06em;margin-top:var(--s4)}
-
-/* 부 섹션 */
-.part{padding-block:var(--s8);border-top:var(--rule)}
-.part .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
-.part .num{font-family:var(--mono);font-weight:500;font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;color:var(--ink);opacity:.55}  /* 대비 3.2:1, 종전 .14 = 1.29:1 (critic P2 접근성, 스튜디오 동일) */
 .part.core .num{color:var(--seal);opacity:.85}
-.part h2{font-size:var(--t-h1)}
 .part .sub{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);margin-top:var(--s2)}
-.part .body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:start}
-.part.rev .body .vis{order:2}
-.part .vis img,.part .vis .ph{width:100%;border-radius:var(--r-md)}
-.part .txt .blk+.blk{margin-top:var(--s5)}
-.sample{margin-top:var(--s6);border:var(--rule-strong);border-radius:var(--r-md);background:var(--card);padding:var(--s5)}
-.sample .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3) var(--s6);align-items:start}
-.sample table{max-width:46em}
-.sample .cols table{max-width:none}
 .sample .cap{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);display:flex;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
 .sample table td,.sample table th{padding:var(--s2) 0;border-bottom:var(--rule);vertical-align:top;text-align:left;font-size:var(--t-sm);line-height:1.55}
 .sample table th{font-family:var(--mono);font-weight:500;color:var(--gray);width:36%;padding-right:var(--s3);letter-spacing:0}
-.sample table tr:last-child td,.sample table tr:last-child th{border-bottom:0}
-.q{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);line-height:1.6;color:var(--ink)}
-.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
-.qs li{padding:var(--s3) 0 0;border-top:var(--rule)}
-.qs .q{font-size:var(--t-base)}
 .qs .src{font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);display:block;margin-top:var(--s1)}
-.rule{display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);max-width:56em}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
-.rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
-.rule dd.q{font-family:var(--serif);font-size:var(--t-h4)}
 .pgcols{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s6);align-items:start;margin-top:var(--s2)}
 .pg{position:relative;margin:0}
 .pg img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.14)}
@@ -218,32 +88,11 @@ p{max-width:var(--measure);color:var(--body)}
 .zoom img{width:100%;display:block;border:var(--rule);border-radius:2px;background:#fff}
 .zoom figcaption{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);margin-top:var(--s2)}
 .lg .note{margin-top:var(--s4);font-size:var(--t-sm);color:var(--gray);line-height:1.6;border-top:var(--rule);padding-top:var(--s3)}
-.rule dd .slot{background:var(--mat);border-radius:2px;padding:0 .25em;font-family:var(--mono);font-size:.82em;color:var(--brown)}
-.core .why{border-color:var(--hair)}
-.part.core{background:var(--card)}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.steps li{border-top:var(--rule-strong);padding-top:var(--s3)}
 .steps .n{font-family:var(--mono);font-size:var(--t-xs);color:var(--seal);display:block;margin-bottom:var(--s1)}
-.steps p{font-size:var(--t-sm);line-height:1.6}
-.diff{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
-.diff li{border-top:var(--rule-strong);padding-top:var(--s3)}
-.diff .lab{font-size:var(--t-sm);color:var(--gray);display:block}
-.diff b{font-family:var(--mono);font-weight:500;font-size:var(--t-h3);display:block;line-height:1.2;margin:var(--s1) 0}
-.diff b em{font-style:normal;font-size:var(--t-sm);color:var(--gray);margin-left:var(--s1)}
 .diff .d{font-family:var(--mono);font-size:var(--t-sm);color:var(--seal)}
-.diff p{font-size:var(--t-sm);line-height:1.6;margin-top:var(--s2)}
-.diff{gap:var(--s5)}
-
-/* 준비 순서의 차이 */
-.cmp{width:100%;margin-top:var(--s6)}
 .cmp th,.cmp td{text-align:left;vertical-align:top;padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:var(--rule);line-height:1.6}
 .cmp th{font-family:var(--mono);font-weight:500;font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray)}
 .cmp td:first-child{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);width:16%}
-.cmp td:nth-child(2){color:var(--gray);width:38%}
-.cmp td:nth-child(3){color:var(--ink);font-weight:500}
-.cmp td:nth-child(3)::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-right:var(--s2);vertical-align:.15em}
-
-/* 형태와 가격 */
 .price{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .price>li{background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
 .price h3{font-size:var(--t-h4)}
@@ -252,106 +101,31 @@ p{max-width:var(--measure);color:var(--body)}
 .price .won.two{font-size:var(--t-h2);margin-top:var(--s2)}
 .price .calc{font-size:var(--t-base);line-height:1.6;color:var(--ink);max-width:none;margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
 .price .calc+.calc{margin-top:var(--s1);padding-top:0;border-top:0}
-.price .alt{font-size:var(--t-md);color:var(--body);line-height:1.5;margin-top:var(--s1)}  /* GS-22-1: 둘째 상품 값은 먹색, 본문 크기. 朱印 은 카드마다 하나 */
+.price .alt{font-size:var(--t-md);color:var(--body);line-height:1.5;margin-top:var(--s1)}
 .price .alt b{font-family:var(--mono);font-weight:500;font-size:var(--t-base);color:var(--ink);white-space:nowrap}
-.pricenote{font-size:var(--t-base);line-height:1.65;color:var(--body);margin-top:var(--s4);max-width:var(--measure)}  /* GS-22-2: 절반 근거는 카드 밖 주석 16px (G1 하한). critic s44 P2: 행 65.5자 → 본문 measure 36em */
-.price ul{margin-top:var(--s2)}
+.pricenote{font-size:var(--t-base);line-height:1.65;color:var(--body);margin-top:var(--s4);max-width:var(--measure)}
 .price .pricefoot{font-size:var(--t-cap);color:var(--gray);line-height:1.6;margin-top:var(--s2);padding-top:var(--s2);border-top:var(--rule)}
 .price ul li{font-size:var(--t-md);color:var(--body);line-height:1.65;position:relative;padding-left:var(--s3)}
-.price ul li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
-.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5)}
-.flow li{border-top:var(--rule-strong);padding-top:var(--s3)}
 .flow .n{font-family:var(--mono);font-size:var(--t-xs);color:var(--seal);display:block;margin-bottom:var(--s1)}
 .flow h3{font-size:var(--t-base);margin-bottom:var(--s1)}
-.flow p{font-size:var(--t-sm)}
-
-/* 31권 */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:var(--s3);margin-top:var(--s4)}
-.bk img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14);transition:transform .3s var(--ease)}
-.bk:hover img{transform:translateY(-4px)}
-.bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4;word-break:keep-all;height:2.8em}  /* 캡션 행 높이 고정: 대학명 2행분 */
-.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);margin-top:2px;word-break:keep-all;line-height:1.6;height:1.6em}  /* 면수 질문수 1행분. GS-24-6: 구매 변별 정보라 문서 최소 11px 에서 12px 로 */
-
-/* FAQ */
-.faq{margin-top:var(--s5);border-top:var(--rule-strong)}
-.faq details{border-bottom:var(--rule)}
-.faq summary{cursor:pointer;list-style:none;min-height:var(--tap);display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s3) 0;font-weight:600}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--mono);color:var(--gray);flex:none}
-.faq details[open] summary::after{content:"\2013"}
-.faq .a{padding:0 0 var(--s4);font-size:var(--t-base);color:var(--body);max-width:none}
-
-/* 마무리 */
-.close .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:center}
-.close h2{font-size:var(--t-display);max-width:10em}
+.bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4;word-break:keep-all;height:2.8em}
+.bk .mt{display:block;font-family:var(--mono);font-size:var(--t-cap);color:var(--gray);margin-top:2px;word-break:keep-all;line-height:1.6;height:1.6em}
 .close .won{font-family:var(--mono);font-size:var(--t-h4);margin-top:var(--s4);opacity:.85}
-.close img,.close .ph{width:100%;border-radius:var(--r-md)}
-
-/* 푸터 */
 .ft{padding-block:var(--s5);border-top:var(--rule);font-size:var(--t-sm);color:var(--gray)}
-.ft .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5)}
-.ft b{color:var(--ink);font-weight:700;display:block;margin-bottom:var(--s2)}
-.ft p{font-size:var(--t-sm);line-height:1.7;max-width:none}
-/* GS-17 A2: index.html 푸터 사업자 블록(address.bizinfo + nav) 승계 */
-.ft .biz{margin-top:var(--s2)}
-.ft .bizinfo{font-style:normal;font-size:var(--t-cap);line-height:1.6;max-width:none;word-break:keep-all}
-.ft .biz nav{margin-top:0;font-size:var(--t-cap);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}  /* GS-17 A2 회귀 수리: index.html(base.css:305) 과 같은 flex 행 */
-.ft .biz nav a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:underline;text-underline-offset:3px}  /* 탭 표적 44px(faq A1 과 같은 기준). 종전 41x14, 81x14 */
-
-@media (prefers-reduced-motion:no-preference){
-  .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  .rv.in{opacity:1;transform:none}
-}
-@media (max-width:1000px){
-  .facts ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .rail{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rail li:last-child{grid-column:span 2}
-  .openers{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .pr{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:900px){
-  .sec{padding-block:var(--s8)}
-  #who,#trust{padding-block:var(--s9)}
-  .hero .wrap{grid-template-columns:1fr;gap:var(--s5);min-height:0;padding-block:var(--s6)}
-  .hero::after{background:linear-gradient(180deg,var(--paper) 0%,rgba(244,239,227,.97) 42%,rgba(244,239,227,.55) 72%,rgba(244,239,227,.06) 100%)}
-  .stage{height:clamp(230px,60vw,380px);margin-top:0;align-self:auto;--fan-x:50%}
-  .fan{width:clamp(130px,30vw,200px)}
-  .fan.f0,.fan.f4{display:none}
-  .fan.f1{transform:translateX(-50%) rotate(-10deg) translateX(-56%)}
-  .fan.f3{transform:translateX(-50%) rotate(10deg) translateX(56%)}
-  .split,.split.rev{grid-template-columns:1fr}
-  .split.rev .txt{order:0}
-  .part .head,.part .body{grid-template-columns:1fr;gap:var(--s5)}
-  .part.rev .body .vis{order:0}
-  .sample .cols,.qs,.pgcols{grid-template-columns:1fr}
-  .sample{padding:var(--s4)}
-  .part .num{font-size:clamp(48px,10vw,72px)}
-  .steps,.diff{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .price,.flow,.forms,.aud{grid-template-columns:1fr}
-  .close .wrap{grid-template-columns:1fr}
-  .ft .wrap{grid-template-columns:1fr}
-}
-@media (max-width:560px){
-  .facts ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rail{grid-template-columns:1fr}
-  .rail li:last-child{grid-column:auto}
-  .openers{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2)}
-  .steps,.diff,.pr{grid-template-columns:1fr}
-  .diff{gap:var(--s4)}
-  .sample{padding:var(--s3) var(--s3)}
-  .rule{grid-template-columns:1fr;gap:var(--s1) 0}
-  .rule dt{padding-top:var(--s2)}
-  .rail li.core{padding:var(--s3)}
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}
-  .grid>.bk:last-child:nth-child(3n+1){grid-column:1/-1;justify-self:center;width:calc((100% - 2*var(--s2))/3)}  /* GS-24-6: 31권은 3열에서 마지막 행이 1장. 홀로 남는 타일은 같은 폭으로 가운데에 */
-  .cmp td:first-child{width:22%}
-  .cmp td:nth-child(2){width:34%}
-  .top .tag{display:none}
-  .hero h1{font-size:clamp(30px,9vw,38px)}
-}
-
-/* 2026-09-03 건우 지시: AI 정물 0장. 부 절 = 실물 면 표본(pgv), 문제·형태 절 = 단일 열, 마무리 = 실물 표지 */
-.split.one{grid-template-columns:1fr}
+@media (max-width:900px){.hero::after{background:linear-gradient(180deg,var(--paper) 0%,rgba(244,239,227,.97) 42%,rgba(244,239,227,.55) 72%,rgba(244,239,227,.06) 100%)}}
+@media (max-width:900px){.fan.f0,.fan.f4{display:none}}
+@media (max-width:900px){.fan.f1{transform:translateX(-50%) rotate(-10deg) translateX(-56%)}}
+@media (max-width:900px){.fan.f3{transform:translateX(-50%) rotate(10deg) translateX(56%)}}
+@media (max-width:900px){.sample .cols,.qs,.pgcols{grid-template-columns:1fr}}
+@media (max-width:900px){.price,.flow,.forms,.aud{grid-template-columns:1fr}}
+@media (max-width:560px){.rule dt{padding-top:var(--s2)}}
+@media (max-width:560px){.rail li.core{padding:var(--s3)}}
+@media (max-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}}
+@media (max-width:560px){.grid>.bk:last-child:nth-child(3n+1){grid-column:1/-1;justify-self:center;width:calc((100% - 2*var(--s2))/3)}}
+@media (max-width:560px){.cmp td:first-child{width:22%}}
+@media (max-width:560px){.top .tag{display:none}}
+@media (max-width:560px){.hero h1{font-size:clamp(30px,9vw,38px)}}
 .pgv{margin:0}
 .pgv .pg{position:relative;border:var(--rule);border-radius:var(--r-md);overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(49,46,46,.08),0 12px 28px rgba(49,46,46,.12)}
 .pgv .pg img{display:block;width:100%;height:auto;border-radius:0}
@@ -361,27 +135,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .closecovers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
 .closecovers img{width:100%;height:auto;border-radius:2px;box-shadow:0 10px 24px rgba(49,46,46,.35)}
 .close .vis{align-self:center}
-/* critic P2(2026-09-03 v4): 비rev 부도 실물 면 열을 7fr 로(1·3·5부 397→555px). 마무리 표지는 잉크 바탕에서 보이게 */
 @media (min-width:901px){.part:not(.rev) .body{grid-template-columns:minmax(0,7fr) minmax(0,5fr)}}
 .closecovers{gap:var(--s2)}
 .closecovers img{box-shadow:0 14px 32px rgba(0,0,0,.55);outline:1px solid rgba(239,233,220,.16)}
-
-/* ---- GS-24-6: 900px 이하 하단 구매 바 2칸(스튜디오 GS-17 B 와 동일 구조). 왼쪽 가격 한 줄(#format 앵커), 오른쪽 1차 CTA 복제 玄墨 fill 하나. 배경은 --paper-rgb 토큰 ---- */
-.buybar{display:none}
-@media (max-width:900px){
-  body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
-  .buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60;
-    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96);
-    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
-  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}  /* critic s44 P2: 반투명 바 위 대비 4.60 → --body 6.9 */
-  .buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}
-  .buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;color:var(--seal);white-space:nowrap}
-  .buybar .btn{flex:none;min-height:52px;padding:0 var(--s4);gap:var(--s2);font-size:var(--t-sm);border-radius:var(--r-md)}
-}
-@media (max-width:360px){
-  .buybar .btn{padding:0 var(--s3)}
-}
-
+@media (max-width:900px){.buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;color:var(--seal);white-space:nowrap}}
 </style>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript><!-- critic r3b P1: .rv 는 @media(prefers-reduced-motion:no-preference) 안에서 opacity 0 으로 시작하고
      .in 부여는 본문 끝 인라인 스크립트뿐이다. 스크립트를 막으면 히어로 아래가 통째로 빈다
@@ -406,7 +163,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 .promo[hidden]{display:none!important}
 </style>
 </head>
-<body>
+<body class="v2 lp">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 
 <header class="top">
@@ -425,7 +182,7 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 <main id="main">
 <!-- 도입 -->
 <section class="hero" id="top">
-  
+
   <div class="wrap">
     <div class="say">
     <div class="pagehead">
@@ -464,12 +221,15 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 </section>
 
 <!-- 문제 -->
-<section class="sec ink" id="problem">
+<section class="sec ink lp-collapsible" id="problem">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">같은 “면접”이라는 이름, 준비 방법이 다른 세 시험</h2></summary>
+<div class="lp-fold-body">
     <div class="split one">
       <div class="txt rv">
         <p class="kicker">시작하기 전에</p>
-        <h2 class="h2">같은 “면접”이라는 이름, 준비 방법이 다른 세 시험</h2>
+
         <p class="lede" style="margin-top:var(--s4)">대입 면접 자료 대부분이 면접을 한 덩어리로 다룹니다. 내 생활기록부가 문제지인 시험과 면접장에서 받은 글이 문제지인 시험은 준비할 것이 처음부터 다른데도 그렇습니다.</p>
         <ul class="forms">
           <li><span class="mono">형태 1</span><h3>서류기반</h3><p>내 생활기록부가 문제지. 면접관이 기재 내용을 읽고 그 자리에서 묻는 시험입니다. 이 책의 3부와 4부가 이 형태를 위한 것.</p></li>
@@ -479,7 +239,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
         <p class="after">지원 전형이 어느 형태인지 모른 채 시작한 준비는 방향부터 어긋납니다. 이 책의 첫 면이 형태 판정인 이유.</p>
       </div>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 맞는 사람 -->
@@ -516,11 +279,14 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 </section>
 
 <!-- 계획 -->
-<section class="sec" id="parts">
+<section class="sec lp-collapsible" id="parts">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">다섯 부, 읽는 순서 그대로 준비 순서</h2></summary>
+<div class="lp-fold-body">
     <div class="rv">
       <p class="kicker">이 책이 하는 일</p>
-      <h2 class="h2">다섯 부, 읽는 순서 그대로 준비 순서</h2>
+
       <p class="lede" style="margin-top:var(--s4)">표지의 차례가 곧 준비 순서입니다. 앞의 세 부는 4부를 내 것으로 만들기 위한 준비이고 4부가 본론, 5부는 대학별 차이의 반영. 31권 전권이 같은 다섯 부로 짜여 있습니다.</p>
     </div>
     <ol class="rail">
@@ -539,15 +305,21 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 <li class="rv"><img src="../assets/photo/gbd/gbd_gachon_part5.jpg" width="360" height="509" alt="5부 들어가는 면" loading="lazy" decoding="async"><span>5부 들어가는 면</span></li>
     </ul>
     <p class="openers-cap">판매본 지면 그대로. 가천대학교 판 차례와 각 부 들어가는 면. 본문 지면은 대학별 상세 면의 미리보기에.</p>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 1부 -->
-<section class="part" id="p1">
+<section class="part lp-collapsible" id="p1">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>내 면접은 어느 형태인가</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">01</div>
-      <div><h2>내 면접은 어느 형태인가</h2><p class="sub">서류기반 | 제시문 | MMI, 전형별 형태 판정</p></div>
+      <div><p class="sub">서류기반 | 제시문 | MMI, 전형별 형태 판정</p></div>
     </div>
     <div class="body">
       <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_D.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_D.jpg" width="1000" height="664" alt="가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:89.95%;top:30.16%" aria-hidden="true">1</span><span class="mk" style="left:62.95%;top:77.12%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 4면 상단, 1부 면접 형태 판정 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>세 형태 중 서류기반. 정의와 이 대학에 있음 표시</p></li><li><span class="n">2</span><p>전형별 형태 판정표. 가천바람개비전형은 서류확인형</p></li></ol></figcaption></figure></div>
@@ -572,15 +344,21 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
             <tr><th>수시 지역균형전형, 의과대학</th><td>혼합형</td></tr>
           </table>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 2부 -->
-<section class="part rev" id="p2">
+<section class="part rev lp-collapsible" id="p2">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>이 대학은 무엇을 묻는가</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">02</div>
-      <div><h2>이 대학은 무엇을 묻는가</h2><p class="sub">전형별 제원 | 이 대학이 찾는 학생</p></div>
+      <div><p class="sub">전형별 제원 | 이 대학이 찾는 학생</p></div>
     </div>
     <div class="body">
       <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_E.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_E.jpg" width="1000" height="1413" alt="가천대학교 판 7면, 2부 학과별 인재상 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:85.68%;top:9.46%" aria-hidden="true">1</span><span class="mk" style="left:43.37%;top:21.60%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 7면, 2부 학과별 인재상 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>확인 질문에서 역추론한 학과별 초점. 질문 5건 이상 확인된 36개 학과 수록</p></li><li><span class="n">2</span><p>간호학과 82건. 확인하는 것과 실제 질문 두 건</p></li></ol></figcaption></figure></div>
@@ -605,15 +383,21 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
             <tr><th>제시문</th><td>사용하지 않음 (기록 기반)</td></tr>
           </table></div>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 3부 -->
-<section class="part" id="p3">
+<section class="part lp-collapsible" id="p3">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>실제로 나온 질문</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">03</div>
-      <div><h2>실제로 나온 질문</h2><p class="sub">선배 후기에서 회수한 기출, 유형별, 모집단위와 연도</p></div>
+      <div><p class="sub">선배 후기에서 회수한 기출, 유형별, 모집단위와 연도</p></div>
     </div>
     <div class="body">
       <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_B.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_B.jpg" width="1000" height="1413" alt="가천대학교 판 14면, 3부 실제로 나온 질문 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:65.05%;top:21.81%" aria-hidden="true">1</span><span class="mk" style="left:57.31%;top:48.66%" aria-hidden="true">2</span><span class="mk" style="left:43.86%;top:41.65%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 14면, 3부 실제로 나온 질문 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>유형 이름과 질문. 끝의 작은 글씨가 모집단위와 연도</p></li><li><span class="n">2</span><p>공동체와 인성 유형. 첫 두 질문</p></li><li><span class="n">3</span><p>한 줄 질문. 전자공학과, 2021년</p></li></ol></figcaption></figure></div>
@@ -637,15 +421,21 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
             <li><span class="q">“2학년 때 쓰러진 친구를 응급처치했다고 했는데, 어떻게 도왔나요?”</span><span class="src">반도체물리학과, 2025년</span></li>
           </ul>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 4부, 절정 -->
-<section class="part core rev" id="p4">
+<section class="part core rev lp-collapsible" id="p4">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>내 생기부에서 질문 뽑기</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">04</div>
-      <div><p class="kicker">이 책의 본론</p><h2>내 생기부에서 질문 뽑기</h2><p class="sub">생기부 기재를 질문으로 바꾸는 규칙</p></div>
+      <div><p class="kicker">이 책의 본론</p><p class="sub">생기부 기재를 질문으로 바꾸는 규칙</p></div>
     </div>
     <div class="body">
       <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_F.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_F.jpg" width="1000" height="1413" alt="가천대학교 판 23면, 4부 창의적 체험활동 규칙 면. 표시한 2칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:54.09%;top:11.66%" aria-hidden="true">1</span><span class="mk" style="left:74.80%;top:26.23%" aria-hidden="true">2</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 23면, 4부 창의적 체험활동 규칙 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>영역 이름과 규칙 한 건. 전교 회장, 부회장 기재 때의 질문 틀, 꼬리질문, 평가 축</p></li><li><span class="n">2</span><p>영재학급, 심화과정 기재 때의 규칙</p></li></ol></figcaption></figure></div>
@@ -677,15 +467,21 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <li><span class="n">03</span><p>질문 틀의 빈 자리에 내 기재를 채워 질문 만들기.</p></li>
       <li><span class="n">04</span><p>꼬리질문까지 답 준비. 그 목록이 내 예상 질문지.</p></li>
     </ol>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 5부 -->
-<section class="part late" id="p5">
+<section class="part late lp-collapsible" id="p5">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>이 대학의 특징과 준비 전략</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">05</div>
-      <div><h2>이 대학의 특징과 준비 전략</h2><p class="sub">타 대학 대비 차이 | 준비 전략</p></div>
+      <div><p class="sub">타 대학 대비 차이 | 준비 전략</p></div>
     </div>
     <div class="body">
       <div class="vis rv"><figure class="pgv"><div class="pg"><a href="../assets/photo/gbd/gbd_sample_C.jpg" target="_blank" rel="noopener" aria-label="표본 면 크게 보기"><img src="../assets/photo/gbd/gbd_sample_C.jpg" width="1000" height="1413" alt="가천대학교 판 31면, 5부 공식 대비 범위와 전체 평균 대비 차이 면. 표시한 3칸만 선명하고 나머지는 흐림" loading="lazy" decoding="async"></a><span class="mk" style="left:51.20%;top:6.12%" aria-hidden="true">1</span><span class="mk" style="left:92.61%;top:53.82%" aria-hidden="true">2</span><span class="mk" style="left:48.77%;top:62.72%" aria-hidden="true">3</span></div><figcaption><span class="cap">판매본 지면 그대로. 가천대학교 판 31면, 5부 공식 대비 범위와 전체 평균 대비 차이 면. 번호 칸만 원문이고 나머지는 판매본 보호를 위해 흐림</span><ol class="lg"><li><span class="n">1</span><p>절 제목. 2027 공식 대비 범위</p></li><li><span class="n">2</span><p>전체 평균 대비 차이 6지표 중 4~6번. 면접시간 10분 계열 63.2% 대 전체 41.7%</p></li><li><span class="n">3</span><p>해석. 답변 1건당 40초 안팎</p></li></ol></figcaption></figure></div>
@@ -709,7 +505,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
             <li><span class="lab">제시문 질문 비중</span><b>0.0%<em>전체 2.3%</em></b><span class="d">-2.3%p</span><p>제시문 확인이 단 1건도 없음. 전 전형이 순수 서류확인형.</p></li>
           </ul>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 31권 -->
@@ -757,11 +556,14 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
 </section>
 
 <!-- 하강, 순서의 차이 -->
-<section class="sec late" id="diff">
+<section class="sec late lp-collapsible" id="diff">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">예상 질문 100개를 외우는 준비와 내 질문을 뽑는 준비</h2></summary>
+<div class="lp-fold-body">
     <div class="rv">
       <p class="kicker">준비 순서의 차이</p>
-      <h2 class="h2">예상 질문 100개를 외우는 준비와 내 질문을 뽑는 준비</h2>
+
       <p class="lede" style="margin-top:var(--s4)">흔한 준비는 남의 기출에서 시작해 남의 답을 외웁니다. 이 책의 순서는 내 전형의 형태에서 시작해 내 생기부에서 끝납니다.</p>
     </div>
     <table class="cmp rv">
@@ -774,7 +576,10 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
         <tr><td>대학 차이</td><td>모든 대학에 같은 준비</td><td>6지표로 잰 차이에서 나온 전략 (5부)</td></tr>
       </tbody>
     </table>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 형태와 가격 -->
@@ -824,9 +629,9 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
       <details><summary data-faq="q">내 지원 대학이 목록에 없으면</summary><div class="a" data-faq="a">현재 판매 목록은 31개 대학. 목록에 없는 대학은 문의 이메일로 알려 주시면 준비 상황을 답합니다.</div></details>
       <details><summary data-faq="q">제시문 면접이나 MMI 준비에도 쓸 수 있나</summary><div class="a" data-faq="a">1부와 2부의 형태 판정과 제원은 모든 형태에 해당. 3부와 4부는 서류기반 면접을 위한 것이라, 제시문 면접은 별도 상품인 제시문 면접 스튜디오 쪽이 맞습니다.</div></details>
       <details><summary data-faq="q">질문은 어디서 가져왔나</summary><div class="a" data-faq="a">대학이 공개한 자료와 개인적으로 수집한 역대 면접 후기에서 회수한 실제 질문만 수록. 추정으로 만든 문항은 없고 질문마다 모집단위와 연도를 적었습니다.</div></details>
-      <details><summary data-faq="q">여러 권을 사면</summary><div class="a" data-faq="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로 권당 16,500원이고, 낱권 값을 31권 더한 1,023,000원의 절반입니다. PDF 소장판 전권 1,705,000원은 권당 55,000원으로 낱권 합산 3,410,000원의 절반입니다. 두 합산 금액은 낱권 값을 더한 수이며 따로 파는 상품이 아닙니다. 학교와 학원 단위 좌석은 문의 이메일로.</div></details>
-      <details><summary data-faq="q">얇은 권도 값이 같나</summary><div class="a" data-faq="a">같습니다. 면수와 질문 수는 대학이 공개한 자료와 회수된 후기의 양에 따라 다르고, 값은 어느 대학이든 한 권 33,000원입니다. 권마다 면수와 질문 수를 목록에 적어 두었으니 구매 전 확인하실 수 있습니다.</div></details>
-      <details><summary data-faq="q">환불은</summary><div class="a" data-faq="a">가이드북은 가분적 디지털 콘텐츠입니다. 아직 열지 않은 권은 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 이미 연 권은 제공이 개시되어 전자상거래법 제17조 제2항 제5호에 따라 청약철회가 제한됩니다. 31권 전권의 환불액은 잔여 권수 비율로 산정합니다. 구매 전 지면 미리보기로 내용을 확인하실 수 있습니다.</div></details>
+      <div class="lp-essential-faq"><h3 data-faq="q">여러 권을 사면</h3><div class="a" data-faq="a">권당 33,000원. 31개 대학 전권 열람은 511,500원으로 권당 16,500원이고, 낱권 값을 31권 더한 1,023,000원의 절반입니다. PDF 소장판 전권 1,705,000원은 권당 55,000원으로 낱권 합산 3,410,000원의 절반입니다. 두 합산 금액은 낱권 값을 더한 수이며 따로 파는 상품이 아닙니다. 학교와 학원 단위 좌석은 문의 이메일로.</div></div>
+      <div class="lp-essential-faq"><h3 data-faq="q">얇은 권도 값이 같나</h3><div class="a" data-faq="a">같습니다. 면수와 질문 수는 대학이 공개한 자료와 회수된 후기의 양에 따라 다르고, 값은 어느 대학이든 한 권 33,000원입니다. 권마다 면수와 질문 수를 목록에 적어 두었으니 구매 전 확인하실 수 있습니다.</div></div>
+      <div class="lp-essential-faq"><h3 data-faq="q">환불은</h3><div class="a" data-faq="a">가이드북은 가분적 디지털 콘텐츠입니다. 아직 열지 않은 권은 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 이미 연 권은 제공이 개시되어 전자상거래법 제17조 제2항 제5호에 따라 청약철회가 제한됩니다. 31권 전권의 환불액은 잔여 권수 비율로 산정합니다. 구매 전 지면 미리보기로 내용을 확인하실 수 있습니다.</div></div>
     </div>
   </div>
 </section>
@@ -867,6 +672,50 @@ ol.lg{list-style:none;display:grid;gap:var(--s2);padding:0;margin:0}
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script data-lp-disclosure>
+(function(){
+  function reveal(details){
+    details.querySelectorAll('.rv').forEach(function(node){node.classList.add('in','on')});
+  }
+  function openTarget(hash,scroll){
+    if(!hash || hash==='#') return;
+    var id;
+    try{id=decodeURIComponent(hash.slice(1))}catch(e){return}
+    var target=document.getElementById(id);
+    if(!target) return;
+    var sectionFold=target.matches('.lp-collapsible') && target.querySelector('details[data-lp-fold]');
+    if(sectionFold){sectionFold.open=true;reveal(sectionFold)}
+    for(var parent=target.parentElement;parent;parent=parent.parentElement){
+      if(parent.tagName==='DETAILS'){parent.open=true;reveal(parent)}
+    }
+    if(scroll) requestAnimationFrame(function(){target.scrollIntoView({block:'start',behavior:'instant'})});
+  }
+  document.addEventListener('click',function(event){
+    if(event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var link=event.target.closest('a[href]');
+    if(!link || link.hasAttribute('download') || (link.target && link.target!=='_self')) return;
+    var url=new URL(link.href,location.href);
+    if(url.origin===location.origin && url.pathname===location.pathname && url.search===location.search){openTarget(url.hash,false)}
+  });
+  document.addEventListener('toggle',function(event){
+    if(event.target.tagName==='DETAILS' && event.target.open) reveal(event.target);
+  },true);
+  window.addEventListener('hashchange',function(){openTarget(location.hash,true)});
+  var printState=null;
+  window.addEventListener('beforeprint',function(){
+    if(printState) return;
+    printState=Array.from(document.querySelectorAll('details')).map(function(details){
+      var saved=[details,details.open];details.open=true;reveal(details);return saved;
+    });
+  });
+  window.addEventListener('afterprint',function(){
+    if(!printState) return;
+    printState.forEach(function(saved){saved[0].open=saved[1]});printState=null;
+  });
+  openTarget(location.hash,true);
 })();
 </script>
 </body>

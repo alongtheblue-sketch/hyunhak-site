@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" data-lp="modern">
 <head>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
@@ -33,307 +33,86 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="icon" href="../assets/favicon_32.png">
+<link rel="stylesheet" href="../assets/promo_lp.css">
 <style>
-:root{
-  --ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644;
-  --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);--paper-rgb:244,239,227;
-  --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif;
-  --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif;
-  --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace;
-  --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px;
-  --gut:clamp(20px,4vw,56px);--container:1120px;
-  --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px;
-  --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px);
-  --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px;
-  --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px;
-  --rule:1px solid var(--hairs);--rule-strong:1px solid var(--hair);
-  --lh-body:1.75;--lh-tight:1.32;--tr-body:-0.012em;--tr-head:-0.032em;--tr-label:.10em;
-  --ease:cubic-bezier(.22,.68,0,1);
-}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:var(--t-base);line-height:var(--lh-body);
-  letter-spacing:var(--tr-body);word-break:keep-all;overflow-wrap:break-word;text-wrap:pretty;
-  font-feature-settings:"palt" 1,"kern" 1;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-img{display:block;max-width:100%;height:auto}
-ul,ol{list-style:none}
-table{border-collapse:collapse;width:100%}
-table caption{caption-side:top;text-align:left;font-size:var(--t-cap);line-height:1.6;color:var(--gray);padding:0 0 6px}  /* GS-17 S3: 표 5개 caption. 시각적으로 조용하게(12px 회색) */
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-.skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}
-.skip:focus{left:0}
+:root{--ink:#312E2E;--paper:#F4EFE3;--paper-2:#EDE7D8;--mat:#EBE4D4;--card:#FBF7EE;--gray:#696561;--body:#4A4644; --seal:#BC3529;--brown:#3B2C20;--gold:#D0AC6E;--hair:rgba(49,46,46,.40);--hairs:rgba(49,46,46,.24);--paper-rgb:244,239,227; --serif:'Noto Serif KR','Noto Serif CJK KR','Source Han Serif K',serif; --sans:'Pretendard Variable','Pretendard',-apple-system,'Apple SD Gothic Neo',sans-serif; --mono:'JetBrains Mono','Pretendard Variable','Pretendard','SFMono-Regular',ui-monospace,'Apple SD Gothic Neo',monospace; --s1:4px;--s2:8px;--s3:16px;--s4:24px;--s5:40px;--s6:56px;--s7:72px;--s8:96px;--s9:128px;--s10:160px; --gut:clamp(20px,4vw,56px);--container:1120px; --t-xs:11px;--t-cap:12px;--t-sm:13px;--t-md:14px;--t-base:16px; --t-h4:clamp(19px,1.5vw,23px);--t-h3:clamp(22px,2.0vw,28px);--t-h2:clamp(26px,2.7vw,34px); --t-h1:clamp(31px,4.0vw,44px);--t-display:clamp(38px,5.6vw,62px);--t-mono:13px; --w-head:800;--measure:36em;--tap:48px;--r-md:4px;--r-lg:8px; --rule:1px solid var(--hairs);--rule-strong:1px solid var(--hair); --lh-body:1.75;--lh-tight:1.32;--tr-body:-0.012em;--tr-head:-0.032em;--tr-label:.10em; --ease:cubic-bezier(.22,.68,0,1);}
+table caption{caption-side:top;text-align:left;font-size:var(--t-cap);line-height:1.6;color:var(--gray);padding:0 0 6px}
 .pricenote{font-size:var(--t-sm);color:var(--gray);margin-top:var(--s3)}
 .viscap{font-family:var(--mono);font-size:var(--t-cap);letter-spacing:.04em;color:var(--gray);line-height:1.6;margin-top:var(--s2)}
-.ink :focus-visible{outline-color:var(--paper)}
-.wrap{max-width:var(--container);margin:0 auto;padding-inline:var(--gut)}
-h1,h2,h3{font-weight:var(--w-head);line-height:var(--lh-tight);letter-spacing:var(--tr-head);text-wrap:balance}
-h4{font-weight:700;line-height:var(--lh-tight);letter-spacing:var(--tr-head)}
-.forms h3,.aud h3,.pr h3,.rail h3,.flow h3,.price h3,.unit h3{font-weight:700;text-wrap:inherit}  /* GS-17 S2: h2 직후 h4 6곳을 h3 로 승격. h4 가 갖던 계산값(weight 700, text-wrap 은 body 상속) 그대로 두어 시각 불변 */
-p{max-width:var(--measure);color:var(--body)}
-.ink p{color:var(--paper-2)}
-.mono{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0}
-/* GS-24-3(스튜디오 동일 적용): JetBrains Mono 에 한글이 없어 한글 라벨의 공백만 mono 폭(0.584em). 한글이 드는 mono 요소의 공백을 Pretendard 폭(0.235em) 으로 */
+.forms h3,.aud h3,.pr h3,.rail h3,.flow h3,.price h3,.unit h3{font-weight:700;text-wrap:inherit}
 .mono,.kicker,.top .tag,.blk h3,.two h3,.rail .n,.rail .pg,.rail .go,.openers span,.openers-cap,.part .sub,.sample .cap,.sample table th,.qs .src,.rule dt,.cmp th,.cmp td:first-child,.diff .d,.close .won,.viscap,.scrcap,.quote .src,.tiles .d,.revs .stp,.issues .tag,.ladder th,.unit dt,.vis .zl,.bk .mt{word-spacing:-.35em}
 .kicker{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;gap:var(--s2);margin-bottom:var(--s3)}
-.kicker::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--seal);flex:none}
-.ink .kicker{color:var(--paper-2);opacity:.8}
-.h2{font-size:var(--t-h1);max-width:22em}
-.lede{font-size:var(--t-h4);line-height:1.6;max-width:30em}
-.sec{padding-block:var(--s9)}
-.ink{background:var(--ink);color:var(--paper)}
-.mat{background:var(--mat)}
-.btn{display:inline-flex;align-items:center;gap:var(--s3);min-height:var(--tap);padding:0 var(--s4);background:var(--ink);color:var(--paper);
-  font-weight:700;border-radius:var(--r-md);transition:transform .24s var(--ease),background .24s}
-.btn:hover{background:var(--brown);transform:translateY(-1px)}
-.btn .arr{font-family:var(--mono);font-weight:400}
 .ink .btn{background:var(--paper);color:var(--ink)}
 .ink .btn:hover{background:var(--card)}
-.tl{display:inline-flex;align-items:center;gap:6px;min-height:48px;font-weight:600;font-size:var(--t-sm);color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink);text-decoration-thickness:1px;text-underline-offset:5px}  /* 2026-09-03 critic P1: 탭박스 하단 hair 룰(글자에서 18px, 1.72:1) → 글자 밑줄(ink) */
-.ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
+.tl{display:inline-flex;align-items:center;gap:6px;min-height:48px;font-weight:600;font-size:var(--t-sm);color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink);text-decoration-thickness:1px;text-underline-offset:5px}
 .blk h3,.two h3{font-size:var(--t-sm);font-family:var(--mono);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
-.blk ul li{position:relative;padding-left:var(--s3);margin-bottom:var(--s2);line-height:1.6;color:var(--body)}
-.blk ul li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:var(--ink)}
-.why{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
-.why p+p{margin-top:var(--s3)}
-
-/* 상단 띠 */
-.top{border-bottom:var(--rule);background:var(--paper)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;min-height:56px;gap:var(--s3)}
-.brand{display:inline-flex;align-items:baseline;gap:var(--s2);font-weight:800;letter-spacing:var(--tr-head);min-height:var(--tap);padding-block:10px}
-.brand .han{font-family:var(--serif);font-weight:500;font-size:var(--t-sm);color:var(--gray);letter-spacing:.08em}
 .top .tag{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);letter-spacing:.06em}
-
-/* 히어로 */
-.hero{position:relative;overflow:hidden;border-bottom:var(--rule)}
 .hero .bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:right center}
 .hero{background:linear-gradient(180deg,var(--paper) 0%,var(--paper-2) 100%)}
-.hero .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:var(--s6);align-items:center;min-height:min(80vh,800px);padding-block:var(--s8)}
-.hero .say{position:relative;z-index:3;padding-right:var(--s4)}
-.hero .aeo-answer{font-size:var(--t-sm);color:var(--gray);margin-top:var(--s4);max-width:34em}
 .hero h1{font-size:clamp(31px,4.3vw,54px);max-width:12em;margin:var(--s3) 0 var(--s4)}
-.hero .cta{display:flex;flex-wrap:wrap;gap:var(--s4);align-items:center;margin-top:var(--s5)}
-.stage{position:relative;height:clamp(280px,32vw,460px);align-self:start;margin-top:var(--s3)}
-.fan{position:absolute;width:clamp(136px,12.5vw,186px);height:auto;left:var(--fan-x,56%);bottom:0;transform-origin:50% 100%;box-shadow:0 18px 40px rgba(49,46,46,.28),0 2px 0 rgba(49,46,46,.1);border-radius:2px}
-.fan.f0{transform:translateX(-50%) rotate(-14deg) translateX(-100%)}
-.fan.f1{transform:translateX(-50%) rotate(-7deg) translateX(-50%)}
-.fan.f2{transform:translateX(-50%)}
-.fan.f3{transform:translateX(-50%) rotate(7deg) translateX(50%)}
-.fan.f4{transform:translateX(-50%) rotate(14deg) translateX(100%)}
-
-/* 계기 띠 */
-.facts{border-bottom:var(--rule);background:var(--card)}
-.facts ul{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);padding-block:var(--s5)}
-.facts li{border-left:var(--rule-strong);padding-left:var(--s3)}
-.facts b{display:block;font-family:var(--mono);font-weight:500;font-size:var(--t-h2);line-height:1.1;letter-spacing:-.02em;white-space:nowrap}
-.facts b small{font-size:var(--t-sm);margin-left:2px;color:var(--gray)}
-.facts span{display:block;font-size:var(--t-sm);color:var(--gray);margin-top:var(--s1)}
-
-/* 문제 */
-.split{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:start}
-.split.rev{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}
-.split.rev .txt{order:2}
 .split img,.split .ph{width:100%;border-radius:var(--r-md)}
-.forms{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.forms li{border:1px solid rgba(244,239,227,.22);border-radius:var(--r-md);padding:var(--s4)}
 .forms h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
-.forms p{font-size:var(--t-sm);line-height:1.65}
-.forms .mono{display:block;margin-bottom:var(--s2);opacity:.7}
-.after{margin-top:var(--s6);padding-top:var(--s4);border-top:1px solid rgba(244,239,227,.22);font-size:var(--t-h4);line-height:1.55;max-width:28em}
-
-/* 맞는 사람 */
-.aud{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.aud li{border-top:2px solid var(--ink);padding-top:var(--s4)}
-.aud .mono{display:block;color:var(--gray);margin-bottom:var(--s2)}
 .aud h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .aud p{font-size:var(--t-sm);line-height:1.65}
-
-/* 만든 사람 */
-.pr{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.pr li{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}
 .pr h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .pr p{font-size:var(--t-sm);line-height:1.65}
 .pr .mono{display:block;color:var(--ink);font-weight:500;margin-bottom:var(--s2)}
-
-/* 다섯 부 */
-.rail{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.rail li{position:relative;padding-top:var(--s4);border-top:2px solid var(--ink)}
 .rail li.core{border-top-color:var(--ink);border-top-width:4px;background:var(--card);border-left:var(--rule);border-right:var(--rule);border-bottom:var(--rule);padding:var(--s4);border-radius:0 0 var(--r-md) var(--r-md)}
 .rail .n{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);display:block;margin-bottom:var(--s2)}
 .rail li.core .n{color:var(--ink);font-weight:700}
 .rail h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
 .rail p{font-size:var(--t-sm);line-height:1.65}
 .rail .pg{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2);display:block}
-.openers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s3);margin-top:var(--s8)}
-.openers img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14)}
 .openers span{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:var(--s2)}
 .openers-cap{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);letter-spacing:.06em;margin-top:var(--s4)}
-
-/* 부 섹션 */
-.part{padding-block:var(--s8);border-top:var(--rule)}
-.part .head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:end;margin-bottom:var(--s6)}
-.part .num{font-family:var(--mono);font-weight:500;font-size:clamp(64px,9vw,120px);line-height:.9;letter-spacing:-.04em;color:var(--ink);opacity:.55}  /* 대비 3.2:1, 종전 .14 = 1.29:1 (critic P2 접근성) */
-.part.core .num{color:var(--ink);opacity:.8}  /* GS-17 B must_fix ①: 1 → .8 */
-.part h2{font-size:var(--t-h1)}
+.part.core .num{color:var(--ink);opacity:.8}
 .part .sub{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);margin-top:var(--s2)}
-.part .body{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s6);align-items:start}
-.part.rev .body .vis{order:2}
-.part .vis img,.part .vis .ph{width:100%;border-radius:var(--r-md)}
-.part .txt .blk+.blk{margin-top:var(--s5)}
-.sample{margin-top:var(--s6);border:var(--rule-strong);border-radius:var(--r-md);background:var(--card);padding:var(--s5)}
-.sample .cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3) var(--s6);align-items:start}
-.sample table{max-width:46em}
-.sample .cols table{max-width:none}
 .sample .cap{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);display:flex;justify-content:space-between;gap:var(--s3);margin-bottom:var(--s3);padding-bottom:var(--s2);border-bottom:var(--rule)}
 .sample table td,.sample table th{padding:var(--s2) 0;border-bottom:var(--rule);vertical-align:top;text-align:left;font-size:var(--t-sm);line-height:1.55}
 .sample table th{font-family:var(--mono);font-weight:500;color:var(--gray);width:36%;padding-right:var(--s3);letter-spacing:0}
-.sample table tr:last-child td,.sample table tr:last-child th{border-bottom:0}
-.q{font-family:var(--serif);font-weight:500;font-size:var(--t-h4);line-height:1.6;color:var(--ink)}
-.qs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4)}
-.qs li{padding:var(--s3) 0 0;border-top:var(--rule)}
-.qs .q{font-size:var(--t-base)}
 .qs .src{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);display:block;margin-top:var(--s1)}
-.rule{display:grid;grid-template-columns:auto 1fr;gap:var(--s2) var(--s4);max-width:56em}
 .rule dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray);padding-top:.35em;white-space:nowrap}
-.rule dd{font-size:var(--t-base);line-height:1.6;color:var(--ink)}
-.rule dd.q{font-family:var(--serif);font-size:var(--t-h4)}
-.rule dd .slot{background:var(--mat);border-radius:2px;padding:0 .25em;font-family:var(--mono);font-size:.82em;color:var(--brown)}
-.core .why{border-color:var(--hair)}
-.part.core{background:var(--card)}
-.steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
-.steps li{border-top:var(--rule-strong);padding-top:var(--s3)}
 .steps .n{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;color:var(--ink);display:block;margin-bottom:var(--s1)}
-.steps p{font-size:var(--t-sm);line-height:1.6}
-.diff{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
-.diff li{border-top:var(--rule-strong);padding-top:var(--s3)}
-.diff .lab{font-size:var(--t-sm);color:var(--gray);display:block}
-.diff b{font-family:var(--mono);font-weight:500;font-size:var(--t-h3);display:block;line-height:1.2;margin:var(--s1) 0}
-.diff b em{font-style:normal;font-size:var(--t-sm);color:var(--gray);margin-left:var(--s1)}
 .diff .d{font-family:var(--mono);font-size:var(--t-sm);color:var(--seal)}
-.diff p{font-size:var(--t-sm);line-height:1.6;margin-top:var(--s2)}
-.diff{gap:var(--s5)}
-
-/* 준비 순서의 차이 */
-.cmp{width:100%;margin-top:var(--s6)}
 .cmp th,.cmp td{text-align:left;vertical-align:top;padding:var(--s3) var(--s3) var(--s3) 0;border-bottom:var(--rule);line-height:1.6}
 .cmp th{font-family:var(--mono);font-weight:500;font-size:var(--t-xs);letter-spacing:.06em;color:var(--gray)}
 .cmp td:first-child{font-family:var(--mono);font-size:var(--t-sm);color:var(--gray);width:16%}
-.cmp td:nth-child(2){color:var(--gray);width:38%}
-.cmp td:nth-child(3){color:var(--ink);font-weight:500}
-.cmp td:nth-child(3)::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-right:var(--s2);vertical-align:.15em}
-
-/* 형태와 가격 */
 .price{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3);margin-top:var(--s6)}
 .price>li.pick{border-color:var(--seal)}
-.price>li.pick .tag{position:absolute;top:-12px;right:var(--s3);height:24px;line-height:22px;font-size:var(--t-cap);font-weight:700;letter-spacing:0;color:var(--ink);background:var(--card);border:1px solid var(--ink);border-radius:2px;padding:0 7px;white-space:nowrap}  /* GS-17 B must_fix ⑤: 카드 안 top 16px 은 h4 상자와 겹침(940~1200 에서 gap -61px). 상단 테두리 위로 올려 h4(top 24px) 와 12px 분리, 형제 카드 y 편차 0 유지 */
+.price>li.pick .tag{position:absolute;top:-12px;right:var(--s3);height:24px;line-height:22px;font-size:var(--t-cap);font-weight:700;letter-spacing:0;color:var(--ink);background:var(--card);border:1px solid var(--ink);border-radius:2px;padding:0 7px;white-space:nowrap}
 .price>li{position:relative;background:var(--card);border:var(--rule-strong);border-radius:var(--r-md);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
 .price>li .btn{margin-top:auto;align-self:flex-start;padding-top:0;padding-bottom:0}
 .price>li ul{margin-bottom:var(--s3)}
 .price h3{font-size:var(--t-h4)}
 .price .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h3);color:var(--seal);line-height:1.1;margin-top:var(--s2);white-space:nowrap}
 .price .won small{display:block;font-size:var(--t-sm);color:var(--gray);margin-left:0;margin-top:2px;font-family:var(--sans);white-space:normal}
-.price .won.two{font-size:var(--t-h4);margin-top:var(--s2)}  /* GS-17: 형제 카드 .won y 편차 4px → 0 */
-.price ul{margin-top:var(--s2)}
+.price .won.two{font-size:var(--t-h4);margin-top:var(--s2)}
 .price ul li{font-size:var(--t-sm);color:var(--body);line-height:1.6;position:relative;padding-left:var(--s3)}
-.price ul li::before{content:"";position:absolute;left:0;top:.8em;width:6px;height:1px;background:var(--ink)}
-.flow{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5)}
-.flow li{border-top:var(--rule-strong);padding-top:var(--s3)}
 .flow .n{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;color:var(--ink);display:block;margin-bottom:var(--s1)}
 .flow h3{font-size:var(--t-base);margin-bottom:var(--s1)}
-.flow p{font-size:var(--t-sm)}
-
-/* 31권 */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(118px,1fr));gap:var(--s4) var(--s3);margin-top:var(--s6)}
-.bk img{width:100%;border-radius:2px;box-shadow:0 1px 0 rgba(49,46,46,.08),0 10px 24px rgba(49,46,46,.14);transition:transform .3s var(--ease)}
-.bk:hover img{transform:translateY(-4px)}
 .bk .nm{display:block;font-size:var(--t-sm);font-weight:600;margin-top:var(--s2);line-height:1.4}
 .bk .mt{display:block;font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);margin-top:2px}
-
-/* FAQ */
-.faq{margin-top:var(--s5);border-top:var(--rule-strong)}
-.faq details{border-bottom:var(--rule)}
-.faq summary{cursor:pointer;list-style:none;min-height:var(--tap);display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s3) 0;font-weight:600}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--mono);color:var(--gray);flex:none}
-.faq details[open] summary::after{content:"\2013"}
-.faq .a{padding:0 0 var(--s4);font-size:var(--t-base);color:var(--body);max-width:none}
-
-/* 마무리 */
-.close .wrap{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:var(--s7);align-items:center}
-.close h2{font-size:var(--t-display);max-width:10em}
 .close .won{font-family:var(--mono);font-size:var(--t-h4);margin-top:var(--s4);opacity:.85}
-.close img,.close .ph{width:100%;border-radius:var(--r-md)}
-
-/* 푸터 */
 .ft{padding-block:var(--s6);border-top:var(--rule);font-size:var(--t-sm);color:var(--gray)}
-.ft .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s5)}
-.ft b{color:var(--ink);font-weight:700;display:block;margin-bottom:var(--s2)}
-.ft p{font-size:var(--t-sm);line-height:1.7;max-width:none}
-/* GS-17 A2: index.html 푸터 사업자 블록(address.bizinfo + nav) 승계 */
-.ft .biz{margin-top:var(--s2)}
-.ft .bizinfo{font-style:normal;font-size:var(--t-cap);line-height:1.6;max-width:none;word-break:keep-all}
-.ft .biz nav{margin-top:0;font-size:var(--t-cap);display:flex;flex-wrap:wrap;align-items:center;gap:var(--s2)}  /* GS-17 A2 회귀 수리: index.html(base.css:305) 과 같은 flex 행 */
-.ft .biz nav a{display:inline-flex;align-items:center;min-height:44px;min-width:44px;text-decoration:underline;text-underline-offset:3px}  /* 탭 표적 44px(faq A1 과 같은 기준). 종전 41x14, 81x14 */
-
-@media (prefers-reduced-motion:no-preference){
-  .rv{opacity:0;transform:translateY(14px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
-  .rv.in{opacity:1;transform:none}
-}
-@media (max-width:1000px){
-  .facts ul{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .rail{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .rail li:last-child{grid-column:span 2}
-  .openers{grid-template-columns:repeat(3,minmax(0,1fr))}
-  .pr{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:900px){
-  .sec{padding-block:var(--s8)}
-  #who,#trust{padding-block:var(--s9)}
-  .hero .wrap{grid-template-columns:1fr;gap:var(--s5);min-height:0;padding-block:var(--s6)}
-  .hero::after{background:linear-gradient(180deg,var(--paper) 0%,rgba(244,239,227,.97) 42%,rgba(244,239,227,.55) 72%,rgba(244,239,227,.06) 100%)}
-  .stage{height:clamp(230px,60vw,380px);margin-top:0;align-self:auto;--fan-x:50%}
-  .fan{width:clamp(130px,30vw,200px)}
-  .fan.f0,.fan.f4{display:none}
-  .fan.f1{transform:translateX(-50%) rotate(-10deg) translateX(-56%)}
-  .fan.f3{transform:translateX(-50%) rotate(10deg) translateX(56%)}
-  .split,.split.rev{grid-template-columns:1fr}
-  .split.rev .txt{order:0}
-  .part .head,.part .body{grid-template-columns:1fr;gap:var(--s5)}
-  .part.rev .body .vis{order:0}
-  .sample .cols,.qs{grid-template-columns:1fr}
-  .sample{padding:var(--s4)}
-  .part .num{font-size:clamp(48px,10vw,72px)}
-  .steps,.diff{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .flow,.forms,.aud{grid-template-columns:1fr}
-  .price{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .close .wrap{grid-template-columns:1fr}
-  .ft .wrap{grid-template-columns:1fr}
-}
-@media (max-width:560px){
-  .facts ul{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .price{grid-template-columns:1fr;row-gap:var(--s4)}  /* GS-17: pick 태그(top -12px)와 위 카드 바닥 간격 5 → 13px */
-  .rail{grid-template-columns:1fr}
-  .rail li:last-child{grid-column:auto}
-  .openers{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s2)}
-  .steps,.diff,.pr{grid-template-columns:1fr}
-  .diff{gap:var(--s4)}
-  .sample{padding:var(--s3) var(--s3)}
-  .rule{grid-template-columns:1fr;gap:var(--s1) 0}
-  .rule dt{padding-top:var(--s2)}
-  .rail li.core{padding:var(--s3)}
-  .grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}
-  .cmp td:first-child{width:22%}
-  .cmp td:nth-child(2){width:34%}
-  .top .tag{display:none}
-  .hero h1{font-size:clamp(30px,9vw,38px)}
-}
-
-/* 스튜디오 전용 */
-/* GS-17 A: 히어로 실물 화면 한 장 정면. 회전 0, 겹침 0 */
-.hero .wrap{min-height:min(64vh,600px)}  /* GS-17: 회전 겹침을 걷어낸 뒤 남는 히어로 하단 여백 정리 */
+@media (max-width:900px){.hero::after{background:linear-gradient(180deg,var(--paper) 0%,rgba(244,239,227,.97) 42%,rgba(244,239,227,.55) 72%,rgba(244,239,227,.06) 100%)}}
+@media (max-width:900px){.fan.f0,.fan.f4{display:none}}
+@media (max-width:900px){.fan.f1{transform:translateX(-50%) rotate(-10deg) translateX(-56%)}}
+@media (max-width:900px){.fan.f3{transform:translateX(-50%) rotate(10deg) translateX(56%)}}
+@media (max-width:900px){.sample .cols,.qs{grid-template-columns:1fr}}
+@media (max-width:900px){.flow,.forms,.aud{grid-template-columns:1fr}}
+@media (max-width:900px){.price{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.price{grid-template-columns:1fr;row-gap:var(--s4)}}
+@media (max-width:560px){.rule dt{padding-top:var(--s2)}}
+@media (max-width:560px){.rail li.core{padding:var(--s3)}}
+@media (max-width:560px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3) var(--s2)}}
+@media (max-width:560px){.cmp td:first-child{width:22%}}
+@media (max-width:560px){.top .tag{display:none}}
+@media (max-width:560px){.hero h1{font-size:clamp(30px,9vw,38px)}}
+.hero .wrap{min-height:min(64vh,600px)}
 .stage{height:auto;margin-top:0;align-self:center}
 .solo{margin:0}
-.scr{position:static;width:100%;border:1px solid var(--hair);border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(49,46,46,.12),0 2px 0 rgba(49,46,46,.08)}  /* GS-17 must_fix ④: 22/48/.22 → 10/24/.12 */
+.scr{position:static;width:100%;border:1px solid var(--hair);border-radius:6px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(49,46,46,.12),0 2px 0 rgba(49,46,46,.08)}
 .scr img{width:100%;height:auto;display:block}
 .scrcap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--s2) var(--s3);margin-top:var(--s3);padding-top:var(--s2);border-top:var(--rule);font-family:var(--mono);font-size:var(--t-cap);letter-spacing:.04em;color:var(--gray)}
 .scrcap b{font-weight:500;color:var(--ink)}
@@ -376,39 +155,30 @@ p{max-width:var(--measure);color:var(--body)}
 .unit .sub{font-size:var(--t-sm);color:var(--gray)}
 .unit dl{display:grid;grid-template-columns:auto 1fr;gap:var(--s1) var(--s3);font-size:var(--t-sm);margin-top:var(--s2)}
 .unit dt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);padding-top:.25em}
-.unit dd{line-height:1.55}  /* critic s44 P2-5: 한글 행간 하한 */
+.unit dd{line-height:1.55}
 .unit .ex{margin-top:var(--s2);border-top:var(--rule);padding-top:var(--s2)}
 .unit .ex li{font-size:var(--t-sm);line-height:1.5;display:flex;gap:var(--s2);margin-top:var(--s1)}
 .unit .ex .lv{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);flex:none;width:2.4em;padding-top:.2em}
 .unit .won{font-family:var(--mono);font-weight:500;font-size:var(--t-h4);color:var(--seal);margin-top:auto;padding-top:var(--s3);white-space:nowrap}
-.unit .won small{display:block;white-space:normal;font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:0;margin-top:2px}  /* nowrap 상속으로 1000px+ 카드 밖 19~21px 넘침 (critic P1-1, 2026-09-03) */
-.unit .tl{margin-top:auto;padding-top:var(--s3);align-self:flex-start}  /* GS-24-5: 카드 안 .won 을 걷어 링크가 바닥 정렬을 이어받는다 */
-@media (max-width:1000px){
-  .units{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .units li:last-child{grid-column:span 2}
-  .tiles{grid-template-columns:repeat(3,minmax(0,1fr))}
-}
-@media (max-width:900px){
-  .hero .wrap{min-height:0;gap:var(--s4);padding-block:var(--s5) var(--s4)}  /* GS-17 hero must_fix ①: 390 히어로 854px → 758px. gap 40→24, padding 56/56 → 40/24 */
-  .hero .cta{margin-top:var(--s4);gap:var(--s3) var(--s4)}
-  .scrcap{margin-top:var(--s2)}
-  .stage{height:auto;align-self:auto}
-  .issues{grid-template-columns:1fr}
-  .openers{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (max-width:560px){
-  .forms{grid-template-columns:1fr}
-  .unit .ex{display:none}
-  .unit dl{grid-template-columns:auto 1fr}
-  .units{grid-template-columns:1fr}
-  .units li:last-child{grid-column:auto}
-  .tiles{grid-template-columns:repeat(2,minmax(0,1fr))}
-  .openers{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}
-  .tabshot{display:none}
-}
-
-/* 2026-09-03 건우 지시: 문제 절 AI 정물 제거 → 단일 열, 네 문장 카드 4열. 다섯 단계 카드 = 아래 실물 화면 절로 가는 링크 */
-.split.one{grid-template-columns:1fr}
+.unit .won small{display:block;white-space:normal;font-size:var(--t-sm);color:var(--gray);font-family:var(--sans);margin-left:0;margin-top:2px}
+.unit .tl{margin-top:auto;padding-top:var(--s3);align-self:flex-start}
+@media (max-width:1000px){.units{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:1000px){.units li:last-child{grid-column:span 2}}
+@media (max-width:1000px){.tiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.hero .wrap{min-height:0;gap:var(--s4);padding-block:var(--s5) var(--s4)}}
+@media (max-width:900px){.hero .cta{margin-top:var(--s4);gap:var(--s3) var(--s4)}}
+@media (max-width:900px){.scrcap{margin-top:var(--s2)}}
+@media (max-width:900px){.stage{height:auto;align-self:auto}}
+@media (max-width:900px){.issues{grid-template-columns:1fr}}
+@media (max-width:900px){.openers{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.forms{grid-template-columns:1fr}}
+@media (max-width:560px){.unit .ex{display:none}}
+@media (max-width:560px){.unit dl{grid-template-columns:auto 1fr}}
+@media (max-width:560px){.units{grid-template-columns:1fr}}
+@media (max-width:560px){.units li:last-child{grid-column:auto}}
+@media (max-width:560px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.openers{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s2)}}
+@media (max-width:560px){.tabshot{display:none}}
 .split.one .forms{grid-template-columns:repeat(4,minmax(0,1fr))}
 .rail li a{display:block;height:100%;color:inherit;text-decoration:none}
 .rail li a:hover h3,.rail li a:focus-visible h3{text-decoration:underline;text-underline-offset:4px}
@@ -416,24 +186,15 @@ p{max-width:var(--measure);color:var(--body)}
 .rail .go{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s3);font-family:var(--mono);font-size:var(--t-xs);color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:2px;transition:color var(--dur-1) var(--ease),border-color var(--dur-1) var(--ease)}
 .rail li a:hover .go{color:var(--ink);border-bottom-width:2px}
 .part{scroll-margin-top:var(--s5)}
-.part .vis{scroll-margin-top:var(--s5)}  /* GS-17 S5 회귀 수리: 카드 "실제 화면 보기" 착지 = #pN-shot(화면). p3 p5 는 sample 이 body 앞이라 섹션 상단 착지 시 화면이 접힘 아래(390 가시율 17%, 0%) */
-.vis .zoom{display:block;color:inherit;text-decoration:none}  /* critic P1: 단계 화면 5장 확대 래퍼(원본 jpg 새 탭) */
-/* GS-17 r3b S5 수리: 라벨을 그림 안 오른쪽 아래(absolute)에서 그림 밖 캡션 줄로 내린다.
-   r3 반박 실측 = 라벨이 p1 std_home 의 "21분 7분" 칸과 p5 std_report 의 "2 / 10" 점수를 덮었다(상자 교차 5/5, 1440 과 390 양쪽).
-   hover 표시로 숨기면 손가락 기기에서 확대 단서가 사라지므로 자리를 옮긴다. 상자가 그림 밖이라 잉크 겹침은 0 이 된다. */
+.part .vis{scroll-margin-top:var(--s5)}
+.vis .zoom{display:block;color:inherit;text-decoration:none}
 .vis .zl{display:flex;justify-content:flex-end;align-items:center;gap:4px;margin-top:var(--s2);font-family:var(--mono);font-size:var(--t-cap);letter-spacing:.04em;line-height:1.6;color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-/* audience r3b: 그림 밖으로 내리자 자리가 사진 출처 표기와 같아져 "설명" 으로 읽히고 "눌러 보라" 로는 안 읽혔다.
-   크기는 그대로 두고 회색에서 먹색 밑줄로 올려 누를 수 있다는 신호만 준다. 테두리 상자 안은 그림과 경쟁해 기각. */
 .vis .zoom:hover .zl,.vis .zoom:focus-visible .zl{text-decoration-thickness:2px}
 @media (max-width:900px){.split.one .forms{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.split.one .forms{grid-template-columns:1fr}}
-
-/* 2026-09-03 critic P2: 다섯 단계 카드 링크 신호를 카드 바닥에 정렬, 글자 13px. 문제 절 카드 테두리 대비 */
 .rail li a{display:flex;flex-direction:column;align-items:flex-start}
 .rail .go{margin-top:auto;padding-top:var(--s3);font-size:var(--t-sm)}
 .split.one .forms li{border-color:rgba(244,239,227,.38)}
-
-/* GS-17 parts_S5 A: 다섯 단계 카드를 3열에 앉히고 본론 카드가 두 칸을 먹는다. 부 섹션은 고유 자산의 자리와 면적으로 리듬. */
 .rail.anchor{grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s6) var(--s4);align-items:stretch;margin-top:var(--s6)}
 .rail.anchor li.core{grid-column:span 2}
 .rail.anchor li.core a{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:var(--s3) var(--s5);align-items:start;height:100%}
@@ -442,45 +203,22 @@ p{max-width:var(--measure);color:var(--body)}
 .rail.anchor li.core .bd{display:flex;flex-direction:column;align-items:flex-start;height:100%}
 .rail.anchor li.core .bd p{font-size:var(--t-base)}
 .rail.anchor li.core .bd .pg{margin-top:var(--s3)}
-.rail.anchor .tail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* critic s44 P2-2: 바닥 규칙선은 3·5단계에만 있어 2/5, 걷어서 0/5. GS-24-5: 3단계 카드만 링크가 오른쪽(225px)에 있어 5장 중 1장 이탈. .foot 과 같은 세로 배열로 정렬, DOM 은 그대로(S5 카드 변주 유지) */
+.rail.anchor .tail{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}
 .rail.anchor .tail .pg,.rail.anchor .tail .go{margin-top:0;padding-top:0}
-.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}  /* GS-17 must_fix ①: 카드5 pg→go 순 복구, 바닥 규칙선 래퍼는 .tail(가로 한 줄) 과 다른 .foot(세로) */
+.rail.anchor .foot{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s2);width:100%;margin-top:auto;padding-top:var(--s3);border-top:0}
 .rail.anchor .foot .pg,.rail.anchor .foot .go{margin-top:0;padding-top:0}
 .part .sample.strip{margin-top:0;margin-bottom:var(--s6);padding:var(--s4) 0;background:transparent;border-left:0;border-right:0;border-radius:0}
-.part#p2 .body,.part#p3 .body,.part#p2 .head,.part#p3 .head{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}  /* critic s44 P2-1: head 를 body 트랙에 맞춰 제목 좌변 79.3px 어긋남 해소 */  /* GS-17 must_fix ②③: p3 4:8 철회(증거 화면 ≥400px), p5 는 기본 5:7 */
+.part#p2 .body,.part#p3 .body,.part#p2 .head,.part#p3 .head{grid-template-columns:minmax(0,6fr) minmax(0,6fr)}
 .part#p5 .sample{margin-top:0;margin-bottom:var(--s6)}
 .part#p3{padding-block:var(--s7) var(--s8)}
 .part#p5{padding-block:var(--s8) var(--s9)}
-@media (max-width:1000px){
-  /* GS-17 must_fix ④: 3열 유지(1,2,3 / 4 4,5). 2열이면 카드 3, 5 옆이 빈 칸. span 2 는 core 만. .rail li:last-child{span 2}(:243) 를 .loop 이 이긴다 */
-  .rail.anchor{gap:var(--s5) var(--s3)}
-  .rail.anchor li.loop{grid-column:auto}
-  .rail.anchor li.core a{grid-template-columns:1fr;gap:var(--s3)}
-}
-@media (max-width:900px){
-  .part#p2 .body,.part#p3 .body,.part#p5 .body{grid-template-columns:1fr}
-}
-@media (max-width:700px){
-  .rail.anchor{grid-template-columns:1fr;gap:var(--s5)}
-  .rail.anchor li.core,.rail.anchor li.pivot,.rail.anchor li.loop{grid-column:auto}
-}
-
-/* ---- GS-17 B: 900px 이하 하단 구매 바 2칸. 왼쪽 가격 한 줄(#format 앵커), 오른쪽 1차 CTA 玄墨 fill 하나. 셀렉터는 base.css .fix 와 겹치지 않게 .buybar ---- */
-.buybar{display:none}
-@media (max-width:900px){
-  body{padding-bottom:calc(80px + env(safe-area-inset-bottom))}
-  .buybar{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);position:fixed;left:0;right:0;bottom:0;z-index:60;
-    padding:8px var(--s3) calc(8px + env(safe-area-inset-bottom));background:rgba(var(--paper-rgb),.96);
-    -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
-  .buybar .lab{display:flex;flex-direction:column;justify-content:center;min-height:44px;min-width:0;margin:0;color:var(--body)}  /* critic s44 P2(가이드북 면 지적, 두 면 동일): 반투명 바 위 대비 4.60 → --body 6.9, 라벨 11 → 12px */
-  .buybar .nm{font-size:var(--t-cap);line-height:1.3;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--ink)}  /* GS-24-5: 탭 단서 밑줄을 --hair 에서 먹색으로(GS-23 확대 안내와 같은 처분) */
-  .buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15;
-    color:var(--seal);white-space:nowrap}
-  .buybar .btn{flex:none;min-height:52px;padding:0 var(--s4);gap:var(--s2);font-size:var(--t-sm);border-radius:var(--r-md)}
-}
-@media (max-width:360px){
-  .buybar .btn{padding:0 var(--s3)}
-}
+@media (max-width:1000px){.rail.anchor{gap:var(--s5) var(--s3)}}
+@media (max-width:1000px){.rail.anchor li.loop{grid-column:auto}}
+@media (max-width:1000px){.rail.anchor li.core a{grid-template-columns:1fr;gap:var(--s3)}}
+@media (max-width:900px){.part#p2 .body,.part#p3 .body,.part#p5 .body{grid-template-columns:1fr}}
+@media (max-width:700px){.rail.anchor{grid-template-columns:1fr;gap:var(--s5)}}
+@media (max-width:700px){.rail.anchor li.core,.rail.anchor li.pivot,.rail.anchor li.loop{grid-column:auto}}
+@media (max-width:900px){.buybar .won{display:block;margin-top:2px;font-family:var(--mono);font-weight:500;font-size:var(--t-h4);line-height:1.15; color:var(--seal);white-space:nowrap}}
 </style>
 <noscript><style>.rv{opacity:1;transform:none}</style></noscript><!-- critic r3b P1: .rv 는 @media(prefers-reduced-motion:no-preference) 안에서 opacity 0 으로 시작하고
      .in 부여는 본문 끝 인라인 스크립트뿐이다. 스크립트를 막으면 히어로 아래가 통째로 빈다
@@ -505,7 +243,7 @@ p{max-width:var(--measure);color:var(--body)}
 .promo[hidden]{display:none!important}
 </style>
 </head>
-<body>
+<body class="v2 lp">
 
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <header class="top">
@@ -558,12 +296,15 @@ p{max-width:var(--measure);color:var(--body)}
 </section>
 
 <!-- 문제 -->
-<section class="sec ink" id="problem">
+<section class="sec ink lp-collapsible" id="problem">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">혼자 하는 제시문 면접 연습이 멈추는 자리</h2></summary>
+<div class="lp-fold-body">
     <div class="split one">
       <div class="txt rv">
         <p class="kicker">시작하기 전에</p>
-        <h2 class="h2">혼자 하는 제시문 면접 연습이 멈추는 자리</h2>
+
         <p class="lede" style="margin-top:var(--s4)">제시문 면접은 생활기록부를 보지 않습니다. 면접장에서 받은 글과 발문을 정해진 시간 안에 읽고 정해진 시간 안에 말하는 시험입니다. 혼자 연습하면 상담에서 반복해 듣는 네 문장에서 멈춥니다.</p>
         <ul class="forms">
           <li><span class="mono">읽는 순서</span><h3>“네 편 요약은 다 했는데, 뭘 물었는지는 답을 못 했어요.”</h3><p>요약은 답이 아닙니다. 발문이 지목한 기준으로 판단해야 답이 됩니다.</p></li>
@@ -574,7 +315,10 @@ p{max-width:var(--measure);color:var(--body)}
         <p class="after">네 문장의 공통 원인은 독해력이 아닙니다. 시험장의 시간 규격 안에서 소리 내어 말해 볼 자리와 말한 것을 돌려받을 자리가 없었다는 것입니다.</p>
       </div>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 맞는 사람 -->
@@ -614,11 +358,14 @@ p{max-width:var(--measure);color:var(--body)}
 </section>
 
 <!-- 계획 -->
-<section class="sec" id="parts">
+<section class="sec lp-collapsible" id="parts">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">응시 한 회, 다섯 단계 그대로 준비 순서</h2></summary>
+<div class="lp-fold-body">
     <div class="rv">
       <p class="kicker">이 스튜디오가 하는 일</p>
-      <h2 class="h2">응시 한 회, 다섯 단계 그대로 준비 순서</h2>
+
       <p class="lede" style="margin-top:var(--s4)">세트를 고르고 준비하고 답변을 촬영합니다. 리포트를 받고 다시 응시합니다. 앞의 세 단계는 시험장을 옮겨 놓은 것이고 4단계가 이 스튜디오의 본론, 5단계는 그 리포트로 다음 회차를 정하는 자리입니다.</p>
     </div>
     <ol class="rail anchor">
@@ -628,15 +375,21 @@ p{max-width:var(--measure);color:var(--body)}
       <li class="rv core"><a href="#p4-shot"><div class="hd"><span class="n">4단계, 본론</span><h3>전사, 채점, 첨삭 세 단</h3></div><div class="bd"><p>말한 그대로 전사한 뒤 루브릭으로 채점하고 진단과 구술체 재구성을 붙입니다.</p><span class="pg">리포트가 응시 직후 열림</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></div></a></li>
       <li class="rv loop"><a href="#p5-shot"><span class="n">5단계</span><h3>재응시와 순위</h3><p>지문마다 5회. 막힌 문항만 연습형으로 다시 한 뒤 실전형으로 확인.</p><span class="foot"><span class="pg">5회 사다리, 랭킹 3축</span><span class="go">실제 화면 보기 <span aria-hidden="true">↓</span></span></span></a></li>
     </ol>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 1단계 -->
-<section class="part" id="p1">
+<section class="part lp-collapsible" id="p1">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>세트 고르기</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">01</div>
-      <div><h2>세트 고르기</h2><p class="sub">다섯 단위 150세트 | 난이도 | 네 축 점수</p></div>
+      <div><p class="sub">다섯 단위 150세트 | 난이도 | 네 축 점수</p></div>
     </div>
     <div class="body">
       <div class="vis rv" id="p1-shot"><a class="zoom" href="../assets/photo/std/std_home.jpg" target="_blank" rel="noopener" aria-label="세트 고르기 화면, 고려대 계열적합 인문 세트 목록. 새 탭에서 크게 보기"><div class="shot"><img src="../assets/photo/std/std_home.jpg" width="1400" height="801" alt="세트 고르기 화면, 고려대 계열적합 인문 세트 목록" loading="lazy" decoding="async"></div><span class="zl" aria-hidden="true">크게 보기 <span>↗</span></span></a></div>
@@ -674,15 +427,21 @@ p{max-width:var(--measure);color:var(--body)}
             <tr><td>맞서는 두 힘이 만드는 멈춤</td><td class="r">중</td></tr>
           </table>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 2단계 -->
-<section class="part rev" id="p2">
+<section class="part rev lp-collapsible" id="p2">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>준비 시간</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">02</div>
-      <div><h2>준비 시간</h2><p class="sub">제시문, 발문, 답변 메모 | 연세 8분, 고려 21분</p></div>
+      <div><p class="sub">제시문, 발문, 답변 메모 | 연세 8분, 고려 21분</p></div>
     </div>
     <div class="body">
       <div class="vis rv" id="p2-shot"><a class="zoom" href="../assets/photo/std/std_prep.jpg" target="_blank" rel="noopener" aria-label="준비 시간 화면, 제시문과 21분 타이머와 답변 메모. 새 탭에서 크게 보기"><div class="shot"><img src="../assets/photo/std/std_prep.jpg" width="1400" height="801" alt="준비 시간 화면, 제시문과 21분 타이머와 답변 메모" loading="lazy" decoding="async"></div><span class="zl" aria-hidden="true">크게 보기 <span>↗</span></span></a></div>
@@ -719,15 +478,21 @@ p{max-width:var(--measure);color:var(--body)}
             </table>
           </div>
     </div>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 3단계 -->
-<section class="part" id="p3">
+<section class="part lp-collapsible" id="p3">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>답변 촬영</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">03</div>
-      <div><h2>답변 촬영</h2><p class="sub">전면 카메라 녹화 | 말한 그대로 전사 | 전달과 태도 신호</p></div>
+      <div><p class="sub">전면 카메라 녹화 | 말한 그대로 전사 | 전달과 태도 신호</p></div>
     </div>
     <div class="sample strip rv">
           <div class="cap"><span>지면 표본, 전달 측정값</span><span>데모 응시 리포트, 가상 학생</span></div>
@@ -750,21 +515,28 @@ p{max-width:var(--measure);color:var(--body)}
             <li>말한 그대로 받아 적는 전사. 제시문 어휘를 기준으로 오인식을 보정</li>
             <li>어절 수와 발화 시간과 분당 어절, 간투사 횟수와 침묵 비율과 사용 시간을 측정</li>
             <li>응시 영상은 마이페이지에서 다시 보기</li>
-            <li>응시 영상과 목소리는 첨삭과 계정 확인에만 씁니다. 목소리 대조는 첫 응시 전 고지에 동의한 뒤에만 합니다</li>
+
           </ul></div>
         <div class="blk"><h3>어떻게 쓰나</h3>
           <div class="why"><p>내용은 전사문에서 채점하고 전달과 태도는 음성과 영상 신호에서 잽니다. 태도 축은 침묵과 완주와 개시 선언과 카메라 네 성분으로 계산합니다.</p><p>자기 답변을 글로 읽는 첫 경험이 여기서 생깁니다. 무엇을 말했다고 생각했는지와 실제로 말한 것의 차이가 전사문에 그대로 남습니다.</p></div></div>
       </div>
     </div>
-  </div>
+
+</div>
+</details>
+<ul class="lp-essential"><li>응시 영상과 목소리는 첨삭과 계정 확인에만 씁니다. 목소리 대조는 첫 응시 전 고지에 동의한 뒤에만 합니다</li></ul>
+</div>
 </section>
 
 <!-- 4단계, 절정 -->
-<section class="part core rev" id="p4">
+<section class="part core rev lp-collapsible" id="p4">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>전사, 채점, 첨삭 세 단</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">04</div>
-      <div><p class="kicker">이 스튜디오의 본론</p><h2>전사, 채점, 첨삭 세 단</h2><p class="sub">문항별 루브릭 채점 | 여섯 축 | 진단과 구술체 재구성</p></div>
+      <div><p class="kicker">이 스튜디오의 본론</p><p class="sub">문항별 루브릭 채점 | 여섯 축 | 진단과 구술체 재구성</p></div>
     </div>
     <div class="body">
       <div class="vis rv" id="p4-shot"><a class="zoom" href="../assets/photo/std/std_revision.jpg" target="_blank" rel="noopener" aria-label="첨삭 화면, 전사록 정리와 진단 여섯 유형. 새 탭에서 크게 보기"><div class="shot"><img src="../assets/photo/std/std_revision.jpg" width="1400" height="1167" alt="첨삭 화면, 전사록 정리와 진단 여섯 유형" loading="lazy" decoding="async"></div><span class="zl" aria-hidden="true">크게 보기 <span>↗</span></span></a></div>
@@ -797,15 +569,21 @@ p{max-width:var(--measure);color:var(--body)}
       <li><span class="n">03</span><p>진단의 인용 문장을 내 답변에서 찾아 고칠 방향을 적습니다.</p></li>
       <li><span class="n">04</span><p>구술체 재구성을 소리 내어 따라 말한 뒤 연습형으로 그 문항만 다시 응시합니다.</p></li>
     </ol>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 5단계 -->
-<section class="part" id="p5">
+<section class="part lp-collapsible" id="p5">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2>재응시와 순위</h2></summary>
+<div class="lp-fold-body">
     <div class="head rv">
       <div class="num">05</div>
-      <div><h2>재응시와 순위</h2><p class="sub">지문당 5회 | 랭킹 3축 | 인강 두 종류</p></div>
+      <div><p class="sub">지문당 5회 | 랭킹 3축 | 인강 두 종류</p></div>
     </div>
     <div class="sample rv">
           <div class="cap"><span>지면 표본, 지문 한 편 5회 사다리</span><span>권장 순서</span></div>
@@ -820,7 +598,12 @@ p{max-width:var(--measure);color:var(--body)}
     </div>
     <div class="body">
       <div class="vis rv" id="p5-shot"><a class="zoom" href="../assets/photo/std/std_report.jpg" target="_blank" rel="noopener" aria-label="평가 리포트 화면, 여섯 축 도형과 문항별 루브릭 채점. 새 탭에서 크게 보기"><div class="shot"><img src="../assets/photo/std/std_report.jpg" width="1400" height="801" alt="평가 리포트 화면, 여섯 축 도형과 문항별 루브릭 채점" loading="lazy" decoding="async"></div><span class="zl" aria-hidden="true">크게 보기 <span>↗</span></span></a></div>
-      <div class="txt rv">
+
+    </div>
+
+</div>
+</details>
+<div class="lp-essential"><div class="txt rv">
         <div class="blk"><h3>이 단계에 들어 있는 것</h3>
           <ul>
             <li>지문 한 편에 5회. 실전형 한 번 뒤 연습형으로 막힌 문항만 다시 하고 실전형으로 확인</li>
@@ -838,17 +621,19 @@ p{max-width:var(--measure);color:var(--body)}
             <li>세트별 풀이법 인강. 세트마다 한 편, 그 세트의 제시문과 문항으로 풀이 순서를 보임. 낱권을 사면 그 세트 1편이, 단위 전권을 사면 그 단위 30편이 딸려 옴</li>
             <li>시청은 마이페이지의 내 강의, 시청 기간은 지급일부터 3개월. 공개 편수는 열람 시점 기준으로 지문 목록과 내 강의에 표시</li>
           </ul></div>
-      </div>
-    </div>
-  </div>
+      </div></div>
+</div>
 </section>
 
 <!-- 하강, 순서의 차이 -->
-<section class="sec mat" id="diff">
+<section class="sec mat lp-collapsible" id="diff">
   <div class="wrap">
+<details class="lp-fold" data-lp-fold>
+<summary><h2 class="h2">기출을 눈으로 푸는 준비와 시간 안에 말하고 돌려받는 준비</h2></summary>
+<div class="lp-fold-body">
     <div class="rv">
       <p class="kicker">준비 순서의 차이</p>
-      <h2 class="h2">기출을 눈으로 푸는 준비와 시간 안에 말하고 돌려받는 준비</h2>
+
       <p class="lede" style="margin-top:var(--s4)">흔한 준비는 기출 제시문을 읽고 답안을 써 봅니다. 이 스튜디오의 순서는 지원 대학 규격의 타이머 안에서 말하는 데서 시작하고, 말한 것을 전사와 첨삭으로 돌려받는 데서 끝납니다.</p>
     </div>
     <table class="cmp rv">
@@ -863,7 +648,10 @@ p{max-width:var(--measure);color:var(--body)}
         <tr><td>재응시</td><td>새 문제로 넘어감</td><td>같은 지문 5회 사다리, 순위로 위치 확인 (5단계)</td></tr>
       </tbody>
     </table>
-  </div>
+
+</div>
+</details>
+</div>
 </section>
 
 <!-- 형태와 가격 -->
@@ -932,9 +720,9 @@ p{max-width:var(--measure);color:var(--body)}
       <details><summary data-faq="q">응시에 무엇이 필요한가</summary><div class="a" data-faq="a">카메라와 마이크가 있는 브라우저. 태블릿과 노트북 모두 됩니다. 응시 시간은 대학 규격과 같습니다.</div></details>
       <details><summary data-faq="q">첨삭은 언제 받나</summary><div class="a" data-faq="a">응시를 마치면 리포트가 바로 열립니다. 전사와 진단과 구술체 재구성 세 단이 회차마다 마이페이지에 남습니다.</div></details>
       <details><summary data-faq="q">채점은 누가 하나</summary><div class="a" data-faq="a">세트마다 붙은 루브릭과 모범 포인트에 전사문을 대조해 자동으로 채점합니다. 기준마다 인용 근거와 밴드가 함께 적히고, 강사 화면에서 사람이 전 시도를 열람합니다.</div></details>
-      <details><summary data-faq="q">인강은 무엇이 포함되나</summary><div class="a" data-faq="a">단위 전권에는 그 단위 세트별 풀이법 인강 30편과 공통 풀이 인강이 딸려 있습니다. 낱권에는 그 세트 풀이법 인강 1편이 딸려 있고, 공통 풀이 인강만 따로 살 수도 있습니다. 인강 시청 기간은 지급일부터 3개월입니다. 시청은 마이페이지의 내 강의에서 하고, 공개 편수는 지문 목록과 내 강의에 열람 시점 기준으로 표시됩니다.</div></details>
-      <details><summary data-faq="q">한 계정을 여럿이 써도 되나</summary><div class="a" data-faq="a">1계정 1인입니다. 첫 응시 전 고지에 동의하면 이후 응시의 목소리를 계정 기준과 대조하고, 명백히 다른 목소리가 반복되면 경고 뒤 사람이 검토합니다.</div></details>
-      <details><summary data-faq="q">환불은</summary><div class="a" data-faq="a">응시권과 인강은 가분적 디지털 콘텐츠입니다. 응시하지 않은 지문과 재생하지 않은 강의는 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 이미 응시한 지문과 재생한 강의는 제공이 개시되어 전자상거래법 제17조 제2항 제5호에 따라 청약철회가 제한됩니다. 단위 전권의 환불액은 잔여 지문 수 비율로 산정합니다. 구매 전 체험 응시 1회로 확인하실 수 있습니다.</div></details>
+      <div class="lp-essential-faq"><h3 data-faq="q">인강은 무엇이 포함되나</h3><div class="a" data-faq="a">단위 전권에는 그 단위 세트별 풀이법 인강 30편과 공통 풀이 인강이 딸려 있습니다. 낱권에는 그 세트 풀이법 인강 1편이 딸려 있고, 공통 풀이 인강만 따로 살 수도 있습니다. 인강 시청 기간은 지급일부터 3개월입니다. 시청은 마이페이지의 내 강의에서 하고, 공개 편수는 지문 목록과 내 강의에 열람 시점 기준으로 표시됩니다.</div></div>
+      <div class="lp-essential-faq"><h3 data-faq="q">한 계정을 여럿이 써도 되나</h3><div class="a" data-faq="a">1계정 1인입니다. 첫 응시 전 고지에 동의하면 이후 응시의 목소리를 계정 기준과 대조하고, 명백히 다른 목소리가 반복되면 경고 뒤 사람이 검토합니다.</div></div>
+      <div class="lp-essential-faq"><h3 data-faq="q">환불은</h3><div class="a" data-faq="a">응시권과 인강은 가분적 디지털 콘텐츠입니다. 응시하지 않은 지문과 재생하지 않은 강의는 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 이미 응시한 지문과 재생한 강의는 제공이 개시되어 전자상거래법 제17조 제2항 제5호에 따라 청약철회가 제한됩니다. 단위 전권의 환불액은 잔여 지문 수 비율로 산정합니다. 구매 전 체험 응시 1회로 확인하실 수 있습니다.</div></div>
       <details><summary data-faq="q">모의면접과 무엇이 다른가</summary><div class="a" data-faq="a">이것이 모의면접입니다. 연세대 준비 8분과 답변 5분, 고려대 준비 21분과 발화 7분 규격 그대로 기출 제시문으로 촬영 응시합니다. 회차마다 전사와 진단과 구술체 재구성 세 단을 받습니다.</div></details>
       <details><summary data-faq="q">면접컨설팅 대신 쓸 수 있나</summary><div class="a" data-faq="a">별도 1:1 면접컨설팅 상품은 없습니다. 연세대와 고려대 제시문 면접은 이 스튜디오의 응시와 첨삭으로, 서류기반 면접은 대학별 가이드북으로 준비합니다.</div></details>
       <details><summary data-faq="q">서류기반 면접 준비에도 쓸 수 있나</summary><div class="a" data-faq="a">스튜디오는 제시문 면접용입니다. 생활기록부가 문제지인 서류기반 면접은 별도 상품인 대학별 가이드북 쪽이 맞습니다.</div></details>
@@ -978,6 +766,50 @@ p{max-width:var(--measure);color:var(--body)}
   if(!('IntersectionObserver' in window)){document.querySelectorAll('.rv').forEach(function(e){e.classList.add('in')});return}
   var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{rootMargin:'0px 0px -8% 0px',threshold:.08});
   document.querySelectorAll('.rv').forEach(function(e){io.observe(e)});
+})();
+</script>
+
+<script data-lp-disclosure>
+(function(){
+  function reveal(details){
+    details.querySelectorAll('.rv').forEach(function(node){node.classList.add('in','on')});
+  }
+  function openTarget(hash,scroll){
+    if(!hash || hash==='#') return;
+    var id;
+    try{id=decodeURIComponent(hash.slice(1))}catch(e){return}
+    var target=document.getElementById(id);
+    if(!target) return;
+    var sectionFold=target.matches('.lp-collapsible') && target.querySelector('details[data-lp-fold]');
+    if(sectionFold){sectionFold.open=true;reveal(sectionFold)}
+    for(var parent=target.parentElement;parent;parent=parent.parentElement){
+      if(parent.tagName==='DETAILS'){parent.open=true;reveal(parent)}
+    }
+    if(scroll) requestAnimationFrame(function(){target.scrollIntoView({block:'start',behavior:'instant'})});
+  }
+  document.addEventListener('click',function(event){
+    if(event.defaultPrevented || event.button!==0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    var link=event.target.closest('a[href]');
+    if(!link || link.hasAttribute('download') || (link.target && link.target!=='_self')) return;
+    var url=new URL(link.href,location.href);
+    if(url.origin===location.origin && url.pathname===location.pathname && url.search===location.search){openTarget(url.hash,false)}
+  });
+  document.addEventListener('toggle',function(event){
+    if(event.target.tagName==='DETAILS' && event.target.open) reveal(event.target);
+  },true);
+  window.addEventListener('hashchange',function(){openTarget(location.hash,true)});
+  var printState=null;
+  window.addEventListener('beforeprint',function(){
+    if(printState) return;
+    printState=Array.from(document.querySelectorAll('details')).map(function(details){
+      var saved=[details,details.open];details.open=true;reveal(details);return saved;
+    });
+  });
+  window.addEventListener('afterprint',function(){
+    if(!printState) return;
+    printState.forEach(function(saved){saved[0].open=saved[1]});printState=null;
+  });
+  openTarget(location.hash,true);
 })();
 </script>
 </body>
