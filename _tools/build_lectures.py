@@ -143,7 +143,7 @@ TAIL = '''</main>
 '''
 
 CSS_COMMON = '''/* 인강 상품면 공용 (2026-09-06). 크기는 토큰만, 朱印은 가격과 맛보기 표식과 진행 막대에만 */
-.lec2 .sample video{width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--r-sm);display:block;box-shadow:inset 0 0 0 1px var(--hair)}
+.lec2 .sample video{width:100%;aspect-ratio:16/9;background:#000;border-radius:var(--r-md);display:block;box-shadow:inset 0 0 0 1px var(--hair)}
 .lec2 .sample .cap{margin-top:10px;font-size:var(--t-sm);color:var(--gray);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .lec2 .ot{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);padding:var(--s4)}
 .lec2 .ot h3,.lec2 .ot h2{font-size:var(--t-h4);margin:0;letter-spacing:inherit}
@@ -214,7 +214,7 @@ CSS_LIST = CSS_COMMON + '''
 .lecp .chips button[aria-pressed="true"]{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);font-weight:700}   /* 상태 표식은 테두리, 솔리드 채움은 주 행동 하나만 (critic NNN3) */
 .lecp .otgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);margin-top:var(--s4)}
 @media (max-width:820px){.lecp .otgrid{grid-template-columns:1fr}}
-.lecp .poster{position:relative;aspect-ratio:16/9;background:var(--ink);border-radius:var(--r-sm);overflow:hidden;box-shadow:inset 0 0 0 1px var(--hair);display:grid;place-items:center;color:var(--paper);text-align:center;padding:var(--s4)}
+.lecp .poster{position:relative;aspect-ratio:16/9;background:var(--ink);border-radius:var(--r-md);overflow:hidden;box-shadow:inset 0 0 0 1px var(--hair);display:grid;place-items:center;color:var(--paper);text-align:center;padding:var(--s4)}
 .lecp .poster .han{font-family:var(--serif);font-weight:300;letter-spacing:.08em;color:rgba(var(--paper-rgb),.7);font-size:var(--t-sm)}
 .lecp .poster h3{font-size:var(--t-h3);margin-top:8px}
 .lecp .poster p{font-size:var(--t-sm);color:rgba(var(--paper-rgb),.75);margin-top:8px}

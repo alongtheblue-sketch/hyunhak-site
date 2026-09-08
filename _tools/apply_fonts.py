@@ -4,9 +4,15 @@
 import re, glob, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SKIP = {"reader.html"}
-PAT = re.compile(r'(?<!<noscript>)<link rel="stylesheet" href="(https://(?:fonts\.googleapis\.com|cdn\.jsdelivr\.net)[^"]+)"[^>]*>')
+PAT = re.compile(r'(?<!<noscript>)<link rel="stylesheet" href="(https://(?:fonts\.googleapis\.com|cdn\.jsdelivr\.net)[^"]+)"(?![^>]*media="print")[^>]*>')
+# 종전(2026-09-03~08) 산출 = Google Fonts 도 preload 형. preload 는 본문 서체 Pretendard 1개만 두고 Google Fonts 는 media=print 비차단 형으로 이관 (W1 FONTS_REQUEST 2026-09-08)
+PRE_G = re.compile(r'<link rel="preload" as="style" href="(https://fonts\.googleapis\.com[^"]+)" onload="this\.onload=null;this\.rel=\'stylesheet\'">')
+def deferred(u):
+    return f'<link rel="stylesheet" href="{u}" media="print" onload="this.onload=null;this.media=\'all\'">'
 def conv(m):
     u = m.group(1)
+    if "fonts.googleapis.com" in u:
+        return deferred(u) + f'<noscript><link rel="stylesheet" href="{u}"></noscript>'
     return (f'<link rel="preload" as="style" href="{u}" onload="this.onload=null;this.rel=\'stylesheet\'">'
             f'<noscript><link rel="stylesheet" href="{u}"></noscript>')
 n = 0
@@ -15,6 +21,7 @@ for p in sorted(glob.glob(os.path.join(ROOT, "**", "*.html"), recursive=True)):
     if rel in SKIP or rel.startswith(("design/", "_design/", "_docs/", "_tools/")): continue
     s = open(p, encoding="utf-8").read()
     t = PAT.sub(conv, s)
+    t = PRE_G.sub(lambda m: deferred(m.group(1)), t)
     # gstatic 를 먼저 넣고 그 뒤에 jsdelivr 를 끼운다. 종전 순서(jsdelivr 먼저)는 1회째에 gstatic 줄이 없어 jsdelivr 가 빠지고 2회째에야 들어갔다(build_all 1회·2회 해시 불일치, 2026-09-03 실측)
     if "fonts.googleapis.com" in t and 'rel="preconnect" href="https://fonts.gstatic.com"' not in t:
         t = t.replace("<head>", '<head>\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>', 1)

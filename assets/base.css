@@ -1237,3 +1237,5 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .btn.ghost[data-list-price]:hover{background:var(--card);color:var(--ink)}
 :where(body.v2) .promo.ink [data-list-price],:where(body.v2) .pband.ink [data-list-price]{color:var(--paper)}
 :where(body.v2) .promo.ink .sale,:where(body.v2) .pband.ink .sale{color:var(--paper)}
+/* D23 인강실(classroom) 朱印 테두리 박스를 본판 괘선 문법으로 (W3 BASE_CSS_REQUEST 2026-09-08). 배지 .folio 는 생성기 잔여 */
+.lec2.lecr .ot,.lec2.lecr .cr{border:var(--rule);border-radius:var(--r-md);box-shadow:var(--shadow-1)}

@@ -33,7 +33,7 @@
 <link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap" media="print" onload="this.onload=null;this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&family=JetBrains+Mono:wght@400;500&display=swap"></noscript>
 <link rel="stylesheet" href="assets/base.css"><noscript><style>.rv{opacity:1;transform:none}</style></noscript>
 <style>
 /* ===== 인강 뷰어 전용 (v3 판본, 2026-09-02). 크기는 토큰만. 朱印은 활성 표식과 책갈피 점과 진행 막대에만 ===== */
@@ -49,7 +49,7 @@
 @media (min-width:980px){.lay2{grid-template-columns:296px minmax(0,1fr);gap:var(--s5)}.lay2>.side{order:1}.lay2>.stagecol{order:2}}
 
 /* 플레이어 */
-.player{position:relative;background:var(--ink);border-radius:var(--r-sm);overflow:hidden;aspect-ratio:16/9;outline:none;
+.player{position:relative;background:var(--ink);border-radius:var(--r-md);overflow:hidden;aspect-ratio:16/9;outline:none;
   box-shadow:inset 0 0 0 1px var(--hair);-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .player:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 .player video{position:absolute;inset:0;width:100%;height:100%;background:#000;display:block}
@@ -108,7 +108,7 @@
 .rate:hover{background:rgba(var(--paper-rgb),.12)}
 .menu2x{position:absolute;right:0;bottom:50px;background:rgba(26,25,24,.97);box-shadow:inset 0 0 0 1px rgba(var(--paper-rgb),.18);border-radius:var(--r-md);padding:6px;display:none;z-index:6;min-width:120px}
 .menu2x[data-open="1"]{display:block}
-.menu2x button{display:block;width:100%;text-align:left;padding:10px 12px;font-family:var(--mono);font-size:var(--t-mono);color:var(--paper);border-radius:var(--r-sm);font-variant-numeric:tabular-nums}
+.menu2x button{display:block;width:100%;text-align:left;padding:10px 12px;font-family:var(--mono);font-size:var(--t-mono);color:var(--paper);border-radius:var(--r-md);font-variant-numeric:tabular-nums}
 .menu2x button:hover{background:rgba(var(--paper-rgb),.12)}
 .menu2x button.on{color:var(--gold);font-weight:500}
 .menu2x .mh{font-family:var(--mono);font-size:var(--t-xs);color:rgba(var(--paper-rgb),.6);padding:6px 12px 4px;letter-spacing:var(--tr-label)}
@@ -116,8 +116,8 @@
 .lay2>.side{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);overflow:hidden;gap:0}
 .pane{max-height:min(62vh,640px);overflow:auto;padding:6px}
 .pane[hidden]{display:none}
-.chl li,.bml li{border-radius:var(--r-sm)}
-.chl button{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;width:100%;text-align:left;padding:11px 10px;min-height:var(--tap);border-radius:var(--r-sm);font-size:var(--t-sm);line-height:1.35}
+.chl li,.bml li{border-radius:var(--r-md)}
+.chl button{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:8px;align-items:center;width:100%;text-align:left;padding:11px 10px;min-height:var(--tap);border-radius:var(--r-md);font-size:var(--t-sm);line-height:1.35}
 .chl button:hover{background:var(--mat)}
 .chl li.on button{background:var(--ink);color:var(--paper)}
 .chl .n{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
@@ -126,12 +126,12 @@
 .chl li.done .n::after{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--seal);margin-left:5px;vertical-align:1px}
 .bml li{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:8px;align-items:start;padding:10px 10px;border-bottom:var(--rule)}
 .bml li:last-child{border-bottom:0}
-.bml .jump{display:inline-flex;align-items:center;min-height:44px;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--seal);font-variant-numeric:tabular-nums;padding:0 var(--s2);border-radius:var(--r-sm);white-space:nowrap}
+.bml .jump{display:inline-flex;align-items:center;min-height:44px;font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--seal);font-variant-numeric:tabular-nums;padding:0 var(--s2);border-radius:var(--r-md);white-space:nowrap}
 .bml .jump:hover{background:var(--mat)}
 .bml .lb{font-size:var(--t-sm);font-weight:600;line-height:1.35;word-break:keep-all}
 .bml .nt{font-size:var(--t-sm);color:var(--body);margin-top:3px;line-height:1.55;white-space:pre-wrap}
 .bml .ops{display:flex;gap:2px}
-.bml .ops button{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-sm);color:var(--gray)}
+.bml .ops button{width:44px;height:44px;display:grid;place-items:center;border-radius:var(--r-md);color:var(--gray)}
 .bml .ops button:hover{background:var(--mat);color:var(--ink)}
 .bml .ops svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round}
 .bml .edit{grid-column:1/-1;display:grid;gap:6px;margin-top:4px}
@@ -142,7 +142,7 @@
 .bml .edit .r button.pri{background:var(--ink);color:var(--paper);box-shadow:none}
 .pane .empty{border:0;padding:var(--s4) var(--s3)}
 .side .foot{border-top:var(--rule);padding:10px 12px;font-size:var(--t-xs);color:var(--gray);line-height:1.7;max-width:none}
-.side .foot kbd{font-family:var(--mono);font-size:var(--t-xs);padding:1px 5px;box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-sm);background:#fff;margin:0 1px}
+.side .foot kbd{font-family:var(--mono);font-size:var(--t-xs);padding:1px 5px;box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-md);background:#fff;margin:0 1px}
 /* 안내 카드 (잠금, 준비 중, 오류) */
 .notice{background:var(--card);border-radius:var(--r-md);padding:var(--s5);box-shadow:inset 0 0 0 1px var(--hairs);max-width:560px}
 .notice h2{font-size:var(--t-h3)}
