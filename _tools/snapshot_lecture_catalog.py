@@ -8,8 +8,13 @@
 형식 = 기존 파일과 같은 키 순서·indent 1·ensure_ascii False. duration_sec 은 정수(round). published_at 은 날짜 10자.
 정렬 = kind, unit_code, seq (기존 파일 실측 순서).
 
+부분 갱신 (--only id,id,…): 지정 강의만 원천 값으로 바꾸고 나머지 행·n·snapshot_at 은 파일 그대로 둔다. 한 결재의 범위가 몇 편일 때
+쓴다(2026-09-08 실측: 전체 재스냅샷은 다른 스레드의 길이 변경 20건과 OT 0강(L0-0, 회원 무료·API 가 덮는 강의)을 끌고 와
+"공통 풀이 4편" 문면과 v2_check 금지 문자 게이트를 깼다). 부분 갱신 이력은 partial_updates 에 남는다.
+
 사용:
   python3 _tools/snapshot_lecture_catalog.py                 # 원격 D1 읽기 → 변경 요약 출력 → 파일 갱신
+  python3 _tools/snapshot_lecture_catalog.py --only lec_a,lec_b   # 그 강의만 갱신 (원격 또는 --rows-json)
   python3 _tools/snapshot_lecture_catalog.py --check         # 갱신 없이 원격 대 파일 차이만 (rc 0 = 같음, 1 = 낡음, 2 = 검사불가)
   python3 _tools/snapshot_lecture_catalog.py --rows-json r.json   # 오프라인 (테스트)
 """
@@ -49,11 +54,27 @@ def norm(r):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true")
-    ap.add_argument("--rows-json")
+    ap.add_argument("--rows-json", help="원격 대신 읽을 원천: 원시 행 리스트 또는 {lectures:[…]} 카탈로그 꼴")
+    ap.add_argument("--only", help="쉼표 구분 강의 id. 이 강의만 갱신(부분 갱신)")
     a = ap.parse_args()
-    rows = json.loads(Path(a.rows_json).read_text(encoding="utf-8")) if a.rows_json else d1(SQL)
+    if a.rows_json:
+        src = json.loads(Path(a.rows_json).read_text(encoding="utf-8"))
+        rows = src["lectures"] if isinstance(src, dict) else src
+    else:
+        rows = d1(SQL)
     new = [norm(r) for r in rows]
     old = json.loads(CAT.read_text(encoding="utf-8")) if CAT.exists() else {"lectures": []}
+    only = [x.strip() for x in a.only.split(",") if x.strip()] if a.only else None
+    if only:
+        src_map = {l["id"]: l for l in new}
+        missing = [i for i in only if i not in src_map]
+        if missing:
+            print(f"--only 강의가 원천에 없다: {missing}", file=sys.stderr); return 2
+        merged = [src_map[l["id"]] if l["id"] in only else l for l in old["lectures"]]
+        absent = [i for i in only if i not in {l["id"] for l in old["lectures"]}]
+        if absent:
+            print(f"--only 강의가 파일에 없다(부분 갱신은 추가를 안 한다): {absent}", file=sys.stderr); return 2
+        new = merged
     om = {l["id"]: l for l in old["lectures"]}
     nm = {l["id"]: l for l in new}
     added = [i for i in nm if i not in om]
@@ -74,9 +95,15 @@ def main():
         print("변경 없음, 파일 유지")
         return 0
     kst = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).strftime("%Y-%m-%dT%H:%M+09:00")
-    out = {"snapshot_at": kst, "source": "D1 hyunhak.lectures (remote, read-only)", "n": len(new), "lectures": new}
+    if only:
+        out = dict(old); out["lectures"] = new; out["n"] = len(new)
+        out["partial_updates"] = (old.get("partial_updates") or []) + [{"at": kst, "ids": only, "source": "D1 hyunhak.lectures (remote, read-only)" if not a.rows_json else f"offline {a.rows_json}"}]
+        note = f"부분 갱신 {len(only)}편, snapshot_at 유지 {old.get('snapshot_at')}"
+    else:
+        out = {"snapshot_at": kst, "source": "D1 hyunhak.lectures (remote, read-only)", "n": len(new), "lectures": new}
+        note = f"snapshot_at={kst}"
     CAT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
-    print(f"갱신 → {CAT} snapshot_at={kst}")
+    print(f"갱신 → {CAT} {note}")
     return 0
 
 

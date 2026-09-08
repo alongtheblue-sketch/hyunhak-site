@@ -973,7 +973,7 @@
    "seq": 1,
    "title": "연세대 2026 기출 활동우수 인문통합 해설 강의",
    "subtitle": "통제감의 조건과 선택의 기능",
-   "duration_sec": 1498,
+   "duration_sec": 1295,
    "status": "ready",
    "published_at": "2026-09-04",
    "access": "entitled"
@@ -986,7 +986,7 @@
    "seq": 2,
    "title": "연세대 2026 기출 활동우수 자연 해설 강의",
    "subtitle": "과학자의 태도와 도그마의 두 용법",
-   "duration_sec": 1500,
+   "duration_sec": 1328,
    "status": "ready",
    "published_at": "2026-09-04",
    "access": "entitled"
@@ -999,7 +999,7 @@
    "seq": 3,
    "title": "연세대 2026 기출 국제형 해설 강의",
    "subtitle": "광기는 배제의 산물인가 뇌의 문제인가",
-   "duration_sec": 1326,
+   "duration_sec": 1222,
    "status": "ready",
    "published_at": "2026-09-04",
    "access": "entitled"
@@ -1012,7 +1012,7 @@
    "seq": 4,
    "title": "고려대 2026 기출 계열적합 인문 오전 해설 강의",
    "subtitle": "우위에 선 자리는 왜 갈등을 낳는가",
-   "duration_sec": 1424,
+   "duration_sec": 1245,
    "status": "ready",
    "published_at": "2026-09-04",
    "access": "entitled"
@@ -1025,7 +1025,7 @@
    "seq": 5,
    "title": "고려대 2026 기출 계열적합 자연 오후 해설 강의",
    "subtitle": "임계점 이후의 두 결말",
-   "duration_sec": 1362,
+   "duration_sec": 1251,
    "status": "ready",
    "published_at": "2026-09-04",
    "access": "entitled"
@@ -2615,6 +2615,19 @@
    "status": "ready",
    "published_at": "2026-09-05",
    "access": "entitled"
+  }
+ ],
+ "partial_updates": [
+  {
+   "at": "2026-09-08T15:38+09:00",
+   "ids": [
+    "lec_passage_yonsei_2026_gichul_hum",
+    "lec_passage_yonsei_2026_gichul_sci",
+    "lec_passage_yonsei_2026_gichul_intl",
+    "lec_passage_korea_2026_gichul_hum_am",
+    "lec_passage_korea_2026_gichul_sci_pm"
+   ],
+   "source": "offline /Users/gregory/Workspace/hyunhak-api/tools/out/_lecture_catalog_full_20260908T1535.json"
   }
  ]
 }
