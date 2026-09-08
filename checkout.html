@@ -419,7 +419,8 @@
       <div id="sumRows" style="margin-top:var(--s3)"></div>
       <dl class="kv" id="sumDl"></dl>
       <div class="total"><span>결제 금액</span><span class="won" id="sumTotal">0원</span></div>
-      <button class="btn" type="button" id="payBtn">결제</button>
+      <button class="btn" type="button" id="payBtn" disabled>결제</button>
+      <p class="note" id="authStatus" role="status" hidden></p>
       <p class="stub" id="testNote">테스트 결제 환경입니다. 실제 승인 전에는 카드에서 돈이 빠져나가지 않습니다.</p>
       <p class="note rule" id="refundNote"></p>
     </div>
@@ -459,8 +460,26 @@ document.addEventListener('DOMContentLoaded', async function(){
   var $=function(s){return document.querySelector(s)};
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
 
-  var st = await HH.me();
-  if(!st.member){ location.href='login.html?next=checkout.html'; return; }
+  var authTimer;
+  var st = await Promise.race([
+    HH.me(),
+    new Promise(function(resolve){ authTimer=setTimeout(function(){ resolve({member:null,error:'timeout'}); },10000); })
+  ]).catch(function(){ return {member:null,error:'network'}; });
+  clearTimeout(authTimer);
+  if(st.error){
+    $('#payBtn').disabled=true;
+    $('#testNote').hidden=true;
+    $('#authStatus').textContent='잠시 후 다시 시도';
+    $('#authStatus').hidden=false;
+    return;
+  }
+  if(!st.member){
+    $('.lay').style.display='none';
+    var guest=document.createElement('div'); guest.className='wrap';
+    guest.innerHTML='<p class="note"><a class="btn" href="login.html?next=checkout.html">로그인</a></p>';
+    $('#main').appendChild(guest);
+    return;
+  }
   HH.pruneCart();   // 세트 없는 구 낱권 줄은 주문 body 에 실리기 전에 뺀다 (장바구니를 거치지 않고 들어온 경우)
   await HH.promoReady;   // 할인 행사 판정 뒤 정가→현재가 재계산된 장바구니로 시작 (서버 금액과 같은 산식, 2026-09-07)
   var items = HH.cart();
@@ -474,6 +493,12 @@ document.addEventListener('DOMContentLoaded', async function(){
   var widgetReady = false;
   function syncPayBtn(){ var pb = document.getElementById('payBtn'); if (pb) pb.disabled = !(gbAck && widgetReady); }
   if (!gbAck) {
+    var noticeOpen=document.createElement('button');
+    noticeOpen.type='button'; noticeOpen.className='tlink'; noticeOpen.id='gbNoticeOpen';
+    noticeOpen.textContent='구매 전 안내';
+    $('#authStatus').after(noticeOpen);
+    function openNotice(){
+    var opener=document.activeElement;
     var pop = document.createElement('div');
     pop.className = 'hh-popup';
     pop.setAttribute('role', 'dialog');
@@ -482,7 +507,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     pop.innerHTML = '<div class="hh-popup-back"></div>'
       + '<div class="hh-popup-card">'
       + '<p class="hh-popup-kind">구매 전 안내</p>'
-      + '<h2 id="gbNoticeTitle" class="hh-popup-title">가이드북 열람 안내</h2>'
+      + '<h2 id="gbNoticeTitle" class="hh-popup-title" tabindex="-1">가이드북 열람 안내</h2>'
       + '<div class="hh-popup-body">'
       + '<p>가이드북은 결제 즉시 브라우저 보안 리더로 열람하실 수 있으며, 열람 기간은 구매일부터 3개월입니다.</p>'
       + '<p>인쇄는 권당 3회까지 가능합니다.</p>'
@@ -498,8 +523,47 @@ document.addEventListener('DOMContentLoaded', async function(){
       + '</div>';
     document.body.appendChild(pop);
     var okBtn = document.getElementById('gbNoticeOk');
-    okBtn.focus();
-    okBtn.addEventListener('click', function(){ pop.remove(); gbAck = true; syncPayBtn(); document.getElementById('payBtn').focus(); });
+    var title=document.getElementById('gbNoticeTitle');
+    var background=new Map();
+    function isolate(){
+      Array.from(document.body.children).forEach(function(el){
+        if(el===pop || /^(SCRIPT|STYLE)$/.test(el.tagName) || background.has(el)) return;
+        background.set(el,el.inert); el.inert=true;
+      });
+    }
+    isolate();
+    var observer=new MutationObserver(isolate);
+    observer.observe(document.body,{childList:true});
+    function closeNotice(accepted){
+      observer.disconnect();
+      document.removeEventListener('keydown',onKey,true);
+      document.removeEventListener('focusin',onFocus,true);
+      pop.remove();
+      background.forEach(function(inert,el){ el.inert=inert; });
+      if(accepted) gbAck=true;
+      syncPayBtn();
+      var target=accepted && !$('#payBtn').disabled ? $('#payBtn') : opener;
+      if(!target || target===document.body || !target.isConnected || target.disabled) target=noticeOpen;
+      target.focus();
+    }
+    function onKey(ev){
+      if(ev.key==='Escape'){ ev.preventDefault(); ev.stopImmediatePropagation(); closeNotice(false); return; }
+      if(ev.key!=='Tab') return;
+      var focusable=Array.from(pop.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),[tabindex="0"]'));
+      var first=focusable[0]||title, last=focusable[focusable.length-1]||title;
+      var active=document.activeElement;
+      if(!pop.contains(active) || active===title || (ev.shiftKey && active===first) || (!ev.shiftKey && active===last)){
+        ev.preventDefault(); (ev.shiftKey?last:first).focus();
+      }
+    }
+    function onFocus(ev){ if(!pop.contains(ev.target)) title.focus(); }
+    document.addEventListener('keydown',onKey,true);
+    document.addEventListener('focusin',onFocus,true);
+    title.focus();
+    okBtn.addEventListener('click',function(){ closeNotice(true); });
+    }
+    noticeOpen.addEventListener('click',openNotice);
+    openNotice();
   }
 
   var needShip = items.some(function(x){return x.ship});

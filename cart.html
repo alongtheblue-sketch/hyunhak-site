@@ -53,6 +53,9 @@
 .keep{margin-top:var(--s5)}
 .bill .btn{width:100%;margin-top:var(--s4)}
 .bill .free{margin-top:12px}
+:where(body.v2) .bill .total{background:transparent;color:var(--ink);border:var(--rule)}
+:where(body.v2) .bill .total span:first-child{color:var(--gray)}
+:where(body.v2) .bill .btn+.note{margin-top:var(--s3)}
 @media (max-width:600px){.line{grid-template-columns:56px minmax(0,1fr)}.line .p{grid-column:2;text-align:left}}
 </style>
 </head>
@@ -101,7 +104,7 @@
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>장바구니</span></nav>
-    <h1>장바구니</h1>
+    <h1 id="cartTitle" tabindex="-1">장바구니</h1>
     <p class="lede">이용권과 가이드북은 결제 즉시 열립니다.</p>
    </div>
   </div>
@@ -123,6 +126,7 @@
       <div class="total"><span>결제 예정</span><span class="won" id="billTotal">0원</span></div>
       <p class="note free">배송비는 3,000원이며, 실물 5만원 이상이면 무료입니다.</p>
       <a class="btn" href="checkout.html" id="toCheckout">결제로 <span class="ar" aria-hidden="true">→</span></a>
+      <p class="note">아직 열지 않은 권, 재생하지 않은 강의, 응시하지 않은 지문은 공급받은 날부터 7일 이내에 청약철회하실 수 있고 그만큼 환불됩니다. 카드(일시불)로 결제합니다.</p>
     </div>
   </aside>
 </div>
@@ -161,9 +165,9 @@ document.addEventListener('DOMContentLoaded', function(){
   function thumb(it){
     var sku=String(it.sku||'');
     // 전권 번들은 목록면으로, 소장판(-pdf)은 원권 표지로. sku 그대로 slug 를 만들면 존재하지 않는 면과 표지 404 (r2 R12)
-    if(sku.indexOf('guide-all')===0) return '<a class="thumb" href="guidebook/index.html"><img src="assets/photo/art_figure.png" alt="" width="56" height="79"></a>';
-    if(sku.indexOf('guide-')===0){ var slug=sku.slice(6).replace(/-pdf$/,''); return '<a class="thumb" href="guidebook/'+encodeURIComponent(slug)+'.html"><img src="assets/covers/'+encodeURIComponent(slug)+'.jpg" alt="" width="56" height="79"></a>'; }
-    if(sku==='envelope-mock') return '<a class="thumb" href="index.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="" width="56" height="79"></a>';
+    if(sku.indexOf('guide-all')===0) return '<a class="thumb" href="guidebook/index.html"><img src="assets/photo/art_figure.png" alt="'+esc(it.title)+'" width="56" height="79"></a>';
+    if(sku.indexOf('guide-')===0){ var slug=sku.slice(6).replace(/-pdf$/,''); return '<a class="thumb" href="guidebook/'+encodeURIComponent(slug)+'.html"><img src="assets/covers/'+encodeURIComponent(slug)+'.jpg" alt="'+esc(it.title)+'" width="56" height="79"></a>'; }
+    if(sku==='envelope-mock') return '<a class="thumb" href="index.html"><img src="assets/photo/envelope_exam_aigen.jpg" alt="'+esc(it.title)+'" width="56" height="79"></a>';
     return '<a class="thumb" href="studio.html"><span class="thumb-txt">'+esc((it.title||'').slice(0,2))+'<br>'+esc((it.title||'').slice(2,4))+'</span></a>';
   }
   // 1개 한정 상품 (서버도 400 으로 막지만, 화면에서 수량 조절을 없애 마찰을 줄인다)
@@ -197,9 +201,18 @@ document.addEventListener('DOMContentLoaded', function(){
       +'<div><dt>배송</dt><dd>'+HH.won(ship)+'</dd></div>';
     document.getElementById('billTotal').textContent=HH.won(sub+ship);
     rows.querySelectorAll('button[data-i]').forEach(function(b){b.addEventListener('click',function(){
-      var it=HH.cart();var x=it[+b.dataset.i];x.qty=Math.max(1,Math.min(10,x.qty+ +b.dataset.d));HH.saveCart(it);render();})});
+      var index=+b.dataset.i;
+      var buttons=Array.from(b.closest('.line').querySelectorAll('.ops button'));
+      var nextIndex=buttons.indexOf(b)+1;
+      var it=HH.cart();var x=it[index];x.qty=Math.max(1,Math.min(10,x.qty+ +b.dataset.d));HH.saveCart(it);render();
+      var row=rows.children[index];
+      var target=row && row.querySelectorAll('.ops button')[nextIndex];
+      (target||document.getElementById('cartTitle')).focus();
+    })});
     rows.querySelectorAll('button[data-rm]').forEach(function(a){a.addEventListener('click',function(){
-      var it=HH.cart();it.splice(+a.dataset.rm,1);HH.saveCart(it);render();})});
+      var it=HH.cart();it.splice(+a.dataset.rm,1);HH.saveCart(it);render();
+      document.getElementById('cartTitle').focus();
+    })});
   }
   document.getElementById('toCheckout').addEventListener('click', function(ev){
     if(this.getAttribute('aria-disabled')==='true') ev.preventDefault();

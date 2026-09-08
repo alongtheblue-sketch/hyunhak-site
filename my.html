@@ -318,7 +318,15 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
 document.addEventListener('DOMContentLoaded', async function(){
   function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
   var st = await HH.me(true);
-  if(!st.member){ location.href='login.html?next=my.html'; return; }
+  if(!st.member){
+    document.querySelector('.lay').style.display='none';
+    var guest=document.createElement('div'); guest.className='wrap';
+    guest.innerHTML=st.error
+      ? '<p class="note" role="status">잠시 후 다시 시도</p>'
+      : '<p class="note"><a class="btn" href="login.html?next=my.html">로그인</a></p>';
+    document.getElementById('main').appendChild(guest);
+    return;
+  }
   document.getElementById('whoName').textContent = st.member.name || st.member.email;
   document.getElementById('whoSince').textContent = st.member.email;
 
