@@ -1,0 +1,80 @@
+[
+  {
+    "file": "_tools/program_guidebook_v2.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "_tools/program_guidebook_v2.html"
+    ],
+    "exit": 0,
+    "stdout": "\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건\n",
+    "stderr": ""
+  },
+  {
+    "file": "_tools/program_studio_v2.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "_tools/program_studio_v2.html"
+    ],
+    "exit": 0,
+    "stdout": "\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건\n",
+    "stderr": ""
+  },
+  {
+    "file": "index.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "index.html"
+    ],
+    "exit": 0,
+    "stdout": "\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건\n",
+    "stderr": ""
+  },
+  {
+    "file": "programs/guidebook.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "programs/guidebook.html"
+    ],
+    "exit": 0,
+    "stdout": "\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건\n",
+    "stderr": ""
+  },
+  {
+    "file": "programs/studio.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "programs/studio.html"
+    ],
+    "exit": 0,
+    "stdout": "programs/studio.html:1:0  [S2 C-12 게이트] 쉼표 포함 문장 비율 과다  ← '70% (7/10)'\n    → 일부 문장의 쉼표를 마침표 분할·연결어미 흡수·삭제로. KatFish: 사람 26% vs AI 61%\n\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건\n상위 규칙: C-12×1\n",
+    "stderr": ""
+  },
+  {
+    "file": "studio.html",
+    "cmd": [
+      "python3",
+      "/Users/gregory/unjang/_shared/style_gate/style_gate.py",
+      "scan",
+      "--gate-only",
+      "studio.html"
+    ],
+    "exit": 0,
+    "stdout": "studio.html:407:0  [S2 E-2 게이트] 동일 종결어미 연속  ← \"'분' 류 5문장 연속\"\n    → '~다·~았다·~ㄴ다·~기 마련이다·명사형' 섞기. 상류 실측 '~한다' 편중 AI 1.8배\n\n[deliverable/general] 등급 A  |  게이트 S1 0건 S2 1건  |  권고 0건\n상위 규칙: E-2×1\n",
+    "stderr": ""
+  }
+]

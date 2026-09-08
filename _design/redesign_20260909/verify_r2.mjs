@@ -8,9 +8,14 @@ import { fileURLToPath } from 'node:url';
 import path from 'node:path';
 const require = createRequire(import.meta.url);
 const root = path.resolve(fileURLToPath(new URL('../../', import.meta.url)));
-const out = path.join(root, '_design/redesign_20260909/browser_results');
+const out = path.join(root, '_design/redesign_20260909/browser_results_r2b');
 const manifest = JSON.parse(await readFile(path.join(root, '_tools/seo_manifest.json'), 'utf8'));
 const pages = Object.keys(manifest.pages).sort();
+const ledger = await readFile(path.join(root, '_design/redesign_20260909/copy_ledger_v6.md'), 'utf8');
+const expectedCopy = Object.fromEntries([...ledger.matchAll(/^\| [^|]+ \| `([^`]+)` \| ([^|]+) \|/gm)].map(m => [m[1], m[2].trim()]));
+const campaign = JSON.parse(await readFile(path.join(root, '_tools/promo.json'), 'utf8'));
+const programPages = ['programs/guidebook.html', 'programs/studio.html', 'programs/korea.html', 'programs/yonsei.html'];
+const normalize = value => value.replace(/\s+/g, ' ').trim();
 const findings = [];
 let server, browser, base;
 function check(ok, label, detail = '') {
@@ -57,6 +62,9 @@ try {
   await mkdir(out, { recursive: true });
   for (const viewport of [{ width: 390, height: 844 }, { width: 1280, height: 800 }]) {
     const context = await browser.newContext({ viewport, reducedMotion: 'reduce' });
+    // 행사 배치와 통신 실패는 다른 상태다. 정상 배치는 고정 행사 응답으로 재현한다.
+    await context.addInitScript(() => { const now = Date.parse('2026-09-09T12:00:00+09:00'); Date.now = () => now; });
+    await context.route('**/api/config', route => route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify({ oauth: {}, promo: campaign }) }));
     for (const rel of pages) {
       const page = await context.newPage();
       const errors = [];
@@ -84,6 +92,16 @@ try {
         await page.evaluate(() => window.scrollTo(0, 0));
         const widths = await page.evaluate(() => ({ document: document.documentElement.scrollWidth, body: document.body.scrollWidth, viewport: innerWidth }));
         check(widths.document <= widths.viewport && widths.body <= widths.viewport, `${rel} ${viewport.width} overflow`, widths);
+        if (programPages.includes(rel)) {
+          const labels = page.locator('label.ph');
+          const font = await labels.count() === 1 ? await labels.evaluate(n => getComputedStyle(n).fontFamily) : null;
+          check(font?.includes('Pretendard'), `${rel} ${viewport.width} search label Pretendard`, font ?? 'label.ph missing');
+        }
+        const h1Key = ({ 'index.html': 'home_h1', 'programs/guidebook.html': 'guide_h1', 'programs/studio.html': 'studio_h1' })[rel];
+        if (h1Key) {
+          const actual = normalize(await page.locator('h1').innerText());
+          check(Boolean(expectedCopy[h1Key]) && actual === normalize(expectedCopy[h1Key]), `${rel} ${viewport.width} H1 matches selected ledger copy`, { actual, expected: expectedCopy[h1Key] });
+        }
         if (rel === 'index.html') {
           const boxes = await page.locator('[data-product]').evaluateAll(nodes => nodes.map(n => {
             const r = n.getBoundingClientRect(); const h = n.querySelector('h2').getBoundingClientRect();
@@ -91,6 +109,24 @@ try {
           }));
           check(boxes.length === 2 && boxes.every(r => r.top >= 0 && r.top < viewport.height && r.headingTop < viewport.height), `home ${viewport.width} both card headings in first viewport`, boxes);
           if (viewport.width === 1280) check(Math.abs(boxes[0].width - boxes[1].width) <= 2 && Math.abs(boxes[0].height - boxes[1].height) <= 2, 'home equal card dimensions', boxes);
+          const prices = await page.locator('[data-product]').evaluateAll(cards => cards.map(card => [...card.querySelectorAll('.r2-card-price')].map(row => row.querySelector('[data-list-price]')?.dataset.listPrice)));
+          check(JSON.stringify(prices) === JSON.stringify([['33000', '511500'], ['495000', '33000']]), `home ${viewport.width} two price rows per card in approved order`, prices);
+          if (viewport.width === 1280) {
+            const actions = await page.locator('.r2-card .r2-actions').evaluateAll(nodes => nodes.map(n => ({ top: n.getBoundingClientRect().top, bottom: n.getBoundingClientRect().bottom })));
+            check(actions.length === 2 && actions.every(r => r.top >= 0 && r.bottom <= viewport.height), 'home desktop both card CTAs in first viewport', actions);
+          }
+          const more = await page.locator('#find .more').evaluate(n => ({ count: n.querySelectorAll('a').length, hrefs: [...n.querySelectorAll('a')].map(a => a.getAttribute('href')), gap: parseFloat(getComputedStyle(n).columnGap) }));
+          check(more.count === 1 && more.hrefs[0] === 'guidebook/index.html' && await page.locator('#flow a[href="programs/studio.html"]').count() === 1, `home ${viewport.width} find link belongs to guidebooks only`, more);
+          // B3의 중복 제거 후 링크는 하나다. 일시적으로 같은 링크를 복제하여 B2의 실제 간격도 측정한다.
+          const linkGap = await page.locator('#find .more').evaluate(n => {
+            const first = n.querySelector('a'); if (!first) return null;
+            const probe = first.cloneNode(true); n.append(probe);
+            try {
+              const a = first.getBoundingClientRect(), b = probe.getBoundingClientRect();
+              return b.top >= a.bottom ? b.top - a.bottom : b.left - a.right;
+            } finally { probe.remove(); }
+          });
+          check(more.gap >= 12 && linkGap >= 12, `home ${viewport.width} find links gap at least 12px (temporary pair)`, { configured: more.gap, measured: linkGap });
           const bandTop = await page.locator('section.pband').evaluate(n => n.getBoundingClientRect().top);
           check(bandTop >= viewport.height, `home ${viewport.width} price band below fold`, bandTop);
           check(await page.locator('.r2-products [data-list-price]').count() >= 2, 'home price contracts');
@@ -113,6 +149,31 @@ try {
       check(errors.length === 0, `${rel} ${viewport.width} console errors`, errors);
       await page.close();
     }
+    await context.close();
+  }
+  // 별도 로컬 실패 레그: config 요청을 실제 중단하고 두 번 실패한 뒤 행사/팝업 0개를 확인한다.
+  for (const rel of ['index.html', 'studio.html', ...programPages]) {
+    const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, reducedMotion: 'reduce' });
+    let configAttempts = 0;
+    await context.route('**/api/config', async route => { configAttempts++; await route.abort('failed'); });
+    const page = await context.newPage();
+    try {
+      await page.goto(new URL(rel, base).href, { waitUntil: 'domcontentloaded', timeout: 30000 });
+      if (!await page.evaluate(() => Boolean(window.HH?.promoReady))) throw new Error('HH.promoReady missing: this page does not load the shared app runtime');
+      await page.evaluate(async () => {
+        let timer;
+        try {
+          await Promise.race([window.HH.promoReady, new Promise((_, reject) => {
+            timer = setTimeout(() => reject(new Error('promoReady timed out')), 15000);
+          })]);
+        } finally { clearTimeout(timer); }
+      });
+      const result = await page.evaluate(() => {
+        const visible = n => { const s = getComputedStyle(n), r = n.getBoundingClientRect(); return s.display !== 'none' && s.visibility !== 'hidden' && r.width > 0 && r.height > 0; };
+        return { promoCount: document.querySelectorAll('[data-promo]').length, visible: [...document.querySelectorAll('[data-promo], [data-promo-popup]')].filter(visible).length, discounted: document.querySelectorAll('[data-list-price] .sale').length, unknown: window.HH.promo() === undefined };
+      });
+      check(configAttempts >= 2 && result.promoCount > 0 && result.visible === 0 && result.discounted === 0 && result.unknown, `${rel} config blocked: no visible campaign, list prices unchanged`, { ...result, configAttempts });
+    } catch (e) { check(false, `${rel} config blocked execution`, e.message); }
     await context.close();
   }
   const failures = findings.filter(x => x.result === 'FAIL');

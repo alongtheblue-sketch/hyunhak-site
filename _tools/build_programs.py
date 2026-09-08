@@ -17,7 +17,11 @@ def copy_text(key):
 
 def render_copy(source):
     copy = json.loads((HERE / "r2_copy.json").read_text(encoding="utf-8"))
-    return re.sub(r"__C_([a-z0-9_]+)__", lambda m: html.escape(copy[m[1]][0]), source)
+    def render(match):
+        text = html.escape(copy[match[1]][0])
+        # 문안은 평문 원장에 보관하고 승인된 H1의 줄바꿈만 마크업으로 표현한다.
+        return text.replace(" 실전", " <br>실전", 1) if match[1] == "studio_h1" else text
+    return re.sub(r"__C_([a-z0-9_]+)__", render, source)
 
 
 def guide_options():

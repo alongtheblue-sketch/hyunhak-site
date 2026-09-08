@@ -1227,7 +1227,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-promo{border-bottom:var(--rule-ui);background:var(--mat)}
 :where(body.v2) .r2-promo p{max-width:none;padding-block:var(--s2);font-size:var(--t-xs);line-height:var(--lh-ui);text-align:center}
 :where(body.v2) .r2-hero,:where(body.v2) .r2-intro{padding-block:var(--s4) var(--s3)}
-:where(body.v2) .r2-hero>h1{font-size:var(--t-h4);margin-bottom:var(--s1)}
+:where(body.v2) .r2-hero>h1{font-size:var(--t-h2);margin-bottom:var(--s1)}
 :where(body.v2) .r2-hero>p{max-width:none;font-size:var(--t-sm);color:var(--body)}
 :where(body.v2) .r2-products{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4);margin-top:var(--s4)}
 :where(body.v2) .r2-card{display:flex;flex-direction:column;background:var(--card);border:var(--rule-ui);border-radius:var(--r-md);padding:var(--s4)}
@@ -1237,6 +1237,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-card-copy p{max-width:none}
 :where(body.v2) .r2-card-copy p+p{margin-top:var(--s1)}
 :where(body.v2) .r2-card-price{display:flex;justify-content:space-between;align-items:baseline;gap:var(--s3);border-top:var(--rule-ui);padding-block:var(--s2);margin-top:auto;font-size:var(--t-sm)}
+:where(body.v2) .r2-card-price+.r2-card-price{margin-top:0}
 :where(body.v2) .r2-card-price b{font-family:var(--mono);font-size:var(--t-h4);text-align:right}
 :where(body.v2) .r2-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s2) var(--s4)}
 :where(body.v2) .r2-actions .btn{min-width:calc(var(--tap) * 2)}
@@ -1251,6 +1252,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-trust dd{font-size:var(--t-sm);color:var(--body);margin-top:var(--s1)}
 :where(body.v2) .r2-home-content .find .top{margin-top:var(--s3)}
 :where(body.v2) .r2-home-content .find .tabs{flex-wrap:wrap}
+:where(body.v2) .r2-home-content .find .more{display:flex;flex-wrap:wrap;gap:var(--s3)}
 :where(body.v2) .r2-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s4);margin-block:var(--s4)}
 :where(body.v2) .r2-steps li{border-top:var(--rule-ui);padding-top:var(--s3)}
 :where(body.v2) .r2-steps h3{font-size:var(--t-h4);margin-bottom:var(--s2)}
@@ -1291,8 +1293,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-buy .tlink{font-size:var(--t-sm)}
 :where(body.v2) .r2-buy .r2-status{font-size:var(--t-sm);margin-top:var(--s1)}
 :where(body.v2) .r2-buy [data-cart-link][hidden]{display:none}
-:where(body.v2) .r2-buy :disabled{cursor:not-allowed;color:var(--gray)}
-:where(body.v2) .r2-buy .btn:disabled{color:var(--paper)}
+:where(body.v2) .r2-buy :disabled{cursor:not-allowed;background:var(--mat);border:var(--rule-ui);color:var(--gray)}
 :where(body.v2) .r2-parts{display:grid;gap:var(--s2)}
 :where(body.v2) .r2-parts li{padding-block:var(--s2);border-bottom:var(--rule);font-size:var(--t-base)}
 :where(body.v2) .r2-section .openers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4);margin-bottom:var(--s5)}

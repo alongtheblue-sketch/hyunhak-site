@@ -222,7 +222,11 @@
   async function loadPromo() {
     let cfg = await config();
     if (cfg._failed) { await new Promise((r) => setTimeout(r, 800)); cfg = await config(); }
-    if (cfg._failed) return undefined;   // 두 번 다 실패 = 미확정. 배너·가격·장바구니 단가 그대로
+    if (cfg._failed) {
+      renderPromoPrices();   // 미확정이면 행사만 숨기고 정가와 저장 장바구니 단가를 보존한다.
+      document.querySelectorAll("[data-promo-popup]").forEach((el) => { el.hidden = true; });
+      return undefined;
+    }
     _promo = cfg.promo ? cfg.promo : null;
     const items = cart();
     saveCart(items);

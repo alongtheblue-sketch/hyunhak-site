@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import vm from 'node:vm';
 const source = readFileSync(new URL('../../assets/product_buy.js', import.meta.url), 'utf8');
+const copy = JSON.parse(readFileSync(new URL('../../_tools/r2_copy.json', import.meta.url), 'utf8'));
 let checks = 0;
 function fixture(kind) {
   let mode = kind === 'guidebook' ? 'single' : 'pass';
@@ -16,7 +17,7 @@ function fixture(kind) {
   const status = { textContent: '' }, cartLink = { hidden: true };
   const plans = ['single', 'pass', 'lecture'].map(x => ({ dataset: { plan: x }, hidden: true }));
   const block = {
-    dataset: { productBuy: kind, allTitle: '2027 서류기반면접 가이드북 전권 열람권, 31권', lectureTitle: '공통 풀이 인강', added: '장바구니에 담았습니다.', failed: '장바구니에 담지 못했습니다. 장바구니를 확인해 주세요.' },
+    dataset: { productBuy: kind, allTitle: '2027 서류기반면접 가이드북 전권 열람권, 31권', lectureTitle: '공통 풀이 인강', added: copy.added[0], failed: copy.cart_failed[0] },
     querySelector: selector => ({ select, '[data-cart-sku]': button, '[role="status"]': status, '[data-cart-link]': cartLink, 'input[type="radio"]:checked': { value: mode } })[selector],
     querySelectorAll: () => plans,
     addEventListener: (name, fn) => { callbacks[name] = fn; }
@@ -64,7 +65,7 @@ test('HH rejection is reported without success', () => {
 });
 test('thrown storage or runtime error has a visible recovery link', () => {
   const x = fixture('guidebook'); x.setError(new Error('storage')); x.click();
-  assert.match(x.status.textContent, /담지 못했습니다/); assert.equal(x.cartLink.hidden, false);
+  assert.equal(x.status.textContent, copy.cart_failed[0]); assert.equal(x.cartLink.hidden, false);
 });
 test('changing product clears stale feedback', () => {
   const x = fixture('guidebook'); x.click(); x.mode('all'); assert.equal(x.status.textContent, ''); assert.equal(x.cartLink.hidden, true);

@@ -4,16 +4,18 @@
 
 | 면과 자리 | 문안 ID | 원문 | 근거 ID | 글자 수 |
 |---|---|---|---|---:|
-| 홈 / home_h1 | `home_h1` | 대입 면접 준비 | G1 S1 | 8 |
-| 홈 / home_lead | `home_lead` | 서류기반 면접 가이드북과 제시문 면접 스튜디오입니다. | G1 S1 | 29 |
+| 홈 / home_h1 | `home_h1` | 대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다. | G5 S2 | 32 |
+| 홈 / home_lead | `home_lead` | 31개 대학 서류기반 면접과 연세대, 고려대 제시문 면접을 그 대학 기준으로 준비합니다. | G1 S1 G5 | 49 |
 | 홈과 상세 공통 / guide_audience | `guide_audience` | 학종 서류기반 면접 준비생과 학부모 | G1 G4 | 19 |
 | 홈과 상세 공통 / guide_name | `guide_name` | 서류기반 면접 가이드북 | G1 | 12 |
+| 가이드북 상세 / guide_h1 | `guide_h1` | 2027 대학별 서류기반 면접 가이드북 | G1 | 21 |
 | 홈과 상세 공통 / guide_card_1 | `guide_card_1` | 31개 대학의 면접 질문과 준비 전략입니다. | G1 G4 | 24 |
-| 홈과 상세 공통 / guide_card_2 | `guide_card_2` | 생기부에서 질문을 뽑는 전환 규칙을 담았습니다. | G4 | 26 |
+| 홈과 상세 공통 / guide_card_2 | `guide_card_2` | 내 생기부에서 나올 질문을 그 대학 기준으로 뽑습니다. | G4 | 30 |
 | 홈과 상세 공통 / studio_audience | `studio_audience` | 연세대와 고려대 제시문 면접 준비생 | S1 | 19 |
 | 홈과 상세 공통 / studio_name | `studio_name` | 제시문 면접 스튜디오 | S1 | 11 |
 | 홈과 상세 공통 / studio_card_1 | `studio_card_1` | 기출 제시문 150세트로 촬영 응시합니다. | S1 S2 | 23 |
-| 홈과 상세 공통 / studio_card_2 | `studio_card_2` | 지문마다 응시 5회와 첨삭 세 단을 제공합니다. | S3a S4 | 26 |
+| 홈과 상세 공통 / studio_card_2 | `studio_card_2` | 지문마다 5회 응시합니다. | S3a | 14 |
+| 홈 / studio_card_3 | `studio_card_3` | 고사장과 같은 규격으로 응시하고 첨삭 세 단을 받습니다. | S1 S4 | 31 |
 | 홈과 상세 공통 / per_book | `per_book` | 권당 | G1 | 2 |
 | 홈과 상세 공통 / per_passage | `per_passage` | 지문 1편 | S3a | 5 |
 | 홈과 상세 공통 / price_33000 | `price_33000` | 33,000원 | G1 S3a | 7 |
@@ -25,7 +27,7 @@
 | 홈과 상세 공통 / add | `add` | 담기 | C1 | 2 |
 | 홈과 상세 공통 / cart | `cart` | 장바구니 보기 | C1 | 7 |
 | 홈과 상세 공통 / added | `added` | 장바구니에 담았습니다. | C1 | 12 |
-| 홈과 상세 공통 / cart_failed | `cart_failed` | 장바구니에 담지 못했습니다. 장바구니를 확인해 주세요. | C1 | 30 |
+| 홈과 상세 공통 / cart_failed | `cart_failed` | 장바구니 처리 중 오류가 발생했습니다. 장바구니를 확인해 주세요. | C1 | 36 |
 | 홈 / source_title | `source_title` | 질문 3,865개 | G5 | 9 |
 | 홈 / source_text | `source_text` | 대학 공개 자료와 면접 후기에서 골랐습니다. | G5 | 24 |
 | 홈과 상세 공통 / withdraw_title | `withdraw_title` | 이용 전 청약철회 | G8 C3 | 9 |
@@ -33,7 +35,7 @@
 | 홈과 상세 공통 / reader_title | `reader_title` | 보안 리더 열람 | G7 | 8 |
 | 홈과 상세 공통 / reader_text | `reader_text` | 기기 제한 없이 열람하며 권당 3회 인쇄합니다. | G7 | 26 |
 | 홈과 상세 공통 / maker_title | `maker_title` | 만든 사람 | A1 | 5 |
-| 홈과 상세 공통 / maker_text | `maker_text` | 현학자가 두 상품을 같은 기준으로 편집합니다. | A1 | 25 |
+| 홈과 상세 공통 / maker_text | `maker_text` | 입시 컨설턴트 한 사람이 31권과 150세트를 같은 기준으로 편집합니다. | A1 | 40 |
 | 홈과 상세 공통 / maker_link | `maker_link` | 학력과 경력 보기 | A1 A2 | 9 |
 | 홈 / find_title | `find_title` | 대학별로 찾기 | G1 S1 | 7 |
 | 홈 / find_lead | `find_lead` | 지원 대학의 가이드북을 찾습니다. | G1 | 18 |
@@ -63,8 +65,8 @@
 | 홈과 상세 공통 / faq_pick_q | `faq_pick_q` | 서류기반 면접과 제시문 면접의 구분 | G10 | 19 |
 | 홈과 상세 공통 / faq_pick_a | `faq_pick_a` | 지원 전형의 면접 형태는 38개 대학 면접 형태 판정표에서 확인합니다. | G10 | 39 |
 | 홈과 상세 공통 / interview_link | `interview_link` | 면접 형태 판정표 보기 | G10 | 12 |
-| 홈과 상세 공통 / faq_source_q | `faq_source_q` | 가이드북에 수록한 질문 | G5 | 12 |
-| 홈과 상세 공통 / faq_source_a | `faq_source_a` | 질문 3,865개를 수록했습니다. | G5 | 18 |
+| 홈과 상세 공통 / faq_source_q | `faq_source_q` | 질문 3,865개의 출처 | G5 | 13 |
+| 홈과 상세 공통 / faq_source_a | `faq_source_a` | 대학 공개 자료와 면접 후기에서 고른 질문입니다. | G5 | 27 |
 | 홈과 상세 공통 / faq_refund_q | `faq_refund_q` | 청약철회 조건 | G8 S9 C3 | 7 |
 | 홈과 상세 공통 / terms_link | `terms_link` | 이용약관 제6조 보기 | C3 | 11 |
 | 홈과 상세 공통 / faq_all | `faq_all` | 질문 전체 보기 | C4 | 8 |
@@ -94,7 +96,8 @@
 | 가이드북 상세 / group_text | `group_text` | 여러 대학 자료를 이용하는 학원은 전권 상품을 확인할 수 있습니다. | G2 G3 | 37 |
 | 홈과 상세 공통 / maker_short | `maker_short` | 현학자가 가이드북 31권과 스튜디오 150세트를 같은 기준으로 편집합니다. | A1 | 41 |
 | 홈과 상세 공통 / return_buy | `return_buy` | 구매할 상품 고르기 | C1 | 10 |
-| 스튜디오 상세 / studio_h1 | `studio_h1` | 연세대, 고려대 제시문 면접 스튜디오 | S1 | 20 |
+| 스튜디오 상세 / studio_h1 | `studio_h1` | 연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다 | S1 | 30 |
+| 스튜디오 응시실 / studio_room_lead | `studio_room_lead` | 기출 제시문 150세트, 지문마다 5회 응시, 세 단 첨삭입니다. | S2 S3a S4 | 36 |
 | 스튜디오 상세 / studio_lead | `studio_lead` | 실전 규격으로 촬영 응시하고 첨삭 세 단을 받습니다. | S1 S4 | 29 |
 | 스튜디오 상세 / studio_buy_title | `studio_buy_title` | 스튜디오 이용권 구매 | S3 C1 | 11 |
 | 스튜디오 상세 / choose_unit | `choose_unit` | 응시 단위 고르기 | S2 | 9 |
@@ -118,6 +121,9 @@
 | 스튜디오 상세 / lecture_release | `lecture_release` | 공개된 편부터 열람하며 강의는 순차 업로드합니다. | S7 | 27 |
 | 스튜디오 상세 / lecture_cost | `lecture_cost` | 공개되면 추가 비용 없이 같은 이용권으로 열람합니다. | S7 | 29 |
 | 홈과 상세 / lecture_period | `lecture_period` | 지문 낱권과 단위 전권은 응시 12개월, 인강 3개월입니다. | S3a S3b | 33 |
+| 홈과 상세 / common_period | `common_period` | 공통 풀이 인강은 3개월간 이용합니다. | S3c | 21 |
+| 홈과 상세 / pass_contents | `pass_contents` | 단위 전권에는 해당 단위의 지문 30편이 포함됩니다. | S3b | 29 |
+| 홈과 상세 / guide_count | `guide_count` | 수록 질문 3,865개 | G5 | 12 |
 | 스튜디오 상세 / lecture_link | `lecture_link` | 공개 강의와 맛보기 보기 | S7 L1 | 13 |
 | 스튜디오 상세 / ranking | `ranking` | 스튜디오 순위표 | S10 | 8 |
 | 스튜디오 상세 / ranking_text | `ranking_text` | 스튜디오에서 응시 현황과 순위표를 확인합니다. | S10 | 25 |
@@ -137,12 +143,6 @@
 | 스튜디오 상세 / yonsei_sci | `yonsei_sci` | 연세대 활동우수 자연 | S2 | 11 |
 | 스튜디오 상세 / yonsei_intl | `yonsei_intl` | 연세대 국제형 | S2 | 7 |
 
-| 홈과 상세 / common_period | `common_period` | 공통 풀이 인강은 3개월간 이용합니다. | S3c | 21 |
-
-| 홈과 상세 / pass_contents | `pass_contents` | 단위 전권에는 해당 단위의 지문 30편이 포함됩니다. | S3b | 29 |
-
-| 홈과 상세 / guide_count | `guide_count` | 수록 질문 3,865개 | G5 | 12 |
-
 ## 보존 문안과 자료
 
 - P1 행사 스트립: 9월 30일까지 전 상품을 정가에서 30% 할인합니다. (30자)
@@ -153,4 +153,13 @@
 - A1 브랜드 필름: figure.herofilm, track, 자막과 버튼 문면을 그대로 이동합니다.
 - SEO: 기존 JSON-LD 전체를 바이트 보존하므로 FAQPage는 기존 문안이 남습니다. 신규 본문 FAQ와의 차이는 R2 보존 조건에 따른 잔여 사항입니다.
 
-이어가기: 이 원장 이후 템플릿과 홈을 구현합니다. 커밋은 Git 관리 경로 쓰기 차단으로 BLOCKED입니다.
+이어가기: R2b 반영과 검증 기록은 IMPL_REPORT_R2b.md에 있습니다. 커밋은 본 세션이 대리합니다.
+
+## R2b H1 후보와 선택
+
+| 후보 | 원문 | 근거 ID | 글자 수 | 결정 |
+|---|---|---|---:|---|
+| (가) | 면접은 대학마다 다릅니다. 그 대학의 요강과 기출로 준비합니다. | G5 S2 | 35 | 미선택. 첫 문장 뒤 줄바꿈 |
+| (나) | 대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다. | G5 S2 | 32 | 선택. home_h1 |
+
+스튜디오 상세 H1은 "면접을" 뒤에서 두 줄로 표시합니다. 글자 수에는 줄바꿈 자리를 공백 한 칸으로 셉니다.

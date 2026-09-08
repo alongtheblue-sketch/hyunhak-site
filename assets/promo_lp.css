@@ -348,7 +348,7 @@ p:where(html[data-lp~="modern"],html[data-lp~="modern"] *){max-width:var(--measu
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:var(--paper);padding:12px 18px;font-size:var(--t-sm)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).skip:focus{left:0}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).btn .arr{font-family:var(--mono);font-weight:400}
-:where(html[data-lp~="modern"],html[data-lp~="modern"] *).ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
+:where(html[data-lp~="modern"]) :is(.part .vis,.close) .ph{background:linear-gradient(135deg,var(--paper-2),var(--mat));display:grid;place-items:center;color:var(--gray);font-family:var(--mono);font-size:var(--t-sm);border:var(--rule)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).blk ul li{position:relative;padding-left:var(--s3);margin-bottom:var(--s2);line-height:1.6;color:var(--body)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).blk ul li::before{content:"";position:absolute;left:0;top:.75em;width:6px;height:1px;background:var(--ink)}
 :where(html[data-lp~="modern"],html[data-lp~="modern"] *).why{background:var(--card);border:var(--rule);border-radius:var(--r-md);padding:var(--s4)}

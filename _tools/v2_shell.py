@@ -51,7 +51,7 @@ def promo_strip(rel, p=None, price_note=True):
     p = p if p is not None else load_promo()
     if not p or rel in set(p.get("exclude") or []):   # exclude = 자체 가격표가 있는 면 (b2b 스쿨 플랜, COPY_REVIEW P0)
         return ""
-    if rel in {"index.html", "programs/guidebook.html", "programs/studio.html"}:
+    if rel in {"index.html", "studio.html", "programs/guidebook.html", "programs/studio.html"}:
         # R2: 기존 행사 label 바이트를 한 줄로 제시한다. promo 원천은 변경하지 않는다.
         return ('\n<aside class="promo r2-promo" data-promo="' + html.escape(p["id"], quote=True)
                 + '" data-promo-until="' + html.escape(p["ends_at"], quote=True)
