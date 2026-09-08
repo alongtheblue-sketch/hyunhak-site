@@ -42,7 +42,6 @@
 .pass .t{font-size:17px;font-weight:700}
 .pass p{margin-top:8px;font-size:14px;color:var(--body);line-height:1.8}
 .pass .opts{margin-top:var(--s3);display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.pass .mockbadge{margin-top:12px;font-size:12.5px;color:var(--seal)}
 .submit{display:flex;align-items:center;gap:var(--s3);flex-wrap:wrap;padding-bottom:var(--s6)}
 .submit .btn{width:auto}
 .submit .note{flex:1;min-width:220px}
@@ -101,7 +100,7 @@
   <div class="auth wide">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>회원 가입</span></nav>
     <h1>회원 가입</h1>
-    <p class="lede" id="joinSub">약관 동의, 본인인증, 정보 입력. 완료와 동시에 로그인.</p>
+    <p class="lede" id="joinSub">약관 동의, <span id="idvSub" hidden>본인인증, </span>정보 입력. 완료와 동시에 로그인.</p>
 
     <div id="oauthMsg" role="status" aria-live="polite" hidden style="margin-top:var(--s4)"></div>
 
@@ -111,9 +110,9 @@
       <p class="socnote">제공사 계정으로 시작하시면 약관 동의 한 번만 거치며, 비밀번호를 따로 만들지 않습니다.</p>
     </div>
 
+    <form id="joinForm">
     <div class="rail" aria-label="가입 단계">
       <span class="cur">약관 동의</span>
-      <span>본인인증</span>
       <span>정보 입력</span>
     </div>
 
@@ -146,7 +145,8 @@
       선택 항목은 거부하셔도 아무런 불이익이 없습니다.</p>
     </section>
 
-    <section class="step">
+    <template id="idvTemplate">
+    <section class="step" id="idvStep">
       <h2><span class="no">2</span>본인인증</h2>
       <div class="panel pass">
         <p class="t">휴대전화 본인인증</p>
@@ -155,12 +155,12 @@
           <button class="btn" type="button">PASS 앱 인증</button>
           <button class="btn ghost" type="button">문자 인증</button>
         </div>
-        <p class="mockbadge">시안 단계 목업. 실 연동은 본인확인기관 계약 후.</p>
       </div>
     </section>
+    </template>
 
-    <section class="step form">
-      <h2><span class="no">3</span>정보 입력</h2>
+    <section class="step form" id="infoStep">
+      <h2><span class="no">2</span>정보 입력</h2>
       <div class="field">
         <label id="mtypeLb">회원 구분</label>
         <div class="mtype" role="radiogroup" aria-labelledby="mtypeLb">
@@ -204,7 +204,7 @@
       </div>
       <div class="field">
         <label for="em">이메일</label>
-        <input id="em" type="email" autocomplete="email">
+        <input id="em" type="email" autocomplete="email" required pattern="^[^\s@]+@[^\s@]+\.[^\s@]+$">
         <span class="help">영수증과 열람 안내를 받는 주소</span>
       </div>
       <div class="field">
@@ -219,9 +219,10 @@
     </section>
 
     <div class="submit">
-      <button class="btn" type="button" id="joinBtn">가입 완료 <span class="ar" aria-hidden="true">→</span></button>
+      <button class="btn" type="submit" id="joinBtn">가입 완료 <span class="ar" aria-hidden="true">→</span></button>
       <span class="note">완료와 동시에 로그인 상태로 전환, 제시문 면접 스튜디오 맛보기 1회가 열림.</span>
     </div>
+    </form>
   </div>
 </div>
 </main>
@@ -255,8 +256,26 @@
 <script>
 document.addEventListener('DOMContentLoaded', async function(){
   var $=function(s){return document.querySelector(s)};
+  $('#joinForm').addEventListener('submit',function(ev){ ev.preventDefault(); });
   var q=new URLSearchParams(location.search);
-  var next=q.get('next')||'my.html';
+  function safeNext(value){
+    if(typeof value!=='string' || !value) return 'my.html';
+    var path=value;
+    for(var i=0;i<8;i++){
+      if(/[\u0000-\u001f\u007f\\]/.test(path) || path.indexOf('//')===0
+        || /^(?:https?|javascript|data):/i.test(path)
+        || !(/^\//.test(path) || /^[A-Za-z0-9_-]+\.html(?:[?#]|$)/.test(path))) return 'my.html';
+      var url;
+      try{ url=new URL(path, location.href); }catch(e){ return 'my.html'; }
+      if(url.origin!==location.origin) return 'my.html';
+      var decoded;
+      try{ decoded=decodeURIComponent(path.replace(/%(?![0-9a-f]{2})/gi,'%25')); }catch(e){ return 'my.html'; }
+      if(decoded===path) return value;
+      path=decoded;
+    }
+    return 'my.html';
+  }
+  var next=safeNext(q.get('next'));
   var social=q.get('social');
   var msg=$('#oauthMsg');
   function show(text, kind){ msg.textContent=text; msg.className='oauthmsg'+(kind==='info'?' info':''); msg.hidden=false; }
@@ -282,14 +301,29 @@ document.addEventListener('DOMContentLoaded', async function(){
 
   // ── 일반 가입 ──
   if(!social){
+    HH.config().then(function(cfg){
+      if(cfg.idvEnabled !== true) return;
+      $('#infoStep').before($('#idvTemplate').content.cloneNode(true));
+      var idvRail=document.createElement('span');
+      idvRail.textContent='본인인증';
+      $('.rail').lastElementChild.before(idvRail);
+      $('#infoStep .no').textContent='3';
+      $('#idvSub').hidden=false;
+    });
     HH.oauthButtons($('#socs'), next);
-    ['nm','ph','em','pw','pw2'].forEach(function(id){ var el=$('#'+id); if(el) el.addEventListener('keydown', function(ev){
-      if(ev.key==='Enter'){ ev.preventDefault(); $('#joinBtn').click(); } }); });   // 입력 중 Enter = 가입 완료
-    $('#joinBtn').addEventListener('click', async function(){
+    $('#em').addEventListener('input',function(){ this.setCustomValidity(''); });
+    $('#joinForm').addEventListener('submit', async function(ev){
+      ev.preventDefault();
+      if($('#joinBtn').disabled) return;
       if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의해 주세요');
       var name=$('#nm').value.trim(), phone=$('#ph').value.trim(), email=$('#em').value.trim(), pw=$('#pw').value, pw2=$('#pw2').value;
       if(!name) return alert('이름을 입력해 주세요');
       if(!email) return alert('이메일을 입력해 주세요');
+      if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+        $('#em').setCustomValidity('이메일을 입력해 주세요');
+        $('#em').reportValidity();
+        return;
+      }
       if(pw.length<10||!/[A-Za-z]/.test(pw)||!/[0-9]/.test(pw)) return alert('비밀번호는 10자 이상, 문자와 숫자를 각 1자 이상 포함해야 합니다');
       if(pw!==pw2) return alert('비밀번호 확인이 일치하지 않습니다');
       var btn=$('#joinBtn'); btn.disabled=true; btn.textContent='가입 중';
@@ -306,6 +340,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   }
 
   // ── 간편 로그인 첫 가입 = 약관 동의 1회 화면 ──
+  $('#joinBtn').disabled=true;
   var pend=null;
   try{ pend=(await HH.api('/api/auth/oauth/pending')).pending; }catch(e){}
   if(!pend||pend.mode!=='join'){
@@ -318,23 +353,23 @@ document.addEventListener('DOMContentLoaded', async function(){
   var label=(HH.OAUTH_LABEL&&HH.OAUTH_LABEL[pend.provider])||pend.provider;
 
   $('#socwrap').hidden=true;
-  var steps=document.querySelectorAll('main .step');
-  steps[1].hidden=true;                       // 본인인증 = 소셜 경로에서 생략
   var rail=$('.rail');
   rail.innerHTML='<span class="cur">약관 동의</span><span>정보 확인</span>';
   $('#joinSub').textContent=label+' 계정으로 가입, 약관 동의와 정보 확인';
-  steps[2].querySelector('.no').textContent='2';
+  $('#infoStep .no').textContent='2';
   show(label+' 계정을 확인했습니다'+(pend.email?' ('+pend.email+')':'')+'. 약관에 동의하면 가입이 끝납니다.','info');
 
   // 비밀번호, 이메일 입력 제거 (소셜 회원은 비밀번호를 만들지 않는다)
-  ['#pw','#pw2','#em'].forEach(function(sel){ var f=$(sel); if(f&&f.closest('.field')) f.closest('.field').hidden=true; });
+  ['#pw','#pw2','#em'].forEach(function(sel){ var f=$(sel); if(f&&f.closest('.field')){ f.closest('.field').hidden=true; f.disabled=true; } });
   if(pend.name) $('#nm').value=pend.name;
   $('#nm').closest('.field').querySelector('.help').textContent=label+' 계정 이름을 가져왔습니다. 실명으로 고칠 수 있습니다';
   $('#ph').closest('.field').querySelector('.help').textContent='배송이 있는 주문에 씁니다. 지금 비워도 됩니다';
-  var btn=$('#joinBtn'); btn.textContent=label+'로 가입 완료';
+  var btn=$('#joinBtn'); btn.disabled=false; btn.textContent=label+'로 가입 완료';
   $('.submit .note').textContent='완료와 동시에 로그인 상태로 전환, 제시문 면접 스튜디오 맛보기 1회가 열림.';
 
-  btn.addEventListener('click', async function(){
+  $('#joinForm').addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    if(btn.disabled) return;
     if(!$('#ck-terms').checked||!$('#ck-priv').checked||!$('#ck-age').checked) return alert('필수 약관에 동의해 주세요');
     var name=$('#nm').value.trim(), phone=$('#ph').value.trim();
     if(!name) return alert('이름을 입력해 주세요');
@@ -345,7 +380,7 @@ document.addEventListener('DOMContentLoaded', async function(){
         name:name, phone:phone, member_type:pb.member_type, school:pb.school, grade:pb.grade,
         agree_terms:$('#ck-terms').checked, agree_privacy:$('#ck-priv').checked,
         agree_age:$('#ck-age').checked, marketing_opt_in:$('#ck-mkt').checked})});
-      location.href=r.next||next;
+      location.href=safeNext(r.next||next);
     }catch(e){ show(e.message||'가입에 실패했습니다'); btn.disabled=false; btn.textContent=label+'로 가입 완료'; }
   });
 });

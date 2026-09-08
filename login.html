@@ -96,7 +96,7 @@
         <label for="pw">비밀번호</label>
         <input id="pw" type="password" autocomplete="current-password" required>
       </div>
-      <label class="check keep"><input type="checkbox" checked><span>이 기기에서 로그인 유지</span></label>
+      <label class="check keep"><input type="checkbox" id="remember" name="remember" checked><span>이 기기에서 로그인 유지</span></label>
       <div class="entry">
         <button class="btn" type="submit" id="loginBtn">로그인 <span class="ar" aria-hidden="true">→</span></button>
       </div>
@@ -111,7 +111,7 @@
 
     <div class="aux2">
       <span>처음이라면</span>
-      <a class="tlink" href="join.html">회원 가입</a>
+      <a class="tlink" href="join.html" id="joinLink">회원 가입</a>
     </div>
   </div>
 </div>
@@ -146,7 +146,25 @@
 <script>
 document.addEventListener('DOMContentLoaded', function(){
   var q=new URLSearchParams(location.search);
-  var next=q.get('next')||'my.html';
+  function safeNext(value){
+    if(typeof value!=='string' || !value) return 'my.html';
+    var path=value;
+    for(var i=0;i<8;i++){
+      if(/[\u0000-\u001f\u007f\\]/.test(path) || path.indexOf('//')===0
+        || /^(?:https?|javascript|data):/i.test(path)
+        || !(/^\//.test(path) || /^[A-Za-z0-9_-]+\.html(?:[?#]|$)/.test(path))) return 'my.html';
+      var url;
+      try{ url=new URL(path, location.href); }catch(e){ return 'my.html'; }
+      if(url.origin!==location.origin) return 'my.html';
+      var decoded;
+      try{ decoded=decodeURIComponent(path.replace(/%(?![0-9a-f]{2})/gi,'%25')); }catch(e){ return 'my.html'; }
+      if(decoded===path) return value;
+      path=decoded;
+    }
+    return 'my.html';
+  }
+  var next=safeNext(q.get('next'));
+  document.getElementById('joinLink').href='join.html?next='+encodeURIComponent(next);
   var linkP=q.get('link');
   var msg=document.getElementById('oauthMsg');
   function show(text, kind){ msg.textContent=text; msg.className='oauthmsg'+(kind==='info'?' info':''); msg.hidden=false; }
@@ -166,7 +184,7 @@ document.addEventListener('DOMContentLoaded', function(){
       b.textContent=label+' 계정 연결하기';
       b.addEventListener('click', async function(){
         b.disabled=true; b.textContent='연결 중';
-        try{ var r=await HH.api('/api/auth/oauth/link',{method:'POST',body:'{}'}); location.href=r.next||next; }
+        try{ var r=await HH.api('/api/auth/oauth/link',{method:'POST',body:'{}'}); location.href=safeNext(r.next||next); }
         catch(e){ show(e.message||'연결에 실패했습니다'); b.disabled=false; b.textContent=label+' 계정 연결하기'; }
       });
       msg.parentNode.insertBefore(b, msg.nextSibling);
@@ -181,11 +199,12 @@ document.addEventListener('DOMContentLoaded', function(){
     try{
       await HH.api('/api/auth/login',{method:'POST',body:JSON.stringify({
         email:document.getElementById('em').value.trim(),
-        password:document.getElementById('pw').value})});
+        password:document.getElementById('pw').value,
+        remember:document.getElementById('remember').checked})});
       if(linkP){
         try{
           var r=await HH.api('/api/auth/oauth/link',{method:'POST',body:'{}'});
-          location.href=r.next||next; return;
+          location.href=safeNext(r.next||next); return;
         }catch(e2){ show('연결에 실패했습니다. '+(e2.message||'')); }
       }
       location.href=next;
