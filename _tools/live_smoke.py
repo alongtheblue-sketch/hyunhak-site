@@ -46,7 +46,9 @@ def main():
             if s != 200:
                 fails.append(f"{s} {u}")
     print(f"pages 200: {len(urls) - sum(1 for f in fails if f[:3].strip().isdigit() or f.startswith('-1'))}/{len(urls)}")
-    for a in ["/assets/video/hero_loop_aigen.mp4", "/assets/video/hero_loop_aigen.webm",
+    for a in ["/assets/video/brand_v2_hero_aigen.mp4", "/assets/video/brand_v2_hero_aigen.webm", "/assets/video/brand_v2_full_aigen.mp4", "/assets/video/brand_v2_full_aigen.webm",
+              "/assets/video/brand_v2_hero_poster_aigen.jpg", "/assets/video/brand_v2_full_poster_aigen.jpg", "/assets/video/brand_v2_hero_aigen.vtt", "/assets/video/brand_v2_full_aigen.vtt",
+              "/assets/video/hero_loop_aigen.mp4", "/assets/video/hero_loop_aigen.webm",
               "/assets/photo/hero_poster_aigen.jpg", "/assets/photo/og_aigen.jpg", "/assets/photo/bg_guidebook_aigen.jpg",
               "/insta.html", "/llms.txt", "/robots.txt"]:
         s, _ = get(SITE + a)

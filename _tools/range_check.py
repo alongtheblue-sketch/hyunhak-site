@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 """자산 바이트 범위(206) 검사기 (2026-09-07). 워커 withRange 의 계약을 로컬(wrangler dev)·라이브에서 같은 항목으로 잰다.
 근거: iOS Safari 는 서버 byte-range 지원 없이는 mp4 를 재생하지 못한다. 본문 바이트는 로컬 파일과 대조한다(라이브 = 로컬 해시 동일 전제).
-사용: python3 _tools/range_check.py [--base https://hyunhak.com] [--path assets/video/brand_60s_aigen.mp4]
+사용: python3 _tools/range_check.py [--base https://hyunhak.com] [--path assets/video/brand_v2_hero_aigen.mp4]
 """
 import pathlib, sys, urllib.request, urllib.error
 
 BASE = "https://hyunhak.com"
 if "--base" in sys.argv: BASE = sys.argv[sys.argv.index("--base") + 1].rstrip("/")
-PATH = "assets/video/brand_60s_aigen.mp4"
+PATH = "assets/video/brand_v2_hero_aigen.mp4"   # 2026-09-08 v2 히어로(24s). v1 brand_60s 는 존치(롤백)
 if "--path" in sys.argv: PATH = sys.argv[sys.argv.index("--path") + 1].lstrip("/")
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 DATA = (ROOT / PATH).read_bytes(); SIZE = len(DATA)
@@ -49,7 +49,7 @@ else:
     chk("R10 ETag 존재", False, "ETag 헤더 없음")
 st, h, b = req("about.html", {"Range": "bytes=0-99"})
 chk("R11 HTML 은 범위 미적용 200 (종전 그대로)", st == 200 and len(b) > 100, f"{st} len={len(b)}")
-for extra in ("assets/video/brand_60s_aigen.webm", "assets/video/sample_common.mp4"):
+for extra in ("assets/video/brand_v2_hero_aigen.webm", "assets/video/brand_v2_full_aigen.mp4", "assets/video/brand_v2_full_aigen.webm", "assets/video/sample_common.mp4"):
     d = (ROOT / extra).read_bytes(); st, h, b = req(extra, {"Range": "bytes=0-1023"})
     chk(f"R12 {extra} bytes=0-1023 → 206 일치", st == 206 and b == d[:1024] and h.get("content-range") == f"bytes 0-1023/{len(d)}", f"{st} cr={h.get('content-range')}")
 n = sum(1 for ok, *_ in rows if ok)
