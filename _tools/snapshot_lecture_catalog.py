@@ -100,8 +100,13 @@ def main():
         out["partial_updates"] = (old.get("partial_updates") or []) + [{"at": kst, "ids": only, "source": "D1 hyunhak.lectures (remote, read-only)" if not a.rows_json else f"offline {a.rows_json}"}]
         note = f"부분 갱신 {len(only)}편, snapshot_at 유지 {old.get('snapshot_at')}"
     else:
-        out = {"snapshot_at": kst, "source": "D1 hyunhak.lectures (remote, read-only)", "n": len(new), "lectures": new}
-        note = f"snapshot_at={kst}"
+        out = {"snapshot_at": kst, "source": "D1 hyunhak.lectures (remote, read-only)", "n": len(new)}
+        # 전체 재스냅샷은 부분 갱신을 값으로 흡수하지만 이력까지 흡수하지는 않는다.
+        # 그냥 덮어쓰면 "언제 무엇을 몇 편만 고쳤나" 가 사라지므로 옮겨 적는다 (GE-4).
+        if old.get("partial_updates"):
+            out["partial_updates_superseded"] = old["partial_updates"]
+        out["lectures"] = new
+        note = f"snapshot_at={kst}" + (f", 부분 갱신 이력 {len(old['partial_updates'])}건 이월" if old.get("partial_updates") else "")
     CAT.write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"갱신 → {CAT} {note}")
     return 0

@@ -10,7 +10,18 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 E = html.escape
 SETS = json.load(open(os.path.join(ROOT, "assets/data/sets.json"), encoding="utf-8"))
 CAT = json.load(open(os.path.join(ROOT, "_tools/lecture_catalog.json"), encoding="utf-8"))
-LECS = [l for l in CAT["lectures"] if l.get("status") != "hidden"]
+def _is_ot(l):
+    """인강 OT(0강) = 회원 무료 안내 영상. 상품 구성이 아니라 API 가 목록 맨 위에 따로 싣는다.
+    카탈로그를 전체 스냅샷으로 뜨면 이 행이 들어와 공통이 5편이 되고 '공통 풀이 4편' 문면과 어긋난다 (GE-4).
+    판정은 원천 두 축의 곱 = 회원 무료(access) 이면서 0강(seq). 둘 중 하나만으로 거르지 않는다."""
+    return l.get("access") == "member" and l.get("seq") == 0
+
+
+_ALL = [l for l in CAT["lectures"] if l.get("status") != "hidden"]
+_OT = [l["id"] for l in _ALL if _is_ot(l)]
+LECS = [l for l in _ALL if not _is_ot(l)]
+if _OT:
+    print(f"[build_lectures] 상품 구성에서 제외한 OT {len(_OT)}편: {', '.join(_OT)}", file=sys.stderr)
 SNAP = CAT["snapshot_at"][:10]
 UNITS = {u["code"]: u for u in SETS["units"]}
 ORDER = ["yonsei-hum", "yonsei-sci", "yonsei-intl", "korea-hum", "korea-sci"]
