@@ -26,6 +26,13 @@ def ledger():
         "n": len(sale),
         "q": sum(meta[e["slug"]]["questions"] for e in sale),
         "p": sum(meta[e["slug"]]["pages"] for e in sale),
+        "books": [
+            {"slug": e["slug"], "name": e["name"],
+             "short": e["name"].replace("학교", "").replace("(서울)", ""),
+             "pages": meta[e["slug"]]["pages"], "q": meta[e["slug"]]["questions"],
+             "sale": bool(e.get("onsale", True))}
+            for e in sorted(sale, key=lambda e: e["name"])
+        ],
     }
 
 
@@ -34,7 +41,10 @@ ANCHORS = [
     # 2026-09-08 브랜드 필름 v2 교체: v1 자막 대본(#hero-film-tx, #film-tx)의 '수록 질문 N.' '31권, N면' 앵커 4건 제거 (v2 텍스트 층은 수치를 싣지 않는다. 대본 문단은 build_brand_captions_v2.py 가 자막에서 파생)
     ("index.html", r"질문 ([\d,]+)개", "q", 2),
     ("index.html", r"질문 <b>([\d,]+)개</b>", "q", 2),
+    ("index.html", r"\\uc9c8\\ubb38 ([\d,]+)\\uac1c", "q", 1),
     ("index.html", r"본문 ([\d,]+)면", "p", 1),
+    ("interview.html", r"면접 기출문제 ([\d,]+)문", "q", 2),
+    ("_tools/r2_copy.json", r"질문 ([\d,]+)개", "q", 4),
     ("about.html", r"질문 ([\d,]+)개", "q", 2),
     ("about.html", r"<b>([\d,]+)</b><span>수록 질문</span>", "q", 1),
     ("about.html", r"가이드북, ([\d,]+)면", "p", 1),
@@ -65,6 +75,23 @@ def main():
             s = re.sub(pat, lambda m: m.group(0).replace(m.group(1), want[key]), s)
             edits[fname] = s
             changed.append(fname)
+
+    # 홈의 대학 선택기도 목록과 같은 원장에서 유도한다. --check는 쓰지 않는다.
+    home = edits.get("index.html", (ROOT / "index.html").read_text(encoding="utf-8"))
+    arrays = list(re.finditer(r"\bvar HH_GB\s*=\s*(\[[^;]*\]);", home))
+    if len(arrays) != 1:
+        errors.append(f"index.html: HH_GB 배열 {len(arrays)}건, 기대 1건")
+    else:
+        match = arrays[0]
+        try:
+            books = json.loads(match.group(1))
+        except json.JSONDecodeError as exc:
+            errors.append(f"index.html: HH_GB JSON 오류: {exc}")
+        else:
+            if books != L["books"]:
+                stale.append("index.html: HH_GB의 slug/name/short/pages/q/sale != 원장")
+                payload = json.dumps(L["books"], ensure_ascii=False, separators=(",", ":"))
+                edits["index.html"] = home[:match.start(1)] + payload + home[match.end(1):]
 
     if errors:
         for e in errors:

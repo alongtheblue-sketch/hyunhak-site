@@ -8,7 +8,7 @@ promo 적용: LP 4 + 홈 1 + 팝업 6 / 변경 3 ['guidebook/index.html', 'lectu
 변경 41
 base.css 면 63 변경 35
 analytics 주입 41 ga4=G-2ZM01XDLNT meta_pixel=1788228408971711 wcs=없음
--- 66면 처리, 43면 기록
+-- 66면 처리, 44면 기록
 sitemap.xml 55 URL / robots.txt / llms.txt / llms-full.txt 기록
 rss.xml 55 항목 기록
   [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
@@ -22,4 +22,4 @@ build_samples --check: 표본 12장 + 확대 1 / FAIL 0건 (v24 PDF 100417407367
 자막 게이트 통과: 영상 배선 11건, 면제 0건
 link_check: 면 66 · sitemap 55 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
 worker_check: FAIL 0 / 27 항목
-ae0de744b80b960b
+5fab27640f4658f7

@@ -29,7 +29,7 @@
 | 홈과 상세 공통 / added | `added` | 장바구니에 담았습니다. | C1 | 12 |
 | 홈과 상세 공통 / cart_failed | `cart_failed` | 장바구니 처리 중 오류가 발생했습니다. 장바구니를 확인해 주세요. | C1 | 36 |
 | 상세면과 HH 공통 / cart_failed_storage | `cart_failed_storage` | 브라우저 저장소에 장바구니를 저장하지 못했습니다. 저장소 설정과 여유 공간을 확인해 주세요. | C1 | 51 |
-| 홈 / source_title | `source_title` | 질문 3,865개 | G5 | 9 |
+| 홈 / source_title | `source_title` | 질문 3,934개 | G5 | 9 |
 | 홈 / source_text | `source_text` | 대학 공개 자료와 면접 후기에서 골랐습니다. | G5 | 24 |
 | 홈과 상세 공통 / withdraw_title | `withdraw_title` | 이용 전 청약철회 | G8 C3 | 9 |
 | 홈과 상세 공통 / withdraw_text | `withdraw_text` | 이용 전 청약철회 조건은 이용약관 제6조에 따릅니다. | G8 S9 C3 | 29 |
@@ -59,14 +59,14 @@
 | 홈 / maker_bio | `maker_bio` | 현학자는 입시 컨설턴트 13년차이며 고려대학교 영어교육과를 졸업했습니다. | A1 A3 | 40 |
 | 홈 / maker_work | `maker_work` | 가이드북 31권과 스튜디오 150세트를 한 사람이 편집합니다. | A1 | 34 |
 | 홈 / guide_totals | `guide_totals` | 가이드북은 31권이며 본문 1,198면입니다. | G1 G6 | 25 |
-| 홈 / guide_questions | `guide_questions` | 수록 질문 3,865개는 대학 공개 자료와 면접 후기에서 골랐습니다. | G5 | 38 |
+| 홈 / guide_questions | `guide_questions` | 수록 질문 3,934개는 대학 공개 자료와 면접 후기에서 골랐습니다. | G5 | 38 |
 | 홈과 상세 공통 / faq_title | `faq_title` | 자주 묻는 질문 | C4 | 8 |
 | 홈과 상세 공통 / faq_read_q | `faq_read_q` | 가이드북 열람 방법 | G7 | 10 |
 | 홈과 상세 공통 / faq_read_a | `faq_read_a` | 결제 후 마이페이지에서 브라우저 보안 리더로 열람합니다. | G7 | 31 |
 | 홈과 상세 공통 / faq_pick_q | `faq_pick_q` | 서류기반 면접과 제시문 면접의 구분 | G10 | 19 |
 | 홈과 상세 공통 / faq_pick_a | `faq_pick_a` | 지원 전형의 면접 형태는 38개 대학 면접 형태 판정표에서 확인합니다. | G10 | 39 |
 | 홈과 상세 공통 / interview_link | `interview_link` | 면접 형태 판정표 보기 | G10 | 12 |
-| 홈과 상세 공통 / faq_source_q | `faq_source_q` | 질문 3,865개의 출처 | G5 | 13 |
+| 홈과 상세 공통 / faq_source_q | `faq_source_q` | 질문 3,934개의 출처 | G5 | 13 |
 | 홈과 상세 공통 / faq_source_a | `faq_source_a` | 대학 공개 자료와 면접 후기에서 고른 질문입니다. | G5 | 27 |
 | 홈과 상세 공통 / faq_refund_q | `faq_refund_q` | 청약철회 조건 | G8 S9 C3 | 7 |
 | 홈과 상세 공통 / terms_link | `terms_link` | 이용약관 제6조 보기 | C3 | 11 |
@@ -124,7 +124,7 @@
 | 홈과 상세 / lecture_period | `lecture_period` | 지문 낱권과 단위 전권은 응시 12개월, 인강 3개월입니다. | S3a S3b | 33 |
 | 홈과 상세 / common_period | `common_period` | 공통 풀이 인강은 3개월간 이용합니다. | S3c | 21 |
 | 홈과 상세 / pass_contents | `pass_contents` | 단위 전권에는 해당 단위의 지문 30편이 포함됩니다. | S3b | 29 |
-| 홈과 상세 / guide_count | `guide_count` | 수록 질문 3,865개 | G5 | 12 |
+| 홈과 상세 / guide_count | `guide_count` | 수록 질문 3,934개 | G5 | 12 |
 | 스튜디오 상세 / lecture_link | `lecture_link` | 공개 강의와 맛보기 보기 | S7 L1 | 13 |
 | 스튜디오 상세 / ranking | `ranking` | 스튜디오 순위표 | S10 | 8 |
 | 스튜디오 상세 / ranking_text | `ranking_text` | 스튜디오에서 응시 현황과 순위표를 확인합니다. | S10 | 25 |

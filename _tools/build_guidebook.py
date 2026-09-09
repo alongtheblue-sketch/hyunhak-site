@@ -1025,7 +1025,7 @@ def render_page(cat, items, i, meta):
         acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>\n'
                 f'      {pdf_btn}<a class="btn ghost" href="../cart.html">장바구니 보기</a>')
         badge = '<span class="badge seal">판매 중</span>'
-        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 아직 열지 않은 권은 공급받은 날부터 7일 이내 청약철회 가능."
+        note = ("결제 후 마이페이지에서 브라우저 보안 리더로 바로 열림. 열람 기간은 구매일부터 3개월. 아직 열지 않은 권은 제공이 개시되기 전까지 청약철회하실 수 있고 그만큼 환불됩니다."
                 + (" PDF 소장판은 워터마크 파일을 발급해 소장." if pdfp else ""))
         final_h2, final_p = "이 학교부터 담기", f"{name} 2027 면접 가이드북, {won(price)}. 보안 리더 열람 3개월."
         final_acts = (f'<button type="button" class="btn" data-cart-sku="{esc(e["sku"])}" data-cart-title="{esc(h1)}" data-cart-price="{price}">담기 <span class="ar" aria-hidden="true">→</span></button>'
