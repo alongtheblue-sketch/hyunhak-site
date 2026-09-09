@@ -174,6 +174,24 @@
     }
   },
   "pages": {
+    "ranking.html": {
+      "title": "응시 순위표와 랭킹실, 연세대 고려대 제시문 면접 스튜디오, 현학적 연구소",
+      "description": "연세대와 고려대 제시문 면접 스튜디오의 응시 순위표입니다. 공개를 선택한 회원의 별명과 점수, 세트, 난이도를 확인합니다. 전체, 세트별, 난이도별로 응시 기록을 살펴봅니다.",
+      "type": "hub",
+      "priority": 0.7,
+      "changefreq": "daily",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "랭킹실",
+          "path": "/ranking.html"
+        }
+      ],
+      "answer": ""
+    },
     "404.html": {
       "title": "현학적 연구소, 없는 면",
       "description": "요청하신 주소의 면을 찾지 못했습니다.",

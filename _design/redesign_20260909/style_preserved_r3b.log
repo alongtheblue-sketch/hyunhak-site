@@ -1,0 +1,6 @@
+PASS guidebook/gachon.html baseline/current main bytes identical; existing style grade preserved
+PASS guidebook/konkuk.html baseline/current main bytes identical; existing style grade preserved
+PASS guidebook/kookmin.html baseline/current main bytes identical; existing style grade preserved
+PASS guidebook/kyonggi.html baseline/current main bytes identical; existing style grade preserved
+PASS guidebook/snu.html baseline/current main bytes identical; existing style grade preserved
+PASS terms.html baseline/current main bytes identical; existing style grade preserved

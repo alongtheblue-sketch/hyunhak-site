@@ -1,0 +1,33 @@
+정보: SEARCH 공식 검증 통과. 책 1부·2부 미수록 전형 20건은 상품 문구에서 빼고 hub 에 표식: catholic: '학교장추천전형'; catholic: '학교장추천전형 의예과'; dongguk: '불교추천인재'; ewha: '예체능서류전형'; gachon: '가천의약학'; kookmin: '국제인재'; kwangwoon: '소프트웨어우수인재전형'; kyonggi: '디자인학부'; myongji: '크리스천리더전형'; myongji: '교과면접전형'; pusan: '지역인재전형'; pusan: '의예과'; sejong: '세종인재전형(면접형) 창의소프트학부'; snu: '일반전형'; uos: '기회균형전형Ⅰ'; dgist: '일반전형'; pknu: '학교생활우수인재'; sahmyook: 'S/W인재'; sahmyook: '예체능인재'; ulsan: '의예과'
+경고: 후공정 산물이 지워졌다 (analytics:begin, bizinfo, class="fix"). sh _tools/build_all.sh 로 복구할 것.
+정보: SEARCH 공식 검증 통과. 책 1부·2부 미수록 전형 20건은 상품 문구에서 빼고 hub 에 표식: catholic: '학교장추천전형'; catholic: '학교장추천전형 의예과'; dongguk: '불교추천인재'; ewha: '예체능서류전형'; gachon: '가천의약학'; kookmin: '국제인재'; kwangwoon: '소프트웨어우수인재전형'; kyonggi: '디자인학부'; myongji: '크리스천리더전형'; myongji: '교과면접전형'; pusan: '지역인재전형'; pusan: '의예과'; sejong: '세종인재전형(면접형) 창의소프트학부'; snu: '일반전형'; uos: '기회균형전형Ⅰ'; dgist: '일반전형'; pknu: '학교생활우수인재'; sahmyook: 'S/W인재'; sahmyook: '예체능인재'; ulsan: '의예과'
+[build_lectures] 상품 구성에서 제외한 OT 1편: lec_common_L0-0
+변경 54 / nav 없음 0 / 레거시 0
+변경 54
+promo 적용: LP 4 + 홈 1 + 팝업 6 / 변경 3 ['guidebook/index.html', 'lectures.html', 'interview.html'] / 행사 중
+변경 41
+base.css 면 64 변경 36
+analytics 주입 42 ga4=G-2ZM01XDLNT meta_pixel=1788228408971711 wcs=없음
+-- 67면 처리, 44면 기록
+sitemap.xml 56 URL / robots.txt / llms.txt / llms-full.txt 기록
+rss.xml 56 항목 기록
+검사                           결과    건수                 비고
+-------------------------------------------------------------------
+manifest 등재                  PASS  0 fail / 67        
+seo 블록/ld+json 1개            PASS  0 fail / 66        
+(a) JSON-LD 파싱/필수필드          WARN  0 fail, 1 warn / 67 
+(b) canonical 일치             WARN  0 fail, 1 warn / 67 
+(c) 내부 링크 dead               FAIL  1 fail / 2479      
+(d) sitemap == 색인 페이지        PASS  0 fail / 56        
+(e2) robots 3범주              PASS  0 fail / 34        
+(e3) sitemap URL robots 접근성  PASS  0 fail / 56        
+(e) title 유일/description 길이  FAIL  1 fail, 2 warn / 67 
+(f) 이미지 alt 누락               PASS  0 fail             누락 0건
+-------------------------------------------------------------------
+FAIL 2건 / WARN 4건 / 검사 10항목
+  [FAIL] (c) 내부 링크 dead: studio.html: #ranking 앵커 #ranking 없음
+  [FAIL] (e) title 유일/description 길이: ranking.html: <title> 없음
+  [WARN] (a) JSON-LD 파싱/필수필드: reader.html: JSON-LD 없음 (skip 페이지)
+  [WARN] (b) canonical 일치: reader.html: canonical 없음
+  [WARN] (e) title 유일/description 길이: ranking.html: <title> '' != manifest '응시 순위표와 랭킹실, 연세대 고려대 제시문 면접 스튜디오, 현학적 연구소'
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)

@@ -1,0 +1,17 @@
+검사                           결과    건수                 비고
+-------------------------------------------------------------------
+manifest 등재                  PASS  0 fail / 67        
+seo 블록/ld+json 1개            PASS  0 fail / 66        
+(a) JSON-LD 파싱/필수필드          WARN  0 fail, 1 warn / 67 
+(b) canonical 일치             WARN  0 fail, 1 warn / 67 
+(c) 내부 링크 dead               PASS  0 fail / 2478      
+(d) sitemap == 색인 페이지        PASS  0 fail / 56        
+(e2) robots 3범주              PASS  0 fail / 34        
+(e3) sitemap URL robots 접근성  PASS  0 fail / 56        
+(e) title 유일/description 길이  WARN  0 fail, 1 warn / 67 
+(f) 이미지 alt 누락               PASS  0 fail             누락 0건
+-------------------------------------------------------------------
+FAIL 0건 / WARN 3건 / 검사 10항목
+  [WARN] (a) JSON-LD 파싱/필수필드: reader.html: JSON-LD 없음 (skip 페이지)
+  [WARN] (b) canonical 일치: reader.html: canonical 없음
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)

@@ -1,0 +1,8 @@
+PASS guidebook/single SKU=guide-snu list_price=33000 qty=1 plan and select state
+PASS guidebook/all SKU=guide-all-view list_price=511500 qty=1 plan and select state
+PASS guidebook/pdf SKU=guide-all-pdf list_price=1705000 qty=1 plan and select state
+PASS studio/pass SKU=pass-korea-hum list_price=495000 qty=1 plan and select state
+PASS studio/lecture SKU=lecture-common list_price=220000 qty=1 plan and select state
+PASS studio/single routes to the selected unit sets before cart
+PASS storage failure surfaces the registered message and cart recovery link
+test_r3_product_buy: PASS 7/7

@@ -1,0 +1,30 @@
+$ node <<'JS'  (Node VM harness, actual assets/rank_profile.js and my.html datasets; read-only delegated test)
+PASS initial nickname and public state
+PASS initial null nickname
+PASS save success trims nickname and sends authenticated PATCH
+PASS enable blank makes zero API calls and restores checkbox
+PASS enable valid saves nickname and public consent in one payload
+PASS disable legacy blank nickname sends only rank_public false
+PASS save 400 nickname_required maps message and preserves saved state
+PASS enable 400 nickname_required maps message and preserves saved state
+PASS save 409 nickname_taken maps message and preserves saved state
+PASS enable 409 nickname_taken maps message and preserves saved state
+PASS save 400 nickname_invalid/too_short maps message and preserves saved state
+PASS enable 400 nickname_invalid/too_short maps message and preserves saved state
+PASS save 400 nickname_invalid/too_long maps message and preserves saved state
+PASS enable 400 nickname_invalid/too_long maps message and preserves saved state
+PASS save 400 nickname_invalid/charset maps message and preserves saved state
+PASS enable 400 nickname_invalid/charset maps message and preserves saved state
+PASS save 400 nickname_invalid/forbidden maps message and preserves saved state
+PASS enable 400 nickname_invalid/forbidden maps message and preserves saved state
+PASS network failure during public-on restores prior state
+PASS network failure during public-off restores prior state
+RESULT cases=20 passed=20 failed=0 browser=NOT_RUN files_written=0
+exit=0
+
+$ node <<'JS'  (Node VM regression harness, actual rank_profile.js and rank.js; read-only delegated test)
+PASS composing Enter and keyCode 229: PATCH=0, preventDefault=0
+PASS completed composition Enter: PATCH=1
+PASS sets.json failure difficulty view: unknown group=난이도 미확인, retained rows=1, score=90, table visible
+RESULT prior_P2_reproductions=2 resolved=2 failed=0 browser=NOT_RUN files_written=0
+exit=0

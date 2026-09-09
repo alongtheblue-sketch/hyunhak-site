@@ -741,6 +741,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) .book{display:grid;grid-template-columns:1fr;align-items:start}
 :where(body.v2) .pages{min-width:0}
 :where(body.v2) .page{padding:var(--s-sec) 0;border-bottom:var(--rule-strong)}
+/* R3: .page의 축약 padding 뒤에도 .wrap의 --gut 좌우 여백을 유지한다. 색 토큰과 위 대비값은 불변. */
+:where(body.v2) .page.wrap{padding-inline:var(--gut)}
 :where(body.v2) .page:last-child{border-bottom:0}
 :where(body.v2) .page h1{font-size:var(--t-display);margin-bottom:var(--s4)}
 :where(body.v2) .page h2.t{font-size:var(--t-h2)}
@@ -1326,4 +1328,95 @@ html.ppop-open{overflow:hidden}
   :where(body.v2) .r2-buy{padding:var(--s3)}
   :where(body.v2) .r2-section .openers{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3)}
   :where(body.v2) .r2-price-row b s.was{display:block}
+}
+/* R3: 상세면 수령물, 표본, 비교표. 색과 크기 토큰은 위 정의를 그대로 사용한다. */
+:where(body.v2) .r3-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:var(--s5);align-items:center}
+:where(body.v2) .r3-hero .r2-intro{grid-column:1/-1;max-width:none;margin-inline:0}
+:where(body.v2) .r3-buy{margin:0;padding:var(--s3);width:100%}
+:where(body.v2) .r3-buy>p{font-size:var(--t-sm);color:var(--body)}
+:where(body.v2) .r3-buy .r2-status:empty{display:none}
+:where(body.v2) .r3-buy .r3-actions{margin-top:var(--s2)}
+:where(body.v2) .r3-hero-visual{margin:0}
+:where(body.v2) .r3-hero-visual>img{width:100%;border:var(--rule-ui);border-radius:var(--r-md)}
+:where(body.v2) .r3-cover-fan{display:flex;align-items:center;justify-content:center;padding:var(--s5) var(--s3);min-height:var(--s11);background:var(--mat)}
+:where(body.v2) .r3-cover-fan>img{width:25%;flex:none}
+:where(body.v2) .r3-cover-fan>img+img{margin-left:-7%}
+:where(body.v2) .r3-cover-fan>img:nth-child(2n){transform:translateY(var(--s3))}
+:where(body.v2) .r3-metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-block:var(--s4);border-block:var(--rule-hd)}
+:where(body.v2) .r3-metrics>div{padding:var(--s3) var(--s2);border-right:var(--rule-ui)}
+:where(body.v2) .r3-metrics>div:last-child{border-right:0}
+:where(body.v2) .r3-metrics dt{font-size:var(--t-sm);color:var(--body)}
+:where(body.v2) .r3-metrics dd{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;line-height:var(--lh-tight);margin-top:var(--s2)}
+:where(body.v2) .r3-section{scroll-margin-top:calc(var(--hd-h) + var(--s3))}
+:where(body.v2) .r3-table-scroll{overflow-x:auto;overscroll-behavior-inline:contain;margin-block:var(--s3)}
+:where(body.v2) .r3-table{font-size:var(--t-base);line-height:var(--lh-ui);text-align:left}
+:where(body.v2) .r3-table caption{text-align:left;font-size:var(--t-sm);color:var(--body);padding-bottom:var(--s2)}
+:where(body.v2) .r3-table th,:where(body.v2) .r3-table td{border-bottom:var(--rule-ui);padding:var(--s3);vertical-align:top}
+:where(body.v2) .r3-table th{background:var(--mat);font-weight:600}
+:where(body.v2) .r3-table th[scope="row"]{width:24%}
+:where(body.v2) .r3-table td{background:var(--card);color:var(--body)}
+:where(body.v2) .r3-table thead{border-top:var(--rule-hd)}
+:where(body.v2) .r3-table thead th{min-width:9em}
+:where(body.v2) .r3-price{font-family:var(--mono);font-size:var(--t-base);font-weight:500;color:var(--seal)}
+:where(body.v2) .r3-price .was{display:block}
+:where(body.v2) .r3-spreads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s4);align-items:start}
+:where(body.v2) .r3-spreads img,:where(body.v2) .r3-screen-strip img{width:100%;height:auto;border:var(--rule-ui)}
+:where(body.v2) .r3-spreads img+img{margin-top:var(--s3)}
+:where(body.v2) .r3-spreads figcaption,:where(body.v2) .r3-screen-strip figcaption{font-size:var(--t-sm);color:var(--body);margin-top:var(--s2)}
+:where(body.v2) .r3-studio-spreads{grid-template-columns:repeat(2,minmax(0,1fr))}
+:where(body.v2) .r3-report-spread{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:var(--s3);align-items:start}
+:where(body.v2) .r3-report-spread img+img{margin-top:0}
+:where(body.v2) .r3-report-spread figcaption{grid-column:1/-1}
+:where(body.v2) .r3-parts{display:grid;gap:var(--s3)}
+:where(body.v2) .r3-parts li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s3);padding-block:var(--s3);border-bottom:var(--rule-ui)}
+:where(body.v2) .r3-parts h3{font-size:var(--t-h4)}
+:where(body.v2) .r3-sample-gallery{margin-top:var(--s4)}
+:where(body.v2) .r3-sample-gallery>h2{font-size:var(--t-h3);margin-bottom:var(--s3)}
+:where(body.v2) .r3-sample-gallery .openers{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:28%;overflow-x:auto;gap:var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s3)}
+:where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:45%;overflow-x:auto;gap:var(--s4);padding-bottom:var(--s3)}
+:where(body.v2) .r3-sample-gallery .r2-samples .pgs{grid-column:auto}
+:where(body.v2) .r3-sample-gallery .pgcols{grid-template-columns:minmax(0,1fr)}
+:where(body.v2) .r3-covers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s4) var(--s3)}
+:where(body.v2) .r3-covers a,:where(body.v2) .r3-book-names a{display:flex;flex-direction:column;min-height:var(--tap);gap:var(--s2);font-size:var(--t-sm)}
+:where(body.v2) .r3-covers img{width:100%;border:var(--rule-ui)}
+:where(body.v2) .r3-view{color:var(--link);text-decoration:underline;text-underline-offset:var(--s1)}
+:where(body.v2) .r3-book-names{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3);margin-top:var(--s4)}
+:where(body.v2) .r3-book-names a{border-bottom:var(--rule-ui);padding-block:var(--s2);justify-content:space-between}
+:where(body.v2) .r3-actions{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
+:where(body.v2) .r3-actions .tlink,:where(body.v2) .r3-section>.tlink{display:inline-flex;align-items:center;min-height:var(--tap)}
+:where(body.v2) .r3-units{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+:where(body.v2) .r3-units article{padding:var(--s3);border:var(--rule-ui);background:var(--card)}
+:where(body.v2) .r3-units h3{font-size:var(--t-h4);margin-bottom:var(--s3)}
+:where(body.v2) .r3-units p{font-size:var(--t-sm)}
+:where(body.v2) .r3-screen-strip{display:grid;grid-auto-flow:column;grid-auto-columns:38%;gap:var(--s3);overflow-x:auto;margin-top:var(--s4);padding-bottom:var(--s3)}
+:where(body.v2) .r3-widget-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+:where(body.v2) .r3-widget-grid h3{font-size:var(--t-base)}
+:where(body.v2) .r3-rank-widget{margin-block:var(--s4)}
+:where(body.v2) .r3-rank-widget [data-unit]{grid-template-columns:minmax(0,1fr);gap:var(--s2)}
+:where(body.v2) .r3-rank-widget[hidden]{display:none}
+:where(body.v2) .r3-ranking{padding-top:var(--s4)}
+:where(body.v2) .r3-ranking h1{font-size:var(--t-h1);margin-bottom:var(--s3)}
+:where(body.v2) .r3-ranking .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+:where(body.v2) .r3-ranking .tabs button{white-space:normal;min-height:var(--tap);font-size:var(--t-sm)}
+:where(body.v2) .r3-ranking .rpanel{padding-top:var(--s3)}
+:where(body.v2) .r3-ranking .rtbl{min-width:36rem}
+:where(body.v2) .r3-nickname{display:flex;align-items:end;flex-wrap:wrap;gap:var(--s3);margin-bottom:var(--s3)}
+:where(body.v2) .r3-nickname label{display:grid;gap:var(--s2)}
+:where(body.v2) .r3-nickname input{min-height:var(--tap);border:var(--rule-ui);background:var(--card);font:inherit;padding:var(--s2)}
+:where(body.v2) .r3-nickname small{color:var(--body)}
+@media(max-width:43.75rem){
+  :where(body.v2) .r3-hero{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .r3-hero-visual{margin-block:var(--s4)}
+  :where(body.v2) .r3-hero-visual>img{max-height:var(--s11);object-fit:contain}
+  :where(body.v2) .r3-cover-fan{padding:var(--s3);min-height:0}
+  :where(body.v2) .r3-metrics{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:0}
+  :where(body.v2) .r3-metrics>div{border-bottom:var(--rule-ui)}
+  :where(body.v2) .r3-spreads,:where(body.v2) .r3-parts li{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .r3-report-spread{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .r3-table th,:where(body.v2) .r3-table td{padding:var(--s3) var(--s2);font-size:var(--t-sm)}
+  :where(body.v2) .r3-sample-gallery .openers{grid-auto-columns:42%}
+  :where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-columns:90%}
+  :where(body.v2) .r3-covers{grid-template-columns:repeat(3,minmax(0,1fr))}
+  :where(body.v2) .r3-units,:where(body.v2) .r3-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  :where(body.v2) .r3-screen-strip{grid-auto-columns:85%}
 }

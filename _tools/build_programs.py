@@ -7,6 +7,7 @@ from pathlib import Path
 
 import v2_shell as V
 import r2_faq
+from apply_counts import ledger as count_ledger
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
@@ -39,12 +40,39 @@ def guide_options():
     )
 
 
+def guide_catalog():
+    catalog = json.loads((HERE / "guidebook_catalog.json").read_text(encoding="utf-8"))
+    items = sorted((x for x in catalog["items"] if x.get("onsale", True)
+                    and x["slug"] not in {"yonsei", "korea"}), key=lambda x: x["name"])
+    if len(items) != 31:
+        raise ValueError("R3 대학 목록은 판매 31권이어야 합니다")
+    covers, names = [], []
+    for i, item in enumerate(items):
+        slug, name = html.escape(item["slug"]), html.escape(item["name"])
+        label = f'<span data-copy="r3_univ_{slug}">{name}</span>'
+        cover = (f'<img src="../assets/covers/{slug}.jpg" alt="{name} 가이드북 표지" '
+                 'loading="lazy" decoding="async">') if i < 12 else ""
+        entry = (f'<li><a href="../guidebook/{slug}.html">{cover}{label}'
+                 '<span class="r3-view" data-copy="r3_view">__C_r3_view__</span></a></li>')
+        (covers if i < 12 else names).append(entry)
+    return '<ul class="r3-covers">' + ''.join(covers) + '</ul><ul class="r3-book-names">' + ''.join(names) + '</ul>'
+
+
 def build():
+    counts = count_ledger()
+    expected = {"r3_questions": f"{counts['n']}권 합계 {counts['q']:,}개",
+                "r3_pages": f"{counts['n']}권 합계 {counts['p']:,}면",
+                "r3_guide_metric_1": f"{counts['p']:,}면",
+                "r3_guide_metric_2": f"{counts['q']:,}개"}
+    for key, value in expected.items():
+        if copy_text(key) != value:
+            raise ValueError(f"R3 원장 계수 불일치: {key} != {value}")
     for kind in ("guidebook", "studio", "yonsei", "korea"):
         rel = f"programs/{kind}.html"
         source = (HERE / f"program_{kind}_v2.html").read_text(encoding="utf-8")
         if kind == "guidebook":
             source = source.replace("__GUIDE_OPTIONS__", guide_options())
+            source = source.replace("__GUIDE_CATALOG__", guide_catalog())
         if kind in {"guidebook", "studio"}:
             if source.count("__R2_FAQ__") != 1:
                 raise ValueError(f"{rel}: expected one R2 FAQ slot")

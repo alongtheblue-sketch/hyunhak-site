@@ -164,3 +164,249 @@
 | (나) | 대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다. | G5 S2 | 32 | 선택. home_h1 |
 
 스튜디오 상세 H1은 "면접을" 뒤에서 두 줄로 표시합니다. 글자 수에는 줄바꿈 자리를 공백 한 칸으로 셉니다.
+
+
+## R3b 상세면과 랭킹실, 별명 문안
+
+층: 런타임. 기존 표본 캡션과 법률 foot은 보존합니다. 대학명은 G1 판매 목록에서 유도합니다. 별명 입력 규칙은 금지 문자 게이트에 맞춰 쉼표로 표기합니다.
+
+| 면과 자리 | 문안 ID | 원문 | 근거 ID | 글자 수 |
+|---|---|---|---|---:|
+| R3b / r3_metrics | `r3_metrics` | 구성 요약 | G1 G4 G5 G6 G7 S2 S3 S4 S8 | 5 |
+| R3b / r3_pdf | `r3_pdf` | 전권 PDF 소장판 | G3 | 10 |
+| R3b / r3_pdf_cart | `r3_pdf_cart` | 2027 서류기반면접 가이드북 전권 PDF 소장판, 31권 | G3 | 32 |
+| R3b / r3_read_period | `r3_read_period` | 보안 리더 열람, 3개월 | G2 G7 | 13 |
+| R3b / r3_trial_link | `r3_trial_link` | 회원 가입 후 무료 응시 1회 | S8 | 16 |
+| R3b / r3_opener_gallery | `r3_opener_gallery` | 차례와 다섯 부 표본 | G4 | 11 |
+| R3b / r3_components | `r3_components` | 권 구성 | G4 | 4 |
+| R3b / r3_five_parts | `r3_five_parts` | 대학마다 다섯 부로 구성합니다. | G4 | 17 |
+| R3b / r3_questions_label | `r3_questions_label` | 수록 질문 | G5 | 5 |
+| R3b / r3_questions | `r3_questions` | 31권 합계 3,934개 | G5 | 13 |
+| R3b / r3_pages_label | `r3_pages_label` | 본문 | G6 | 2 |
+| R3b / r3_pages | `r3_pages` | 31권 합계 1,198면 | G6 | 13 |
+| R3b / r3_read_label | `r3_read_label` | 열람 방식 | G7 | 5 |
+| R3b / r3_read | `r3_read` | 보안 리더에서 워터마크와 함께 열람합니다. 기기 제한은 없습니다. | G7 | 36 |
+| R3b / r3_print_label | `r3_print_label` | 인쇄 | G7 | 2 |
+| R3b / r3_print | `r3_print` | 계정 정보 워터마크를 넣어 권당 3회 인쇄합니다. | G7 | 27 |
+| R3b / r3_period_label | `r3_period_label` | 열람 기간 | G2 | 5 |
+| R3b / r3_months_3 | `r3_months_3` | 3개월 | G2 S3c | 3 |
+| R3b / r3_pdf_delivery | `r3_pdf_delivery` | 구매 계정을 각인한 파일을 발급합니다. | G3 | 21 |
+| R3b / r3_update_label | `r3_update_label` | 판 갱신 | G11 | 4 |
+| R3b / r3_guide_refund | `r3_guide_refund` | 제공이 개시되기 전까지 청약철회하실 수 있습니다. 전권은 잔여 권수 비율로 환불합니다. | G8 C3 | 48 |
+| R3b / r3_guide_receipt | `r3_guide_receipt` | 가이드북 수령물 요약 | G1 G2 G3 G4 G5 G6 G7 G8 | 11 |
+| R3b / r3_part1_cap | `r3_part1_cap` | 1부 면접 형태 판정 지면 | G4 | 14 |
+| R3b / r3_part3_cap | `r3_part3_cap` | 3부 실제로 나온 질문 지면 | G4 | 15 |
+| R3b / r3_part4_cap | `r3_part4_cap` | 4부 전환 규칙 지면 | G4 | 11 |
+| R3b / r3_part4_zoom | `r3_part4_zoom` | 4부 전환 규칙 지면 확대 | G4 | 14 |
+| R3b / r3_compare_item | `r3_compare_item` | 비교 항목 | G1 S3 | 5 |
+| R3b / r3_price_label | `r3_price_label` | 가격 | G1 S3 | 2 |
+| R3b / price_1705000 | `price_1705000` | 1,705,000원 | G3 | 10 |
+| R3b / r3_book_count | `r3_book_count` | 권수 | G1 | 2 |
+| R3b / r3_one_book | `r3_one_book` | 선택 대학 1권 | G1 | 8 |
+| R3b / r3_31_books | `r3_31_books` | 31권 | G1 | 3 |
+| R3b / r3_pdf_period | `r3_pdf_period` | 파일 소장 | G3 | 5 |
+| R3b / r3_file_label | `r3_file_label` | 파일 | G3 G7 | 2 |
+| R3b / r3_no_download | `r3_no_download` | 원본 다운로드 없음 | G7 | 10 |
+| R3b / r3_print_three | `r3_print_three` | 권당 3회 | G7 | 5 |
+| R3b / r3_pdf_mark | `r3_pdf_mark` | 구매 계정 각인 PDF | G3 | 12 |
+| R3b / r3_before_open | `r3_before_open` | 제공이 개시되기 전까지 | G8 C3 | 12 |
+| R3b / r3_unopened_ratio | `r3_unopened_ratio` | 미열람 권수 비율 환불 | G8 | 12 |
+| R3b / r3_before_file | `r3_before_file` | 제공이 개시되기 전까지, 파일 발급 전 | G8 C3 | 21 |
+| R3b / r3_guide_compare | `r3_guide_compare` | 가이드북 이용권 비교 | G1 G2 G3 G7 G8 | 11 |
+| R3b / r3_cover_snu | `r3_cover_snu` | 서울대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_cover_ewha | `r3_cover_ewha` | 이화여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_cover_khu | `r3_cover_khu` | 경희대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_cover_pusan | `r3_cover_pusan` | 부산대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_cover_cau | `r3_cover_cau` | 중앙대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_guide_metric_label_0 | `r3_guide_metric_label_0` | 대학 | G1 | 2 |
+| R3b / r3_guide_metric_0 | `r3_guide_metric_0` | 31개 | G1 | 3 |
+| R3b / r3_guide_metric_label_1 | `r3_guide_metric_label_1` | 본문 | G6 | 2 |
+| R3b / r3_guide_metric_1 | `r3_guide_metric_1` | 1,198면 | G6 | 6 |
+| R3b / r3_guide_metric_label_2 | `r3_guide_metric_label_2` | 수록 질문 | G5 | 5 |
+| R3b / r3_guide_metric_2 | `r3_guide_metric_2` | 3,934개 | G5 | 6 |
+| R3b / r3_guide_metric_label_3 | `r3_guide_metric_label_3` | 권 구성 | G4 | 4 |
+| R3b / r3_guide_metric_3 | `r3_guide_metric_3` | 5부 | G4 | 2 |
+| R3b / r3_guide_metric_label_4 | `r3_guide_metric_label_4` | 열람 기간 | G2 | 5 |
+| R3b / r3_guide_metric_4 | `r3_guide_metric_4` | 3개월 | G2 | 3 |
+| R3b / r3_guide_metric_label_5 | `r3_guide_metric_label_5` | 권당 인쇄 | G7 | 5 |
+| R3b / r3_guide_metric_5 | `r3_guide_metric_5` | 3회 | G7 | 2 |
+| R3b / r3_choose_jump | `r3_choose_jump` | 대학 선택으로 이동 | G1 | 10 |
+| R3b / r3_receive | `r3_receive` | 받아보는 구성 | G1 G2 G3 G4 G5 G6 G7 G8 | 7 |
+| R3b / r3_preview | `r3_preview` | 본문 표본 확대 | G4 | 8 |
+| R3b / r3_part_1_desc | `r3_part_1_desc` | 지원 전형의 면접 형태를 확인합니다. | G4 | 20 |
+| R3b / r3_part_2_desc | `r3_part_2_desc` | 대학이 무엇을 묻는지 확인합니다. | G4 | 18 |
+| R3b / r3_part_3_desc | `r3_part_3_desc` | 이 대학에서 실제로 나온 질문을 살펴봅니다. | G4 | 24 |
+| R3b / r3_part_4_desc | `r3_part_4_desc` | 생기부 기록을 면접 질문으로 전환합니다. | G4 | 22 |
+| R3b / r3_part_5_desc | `r3_part_5_desc` | 대학의 특징에 맞춰 준비 전략을 확인합니다. | G4 | 24 |
+| R3b / r3_counts_vary | `r3_counts_vary` | 수록 질문 수는 대학별 가이드북마다 다릅니다. | G5 | 25 |
+| R3b / r3_guide_opened | `r3_guide_opened` | 이미 연 권은 제공이 개시되어 청약철회가 제한됩니다. | G8 C3 | 29 |
+| R3b / r3_passages_label | `r3_passages_label` | 제시문 | S2 | 3 |
+| R3b / r3_150_authored | `r3_150_authored` | 기출 규격으로 새로 저작한 제시문 150세트 | S2 | 24 |
+| R3b / r3_five_units | `r3_five_units` | 5단위, 단위마다 지문 30편 | S2 | 16 |
+| R3b / r3_attempt_label | `r3_attempt_label` | 응시 횟수 | S3 | 5 |
+| R3b / r3_five_attempts | `r3_five_attempts` | 지문당 5회 | S3a S3b | 6 |
+| R3b / r3_axes_label | `r3_axes_label` | 채점 축 | S14 | 4 |
+| R3b / r3_axes | `r3_axes` | 내용 4축과 전달력, 태도를 채점합니다. 고려대 3번 문항은 종합적 사고력도 채점합니다. | S14 | 49 |
+| R3b / r3_video_label | `r3_video_label` | 응시 영상 | S5 | 5 |
+| R3b / r3_own_video | `r3_own_video` | 응시 영상을 보관하며 본인이 다시 볼 수 있습니다. | S5 | 28 |
+| R3b / r3_valid_label | `r3_valid_label` | 유효기간 | S3 | 4 |
+| R3b / r3_rank_choice | `r3_rank_choice` | 별명 공개를 선택한 회원의 기록을 싣습니다. | S10 | 24 |
+| R3b / r3_studio_refund | `r3_studio_refund` | 응시하지 않은 지문은 제공이 개시되기 전까지 청약철회하실 수 있습니다. | S9 C3 | 39 |
+| R3b / r3_studio_receipt | `r3_studio_receipt` | 스튜디오 수령물 요약 | S2 S3 S4 S5 S9 S10 S13 S14 | 11 |
+| R3b / r3_nickname_note | `r3_nickname_note` | 별명으로 싣습니다. 별명을 정하기 전 회원은 이름 가운데 글자를 가려 싣습니다. | S10 | 44 |
+| R3b / r3_ranking_link | `r3_ranking_link` | 랭킹실 → | S10 | 5 |
+| R3b / r3_rank_unit_0 | `r3_rank_unit_0` | 연세대 인문+통합 | S2 | 9 |
+| R3b / r3_people | `r3_people` | 명 | S10 | 1 |
+| R3b / r3_top_score | `r3_top_score` | 최고 점수 | S10 | 5 |
+| R3b / r3_rank_unit_1 | `r3_rank_unit_1` | 연세대 자연 | S2 | 6 |
+| R3b / r3_rank_unit_2 | `r3_rank_unit_2` | 고려대 인문 | S2 | 6 |
+| R3b / r3_rank_unit_3 | `r3_rank_unit_3` | 고려대 자연 | S2 | 6 |
+| R3b / r3_univ | `r3_univ` | 대학 | G1 S13 | 2 |
+| R3b / r3_prep | `r3_prep` | 준비 | S13 | 2 |
+| R3b / r3_answer | `r3_answer` | 답변 | S13 | 2 |
+| R3b / r3_nq | `r3_nq` | 문항 수 | S13 | 4 |
+| R3b / r3_yonsei | `r3_yonsei` | 연세대 | S13 | 3 |
+| R3b / r3_8m | `r3_8m` | 8분 | S13 | 2 |
+| R3b / r3_5m | `r3_5m` | 5분 | S13 | 2 |
+| R3b / r3_2q | `r3_2q` | 2문항 | S13 | 3 |
+| R3b / r3_korea | `r3_korea` | 고려대 | S13 | 3 |
+| R3b / r3_21m | `r3_21m` | 21분 | S13 | 3 |
+| R3b / r3_7m | `r3_7m` | 7분 | S13 | 2 |
+| R3b / r3_3q | `r3_3q` | 3문항 | S13 | 3 |
+| R3b / r3_specs | `r3_specs` | 실제 고사장 규격 | S13 | 9 |
+| R3b / r3_passage_count | `r3_passage_count` | 지문 수 | S3 | 4 |
+| R3b / r3_30passages | `r3_30passages` | 지문 30편 | S2 S3b | 6 |
+| R3b / r3_lecture_only | `r3_lecture_only` | 인강만 제공 | S3c | 6 |
+| R3b / r3_no_attempts | `r3_no_attempts` | 응시 미포함 | S3c | 6 |
+| R3b / r3_lectures_included | `r3_lectures_included` | 포함 인강 | S3 | 5 |
+| R3b / r3_lecture_1 | `r3_lecture_1` | 해당 세트 풀이법 1편 | S3a | 12 |
+| R3b / r3_lecture_30 | `r3_lecture_30` | 세트별 풀이법 30편과 공통 풀이 | S3b | 18 |
+| R3b / r3_validity | `r3_validity` | 응시 12개월, 인강 3개월 | S3a S3b | 15 |
+| R3b / r3_unattempted_ratio | `r3_unattempted_ratio` | 미응시 지문 수 비율 환불 | S9 | 14 |
+| R3b / r3_before_play | `r3_before_play` | 제공이 개시되기 전까지, 강의 재생 전 | S9 C3 | 21 |
+| R3b / r3_studio_compare | `r3_studio_compare` | 스튜디오 이용권 비교 | S3 S9 | 11 |
+| R3b / r3_yonsei_spec | `r3_yonsei_spec` | 준비 8분, 답변 5분, 2문항 | S13 | 17 |
+| R3b / r3_room | `r3_room` | 응시실 | S1 | 3 |
+| R3b / r3_korea_spec | `r3_korea_spec` | 준비 21분, 답변 7분, 3문항 | S13 | 18 |
+| R3b / r3_stage_cap | `r3_stage_cap` | 스튜디오 실전형 응시 준비 화면 | S1 S4 | 17 |
+| R3b / r3_studio_metric_label_0 | `r3_studio_metric_label_0` | 제시문 | S2 | 3 |
+| R3b / r3_studio_metric_0 | `r3_studio_metric_0` | 150세트 | S2 | 5 |
+| R3b / r3_studio_metric_label_1 | `r3_studio_metric_label_1` | 응시 단위 | S2 | 5 |
+| R3b / r3_studio_metric_1 | `r3_studio_metric_1` | 5곳 | S2 | 2 |
+| R3b / r3_studio_metric_label_2 | `r3_studio_metric_label_2` | 지문당 응시 | S3 | 6 |
+| R3b / r3_studio_metric_2 | `r3_studio_metric_2` | 5회 | S3 | 2 |
+| R3b / r3_studio_metric_label_3 | `r3_studio_metric_label_3` | 첨삭 | S4 | 2 |
+| R3b / r3_studio_metric_3 | `r3_studio_metric_3` | 3단 | S4 | 2 |
+| R3b / r3_studio_metric_label_4 | `r3_studio_metric_label_4` | 응시 기간 | S3 | 5 |
+| R3b / r3_studio_metric_4 | `r3_studio_metric_4` | 12개월 | S3 | 4 |
+| R3b / r3_studio_metric_label_5 | `r3_studio_metric_label_5` | 무료 응시 | S8 | 5 |
+| R3b / r3_studio_metric_5 | `r3_studio_metric_5` | 1회 | S8 | 2 |
+| R3b / r3_prep_cap | `r3_prep_cap` | 제시문 준비 화면 | S4 | 9 |
+| R3b / r3_answer_cap | `r3_answer_cap` | 답변 촬영 화면 | S4 | 8 |
+| R3b / r3_revision_cap | `r3_revision_cap` | 첨삭 세 단 화면 | S4 S14 | 9 |
+| R3b / r3_report_cap | `r3_report_cap` | 첨삭 리포트 화면 | S4 S14 | 9 |
+| R3b / r3_studio_preview | `r3_studio_preview` | 응시와 첨삭 화면 | S4 | 9 |
+| R3b / r3_screen_home | `r3_screen_home` | 스튜디오 지문 선택 화면 | S4 | 13 |
+| R3b / r3_screen_prep | `r3_screen_prep` | 제시문 준비 화면 | S4 | 9 |
+| R3b / r3_screen_answer | `r3_screen_answer` | 답변 촬영 화면 | S4 | 8 |
+| R3b / r3_screen_tab | `r3_screen_tab` | 스튜디오 응시 기록 화면 | S4 | 13 |
+| R3b / r3_sum_prefix | `r3_sum_prefix` | 낱권 30편 | S3d | 6 |
+| R3b / price_990000 | `price_990000` | 990,000원 | S3d | 8 |
+| R3b / r3_sum_suffix | `r3_sum_suffix` | 은 합산 금액입니다. | S3d | 11 |
+| R3b / r3_studio_opened | `r3_studio_opened` | 응시한 지문은 제공이 개시되어 청약철회가 제한됩니다. | S9 C3 | 29 |
+| R3b / r3_studio_maker | `r3_studio_maker` | 한 사람이 제시문 150세트를 같은 기준으로 편집합니다. | S12 | 31 |
+| R3b / r3_univ_ajou | `r3_univ_ajou` | 아주대학교 | G1 | 5 |
+| R3b / r3_cover_ajou | `r3_cover_ajou` | 아주대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_catholic | `r3_univ_catholic` | 가톨릭대학교 | G1 | 6 |
+| R3b / r3_cover_catholic | `r3_cover_catholic` | 가톨릭대학교 가이드북 표지 | G1 | 14 |
+| R3b / r3_univ_cau | `r3_univ_cau` | 중앙대학교 | G1 | 5 |
+| R3b / r3_univ_dongguk | `r3_univ_dongguk` | 동국대학교 | G1 | 5 |
+| R3b / r3_cover_dongguk | `r3_cover_dongguk` | 동국대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_ewha | `r3_univ_ewha` | 이화여자대학교 | G1 | 7 |
+| R3b / r3_univ_gachon | `r3_univ_gachon` | 가천대학교 | G1 | 5 |
+| R3b / r3_cover_gachon | `r3_cover_gachon` | 가천대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_hufs | `r3_univ_hufs` | 한국외국어대학교 | G1 | 8 |
+| R3b / r3_cover_hufs | `r3_cover_hufs` | 한국외국어대학교 가이드북 표지 | G1 | 16 |
+| R3b / r3_univ_inha | `r3_univ_inha` | 인하대학교 | G1 | 5 |
+| R3b / r3_cover_inha | `r3_cover_inha` | 인하대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_khu | `r3_univ_khu` | 경희대학교 | G1 | 5 |
+| R3b / r3_univ_konkuk | `r3_univ_konkuk` | 건국대학교(서울) | G1 | 9 |
+| R3b / r3_cover_konkuk | `r3_cover_konkuk` | 건국대학교(서울) 가이드북 표지 | G1 | 17 |
+| R3b / r3_univ_kookmin | `r3_univ_kookmin` | 국민대학교 | G1 | 5 |
+| R3b / r3_cover_kookmin | `r3_cover_kookmin` | 국민대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_kwangwoon | `r3_univ_kwangwoon` | 광운대학교 | G1 | 5 |
+| R3b / r3_cover_kwangwoon | `r3_cover_kwangwoon` | 광운대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_kyonggi | `r3_univ_kyonggi` | 경기대학교 | G1 | 5 |
+| R3b / r3_cover_kyonggi | `r3_cover_kyonggi` | 경기대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_myongji | `r3_univ_myongji` | 명지대학교 | G1 | 5 |
+| R3b / r3_cover_myongji | `r3_cover_myongji` | 명지대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_pusan | `r3_univ_pusan` | 부산대학교 | G1 | 5 |
+| R3b / r3_univ_sejong | `r3_univ_sejong` | 세종대학교 | G1 | 5 |
+| R3b / r3_cover_sejong | `r3_cover_sejong` | 세종대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_seoultech | `r3_univ_seoultech` | 서울과학기술대학교 | G1 | 9 |
+| R3b / r3_cover_seoultech | `r3_cover_seoultech` | 서울과학기술대학교 가이드북 표지 | G1 | 17 |
+| R3b / r3_univ_snu | `r3_univ_snu` | 서울대학교 | G1 | 5 |
+| R3b / r3_univ_sookmyung | `r3_univ_sookmyung` | 숙명여자대학교 | G1 | 7 |
+| R3b / r3_cover_sookmyung | `r3_cover_sookmyung` | 숙명여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_soongsil | `r3_univ_soongsil` | 숭실대학교 | G1 | 5 |
+| R3b / r3_cover_soongsil | `r3_cover_soongsil` | 숭실대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_sungshin | `r3_univ_sungshin` | 성신여자대학교 | G1 | 7 |
+| R3b / r3_cover_sungshin | `r3_cover_sungshin` | 성신여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_uos | `r3_univ_uos` | 서울시립대학교 | G1 | 7 |
+| R3b / r3_cover_uos | `r3_cover_uos` | 서울시립대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_dankook | `r3_univ_dankook` | 단국대학교(죽전) | G1 | 9 |
+| R3b / r3_cover_dankook | `r3_cover_dankook` | 단국대학교(죽전) 가이드북 표지 | G1 | 17 |
+| R3b / r3_univ_duksung | `r3_univ_duksung` | 덕성여자대학교 | G1 | 7 |
+| R3b / r3_cover_duksung | `r3_cover_duksung` | 덕성여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_dongduk | `r3_univ_dongduk` | 동덕여자대학교 | G1 | 7 |
+| R3b / r3_cover_dongduk | `r3_cover_dongduk` | 동덕여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_donga | `r3_univ_donga` | 동아대학교 | G1 | 5 |
+| R3b / r3_cover_donga | `r3_cover_donga` | 동아대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_sahmyook | `r3_univ_sahmyook` | 삼육대학교 | G1 | 5 |
+| R3b / r3_cover_sahmyook | `r3_cover_sahmyook` | 삼육대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_swu | `r3_univ_swu` | 서울여자대학교 | G1 | 7 |
+| R3b / r3_cover_swu | `r3_cover_swu` | 서울여자대학교 가이드북 표지 | G1 | 15 |
+| R3b / r3_univ_ulsan | `r3_univ_ulsan` | 울산대학교 | G1 | 5 |
+| R3b / r3_cover_ulsan | `r3_cover_ulsan` | 울산대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_incheon | `r3_univ_incheon` | 인천대학교 | G1 | 5 |
+| R3b / r3_cover_incheon | `r3_cover_incheon` | 인천대학교 가이드북 표지 | G1 | 13 |
+| R3b / r3_univ_hanyang-erica | `r3_univ_hanyang-erica` | 한양대학교(ERICA) | G1 | 12 |
+| R3b / r3_cover_hanyang-erica | `r3_cover_hanyang-erica` | 한양대학교(ERICA) 가이드북 표지 | G1 | 20 |
+| R3b / r3_view | `r3_view` | 보기 | G1 | 2 |
+| R3b / r3_faq_pdf_q | `r3_faq_pdf_q` | PDF 소장판 수령 방법 | G3 | 13 |
+| R3b / r3_faq_update_q | `r3_faq_update_q` | 대학 추가와 판 갱신 | G11 | 11 |
+| R3b / r3_faq_print_q | `r3_faq_print_q` | 가이드북 인쇄 방법 | G7 | 10 |
+| R3b / r3_faq_period_q | `r3_faq_period_q` | 전권 열람권의 열람 기간 | G2 | 13 |
+| R3b / r3_faq_teacher_q | `r3_faq_teacher_q` | 강사 계정의 열람 범위 | S11 | 12 |
+| R3b / r3_faq_teacher_a | `r3_faq_teacher_a` | 제공 항목은 응시 이력과 첨삭 리포트뿐입니다. 답변 원본 음성과 영상, 기준 목소리는 어떤 경우에도 강사에게 제공되지 않습니다. | S11 | 71 |
+| R3b / r3_faq_rank_q | `r3_faq_rank_q` | 순위표 공개와 별명 설정 | S10 | 13 |
+| R3b / r3_faq_rank_a | `r3_faq_rank_a` | 마이페이지에서 별명을 정하고 순위표 공개를 선택합니다. | S10 | 30 |
+| R3b / r3_faq_video_q | `r3_faq_video_q` | 응시 영상 다시 보기 | S5 | 11 |
+| R3b / r3_rank_h1 | `r3_rank_h1` | 응시 순위표 | S10 | 6 |
+| R3b / r3_rank_lead | `r3_rank_lead` | 공개를 선택한 회원의 기록을 싣습니다. 점수는 0~100점입니다. | S10 | 36 |
+| R3b / r3_rank_name | `r3_rank_name` | 별명 | S10 | 2 |
+| R3b / r3_rank_caption | `r3_rank_caption` | 응시 순위 표. 순위, 별명, 점수, 세트 코드, 난이도, 응시 날짜. | S10 | 39 |
+| R3b / r3_rank_mine | `r3_rank_mine` | 내 기록 싣기 / 별명 정하기 → 마이페이지 | S10 | 24 |
+| R3b / r3_rank_noscript | `r3_rank_noscript` | 순위표를 보려면 자바스크립트를 켜 주세요. | S10 | 23 |
+| R3b / r3_rank_failed | `r3_rank_failed` | 순위표를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요. | S10 | 33 |
+| R3b / r3_rank_masked | `r3_rank_masked` | 별명을 정하기 전 회원 | S10 | 12 |
+| R3b / r3_find_link | `r3_find_link` | 대학 찾기 | G1 | 5 |
+| R3b / r3_rank_seo_title | `r3_rank_seo_title` | 응시 순위표와 랭킹실, 연세대 고려대 제시문 면접 스튜디오, 현학적 연구소 | S10 | 41 |
+| R3b / r3_rank_seo_desc | `r3_rank_seo_desc` | 연세대와 고려대 제시문 면접 스튜디오의 응시 순위표입니다. 공개를 선택한 회원의 별명과 점수, 세트, 난이도를 확인합니다. 전체, 세트별, 난이도별로 응시 기록을 살펴봅니다. | S10 | 97 |
+| R3b / r3_rank_nav | `r3_rank_nav` | 랭킹실 | S10 | 3 |
+| R3b / r3_nickname_label | `r3_nickname_label` | 별명 | S10 | 2 |
+| R3b / r3_nickname_save | `r3_nickname_save` | 별명 저장 | S10 | 5 |
+| R3b / r3_nickname_rules | `r3_nickname_rules` | 2~12자, 한글, 영문, 숫자 | S10 | 17 |
+| R3b / r3_nickname_required | `r3_nickname_required` | 별명을 먼저 정해 주세요 | S10 | 13 |
+| R3b / r3_nickname_taken | `r3_nickname_taken` | 이미 사용 중인 별명입니다. 다른 별명을 정해 주세요. | S10 | 30 |
+| R3b / r3_nickname_short | `r3_nickname_short` | 별명은 2자 이상으로 정해 주세요. | S10 | 19 |
+| R3b / r3_nickname_long | `r3_nickname_long` | 별명은 12자 이내로 정해 주세요. | S10 | 19 |
+| R3b / r3_nickname_charset | `r3_nickname_charset` | 별명은 완성형 한글, 영문, 숫자로 정해 주세요. | S10 | 27 |
+| R3b / r3_nickname_forbidden | `r3_nickname_forbidden` | 사용할 수 없는 표현이 포함된 별명입니다. 다른 별명을 정해 주세요. | S10 | 38 |
+| R3b / r3_nickname_failed | `r3_nickname_failed` | 저장하지 못했습니다. 잠시 후 다시 시도해 주세요. | S10 | 28 |
+| R3b / r3_nickname_saved | `r3_nickname_saved` | 별명을 저장했습니다. | S10 | 11 |
+| R3b / r3_rank_public_note | `r3_rank_public_note` | 랭킹실에 별명, 최고 점수, 응시한 세트 코드, 채점일이 실립니다. 선택 항목이며, 꺼도 채점과 첨삭과 리포트는 그대로 받습니다. | S10 | 72 |
+| R3b / r3_rank_on_saved | `r3_rank_on_saved` | 공개를 저장했습니다. 다음 집계부터 순위표에 실립니다.  | S10 | 31 |
+| R3b / r3_rank_off_saved | `r3_rank_off_saved` | 공개를 껐습니다. 다음 집계부터 순위표에서 빠집니다.  | S10 | 30 |
+| R3b / r3_print_mark_label | `r3_print_mark_label` | 인쇄와 계정 표시 | G3 G7 | 9 |
+| R3b / r3_rank_unknown_difficulty | `r3_rank_unknown_difficulty` | 난이도 미확인 | S10 | 7 |
