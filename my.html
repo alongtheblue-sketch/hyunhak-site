@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', async function(){
       body.innerHTML='<div class="tw"><table class="tbl"><thead><tr><th class="c"></th><th>상품</th><th>열람 여부</th><th>제한 사유</th><th class="num">금액</th></tr></thead><tbody>'
         +(rows||'<tr><td colspan="5">주문에 담긴 상품이 없습니다</td></tr>')+'</tbody></table></div>'
         +'<p class="sum"><span>선택한 상품의 환불 금액</span><b id="rfSum"></b></p>'
-        +(e.window_until?'<p class="lim">청약철회 가능 기한 '+d10(e.window_until)+' 까지 (공급받은 날부터 '+HH.intIn(e.policy&&e.policy.deadline_days,1,60,7)+'일)</p>':'')
+        +(e.window_until?'<p class="lim">청약철회 가능 기한 '+d10(e.window_until)+' 까지'+(e.policy&&e.policy.deadline_days!=null?' (공급받은 날부터 '+HH.intIn(e.policy.deadline_days,1,60,7)+'일)':'')+'</p>':'')   /* deadline_days null(API 2026-09-09 청약철회 기한 제거) 이면 괄호를 그리지 않는다. 종전 intIn 폴백 7 이 「7일」을 계속 그려 약관·API 와 어긋났다 */
         +(anyOk?'':'<div class="state">이 주문에는 지금 청약철회할 수 있는 상품이 없습니다. 제공이 개시되었거나 기한이 지난 상품은 단순 변심으로 환불되지 않습니다. 표시 내용과 실제가 다른 경우에는 admin@hyunhak.com 으로 보내 주세요.</div>');
       body.querySelectorAll('.ck').forEach(function(c){ c.addEventListener('change', sumUp); });
       sumUp();

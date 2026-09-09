@@ -103,7 +103,7 @@ try {
           return { table: (t.caption && t.caption.textContent.trim().slice(0, 16)) || t.className, right: Math.round(r.right), vw: innerWidth,
             scrollable: !!wrap && wrap.scrollWidth > wrap.clientWidth, hint: !!hintEl && getComputedStyle(hintEl).display !== 'none' };
         }));
-        check(tables.every(t => t.right <= t.vw || (t.scrollable && t.hint)), `${rel} ${viewport.width} tables inside viewport or scrollable with visible hint`, tables);
+        check(tables.every(t => t.scrollable ? t.hint : (t.right <= t.vw && !t.hint)), `${rel} ${viewport.width} tables inside viewport without hint, or scrollable with visible hint`, tables);
         if (rel.startsWith('programs/')) {
           const band = await page.locator('.r3-metrics').boundingBox();
           if (viewport.width === 1280) check(band && band.y + band.height <= viewport.height, `${rel} metrics band fully inside first viewport`, band);
@@ -113,8 +113,8 @@ try {
           check(closeBtn.cls.split(' ').includes('btn'), `${rel} closing CTA is a button`, closeBtn);
         }
         if (rel === 'programs/studio.html') {
-          const sums = await page.locator('main p:has(> .r3-price)').evaluateAll(ns => ns.map(n => ({ text: n.textContent.replace(/\s+/g, ' ').trim(), bound: !!n.querySelector('[data-list-price]') })));
-          check(sums.length === 1 && sums[0].text.includes('990,000원') && !sums[0].bound, `${rel} sum sentence keeps list price 990,000 unbound from promo`, sums);
+          const sums = await page.locator('main p:has(> .r3-sum)').evaluateAll(ns => ns.map(n => ({ text: n.textContent.replace(/\s+/g, ' ').trim(), bound: !!n.querySelector('[data-list-price]') })));
+          check(sums.length === 1 && sums[0].text.includes('990,000원') && !sums[0].bound, `${rel} sum sentence keeps list price 990,000 unbound from promo and not in price color`, sums);
         }
         if (rel.includes('guidebook')) {
           await page.locator('input[value="pdf"]').check();

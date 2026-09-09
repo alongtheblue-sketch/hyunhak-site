@@ -315,6 +315,7 @@
 | R3b / price_990000 | `price_990000` | 990,000원 | S3d | 8 |
 | R3b / r3_sum_suffix | `r3_sum_suffix` | 은 정가 기준 합산 금액입니다. | S3d | 17 |
 | R3b / r3_scroll_hint | `r3_scroll_hint` | 표는 옆으로 밀어 볼 수 있습니다. | C1 | 19 |
+| R3b / r3_scroll_hint_img | `r3_scroll_hint_img` | 표본은 옆으로 밀어 볼 수 있습니다. | C1 | 20 |
 | R3b / r3_studio_opened | `r3_studio_opened` | 응시한 지문은 제공이 개시되어 청약철회가 제한됩니다. | S9 C3 | 29 |
 | R3b / r3_studio_maker | `r3_studio_maker` | 한 사람이 제시문 150세트를 같은 기준으로 편집합니다. | S12 | 31 |
 | R3b / r3_univ_ajou | `r3_univ_ajou` | 아주대학교 | G1 | 5 |
@@ -379,8 +380,8 @@
 | R3b / r3_faq_update_q | `r3_faq_update_q` | 대학 추가와 판 갱신 | G11 | 11 |
 | R3b / r3_faq_print_q | `r3_faq_print_q` | 가이드북 인쇄 방법 | G7 | 10 |
 | R3b / r3_faq_period_q | `r3_faq_period_q` | 전권 열람권의 열람 기간 | G2 | 13 |
-| R3b / r3_faq_teacher_q | `r3_faq_teacher_q` | 강사 계정의 열람 범위 | S11 | 12 |
-| R3b / r3_faq_teacher_a | `r3_faq_teacher_a` | 제공 항목은 응시 이력과 첨삭 리포트뿐입니다. 답변 원본 음성과 영상, 기준 목소리는 어떤 경우에도 강사에게 제공되지 않습니다. | S11 | 71 |
+| R3b / r3_faq_teacher_q | `r3_faq_teacher_q` | 강사 계정은 무엇을 봅니까 | S11 | 14 |
+| R3b / r3_faq_teacher_a | `r3_faq_teacher_a` | 배정 학생의 응시 진행과 잔여 횟수, 학생이 동의한 범위의 첨삭 리포트를 봅니다. | S11 | 45 |
 | R3b / r3_faq_rank_q | `r3_faq_rank_q` | 순위표 공개와 별명 설정 | S10 | 13 |
 | R3b / r3_faq_rank_a | `r3_faq_rank_a` | 마이페이지에서 별명을 정하고 순위표 공개를 선택합니다. | S10 | 30 |
 | R3b / r3_faq_video_q | `r3_faq_video_q` | 응시 영상 다시 보기 | S5 | 11 |

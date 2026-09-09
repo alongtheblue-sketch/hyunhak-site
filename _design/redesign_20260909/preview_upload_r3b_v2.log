@@ -1,0 +1,35 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.130.0
+────────────────────
+🌀 Building list of assets...
+✨ Read 1483 files from the assets directory /Users/gregory/Workspace/_wt/hh-r3
+🌀 Starting asset upload...
+🌀 Found 3 new or modified static assets to upload. Proceeding with upload...
++ /programs/studio.html
++ /programs/guidebook.html
++ /assets/base.css
+Uploaded 1 of 3 assets
+Uploaded 2 of 3 assets
+Uploaded 3 of 3 assets
+✨ Success! Uploaded 3 files (625 already uploaded) (0.81 sec)
+
+Total Upload: 11.79 KiB / gzip: 3.74 KiB
+Worker Startup Time: 0 ms
+Your Worker has access to the following bindings:
+Binding                   Resource         
+env.DB (hyunhak)          D1 Database      
+env.ASSETS                Assets           
+
+Uploaded hyunhak-site (3.67 sec)
+Worker Version ID: 2ea7346a-468d-491e-8b16-3b23fa30c233
+Version Preview URL: https://2ea7346a-hyunhak-site.alongtheblue.workers.dev
+
+To deploy this version to production traffic use the command wrangler versions deploy
+
+Changes to non-versioned settings (config properties 'logpush' or 'tail_consumers') take effect after your next deployment using the command wrangler versions deploy
+
+Changes to triggers (routes, custom domains, cron schedules, etc) must be applied with the command wrangler triggers deploy
+
