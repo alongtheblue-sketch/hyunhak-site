@@ -41,8 +41,18 @@ def main():
                  "_tools/promo.json", "_tools/promo_strip.html", "_tools/promo_band.html",
                  "_tools/promo_popup.html", "robots.txt", "llms.txt", "assets/app.js",
                  "programs/korea.html", "programs/yonsei.html", "checkout.html"]
+    # _tools/build_all.sh 는 세션 커밋 990e738 의 해시 정렬 로케일 고정(`| sort |` → `| LC_ALL=C sort |` + 주석) 한 줄만 허용 (2026-09-09)
+    def normalized(rel, text):
+        if rel != "_tools/build_all.sh":
+            return text
+        lines = []
+        for line in text.splitlines(keepends=True):
+            if line.startswith('find . -name "*.html"') and "LC_ALL=C sort" in line:
+                line = line.split("   # LC_ALL=C:")[0].replace("| LC_ALL=C sort |", "| sort |") + "\n"
+            lines.append(line)
+        return "".join(lines)
     for rel in protected:
-        assert read(rel) == old(rel), f"protected file changed: {rel}"
+        assert normalized(rel, read(rel)) == old(rel), f"protected file changed: {rel}"
     for rel in ["terms.html", "privacy.html"]:
         assert main_body(read(rel)) == main_body(old(rel)), f"legal body changed: {rel}"
     print(f"PASS protected files={len(protected)} legal bodies=2 bytes identical")
