@@ -1,4 +1,4 @@
-# R3b 브리프 — 상세면 2면 재구성 + 랭킹실 + 별명 + IA 단순화 (hyunhak.com, 2026-09-09, base = r3a 완료 HEAD)
+# R3b 브리프 — 상세면 2면 재구성 + 랭킹실 + 별명 + IA 단순화 (hyunhak.com, 2026-09-09, base = r3a 커밋 98b5ff1 + FACTS v2 S13·S14·X 판정(작업 트리))
 
 ## 0. 건우 지시 원문 (13:03, 채점 기준)
 - 「가이드북이랑 면접스튜디오 원래 되게 상세하게 상세페이지 있었는데 사라졌어. 해당 상세페이지 보고 아 이런거구나 하고 딱 느낌 올 수 있게, 정확히 내가 어떤걸 받아볼 수 있는지 이해가 딱 되도록 해줘야 해. 이건 다시 만들고 구성 생각해봐. 소구점 빵빵하게 넣고. 마케팅 측면에서 강화 많이 되어야 할거야」
@@ -7,8 +7,8 @@
 
 ## 1. 작업 환경
 - 작업 트리 = `~/Workspace/_wt/hh-r3`(브랜치 redesign/20260909-r3). base = r3a 커밋 완료 HEAD. 공통 조항 = `_design/redesign_20260909/codex/impl_brief_invariants.md`. 사실 원장 = `_design/redesign_20260909/FACTS_LEDGER.md` v2(수치·주장은 항목 id 만, RD-4 ② 강사 영상 열람 단정 금지, 「13년차」 면당 1곳). 카피 규칙 = r2_brief §5(합쇼체, 가운뎃점·em대시·은유·대구 0, style_gate A/B).
-- 채택 설계 = `__DESIGN_DIR__`(목업 HTML + SECTION_MAP). 목업의 구조·섹션 순서·요소·카피를 그대로 옮긴다. 목업이 원장 밖 수치를 담고 있으면 그 수치는 뺀다(보고).
-- 브라우저 BLOCKED 규약. 변경 단위마다 커밋. 무접촉 목록 = r3a 와 동일 + `_worker/index.js`(301 표는 §2.4 의 1건만 추가).
+- 채택 설계 = `_design/redesign_20260909/SECTION_SPEC_R3.md`(절 순서·내용·근거 id·참조 목업). 시각 참조 목업(읽기만, 이 저장소 밖) = `~/Workspace/_wt/hh-r2b/_design/redesign_20260909/r3_design/{A,B,C}/*.html` + `shared.css`. 목업의 카피·수치는 옮기지 않는다(원장 밖 문면 다수, `r3_design/CODEX_R3_REVIEW.md` 전건표 참조). 구조와 조판 의도만 가져오고 문장은 FACTS v2 로 새로 쓴다.
+- 브라우저 BLOCKED 규약. **커밋은 본 세션 대리**(워크트리 git 인덱스가 저장소 밖이라 샌드박스가 거부한다. 커밋 시도 금지, 단계별 변경 파일 목록만 보고). 무접촉 목록 = r3a 와 동일 + `_worker/index.js`.
 
 ## 2. 순서 (각 단계 끝에 커밋)
 ### 2.1 상세면 2면 재구성 (programs/guidebook.html, programs/studio.html)
