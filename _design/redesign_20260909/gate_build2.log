@@ -6,13 +6,13 @@
 변경 41
 promo 적용: LP 4 + 홈 1 + 팝업 6 / 변경 3 ['guidebook/index.html', 'lectures.html', 'interview.html'] / 행사 중
 변경 41
-base.css 면 63 변경 35
+base.css 면 64 변경 35
 analytics 주입 41 ga4=G-2ZM01XDLNT meta_pixel=1788228408971711 wcs=없음
--- 66면 처리, 43면 기록
-sitemap.xml 55 URL / robots.txt / llms.txt / llms-full.txt 기록
-rss.xml 55 항목 기록
+-- 67면 처리, 43면 기록
+sitemap.xml 56 URL / robots.txt / llms.txt / llms-full.txt 기록
+rss.xml 56 항목 기록
   [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
-v2_check: files=61 fails=0
+v2_check: files=62 fails=0
 면 31 / FAIL 0건
 최신 (terms a05229cb3d39, privacy f037c605661e)
 지면 = 원장 (낡음 0)
@@ -20,6 +20,6 @@ seo_keyword_census: 가이드북 31/31면 전 구절, 계열 22/22 / FAIL 0건
 build_samples --check: 표본 12장 + 확대 1 / FAIL 0건 (v24 PDF 100417407367be5d)
 [full] 자막 봉인 대조 통과(설계 원본 없는 트리)
 자막 게이트 통과: 영상 배선 11건, 면제 0건
-link_check: 면 66 · sitemap 55 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
+link_check: 면 67 · sitemap 56 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
 worker_check: FAIL 0 / 27 항목
-ae0de744b80b960b
+af16326ce76c328e

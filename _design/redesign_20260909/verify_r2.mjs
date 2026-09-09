@@ -39,7 +39,7 @@ async function startServer() {
   return `http://127.0.0.1:${server.address().port}/`;
 }
 async function navCheck(page, rel, viewport) {
-  for (const [selector, guideLabel, studioLabel] of [['.gnb', '가이드북', '제시문 면접 스튜디오'], ['.fix', '가이드북', '스튜디오']]) {
+  for (const [selector, guideLabel, studioLabel] of [['.gnb', '가이드북', '스튜디오'], ['.fix', '가이드북', '스튜디오']]  /* R3 GNB 라벨 「스튜디오」(SECTION_SPEC_R3 §4, 2026-09-09). 구 「제시문 면접 스튜디오」는 R2 셸 */) {
     const result = await page.locator(selector).evaluate((nav, labels) => {
       const links = [...nav.querySelectorAll('a')];
       return labels.map(label => {

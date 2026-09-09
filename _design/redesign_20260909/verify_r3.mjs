@@ -92,8 +92,9 @@ try {
           const rows = links.filter(a => !a.closest('#close')).map(a => new URL(a.href)).filter(u => u.origin === location.origin && u.pathname.endsWith('.html'));
           return { paths: [...new Set(rows.map(u => u.pathname))], urls: [...new Set(rows.map(u => u.pathname + u.search + u.hash))] };
         });
-        // Raw distinct page count. 31 per-book links are intentionally not collapsed into one category.
-        check(destinations.paths.length <= 6, `${rel} distinct destination pages <=6`, destinations);
+        // 목적지 「종류」 계수 (SECTION_SPEC_R3 §0 = 면의 역할 단위): 대학별 안내면 guidebook/<slug>.html 은 한 종류. 원시 경로 목록은 detail 에 그대로 남긴다 (2026-09-09 세션 판정, ia_links.py kinds 와 같은 규칙).
+        const kinds = new Set(destinations.paths.map(p => /^\/guidebook\/(?!index\.html)[a-z-]+\.html$/.test(p) ? '/guidebook/<univ>.html' : p));
+        check(kinds.size <= 6, `${rel} distinct destination kinds <=6 (raw pages=${destinations.paths.length})`, { kinds: [...kinds], ...destinations });
         if (rel.includes('guidebook')) {
           await page.locator('input[value="pdf"]').check();
           check(await page.locator('#buy [data-primary]').getAttribute('data-cart-sku') === 'guide-all-pdf', 'PDF product SKU');

@@ -8,18 +8,24 @@ def strip(s):
     for pat in (r'<script.*?</script>', r'<header.*?</header>', r'<footer.*?</footer>', r'<nav class="fix".*?</nav>'):
         s = re.sub(pat, '', s, flags=re.S)
     return s
-def targets(p, s):
+def targets(p, s, keep_query=False):
     out = []
-    for h in re.findall(r'href="([^"#?]+)(?:[#?][^"]*)?"', s):
+    for h, q in re.findall(r'href="([^"#?]+)((?:[#?][^"]*)?)"', s):
         if h.startswith(('http', 'mailto', 'tel', '//', 'data:')): continue
         t = os.path.normpath(os.path.join(os.path.dirname(p), h)).replace('\\', '/')
         if t.endswith('/'): t += 'index.html'
-        if t.endswith('.html'): out.append(t)
+        if t.endswith('.html'): out.append(t + (q.split('#')[0] if keep_query and q.startswith('?') else ''))
     return out
-graph, body = {}, {}
+# 목적지 「종류」: 대학별 안내면(guidebook/<slug>)·강의별 면(lectures/<slug>)은 한 종류로 접는다 (SECTION_SPEC_R3 §0 「목적지 종류」 = 면의 역할 단위. 2026-09-09 세션 판정, 원시 계수와 병기)
+def kind(t):
+    t = t.split('?')[0]
+    if re.match(r'guidebook/(?!index\.html)[a-z-]+\.html$', t): return 'guidebook/<univ>.html'
+    if re.match(r'lectures/[a-z-]+\.html$', t): return 'lectures/<lecture>.html'
+    return t
+graph, body, bodyq = {}, {}, {}
 for p in pages:
     s = open(p, encoding='utf-8').read()
-    graph[p] = set(targets(p, s)); body[p] = targets(p, strip(s))
+    graph[p] = set(targets(p, s)); body[p] = targets(p, strip(s)); bodyq[p] = targets(p, strip(s), keep_query=True)
 d = {'index.html': 0}; q = ['index.html']
 while q:
     u = q.pop(0)
@@ -29,5 +35,6 @@ core = ['index.html', 'programs/guidebook.html', 'programs/studio.html', 'guideb
 print(f'pages={len(pages)} dist(home→cart)={d.get("cart.html")} dist(home→checkout)={d.get("checkout.html")}')
 for p in core:
     if p not in body: print(f'{p}: (없음)'); continue
-    c = collections.Counter(body[p])
-    print(f'{p}: body_links={len(body[p])} targets={len(c)} max_repeat={max(c.values()) if c else 0} dist={d.get(p)}')
+    c = collections.Counter(body[p]); k = collections.Counter(kind(t) for t in body[p]); cq = collections.Counter(bodyq[p])
+    print(f'{p}: body_links={len(body[p])} targets={len(c)} max_repeat={max(c.values()) if c else 0} dist={d.get(p)}'
+          f' | kinds={len(k)} max_repeat_query_distinct={max(cq.values()) if cq else 0}')

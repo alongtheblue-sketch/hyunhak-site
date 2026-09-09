@@ -1331,7 +1331,7 @@ html.ppop-open{overflow:hidden}
 }
 /* R3: 상세면 수령물, 표본, 비교표. 색과 크기 토큰은 위 정의를 그대로 사용한다. */
 :where(body.v2) .r3-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:var(--s5);align-items:center}
-:where(body.v2) .r3-hero .r2-intro{grid-column:1/-1;max-width:none;margin-inline:0}
+:where(body.v2) .r3-hero .r2-intro{grid-column:1/-1;max-width:none;margin-inline:0;padding-top:var(--s3)}  /* 상단 s3: 계기 밴드 첫 화면 여유 확보 (2026-09-09 verify_r3 실측) */
 :where(body.v2) .r3-buy{margin:0;padding:var(--s3);width:100%}
 :where(body.v2) .r3-buy>p{font-size:var(--t-sm);color:var(--body)}
 :where(body.v2) .r3-buy .r2-status:empty{display:none}
@@ -1342,7 +1342,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-cover-fan>img{width:25%;flex:none}
 :where(body.v2) .r3-cover-fan>img+img{margin-left:-7%}
 :where(body.v2) .r3-cover-fan>img:nth-child(2n){transform:translateY(var(--s3))}
-:where(body.v2) .r3-metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-block:var(--s4);border-block:var(--rule-hd)}
+:where(body.v2) .r3-metrics{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-block:var(--s3) var(--s4);border-block:var(--rule-hd)}  /* 상단 s3: 1280×800 첫 화면 안에 밴드 상단 (SECTION_SPEC_R3 §6, 2026-09-09 verify_r3 실측 studio y 825 → 수리) */
 :where(body.v2) .r3-metrics>div{padding:var(--s3) var(--s2);border-right:var(--rule-ui)}
 :where(body.v2) .r3-metrics>div:last-child{border-right:0}
 :where(body.v2) .r3-metrics dt{font-size:var(--t-sm);color:var(--body)}
