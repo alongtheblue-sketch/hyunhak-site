@@ -111,8 +111,9 @@ def shipping_details(m, delivery, price):
             "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": zero, "transitTime": zero}}
 
 
-def return_policy(m, delivery):
-    """terms.html 제6조 전사. 근거 없는 값은 만들지 않는다 -> manifest 미기재면 None(속성 생략)."""
+def return_policy(m, delivery, sch=None, rel=""):
+    """terms.html 제6조 전사. 근거 없는 값은 만들지 않는다 -> manifest 미기재면 None(속성 생략).
+    디지털 유한 창 일수는 면의 schema.return_kind 로 merchant.digital_return_days_by_kind 에서 고른다 (2026-09-09 HR3-4 A안)."""
     mc = m["site"].get("merchant") or {}
     country = mc.get("country", "KR")
     if delivery == "physical":
@@ -136,10 +137,15 @@ def return_policy(m, delivery):
     pol = {"@type": "MerchantReturnPolicy", "applicableCountry": country,
            "returnPolicyCategory": "https://schema.org/" + cat}
     if cat == "MerchantReturnFiniteReturnWindow":
-        days = mc.get("digital_return_days")
-        if days is None:
-            return None
-        pol["merchantReturnDays"] = days
+        # 디지털 청약철회는 「제공 개시 전까지」(terms 제6조, API support.js REFUND_POLICY deadline_days null)라 달력 기한이 없다.
+        # schema.org 유한 창은 일수가 필수이므로 상품 이용 기간을 싣는다 (view 90 = 가이드북 열람 3개월, lecture 90 = 인강 3개월,
+        # pass 365 = 스튜디오 이용권 12개월). 값과 근거는 manifest merchant 블록 한 곳. 표에 없는 kind 는 빌드를 멈춘다
+        # (미분류를 기본값으로 덮으면 종전 「7일」 사본이 조용히 되살아난다).
+        table = mc.get("digital_return_days_by_kind") or {}
+        kind = (sch or {}).get("return_kind")
+        if kind not in table:
+            raise SystemExit(f"seo_inject: {rel or '?'} 의 schema.return_kind={kind!r} 가 merchant.digital_return_days_by_kind {sorted(table)} 에 없다")
+        pol["merchantReturnDays"] = int(table[kind])
         pol["returnFees"] = "https://schema.org/FreeReturn"
         # returnMethod 생략: 디지털은 돌려보낼 물건이 없다 (terms 제6조에도 반송 수단 없음)
     return pol
@@ -250,7 +256,7 @@ def build_graph(m, rel, e, page_html):
             prod["additionalProperty"] = [{"@type": "PropertyValue", "name": k, "value": v}
                                           for k, v in sch["properties"].items()]
         delivery = sch.get("delivery", "digital")
-        ret = return_policy(m, delivery)
+        ret = return_policy(m, delivery, sch, rel)
         out = []
         for o in offers or []:
             # 살 수 있는 곳이 이 면이 아니면 offer_url 로 실제 결제 동선을 가리킨다.

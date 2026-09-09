@@ -84,7 +84,7 @@
       "contact": "admin@hyunhak.com"
     },
     "merchant": {
-      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신. 디지털은 제6조(열지 않은 권 공급일부터 7일 청약철회) 전사, 반송 수단이 없어 returnMethod 는 싣지 않는다.",
+      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신. 디지털은 제6조 「제공 개시 전까지」(달력 기한 없음) 전사. schema.org 유한 창은 일수가 필수라 상품 이용 기간을 싣는다 = digital_return_days_by_kind, 면의 schema.return_kind 로 고른다 (view = 가이드북 열람 3개월, API pay.js VIEW_MONTHS / lecture = 인강 3개월, LECTURE_MONTHS / pass = 스튜디오 이용권 12개월, studio.html faq.html 고지). 표에 없는 kind 는 빌드 정지. 반송 수단이 없어 returnMethod 는 싣지 않는다. 2026-09-09 HR3-4 A안 (종전 digital_return_days 7 = 공급일 7일 사본).",
       "country": "KR",
       "shipping_fee": 3000,
       "free_shipping_over": 50000,
@@ -96,7 +96,11 @@
       "physical_handling_days_min": 0,
       "physical_handling_days_max": 1,
       "digital_return_category": "MerchantReturnFiniteReturnWindow",
-      "digital_return_days": 7
+      "digital_return_days_by_kind": {
+        "view": 90,
+        "pass": 365,
+        "lecture": 90
+      }
     },
     "address": {
       "street": "테헤란로 70길 12, 402-941A호",
@@ -138,7 +142,8 @@
             "price": null,
             "sku": null
           }
-        ]
+        ],
+        "return_kind": "view"
       }
     },
     "programs/*": {
@@ -169,7 +174,8 @@
             "price": 22000,
             "sku": null
           }
-        ]
+        ],
+        "return_kind": "pass"
       }
     }
   },
@@ -2707,7 +2713,8 @@
             "sku": "lecture-common",
             "offer_url": "/studio.html#lecture"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함.",
       "keywords": [
@@ -2807,7 +2814,8 @@
             "sku": "guide-all-pdf",
             "offer_url": "/guidebook/"
           }
-        ]
+        ],
+        "return_kind": "view"
       },
       "answer": "대학별 면접 가이드북 2027은 서류기반 면접(생기부 면접) 준비서로 31개 대학 31권, 다섯 부 구성입니다. 면접 기출문제와 생기부 예상 질문 규칙을 담았고 권당 33,000원.",
       "keywords": [
@@ -2892,7 +2900,8 @@
             "sku": "lecture-common",
             "offer_url": "/studio.html#lecture"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "제시문 면접 스튜디오는 연세대, 고려대 기출 규격 150세트를 촬영 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원.",
       "keywords": [
@@ -3117,7 +3126,8 @@
             "price": 495000,
             "sku": "pass-korea-hum"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "고려대 계열적합 인문 풀이법 인강은 공통 풀이 4편과 단위 강의, 세트 해설 30편으로 구성되며 단위 전권 이용권에 포함되어 구매일부터 3개월 시청합니다."
     },
@@ -3149,7 +3159,8 @@
             "price": 495000,
             "sku": "pass-korea-sci"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "고려대 계열적합 자연 풀이법 인강은 공통 풀이 4편과 단위 강의, 세트 해설 40편(보충 10편 포함)으로 구성되며 단위 전권 이용권에 포함되어 구매일부터 3개월 시청합니다."
     },
@@ -3181,7 +3192,8 @@
             "price": 495000,
             "sku": "pass-yonsei-hum"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "연세대 활동우수 인문통합 풀이법 인강은 공통 풀이 4편과 단위 강의, 세트 해설 30편으로 구성되며 단위 전권 이용권에 포함되어 구매일부터 3개월 시청합니다."
     },
@@ -3213,7 +3225,8 @@
             "price": 495000,
             "sku": "pass-yonsei-sci"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "연세대 활동우수 자연 풀이법 인강은 공통 풀이 4편과 단위 강의, 세트 해설 30편으로 구성되며 단위 전권 이용권에 포함되어 구매일부터 3개월 시청합니다."
     },
@@ -3245,7 +3258,8 @@
             "price": 495000,
             "sku": "pass-yonsei-intl"
           }
-        ]
+        ],
+        "return_kind": "pass"
       },
       "answer": "연세대 국제형 풀이법 인강은 공통 풀이 4편과 단위 강의, 세트 해설 30편으로 구성되며 단위 전권 이용권에 포함되어 구매일부터 3개월 시청합니다."
     },
@@ -3277,7 +3291,8 @@
             "price": 220000,
             "sku": "lecture-common"
           }
-        ]
+        ],
+        "return_kind": "lecture"
       },
       "answer": "공통 풀이 인강은 연세대, 고려대 제시문 면접 다섯 단위에 공통인 풀이 절차 4편으로 220,000원에 3개월 시청하며, 단위 전권 이용권에는 이미 포함되어 있습니다."
     }
