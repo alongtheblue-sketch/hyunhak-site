@@ -104,6 +104,11 @@ try {
             scrollable: !!wrap && wrap.scrollWidth > wrap.clientWidth, hint: !!hintEl && getComputedStyle(hintEl).display !== 'none' };
         }));
         check(tables.every(t => t.scrollable ? t.hint : (t.right <= t.vw && !t.hint)), `${rel} ${viewport.width} tables inside viewport without hint, or scrollable with visible hint`, tables);
+        const strips = await page.evaluate(() => [...document.querySelectorAll('main .openers, main .r2-samples, main .r3-screen-strip')].map(n => {
+          const hintEl = n.nextElementSibling && n.nextElementSibling.classList.contains('r3-scroll-hint') ? n.nextElementSibling : null;
+          return { strip: n.className.split(' ')[0], scrollable: n.scrollWidth > n.clientWidth + 1, hint: !!hintEl && getComputedStyle(hintEl).display !== 'none' };
+        }));
+        check(strips.every(s => s.scrollable === s.hint), `${rel} ${viewport.width} image scrollers: hint iff scrollable`, strips);
         if (rel.startsWith('programs/')) {
           const band = await page.locator('.r3-metrics').boundingBox();
           if (viewport.width === 1280) check(band && band.y + band.height <= viewport.height, `${rel} metrics band fully inside first viewport`, band);

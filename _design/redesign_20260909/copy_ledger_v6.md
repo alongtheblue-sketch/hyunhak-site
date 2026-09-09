@@ -381,7 +381,7 @@
 | R3b / r3_faq_print_q | `r3_faq_print_q` | 가이드북 인쇄 방법 | G7 | 10 |
 | R3b / r3_faq_period_q | `r3_faq_period_q` | 전권 열람권의 열람 기간 | G2 | 13 |
 | R3b / r3_faq_teacher_q | `r3_faq_teacher_q` | 강사 계정은 무엇을 봅니까 | S11 | 14 |
-| R3b / r3_faq_teacher_a | `r3_faq_teacher_a` | 배정 학생의 응시 진행과 잔여 횟수, 학생이 동의한 범위의 첨삭 리포트를 봅니다. | S11 | 45 |
+| R3b / r3_faq_teacher_a | `r3_faq_teacher_a` | 배정 학생의 응시 진행과 잔여 횟수, 학생이 동의한 범위의 첨삭 리포트를 봅니다. 원본 음성과 영상은 제공하지 않으며 유효 좌석 5개당 1개가 무상입니다. | S11 | 86 |
 | R3b / r3_faq_rank_q | `r3_faq_rank_q` | 순위표 공개와 별명 설정 | S10 | 13 |
 | R3b / r3_faq_rank_a | `r3_faq_rank_a` | 마이페이지에서 별명을 정하고 순위표 공개를 선택합니다. | S10 | 30 |
 | R3b / r3_faq_video_q | `r3_faq_video_q` | 응시 영상 다시 보기 | S5 | 11 |

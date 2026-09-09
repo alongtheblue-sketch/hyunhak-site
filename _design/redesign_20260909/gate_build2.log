@@ -22,4 +22,4 @@ build_samples --check: 표본 12장 + 확대 1 / FAIL 0건 (v24 PDF 100417407367
 자막 게이트 통과: 영상 배선 11건, 면제 0건
 link_check: 면 67 · sitemap 56 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
 worker_check: FAIL 0 / 27 항목
-83fc0f02b306ab19
+f5c3ccb4e54a7f22

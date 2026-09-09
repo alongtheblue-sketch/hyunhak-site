@@ -1,0 +1,513 @@
+===== build x2
+build rc=0/0 hash=f5c3ccb4e54a7f22/f5c3ccb4e54a7f22 same=yes
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
+===== server 8791
+===== after shots
+m390 index.html h1= 대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다. docH= 6405 scrollW= 390 pband_top= 0 buy_top= null buy_cta= null lp= 22 err= 12
+m390 programs/guidebook.html h1= 2027 대학별 서류기반 면접 가이드북 docH= 10423 scrollW= 390 pband_top= null buy_top= 204 buy_cta= 525 lp= 6 err= 8
+m390 programs/studio.html h1= 연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다 docH= 8428 scrollW= 390 pband_top= null buy_top= 204 buy_cta= 525 lp= 6 err= 10
+m390 studio.html h1= 연세대, 고려대 제시문 면접을실전 규격으로 연습합니다 docH= 13581 scrollW= 390 pband_top= null buy_top= null buy_cta= null lp= 10 err= 22
+m390 guidebook/index.html h1= 학교별 2027 서류기반면접 가이드북 docH= 10261 scrollW= 390 pband_top= null buy_top= null buy_cta= null lp= 37 err= 8
+d1280 index.html h1= 대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다. docH= 4092 scrollW= 1280 pband_top= 0 buy_top= null buy_cta= null lp= 22 err= 12
+d1280 programs/guidebook.html h1= 2027 대학별 서류기반 면접 가이드북 docH= 8725 scrollW= 1280 pband_top= null buy_top= 236 buy_cta= 567 lp= 6 err= 8
+d1280 programs/studio.html h1= 연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다 docH= 6661 scrollW= 1280 pband_top= null buy_top= 291 buy_cta= 622 lp= 6 err= 10
+d1280 studio.html h1= 연세대, 고려대 제시문 면접을실전 규격으로 연습합니다 docH= 10177 scrollW= 1280 pband_top= null buy_top= null buy_cta= null lp= 10 err= 22
+d1280 guidebook/index.html h1= 학교별 2027 서류기반면접 가이드북 docH= 7104 scrollW= 1280 pband_top= null buy_top= null buy_cta= null lp= 37 err= 8
+shots rc=0
+===== verify_r2
+PASS 404.html 390 HTTP 200
+PASS 404.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS 404.html 390 console errors []
+PASS about.html 390 HTTP 200
+PASS about.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS about.html 390 console errors []
+PASS b2b.html 390 HTTP 200
+PASS b2b.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS b2b.html 390 console errors []
+PASS cart.html 390 HTTP 200
+PASS cart.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS cart.html 390 console errors []
+PASS checkout.html 390 HTTP 200
+PASS checkout.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS checkout.html 390 console errors []
+PASS classroom.html 390 HTTP 200
+PASS classroom.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS classroom.html 390 console errors []
+PASS faq.html 390 HTTP 200
+PASS faq.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS faq.html 390 console errors []
+PASS guidebook/ajou.html 390 HTTP 200
+PASS guidebook/ajou.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/ajou.html 390 console errors []
+PASS guidebook/catholic.html 390 HTTP 200
+PASS guidebook/catholic.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/catholic.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/cau.html 390 HTTP 200
+PASS guidebook/cau.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/cau.html 390 console errors []
+PASS guidebook/dankook.html 390 HTTP 200
+PASS guidebook/dankook.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/dankook.html 390 console errors []
+PASS guidebook/donga.html 390 HTTP 200
+PASS guidebook/donga.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/donga.html 390 console errors []
+PASS guidebook/dongduk.html 390 HTTP 200
+PASS guidebook/dongduk.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL guidebook/dongduk.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/dongguk.html 390 HTTP 200
+PASS guidebook/dongguk.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/dongguk.html 390 console errors []
+PASS guidebook/duksung.html 390 HTTP 200
+PASS guidebook/duksung.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/duksung.html 390 console errors []
+PASS guidebook/ewha.html 390 HTTP 200
+PASS guidebook/ewha.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL guidebook/ewha.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/gachon.html 390 HTTP 200
+PASS guidebook/gachon.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/gachon.html 390 console errors []
+PASS guidebook/hanyang-erica.html 390 HTTP 200
+PASS guidebook/hanyang-erica.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/hanyang-erica.html 390 console errors []
+PASS guidebook/hufs.html 390 HTTP 200
+PASS guidebook/hufs.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/hufs.html 390 console errors []
+PASS guidebook/incheon.html 390 HTTP 200
+PASS guidebook/incheon.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/incheon.html 390 console errors []
+PASS guidebook/index.html 390 HTTP 200
+PASS guidebook/index.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/index.html 390 console errors []
+PASS guidebook/inha.html 390 HTTP 200
+PASS guidebook/inha.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/inha.html 390 console errors []
+PASS guidebook/khu.html 390 HTTP 200
+PASS guidebook/khu.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/khu.html 390 console errors []
+PASS guidebook/konkuk.html 390 HTTP 200
+PASS guidebook/konkuk.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/konkuk.html 390 console errors []
+PASS guidebook/kookmin.html 390 HTTP 200
+PASS guidebook/kookmin.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL guidebook/kookmin.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/kwangwoon.html 390 HTTP 200
+PASS guidebook/kwangwoon.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/kwangwoon.html 390 console errors []
+PASS guidebook/kyonggi.html 390 HTTP 200
+PASS guidebook/kyonggi.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/kyonggi.html 390 console errors []
+PASS guidebook/myongji.html 390 HTTP 200
+PASS guidebook/myongji.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/myongji.html 390 console errors []
+PASS guidebook/pusan.html 390 HTTP 200
+PASS guidebook/pusan.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/pusan.html 390 console errors []
+PASS guidebook/sahmyook.html 390 HTTP 200
+PASS guidebook/sahmyook.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/sahmyook.html 390 console errors []
+PASS guidebook/sejong.html 390 HTTP 200
+PASS guidebook/sejong.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/sejong.html 390 console errors []
+PASS guidebook/seoultech.html 390 HTTP 200
+PASS guidebook/seoultech.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/seoultech.html 390 console errors []
+PASS guidebook/snu.html 390 HTTP 200
+PASS guidebook/snu.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL guidebook/snu.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/sookmyung.html 390 HTTP 200
+PASS guidebook/sookmyung.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/sookmyung.html 390 console errors []
+PASS guidebook/soongsil.html 390 HTTP 200
+PASS guidebook/soongsil.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/soongsil.html 390 console errors []
+PASS guidebook/sungshin.html 390 HTTP 200
+PASS guidebook/sungshin.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/sungshin.html 390 console errors []
+PASS guidebook/swu.html 390 HTTP 200
+PASS guidebook/swu.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/swu.html 390 console errors []
+PASS guidebook/ulsan.html 390 HTTP 200
+PASS guidebook/ulsan.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL guidebook/ulsan.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/uos.html 390 HTTP 200
+PASS guidebook/uos.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS guidebook/uos.html 390 console errors []
+PASS index.html 390 HTTP 200
+PASS index.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS index.html 390 H1 matches selected ledger copy {"actual":"대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다.","expected":"대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다."}
+PASS home 390 both card headings in first viewport [{"top":306.15625,"width":350,"height":328.953125,"headingTop":353.90625},{"top":651.109375,"width":350,"height":328.953125,"headingTop":698.859375}]
+PASS home 390 two price rows per card in approved order [["33000","511500"],["495000","33000"]]
+PASS home 390 find link belongs to guidebooks only {"count":1,"hrefs":["guidebook/index.html"],"gap":16}
+PASS home 390 find links gap at least 12px (temporary pair) {"configured":16,"measured":16}
+PASS home 390 price band below fold 4380.421875
+PASS home price contracts ""
+PASS home 390 promo single line {"height":18,"line":18}
+PASS index.html 390 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS index.html 390 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS index.html 390 console errors []
+PASS insta.html 390 HTTP 200
+PASS insta.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS insta.html 390 console errors []
+PASS interview.html 390 HTTP 200
+PASS interview.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS interview.html 390 console errors []
+PASS join.html 390 HTTP 200
+PASS join.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS join.html 390 console errors []
+PASS lecture.html 390 HTTP 200
+PASS lecture.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS lecture.html 390 console errors []
+PASS lectures.html 390 HTTP 200
+PASS lectures.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS lectures.html 390 console errors []
+PASS lectures/common.html 390 HTTP 200
+PASS lectures/common.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS lectures/common.html 390 console errors []
+PASS lectures/korea-hum.html 390 HTTP 200
+PASS lectures/korea-hum.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL lectures/korea-hum.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=korea-hum' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS lectures/korea-sci.html 390 HTTP 200
+PASS lectures/korea-sci.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL lectures/korea-sci.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=korea-sci' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=korea-sci&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=yeongo-gichul' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS lectures/yonsei-hum.html 390 HTTP 200
+PASS lectures/yonsei-hum.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS lectures/yonsei-hum.html 390 console errors []
+PASS lectures/yonsei-intl.html 390 HTTP 200
+PASS lectures/yonsei-intl.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS lectures/yonsei-intl.html 390 console errors []
+PASS lectures/yonsei-sci.html 390 HTTP 200
+PASS lectures/yonsei-sci.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL lectures/yonsei-sci.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=yonsei-sci' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS library.html 390 HTTP 200
+PASS library.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL library.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS login.html 390 HTTP 200
+PASS login.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS login.html 390 console errors []
+PASS my.html 390 HTTP 200
+PASS my.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL my.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS notice.html 390 HTTP 200
+PASS notice.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS notice.html 390 console errors []
+PASS pastexam.html 390 HTTP 200
+PASS pastexam.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS pastexam.html 390 console errors []
+PASS pay_done.html 390 HTTP 200
+PASS pay_done.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS pay_done.html 390 console errors []
+PASS privacy.html 390 HTTP 200
+PASS privacy.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS privacy.html 390 console errors []
+PASS programs/guidebook.html 390 HTTP 200
+PASS programs/guidebook.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS programs/guidebook.html 390 search label Pretendard "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+PASS programs/guidebook.html 390 H1 matches selected ledger copy {"actual":"2027 대학별 서류기반 면접 가이드북","expected":"2027 대학별 서류기반 면접 가이드북"}
+PASS programs/guidebook.html 390 primary fully in first viewport {"x":37,"y":618.90625,"width":96,"height":48}
+PASS programs/guidebook.html primary enabled ""
+PASS programs/guidebook.html price contracts ""
+PASS programs/guidebook.html single primary ""
+PASS programs/guidebook.html 390 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS programs/guidebook.html 390 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+FAIL programs/guidebook.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS programs/korea.html 390 HTTP 200
+PASS programs/korea.html 390 overflow {"document":390,"body":374,"viewport":390}
+SKIP programs/korea.html 390 search label Pretendard "Separate LP shell has no shared label.ph or app.js (R2c scope)."
+PASS programs/korea.html 390 console errors []
+PASS programs/studio.html 390 HTTP 200
+PASS programs/studio.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS programs/studio.html 390 search label Pretendard "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+PASS programs/studio.html 390 H1 matches selected ledger copy {"actual":"연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다","expected":"연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다"}
+PASS programs/studio.html 390 primary fully in first viewport {"x":37,"y":618.90625,"width":96,"height":48}
+PASS programs/studio.html primary enabled ""
+PASS programs/studio.html price contracts ""
+PASS programs/studio.html single primary ""
+PASS programs/studio.html 390 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS programs/studio.html 390 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+FAIL programs/studio.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS programs/yonsei.html 390 HTTP 200
+PASS programs/yonsei.html 390 overflow {"document":390,"body":374,"viewport":390}
+SKIP programs/yonsei.html 390 search label Pretendard "Separate LP shell has no shared label.ph or app.js (R2c scope)."
+PASS programs/yonsei.html 390 console errors []
+PASS ranking.html 390 HTTP 200
+PASS ranking.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS ranking.html 390 console errors []
+PASS reader.html 390 HTTP 200
+PASS reader.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS reader.html 390 console errors []
+PASS studio.html 390 HTTP 200
+PASS studio.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL studio.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=korea-hum' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=yonsei-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS support.html 390 HTTP 200
+PASS support.html 390 overflow {"document":390,"body":390,"viewport":390}
+FAIL support.html 390 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS terms.html 390 HTTP 200
+PASS terms.html 390 overflow {"document":390,"body":390,"viewport":390}
+PASS terms.html 390 console errors []
+PASS 404.html 1280 HTTP 200
+PASS 404.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS 404.html 1280 console errors []
+PASS about.html 1280 HTTP 200
+PASS about.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS about.html 1280 console errors []
+PASS b2b.html 1280 HTTP 200
+PASS b2b.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS b2b.html 1280 console errors []
+PASS cart.html 1280 HTTP 200
+PASS cart.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS cart.html 1280 console errors []
+PASS checkout.html 1280 HTTP 200
+PASS checkout.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS checkout.html 1280 console errors []
+PASS classroom.html 1280 HTTP 200
+PASS classroom.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS classroom.html 1280 console errors []
+PASS faq.html 1280 HTTP 200
+PASS faq.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS faq.html 1280 console errors []
+PASS guidebook/ajou.html 1280 HTTP 200
+PASS guidebook/ajou.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/ajou.html 1280 console errors []
+PASS guidebook/catholic.html 1280 HTTP 200
+PASS guidebook/catholic.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/catholic.html 1280 console errors []
+PASS guidebook/cau.html 1280 HTTP 200
+PASS guidebook/cau.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/cau.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/dankook.html 1280 HTTP 200
+PASS guidebook/dankook.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/dankook.html 1280 console errors []
+PASS guidebook/donga.html 1280 HTTP 200
+PASS guidebook/donga.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/donga.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/dongduk.html 1280 HTTP 200
+PASS guidebook/dongduk.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/dongduk.html 1280 console errors []
+PASS guidebook/dongguk.html 1280 HTTP 200
+PASS guidebook/dongguk.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/dongguk.html 1280 console errors []
+PASS guidebook/duksung.html 1280 HTTP 200
+PASS guidebook/duksung.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/duksung.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/ewha.html 1280 HTTP 200
+PASS guidebook/ewha.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/ewha.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/gachon.html 1280 HTTP 200
+PASS guidebook/gachon.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/gachon.html 1280 console errors []
+PASS guidebook/hanyang-erica.html 1280 HTTP 200
+PASS guidebook/hanyang-erica.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/hanyang-erica.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/hufs.html 1280 HTTP 200
+PASS guidebook/hufs.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/hufs.html 1280 console errors []
+PASS guidebook/incheon.html 1280 HTTP 200
+PASS guidebook/incheon.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/incheon.html 1280 console errors []
+PASS guidebook/index.html 1280 HTTP 200
+PASS guidebook/index.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/index.html 1280 console errors []
+PASS guidebook/inha.html 1280 HTTP 200
+PASS guidebook/inha.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/inha.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/khu.html 1280 HTTP 200
+PASS guidebook/khu.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/khu.html 1280 console errors []
+PASS guidebook/konkuk.html 1280 HTTP 200
+PASS guidebook/konkuk.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/konkuk.html 1280 console errors []
+PASS guidebook/kookmin.html 1280 HTTP 200
+PASS guidebook/kookmin.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/kookmin.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/kwangwoon.html 1280 HTTP 200
+PASS guidebook/kwangwoon.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/kwangwoon.html 1280 console errors []
+PASS guidebook/kyonggi.html 1280 HTTP 200
+PASS guidebook/kyonggi.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/kyonggi.html 1280 console errors []
+PASS guidebook/myongji.html 1280 HTTP 200
+PASS guidebook/myongji.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/myongji.html 1280 console errors []
+PASS guidebook/pusan.html 1280 HTTP 200
+PASS guidebook/pusan.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/pusan.html 1280 console errors []
+PASS guidebook/sahmyook.html 1280 HTTP 200
+PASS guidebook/sahmyook.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/sahmyook.html 1280 console errors []
+PASS guidebook/sejong.html 1280 HTTP 200
+PASS guidebook/sejong.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/sejong.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/seoultech.html 1280 HTTP 200
+PASS guidebook/seoultech.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/seoultech.html 1280 console errors []
+PASS guidebook/snu.html 1280 HTTP 200
+PASS guidebook/snu.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/snu.html 1280 console errors []
+PASS guidebook/sookmyung.html 1280 HTTP 200
+PASS guidebook/sookmyung.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/sookmyung.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/soongsil.html 1280 HTTP 200
+PASS guidebook/soongsil.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/soongsil.html 1280 console errors []
+PASS guidebook/sungshin.html 1280 HTTP 200
+PASS guidebook/sungshin.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/sungshin.html 1280 console errors []
+PASS guidebook/swu.html 1280 HTTP 200
+PASS guidebook/swu.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL guidebook/swu.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS guidebook/ulsan.html 1280 HTTP 200
+PASS guidebook/ulsan.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/ulsan.html 1280 console errors []
+PASS guidebook/uos.html 1280 HTTP 200
+PASS guidebook/uos.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS guidebook/uos.html 1280 console errors []
+PASS index.html 1280 HTTP 200
+PASS index.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS index.html 1280 H1 matches selected ledger copy {"actual":"대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다.","expected":"대학마다 다른 면접을 그 대학의 요강과 기출로 준비합니다."}
+PASS home 1280 both card headings in first viewport [{"top":330.734375,"width":496.8125,"height":404.25,"headingTop":386.484375},{"top":330.734375,"width":496.8125,"height":404.25,"headingTop":386.484375}]
+PASS home equal card dimensions [{"top":330.734375,"width":496.8125,"height":404.25,"headingTop":386.484375},{"top":330.734375,"width":496.8125,"height":404.25,"headingTop":386.484375}]
+PASS home 1280 two price rows per card in approved order [["33000","511500"],["495000","33000"]]
+PASS home desktop both card CTAs in first viewport [{"top":661.984375,"bottom":709.984375},{"top":661.984375,"bottom":709.984375}]
+PASS home 1280 find link belongs to guidebooks only {"count":1,"hrefs":["guidebook/index.html"],"gap":16}
+PASS home 1280 find links gap at least 12px (temporary pair) {"configured":16,"measured":16}
+PASS home 1280 price band below fold 2583.078125
+PASS home price contracts ""
+PASS home 1280 promo single line {"height":18,"line":18}
+PASS index.html 1280 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS index.html 1280 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+FAIL index.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices?kind=notice&limit=3' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS insta.html 1280 HTTP 200
+PASS insta.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS insta.html 1280 console errors []
+PASS interview.html 1280 HTTP 200
+PASS interview.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS interview.html 1280 console errors []
+PASS join.html 1280 HTTP 200
+PASS join.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS join.html 1280 console errors []
+PASS lecture.html 1280 HTTP 200
+PASS lecture.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS lecture.html 1280 console errors []
+PASS lectures.html 1280 HTTP 200
+PASS lectures.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS lectures.html 1280 console errors []
+PASS lectures/common.html 1280 HTTP 200
+PASS lectures/common.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL lectures/common.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/notices/active?kind=popup' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS lectures/korea-hum.html 1280 HTTP 200
+PASS lectures/korea-hum.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL lectures/korea-hum.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=korea-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS lectures/korea-sci.html 1280 HTTP 200
+PASS lectures/korea-sci.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS lectures/korea-sci.html 1280 console errors []
+PASS lectures/yonsei-hum.html 1280 HTTP 200
+PASS lectures/yonsei-hum.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL lectures/yonsei-hum.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=yonsei-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=yonsei-hum' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/public?unit=yeongo-gichul' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS lectures/yonsei-intl.html 1280 HTTP 200
+PASS lectures/yonsei-intl.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS lectures/yonsei-intl.html 1280 console errors []
+PASS lectures/yonsei-sci.html 1280 HTTP 200
+PASS lectures/yonsei-sci.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS lectures/yonsei-sci.html 1280 console errors []
+PASS library.html 1280 HTTP 200
+PASS library.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS library.html 1280 console errors []
+PASS login.html 1280 HTTP 200
+PASS login.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS login.html 1280 console errors []
+PASS my.html 1280 HTTP 200
+PASS my.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS my.html 1280 console errors []
+PASS notice.html 1280 HTTP 200
+PASS notice.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL notice.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS pastexam.html 1280 HTTP 200
+PASS pastexam.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS pastexam.html 1280 console errors []
+PASS pay_done.html 1280 HTTP 200
+PASS pay_done.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS pay_done.html 1280 console errors []
+PASS privacy.html 1280 HTTP 200
+PASS privacy.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS privacy.html 1280 console errors []
+PASS programs/guidebook.html 1280 HTTP 200
+PASS programs/guidebook.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS programs/guidebook.html 1280 search label Pretendard "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+PASS programs/guidebook.html 1280 H1 matches selected ledger copy {"actual":"2027 대학별 서류기반 면접 가이드북","expected":"2027 대학별 서류기반 면접 가이드북"}
+PASS programs/guidebook.html 1280 primary fully in first viewport {"x":148.1875,"y":621.921875,"width":96,"height":48}
+PASS programs/guidebook.html primary enabled ""
+PASS programs/guidebook.html price contracts ""
+PASS programs/guidebook.html single primary ""
+PASS programs/guidebook.html 1280 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS programs/guidebook.html 1280 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+FAIL programs/guidebook.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS programs/korea.html 1280 HTTP 200
+PASS programs/korea.html 1280 overflow {"document":1280,"body":1264,"viewport":1280}
+SKIP programs/korea.html 1280 search label Pretendard "Separate LP shell has no shared label.ph or app.js (R2c scope)."
+PASS programs/korea.html 1280 console errors []
+PASS programs/studio.html 1280 HTTP 200
+PASS programs/studio.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS programs/studio.html 1280 search label Pretendard "\"Pretendard Variable\", Pretendard, -apple-system, \"Apple SD Gothic Neo\", sans-serif"
+PASS programs/studio.html 1280 H1 matches selected ledger copy {"actual":"연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다","expected":"연세대, 고려대 제시문 면접을 실전 규격으로 연습합니다"}
+PASS programs/studio.html 1280 primary fully in first viewport {"x":148.1875,"y":657.15625,"width":96,"height":48}
+PASS programs/studio.html primary enabled ""
+PASS programs/studio.html price contracts ""
+PASS programs/studio.html single primary ""
+PASS programs/studio.html 1280 .gnb destinations ["/programs/guidebook.html","/programs/studio.html"]
+PASS programs/studio.html 1280 .fix destinations ["/programs/guidebook.html","/programs/studio.html"]
+FAIL programs/studio.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS programs/yonsei.html 1280 HTTP 200
+PASS programs/yonsei.html 1280 overflow {"document":1280,"body":1264,"viewport":1280}
+SKIP programs/yonsei.html 1280 search label Pretendard "Separate LP shell has no shared label.ph or app.js (R2c scope)."
+PASS programs/yonsei.html 1280 console errors []
+PASS ranking.html 1280 HTTP 200
+PASS ranking.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS ranking.html 1280 console errors []
+PASS reader.html 1280 HTTP 200
+PASS reader.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS reader.html 1280 console errors []
+PASS studio.html 1280 HTTP 200
+PASS studio.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+FAIL studio.html 1280 console errors ["console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/auth/me' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=yonsei-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=korea-sci&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=korea-hum&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED","console: Access to fetch at 'https://api.hyunhak.com/api/lectures/summary?unit=yonsei-intl&kind=passage' from origin 'http://127.0.0.1:8791' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.","console: Failed to load resource: net::ERR_FAILED"]
+PASS support.html 1280 HTTP 200
+PASS support.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS support.html 1280 console errors []
+PASS terms.html 1280 HTTP 200
+PASS terms.html 1280 overflow {"document":1280,"body":1280,"viewport":1280}
+PASS terms.html 1280 console errors []
+PASS index.html config blocked: no visible campaign, list prices unchanged {"promoCount":2,"visible":0,"discounted":0,"unknown":true,"configAttempts":2}
+PASS studio.html config blocked: no visible campaign, list prices unchanged {"promoCount":1,"visible":0,"discounted":0,"unknown":true,"configAttempts":2}
+PASS programs/guidebook.html config blocked: no visible campaign, list prices unchanged {"promoCount":1,"visible":0,"discounted":0,"unknown":true,"configAttempts":2}
+PASS programs/studio.html config blocked: no visible campaign, list prices unchanged {"promoCount":1,"visible":0,"discounted":0,"unknown":true,"configAttempts":2}
+SKIP programs/korea.html config blocked promo check "Separate LP shell does not load the shared app.js promo runtime (R2c scope)."
+SKIP programs/yonsei.html config blocked promo check "Separate LP shell does not load the shared app.js promo runtime (R2c scope)."
+r2_browser: pages=67 viewports=2 FAIL=32
+verify_r2 rc=1
+===== style_gate (변경 html·템플릿)
+_tools/guidebook_index_v2.html: 상위 규칙: E-2×1
+_tools/program_guidebook_v2.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+_tools/program_korea_v2.html: 상위 규칙: C-8×7, E-2×1
+_tools/program_studio_v2.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+_tools/program_yonsei_v2.html: 상위 규칙: C-11×6, C-8×5, K-4×1, E-2×1
+about.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+b2b.html: 상위 규칙: C-12×1, E-2×1
+classroom.html: 상위 규칙: C-12×1
+faq.html: 상위 규칙: C-12×1, E-2×1
+guidebook/hanyang-erica.html: 상위 규칙: C-12×1, E-2×1
+index.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+interview.html: 상위 규칙: E-2×1
+lecture.html: 상위 규칙: C-12×1
+library.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+my.html: 상위 규칙: C-12×1, E-2×1, K-1×1
+notice.html: 상위 규칙: C-12×1
+pastexam.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+programs/guidebook.html: 상위 규칙: C-12×1
+programs/korea.html: 상위 규칙: C-8×7, E-2×1
+programs/studio.html: 상위 규칙: C-12×1
+programs/yonsei.html: 상위 규칙: C-11×6, C-8×5, K-4×1, E-2×1
+ranking.html: [deliverable/general] 등급 A  |  게이트 S1 0건 S2 0건  |  권고 0건
+studio.html: 상위 규칙: E-2×1
+support.html: 상위 규칙: C-12×1
+===== 금액 자기검사 (원장 밖 금액)
+===== done
+EXIT=0
