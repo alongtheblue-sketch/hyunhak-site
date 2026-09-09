@@ -1330,8 +1330,15 @@ html.ppop-open{overflow:hidden}
   :where(body.v2) .r2-price-row b s.was{display:block}
 }
 /* R3: 상세면 수령물, 표본, 비교표. 색과 크기 토큰은 위 정의를 그대로 사용한다. */
-:where(body.v2) .r3-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);column-gap:var(--s5);align-items:center}
-:where(body.v2) .r3-hero .r2-intro{grid-column:1/-1;max-width:none;margin-inline:0;padding-top:var(--s3)}  /* 상단 s3: 계기 밴드 첫 화면 여유 확보 (2026-09-09 verify_r3 실측) */
+:where(body.v2) .r3-hero{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);grid-template-areas:"intro intro" "buy visual" "buy metrics";column-gap:var(--s5);align-items:start;margin-bottom:var(--s4)}  /* 계기 밴드를 히어로 오른쪽 열(시각물 아래)에 두어 1280×800 첫 화면 안에 6칸 전부 (critic 재채점 수리 7, 2026-09-09) */
+:where(body.v2) .r3-hero .r3-buy{grid-area:buy}
+:where(body.v2) .r3-hero .r3-hero-visual{grid-area:visual}
+:where(body.v2) .r3-hero .r3-metrics{grid-area:metrics;grid-template-columns:repeat(3,minmax(0,1fr));margin-block:var(--s3) 0}
+:where(body.v2) .r3-hero .r3-metrics>div{padding:var(--s2)}
+:where(body.v2) .r3-hero .r3-metrics>div:nth-child(3n){border-right:0}
+:where(body.v2) .r3-hero .r3-metrics>div:nth-child(-n+3){border-bottom:var(--rule-ui)}
+:where(body.v2) .r3-hero-visual:not(.r3-cover-fan)>img{max-height:calc(var(--s11) + var(--s5));object-fit:cover;object-position:top}  /* 스튜디오 화면 캡처 높이 상한: 계기 밴드 하단까지 800 안 (critic 수리 7) */
+:where(body.v2) .r3-hero .r2-intro{grid-area:intro;max-width:none;margin-inline:0;padding-top:var(--s3)}  /* 상단 s3: 계기 밴드 첫 화면 여유 확보 (2026-09-09 verify_r3 실측) */
 :where(body.v2) .r3-buy{margin:0;padding:var(--s3);width:100%}
 :where(body.v2) .r3-buy>p{font-size:var(--t-sm);color:var(--body)}
 :where(body.v2) .r3-buy .r2-status:empty{display:none}
@@ -1348,12 +1355,14 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-metrics dt{font-size:var(--t-sm);color:var(--body)}
 :where(body.v2) .r3-metrics dd{font-family:var(--mono);font-size:var(--t-h4);font-weight:500;line-height:var(--lh-tight);margin-top:var(--s2)}
 :where(body.v2) .r3-section{scroll-margin-top:calc(var(--hd-h) + var(--s3))}
+:where(body.v2) .r2-section.r3-section>h2{font-size:var(--t-h3)}  /* 상세면 H1 은 R2 규칙(base.css 56.25em 블록)대로 t-h2 라 절 제목은 t-h3 로 한 단 아래 (critic 수리 5: 위계 역전) */
+:where(body.v2) .r3-scroll-hint{display:none;font-size:var(--t-sm);color:var(--gray);margin-top:calc(var(--s2) * -1)}
 :where(body.v2) .r3-table-scroll{overflow-x:auto;overscroll-behavior-inline:contain;margin-block:var(--s3)}
 :where(body.v2) .r3-table{font-size:var(--t-base);line-height:var(--lh-ui);text-align:left}
 :where(body.v2) .r3-table caption{text-align:left;font-size:var(--t-sm);color:var(--body);padding-bottom:var(--s2)}
 :where(body.v2) .r3-table th,:where(body.v2) .r3-table td{border-bottom:var(--rule-ui);padding:var(--s3);vertical-align:top}
 :where(body.v2) .r3-table th{background:var(--mat);font-weight:600}
-:where(body.v2) .r3-table th[scope="row"]{width:24%}
+:where(body.v2) .r3-table th[scope="row"]{width:24%;position:sticky;left:0;z-index:1}  /* 가로 스크롤 중 행 머리 고정 (critic 수리 3) */
 :where(body.v2) .r3-table td{background:var(--card);color:var(--body)}
 :where(body.v2) .r3-table thead{border-top:var(--rule-hd)}
 :where(body.v2) .r3-table thead th{min-width:9em}
@@ -1375,6 +1384,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-sample-gallery .openers{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:28%;overflow-x:auto;gap:var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s3)}
 :where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:45%;overflow-x:auto;gap:var(--s4);padding-bottom:var(--s3)}
 :where(body.v2) .r3-sample-gallery .r2-samples .pgs{grid-column:auto}
+:where(body.v2) .r3-sample-gallery .r2-samples figure.pgv{margin:0;padding:var(--s3);border:var(--rule-ui);background:var(--card)}  /* 높이가 다른 표본 카드를 같은 높이의 테두리 카드로: 빈 자리가 결함이 아니라 카드 안 여백으로 읽히게 (critic 수리 6) */
 :where(body.v2) .r3-sample-gallery .pgcols{grid-template-columns:minmax(0,1fr)}
 :where(body.v2) .r3-covers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s4) var(--s3)}
 :where(body.v2) .r3-covers a,:where(body.v2) .r3-book-names a{display:flex;flex-direction:column;min-height:var(--tap);gap:var(--s2);font-size:var(--t-sm)}
@@ -1399,13 +1409,19 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-ranking .tabs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
 :where(body.v2) .r3-ranking .tabs button{white-space:normal;min-height:var(--tap);font-size:var(--t-sm)}
 :where(body.v2) .r3-ranking .rpanel{padding-top:var(--s3)}
-:where(body.v2) .r3-ranking .rtbl{min-width:36rem}
+@media(min-width:53.8125rem){:where(body.v2) .r3-ranking .rtbl{min-width:36rem}}  /* 861 이상만. 860 이하는 base.css 「순위 표를 라벨 격자로 접는다」 규칙이 맡는다 (critic 수리 1: 390 에서 576 고정이 점수 열을 화면 밖으로) */
 :where(body.v2) .r3-nickname{display:flex;align-items:end;flex-wrap:wrap;gap:var(--s3);margin-bottom:var(--s3)}
 :where(body.v2) .r3-nickname label{display:grid;gap:var(--s2)}
 :where(body.v2) .r3-nickname input{min-height:var(--tap);border:var(--rule-ui);background:var(--card);font:inherit;padding:var(--s2)}
 :where(body.v2) .r3-nickname small{color:var(--body)}
 @media(max-width:43.75rem){
-  :where(body.v2) .r3-hero{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .r3-hero{grid-template-columns:minmax(0,1fr);grid-template-areas:none}
+  :where(body.v2) .r3-hero .r2-intro,:where(body.v2) .r3-hero .r3-buy,:where(body.v2) .r3-hero .r3-hero-visual,:where(body.v2) .r3-hero .r3-metrics{grid-area:auto}
+  :where(body.v2) .r3-hero .r3-metrics{margin-block:0 var(--s4)}
+  :where(body.v2) .r3-hero .r3-metrics>div:nth-child(3n){border-right:0}
+  :where(body.v2) .r3-table thead th{min-width:7em}
+  :where(body.v2) .r3-table th[scope="row"]{width:auto;min-width:6em}
+  :where(body.v2) .r3-scroll-hint{display:block}
   :where(body.v2) .r3-hero-visual{margin-block:var(--s4)}
   :where(body.v2) .r3-hero-visual>img{max-height:var(--s11);object-fit:contain}
   :where(body.v2) .r3-cover-fan{padding:var(--s3);min-height:0}
@@ -1420,3 +1436,7 @@ html.ppop-open{overflow:hidden}
   :where(body.v2) .r3-units,:where(body.v2) .r3-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   :where(body.v2) .r3-screen-strip{grid-auto-columns:85%}
 }
+@media (max-width:56.249em){
+  :where(body.v2) .r3-hero .r2-intro h1{font-size:var(--t-h2)}
+  :where(body.v2) .r2-section.r3-section>h2{font-size:var(--t-h3)}
+}  /* 900 이하 위계: 면 제목 t-h2 > 절 제목 t-h3 (critic 수리 5) */

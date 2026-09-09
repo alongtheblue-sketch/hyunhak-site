@@ -95,6 +95,27 @@ try {
         // 목적지 「종류」 계수 (SECTION_SPEC_R3 §0 = 면의 역할 단위): 대학별 안내면 guidebook/<slug>.html 은 한 종류. 원시 경로 목록은 detail 에 그대로 남긴다 (2026-09-09 세션 판정, ia_links.py kinds 와 같은 규칙).
         const kinds = new Set(destinations.paths.map(p => /^\/guidebook\/(?!index\.html)[a-z-]+\.html$/.test(p) ? '/guidebook/<univ>.html' : p));
         check(kinds.size <= 6, `${rel} distinct destination kinds <=6 (raw pages=${destinations.paths.length})`, { kinds: [...kinds], ...destinations });
+        // critic 재채점 수리 검증 (2026-09-09): 컨테이너 안 가로 넘침은 문서축 overflow 로는 안 잡힌다
+        const tables = await page.evaluate(() => [...document.querySelectorAll('main table')].map(t => {
+          const wrap = t.closest('.r3-table-scroll');
+          const hintEl = wrap && wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('r3-scroll-hint') ? wrap.nextElementSibling : null;
+          const r = t.getBoundingClientRect();
+          return { table: (t.caption && t.caption.textContent.trim().slice(0, 16)) || t.className, right: Math.round(r.right), vw: innerWidth,
+            scrollable: !!wrap && wrap.scrollWidth > wrap.clientWidth, hint: !!hintEl && getComputedStyle(hintEl).display !== 'none' };
+        }));
+        check(tables.every(t => t.right <= t.vw || (t.scrollable && t.hint)), `${rel} ${viewport.width} tables inside viewport or scrollable with visible hint`, tables);
+        if (rel.startsWith('programs/')) {
+          const band = await page.locator('.r3-metrics').boundingBox();
+          if (viewport.width === 1280) check(band && band.y + band.height <= viewport.height, `${rel} metrics band fully inside first viewport`, band);
+          const heads = await page.evaluate(() => ({ h1: parseFloat(getComputedStyle(document.querySelector('main h1')).fontSize), h2: Math.max(...[...document.querySelectorAll('main .r3-section>h2')].map(h => parseFloat(getComputedStyle(h).fontSize))) }));
+          check(heads.h1 > heads.h2, `${rel} ${viewport.width} H1 larger than section H2`, heads);
+          const closeBtn = await page.locator('#close .r3-actions a').first().evaluate(a => ({ cls: a.className, h: a.getBoundingClientRect().height }));
+          check(closeBtn.cls.split(' ').includes('btn'), `${rel} closing CTA is a button`, closeBtn);
+        }
+        if (rel === 'programs/studio.html') {
+          const sums = await page.locator('main p:has(> .r3-price)').evaluateAll(ns => ns.map(n => ({ text: n.textContent.replace(/\s+/g, ' ').trim(), bound: !!n.querySelector('[data-list-price]') })));
+          check(sums.length === 1 && sums[0].text.includes('990,000원') && !sums[0].bound, `${rel} sum sentence keeps list price 990,000 unbound from promo`, sums);
+        }
         if (rel.includes('guidebook')) {
           await page.locator('input[value="pdf"]').check();
           check(await page.locator('#buy [data-primary]').getAttribute('data-cart-sku') === 'guide-all-pdf', 'PDF product SKU');

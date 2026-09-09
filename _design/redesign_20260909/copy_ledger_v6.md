@@ -305,6 +305,7 @@
 | R3b / r3_answer_cap | `r3_answer_cap` | 답변 촬영 화면 | S4 | 8 |
 | R3b / r3_revision_cap | `r3_revision_cap` | 첨삭 세 단 화면 | S4 S14 | 9 |
 | R3b / r3_report_cap | `r3_report_cap` | 첨삭 리포트 화면 | S4 S14 | 9 |
+| R3b / r3_spread_cap | `r3_spread_cap` | 첨삭 세 단 화면과 첨삭 리포트 화면 | S4 S14 | 20 |
 | R3b / r3_studio_preview | `r3_studio_preview` | 응시와 첨삭 화면 | S4 | 9 |
 | R3b / r3_screen_home | `r3_screen_home` | 스튜디오 지문 선택 화면 | S4 | 13 |
 | R3b / r3_screen_prep | `r3_screen_prep` | 제시문 준비 화면 | S4 | 9 |
@@ -312,7 +313,8 @@
 | R3b / r3_screen_tab | `r3_screen_tab` | 스튜디오 응시 기록 화면 | S4 | 13 |
 | R3b / r3_sum_prefix | `r3_sum_prefix` | 낱권 30편 | S3d | 6 |
 | R3b / price_990000 | `price_990000` | 990,000원 | S3d | 8 |
-| R3b / r3_sum_suffix | `r3_sum_suffix` | 은 합산 금액입니다. | S3d | 11 |
+| R3b / r3_sum_suffix | `r3_sum_suffix` | 은 정가 기준 합산 금액입니다. | S3d | 17 |
+| R3b / r3_scroll_hint | `r3_scroll_hint` | 표는 옆으로 밀어 볼 수 있습니다. | C1 | 19 |
 | R3b / r3_studio_opened | `r3_studio_opened` | 응시한 지문은 제공이 개시되어 청약철회가 제한됩니다. | S9 C3 | 29 |
 | R3b / r3_studio_maker | `r3_studio_maker` | 한 사람이 제시문 150세트를 같은 기준으로 편집합니다. | S12 | 31 |
 | R3b / r3_univ_ajou | `r3_univ_ajou` | 아주대학교 | G1 | 5 |

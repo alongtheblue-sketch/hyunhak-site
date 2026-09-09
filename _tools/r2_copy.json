@@ -278,7 +278,7 @@
   "r3_screen_tab": ["스튜디오 응시 기록 화면", "S4"],
   "r3_sum_prefix": ["낱권 30편", "S3d"],
   "price_990000": ["990,000원", "S3d"],
-  "r3_sum_suffix": ["은 합산 금액입니다.", "S3d"],
+  "r3_sum_suffix": ["은 정가 기준 합산 금액입니다.", "S3d"],
   "r3_studio_opened": ["응시한 지문은 제공이 개시되어 청약철회가 제한됩니다.", "S9 C3"],
   "r3_studio_maker": ["한 사람이 제시문 150세트를 같은 기준으로 편집합니다.", "S12"],
   "r3_univ_ajou": ["아주대학교", "G1"],
@@ -375,5 +375,7 @@
   "r3_rank_on_saved": ["공개를 저장했습니다. 다음 집계부터 순위표에 실립니다. ", "S10"],
   "r3_rank_off_saved": ["공개를 껐습니다. 다음 집계부터 순위표에서 빠집니다. ", "S10"],
   "r3_print_mark_label": ["인쇄와 계정 표시", "G3 G7"],
-  "r3_rank_unknown_difficulty": ["난이도 미확인", "S10"]
+  "r3_rank_unknown_difficulty": ["난이도 미확인", "S10"],
+  "r3_scroll_hint": ["표는 옆으로 밀어 볼 수 있습니다.", "C1"],
+  "r3_spread_cap": ["첨삭 세 단 화면과 첨삭 리포트 화면", "S4 S14"]
 }

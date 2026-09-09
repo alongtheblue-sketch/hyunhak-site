@@ -1,0 +1,140 @@
+PASS programs/guidebook.html HTTP 200
+PASS programs/guidebook.html 390 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS programs/guidebook.html 390 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS programs/guidebook.html 390 primary in first viewport {"x":37,"y":618.90625,"width":96,"height":48}
+PASS programs/guidebook.html mobile height limit 10522
+PASS programs/guidebook.html tap targets [{"text":"담기","h":48,"min":48},{"text":"이용약관 제6조 보기","h":48,"min":48},{"text":"구매할 상품 고르기","h":48,"min":48},{"text":"목록에서 고르기 →","h":48,"min":48}]
+PASS programs/guidebook.html CTA gap [{"gap":16,"min":16},{"gap":16,"min":16}]
+PASS programs/guidebook.html distinct destination kinds <=6 (raw pages=34) {"kinds":["/cart.html","/terms.html","/programs/guidebook.html","/guidebook/<univ>.html"],"paths":["/cart.html","/terms.html","/programs/guidebook.html","/guidebook/gachon.html","/guidebook/catholic.html","/guidebook/konkuk.html","/guidebook/kyonggi.html","/guidebook/khu.html","/guidebook/kwangwoon.html","/guidebook/kookmin.html","/guidebook/dankook.html","/guidebook/duksung.html","/guidebook/dongguk.html","/guidebook/dongduk.html","/guidebook/donga.html","/guidebook/myongji.html","/guidebook/pusan.html","/guidebook/sahmyook.html","/guidebook/seoultech.html","/guidebook/snu.html","/guidebook/uos.html","/guidebook/swu.html","/guidebook/sungshin.html","/guidebook/sejong.html","/guidebook/sookmyung.html","/guidebook/soongsil.html","/guidebook/ajou.html","/guidebook/ulsan.html","/guidebook/ewha.html","/guidebook/incheon.html","/guidebook/inha.html","/guidebook/cau.html","/guidebook/hufs.html","/guidebook/hanyang-erica.html"],"urls":["/cart.html","/terms.html","/programs/guidebook.html#books","/guidebook/gachon.html","/guidebook/catholic.html","/guidebook/konkuk.html","/guidebook/kyonggi.html","/guidebook/khu.html","/guidebook/kwangwoon.html","/guidebook/kookmin.html","/guidebook/dankook.html","/guidebook/duksung.html","/guidebook/dongguk.html","/guidebook/dongduk.html","/guidebook/donga.html","/guidebook/myongji.html","/guidebook/pusan.html","/guidebook/sahmyook.html","/guidebook/seoultech.html","/guidebook/snu.html","/guidebook/uos.html","/guidebook/swu.html","/guidebook/sungshin.html","/guidebook/sejong.html","/guidebook/sookmyung.html","/guidebook/soongsil.html","/guidebook/ajou.html","/guidebook/ulsan.html","/guidebook/ewha.html","/guidebook/incheon.html","/guidebook/inha.html","/guidebook/cau.html","/guidebook/hufs.html","/guidebook/hanyang-erica.html","/programs/guidebook.html#buy"]}
+PASS programs/guidebook.html 390 tables inside viewport or scrollable with visible hint [{"table":"가이드북 수령물 요약","right":370,"vw":390,"scrollable":false,"hint":true},{"table":"가이드북 이용권 비교","right":412,"vw":390,"scrollable":true,"hint":true}]
+PASS programs/guidebook.html 390 H1 larger than section H2 {"h1":29.0513,"h2":23.8126}
+PASS programs/guidebook.html closing CTA is a button {"cls":"btn","h":48}
+PASS PDF product SKU
+PASS PDF delivery note
+PASS PDF cart retains list price [{"sku":"guide-all-pdf","title":"2027 서류기반면접 가이드북 전권 PDF 소장판, 31권","price":1193500,"list_price":1705000,"qty":1,"ship":false}]
+PASS programs/guidebook.html 390 overflow zero {"viewport":390,"document":390,"body":390,"height":11037}
+PASS programs/guidebook.html loaded mobile height 11037
+PASS programs/studio.html HTTP 200
+PASS programs/studio.html 390 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS programs/studio.html 390 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS programs/studio.html 390 primary in first viewport {"x":37,"y":618.90625,"width":96,"height":48}
+PASS programs/studio.html mobile height limit 9029
+PASS programs/studio.html tap targets [{"text":"담기","h":48,"min":48},{"text":"회원 가입 후 무료 응시 1회","h":48,"min":48},{"text":"이용약관 제6조 보기","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"구매할 상품 고르기","h":48,"min":48},{"text":"스쿨 플랜 안내","h":48,"min":48}]
+PASS programs/studio.html CTA gap [{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16}]
+PASS programs/studio.html distinct destination kinds <=6 (raw pages=5) {"kinds":["/cart.html","/studio.html","/terms.html","/programs/studio.html","/ranking.html"],"paths":["/cart.html","/studio.html","/terms.html","/programs/studio.html","/ranking.html"],"urls":["/cart.html","/studio.html","/terms.html","/programs/studio.html#units","/studio.html?unit=yonsei-hum","/studio.html?unit=yonsei-sci","/studio.html?unit=yonsei-intl","/studio.html?unit=korea-hum","/studio.html?unit=korea-sci","/programs/studio.html#buy","/ranking.html"]}
+PASS programs/studio.html 390 tables inside viewport or scrollable with visible hint [{"table":"스튜디오 수령물 요약","right":370,"vw":390,"scrollable":false,"hint":true},{"table":"실제 고사장 규격","right":384,"vw":390,"scrollable":true,"hint":true},{"table":"스튜디오 이용권 비교","right":393,"vw":390,"scrollable":true,"hint":true}]
+PASS programs/studio.html 390 H1 larger than section H2 {"h1":29.0513,"h2":23.8126}
+PASS programs/studio.html closing CTA is a button {"cls":"btn","h":48}
+PASS programs/studio.html sum sentence keeps list price 990,000 unbound from promo [{"text":"낱권 30편 990,000원은 정가 기준 합산 금액입니다.","bound":false}]
+PASS programs/studio.html 390 overflow zero {"viewport":390,"document":390,"body":390,"height":9029}
+PASS programs/studio.html loaded mobile height 9029
+PASS ranking.html HTTP 200
+PASS ranking.html 390 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS ranking.html 390 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS ranking nickname header
+PASS ranking four tabs
+PASS masked row title
+PASS masked value unchanged
+PASS nickname row has no masked title
+PASS ranking table before view controls and distribution [422.265625,629.765625,831.765625]
+PASS ranking tab yonsei-hum
+PASS ranking tab yonsei-sci
+PASS ranking tab korea-hum
+PASS ranking tab korea-sci
+PASS ranking view set
+PASS ranking view difficulty
+PASS ranking view all
+PASS page.wrap inline padding 20
+PASS ranking.html HTTP 200
+PASS ranking empty H1 stays visible
+PASS ranking empty note
+PASS ranking.html HTTP 200
+PASS ranking collecting H1 stays visible
+PASS ranking collecting note
+PASS ranking.html HTTP 200
+PASS ranking private H1 stays visible
+PASS ranking private note
+PASS ranking.html HTTP 200
+PASS ranking failed H1 stays visible
+PASS ranking failed note
+PASS ranking.html HTTP 200
+PASS ranking.html 390 overflow zero {"viewport":390,"document":390,"body":390,"height":2438}
+PASS studio.html HTTP 200
+PASS studio.html 390 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS studio.html 390 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS studio.html 390 overflow zero {"viewport":390,"document":390,"body":390,"height":14149}
+PASS index.html HTTP 200
+PASS index.html 390 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS index.html 390 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS index.html 390 overflow zero {"viewport":390,"document":390,"body":390,"height":7258}
+PASS programs/guidebook.html HTTP 200
+PASS programs/guidebook.html 1280 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS programs/guidebook.html 1280 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS programs/guidebook.html 1280 primary in first viewport {"x":148.1875,"y":621.921875,"width":96,"height":48}
+PASS programs/guidebook.html metrics top in viewport {"x":683.265625,"y":556.15625,"width":465.546875,"height":172.375}
+PASS programs/guidebook.html tap targets [{"text":"담기","h":48,"min":48},{"text":"이용약관 제6조 보기","h":48,"min":48},{"text":"구매할 상품 고르기","h":48,"min":48},{"text":"목록에서 고르기 →","h":48,"min":48}]
+PASS programs/guidebook.html CTA gap [{"gap":16,"min":16},{"gap":16,"min":16}]
+PASS programs/guidebook.html distinct destination kinds <=6 (raw pages=34) {"kinds":["/cart.html","/terms.html","/programs/guidebook.html","/guidebook/<univ>.html"],"paths":["/cart.html","/terms.html","/programs/guidebook.html","/guidebook/gachon.html","/guidebook/catholic.html","/guidebook/konkuk.html","/guidebook/kyonggi.html","/guidebook/khu.html","/guidebook/kwangwoon.html","/guidebook/kookmin.html","/guidebook/dankook.html","/guidebook/duksung.html","/guidebook/dongguk.html","/guidebook/dongduk.html","/guidebook/donga.html","/guidebook/myongji.html","/guidebook/pusan.html","/guidebook/sahmyook.html","/guidebook/seoultech.html","/guidebook/snu.html","/guidebook/uos.html","/guidebook/swu.html","/guidebook/sungshin.html","/guidebook/sejong.html","/guidebook/sookmyung.html","/guidebook/soongsil.html","/guidebook/ajou.html","/guidebook/ulsan.html","/guidebook/ewha.html","/guidebook/incheon.html","/guidebook/inha.html","/guidebook/cau.html","/guidebook/hufs.html","/guidebook/hanyang-erica.html"],"urls":["/cart.html","/terms.html","/programs/guidebook.html#books","/guidebook/gachon.html","/guidebook/catholic.html","/guidebook/konkuk.html","/guidebook/kyonggi.html","/guidebook/khu.html","/guidebook/kwangwoon.html","/guidebook/kookmin.html","/guidebook/dankook.html","/guidebook/duksung.html","/guidebook/dongguk.html","/guidebook/dongduk.html","/guidebook/donga.html","/guidebook/myongji.html","/guidebook/pusan.html","/guidebook/sahmyook.html","/guidebook/seoultech.html","/guidebook/snu.html","/guidebook/uos.html","/guidebook/swu.html","/guidebook/sungshin.html","/guidebook/sejong.html","/guidebook/sookmyung.html","/guidebook/soongsil.html","/guidebook/ajou.html","/guidebook/ulsan.html","/guidebook/ewha.html","/guidebook/incheon.html","/guidebook/inha.html","/guidebook/cau.html","/guidebook/hufs.html","/guidebook/hanyang-erica.html","/programs/guidebook.html#buy"]}
+PASS programs/guidebook.html 1280 tables inside viewport or scrollable with visible hint [{"table":"가이드북 수령물 요약","right":1149,"vw":1280,"scrollable":false,"hint":false},{"table":"가이드북 이용권 비교","right":1149,"vw":1280,"scrollable":false,"hint":false}]
+PASS programs/guidebook.html metrics band fully inside first viewport {"x":683.265625,"y":556.15625,"width":465.546875,"height":172.375}
+PASS programs/guidebook.html 1280 H1 larger than section H2 {"h1":41.6555,"h2":34.1438}
+PASS programs/guidebook.html closing CTA is a button {"cls":"btn","h":48}
+PASS PDF product SKU
+PASS PDF delivery note
+PASS PDF cart retains list price [{"sku":"guide-all-pdf","title":"2027 서류기반면접 가이드북 전권 PDF 소장판, 31권","price":1193500,"list_price":1705000,"qty":1,"ship":false}]
+PASS programs/guidebook.html 1280 overflow zero {"viewport":1280,"document":1280,"body":1280,"height":9063}
+PASS programs/studio.html HTTP 200
+PASS programs/studio.html 1280 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS programs/studio.html 1280 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS programs/studio.html 1280 primary in first viewport {"x":148.1875,"y":657.15625,"width":96,"height":48}
+PASS programs/studio.html metrics top in viewport {"x":683.265625,"y":593.75,"width":465.546875,"height":172.375}
+PASS programs/studio.html tap targets [{"text":"담기","h":48,"min":48},{"text":"회원 가입 후 무료 응시 1회","h":48,"min":48},{"text":"이용약관 제6조 보기","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"응시실","h":48,"min":48},{"text":"구매할 상품 고르기","h":48,"min":48},{"text":"스쿨 플랜 안내","h":48,"min":48}]
+PASS programs/studio.html CTA gap [{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16},{"gap":16,"min":16}]
+PASS programs/studio.html distinct destination kinds <=6 (raw pages=5) {"kinds":["/cart.html","/studio.html","/terms.html","/programs/studio.html","/ranking.html"],"paths":["/cart.html","/studio.html","/terms.html","/programs/studio.html","/ranking.html"],"urls":["/cart.html","/studio.html","/terms.html","/programs/studio.html#units","/studio.html?unit=yonsei-hum","/studio.html?unit=yonsei-sci","/studio.html?unit=yonsei-intl","/studio.html?unit=korea-hum","/studio.html?unit=korea-sci","/programs/studio.html#buy","/ranking.html"]}
+PASS programs/studio.html 1280 tables inside viewport or scrollable with visible hint [{"table":"스튜디오 수령물 요약","right":1149,"vw":1280,"scrollable":false,"hint":false},{"table":"실제 고사장 규격","right":1149,"vw":1280,"scrollable":false,"hint":false},{"table":"스튜디오 이용권 비교","right":1149,"vw":1280,"scrollable":false,"hint":false}]
+PASS programs/studio.html metrics band fully inside first viewport {"x":683.265625,"y":593.75,"width":465.546875,"height":172.375}
+PASS programs/studio.html 1280 H1 larger than section H2 {"h1":41.6555,"h2":34.1438}
+PASS programs/studio.html closing CTA is a button {"cls":"btn","h":48}
+PASS programs/studio.html sum sentence keeps list price 990,000 unbound from promo [{"text":"낱권 30편 990,000원은 정가 기준 합산 금액입니다.","bound":false}]
+PASS programs/studio.html 1280 overflow zero {"viewport":1280,"document":1280,"body":1280,"height":7247}
+PASS ranking.html HTTP 200
+PASS ranking.html 1280 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS ranking.html 1280 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS ranking nickname header
+PASS ranking four tabs
+PASS masked row title
+PASS masked value unchanged
+PASS nickname row has no masked title
+PASS ranking table before view controls and distribution [450.5625,626.5625,746.5625]
+PASS ranking tab yonsei-hum
+PASS ranking tab yonsei-sci
+PASS ranking tab korea-hum
+PASS ranking tab korea-sci
+PASS ranking view set
+PASS ranking view difficulty
+PASS ranking view all
+PASS page.wrap inline padding 51.2
+PASS ranking.html HTTP 200
+PASS ranking empty H1 stays visible
+PASS ranking empty note
+PASS ranking.html HTTP 200
+PASS ranking collecting H1 stays visible
+PASS ranking collecting note
+PASS ranking.html HTTP 200
+PASS ranking private H1 stays visible
+PASS ranking private note
+PASS ranking.html HTTP 200
+PASS ranking failed H1 stays visible
+PASS ranking failed note
+PASS ranking.html HTTP 200
+PASS ranking.html 1280 overflow zero {"viewport":1280,"document":1280,"body":1280,"height":1860}
+PASS studio.html HTTP 200
+PASS studio.html 1280 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS studio.html 1280 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS studio.html 1280 overflow zero {"viewport":1280,"document":1280,"body":1280,"height":10369}
+PASS index.html HTTP 200
+PASS index.html 1280 .gnb five hrefs ["/programs/guidebook.html","/programs/studio.html","/ranking.html","/lectures.html","/b2b.html"]
+PASS index.html 1280 .fix five hrefs ["/index.html","/programs/guidebook.html","/programs/studio.html","/ranking.html","/my.html"]
+PASS index.html 1280 overflow zero {"viewport":1280,"document":1280,"body":1280,"height":4874}
+verify_r3: checks=138 FAIL=0
+EXIT=0
