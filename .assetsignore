@@ -24,3 +24,7 @@ _config.yml
 
 # 맛보기 표본 빌드 원장. 빌더만 읽는다. 로컬 경로가 실려 있어 공개 자산으로 나가면 안 된다 (2026-09-07)
 assets/video/samples_manifest.json
+
+# remember 플러그인(claude-plugins-official)이 세션 기록을 저장소 안 .remember/ 에 쓴다 (2026-09-08부터). 세션 로그라 공개 자산으로 나가면 안 된다.
+# 배포 게이트가 .assetsignore 밖 미추적 100파일로 멈춘 실측 2026-09-09 16:4x
+.remember/
