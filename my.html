@@ -414,7 +414,8 @@ document.addEventListener('DOMContentLoaded', async function(){
       op='<button type="button" class="btn sm dlgo" data-slug="'+esc(slug)+'">PDF 내려받기</button>';
     } else {
       // 이 카드가 가리키는 세트를 토큰 요청에 실어 보낸다 (세트를 여럿 가진 회원이 두 번째 세트를 바로 쓴다)
-      op='<button type="button" class="btn sm sgo"'+(HH.okSetId(meta.set_id)?' data-set-id="'+esc(meta.set_id)+'"':'')+'>응시하러 가기</button>';
+      // 권리 id 도 싣는다 (HSE-1 ④, 2026-09-09): 전권 둘 보유자가 둘째 전권 카드를 눌러도 그 권리가 열린다
+      op='<button type="button" class="btn sm sgo"'+(HH.okSetId(meta.set_id)?' data-set-id="'+esc(meta.set_id)+'"':'')+(e.id?' data-ent="'+esc(e.id)+'"':'')+'>응시하러 가기</button>';
     }
     // 응시 횟수 (2026-09-07 건우 지시 "이용권 횟수도, 잔여 횟수까지"): 낱권 = uses_left / 5 (studio.html 고지), 전권 = 지문마다 5회를
     // 응시 원장(/api/studio/attempts usage)으로 세트별로 센다. 원장은 카드 뒤에 오므로 .stuse 자리에 나중에 채운다.
@@ -546,12 +547,16 @@ document.addEventListener('DOMContentLoaded', async function(){
     setIds.forEach(function(id,i){ var sm=ssums[i]; if(sm){ if(HH.intIn(sm.ready,0,999,0)>0) N+=1; else M+=1; } });
     if((codes.length||setIds.length)&&(N||M)) document.getElementById('myLecSum').textContent='보유 단위와 세트 공개 '+N+'편, 준비 중 '+M+'편. 이어보기로 바로 이동합니다';
   })();
-  // 한 주문으로 세트를 여럿 사면 서버는 가장 오래된 studio 권리를 고른다. 카드가 가리키는 세트를
-  // set_id 로 넘겨 그 권리를 고르게 한다. 인자가 없으면 서버 현행 동작 그대로다 (역호환)
+  // 카드가 가리키는 권리(entitlement_id)와 세트(set_id)를 토큰 요청에 싣는다 (HSE-1 ④, 2026-09-09). 서버는 권리 id 를
+  // 우선해 그 권리를 열고 허용 세트 정규식을 토큰에 박는다. 전권 둘 보유자가 둘째 전권을 쓰고, 낱권은 결속 세트만 열린다.
+  // 맛보기 카드는 둘 다 없어 인자 없이 보낸다 (서버 현행 동작, 역호환)
+  var ENT_ID_RE=/^ent[A-Za-z0-9_]{1,80}$/;
   document.querySelectorAll('.sgo').forEach(function(a){a.addEventListener('click', async function(ev){
     ev.preventDefault();
-    var sid=this.dataset.setId||'';
-    var opt=HH.okSetId(sid)?{method:'POST',body:JSON.stringify({set_id:sid})}:{method:'POST'};
+    var sid=this.dataset.setId||'', eid=this.dataset.ent||'', body={};
+    if(HH.okSetId(sid)) body.set_id=sid;
+    if(ENT_ID_RE.test(eid)) body.entitlement_id=eid;
+    var opt=Object.keys(body).length?{method:'POST',body:JSON.stringify(body)}:{method:'POST'};
     try{ var r=await HH.api('/api/studio/token',opt); window.open(r.url,'_blank','noopener'); }
     catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
   })});
