@@ -55,3 +55,7 @@ https://hyunhak.com/interview/korea-sci.html
 https://hyunhak.com/interview/korea-eq-hum.html
 https://hyunhak.com/interview/korea-eq-sci.html
 https://hyunhak.com/notice.html
+# 2026-09-10 17:3x GSC URL 검사 색인 생성 요청(IA1 사이트 f690590 배포 뒤, 네이버 미접수): programs/studio.html 「등록되어 있지 않음 → 요청됨」, studio.html·interview.html 「등록되어 있음 → 재크롤링 요청됨」. lectures.html·홈·ranking.html·lectures/5면 은 클릭했으나 모달 미확인(UNKNOWN, 재검사 필요). 네이버 수집 요청·사이트맵 재제출은 s14 승계 세션 몫.
+https://hyunhak.com/programs/studio.html
+https://hyunhak.com/studio.html
+https://hyunhak.com/interview.html
