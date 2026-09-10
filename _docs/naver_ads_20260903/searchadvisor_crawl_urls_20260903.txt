@@ -59,3 +59,15 @@ https://hyunhak.com/notice.html
 https://hyunhak.com/programs/studio.html
 https://hyunhak.com/studio.html
 https://hyunhak.com/interview.html
+# 2026-09-10 19:05~19:19 s14 재검사(IA1 f690590, 서브에이전트 집행). GSC: 홈 「URL이 Google에 등록되어 있음」(스크린샷 확인, 재클릭 X), ranking.html 「등록되어 있지 않음(발견됨) → 색인 생성 요청됨」(19:1x 모달 실측), lectures.html 요청 실패 = 실제 URL 테스트 「페이지 가져오기 실패: 액세스 금지(403)로 인해 차단됨」(robots 허용 예, 에이전트 Google 검사 도구 스마트폰), lectures/korea-hum.html 요청 실패(같은 403 문면), lectures/{korea-sci,yonsei-hum,yonsei-sci,yonsei-intl}.html 「등록되어 있지 않음: 발견됨 - 현재 색인이 생성되지 않음」 요청 클릭 보류(403 연속 2건). curl 대조: /lectures.html, /lectures/korea-hum.html 은 curl UA 와 Googlebot UA 에 Cloudflare 403(Attention Required, noindex 챌린지), 브라우저 UA 와 Yeti UA 는 200. /studio.html, /interview.html, /ranking.html 은 전 UA 200. Cloudflare 규칙 점검은 건우 결재 사항. GSC 할당량 문면 미출현(오늘 요청 클릭 누계 13). GSC Sitemaps: sitemap.xml 등재(9/4 제출, 9/10 읽음, 성공, 발견 56면) 재제출 X. 네이버: 19:17:17~19:17:48 수집 요청 11건 내역 표 등재 11/11 실측(일일 50 중 20 사용, 캡차 0), 사이트맵 제출 페이지에 sitemap.xml 등재 재제출 X.
+https://hyunhak.com/lectures.html
+https://hyunhak.com/
+https://hyunhak.com/ranking.html
+https://hyunhak.com/lectures/korea-hum.html
+https://hyunhak.com/lectures/korea-sci.html
+https://hyunhak.com/lectures/yonsei-hum.html
+https://hyunhak.com/lectures/yonsei-sci.html
+https://hyunhak.com/lectures/yonsei-intl.html
+https://hyunhak.com/programs/studio.html
+https://hyunhak.com/studio.html
+https://hyunhak.com/interview.html
