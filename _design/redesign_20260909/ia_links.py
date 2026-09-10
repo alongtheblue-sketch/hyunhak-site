@@ -21,6 +21,8 @@ def kind(t):
     t = t.split('?')[0]
     if re.match(r'guidebook/(?!index\.html)[a-z-]+\.html$', t): return 'guidebook/<univ>.html'
     if re.match(r'lectures/[a-z-]+\.html$', t): return 'lectures/<lecture>.html'
+    # IA1-1 A 결재 2026-09-10: 전형별 안내 8면은 같은 목적지 종류다.
+    if re.match(r'interview/(?!index\.html)[a-z-]+\.html$', t): return 'interview/<code>.html'
     return t
 graph, body, bodyq = {}, {}, {}
 for p in pages:

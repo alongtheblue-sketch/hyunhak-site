@@ -214,6 +214,7 @@ def footer(rel, compact=False):
     p = prefix_of(rel)
     links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l, _ in GNB)
     links += f'<li><a href="{p}library.html">자료실</a></li><li><a href="{p}about.html">연구소</a></li>'
+    links += f'<li><a href="{p}interview.html#exam">전형별 출제 유형과 풀이법</a></li>'
     disclosure = "" if compact else " open"
     # v2_check 의 정적 셸 계약은 속성 없는 <footer> 를 요구한다.
     # 파싱 즉시 클래스만 부여해 footer.ft 스타일과 기존 검증 계약을 함께 유지한다.

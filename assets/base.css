@@ -1399,10 +1399,43 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-book-names a{border-bottom:var(--rule-ui);padding-block:var(--s2);justify-content:space-between}
 :where(body.v2) .r3-actions{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center}
 :where(body.v2) .r3-actions .tlink,:where(body.v2) .r3-section>.tlink{display:inline-flex;align-items:center;min-height:var(--tap)}
-:where(body.v2) .r3-units{display:grid;grid-template-columns:repeat(auto-fit,minmax(11rem,1fr));gap:var(--s3)}  /* 단위 카드 5장을 한 행에 (3+2 고아 칸 제거, critic 2회차 L4) */
-:where(body.v2) .r3-units article{padding:var(--s3);border:var(--rule-ui);background:var(--card)}
-:where(body.v2) .r3-units h3{font-size:var(--t-h4);margin-bottom:var(--s3)}
-:where(body.v2) .r3-units p{font-size:var(--t-sm)}
+/* IA1 B 명패 행: .units의 760 경계와 2열을 공유한다. 토큰 값은 그대로다. */
+:where(body.v2) .r3-units{border-top:var(--rule-ui);align-items:stretch}
+:where(body.v2) .r3-unit{grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto 1fr auto;gap:var(--s3);border-bottom:var(--rule-ui);background:var(--card);min-width:0;align-items:start}
+:where(body.v2) .r3-unit.r3-unit-opening{background:var(--mat)}
+:where(body.v2) .r3-unit .kn{grid-column:1;grid-row:1 / 3;line-height:var(--lh-tight)}
+:where(body.v2) .r3-unit-heading{grid-column:2;min-width:0}
+:where(body.v2) .r3-unit .uni{font-size:var(--t-sm);color:var(--gray);line-height:var(--lh-ui);margin:0 0 var(--s1)}
+:where(body.v2) .r3-unit h3{font-size:var(--t-h4);letter-spacing:var(--tr-head);line-height:var(--lh-tight);word-break:keep-all;margin:0}
+:where(body.v2) .r3-unit-badge{display:inline-flex;align-items:center;margin-top:var(--s2);padding:var(--s1) var(--s2);border:var(--rule-ui);font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body)}
+:where(body.v2) .r3-unit .r3-unit-spec{grid-column:3;grid-row:1;display:grid;grid-template-columns:auto;gap:var(--s2);margin:0;align-self:center;font-family:var(--mono);font-size:var(--t-mono);line-height:var(--lh-ui)}
+:where(body.v2) .r3-unit-spec>div{display:grid;grid-template-columns:auto auto;gap:var(--s2)}
+:where(body.v2) .r3-unit-spec dt{font-size:var(--t-sm);color:var(--gray)}
+:where(body.v2) .r3-unit-spec dd{text-align:right;white-space:nowrap}
+:where(body.v2) .r3-unit-note{grid-column:2 / -1;grid-row:2;font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);margin:0;max-width:none}
+:where(body.v2) .r3-unit-commerce{grid-column:2 / -1;grid-row:3;display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between}
+:where(body.v2) .r3-unit-commerce .lec{margin:0}
+:where(body.v2) .r3-unit .foot{grid-column:1 / -1;grid-row:4;margin:0;align-self:end;justify-content:flex-end;gap:var(--s3);border-top:var(--rule-ui)}
+:where(body.v2) .r3-unit .foot :is(.btn,.tlink){display:inline-flex;align-items:center;min-height:var(--tap);white-space:normal;word-break:keep-all}
+:where(body.v2) .r3-unit .foot .tlink{min-width:var(--tap);justify-content:center}  /* 담기 tap 폭 (critic L1) */
+:where(body.v2) .r3-opening-links{margin-top:var(--s3);max-width:none}
+:where(body.v2) .r3-opening-links .tlink{display:inline-flex;align-items:center;min-height:var(--tap)}
+:where(body.v2) .xsoon .r3-opening-cta{gap:var(--s3);margin:0}
+:where(body.v2) .xsoon .r3-opening-cta .btn{background:var(--card);color:var(--ink);border-color:var(--card)}
+:where(body.v2) .r3-opening-cta :is(.btn,.tlink){min-height:var(--tap);display:inline-flex;align-items:center}
+@media(min-width:47.5em){
+  /* 홀수 열은 .unit 760 규범(좌 0 = 페이지 스파인, 괘선 안쪽 s4) 그대로. 짝수 열만 우측도 s4: 색면(--card·--mat) 끝이 글자·solid 버튼 끝과 같은 선이면 잘린 것으로 읽힌다 (Stage 3 외부 시선 3인 동일 지적 + critic Δ2-R1, 2026-09-10 세션). 모바일은 패딩 0 유지 */
+  :where(body.v2) .r3-unit:nth-child(even){padding-inline:var(--s4);border-left:var(--rule-ui)}
+}
+@media(max-width:63.999em){
+  :where(body.v2) .r3-unit{grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto 1fr auto}
+  :where(body.v2) .r3-unit .r3-unit-spec{grid-column:2;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}
+  :where(body.v2) .r3-unit-spec>div{grid-template-columns:1fr;gap:var(--s1)}
+  :where(body.v2) .r3-unit-spec dd{text-align:left}
+  :where(body.v2) .r3-unit-note{grid-row:3}
+  :where(body.v2) .r3-unit-commerce{grid-row:4}
+  :where(body.v2) .r3-unit .foot{grid-row:5}
+}
 :where(body.v2) .r3-screen-strip{display:grid;grid-auto-flow:column;grid-auto-columns:38%;gap:var(--s3);overflow-x:auto;margin-top:var(--s4);padding-bottom:var(--s3)}
 :where(body.v2) .r3-widget-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
 :where(body.v2) .r3-widget-grid h3{font-size:var(--t-base)}
@@ -1438,7 +1471,7 @@ html.ppop-open{overflow:hidden}
   :where(body.v2) .r3-sample-gallery .openers{grid-auto-columns:42%}
   :where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-columns:90%}
   :where(body.v2) .r3-covers{grid-template-columns:repeat(3,minmax(0,1fr))}
-  :where(body.v2) .r3-units,:where(body.v2) .r3-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  :where(body.v2) .r3-widget-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   :where(body.v2) .r3-screen-strip{grid-auto-columns:85%}
 }
 @media (max-width:56.249em){

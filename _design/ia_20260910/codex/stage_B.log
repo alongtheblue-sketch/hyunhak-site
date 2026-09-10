@@ -1,0 +1,14 @@
+단계 B 끝
+$ git status --short
+ M _tools/build_programs.py
+ M _tools/program_studio_v2.html
+ M _tools/r2_copy.json
+ M assets/base.css
+ M assets/product_buy.js
+ M programs/guidebook.html
+ M programs/korea.html
+ M programs/studio.html
+ M programs/yonsei.html
+ M studio.html
+?? _design/ia_20260910/
+?? _tools/studio_units.py

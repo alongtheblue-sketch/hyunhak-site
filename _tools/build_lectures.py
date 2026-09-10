@@ -232,8 +232,9 @@ def list_page(cs):
                 + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}, 2026 기출 해설 {len(k["gichul"])}</span>' if c["code"] != "common" else '<span>다섯 단위 공통 절차 4편</span>')
                 + (f'<span class="pub" data-lec-summary="unit={c["code"]}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">{E(SNAP)} 스냅샷 기준 세트 해설 {len(k["passage"])}편</span>' if c["code"] != "common" else f'<span class="pub" data-lec-summary="kind=common" data-total="{len(k["common"])}">{E(SNAP)} 스냅샷 기준 {len(k["common"])}편</span>'))
         pr = (f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 인강 포함, 시청 3개월</small></span>' if c["code"] != "common" else f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 시청 3개월</small></span>')
+        guide = '' if c["code"] == "common" else f'<a class="tlink" href="interview/{c["code"]}.html">출제 유형과 풀이법 보기</a>'
         rows.append(f'''<article class="cr" data-univ="{c["univ"]}" data-track="{c["track"]}">
-  <div><span class="kn">{E(c["spec"])}</span><h2><a href="lectures/{c["code"]}.html">{E(c["label"])}{"" if c["code"] == "common" else " 풀이법 인강"}</a></h2><p class="sub">{E(INTRO[c["code"]][0].split(". ")[1][:60] + "…") if c["code"] != "common" else "절차 시험, 개수 계약, 말하기 편집, 연습 시스템"}</p></div>
+  <div><span class="kn">{E(c["spec"])}</span><h2><a href="lectures/{c["code"]}.html">{E(c["label"])}{"" if c["code"] == "common" else " 풀이법 인강"}</a></h2>{guide}<p class="sub">{E(INTRO[c["code"]][0].split(". ")[1][:60] + "…") if c["code"] != "common" else "절차 시험, 개수 계약, 말하기 편집, 연습 시스템"}</p></div>
   <div class="comp">{comp}</div>
   <div class="acts">{pr}<a class="btn ghost sm" href="lectures/{c["code"]}.html#sample">맛보기</a><a class="btn sm" href="lectures/{c["code"]}.html">강좌 상세 <span class="ar" aria-hidden="true">→</span></a></div>
 </article>''')
@@ -451,10 +452,11 @@ def detail_page(c, cs):
     meta = (f'<span>{c["n"]}편</span><span>{E(fmt_total(c["sec"]))}</span><span>시청 3개월</span>'
             + ('' if is_common else f'<span data-lec-summary="unit={code}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">세트 해설 {len(k["passage"])}편, {E(SNAP)} 스냅샷 기준</span>'))
     others = "".join(f'<a class="btn ghost sm" href="{o["code"]}.html">{E(o["label"])}</a>' for o in cs if o["code"] != code)
+    guide = '' if is_common else f'<a class="tlink" href="../interview/{code}.html">출제 유형과 풀이법 보기</a>'
     body = f'''<div class="wrap">
  <nav class="crumb" aria-label="위치" style="padding-top:var(--s3)"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="../lectures.html">인강</a><span aria-hidden="true">/</span><span>{E(c["label"])}</span></nav>
  <div class="hero2">
-  <div class="hcopy"><span class="eyebrow">{"공통 풀이" if is_common else "풀이법 인강"}</span><h1>{E(label)}</h1><p class="meta">{meta}</p><p class="lede">{E(INTRO[code][0].split(". ")[0])}.</p>{buy}</div>
+  <div class="hcopy"><span class="eyebrow">{"공통 풀이" if is_common else "풀이법 인강"}</span><h1>{E(label)}</h1>{guide}<p class="meta">{meta}</p><p class="lede">{E(INTRO[code][0].split(". ")[0])}.</p>{buy}</div>
   <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline><source src="../assets/video/sample_{code}.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, {smp_len(code)}. 로그인 없이 봅니다.</p></div>
    <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다.</p>{order_svg()}<p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
  </div>

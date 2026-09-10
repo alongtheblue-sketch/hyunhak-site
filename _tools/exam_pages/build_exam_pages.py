@@ -130,12 +130,14 @@ def build_one(code, mod):
         if code.startswith("korea-eq"): mats.append(("2024, 2025, 2026 문항카드 원문", "선행학습영향평가 보고서"))
         cta = (f'<div class="xsoon"><div><h3>{E(name)} 응시 단위는 <span class="d">{EX.OPEN_DATE}</span>에 엽니다</h3>'
                f'<p>여는 날에 세트와 해설 인강이 함께 섭니다. 그때까지 이 면의 규격과 풀이 절차는 그대로 봅니다.</p></div>'
-               f'<p><a class="tlink" href="../notice.html?id={EX.NOTICE_ID}">{EX.OPEN_DATE} 오픈, 공지 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></p></div>')   # 링크 1개 (critic 권고: 50px 간격 중복)
+               f'<div class="xcta r3-opening-cta"><a class="btn" href="../notice.html?id={EX.NOTICE_ID}">{EX.OPEN_DATE} 오픈, 공지 보기</a>'
+               f'<a class="tlink" href="../interview.html#exam">면접 형태 판정표</a></div></div>')
         badge = f'<span class="badge mute">{EX.OPEN_DATE} 오픈 예정</span><span class="k">2027학년도 기준</span>'
     else:
         mats = [("제시문 면접 스튜디오 세트", f'{bank["n_sets"]}세트'), ("풀이법 해설 인강", f'{sp["lecture_count"]}편')]
         if past: mats.append(("2026 기출 해설", f"{len(past)}세트"))
-        cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">면접 스튜디오 이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
+        cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">응시실 열기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
+               f'<a class="tlink" href="../programs/studio.html#u-{code}">이용권 보기</a>'
                f'<a class="tlink" href="../lectures/{code}.html">풀이법 인강 <span class="ar" aria-hidden="true">&rarr;</span></a></div>')
         badge = '<span class="badge seal">판매 중</span><span class="k">2027학년도 기준</span>'
     spec_html, used_notes = spec_rows(f, notes, ratio_idx, opening)

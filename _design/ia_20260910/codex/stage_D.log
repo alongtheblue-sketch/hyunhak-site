@@ -1,0 +1,167 @@
+단계 D 끝
+$ git status --short
+ M _design/redesign_20260909/ia_links.py
+ M _tools/build_lectures.py
+ M _tools/build_programs.py
+ M _tools/build_sitemap.py
+ M _tools/exam_pages/build_exam_pages.py
+ M _tools/exam_pages/tpl.html
+ M _tools/interview_hub_v1.html
+ M _tools/program_studio_v2.html
+ M _tools/r2_copy.json
+ M _tools/v2_shell.py
+ M about.html
+ M assets/base.css
+ M assets/product_buy.js
+ M b2b.html
+ M classroom.html
+ M faq.html
+ M guidebook/ajou.html
+ M guidebook/catholic.html
+ M guidebook/cau.html
+ M guidebook/dankook.html
+ M guidebook/donga.html
+ M guidebook/dongduk.html
+ M guidebook/dongguk.html
+ M guidebook/duksung.html
+ M guidebook/ewha.html
+ M guidebook/gachon.html
+ M guidebook/hanyang-erica.html
+ M guidebook/hufs.html
+ M guidebook/incheon.html
+ M guidebook/index.html
+ M guidebook/inha.html
+ M guidebook/khu.html
+ M guidebook/konkuk.html
+ M guidebook/kookmin.html
+ M guidebook/kwangwoon.html
+ M guidebook/kyonggi.html
+ M guidebook/myongji.html
+ M guidebook/pusan.html
+ M guidebook/sahmyook.html
+ M guidebook/sejong.html
+ M guidebook/seoultech.html
+ M guidebook/snu.html
+ M guidebook/sookmyung.html
+ M guidebook/soongsil.html
+ M guidebook/sungshin.html
+ M guidebook/swu.html
+ M guidebook/ulsan.html
+ M guidebook/uos.html
+ M index.html
+ M interview.html
+ M interview/korea-eq-hum.html
+ M interview/korea-eq-sci.html
+ M interview/korea-hum.html
+ M interview/korea-sci.html
+ M interview/yonsei-hum.html
+ M interview/yonsei-intl.html
+ M interview/yonsei-mirae.html
+ M interview/yonsei-sci.html
+ M lecture.html
+ M lectures.html
+ M lectures/common.html
+ M lectures/korea-hum.html
+ M lectures/korea-sci.html
+ M lectures/yonsei-hum.html
+ M lectures/yonsei-intl.html
+ M lectures/yonsei-sci.html
+ M library.html
+ M llms.txt
+ M my.html
+ M notice.html
+ M pastexam.html
+ M privacy.html
+ M programs/guidebook.html
+ M programs/studio.html
+ M ranking.html
+ M rss.xml
+ M sitemap.xml
+ M studio.html
+ M support.html
+ M terms.html
+?? _design/ia_20260910/
+?? _tools/studio_units.py
+
+$ git diff --stat
+ _design/redesign_20260909/ia_links.py |   2 +
+ _tools/build_lectures.py              |   6 +-
+ _tools/build_programs.py              |   9 +-
+ _tools/build_sitemap.py               |   2 +-
+ _tools/exam_pages/build_exam_pages.py |   6 +-
+ _tools/exam_pages/tpl.html            |   2 +-
+ _tools/interview_hub_v1.html          |   1 +
+ _tools/program_studio_v2.html         |   2 +-
+ _tools/r2_copy.json                   |  15 +-
+ _tools/v2_shell.py                    |   1 +
+ about.html                            |   2 +-
+ assets/base.css                       |  41 +++-
+ assets/product_buy.js                 |   7 +
+ b2b.html                              |   2 +-
+ classroom.html                        |   2 +-
+ faq.html                              |   2 +-
+ guidebook/ajou.html                   |   2 +-
+ guidebook/catholic.html               |   2 +-
+ guidebook/cau.html                    |   2 +-
+ guidebook/dankook.html                |   2 +-
+ guidebook/donga.html                  |   2 +-
+ guidebook/dongduk.html                |   2 +-
+ guidebook/dongguk.html                |   2 +-
+ guidebook/duksung.html                |   2 +-
+ guidebook/ewha.html                   |   2 +-
+ guidebook/gachon.html                 |   2 +-
+ guidebook/hanyang-erica.html          |   2 +-
+ guidebook/hufs.html                   |   2 +-
+ guidebook/incheon.html                |   2 +-
+ guidebook/index.html                  |   2 +-
+ guidebook/inha.html                   |   2 +-
+ guidebook/khu.html                    |   2 +-
+ guidebook/konkuk.html                 |   2 +-
+ guidebook/kookmin.html                |   2 +-
+ guidebook/kwangwoon.html              |   2 +-
+ guidebook/kyonggi.html                |   2 +-
+ guidebook/myongji.html                |   2 +-
+ guidebook/pusan.html                  |   2 +-
+ guidebook/sahmyook.html               |   2 +-
+ guidebook/sejong.html                 |   2 +-
+ guidebook/seoultech.html              |   2 +-
+ guidebook/snu.html                    |   2 +-
+ guidebook/sookmyung.html              |   2 +-
+ guidebook/soongsil.html               |   2 +-
+ guidebook/sungshin.html               |   2 +-
+ guidebook/swu.html                    |   2 +-
+ guidebook/ulsan.html                  |   2 +-
+ guidebook/uos.html                    |   2 +-
+ index.html                            |   4 +-
+ interview.html                        |   3 +-
+ interview/korea-eq-hum.html           |   6 +-
+ interview/korea-eq-sci.html           |   6 +-
+ interview/korea-hum.html              |   6 +-
+ interview/korea-sci.html              |   6 +-
+ interview/yonsei-hum.html             |   6 +-
+ interview/yonsei-intl.html            |   6 +-
+ interview/yonsei-mirae.html           |   6 +-
+ interview/yonsei-sci.html             |   6 +-
+ lecture.html                          |   2 +-
+ lectures.html                         |  12 +-
+ lectures/common.html                  |   2 +-
+ lectures/korea-hum.html               |   4 +-
+ lectures/korea-sci.html               |   4 +-
+ lectures/yonsei-hum.html              |   4 +-
+ lectures/yonsei-intl.html             |   4 +-
+ lectures/yonsei-sci.html              |   4 +-
+ library.html                          |   2 +-
+ llms.txt                              |   8 +
+ my.html                               |   4 +-
+ notice.html                           |   2 +-
+ pastexam.html                         |   2 +-
+ privacy.html                          |   2 +-
+ programs/guidebook.html               |   2 +-
+ programs/studio.html                  |  11 +-
+ ranking.html                          |   3 +-
+ rss.xml                               | 358 +++++++++++++++++-----------------
+ sitemap.xml                           |  80 ++++----
+ studio.html                           |  42 ++--
+ support.html                          |   2 +-
+ terms.html                            |   2 +-
+ 80 files changed, 434 insertions(+), 343 deletions(-)

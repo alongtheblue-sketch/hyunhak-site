@@ -127,7 +127,7 @@ def build_llms(m, pages):
             out.append(f"- [{by_path[rel]['title']}]({C.canonical_url(m, rel)}): {by_path[rel]['description']}")
     out += ["", "## 제시문 면접 스튜디오 (학교별)"]
     for rel, e in sorted(pages, key=lambda x: x[0]):
-        if rel.startswith("programs/"):
+        if rel.startswith(("programs/", "interview/")):
             out.append(f"- [{e['title']}]({C.canonical_url(m, rel)}): {e['description']}")
     out += ["", "## 학교별 2027 서류기반면접 가이드북"]
     for rel, e in sorted(pages, key=lambda x: x[0]):

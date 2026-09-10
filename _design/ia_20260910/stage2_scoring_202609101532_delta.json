@@ -1,0 +1,64 @@
+{
+  "version": "v3.1-stage2",
+  "timestamp": "2026-09-10T15:32:00+09:00",
+  "deliverable_path": "/Users/gregory/Workspace/_wt/hh-ia (ia/20260910-units-links, rebuild fe2615c748ca89cf): programs/studio.html#units, studio.html#units, interview/<code>.html x8 — Δ 재채점 2회차",
+  "lenses": {
+    "L1": {
+      "score": 4,
+      "evidence": "primary 부재 해소 확인(소개면 8장 solid ⑤). 잔존 = 「응시실」이 소개면에서는 구매 면으로, 구매 면에서는 studio.html:508 selectUnit 로 같은 면 탭 전환. 8면 판매 CTA 는 문서 8475px 중 약 6250px 지점 1곳. 미해결 약속 불일치로 5 미도달.",
+      "source_lines": 3
+    },
+    "L2": {
+      "score": 4,
+      "evidence": "git diff assets/base.css 에 gradient/box-shadow 매치 0 유지. 신규 solid 는 --ink #312E2E 먹판이라 팔레트 밖 색 유입 없음. 감점 = foot 우측 정렬 3버튼 밴드가 SaaS 가격표 기본형.",
+      "source_lines": 2
+    },
+    "L3": {
+      "score": 4,
+      "evidence": "studio_units.py:55 로 면당 solid 1개 확립, sync_purchase() 재계수로 구매면 kn 01~05 연속 실측. 잔존 = h3 단독에 대학명 없음. 신규 = 같은 단위가 소개면 05 대 구매면 04, studio.html 한 면에 「담기」 solid btn sm / btn ghost sm / btn ghost 3등급 공존.",
+      "source_lines": 4
+    },
+    "L4": {
+      "score": 3,
+      "evidence": "M2 는 DOM 만 해소이고 기하 무변. 옛 캡처 대 새 캡처 밴드 동일: 문면 328-338, foot 괘선 376, 버튼 393-440, 카드 하단 465. grid-template-rows 3행 1fr 잔존. M3 구매면 고아 1칸, M4 예정 카드 foot 약 330px 공백 보류 선언.",
+      "source_lines": 4
+    },
+    "L5": {
+      "score": 4,
+      "evidence": "면당 solid 1개로 v8 L1 강조축 단일성 성립. 강조는 hue 아닌 --ink 값대비로 집행하고 seal #9E2B22 은 가격 전용 유지. 잔존 = 「판매 중」이 카드 무채 아웃라인과 8면 적계 배지 두 표현.",
+      "source_lines": 3
+    },
+    "L6": {
+      "score": 3,
+      "evidence": "판매 01 02 03 / 예정 04 / 판매 05 06 / 예정 07 08 지그재그 유지. 예정 3단위가 소개면 카드 3장 대 구매면 각주 1줄. 8면 CTA 깊이 74% 유지. 세 항목 모두 이번 회차 미집행.",
+      "source_lines": 3
+    },
+    "L7": {
+      "score": 3,
+      "evidence": "구매면 「해설 강의 상태는 내 강의에서 확인」 5회 반복 유지, 8면 리드와 회색 요약이 21분 7분 중복 유지, my.html 문안이 §5 허브 문안과 불일치 유지. 이번 회차 대상 아님.",
+      "source_lines": 3
+    },
+    "L8": {
+      "score": 4,
+      "evidence": "assets/base.css:1420 min-width var(--tap) 적용, results.json 20 경로 tooSmall 0 과 docOverflow 0 과 errors 0. 5 미도달 사유 = 같은 「담기」 행동이 소개면 <a href=#buy> 5건과 구매면 <button type=button> 5건 두 semantics 로 갈린다.",
+      "source_lines": 3
+    },
+    "L9": {
+      "score": 4,
+      "evidence": "팔레트 무변경으로 대비 실측 동일: gray/card 5.68, gray/mat 4.56, body/card 9.18, ink/card 13.23 전건 AA. 신규 solid 먹판은 ink/card 13.23. 잔존 = h3 대학명 부재, 링크 텍스트 면당 5~8회 중복, 담기 semantics 분기.",
+      "source_lines": 4
+    }
+  },
+  "total": 33,
+  "minimum_check": {
+    "L1": "≥4 OK",
+    "L8": "≥3 OK",
+    "L9": "≥3 OK"
+  },
+  "release_recommendation": "RELEASE",
+  "bias_self_check": {
+    "has_vague_evidence": false,
+    "has_forbidden_phrases": false,
+    "has_minimum_evidence_length": true
+  }
+}

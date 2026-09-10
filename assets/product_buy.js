@@ -31,6 +31,15 @@
   }
 
   block.addEventListener('change', update);
+  document.addEventListener('click', function (event) {
+    var link = event.target.closest('[data-r3-unit-buy]');
+    if (!link || isGuide || !HH.okUnit(link.dataset.r3UnitBuy)) return;
+    select.value = link.dataset.r3UnitBuy;
+    block.querySelector('input[name="product"][value="pass"]').checked = true;
+    update();
+    // 카드 「담기」는 구매 블록의 담기 버튼과 같은 경로로 장바구니에 넣는다 (X1 mid-1, 2026-09-10 세션). href="#buy" 이동은 그대로 두어 상태 문구가 보이게 한다.
+    button.click();
+  });
   button.addEventListener('click', function () {
     if (button.dataset.cartSku === 'passage-single') {
       // 낱권에는 set_id가 필수다. 기존 응시실에서 실제 지문을 고르게 한다.

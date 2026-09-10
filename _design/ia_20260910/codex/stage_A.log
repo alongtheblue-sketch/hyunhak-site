@@ -1,0 +1,15 @@
+단계 A 끝
+$ rg -n 'r3_yonsei_spec|r3_korea_spec' _tools programs --glob '*.py' --glob '*.html'
+(출력 없음: 소비자 0, 미사용 문안 키 삭제)
+$ git status --short
+ M _tools/build_programs.py
+ M _tools/program_studio_v2.html
+ M _tools/r2_copy.json
+ M assets/base.css
+ M assets/product_buy.js
+ M programs/guidebook.html
+ M programs/korea.html
+ M programs/studio.html
+ M programs/yonsei.html
+?? _design/ia_20260910/
+?? _tools/studio_units.py

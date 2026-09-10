@@ -1,0 +1,64 @@
+{
+  "version": "v3.1-stage2",
+  "timestamp": "2026-09-10T15:40:00+09:00",
+  "deliverable_path": "/Users/gregory/Workspace/_wt/hh-ia (branch ia/20260910-units-links): programs/studio.html#units, studio.html#units, interview/<code>.html x8",
+  "lenses": {
+    "L1": {
+      "score": 4,
+      "evidence": "유입 링크 실측(자기·xsib 제외): 판매 5면 각 5경로(lectures.html, studio.html, interview.html, programs/studio.html, lectures/<code>.html), 예정 3면 각 3경로. 카드 제목 titleLines:1 이 8/8. 미달분 = 카드 3액션 primary 부재와 「응시실」 라벨 대 목적지 불일치.",
+      "source_lines": 8
+    },
+    "L2": {
+      "score": 4,
+      "evidence": "git diff assets/base.css 에 gradient/box-shadow 매치 0건. 팔레트 #312E2E 玄墨 + #F4EFE3 楮紙, mono 序 번호 01~08, 괘선 1px. 감점 = foot 우측 정렬 3버튼 밴드가 SaaS 가격표 카드 기본형.",
+      "source_lines": 3
+    },
+    "L3": {
+      "score": 3,
+      "evidence": "h3 = --t-h4 27.99px 1줄 8/8, keep-all, 제원 JetBrains Mono 13px tabular. 감점 = studio_units.py:56-58 에서 5번과 6번 액션이 동일 btn ghost sm(primary 부재), studio.html:150-154 序 번호 01 02 03 05 06 결번, h3 단독에 대학명 없음.",
+      "source_lines": 3
+    },
+    "L4": {
+      "score": 3,
+      "evidence": "카드 높이 8장 전부 279.4375px, 소개면 2열 4행 고아 0. 실측 gutter = 좌 콘텐츠 우단 613px / 괘선 640px / 우 번호 좌단 668px. 감점 = .r3-unit-commerce 빈 div 8개와 grid-row 1fr 죽은 띠, 예정 카드 foot 500px 중 330px 공백, 구매 면 마지막 행 고아 1칸.",
+      "source_lines": 4
+    },
+    "L5": {
+      "score": 3,
+      "evidence": "--mat #EBE4D4 대 --card #FFFDF8 = 1.25:1 이나 배지 「9월 14일 오픈」 + 안내문 병기로 WCAG 1.4.1 통과. 감점 = 「판매 중」 상태가 카드 무채 아웃라인과 8면 적계 배지 두 표현, 구매 면 강조색 CTA 0개(v8 L1 강조축 공백).",
+      "source_lines": 3
+    },
+    "L6": {
+      "score": 3,
+      "evidence": "소개면 배열이 판매 01 02 03 / 예정 04 / 판매 05 06 / 예정 07 08 지그재그. 같은 예정 3단위가 소개면 카드 3장 대 구매 면 각주 1줄. 8면은 문서 8475px 중 6250px(74%) 지점에 판매 CTA 단 1곳.",
+      "source_lines": 3
+    },
+    "L7": {
+      "score": 3,
+      "evidence": "가운뎃점 em대시 grep 0건, 제원값은 facts/<code>.json 유래에 studio_units.py:29-31 정수 분 assert. 감점 = 구매 면 「해설 강의 상태는 내 강의에서 확인」 5회 반복, 8면 리드와 회색 요약이 21분 7분 중복, my.html 문안이 §5 허브 문안과 불일치.",
+      "source_lines": 4
+    },
+    "L8": {
+      "score": 4,
+      "evidence": "results.json 18 경로 전건 docOverflow 0 과 pass true. 760px 단일 경계로 1280 2열 390 1열. 390 제원 3칸 각 약 106px 확보. 고정 px 높이 0, 신규 토큰 0. 감점 = 「담기」 tlink 실폭 34px(min-width 미지정).",
+      "source_lines": 3
+    },
+    "L9": {
+      "score": 4,
+      "evidence": "sRGB 상대휘도 실측 대비: gray/card 5.68, gray/mat 4.56, body/card 9.18, body/mat 7.37, ink/card 13.23, link/card 7.92 로 전 텍스트 AA 통과. 과장 카피 0건. 감점 = h3 에 대학명 부재로 heading 탐색 모호, 동일 링크 텍스트 면당 5~8회 중복(2.4.4 AAA 미달).",
+      "source_lines": 4
+    }
+  },
+  "total": 31,
+  "minimum_check": {
+    "L1": "≥4 OK",
+    "L8": "≥3 OK",
+    "L9": "≥3 OK"
+  },
+  "release_recommendation": "RELEASE",
+  "bias_self_check": {
+    "has_vague_evidence": false,
+    "has_forbidden_phrases": false,
+    "has_minimum_evidence_length": true
+  }
+}

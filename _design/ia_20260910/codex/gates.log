@@ -1,0 +1,175 @@
+$ python3 _tools/seo_check.py
+검사                           결과    건수                 비고
+-------------------------------------------------------------------
+manifest 등재                  PASS  0 fail / 75        
+seo 블록/ld+json 1개            PASS  0 fail / 74        
+(a) JSON-LD 파싱/필수필드          WARN  0 fail, 1 warn / 75 
+(b) canonical 일치             WARN  0 fail, 1 warn / 75 
+(c) 내부 링크 dead               PASS  0 fail / 2910      
+(d) sitemap == 색인 페이지        PASS  0 fail / 64        
+(e2) robots 3범주              PASS  0 fail / 34        
+(e3) sitemap URL robots 접근성  PASS  0 fail / 64        
+(e) title 유일/description 길이  WARN  0 fail, 1 warn / 75 
+(f) 이미지 alt 누락               PASS  0 fail             누락 0건
+-------------------------------------------------------------------
+FAIL 0건 / WARN 3건 / 검사 10항목
+  [WARN] (a) JSON-LD 파싱/필수필드: reader.html: JSON-LD 없음 (skip 페이지)
+  [WARN] (b) canonical 일치: reader.html: canonical 없음
+  [WARN] (e) title 유일/description 길이: reader.html: description 비어 있음 (noindex)
+exit=0
+
+$ python3 _tools/v2_check.py
+v2_check: files=70 fails=0
+exit=0
+
+$ python3 _tools/guidebook_aeo_check.py
+검사                          통과  미달
+--------------------------------------------------------------------------
+S1 기출 노출 4개 이하          31/31   -
+S2 규칙 노출 3개 이하          31/31   -
+S3 전략 제목 8개 이하          31/31   -
+A1 답변 문단 1개             31/31   -
+A2 핵심 팩트 6줄 이상          31/31   -
+A3 FAQ 8문 이상            31/31   -
+G1 저자 노드                31/31   -
+G2 대학 공식주소              31/31   -
+G3 갱신일                  31/31   -
+G4 인용 자리                31/31   -
+G5 청약철회 정책              31/31   -
+--------------------------------------------------------------------------
+R1 관련 대학 묶음            186건  31면에서 원장 대조
+--------------------------------------------------------------------------
+면 31 / FAIL 0건
+exit=0
+
+$ python3 _tools/apply_counts.py --check
+원장: 판매 31권, 기출 3,934문, 본문 1,198면
+지면 = 원장 (낡음 0)
+exit=0
+
+$ python3 _tools/build_samples.py --check
+build_samples --check: 표본 12장 + 확대 1 / FAIL 0건 (v24 PDF 100417407367be5d)
+exit=0
+
+$ python3 _tools/build_brand_captions_v2.py --check
+[hero] 자막 봉인 대조 통과(설계 원본 없는 트리)
+[full] 자막 봉인 대조 통과(설계 원본 없는 트리)
+exit=0
+
+$ python3 _tools/caption_check.py
+  확인  about.html:assets/video/brand_v2_full_aigen.webm  -> assets/video/brand_v2_full_aigen.vtt
+  확인  classroom.html:assets/video/sample_common.mp4  -> assets/video/sample_common.vtt
+  확인  index.html:(소스 없음)  -> assets/video/brand_v2_hero_aigen.vtt
+  확인  lectures/common.html:../assets/video/sample_common.mp4  -> ../assets/video/sample_common.vtt
+  확인  lectures/korea-hum.html:../assets/video/sample_korea-hum.mp4  -> ../assets/video/sample_korea-hum.vtt
+  확인  lectures/korea-sci.html:../assets/video/sample_korea-sci.mp4  -> ../assets/video/sample_korea-sci.vtt
+  확인  lectures/yonsei-hum.html:../assets/video/sample_yonsei-hum.mp4  -> ../assets/video/sample_yonsei-hum.vtt
+  확인  lectures/yonsei-intl.html:../assets/video/sample_yonsei-intl.mp4  -> ../assets/video/sample_yonsei-intl.vtt
+  확인  lectures/yonsei-sci.html:../assets/video/sample_yonsei-sci.mp4  -> ../assets/video/sample_yonsei-sci.vtt
+  확인  lectures.html:assets/video/sample_common.mp4  -> assets/video/sample_common.vtt
+  배선  assets/lecture.js  (회원 강의 플레이어. D1 vtt_key 로 트랙을 받아 Blob 으로 붙인다)
+자막 게이트 통과: 영상 배선 11건, 면제 0건
+exit=0
+
+$ python3 _tools/apply_checkout_legal.py --check
+최신 (terms a05229cb3d39, privacy f037c605661e)
+exit=0
+
+$ python3 _tools/seo_keyword_census.py
+가이드북 면                       구절
+guidebook/ajou.html          9/9
+guidebook/catholic.html      9/9
+guidebook/cau.html           9/9
+guidebook/dankook.html       9/9
+guidebook/donga.html         9/9
+guidebook/dongduk.html       9/9
+guidebook/dongguk.html       9/9
+guidebook/duksung.html       9/9
+guidebook/ewha.html          9/9
+guidebook/gachon.html        9/9
+guidebook/hanyang-erica.html 9/9
+guidebook/hufs.html          9/9
+guidebook/incheon.html       9/9
+guidebook/inha.html          9/9
+guidebook/khu.html           9/9
+guidebook/konkuk.html        9/9
+guidebook/kookmin.html       9/9
+guidebook/kwangwoon.html     9/9
+guidebook/kyonggi.html       9/9
+guidebook/myongji.html       9/9
+guidebook/pusan.html         9/9
+guidebook/sahmyook.html      9/9
+guidebook/sejong.html        9/9
+guidebook/seoultech.html     9/9
+guidebook/snu.html           9/9
+guidebook/sookmyung.html     9/9
+guidebook/soongsil.html      9/9
+guidebook/sungshin.html      9/9
+guidebook/swu.html           9/9
+guidebook/ulsan.html         9/9
+guidebook/uos.html           9/9
+------------------------------------------------------------
+계열                         면수  요구 면
+연세대 활동우수형 면접                3  programs/yonsei.html  OK
+연대 면접                       3  programs/yonsei.html  OK
+연세대 면접                      9  programs/yonsei.html  OK
+연세대 제시문 면접                  5  programs/yonsei.html  OK
+연세대 모의면접                    3  programs/yonsei.html  OK
+연세대 면접컨설팅                   1  programs/yonsei.html  OK
+고려대 계열적합형 면접                1  programs/korea.html  OK
+고려대 계열적합전형 면접               4  programs/korea.html  OK
+고대 면접                       4  programs/korea.html  OK
+고려대 면접                      9  programs/korea.html  OK
+고려대 제시문 면접                 64  programs/korea.html  OK
+고려대 모의면접                    3  programs/korea.html  OK
+생기부 면접                     36  interview.html  OK
+서류기반 면접                    39  interview.html  OK
+대입 면접컨설팅                    5  interview.html  OK
+대입 모의면접                     7  interview.html  OK
+모의면접                       41  studio.html  OK
+면접컨설팅                      38  index.html  OK
+면접 예상문제                    38  index.html  OK
+면접 기출문제                    39  index.html  OK
+대입 면접 준비                   37  index.html  OK
+MMI 면접                      1  interview.html  OK
+------------------------------------------------------------
+seo_keyword_census: 가이드북 31/31면 전 구절, 계열 22/22 / FAIL 0건
+exit=0
+
+$ python3 _tools/link_check.py
+link_check: 면 75 · sitemap 64 · 삭제 이력 37 · 워커 301 표 7+33 · fails=0
+exit=0
+
+$ node _tools/worker_check.mjs
+PASS LEGACY_REDIRECTS 표 읽힘                                33건
+PASS 표 전건 301 + Location 일치                               33/33
+PASS 정규화 /interview/ → 301 /interview.html                301 https://hyunhak.com/interview.html
+PASS 정규화 /store → 301 /guidebook/index.html               301 https://hyunhak.com/guidebook/index.html
+PASS 정규화 /programs/ → 301 /programs/guidebook.html        301 https://hyunhak.com/programs/guidebook.html
+PASS 정규화 /programs → 301 /programs/guidebook.html         301 https://hyunhak.com/programs/guidebook.html
+PASS 정규화 /lectures/ → 301 /lectures.html                  301 https://hyunhak.com/lectures.html
+PASS 정규화 /interview/korea → 301 /programs/korea.html      301 https://hyunhak.com/programs/korea.html
+PASS 301 이 쿼리를 보존(utm → 목적지 ai_referrals)                 https://hyunhak.com/programs/korea.html?utm_source=chatgpt.com
+PASS /interview (허브, 산 면) 200                             200
+PASS 철거 7권 301 (기존 REMOVED_GUIDEBOOK 유지)                  301 https://hyunhak.com/guidebook/index.html
+PASS 확장자 없는 경로 /faq 200 (기존 해석 유지)                        200
+PASS /guidebook → 301 슬래시 (기존 유지)                         301 https://hyunhak.com/guidebook/
+PASS www → apex 301 (기존 유지)                               301 https://hyunhak.com/
+PASS /favicon.ico 200 image/png + 캐시                      200 image/png
+PASS 없는 면 404 + 404.html 본문                               404 len=13552
+PASS not_found INSERT 1건 (path, ref_host, ua_class=browser) [["/nope.html","chatgpt.com","browser"]]
+PASS 원장 = 쿼리 제외 + ua_class ai_user                        [["/nope.html","","ai_user"]]
+PASS ua_class ai_bot (PerplexityBot)                      ai_bot
+PASS ua_class search_bot (Googlebot)                      search_bot
+PASS ua_class other_bot (스모크)                             other_bot
+PASS ua_class other_bot (Chrome 프리페치 프록시)                 other_bot
+PASS ua_class none (UA 없음)                                none
+PASS HEAD 404 는 원장 미기록                                    0
+PASS 비정식 호스트 404 는 원장 미기록                                 0
+PASS 비 HTML 404 도 404.html 본문 (기존 NIT1 유지)                404
+PASS 404 원장 분당 예산 60 (이미 위에서 쓴 만큼 차감)                     52/70 기록
+worker_check: FAIL 0 / 27 항목
+exit=0
+
+$ git diff --check
+exit=0

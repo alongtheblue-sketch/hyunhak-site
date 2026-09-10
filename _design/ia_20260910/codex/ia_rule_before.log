@@ -1,0 +1,13 @@
+$ git show HEAD:_design/redesign_20260909/ia_links.py | python3 -
+pages=69 dist(home→cart)=1 dist(home→checkout)=2
+index.html: body_links=19 targets=9 max_repeat=5 dist=0 | kinds=9 max_repeat_query_distinct=5
+programs/guidebook.html: body_links=36 targets=35 max_repeat=2 dist=1 | kinds=5 max_repeat_query_distinct=2
+programs/studio.html: body_links=20 targets=14 max_repeat=6 dist=1 | kinds=14 max_repeat_query_distinct=2
+guidebook/index.html: body_links=12 targets=9 max_repeat=2 dist=1 | kinds=9 max_repeat_query_distinct=2
+studio.html: body_links=22 targets=16 max_repeat=5 dist=2 | kinds=16 max_repeat_query_distinct=2
+ranking.html: body_links=5 targets=5 max_repeat=1 dist=1 | kinds=5 max_repeat_query_distinct=1
+b2b.html: body_links=5 targets=4 max_repeat=2 dist=1 | kinds=4 max_repeat_query_distinct=2
+lectures.html: body_links=34 targets=20 max_repeat=3 dist=1 | kinds=15 max_repeat_query_distinct=3
+my.html: body_links=11 targets=10 max_repeat=2 dist=1 | kinds=10 max_repeat_query_distinct=2
+cart.html: body_links=7 targets=6 max_repeat=2 dist=1 | kinds=6 max_repeat_query_distinct=2
+exit=0

@@ -1,0 +1,41 @@
+단계 C 끝
+$ git status --short
+ M _design/redesign_20260909/ia_links.py
+ M _tools/build_lectures.py
+ M _tools/build_programs.py
+ M _tools/build_sitemap.py
+ M _tools/exam_pages/build_exam_pages.py
+ M _tools/exam_pages/tpl.html
+ M _tools/interview_hub_v1.html
+ M _tools/program_studio_v2.html
+ M _tools/r2_copy.json
+ M _tools/v2_shell.py
+ M assets/base.css
+ M assets/product_buy.js
+ M classroom.html
+ M index.html
+ M interview.html
+ M interview/korea-eq-hum.html
+ M interview/korea-eq-sci.html
+ M interview/korea-hum.html
+ M interview/korea-sci.html
+ M interview/yonsei-hum.html
+ M interview/yonsei-intl.html
+ M interview/yonsei-mirae.html
+ M interview/yonsei-sci.html
+ M lectures.html
+ M lectures/common.html
+ M lectures/korea-hum.html
+ M lectures/korea-sci.html
+ M lectures/yonsei-hum.html
+ M lectures/yonsei-intl.html
+ M lectures/yonsei-sci.html
+ M my.html
+ M programs/guidebook.html
+ M programs/korea.html
+ M programs/studio.html
+ M programs/yonsei.html
+ M ranking.html
+ M studio.html
+?? _design/ia_20260910/
+?? _tools/studio_units.py

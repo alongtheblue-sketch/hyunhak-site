@@ -529,7 +529,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     var sums=await Promise.all(codes.map(function(c){ return HH.api('/api/lectures/summary?unit='+encodeURIComponent(c)+'&kind=passage').catch(function(){return null}); }));
     codes.forEach(function(c,i){
       var u=unitOf(c), sm=sums[i], total=u?u.set_count:30;
-      cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의</p>'
+      cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의 <a class="tlink" href="interview/'+encodeURIComponent(c)+'.html">출제 유형과 풀이법 보기</a></p>'
         +'<p class="st">'+(sm?esc(lecText(sm.ready||0,total)):'공개 편수를 지금 확인할 수 없습니다')+(GICHUL_OF[c]?', 2026 기출 해설 1편':'')+(until(owned[c])?', '+until(owned[c]):'')+'</p></div>'
         +'<div class="ops"><a class="btn sm" href="lecture.html?unit='+encodeURIComponent(c)+'">강의 목록</a><a class="btn ghost sm" href="studio.html?unit='+encodeURIComponent(c)+'">지문 목록</a></div></div>');
     });
@@ -537,7 +537,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     setIds.forEach(function(id,i){
       var hit=setOf(id), sm=ssums[i], title=hit?hit.set.title:id;
       cards.push('<div class="subcard"><div><p class="nm">'+esc(title)+' 해설</p>'
-        +'<p class="st">'+(hit?esc(hit.unit.label)+', ':'')+(sm?(sm.ready>0?'해설 강의 공개':'해설 강의 준비 중'):'상태를 지금 확인할 수 없습니다')+'<span class="mono">'+esc(id)+'</span>'+(until(ownedSets[id])?', '+until(ownedSets[id]):'')+'</p></div>'
+        +'<p class="st">'+(hit?esc(hit.unit.label)+(HH.okUnit(hit.unit.code)?' <a class="tlink" href="interview/'+encodeURIComponent(hit.unit.code)+'.html">출제 유형과 풀이법 보기</a>':'')+', ':'')+(sm?(sm.ready>0?'해설 강의 공개':'해설 강의 준비 중'):'상태를 지금 확인할 수 없습니다')+'<span class="mono">'+esc(id)+'</span>'+(until(ownedSets[id])?', '+until(ownedSets[id]):'')+'</p></div>'
         +'<div class="ops"><a class="btn sm" href="lecture.html?set='+encodeURIComponent(id)+'">내 강의</a></div></div>');
     });
     box.innerHTML=cards.join('');

@@ -1,0 +1,13 @@
+$ node _design/ia_20260910/codex/verify_ia1_buy.mjs
+PASS card korea-hum: selects sale unit, restores pass, preserves cart price and quantity
+PASS card korea-sci: selects sale unit, restores pass, preserves cart price and quantity
+PASS card yonsei-hum: selects sale unit, restores pass, preserves cart price and quantity
+PASS card yonsei-sci: selects sale unit, restores pass, preserves cart price and quantity
+PASS card yonsei-intl: selects sale unit, restores pass, preserves cart price and quantity
+PASS rejects non-sale card "yonsei-mirae"
+PASS rejects non-sale card "korea-eq-hum"
+PASS rejects non-sale card "korea-eq-sci"
+PASS rejects non-sale card "unknown"
+PASS rejects non-sale card "\"><script>"
+IA1_BUY failures=0 (DOM event unit test; browser acceptance remains BLOCKED)
+exit=0

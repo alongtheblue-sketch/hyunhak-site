@@ -7,6 +7,7 @@ from pathlib import Path
 
 import v2_shell as V
 import r2_faq
+import studio_units
 from apply_counts import ledger as count_ledger
 
 HERE = Path(__file__).resolve().parent
@@ -73,6 +74,10 @@ def build():
         if kind == "guidebook":
             source = source.replace("__GUIDE_OPTIONS__", guide_options())
             source = source.replace("__GUIDE_CATALOG__", guide_catalog())
+        if kind == "studio":
+            if source.count("__UNITS__") != 1:
+                raise ValueError("studio: expected one units slot")
+            source = source.replace("__UNITS__", studio_units.render())
         if kind in {"guidebook", "studio"}:
             if source.count("__R2_FAQ__") != 1:
                 raise ValueError(f"{rel}: expected one R2 FAQ slot")
@@ -82,11 +87,13 @@ def build():
             source = V.apply_shell(source, rel)
             source = V.apply_footer(source, rel)
             source = V.apply_fix(source, rel)
-        if re.search(r"__(?:C_|GUIDE_)", source):
+        if re.search(r"__(?:C_|GUIDE_|UNITS__)", source):
             raise ValueError(f"{rel}: 치환되지 않은 자리표시")
         (ROOT / rel).write_text(source, encoding="utf-8")
     home = ROOT / "index.html"
     home.write_text(r2_faq.sync_home(home.read_text(encoding="utf-8")), encoding="utf-8")
+    purchase = ROOT / "studio.html"
+    purchase.write_text(studio_units.sync_purchase(purchase.read_text(encoding="utf-8")), encoding="utf-8")
 
 
 if __name__ == "__main__":

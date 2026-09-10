@@ -1,0 +1,110 @@
+$ python3 _design/ia_20260910/codex/verify_ia1_static.py
+PASS LP 8 cards in CODES order
+PASS purchase templates only 5 sale units
+PASS LP standalone cart link removed
+PASS LP keeps single purchase data-primary marker
+PASS yonsei-hum title from approved source
+PASS yonsei-hum facts to minutes: ['8분', '5분', '2개']
+PASS yonsei-hum primary guide
+PASS yonsei-hum allowed actions
+PASS yonsei-hum shared markup ./span
+PASS yonsei-hum shared markup ./div[1]
+PASS yonsei-hum shared markup ./dl
+PASS yonsei-hum shared markup ./p
+PASS yonsei-hum CTA routes
+PASS yonsei-hum screen breadcrumb
+PASS yonsei-hum llms entry
+PASS yonsei-sci title from approved source
+PASS yonsei-sci facts to minutes: ['8분', '5분', '2개']
+PASS yonsei-sci primary guide
+PASS yonsei-sci allowed actions
+PASS yonsei-sci shared markup ./span
+PASS yonsei-sci shared markup ./div[1]
+PASS yonsei-sci shared markup ./dl
+PASS yonsei-sci shared markup ./p
+PASS yonsei-sci CTA routes
+PASS yonsei-sci screen breadcrumb
+PASS yonsei-sci llms entry
+PASS yonsei-intl title from approved source
+PASS yonsei-intl facts to minutes: ['8분', '5분', '2개']
+PASS yonsei-intl primary guide
+PASS yonsei-intl allowed actions
+PASS yonsei-intl shared markup ./span
+PASS yonsei-intl shared markup ./div[1]
+PASS yonsei-intl shared markup ./dl
+PASS yonsei-intl shared markup ./p
+PASS yonsei-intl CTA routes
+PASS yonsei-intl screen breadcrumb
+PASS yonsei-intl llms entry
+PASS yonsei-mirae title from approved source
+PASS yonsei-mirae facts to minutes: ['10분', '5분', '3개']
+PASS yonsei-mirae primary guide
+PASS yonsei-mirae allowed actions
+PASS yonsei-mirae opening status and no commerce
+PASS yonsei-mirae CTA routes
+PASS yonsei-mirae screen breadcrumb
+PASS yonsei-mirae llms entry
+PASS korea-hum title from approved source
+PASS korea-hum facts to minutes: ['21분', '7분', '3개']
+PASS korea-hum primary guide
+PASS korea-hum allowed actions
+PASS korea-hum shared markup ./span
+PASS korea-hum shared markup ./div[1]
+PASS korea-hum shared markup ./dl
+PASS korea-hum shared markup ./p
+PASS korea-hum CTA routes
+PASS korea-hum screen breadcrumb
+PASS korea-hum llms entry
+PASS korea-sci title from approved source
+PASS korea-sci facts to minutes: ['21분', '7분', '3개']
+PASS korea-sci primary guide
+PASS korea-sci allowed actions
+PASS korea-sci shared markup ./span
+PASS korea-sci shared markup ./div[1]
+PASS korea-sci shared markup ./dl
+PASS korea-sci shared markup ./p
+PASS korea-sci CTA routes
+PASS korea-sci screen breadcrumb
+PASS korea-sci llms entry
+PASS korea-eq-hum title from approved source
+PASS korea-eq-hum facts to minutes: ['12분', '6분', '3개']
+PASS korea-eq-hum primary guide
+PASS korea-eq-hum allowed actions
+PASS korea-eq-hum opening status and no commerce
+PASS korea-eq-hum CTA routes
+PASS korea-eq-hum screen breadcrumb
+PASS korea-eq-hum llms entry
+PASS korea-eq-sci title from approved source
+PASS korea-eq-sci facts to minutes: ['12분', '6분', '3개']
+PASS korea-eq-sci primary guide
+PASS korea-eq-sci allowed actions
+PASS korea-eq-sci opening status and no commerce
+PASS korea-eq-sci CTA routes
+PASS korea-eq-sci screen breadcrumb
+PASS korea-eq-sci llms entry
+PASS purchase opening list order
+PASS hub summary jump
+PASS yonsei-hum lectures list/detail ingress
+PASS yonsei-sci lectures list/detail ingress
+PASS yonsei-intl lectures list/detail ingress
+PASS korea-hum lectures list/detail ingress
+PASS korea-sci lectures list/detail ingress
+PASS SEO byte preservation: []
+PASS analytics byte preservation: []
+PASS font loading byte preservation: []
+PASS brand film byte preservation: []
+PASS terms.html legal main byte preservation
+PASS privacy.html legal main byte preservation
+PASS literal list prices and order preserved: []
+PASS protected source files
+INGRESS excluding interview/*.html, _tools templates, design/docs and scripts; purchase templates render verified above
+PASS yonsei-hum >=3 inbound pages: 5 interview.html, lectures.html, lectures/yonsei-hum.html, programs/studio.html, studio.html
+PASS yonsei-sci >=3 inbound pages: 5 interview.html, lectures.html, lectures/yonsei-sci.html, programs/studio.html, studio.html
+PASS yonsei-intl >=3 inbound pages: 5 interview.html, lectures.html, lectures/yonsei-intl.html, programs/studio.html, studio.html
+PASS yonsei-mirae >=3 inbound pages: 3 interview.html, programs/studio.html, studio.html
+PASS korea-hum >=3 inbound pages: 5 interview.html, lectures.html, lectures/korea-hum.html, programs/studio.html, studio.html
+PASS korea-sci >=3 inbound pages: 5 interview.html, lectures.html, lectures/korea-sci.html, programs/studio.html, studio.html
+PASS korea-eq-hum >=3 inbound pages: 3 interview.html, programs/studio.html, studio.html
+PASS korea-eq-sci >=3 inbound pages: 3 interview.html, programs/studio.html, studio.html
+IA1_STATIC failures=0
+exit=0

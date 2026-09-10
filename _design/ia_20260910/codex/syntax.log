@@ -1,0 +1,2 @@
+$ node --check _design/ia_20260910/shot_ia1.mjs
+exit=0

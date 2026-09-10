@@ -1,0 +1,31 @@
+$ grep -rl "interview/yonsei-hum.html" --include=*.html . | grep -v _design | wc -l
+       6
+exit=0
+
+$ grep -rl "interview/yonsei-sci.html" --include=*.html . | grep -v _design | wc -l
+       6
+exit=0
+
+$ grep -rl "interview/yonsei-intl.html" --include=*.html . | grep -v _design | wc -l
+       6
+exit=0
+
+$ grep -rl "interview/yonsei-mirae.html" --include=*.html . | grep -v _design | wc -l
+       4
+exit=0
+
+$ grep -rl "interview/korea-hum.html" --include=*.html . | grep -v _design | wc -l
+       6
+exit=0
+
+$ grep -rl "interview/korea-sci.html" --include=*.html . | grep -v _design | wc -l
+       6
+exit=0
+
+$ grep -rl "interview/korea-eq-hum.html" --include=*.html . | grep -v _design | wc -l
+       4
+exit=0
+
+$ grep -rl "interview/korea-eq-sci.html" --include=*.html . | grep -v _design | wc -l
+       4
+exit=0

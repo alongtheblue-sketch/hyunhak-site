@@ -1,0 +1,64 @@
+{
+  "version": "v3.1-stage2",
+  "timestamp": "2026-09-10T15:46:00+09:00",
+  "deliverable_path": "/Users/gregory/Workspace/_wt/hh-ia (ia/20260910-units-links): Δ2 재채점 3회차 — base.css:1426-1429 padding-inline var(--s4) 적용 후",
+  "lenses": {
+    "L1": {
+      "score": 4,
+      "evidence": "링크 구조와 문안 무변경. 「응시실」 라벨 대 목적지 불일치(M1)와 8면 CTA 74% 깊이 존치로 5 미도달.",
+      "source_lines": 2
+    },
+    "L2": {
+      "score": 4,
+      "evidence": "팔레트 밖 색 유입 0, 그라디언트 box-shadow 매치 0 유지. foot 우측 정렬 3버튼 밴드가 SaaS 가격표 기본형이라 5 미도달.",
+      "source_lines": 2
+    },
+    "L3": {
+      "score": 4,
+      "evidence": "序 번호 소개면 01~08 구매면 01~05, 면당 solid 1개, titleLines 1 전건 불변. h3 단독 대학명 부재와 「담기」 3등급 공존 존치.",
+      "source_lines": 3
+    },
+    "L4": {
+      "score": 3,
+      "evidence": "우측 지각 절단 해소(짝수 열 담기 우단 1111px 대 내용 상자 1124.8px 대 색면 상자 1148.8px). 신규 = 카드 내용 좌단 155.2px 가 h2 글리프 132px 페이지 스파인과 24px 이탈. 기존 M2 죽은 여백 M3 고아 M4 foot 빈 밴드 존치. 순증감 0.",
+      "source_lines": 5
+    },
+    "L5": {
+      "score": 4,
+      "evidence": "팔레트 대비 무변경. 색면이 글자보다 24px 넓어져 --mat 예정 카드 상태 색면이 독립 판독된다. 「판매 중」이 카드 무채 아웃라인과 8면 적계 배지 두 표현으로 남아 5 미도달.",
+      "source_lines": 3
+    },
+    "L6": {
+      "score": 3,
+      "evidence": "지그재그 배열, 예정 3단위 두 면 위계 3단 차, 8면 CTA 74% 깊이 전부 무변.",
+      "source_lines": 2
+    },
+    "L7": {
+      "score": 3,
+      "evidence": "색면 끝과 글자 끝이 겹치던 마무리는 해소. 신규 = 한 카드 안 괘선 두 길이(행 구분 131~640 셀 폭 대 foot 상단 155~616 내용 폭). 반복 문장 5회와 8면 중복 진술과 my.html 문안 존치.",
+      "source_lines": 4
+    },
+    "L8": {
+      "score": 4,
+      "evidence": "results.json 20/20 pass, errors 0, docOverflow 0, 카드 높이 279.4375 및 328.40625 불변, 390 은 media min-width 47.5em 밖이라 무변. 담기 semantics a 대 button 분기 존치.",
+      "source_lines": 3
+    },
+    "L9": {
+      "score": 4,
+      "evidence": "팔레트 무변경으로 대비 실측 동일: gray/mat 4.56 최저, gray/card 5.68, body/card 9.18, ink/card 13.23 전건 AA 통과. h3 대학명 부재와 링크 텍스트 중복 존치.",
+      "source_lines": 3
+    }
+  },
+  "total": 33,
+  "minimum_check": {
+    "L1": "≥4 OK",
+    "L8": "≥3 OK",
+    "L9": "≥3 OK"
+  },
+  "release_recommendation": "RELEASE",
+  "bias_self_check": {
+    "has_vague_evidence": false,
+    "has_forbidden_phrases": false,
+    "has_minimum_evidence_length": true
+  }
+}
