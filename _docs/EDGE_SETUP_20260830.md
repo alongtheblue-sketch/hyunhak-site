@@ -32,6 +32,12 @@ R2 "protected paths bots", 액션 Block:
 
     (starts_with(http.request.uri.path, "/reader") or starts_with(http.request.uri.path, "/lecture") or starts_with(http.request.uri.path, "/api/reader") or starts_with(http.request.uri.path, "/api/lecture")) and (cf.client.bot or lower(http.user_agent) contains "bot" or lower(http.user_agent) contains "crawl" or lower(http.user_agent) contains "spider" or lower(http.user_agent) contains "python" or lower(http.user_agent) contains "curl" or lower(http.user_agent) contains "wget" or lower(http.user_agent) contains "headless")
 
+**정정 2026-09-10 (S14-3)**: 위 R2 의 `starts_with(http.request.uri.path, "/lecture")` 가 인강 안내면 `/lectures.html`·`/lectures/*.html` 까지 잡아 Googlebot(cf.client.bot) 이 403 을 받았다 (GSC 실제 URL 테스트 6건 「액세스 금지」, curl 대조 = `/lectures*` 만 비브라우저 UA 403). 보호 대상은 뷰어 셸 `/lecture.html` 하나이므로 그 항만 정확 일치로 바꾼다. R2 정정식:
+
+    (starts_with(http.request.uri.path, "/reader") or http.request.uri.path eq "/lecture.html" or starts_with(http.request.uri.path, "/api/reader") or starts_with(http.request.uri.path, "/api/lecture")) and (cf.client.bot or lower(http.user_agent) contains "bot" or lower(http.user_agent) contains "crawl" or lower(http.user_agent) contains "spider" or lower(http.user_agent) contains "python" or lower(http.user_agent) contains "curl" or lower(http.user_agent) contains "wget" or lower(http.user_agent) contains "headless")
+
+적용 뒤 검증: `curl -sI -A "Googlebot/2.1" https://hyunhak.com/lectures/common.html` = 200, `curl -sI -A "Googlebot/2.1" https://hyunhak.com/lecture.html` = 403 유지. 그 뒤 GSC 6건(lectures.html + lectures/5면) 색인 재요청.
+
 R3 "reader shell non-browser", 액션 Managed Challenge:
 
     (http.host eq "hyunhak.com" and http.request.uri.path in {"/reader.html" "/lecture.html"} and not http.user_agent contains "Mozilla")
