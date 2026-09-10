@@ -100,23 +100,23 @@ SYMBOL = ('<svg viewBox="0 0 100 100" aria-hidden="true"><g fill="currentColor">
 # 앞 2 = 파는 것, 뒤 2 = 부가. 경계에 여백 한 칸을 더 줘 한 덩어리로 뭉치지 않게 한다 (s17 건우 지적)
 GNB = [
     ("programs/guidebook.html", "가이드북", ("guidebook/", "programs/guidebook.html")),
-    ("programs/studio.html", "제시문 면접 스튜디오", ("studio.html", "programs/studio.html")),
+    ("programs/studio.html", "스튜디오", ("studio.html", "programs/studio.html")),
+    ("ranking.html", "랭킹실", ("ranking.html",)),
     ("lectures.html", "인강", ("lectures.html", "lectures/", "classroom.html")),
-    ("library.html", "자료실", ("library.html",)),
-    ("about.html", "연구소", ("about.html", "faq.html", "notice.html")),
     ("b2b.html", "스쿨 플랜", ("b2b.html",)),
 ]
-GNB_GROUP_BREAK = 3   # 이 인덱스 항목부터 부가 묶음 (파는 것 3, 부가 2. 인강 신설 2026-09-06. 무료 아카이브 폐지 2026-08-26, 봉투 모의고사 판매 중단 2026-08-31)
+GNB_GROUP_BREAK = 4   # 개인 이용 4개 다음 스쿨 플랜
 FIX = [  # (href, label, 매칭 키, primary, 아이콘 키)
     ("index.html", "홈", ("index.html",), False, "home"),
-    ("index.html#find", "대학 찾기", (), False, "find"),
     ("programs/guidebook.html", "가이드북", ("guidebook/", "programs/guidebook.html"), False, "book"),
     ("programs/studio.html", "스튜디오", ("studio.html", "programs/studio.html", "programs/yonsei.html", "programs/korea.html"), False, "camera"),
+    ("ranking.html", "랭킹실", ("ranking.html",), False, "rank"),
     ("my.html", "MY", ("my.html",), False, "my"),
 ]
 
 # 모바일 바 아이콘 (선 1.8, currentColor. 자리표시 사각 <i> 대체)
 FIX_ICONS = {
+    "rank": '<path d="M4 20V12h5v8M9 20V5h6v15M15 20v-10h5v10M3 20h18"/>',
     "home": '<path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/>',
     "find": '<circle cx="10.6" cy="10.6" r="5.6"/><path d="M14.8 14.8 20 20"/>',
     "book": '<rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/>',
@@ -213,6 +213,7 @@ def shell(rel):
 def footer(rel, compact=False):
     p = prefix_of(rel)
     links = "".join(f'<li><a href="{p}{h}">{l}</a></li>' for h, l, _ in GNB)
+    links += f'<li><a href="{p}library.html">자료실</a></li><li><a href="{p}about.html">연구소</a></li>'
     disclosure = "" if compact else " open"
     # v2_check 의 정적 셸 계약은 속성 없는 <footer> 를 요구한다.
     # 파싱 즉시 클래스만 부여해 footer.ft 스타일과 기존 검증 계약을 함께 유지한다.

@@ -1,0 +1,2 @@
+v2_check: files=62 fails=1
+  FAIL my.html: 금지 문자 '·' x2

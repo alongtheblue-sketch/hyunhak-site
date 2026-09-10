@@ -12,11 +12,11 @@
   function update() {
     var mode = block.querySelector('input[type="radio"]:checked').value;
     var option = select.options[select.selectedIndex];
-    select.disabled = isGuide ? mode === 'all' : mode === 'lecture';
+    select.disabled = isGuide ? mode !== 'single' : mode === 'lecture';
     if (isGuide) {
-      button.dataset.cartSku = mode === 'all' ? 'guide-all-view' : option.value;
-      button.dataset.cartTitle = mode === 'all' ? block.dataset.allTitle : option.dataset.cartTitle;
-      button.dataset.cartPrice = mode === 'all' ? '511500' : option.dataset.cartPrice;
+      button.dataset.cartSku = mode === 'pdf' ? 'guide-all-pdf' : mode === 'all' ? 'guide-all-view' : option.value;
+      button.dataset.cartTitle = mode === 'pdf' ? block.dataset.pdfTitle : mode === 'all' ? block.dataset.allTitle : option.dataset.cartTitle;
+      button.dataset.cartPrice = mode === 'pdf' ? '1705000' : mode === 'all' ? '511500' : option.dataset.cartPrice;
     } else {
       button.dataset.cartSku = mode === 'lecture' ? 'lecture-common' : mode === 'single' ? 'passage-single' : 'pass-' + option.value;
       button.dataset.cartTitle = mode === 'lecture' ? block.dataset.lectureTitle : option.textContent + ' 전권 이용권';

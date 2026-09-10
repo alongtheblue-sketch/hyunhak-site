@@ -1,0 +1,11 @@
+pages=60 dist(home→cart)=1 dist(home→checkout)=2
+index.html: body_links=21 targets=11 max_repeat=5 dist=0
+programs/guidebook.html: body_links=9 targets=6 max_repeat=2 dist=1
+programs/studio.html: body_links=10 targets=6 max_repeat=3 dist=1
+guidebook/index.html: body_links=11 targets=9 max_repeat=2 dist=1
+studio.html: body_links=14 targets=12 max_repeat=2 dist=1
+ranking.html: (없음)
+b2b.html: body_links=5 targets=4 max_repeat=2 dist=1
+lectures.html: body_links=28 targets=14 max_repeat=3 dist=1
+my.html: body_links=11 targets=10 max_repeat=2 dist=1
+cart.html: body_links=7 targets=6 max_repeat=2 dist=1

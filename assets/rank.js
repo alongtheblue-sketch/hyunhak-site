@@ -1,6 +1,6 @@
 /* 면접 스튜디오 순위표 (2026-09-07). 원천 = /api/studio/ranking 하나(실응시 원장 집계, 가공 인원 0).
    studio.html 의 순위표(#ranking[data-rank-board] + 응시 현황 [data-rank-summary]) 와 index.html 위젯(#rankWidget[data-rank-widget]) 을 그린다.
-   이름은 서버가 가린 값 그대로, 세트 제목과 난이도는 assets/data/sets.json 에서 붙인다. 표시 상태 3가지:
+   별명은 서버 값 그대로, masked 행만 종전 가린 이름을 보인다. 세트 제목과 난이도는 assets/data/sets.json 에서 붙인다. 표시 상태 3가지:
    응시 0 = "아직 응시 기록이 없습니다" / 채점 10명 미만 = 분포 숨김 + "집계 중" / 공개 회원 0 = 행 없음 문구. 숫자 0 을 크게 박지 않는다. */
 (function () {
   if (!window.HH) return;
@@ -65,21 +65,26 @@
     return span;
   }
   const kstStamp = (iso) => { const t = Date.parse(iso || ""); if (Number.isNaN(t)) return ""; const d = new Date(t + 9 * 3600 * 1000); const z = (v) => String(v).padStart(2, "0"); return d.getUTCFullYear() + "." + z(d.getUTCMonth() + 1) + "." + z(d.getUTCDate()) + " " + z(d.getUTCHours()) + ":" + z(d.getUTCMinutes()) + " 집계"; };
-  function groupRows(rows, view, sets) {
+  function groupRows(rows, view, sets, unknownLabel) {
     if (view === "set") {
       const g = new Map();
       rows.forEach((r) => { const c = codeOf(r.set_id); if (!g.has(c)) g.set(c, { key: c, n: (sets[r.set_id] || {}).n || 99, title: (sets[r.set_id] || {}).title || "", diff: (sets[r.set_id] || {}).difficulty || "", rows: [] }); g.get(c).rows.push(r); });
       return [...g.values()].sort((a, b) => a.n - b.n).map((x) => ({ label: x.key + (x.title ? " " + x.title : "") + (x.diff ? " (" + x.diff + ")" : ""), rows: x.rows.slice(0, GROUP_TOP.set) }));
     }
     if (view === "difficulty") {
-      return DIFF_ORDER.map((d) => ({ label: "난이도 " + d, rows: rows.filter((r) => (sets[r.set_id] || {}).difficulty === d).slice(0, GROUP_TOP.difficulty) })).filter((g) => g.rows.length);
+      const groups = DIFF_ORDER.map((d) => ({ label: "난이도 " + d, rows: rows.filter((r) => (sets[r.set_id] || {}).difficulty === d).slice(0, GROUP_TOP.difficulty) })).filter((g) => g.rows.length);
+      const unknown = rows.filter(r => !DIFF_ORDER.includes((sets[r.set_id] || {}).difficulty));
+      if (unknown.length) groups.push({ label: unknownLabel, rows: unknown.slice(0, GROUP_TOP.difficulty) });
+      return groups;
     }
     return [{ label: null, rows }];
   }
-  function fillRow(tr, r, sets) {
+  function fillRow(tr, r, sets, maskedLabel) {
     const s = sets[r.set_id] || {};
     const put = (k, v) => { const c = tr.querySelector('[data-c="' + k + '"]'); if (c) c.textContent = v; };
     put("rank", n(r.rank)); put("name", String(r.name || "회원")); put("score", n(r.score));
+    if (r.masked === true) tr.title = maskedLabel;
+    else tr.removeAttribute("title");
     put("set", codeOf(r.set_id)); put("at", dateOf(r.at));
     const setCell = tr.querySelector('[data-c="set"]'); if (setCell && s.title) setCell.title = s.title;
     const dc = tr.querySelector('[data-c="diff"]');
@@ -89,6 +94,8 @@
     const x = data.units[unit]; if (!x) return;
     root.querySelectorAll("[data-rank-tabs] [data-unit]").forEach((b) => {
       b.setAttribute("aria-selected", b.dataset.unit === unit ? "true" : "false");
+      b.tabIndex = b.dataset.unit === unit ? 0 : -1;
+      b.setAttribute("aria-controls", "rp-" + unit);
       const cnt = b.querySelector("span"); const xu = data.units[b.dataset.unit];
       if (cnt && xu) cnt.textContent = n(xu.takers) ? fmt(xu.takers) : "–";
     });
@@ -111,9 +118,9 @@
     const body = root.querySelector("[data-rank-rows]"); const tplRow = root.querySelector("template[data-rank-row]"); const tplGrp = root.querySelector("template[data-rank-group]");
     if (body && tplRow) {
       body.textContent = "";
-      groupRows(rows, view, sets).forEach((g) => {
+      groupRows(rows, view, sets, root.dataset.unknownDifficulty).forEach((g) => {
         if (g.label && tplGrp) { const h = tplGrp.content.cloneNode(true); const c = h.querySelector('[data-c="group"]'); if (c) c.textContent = g.label; body.appendChild(h); }
-        g.rows.forEach((r) => { const tr = tplRow.content.cloneNode(true); fillRow(tr.querySelector("tr"), r, sets); body.appendChild(tr); });
+        g.rows.forEach((r) => { const tr = tplRow.content.cloneNode(true); fillRow(tr.querySelector("tr"), r, sets, root.dataset.maskedLabel); body.appendChild(tr); });
       });
       const table = body.closest("table"); if (table) table.hidden = rows.length === 0;
     }
@@ -136,10 +143,18 @@
   function bindBoard(root, data, sets) {
     let unit = UNITS[0], view = "all";
     const h = (location.hash || "").replace("#", "");
-    root.querySelectorAll("[data-rank-tabs] [data-unit]").forEach((b) => b.addEventListener("click", () => { unit = b.dataset.unit; renderBoard(root, data, sets, unit, view); }));
+    const tabs = [...root.querySelectorAll("[data-rank-tabs] [data-unit]")];
+    tabs.forEach((b, i) => {
+      b.addEventListener("click", () => { unit = b.dataset.unit; renderBoard(root, data, sets, unit, view); });
+      b.addEventListener("keydown", (e) => {
+        const next = e.key === "ArrowRight" ? (i + 1) % tabs.length : e.key === "ArrowLeft" ? (i + tabs.length - 1) % tabs.length : e.key === "Home" ? 0 : e.key === "End" ? tabs.length - 1 : -1;
+        if (next < 0) return;
+        e.preventDefault(); tabs[next].focus(); tabs[next].click();
+      });
+    });
     root.querySelectorAll("[data-rank-views] [data-view]").forEach((b) => b.addEventListener("click", () => { view = b.dataset.view; renderBoard(root, data, sets, unit, view); }));
     renderBoard(root, data, sets, unit, view);
-    root.hidden = totalTakers(data) === 0;
+    root.hidden = !root.hasAttribute("data-rank-page") && totalTakers(data) === 0;
   }
 
   document.addEventListener("DOMContentLoaded", async () => {
@@ -148,7 +163,14 @@
     const summary = document.querySelector("[data-rank-summary]");
     if (!widget && !board && !summary) return;
     const data = await loadRanking();
-    if (!data || !data.units) return;   // 서버 판정을 못 받으면 숨긴 채 둔다 (빈 표를 그리지 않는다)
+    if (!data || !data.units || UNITS.some(u => !data.units[u])) {
+      if (board && board.hasAttribute("data-rank-page")) {
+        const note = board.querySelector("[data-rank-note]");
+        note.textContent = board.dataset.failed; note.hidden = false;
+        const table = board.querySelector("table"); if (table) table.hidden = true;
+      }
+      return;
+    }
     if (widget) renderWidget(widget, data);
     if (summary) { renderSummary(summary, data); summary.hidden = totalTakers(data) === 0; }
     if (board) { const sets = await loadSets(); bindBoard(board, data, sets); }

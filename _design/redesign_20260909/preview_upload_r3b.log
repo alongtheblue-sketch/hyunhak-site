@@ -1,0 +1,99 @@
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+
+ ⛅️ wrangler 4.130.0
+────────────────────
+🌀 Building list of assets...
+✨ Read 1460 files from the assets directory /Users/gregory/Workspace/_wt/hh-r3
+🌀 Starting asset upload...
+🌀 Found 67 new or modified static assets to upload. Proceeding with upload...
++ /assets/product_buy.js
++ /assets/rank.js
++ /ranking.html
++ /terms.html
++ /privacy.html
++ /b2b.html
++ /index.html
++ /lectures.html
++ /lectures/yonsei-intl.html
++ /guidebook/sahmyook.html
++ /guidebook/incheon.html
++ /guidebook/myongji.html
++ /guidebook/donga.html
++ /guidebook/soongsil.html
++ /guidebook/dankook.html
++ /guidebook/sungshin.html
++ /guidebook/ewha.html
++ /guidebook/catholic.html
++ /guidebook/ajou.html
++ /guidebook/kwangwoon.html
++ /lectures/korea-sci.html
++ /interview.html
++ /programs/yonsei.html
++ /assets/rank_profile.js
++ /llms.txt
++ /pastexam.html
++ /about.html
++ /support.html
++ /library.html
++ /lectures/common.html
++ /programs/studio.html
++ /lectures/yonsei-hum.html
++ /guidebook/hanyang-erica.html
++ /guidebook/gachon.html
++ /guidebook/snu.html
++ /guidebook/duksung.html
++ /guidebook/inha.html
++ /guidebook/hufs.html
++ /guidebook/kookmin.html
++ /guidebook/ulsan.html
++ /guidebook/sookmyung.html
++ /guidebook/seoultech.html
++ /guidebook/uos.html
++ /faq.html
++ /assets/base.css
++ /sitemap.xml
++ /notice.html
++ /llms-full.txt
++ /lecture.html
++ /classroom.html
++ /rss.xml
++ /guidebook/index.html
++ /lectures/yonsei-sci.html
++ /lectures/korea-hum.html
++ /guidebook/dongguk.html
++ /guidebook/khu.html
++ /guidebook/dongduk.html
++ /guidebook/konkuk.html
++ /guidebook/cau.html
++ /guidebook/kyonggi.html
++ /guidebook/pusan.html
++ /programs/guidebook.html
++ /guidebook/sejong.html
++ /guidebook/swu.html
++ /studio.html
++ /my.html
++ /programs/korea.html
+Uploaded 22 of 67 assets
+Uploaded 44 of 67 assets
+Uploaded 67 of 67 assets
+✨ Success! Uploaded 67 files (561 already uploaded) (1.52 sec)
+
+Total Upload: 11.79 KiB / gzip: 3.74 KiB
+Worker Startup Time: 0 ms
+Your Worker has access to the following bindings:
+Binding                   Resource         
+env.DB (hyunhak)          D1 Database      
+env.ASSETS                Assets           
+
+Uploaded hyunhak-site (4.00 sec)
+Worker Version ID: e8ccbd2c-a7c4-43bd-8c94-aeeef6cb737a
+Version Preview URL: https://e8ccbd2c-hyunhak-site.alongtheblue.workers.dev
+
+To deploy this version to production traffic use the command wrangler versions deploy
+
+Changes to non-versioned settings (config properties 'logpush' or 'tail_consumers') take effect after your next deployment using the command wrangler versions deploy
+
+Changes to triggers (routes, custom domains, cron schedules, etc) must be applied with the command wrangler triggers deploy
+
