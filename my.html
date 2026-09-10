@@ -62,8 +62,18 @@
 .orders .s.red{color:var(--seal)}
 .pfgrid{display:grid;grid-template-columns:1fr 160px;gap:12px;margin-top:8px}
 .pwgrid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:8px}
-.bd-list{margin-top:10px;display:grid;gap:8px}
-.bd-list .r{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:var(--t-sm);border-top:var(--rule);padding-top:8px}
+.bd-list,.setrows{margin-top:10px;display:grid;gap:8px}
+.bd-list .r,.setrows .r{display:flex;align-items:center;justify-content:space-between;gap:10px;font-size:var(--t-sm);border-top:var(--rule);padding-top:8px}
+/* 세트별 행 (트랙 D, 2026-09-10): 제목 · 응시 횟수와 잔여 · 문제지·해설지 PDF. 응시한 세트는 제목이 굵다 */
+.setrows .r .sr-t,.bd-list .r .sr-t{flex:1 1 auto;min-width:0}
+.setrows .r.did .sr-t,.bd-list .r.did .sr-t{font-weight:700}
+.setrows .r .sr-u,.bd-list .r .sr-u{color:var(--gray);white-space:nowrap}
+.setrows .r .sr-u b,.bd-list .r .sr-u b{color:var(--seal);font-weight:600}
+.setrows .r .sr-ops,.bd-list .r .sr-ops{display:flex;gap:12px;white-space:nowrap}
+.setrows .r .sr-ops .tlink,.bd-list .r .sr-ops .tlink{min-height:0;font-size:var(--t-sm)}
+.setrows .r .sr-ops .tlink.done,.bd-list .r .sr-ops .tlink.done{color:var(--gray)}
+.setrows .sr-h{font-size:var(--t-sm);color:var(--gray);margin-top:10px}
+@media (max-width:700px){.setrows .r,.bd-list .r{flex-wrap:wrap}.setrows .r .sr-u,.bd-list .r .sr-u{white-space:normal}}
 details.bd summary{cursor:pointer;font-size:var(--t-sm);color:var(--gray);margin-top:8px;min-height:44px;display:flex;align-items:center}
 .orders .s .tlink{margin-left:8px;min-height:0;font-size:var(--t-sm)}
 .orders .s .badge{margin-left:8px;vertical-align:middle}
@@ -422,12 +432,20 @@ document.addEventListener('DOMContentLoaded', async function(){
     var isStudio = e.kind==='studio_passage'||e.kind==='studio_school';
     var usesTx = e.kind==='studio_passage' ? (e.uses_left!=null ? ', 잔여 응시 <b>'+HH.intIn(e.uses_left,0,9999,0)+'회</b> / 5회' : ', 응시 횟수 제한 없음')
       : e.kind==='studio_school' ? '' : (e.uses_left!=null?', 잔여 '+HH.intIn(e.uses_left,0,9999,0)+'회':'');
-    var attrs = isStudio ? ' data-ent="'+esc(e.id||'')+'" data-kind="'+esc(e.kind)+'"' : '';
-    var st = '<p class="st">'+esc(KIND[e.kind]||e.kind)+usesTx+'<span class="stuse"></span>'+(e.expires_at?', '+esc(e.expires_at.slice(0,10))+' 까지':'')+'</p>';
+    // 세트별 행(트랙 D, 2026-09-10 건우 「어떤 세트를 몇 회 응시했는지 모른다」): 카드 아래 .setrows 에 응시 원장이 온 뒤 채운다.
+    // 낱권 = 결속 세트 1행, 전권 = 응시한 세트를 펼친 채로 + 나머지 세트는 details 안. 행마다 문제지·해설지 PDF (구매자 각인 보안본)
+    var expired = !!(e.expires_at && Date.parse(e.expires_at) <= Date.now());
+    var attrs = isStudio ? ' data-ent="'+esc(e.id||'')+'" data-kind="'+esc(e.kind)+'" data-sku="'+esc(meta.sku||'')+'"'
+      +(HH.okSetId(meta.set_id)?' data-set-id="'+esc(meta.set_id)+'"':'')+(expired?' data-expired="1"':'') : '';
+    var st = '<p class="st">'+esc(KIND[e.kind]||e.kind)+usesTx+'<span class="stuse"></span>'+(e.expires_at?', '+esc(e.expires_at.slice(0,10))+' 까지'+(expired?' (응시 기간 종료)':''):'')+'</p>';
     if(e.kind==='studio_school')
       return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
         +'<div class="ops">'+op+'</div>'
+        +'<div class="setrows"></div>'
         +'<details class="bd stsets" hidden><summary>세트별 사용과 잔여 펼치기</summary><div class="bd-list"></div></details></div>';
+    if(e.kind==='studio_passage')
+      return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
+        +'<div class="ops">'+op+'</div><div class="setrows"></div></div>';
     return '<div class="subcard"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
       +'<div class="ops">'+op+'</div></div>';
   }));
@@ -449,9 +467,20 @@ document.addEventListener('DOMContentLoaded', async function(){
   (async function(){
     var SET_USES=5, RET=90;
     var GTITLE={korea_2026_gichul_hum_am:'고려대 2026 기출 계열적합 인문 오전',korea_2026_gichul_sci_pm:'고려대 2026 기출 계열적합 자연 오후',yonsei_2026_gichul_hum:'연세대 2026 기출 활동우수 인문통합',yonsei_2026_gichul_sci:'연세대 2026 기출 활동우수 자연',yonsei_2026_gichul_intl:'연세대 2026 기출 국제형'};
-    var titles={};
-    try{ ((await (await fetch('assets/data/sets.json')).json()).units||[]).forEach(function(u){ (u.sets||[]).forEach(function(x){ titles[x.id]=u.label+' '+String(x.n).padStart(2,'0')+' '+x.title; }); }); }catch(e){}
+    var titles={}, unitSets={};   // unitSets[sku] = 단위 전권의 세트 id 30개 (카탈로그 순)
+    try{ ((await (await fetch('assets/data/sets.json')).json()).units||[]).forEach(function(u){ unitSets[u.sku]=(u.sets||[]).map(function(x){return x.id}); (u.sets||[]).forEach(function(x){ titles[x.id]=u.label+' '+String(x.n).padStart(2,'0')+' '+x.title; }); }); }catch(e){}
     function setTitle(id){ return titles[id]||GTITLE[id]||id||'세트 미상'; }
+    // 받은 적 있는 세트 파일 (set_id:doc). 원장 = /api/studio/sets/downloads/me. 실패해도 행은 그린다
+    var got={}; try{ ((await HH.api('/api/studio/sets/downloads/me')).downloads||[]).forEach(function(d){ got[d.set_id+':'+d.doc]=1; }); }catch(e){}
+    // 세트 1행: 제목 · 응시 n회와 잔여 · 문제지·해설지 PDF. expired 면 PDF 링크 대신 종료 문구 (서버도 만료 권리는 403)
+    function setRow(setId, n, expired){
+      var did=n>0, left=Math.max(0,SET_USES-n);
+      var use = did ? '응시 <b>'+n+'회</b>, 잔여 '+left+'회' : '미응시, 5회 가능';
+      var ops = expired ? '<span class="sr-u">응시 기간 종료</span>'
+        : '<span class="sr-ops"><button type="button" class="tlink sdl'+(got[setId+':exam']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="exam">문제지 PDF'+(got[setId+':exam']?' (받음)':'')+'</button>'
+          +'<button type="button" class="tlink sdl'+(got[setId+':key']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="key">해설지 PDF'+(got[setId+':key']?' (받음)':'')+'</button></span>';
+      return '<div class="r'+(did?' did':'')+'"><span class="sr-t">'+esc(setTitle(setId))+'</span><span class="sr-u">'+use+'</span>'+ops+'</div>';
+    }
     var MODE={combined:'실전형',per_question:'연습형'}, KINDS={trial:'맛보기',studio_passage:'낱권',studio_school:'전권'};
     var ol=document.getElementById('stuRows'), sum=document.getElementById('stuSum');
     var data=null;
@@ -462,19 +491,30 @@ document.addEventListener('DOMContentLoaded', async function(){
     var byEnt={}; (data.usage||[]).forEach(function(u){ if(!u.entitlement_id) return; (byEnt[u.entitlement_id]=byEnt[u.entitlement_id]||[]).push(u); });
     document.querySelectorAll('#passList [data-ent]').forEach(function(card){
       var id=card.dataset.ent, kind=card.dataset.kind, us=byEnt[id]||[], used=us.reduce(function(a,u){return a+HH.intIn(u.n,0,99999,0)},0);
+      var expired=card.dataset.expired==='1';
       var el=card.querySelector('.stuse'); if(!el) return;
+      var rowsEl=card.querySelector('.setrows');
+      var nOf={}; us.forEach(function(u){ if(HH.okSetId(u.set_id)) nOf[u.set_id]=HH.intIn(u.n,0,99999,0); });
       if(kind==='studio_school'){
         el.textContent=', 지문마다 '+SET_USES+'회, 응시 '+used+'회'+(us.length?' (세트 '+us.length+'개)':'');
+        // 응시한 세트 = 펼친 채로 (많이 본 순), 나머지 세트 = details 안. 둘 다 행마다 PDF 링크
+        var all=unitSets[card.dataset.sku]||[];
+        var didIds=Object.keys(nOf).sort(function(a,b){ return nOf[b]-nOf[a]; });
+        var restIds=all.filter(function(s){ return !nOf[s]; });
+        if(rowsEl) rowsEl.innerHTML=(didIds.length
+            ? '<p class="sr-h">응시한 세트 '+didIds.length+'개. 문제지와 해설지는 구매자 각인 보안본 PDF 입니다</p>'+didIds.map(function(s){ return setRow(s,nOf[s],expired); }).join('')
+            : '<p class="sr-h">아직 응시한 세트가 없습니다. 세트마다 '+SET_USES+'회 응시할 수 있고, 문제지와 해설지 PDF 는 아래에서 받습니다</p>');
         var d=card.querySelector('.stsets');
-        if(d&&us.length){
+        if(d&&(restIds.length||all.length===0)){
           d.hidden=false;
-          us.sort(function(a,b){ return HH.intIn(b.n,0,99999,0)-HH.intIn(a.n,0,99999,0); });
-          d.querySelector('.bd-list').innerHTML=us.map(function(u){ var n=HH.intIn(u.n,0,99999,0), left=Math.max(0,SET_USES-n);
-            return '<div class="r"><span>'+esc(setTitle(u.set_id))+'</span><span>'+n+'회 응시, 잔여 <b>'+left+'회</b></span></div>'; }).join('');
-          d.querySelector('summary').textContent='세트별 사용과 잔여, '+us.length+'개 펼치기';
+          d.querySelector('.bd-list').innerHTML=restIds.map(function(s){ return setRow(s,0,expired); }).join('')
+            ||'<div class="r"><span class="sr-t">세트 목록을 지금 불러올 수 없습니다</span></div>';
+          d.querySelector('summary').textContent=(didIds.length?'나머지 세트 ':'세트 ')+restIds.length+'개 문제지·해설지 PDF 펼치기';
         }
-      } else if(kind==='studio_passage'&&used){
-        el.textContent=', 응시 '+used+'회';
+      } else if(kind==='studio_passage'){
+        if(used) el.textContent=', 응시 '+used+'회';
+        var sid=card.dataset.setId;
+        if(rowsEl&&HH.okSetId(sid)) rowsEl.innerHTML=setRow(sid,nOf[sid]||0,expired);
       }
     });
     // 응시 기록 표 (최신순, 원장 그대로)
@@ -485,11 +525,16 @@ document.addEventListener('DOMContentLoaded', async function(){
     sum.textContent=list.length
       ? '응시 '+list.length+'회, 채점 완료 '+graded.length+'회'+(graded.length?', 최고 '+best+'%':'')+'. 영상과 첨삭은 응시일부터 '+RET+'일 안에 스튜디오에서 다시 봅니다'
       : '스튜디오 응시와 점수가 여기에 쌓입니다. 영상과 첨삭은 응시일부터 '+RET+'일 안에 스튜디오에서 다시 봅니다';
+    // 세트별 회차 (건우 2026-09-10 「몇 회 응시했는지 모른다」): 같은 세트의 응시를 시간순으로 세어 「이 세트 n번째」를 붙인다
+    var ordinal={}, cnt={};
+    list.slice().sort(function(a,b){ return String(a.created_at||'').localeCompare(String(b.created_at||'')); })
+      .forEach(function(r){ var k=r.set_id||'?'; cnt[k]=(cnt[k]||0)+1; ordinal[r.ref||r.attempt_id||k+cnt[k]]=cnt[k]; });
     ol.innerHTML=list.map(function(r){
       var d=String(r.created_at||'').slice(0,10), t=Date.parse(r.created_at||''), old=isFinite(t)&&(Date.now()-t)>RET*86400000;
       var done=r.total_score!=null&&r.total_points;
       var sc=done?(r.total_score+' / '+r.total_points+' ('+Math.round(r.total_score/r.total_points*100)+'%)'):(r.finalized_at?'채점 완료':'채점 전');
-      return '<li><div class="row"><span class="d">'+esc(d)+'</span><span class="t">'+esc(setTitle(r.set_id))+(r.answer_mode?', '+esc(MODE[r.answer_mode]||r.answer_mode):'')
+      var k=r.set_id||'?', nth=ordinal[r.ref||r.attempt_id||k+cnt[k]], tot=cnt[k]||0;
+      return '<li><div class="row"><span class="d">'+esc(d)+'</span><span class="t">'+esc(setTitle(r.set_id))+(tot>1?' <span class="badge line">이 세트 '+nth+'번째 / '+tot+'회</span>':'')+(r.answer_mode?', '+esc(MODE[r.answer_mode]||r.answer_mode):'')
         +(KINDS[r.kind]?' <span class="badge line">'+esc(KINDS[r.kind])+'</span>':'')+'</span>'
         +'<span class="s'+(done?'':' red')+'">'+esc(sc)+(old?' <span class="badge line">영상 보관 종료</span>':'')+'</span></div></li>';
     }).join('');
@@ -583,6 +628,34 @@ document.addEventListener('DOMContentLoaded', async function(){
     }catch(e){ alert(e.message||'내려받기에 실패했습니다'); }
     finally{ b.disabled=false; b.textContent=t0; }
   })});
+  // 세트 문제지·해설지 PDF (트랙 D, 2026-09-10): 행이 응시 원장 뒤에 그려지므로 위임 리스너. 서버가 권리·기간·한도를 판정하고
+  // 구매자 이메일·주문번호·시리얼을 각인한 보안본을 준다. 멱등 idem 은 소장판과 같은 방식으로 sessionStorage 보존
+  var SDL_DOC={exam:'문제지',key:'해설지'};
+  document.getElementById('passList').addEventListener('click', async function(ev){
+    var b=ev.target.closest('.sdl'); if(!b||b.disabled) return;
+    var sid=b.dataset.setId, doc=b.dataset.doc;
+    if(!HH.okSetId(sid)||!SDL_DOC[doc]) return;
+    b.disabled=true; var t0=b.textContent; b.textContent=SDL_DOC[doc]+' 준비 중…';
+    var ik='hh_sdl_idem_'+sid+'_'+doc, idem=null;
+    try{ idem=sessionStorage.getItem(ik); }catch(e){}
+    if(!idem){ idem='my-'+sid+'-'+doc+'-'+Date.now()+'-'+Math.random().toString(36).slice(2,8);
+      try{ sessionStorage.setItem(ik,idem); }catch(e){} }
+    try{
+      var res=await fetch(HH.API+'/api/studio/sets/download',{method:'POST',credentials:'include',
+        headers:{'Content-Type':'application/json'},body:JSON.stringify({set_id:sid,doc:doc,idem:idem})});
+      if(!res.ok){ var d=await res.json().catch(function(){return{}}); throw new Error(d.error||('오류 '+res.status)); }
+      if((res.headers.get('content-type')||'').indexOf('application/pdf')!==0) throw new Error('응답이 PDF 가 아닙니다');
+      var blob=await res.blob();
+      var u=URL.createObjectURL(blob);
+      var a=document.createElement('a');
+      a.href=u; a.download='hyunhak-'+sid+'-'+doc+'.pdf';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(u); }, 60000);
+      try{ sessionStorage.removeItem(ik); }catch(e){}
+      t0=SDL_DOC[doc]+' PDF (받음)'; b.classList.add('done');
+    }catch(e){ alert(e.message||'내려받기에 실패했습니다'); }
+    finally{ b.disabled=false; b.textContent=t0; }
+  });
 
   var ST={pending:'결제 대기',paid:'결제 완료',failed:'실패',canceled:'취소',refunded:'환불'};
   // 청약철회 요청 상태 배지. 접수 직후와 existing_request 둘 다 이 표로 그린다 (법률 검토 2026-09-03: "청약철회 접수(처리 중)")
