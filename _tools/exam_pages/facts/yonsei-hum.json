@@ -1,0 +1,1068 @@
+{
+ "code": "yonsei-hum",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "연세대학교",
+  "univ_short": "연세대",
+  "track": "학생부종합 활동우수형",
+  "unit": "인문·통합",
+  "label": "연세대 활동우수형 인문·통합",
+  "form": "제시문 기반 면접",
+  "passages": 4,
+  "prep_sec": 480,
+  "answer_sec": 300,
+  "questions": 2,
+  "points": "문항별 배점 공개(세트 안 표기)",
+  "stage": "1단계 서류 100%(일정 배수) → 2단계 1단계 성적 60% + 면접 40%",
+  "ratio_src": "2027 수시모집요강 Ⅸ_3",
+  "lang": "한국어",
+  "scope": "인문·사회 통합 교과(국어·사회·윤리·역사), 도표 자료 포함",
+  "eval_axes": [
+   "제시문 이해",
+   "논리 전개",
+   "종합·적용"
+  ],
+  "src": [
+   "2027 연세대 수시모집요강 Ⅸ_3(p.63)",
+   "연세대 선행학습영향평가 보고서 2026 p.1295~1301",
+   "은행 spec/SPEC_v1.md"
+  ],
+  "status": "on_sale",
+  "sku": "pass-yonsei-hum",
+  "price": 495000,
+  "single_price": 33000,
+  "lecture_count": 40
+ },
+ "bank": {
+  "dir": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "null": 30
+  },
+  "track": {
+   "2027 학생부종합 활동우수형 | 인문 통합": 30
+  },
+  "difficulty": {
+   "하": 5,
+   "중": 10,
+   "상": 10,
+   "최상": 5
+  },
+  "verb_tail": {
+   "설명하시오": 60
+  },
+  "passages_mode": 4,
+  "questions_mode": 2,
+  "sets": [
+   {
+    "id": "yonsei_2027_h01",
+    "title": "선택지의 양과 행복의 관계",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 제시문 [다]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h01.json"
+   },
+   {
+    "id": "yonsei_2027_h02",
+    "title": "잣대의 같음과 출발의 같음",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h02.json"
+   },
+   {
+    "id": "yonsei_2027_h03",
+    "title": "점수를 믿는 일과 사람을 믿는 일",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h03.json"
+   },
+   {
+    "id": "yonsei_2027_h04",
+    "title": "보정으로 돌아오지 않는 목소리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h04.json"
+   },
+   {
+    "id": "yonsei_2027_h05",
+    "title": "존중의 대상은 누가 정하는가",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [다]의 관점에서 제시문 [가]와 [나]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h05.json"
+   },
+   {
+    "id": "yonsei_2027_h06",
+    "title": "이름을 지운 뒤에 남는 비용",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h06.json"
+   },
+   {
+    "id": "yonsei_2027_h07",
+    "title": "보전이 셈하는 것",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h07.json"
+   },
+   {
+    "id": "yonsei_2027_h08",
+    "title": "예측 알고리즘과 책임 귀속의 공백",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h08.json"
+   },
+   {
+    "id": "yonsei_2027_h09",
+    "title": "지워진 기록과 견줄 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h09.json"
+   },
+   {
+    "id": "yonsei_2027_h10",
+    "title": "사람의 몫으로 남는 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h10.json"
+   },
+   {
+    "id": "yonsei_2027_h11",
+    "title": "수치가 만들어지는 자리와 옮겨지는 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h11.json"
+   },
+   {
+    "id": "yonsei_2027_h12",
+    "title": "거리가 시키는 일",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h12.json"
+   },
+   {
+    "id": "yonsei_2027_h13",
+    "title": "오지 않은 사람을 대신 말하는 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h13.json"
+   },
+   {
+    "id": "yonsei_2027_h14",
+    "title": "오르는 값과 내리는 만족",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h14.json"
+   },
+   {
+    "id": "yonsei_2027_h15",
+    "title": "허락된 여백과 정하는 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h15.json"
+   },
+   {
+    "id": "yonsei_2027_h16",
+    "title": "적중과 반복 사이",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h16.json"
+   },
+   {
+    "id": "yonsei_2027_h17",
+    "title": "되갚는 벌과 돌려보내는 벌",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h17.json"
+   },
+   {
+    "id": "yonsei_2027_h18",
+    "title": "값은 그대로인데 그림이 달라질 때",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h18.json"
+   },
+   {
+    "id": "yonsei_2027_h19",
+    "title": "이어져 온 것과 이어졌다고 말해진 것",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 제시문 [다]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h19.json"
+   },
+   {
+    "id": "yonsei_2027_h20",
+    "title": "돌봄을 재는 자",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h20.json"
+   },
+   {
+    "id": "yonsei_2027_h21",
+    "title": "알리는 일과 믿게 하는 일",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h21.json"
+   },
+   {
+    "id": "yonsei_2027_h22",
+    "title": "눈금이 멈추는 곳",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h22.json"
+   },
+   {
+    "id": "yonsei_2027_h23",
+    "title": "도움의 형태를 정하는 자리",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h23.json"
+   },
+   {
+    "id": "yonsei_2027_h24",
+    "title": "달라진 사람을 같은 사람이라 부를 때",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]를 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [가]와 제시문 [라]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h24.json"
+   },
+   {
+    "id": "yonsei_2027_h25",
+    "title": "비어 있는 자리를 세는 일",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h25.json"
+   },
+   {
+    "id": "yonsei_2027_h26",
+    "title": "여럿을 센 값이 한 사람에게 놓일 때",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [다]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h26.json"
+   },
+   {
+    "id": "yonsei_2027_h27",
+    "title": "표가 겪고 나온 것",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+     "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h27.json"
+   },
+   {
+    "id": "yonsei_2027_h28",
+    "title": "계산대 앞에서 밝힌 뜻",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]를 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [다]와 제시문 [라]의 유사점과 차이점을 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h28.json"
+   },
+   {
+    "id": "yonsei_2027_h29",
+    "title": "옮겨진 말이 제자리를 찾았다고 말할 때",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가]의 관점에서 제시문 [나]와 [다]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h29.json"
+   },
+   {
+    "id": "yonsei_2027_h30",
+    "title": "한 대씩 늘어난 것과 한꺼번에 달라진 것",
+    "subtype": null,
+    "track": "2027 학생부종합 활동우수형 | 인문 통합",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [다]의 관점에서 제시문 [가]와 제시문 [나]를 비교하여 설명하시오.",
+     "제시문 [나]의 관점에서 제시문 [라]의 결과가 의미하는 바를 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": false,
+    "file": "/Users/gregory/Workspace/yonsei_interview_bank_2027/sets/yonsei_2027_h30.json"
+   }
+  ]
+ },
+ "pastexam": [
+  {
+   "file": "/Users/gregory/Workspace/interview_pastexam_2026/yonsei/sets/yonsei_2026_gichul_hum.json",
+   "id": "yonsei_2026_gichul_hum",
+   "title": "통제감의 조건과 선택의 기능",
+   "n_passages": 4,
+   "n_questions": 2,
+   "q_texts": [
+    "제시문 [나]의 관점에서 제시문 [가]의 연구 결과를 설명하시오.",
+    "제시문 [라]의 관점에서 제시문 [나]와 제시문 [다]의 유사점과 차이점을 설명하시오."
+   ],
+   "passage_heads": [
+    "한 연구에서 대학생 자원자들이 요양원의 노인들을 정기적으로 방문하도록 배정되었다. 이때 A 집단의 노인들은 방문 일정과 학생들이 머무는 시간을 ",
+    "요즘은 스마트 기기의 애플리케이션을 사용하여 자신의 건강 상태나 생활 습관을 기록하고 관리하는 것이 생활 양식으로 자리 잡는 느낌이다. 이러한 ",
+    "우리는 알고리즘이 정보를 선별하고 광고를 유도하는 시대에 살고 있으며, 이는 다시 우리 각자에게 맞춤형으로 제공되는 정보 환경을 조성한다. 소셜",
+    "노벨상 수상자인 경제철학자 아마르티아 센은 『자유의 발전』이라는 자신의 책에서, 선택 그 자체와 선택이 우리의 삶에서 수행하는 기능을 구분한다."
+   ]
+  }
+ ]
+}

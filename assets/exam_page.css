@@ -1,0 +1,246 @@
+/* ══ 전형별 면접 출제 유형과 풀이법 상세면 (2026-09-10, design-director) ══
+   범위   .exam 공통 + 안별 modifier  .xa 문서형 / .xb 카드형 / .xc 절차형
+   규범   값은 assets/base.css :root 토큰만. 리터럴 px 는 1px 괘선과 SVG 좌표에만.
+          신규 색 0, 신규 서체 0, 이미지 0. 그림자 없음, 위계는 괘선으로.
+          朱印 --seal 은 가격, 인장, 활성 표식, 강조 라벨에만. 金泥 --gold 는 玄墨 바탕 위에서만.
+   구분   앵커 내비에 卷 표식을 쓰지 않는다 (인강 상세면과의 구분 표지 1).
+   갈리는 자리 3   ① 유형 지도  ② 예시 문항 상자  ③ 규격표 모바일 처리 */
+
+/* ── 지면 머리 ── */
+:where(body.exam) .pagehead{padding:var(--s4) 0 var(--s5)}
+:where(body.exam) .pagehead h1{font-size:var(--t-h1);margin-top:var(--s2);max-width:20ch}
+:where(body.exam) .pagehead .st{display:flex;gap:var(--s2);align-items:center;flex-wrap:wrap;margin-top:var(--s3)}
+:where(body.exam) .pagehead .lede{margin-top:var(--s3);font-size:var(--t-md);line-height:1.6;color:var(--body);max-width:var(--measure)}
+:where(body.exam) .pagehead .lede b{font-weight:700;color:var(--ink)}
+:where(body.exam) .pagehead .lede .num{font-family:var(--mono);font-weight:500}
+
+/* ── 앵커 내비 (卷 없음) ── */
+:where(body.exam) .anch{display:flex;gap:var(--s1);border-top:var(--rule-strong);border-bottom:var(--rule-strong);
+  overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:var(--hd-h);background:var(--paper);z-index:4}
+:where(body.exam) .anch a{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 var(--s3);
+  font-size:var(--t-sm);font-weight:600;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;flex:0 0 auto}
+:where(body.exam) .anch a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--seal)}
+:where(body.exam) .anch a:hover{color:var(--ink)}
+@media (max-width:900px){:where(body.exam) .anch{top:var(--hd-h-sm)}:where(body.exam) .anch a{padding:0 var(--s2)}}
+@media (max-width:400px){:where(body.exam) .anch{gap:0}:where(body.exam) .anch a{padding:0 var(--s2);font-size:var(--t-xs)}}
+
+/* ── 지면 공통 ── */
+:where(body.exam) .page{padding:var(--s6) 0;scroll-margin-top:calc(var(--hd-h) + var(--s5))}
+@media (max-width:900px){:where(body.exam) .page{scroll-margin-top:calc(var(--hd-h-sm) + var(--s5))}}
+:where(body.exam) .page>.note{margin-top:var(--s2);font-size:var(--t-sm);color:var(--gray);max-width:var(--measure)}
+:where(body.exam) .page .sub{margin-top:var(--s4);font-size:var(--t-base);line-height:var(--lh-body);color:var(--body);max-width:var(--measure)}
+:where(body.exam) .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.exam) .num{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-0.01em}
+/* 자리표: 빌드가 채울 값. 모노 + 점선 밑줄로 미확정임을 드러낸다 */
+:where(body.exam) .ph{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;color:var(--gray);
+  border-bottom:1px dashed var(--hair);padding-bottom:1px;white-space:nowrap}
+:where(body.exam) sup.fn{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--seal);
+  vertical-align:super;line-height:0;margin-left:2px}
+:where(body.exam) .fnlist{margin-top:var(--s3);border-top:var(--rule);padding-top:var(--s2);display:grid;gap:var(--s1)}
+:where(body.exam) .fnlist li{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s2);
+  font-size:var(--t-xs);color:var(--gray);line-height:1.6}
+:where(body.exam) .fnlist li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--seal)}
+
+/* ══ ① 규격표 #spec ══ */
+:where(body.exam) .xspec{margin-top:var(--s4);border-top:var(--rule-hd)}
+:where(body.exam) .xspec .r{display:grid;grid-template-columns:minmax(6.5em,10em) minmax(0,1fr);gap:var(--s2) var(--s4);
+  padding:var(--s3) 0;border-bottom:var(--rule);align-items:baseline}
+:where(body.exam) .xspec .r>dt{font-size:var(--t-sm);color:var(--gray);font-weight:600}
+:where(body.exam) .xspec .r>dd{font-size:var(--t-base);color:var(--ink);line-height:var(--lh-ui)}
+:where(body.exam) .xspec .r>dd b{font-family:var(--mono);font-weight:500;font-variant-numeric:tabular-nums}
+:where(body.exam) .xspec .r>dd .xsec{color:var(--gray);font-size:var(--t-sm);margin-left:var(--s1)}
+/* B 카드형: 규격표를 카드 격자로. 좁아지면 1열 */
+:where(body.xb) .xspec{border-top:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:var(--s2)}
+:where(body.xb) .xspec .r{display:block;background:var(--card);border-radius:var(--r-md);
+  box-shadow:inset 0 0 0 1px var(--hairs);border-bottom:0;padding:var(--s3)}
+:where(body.xb) .xspec .r>dt{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);font-weight:500}
+:where(body.xb) .xspec .r>dd{margin-top:var(--s2);font-size:var(--t-md);line-height:var(--lh-tight)}
+:where(body.xb) .xspec .r>dd .xsec{display:block;margin-left:0;margin-top:var(--s1)}
+/* A 문서형, C 절차형: 390 에서도 2열 유지. 라벨 열을 줄이고 값은 흐른다 */
+@media (max-width:480px){
+  :where(body.xa) .xspec .r,:where(body.xc) .xspec .r{grid-template-columns:minmax(5em,7.5em) minmax(0,1fr);gap:var(--s2)}
+  :where(body.xa) .xspec .r>dt,:where(body.xc) .xspec .r>dt{font-size:var(--t-xs)}
+  :where(body.xa) .xspec .r>dd,:where(body.xc) .xspec .r>dd{font-size:var(--t-sm)}
+}
+
+/* ══ ② 유형 지도 #types ══ */
+:where(body.exam) .xtypes{margin-top:var(--s4);display:grid}
+:where(body.exam) .xtype h3{font-size:var(--t-h4)}
+:where(body.exam) .xtype .def{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body)}
+:where(body.exam) .xtype .q{font-size:var(--t-sm);color:var(--ink);line-height:var(--lh-body)}
+:where(body.exam) .xtype .n{display:flex;gap:var(--s3);align-items:baseline;flex-wrap:wrap}
+:where(body.exam) .xtype .n b{font-family:var(--mono);font-weight:500;font-size:var(--t-sm);color:var(--ink);font-variant-numeric:tabular-nums}
+/* A 괘선 표 */
+:where(body.xa) .xtypes{border-top:var(--rule-hd)}
+:where(body.xa) .xtype{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1.15fr) minmax(0,1fr) minmax(0,8em);
+  gap:var(--s2) var(--s4);padding:var(--s3) 0;border-bottom:var(--rule);align-items:start}
+:where(body.xa) .xtype h3{grid-column:1;font-size:var(--t-base)}
+:where(body.xa) .xtype .def{grid-column:2}
+:where(body.xa) .xtype .q{grid-column:3;color:var(--body)}
+:where(body.xa) .xtype .n{grid-column:4;flex-direction:column;gap:var(--s1);align-items:flex-start}
+@media (max-width:820px){
+  :where(body.xa) .xtype{grid-template-columns:minmax(0,1fr) minmax(0,7em)}
+  :where(body.xa) .xtype h3{grid-column:1}:where(body.xa) .xtype .n{grid-column:2;grid-row:1/span 2}
+  :where(body.xa) .xtype .def,:where(body.xa) .xtype .q{grid-column:1/-1}
+}
+/* B 카드 격자 */
+:where(body.xb) .xtypes{grid-template-columns:repeat(auto-fit,minmax(16em,1fr));gap:var(--s3)}
+:where(body.xb) .xtype{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);
+  padding:var(--s4);display:flex;flex-direction:column;gap:var(--s2)}
+:where(body.xb) .xtype .n{order:-1;justify-content:space-between;width:100%;padding-bottom:var(--s2);border-bottom:var(--rule)}
+:where(body.xb) .xtype .q{border-left:2px solid var(--hair);padding-left:var(--s2);margin-top:auto}
+/* C 세로 타임라인. 유형 지도도 시간 축과 같은 레일에 붙는다 */
+:where(body.xc) .xtypes{gap:0;border-left:var(--rule-strong);margin-left:var(--s2)}
+:where(body.xc) .xtype{position:relative;padding:var(--s3) 0 var(--s4) var(--s5);display:grid;gap:var(--s2)}
+:where(body.xc) .xtype::before{content:"";position:absolute;left:0;top:calc(var(--s3) + var(--s2));
+  width:var(--s3);height:1px;background:var(--hair)}
+:where(body.xc) .xtype::after{content:"";position:absolute;left:calc(var(--s1) * -1);top:var(--s3);
+  width:var(--s2);height:var(--s2);border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 2px var(--seal)}
+:where(body.xc) .xtype .q{color:var(--body);border-left:2px solid var(--hairs);padding-left:var(--s2)}
+
+/* ══ ③ 풀이 메타 #method ══ */
+:where(body.exam) .xrules{margin-top:var(--s4);counter-reset:xr;display:grid;gap:var(--s2);max-width:var(--measure)}
+:where(body.exam) .xrules li{counter-increment:xr;display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s3);
+  padding:var(--s2) 0;border-top:var(--rule);font-size:var(--t-base);line-height:var(--lh-body);color:var(--body)}
+:where(body.exam) .xrules li::before{content:counter(xr,decimal-leading-zero);font-family:var(--mono);font-size:var(--t-xs);
+  font-weight:500;color:var(--seal);letter-spacing:var(--tr-label);line-height:2.2}
+:where(body.exam) .xrules li b{color:var(--ink);font-weight:700}
+/* 시간 배분 */
+:where(body.exam) .xtime{margin-top:var(--s5);border-top:var(--rule-hd)}
+:where(body.exam) .xtime .cap{display:flex;justify-content:space-between;gap:var(--s3);align-items:baseline;
+  padding:var(--s2) 0;border-bottom:var(--rule)}
+:where(body.exam) .xtime .row{display:grid;grid-template-columns:var(--s5) minmax(0,7em) minmax(0,1fr);gap:var(--s2) var(--s3);
+  padding:var(--s3) 0;border-bottom:var(--rule);align-items:baseline}
+:where(body.exam) .xtime .row .st{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
+:where(body.exam) .xtime .row .xsec{font-family:var(--mono);font-weight:500;font-size:var(--t-base);color:var(--ink);font-variant-numeric:tabular-nums}
+:where(body.exam) .xtime .row .do{font-size:var(--t-base);color:var(--body);line-height:var(--lh-ui)}
+:where(body.exam) .xtime .bar{grid-column:1/-1;height:2px;background:var(--hairs);position:relative}
+:where(body.exam) .xtime .bar i{position:absolute;inset:0 auto 0 0;width:var(--w);background:var(--ink)}
+@media (max-width:480px){
+  :where(body.exam) .xtime .row{grid-template-columns:var(--s5) minmax(0,1fr)}
+  :where(body.exam) .xtime .row .do{grid-column:1/-1}
+}
+/* C 절차형: 시간 배분을 세로 타임라인으로 세운다. 권고안(A 문서형)에도 이 구획만 얹는다 (SELF_CHECK §8, 2026-09-10) */
+:where(body.xa) .xtime,:where(body.xc) .xtime{border-top:0;border-left:var(--rule-strong);margin-left:var(--s2);margin-top:var(--s4)}
+:where(body.xa) .xtime,:where(body.xc) .xtime .cap{margin-left:var(--s5);border-bottom:var(--rule-strong)}
+:where(body.xa) .xtime,:where(body.xc) .xtime .row{position:relative;grid-template-columns:minmax(0,7em) minmax(0,1fr);
+  padding:var(--s3) 0 var(--s3) var(--s5);border-bottom:0}
+:where(body.xa) .xtime,:where(body.xc) .xtime .row::after{content:"";position:absolute;left:calc(var(--s1) * -1);top:var(--s4);
+  width:var(--s2);height:var(--s2);border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 2px var(--ink)}
+:where(body.xa) .xtime,:where(body.xc) .xtime .row .st{position:absolute;left:var(--s3);top:var(--s4);line-height:1}
+:where(body.xa) .xtime,:where(body.xc) .xtime .bar{grid-column:1/-1;margin-top:var(--s2)}
+@media (max-width:480px){:where(body.xa) .xtime,:where(body.xc) .xtime .row{grid-template-columns:minmax(0,1fr)}}
+
+/* 비공개 층 경계. 회색 자리표와 자물쇠 없이 괘선과 라벨로만 */
+:where(body.exam) .xlock{margin-top:var(--s5);border-top:var(--rule-hd);padding-top:var(--s3)}
+:where(body.exam) .xlock .xhd{display:flex;justify-content:space-between;gap:var(--s3);align-items:baseline;flex-wrap:wrap}
+:where(body.exam) .xlock h3{font-size:var(--t-base)}
+:where(body.exam) .xlock ul{margin-top:var(--s3);display:grid;gap:var(--s2);
+  border-left:1px dashed var(--hair);border-bottom:1px dashed var(--hair);padding:0 0 var(--s3) var(--s4)}
+:where(body.exam) .xlock ul li{font-size:var(--t-sm);color:var(--gray);line-height:var(--lh-ui);
+  display:grid;grid-template-columns:var(--s3) minmax(0,1fr);gap:var(--s2)}
+:where(body.exam) .xlock ul li::before{content:"";display:block;height:1px;background:var(--hair);margin-top:calc(var(--s3) - 1px)}
+:where(body.exam) .xlock .note{margin-top:var(--s3);font-size:var(--t-sm);color:var(--body);max-width:var(--measure)}
+
+/* ══ ④ 예시 문항 #sample ══ */
+:where(body.exam) .xsample{margin-top:var(--s4);display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:var(--s5)}
+@media (max-width:900px){:where(body.exam) .xsample{grid-template-columns:minmax(0,1fr);gap:var(--s5)}}
+:where(body.exam) .xdoc{background:var(--paper);padding:var(--s4)}
+:where(body.exam) .xdoc .doc_head{display:flex;justify-content:space-between;gap:var(--s3);align-items:baseline;
+  flex-wrap:wrap;padding-bottom:var(--s2);border-bottom:var(--rule-strong)}
+:where(body.exam) .xdoc .doc_head .t{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--ink)}
+:where(body.exam) .xdoc .pass{margin-top:var(--s3);display:grid;gap:var(--s3)}
+:where(body.exam) .xdoc .pass p{font-size:var(--t-sm);line-height:1.85;color:var(--ink);max-width:none}
+:where(body.exam) .xdoc .pass p .lb{font-weight:700;margin-right:var(--s1)}
+:where(body.exam) .xdoc .qs{margin-top:var(--s4);padding-top:var(--s3);border-top:var(--rule-strong);display:grid;gap:var(--s2)}
+:where(body.exam) .xdoc .qs li{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s2);
+  font-size:var(--t-sm);line-height:1.8;color:var(--ink)}
+:where(body.exam) .xdoc .qs li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--seal)}
+/* A 괘선 이중 테두리 (인쇄물 인용 꼴) */
+:where(body.xa) .xdoc{box-shadow:inset 0 0 0 1px var(--hair),inset 0 0 0 var(--s1) var(--paper),inset 0 0 0 5px var(--hairs)}
+/* B 지면 배경 */
+:where(body.xb) .xdoc{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs)}
+/* C 지면 배경 + 왼쪽 단계 레일 */
+:where(body.xc) .xdoc{background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs);
+  border-left:2px solid var(--ink)}
+
+/* 풀이 골격 */
+:where(body.exam) .xsteps{counter-reset:xs;display:grid}
+:where(body.exam) .xsteps li{counter-increment:xs;padding:var(--s3) 0;border-top:var(--rule)}
+:where(body.exam) .xsteps li:first-child{border-top:var(--rule-hd)}
+:where(body.exam) .xsteps li h4{font-size:var(--t-base);display:flex;gap:var(--s2);align-items:baseline}
+:where(body.exam) .xsteps li h4::before{content:counter(xs);font-family:var(--mono);font-size:var(--t-xs);
+  font-weight:500;color:var(--seal);letter-spacing:var(--tr-label);flex:none}
+:where(body.exam) .xsteps li p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);margin-top:var(--s1);max-width:none}
+:where(body.exam) .xsteps li.off h4,:where(body.exam) .xsteps li.off p{color:var(--gray)}
+:where(body.exam) .xsteps li.off{border-top:1px dashed var(--hair)}
+:where(body.exam) .xfirst{margin-top:var(--s4);padding:var(--s3);background:var(--mat);border-radius:var(--r-md)}
+:where(body.exam) .xfirst .k{display:block;margin-bottom:var(--s2)}
+:where(body.exam) .xfirst p{font-size:var(--t-sm);line-height:1.8;color:var(--ink);max-width:none}
+:where(body.exam) .xtrap{margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule-strong)}
+:where(body.exam) .xtrap .k{display:block;margin-bottom:var(--s2);color:var(--seal)}
+:where(body.exam) .xtrap p{font-size:var(--t-sm);line-height:1.8;color:var(--body);max-width:none}
+/* C 절차형은 풀이 골격을 오른쪽 단계 레일로 세운다 */
+:where(body.xc) .xsteps{border-left:var(--rule-strong);margin-left:var(--s2)}
+:where(body.xc) .xsteps li{position:relative;padding-left:var(--s5);border-top:0}
+:where(body.xc) .xsteps li:first-child{border-top:0}
+:where(body.xc) .xsteps li::after{content:"";position:absolute;left:calc(var(--s1) * -1);top:var(--s4);
+  width:var(--s2);height:var(--s2);border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 2px var(--ink)}
+:where(body.xc) .xsteps li.off::after{box-shadow:inset 0 0 0 1px var(--hair)}
+
+/* ══ ⑤ 실수 #pitfalls ══ */
+:where(body.exam) .xpit{margin-top:var(--s4);display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:var(--s4)}
+:where(body.exam) .xpit>div{border-top:2px solid var(--ink);padding-top:var(--s3)}
+:where(body.exam) .xpit h3{font-size:var(--t-base)}
+:where(body.exam) .xpit p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);margin-top:var(--s2);max-width:none}
+:where(body.xb) .xpit>div{border-top:0;background:var(--card);border-radius:var(--r-md);
+  box-shadow:inset 0 0 0 1px var(--hairs);padding:var(--s4)}
+
+/* ══ ⑥ 준비 순서와 연결 #plan ══ */
+:where(body.exam) .xplan{margin-top:var(--s4);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s3)}
+@media (max-width:900px){:where(body.exam) .xplan{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){:where(body.exam) .xplan{grid-template-columns:minmax(0,1fr)}}
+:where(body.exam) .xplan .st{border-top:var(--rule-hd);padding-top:var(--s3)}
+:where(body.exam) .xplan .st h3{font-size:var(--t-base);margin-top:var(--s2)}
+:where(body.exam) .xplan .st p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);margin-top:var(--s2);max-width:none}
+:where(body.exam) .xmat{margin-top:var(--s5);border-top:var(--rule-strong)}
+:where(body.exam) .xmat li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s3);align-items:baseline;
+  padding:var(--s3) 0;border-bottom:var(--rule);font-size:var(--t-base)}
+:where(body.exam) .xmat li b{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+:where(body.exam) .xcta{margin-top:var(--s5);display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
+/* 오픈 예정 띠 */
+:where(body.exam) .xsoon{margin-top:var(--s5);background:var(--ink);color:var(--paper);border-radius:var(--r-md);
+  padding:var(--s5);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4);align-items:center}
+@media (max-width:820px){:where(body.exam) .xsoon{grid-template-columns:minmax(0,1fr)}}
+:where(body.exam) .xsoon h3{font-size:var(--t-h4)}
+:where(body.exam) .xsoon p{color:rgba(var(--paper-rgb),.78);font-size:var(--t-sm);margin-top:var(--s2);max-width:var(--measure)}
+:where(body.exam) .xsoon .d{font-family:var(--mono);font-weight:500;color:var(--gold);font-variant-numeric:tabular-nums}
+:where(body.exam) .xsoon .tlink{color:var(--paper);text-decoration-color:var(--paper)}
+:where(body.exam) .xsoon .tlink:hover{color:rgba(var(--paper-rgb),.72);text-decoration-color:rgba(var(--paper-rgb),.72)}
+
+/* ══ ⑧ 문의 #contact ══ */
+:where(body.exam) .xcon{margin-top:var(--s4);display:grid;grid-template-columns:repeat(auto-fit,minmax(16em,1fr));gap:var(--s4);
+  border-top:var(--rule-hd);padding-top:var(--s4)}
+:where(body.exam) .xcon .tel{display:inline-flex;align-items:center;gap:var(--s2);min-height:var(--tap);
+  font-size:var(--t-h4);font-weight:700;letter-spacing:var(--tr-head)}
+:where(body.exam) .xcon .tel .no{font-family:var(--mono);font-weight:500;letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+:where(body.exam) .xcon p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);margin-top:var(--s2)}
+
+/* ══ ⑨ 형제 면 띠 ══ */
+:where(body.exam) .xsib{padding:var(--s6) 0;border-top:var(--rule-strong)}
+:where(body.exam) .xsib ul{margin-top:var(--s3);display:grid;grid-template-columns:repeat(auto-fit,minmax(15em,1fr));gap:0 var(--s4)}
+:where(body.exam) .xsib li{border-top:var(--rule)}
+:where(body.exam) .xsib a{display:flex;justify-content:space-between;gap:var(--s3);align-items:center;
+  min-height:var(--tap);padding:var(--s1) 0;font-size:var(--t-sm);color:var(--body)}
+:where(body.exam) .xsib a:hover{color:var(--ink)}
+:where(body.exam) .xsib a[aria-current="page"]{color:var(--ink);font-weight:700}
+:where(body.exam) .xsib .hub{margin-top:var(--s4)}
+
+/* 포커스 가시성. 전역 :focus-visible 은 outline:2px solid var(--ink) 라
+   玄墨 띠 위에서는 링과 배경이 같은 색이 된다(실측 대비 1.00). 그 자리만 楮紙로 뒤집는다 */
+:where(body.exam) .xsoon a:focus-visible{outline-color:var(--paper)}
+
+/* ── 빌더 추가 (2026-09-10 메인 세션): 예시 문항 출처 줄, 유형 카드 안 문장형 값 ── */
+:where(body.exam) .xsrc{margin-top:var(--s2);font-size:var(--t-xs);color:var(--gray);line-height:1.6}
+:where(body.exam) .xtype .n>span:not(.k){font-size:var(--t-sm);color:var(--body);line-height:var(--lh-ui)}
+:where(body.exam) .xtime .row .xsec.txt{font-family:var(--sans);font-weight:400;font-size:var(--t-sm);color:var(--gray)}

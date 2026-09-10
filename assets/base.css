@@ -935,6 +935,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) .ptxt .rate{display:none}   /* 계기 숫자는 먹판 안에서만 세운다. 지면에서는 표제가 이미 30%를 말한다 */
 :where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;
   color:var(--gray);margin-top:var(--s2);max-width:none}
+:where(body.v2) .ptxt .pnote{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);max-width:none}   /* 안내 한 줄 (2026-09-10 9/14 오픈). 마감 줄과 다른 층이라 mono 가 아니라 본문 small */
+:where(body.v2) .ptxt .pnote .tlink{margin-left:var(--s1);white-space:nowrap}
 
 /* 가격 예시 표: 세로 괘선 0, 헤더 채움 0, 얼룩말 줄 0 */
 :where(body.v2) .ptbl{width:100%;border-collapse:collapse}

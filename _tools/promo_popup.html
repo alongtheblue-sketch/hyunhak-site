@@ -1,6 +1,6 @@
 <!-- 통합용 팝업 템플릿. 조판은 시안과 같은 함수에서 나온다(build_parts.py popup()).
      자리표  {mod}   .pop 의 안 클래스 = pop--gwak | pop--muk | pop--simm  (도판 없는 회차는 pop--noimg 를 덧붙인다)
-             {rate} {label} {until_text} {promo_id} {ends_at} {img} {link_studio} {link_guidebook} {rows}
+             {rate} {label} {until_text} {promo_id} {ends_at} {img} {link_studio} {link_guidebook} {rows} {notice_line}(안내 한 줄, 비면 빈 문자열)
              {p}     상대경로 접두. 뿌리 면은 "" , guidebook/ 아래 면은 "../"
      행 형식 {rows} = <tr><th scope="row">이름</th><td><span data-list-price="33000">33,000원</span></td></tr> × N
              지면에는 정가만 적는다. 할인가를 미리 적으면 app.js 가 그 안에서 한 번 더 치환해 두 번 찍힌다.
@@ -24,7 +24,7 @@
         <span class="rate">{rate}</span>
         <h2 id="ppopT">{label}</h2>
         <p class="until" id="ppopU">{until_text}</p>
-      </div>
+{notice_line}      </div>
       <div class="pbot">
         <table class="ptbl">
           <caption class="sr">{rate} 할인 적용 가격 예시. 정가 뒤에 할인가가 붙습니다.</caption>

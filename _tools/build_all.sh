@@ -12,6 +12,7 @@ head1() { _o=$("$@"); printf '%s\n' "$_o" | head -1; }
 python3 _tools/build_guidebook.py build >/dev/null
 python3 _tools/build_interview_hub.py >/dev/null   # 1c 38개 대학 면접 형태 판정표 (SEARCH 표 원장, 2026-09-04)
 python3 _tools/build_lectures.py >/dev/null   # 1d 인강 상품면 9종 = 목록 1 + 강좌 상세 6 + 인강실 1 (sets.json + lecture_catalog.json 스냅샷, 2026-09-06)
+python3 _tools/exam_pages/build_exam_pages.py >/dev/null   # 1e 전형별 면접 출제 유형·풀이법 상세면 8 = interview/<code>.html (drafts + facts + tpl, 2026-09-10)
 python3 _tools/apply_nav.py --skip "$SKIP"
 python3 _tools/apply_footer.py --skip "$SKIP"
 python3 _tools/apply_promo.py   # 2b 행사 배너: 상세 LP 4면 띠 + 홈 밴드 (v2 셸 밖 자리, _tools/promo.json 기간 안에서만. 2026-09-07)

@@ -1,0 +1,100 @@
+{
+ "yonsei-hum": {
+  "label": "연세대 활동우수형 인문·통합",
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "null": 30
+  },
+  "verb_tail": {
+   "설명하시오": 60
+  }
+ },
+ "yonsei-sci": {
+  "label": "연세대 활동우수형 자연",
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "null": 30
+  },
+  "verb_tail": {
+   "평가하시오": 17,
+   "설명하시오": 43
+  }
+ },
+ "yonsei-intl": {
+  "label": "연세대 국제형",
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "null": 30
+  },
+  "verb_tail": {
+   "분석하시오": 30,
+   "설명하시오": 24,
+   "비교하시오": 6
+  }
+ },
+ "yonsei-mirae": {
+  "label": "연세대 미래캠퍼스 학생부종합",
+  "status": "opening",
+  "n_sets": 150,
+  "subtype": {
+   "null": 150
+  },
+  "verb_tail": {
+   "설명하시오": 238,
+   "제시하시오": 66,
+   "비교하시오": 39,
+   "기타": 105,
+   "밝히시오": 2
+  }
+ },
+ "korea-hum": {
+  "label": "고려대 계열적합전형 인문",
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "인문A": 15,
+   "인문B": 15
+  },
+  "verb_tail": {
+   "설명하시오": 27,
+   "평가하시오": 29,
+   "말해 보시오": 15,
+   "분석하시오": 4,
+   "기타": 14,
+   "제시하시오": 1
+  }
+ },
+ "korea-sci": {
+  "label": "고려대 계열적합전형 자연",
+  "status": "on_sale",
+  "n_sets": 43,
+  "subtype": {
+   "자연4": 27,
+   "자연6": 16
+  },
+  "verb_tail": {
+   "설명하시오": 81,
+   "제시하시오": 15,
+   "기타": 13,
+   "말해 보시오": 17,
+   "밝히시오": 3
+  }
+ },
+ "korea-eq-hum": {
+  "label": "고려대 고른기회전형 인문",
+  "status": "opening",
+  "n_sets": null,
+  "subtype": null,
+  "verb_tail": null
+ },
+ "korea-eq-sci": {
+  "label": "고려대 고른기회전형 자연",
+  "status": "opening",
+  "n_sets": null,
+  "subtype": null,
+  "verb_tail": null
+ }
+}

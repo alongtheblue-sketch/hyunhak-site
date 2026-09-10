@@ -1,0 +1,162 @@
+<!-- ══ 전형별 면접 출제 유형과 풀이법 상세면, 통합용 템플릿 (2026-09-10 design-director 원본 _design/exam_pages_20260910/tpl.html 의 파이프라인 사본. 차이 = canonical/description 제거(seo_inject), aeo-slot, {sample_note} {sample_src}, app.js + 앵커 현재 표시) ══
+     쓰임   /interview/<code>.html 8면의 단일 원천. 빌더가 자리표를 치환해 면을 낸다.
+            시안 6본(tpl_A/B/C[.._open].html)도 이 파일에서 build_pages.py 가 낸 것이라 조판이 갈리지 않는다.
+     셸     <!--v2:shell--> <!--v2:footer--> <!--v2:fix--> 세 자리는 빌드가 GNB, 푸터, 모바일 바로 채운다.
+     JS     앵커 현재 표시와 details 만 메인 세션이 붙인다. 이 템플릿에는 스크립트가 없다.
+     JSON-LD  FAQPage 는 seo_inject 가 details.faq 에서 뽑는다. 이 템플릿은 마크업만 낸다.
+
+     자리표 전량 (28)
+       {code}          면 코드 (yonsei-hum … korea-eq-sci)
+       {mod}           안 modifier 클래스, xa 문서형 / xb 카드형 / xc 절차형
+       {lang_title}    <title> 문자열
+       {desc}          meta description
+       {canonical}     정규 URL
+       {crumb_name}    브레드크럼 마지막 마디, 전형명
+       {status_badge}  상태 배지 마크업 (판매 중 / 9월 14일 오픈 예정)
+       {h1}            제목. "{대학} {전형명} 면접, 출제 유형과 풀이법 (2027)"
+       {lead}          리드 2문장, 답변엔진용 answer-first
+       {aeo}           aeo-answer 한 문장
+       {spec_rows}     #spec 규격표 행 (div.r > dt + dd) 반복
+       {spec_notes}    #spec 출처 각주 목록 (li > span + span)
+       {type_cards}    #types 유형 항목 (li.xtype) 반복, 3~5개
+       {method_rules}  #method 핵심 원칙 (li) 반복, 3~5개
+       {time_cap}      #method 시간 배분 표 머리 (총 시간과 단계 수)
+       {time_rows}     #method 시간 배분 행 (div.row) 반복
+       {lock_items}    #method 비공개 층 항목 (li) 반복
+       {sample_doc}    #sample 시험지 상자 안쪽 (doc_head + 제시문 + 문항)
+       {sample_steps}  #sample 풀이 골격 (li) 반복, 마지막 단계는 li.off
+       {sample_first}  #sample 첫 문장 예시
+       {sample_trap}   #sample 자주 갈리는 함정
+       {pitfalls}      #pitfalls 실수 3개 (div > h3 + p)
+       {plan_steps}    #plan 준비 순서 4단계 (div.st)
+       {materials}     #plan 우리 자료 목록 (li)
+       {cta}           #plan 행동. 판매중은 .btn 1개 + .tlink, 오픈 예정은 .tlink + 오픈 예정 띠
+       {faq}           #faq details.faq 5개
+       {contact_hours} #contact 운영 시간
+       {siblings}      하단 형제 면 8개 링크, 현재 면은 aria-current="page"
+-->
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{lang_title}</title>
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="../assets/favicon_32.png">
+<link rel="preload" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"></noscript>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" media="print" onload="this.onload=null;this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;500;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap"></noscript>
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/exam_page.css">
+</head>
+<body class="v2 exam {mod}" data-p="../">
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<div class="frame"><div class="sheet">
+<!--v2:shell-->
+<main id="main">
+
+<div class="wrap">
+ <div class="pagehead">
+  <nav class="crumb" aria-label="위치"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="../interview.html">면접 형태 판정표</a><span aria-hidden="true">/</span><span>{crumb_name}</span></nav>
+  <h1>{h1}</h1>
+  <p class="st">{status_badge}</p>
+  <div class="lede">{lead}</div>
+  <!-- aeo-slot -->
+ </div>
+</div>
+
+<div class="wrap">
+ <nav class="anch" aria-label="지면 차례">
+  <a href="#spec" aria-current="true">전형 규격</a><a href="#types">출제 유형</a><a href="#method">풀이 메타</a><a href="#sample">예시 문항</a><a href="#plan">준비 순서</a><a href="#faq">묻는 것</a>
+ </nav>
+
+ <section class="page" id="spec">
+  <h2 class="t">전형 규격</h2>
+  <p class="note">값은 대학이 공개한 2027학년도 자료에서 옮겼습니다. 각 값의 출처는 표 아래 각주에 적습니다.</p>
+  <dl class="xspec">{spec_rows}</dl>
+  <ul class="fnlist">{spec_notes}</ul>
+ </section>
+
+ <section class="page" id="types">
+  <h2 class="t">출제 유형 지도</h2>
+  <p class="note">발문이 요구하는 작업으로 유형을 가릅니다. 빈도는 3개년 기출에서 센 값입니다.</p>
+  <ol class="xtypes">{type_cards}</ol>
+ </section>
+
+ <section class="page" id="method">
+  <h2 class="t">풀이 메타</h2>
+  <p class="sub">유형이 갈려도 밟는 순서는 같습니다. 아래 원칙과 시간 배분이 그 순서입니다.</p>
+  <ol class="xrules">{method_rules}</ol>
+  <div class="xtime">
+   <div class="cap">{time_cap}</div>
+   {time_rows}
+  </div>
+  <div class="xlock">
+   <div class="xhd"><h3>여기서부터는 스튜디오와 인강</h3><span class="k">이 면에 싣지 않는 층</span></div>
+   <ul>{lock_items}</ul>
+   <p class="note">이 세 가지는 응시와 첨삭에 붙어 있는 층이라 정보면에 옮겨 적지 않습니다.</p>
+  </div>
+ </section>
+
+ <section class="page" id="sample">
+  <h2 class="t">예시 문항과 풀이 골격</h2>
+  <p class="note">{sample_note}</p>
+  <div class="xsample">
+   <div><div class="xdoc">{sample_doc}</div><p class="xsrc">{sample_src}</p></div>
+   <div>
+    <ol class="xsteps">{sample_steps}</ol>
+    <div class="xfirst"><span class="k">첫 문장 예시</span><p>{sample_first}</p></div>
+    <div class="xtrap"><span class="k">자주 갈리는 자리</span><p>{sample_trap}</p></div>
+   </div>
+  </div>
+ </section>
+
+ <section class="page" id="pitfalls">
+  <h2 class="t">자주 하는 실수</h2>
+  <div class="xpit">{pitfalls}</div>
+ </section>
+
+ <section class="page" id="plan">
+  <h2 class="t">준비 순서</h2>
+  <div class="xplan">{plan_steps}</div>
+  <ul class="xmat">{materials}</ul>
+  {cta}
+ </section>
+
+ <section class="page" id="faq">
+  <h2 class="t">자주 묻는 질문</h2>
+  <div style="margin-top:var(--s4)">{faq}</div>
+ </section>
+
+ <section class="page" id="contact">
+  <h2 class="t">오프라인 수업 문의</h2>
+  <div class="xcon">
+   <div>
+    <a class="tel" href="tel:07080980671"><span>오프라인 수업 문의</span> <span class="no">070-8098-0671</span></a>
+    <p>{contact_hours}</p>
+   </div>
+   <div>
+    <span class="k">그 밖의 문의</span>
+    <p>결제와 이용권, 배송은 고객센터에서 받습니다.</p>
+    <p style="margin-top:var(--s2)"><a class="tlink" href="../support.html">고객센터 <span class="ar" aria-hidden="true">→</span></a></p>
+   </div>
+  </div>
+ </section>
+
+ <nav class="xsib" aria-label="다른 전형 면">
+  <span class="k">전형별 면접 상세면</span>
+  <ul>{siblings}</ul>
+  <p class="hub"><a class="tlink" href="../interview.html">대학별 면접 형태 판정표 38개 대학 <span class="ar" aria-hidden="true">→</span></a></p>
+ </nav>
+</div>
+</main>
+<!--v2:footer-->
+</div></div>
+<!--v2:fix-->
+<script src="../assets/app.js"></script>
+<script>
+(function(){var a=document.querySelectorAll(".anch a[href^='#']");if(!a.length||!("IntersectionObserver" in window))return;var m={};a.forEach(function(x){m[x.getAttribute("href").slice(1)]=x});var io=new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;a.forEach(function(x){x.removeAttribute("aria-current")});var x=m[e.target.id];if(x)x.setAttribute("aria-current","true")})},{rootMargin:"-40% 0px -55% 0px"});Object.keys(m).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)})})();
+</script>
+</body>
+</html>

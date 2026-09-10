@@ -1,0 +1,1008 @@
+{
+ "code": "yonsei-intl",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "연세대학교",
+  "univ_short": "연세대",
+  "track": "학생부종합 국제형",
+  "unit": "국제계열",
+  "label": "연세대 국제형",
+  "form": "제시문 기반 면접(영어 제시문 포함)",
+  "passages": 3,
+  "prep_sec": 480,
+  "answer_sec": 300,
+  "questions": 2,
+  "points": "문제1 40점, 문제2 60점",
+  "stage": "1단계 서류 100% → 2단계 1단계 성적 60% + 면접 40%",
+  "ratio_src": "2027 수시모집요강 Ⅴ_3",
+  "lang": "한국어 + 영어 제시문",
+  "scope": "국제계열(국어·도덕·사회·영어) 통합, 영어 제시문 1편 이상",
+  "eval_axes": [
+   "제시문 이해(영어 포함)",
+   "비교·분석",
+   "종합·적용"
+  ],
+  "src": [
+   "2027 연세대 수시모집요강 Ⅴ_3(p.27~28)·Ⅸ_3",
+   "연세대 문항카드 2024~2026",
+   "은행 spec/SPEC_v1.md"
+  ],
+  "status": "on_sale",
+  "sku": "pass-yonsei-intl",
+  "price": 495000,
+  "single_price": 33000,
+  "lecture_count": 40
+ },
+ "bank": {
+  "dir": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "null": 30
+  },
+  "track": {
+   "2027 학생부종합 국제형": 30
+  },
+  "difficulty": {
+   "하": 10,
+   "중": 10,
+   "상": 10
+  },
+  "verb_tail": {
+   "분석하시오": 30,
+   "설명하시오": 24,
+   "비교하시오": 6
+  },
+  "passages_mode": 3,
+  "questions_mode": 2,
+  "sets": [
+   {
+    "id": "yonsei_intl_2027_i01",
+    "title": "언어는 생각을 빚는가 실어 나르는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "언어와 사고의 관계에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i01.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i02",
+    "title": "지역 문화를 지키는 관광, 소비하는 관광",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "지역 문화와 관광의 관계에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i02.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i03",
+    "title": "낯선 예절을 읽는 두 가지 방식",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "문화에 따라 다른 예절에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i03.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i04",
+    "title": "고향은 장소인가 관계인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "고향의 의미에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i04.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i05",
+    "title": "세계로 간 국수, 섞이는 맛과 지워지는 맛",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "음식 문화의 세계화에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i05.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i06",
+    "title": "국가대표의 자격은 어디서 오는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "국가대표의 자격에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i06.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i07",
+    "title": "자동 번역 시대의 외국어 학습",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "자동 번역 기술과 외국어 학습에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i07.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i08",
+    "title": "같은 날을 기억하는 두 방식",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "역사적 사건에 대한 공동체의 기억에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i08.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i09",
+    "title": "도움에 붙는 조건의 정당성",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "도움에 조건을 붙이는 일의 정당성에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i09.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i10",
+    "title": "24시간 도시의 자유와 소진",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "24시간 멈추지 않는 도시의 삶에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i10.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i11",
+    "title": "문화재는 만든 이의 것인가 지킨 이의 것인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "문화재의 귀속에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i11.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i12",
+    "title": "모두의 언어와 마지막 화자의 낱말",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "공용어의 확산과 언어의 가치에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i12.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i13",
+    "title": "국경을 모르는 질병, 국경 안에 갇힌 대응",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "감염병 위기에서의 국경 통제에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i13.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i14",
+    "title": "기후 책임, 쌓인 양으로 묻는가 흐르는 양으로 묻는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "기후 변화에 대한 책임의 배분에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i14.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i15",
+    "title": "인권의 보편성과 공동체의 관습",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "인권과 문화의 관계에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i15.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i16",
+    "title": "역사 교과서는 사실을 적는가 기억을 고르는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "역사 교과서의 서술에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i16.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i17",
+    "title": "국경을 넘는 원격 노동, 기회인가 경쟁인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "국경을 넘는 원격 노동의 확산에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i17.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i18",
+    "title": "환대의 의무와 감당의 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "낯선 이를 맞이하는 일에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i18.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i19",
+    "title": "모두의 시계, 누구의 시간",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "표준의 통일에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i19.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i20",
+    "title": "예술의 도발과 공동체가 긋는 선",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "예술 표현과 공동체의 기준에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i20.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i21",
+    "title": "가치의 전파는 계몽인가 지배인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "보편적 가치의 전파에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i21.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i22",
+    "title": "국민 됨은 물려받는 것인가 서약하는 것인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "정치 공동체 구성원 자격의 근거에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i22.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i23",
+    "title": "무역의 이익은 어디에 쌓이는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "무역의 이익과 그 분배에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i23.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i24",
+    "title": "국제 규범은 주권 위에 설 수 있는가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "국제 규범과 국가 주권의 관계에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i24.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i25",
+    "title": "조상의 잘못은 누구의 몫인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "과거의 잘못에 대한 후손의 책임에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i25.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i26",
+    "title": "물에 잠기는 마을과 불이 켜지는 도시",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "대규모 개발 사업의 정당성에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i26.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i27",
+    "title": "만인의 규격과 주인 있는 망",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "기술 표준의 개방과 폐쇄에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교하시오.",
+     "제시문 [가]와 제시문 [나]의 관점에서 제시문 [다]를 분석하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i27.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i28",
+    "title": "데이터는 어느 나라의 것인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "데이터에 대한 국가의 관할에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i28.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i29",
+    "title": "주인 없는 곳은 먼저 닿은 사람의 것인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "누구의 것도 아닌 자원을 먼저 차지하는 일에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i29.json"
+   },
+   {
+    "id": "yonsei_intl_2027_i30",
+    "title": "소속이 먼저인가 연대가 먼저인가",
+    "subtype": null,
+    "track": "2027 학생부종합 국제형",
+    "prep_seconds": 480,
+    "interview_seconds": null,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "연대의 토대에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+     "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+    ],
+    "q_points": [
+     40,
+     60
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "en",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_intl_interview_bank_2027/sets/yonsei_intl_2027_i30.json"
+   }
+  ]
+ },
+ "pastexam": [
+  {
+   "file": "/Users/gregory/Workspace/interview_pastexam_2026/yonsei/sets/yonsei_2026_gichul_intl.json",
+   "id": "yonsei_2026_gichul_intl",
+   "title": "광기는 배제의 산물인가 뇌의 문제인가",
+   "n_passages": 3,
+   "n_questions": 2,
+   "q_texts": [
+    "광기(madness)의 개념과 해석에 관하여 제시문 [가]와 제시문 [나]의 관점을 비교 분석하시오.",
+    "제시문 [다]를 제시문 [가]와 제시문 [나]의 관점에서 각각 설명하시오."
+   ],
+   "passage_heads": [
+    "역사학자이자 사회이론가인 미셸 푸코는 그의 저서 『광기의 역사』에서 광인을 사회의 정상적 질서 바깥에 위치한 ‘타자’로 규정한다. 그는 우리가 ",
+    "The Enlightenment* promised that human suffering would yield to the advance of r",
+    "역사상 특이한 현상들이 많지만 ‘마녀사냥’만큼 이해하기 힘든 현상도 드물 것이다. 이 세상에 악마와 내통하는 자들이 있어서, 이들이 사회 전체를"
+   ]
+  }
+ ]
+}

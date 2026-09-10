@@ -3020,7 +3020,15 @@
           "guidebook/hufs.html",
           "guidebook/hanyang-erica.html",
           "programs/yonsei.html",
-          "programs/korea.html"
+          "programs/korea.html",
+          "interview/yonsei-hum.html",
+          "interview/yonsei-sci.html",
+          "interview/yonsei-intl.html",
+          "interview/yonsei-mirae.html",
+          "interview/korea-hum.html",
+          "interview/korea-sci.html",
+          "interview/korea-eq-hum.html",
+          "interview/korea-eq-sci.html"
         ],
         "list_name": "대학별 면접 준비 자료"
       },
@@ -3262,6 +3270,383 @@
         ]
       },
       "answer": "공통 풀이 인강은 연세대, 고려대 제시문 면접 다섯 단위에 공통인 풀이 절차 4편으로 220,000원에 3개월 시청하며, 단위 전권 이용권에는 이미 포함되어 있습니다."
+    },
+    "interview/yonsei-hum.html": {
+      "title": "연세대 활동우수형 면접 인문 통합 출제 유형과 풀이법 | 연세대학교 2027 | 현학적 연구소",
+      "description": "연세대학교 학생부종합 활동우수형 인문 통합 면접의 출제 유형과 풀이법을 설명합니다. 제시문 4편, 준비 480초, 답변 300초, 2문항의 규격을 확인합니다.",
+      "answer": "연세대 활동우수형 인문 통합 면접은 제시문 기반 면접입니다. 제시문 4편을 읽고 480초 준비 후 300초 동안 2문항에 답합니다.",
+      "keywords": [
+        "연세대 활동우수형 면접",
+        "연세대학교 학생부종합 활동우수형 면접",
+        "연세대 활동우수형 인문 면접",
+        "연세대 활동우수형 통합계열 면접",
+        "연세대 활동우수형 면접 기출",
+        "연세대학교 제시문 면접 준비",
+        "연세대 활동우수형 면접 시간",
+        "연세대 인문 면접 출제 유형",
+        "연세대 제시문 면접 풀이법",
+        "연세대 면접 관점 비교",
+        "연세대 면접 자료 해석",
+        "연세대 활동우수형 모의면접"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "연세대 활동우수형 인문, 통합",
+          "path": "/interview/yonsei-hum.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/yonsei-sci.html": {
+      "title": "연세대 활동우수형 면접 자연계열, 출제 유형과 풀이법 2027 | 현학적 연구소",
+      "description": "연세대 활동우수형 자연 면접은 제시문 4편을 읽고 2문항에 답합니다. 준비는 480초, 답변은 300초입니다. 기출과 자체 문항은행에서 확인한 관점 적용, 비교, 평가 유형을 설명합니다.",
+      "answer": "연세대 활동우수형 자연계열 면접은 제시문을 근거로 관점을 적용하고 비교하거나 평가하는 면접입니다. 제시문 4편을 읽는 준비 시간은 480초이며, 2문항에 300초 동안 답합니다.",
+      "keywords": [
+        "연세대 활동우수형 자연 면접",
+        "연세대학교 활동우수형 자연 면접",
+        "연세대학교 학생부종합 활동우수형 면접",
+        "연세대 활동우수형 자연 면접 기출",
+        "연세대 활동우수형 자연 면접 준비",
+        "연세대 활동우수형 자연 제시문",
+        "연세대 활동우수형 면접 시간",
+        "연세대 자연 면접 풀이법",
+        "연세대 자연 면접 관점 비교",
+        "연세대 자연 면접 과학 지문",
+        "연세대 활동우수형 모의면접",
+        "연세대 활동우수형 자연 면접 인강"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "연세대 활동우수형 자연",
+          "path": "/interview/yonsei-sci.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/yonsei-intl.html": {
+      "title": "연세대 국제형 면접 출제 유형과 풀이법 | 2027 기출 구조와 예시 | 현학적 연구소",
+      "description": "연세대 국제형 면접은 영어를 포함한 제시문 3편과 문항 2개로 구성됩니다. 준비 480초, 답변 300초입니다. 관점 비교와 사례 적용의 차이, 영어 제시문 독해 절차를 설명합니다.",
+      "answer": "연세대 국제형 면접은 영어 제시문을 포함한 제시문 기반 면접입니다. 제시문 3편을 읽고 관점 비교와 관점별 적용을 묻는 문항 2개에 답합니다.",
+      "keywords": [
+        "연세대 국제형 면접",
+        "연세대학교 국제형 면접",
+        "연세대 국제형 면접 기출",
+        "연세대학교 학생부종합 국제형 면접",
+        "연세대 국제형 면접 준비",
+        "연세대 국제형 면접 시간",
+        "연세대 국제형 영어 제시문",
+        "연세대 국제형 영어 독해",
+        "연세대 국제형 제시문 비교",
+        "연세대 국제형 면접 예상문제",
+        "연세대 국제형 면접 풀이법",
+        "연세대 국제형 면접 인강"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "연세대 국제형",
+          "path": "/interview/yonsei-intl.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/yonsei-mirae.html": {
+      "title": "연세대학교 미래캠퍼스 학생부종합 학교생활우수자(면접형)와 글로벌인재 면접 유형과 풀이법 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 학생부종합 학교생활우수자(면접형)와 글로벌인재 면접을 안내합니다. 준비 10분, 답변 5분, 질문 3개 규격을 확인합니다. 계열별 출제 유형과 풀이 절차를 설명합니다.",
+      "answer": "미래캠퍼스 학교생활우수자와 글로벌인재 전형 면접은 제시문 기반 녹화 면접입니다. 준비 10분 뒤 질문 3개에 5분 동안 답변합니다.",
+      "keywords": [
+        "연세대 미래캠퍼스 면접",
+        "연세대학교 미래캠퍼스 학생부종합 면접",
+        "연세대 미래 학교생활우수자 면접 기출",
+        "연세대 미래 학교생활우수자 면접형 준비",
+        "연세대학교 미래캠퍼스 글로벌인재 면접",
+        "연세대 미래 글로벌인재 영어 면접",
+        "연세대 미래캠퍼스 제시문 면접 시간",
+        "연세대 미래캠퍼스 면접 질문",
+        "연세대 미래 자율융합계열 면접",
+        "연세대 미래 디자인계열 면접",
+        "연세대 미래 첨단계열 면접 계산",
+        "연세대 미래 보건계열 면접 도표",
+        "연세대 미래캠퍼스 면접 풀이법"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "연세대 미래캠퍼스 학생부종합",
+          "path": "/interview/yonsei-mirae.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교 미래캠퍼스",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/korea-hum.html": {
+      "title": "고려대 계열적합전형 인문 면접 유형과 풀이법 | 2027 준비 | 현학적 연구소",
+      "description": "고려대 계열적합전형 인문 면접은 준비 21분, 면접 7분입니다. 인문학형과 사회형의 제시문 구성 차이를 설명합니다. 비교, 관점 평가, 자료 해석의 풀이 순서를 안내합니다.",
+      "answer": "고려대 계열적합전형 인문 면접은 제시문을 읽고 근거를 구성해 말하는 면접입니다. 준비 21분과 면접 7분이 주어집니다.",
+      "keywords": [
+        "고려대 계열적합전형 인문 면접",
+        "고려대학교 계열적합전형 면접",
+        "고려대 계열적합 인문 면접 기출",
+        "고려대 계열적합 제시문 면접 준비",
+        "고려대 인문 면접 풀이법",
+        "고려대 인문 면접 제시문 수",
+        "고려대 계열적합 면접 시간",
+        "고려대 인문 면접 자료 해석",
+        "고려대학교 인문 면접 예상문제",
+        "고려대 계열적합 면접 해설",
+        "고려대 인문 면접 인강",
+        "2027 고려대 계열적합전형 면접"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "고려대 계열적합전형 인문",
+          "path": "/interview/korea-hum.html"
+        }
+      ],
+      "schema": {
+        "about": "고려대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/korea-sci.html": {
+      "title": "고려대 계열적합전형 면접 자연 | 2027 출제 유형과 풀이법 | 현학적 연구소",
+      "description": "고려대 계열적합전형 자연 면접은 준비 21분, 답변 7분입니다. 공통 개념 도출과 수학 적용, 사회현상 확장 유형을 설명합니다. 2026 기출의 제시문 4편, 3문항 구성을 확인합니다.",
+      "answer": "계열적합전형 자연 면접은 공통 개념을 수학과 사회현상에 적용하는 제시문 면접입니다. 준비는 21분, 답변은 7분입니다. 발문을 확인한 뒤 제시문별 근거와 계산을 연결해 설명하는 연습이 필요합니다.",
+      "keywords": [
+        "고려대 계열적합전형 자연 면접",
+        "고려대학교 계열적합전형 면접",
+        "고려대 계열적합 자연 면접 기출",
+        "고려대학교 자연계열 제시문 면접",
+        "고려대 계열적합 면접 준비 시간",
+        "고려대 계열적합 면접 답변 시간",
+        "고려대 자연 면접 수학 문제",
+        "고려대 자연 면접 공통 개념",
+        "고려대 계열적합 면접 풀이법",
+        "고려대 계열적합 자연 모의면접",
+        "고려대 계열적합 자연 면접 인강",
+        "고려대 계열적합 자연 2026 기출"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "고려대 계열적합전형 자연",
+          "path": "/interview/korea-sci.html"
+        }
+      ],
+      "schema": {
+        "about": "고려대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/korea-eq-hum.html": {
+      "title": "고려대 고른기회전형 면접 인문 | 2027 출제 유형과 기출 풀이법 | 현학적 연구소",
+      "description": "고려대 고른기회전형 인문 면접은 제시문을 읽고 답하는 면접입니다. 준비 12분과 면접 6분이 주어집니다. 개념 비교와 관점 평가 등 기출 유형을 설명합니다.",
+      "answer": "고려대 고른기회전형 인문 면접은 제시문 기반 면접입니다. 준비 12분과 면접 6분이 주어집니다. 기출에서는 개념 비교, 관점에 따른 평가, 사례 적용과 문학을 활용한 종합을 요구합니다.",
+      "keywords": [
+        "고려대 고른기회전형 면접",
+        "고려대학교 고른기회전형 인문 면접",
+        "고려대 고른기회 인문 면접 기출",
+        "고려대 고른기회 제시문 면접 준비",
+        "고려대학교 학생부종합 고른기회전형 면접",
+        "고려대 고른기회 면접 시간",
+        "고려대 고른기회 면접 질문",
+        "고려대 고른기회 면접 풀이법",
+        "고려대 고른기회 인문 면접 유형",
+        "2027 고려대 고른기회 면접",
+        "2026 고려대 고른기회 면접 기출",
+        "고려대 고른기회 계열적합 면접 차이"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "고려대 고른기회전형 인문",
+          "path": "/interview/korea-eq-hum.html"
+        }
+      ],
+      "schema": {
+        "about": "고려대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
+    },
+    "interview/korea-eq-sci.html": {
+      "title": "고려대 고른기회전형 면접 자연계열 | 2027 출제 유형과 풀이법 | 현학적 연구소",
+      "description": "고려대 고른기회전형 자연 면접의 준비 12분과 답변 6분 규격을 안내합니다. 2026 기출의 제시문 4편과 3문항을 바탕으로 실험 설명, 사회 현상 비교, 수학 적용의 풀이 순서를 정리합니다.",
+      "answer": "고려대학교 학생부종합 고른기회전형 자연 면접은 제시문 기반 면접입니다. 준비 12분, 답변 6분이며 2026 기출은 제시문 4편과 3문항으로 구성됩니다.",
+      "keywords": [
+        "고려대 고른기회전형 자연 면접",
+        "고려대학교 고른기회전형 면접",
+        "고려대 고른기회 자연 면접 기출",
+        "고려대학교 고른기회 자연계열 면접 준비",
+        "고려대 고른기회 제시문 면접 풀이",
+        "고려대 고른기회 면접 시간",
+        "고려대 고른기회 자연 면접 과학",
+        "고려대 고른기회 자연 면접 수학",
+        "고려대 고른기회 면접 출제 유형",
+        "고려대 고른기회 면접 2027",
+        "고려대 고른기회 자연 2026 기출",
+        "고려대 계열적합 고른기회 면접 차이"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "고려대 고른기회전형 자연",
+          "path": "/interview/korea-eq-sci.html"
+        }
+      ],
+      "schema": {
+        "about": "고려대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-09-10",
+      "date_published": "2026-09-10"
     }
   }
 }

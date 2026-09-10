@@ -1,0 +1,4839 @@
+{
+ "code": "yonsei-mirae",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "연세대학교 미래캠퍼스",
+  "univ_short": "연세대 미래",
+  "track": "학생부종합 학교생활우수자·글로벌인재",
+  "unit": "계열별(자율융합·첨단·보건·디자인·국제)",
+  "label": "연세대 미래캠퍼스 학생부종합",
+  "form": "제시문 기반 면접",
+  "passages": 1,
+  "prep_sec": 600,
+  "answer_sec": 300,
+  "questions": 3,
+  "points": "비공개(질문 3개, 질문당 답변 약 100초)",
+  "stage": "학교생활우수자(면접형) 1단계 서류 100%(350%) → 2단계 서류 70% + 면접 30% / 글로벌인재 면접 = 논리적 사고력 Ⅰ(영어) + Ⅱ(한국어)",
+  "ratio_src": "2027 미래캠퍼스 입학전형시행계획(2026-05-29)",
+  "lang": "한국어(국제계열은 영어 제시문)",
+  "scope": "계열별 교과 통합, 시험지 1장(제시문 1개 + 질문 3개)",
+  "eval_axes": [
+   "제시문 이해",
+   "논리 전개",
+   "계열 적합 적용"
+  ],
+  "src": [
+   "2027 연세대 미래캠퍼스 수시모집요강(제시문 1개-질문 3개, 숙지 10분·면접 5분)",
+   "미래캠퍼스 2027 면접예시문항 가이드북",
+   "은행 spec/SPEC_v1.md + ERRATA 2026-09-09"
+  ],
+  "status": "opening",
+  "open_date": "2026-09-14",
+  "sku": null,
+  "price": null,
+  "single_price": null,
+  "lecture_count": null
+ },
+ "bank": {
+  "dir": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets",
+  "n_sets": 150,
+  "subtype": {
+   "null": 150
+  },
+  "track": {
+   "2027 학생부종합 학교생활우수자(디자인예술학부)": 11,
+   "2027 학생부종합 학교생활우수자(디자인계열)": 19,
+   "2027 학생부종합 글로벌인재(국제계열)": 30,
+   "2027 학생부종합 학교생활우수자(보건계열)": 30,
+   "2027 학생부종합 학교생활우수자(자율융합계열)": 30,
+   "2027 학생부종합 학교생활우수자(첨단계열)": 30
+  },
+  "difficulty": {
+   "하": 50,
+   "중": 50,
+   "상": 50
+  },
+  "verb_tail": {
+   "설명하시오": 238,
+   "제시하시오": 66,
+   "비교하시오": 39,
+   "기타": 105,
+   "밝히시오": 2
+  },
+  "passages_mode": 3,
+  "questions_mode": 3,
+  "sets": [
+   {
+    "id": "yonsei_mirae_2027_d01",
+    "title": "오마주와 표절",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 제시된 모방이 창작이 되는 두 가지 기준을 설명하고, 그 기준에 비추어 제시문 [나]의 심사위원회가 왜 둘로 갈렸는지 설명하시오.",
+     "제시문 [가]의 두 기준을 적용하여, 제시문 [다]의 작가가 원본 삽화를 함께 전시한 이유를 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 다른 작품을 참고하여 창작할 때 가져야 할 자세에 대한 자신의 생각을 한 가지 행동과 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d02",
+    "title": "제작의 오차와 흔적",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 대화에 나타난 제작 흔적을 대하는 두 가르침을 비교하고, 제시문 [나]에서 납품 뒤에 일어난 일들이 그 두 가르침과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 보는 사람에 관한 기준을 적용하여, 제시문 [다]에서 잔을 고른 사실을 알린 뒤 관람객의 해석이 달라진 이유를 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 만든 물건의 흔적을 어디까지 드러낼지에 대한 자신의 생각을 기준 한 가지와 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d03",
+    "title": "색과 정보 전달",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 말한 색의 두 가지 일에 비추어 제시문 [나]의 시설 담당자와 디자인 담당자의 관점을 비교하여 설명하시오.",
+     "제시문 [가]에서 말한 색의 두 가지 일을 바탕으로, 제시문 [다]의 두 전시실에 대한 관람객 반응을 비교하여 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 아름다움과 정보 전달이 부딪힐 때 디자이너가 취할 바람직한 태도를 한 가지 행동과 그 이유로 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d04",
+    "title": "고쳐 쓰는 문화",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 스승이 말하는 검소의 뜻을 설명하고, 제시문 [나]의 구청이 지원 제도를 바꾼 결정을 그 뜻에 근거하여 설명하시오.",
+     "제시문 [가]의 검소 개념을 적용하여, 제시문 [다]의 어머니가 해진 팔꿈치는 기우고 멀쩡한 팔꿈치의 장식은 거절한 이유를 설명하시오.",
+     "제시문 [다]를 참고하여, 낡거나 흠이 생긴 물건을 고친 자리를 드러낼지에 대한 자신의 생각을 기준 한 가지와 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d05",
+    "title": "공원의 안내 표지를 읽는 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]가 안내 표지에서 중시하는 기준을, 방문객이 정보를 찾고 읽는 과정에 초점을 맞추어 비교하시오.",
+     "제시문 [나]를 바탕으로 [다]의 두 방문객이 표지를 읽지 못한 이유를, 각 방문객이 겪은 어려움과 연결하여 설명하시오.",
+     "제시문 [다]의 표지를 고친다면 통일성을 유지하면서 방문객의 식별을 돕는 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d06",
+    "title": "모두를 위한 디자인",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 모두를 위한 디자인의 이상과 한계를 설명하고, 제시문 [나]의 경사로 논쟁에 나타난 입장들을 [가]의 논의와 관련지어 비교하시오.",
+     "제시문 [가]의 모두를 위한 디자인이라는 이상에 비추어, 제시문 [다]의 전시가 서로 다른 관람객에게 제공한 감상 기회를 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 다양한 관람객의 요구를 고려한 전시가 나아갈 방향을 방안 한 가지와 그 이유로 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d07",
+    "title": "아름다운 포장",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]가 제시하는 설득과 기만을 나누는 두 기준을 설명하고, 그 기준에 비추어 제시문 [나]의 홍보물 논란과 학생회의 새 규정을 평가하여 설명하시오.",
+     "제시문 [가]의 기준을 적용하여, 제시문 [다]의 광고 작업에 대한 두 평론가의 평가가 무엇에 주목하는지 비교하여 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 알리는 일에서 아름다움과 진실을 함께 지키는 방법 한 가지에 대한 자신의 생각을 그 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d08",
+    "title": "첫 결제를 권하는 화면",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]가 구매 화면의 성과를 판단하는 기준을, 사용자의 선택에 관해 각각 확인하려는 점을 중심으로 비교하시오.",
+     "제시문 [가]와 [나]를 바탕으로, [다]의 첫 달 가격이 정확하고 구매 버튼을 눌렀다는 사실만으로 충분한 이해를 인정하기 어려운 이유를 설명하시오.",
+     "제시문 [다]에서 구매 의욕과 결제 조건의 이해를 함께 고려한 화면 수정 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d09",
+    "title": "사고를 경고하는 그림의 표현",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]가 안전 포스터를 판단할 때 확인하는 점을, 전달 효과와 사람을 표현하는 방식에 초점을 맞추어 비교하시오.",
+     "제시문 [가]와 [나]를 바탕으로, [다]의 포스터가 눈에 잘 띄었다는 이유만으로 좋은 안전 안내라고 평가하기 어려운 이유를 두 가지 설명하시오.",
+     "제시문 [다]의 포스터에서 경고의 주목도를 유지하면서 사고 당사자를 존중할 수정 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d10",
+    "title": "전시의 순서",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 해석과 조작을 가르는 기준을 설명하고, 제시문 [나]의 갈등과 절충안을 그 기준에 비추어 평가하여 설명하시오.",
+     "제시문 [가]를 바탕으로 [다]의 두 비평을 규칙 공개와 선택권의 차이에 주목하여 비교하시오.",
+     "제시문 [나]를 참고하여 전시 기획자의 바람직한 자세에 대한 자신의 생각을 설명하고, 이를 실천할 방안 한 가지를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d11",
+    "title": "기능과 장식",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 두 입장이 기능이라는 말을 각각 어떤 뜻으로 쓰는지 비교하고, 제시문 [나]의 논쟁에서 의원과 건축가의 주장이 어느 입장에 근거하는지 설명하시오.",
+     "제시문 [가]의 기능 개념을 바탕으로 [다]의 두 비평을 기능을 인정하는 기준의 차이에 주목하여 비교하시오.",
+     "제시문 [나]를 바탕으로 공공 건물의 장식 예산에 대한 자신의 입장을 밝히고, 예상되는 반론 한 가지에 답하며 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d12",
+    "title": "대피 지도에 표시할 출구",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 가까운 출구 안내와 분산 안내를, 이동 시간을 판단하는 대상과 고려하는 시간 요소를 중심으로 비교하시오.",
+     "제시문 [가]를 바탕으로 [나]에서 모든 화살표를 서쪽으로 바꾸어도 대기가 생긴 이유를, 참가자들의 출구 선택이 겹치는 과정으로 설명하시오.",
+     "최신 혼잡 정보가 없는 제시문 [다]의 상황에서 당신이 채택할 지도 운영 방안 한 가지를, 안내의 정확성을 기준으로 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d13",
+    "title": "바구니 제작 전시의 관람 순서",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 자유 탐색 방식과 순서 관람 방식이 전시 내용의 이해에 도움이 되는 조건을, 앞선 정보의 필요 여부를 중심으로 비교하시오.",
+     "제시문 [가]의 구분을 적용하여 [다]의 두 관람평 가운데 [나]의 제작 기록으로 바로잡을 수 있는 판단을 고르고, 그 이유를 설명하시오.",
+     "제시문 [다]의 공간 조건에서 자유로운 이동과 제작 과정의 이해를 함께 돕는 전시 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d14",
+    "title": "지도의 정치",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 입장이 지도를 평가하는 기준을 각각 어디에 두는지 비교하고, 제시문 [나]의 학생회와 문제를 제기한 학생의 주장이 그 두 기준과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]를 바탕으로 [다]의 지도 아래 적힌 '이 지도는 정확하다'를 기준 선택과 관련지어 설명하시오.",
+     "제시문 [나]의 안내 지도를 만든다면 어떤 방안이 바람직한지 자신의 생각을 밝히고, 그 방안에 대한 반론 한 가지에 답하며 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d15",
+    "title": "폐허의 보존",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인예술학부)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 세 원칙이 서로를 제약하는 이유를 설명하고, 제시문 [나]의 세 가지 안이 각각 어느 원칙을 앞세우는지 밝혀 그 충돌 구조를 비교하시오.",
+     "제시문 [가]의 세 원칙을 바탕으로 [다]의 공연을 원칙별로 한 가지 사실을 들어 평가하여 설명하시오.",
+     "제시문 [다]의 공연 뒤에 생긴 문제를 고려하여, 폐허 활용에서 우선할 원칙에 대한 자신의 생각과 그 원칙을 지킬 방안 한 가지를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d16",
+    "title": "지역 축제 안내 표지판의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 정보 전달력, 제작비와 유지 비용, 심미성, 방문객 접근성 측면에서 비교하시오.",
+     "본문의 정전 상황을 C안에 적용하여, 노인 방문객을 위한 안내가 중단될 수 있는 이유를 화면 기능과 도움을 줄 사람의 준비 상황에 연결해 설명하시오.",
+     "만약 내가 김다온이라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d17",
+    "title": "예약 앱에서 바꿀 수 있는 조작 범위",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 조작 방식의 통일성, 개인별 조정 범위, 도움받기 편의의 세 측면에서 비교하시오.",
+     "제시문의 전화 안내 상황을 B안에 적용하여, 같은 앱을 쓰면서도 다른 메뉴를 누를 수 있는 이유를 두 가지 단서로 설명하시오.",
+     "만약 내가 화면 설계 팀장이라면 어떤 안을 고를 것인지 이유와 함께 밝히고, 그 안의 약점 하나를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d18",
+    "title": "대기 시간 그림에 남겨야 할 정보",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 핵심 수치의 눈에 띄는 정도, 변동 폭 표시, 조사 조건 전달의 세 측면에서 비교하시오.",
+     "본문의 기록 조건을 바탕으로, 주말 방문자가 대표값 12분만 보고 15분 안에 입장할 수 있다고 판단하기 어려운 이유 두 가지를 설명하시오.",
+     "만약 내가 전시 기획자라면 어떤 안을 고를 것인지 이유와 함께 밝히고, 그 안에서 생길 오해 하나를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d19",
+    "title": "특산물 포장 회수 방식의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 병을 돌려주게 하는 유인, 참여할 수 있는 소비자의 범위, 운영 비용과 위생 관리, 라벨과 반납 절차가 만드는 이용 경험 측면에서 비교하시오.",
+     "본문의 고령 소비자 상황을 C안에 적용하여, 반납함이 있어도 반납을 포기할 수 있는 이유를 적립금 지급 조건과 연결해 설명하시오.",
+     "만약 내가 김나윤이라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d20",
+    "title": "충전식 독서등의 외형과 수리 구조",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 외형의 일체감, 부품 교체를 위한 개방 방식, 수리 중 사용 중단의 세 측면에서 비교하시오.",
+     "본문의 스위치 고장 사례를 C안에 적용하여, 배터리를 쉽게 교체한다는 장점이 모든 고장의 당일 수리를 뜻하지 않는 이유를 설명하시오.",
+     "만약 내가 제품 디자이너라면 어떤 안을 고를 것인지 이유와 함께 밝히고, 그 안의 약점 하나를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d21",
+    "title": "역 앞 공원 벤치의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 이용 편의성, 관리와 민원 대응, 사회적 포용성, 제작비와 유지 비용 측면에서 비교하시오.",
+     "본문에서 벤치 외에 쉴 자리가 없다는 조건을 B안에 적용하여, 잠자리 민원이 줄어도 몸을 뉘어야 하는 노인의 휴식 문제가 남는 이유를 설명하시오.",
+     "만약 내가 김해온이라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d22",
+    "title": "어린이 병동 벽화의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 정서적 치유 효과, 구역 안내 기능, 비용, 유지 관리 측면에서 비교하시오.",
+     "본문의 감염 관리 강화 상황을 C안에 적용하여, 벽의 일부가 비게 되는 이유를 새 그림의 마련과 교체 과정에 연결해 설명하시오.",
+     "만약 내가 김서진이라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d23",
+    "title": "재활용 의류 봉제 구조의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 수선 용이성, 내구성, 생산 비용, 착용감과 외형 측면에서 비교하시오.",
+     "본문의 재활용 원단 특성을 B안에 적용하여, 착용 시험에서 오래 견딘 재킷에도 주름 불량이 생기는 이유를 솔기와 원단의 관계로 설명하시오.",
+     "만약 내가 김온유라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d24",
+    "title": "광장 야간 조명의 인상과 길 안내",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 시각적 인상, 이용자의 눈에 빛이 들어오는 방식, 안내 정보의 식별의 세 측면에서 비교하시오.",
+     "본문의 C안에 비 온 뒤의 상황을 적용하여, 광원을 가려도 안내가 잘 보이지 않을 수 있는 이유를 빛의 경로를 따라 설명하시오.",
+     "만약 내가 공간 디자이너라면 어떤 안을 고를 것인지 이유와 함께 밝히고, 안내 기능을 유지하며 그 안의 약점 하나를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d25",
+    "title": "학교 앱 첫 화면의 세 가지 안",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 정보 탐색 효율, 서툰 사용자의 접근성, 개발비와 유지 부담, 작동 속도와 오류 가능성 측면에서 비교하시오.",
+     "본문의 편집 기능 사용 조사 결과를 C안에 적용하여, 편집 기능을 쓰는 비율이 낮아도 교사 한 명의 전화 안내가 어려울 수 있는 이유를 설명하시오.",
+     "만약 내가 김도현이라면 어떤 안을 고를 것인지 밝히고, 본문에 나온 그 안의 문제 한 가지를 보완할 아이디어 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d26",
+    "title": "선물 포장을 고르는 사람과 여는 사람",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 구매 순간의 시각적 인상, 여는 부분의 발견, 개봉에 필요한 손동작의 세 측면에서 비교하시오.",
+     "본문의 점검 조건을 근거로, C의 구매 선호와 단계별 낮은 힘만으로 개봉 접근성이 높다고 판단하기 어려운 이유 두 가지를 설명하시오.",
+     "만약 내가 포장 디자이너라면 어떤 안을 고를 것인지 구매 인상과 혼자 여는 조건을 고려해 밝히고, 그 안의 약점 하나를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d27",
+    "title": "옛 공방 영상에서 기록과 창작을 표시하는 방법",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 영상에 대한 몰입, 내용의 범주 구별, 근거 확인 방식의 세 측면에서 비교하시오.",
+     "제시문의 구분 기준을 적용하여, 영상 속 지붕 높이와 장인들의 대화를 각각 어느 범주로 표시해야 하는지 이유와 함께 설명하시오.",
+     "만약 내가 전시 디자이너라면 어떤 표시 안을 고를 것인지 밝히고, 그 안에서 생기는 오해 한 가지를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d28",
+    "title": "생활시설의 상징을 누가 어떤 기준으로 정할 것인가",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 선정 절차를 전문가 평가의 효력, 주민의 결정 권한, 참여의 대표성이라는 세 측면에서 비교하시오.",
+     "제시문의 판독 시험 결과를 B안과 C안에 적용하여, 인기 도안을 최종 후보로 남길 수 있는지 각각 이유와 함께 설명하시오.",
+     "만약 내가 공공 디자이너라면 어떤 선정 절차를 고를 것인지 밝히고, 그 절차의 참여상 약점 한 가지를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d29",
+    "title": "공공시설 안내를 글과 그림과 소리로 전달하는 방법",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 전달할 수 있는 정보, 이용자의 접근성, 여러 사람의 동시 이용이라는 세 측면에서 비교하시오.",
+     "제시문을 바탕으로, 혼잡 시간에 분실물을 찾는 방문객에게 C안이 줄 수 있는 도움과 남는 어려움을 한 가지씩 설명하시오.",
+     "만약 내가 안내 디자이너라면 어떤 안내 안을 고를 것인지 밝히고, 그 안의 이용상 약점 한 가지를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_d30",
+    "title": "대피 앱에서 먼저 보여 줄 정보와 빠르다는 판단",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(디자인계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 1,
+    "n_questions": 3,
+    "q_texts": [
+     "A, B, C 안을 첫 화면의 정보량, 경로 확인 절차, 잘못된 경로 선택의 위험이라는 세 측면에서 비교하시오.",
+     "제시문의 모의시험 결과를 바탕으로, B안을 모든 이용자에게 가장 빠른 대피 화면이라고 판단하기 어려운 이유를 대상과 측정 항목으로 나누어 설명하시오.",
+     "만약 내가 화면 디자이너라면 어떤 첫 화면 안을 고를 것인지 밝히고, 그 안의 이용상 약점 한 가지를 줄일 보완 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     ""
+    ],
+    "passage_langs": [
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_d30.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g01",
+    "title": "Do urban green spaces make city residents healthier?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "According to Passage [B], what are the two reasons why green spaces improve residents' health, and what problem does the passage point out about how these benefits are shared?",
+     "Using Passage [B], explain why building parks only where land is easy to buy may keep the health benefits in Passage [A] from reaching low-income neighborhoods.",
+     "In your opinion, which one action should a city prioritize to share the health benefits of green spaces more fairly? Support your choice with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g02",
+    "title": "Who benefits from cross-border student exchange?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "According to Passage [B], what are the two reasons why student exchange benefits both countries, and what limitation does the passage admit?",
+     "Using the limitation in Passage [B], explain why the growth in student exchange described in Passage [A] may not spread its benefits throughout both societies.",
+     "What is your opinion on using public money to widen access to student exchange? Support your position with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g03",
+    "title": "Why do school cafeterias throw away so much food?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "According to the passages, how serious is food waste in school cafeterias, and what are the two causes explained in Passage [B]?",
+     "Using Passage [B], explain how allowing students to choose their serving size could reduce the food disposal costs described in Passage [A].",
+     "In your opinion, which should a school try first to reduce food waste: portion choice or student input on menus? Support your choice with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g04",
+    "title": "Working hours in an international remote team",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the problem in passage [A] and the approach to cooperation in passage [B].",
+     "Using passage [B], explain how shared task notes could reduce the pressure to reply during dinner in passage [A].",
+     "In your opinion, when should a team member be expected to reply outside agreed working hours? Explain one rule with a reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g05",
+    "title": "Can remote work revive small towns?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the situation described in Passage [A] and explain the two reasons in Passage [B] why remote work can help small towns.",
+     "Using Passage [B], explain why attracting new families in Passage [A] may not keep a town's schools open if companies order workers back to the office.",
+     "In your opinion, can remote work help small towns recover in the long run? Support your position with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g06",
+    "title": "Should public transport be free for everyone?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "What do the passages [A] and [B] tell us about the goals of fare-free public transport and about what actually happened in the city described in Passage [B]? Why did the free service fail to reduce car traffic?",
+     "Applying the goal of easier travel for low-income people in Passage [A], explain how the bus budget cuts in Passage [B] worked against that goal.",
+     "In your opinion, was the city in Passage [B] right to restore a small fare for working-age adults? Support your position with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g07",
+    "title": "The true cost of cheap clothes",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the phenomenon described in Passage [A], and explain the two hidden costs of cheap clothing presented in Passage [B].",
+     "Using Passage [B], explain how the frequent buying and quick disposal described in Passage [A] can increase environmental costs even when clothes are cheap.",
+     "What is your opinion on buying cheap clothes to wear only a few times? Support your position with one reason from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g08",
+    "title": "Ending the twice-a-year clock change",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "According to Passages [A] and [B], why did countries begin changing their clocks, and why has that reason weakened? Explain also what makes it difficult for a country to end the practice.",
+     "Using [B], explain how keeping summer time all year would affect the winter school journeys mentioned in the passage, compared with keeping standard time.",
+     "In your opinion, should a country keep changing its clocks twice a year, or end the practice? Explain your view with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g09",
+    "title": "Is spending on space exploration justified?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the debate described in Passage [A], and explain the two reasons that supporters of space budgets give in Passage [B].",
+     "Using [A] and [B], explain why using spacecraft materials in hospital equipment does not guarantee that hospitals waiting for equipment can obtain it now.",
+     "In your opinion, is government spending on space exploration justified? Support your view with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g10",
+    "title": "When disasters cross borders",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "What do the passages [A] and [B] tell us about disasters that cross national borders? Summarize the main contents of each passage and the two views in Passage [B].",
+     "Using [A] and [B], explain why supplies stored near a border may still be delayed if customs rules remain unchanged.",
+     "Do you agree that neighboring countries should build a joint system for responding to disasters? Support your view with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g11",
+    "title": "Preventing or compensating climate damage",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the situation described in Passage [A] and explain the reasons each side gives in Passage [B].",
+     "Using [B], explain why spending the entire budget in [A] on future prevention could weaken the prevention plan itself.",
+     "In your opinion, should a limited climate budget go first to prevention or compensation? Explain your priority with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g12",
+    "title": "Recognizing skills acquired abroad",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the recognition problem in passage [A] and the principle for assessing qualifications in passage [B].",
+     "Drawing on passage [B], explain why the untested knowledge in passage [A] does not justify treating all the worker's skills as unproven.",
+     "In your opinion, should the worker in [A] begin supervised work before the local safety test? Support your position with one reason considering both access to work and service safety."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g13",
+    "title": "Is water a basic right or a priced product?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "According to Passage [B], what are the two reasons for treating water as a priced product and the two reasons for treating it as a basic right?",
+     "Using [B], explain one benefit and one risk of charging for water in a city that keeps its water system in public hands.",
+     "Do you think a city should give priority to covering water costs or guaranteeing basic water access? Explain your view with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g14",
+    "title": "Is it fair to show different customers different prices?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "What do the passages [A] and [B] tell us about how personalized pricing works? Summarize the three reasons given in support of the practice and explain how the critics answer the third one.",
+     "Using [A] and [B], explain why comparing the two displayed shoe prices alone does not tell the friends whether the pricing rule is fair.",
+     "In your opinion, which matters more for fair personalized pricing, wider access or knowing the pricing rules? Explain your choice with one reason or one example from the passages."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g15",
+    "title": "Language support at a public service counter",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main issue in passage [A] and the two forms of language support in passage [B].",
+     "Using passage [B], explain why the shorter processing time in passage [A] does not establish better access for residents using minority languages.",
+     "Which form of support in passage [B] do you think the office should fund first? Explain your choice using one criterion and a detail about residents in passage [A]."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]"
+    ],
+    "passage_langs": [
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g16",
+    "title": "Who should explain a digital heritage collection?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in the order [A], [B], and [C].",
+     "Using [B] and [C], explain one benefit and one concern about posting the images in [A] before the community's explanations are ready.",
+     "What is your opinion on requiring community approval of descriptions before publishing the cloth images in [A]? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g17",
+    "title": "Should schools move to a four-day week?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain how a school's higher attendance can coexist with greater burdens on families where all adults work.",
+     "What is your opinion on a four-day school week? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g18",
+    "title": "More visitors and clear routes through a town",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in the order [A], [B], and [C].",
+     "Applying [B] and [C], explain one way that directing the extra ferry's morning tour groups to the waterfront would help visitors and one way it would help residents.",
+     "What is your opinion on keeping the residential lane closed to tour groups before noon while allowing more tourists into the town? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g19",
+    "title": "Refund help when an overseas seller does not reply",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in the order [A], [B], and [C].",
+     "Using [B] and [C], explain one reason the platform should handle the complaint in [A] and one reason the receipt alone cannot justify a refund.",
+     "What is your opinion on requiring the platform to arrange a refund when a seller remains silent after a stated response period? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g20",
+    "title": "Should pet owners be required to hold a license?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain why registration may help return a lost dog but fail to identify an owner who skips registration.",
+     "What is your opinion on requiring a license to own a dog? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g21",
+    "title": "Should school rankings be published?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain how publishing each school's progress from its students' starting level could address one concern in each passage.",
+     "What is your opinion on publishing school rankings? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g22",
+    "title": "Should students be paid for good grades?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain why increased study time during payments does not show that students will keep studying after payments end.",
+     "What is your opinion on paying students for good grades? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g23",
+    "title": "Sharing a road report before its meaning is checked",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in the order [A], [B], and [C].",
+     "Compare how the teams in [B] and [C] would use the bridge report in [A] when planning a delivery, giving one use permitted by each.",
+     "What is your opinion on requiring a source, observation time, and checking status before disaster reports enter a shared international map? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g24",
+    "title": "How much of a joint research method should be public?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in the order [A], [B], and [C].",
+     "Using [B] and [C], explain one benefit and one limitation of publishing results and test conditions while restricting the detailed failure instructions in [A].",
+     "What is your opinion on temporarily limiting public access to the detailed failure instructions from this international research project? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g25",
+    "title": "Should influencer advertising follow stricter rules?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain what a paid partnership label tells viewers and what they still need to check about a product claim.",
+     "What is your opinion on making stricter rules for influencer advertising? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g26",
+    "title": "One assessment across different learning conditions",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in one or two sentences per passage.",
+     "Using [B] and [C], explain one benefit and one limitation of giving every student the same extra time in [A].",
+     "What is your opinion on offering translated questions and replacing verified lost time under one scoring standard? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g27",
+    "title": "Shared orbits and responsibility before movement",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in one or two sentences per passage.",
+     "Based on [B] and [C], explain why publishing the initial paths in [A] supports access but does not ensure safety after both paths change.",
+     "What is your opinion on requiring a joint safety check before satellite operators change their paths? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g28",
+    "title": "Electricity exchange when both partners face shortages",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in one or two sentences per passage.",
+     "Based on [B] and [C], explain why stopping the delivery in [A] to protect factory production differs from stopping it to protect the exporter's hospital.",
+     "What is your opinion on requiring countries to fulfill promised electricity deliveries without exceptions during a shared shortage? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g29",
+    "title": "Urgent warnings across languages",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage in one or two sentences per passage.",
+     "Using [B] and [C], explain one benefit of translating the evacuation order in [A] immediately and one risk of dropping the road condition.",
+     "What is your opinion on requiring a final check of action words and safety conditions before sending every multilingual emergency warning, including messages prepared in advance, even if this delays delivery? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_g30",
+    "title": "Should companies pay a tax on robots that replace workers?",
+    "subtype": null,
+    "track": "2027 학생부종합 글로벌인재(국제계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "Summarize the main contents from each passage and provide the supporting reasons in Passages B and C.",
+     "Using [B] and [C], explain how taxing profits to fund retraining addresses the funding need in [B] and the definition problem in [C].",
+     "What is your opinion on taxing robots that replace human workers? Support your idea with concrete reasons and examples."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[A]",
+     "[B]",
+     "[C]"
+    ],
+    "passage_langs": [
+     "en",
+     "en",
+     "en"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_g30.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h01",
+    "title": "수치가 된 몸",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 나타난 자기 관리와 자기 감시의 차이를 설명하고, 제시문 [가]의 걷기 대회에서 나타난 참가자들의 모습을 그 차이에 근거하여 비교하시오.",
+     "제시문 [나]의 기록 목적 구별을 적용하여, 제시문 [다]의 윤서가 앱을 다시 설치한 뒤 기록의 용도를 어떻게 바꾸었는지 구체적인 변화 두 가지를 근거로 설명하시오.",
+     "제시문 [다]를 참고하여, 건강 앱의 숫자를 대하는 바람직한 자세를 자신의 사용 원칙 한 가지와 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h02",
+    "title": "폭염 속 작업을 멈추는 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 공통 중지 기준과 개인의 이상 신호가 작업을 멈추는 시점을 정할 때 각각 어떤 역할을 하는지 비교하시오.",
+     "제시문 [나]를 바탕으로 [다]의 노동자가 휴식실이 있는데도 쉬겠다는 말을 거둔 이유를 임금과 동료의 부담 측면에서 설명하시오.",
+     "당신이 [다]의 사용자라면 노동자가 몸의 이상을 바로 알릴 수 있도록 무엇을 바꾸겠는지, 실행 방안 한 가지와 그 이유를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h03",
+    "title": "통증을 말하는 방식",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 제시된 통증을 전하는 두 방식을 비교하고, 제시문 [가]의 통증 점수를 둘러싼 문제가 두 방식과 어떻게 관련되는지 설명하시오.",
+     "제시문 [가], [나]를 바탕으로, 제시문 [다]에서 차트에 문장을 덧붙인 일이 통증 점수의 한계를 어떻게 보완했는지 설명하시오.",
+     "제시문 [다]의 노인이 통증 점수를 낮춰 말한 사정을 고려하여, 의료진과 환자의 소통에 필요한 자세를 자신의 실천 방안 한 가지와 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h04",
+    "title": "결정 지원 화면과 보호자의 선의",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 제시된 자기결정의 세 조건을 설명하고, 제시문 [가]의 설명회에서 가족 대표와 개발자가 각각 어느 조건을 근거로 삼고 있는지 밝히시오.",
+     "제시문 [나]의 자발과 표현 조건을 적용하여, 제시문 [다]에서 딸의 대리 입력 제안과 마지막 동석 장면을 각각 설명하시오.",
+     "당신이 제시문 [다]의 딸이라면 아버지의 다음 치료 결정에 어떻게 참여할지, 제시문 [나]의 조건 하나를 근거로 행동 한 가지와 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h05",
+    "title": "유전자 검사 결과와 모를 권리",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에서 알 권리와 모를 권리를 어떻게 구별하는지 설명하고, 그 구별에 비추어 제시문 [가]의 김○○과 박○○ 중 누구의 주장이 [나]의 관점에 가까운지 이유와 함께 설명하시오.",
+     "제시문 [나]를 참고하여, 제시문 [다]에서 언니가 먼저 물었어야 했다고 말한 이유를 결과 확인과 결과 전달의 차이를 중심으로 설명하시오.",
+     "당신이 제시문 [다]의 서진이라면 결과를 확인한 뒤 언니에게 어떻게 할지, 제시문 [나]를 바탕으로 행동 순서와 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h06",
+    "title": "늘어난 시간을 재는 기준",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위의 세 제시문은 모두 오래 사는 것과 잘 사는 것의 관계를 다루고 있다. 각 제시문이 늘어난 시간을 평가하는 기준으로 무엇을 제시하는지 밝히고, 제시문 [다]의 합의가 제시문 [나]의 두 관점 가운데 어느 쪽에 가까운지 이유와 함께 설명하시오.",
+     "제시문 [가]의 보고서를 제시문 [다]에 적용하여, 늘어난 시간을 평가할 때 확인할 정보를 활동 가능 상태와 본인 결정 여부로 나누어 제시하시오.",
+     "당신이 제시문 [다]의 상담 간호사라면 환자와 가족의 뜻이 다를 때 어떤 원칙으로 결정을 도울지, 제시문 [나]를 참고하여 원칙 한 가지와 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h07",
+    "title": "집으로 들어온 의료 기기",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위 세 제시문은 모두 의료 기기가 병원에서 가정으로 옮겨질 때 생기는 변화를 다루고 있다. 각 제시문이 이 변화에서 가장 중요하게 보는 것이 무엇이라고 생각하는지 밝히고, 그렇게 판단한 근거를 제시문의 내용에서 찾아 설명하시오.",
+     "제시문 [나]의 판단과 책임 배분 기준을 적용하여, 제시문 [가]의 위험하지 않은 알림과 장치가 알아채지 못하는 감염 징후를 가정에서 어떻게 다르게 다뤄야 하는지 설명하시오.",
+     "당신이 제시문 [다]의 방문 간호사라면 아버지의 자율과 어머니의 부담을 함께 고려해 어떤 지원을 할지, 제시문 [나]를 바탕으로 방안 한 가지와 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h08",
+    "title": "고치는 기술과 받아들이는 사회",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 보조 기술에 대한 서로 다른 반응을 정리하고, 그 반응들이 제시문 [나]의 두 관점과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 [다]의 민재가 수술을 거절한 이유를 수어의 의미와 학습 부담에 비추어 설명하시오.",
+     "제시문 [가]와 [다]를 참고하여 보조 기술과 환경 개선을 지원할 때 당사자의 선택을 존중하는 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h09",
+    "title": "재활 예약과 돌아오는 버스",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 거주지에서 센터까지 이동하는 부담을 환승 여부와 버스 운행 간격을 중심으로 비교하시오.",
+     "제시문 [나]를 바탕으로 [다]에서 오전 예약 한 자리가 생겨도 이용자가 재활 참여를 이어 가기 어려운 이유를 왕복 교통편과 연결하여 설명하시오.",
+     "당신이 [다]의 센터 직원이라면 정기 재활 참여를 도울 방안 한 가지를 제시하고, 시행 전에 확인할 왕복 이동 조건 한 가지를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h10",
+    "title": "기분을 조절하는 약과 환자의 선택",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위의 세 제시문은 모두 기분을 조절하는 약을 쓸지 정하는 일을 다루고 있다. 제시문 [나]의 두 관점을 비교하여 설명하고, 제시문 [가]의 바뀐 진료 방식과 제시문 [다]의 결정 과정이 [나]의 어느 부분에 해당하는지 밝히시오.",
+     "제시문 [나]의 결정 조건을 적용하여 [다]에서 잠이 다시 흐트러지자 감량 단계에 머무는 기간을 늘린 조치가 그 조건에 어떻게 부합하는지 설명하시오.",
+     "당신이 제시문 [다]의 의사라면 환자가 약을 줄이고 싶다고 할 때 어떤 자세로 결정에 참여할지, 제시문 [가]와 [나]에서 찾은 근거와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h11",
+    "title": "재활 보조 기기의 설정 권한",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 나타난 자기결정의 관점과 보호의 관점을 비교하고, 제시문 [가]의 설정 잠금을 둘러싼 갈등이 두 관점과 어떻게 연결되는지 설명하시오.",
+     "제시문 [나]의 자기결정과 보호의 관점을 적용하여 [다]의 민규 씨가 보조 강도를 무단으로 바꾼 행동을 두 관점에서 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 재활 보조 기기의 설정 권한과 책임을 나누는 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h12",
+    "title": "예약 부도와 일정 변경의 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 담당자와 [나]가 예약 부도에 대한 제재를 볼 때, 이용자가 불참을 예방할 수 있다는 전제를 어떻게 다루는지 비교하시오.",
+     "제시문 [나]를 적용하여 [다]의 보조원의 불참에 대한 책임과 취소 통보의 책임을 구별하고, 빈 시간이 생겼다는 사실만으로 두 책임을 같게 볼 수 없는 이유를 설명하시오.",
+     "당신이라면 [가]의 사전 예약 제한을 어떤 기준으로 적용하겠는지 방안 한 가지를 제시하고, 대기자의 기회와 불안정한 근무 일정의 이용자를 함께 고려한 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h13",
+    "title": "기능 저하의 치료와 지원",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]의 건강을 보는 두 방식을 비교하고, 제시문 [가]의 노인 건강 예산을 둘러싼 논쟁이 두 방식과 어떻게 연결되는지 설명하시오.",
+     "제시문 [나]의 두 건강관에 비추어 [다]에서 상철 씨가 작업 환경을 바꾼 행동과 아들이 치료를 권한 행동의 차이를 설명하시오.",
+     "제시문 [다]처럼 치료를 아직 결정하지 않은 사람을 도울 때 바람직한 자세 한 가지를 [나]의 판단 기준에 근거하여 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h14",
+    "title": "원격 진료와 환자 신뢰의 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [다]에서 원격 진료에 대한 환자의 신뢰가 어떻게 형성되고 또 흔들리고 있는지를 제시문 [나]에 나타난 신뢰의 세 조건과 관련지어 설명하시오.",
+     "제시문 [나]의 책임 보증 조건에 비추어 [가]의 담당 의사 표시와 진료 기록 이관 의무화만으로 책임 떠넘기기가 해소되었다고 단정하기 어려운 이유를 설명하시오.",
+     "제시문 [가]와 [다]의 신뢰 문제를 줄이기 위해 병원과 환자에게 각각 어떤 노력이 필요한지 한 가지씩 제시하고, 그 이유를 [나]의 조건과 연결하여 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h15",
+    "title": "접종 참여와 센터 이용의 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]가 접종 참여를 높이는 조치에서 보호하려는 개인의 선택과 공동체의 건강을, 각각의 이유와 함께 설명하시오.",
+     "제시문 [나]를 바탕으로 [다]의 두 이용자에게 주말 접종 안내가 갖는 의미를 비교하고, 증명서가 없다는 사실만으로 같은 대응을 하기 어려운 이유를 설명하시오.",
+     "당신이 [가]의 운영회의에 참여한다면 증명서에 따른 식사실 이용 제한을 채택할지 자신의 입장을 제시하고, 보호 효과와 이용자 부담에서 판단 근거를 각각 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h16",
+    "title": "노인 낙상과 착용형 감지 기기",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 기기가 돌봄을 돕는다는 원칙에 비추어 보호자가 방문을 줄인 사례의 문제를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 혼자 사는 노인의 낙상 피해를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h17",
+    "title": "청소년 수면 부족과 수면 측정 앱",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 측정은 생활 점검의 보조 수단이라는 원칙에 비추어 수면 점수로 학생을 평가할 때의 문제를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 청소년의 수면 부족 문제를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h18",
+    "title": "구강 검진과 사진 상담 앱의 연계",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 사진 상담의 범위를 근거로 이를 대면 검진 대신으로 여긴 이용자에게 생길 문제 한 가지를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 구강 검진율을 높이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h19",
+    "title": "이어폰 사용과 소음성 난청",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 청력 검진이 알림을 무시하던 학생의 행동을 바꾼 과정을 본문 사례에 근거하여 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 청소년의 소음성 난청을 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h20",
+    "title": "교대근무의 휴식과 업무 인계",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 대체자의 담당 수락을 확인한 뒤 호출을 넘기는 이유를 [가]의 인계 개념과 연결하여 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 교대근무에서 종사자의 휴식과 이용자의 요청 처리를 함께 보장하기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h21",
+    "title": "근시 증가와 화면 시간 관리 기술",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 스스로 조절하는 힘을 길러야 한다는 관점에서 잠금 해제 뒤 사용 시간이 되돌아간 사례를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 청소년의 눈 건강을 지키기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h22",
+    "title": "고령자 다약제 복용과 복약 관리 앱",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 의료진이 최종 판단을 맡는다는 원칙에 비추어 앱 경고만 믿고 약을 끊은 사례의 문제를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 고령자의 안전한 약 복용을 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h23",
+    "title": "응급 의료의 지역 격차와 인공지능 구급 배차",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 추천 근거를 모르는 구급 대원이 추천과 다른 배차를 결정할 때 겪는 어려움을 책임 문제와 관련지어 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 응급 의료의 지역 간 격차로 인한 피해를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h24",
+    "title": "고령 운전자 사고와 운전 능력 검사 제도",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 오판정과 재검사 절차 부재가 고령 운전자의 이동에 미치는 영향을 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 고령 운전자의 사고를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h25",
+    "title": "신체 활동 실천율 추이와 보상형 걷기 앱",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 포인트 지급이 중단된 도시의 사례가 보상만으로 걷기 습관을 유지하는 데 어떤 한계가 있음을 보여 주는지 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 성인의 신체 활동을 늘리기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h26",
+    "title": "초미세먼지 노출과 개인 노출 측정기",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 감지기 교체 비용을 가정이 부담하는 방식이 저소득 가정의 초미세먼지 대응에 미치는 영향을 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 초미세먼지로 인한 건강 피해를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h27",
+    "title": "항생제 내성과 처방 감시 시스템",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 처방률이 낮다는 이유만으로 의료 기관을 좋게 평가할 때 놓칠 수 있는 문제 한 가지를 사례와 연결하여 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 항생제 내성 문제를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h28",
+    "title": "검사 기관의 측정 오차와 결과 통보 기준",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 기관별 평균 차이로 모든 결과를 일괄 수정하자는 제안의 한계를 [가]의 자료 범위에 비추어 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 건강 검사의 측정 오차로 인한 피해를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h29",
+    "title": "비대면 재활의 참여와 동작 관찰",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, [가]의 이수율이 높아도 새 균형 동작의 수행 상태를 확인할 수 없는 이유를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 이동이 어려운 이용자가 재활에 안전하게 참여하기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_h30",
+    "title": "폭염 온열 질환과 취약 가구 원격 모니터링",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(보건계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 내용을 요약하고, 그림 [1]이 제시문 [가]의 내용 중 어느 부분을 뒷받침하고 있는지 설명하시오.",
+     "제시문 [나]의 내용을 요약하고, 알림을 받은 담당자에게 냉방비 지원 예산이 없는 상황에서 모니터링의 효과가 제한되는 이유를 설명하시오.",
+     "제시문 [가]와 [나]의 내용을 바탕으로 폭염 취약 가구의 피해를 줄이기 위한 개인적, 사회적 노력을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_h30.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j01",
+    "title": "잊힐 권리와 기록의 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 두 가지 권리와 책임의 관점을 비교하고, 제시문 [나]의 갈등이 그 두 관점과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 사람과 동네 이름을 밝히지 않고 빈터를 기록한 방식을 관점별로 설명하시오.",
+     "제시문 [다]의 관람객 반응을 참고하여, 지워진 기록을 대신할 바람직한 기억 방식 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j02",
+    "title": "약속의 구속력",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 제시된 약속을 지키지 못하게 된 사람의 세 가지 책임을 설명하고, 제시문 [나]의 마을 회의에서 갈린 두 의견을 [가]의 관점에서 비교하시오.",
+     "제시문 [가]의 세 가지 책임을 제시문 [다]의 재봉사에게 적용하여, 각 책임에 해당하는 행동을 하나씩 설명하시오.",
+     "제시문 [다]에서 기한 변경에 합의한 뒤에도 남은 불편을 참고하여, 약속을 바꿔야 할 때 바람직한 자세 한 가지를 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j03",
+    "title": "전통 놀이의 변형",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 전통의 본질에 대한 두 관점을 비교하고, 제시문 [나]의 줄다리기를 둘러싼 갈등이 그 두 관점과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 관점을 제시문 [다]의 공연 의상에 적용하여, 두 평론가가 서로 다르게 평가한 이유를 관점별로 설명하시오.",
+     "제시문 [나]나 [다]의 사례 한 가지를 근거로, 전통을 이어 가는 바람직한 방식 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j04",
+    "title": "익명의 선행",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 선행의 가치에 대한 두 관점을 비교하고, 제시문 [나]에서 기부자를 찾으려는 쪽과 반대하는 쪽의 입장을 그 두 관점과 연결하여 설명하시오.",
+     "제시문 [가]의 동기와 결과 관점을 제시문 [다]의 익명 기부에 적용하여, 각 관점에서 주목할 내용을 하나씩 설명하시오.",
+     "제시문 [나]의 익명 기부 사례를 근거로, 선행을 알리는 일에 대한 자신의 입장을 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j05",
+    "title": "침묵의 의미",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 침묵에 대한 두 관점을 비교하고, 제시문 [나]에서 침묵한 학생을 둘러싼 상반된 반응이 그 두 관점과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 관점을 제시문 [다]의 여백에 적용하여, 여백을 회피와 발언으로 본 두 해석의 이유를 각각 설명하시오.",
+     "제시문 [나]의 학급 회의를 참고하여, 말해야 할 때와 침묵해도 좋을 때를 가르는 바람직한 기준 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j06",
+    "title": "사과 없는 용서",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 용서에 대한 두 흐름을 근거와 함께 비교하고, 제시문 [나]에서 이 씨의 결정을 두고 나온 세 사람의 반응이 그 두 흐름과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 흐름을 적용하여, 제시문 [다]에서 사과 전에 나타난 주인공의 변화가 용서에 해당하는지를 흐름별로 설명하시오.",
+     "제시문 [나]의 공동 점검 사례를 참고하여, 사과 없는 용서와 책임 요구의 관계에 대한 자신의 입장을 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j07",
+    "title": "경쟁과 운",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 공정한 경쟁에 대한 두 견해를 비교하고, 제시문 [나]의 장학금 논쟁에서 두 견해가 어떻게 맞서고 있는지 설명하시오.",
+     "제시문 [가]의 두 견해를 적용하여, [다]의 제비뽑기 배역에 대한 두 평가가 각각 어떤 이유에서 나오는지 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 경쟁에서 운이 만든 차이를 다루는 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j08",
+    "title": "일의 의미",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 일의 가치에 대한 두 견해를 비교하고, 제시문 [나]의 학생이 들은 두 조언과 교통비 지급 이후의 심경을 두 견해와 관련지어 설명하시오.",
+     "제시문 [가]의 두 견해를 적용하여, [다]의 김 노인이 사례금 앞에서 느낀 안도와 서운함의 이유를 각각 설명하시오.",
+     "제시문 [가]와 [다]를 바탕으로, 일의 가치를 판단할 때 중시할 기준 한 가지에 대한 자신의 생각을 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j09",
+    "title": "번역과 원문",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 번역에 대한 두 견해를 비교하고, 제시문 [나]의 자막 논란에서 비판과 옹호가 각각 어느 견해에 서 있는지 설명하시오.",
+     "제시문 [가]의 두 견해를 적용하여, [다]의 시집에 대한 두 평론이 각각 어떤 기준에 따른 평가인지 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 옮김의 가치를 판단할 기준 한 가지에 대한 자신의 생각을 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j10",
+    "title": "도시의 기억",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 장소에 대한 두 견해를 비교하고, 제시문 [나]의 주민 투표에서 찬성과 반대가 두 견해와 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, [다]의 벽화 작업에 대한 두 해석이 각각 무엇을 중시하는지 설명하시오.",
+     "제시문 [나]와 [다]를 바탕으로, 재개발에서 장소의 기억을 다루는 바람직한 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j11",
+    "title": "관용의 역설",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 관용에 대한 두 견해를 각 견해가 딛고 있는 전제의 차이까지 포함하여 비교하고, 제시문 [나]의 규칙 개정 논쟁이 두 견해와 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 견해를 적용하여, [다]에서 운영자가 제지도 반박도 하지 않은 행동을 각 견해가 어떻게 평가할지 설명하시오.",
+     "제시문 [나]의 논쟁을 참고하여, 관용의 한계를 정하는 바람직한 운영 원칙 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j12",
+    "title": "공공미술의 철거",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 나타난 두 관점이 각각 무엇을 묻고 있는지 비교하고, 제시문 [나]의 주민 민원, 작가의 반박, 시의 이전 결정이 그 두 물음과 어떻게 연결되는지 설명하시오.",
+     "제시문 [가]의 두 물음을 적용하여, [다]의 해체 작업에 대한 두 평가가 각각 어떤 근거를 갖는지 설명하시오.",
+     "제시문 [나]의 갈등을 참고하여, 공공 공간에 예술 작품을 설치할 때 필요한 조건 한 가지에 대한 자신의 생각을 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j13",
+    "title": "의무 너머의 행위",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 입장이 어떤 전제에서 갈라지는지 비교하고, 제시문 [나]에서 그 학생을 비난한 친구, 미리 알려 주었어야 한다고 말한 친구, 학생 자신의 판단을 각 입장과 연결하여 설명하시오.",
+     "제시문 [가]의 관계의 역사에 따른 설명을 [다]에 적용하여, 정례에게 향하던 기대와 결말에서 부부가 받아들인 기대가 어떻게 다른지 비교하시오.",
+     "제시문 [나]를 참고하여, 호의를 중단할 때 미리 알리는 일을 의무로 보아야 하는지 자신의 입장을 밝히고, 그 입장에 맞는 학급의 대응 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j14",
+    "title": "예약 근무의 소득 보장과 시간 선택",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점이 근무 자율성을 판단하는 기준을, 각각 무엇을 확인하는지 중심으로 비교하시오.",
+     "제시문 [가]의 생활 여건 관점을 적용하여, [다]의 노동자가 예약 방식으로 옮긴 뒤 밤에 쉬었다가 다시 일하게 된 이유를 두 시기의 소득 변화와 관련지어 설명하시오.",
+     "제시문 [나]의 취소 규칙을 바꿀 방안 한 가지를, 예약 공백과 [다]의 소득 불안을 함께 줄일 수 있는 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j15",
+    "title": "아름다움의 기준",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 답이 각각 어떤 물음에 답하고 있는지 비교하고, 제시문 [나]의 교사들의 논거와 학생 대표의 마지막 반문을 그 층위 구별에 근거하여 설명하시오.",
+     "제시문 [가]의 두 물음을 [다]의 두 해석에 적용하여, 각 해석이 아름다움의 근거로 삼는 것을 비교하시오.",
+     "제시문 [다]를 참고하여 아름다움의 기준이 시대에 따라 바뀔 수 있는지 자신의 입장을 밝히고, 그 입장에 맞는 작품 평가 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j16",
+    "title": "LED 가로등 전환",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 두 제시문이 LED 가로등 전환을 바라보는 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 공원 조명을 LED로 바꿀 때 예상되는 이익과 생태계 부담을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 밤길 안전을 유지하면서 빛 공해를 줄일 가로등 운영 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j17",
+    "title": "일회용 컵 보증금",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 두 제시문이 일회용 컵 보증금 제도를 바라보는 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 컵 보증금이 소비자의 반납과 매장의 다른 용기 사용에 미치는 영향을 각각 그 이유와 함께 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 컵 반납을 유도하면서 매장의 관리 부담을 줄일 운영 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j18",
+    "title": "드론 배송",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 두 제시문이 드론 배송의 확대를 바라보는 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 드론 배송 확대가 물품을 받는 마을과 항로 아래의 비수혜 마을에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 드론 배송을 이용하지 않는 항로 아래 주민의 소음 부담을 줄일 운영 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j19",
+    "title": "자전거 도로 확장의 편익과 갈등",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 두 제시문이 자전거 도로 확장을 바라보는 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 보도 겸용 자전거 도로가 자동차 없는 시민과 걸음이 느린 보행자에게 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 자전거 도로 운영에서 보행자의 사고 위험을 줄일 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j20",
+    "title": "도시 양봉",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 두 제시문이 도시 양봉을 바라보는 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 꽃이 늘지 않은 지역에 벌통을 더 놓을 때 재배 작물과 야생 토종벌에 미칠 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 야생 토종벌의 먹이 경쟁 부담을 줄일 도시 양봉 운영 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j21",
+    "title": "하천 자연화의 이익과 홍수 안전",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 하천 정비를 바라보는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 물길을 넓힐 수 없는 도심 구간의 하천 자연화가 주민에게 미치는 이익과 위험을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 물길을 넓힐 수 없는 하천에서 생태 복원과 홍수 안전을 함께 고려할 관리 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j22",
+    "title": "배양육과 축산의 환경 부담",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 배양육의 환경 효과를 평가하는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 배양육의 확산이 환경과 축산 농가에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 배양육 전환의 환경 부담과 농가 부담을 줄이는 방안을 하나씩 고르고, 각 방안의 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j23",
+    "title": "전자책 독서의 자원 계산",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 전자책의 자원 사용을 계산할 때 두 제시문이 계산 범위를 어디까지 잡는지 관점의 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 독서의 디지털 전환이 자원 사용과 읽기 효용에 미치는 영향을 구분하여 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 독자가 매체를 선택할 때 자원 사용과 읽기 효용에서 고려할 바람직한 기준을 하나씩 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j24",
+    "title": "스마트팜과 농촌 공동체",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 농업 자동화가 농촌에 가져올 변화를 바라보는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 스마트팜의 확산이 농업 생산과 농촌 공동체에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 스마트팜의 이익을 살리면서 소규모 농가의 참여를 돕는 방안 하나를 제시하고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j25",
+    "title": "해상 풍력과 어민의 바다",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 해상 풍력 개발을 바라보는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 해상 풍력 단지 건설이 도시와 해안 마을에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 탄소 감축과 어민의 생계를 함께 고려하는 사업 추진 방안 하나를 제시하고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j26",
+    "title": "지열 발전과 유발 지진",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 지열 발전의 위험을 바라보는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 지열 발전의 확대가 사회 전체와 발전소 주변 지역에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 지열 발전의 위험 수용 기준에 포함할 조건 하나와, 그 조건을 주민과 함께 정할 방안을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j27",
+    "title": "유전자 편집 작물과 식량 안보",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 유전자 편집 작물을 평가하는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로 유전자 편집 작물의 확산이 농업과 생태계에 미치는 영향을 각각 한 가지씩 설명하시오.",
+     "제시문 [가]와 [나]를 참고하여 편집 작물의 시험 재배 성과만으로 보급을 확대해도 되는지 자신의 입장을 밝히고, 생태 위험을 고려한 보급 조건 하나를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j28",
+    "title": "탄소 포집 저장과 감축의 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 탄소 포집 저장 기술의 역할에 대한 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 포집 설비가 실제 가동될 때와 포집 계획만으로 기존 설비를 연장할 때 감축 노력에 미치는 영향을 각각 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 탄소 포집 저장을 어디까지 활용할지 자신의 입장을 밝히고, 그 입장에서 필요한 위험 관리 조건 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j29",
+    "title": "위성 군집 통신과 밤하늘",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 위성 군집 통신망을 바라보는 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 통신망이 닿지 않는 지역에 위성 통신을 확대할 때 교육 기회와 장기적인 궤도 이용에 미치는 영향을 각각 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 위성 군집 통신을 확대할 때 받아들일 수 있는 궤도 위험의 기준 한 가지를 정하고, 이에 따른 운영 방향을 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_j30",
+    "title": "하수 재이용 식수의 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]의 내용을 요약하고, 정수된 하수를 식수로 쓰는 방안에 대한 두 제시문의 관점 차이를 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 한 도시가 하수 재이용 식수를 특정 지역에 먼저 공급할 때 물 관리의 이점과 주민이 부담할 문제를 각각 하나씩 설명하시오.",
+     "제시문 [가]와 [나]를 바탕으로, 안전성의 불확실성이 남은 하수 재이용 식수의 도입에 대한 자신의 입장을 밝히고, 이를 판단한 기준 한 가지를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_j30.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t01",
+    "title": "자동화 이익의 분배",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 제시된 분배의 세 기준을 설명하고, 제시문 [가]에서 이익의 몫을 주장하는 세 입장이 각각 어느 기준에 서 있는지 비교하시오.",
+     "제시문 [나]의 기여 기준을 적용하여, [다]의 서 반장이 찬성하려던 손을 내린 이유를 설명하시오.",
+     "제시문 [다]의 회의 위원이라면 당신은 자동화로 늘어난 이익을 어떻게 나눌 것인지, [나]의 기준 한 가지를 근거로 방안 한 가지를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t02",
+    "title": "추천과 취향",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 제시된 세 기준이 각각 취향의 소유를 무엇으로 판단하는지 설명하시오.",
+     "제시문 [나]의 수정 기준과 재료 기준을 적용하여, [다]에서 하람의 규칙이 취향에 미친 영향을 각각 설명하시오.",
+     "당신이 듣는 음악과 보는 영상의 대부분을 추천 기능이 골라 준다면, 제시문 [나]의 기준 한 가지를 바탕으로 취향을 관리할 방법 한 가지와 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t03",
+    "title": "기억의 외주",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위의 세 제시문은 모두 기억을 도구에 맡기는 일을 다루고 있다. 제시문 [나]의 두 관점을 설명하고, 제시문 [가]의 실험 결과가 두 관점 각각에서 어떻게 해석될 수 있는지 설명하시오.",
+     "제시문 [나]의 첫째 관점을 바탕으로, [다]에서 지호가 번호를 외운 뒤 사람을 떠올리는 방식이 달라진 이유를 설명하시오.",
+     "제시문 [다]를 참고하여, 당신이 공부할 때 스스로 기억할 것과 도구에 맡길 것을 나누는 기준을 세우고 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t04",
+    "title": "건조 설비를 가동할 시간",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 전력 단가와 총전기요금을 각각에 반영되는 정보를 중심으로 비교하시오.",
+     "제시문 [가]를 바탕으로 [나]의 직원이 비용을 아꼈다고 한 판단이 타당한지, 두 시험의 사용량과 총전기요금을 근거로 설명하시오.",
+     "당신이 제시문 [다]의 관리자라면 이번 주문에 낮 가동과 밤 가동 중 어떤 방안을 택할지, 전기요금과 완료 시각을 근거로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t05",
+    "title": "빠른 설비의 하루 생산",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 불량률과 정비 시간이 각각 설비의 실제 공급량에 어떤 영향을 주는지 구별하여 설명하시오.",
+     "제시문 [가]의 정상 제품 수 기준을 적용하여 [나]에서 갑의 공급 능력이 더 좋다는 보고가 타당한지 시험 결과를 근거로 설명하시오.",
+     "당신이 제시문 [다]의 담당자라면 어느 설비에 주문을 맡길지, 하루 공급량과 옆 라인 일정을 근거로 자신의 선택을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t06",
+    "title": "예측의 불확실성을 전하는 두 방식",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 확률 수치 전달과 행동 지침 전달이 판단을 누구에게 맡기는지 비교하여 설명하시오.",
+     "제시문 [가]를 바탕으로, [나]에서 권고에 확률과 과거 기록을 함께 적는 방식이 권고만 보내는 방식보다 이용자의 판단에 어떤 도움을 줄 수 있는지 설명하시오.",
+     "제시문 [가]와 [다]를 참고하여, 당신이 예측 서비스 개발자라면 불확실성을 전달할 방식 한 가지를 정하고 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t07",
+    "title": "결함 공개의 시점",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 원칙에 비추어, 제시문 [나]의 회사가 정부 기관의 규정이 정해지기 전과 후에 결함 공개를 다룬 방식이 어떻게 달라졌는지 비교하여 설명하시오.",
+     "제시문 [나]의 위해 가능 결함 공개 규정을 [다]에 적용하여, 회사가 알려야 할 시점과 내용을 설명하시오.",
+     "제시문 [가]와 [다]를 참고하여, 개발자가 회사 밖에 결함을 직접 알리는 것이 정당한 조건 한 가지와 그 근거를 자신의 생각으로 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t08",
+    "title": "보조와 향상 사이",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]가 제시한 보조와 향상의 차이를 설명하고, [나]와 [다]에서 장치 사용으로 달라진 점을 하나씩 제시하시오.",
+     "제시문 [가]의 보조 개념에 비추어, [다]에서 보청기를 빼게 한 조치가 세아의 듣기 평가에 어떤 문제를 낳을 수 있는지 설명하시오.",
+     "제시문 [나]와 [다] 중 한 사례를 골라, 몸의 능력을 넓히는 기술을 허용할 조건 한 가지를 자신의 생각과 근거를 담아 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t09",
+    "title": "울리지 않은 경보와 잘못 울린 경보",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 미탐지와 오경보를 실제 위험의 유무와 장치의 반응을 기준으로 비교하시오.",
+     "제시문 [가]를 바탕으로 [나]의 높은 기준이 더 안전하다는 보고를 평가하고, 두 오류의 횟수를 근거로 설명하시오.",
+     "당신이라면 제시문 [다]에서 미탐지와 오경보 중 어느 위험을 우선 줄일지, 다른 위험의 보완책 한 가지와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t10",
+    "title": "멈추지 않는 화면",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위의 세 제시문은 모두 화면 앞에서 멈추는 일을 다루고 있다. 세 지문 각각에서 멈춤을 어렵게 하거나 가능하게 하는 요인이 무엇이라 보는지 밝히고, 그렇게 판단한 이유를 설명하시오.",
+     "제시문 [나]의 미리 조건을 바꾸는 자율 개념을 적용하여, [다]의 두 방법이 멈춤을 유지하는 데 차이를 보인 이유를 규칙을 바꾸는 권한에 초점을 맞추어 설명하시오.",
+     "제시문 [가] 또는 [나]를 참고하여, 화면을 적절한 때에 멈추기 위해 당신이 취할 자세 한 가지를 구체적인 행동과 그 이유로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t11",
+    "title": "함께 끊기는 두 통신선",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 통신망의 평상시 성능과 장애 대응 능력을 평가할 때 각각 확인해야 할 것을 비교하시오.",
+     "제시문 [가]를 적용하여 [나]의 두 구성이 장애에 똑같이 대비한다는 주장을 평가하고, 두 종류의 시험 결과를 근거로 설명하시오.",
+     "당신이 제시문 [다]의 운영자라면 평상시 지연과 필수 통신 조건을 고려해 구성을 선택하고, 장애 시 운영 방안 한 가지를 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t12",
+    "title": "표준을 정하는 힘",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "위의 세 제시문은 모두 기술 표준을 정하는 일을 다루고 있다. 각 제시문이 표준의 어떤 면을 드러낸다고 생각하는지 밝히고, 그렇게 판단한 근거를 각 제시문의 내용에서 찾아 설명하시오.",
+     "제시문 [나]의 이익과 부담을 나누는 결정이라는 관점에 비추어, [가]의 교환소 운영자와 [다]의 의용소방대가 겪는 문제의 공통점과 차이점을 설명하시오.",
+     "당신이 제시문 [다]의 정 팀장이라면, [가]의 법안 심의 위원회에 제안할 방안 한 가지를 자신의 경험에서 찾은 근거와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t13",
+    "title": "통로에 멈춘 안내 로봇",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 속도 제한과 정지 규칙이 로봇의 이동에 하는 역할을 실제 정지 거리와 명령 조건을 중심으로 비교하시오.",
+     "제시문 [가]를 바탕으로 [나]의 빠른 설정도 안전하다는 주장이 타당한지, 감지 거리와 정지 거리를 근거로 설명하시오.",
+     "당신이 제시문 [다]의 운영자라면 로봇이 사람의 개입을 요청할 조건과 개입 후 재출발할 조건을 한 가지씩 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t14",
+    "title": "공공 연구 성과의 공개와 독점 사용권",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [나]에 나타난 공개 원칙과 독점 사용권 방식의 채택 근거를 각각 한 가지씩 들어 비교하시오.",
+     "제시문 [가]와 [나]를 바탕으로, [다]에서 공공 목적 조항에 따른 할인 뒤에도 갈등이 이어진 이유를 이용자의 부담과 기업의 투자 회수에 초점을 맞추어 설명하시오.",
+     "제시문 [다]의 오 씨처럼 연구 성과를 이용하려는 시민에게 어떤 태도가 필요한지, 구체적인 행동 한 가지와 제시문에서 찾은 이유를 들어 자신의 생각을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t15",
+    "title": "출입 장치의 자동 업데이트와 유예 조건",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]가 업데이트 적용에서 중시하는 기준을, 보호하려는 대상이 드러나도록 비교하시오.",
+     "제시문 [가]와 [나]를 바탕으로, [다]의 일괄 자동 적용 계획이 갖는 이점과 문제점을 각각 한 가지씩 설명하시오.",
+     "당신이 제시문 [다]의 관리자라면 업데이트 유예를 허용할 조건 한 가지를 정하고, 그 조건이 필요한 이유를 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t16",
+    "title": "스마트 계량기와 전력 수요 조절의 공정성",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 도시의 2026년 전력 소비량 감소율을 계산하는 절차를 설명하고 계산하시오. 단, 2025년에 가정 부문의 가구들은 서로 같은 양의 전력을 소비했고, 산업 부문의 기업들도 서로 같은 양을 소비했다고 가정한다.",
+     "제시문 [가]와 [나]를 바탕으로 가구의 자발적 절전과 전력 회사의 수요 조절에 전력 사용 데이터를 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 수요 조절에 참여하는 가구의 부담을 공정하게 나누는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t17",
+    "title": "댐 유입량 예측의 오차와 방류 결정 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 댐의 기존 모형과 새 모형의 예측 오차율을 계산하는 절차를 설명하고 계산하시오. 단, 오차율은 날마다 예측 유입량과 실제 유입량의 차이를 부호 없이 잰 값을 검증 기간에 걸쳐 모두 더한 뒤, 같은 기간의 실제 유입량을 모두 더한 값으로 나누어 백분율로 나타낸 값으로 정의한다.",
+     "제시문 [나]를 바탕으로 댐 유입량 예측을 사전 방류와 용수 배분에 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 예측 오차로 인한 피해를 줄이는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t18",
+    "title": "자율주행 버스의 비용 계산과 사고 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 노선의 연간 운행 비용이 자율주행 버스 도입 전보다 몇 % 줄어드는지 계산하는 절차를 설명하고 계산하시오. 단, 정비비는 도입 전과 같다고 가정한다.",
+     "제시문 [나]를 바탕으로 자율주행 버스의 주행 기록을 사고 경위 확인과 안전요원 운행 지침 마련에 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 자율주행 버스 사고의 승객 보호와 책임 분담을 위한 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t19",
+    "title": "온라인 강의 완료율과 표본의 대표성",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 플랫폼에서 기존 설계 집단과 개편 설계 집단의 전체 완료율을 각각 계산하는 절차를 설명하고 계산하시오. 단, 무작위로 나눈 두 집단의 과정별 수강생 비중은 전체 수강생의 비중과 같다고 가정한다.",
+     "제시문 [나]를 바탕으로 영상 이탈 기록과 확인 문제 풀이 기록을 수업 개선에 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 완료율과 정답률이 학습 성과를 과장하지 않도록 하는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t20",
+    "title": "전동킥보드 이용 급증과 사고율 해석",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 도시의 2025년과 2026년의 전동킥보드 사고율을 각각 구하고 그 변화율을 계산하는 절차를 설명하고 계산하시오. 단, 사고율은 이용 1만 건당 사고 건수로 하고 변화율은 2025년 사고율을 기준으로 계산한다.",
+     "제시문 [나]를 바탕으로 위치 정보와 원격 제어를 보행자 사고 예방과 통행로 확보에 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 안전 관리 기술의 오작동 피해와 주차 구역의 지역 격차를 줄이는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t21",
+    "title": "재활용 선별 로봇 도입과 일자리 전환",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 시설에서 하루에 회수되는 재활용품의 양이 로봇 도입 전보다 몇 % 늘었는지 계산하는 절차를 설명하고 계산하시오. 단, 하루 반입량과 품목별 반입 비중은 도입 전과 같다고 가정한다.",
+     "제시문 [나]를 바탕으로 선별 로봇을 노동자의 안전과 고용 유지에 활용하는 방법을 각각 한 가지씩 제시하시오.",
+     "제시문 [나]를 참고하여 자동화의 이익을 노동자의 고용 유지에 쓰는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t22",
+    "title": "예약 서비스의 공통 연결 규칙과 기능 개발",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 독자 규격 안 대비 공개 표준 안의 전체 연결 비용 감소율을 계산하는 절차를 설명하고 계산하시오. 단, 두 안의 연결 범위는 같고 제시된 비용 외에는 들지 않는다고 가정한다.",
+     "제시문 [나]를 바탕으로 [가]의 기본 예약 정보는 공유하고 일정 추천 기능은 별도로 개발하는 방식이 호환성과 혁신에 주는 영향을 설명하시오.",
+     "제시문 [나]를 참고하여 호환성과 새 기능 개발을 함께 보장할 운영 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t23",
+    "title": "건축용 3D 프린팅과 벽체의 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 회사가 장비 구입 비용을 회수하기 위해 지어야 하는 주택의 최소 채수를 계산하는 절차를 설명하고 계산하시오. 단, 주택 한 채의 건설 비용과 절감 비율은 모든 주택에서 같고, 장비 유지비 외에 추가로 드는 비용은 없다고 가정한다.",
+     "제시문 [나]의 설계 파일에 따라 벽체를 만드는 방식을 바탕으로, 이재민 주택 공급과 가족 수에 맞춘 주택 공급에서 얻는 이점을 각각 설명하시오.",
+     "제시문 [나]를 참고하여 건축용 3D 프린팅 주택의 안전과 피해 배상을 보장할 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t24",
+    "title": "센서 자동 제어와 공정 불량률",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 공장의 전체 불량률 감소 폭(퍼센트포인트)을 계산하는 절차를 설명하고 계산하시오. 단, 전체 불량률은 하루 생산량 전체에서 불량품이 차지하는 비율로 계산한다.",
+     "제시문 [나]의 센서 오염 사례를 제시문 [가]의 자동 제어에 적용하여, 불량이 늘어나는 과정을 측정과 제어의 순서로 설명하시오.",
+     "제시문 [나]를 참고하여 센서 오류로 인한 불량 확산을 막을 운영 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t25",
+    "title": "배차 알고리즘과 배달 노동의 데이터",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 회사의 2026년 건당 평균 배달 시간이 2025년에 비해 변한 비율을 계산하는 절차를 설명하고 계산하시오. 단, 2025년의 건당 배달 시간은 지역과 관계없이 모두 같았다고 가정한다.",
+     "제시문 [나]를 바탕으로 배차 알고리즘을 주문 묶음과 배정 순위 결정에 활용하는 방식을 각각 설명하시오.",
+     "제시문 [나]를 참고하여 배차 알고리즘을 이용하는 기사의 공정한 배정과 안전을 위한 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t26",
+    "title": "음향 센서 누수 탐지와 수돗물 공급 관리",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 시의 2026년 누수율을 계산하는 절차를 설명하고 계산하시오. 단, 공급량은 실제 사용량과 누수량의 합과 같다고 가정한다.",
+     "제시문 [나]를 바탕으로 누수 지점 탐지가 도로 침하 예방과 가뭄 시 급수 유지에 쓰이는 과정을 각각 설명하시오.",
+     "제시문 [나]를 참고하여 누수 탐지 시스템의 급수 차단을 운영할 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t27",
+    "title": "취약점 공개와 수정본의 실제 적용",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 0일 시작부터 18일 시작까지 누적 미수정량을 계산하는 절차를 설명하고 계산하시오. 단, 운영처의 증감이나 제시된 시점 외의 설치 완료는 없다고 가정한다.",
+     "제시문 [나]를 바탕으로 [가]에서 수정본 배포 후에도 위험이 남은 이유를 개발자와 운영자의 역할에 비추어 설명하시오.",
+     "제시문 [나]를 참고하여 운영처의 대응을 돕고 악용 위험을 줄이도록 취약점 공개를 조정할 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t28",
+    "title": "데이터센터의 재생에너지 비중과 지역의 부담",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 지역의 데이터센터 화석 연료 전력 소비량이 2025년에 비해 2026년에 증가한 비율을 계산하는 절차를 설명하고 계산하시오. 단, 재생에너지가 아닌 전력은 모두 화석 연료로 생산되었다고 가정한다.",
+     "제시문 [나]의 부담과 편익 분배 기준을 제시문 [가]에 적용하여, 재생에너지 비중 상승만으로 지역 부담이 줄었다고 보기 어려운 이유를 설명하시오.",
+     "제시문 [나]를 참고하여 데이터센터를 지역 주민에게 이롭게 활용할 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t29",
+    "title": "안면 인식 출입의 처리 시간과 생체 정보의 수집",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 해당하는 건물에서 인원이 늘어난 뒤 안면 인식을 도입했을 때 출근 시간대 총 처리 시간이 현재에 비해 변한 비율을 계산하는 절차를 설명하고 계산하시오. 단, 인식 실패율과 인식에 걸리는 시간은 인원이 늘어난 뒤에도 같고, 인식에 실패한 사람에게만 수동 확인 시간이 추가된다고 가정한다.",
+     "제시문 [나]를 바탕으로 안면 인식이 공항의 확인 절차와 손을 다친 이용자의 본인 확인에 쓰이는 방식을 각각 설명하시오.",
+     "제시문 [나]를 참고하여 안면 인식 출입에서 이용자를 보호할 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_t30",
+    "title": "위성 저수율의 오차와 제한급수 판단",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 2,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 보정과 오차 한계를 반영한 관측 시점 저수량의 최솟값을 계산하는 절차를 설명하고 계산하시오. 단, 검증 자료의 보정 방식과 오차 한계가 이 저수지에도 그대로 적용된다고 가정한다.",
+     "제시문 [나]의 판단 원칙을 [가]에 적용하여 대표값만으로 제한급수가 불필요하다고 단정할 수 없는 이유를 저수율 기준과 오차 범위를 연결하여 설명하시오.",
+     "제시문 [나]를 참고하여 제한급수 여부를 결정할 때 관측 오차를 반영하는 방안을 두 가지 이상 제시하고, 각각에 대해 우려할 점을 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t30.json"
+   }
+  ]
+ },
+ "pastexam": null
+}

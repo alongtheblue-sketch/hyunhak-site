@@ -41,6 +41,13 @@ def popup_block(rel, p):
         tpl = re.sub(r"\s*<figure class=\"pkv\">.*?</figure>", "", tpl, count=1, flags=re.S)   # 빈 src 의 img 는 문서 자신을 다시 요청한다. 칸을 통째로 뺀다
     rows = pop.get("rows") or [r for r in ((p.get("band") or {}).get("rows") or [])][:2]
     rows_html = "".join(f'\n            <tr><th scope="row">{html.escape(str(name))}</th><td><span data-list-price="{int(price)}">{int(price):,}원</span></td></tr>' for name, price in rows)
+    # 안내 한 줄 (2026-09-10): popup.notice 가 있으면 마감 줄 아래에 사실 문장 + 텍스트 링크 하나. 행사 문안과 같은 층이 아니라 별 단락.
+    nt = pop.get("notice") or {}
+    notice_line = ""
+    if nt.get("text"):
+        href = nt.get("href") or ""
+        link = f' <a class="tlink" href="{pre}{html.escape(href)}">{html.escape(nt.get("label") or "안내 보기")}</a>' if href else ""
+        notice_line = f'        <p class="pnote" id="ppopN">{html.escape(nt["text"])}{link}</p>\n'
     return "\n" + tpl.format(
         mod=mod, rate=f"{p['rate']}%", label=html.escape(pop.get("title") or p.get("label") or ""),
         until_text=html.escape((p.get("band") or {}).get("until_text") or ""),
@@ -48,6 +55,7 @@ def popup_block(rel, p):
         link_studio_label=html.escape(pop.get("link_studio_label") or "면접 스튜디오 구매 바로가기"),
         link_guidebook_label=html.escape(pop.get("link_guidebook_label") or "가이드북 바로가기"),
         mute_label=html.escape(pop.get("mute_label") or "오늘 하루 보지 않기"),
+        notice_line=notice_line,
     ) + "\n"
 
 

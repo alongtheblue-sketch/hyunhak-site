@@ -1,0 +1,3 @@
+drafts/*.log
+drafts/*.pid
+__pycache__/

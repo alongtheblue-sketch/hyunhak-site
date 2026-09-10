@@ -287,7 +287,7 @@ def list_page(cs):
   <div class="sh rv"><div><h2 class="t">자주 묻는 것</h2></div></div>
   <div class="rv">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
-  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간 12개월과 다릅니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
+  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간도 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
   <details class="faq"><summary>공개 편수는 어디서 확인하나요</summary><div class="a"><p>강좌 상세와 인강실에 열람 시점 기준으로 적힙니다. 준비 중인 편은 공개되는 대로 순차 업로드됩니다.</p></div></details>
   </div>
@@ -421,7 +421,7 @@ def detail_page(c, cs):
     intro = "".join(f"<p>{E(x)}</p>" for x in INTRO[code])
     # 구매 상자
     if not is_common:
-        buy = f'''<div class="buybox" id="plan"><p class="k">단위 전권 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 응시 12개월, 인강 3개월</small></p>
+        buy = f'''<div class="buybox" id="plan"><p class="k">단위 전권 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 응시 3개월, 인강 3개월</small></p>
 <ul class="inc"><li><span>이 인강 {c["n"]}편</span><span>전부 포함</span></li><li><span>응시</span><span>지문 {c["set_count"]}편, 지문마다 5회</span></li><li><span>첨삭</span><span>전사, 진단, 재구성</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="{E(c["sku"])}" data-cart-title="{E(c["label"])} 전권 이용권" data-cart-price="{c["price"]}">단위 전권 담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
@@ -466,7 +466,7 @@ def detail_page(c, cs):
  <section class="page" id="intro"><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + "을 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
-  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간 12개월과 다릅니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
+  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간도 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
  </div>
  <div style="margin-top:var(--s6)"><span class="eyebrow">다른 강좌</span><div style="display:flex;gap:8px;flex-wrap:wrap">{others}</div></div></section>

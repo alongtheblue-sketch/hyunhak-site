@@ -1,0 +1,1236 @@
+{
+ "code": "korea-hum",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "고려대학교",
+  "univ_short": "고려대",
+  "track": "학생부종합 계열적합전형",
+  "unit": "인문",
+  "label": "고려대 계열적합전형 인문",
+  "form": "제시문 기반 면접",
+  "passages": 4,
+  "prep_sec": 1260,
+  "answer_sec": 420,
+  "questions": 3,
+  "points": "비공개(역량 3축 등급 평가)",
+  "stage": "1단계 서류 100%(5배수) → 2단계 1단계 성적 60% + 면접 40%",
+  "ratio_src": "2027 수시모집요강 학생부종합(계열적합전형) 전형요소",
+  "lang": "한국어",
+  "scope": "국어·사회·윤리·역사 교과 통합, 도표·그래프 의무 포함",
+  "eval_axes": [
+   "분석력",
+   "적용력",
+   "종합적 사고력"
+  ],
+  "src": [
+   "2027 고려대 수시모집요강 Ⅴ 면접평가 안내 p.29(준비 21분·면접 7분)",
+   "고려대 선행학습영향평가 보고서 2024~2026 문항카드",
+   "은행 spec/SPEC_v1.md·PRACTICE_META_v1.md"
+  ],
+  "status": "on_sale",
+  "sku": "pass-korea-hum",
+  "price": 495000,
+  "single_price": 33000,
+  "lecture_count": 44
+ },
+ "bank": {
+  "dir": "/Users/gregory/Workspace/korea_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "인문A": 15,
+   "인문B": 15
+  },
+  "track": {
+   "2027 학생부종합 계열적합전형 | 인문": 30
+  },
+  "difficulty": {
+   "하": 5,
+   "중": 10,
+   "상": 10,
+   "최상": 5
+  },
+  "verb_tail": {
+   "설명하시오": 27,
+   "평가하시오": 29,
+   "말해 보시오": 15,
+   "분석하시오": 4,
+   "기타": 14,
+   "제시하시오": 1
+  },
+  "passages_mode": 4,
+  "questions_mode": 3,
+  "sets": [
+   {
+    "id": "korea_2027_h01",
+    "title": "기억은 어떻게 기록이 되는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 기록에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢밝히는 서술의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)가 지향하는 기록 문화를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h01.json"
+   },
+   {
+    "id": "korea_2027_h02",
+    "title": "이름은 누구의 것인가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 이름에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢정명의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)가 지향하는 이름 문화를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h02.json"
+   },
+   {
+    "id": "korea_2027_h03",
+    "title": "놀이는 어떻게 문화가 되는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 놀이에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢놀이하는 인간의 관점에서 (가)의 ㉠과 (나)의 ㉡의 태도를 각각 평가하시오.",
+     "(라)가 지향하는 사회를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h03.json"
+   },
+   {
+    "id": "korea_2027_h04",
+    "title": "문자의 문턱",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 문자를 대하는 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢에 나타난 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)가 지향하는 언어 문화를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h04.json"
+   },
+   {
+    "id": "korea_2027_h05",
+    "title": "속도는 무엇을 싣고 달리는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 길과 속도에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)가 지향하는 공동체를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h05.json"
+   },
+   {
+    "id": "korea_2027_h06",
+    "title": "빌린 틀로 지은 옷",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타난 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)의 두 목소리가 함께 전제하고 있는 것이 무엇인지 밝히고, 그 전제에 대한 자신의 판단을 바탕으로 문화의 원형을 어떻게 보아야 하는지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h06.json"
+   },
+   {
+    "id": "korea_2027_h07",
+    "title": "웃음은 어디를 향하는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 웃음의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢되받아칠 수 있는 웃음의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)의 필자가 지향하는 웃음 문화가 무엇인지 밝히고, 그것을 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h07.json"
+   },
+   {
+    "id": "korea_2027_h08",
+    "title": "다시 세운 집은 그 집인가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠고쳐 쓰기와 (나)의 ㉡고증 원칙에 나타나는 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)의 필자가 말하는 진짜 체험이 무엇인지 밝히고, 그것을 바탕으로 사라진 것을 되살리는 일이 지켜야 할 원칙에 대해 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h08.json"
+   },
+   {
+    "id": "korea_2027_h09",
+    "title": "선물이 남기는 빚",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는 갚음에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢자발의 형식을 띤 의무의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)에 나타난 기부를 둘러싼 논란을 해결하고 바람직한 기부 문화를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h09.json"
+   },
+   {
+    "id": "korea_2027_h10",
+    "title": "경계에 선 사람은 무엇을 보는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠에 나타난 글쓴이의 태도와 (나)의 ㉡에 나타난 중인들의 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢경계인의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)가 지향하는 사회를 만들기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h10.json"
+   },
+   {
+    "id": "korea_2027_h11",
+    "title": "임자를 만나야 값이 되는가",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠팔린 인생과 (나)의 ㉡셈 밖의 살림에 나타나는 일의 값에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢인정의 관점에서 (가)의 ㉠팔린 인생과 (나)의 ㉡셈 밖의 살림을 각각 평가하시오.",
+     "(라)가 제기하는 문제를 해결하기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h11.json"
+   },
+   {
+    "id": "korea_2027_h12",
+    "title": "읽지 말라는 책",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠읽히려는 뜻과 (나)의 ㉡근원을 끊어야 한다는 논리에 나타나는 책에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢스스로 가늠하는 힘의 관점에서 (가)의 ㉠읽히려는 뜻과 (나)의 ㉡근원을 끊어야 한다는 논리를 각각 평가하시오.",
+     "(라)에 나타난 유해물 지정을 둘러싼 논쟁을 해결하기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h12.json"
+   },
+   {
+    "id": "korea_2027_h13",
+    "title": "아첨과 격식 사이",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠비위를 맞추는 말과 (나)의 ㉡양쪽이 함께 아는 약속에 나타나는 말의 꾸밈에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢말과 실질 사이의 거리의 관점에서 (가)의 ㉠비위를 맞추는 말과 (나)의 ㉡양쪽이 함께 아는 약속을 각각 평가하시오.",
+     "(라)가 제기하는 광고 표현의 경계 문제를 해결하기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h13.json"
+   },
+   {
+    "id": "korea_2027_h14",
+    "title": "함께 부르는 노래",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠함께 부르자는 청유와 (나)의 ㉡노랫말에 담긴 대의에 나타나는 노래에 대한 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢집합 감정의 관점에서 (가)의 ㉠함께 부르자는 청유와 (나)의 ㉡노랫말에 담긴 대의를 각각 평가하시오.",
+     "(라)에 나타난 갈등을 해결하기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h14.json"
+   },
+   {
+    "id": "korea_2027_h15",
+    "title": "끊어진 것을 잇는 법",
+    "subtype": "인문A",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 ㉠과 (나)의 ㉡에 나타나는, 단절에 대응하는 태도의 공통점과 차이점을 설명하시오.",
+     "(다)의 ㉢재구성의 관점에서 (가)의 ㉠과 (나)의 ㉡을 각각 평가하시오.",
+     "(라)에 나타난 기술 단절의 문제를 해결하기 위해 어떠한 노력이 필요한지 (가), (나), (다)를 모두 활용하여 자신의 생각을 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h15.json"
+   },
+   {
+    "id": "korea_2027_h16",
+    "title": "뉴스가 비추는 위험의 크기",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (다)의 그림과 (라)의 표에 나타난 결과를 관련지어 분석하시오.",
+     "제시문 (다)와 (마)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (라)와 (사)를 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 예방 예산의 배분 기준에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h16.json"
+   },
+   {
+    "id": "korea_2027_h17",
+    "title": "묶음과 낱",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (다)와 (라)를 활용하여 제시문 (나)의 제안이 기대한 효과를 거둘 수 있을지 설명하시오.",
+     "제시문 (바)와 (사)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 지역 간 학력 격차를 줄이기 위한 새로운 해결 방안을 제시하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h17.json"
+   },
+   {
+    "id": "korea_2027_h18",
+    "title": "성공 사례가 말해 주지 않는 것",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 6,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)와 (다)를 활용하여 제시문 (나)에 나타난 조사 방법을 분석하시오.",
+     "제시문 (라)의 관점을 바탕으로 제시문 (다)의 그림을 해석하고, 이를 토대로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (가), (라), (바)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 실패 정보의 수집과 활용 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h18.json"
+   },
+   {
+    "id": "korea_2027_h19",
+    "title": "질문이 만든 다수",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 6,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)와 (다)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (라)를 활용하여 제시문 (다)에 나타난 결과를 분석하시오.",
+     "제시문 (다)와 (바)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 여론조사 결과를 정책 결정에 활용하는 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h19.json"
+   },
+   {
+    "id": "korea_2027_h20",
+    "title": "발생의 기록, 점검의 기록",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 6,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 관점을 바탕으로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (다)와 (라)를 활용하여 제시문 (나)의 주장이 근거로 삼은 통계를 어떻게 읽어야 하는지 설명하시오.",
+     "제시문 (바)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 시설 안전 관리 정책의 개선 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h20.json"
+   },
+   {
+    "id": "korea_2027_h21",
+    "title": "순위표의 양 끝",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 6,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (다)의 표가 제시문 (나)의 ㉠을 지지하는지 설명하시오.",
+     "제시문 (라)의 관점을 바탕으로 제시문 (다)에 나타난 결과가 발생한 이유를 설명하시오.",
+     "제시문 (가), (라), (바)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 학군 성과 평가 제도의 개선 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h21.json"
+   },
+   {
+    "id": "korea_2027_h22",
+    "title": "측정소 앞의 맑은 공기",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 6,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (다)의 표가 제시문 (나)의 ㉠을 지지하는지 설명하시오.",
+     "제시문 (라)의 관점을 바탕으로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (가), (라), (바)를 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 지표를 공개하는 정책이 본래의 목표를 이루기 위한 조건에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h22.json"
+   },
+   {
+    "id": "korea_2027_h23",
+    "title": "꾸중 다음 날의 점수",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (나)에 나타난 결과를 분석하고, 제시문 (다)의 그림이 (나)의 ㉠을 지지하는지 설명하시오.",
+     "제시문 (마)의 관점을 바탕으로 제시문 (라)의 표를 해석하고, 이를 토대로 제시문 (나)에 나온 지도 방식의 효과를 구체적으로 설명하시오.",
+     "제시문 (가), (라), (사)를 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 학생 지도 방식의 효과를 확인하는 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h23.json"
+   },
+   {
+    "id": "korea_2027_h24",
+    "title": "8분 안에 도착한다는 것",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 바탕으로 제시문 (다)의 표가 제시문 (나)의 ㉠을 지지하는지 설명하시오.",
+     "제시문 (라)를 활용하여 제시문 (다)의 표에 나타난 결과가 발생한 이유를 설명하고, 이를 바탕으로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (가), (라), (바)와 제시문 (사)의 그림을 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 지표로 공공 기관의 성과를 관리할 때 갖추어야 할 조건에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h24.json"
+   },
+   {
+    "id": "korea_2027_h25",
+    "title": "정확한 검사가 전하는 잘못된 소식",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)와 (다)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (라)를 활용하여 제시문 (나)의 검사에서 양성 판정을 받은 사람이 실제로 질환 R를 가지고 있을 가능성을 구체적으로 설명하고, 그 값이 제시문 (다)의 표에서 양성 판정자 가운데 질환자가 차지하는 비율과 다른 이유를 설명하시오.",
+     "제시문 (마)와 (사)를 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 검사 도입 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h25.json"
+   },
+   {
+    "id": "korea_2027_h26",
+    "title": "어느 병원이 더 안전한가",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 표와 (다)의 그림을 활용하여 제시문 (가)의 ㉠을 평가하시오.",
+     "제시문 (라)를 활용하여 제시문 (나)와 (다)의 결과가 서로 어긋나게 된 이유를 설명하고, 이를 바탕으로 제시문 (마)에 나타난 차별 의혹을 평가하시오.",
+     "제시문 (라)와 (사)의 그림을 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 병원 성적 공개의 바람직한 방식에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h26.json"
+   },
+   {
+    "id": "korea_2027_h27",
+    "title": "삼 년 앞선 곡선",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여, 제시문 (다)의 표가 제시문 (나)의 ㉠을 뒷받침하는지 설명하시오.",
+     "제시문 (라)의 관점을 바탕으로 제시문 (다)의 표에 나타난 시차를 해석하고, 이를 토대로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (가), (바)와 제시문 (사)의 그림을 활용하여 제시문 (마)의 ㉡과 ㉢을 각각 평가하고, 두 사업의 우선순위에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h27.json"
+   },
+   {
+    "id": "korea_2027_h28",
+    "title": "커트라인 양쪽의 학생들",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)와 (다)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (라)를 활용하여 제시문 (다)의 표에서 기준선 인접 비교의 전제가 성립하는지 확인하고, 이 비교로 장학 지원의 효과를 어떻게 측정할 수 있는지 설명하시오.",
+     "제시문 (마)와 제시문 (사)의 그림을 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 장학 제도의 운영 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h28.json"
+   },
+   {
+    "id": "korea_2027_h29",
+    "title": "바늘을 돌려도 폭풍우는 온다",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)를 활용하여 제시문 (다)의 결과를 분석하고, 이를 바탕으로 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (라)와 (마)를 활용하여 제시문 (나)에 나온 계획의 효과를 구체적으로 설명하시오.",
+     "제시문 (가), (마)와 제시문 (사)를 활용하여 제시문 (바)의 ㉡과 ㉢을 각각 평가하고, 중도 이탈을 줄이기 위한 지원 배분 방안에 대한 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h29.json"
+   },
+   {
+    "id": "korea_2027_h30",
+    "title": "온라인 광장과 기울어진 저울",
+    "subtype": "인문B",
+    "track": "2027 학생부종합 계열적합전형 | 인문",
+    "prep_seconds": 1260,
+    "interview_seconds": 420,
+    "n_passages": 7,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)와 (다)를 활용하여 제시문 (나)의 ㉠을 평가하시오.",
+     "제시문 (가)와 (바)를 활용하여 제시문 (라)에 나타난 결과를 분석하시오.",
+     "제시문 (라), (바), (사)를 활용하여 제시문 (마)의 ㉡과 ㉢을 평가하고, K시가 시민 의견을 조사할 때 어떠한 노력이 필요한지 자신의 생각을 말해보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)",
+     "(바)",
+     "(사)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_interview_bank_2027/sets/korea_2027_h30.json"
+   }
+  ]
+ },
+ "pastexam": [
+  {
+   "file": "/Users/gregory/Workspace/interview_pastexam_2026/korea/sets/korea_2026_gichul_hum_am.json",
+   "id": "korea_2026_gichul_hum_am",
+   "title": "우위에 선 자리는 왜 갈등을 낳는가",
+   "n_passages": 4,
+   "n_questions": 3,
+   "q_texts": [
+    "(가)의 ㉠고위층 인사와 (나) ㉡청의 태도에 나타나는 공통점과 차이점을 설명하시오.",
+    "(나)의 ㉡청과 ㉢영국의 입장에서 (다)의 ㉣화쟁(和諍)과 ㉤세계 시민주의를 각각 평가하시오.",
+    "(라)의 화자 ‘나’가 깨달은 점이 무엇인지 밝히고, 그것을 바탕으로 (가)와 (나)에 나타난 갈등 상황의 해결책에 대해 자유롭게 말해 보시오."
+   ],
+   "passage_heads": [
+    "“절차도 모르나? 어디에 들른 거요? 일을 어떻게 처리해야 하는지도 몰라? 그런 일이라면 먼저 관공서에 문서로 제출했어야지. 그러면 관공서에서 ",
+    "㉡청은 도자기, 생사, 차 등을 유럽에 수출하고 그 대금으로 은을 들여왔다. 그러나 청은 유럽 상인들과 한인이 결탁하여 반청 운동을 일으킬 것을",
+    "원효는 다양한 이론이 갈등하는 것은 불교의 진리가 하나의 마음[一心]과 하나의 지혜(智慧)를 표현한 것임을 모르고, 자기 이론만이 옳다고 믿기 ",
+    "나는 마치 손주 새끼들 반기듯이 만면에 웃음을 띠고 두 손까지 활짝 벌려 그들 고양이 가족을 환대한다*는 표시를 하며 부엌문 쪽으로 갔다. 그러"
+   ]
+  },
+  {
+   "file": "/Users/gregory/Workspace/interview_pastexam_2026/korea/sets/korea_2026_gichul_hum_pm.json",
+   "id": "korea_2026_gichul_hum_pm",
+   "title": "원인은 어디에 있는가",
+   "n_passages": 7,
+   "n_questions": 3,
+   "q_texts": [
+    "제시문 (가)의 주장을 평가하고, 이를 바탕으로 제시문 (나)의 ㉠을 평가하시오.",
+    "제시문 (다)와 (라)를 활용하여 제시문 (나)에 나온 정책의 효과를 구체적으로 설명하시오.",
+    "제시문 (가), (바), (사)를 활용하여 제시문 (마)의 ㉡과 ㉢을 평가하시오."
+   ],
+   "passage_heads": [
+    "연구자 A는 아이스크림 판매량이 많은 시기에 익사 사고가 많이 발생한다는 사실을 발견하였다. 이에 그는 아이스크림 판매가 증가할수록 익사 사고도",
+    "B국 정부는 도심부 내 일반도로의 제한속도를 60km/h에서 50km/h로 낮추는 정책을 2021년 4월부터 전국적으로 시행하기로 하였다. 그런",
+    "다음 표는 (나)에 나온 B국의 지역별 교통사고 사망 건수를 나타낸다.",
+    "정책 효과를 측정하는 방법에는 여러 가지가 있다. 그 중 하나로, 정책이 시행된 집단(실험 집단)의 전후 변화에서 정책이 시행되지 않은 집단(통",
+    "일반적으로 경제적 안정은 행복한 삶을 실현하기 위한 필수 조건으로 여겨진다. 그러나 연구자 F는 ㉡시간에 따라 한 국가의 1인당 실질 소득이 증",
+    "20세기 G국에서 볼링은 대중적인 클럽 스포츠였다. 팀을 이루어 정기적으로 경기에 참여하는 볼링 리그는 단순한 여가 활동을 넘어, 사람들 간의 ",
+    "다음 그림은 1980년부터 2000년 사이 (바)에 나온 G국의 여러 지표를 나타낸다.\n\n<그림 1> 연도별 1인당 실질 GDP         "
+   ]
+  }
+ ]
+}

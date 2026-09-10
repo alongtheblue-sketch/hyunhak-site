@@ -1,0 +1,40 @@
+{
+ "code": "korea-eq-hum",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "고려대학교",
+  "univ_short": "고려대",
+  "track": "학생부종합 고른기회전형",
+  "unit": "인문",
+  "label": "고려대 고른기회전형 인문",
+  "form": "제시문 기반 면접",
+  "passages": 4,
+  "prep_sec": 720,
+  "answer_sec": 360,
+  "questions": 3,
+  "points": "비공개(역량 3축 등급 평가)",
+  "stage": "1단계 서류 100%(3배수) → 2단계 1단계 성적 60% + 면접 40%, 수능 최저 없음",
+  "ratio_src": "2027 수시모집요강 학생부종합(고른기회전형) 전형요소",
+  "lang": "한국어",
+  "scope": "국어·사회·윤리·과학 교과 통합(2026 문항카드: 생물 다양성·문화 상대주의·규칙 공리주의·문학)",
+  "eval_axes": [
+   "분석력",
+   "적용력",
+   "종합적 사고력"
+  ],
+  "src": [
+   "2027 고려대 수시모집요강 Ⅴ 면접평가 안내 p.29(준비 12분·면접 6분)",
+   "2027 입학전형시행계획 p.13(모집 199명)",
+   "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"
+  ],
+  "status": "opening",
+  "open_date": "2026-09-14",
+  "sku": null,
+  "price": null,
+  "single_price": null,
+  "lecture_count": null,
+  "admission_quota": 199
+ },
+ "bank": null,
+ "pastexam": null
+}

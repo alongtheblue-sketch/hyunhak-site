@@ -14,6 +14,8 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import build_guidebook as B   # noqa: E402
 import seo_common as C         # noqa: E402
+sys.path.insert(0, str(Path(__file__).resolve().parent / "exam_pages"))
+import codes as EX             # noqa: E402  전형별 상세면 8 코드 원장 (2026-09-10)
 
 ROOT = Path(__file__).resolve().parent.parent
 TPL = Path(__file__).with_name("interview_hub_v1.html")
@@ -155,6 +157,19 @@ def faq_html(faq):
     return "\n".join(f'      <details class="faq"><summary>{esc(q)}</summary><div class="a"><p>{esc(a)}</p></div></details>' for q, a in faq)
 
 
+def exam_cards():
+    """허브 #exam 카드 8장. 값은 _tools/exam_pages/facts/<code>.json spec 만 쓴다 (2026-09-10)."""
+    out = []
+    for code, name, status in EX.CODES:
+        f = json.loads((Path(__file__).resolve().parent / "exam_pages" / "facts" / f"{code}.json").read_text(encoding="utf-8"))["spec"]
+        st = "판매 중" if f.get("status") == "on_sale" else f"{EX.OPEN_DATE} 오픈 예정"
+        out.append('      <div class="k"><b>%s</b><small>%s</small>'
+                   '<p>제시문 %d편, 준비 %d분, 답변 %d분, 질문 %d개.</p>'
+                   '<a class="tlink" href="interview/%s.html">출제 유형과 풀이법 <span class="ar" aria-hidden="true">→</span></a></div>'
+                   % (esc(name), esc(st), f["passages"], f["prep_sec"] // 60, f["answer_sec"] // 60, f["questions"], code))
+    return "\n".join(out)
+
+
 def build():
     cat, meta, items = load()
     n = len(items)
@@ -177,7 +192,7 @@ def build():
     m = {"__TITLE__": esc(seo_entry(n, n_doc, n_sale)["title"]), "__LEDE__": lede,
          "__N__": str(n), "__T__": str(n_tracks), "__N_DOC__": str(n_doc), "__N_PAS__": str(n_pas), "__N_MIX__": str(n_mix),
          "__N_SALE__": str(n_sale), "__ROWS__": rows_html(items, meta),
-         "__FAQ_GENERIC__": faq_html(gen), "__FAQ_UNIV__": faq_html(uni)}
+         "__FAQ_GENERIC__": faq_html(gen), "__FAQ_UNIV__": faq_html(uni), "__EXAM__": exam_cards()}
     html = B.fill(TPL.read_text(encoding="utf-8"), m)
     left = re.findall(r"__[A-Z_]+__", html)
     if left:
@@ -209,7 +224,7 @@ def write_manifest(n, n_doc, n_sale, items):
     m = C.load_manifest()
     e = seo_entry(n, n_doc, n_sale)
     listed = [f"guidebook/{x['slug']}.html" for x in sorted(items.values(), key=sort_key)
-              if x.get("onsale", True) and x["slug"] not in B.STUDIO] + ["programs/yonsei.html", "programs/korea.html"]
+              if x.get("onsale", True) and x["slug"] not in B.STUDIO] + ["programs/yonsei.html", "programs/korea.html"] + [f"interview/{c}.html" for c, _, _ in EX.CODES]
     ent = m["pages"].setdefault(REL, {})
     ent.update({"title": e["title"], "description": e["description"], "answer": e["answer"], "keywords": e["keywords"],
                 "type": "hub", "priority": 0.9, "changefreq": "weekly", "noindex": False,

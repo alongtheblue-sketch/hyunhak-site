@@ -1,0 +1,1574 @@
+[
+ {
+  "f": "tpl_A.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 6567,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 89.9,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 395,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 16,
+    "lh": 1.5,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3430,
+   "w": 1018
+  },
+  "soon": null,
+  "doc": {
+   "r": 654,
+   "b": 4241,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1414,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_A_open.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 6960,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 89.6,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 413,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 16,
+    "lh": 1.5,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3613,
+   "w": 1018
+  },
+  "soon": {
+   "r": 1149,
+   "b": 5612,
+   "w": 1018
+  },
+  "doc": {
+   "r": 654,
+   "b": 4424,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1597,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ },
+ {
+  "f": "tpl_B.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 6375,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.9,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 462,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 28,
+    "lh": 1.32,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3208,
+   "w": 1018
+  },
+  "soon": null,
+  "doc": {
+   "r": 654,
+   "b": 4019,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1290,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_B_open.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 6722,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.7,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 486,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 28,
+    "lh": 1.32,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3345,
+   "w": 1018
+  },
+  "soon": {
+   "r": 1149,
+   "b": 5374,
+   "w": 1018
+  },
+  "doc": {
+   "r": 654,
+   "b": 4155,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1427,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ },
+ {
+  "f": "tpl_C.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 6724,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.4,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 417,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 16,
+    "lh": 1.5,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3592,
+   "w": 1018
+  },
+  "soon": null,
+  "doc": {
+   "r": 654,
+   "b": 4399,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1414,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_C_open.html",
+  "vw": 1280,
+  "err": 0,
+  "ox": 0,
+  "docH": 7118,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.1,
+  "off8": [
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2",
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "wrap paddingLeft 51.2",
+   "wrap paddingRight 51.2"
+  ],
+  "tot8": 435,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 50.8,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 28,
+    "lh": 1.6,
+    "ls": -0.0069,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 41.7,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 16,
+    "lh": 1.5,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 1149,
+   "b": 3775,
+   "w": 1018
+  },
+  "soon": {
+   "r": 1149,
+   "b": 5770,
+   "w": 1018
+  },
+  "doc": {
+   "r": 654,
+   "b": 4582,
+   "w": 523
+  },
+  "spec": {
+   "r": 1149,
+   "b": 1597,
+   "w": 1018
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ },
+ {
+  "f": "tpl_A.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 8612,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.8,
+  "off8": [
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 393,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 13,
+    "lh": 1.5,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 4002,
+   "w": 350
+  },
+  "soon": null,
+  "doc": {
+   "r": 370,
+   "b": 4761,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 1387,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_A_open.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 9057,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 90.5,
+  "off8": [
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 411,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 13,
+    "lh": 1.5,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 4141,
+   "w": 350
+  },
+  "soon": {
+   "r": 370,
+   "b": 7400,
+   "w": 350
+  },
+  "doc": {
+   "r": 370,
+   "b": 4900,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 1527,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ },
+ {
+  "f": "tpl_B.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 9282,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 92.1,
+  "off8": [
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 458,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 19.5,
+    "lh": 1.32,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 4582,
+   "w": 350
+  },
+  "soon": null,
+  "doc": {
+   "r": 370,
+   "b": 5341,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 1974,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_B_open.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 9808,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 91.9,
+  "off8": [
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 482,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 19.5,
+    "lh": 1.32,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 4802,
+   "w": 350
+  },
+  "soon": {
+   "r": 370,
+   "b": 8151,
+   "w": 350
+  },
+  "doc": {
+   "r": 370,
+   "b": 5561,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 2195,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ },
+ {
+  "f": "tpl_C.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 8525,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 48,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 91.3,
+  "off8": [
+   "badge seal paddingTop 6",
+   "badge seal paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 415,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 21,
+  "habN": 13,
+  "daN": 58,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 13,
+    "lh": 1.5,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 3896,
+   "w": 350
+  },
+  "soon": null,
+  "doc": {
+   "r": 370,
+   "b": 4655,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 1387,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 1
+ },
+ {
+  "f": "tpl_C_open.html",
+  "vw": 390,
+  "err": 0,
+  "ox": 0,
+  "docH": 8969,
+  "small": [],
+  "small48n": 3,
+  "small48": [
+   "본문으로 건너뛰기 h47",
+   "현학적 연구소 h44",
+   "면접 형태 판정표 h44"
+  ],
+  "focMin": 5.04,
+  "focBad": [],
+  "txtMin": 4.56,
+  "txtBad": [],
+  "txtN": 51,
+  "cut": [],
+  "vstack": [],
+  "ovf": [],
+  "p8": 91,
+  "off8": [
+   "badge mute paddingTop 6",
+   "badge mute paddingBottom 6",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1",
+   "A marginBottom -1"
+  ],
+  "tot8": 433,
+  "banned": {
+   "mid": 0,
+   "dash": 0,
+   "excl": 0,
+   "sup": 0,
+   "pass": 0
+  },
+  "ph": 26,
+  "habN": 13,
+  "daN": 61,
+  "textAlive": true,
+  "roles": {
+   "h1": {
+    "px": 35.4,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "lede": {
+    "px": 19.5,
+    "lh": 1.6,
+    "ls": -0.0098,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "h2": {
+    "px": 29.1,
+    "lh": 1.32,
+    "ls": -0.032,
+    "ff": "Pretendard Variable",
+    "w": "800"
+   },
+   "spec_dd": {
+    "px": 13,
+    "lh": 1.5,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "type_def": {
+    "px": 13,
+    "lh": 1.75,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "rule": {
+    "px": 16,
+    "lh": 1.75,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "pass": {
+    "px": 13,
+    "lh": 1.85,
+    "ls": -0.0148,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "faq_a": {
+    "px": 16,
+    "lh": 1.8,
+    "ls": -0.012,
+    "ff": "Pretendard Variable",
+    "w": "400"
+   },
+   "badge": {
+    "px": 12,
+    "lh": 1,
+    "ls": 0.06,
+    "ff": "JetBrains Mono",
+    "w": "500"
+   }
+  },
+  "lock": {
+   "r": 370,
+   "b": 4035,
+   "w": 350
+  },
+  "soon": {
+   "r": 370,
+   "b": 7313,
+   "w": 350
+  },
+  "doc": {
+   "r": 370,
+   "b": 4794,
+   "w": 350
+  },
+  "spec": {
+   "r": 370,
+   "b": 1527,
+   "w": 350
+  },
+  "anch": 6,
+  "sib": 8,
+  "imgs": 0,
+  "svgs": 0,
+  "btns": 0
+ }
+]
