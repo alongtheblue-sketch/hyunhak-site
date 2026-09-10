@@ -45,3 +45,12 @@ https://hyunhak.com/guidebook/swu.html
 https://hyunhak.com/guidebook/ulsan.html
 https://hyunhak.com/guidebook/incheon.html
 https://hyunhak.com/guidebook/hanyang-erica.html
+# 2026-09-10 13:24~13:26 접수 8건(면접 전형별 상세면, 사이트 6fae76e 배포 뒤): 네이버 내역 표 등재 8/8 실측 + GSC URL 검사 색인 생성 요청 8/8 「색인 생성 요청됨」. notice.html 은 공지 SQL 적용 뒤 별도.
+https://hyunhak.com/interview/yonsei-hum.html
+https://hyunhak.com/interview/yonsei-sci.html
+https://hyunhak.com/interview/yonsei-intl.html
+https://hyunhak.com/interview/yonsei-mirae.html
+https://hyunhak.com/interview/korea-hum.html
+https://hyunhak.com/interview/korea-sci.html
+https://hyunhak.com/interview/korea-eq-hum.html
+https://hyunhak.com/interview/korea-eq-sci.html
