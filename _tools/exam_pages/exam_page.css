@@ -122,14 +122,14 @@
 }
 /* C 절차형: 시간 배분을 세로 타임라인으로 세운다. 권고안(A 문서형)에도 이 구획만 얹는다 (SELF_CHECK §8, 2026-09-10) */
 :where(body.xa) .xtime,:where(body.xc) .xtime{border-top:0;border-left:var(--rule-strong);margin-left:var(--s2);margin-top:var(--s4)}
-:where(body.xa) .xtime,:where(body.xc) .xtime .cap{margin-left:var(--s5);border-bottom:var(--rule-strong)}
-:where(body.xa) .xtime,:where(body.xc) .xtime .row{position:relative;grid-template-columns:minmax(0,7em) minmax(0,1fr);
+:where(body.xa) .xtime .cap,:where(body.xc) .xtime .cap{margin-left:var(--s5);border-bottom:var(--rule-strong)}
+:where(body.xa) .xtime .row,:where(body.xc) .xtime .row{position:relative;grid-template-columns:minmax(0,7em) minmax(0,1fr);
   padding:var(--s3) 0 var(--s3) var(--s5);border-bottom:0}
-:where(body.xa) .xtime,:where(body.xc) .xtime .row::after{content:"";position:absolute;left:calc(var(--s1) * -1);top:var(--s4);
+:where(body.xa) .xtime .row::after,:where(body.xc) .xtime .row::after{content:"";position:absolute;left:calc(var(--s1) * -1);top:var(--s4);
   width:var(--s2);height:var(--s2);border-radius:50%;background:var(--paper);box-shadow:inset 0 0 0 2px var(--ink)}
-:where(body.xa) .xtime,:where(body.xc) .xtime .row .st{position:absolute;left:var(--s3);top:var(--s4);line-height:1}
-:where(body.xa) .xtime,:where(body.xc) .xtime .bar{grid-column:1/-1;margin-top:var(--s2)}
-@media (max-width:480px){:where(body.xa) .xtime,:where(body.xc) .xtime .row{grid-template-columns:minmax(0,1fr)}}
+:where(body.xa) .xtime .row .st,:where(body.xc) .xtime .row .st{position:absolute;left:var(--s3);top:var(--s4);line-height:1}
+:where(body.xa) .xtime .bar,:where(body.xc) .xtime .bar{grid-column:1/-1;margin-top:var(--s2)}
+@media (max-width:480px){:where(body.xa) .xtime .row,:where(body.xc) .xtime .row{grid-template-columns:minmax(0,1fr)}}
 
 /* 비공개 층 경계. 회색 자리표와 자물쇠 없이 괘선과 라벨로만 */
 :where(body.exam) .xlock{margin-top:var(--s5);border-top:var(--rule-hd);padding-top:var(--s3)}

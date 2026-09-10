@@ -22,7 +22,10 @@ for (const code of FILES) for (const w of [1280, 390]) {
     document.querySelectorAll('a,button,summary').forEach(el => { const r = el.getBoundingClientRect(); if (r.width > 0 && r.height > 0 && r.height < 44) small.push((el.textContent || '').trim().slice(0, 14) + ' h' + Math.round(r.height)); });
     const ph = document.querySelectorAll('.ph').length;
     const banned = { mid: (document.body.innerText.match(/·/g) || []).length, dash: (document.body.innerText.match(/—/g) || []).length };
-    return { ox, docH: de.scrollHeight, over: over.slice(0, 8), overN: over.length, cellOver: tableOver.length, small: small.slice(0, 8), smallN: small.length, ph, banned };
+    const liMax = Math.max(0, ...[...document.querySelectorAll('.xrules li, .xlock li, .xsteps li')].map(el => el.getBoundingClientRect().height));
+    const rowZero = [...document.querySelectorAll('.xtime .row')].filter(el => el.getBoundingClientRect().width < 50).length;
+    const absOut = [...document.querySelectorAll('main *')].filter(el => { const r = el.getBoundingClientRect(); return r.width > 0 && r.bottom < 0; }).length;
+    return { ox, liMax: Math.round(liMax), rowZero, absOut, docH: de.scrollHeight, over: over.slice(0, 8), overN: over.length, cellOver: tableOver.length, small: small.slice(0, 8), smallN: small.length, ph, banned };
   }, w);
   await pg.screenshot({ path: `${OUT}/prod_${code}_${w}.png`, fullPage: true });
   rows.push({ code, vw: w, err: errs.length, ...m });

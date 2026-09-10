@@ -77,12 +77,14 @@ def spec_rows(f, notes, ratio_note_idx, opening):
         rows.append(("이용권", f'단위 전권 <b>{sp["price"]:,}</b>원, 지문 낱권 <b>{sp["single_price"]:,}</b>원'))
         rows.append(("스튜디오 세트", f'<b>{bank["n_sets"]}</b>세트, 세트마다 <b>5</b>회 응시'))
         rows.append(("해설 인강", f'<b>{sp["lecture_count"]}</b>편'))
+    refs = [(k, v, fn_index(k, notes, ratio_note_idx) if k != "형태" else 0) for k, v in rows]
+    used = sorted({fn for _, _, fn in refs if fn})
+    remap = {old: i for i, old in enumerate(used, 1)}          # 참조된 각주만 1부터 다시 매긴다 (critic 권고: 고아 각주 3번 5면)
     out = []
-    for k, v in rows:
-        fn = fn_index(k, notes, ratio_note_idx) if k != "형태" else 0
-        sup = f'<sup class="fn">{fn}</sup>' if fn else ""
+    for k, v, fn in refs:
+        sup = f'<sup class="fn">{remap[fn]}</sup>' if fn else ""
         out.append(f'<div class="r"><dt>{k}</dt><dd>{v}{sup}</dd></div>')
-    return "".join(out)
+    return "".join(out), [notes[i - 1] for i in used]
 
 def build_one(code, mod):
     d = json.loads((D / "drafts" / f"{code}.json").read_text(encoding="utf-8"))
@@ -126,10 +128,9 @@ def build_one(code, mod):
     if opening:
         mats = [("제시문 면접 스튜디오 세트", f"{EX.OPEN_DATE} 오픈"), ("풀이법 해설 인강", f"{EX.OPEN_DATE} 오픈")]
         if code.startswith("korea-eq"): mats.append(("2024, 2025, 2026 문항카드 원문", "선행학습영향평가 보고서"))
-        cta = (f'<div class="xcta"><a class="tlink" href="../notice.html?id={EX.NOTICE_ID}">{EX.OPEN_DATE} 오픈, 공지 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></div>'
-               f'<div class="xsoon"><div><h3>{E(name)} 응시 단위는 <span class="d">{EX.OPEN_DATE}</span>에 엽니다</h3>'
+        cta = (f'<div class="xsoon"><div><h3>{E(name)} 응시 단위는 <span class="d">{EX.OPEN_DATE}</span>에 엽니다</h3>'
                f'<p>여는 날에 세트와 해설 인강이 함께 섭니다. 그때까지 이 면의 규격과 풀이 절차는 그대로 봅니다.</p></div>'
-               f'<p><a class="tlink" href="../notice.html?id={EX.NOTICE_ID}">공지 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></p></div>')
+               f'<p><a class="tlink" href="../notice.html?id={EX.NOTICE_ID}">{EX.OPEN_DATE} 오픈, 공지 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></p></div>')   # 링크 1개 (critic 권고: 50px 간격 중복)
         badge = f'<span class="badge mute">{EX.OPEN_DATE} 오픈 예정</span><span class="k">2027학년도 기준</span>'
     else:
         mats = [("제시문 면접 스튜디오 세트", f'{bank["n_sets"]}세트'), ("풀이법 해설 인강", f'{sp["lecture_count"]}편')]
@@ -137,6 +138,7 @@ def build_one(code, mod):
         cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">면접 스튜디오 이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
                f'<a class="tlink" href="../lectures/{code}.html">풀이법 인강 <span class="ar" aria-hidden="true">&rarr;</span></a></div>')
         badge = '<span class="badge seal">판매 중</span><span class="k">2027학년도 기준</span>'
+    spec_html, used_notes = spec_rows(f, notes, ratio_idx, opening)
     sib = "".join(f'<li><a href="{c}.html"{" aria-current=\"page\"" if c == code else ""}><span>{E(n)}</span><span class="k">{E(s)}</span></a></li>'
                   for c, n, s in EX.CODES)
     title = f'{d["title_tag"]} | 현학적 연구소'
@@ -146,12 +148,12 @@ def build_one(code, mod):
         "code": code, "mod": mod, "lang_title": E(title), "canonical": f"https://hyunhak.com/interview/{code}.html", "desc": E(desc), "aeo": E(answer),
         "crumb_name": san(sp["label"]), "status_badge": badge, "h1": E(d["h1"]),
         "lead": "".join(f"<p>{num_b(s)}</p>" for s in d["lead"]),
-        "spec_rows": spec_rows(f, notes, ratio_idx, opening),
-        "spec_notes": "".join(f'<li><span>{i}</span><span>{san(n)}</span></li>' for i, n in enumerate(notes, 1)),
+        "spec_rows": spec_html,
+        "spec_notes": "".join(f'<li><span>{i}</span><span>{san(n)}</span></li>' for i, n in enumerate(used_notes, 1)),
         "type_cards": "".join(tc),
-        "method_rules": "".join(f'<li><b>{E(p["title"])}</b> {E(p["body"])}</li>' for p in d["method"]["principles"]),
+        "method_rules": "".join(f'<li><span><b>{E(p["title"])}</b> {E(p["body"])}</span></li>' for p in d["method"]["principles"]),   # li 격자(24px+1fr)라 span 1개로 감싼다 (critic B-2)
         "time_cap": time_cap, "time_rows": "".join(rows),
-        "lock_items": "".join(f"<li><span></span><span>{E(t)}</span></li>" for t in [d["method"]["boundary"]] + LOCK),
+        "lock_items": "".join(f"<li><span>{E(t)}</span></li>" for t in [d["method"]["boundary"]] + LOCK),   # li 격자(16px+1fr)의 첫 칸은 ::before, 자식은 span 1개 (디렉터 결함4 「격자 자식 수」)
         "sample_note": SAMPLE_NOTE_CARD if code.startswith("korea-eq") else SAMPLE_NOTE_BANK,
         "sample_doc": doc, "sample_src": E(sm["source_note"]), "sample_steps": steps,
         "sample_first": E(sm["first_sentence"]), "sample_trap": E(sm["trap"]),

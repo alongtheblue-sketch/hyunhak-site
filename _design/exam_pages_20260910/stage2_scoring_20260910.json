@@ -1,0 +1,55 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-09-10T11:43:29+09:00",
+ "deliverable_path": "/Users/gregory/Workspace/hyunhak-site/interview/*.html (8본) + /Users/gregory/Workspace/hyunhak-site/assets/exam_page.css",
+ "lenses": {
+  "L1": {
+   "score": 1,
+   "evidence": "약속 '풀이법'의 시각 번역 2축이 8/8 면에서 소멸. .xrules 원칙 목록 전 항목이 24px 칸에 1글자씩 세로 배치(badRules=ruleN, 100%), .xtime 은 computed position:absolute 41x32px border-radius:50% 로 접혀 y=46 문서 최상단 이탈. 디렉터 권고 핵심인 'A + #method 세로 타임라인'이 렌더 0."
+  },
+  "L2": {
+   "score": 4,
+   "evidence": "그라디언트 선언 0, 이미지 0, box-shadow 발광 0, 합격 배지 0. 괘선과 楮紙 색면 중심이라 한국 학원 LP 관용구와 갈린다. 유형 지도 4열 표와 4단 준비 순서는 관습적이나 04 정보 용도에 적합."
+  },
+  "L3": {
+   "score": 2,
+   "evidence": "온전한 절반의 사다리는 선다(H1 var(--t-h1), 본문 16px/24px, 계기값 JetBrains Mono tabular-nums, 시험지 발췌 line-height 1.85). 그러나 면 높이 49~55% 를 차지하는 #method 가 행폭 24px, 1글자 measure 로 조판되어 행 길이 통제 붕괴."
+  },
+  "L4": {
+   "score": 2,
+   "evidence": "1280 판면 1018px, 산문 measure 576px 적정. 그러나 .xtime 이 흐름 이탈해 #method 에 구조 공백 발생, 이탈 블록이 y 199~2382 x=111 로 크럼브부터 #types 표까지 관통. #types 4열 표는 4열 6줄 행에서 2~3열이 4줄분 수동 여백(방법론 적용 행)."
+  },
+  "L5": {
+   "score": 5,
+   "evidence": "exam_page.css 전 규칙 var() 토큰, 리터럴 색 0, 신규 색 0. 朱印 --seal 은 번호 카운터/배지/각주 기호/활성 앵커 밑줄에만. 金泥 --gold 는 .xsoon 玄墨 띠 위 날짜 1자리에만. 楮紙 지배면적, 반전 표면 1개."
+  },
+  "L6": {
+   "score": 2,
+   "evidence": "밀도 리듬 파괴. #method 6,664~8,480px 대 #sample 833~958px 대 #pitfalls 285px. 1280 총 높이 13,465~15,366px 중 절반이 한 구획 고장. 오픈 예정 면은 '9월 14일 오픈, 공지 보기' 텍스트 링크와 .xsoon 띠 '공지 보기'가 같은 목적지로 약 50px 간격 중복."
+  },
+  "L7": {
+   "score": 2,
+   "evidence": "각주 체계(sup.fn + .fnlist 4출처), '대학 기출 지문이 아닙니다' 고지, tel: 링크, aria-current 이중, FAQPage JSON-LD 5문항 확인. 반면 각주 3번이 korea-hum/korea-sci/korea-eq-hum/yonsei-hum/yonsei-sci 5면에서 정의만 있고 본문 기호 부재(표 번호 1,2,4 로 건너뜀). .k 자간이 어절 간격을 벌린다."
+  },
+  "L8": {
+   "score": 2,
+   "evidence": "390 가로 넘침 0(scrollW 390 = clientW 390), 규격표 2열 유지, 예시 문항 2열→1열 전환, 앵커 sticky 와 scroll-margin-top 정합 확인. 그러나 절대배치 이탈 블록이 셸 헤더 위로 올라오고 0폭 텍스트 열이 1280/390 두 브레이크포인트 모두 재현, 매체 기본 요건 미달."
+  },
+  "L9": {
+   "score": 3,
+   "evidence": "대비 sRGB 상대휘도 실측 전건 AA: .k/.note/.fnlist 5.04:1(12~13px), 본문 8.13:1, 규격표 값 11.73:1, .xsoon 본문 7.78:1, 金泥 날짜 6.28:1. main 안 44px 미만 히트박스 0. 玄墨 띠 포커스 링 楮紙 반전 확인. 과장 카피 0. 감점은 절대배치가 만든 시각 순서 대 DOM 순서 불일치(WCAG 1.3.2)와 1글자 행폭 가독 붕괴."
+  }
+ },
+ "total": 23,
+ "minimum_check": {
+  "L1": "≥4 FAIL",
+  "L8": "≥3 FAIL",
+  "L9": "≥3 OK"
+ },
+ "release_recommendation": "FULL_REWORK",
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}
