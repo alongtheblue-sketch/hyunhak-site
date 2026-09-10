@@ -1,0 +1,82 @@
+{
+ "version": "v3.1-stage2",
+ "timestamp": "2026-09-10T11:57:54+09:00",
+ "round": 2,
+ "deliverable_path": "/Users/gregory/Workspace/hyunhak-site/interview/*.html (8본) + /Users/gregory/Workspace/hyunhak-site/assets/exam_page.css",
+ "measurement": "본 세션 자체 Playwright getBoundingClientRect, http://127.0.0.1:8911, 8면 x 1280/390 = 16 조합",
+ "stage1": {
+  "G1_render": "PASS 16/16 콘솔 오류 0",
+  "G6_overflow": "PASS scrollWidth-clientWidth 0, 표 셀 초과 0, 절대배치 이탈 0, 형제 겹침 0",
+  "G2_G5": "비해당(인쇄 납품물 아님)"
+ },
+ "lenses": {
+  "L1": {
+   "score": 4,
+   "evidence": "약속 2축 복귀. #types 5유형 4열, #method 원칙 5항 각 73px + 1,260초 5단계 세로 타임라인 렌더 확인(8/8면). 전환축 단일: 판매면 solid 1 + 텍스트링크 1, 오픈예정면 玄墨 띠 1. 감점1 = 핵심인 「읽는 열쇠」가 4열 중 최협 128px, 덜 중요한 정의 360px 발문 313px 로 비중 역순."
+  },
+  "L2": {
+   "score": 4,
+   "evidence": "라이브 CSS grep: gradient 0, Inter 0, Space Grotesk 0, url(data:image 0, nth-child(even) 0, rgba 발광 0, :root 밖 색 리터럴 0. HTML gradient 0, img 1(로고). 합격배지 0, 후기카드 0."
+  },
+  "L3": {
+   "score": 4,
+   "evidence": "산문 measure 576px, 본문 16/24px, 계기값 JetBrains Mono tabular-nums. 1글자 행폭 붕괴 소멸(.xrules li 73px). 감점1 = .xtype 4열 128px 라 37자 3행 27자 2행 = 행당 12~13자, 5/5행. .k letter-spacing 1.2px word-spacing 0 어절 분리."
+  },
+  "L4": {
+   "score": 3,
+   "evidence": "판면 1018px, 절대배치 이탈 0, 형제 겹침 0. 감점2 = .xtype grid-template-columns 실측 144/360.3/313.3/128px, 내용 75자 열이 128px 31자 열이 360px 로 역비례. 행별 높이 편차 130.4~169.4px 가 5/5행(방법론 적용 190.5 대 21.1)."
+  },
+  "L5": {
+   "score": 5,
+   "evidence": "정본 대비 diff 로 색 토큰 무변경, :root 밖 색 리터럴 0, 추가 3규칙도 var(--gray)/var(--body)/var(--sans). 朱印 = 카운터/각주기호/활성앵커 밑줄, 金泥 = .xsoon 날짜 1자리, 반전 표면 1개."
+  },
+  "L6": {
+   "score": 4,
+   "evidence": "#method 1,160~1,305px(종전 6,664~8,480). 1280 구획 285~1,305px 최대 대 최소 4.6배. 문서 높이 7,808~8,375px = 시안 A 6,567 대비 1.19~1.27배, 1.5배 정지선 이내. CTA 중복 소멸. 감점1 = spec 1,170 types 1,225 method 1,305 연속 근접."
+  },
+  "L7": {
+   "score": 4,
+   "evidence": "각주 참조 집합 = 정의 집합 8/8면(고아 0). 「대학 기출 지문이 아닙니다」 고지, tel:, aria-current, FAQPage JSON-LD, 콘솔 오류 0(16/16). 감점1 = .k 자간 어절 분리 전면 잔존, .xtime 5행 중 3행 「약 420초」 값 중복."
+  },
+  "L8": {
+   "score": 4,
+   "evidence": "390 가로 넘침 0(8/8), 표 셀 우측 초과 0, 히트박스 44 미만 0. sticky 2단 65+49=114px 대 scroll-margin-top 105/112px, 앵커 점프 후 구획 상단 여백 54.6px(390) 56.0px(1280). 하단 고정탭 65px 대 body padding-bottom 72px. .xtime .row 390 1열 전환. 감점1 = 390 문서 11,020~11,844px."
+  },
+  "L9": {
+   "score": 4,
+   "evidence": "WCAG 1.3.2 위배(시각 순서 대 DOM 순서)가 .xtime static 복귀로 해소. 색 토큰 무변경이라 대비 실측 승계, 본문 8.13:1 규격표값 11.73:1 .k 5.04:1 .xsoon 7.78:1 金泥 6.28:1 전건 AA. 과장 카피 0, 출처 각주, 비공개층 정직 고지. 감점1 = 12px .k 5.04:1 AAA 미달 + 자간 분리 중첩."
+  }
+ },
+ "total": 36,
+ "minimum_check": {
+  "L1": "4 >= 4 PASS",
+  "L8": "4 >= 3 PASS",
+  "L9": "4 >= 3 PASS"
+ },
+ "release_recommendation": "RELEASE_YES",
+ "blockers": [],
+ "advisories": [
+  "R-1 .xtype 4열 폭 배분과 행 높이 편차 130.4~169.4px",
+  "R-2 .k letter-spacing 1.2px 어절 분리",
+  "R-3 .xtime 5행 중 3행 값 중복"
+ ],
+ "delta_vs_round1": {
+  "L1": 3,
+  "L2": 0,
+  "L3": 2,
+  "L4": 1,
+  "L5": 0,
+  "L6": 2,
+  "L7": 2,
+  "L8": 2,
+  "L9": 1,
+  "total": 13
+ },
+ "roots_16": 0,
+ "afterimage_axes_damaged": 0,
+ "bias_self_check": {
+  "has_vague_evidence": false,
+  "has_forbidden_phrases": false,
+  "has_minimum_evidence_length": true
+ }
+}
