@@ -19,8 +19,8 @@
   // 사본 동기 게이트 = _tools/set_id_contract_check.py (원문 hyunhak-api src/pay.js SET_ID_RE)
   // 쿼리, 카탈로그, localStorage 어디서 온 값이든 이 정규식을 통과한 것만 화면과 주문 body 에 쓴다.
   const SET_ID_RE = /^(korea_2027_[hs]|korea_gorun_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i|yonsei_mirae_2027_[jdthgu])(0[1-9]|[12][0-9]|30)$/;
-  // 판매 단위 11종 (기존 5 + 연세대 미래캠퍼스 6, 2026-09-14 판매 개시). 동기 게이트 _tools/units_vocab_check.py
-  const UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common"];
+  // 판매 단위 13종 (기존 5 + 연세대 미래캠퍼스 6 + 고려대 고른기회 2, 2026-09-14 판매 개시). 동기 게이트 _tools/units_vocab_check.py
+  const UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common", "korea-eq-hum", "korea-eq-sci"];
   const okSetId = (v) => SET_ID_RE.test(String(v == null ? "" : v));
   const okUnit = (v) => UNITS.indexOf(String(v == null ? "" : v)) >= 0;
   // 서버는 주문 1건에 같은 product 를 10줄까지 받는다. 11번째 줄은 주문 전체를 400 으로 떨어뜨린다

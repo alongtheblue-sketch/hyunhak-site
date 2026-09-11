@@ -76,7 +76,8 @@ def spec_rows(f, notes, ratio_note_idx, opening):
     else:
         rows.append(("이용권", f'단위 전권 <b>{sp["price"]:,}</b>원, 지문 낱권 <b>{sp["single_price"]:,}</b>원'))
         rows.append(("스튜디오 세트", f'<b>{bank["n_sets"]}</b>세트, 세트마다 <b>5</b>회 응시'))
-        rows.append(("해설 인강", f'<b>{sp["lecture_count"]}</b>편'))
+        if sp.get("lecture_count"):   # 인강 미인제스트 단위(고른기회 9/14 시점)는 행 생략
+            rows.append(("해설 인강", f'<b>{sp["lecture_count"]}</b>편'))
     refs = [(k, v, fn_index(k, notes, ratio_note_idx) if k != "형태" else 0) for k, v in rows]
     used = sorted({fn for _, _, fn in refs if fn})
     remap = {old: i for i, old in enumerate(used, 1)}          # 참조된 각주만 1부터 다시 매긴다 (critic 권고: 고아 각주 3번 5면)
@@ -134,7 +135,7 @@ def build_one(code, mod):
                f'<a class="tlink" href="../interview.html#exam">면접 형태 판정표</a></div></div>')
         badge = f'<span class="badge mute">{EX.OPEN_DATE} 오픈 예정</span><span class="k">2027학년도 기준</span>'
     else:
-        mats = [("제시문 면접 스튜디오 세트", f'{bank["n_sets"]}세트'), ("풀이법 해설 인강", f'{sp["lecture_count"]}편')]
+        mats = [("제시문 면접 스튜디오 세트", f'{bank["n_sets"]}세트')] + ([("풀이법 해설 인강", f'{sp["lecture_count"]}편')] if sp.get("lecture_count") else [])
         if past: mats.append(("2026 기출 해설", f"{len(past)}세트"))
         # 라벨 = 목적지 (critic IA2 M7): 솔리드 = 구매면(이용권), tlink = 스튜디오 소개면. 「응시실」 문면은 IA2 §5 에서 폐지
         if sp.get("units"):

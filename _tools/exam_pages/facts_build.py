@@ -20,6 +20,8 @@ BANKS = {
     "yonsei-mirae": ([W / "yonsei_mirae_interview_bank_2027/sets", W / "yonsei_mirae_interview_bank_2027/sets_u"], lambda j: True),
     "korea-hum":   (W / "korea_interview_bank_2027/sets", lambda j: "인문" in j.get("track", "")),
     "korea-sci":   (W / "korea_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
+    "korea-eq-hum": (W / "korea_gorun_interview_bank_2027/sets", lambda j: "인문" in j.get("track", "")),   # track "… 고른기회전형 | 인문" (2026-09-11)
+    "korea-eq-sci": (W / "korea_gorun_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
 }
 
 # 요강·시행계획·선행학습영향평가 실측값. 출처 문자열은 지면 각주로 나간다.
@@ -75,13 +77,13 @@ SPEC = {
         stage="1단계 서류 100%(3배수) → 2단계 1단계 성적 60% + 면접 40%, 수능 최저 없음", ratio_src="2027 수시모집요강 학생부종합(고른기회전형) 전형요소",
         lang="한국어", scope="국어·사회·윤리·과학 교과 통합(2026 문항카드: 생물 다양성·문화 상대주의·규칙 공리주의·문학)", eval_axes=["분석력", "적용력", "종합적 사고력"],
         src=["2027 고려대 수시모집요강 Ⅴ 면접평가 안내 p.29(준비 12분·면접 6분)", "2027 입학전형시행계획 p.13(모집 199명)", "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"],
-        status="opening", open_date="2026-09-14", sku=None, price=None, single_price=None, lecture_count=None, admission_quota=199),
+        status="on_sale", open_date="2026-09-14", sku="pass-korea-eq-hum", price=495000, single_price=33000, lecture_count=None, admission_quota=199),
     "korea-eq-sci": dict(univ="고려대학교", univ_short="고려대", track="학생부종합 고른기회전형", unit="자연", label="고려대 고른기회전형 자연",
         form="제시문 기반 면접", passages=4, prep_sec=720, answer_sec=360, questions=3, points="비공개(역량 3축 등급 평가)",
         stage="1단계 서류 100%(3배수) → 2단계 1단계 성적 60% + 면접 40%, 수능 최저 없음", ratio_src="2027 수시모집요강 학생부종합(고른기회전형) 전형요소",
         lang="한국어", scope="사회·과학·수학 교과 통합(2026 문항카드: 과학 실험·이론과 비교·설명)", eval_axes=["분석력", "적용력", "종합적 사고력"],
         src=["2027 고려대 수시모집요강 Ⅴ 면접평가 안내 p.29(준비 12분·면접 6분)", "2027 입학전형시행계획 p.13(모집 199명)", "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"],
-        status="opening", open_date="2026-09-14", sku=None, price=None, single_price=None, lecture_count=None, admission_quota=199),
+        status="on_sale", open_date="2026-09-14", sku="pass-korea-eq-sci", price=495000, single_price=33000, lecture_count=None, admission_quota=199),
 }
 
 PASTEXAM = {

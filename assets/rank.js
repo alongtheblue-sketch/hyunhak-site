@@ -5,7 +5,7 @@
 (function () {
   if (!window.HH) return;
   const API = HH.API;
-  const UNITS = ["yonsei-hum", "yonsei-sci", "korea-hum", "korea-sci", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common"];   // = hyunhak-api src/ranking.js RANK_UNITS 키 순서 (미래 6탭, 2026-09-14)
+  const UNITS = ["yonsei-hum", "yonsei-sci", "korea-hum", "korea-sci", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common", "korea-eq-hum", "korea-eq-sci"];   // = hyunhak-api src/ranking.js RANK_UNITS 키 순서 (미래 6탭 + 고른기회 2탭, 2026-09-14)
   const DIFF_ORDER = ["최상", "상", "중", "하"];
   const DIST_MIN = 10, GROUP_TOP = { set: 5, difficulty: 10 };
   // 응시가 하나도 없으면 세 뿌리 모두 숨긴다. 0 을 크게 박지 않는다는 규칙은 여기 한 곳에만 적는다

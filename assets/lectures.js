@@ -7,7 +7,7 @@
   if (!window.HH) return;
   var HH = window.HH;
   var P = (document.body.getAttribute("data-p") || "");   // 하위 디렉토리 면은 "../"
-  var UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common"];   // = assets/app.js UNITS (units_vocab_check.py). 미래 6단위 = 2026-09-14
+  var UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl", "yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl", "yonsei-mirae-common", "korea-eq-hum", "korea-eq-sci"];   // = assets/app.js UNITS (units_vocab_check.py). 미래 6단위 + 고른기회 2단위 = 2026-09-14
   // 2026 기출 해설 1편 = 단위 전권에 일대일 편입 (LC-4 ②, 2026-09-06). 단위 카드 안에 그 대학 계열 편 하나만 얹고 여섯 번째 단위는 만들지 않는다. hyunhak-api pay.js 와 같은 표
   var GICHUL_UNIT = "yeongo-gichul", GICHUL_OF = { "korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl" };
   function gichulOf(l, code) { return l.unit_code === GICHUL_UNIT && l.passage_set_id === GICHUL_OF[code]; }
