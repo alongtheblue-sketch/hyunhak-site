@@ -37,8 +37,9 @@ UNITS = [
      "bank_dir": "yonsei_intl_interview_bank_2027", "prefix": "yonsei_intl_2027_i", "script_bank": "intl"},
 ]
 
-# Global 5 세트 id 정규식 (서버 검증과 같은 문자열)
-SET_ID_RE = re.compile(r"^(korea_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(0[1-9]|[12][0-9]|30)$")
+# 세트 id 정규식 (서버 검증 hyunhak-api src/pay.js 와 같은 문자열, 2026-09-11 고려대 고른기회 korea_gorun 추가. 동기 게이트 = _tools/set_id_contract_check.py)
+# UNITS 표에는 고른기회가 아직 없어(9/14 2단계) 카탈로그 산출은 종전 150세트 그대로다.
+SET_ID_RE = re.compile(r"^(korea_2027_[hs]|korea_gorun_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(0[1-9]|[12][0-9]|30)$")
 
 # 난이도 폐쇄 어휘. 원천 실측이 네 값이라 최상을 포함한다 (2026-09-02 실측: 하 30, 중 50, 상 50, 최상 20)
 DIFFICULTY_VOCAB = ("하", "중", "상", "최상")

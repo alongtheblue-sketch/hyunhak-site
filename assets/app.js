@@ -14,9 +14,10 @@
     return data;
   }
 
-  // 세트 id 계약 (PLAN 1-D, 서버와 같은 문자열): 5 단위 x 01~30.
+  // 세트 id 계약 (PLAN 1-D, 서버와 같은 문자열): 5 단위 x 01~30 + 고려대 고른기회 2단위(korea_gorun, 2026-09-11 S9-3 1단계 — 화이트리스트 UNITS 는 9/14 2단계에서 7종).
+  // 사본 동기 게이트 = _tools/set_id_contract_check.py (원문 hyunhak-api src/pay.js SET_ID_RE)
   // 쿼리, 카탈로그, localStorage 어디서 온 값이든 이 정규식을 통과한 것만 화면과 주문 body 에 쓴다.
-  const SET_ID_RE = /^(korea_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(0[1-9]|[12][0-9]|30)$/;
+  const SET_ID_RE = /^(korea_2027_[hs]|korea_gorun_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i)(0[1-9]|[12][0-9]|30)$/;
   const UNITS = ["korea-hum", "korea-sci", "yonsei-hum", "yonsei-sci", "yonsei-intl"];
   const okSetId = (v) => SET_ID_RE.test(String(v == null ? "" : v));
   const okUnit = (v) => UNITS.indexOf(String(v == null ? "" : v)) >= 0;
