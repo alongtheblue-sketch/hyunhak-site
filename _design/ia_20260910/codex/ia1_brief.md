@@ -52,7 +52,7 @@ design-director 디렉션(2026-09-10 14:2x, 3안 중 **B 「명패 행」 채택
 | `ranking.html` 탭 아래 | 1 | → `interview.html#exam` | 전형별 출제 유형과 풀이법 |
 | `index.html` 스튜디오 카드 하단 | 1 | tlink → `interview.html#exam` | 동 |
 | 푸터 「상품」 열 | 1 | → `interview.html#exam` | 동 |
-- 8면 CTA 교체: 판매 중 5 = btn 「응시실 열기」→`../studio.html?unit=<code>` · tlink 「이용권 보기」→`../programs/studio.html#u-<code>` · tlink 「풀이법 인강」 유지. 예정 3 = btn 「9월 14일 오픈, 공지 보기」→`../notice.html?id=ntc_0914a001` 를 xcta 자리로 · tlink 「면접 형태 판정표」→`../interview.html#exam`.
+~~- 8면 CTA 교체: 판매 중 5 = btn 「응시실 열기」→`../studio.html?unit=<code>` · tlink 「이용권 보기」→`../programs/studio.html#u-<code>` · tlink 「풀이법 인강」 유지. 예정 3 = btn 「9월 14일 오픈, 공지 보기」→`../notice.html?id=ntc_0914a001` 를 xcta 자리로 · tlink 「면접 형태 판정표」→`../interview.html#exam`.~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
 - breadcrumb 문면은 현행 유지(JSON-LD BreadcrumbList 불변). 화면 crumb 의 href 만 `../interview.html` → `../interview.html#exam`(JSON-LD item 은 canonical 유지).
 - 허브 신설 없음, `interview.html#exam` 단일 착지. GNB 5·모바일 탭 5 무변경(6번째 메뉴·드롭다운은 비권장, 집행 금지).
 - **규칙 판정(IA1-1 A 결재 확정, 건우 2026-09-10 14:33)**: `SECTION_SPEC_R3 §0` 「본문 목적지 종류 ≤ 6」에서 **단위별 딥링크 8개 = 1종으로 계수**한다. 게이트 = `_design/redesign_20260909/ia_links.py` (`_tools/` 에는 없다). 그 `kind()` 는 이미 `guidebook/<univ>.html`·`lectures/<lecture>.html` 을 한 종류로 접는다(2026-09-09 판정). 같은 자리에 `if re.match(r'interview/(?!index\.html)[a-z-]+\.html$', t): return 'interview/<code>.html'` 1줄을 사유 주석(IA1-1 A 결재 2026-09-10)과 함께 추가하고, `python3 _design/redesign_20260909/ia_links.py` 의 변경 전·후 출력 전문(kinds 값 포함)을 보고서에 적는다. exit 0 을 PASS 로 읽지 않고 core 면 전건 kinds ≤ 6 을 확인해 적는다. 예외를 넣지 않고 링크를 빼는 쪽으로 풀지 않는다.
@@ -82,8 +82,8 @@ design-director 디렉션(2026-09-10 14:2x, 3안 중 **B 「명패 행」 채택
 | 카드 보조 링크 (구매면 ⑥ → 같은 면 `#sets` 세트 표, 그 단위 선택) | 세트 고르기 |
 | ~~카드 보조 링크~~ | ~~응시실~~ (IA2 폐지 2026-09-11. 두 면 모두 목적지는 구매면과 세트 표다. 정적 빌드에 보유 판정이 없어 보유자 전용 문면으로도 쓰지 않는다. `r2_copy.json` 키 `r3_room` 삭제) |
 | 카드 보조 링크 | 담기 |
-| 8면 primary 버튼(판매 중) | 응시실 열기 |
-| 8면 보조 링크 | 이용권 보기 |
+~~| 8면 primary 버튼(판매 중) | 응시실 열기 |~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
+~~| 8면 보조 링크 | 이용권 보기 |~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
 | 8면 보조 링크 | 풀이법 인강 |
 | 8면 primary 버튼(대기) | 9월 14일 오픈, 공지 보기 |
 | 8면 보조 링크(대기) | 면접 형태 판정표 |
