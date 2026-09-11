@@ -136,8 +136,9 @@ def build_one(code, mod):
     else:
         mats = [("제시문 면접 스튜디오 세트", f'{bank["n_sets"]}세트'), ("풀이법 해설 인강", f'{sp["lecture_count"]}편')]
         if past: mats.append(("2026 기출 해설", f"{len(past)}세트"))
-        cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">응시실 열기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
-               f'<a class="tlink" href="../programs/studio.html#u-{code}">이용권 보기</a>'
+        # 라벨 = 목적지 (critic IA2 M7): 솔리드 = 구매면(이용권), tlink = 스튜디오 소개면. 「응시실」 문면은 IA2 §5 에서 폐지
+        cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
+               f'<a class="tlink" href="../programs/studio.html#u-{code}">스튜디오 소개</a>'
                f'<a class="tlink" href="../lectures/{code}.html">풀이법 인강 <span class="ar" aria-hidden="true">&rarr;</span></a></div>')
         badge = '<span class="badge seal">판매 중</span><span class="k">2027학년도 기준</span>'
     spec_html, used_notes = spec_rows(f, notes, ratio_idx, opening)

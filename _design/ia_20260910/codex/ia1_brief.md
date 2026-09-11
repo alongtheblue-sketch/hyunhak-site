@@ -98,6 +98,8 @@ design-director 디렉션(2026-09-10 14:2x, 3안 중 **B 「명패 행」 채택
 | 카드 제목 신규 3(r2_copy 키 korea_eq_hum·korea_eq_sci·yonsei_mirae) | 고려대 고른기회 인문 / 고려대 고른기회 자연 / 연세대 미래캠퍼스 |
 | 구매 면 예정 단위 한 줄 | 9월 14일에 여는 단위: 고려대 고른기회 인문, 고려대 고른기회 자연, 연세대 미래캠퍼스 (각각 안내 면 링크) |
 | 구매 면 해설 강의 상태 대체 안내 (면 1회, 상태 조회 실패 시만) | 해설 강의 상태는 내 강의에서 확인합니다. (IA2 신설 2026-09-11. 종전 카드 5장 반복 문면 「해설 강의 상태는 내 강의에서 확인」을 대신한다) |
+| `interview/<code>.html` 판매 5면 xcta | 1 solid + 1 tlink | solid 「이용권 보기」→`../studio.html?unit=<code>`(구매면) · tlink 「스튜디오 소개」→`../programs/studio.html#u-<code>` (IA2 M7, 2026-09-11. 구 「응시실 열기」 폐지) |
+| `programs/studio.html` 카드 ⑦ | 5 | 「구매하러 가기」→`#buy`(단위 선택 후 구매 블록 이동, 적재 없음. IA2 M8, g①) |
 제원 값 원장 = `_tools/exam_pages/facts/<code>.json` 의 prep_sec·answer_sec·questions 만(초→분 변환은 빌더, 화면 하드코딩 금지). 대학명은 codes.py 라벨.
 
 ## 6. 자체 검증 (전건, verbatim 으로 보고서에)

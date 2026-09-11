@@ -64,7 +64,8 @@ def card(row, prefix="../", purchase=False, number=None):
         actions += (f'<a class="btn ghost sm" href="{prefix}studio.html?unit={code}"{room_attr}>'
                     f'{esc(copy_text(go_key))}</a>')
         actions += (f'<button type="button" class="btn sm" data-r3-unit-cart>{esc(copy_text("add"))}</button>'
-                    if purchase else f'<a class="tlink" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("add"))}</a>')
+                    # 소개면 ⑦ 은 담지 않고 구매 블록으로 옮기기만 한다(g①) — 문면도 이동 행동으로 (critic M8, IA2 §5)
+                    if purchase else f'<a class="tlink" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("r3_unit_go_buy"))}</a>')
     return (f'<article class="unit r3-unit{" r3-unit-opening" if opening else ""}" id="u-{code}" data-r3-unit="{code}">'
             f'<span class="kn">{number or row["number"]}</span>'
             f'<div class="r3-unit-heading"><p class="uni">{esc(row["uni"])}</p>'
