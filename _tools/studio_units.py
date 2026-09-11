@@ -40,12 +40,6 @@ def units():
     return rows
 
 
-def unit_prices():
-    """소개면 가격 사본의 원천. 구매면 JS 가 읽는 것과 같은 원장이다 (IA2 g② 대안)."""
-    data = json.loads((HERE.parent / "assets" / "data" / "sets.json").read_text(encoding="utf-8"))
-    return {unit["code"]: int(unit["price"]) for unit in data["units"]}
-
-
 def card(row, prefix="../", purchase=False, number=None):
     """number: 구매면은 판매 카드만 01부터 다시 센다 (critic H1, 결번 방지)."""
     esc = html.escape
@@ -77,11 +71,8 @@ def card(row, prefix="../", purchase=False, number=None):
             f'<h3>{esc(row["title"])}</h3><span class="r3-unit-badge">{esc(badge)}</span></div>'
             f'<dl class="dl r3-unit-spec">{specs}</dl>'
             f'<p class="r3-unit-note">{esc(note)}</p>'
-            # 구매면은 JS 가 채우는 빈 슬롯, 소개면은 판매 단위에 한해 가격 사본 (IA2 g② 대안: 담기 전에 값을 보여 준다)
-            + ('<div class="r3-unit-commerce"></div>' if purchase
-               else '' if opening
-               else f'<div class="r3-unit-commerce"><span class="price" data-list-price="{unit_prices()[code]}">'
-                    f'{unit_prices()[code]:,}원</span></div>')
+            # 구매면은 JS 가 채우는 빈 슬롯, 소개면은 미출력 (critic M2). 소개면 가격 사본은 IA2 g② 커밋 d438cbe 에 있다
+            + ('<div class="r3-unit-commerce"></div>' if purchase else '')
             + f'<div class="foot">{actions}</div></article>')
 
 

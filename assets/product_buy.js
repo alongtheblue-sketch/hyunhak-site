@@ -37,8 +37,9 @@
     select.value = link.dataset.r3UnitBuy;
     block.querySelector('input[name="product"][value="pass"]').checked = true;
     update();
-    // 카드 「담기」는 구매 블록의 담기 버튼과 같은 경로로 장바구니에 넣는다 (X1 mid-1, 2026-09-10 세션). href="#buy" 이동은 그대로 두어 상태 문구가 보이게 한다.
-    button.click();
+    // 카드는 단위를 고르고 구매 블록으로 옮기기만 한다 (IA2 g①). 값을 보이기 전에 장바구니에 넣지 않는다.
+    // 담는 것은 구매 블록의 담기 버튼이며, href="#buy" 이동으로 가격과 상태 문구를 먼저 보인다.
+    // 값을 먼저 보이고 카드에서 담는 대안 ②는 커밋 d438cbe.
   });
   button.addEventListener('click', function () {
     if (button.dataset.cartSku === 'passage-single') {
