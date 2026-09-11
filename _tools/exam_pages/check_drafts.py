@@ -23,6 +23,7 @@ BAN = ["합격", "보장", "1위", "최고", "단 하루", "지금 아니면", "
 PRIVATE = ["루브릭", "모범답안", "모범 답안", "채점 기준표", "배점표", "만점", "감점"]
 YEARS = {"2024", "2025", "2026", "2027"}
 FREE = {"1", "2", "3", "4", "9", "14", "070", "8098", "0671", "12", "6"}   # 문항·단계·(가)~(라) 번호, 9월 14일, 전화. 12/6 = 고른기회 준비·답변(분)
+SAMPLE_FROM_CARDS = {"korea-eq-hum", "korea-eq-sci"}   # SMP A (2026-09-11 건우 결재): 고른기회 예시는 기출 카드 원문 유지, 은행 세트 대조 면제(원문 카드 실재 검사는 그대로)
 
 def walk_str(o):
     if isinstance(o, str): yield o
@@ -163,7 +164,7 @@ def main(codes):
             # 난이도 하 첫 세트 규칙
             first_low = next((s for s in (facts["bank"]["sets"]) if s.get("difficulty") == "하"), facts["bank"]["sets"][0])
             if first_low["id"] != sid: soft.append(f"예시 세트 규칙(난이도 하 첫 세트 {first_low['id']}) 대신 {sid}")
-        elif (facts.get("bank") or {}).get("n_sets"):
+        elif (facts.get("bank") or {}).get("n_sets") and code not in SAMPLE_FROM_CARDS:
             hard.append(f"sample.set_id {sid!r} 이 은행에 없음")
         else:
             # 고른기회: 원문 카드 txt 에서 발문 실재 확인
