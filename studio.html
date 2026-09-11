@@ -145,6 +145,8 @@
     <h2 class="t">응시 단위 5곳</h2>
   <p class="note">단위마다 지문 30편, 응시는 구매일부터 3개월. 세트별 풀이법 인강 30편과 공통 풀이 인강 포함, 인강 3개월. 고려대 자연은 정규 30세트 외 보충 해설 10편을 더 봅니다. 해설 강의 공개 편수는 열람 시점 기준입니다. 강의 구성과 맛보기는 <span>인강</span> 면에서 봅니다.</p>
   <div class="units r3-units" id="unitCards" style="margin-top:var(--s5)"><p class="note">단위 목록을 불러오는 중입니다.</p></div>
+  <!-- 해설 강의 상태를 못 받은 카드가 있을 때만 열린다. 카드마다 같은 문장을 되풀이하지 않는다 (IA2 h) -->
+  <p class="note" id="lecNote" style="margin-top:var(--s3)" hidden>해설 강의 상태는 내 강의에서 확인합니다.</p>
   <!-- ia1:units:begin -->
 <template id="r3-unit-template">
 <article class="unit r3-unit" id="u-yonsei-hum" data-r3-unit="yonsei-hum"><span class="kn">01</span><div class="r3-unit-heading"><p class="uni">연세대</p><h3>활동우수형 인문통합</h3><span class="r3-unit-badge">판매 중</span></div><dl class="dl r3-unit-spec"><div><dt>준비</dt><dd>8분</dd></div><div><dt>답변</dt><dd>5분</dd></div><div><dt>질문</dt><dd>2개</dd></div></dl><p class="r3-unit-note">지문 30편</p><div class="r3-unit-commerce"></div><div class="foot"><a class="btn ghost sm" href="interview/yonsei-hum.html">출제 유형과 풀이법 보기</a><a class="btn ghost sm" href="studio.html?unit=yonsei-hum" data-unit-go="yonsei-hum">세트 고르기</a><button type="button" class="btn sm" data-r3-unit-cart>담기</button></div></article>
@@ -386,7 +388,9 @@ document.addEventListener('DOMContentLoaded', function(){
       HH.api('/api/lectures/summary?unit='+encodeURIComponent(u.code)+'&kind=passage').then(function(r){
         document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.innerHTML=esc(lecStatus(r,r&&r.total))+(r.as_of?'<span class="asof">'+esc(r.as_of)+' 기준</span>':''); });
       }).catch(function(){
-        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ el.textContent='해설 강의 상태는 내 강의에서 확인'; });
+        // 상태를 못 받은 카드는 그 줄을 지우고, 같은 안내를 면 아래 한 번만 남긴다 (카드 5회 반복 → 면 1회, IA2 h)
+        document.querySelectorAll('[data-lec="'+u.code+'"]').forEach(function(el){ var p=el.closest('.lec'); if(p){ p.hidden=true; } else { el.textContent=''; } });
+        var note=document.getElementById('lecNote'); if(note){ note.hidden=false; }
       });
     });
   }
