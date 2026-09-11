@@ -84,7 +84,7 @@
       "contact": "admin@hyunhak.com"
     },
     "merchant": {
-      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신. 디지털은 제6조 「제공 개시 전까지」(달력 기한 없음) 전사. schema.org 유한 창은 일수가 필수라 상품 이용 기간을 싣는다 = digital_return_days_by_kind, 면의 schema.return_kind 로 고른다 (view = 가이드북 열람 3개월, API pay.js VIEW_MONTHS / lecture = 인강 3개월, LECTURE_MONTHS / pass = 스튜디오 이용권 3개월(구매일부터), studio.html faq.html 고지). 표에 없는 kind 는 빌드 정지. 반송 수단이 없어 returnMethod 는 싣지 않는다. 2026-09-09 HR3-4 A안 (종전 digital_return_days 7 = 공급일 7일 사본).",
+      "_note": "terms.html 제5조(실물 배송비 3,000원, 5만원 이상 무료)와 제6조(실물 수령 후 7일 청약철회) 실측 전사. Product JSON-LD 의 shippingDetails/hasMerchantReturnPolicy 는 이 블록만 읽는다. 약관 개정 시 동시 갱신. 디지털은 제6조 「제공 개시 전까지」(달력 기한 없음) 전사. schema.org 유한 창은 일수가 필수라 상품 이용 기간을 싣는다 = digital_return_days_by_kind, 면의 schema.return_kind 로 고른다 (view = 가이드북 열람 3개월, API pay.js VIEW_MONTHS / lecture = 인강 3개월, LECTURE_MONTHS / pass = 스튜디오 이용권 3개월(구매일부터), studio.html faq.html 고지). 표에 없는 kind 는 빌드 정지. 반송 수단이 없어 returnMethod 는 싣지 않는다. 2026-09-09 HR3-4 A안 (종전 digital_return_days 7 = 공급일 7일 사본). 2026-09-11 GSC 「returnMethod 누락(offers.hasMerchantReturnPolicy), 심각하지 않은 문제」 접수 — Google 허용 값은 ReturnAtKiosk·ReturnByMail·ReturnInStore 세 가지뿐(실물 반송)이고 offers 가 실린 9면(pass 7·view 1·lecture 1)은 전건 디지털이라 사실과 맞는 값이 없다. 허위 값은 리치 결과 수동 조치 위험이라 계속 싣지 않는다(건우 보고, 권고 등급이라 노출 영향 0).",
       "country": "KR",
       "shipping_fee": 3000,
       "free_shipping_over": 50000,
