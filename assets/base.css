@@ -1413,8 +1413,10 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-unit-spec dt{font-size:var(--t-sm);color:var(--gray)}
 :where(body.v2) .r3-unit-spec dd{text-align:right;white-space:nowrap}
 :where(body.v2) .r3-unit-note{grid-column:2 / -1;grid-row:2;font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);margin:0;max-width:none}
-:where(body.v2) .r3-unit-commerce{grid-column:2 / -1;grid-row:3;display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between}
+/* 해설 강의 상태를 가격과 같은 줄에 두면 값 설명으로 읽힌다 (Stage 3 프록시 지목, IA2 h). 두 줄로 가르고 가격만 오른쪽 끝에 둔다 */
+:where(body.v2) .r3-unit-commerce{grid-column:2 / -1;grid-row:3;display:flex;flex-direction:column;align-items:stretch;gap:var(--s2)}
 :where(body.v2) .r3-unit-commerce .lec{margin:0}
+:where(body.v2) .r3-unit-commerce .price{align-self:flex-end}
 :where(body.v2) .r3-unit .foot{grid-column:1 / -1;grid-row:4;margin:0;align-self:end;justify-content:flex-end;gap:var(--s3);border-top:var(--rule-ui)}
 :where(body.v2) .r3-unit .foot :is(.btn,.tlink){display:inline-flex;align-items:center;min-height:var(--tap);white-space:normal;word-break:keep-all}
 :where(body.v2) .r3-unit .foot .tlink{min-width:var(--tap);justify-content:center}  /* 담기 tap 폭 (critic L1) */

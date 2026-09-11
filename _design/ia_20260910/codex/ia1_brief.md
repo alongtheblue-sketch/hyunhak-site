@@ -52,7 +52,7 @@ design-director 디렉션(2026-09-10 14:2x, 3안 중 **B 「명패 행」 채택
 | `ranking.html` 탭 아래 | 1 | → `interview.html#exam` | 전형별 출제 유형과 풀이법 |
 | `index.html` 스튜디오 카드 하단 | 1 | tlink → `interview.html#exam` | 동 |
 | 푸터 「상품」 열 | 1 | → `interview.html#exam` | 동 |
-- 8면 CTA 교체: 판매 중 5 = btn 「응시실 열기」→`../studio.html?unit=<code>` · tlink 「이용권 보기」→`../programs/studio.html#u-<code>` · tlink 「풀이법 인강」 유지. 예정 3 = btn 「9월 14일 오픈, 공지 보기」→`../notice.html?id=ntc_0914a001` 를 xcta 자리로 · tlink 「면접 형태 판정표」→`../interview.html#exam`.
+~~- 8면 CTA 교체: 판매 중 5 = btn 「응시실 열기」→`../studio.html?unit=<code>` · tlink 「이용권 보기」→`../programs/studio.html#u-<code>` · tlink 「풀이법 인강」 유지. 예정 3 = btn 「9월 14일 오픈, 공지 보기」→`../notice.html?id=ntc_0914a001` 를 xcta 자리로 · tlink 「면접 형태 판정표」→`../interview.html#exam`.~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
 - breadcrumb 문면은 현행 유지(JSON-LD BreadcrumbList 불변). 화면 crumb 의 href 만 `../interview.html` → `../interview.html#exam`(JSON-LD item 은 canonical 유지).
 - 허브 신설 없음, `interview.html#exam` 단일 착지. GNB 5·모바일 탭 5 무변경(6번째 메뉴·드롭다운은 비권장, 집행 금지).
 - **규칙 판정(IA1-1 A 결재 확정, 건우 2026-09-10 14:33)**: `SECTION_SPEC_R3 §0` 「본문 목적지 종류 ≤ 6」에서 **단위별 딥링크 8개 = 1종으로 계수**한다. 게이트 = `_design/redesign_20260909/ia_links.py` (`_tools/` 에는 없다). 그 `kind()` 는 이미 `guidebook/<univ>.html`·`lectures/<lecture>.html` 을 한 종류로 접는다(2026-09-09 판정). 같은 자리에 `if re.match(r'interview/(?!index\.html)[a-z-]+\.html$', t): return 'interview/<code>.html'` 1줄을 사유 주석(IA1-1 A 결재 2026-09-10)과 함께 추가하고, `python3 _design/redesign_20260909/ia_links.py` 의 변경 전·후 출력 전문(kinds 값 포함)을 보고서에 적는다. exit 0 을 PASS 로 읽지 않고 core 면 전건 kinds ≤ 6 을 확인해 적는다. 예외를 넣지 않고 링크를 빼는 쪽으로 풀지 않는다.
@@ -78,22 +78,28 @@ design-director 디렉션(2026-09-10 14:2x, 3안 중 **B 「명패 행」 채택
 | 자리 | 문안 |
 |---|---|
 | 카드 primary 링크 | 출제 유형과 풀이법 보기 |
-| 카드 보조 링크 | 응시실 |
+| 카드 보조 링크 (소개면 ⑥ → `studio.html?unit=<code>` 구매면) | 이용권 보기 |
+| 카드 보조 링크 (구매면 ⑥ → 같은 면 `#sets` 세트 표, 그 단위 선택) | 세트 고르기 |
+| ~~카드 보조 링크~~ | ~~응시실~~ (IA2 폐지 2026-09-11. 두 면 모두 목적지는 구매면과 세트 표다. 정적 빌드에 보유 판정이 없어 보유자 전용 문면으로도 쓰지 않는다. `r2_copy.json` 키 `r3_room` 삭제) |
 | 카드 보조 링크 | 담기 |
-| 8면 primary 버튼(판매 중) | 응시실 열기 |
-| 8면 보조 링크 | 이용권 보기 |
+~~| 8면 primary 버튼(판매 중) | 응시실 열기 |~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
+~~| 8면 보조 링크 | 이용권 보기 |~~ (IA2 M7 로 폐지, 2026-09-11. 현행 = 아래 IA2 M7 행)
 | 8면 보조 링크 | 풀이법 인강 |
 | 8면 primary 버튼(대기) | 9월 14일 오픈, 공지 보기 |
 | 8면 보조 링크(대기) | 면접 형태 판정표 |
 | 상태 배지(판매) | 판매 중 |
 | 상태 배지(대기) | 9월 14일 오픈 |
 | 대기 카드 안내 1줄 | 이 단위는 9월 14일에 엽니다 |
-| 허브 링크(랭킹실·홈·푸터·인강) | 전형별 출제 유형과 풀이법 |
+| 허브 링크(랭킹실, 홈, 푸터, 인강) → `interview.html#exam` | 전형별 출제 유형과 풀이법 |
+| 마이페이지 단위 행 안 링크 (`my.html` 보유 단위와 응시 기록) → `interview/<code>.html` | 출제 유형과 풀이법 보기 (IA2 현행 승인 2026-09-11, critic L2) |
 | 제원 라벨 3 | 준비 / 답변 / 질문 |
 | 제원 단위 | 분 / 개 |
 | 수량 행 | 지문 30편 |
 | 카드 제목 신규 3(r2_copy 키 korea_eq_hum·korea_eq_sci·yonsei_mirae) | 고려대 고른기회 인문 / 고려대 고른기회 자연 / 연세대 미래캠퍼스 |
 | 구매 면 예정 단위 한 줄 | 9월 14일에 여는 단위: 고려대 고른기회 인문, 고려대 고른기회 자연, 연세대 미래캠퍼스 (각각 안내 면 링크) |
+| 구매 면 해설 강의 상태 대체 안내 (면 1회, 상태 조회 실패 시만) | 해설 강의 상태는 내 강의에서 확인합니다. (IA2 신설 2026-09-11. 종전 카드 5장 반복 문면 「해설 강의 상태는 내 강의에서 확인」을 대신한다) |
+| `interview/<code>.html` 판매 5면 xcta | 1 solid + 1 tlink | solid 「이용권 보기」→`../studio.html?unit=<code>`(구매면) · tlink 「스튜디오 소개」→`../programs/studio.html#u-<code>` (IA2 M7, 2026-09-11. 구 「응시실 열기」 폐지) |
+| `programs/studio.html` 카드 ⑦ | 5 | 「구매하러 가기」→`#buy`(단위 선택 후 구매 블록 이동, 적재 없음. IA2 M8, g①) |
 제원 값 원장 = `_tools/exam_pages/facts/<code>.json` 의 prep_sec·answer_sec·questions 만(초→분 변환은 빌더, 화면 하드코딩 금지). 대학명은 codes.py 라벨.
 
 ## 6. 자체 검증 (전건, verbatim 으로 보고서에)

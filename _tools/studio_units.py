@@ -57,18 +57,23 @@ def card(row, prefix="../", purchase=False, number=None):
     actions = (f'<a class="{guide_cls}" href="{prefix}interview/{code}.html">'
                f'{esc(copy_text("r3_unit_guide"))}</a>')
     if not opening:
+        # ⑥ 라벨 = 목적지 (critic M1). 소개면은 구매면으로 나가고, 구매면은 같은 면의 세트 표로 간다.
+        # 정적 빌드에는 보유 판정이 없으므로 「응시실」은 쓰지 않는다 (IA2 §5, 2026-09-11 결재 C).
+        go_key = "r3_unit_sets" if purchase else "r3_unit_pass"
         room_attr = f' data-unit-go="{code}"' if purchase else ""
         actions += (f'<a class="btn ghost sm" href="{prefix}studio.html?unit={code}"{room_attr}>'
-                    f'{esc(copy_text("r3_room"))}</a>')
+                    f'{esc(copy_text(go_key))}</a>')
         actions += (f'<button type="button" class="btn sm" data-r3-unit-cart>{esc(copy_text("add"))}</button>'
-                    if purchase else f'<a class="tlink" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("add"))}</a>')
+                    # 소개면 ⑦ 은 담지 않고 구매 블록으로 옮기기만 한다(g①) — 문면도 이동 행동으로 (critic M8, IA2 §5)
+                    if purchase else f'<a class="tlink" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("r3_unit_go_buy"))}</a>')
     return (f'<article class="unit r3-unit{" r3-unit-opening" if opening else ""}" id="u-{code}" data-r3-unit="{code}">'
             f'<span class="kn">{number or row["number"]}</span>'
             f'<div class="r3-unit-heading"><p class="uni">{esc(row["uni"])}</p>'
             f'<h3>{esc(row["title"])}</h3><span class="r3-unit-badge">{esc(badge)}</span></div>'
             f'<dl class="dl r3-unit-spec">{specs}</dl>'
             f'<p class="r3-unit-note">{esc(note)}</p>'
-            + ('<div class="r3-unit-commerce"></div>' if purchase else '')   # 소개면은 빈 슬롯 미출력 (critic M2)
+            # 구매면은 JS 가 채우는 빈 슬롯, 소개면은 미출력 (critic M2). 소개면 가격 사본은 IA2 g② 커밋 d438cbe 에 있다
+            + ('<div class="r3-unit-commerce"></div>' if purchase else '')
             + f'<div class="foot">{actions}</div></article>')
 
 
