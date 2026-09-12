@@ -113,6 +113,15 @@ img,svg,video{display:block;max-width:100%;height:auto}
 
 
 /* ═══════ [2] v3 시스템 (:where(body.v2)) ═══════ */
+/* hidden 속성 복구. display 를 주는 컴포넌트(.field .pair .promo .rdist … 83개)가 UA 의
+   [hidden]{display:none} 을 이겨서, JS 가 건 hidden 이 화면에서 무시된다.
+   종전에는 사고가 난 클래스마다 X[hidden] 한 줄씩 덧대 왔고(6개) 나머지 77개는 같은 함정이 남아 있었다.
+   2026-09-12 간편가입 사고: join.html 이 소셜 회원에게 이메일과 비밀번호 칸을 hidden + disabled 로 접었는데
+   .field{display:flex} 가 hidden 을 이겨 「보이는데 못 적는 칸」이 남았다. 소속 학원 칸(teaFields)도 같이 노출됐다.
+   클래스별 대응 대신 여기서 한 번 되돌린다. 개별 X[hidden] 규칙들은 이 줄에 흡수되지만 그대로 둔다.
+   범위는 body.v2 스코프 (전역 요소 셀렉터 금지 규범 준수). [hidden] 에 none 아닌 display 를 주는 규칙은 없다(실측). */
+:where(body.v2) [hidden]{display:none!important}
+
 /* 프레임: 玄墨 필드 안 楮紙 판본. overflow 는 clip (hidden 은 sticky 헤더를 죽인다) */
 body.v2{background:var(--ink)}
 :where(body.v2) .frame{padding:var(--frame)}
