@@ -58,6 +58,9 @@ for _p in ("/assets/video/brand_v2_hero_aigen.vtt", "/assets/video/brand_v2_full
     chk(f"자막 {_p.rsplit('/', 1)[-1]} 200 text/vtt", s == 200 and _ct.startswith("text/vtt") and b.lstrip().startswith(b"WEBVTT"), f"{s} {_ct}")
 s, h, b = get("/assets/video/samples_manifest.json"); chk("표본 빌드 원장 비공개", s == 404, f"{s}")
 if BASE.endswith("hyunhak.com"):
+    s, h, b = get("/join.html", base="http://hyunhak.com", follow=False); chk("http → https 301 (인앱 브라우저 가입 차단 수습 2026-09-12)", s == 301 and h.get("Location", "").startswith("https://hyunhak.com/join.html"), f"{s} {h.get('Location')}")
+    s, h, b = get("/", base="http://www.hyunhak.com", follow=False); chk("http www → https apex 301", s == 301 and h.get("Location", "").startswith("https://hyunhak.com/"), f"{s} {h.get('Location')}")
+    s, h, b = get("/about.html", follow=False); chk("HSTS 헤더", "max-age=" in h.get("Strict-Transport-Security", ""), f"hsts={h.get('Strict-Transport-Security')}")
     s, h, b = get("/", base="https://www.hyunhak.com", follow=False); chk("www → apex 301", s == 301 and "hyunhak.com" in h.get("Location", ""), f"{s} {h.get('Location')}")
     s, h, b = get("/", ua="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"); chk("Googlebot UA 200", s == 200, f"{s}")
     s, h, b = get("/", ua="Mozilla/5.0 AppleWebKit/537.36 (KHTML, like Gecko; compatible; GPTBot/1.2; +https://openai.com/gptbot)")

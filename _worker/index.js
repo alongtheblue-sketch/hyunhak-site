@@ -149,8 +149,14 @@ async function resolve(env, request, url) {
   return { res: html, path: p + ".html" };
 }
 
+function visitorScheme(request) {
+  try { return String(JSON.parse(request.headers.get("cf-visitor") || "{}").scheme || "").toLowerCase(); } catch { return ""; }
+}
+
 function withHeaders(res, path, urlPath) {
   const h = new Headers(res.headers);
+  // HSTS 1년 (2026-09-12, http 301 과 짝). 서브도메인 미포함 — api·studio 는 각자 서빙하고, 미니 터널 등 http 전용 호스트가 생겨도 깨지지 않게.
+  h.set("Strict-Transport-Security", "max-age=31536000");
   if (path && path.endsWith(".html")) {
     h.set("X-Content-Type-Options", "nosniff");
     h.set("Referrer-Policy", "strict-origin-when-cross-origin");
@@ -204,6 +210,15 @@ async function withRange(request, res) {
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    // 평문 http → https 301 (2026-09-12). 인스타그램 인앱 브라우저가 http://hyunhak.com 으로 열면 가입·로그인의
+    // api.hyunhak.com 호출이 Origin http 로 나가 CORS 에서 막히고(브라우저 "Failed to fetch"), __Host- 쿠키도 못 받는다
+    // (실사용자 신고, 라이브 실측 = http 200 그대로 서빙·HSTS 없음). 존 설정(Always Use HTTPS)과 별개로 워커가 스스로 올린다.
+    // 판정 = request.url 의 scheme 또는 cf-visitor 헤더(프록시가 url 을 https 로 재작성하는 배포 형태 대비). 존 밖 호스트(localhost, workers.dev)는 제외.
+    const zoneHost = url.hostname === APEX || url.hostname === "www." + APEX;
+    if (zoneHost && (url.protocol === "http:" || visitorScheme(request) === "http")) {
+      url.protocol = "https:"; url.hostname = APEX;
+      return Response.redirect(url.toString(), 301);
+    }
     if (url.hostname === "www." + APEX) {
       url.hostname = APEX;
       return Response.redirect(url.toString(), 301);
