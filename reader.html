@@ -18,9 +18,10 @@
     font-family:"KoPubWorld Batang","Apple SD Gothic Neo",sans-serif; overscroll-behavior:none; }
   @supports (height:100dvh){ body{ height:100dvh; } }   /* iOS Safari 툴바 변동 대응 */
   #stage[inert]{ pointer-events:none; }
-  button{ font:inherit; font-size:13px; color:var(--paper); background:#2d2b2a;
+  button, #bar a.lib{ font:inherit; font-size:13px; color:var(--paper); background:#2d2b2a;
     border:1px solid #7a756f; border-radius:6px; padding:7px 12px; cursor:pointer; white-space:nowrap; }
-  button:hover{ background:#3a3836; } button:disabled{ opacity:.5; cursor:default; }
+  #bar a.lib{ text-decoration:none; }
+  button:hover, #bar a.lib:hover{ background:#3a3836; } button:disabled{ opacity:.5; cursor:default; }
   button.on{ background:#4a4744; border-color:var(--paper); }
   input{ font:inherit; color:var(--paper); background:#141312; border:1px solid #7a756f; border-radius:6px; padding:6px 8px; }
   input{ -webkit-user-select:text; user-select:text; }
@@ -127,7 +128,8 @@
 <body>
 <div id="bar">
   <button id="sideBtn" aria-expanded="false" aria-controls="side" title="목차 열기 (T)">☰ 목차</button>
-  <span class="t" id="title">현학적 연구소 보안 뷰어</span>
+  <a class="lib" id="libBtn" href="library.html" title="자료실로 돌아가기">자료실로</a>
+  <span class="t" id="title">현학적 연구소 보안 리더</span>
   <span id="pager" hidden><input id="pageIn" type="text" inputmode="numeric" aria-label="페이지 번호" value="1"><span>/</span><span id="pageN"></span></span>
   <span id="zoom" hidden>
     <button data-z="-" title="축소 (-)">－</button>

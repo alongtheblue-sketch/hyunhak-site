@@ -1,0 +1,29 @@
+SEVERITY_SUMMARY: critical=0 high=4 medium=5 low=0
+
+CRITICAL: 없음
+
+HIGH:
+
+- [web/index.html:1047](/Users/gregory/Workspace/interview-studio/web/index.html:1047) — 문항 2 녹음 시작 실패 후 ‘다음’을 누르면 남아 있던 문항 1 녹음이 문항 2로 재전송되고 채점됩니다(VM 재현). — 준비·실패 중 제출을 막고 녹음 버퍼를 응시·문항 ID에 결속하세요.
+- [web/index.html:1042](/Users/gregory/Workspace/interview-studio/web/index.html:1042) — 녹음 부분 성공 후 실패하면 기존 recorder가 살아 있어 재시도 녹음과 섞입니다. 지연된 재시도는 응시 종료 후에도 홈에서 녹음을 재개합니다(VM 재현). — 실패 시 recorder 정리, 재시도 잠금, await 전후 세대 검사와 취소된 스트림 종료가 필요합니다.
+- [web/index.html:834](/Users/gregory/Workspace/interview-studio/web/index.html:834) — 응시 생성 POST 중 뒤로 버튼만 잠깁니다. 랭킹·기록·MY 이동과 새로고침은 가능해 차감된 응시를 버립니다(VM 재현). — 생성 중 상태를 모든 이동·이탈 경고에 적용하고 성공 응답을 보존하세요.
+- [my.html:733](/Users/gregory/Workspace/hyunhak-site/my.html:733) — 부분환불 완료(`done`)도 기존 요청 배지로 버튼을 대체하고 모달 입력을 막아, 서버가 허용하는 잔여 품목 환불을 요청할 수 없습니다. — 진행 중 요청만 차단하고 완료 후 재신청과 `done` 상태명을 지원하세요.
+
+MEDIUM:
+
+- [owned.js:261](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:261) — 최신순 권리를 순회하면서 같은 세트의 오래된 만료·소진 권리가 새 권리를 덮어씁니다. 재구매 회원에게도 ‘담기’가 남습니다(VM 재현). — 세트별 유효 권리를 우선 선택하세요.
+- [api.py:129](/Users/gregory/Workspace/interview-studio/src/interview_studio/api.py:129) — history 입장의 세트 목록이 빈 배열로 바뀌지만 세트별 랭킹은 이를 선택지로 사용해 빈 key로 400 오류를 냅니다. 렌더 스텁은 history에도 세트를 반환해 누락했습니다. — 기록 메타데이터로 선택지를 구성하거나 탭을 숨기고 스텁을 수정하세요.
+- [my.html:421](/Users/gregory/Workspace/hyunhak-site/my.html:421) — 만료 비활성 처리가 낱권에만 적용되어 전권 가이드북은 만료해도 활성 열람 버튼이 남습니다(VM 재현). — 번들도 유효 열람권·파일권을 각각 판정하세요.
+- [lectures.js:155](/Users/gregory/Workspace/hyunhak-site/assets/lectures.js:155) — 최근 시청 목록의 필터가 카드 내부 이어보기에는 적용되지 않아 만료·비공개 강의를 계속 연결합니다(VM 재현). — 카드의 `last` 후보에도 `entitled && status==="ready"`를 적용하세요.
+- [web/index.html:1480](/Users/gregory/Workspace/interview-studio/web/index.html:1480) — 통합 전사의 평균을 첫 delivery로 제한하면서 답변 시간 사용률도 첫 문항 배정 시간으로 계산합니다. 배정 120+180초에 120초 답변이 40% 대신 100%로 표시됩니다. — 필러만 중복 제거하고 시간 사용률은 전체 배정 시간으로 계산하세요.
+
+LOW: 없음
+
+검증: 코드·서버 계약·VM·FastAPI 재현 기준. 부분 수리의 잔존 결함 포함. 브라우저 재실측은 수행하지 않았습니다.
+
+RECOMMENDATION: REQUEST_CHANGES
+
+VERDICT: NO-GO — 답변 오제출, 종료 후 녹음 재개, 응시 차감 후 이탈과 잔여 품목 환불 차단이 남아 있습니다.
+��습니다.
+RECOMMENDATION: BLOCK_MERGE
+VERDICT: NO-GO — 응시 차감 손실, 녹음 데이터 혼합, 제출 불가 및 재구매 경로 차단이 남아 있습니다.

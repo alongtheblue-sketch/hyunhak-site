@@ -11,6 +11,13 @@
   // 2026 기출 해설 1편 = 단위 전권에 일대일 편입 (LC-4 ②, 2026-09-06). 단위 카드 안에 그 대학 계열 편 하나만 얹고 여섯 번째 단위는 만들지 않는다. hyunhak-api pay.js 와 같은 표
   var GICHUL_UNIT = "yeongo-gichul", GICHUL_OF = { "korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl" };
   function gichulOf(l, code) { return l.unit_code === GICHUL_UNIT && l.passage_set_id === GICHUL_OF[code]; }
+  // 기출 해설 편의 unit_code 는 판매 단위가 아니라 yeongo-gichul 이라, 링크에 그대로 실으면 studio.html 이 첫 단위(고려대 인문)로 떨어뜨린다. passage_set_id 로 판매 단위를 되찾는다
+  function gichulUnit(l) { var ks = Object.keys(GICHUL_OF); for (var i = 0; i < ks.length; i++) { if (GICHUL_OF[ks[i]] === l.passage_set_id) return ks[i]; } return ""; }
+  function planHref(l) {
+    if (okUnit(l.unit_code)) return P + "studio.html?unit=" + encodeURIComponent(l.unit_code);
+    if (l.unit_code === GICHUL_UNIT) { var u = gichulUnit(l); return P + "studio.html" + (u ? "?unit=" + encodeURIComponent(u) : "#plans"); }
+    return P + "studio.html" + (l.unit_code ? "#plans" : "#lecture");
+  }
   function okUnit(v) { return UNITS.indexOf(String(v == null ? "" : v)) >= 0; }
   function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
   function n0(v, hi) { var n = Number(v); if (!isFinite(n) || n < 0) return 0; n = Math.trunc(n); return hi != null && n > hi ? hi : n; }
@@ -99,7 +106,7 @@
           if (pct > 0) { if (!bar) { bar = document.createElement("span"); bar.className = "prog"; bar.setAttribute("aria-hidden", "true"); bar.innerHTML = "<i></i>"; row.children[1].appendChild(bar); } bar.firstChild.style.width = pct + "%"; }
         } else if (!sample) {
           st.push('<span class="badge line">이용권 필요</span>');
-          a.innerHTML = '<a class="btn ghost sm" href="' + P + "studio.html" + (l.unit_code ? "?unit=" + encodeURIComponent(l.unit_code) : "#lecture") + '">이용권</a>';
+          a.innerHTML = '<a class="btn ghost sm" href="' + planHref(l) + '">이용권</a>';
         }
       } else if (!sample) {
         a.innerHTML = '<span class="badge line">이용권</span>';
@@ -137,7 +144,7 @@
           .concat(Object.keys(owned).map(function (k) { return owned[k]; }));   // 직접 공통 권리 + 단위 전권 권리(공통 접근 포함, pay.js). 중첩 구매 시 둘 다 후보
         var commonEnt = commonCands.sort(function (a, b) { return String(b.expires_at || "9999").localeCompare(String(a.expires_at || "9999")); })[0] || null;   // 만료 없음 > 가장 늦은 만료
         var cards = [], recent = [];
-        all.forEach(function (l) { if (l.progress && l.progress.updated_at) recent.push(l); });
+        all.forEach(function (l) { if (l.entitled && l.status === "ready" && l.progress && l.progress.updated_at) recent.push(l); });   // 권리가 끝났거나 공개가 내려간 강의는 이어보기를 눌러도 403, 409 로 끝난다
         recent.sort(function (a, b) { return String(b.progress.updated_at).localeCompare(String(a.progress.updated_at)); });
         function card(code, label, ls, ent, href) {
           var ready = ls.filter(function (l) { return l.status === "ready"; });
@@ -145,7 +152,7 @@
           var done = ls.filter(function (l) { return l.progress && l.progress.completed; }).length;
           var started = ls.filter(function (l) { return l.progress && l.progress.position_sec > 0; }).length;
           var pct = ready.length ? Math.round(done / ready.length * 100) : 0;
-          var last = ls.filter(function (l) { return l.progress && l.progress.updated_at; }).sort(function (a, b) { return String(b.progress.updated_at).localeCompare(String(a.progress.updated_at)); })[0];
+          var last = ls.filter(function (l) { return l.entitled && l.status === "ready" && l.progress && l.progress.updated_at; }).sort(function (a, b) { return String(b.progress.updated_at).localeCompare(String(a.progress.updated_at)); })[0];   // 최근 시청 목록과 같은 기준. 권리가 끝났거나 공개가 내려간 편은 카드 이어보기로도 걸지 않는다 (astra s2 M4)
           var untilTx = ent && ent.expires_at ? String(ent.expires_at).slice(0, 10) + " 까지" : "";
           return '<article class="cr' + (ent_ok ? "" : " off") + '"><div class="ch"><h2>' + esc(label) + "</h2><span class=\"cnt\">공개 <b>" + ready.length + "</b> 준비 <b>" + (ls.length - ready.length) + "</b></span></div>"
             + '<p class="st">완료 ' + done + "편, 시작 " + started + "편" + (untilTx ? ", " + esc(untilTx) : "") + "</p>"

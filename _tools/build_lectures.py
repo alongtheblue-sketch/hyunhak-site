@@ -199,7 +199,7 @@ CSS_LIST = CSS_COMMON + '''
 .lecp .cr[hidden]{display:none}
 .lecp .cr .kn{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
 .lecp .cr h2{font-size:var(--t-h4);margin-top:4px}
-.lecp .cr h2 a{display:inline-block;padding:3px 0}
+.lecp .cr h2 a{display:inline-flex;align-items:center;min-height:var(--tap);padding:3px 0}
 .lecp .cr h2 a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--hair)}
 .lecp .cr .sub{font-size:var(--t-sm);color:var(--gray);margin-top:4px}
 .lecp .cr .comp{font-size:var(--t-sm);color:var(--body);display:grid;gap:4px}
@@ -252,7 +252,7 @@ def list_page(cs):
     <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>인강</span></nav>
     <span class="eyebrow rv">인강</span>
     <h1 class="rv">풀이법 인강</h1>
-    <p class="lede rv">연세대, 고려대 제시문 면접의 풀이 절차를 강의로 잇습니다. 공통 풀이 4편, 단위 강의, 지문마다 한 편인 세트 해설, 2026 기출 해설 1편. 단위 전권 이용권에 포함되고 구매일부터 3개월 시청합니다.</p>
+    <p class="lede rv">연세대, 고려대 제시문 면접의 풀이 절차를 강의로 잇습니다. 공통 풀이 4편, 단위 강의, 지문마다 한 편인 세트 해설, 2026 기출 해설 1편. 단위 전권 이용권에 포함되고 지급일부터 3개월 시청합니다.</p>
     <!-- aeo-slot -->
     <div class="acts rv"><a class="btn" href="#ot">인강 OT 와 맛보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="classroom.html">인강실</a></div>
    </div>
@@ -260,7 +260,7 @@ def list_page(cs):
     <div><b>{len(cs)}</b><span>강좌. 단위 5, 공통 1</span></div>
     <div><b>{total_n}</b><span>편 구성, {E(SNAP)} 기준</span></div>
     <div><b>{round(total_sec / 3600)}</b><span>시간, 세트 해설 포함</span></div>
-    <div><b>3</b><span>개월 시청, 구매일부터</span></div>
+    <div><b>3</b><span>개월 시청, 지급일부터</span></div>
    </div>
   </div>
 </section>
@@ -276,7 +276,7 @@ def list_page(cs):
   <div class="sh rv"><div><h2 class="t">인강 OT 와 맛보기</h2><p>사기 전에 순서와 말하는 속도를 확인합니다. 맛보기는 로그인 없이, OT 영상은 로그인 뒤 무료로 봅니다.</p></div></div>
   <div class="otgrid rv">
    <div class="ot"><span class="eyebrow">인강 OT</span><h3>이 인강을 어떤 순서로 듣나</h3><p>5분 안내 강의입니다. 회원이면 이용권이 없어도 인강실에서 무료로 봅니다.</p>
-    <ol class="steps4"><li>공통 풀이 4편을 먼저 다 듣습니다. 두 시간이 안 됩니다.</li><li>내 단위의 단위 강의를 응시 전에 듣습니다.</li><li>응시합니다. 첫 응시는 실전형 한 번, 첨삭을 받습니다.</li><li>그 지문의 세트 해설을 듣고 다시 응시합니다. 지문마다 반복이 30세트 사이클입니다.</li></ol>
+    <ol class="steps4"><li>공통 풀이 4편을 먼저 다 듣습니다. 두 시간이 안 됩니다.</li><li>내 단위의 단위 강의를 응시 전에 듣습니다.</li><li>응시합니다. 마이페이지 이용권의 응시하러 가기로 스튜디오 앱이 열리고, 제시문과 문제는 앱이 냅니다. 첫 응시는 실전형 한 번, 첨삭을 받습니다.</li><li>그 지문의 세트 해설을 듣고 다시 응시합니다. 지문마다 반복이 30세트 사이클입니다.</li></ol>
     {order_svg()}
     <p style="margin-top:var(--s3);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
    <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, {smp_len("common")}. 강좌마다 맛보기가 한 편씩 있습니다.</p></div>
@@ -289,7 +289,7 @@ def list_page(cs):
   <div class="sh rv"><div><h2 class="t">자주 묻는 것</h2></div></div>
   <div class="rv">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
-  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간도 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
+  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>지급일부터 3개월입니다. 응시 이용 기간은 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
   <details class="faq"><summary>공개 편수는 어디서 확인하나요</summary><div class="a"><p>강좌 상세와 인강실에 열람 시점 기준으로 적힙니다. 준비 중인 편은 공개되는 대로 순차 업로드됩니다.</p></div></details>
   </div>
@@ -303,7 +303,7 @@ def list_page(cs):
   if (window.LEC) LEC.paintSummaries(document);
 })();
 </script>'''
-    # 내가 산 것 블록 (assets/owned.js, 2026-09-13): 목록 면에만. 인강실은 자체 보유 판정을 가진다
+    # 내가 산 것 블록 (assets/owned.js, 2026-09-13): 목록 면과 인강실(2026-09-13 s2 (d))에 둔다
     return HEAD.format(title="풀이법 인강, 현학적 연구소", p="", css=CSS_LIST, cls="lec2 lecp") + body + TAIL.format(p="", snap=SNAP.replace("-", ""), script='<script src="assets/owned.js"></script>\n'+script)
 
 
@@ -332,7 +332,8 @@ CSS_ROOM = CSS_COMMON + '''
 
 
 def room_page():
-    body = f'''<section class="phead tight">
+    body = f'''<div class="wrap"><div data-owned hidden></div></div>
+<section class="phead tight">
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="lectures.html">인강</a><span aria-hidden="true">/</span><span>인강실</span></nav>
@@ -349,7 +350,7 @@ def room_page():
    <div class="ot"><span class="eyebrow">로그인 필요</span><h2>인강실은 로그인한 뒤 열립니다</h2><p>산 이용권의 강의와 마지막으로 본 자리를 여기에서 엽니다. 계정이 없으면 먼저 가입하고, 강의를 아직 고르는 중이면 강좌 목록을 보세요.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="login.html?next=classroom.html">로그인 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="join.html">가입</a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
    <div class="guest">
     <div class="sample"><video controls preload="none" poster="assets/video/sample_common.jpg" playsinline><source src="assets/video/sample_common.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="assets/video/sample_common.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>공통 풀이 2편 개수 계약 발췌, {smp_len("common")}</p></div>
-    <div class="ot"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인하면 회원 무료 0강으로 목록 맨 위에 있습니다.</p>{order_svg()}<p style="margin-top:var(--s2)"><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
+    <div class="ot"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인하면 회원 무료 0강으로 목록 맨 위에 있습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다.</p>{order_svg()}<p style="margin-top:var(--s2)"><a class="tlink" href="assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div>
    </div>
   </div>
   <div data-for="member">
@@ -357,16 +358,16 @@ def room_page():
    <div class="crcards" id="crCards"></div>
    <div class="sh" style="margin-top:var(--s6)"><div><h2 class="t">최근 시청</h2><p>마지막으로 본 자리부터 다시 엽니다.</p></div></div>
    <div class="toc" id="crRecent" role="list"><p class="note">불러오는 중입니다.</p></div>
-   <div class="band"><div><h2>목차표와 OT 대본</h2><p>강좌별 강의 목차표와 OT 대본은 자료실에 있습니다.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="library.html#lecdocs">인강 자료 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
+   <div class="band"><div><h2>목차표와 OT 대본</h2><p>강좌별 강의 목차표와 OT 대본은 자료실에 있습니다. 인강 OT 영상은 회원 무료 0강이라 전체 목록 맨 위에서 이용권 없이 봅니다. 자료실 자료는 읽는 자료이고 응시와 별개입니다.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="library.html#lecdocs">인강 자료 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
   </div>
   <div data-for="none">
-   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h2>아직 들어온 강의가 없습니다</h2><p>단위 전권이나 지문 낱권을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
+   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h2>아직 들어온 강의가 없습니다</h2><p>단위 전권이나 지문 낱권을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다. 인강 OT 영상은 회원 무료 0강이라 이용권이 없어도 전체 목록 맨 위에서 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lecture.html">전체 목록</a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
   </div>
   <div data-for="down"><div class="ot"><span class="eyebrow">상태 미상</span><h2>강의 목록을 지금 불러올 수 없습니다</h2><p>잠시 후 다시 열어 주세요. 권리가 사라진 것이 아닙니다.</p></div></div>
  </div>
 </div>'''
     script = '<script>(function(){ var v=document.getElementById("crView"); if(!window.LEC){ v.setAttribute("data-state","down"); return; } LEC.classroom(v); setTimeout(function(){ if(v.getAttribute("data-state")==="loading") v.setAttribute("data-state","down"); }, 12000); })();</script>'
-    return HEAD.format(title="인강실, 현학적 연구소", p="", css=CSS_ROOM, cls="lec2 lecr") + body + TAIL.format(p="", snap=SNAP.replace("-", ""), script=script)
+    return HEAD.format(title="인강실, 현학적 연구소", p="", css=CSS_ROOM, cls="lec2 lecr") + body + TAIL.format(p="", snap=SNAP.replace("-", ""), script='<script src="assets/owned.js"></script>\n'+script)
 
 
 # ---------------- 강좌 상세 ----------------
@@ -430,7 +431,7 @@ def detail_page(c, cs):
 <p class="cartmsg note" role="status" aria-live="polite"></p>
 <p class="alt">지문 낱권 {c["single"]:,}원에는 그 세트 해설 1편이 붙습니다. 공통 풀이 4편만 들으려면 <a href="common.html">220,000원</a>.</p></div>'''
     else:
-        buy = f'''<div class="buybox" id="plan"><p class="k">공통 풀이 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 구매일부터 3개월</small></p>
+        buy = f'''<div class="buybox" id="plan"><p class="k">공통 풀이 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 지급일부터 3개월</small></p>
 <ul class="inc"><li><span>내용</span><span>공통 풀이 4편</span></li><li><span>시청</span><span>인강실, 배속과 책갈피</span></li><li><span>단위 전권</span><span>이미 포함</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="lecture-common" data-cart-title="공통 풀이 인강" data-cart-price="220000">담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
@@ -460,7 +461,7 @@ def detail_page(c, cs):
  <div class="hero2">
   <div class="hcopy"><span class="eyebrow">{"공통 풀이" if is_common else "풀이법 인강"}</span><h1>{E(label)}</h1>{guide}<p class="meta">{meta}</p><p class="lede">{E(INTRO[code][0].split(". ")[0])}.</p>{buy}</div>
   <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline><source src="../assets/video/sample_{code}.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, {smp_len(code)}. 로그인 없이 봅니다.</p></div>
-   <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다.</p>{order_svg()}<p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
+   <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다.</p>{order_svg()}<p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
  </div>
  <!-- aeo-slot -->
 </div>
@@ -470,7 +471,7 @@ def detail_page(c, cs):
  <section class="page" id="intro"><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + "을 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
-  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>구매일부터 3개월입니다. 응시 이용 기간도 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
+  <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>지급일부터 3개월입니다. 응시 이용 기간은 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
  </div>
  <div style="margin-top:var(--s6)"><span class="eyebrow">다른 강좌</span><div style="display:flex;gap:8px;flex-wrap:wrap">{others}</div></div></section>

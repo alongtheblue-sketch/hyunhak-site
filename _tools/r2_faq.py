@@ -18,7 +18,10 @@ PAGE_KEYS = {
                             ("faq_refund_q", "r3_studio_refund"),
                             ("r3_faq_teacher_q", "r3_faq_teacher_a"),
                             ("r3_faq_rank_q", "r3_faq_rank_a"),
-                            ("r3_faq_video_q", "r3_own_video")],
+                            ("r3_faq_video_q", "r3_own_video"),
+                            ("faq_start_q", "faq_start_a"),
+                            ("faq_readonly_q", "faq_readonly_a"),
+                            ("faq_record_q", "faq_record_a")],
 }
 
 

@@ -43,6 +43,8 @@
       row.appendChild(meta);
       var btn = el("button", "btn ghost sm", "열람하기");
       btn.type = "button";
+      // 버튼 이름이 전부 "열람하기" 면 어느 자료인지 구분되지 않는다
+      btn.setAttribute("aria-label", d.title + " 열람하기");
       if (openable) {
         btn.addEventListener("click", function () {
           location.href = "reader.html?slug=" + encodeURIComponent(d.slug);
@@ -83,7 +85,8 @@
       stateText.textContent = "";
       stateText.appendChild(el("b", null, "열람 중"));
       stateText.appendChild(document.createTextNode(left ? ". 남은 시간 " + left + "." : "."));
-      msg("신청되었습니다. 아래 목록에서 열람하실 수 있습니다.");
+      stateText.appendChild(document.createTextNode(" 읽는 자료이며 응시와 별개입니다."));
+      msg("신청되었습니다. 아래 목록에서 열람하실 수 있습니다. 읽는 자료이며 스튜디오 응시와 별개입니다.");
       if (window.HH_TRACK) HH_TRACK("pastexam_trial_claim", { docs: catalog.length });
     } catch (e) {
       if (e.status === 401) { goLogin(); return; }
@@ -123,7 +126,15 @@
     }
 
     // 2) 로그인 상태
-    var who = await HH.me(true);
+    var who = await HH.me();
+    // 401 이 아닌 오류(네트워크, 5xx)는 비회원이라는 뜻이 아니다. 목록을 잠그는 대신
+    // reader.html 로 보내 서버가 권리를 판정하게 한다
+    if (who.error) {
+      renderList(true);
+      stateText.textContent = "상태를 지금 확인할 수 없습니다.";
+      showAction("다시 시도", function () { load(); });
+      return;
+    }
     if (!who.member) {
       renderList(false);
       stateText.textContent = "회원 로그인 후 신청하실 수 있습니다. 신청하면 " + hours + "시간 동안 열람합니다.";
@@ -149,6 +160,7 @@
       stateText.textContent = "";
       stateText.appendChild(el("b", null, "열람 중"));
       stateText.appendChild(document.createTextNode(left ? ". 남은 시간 " + left + "." : "."));
+      stateText.appendChild(document.createTextNode(" 읽는 자료이며 응시와 별개입니다."));
       renderList(true);
       hideAction();
       return;
@@ -159,7 +171,7 @@
       hideAction();
       return;
     }
-    stateText.textContent = "아직 신청하지 않으셨습니다. 신청하면 " + hours + "시간 동안 열람합니다. 계정당 한 번입니다.";
+    stateText.textContent = "아직 신청하지 않으셨습니다. 신청하면 " + hours + "시간 동안 열람합니다. 계정당 한 번입니다. 읽는 자료이며 스튜디오 응시와 별개입니다.";
     renderList(false);
     showAction(hours + "시간 체험 신청", claim);
   }

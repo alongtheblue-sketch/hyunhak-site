@@ -113,9 +113,11 @@
     if (_me !== null && !force) return _me;
     if (_meP && !force) return _meP;   // 헤더, owned, 면 스크립트가 같은 틱에 부르면 요청 1건을 나눠 쓴다 (astra r1 M4)
     _meP = (async () => {
-      try { _me = (await api("/api/auth/me")); } catch (e) { _me = { member: null, error: (e && e.status === 401) ? null : ((e && e.status) || "network") }; }   // 401 = 비회원. 그 밖(네트워크, 5xx, 403)은 error 에 남겨 호출자가 가른다
+      let r;
+      try { r = (await api("/api/auth/me")); } catch (e) { r = { member: null, error: (e && e.status === 401) ? null : ((e && e.status) || "network") }; }   // 401 = 비회원. 그 밖(네트워크, 5xx, 403)은 error 에 남겨 호출자가 가른다
       finally { _meP = null; }
-      return _me;
+      if (!r || !r.error) _me = r;   // 실패 결과는 캐시하지 않는다 (config() 와 같은 방식). 캐시하면 일시 장애가 면 수명 내내 비회원 취급으로 굳는다
+      return r;
     })();
     return _meP;
   }
@@ -198,7 +200,8 @@
     document.querySelectorAll("[data-promo]").forEach((el) => {
       const until = el.getAttribute("data-promo-until");
       const expired = until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until);
-      el.hidden = !p || expired;
+      const want = el.getAttribute("data-promo");
+      el.hidden = !p || !!expired || (!!want && p.id !== want);   // 지면에 박힌 행사 id 와 살아 있는 행사가 다르면 배너를 숨긴다 (팝업 게이트와 같은 대조)
     });
     if (!p) return;
     document.querySelectorAll("[data-list-price]").forEach((el) => {

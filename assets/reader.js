@@ -1,4 +1,4 @@
-/* 현학적 연구소 보안 뷰어 v2 — 페이지 타일을 캔버스에 그리며 계정 워터마크를 같은 캔버스에 합성.
+/* 현학적 연구소 보안 리더 v2 — 페이지 타일을 캔버스에 그리며 계정 워터마크를 같은 캔버스에 합성.
    원본 PDF 는 절대 받지 않는다. <img> 가 아닌 캔버스라 워터마크는 DOM 제거로 지울 수 없다(T5/T9).
    v2 (2026-08-28, DESIGN_v2_toc_search.md + Codex r1 반영): 접히는 사이드바(목차 트리, 검색), 페이지 이동, 확대/축소,
    이어읽기, 키보드. 검색은 서버가 스니펫과 좌표만 준다 (전문 텍스트는 내려오지 않는다, T15).
@@ -178,6 +178,15 @@
       if (r.status === 409 || r.status === 429) {
         state.drawn[p] = false;
         return r.json().catch(function () { return {}; }).then(function (d) { pageDenied(r.status, d); });
+      }
+      // 403 = 권리 취소나 만료(다시 요청해도 같은 결과라 terminal), 503 = 타일 준비 중(재시도 가능).
+      // 두 경우 모두 서버 본문의 error 문구를 그대로 써서 문면 원천을 서버 한 곳에 둔다 (조용히 빈 면만 남기던 문제)
+      if (r.status === 403 || r.status === 503) {
+        state.drawn[p] = false;
+        return r.json().catch(function () { return {}; }).then(function (d) {
+          if (r.status === 403) block(String((d && d.error) || "열람 권리를 확인할 수 없습니다. 마이페이지에서 이용권을 확인해 주세요."));
+          else showToast(String((d && d.error) || "페이지를 준비하고 있습니다. 잠시 후 다시 스크롤해 주세요."));
+        });
       }
       if (!r.ok) throw new Error("page " + p + " " + r.status);
       return r.blob();
@@ -567,10 +576,12 @@
   function fail(text) {
     while (msg.firstChild) msg.removeChild(msg.firstChild);
     msg.appendChild(document.createTextNode(text));
-    var p = el("p"); p.style.cssText = "margin-top:20px;font-size:13px";
-    [["my.html", "내 자료실"], ["guidebook/index.html", "가이드북 목록"], ["index.html", "연구소 홈"]].forEach(function (x, i) {
-      if (i) p.appendChild(document.createTextNode("   "));
-      var a = el("a", null, x[1]); a.href = x[0]; p.appendChild(a);
+    // 리더에는 헤더도 하단 탭도 없어 이 링크들이 유일한 탈출구다. 손가락으로 짚을 수 있는 크기(48px)로 세우고 라벨과 목적지를 맞춘다
+    var p = el("p"); p.style.cssText = "margin-top:20px;font-size:14px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center";
+    [["library.html", "자료실"], ["guidebook/index.html", "가이드북 목록"], ["my.html", "마이페이지"], ["index.html", "연구소 홈"]].forEach(function (x) {
+      var a = el("a", null, x[1]); a.href = x[0];
+      a.style.cssText = "display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 16px;border:1px solid currentColor;border-radius:8px;text-decoration:none";
+      p.appendChild(a);
     });
     msg.appendChild(p);
   }
@@ -598,7 +609,7 @@
       if (Array.isArray(d.size) && d.size.length === 2 && d.size[0] > 0 && d.size[1] > 0)
         document.documentElement.style.setProperty("--pgar", d.size[0] + " / " + d.size[1]);
       titleEl.textContent = d.title || "현학적 연구소";
-      document.title = (d.title || "현학적 연구소") + " — 보안 뷰어";
+      document.title = (d.title || "현학적 연구소") + " — 보안 리더";
       whoEl.textContent = state.email;
       // 인쇄 한도 0 인 자료(체험판)는 버튼 자체를 띄우지 않는다. 서버는 403 으로 막지만
       // 뷰어가 그것을 모르면 누를 때마다 실패하는 버튼이 남는다.

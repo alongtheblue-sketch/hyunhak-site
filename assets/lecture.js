@@ -405,8 +405,15 @@
     v.src = streamUrl();
     v.playbackRate = S.rate;
     v.load();
-    if (at > 0) {
-      var once = function () { try { v.currentTime = at; } catch (e) {} v.removeEventListener("loadedmetadata", once); };
+    // 메타데이터가 늦게 오는 사이에 사용자가 먼저 이동하면(처음부터, 다시 보기, 책갈피) 그 조작이 이긴다.
+    // 목표값을 S.pendingSeek 에 두고 seekTo 가 지우게 한다. 리스너가 뒤늦게 이어보기 지점으로 되돌리던 문제
+    S.pendingSeek = at > 0 ? at : null;
+    if (S.pendingSeek != null) {
+      var once = function () {
+        v.removeEventListener("loadedmetadata", once);
+        var want = S.pendingSeek; S.pendingSeek = null;
+        if (want != null) { try { v.currentTime = want; } catch (e) {} }
+      };
       v.addEventListener("loadedmetadata", once);
     }
     S.lastT = at || 0;
@@ -621,6 +628,7 @@
 
   // ---------- 재생 제어 ----------
   function seekTo(t, kind, val) {
+    S.pendingSeek = null;   // 사용자 조작이 대기 중인 이어보기 복원보다 우선한다
     var from = P.v.currentTime || 0;
     t = Math.max(0, Math.min(S.dur || t, t));
     try { P.v.currentTime = t; } catch (e) {}
