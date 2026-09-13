@@ -1489,3 +1489,28 @@ html.ppop-open{overflow:hidden}
   :where(body.v2) .r3-hero .r2-intro h1{font-size:var(--t-h2)}
   :where(body.v2) .r2-section.r3-section>h2{font-size:var(--t-h3)}
 }  /* 900 이하 위계: 면 제목 t-h2 > 절 제목 t-h3 (critic 수리 5) */
+
+/* ── 내가 산 것 (assets/owned.js, 2026-09-13) — 구매한 회원이 판매 면 위에서 다음 행동을 고른다. 괘선과 종이색만 쓴다 (그림자 0, 곡률 토큰) ── */
+:where(body.v2) .owned{margin:var(--s4) 0 var(--s5);padding:var(--s4);background:var(--card);border-radius:var(--r-md);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2) .owned-h{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;margin-bottom:var(--s2)}
+:where(body.v2) .owned-h h2{margin:0;font-size:var(--t-h4);font-weight:var(--w-head);letter-spacing:-0.01em;line-height:1.3}
+:where(body.v2) .owned-list{list-style:none;margin:0;padding:0}
+:where(body.v2) .owned-list li{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;padding:var(--s3) 0;border-top:var(--rule-ui)}
+:where(body.v2) .owned-list li>div:first-child{min-width:0;flex:1 1 16em}
+:where(body.v2) .owned-list .nm{margin:0;font-size:var(--t-base);font-weight:700;line-height:1.3;letter-spacing:-0.01em;word-break:keep-all;overflow-wrap:break-word}
+:where(body.v2) .owned-list .st{margin:var(--s1) 0 0;font-size:var(--t-sm);color:var(--gray);line-height:var(--lh-ui)}
+:where(body.v2) .owned-list .ops{display:flex;gap:var(--s2);align-items:center;flex-wrap:wrap}
+:where(body.v2) .owned-note,:where(body.v2) .owned-guest{margin:var(--s3) 0 0;font-size:var(--t-sm);color:var(--gray);line-height:var(--lh-body);word-break:keep-all}
+:where(body.v2) .owned-guest{margin:var(--s3) 0;padding:var(--s2) var(--s3);background:var(--card);box-shadow:inset 0 0 0 1px var(--hairs);border-left:2px solid var(--ink)}
+:where(body.v2) .r3-unit-badge.own{color:var(--ink);border-color:var(--ink);font-weight:600}   /* 朱印은 가격과 인장에만. 보유 배지는 먹 */
+:where(body.v2) .liblist .lf.own .own-tag{color:var(--ink);font-weight:600}
+:where(body.v2) .owned-h .tlink{color:var(--gray);font-weight:500;text-decoration-color:var(--hairs)}
+:where(body.v2) .owned-more{margin-top:var(--s2)}
+:where(body.v2) .owned-more summary{cursor:pointer;min-height:var(--tap);display:flex;align-items:center;font-size:var(--t-sm);font-weight:600;color:var(--body)}
+:where(body.v2) .owned-more .owned-list li:first-child{border-top:0}
+@media (max-width:640px){
+  :where(body.v2) .owned{padding:var(--s3)}
+  :where(body.v2) .owned-list li{align-items:stretch;flex-direction:column;gap:var(--s2)}
+  :where(body.v2) .owned-list li>div:first-child{flex:0 0 auto}   /* 세로 배치에서 flex-basis 16em 이 높이로 붙지 않게 */
+  :where(body.v2) .owned-list li:first-child .ops .btn{width:100%}
+}

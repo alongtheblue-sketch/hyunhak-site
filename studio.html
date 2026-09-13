@@ -112,6 +112,7 @@
 <aside class="promo r2-promo" data-promo="prm_2609_30" data-promo-until="2026-09-30T23:59:59+09:00" aria-label="할인 행사 안내"><div class="wrap"><p>9월 30일까지 전 상품을 정가에서 30% 할인합니다.</p></div></aside>
 
 <main id="main">
+<div class="wrap"><div data-owned hidden></div></div>
 
 <!-- 페이지 머리 문안 = COPY.md §4 -->
 <section class="phead tight">
@@ -122,7 +123,7 @@
     <p class="lede" data-copy="studio_room_lead">기출 제시문 150세트, 지문마다 5회 응시, 세 단 첨삭입니다.</p>
   <!-- aeo --><p class="aeo-answer">제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함.</p><!-- /aeo -->
 </div>
-    <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#trialGo" id="trialGo">체험 응시 1회 시작</a><a class="tlink" href="#sets">세트 표 보기</a></div>
+    <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="#trialGo" id="trialGo" data-owned-entry>체험 응시 1회 시작</a><a class="tlink" href="#sets">세트 표 보기</a></div>
     <div class="facts lbl">
       <div><b>5</b><span>지문당 응시 횟수</span></div>
       <div><b>3</b><span>첨삭 단계, 전사와 진단과 재구성</span></div>
@@ -339,6 +340,7 @@
 <nav class="fix" aria-label="모바일 바로가기"><a href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 11.2 12 4.4l8 6.8M6.4 9.8V20h11.2V9.8"/></svg>홈</a><a href="programs/guidebook.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="5" y="4" width="14" height="16"/><path d="M8.6 4v16M12 8.4h4M12 11.8h4"/></svg>가이드북</a><a class="on" aria-current="page" href="programs/studio.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="6" width="12" height="12" rx="2"/><path d="m15 10 6-3v10l-6-3z"/></svg>스튜디오</a><a href="ranking.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 20V12h5v8M9 20V5h6v15M15 20v-10h5v10M3 20h18"/></svg>랭킹실</a><a href="my.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="8.4" r="3.4"/><path d="M4.8 20c1.6-4 4.2-5.6 7.2-5.6s5.6 1.6 7.2 5.6"/></svg>MY</a></nav>
 
 <script src="assets/app.js"></script>
+<script src="assets/owned.js"></script>
 <script src="assets/rank.js" defer></script>
 <script>
 document.addEventListener('DOMContentLoaded', function(){
@@ -525,6 +527,7 @@ document.addEventListener('DOMContentLoaded', function(){
   fetch('assets/data/sets.json').then(function(r){ return r.json(); }).then(function(d){
     units=(d.units||[]).filter(function(u){ return okUnit(u.code); });   // 허용 단위 5종만. 미래캠은 카탈로그에 있어도 서지 않는다 (Global 4)
     renderUnits();
+    if(HH.ownedApplyUnits) HH.ownedApplyUnits();   // 산 단위 카드는 담기 대신 응시하러 가기 (owned.js)
     var q=params.get('unit'); cur=(units.find(function(u){return u.code===q})||units[0]||{}).code;
     renderTabs(); renderRows();
     if(q) document.getElementById('sets').scrollIntoView({block:'start'});
@@ -542,10 +545,7 @@ document.addEventListener('DOMContentLoaded', function(){
     ev.preventDefault();
     var st = await HH.me();
     if(!st.member){ location.href='join.html?next=studio.html'; return; }
-    try{
-      var r = await HH.api('/api/studio/token',{method:'POST'});
-      window.open(r.url,'_blank','noopener');
-    }catch(e){ alert(e.message||'이용권을 확인하지 못했습니다'); }
+    HH.studioGo(this);   // owned.js: 휴대폰 같은 탭, 데스크톱 새 창 (fetch 뒤 window.open 은 팝업으로 막혔다)
   });
 });
 </script>

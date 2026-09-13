@@ -1,0 +1,22 @@
+첨부 r2 기준 **7건 닫힘, 3건 미흡**입니다.
+
+- H1 닫힘 — 두 생성기에 반영됐으며 메모리 재생성에서도 구매물 블록과 스크립트가 유지됩니다.
+- H2 닫힘 — 활성 유료권 보유 시 owned의 무료 체험 행을 숨깁니다.
+- H3 닫힘 — 창 선확보, 팝업 차단 시 같은 탭 이동, 오류 시 빈 창 정리를 확인했습니다.
+- H4 닫힘 — 상단 진입도 `HH.studioGo(this)`를 사용합니다.
+- H5 미흡 — 지연된 `loadMe()` 응답이 응시 중 마이페이지 링크를 다시 표시합니다.
+- M1 미흡 — 열람권이 만료돼도 무기한 파일권 때문에 열람 가능 표시와 번들 열람 버튼이 남습니다.
+- M2 닫힘 — 모바일 `flex:0 0 auto`가 설명칸의 16em 높이를 제거합니다.
+- M3 닫힘 — 동일 slug의 열람권과 파일권을 한 행으로 합칩니다.
+- M4 미흡 — MY 초기 `HH.me(true)`가 Promise 공유를 우회해 동시 조회가 여전히 2건입니다.
+- L1 닫힘 — MY의 미사용 선언은 제거됐고 owned의 선언은 실제 사용됩니다.
+
+별도 신규 회귀는 확인하지 못했습니다. 남은 항목의 위치와 수정안입니다.
+
+- [4 동시성][real] [interview-studio/web/index.html:1643](/Users/gregory/Workspace/interview-studio/web/index.html:1643) — 응시 시작 뒤 `/api/me`가 완료되면 링크를 무조건 재노출 — `loadMe()`에도 현재 화면의 응시 여부를 적용하는 공통 표시 함수를 사용.
+- [1 정확성][real] [assets/owned.js:67](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:67), [122](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:122) — 파일권을 열람권처럼 처리해 구매 링크를 제거하고, 열람권 없는 번들을 자료실로 보냄 — 활성 `download`로 열람 가능 여부를 판정하고 파일권만 있으면 MY 다운로드로 안내.
+- [3 성능][real] [my.html:373](/Users/gregory/Workspace/hyunhak-site/my.html:373) — 초기 강제 조회가 요청을 중복 생성 — 최초 조회는 `HH.me()`로 공유하고 실제 갱신 시에만 강제 조회.
+
+검증: VM에서 링크 재노출·만료 열람권과 유효 파일권 조합·중복 요청을 재현했습니다. 로컬 v2 검사 70면과 링크 검사는 FAIL 0입니다.
+
+VERDICT: NO-GO — 응시 중 이탈 링크 재노출과 만료된 열람권의 잘못된 이용 안내가 남아 있습니다.

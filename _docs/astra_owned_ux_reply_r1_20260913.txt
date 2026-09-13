@@ -1,0 +1,27 @@
+SEVERITY_SUMMARY: critical=0 high=5 medium=4 low=1
+
+CRITICAL:
+- 없음.
+
+HIGH:
+- [1 정확성][high real] [programs/studio.html:94](/Users/gregory/Workspace/hyunhak-site/programs/studio.html:94), [lectures.html:190](/Users/gregory/Workspace/hyunhak-site/lectures.html:190) — 생성기에 변경이 없어 `build_all.sh` 재실행 시 구매물 블록과 스크립트가 사라짐; 메모리 재생성으로 확인 — `program_studio_v2.html`·`build_lectures.py`에도 반영.
+- [1 정확성][high real] [assets/owned.js:126](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:126) — `if(o.trial)`이 유료권과 무료 체험을 함께 표시하지만, 인자 없는 요청은 서버 `trial.js:89`에서 유료권을 우선 선택하여 체험 대신 유료 잔여 횟수를 차감함 — 활성 유료권 보유 시 체험 버튼 숨김.
+- [5 에러 처리][high real] [assets/owned.js:86](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:86) — `if(w===false)`는 팝업 차단 반환값 `null`을 놓쳐 이동 없이 종료됨; `noopener`는 성공해도 null이라 단순 조건 교체도 부정확함 — 클릭 즉시 빈 창을 확보하고 opener 차단 후 이동하거나 같은 탭 사용. [반환값 근거](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#return_value)
+- [1 정확성][high real] [assets/owned.js:186](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:186), [studio.html:550](/Users/gregory/Workspace/hyunhak-site/studio.html:550) — 상단 링크는 “응시하러 가기”로 바뀌지만 기존 `await` 뒤 `window.open(...)`을 유지하여 모바일 팝업 문제가 남음 — 로그인 분기 뒤 `HH.studioGo(this)` 호출.
+- [1 정확성][high real] [interview-studio/web/index.html:326](/Users/gregory/Workspace/interview-studio/web/index.html:326) — 새 마이페이지 링크가 `show()`의 응시 중 숨김 대상에서 빠져 녹화 중 같은 탭으로 이탈 가능; `chunks.push(e.data)`에 쌓인 미제출 답변이 소실됨 — 응시 중 숨기거나 이탈 확인·종료 처리 연결.
+
+MEDIUM:
+- [1 정확성][medium real] [assets/owned.js:50](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:50) — `o.lecture.push(e)`와 가이드북 분류가 `_expired`를 무시해 서버가 거절하는 만료권도 이용 가능·보유 중으로 표시하고 구매 링크를 제거함 — 활성 권리만 행동 목록과 `slugs`에 포함.
+- [1 정확성][medium real] [assets/base.css:1499](/Users/gregory/Workspace/hyunhak-site/assets/base.css:1499) — `flex:1 1 16em`이 모바일 `flex-direction:column`에서도 유지되어 설명칸 높이에 16em이 적용됨 — 모바일에서 `flex:0 1 auto`로 초기화.
+- [1 정확성][medium real] [assets/owned.js:120](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:120) — `o.guide.singles.forEach`가 PDF 구매 시 지급되는 `download`·`file_download`를 동일 상품 2행으로 출력함 — 상품·slug 기준으로 합쳐 “상품 1줄=버튼 1개” 적용.
+- [3 성능·4 동시성][medium real] [assets/owned.js:193](/Users/gregory/Workspace/hyunhak-site/assets/owned.js:193), [assets/app.js:113](/Users/gregory/Workspace/hyunhak-site/assets/app.js:113) — `_me`는 완료 결과만 캐시하여 내비·owned·MY 초기 조회가 중복됨; 동시 호출 3건→요청 3건 재현 — 진행 중 Promise 공유 및 불필요한 초기 조회 제거.
+
+LOW:
+- [6 가독성][low nit] [my.html:599](/Users/gregory/Workspace/hyunhak-site/my.html:599) — 공용 함수 이관 후 `ENT_ID_RE`가 미사용으로 남음 — 선언 제거.
+
+확인: XSS·시크릿 노출·신규 의존성은 발견하지 못했습니다. 구매 위임 충돌과 렌더 완료 순서 누락도 확인되지 않았으며, `.sgo`는 실제 버튼이라 `disabled`가 작동합니다.
+
+검증: 원문 VM 실행과 파일 쓰기를 대체한 메모리 재생성 수행. 브라우저 실측은 자동 승인 검토가 “승인 필요, 정책 never”로 거절하여 미실행했습니다.
+
+RECOMMENDATION: REQUEST_CHANGES
+VERDICT: NO-GO — 재빌드 시 기능 소실, 응시 진입 실패, 유료권 오사용과 녹화 소실 경로를 먼저 수정해야 합니다.

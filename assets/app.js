@@ -108,11 +108,16 @@
   function trackAdd(line) { track("add_to_cart", { currency: "KRW", value: line.price * (line.qty || 1), items: [lineItem(line)] }); }
   function cartTotal() { return cart().reduce((s, x) => s + x.price * x.qty, 0); }
 
-  let _me = null;
+  let _me = null, _meP = null;
   async function me(force) {
     if (_me !== null && !force) return _me;
-    try { _me = (await api("/api/auth/me")); } catch (e) { _me = { member: null, error: (e && e.status === 401) ? null : ((e && e.status) || "network") }; }   // 401 = 비회원. 그 밖(네트워크, 5xx, 403)은 error 에 남겨 호출자가 가른다
-    return _me;
+    if (_meP && !force) return _meP;   // 헤더, owned, 면 스크립트가 같은 틱에 부르면 요청 1건을 나눠 쓴다 (astra r1 M4)
+    _meP = (async () => {
+      try { _me = (await api("/api/auth/me")); } catch (e) { _me = { member: null, error: (e && e.status === 401) ? null : ((e && e.status) || "network") }; }   // 401 = 비회원. 그 밖(네트워크, 5xx, 403)은 error 에 남겨 호출자가 가른다
+      finally { _meP = null; }
+      return _me;
+    })();
+    return _meP;
   }
 
   // ── 간편 로그인 (구글, 카카오, 네이버) ──

@@ -1,0 +1,922 @@
+{
+ "owner_400_index_html": {
+  "ox": 0,
+  "height": 7150,
+  "coarse": true,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  }
+ },
+ "owner_400_studio_html": {
+  "ox": 0,
+  "height": 14561,
+  "coarse": true,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 1편 보유",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  }
+ },
+ "owner_400_programs_studio_html": {
+  "ox": 0,
+  "height": 11295,
+  "coarse": true,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 1편 보유",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  }
+ },
+ "owner_400_library_html": {
+  "ox": 0,
+  "height": 9440,
+  "coarse": true,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  }
+ },
+ "owner_400_lectures_html": {
+  "ox": 0,
+  "height": 6925,
+  "coarse": true,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  }
+ },
+ "owner_400_my_html": {
+  "ox": 0,
+  "height": 6513,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 0회, 2026-12-13 까지 응시하러 가기 아직 응시한 세트가 없습니다. 세트마다 5회 응시할 수 있고, 문제지와 해설지 PDF 는 아래에서 받습니다 세트 30개 문제지·해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-12-13 까지 응시하러 가기 고려대 계열적합 인문 03 놀이는 어떻게 문화가 되는가 미응시, 5회 가능 문제지 PDF 해설지 PDF 단위 전권 이용권 단위 전권 이용권,",
+  "tapSmall": 0,
+  "errs": [],
+  "click": null
+ },
+ "owner_1280_index_html": {
+  "ox": 0,
+  "height": 4719,
+  "coarse": false,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/index.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  }
+ },
+ "owner_1280_studio_html": {
+  "ox": 0,
+  "height": 10778,
+  "coarse": false,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 1편 보유",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  }
+ },
+ "owner_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 8168,
+  "coarse": false,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 1편 보유",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/programs/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  }
+ },
+ "owner_1280_library_html": {
+  "ox": 0,
+  "height": 6250,
+  "coarse": false,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/library.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  }
+ },
+ "owner_1280_lectures_html": {
+  "ox": 0,
+  "height": 5218,
+  "coarse": false,
+  "own": "내가 산 것 MY에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 풀이법 해설 인강 공개된 편부터 시청, 이어보기 인강 보기 나머지 1개 펼치기 응시 순서는 응시하러 가기, 세트 고르기, 면접 시작입니다. 점수와 첨삭은 MY 응시 기록에서 봅니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/lectures.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  }
+ },
+ "owner_1280_my_html": {
+  "ox": 0,
+  "height": 4901,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 0회, 2026-12-13 까지 응시하러 가기 아직 응시한 세트가 없습니다. 세트마다 5회 응시할 수 있고, 문제지와 해설지 PDF 는 아래에서 받습니다 세트 30개 문제지·해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-12-13 까지 응시하러 가기 고려대 계열적합 인문 03 놀이는 어떻게 문화가 되는가 미응시, 5회 가능 문제지 PDF 해설지 PDF 단위 전권 이용권 단위 전권 이용권,",
+  "tapSmall": 0,
+  "errs": [],
+  "click": null
+ },
+ "guest_400_index_html": {
+  "ox": 0,
+  "height": 6481,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_400_studio_html": {
+  "ox": 0,
+  "height": 13947,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "가입하고 체험 응시 1회",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_400_programs_studio_html": {
+  "ox": 0,
+  "height": 10616,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_400_library_html": {
+  "ox": 0,
+  "height": 8890,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_400_lectures_html": {
+  "ox": 0,
+  "height": 6374,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_400_my_html": {
+  "ox": 0,
+  "height": 1572,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "불러오는 중",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_index_html": {
+  "ox": 0,
+  "height": 4190,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_studio_html": {
+  "ox": 0,
+  "height": 10345,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "가입하고 체험 응시 1회",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 7735,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_library_html": {
+  "ox": 0,
+  "height": 5817,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_lectures_html": {
+  "ox": 0,
+  "height": 4786,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ },
+ "guest_1280_my_html": {
+  "ox": 0,
+  "height": 1183,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "불러오는 중",
+  "tapSmall": 0,
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null
+ }
+}

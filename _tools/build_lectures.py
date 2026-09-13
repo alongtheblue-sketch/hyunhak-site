@@ -245,7 +245,8 @@ def list_page(cs):
                 if l["id"] not in _seen:
                     _seen.add(l["id"]); total_sec += (l["duration_sec"] or 0)
     total_n = len(_seen)
-    body = f'''<section class="phead">
+    body = f'''<div class="wrap"><div data-owned hidden></div></div>
+<section class="phead">
   <div class="wrap">
    <div class="pagehead">
     <nav class="crumb rv" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>인강</span></nav>
@@ -302,7 +303,8 @@ def list_page(cs):
   if (window.LEC) LEC.paintSummaries(document);
 })();
 </script>'''
-    return HEAD.format(title="풀이법 인강, 현학적 연구소", p="", css=CSS_LIST, cls="lec2 lecp") + body + TAIL.format(p="", snap=SNAP.replace("-", ""), script=script)
+    # 내가 산 것 블록 (assets/owned.js, 2026-09-13): 목록 면에만. 인강실은 자체 보유 판정을 가진다
+    return HEAD.format(title="풀이법 인강, 현학적 연구소", p="", css=CSS_LIST, cls="lec2 lecp") + body + TAIL.format(p="", snap=SNAP.replace("-", ""), script='<script src="assets/owned.js"></script>\n'+script)
 
 
 # ---------------- 인강실 ----------------
