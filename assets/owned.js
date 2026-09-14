@@ -77,6 +77,8 @@
       if(e.kind==='download'||e.kind==='file_download'){
         if(e._expired) return;
         e._slug=slugOf(meta);
+        // 파일도 제목도 없는 행(인강 앵커 ent_master_lecture 같은 QA seed)은 보유 목록에 없다. 빈 slug 링크는 리더가 "잘못된 접근" 으로 막는다 (2026-09-14 건우 실측)
+        if(!e._slug&&!meta.title){ console.warn('entitlement without file, skipped', e.id); return; }
         if(meta.bundle){ var g=o.guide.bundles[meta.bundle]=o.guide.bundles[meta.bundle]||{view:[],file:[]}; g[e.kind==='file_download'?'file':'view'].push(e); }
         else o.guide.singles.push(e);
         if(e._slug) o.slugs[e._slug]=e;
@@ -164,9 +166,10 @@
     });
     order.forEach(function(k){
       var g=bySlug[k], view=g.view||g.file;
-      var op=g.view
+      // 제목은 있는데 파일이 없는 행은 열람 링크를 만들 수 없다. 마이페이지가 안내를 맡는다 (2026-09-14)
+      var op=g.view&&view._slug
         ? '<a class="btn sm" href="'+pre+'reader.html?slug='+encodeURIComponent(view._slug)+'">열람하기</a>'+(g.file?lnk('my.html','#passList','tlink','마이페이지에서 PDF 내려받기'):'')
-        : lnk('my.html','#passList','btn sm','마이페이지에서 내려받기');
+        : lnk('my.html','#passList','btn sm',view._slug?'마이페이지에서 내려받기':'마이페이지에서 확인');
       out.push({nm:esc(g.title), st:g.file?'읽는 자료, 보안 리더 열람, PDF 소장판':'읽는 자료, 보안 리더 열람', op:op});
     });
     if(trial) out.push({nm:'2026 기출 체험판', st:'읽는 자료, '+trial+'건, 열람 중', op:lnk('pastexam.html','','btn sm','체험판 목록 보기')});

@@ -1,0 +1,38 @@
+{
+  "script": "_tools/shot_reader_anchor_20260914.mjs",
+  "symptom": "my.html 읽는 자료 카드(제목 = 종류 이름) 열람하기 → reader.html?slug= → 잘못된 접근입니다",
+  "root_cause": "ent_master_lecture (master 계정 인강 앵커) 가 kind download + meta {note} (tools/master_grant_lecture_20260828.sql). my.html·owned.js 가 slug 없는 download 행에도 reader 링크를 그렸다",
+  "pre": {
+    "ts": "2026-09-14T09:17:21.768Z",
+    "fails": [
+      "my.html: 빈 slug reader 링크 2",
+      "my.html: 앵커 행이 종류 이름 카드로 섰다",
+      "my.html: 파일 없는 행에 열람 링크가 있다 reader.html?slug=",
+      "studio.html: 빈 slug reader 링크 2"
+    ],
+    "my_cards": [
+      "읽는 자료, 디지털 자료",
+      "가천대학교 2027 면접가이드북",
+      "파일 미연결 상품"
+    ],
+    "my_empty_links": 2,
+    "studio_empty_links": 2,
+    "reader_text": "☰ 목차 자료실로 현학적 연구소 보안 리더 / － ＋ 화면맞춤 잘못된 접근입니다. 자료실 가이드북 목록 마이페이지 연구소 홈 이 화면에는 구매하"
+  },
+  "post": {
+    "ts": "2026-09-14T09:18:51.494Z",
+    "fails": [],
+    "my_cards": [
+      "가천대학교 2027 면접가이드북",
+      "파일 미연결 상품"
+    ],
+    "my_empty_links": 0,
+    "studio_empty_links": 0,
+    "studio_owned": "내가 산 것 마이페이지에서 전체 보기 가천대학교 2027 면접가이드북 읽는 자료, 보안 리더 열람 열람하기 파일 미연결 상품 읽는 자료, 보안 리더 열람 마이페이지에서 확인",
+    "warns": [
+      "warning: entitlement without file, skipped ent_master_lecture",
+      "warning: entitlement without file, skipped ent_master_lecture"
+    ]
+  },
+  "data_fix": "hyunhak-api tools/fix_master_lecture_anchor_kind_20260914.sql (건우 원격 실행)"
+}

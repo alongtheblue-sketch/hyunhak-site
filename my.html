@@ -420,6 +420,9 @@ document.addEventListener('DOMContentLoaded', async function(){
     // 기출 체험판(meta.trial)은 문서마다 권리 1행이라 이름 없는 카드가 문서 수만큼 쌓인다.
     // 카드 1장으로 묶고 기간이 끝난 행은 목록에서 뺀다 (R4-CONTRACT-2)
     if(e.kind==='download'&&meta.trial){ if(!e._expired) trialDocs.push(e); return; }
+    // 파일도 제목도 없는 읽는 자료 행(인강 앵커 ent_master_lecture 처럼 meta 가 note 뿐인 QA seed)은 카드가 아니다.
+    // 리더는 slug 없이 열지 못하고(reader.js boot "잘못된 접근"), 종류 이름만 남은 카드는 무엇인지 보일 수 없다 (2026-09-14 건우 실측)
+    if((e.kind==='download'||e.kind==='file_download')&&!slugOf(meta)&&!meta.title){ console.warn('entitlement without file, skipped', e.id); return; }
     if(meta.bundle){ var g=bundles[meta.bundle]=bundles[meta.bundle]||{view:[],file:[]};
       g[e.kind==='file_download'?'file':'view'].push(e); }
     else singles.push(e);
@@ -468,7 +471,10 @@ document.addEventListener('DOMContentLoaded', async function(){
     // 죽은 권리에 버튼을 주면 403 만 돌아온다 (D7)
     var liveStudio = isStudio && !expired && (e.kind==='studio_school' || e.uses_left==null || HH.intIn(e.uses_left,0,9999,0)>0);
     if(e.kind==='download'||e.kind==='file_download'){
+      // 제목은 있는데 파일이 없는 행(file_key 없는 digital 상품, pay.js grantEntitlements)은 열람 버튼 대신 안내.
+      // 빈 slug 링크는 리더가 "잘못된 접근" 으로 막으므로 버튼을 주면 눌러도 실패만 한다 (2026-09-14)
       op = expired ? '<span class="st">열람 기간 종료</span> <a class="tlink" href="guidebook/index.html">다시 구매</a>'
+        : !slug ? '<span class="st">열람 파일 연결 대기</span> <a class="tlink" href="support.html">고객센터</a>'
         : e.kind==='download' ? '<a class="btn sm" href="reader.html?slug='+encodeURIComponent(slug)+'">열람하기</a>'
         : '<button type="button" class="btn sm dlgo" data-slug="'+esc(slug)+'">PDF 내려받기</button>';
     } else if(isStudio && !liveStudio){
