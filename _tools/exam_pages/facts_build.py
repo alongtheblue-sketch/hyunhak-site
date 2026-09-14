@@ -16,7 +16,8 @@ BANKS = {
     "yonsei-hum":  (W / "yonsei_interview_bank_2027/sets", lambda j: "인문" in j.get("track", "")),
     "yonsei-sci":  (W / "yonsei_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
     "yonsei-intl": (W / "yonsei_intl_interview_bank_2027/sets", lambda j: True),
-    "yonsei-mirae": (W / "yonsei_mirae_interview_bank_2027/sets", lambda j: True),
+    # 미래캠퍼스는 계열별 sets/ 150 과 전 모집단위 공통형 sets_u/ 30 을 함께 센다 (2026-09-14 판매 개시, n_sets 180)
+    "yonsei-mirae": ([W / "yonsei_mirae_interview_bank_2027/sets", W / "yonsei_mirae_interview_bank_2027/sets_u"], lambda j: True),
     "korea-hum":   (W / "korea_interview_bank_2027/sets", lambda j: "인문" in j.get("track", "")),
     "korea-sci":   (W / "korea_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
 }
@@ -49,7 +50,14 @@ SPEC = {
         stage="학교생활우수자(면접형) 1단계 서류 100%(350%) → 2단계 서류 70% + 면접 30% / 글로벌인재 면접 = 논리적 사고력 Ⅰ(영어) + Ⅱ(한국어)", ratio_src="2027 미래캠퍼스 입학전형시행계획(2026-05-29)",
         lang="한국어(국제계열은 영어 제시문)", scope="계열별 교과 통합, 시험지 1장(제시문 1개 + 질문 3개)", eval_axes=["제시문 이해", "논리 전개", "계열 적합 적용"],
         src=["2027 연세대 미래캠퍼스 수시모집요강(제시문 1개-질문 3개, 숙지 10분·면접 5분)", "미래캠퍼스 2027 면접예시문항 가이드북", "은행 spec/SPEC_v1.md + ERRATA 2026-09-09"],
-        status="opening", open_date="2026-09-14", sku=None, price=None, single_price=None, lecture_count=None),
+        status="on_sale", open_date="2026-09-14", sku="pass-yonsei-mirae-free", price=495000, single_price=33000, lecture_count=180,
+        # 판매 단위 5종. 대표 sku 는 위 sku 이고, 실제 구매는 이 다섯 가운데 하나를 고른다 (2026-09-14)
+        units=[dict(code="yonsei-mirae-free", label="연세대 미래 자율융합", sku="pass-yonsei-mirae-free"),
+               dict(code="yonsei-mirae-design", label="연세대 미래 디자인", sku="pass-yonsei-mirae-design"),
+               dict(code="yonsei-mirae-tech", label="연세대 미래 첨단", sku="pass-yonsei-mirae-tech"),
+               dict(code="yonsei-mirae-health", label="연세대 미래 보건", sku="pass-yonsei-mirae-health"),
+               dict(code="yonsei-mirae-intl", label="연세대 미래 국제", sku="pass-yonsei-mirae-intl")],
+        common_unit=dict(code="yonsei-mirae-common", label="연세대 미래 공통형")),
     "korea-hum": dict(univ="고려대학교", univ_short="고려대", track="학생부종합 계열적합전형", unit="인문", label="고려대 계열적합전형 인문",
         form="제시문 기반 면접", passages=4, prep_sec=1260, answer_sec=420, questions=3, points="비공개(역량 3축 등급 평가)",
         stage="1단계 서류 100%(5배수) → 2단계 1단계 성적 60% + 면접 40%", ratio_src="2027 수시모집요강 학생부종합(계열적합전형) 전형요소",
@@ -93,8 +101,12 @@ def bank_summary(code):
     if code not in BANKS:
         return None
     d, pred = BANKS[code]
+    dirs = d if isinstance(d, list) else [d]
     rows = []
-    for f in sorted(glob.glob(str(d / "*.json"))):
+    files = []
+    for one in dirs:
+        files.extend(sorted(glob.glob(str(one / "*.json"))))
+    for f in files:
         j = json.load(open(f, encoding="utf-8"))
         if not pred(j):
             continue
@@ -120,7 +132,7 @@ def bank_summary(code):
                     verbs[k] += 1; break
             else:
                 verbs["기타"] += 1
-    return dict(dir=str(d), n_sets=len(rows), subtype=dict(sub), track=dict(trk), difficulty=dict(diff), verb_tail=dict(verbs),
+    return dict(dir=", ".join(str(x) for x in dirs), n_sets=len(rows), subtype=dict(sub), track=dict(trk), difficulty=dict(diff), verb_tail=dict(verbs),
                 passages_mode=collections.Counter(r["n_passages"] for r in rows).most_common(1)[0][0],
                 questions_mode=collections.Counter(r["n_questions"] for r in rows).most_common(1)[0][0],
                 sets=rows)

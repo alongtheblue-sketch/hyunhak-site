@@ -27,18 +27,49 @@
    "미래캠퍼스 2027 면접예시문항 가이드북",
    "은행 spec/SPEC_v1.md + ERRATA 2026-09-09"
   ],
-  "status": "opening",
+  "status": "on_sale",
   "open_date": "2026-09-14",
-  "sku": null,
-  "price": null,
-  "single_price": null,
-  "lecture_count": null
+  "sku": "pass-yonsei-mirae-free",
+  "price": 495000,
+  "single_price": 33000,
+  "lecture_count": 180,
+  "units": [
+   {
+    "code": "yonsei-mirae-free",
+    "label": "연세대 미래 자율융합",
+    "sku": "pass-yonsei-mirae-free"
+   },
+   {
+    "code": "yonsei-mirae-design",
+    "label": "연세대 미래 디자인",
+    "sku": "pass-yonsei-mirae-design"
+   },
+   {
+    "code": "yonsei-mirae-tech",
+    "label": "연세대 미래 첨단",
+    "sku": "pass-yonsei-mirae-tech"
+   },
+   {
+    "code": "yonsei-mirae-health",
+    "label": "연세대 미래 보건",
+    "sku": "pass-yonsei-mirae-health"
+   },
+   {
+    "code": "yonsei-mirae-intl",
+    "label": "연세대 미래 국제",
+    "sku": "pass-yonsei-mirae-intl"
+   }
+  ],
+  "common_unit": {
+   "code": "yonsei-mirae-common",
+   "label": "연세대 미래 공통형"
+  }
  },
  "bank": {
-  "dir": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets",
-  "n_sets": 150,
+  "dir": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets, /Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u",
+  "n_sets": 180,
   "subtype": {
-   "null": 150
+   "null": 180
   },
   "track": {
    "2027 학생부종합 학교생활우수자(디자인예술학부)": 11,
@@ -46,17 +77,18 @@
    "2027 학생부종합 글로벌인재(국제계열)": 30,
    "2027 학생부종합 학교생활우수자(보건계열)": 30,
    "2027 학생부종합 학교생활우수자(자율융합계열)": 30,
-   "2027 학생부종합 학교생활우수자(첨단계열)": 30
+   "2027 학생부종합 학교생활우수자(첨단계열)": 30,
+   "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통": 30
   },
   "difficulty": {
-   "하": 50,
-   "중": 50,
-   "상": 50
+   "하": 60,
+   "중": 60,
+   "상": 60
   },
   "verb_tail": {
-   "설명하시오": 238,
-   "제시하시오": 66,
-   "비교하시오": 39,
+   "설명하시오": 271,
+   "제시하시오": 89,
+   "비교하시오": 73,
    "기타": 105,
    "밝히시오": 2
   },
@@ -4832,6 +4864,996 @@
     ],
     "has_explanation": true,
     "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets/yonsei_mirae_2027_t30.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u01",
+    "title": "칭찬의 방식",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 과정의 개선을 인정하는 관점과 완성된 성취를 보상하는 관점을 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 실패 뒤 도윤이 낭독을 다시 준비한 과정을 설명하시오.",
+     "제시문 [나]의 노력상 수상자의 반응을 참고하여, 학생의 성장을 돕는 바람직한 칭찬 방식 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u01.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u02",
+    "title": "다수결의 한계",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 다수결을 지지하는 논리와 소수 보호의 원리가 공동 결정의 정당성을 판단하는 관점을 비교하시오.",
+     "제시문 [가]의 두 원리를 바탕으로, 제시문 [나]의 축제안과 [다]에서 수거함을 옮긴 뒤의 상황이 각각 소수에게 미치는 영향을 비교하시오.",
+     "제시문 [나]와 [다]를 참고하여, 다수결로 정할 수 있는 범위에 관한 자신의 생각을 한 가지 제한 조건과 그 이유를 중심으로 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u02.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u03",
+    "title": "조건 붙은 기부",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에서 기부금의 사용을 판단하는 기부 목적 존중의 관점과 수혜자 자율의 관점을 비교하시오.",
+     "제시문 [가]의 두 관점에 비추어, 제시문 [다]의 읽기 모임이 기부 조건을 거절한 이유를 설명하시오.",
+     "제시문 [나]의 도서관이 기부 제안에 대응할 바람직한 방향 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u03.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u04",
+    "title": "다음 세대에 지는 빚",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 편익에 따른 비용 분담과 미래의 자율 보호라는 두 관점을 비교하시오.",
+     "제시문 [가]의 두 관점을 근거로, 제시문 [다]에서 회관이 여러 세대에 준 편익과 남은 상환금이 지후의 제안에 각각 어떻게 작용하는지 설명하시오.",
+     "제시문 [나]를 참고하여, 현재의 서비스 필요와 미래의 선택 여지를 고려한 장기 부채의 바람직한 허용 기준 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u04.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u05",
+    "title": "처벌과 회복",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에서 응보를 중시하는 입장과 피해 및 관계의 회복을 중시하는 입장이 대응을 정하는 기준을 비교하시오.",
+     "제시문 [가]의 두 입장을 적용하여, 제시문 [다]에서 하람의 잘못에 대해 대화 전후에 이루어진 대응을 설명하시오.",
+     "제시문 [나]의 교사들이 피해 학생들의 서로 다른 대화 참여 의사를 고려해 취할 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u05.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u06",
+    "title": "순서와 사정",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 선착순과 필요 우선의 관점이 이용 순서를 공정하다고 판단하는 이유를 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 첫날과 며칠 뒤 이용 순서를 다르게 처리한 이유를 설명하시오.",
+     "제시문 [나]의 열람석 부족에 대응할 바람직한 배정 방식 한 가지를 이용자의 사정을 근거로 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u06.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u07",
+    "title": "표현의 자유와 상처",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 표현의 자유와 인격 보호의 관점을 표현 허용의 기준에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로 제시문 [다]의 처음 공연에 대한 두 평이 엇갈린 이유를 설명하시오.",
+     "제시문 [나]의 논쟁을 참고하여 학교 게시판의 풍자 글을 다룰 바람직한 원칙 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u07.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u08",
+    "title": "능력과 필요",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 기여에 따른 분배와 필요에 따른 분배를 더 많은 몫을 받을 근거에 따라 비교하시오.",
+     "제시문 [가]의 두 분배 기준을 적용하여 제시문 [다]의 두 규칙이 각 집의 몫을 다르게 정하는 이유를 설명하시오.",
+     "제시문 [나]를 참고하여 동아리 지원금을 나누는 바람직한 기준 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u08.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u09",
+    "title": "아끼는 마음과 비판",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 공동체에 대한 애정의 두 관점을 보호하려는 대상에 따라 비교하시오.",
+     "제시문 [가]의 두 관점에 비추어 제시문 [다]에서 청년이 글을 고쳐 다시 낸 행동을 관점별로 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 자신이 속한 공동체를 비판할 때 지닐 바람직한 자세 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u09.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u10",
+    "title": "익명 평가와 책임",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 익명 평가를 지지하는 관점과 그 위험을 강조하는 관점을 의견의 신뢰성에 영향을 주는 조건에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 적용하여 제시문 [다]의 참가자가 이름을 밝히지 않고 평가를 고친 행동을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 익명 수업 평가를 운영할 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u10.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u11",
+    "title": "전문가와 시민",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 전문 판단의 권위와 당사자 결정권을 판단을 맡길 근거에 따라 비교하시오.",
+     "제시문 [가]의 두 관점에 비추어 제시문 [다]에서 전문가의 권고와 다른 선택을 한 마을의 결정을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 전문 판단과 시민의 뜻이 어긋날 때 결정 권한을 정할 바람직한 원칙 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u11.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u12",
+    "title": "불리한 사람에게 더 주기",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 형식적 공정과 실질적 공정을 대회 결과의 공정성을 판단하는 기준에 따라 비교하시오.",
+     "제시문 [가]에 제시된 두 공정 관점을 적용하여 제시문 [다]에서 하린과 지우에게 적용된 가산점 규칙을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 다음 발표 대회의 우대 규칙을 정할 바람직한 기준 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u12.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u13",
+    "title": "쓸모없는 공부",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 배움의 가치를 평가하는 두 관점을 무엇을 성과로 보는지에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 도현이 방문객을 도운 뒤에도 골목 이름의 유래를 조사한 이유를 설명하시오.",
+     "제시문 [나]의 시간 제약을 참고하여, 시험에 나오지 않는 과목의 운영에 관한 바람직한 방향 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u13.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u14",
+    "title": "도움을 거절할 권리",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 도움의 지속과 거절의 존중이라는 두 관점을 각각 무엇을 보호하려는지에 따라 비교하시오.",
+     "제시문 [가]의 두 관점에 비추어, 제시문 [다]에서 선우가 도움을 거절하다가 받아들이게 된 변화를 설명하시오.",
+     "당신이 제시문 [나]의 봉사단원이라면 도움을 거부한 노인에게 어떻게 대응할 것인지, 제시문 [다]를 참고하여 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u14.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u15",
+    "title": "기계 번역 시대의 외국어",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 언어 학습의 두 관점을 의사소통에서 중시하는 성과에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 예린이 번역 기기를 계속 쓰면서 언어를 배우기 시작한 이유를 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여, 번역 기기를 쓸 수 있는 학교에서 외국어 수업을 어떤 방향으로 운영하는 것이 바람직한지 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u15.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u16",
+    "title": "보이지 않는 노동",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 서비스 평가의 두 관점을 성과를 확인하는 범위에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 적용하여, 제시문 [다]의 사람 확인 표시가 생긴 뒤에도 남아 있는 서비스 평가의 특징을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여, 서비스 뒤에 있는 사람의 일을 알릴 바람직한 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u16.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u17",
+    "title": "사라지는 기술",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 옛 기술 교육의 두 관점을 수업에서 중시하는 가치에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]에서 지안이 장인의 제자로 배우면서 평상복은 기계로 만드는 선택을 설명하시오.",
+     "만약 당신이 제시문 [나]의 학교 학생이라면 옛 기술을 가르치는 수업의 운영 방향으로 무엇을 택할 것인지, 제시문의 조건을 근거로 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u17.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u18",
+    "title": "공짜의 값",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에 나타난 무료 서비스의 두 관점을 이용자가 내는 요금과 서비스 유지의 부담을 기준으로 비교하시오.",
+     "제시문 [가]의 두 관점을 적용하여, 제시문 [다]에서 민서가 무료 공부방의 이용 조건을 알게 된 뒤에도 계속 이용한 선택을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여, 학교가 무료 학습 앱의 이용을 안내할 때 어떤 방식의 안내가 바람직한지 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u18.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u19",
+    "title": "실패의 공개",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점이 실패 기록의 가치를 판단하는 기준을 기록 검토에 드는 비용에 대한 해석을 중심으로 비교하시오.",
+     "제시문 [가]의 두 관점을 적용하여 [나]의 실험 기록과 [다]의 안내대 공책이 지닌 가치를 기록의 조건과 이용 결과에 비추어 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 학교 발표회가 실패 기록을 공개하려면 어떤 조건이 필요한지 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u19.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u20",
+    "title": "기계가 결정했을 때",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 과거의 잘못을 따지는 관점과 현재의 피해를 고치는 관점이 책임을 맡을 사람을 정하는 기준을 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로 [나]의 교사와 [다]의 관리자가 피해에 대응할 책임을 맡는 이유를 과거의 관여 여부에 비추어 비교하시오.",
+     "제시문 [가]의 의도, 통제, 예견을 기준으로, 교사가 수정 연기를 받아들인 사실까지 고려하여 [나]의 제작 모둠과 교사 사이에서 잘못에 대한 책임을 나누는 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u20.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u21",
+    "title": "원본과 복제",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에 제시된 두 관점이 원본과 구별되지 않는 복제물의 가치를 판단하는 기준을 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로 [다]의 두 평이 [나]의 복제본 대체 전시를 각각 어떻게 평가할지 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 미술관이 이번 전시에서 우선할 방향 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u21.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u22",
+    "title": "지역의 말",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에서 지역의 말을 살리려는 관점과 누구나 이해할 말을 중시하는 관점이 방송에서 중요하게 보는 가치를 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로 [다]의 민준이 고향 말에 뜻풀이를 붙여 발표한 방식을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 학교 방송의 지역 말 사용에 관한 바람직한 규칙 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u22.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u23",
+    "title": "광고 속 예술",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]에서 예술의 자율성을 중시하는 관점과 목적을 가진 창작도 예술이 될 수 있다고 보는 관점의 판단 기준을 비교하시오.",
+     "제시문 [가]의 두 기준을 적용하여 [나]의 정리 장면 삭제 요청과 [다]의 광고 문구가 작품의 의미에 미치는 영향을 비교하시오.",
+     "제시문 [나]와 [다]를 참고하여 학생 작가들이 정리 장면 삭제 요청에 대응할 방향 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u23.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u24",
+    "title": "축제의 주인",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]와 [나]에서 주민의 공동 활동을 중시하는 관점과 방문객과의 교류를 중시하는 관점이 축제에 기대하는 가치를 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로 [다]의 공동 식사에서 주민과 방문객의 참여가 이루어진 모습을 설명하시오.",
+     "제시문 [나]와 [다]를 참고하여 준비 모임이 저녁 프로그램을 정할 때 우선할 방향 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u24.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u25",
+    "title": "청소년과 작품 선택",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 청소년의 작품 접근을 제한할 때 중시하는 기준에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]의 독자 반응이 [나]의 책 제외 요청을 판단하는 근거로 어떻게 쓰일 수 있는지 설명하시오.",
+     "제시문 [나]의 도서관이 책의 이용을 제한하는 일은 어디까지 보호로 인정될 수 있는지, 그 한계에 대한 자신의 생각을 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u25.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u26",
+    "title": "빌려 쓰는 삶",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 물건의 관리 책임이 누구에게 생기는지에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 적용하여, 제시문 [다]의 두 이웃이 천막을 반납한 방식이 [나]의 반납 규칙에 주는 시사점을 설명하시오.",
+     "제시문 [나]의 학교에서 고장 난 자전거의 수리를 누가 맡는 것이 바람직한지 자신의 생각을 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u26.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u27",
+    "title": "가까운 먹거리",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 먹거리의 환경 부담을 판단할 때 살피는 범위에 따라 비교하시오.",
+     "제시문 [가]를 바탕으로, 제시문 [다]의 계절별 재배 조건 변화가 [나]의 연중 지역산 구매 제안에 갖는 의미를 설명하시오.",
+     "제시문 [나]의 학교가 먹거리의 환경 부담을 고려해 식재료를 고를 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u27.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u28",
+    "title": "밤의 고요",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 공동 공간의 이용 시간을 정할 때 중시하는 권리에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]의 생활 시간 차이가 [나]의 아홉 시 일괄 폐쇄안을 판단하는 데 주는 시사점을 설명하시오.",
+     "제시문 [나]에서 주민의 쉼과 이용자의 활동 기회를 고려한 운동장 운영 방안 한 가지를 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u28.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u29",
+    "title": "건강의 강제",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 본인의 건강을 위한 선택 제한을 정당화하는 기준에 따라 비교하시오.",
+     "제시문 [가]의 선택 제한에 대한 판단 자료를 적용하여, 제시문 [나]의 매점 판매 중단과 [다]의 산책 불참 불이익을 제한 범위에 따라 비교하시오.",
+     "제시문 [나]의 학교가 매점의 판매 제한을 유지해야 하는지에 대한 자신의 입장을 정하고, 반대 입장이 제기할 우려에 어떻게 답할지 이유와 함께 설명하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u29.json"
+   },
+   {
+    "id": "yonsei_mirae_2027_u30",
+    "title": "사라진 종의 복원",
+    "subtype": null,
+    "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+    "prep_seconds": 600,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 [가]의 두 관점을 사라진 생물의 복원에서 인간의 책임을 이해하는 방식에 따라 비교하시오.",
+     "제시문 [가]의 두 관점을 바탕으로, 제시문 [다]의 계속되는 먹이 공급이 [나]의 새 재도입 제안을 판단하는 데 주는 시사점을 설명하시오.",
+     "제시문 [나]의 마을이 새를 들여오는 일이 과거 훼손에 대한 책임 이행으로 인정되려면 어떤 조건을 갖추어야 하는지 자신의 생각을 이유와 함께 제시하시오."
+    ],
+    "q_points": [
+     null,
+     null,
+     null
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     "ko",
+     "ko",
+     "ko"
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_mirae_interview_bank_2027/sets_u/yonsei_mirae_2027_u30.json"
    }
   ]
  },

@@ -3680,6 +3680,171 @@
       ],
       "date_modified": "2026-09-14",
       "date_published": "2026-09-10"
+    },
+    "lectures/yonsei-mirae-free.html": {
+      "title": "연세대 미래 자율융합 풀이법 인강, 연세대학교 미래캠퍼스 자율융합계열 면접 해설 강의 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 자율융합계열 면접 풀이법 인강. 공통 풀이 4편과 세트 해설 30편, 전 모집단위 공통형 해설 30편을 단위 전권 495,000원에 포함해 3개월 시청합니다.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "인강",
+          "path": "/lectures.html"
+        },
+        {
+          "name": "연세대 미래 자율융합",
+          "path": "/lectures/yonsei-mirae-free.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대 미래 자율융합 풀이법 인강",
+        "offers": [
+          {
+            "name": "단위 전권 이용권 (인강 포함)",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-free"
+          }
+        ],
+        "return_kind": "pass"
+      },
+      "answer": "연세대 미래 자율융합 풀이법 인강은 공통 풀이 4편과 자율융합계열 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
+    },
+    "lectures/yonsei-mirae-design.html": {
+      "title": "연세대 미래 디자인 풀이법 인강, 연세대학교 미래캠퍼스 디자인계열과 디자인예술학부 면접 해설 강의 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 디자인계열과 디자인예술학부 면접 풀이법 인강. 공통 풀이 4편과 세트 해설 30편, 전 모집단위 공통형 해설 30편을 단위 전권 495,000원에 포함해 3개월 시청합니다.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "인강",
+          "path": "/lectures.html"
+        },
+        {
+          "name": "연세대 미래 디자인",
+          "path": "/lectures/yonsei-mirae-design.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대 미래 디자인 풀이법 인강",
+        "offers": [
+          {
+            "name": "단위 전권 이용권 (인강 포함)",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-design"
+          }
+        ],
+        "return_kind": "pass"
+      },
+      "answer": "연세대 미래 디자인 풀이법 인강은 공통 풀이 4편과 디자인계열과 디자인예술학부 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
+    },
+    "lectures/yonsei-mirae-tech.html": {
+      "title": "연세대 미래 첨단 풀이법 인강, 연세대학교 미래캠퍼스 첨단계열 면접 해설 강의 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 첨단계열 면접 풀이법 인강. 공통 풀이 4편과 세트 해설 30편, 전 모집단위 공통형 해설 30편을 단위 전권 495,000원에 포함해 3개월 시청합니다.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "인강",
+          "path": "/lectures.html"
+        },
+        {
+          "name": "연세대 미래 첨단",
+          "path": "/lectures/yonsei-mirae-tech.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대 미래 첨단 풀이법 인강",
+        "offers": [
+          {
+            "name": "단위 전권 이용권 (인강 포함)",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-tech"
+          }
+        ],
+        "return_kind": "pass"
+      },
+      "answer": "연세대 미래 첨단 풀이법 인강은 공통 풀이 4편과 첨단계열 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
+    },
+    "lectures/yonsei-mirae-health.html": {
+      "title": "연세대 미래 보건 풀이법 인강, 연세대학교 미래캠퍼스 보건계열 면접 해설 강의 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 보건계열 면접 풀이법 인강. 공통 풀이 4편과 세트 해설 30편, 전 모집단위 공통형 해설 30편을 단위 전권 495,000원에 포함해 3개월 시청합니다.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "인강",
+          "path": "/lectures.html"
+        },
+        {
+          "name": "연세대 미래 보건",
+          "path": "/lectures/yonsei-mirae-health.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대 미래 보건 풀이법 인강",
+        "offers": [
+          {
+            "name": "단위 전권 이용권 (인강 포함)",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-health"
+          }
+        ],
+        "return_kind": "pass"
+      },
+      "answer": "연세대 미래 보건 풀이법 인강은 공통 풀이 4편과 보건계열 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
+    },
+    "lectures/yonsei-mirae-intl.html": {
+      "title": "연세대 미래 국제 풀이법 인강, 연세대학교 미래캠퍼스 국제계열 면접 해설 강의 | 현학적 연구소",
+      "description": "연세대학교 미래캠퍼스 국제계열 면접 풀이법 인강. 공통 풀이 4편과 세트 해설 30편, 전 모집단위 공통형 해설 30편을 단위 전권 495,000원에 포함해 3개월 시청합니다.",
+      "type": "product",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "인강",
+          "path": "/lectures.html"
+        },
+        {
+          "name": "연세대 미래 국제",
+          "path": "/lectures/yonsei-mirae-intl.html"
+        }
+      ],
+      "schema": {
+        "product_name": "연세대 미래 국제 풀이법 인강",
+        "offers": [
+          {
+            "name": "단위 전권 이용권 (인강 포함)",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-intl"
+          }
+        ],
+        "return_kind": "pass"
+      },
+      "answer": "연세대 미래 국제 풀이법 인강은 공통 풀이 4편과 국제계열 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
     }
   }
 }

@@ -24,13 +24,32 @@ if _OT:
     print(f"[build_lectures] 상품 구성에서 제외한 OT {len(_OT)}편: {', '.join(_OT)}", file=sys.stderr)
 SNAP = CAT["snapshot_at"][:10]
 UNITS = {u["code"]: u for u in SETS["units"]}
-ORDER = ["yonsei-hum", "yonsei-sci", "yonsei-intl", "korea-hum", "korea-sci"]
-TRACK = {"yonsei-hum": "hum", "yonsei-sci": "sci", "yonsei-intl": "intl", "korea-hum": "hum", "korea-sci": "sci"}
+# 미래캠퍼스 5단위 = 2026-09-14 판매 개시. 연세대 본교 뒤, 고려대 앞
+MIRAE = ["yonsei-mirae-free", "yonsei-mirae-design", "yonsei-mirae-tech", "yonsei-mirae-health", "yonsei-mirae-intl"]
+MIRAE_COMMON = "yonsei-mirae-common"   # 전 모집단위 공통형. 판매 단위가 아니라 미래 5단위 전권에 딸려 오는 세트 해설 묶음
+ORDER = ["yonsei-hum", "yonsei-sci", "yonsei-intl"] + MIRAE + ["korea-hum", "korea-sci"]
+TRACK = {"yonsei-hum": "hum", "yonsei-sci": "sci", "yonsei-intl": "intl", "korea-hum": "hum", "korea-sci": "sci",
+         "yonsei-mirae-free": "free", "yonsei-mirae-design": "design", "yonsei-mirae-tech": "tech",
+         "yonsei-mirae-health": "health", "yonsei-mirae-intl": "mirae-intl"}
 UNIV = {"yonsei-hum": "yonsei", "yonsei-sci": "yonsei", "yonsei-intl": "yonsei", "korea-hum": "korea", "korea-sci": "korea"}
+UNIV.update({c: "yonsei" for c in MIRAE})
 SPEC = {   # 단위별 규격 한 줄 (studio.html, programs/*.html 의 문안과 같은 값)
     "yonsei-hum": "준비 8분, 답변 5분", "yonsei-sci": "준비 8분, 답변 5분", "yonsei-intl": "준비 8분, 답변 5분, 제시문 [나]는 영어",
     "korea-hum": "준비 21분, 발화 7분", "korea-sci": "준비 21분, 발화 7분",
+    "yonsei-mirae-free": "숙지 10분, 면접 5분, 제시문 1개에 질문 3개",
+    "yonsei-mirae-design": "숙지 10분, 면접 5분, 제시문 1개에 질문 3개",
+    "yonsei-mirae-tech": "숙지 10분, 면접 5분, 제시문 1개에 질문 3개",
+    "yonsei-mirae-health": "숙지 10분, 면접 5분, 제시문 1개에 질문 3개",
+    "yonsei-mirae-intl": "숙지 10분, 면접 5분, 제시문 1개에 질문 3개, 제시문이 영어",
 }
+
+
+def eul(text):
+    """받침에 따라 을/를 을 고른다 (지면 문안 '<규격>을 절차로 만든다')."""
+    ch = text.strip()[-1]
+    if "가" <= ch <= "힣":
+        return "을" if (ord(ch) - 0xAC00) % 28 else "를"
+    return "을"
 # 단위별 소개 문단 (단위 강의 제목에서 뽑은 사실만. 새 주장 없음)
 INTRO = {
     "yonsei-hum": ["연세대 활동우수형 인문통합 면접은 준비 8분과 답변 5분입니다. 이 인강은 발문 끝 동사가 유형을 정한다는 규칙에서 시작해, 적용과 불가와 자료라는 판정 세 종, 480초 배분, 자료를 성립 조건으로 읽는 법, 배점이 시간을 정하는 효율 트랙까지 단위 강의가 잡고, 세트 해설 30편이 지문마다 같은 절차를 밟습니다."],
@@ -38,9 +57,17 @@ INTRO = {
     "yonsei-intl": ["연세대 국제형 면접은 준비 8분과 답변 5분이고 제시문 [나]가 영어입니다. [가]와 [나]의 층위 차이, 영어 [나]를 번역 시험으로 읽지 않는 법, [다]를 관점 단위로 재배열하는 문제 2, 8분과 5분의 배분과 답안의 골격, 실전 시연과 30세트 사이클을 단위 강의 5편이 잡습니다."],
     "korea-hum": ["고려대 계열적합전형 인문 면접은 준비 21분과 발화 7분입니다. 발문이 제시문을 지목하는 방식과 정석 배분표, 표와 산점도와 시계열과 부분 지지의 자료해석 네 갈래, 인문A 각론의 차이 축, 문항 3의 활용 세 칸, 트랙이 무너질 때의 전환 판정, 30세트 사이클과 자기채점까지 단위 강의 9편이 잡습니다."],
     "korea-sci": ["고려대 계열적합전형 자연 면접은 준비 21분과 발화 7분입니다. 문항 1이 문항 2와 3을 미리 정하는 직렬 구조, 우리말과 한자어 한 쌍인 개념어, 중복 개념 네 갈래, 한 세트 21분 완주 조립, 적용편부터 읽는 운용까지 단위 강의 8편이 잡습니다. 정규 30세트 해설 외에 보충 해설 10편을 더 봅니다."],
-    "common": ["공통 풀이 4편은 연세대 활동우수형과 국제형, 고려대 계열적합 다섯 단위에 전부 걸리는 절차입니다. 이 시험이 지식 시험이 아니라 절차 시험이라는 전제, 결론 선언이 개수 계약이라는 구조 잡기, 7분을 편집으로 쓰는 말하기, 연습장의 빈칸이 절차라는 연습 시스템 총론입니다. 단위 전권에는 포함되어 있고, 응시 없이 절차만 들으려면 따로 삽니다."],
+    "yonsei-mirae-free": ["연세대 미래캠퍼스 자율융합계열 면접은 숙지 10분과 면접 5분이고 제시문 1개에 질문이 3개입니다. 이 강좌에는 단위 강의가 없고 자율융합계열 세트 해설 30편과 전 모집단위 공통형 세트 해설 30편으로 이룹니다. 두 묶음 모두 응시한 지문을 되짚는 편이라 응시 뒤에 듣습니다."],
+    "yonsei-mirae-design": ["연세대 미래캠퍼스 디자인계열 면접은 숙지 10분과 면접 5분이고 제시문 1개에 질문이 3개입니다. 이 강좌에는 단위 강의가 없고 디자인계열과 디자인예술학부 세트 해설 30편과 전 모집단위 공통형 세트 해설 30편으로 이룹니다. 두 묶음 모두 응시한 지문을 되짚는 편이라 응시 뒤에 듣습니다."],
+    "yonsei-mirae-tech": ["연세대 미래캠퍼스 첨단계열 면접은 숙지 10분과 면접 5분이고 제시문 1개에 질문이 3개입니다. 이 강좌에는 단위 강의가 없고 첨단계열 세트 해설 30편과 전 모집단위 공통형 세트 해설 30편으로 이룹니다. 두 묶음 모두 응시한 지문을 되짚는 편이라 응시 뒤에 듣습니다."],
+    "yonsei-mirae-health": ["연세대 미래캠퍼스 보건계열 면접은 숙지 10분과 면접 5분이고 제시문 1개에 질문이 3개입니다. 이 강좌에는 단위 강의가 없고 보건계열 세트 해설 30편과 전 모집단위 공통형 세트 해설 30편으로 이룹니다. 두 묶음 모두 응시한 지문을 되짚는 편이라 응시 뒤에 듣습니다."],
+    "yonsei-mirae-intl": ["연세대 미래캠퍼스 국제계열 면접은 숙지 10분과 면접 5분이고 제시문 1개에 질문이 3개이며 제시문이 영어입니다. 이 강좌에는 단위 강의가 없고 국제계열 세트 해설 30편과 전 모집단위 공통형 세트 해설 30편으로 이룹니다. 두 묶음 모두 응시한 지문을 되짚는 편이라 응시 뒤에 듣습니다."],
+    "common": ["공통 풀이 4편은 연세대와 고려대 제시문 면접 판매 단위에 전부 걸리는 절차입니다. 이 시험이 지식 시험이 아니라 절차 시험이라는 전제, 결론 선언이 개수 계약이라는 구조 잡기, 7분을 편집으로 쓰는 말하기, 연습장의 빈칸이 절차라는 연습 시스템 총론입니다. 단위 전권에는 포함되어 있고, 응시 없이 절차만 들으려면 따로 삽니다."],
 }
 COMMON_TX = "공통 풀이 인강"
+NGRP = {1: "한 묶음", 2: "두 묶음", 3: "세 묶음", 4: "네 묶음", 5: "다섯 묶음"}
+# 단위 → 전형 상세면 code. 미래 5단위는 전형 상세면 하나(interview/yonsei-mirae.html)를 함께 쓴다
+EXAM_OF = {c: "yonsei-mirae" for c in MIRAE}
 SAMPLE = {"yonsei-hum": ("단위 강의 3편 480초 배분 발췌", "L1-3"), "yonsei-sci": ("단위 강의 5편 밑줄 기준 발췌", "L1-5"), "yonsei-intl": ("단위 강의 1편 층위 차이 발췌", "L2-1"),
           "korea-hum": ("단위 강의 2편 자료해석 1 발췌", "L3-2"), "korea-sci": ("단위 강의 1편 직렬 구조 발췌", "L4-1"), "common": ("공통 풀이 2편 개수 계약 발췌", "L0-2")}
 SAMPLE_ID = {"yonsei-hum": "lec_unit_yonsei-hum_L1-3", "yonsei-sci": "lec_unit_yonsei-sci_L1-5", "yonsei-intl": "lec_unit_yonsei-intl_L2-1",
@@ -86,9 +113,11 @@ def fmt_total(sec):
 
 
 def by_kind(code):
+    # common_u = 전 모집단위 공통형 세트 해설 30편. 미래 5단위 전권마다 그 단위 강좌에 함께 들어간다 (2026-09-14)
     return {"unit": [l for l in LECS if l["kind"] == "unit" and l["unit_code"] == code],
             "passage": [l for l in LECS if l["kind"] == "passage" and l["unit_code"] == code],
             "common": [l for l in LECS if l["kind"] == "common"],
+            "common_u": [l for l in LECS if l["kind"] == "passage" and l["unit_code"] == MIRAE_COMMON] if code in MIRAE else [],
             "gichul": [l for l in LECS if l["kind"] == "passage" and l["unit_code"] == GICHUL_UNIT and l.get("passage_set_id") == GICHUL_SET_OF.get(code)]}
 
 
@@ -96,15 +125,19 @@ def courses():
     out = []
     for code in ORDER:
         u = UNITS[code]; k = by_kind(code)
-        n = len(k["common"]) + len(k["unit"]) + len(k["passage"]) + len(k["gichul"])
+        n = len(k["common"]) + len(k["unit"]) + len(k["passage"]) + len(k["common_u"]) + len(k["gichul"])
         sec = sum((l["duration_sec"] or 0) for g in k.values() for l in g)
+        # 응시 범위 한 줄. 미래 단위는 계열 30편에 전 모집단위 공통형 30편이 더 붙는다
+        sets_tx = f'지문 {u["set_count"]}편, 지문마다 5회'
+        if k["common_u"]:
+            sets_tx = f'지문 {u["set_count"]}편과 공통형 {len(k["common_u"])}편, 지문마다 5회'
         out.append({"code": code, "label": u["label"], "univ": UNIV[code], "track": TRACK[code], "sku": u["sku"], "price": u["price"],
-                    "single": u["single_price"], "set_count": u["set_count"], "n": n, "sec": sec, "k": k, "spec": SPEC[code]})
+                    "single": u["single_price"], "set_count": u["set_count"], "n": n, "sec": sec, "k": k, "spec": SPEC[code], "sets_tx": sets_tx})
     k = by_kind(None)
-    k["unit"], k["passage"], k["gichul"] = [], [], []
+    k["unit"], k["passage"], k["common_u"], k["gichul"] = [], [], [], []
     sec = sum((l["duration_sec"] or 0) for l in k["common"])
     out.append({"code": "common", "label": COMMON_TX, "univ": "common", "track": "common", "sku": "lecture-common", "price": 220000, "single": None,
-                "set_count": 0, "n": len(k["common"]), "sec": sec, "k": k, "spec": "다섯 단위 공통"})
+                "set_count": 0, "n": len(k["common"]), "sec": sec, "k": k, "spec": "판매 단위 공통", "sets_tx": ""})
     return out
 
 
@@ -229,14 +262,16 @@ def list_page(cs):
     for i, c in enumerate(cs, 1):
         k = c["k"]
         comp = (f'<span><b>{c["n"]}편</b> 구성, {E(fmt_total(c["sec"]))}</span>'
-                + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}, 2026 기출 해설 {len(k["gichul"])}</span>' if c["code"] != "common" else '<span>다섯 단위 공통 절차 4편</span>')
+                + (f'<span>공통 {len(k["common"])}, 단위 강의 {len(k["unit"])}, 세트 해설 {len(k["passage"])}'
+                   + (f', 공통형 세트 해설 {len(k["common_u"])}' if k["common_u"] else f', 2026 기출 해설 {len(k["gichul"])}')
+                   + '</span>' if c["code"] != "common" else '<span>판매 단위 공통 절차 4편</span>')
                 + (f'<span class="pub" data-lec-summary="unit={c["code"]}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">{E(SNAP)} 스냅샷 기준 세트 해설 {len(k["passage"])}편</span>' if c["code"] != "common" else f'<span class="pub" data-lec-summary="kind=common" data-total="{len(k["common"])}">{E(SNAP)} 스냅샷 기준 {len(k["common"])}편</span>'))
         pr = (f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 인강 포함, 시청 3개월</small></span>' if c["code"] != "common" else f'<span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 시청 3개월</small></span>')
-        guide = '' if c["code"] == "common" else f'<a class="tlink" href="interview/{c["code"]}.html">출제 유형과 풀이법 보기</a>'
+        guide = '' if c["code"] == "common" else f'<a class="tlink" href="interview/{EXAM_OF.get(c["code"], c["code"])}.html">출제 유형과 풀이법 보기</a>'
         rows.append(f'''<article class="cr" data-univ="{c["univ"]}" data-track="{c["track"]}">
   <div><span class="kn">{E(c["spec"])}</span><h2><a href="lectures/{c["code"]}.html">{E(c["label"])}{"" if c["code"] == "common" else " 풀이법 인강"}</a></h2>{guide}<p class="sub">{E(INTRO[c["code"]][0].split(". ")[1][:60] + "…") if c["code"] != "common" else "절차 시험, 개수 계약, 말하기 편집, 연습 시스템"}</p></div>
   <div class="comp">{comp}</div>
-  <div class="acts">{pr}<a class="btn ghost sm" href="lectures/{c["code"]}.html#sample">맛보기</a><a class="btn sm" href="lectures/{c["code"]}.html">강좌 상세 <span class="ar" aria-hidden="true">→</span></a></div>
+  <div class="acts">{pr}{f'<a class="btn ghost sm" href="lectures/{c["code"]}.html#sample">맛보기</a>' if c["code"] in SAMPLE else ""}<a class="btn sm" href="lectures/{c["code"]}.html">강좌 상세 <span class="ar" aria-hidden="true">→</span></a></div>
 </article>''')
     _seen, total_sec = set(), 0   # 공통 4편은 강좌마다 실리므로 강의 id 기준으로 한 번만 센다 (편수, 시간 둘 다)
     for c in cs:
@@ -257,7 +292,7 @@ def list_page(cs):
     <div class="acts rv"><a class="btn" href="#ot">인강 OT 와 맛보기 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="classroom.html">인강실</a></div>
    </div>
    <div class="facts rv">
-    <div><b>{len(cs)}</b><span>강좌. 단위 5, 공통 1</span></div>
+    <div><b>{len(cs)}</b><span>강좌. 단위 {len(ORDER)}, 공통 1</span></div>
     <div><b>{total_n}</b><span>편 구성, {E(SNAP)} 기준</span></div>
     <div><b>{round(total_sec / 3600)}</b><span>시간, 세트 해설 포함</span></div>
     <div><b>3</b><span>개월 시청, 지급일부터</span></div>
@@ -265,7 +300,7 @@ def list_page(cs):
   </div>
 </section>
 <div class="wrap">
- <div class="sh rv"><div><h2 class="t">강좌 6</h2><p>단위 전권을 사면 그 단위 강좌 전부가 인강실에 들어갑니다. 공개 편수는 열람 시점 값입니다.</p></div></div>
+ <div class="sh rv"><div><h2 class="t">강좌 {len(cs)}</h2><p>단위 전권을 사면 그 단위 강좌 전부가 인강실에 들어갑니다. 공개 편수는 열람 시점 값입니다.</p></div></div>
  <div class="chips rv" role="group" aria-label="대학 필터" id="crsChips"><button type="button" data-f="" aria-pressed="true">전체</button><button type="button" data-f="yonsei" aria-pressed="false">연세대</button><button type="button" data-f="korea" aria-pressed="false">고려대</button><button type="button" data-f="common" aria-pressed="false">공통</button></div>
  <div class="crs rv" id="crs">
 {chr(10).join(rows)}
@@ -420,13 +455,15 @@ def detail_page(c, cs):
     p = "../"
     is_common = code == "common"
     label = c["label"] + ("" if is_common else " 풀이법 인강")
-    sid = SAMPLE_ID[code]
-    smp_cap, _ = SAMPLE[code]
+    # 맛보기 영상이 없는 강좌(미래 5단위)는 맛보기 블록을 그리지 않는다 (2026-09-14)
+    has_sample = code in SAMPLE
+    sid = SAMPLE_ID.get(code)
+    smp_cap = SAMPLE[code][0] if has_sample else ""
     intro = "".join(f"<p>{E(x)}</p>" for x in INTRO[code])
     # 구매 상자
     if not is_common:
         buy = f'''<div class="buybox" id="plan"><p class="k">단위 전권 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>단위 전권, 응시 3개월, 인강 3개월</small></p>
-<ul class="inc"><li><span>이 인강 {c["n"]}편</span><span>전부 포함</span></li><li><span>응시</span><span>지문 {c["set_count"]}편, 지문마다 5회</span></li><li><span>첨삭</span><span>전사, 진단, 재구성</span></li></ul>
+<ul class="inc"><li><span>이 인강 {c["n"]}편</span><span>전부 포함</span></li><li><span>응시</span><span>{E(c["sets_tx"])}</span></li><li><span>첨삭</span><span>전사, 진단, 재구성</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="{E(c["sku"])}" data-cart-title="{E(c["label"])} 전권 이용권" data-cart-price="{c["price"]}">단위 전권 담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
 <p class="alt">지문 낱권 {c["single"]:,}원에는 그 세트 해설 1편이 붙습니다. 공통 풀이 4편만 들으려면 <a href="common.html">220,000원</a>.</p></div>'''
@@ -441,34 +478,52 @@ def detail_page(c, cs):
     if is_common:
         groups.append(group("공통 풀이", f"구성 <b>{len(k['common'])}</b>", toc_rows(k["common"], sid)))
     else:
-        groups.append(group("공통 풀이", f"구성 <b>{len(k['common'])}</b>, 다섯 단위 공통", toc_rows(k["common"], sid), f'<a class="tlink" href="common.html">공통 풀이 인강 면</a>'))
+        groups.append(group("공통 풀이", f"구성 <b>{len(k['common'])}</b>, 판매 단위 공통", toc_rows(k["common"], sid), f'<a class="tlink" href="common.html">공통 풀이 인강 면</a>'))
         _seqs = [l["seq"] for l in k["unit"] if l.get("seq")]
         _gap = bool(_seqs) and (max(_seqs) - min(_seqs) + 1) != len(_seqs)   # 결번 = 인문/자연 트랙 분기(같은 번호 체계에서 다른 트랙 편)
-        groups.append(group("단위 강의", f"구성 <b>{len(k['unit'])}</b>, {E(c['label'])}만" + (", 번호는 트랙 공통 순번이라 다른 트랙 편은 비어 있습니다" if _gap else ""), toc_rows(k["unit"], sid)))
+        if k["unit"]:
+            groups.append(group("단위 강의", f"구성 <b>{len(k['unit'])}</b>, {E(c['label'])}만" + (", 번호는 트랙 공통 순번이라 다른 트랙 편은 비어 있습니다" if _gap else ""), toc_rows(k["unit"], sid)))
         if k["gichul"]:
             groups.append(group("2026 기출 해설", f'구성 <b>{len(k["gichul"])}</b>, {E(c["label"])} 2026 기출 지문의 실전 해설. 단위 전권에 포함', toc_rows(k["gichul"], sid, noseq=True)))
         head, rest = k["passage"][:6], k["passage"][6:]
         rows = toc_rows(head, sid, strip=c["label"] + " ") + (f'<div class="tocmore" id="tocMore" role="presentation">{toc_rows(rest, sid, start=len(head) + 1, strip=c["label"] + " ")}</div>' if rest else "")
         after = (f'<p class="tocfold"><button type="button" class="tlink" data-tocmore aria-expanded="false" aria-controls="tocMore">세트 해설 {len(k["passage"])}편 전체 보기 <span class="ar" aria-hidden="true">→</span></button></p>' if rest else "")
         groups.append(group("세트 해설", f'구성 <b>{len(k["passage"])}</b>, 지문마다 한 편. <span data-lec-summary="unit={code}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">{E(SNAP)} 스냅샷 기준 {len(k["passage"])}편</span>', rows, f'<a class="tlink" href="../studio.html?unit={code}">지문 목록과 담기</a>', after))
-    tracks = ('' if is_common else f'''<div class="steps three"><div class="step"><span class="no">공통 풀이 {len(k["common"])}편</span><h3>절차부터</h3><p>지식 시험이 아니라 절차 시험이라는 전제에서 결론 선언과 개수 계약, 말하기 편집을 세웁니다.</p></div><div class="step"><span class="no">단위 강의 {len(k["unit"])}편</span><h3>{E(c["label"])}의 판</h3><p>{E(c["spec"])}. 이 단위에만 있는 규칙을 순서대로 잡습니다.</p></div><div class="step"><span class="no">세트 해설 {len(k["passage"])}편</span><h3>지문마다 한 편</h3><p>응시한 지문의 풀이를 같은 절차로 되짚습니다. 응시 뒤에 듣는 편이 가장 오래 남습니다.</p></div></div>''')
+        if k["common_u"]:
+            # 전 모집단위 공통형 30편. 미래 5단위 전권에 함께 들어간다
+            uhead, urest = k["common_u"][:6], k["common_u"][6:]
+            urows = toc_rows(uhead, sid) + (f'<div class="tocmore" id="tocMoreU" role="presentation">{toc_rows(urest, sid, start=len(uhead) + 1)}</div>' if urest else "")
+            uafter = (f'<p class="tocfold"><button type="button" class="tlink" data-tocmore-u aria-expanded="false" aria-controls="tocMoreU">공통형 세트 해설 {len(k["common_u"])}편 전체 보기 <span class="ar" aria-hidden="true">→</span></button></p>' if urest else "")
+            groups.append(group("공통형 세트 해설", f'구성 <b>{len(k["common_u"])}</b>, 전 모집단위 공통형 지문마다 한 편. <span data-lec-summary="unit={MIRAE_COMMON}&amp;kind=passage" data-total="{len(k["common_u"])}">{E(SNAP)} 스냅샷 기준 {len(k["common_u"])}편</span>', urows, f'<a class="tlink" href="../studio.html?unit={MIRAE_COMMON}">공통형 지문 목록과 담기</a>', uafter))
+    if is_common:
+        tracks = ''
+    elif k["common_u"]:
+        # 단위 강의가 없는 단위(미래 5). 두 번째 칸에 그 사실과 공통형 묶음을 적는다
+        tracks = f'''<div class="steps three"><div class="step"><span class="no">공통 풀이 {len(k["common"])}편</span><h3>절차부터</h3><p>지식 시험이 아니라 절차 시험이라는 전제에서 결론 선언과 개수 계약, 말하기 편집을 세웁니다.</p></div><div class="step"><span class="no">단위 강의 {len(k["unit"])}편</span><h3>{E(c["label"])}의 판</h3><p>{E(c["spec"])}. 이 단위에는 단위 강의가 없고 세트 해설이 그 자리를 맡습니다.</p></div><div class="step"><span class="no">세트 해설 {len(k["passage"])}편과 공통형 {len(k["common_u"])}편</span><h3>지문마다 한 편</h3><p>응시한 지문의 풀이를 같은 절차로 되짚습니다. 응시 뒤에 듣는 편이 가장 오래 남습니다.</p></div></div>'''
+    else:
+        tracks = f'''<div class="steps three"><div class="step"><span class="no">공통 풀이 {len(k["common"])}편</span><h3>절차부터</h3><p>지식 시험이 아니라 절차 시험이라는 전제에서 결론 선언과 개수 계약, 말하기 편집을 세웁니다.</p></div><div class="step"><span class="no">단위 강의 {len(k["unit"])}편</span><h3>{E(c["label"])}의 판</h3><p>{E(c["spec"])}. 이 단위에만 있는 규칙을 순서대로 잡습니다.</p></div><div class="step"><span class="no">세트 해설 {len(k["passage"])}편</span><h3>지문마다 한 편</h3><p>응시한 지문의 풀이를 같은 절차로 되짚습니다. 응시 뒤에 듣는 편이 가장 오래 남습니다.</p></div></div>'''
     meta = (f'<span>{c["n"]}편</span><span>{E(fmt_total(c["sec"]))}</span><span>시청 3개월</span>'
-            + ('' if is_common else f'<span data-lec-summary="unit={code}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">세트 해설 {len(k["passage"])}편, {E(SNAP)} 스냅샷 기준</span>'))
+            + ('' if is_common else f'<span data-lec-summary="unit={code}&amp;kind=passage" data-total="{len(c["k"]["passage"])}">세트 해설 {len(k["passage"])}편, {E(SNAP)} 스냅샷 기준</span>')
+            + (f'<span>공통형 세트 해설 {len(k["common_u"])}편</span>' if k["common_u"] else ''))
+    sample_block = (f'<div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline>'
+                    f'<source src="../assets/video/sample_{code}.mp4" type="video/mp4">'
+                    f'<track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video>'
+                    f'<p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, {smp_len(code)}. 로그인 없이 봅니다.</p></div>') if has_sample else ''
     others = "".join(f'<a class="btn ghost sm" href="{o["code"]}.html">{E(o["label"])}</a>' for o in cs if o["code"] != code)
-    guide = '' if is_common else f'<a class="tlink" href="../interview/{code}.html">출제 유형과 풀이법 보기</a>'
+    guide = '' if is_common else f'<a class="tlink" href="../interview/{EXAM_OF.get(code, code)}.html">출제 유형과 풀이법 보기</a>'
     body = f'''<div class="wrap">
  <nav class="crumb" aria-label="위치" style="padding-top:var(--s3)"><a href="../index.html">현학적 연구소</a><span aria-hidden="true">/</span><a href="../lectures.html">인강</a><span aria-hidden="true">/</span><span>{E(c["label"])}</span></nav>
  <div class="hero2">
   <div class="hcopy"><span class="eyebrow">{"공통 풀이" if is_common else "풀이법 인강"}</span><h1>{E(label)}</h1>{guide}<p class="meta">{meta}</p><p class="lede">{E(INTRO[code][0].split(". ")[0])}.</p>{buy}</div>
-  <div id="sample" class="hmedia"><div class="sample"><video controls preload="none" poster="../assets/video/sample_{code}.jpg" playsinline><source src="../assets/video/sample_{code}.mp4" type="video/mp4"><track kind="captions" srclang="ko" label="한국어" default src="../assets/video/sample_{code}.vtt"></video><p class="cap"><span class="badge seal">맛보기</span>{E(smp_cap)}, {smp_len(code)}. 로그인 없이 봅니다.</p></div>
+  <div id="sample" class="hmedia">{sample_block}
    <div class="ot" style="margin-top:var(--s3)"><span class="eyebrow">인강 OT</span><h2>이 인강을 어떤 순서로 듣나</h2><p>공통 풀이 4편을 먼저, 단위 강의는 응시 전에, 세트 해설은 응시한 지문부터. 5분 안내 영상은 로그인 뒤 인강실에서 무료로 봅니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다.</p>{order_svg()}<p style="margin-top:var(--s2);display:flex;gap:18px;flex-wrap:wrap"><a class="tlink" href="../classroom.html">인강실에서 OT 보기 <span class="ar" aria-hidden="true">→</span></a><a class="tlink" href="../assets/docs/lecture_ot_script.pdf">OT 대본 PDF <span class="ar" aria-hidden="true">→</span></a></p></div></div>
  </div>
  <!-- aeo-slot -->
 </div>
 <div class="wrap">
  <nav class="anch" aria-label="지면 차례"><a href="#toc" aria-current="true">강의 목차</a><a href="#intro">이 인강은</a><a href="#faq">묻는 것</a><a href="#plan" class="pl" data-list-price="{c["price"]}"><b>{"공통 풀이" if is_common else "단위 전권"}</b>{c["price"]:,}원</a></nav>
- <section class="page" id="toc"><h2 class="t">{c["n"]}편, {"한 묶음" if is_common else ("네 묶음" if k["gichul"] else "세 묶음")}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
- <section class="page" id="intro"><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + "을 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
+ <section class="page" id="toc"><h2 class="t">{c["n"]}편, {NGRP[len(groups)]}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
+ <section class="page" id="intro"><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + eul(c["spec"]) + " 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
   <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
   <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>지급일부터 3개월입니다. 응시 이용 기간은 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
@@ -477,14 +532,19 @@ def detail_page(c, cs):
  <div style="margin-top:var(--s6)"><span class="eyebrow">다른 강좌</span><div style="display:flex;gap:8px;flex-wrap:wrap">{others}</div></div></section>
 </div>
 <div class="sticky"><div class="wrap in"><span class="pr" data-list-price="{c["price"]}">{c["price"]:,}원</span><a class="btn sm" href="#plan">{"담기" if is_common else "단위 전권 담기"}</a></div></div>'''
+    sample_js = f'["{E(sid)}"]' if has_sample else "[]"
     script = f'''<script>
-(function(){{ if(!window.LEC) return; var S=["{E(sid)}"]; LEC.paintSummaries(document);
+(function(){{ if(!window.LEC) return; var S={sample_js}; LEC.paintSummaries(document);
   var code={"null" if is_common else '"' + code + '"'};
   Promise.all([code?LEC.pub(code):Promise.resolve(null), LEC.mine(), code?LEC.pubGichul(code):Promise.resolve(null)]).then(function(r){{ var pubList=r[0], mineList=r[1]; if(pubList&&r[2]) pubList=pubList.concat(r[2]);
     if(!code){{ LEC.paintRows(document, null, mineList, S); return; }}
     LEC.paintRows(document, pubList, mineList, S); }});
-  var more=document.getElementById('tocMore'), fb=document.querySelector('[data-tocmore]');
-  if(more&&fb){{ more.hidden=true; fb.addEventListener('click',function(){{ var open=more.hidden; more.hidden=!open; fb.setAttribute('aria-expanded', open?'true':'false'); fb.firstChild.textContent = open ? '세트 해설 접기 ' : fb.getAttribute('data-label'); }}); fb.setAttribute('data-label', fb.firstChild.textContent); }}
+  [['tocMore','[data-tocmore]','세트 해설 접기 '],['tocMoreU','[data-tocmore-u]','공통형 세트 해설 접기 ']].forEach(function(p){{
+    var more=document.getElementById(p[0]), fb=document.querySelector(p[1]);
+    if(!more||!fb) return;
+    more.hidden=true; fb.setAttribute('data-label', fb.firstChild.textContent);
+    fb.addEventListener('click',function(){{ var open=more.hidden; more.hidden=!open; fb.setAttribute('aria-expanded', open?'true':'false'); fb.firstChild.textContent = open ? p[2] : fb.getAttribute('data-label'); }});
+  }});
   var links=[].slice.call(document.querySelectorAll('.anch a[href^="#"]')).filter(function(a){{ return a.getAttribute('href')!=='#plan'; }}), secs=links.map(function(a){{ return document.querySelector(a.getAttribute('href')); }}), bar=document.querySelector('.anch');
   var hold=0;
   function setCur(cur){{ links.forEach(function(a,i){{ if(i===cur) a.setAttribute('aria-current','true'); else a.removeAttribute('aria-current'); }}); }}

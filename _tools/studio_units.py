@@ -15,28 +15,34 @@ def copy_text(key):
 
 def units():
     rows = []
-    for number, (code, label, _) in enumerate(EX.CODES, 1):
+    number = 0
+    for code, label, _ in EX.CODES:
         spec = json.loads((HERE / "exam_pages" / "facts" / f"{code}.json").read_text(encoding="utf-8"))["spec"]
         if spec["status"] not in {"on_sale", "opening"}:
             raise ValueError(f"{code}: unknown status")
-        uni = label.split(" ", 1)[0]
-        # 예정 단위의 카드 표제는 IA1 §5 승인 문면을 그대로 사용한다.
-        title = copy_text(code.replace("-", "_")) if spec["status"] == "opening" else label
-        if not title.startswith(uni + " "):
-            raise ValueError(f"{code}: university label mismatch")
-        minutes = []
-        for key in ("prep_sec", "answer_sec"):
-            value = spec[key]
-            if not isinstance(value, int) or value <= 0 or value % 60:
-                raise ValueError(f"{code}: {key} must be whole minutes")
-            minutes.append(value // 60)
-        if spec["status"] == "opening":
-            month, day = map(int, spec["open_date"].split("-")[1:])
-            if f"{month}월 {day}일" != EX.OPEN_DATE:
-                raise ValueError(f"{code}: opening date mismatch")
-        rows.append(dict(code=code, number=f"{number:02}", uni=uni,
-                         title=title[len(uni) + 1:], label=title, spec=spec,
-                         prep=minutes[0], answer=minutes[1]))
+        # 한 전형 안에 판매 단위가 여럿이면(미래캠퍼스 계열 5, 2026-09-14) facts spec.units 가 카드 원장이다.
+        # 안내 링크는 전형 상세면 하나(interview/<전형 code>.html)로 모이고, 세트 링크와 카드 id 는 하위 단위 code 를 쓴다.
+        subs = spec.get("units") or [dict(code=code, label=label)]
+        for sub in subs:
+            number += 1
+            uni = spec["univ_short"] if spec.get("units") else label.split(" ", 1)[0]
+            # 예정 단위의 카드 표제는 IA1 §5 승인 문면을 그대로 사용한다.
+            title = copy_text(sub["code"].replace("-", "_")) if spec["status"] == "opening" else sub["label"]
+            if not title.startswith(uni + " "):
+                raise ValueError(f"{sub['code']}: university label mismatch")
+            minutes = []
+            for key in ("prep_sec", "answer_sec"):
+                value = spec[key]
+                if not isinstance(value, int) or value <= 0 or value % 60:
+                    raise ValueError(f"{code}: {key} must be whole minutes")
+                minutes.append(value // 60)
+            if spec["status"] == "opening":
+                month, day = map(int, spec["open_date"].split("-")[1:])
+                if f"{month}월 {day}일" != EX.OPEN_DATE:
+                    raise ValueError(f"{code}: opening date mismatch")
+            rows.append(dict(code=sub["code"], guide=code, number=f"{number:02}", uni=uni,
+                             title=title[len(uni) + 1:], label=title, spec=spec,
+                             prep=minutes[0], answer=minutes[1]))
     return rows
 
 
@@ -54,7 +60,7 @@ def card(row, prefix="../", purchase=False, number=None):
                                  ("r3_unit_questions", row["spec"]["questions"], "r3_unit_count")))
     # 위계: 면의 목적 행동 하나만 solid (critic H2·H3). 소개면 = ⑤ 안내, 구매면 = ⑦ 담기.
     guide_cls = "btn ghost sm" if purchase else "btn sm"
-    actions = (f'<a class="{guide_cls}" href="{prefix}interview/{code}.html">'
+    actions = (f'<a class="{guide_cls}" href="{prefix}interview/{row.get("guide", code)}.html">'
                f'{esc(copy_text("r3_unit_guide"))}</a>')
     if not opening:
         # ⑥ 라벨 = 목적지 (critic M1). 소개면은 구매면으로 나가고, 구매면은 같은 면의 세트 표로 간다.

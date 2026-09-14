@@ -208,6 +208,12 @@
   padding:var(--s3) 0;border-bottom:var(--rule);font-size:var(--t-base)}
 :where(body.exam) .xmat li b{font-family:var(--mono);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
 :where(body.exam) .xcta{margin-top:var(--s5);display:flex;gap:var(--s3);align-items:center;flex-wrap:wrap}
+/* 한 전형 안에 판매 단위가 여럿인 면(미래캠퍼스 계열 5)의 단위 목록 */
+:where(body.exam) .xunits{margin-top:var(--s5);border-top:var(--rule-strong)}
+:where(body.exam) .xunits li{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:var(--s3);align-items:center;
+  padding:var(--s3) 0;border-bottom:var(--rule);font-size:var(--t-base)}
+@media (max-width:640px){:where(body.exam) .xunits li{grid-template-columns:minmax(0,1fr);gap:var(--s2);justify-items:start}}
+:where(body.exam) .xunote{margin-top:var(--s3);font-size:var(--t-sm);color:var(--gray);max-width:var(--measure)}
 /* 오픈 예정 띠 */
 :where(body.exam) .xsoon{margin-top:var(--s5);background:var(--ink);color:var(--paper);border-radius:var(--r-md);
   padding:var(--s5);display:grid;grid-template-columns:minmax(0,1fr) auto;gap:var(--s4);align-items:center}

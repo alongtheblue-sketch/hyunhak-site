@@ -1,6 +1,6 @@
 {
  "generated_at": "2026-09-02T00:00:00Z",
- "catalog_hash": "1d57706297ed3ee2198b8cb0eb382c525b6b65afa9e7cfe6529f7e41061d1b0f",
+ "catalog_hash": "d403edfa998c2295f9819bd7f11e9394380b0d48ad172fc4991edbe37b1caf9c",
  "units": [
   {
    "code": "korea-hum",
@@ -2673,6 +2673,3324 @@
      "passages": 3,
      "questions": 2,
      "prep_seconds": 480,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-free",
+   "sku": "pass-yonsei-mirae-free",
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 학교생활우수자(자율융합계열)",
+   "label": "연세대 미래 자율융합",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_j01",
+     "n": 1,
+     "title": "잊힐 권리와 기록의 책임",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j02",
+     "n": 2,
+     "title": "약속의 구속력",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j03",
+     "n": 3,
+     "title": "전통 놀이의 변형",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j04",
+     "n": 4,
+     "title": "익명의 선행",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j05",
+     "n": 5,
+     "title": "침묵의 의미",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j06",
+     "n": 6,
+     "title": "사과 없는 용서",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j07",
+     "n": 7,
+     "title": "경쟁과 운",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j08",
+     "n": 8,
+     "title": "일의 의미",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j09",
+     "n": 9,
+     "title": "번역과 원문",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j10",
+     "n": 10,
+     "title": "도시의 기억",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j11",
+     "n": 11,
+     "title": "관용의 역설",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j12",
+     "n": 12,
+     "title": "공공미술의 철거",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 4,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j13",
+     "n": 13,
+     "title": "의무 너머의 행위",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 4,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j14",
+     "n": 14,
+     "title": "예약 근무의 소득 보장과 시간 선택",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j15",
+     "n": 15,
+     "title": "아름다움의 기준",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j16",
+     "n": 16,
+     "title": "LED 가로등 전환",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j17",
+     "n": 17,
+     "title": "일회용 컵 보증금",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j18",
+     "n": 18,
+     "title": "드론 배송",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j19",
+     "n": 19,
+     "title": "자전거 도로 확장의 편익과 갈등",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j20",
+     "n": 20,
+     "title": "도시 양봉",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j21",
+     "n": 21,
+     "title": "하천 자연화의 이익과 홍수 안전",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j22",
+     "n": 22,
+     "title": "배양육과 축산의 환경 부담",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j23",
+     "n": 23,
+     "title": "전자책 독서의 자원 계산",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j24",
+     "n": 24,
+     "title": "스마트팜과 농촌 공동체",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 11
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j25",
+     "n": 25,
+     "title": "해상 풍력과 어민의 바다",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 11
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j26",
+     "n": 26,
+     "title": "지열 발전과 유발 지진",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j27",
+     "n": 27,
+     "title": "유전자 편집 작물과 식량 안보",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j28",
+     "n": 28,
+     "title": "탄소 포집 저장과 감축의 책임",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 4,
+      "합계": 14
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j29",
+     "n": 29,
+     "title": "위성 군집 통신과 밤하늘",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 4,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_j30",
+     "n": 30,
+     "title": "하수 재이용 식수의 조건",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 4,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-design",
+   "sku": "pass-yonsei-mirae-design",
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 학교생활우수자(디자인계열과 디자인예술학부)",
+   "label": "연세대 미래 디자인",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_d01",
+     "n": 1,
+     "title": "오마주와 표절",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d02",
+     "n": 2,
+     "title": "제작의 오차와 흔적",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d03",
+     "n": 3,
+     "title": "색과 정보 전달",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d04",
+     "n": 4,
+     "title": "고쳐 쓰는 문화",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d05",
+     "n": 5,
+     "title": "공원의 안내 표지를 읽는 조건",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d06",
+     "n": 6,
+     "title": "모두를 위한 디자인",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d07",
+     "n": 7,
+     "title": "아름다운 포장",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d08",
+     "n": 8,
+     "title": "첫 결제를 권하는 화면",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d09",
+     "n": 9,
+     "title": "사고를 경고하는 그림의 표현",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d10",
+     "n": 10,
+     "title": "전시의 순서",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d11",
+     "n": 11,
+     "title": "기능과 장식",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d12",
+     "n": 12,
+     "title": "대피 지도에 표시할 출구",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d13",
+     "n": 13,
+     "title": "바구니 제작 전시의 관람 순서",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d14",
+     "n": 14,
+     "title": "지도의 정치",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d15",
+     "n": 15,
+     "title": "폐허의 보존",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d16",
+     "n": 16,
+     "title": "지역 축제 안내 표지판의 세 가지 안",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d17",
+     "n": 17,
+     "title": "예약 앱에서 바꿀 수 있는 조작 범위",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d18",
+     "n": 18,
+     "title": "대기 시간 그림에 남겨야 할 정보",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d19",
+     "n": 19,
+     "title": "특산물 포장 회수 방식의 세 가지 안",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d20",
+     "n": 20,
+     "title": "충전식 독서등의 외형과 수리 구조",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d21",
+     "n": 21,
+     "title": "역 앞 공원 벤치의 세 가지 안",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d22",
+     "n": 22,
+     "title": "어린이 병동 벽화의 세 가지 안",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d23",
+     "n": 23,
+     "title": "재활용 의류 봉제 구조의 세 가지 안",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d24",
+     "n": 24,
+     "title": "광장 야간 조명의 인상과 길 안내",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d25",
+     "n": 25,
+     "title": "학교 앱 첫 화면의 세 가지 안",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d26",
+     "n": 26,
+     "title": "선물 포장을 고르는 사람과 여는 사람",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d27",
+     "n": 27,
+     "title": "옛 공방 영상에서 기록과 창작을 표시하는 방법",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d28",
+     "n": 28,
+     "title": "생활시설의 상징을 누가 어떤 기준으로 정할 것인가",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d29",
+     "n": 29,
+     "title": "공공시설 안내를 글과 그림과 소리로 전달하는 방법",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_d30",
+     "n": 30,
+     "title": "대피 앱에서 먼저 보여 줄 정보와 빠르다는 판단",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 1,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-tech",
+   "sku": "pass-yonsei-mirae-tech",
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 학교생활우수자(첨단계열)",
+   "label": "연세대 미래 첨단",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_t01",
+     "n": 1,
+     "title": "자동화 이익의 분배",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t02",
+     "n": 2,
+     "title": "추천과 취향",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t03",
+     "n": 3,
+     "title": "기억의 외주",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t04",
+     "n": 4,
+     "title": "건조 설비를 가동할 시간",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t05",
+     "n": 5,
+     "title": "빠른 설비의 하루 생산",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t06",
+     "n": 6,
+     "title": "예측의 불확실성을 전하는 두 방식",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t07",
+     "n": 7,
+     "title": "결함 공개의 시점",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t08",
+     "n": 8,
+     "title": "보조와 향상 사이",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t09",
+     "n": 9,
+     "title": "울리지 않은 경보와 잘못 울린 경보",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t10",
+     "n": 10,
+     "title": "멈추지 않는 화면",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t11",
+     "n": 11,
+     "title": "함께 끊기는 두 통신선",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t12",
+     "n": 12,
+     "title": "표준을 정하는 힘",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t13",
+     "n": 13,
+     "title": "통로에 멈춘 안내 로봇",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t14",
+     "n": 14,
+     "title": "공공 연구 성과의 공개와 독점 사용권",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 4,
+      "의견_근거_부담": 3,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t15",
+     "n": 15,
+     "title": "출입 장치의 자동 업데이트와 유예 조건",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t16",
+     "n": 16,
+     "title": "스마트 계량기와 전력 수요 조절의 공정성",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t17",
+     "n": 17,
+     "title": "댐 유입량 예측의 오차와 방류 결정 책임",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t18",
+     "n": 18,
+     "title": "자율주행 버스의 비용 계산과 사고 책임",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 1,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t19",
+     "n": 19,
+     "title": "온라인 강의 완료율과 표본의 대표성",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t20",
+     "n": 20,
+     "title": "전동킥보드 이용 급증과 사고율 해석",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t21",
+     "n": 21,
+     "title": "재활용 선별 로봇 도입과 일자리 전환",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t22",
+     "n": 22,
+     "title": "예약 서비스의 공통 연결 규칙과 기능 개발",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t23",
+     "n": 23,
+     "title": "건축용 3D 프린팅과 벽체의 책임",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t24",
+     "n": 24,
+     "title": "센서 자동 제어와 공정 불량률",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t25",
+     "n": 25,
+     "title": "배차 알고리즘과 배달 노동의 데이터",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 11
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t26",
+     "n": 26,
+     "title": "음향 센서 누수 탐지와 수돗물 공급 관리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 4,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t27",
+     "n": 27,
+     "title": "취약점 공개와 수정본의 실제 적용",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t28",
+     "n": 28,
+     "title": "데이터센터의 재생에너지 비중과 지역의 부담",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 4,
+      "의견_근거_부담": 3,
+      "합계": 14
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t29",
+     "n": 29,
+     "title": "안면 인식 출입의 처리 시간과 생체 정보의 수집",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_t30",
+     "n": 30,
+     "title": "위성 저수율의 오차와 제한급수 판단",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-health",
+   "sku": "pass-yonsei-mirae-health",
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 학교생활우수자(보건계열)",
+   "label": "연세대 미래 보건",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_h01",
+     "n": 1,
+     "title": "수치가 된 몸",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h02",
+     "n": 2,
+     "title": "폭염 속 작업을 멈추는 조건",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h03",
+     "n": 3,
+     "title": "통증을 말하는 방식",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 1,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h04",
+     "n": 4,
+     "title": "결정 지원 화면과 보호자의 선의",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h05",
+     "n": 5,
+     "title": "유전자 검사 결과와 모를 권리",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 1,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h06",
+     "n": 6,
+     "title": "늘어난 시간을 재는 기준",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h07",
+     "n": 7,
+     "title": "집으로 들어온 의료 기기",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h08",
+     "n": 8,
+     "title": "고치는 기술과 받아들이는 사회",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h09",
+     "n": 9,
+     "title": "재활 예약과 돌아오는 버스",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h10",
+     "n": 10,
+     "title": "기분을 조절하는 약과 환자의 선택",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h11",
+     "n": 11,
+     "title": "재활 보조 기기의 설정 권한",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h12",
+     "n": 12,
+     "title": "예약 부도와 일정 변경의 책임",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h13",
+     "n": 13,
+     "title": "기능 저하의 치료와 지원",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h14",
+     "n": 14,
+     "title": "원격 진료와 환자 신뢰의 조건",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h15",
+     "n": 15,
+     "title": "접종 참여와 센터 이용의 조건",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h16",
+     "n": 16,
+     "title": "노인 낙상과 착용형 감지 기기",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h17",
+     "n": 17,
+     "title": "청소년 수면 부족과 수면 측정 앱",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h18",
+     "n": 18,
+     "title": "구강 검진과 사진 상담 앱의 연계",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h19",
+     "n": 19,
+     "title": "이어폰 사용과 소음성 난청",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h20",
+     "n": 20,
+     "title": "교대근무의 휴식과 업무 인계",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h21",
+     "n": 21,
+     "title": "근시 증가와 화면 시간 관리 기술",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h22",
+     "n": 22,
+     "title": "고령자 다약제 복용과 복약 관리 앱",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h23",
+     "n": 23,
+     "title": "응급 의료의 지역 격차와 인공지능 구급 배차",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h24",
+     "n": 24,
+     "title": "고령 운전자 사고와 운전 능력 검사 제도",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 11
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h25",
+     "n": 25,
+     "title": "신체 활동 실천율 추이와 보상형 걷기 앱",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h26",
+     "n": 26,
+     "title": "초미세먼지 노출과 개인 노출 측정기",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h27",
+     "n": 27,
+     "title": "항생제 내성과 처방 감시 시스템",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h28",
+     "n": 28,
+     "title": "검사 기관의 측정 오차와 결과 통보 기준",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h29",
+     "n": 29,
+     "title": "비대면 재활의 참여와 동작 관찰",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_h30",
+     "n": 30,
+     "title": "폭염 온열 질환과 취약 가구 원격 모니터링",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-intl",
+   "sku": "pass-yonsei-mirae-intl",
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 글로벌인재(국제계열)",
+   "label": "연세대 미래 국제",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_g01",
+     "n": 1,
+     "title": "Do urban green spaces make city residents healthier?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g02",
+     "n": 2,
+     "title": "Who benefits from cross-border student exchange?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 1,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g03",
+     "n": 3,
+     "title": "Why do school cafeterias throw away so much food?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 1,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g04",
+     "n": 4,
+     "title": "Working hours in an international remote team",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g05",
+     "n": 5,
+     "title": "Can remote work revive small towns?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g06",
+     "n": 6,
+     "title": "Should public transport be free for everyone?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g07",
+     "n": 7,
+     "title": "The true cost of cheap clothes",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 9
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g08",
+     "n": 8,
+     "title": "Ending the twice-a-year clock change",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g09",
+     "n": 9,
+     "title": "Is spending on space exploration justified?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 9
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g10",
+     "n": 10,
+     "title": "When disasters cross borders",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g11",
+     "n": 11,
+     "title": "Preventing or compensating climate damage",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g12",
+     "n": 12,
+     "title": "Recognizing skills acquired abroad",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g13",
+     "n": 13,
+     "title": "Is water a basic right or a priced product?",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g14",
+     "n": 14,
+     "title": "Is it fair to show different customers different prices?",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g15",
+     "n": 15,
+     "title": "Language support at a public service counter",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 2,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g16",
+     "n": 16,
+     "title": "Who should explain a digital heritage collection?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g17",
+     "n": 17,
+     "title": "Should schools move to a four-day week?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g18",
+     "n": 18,
+     "title": "More visitors and clear routes through a town",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g19",
+     "n": 19,
+     "title": "Refund help when an overseas seller does not reply",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g20",
+     "n": 20,
+     "title": "Should pet owners be required to hold a license?",
+     "difficulty": "하",
+     "axes": {
+      "영어_구문_부하": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g21",
+     "n": 21,
+     "title": "Should school rankings be published?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g22",
+     "n": 22,
+     "title": "Should students be paid for good grades?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g23",
+     "n": 23,
+     "title": "Sharing a road report before its meaning is checked",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g24",
+     "n": 24,
+     "title": "How much of a joint research method should be public?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g25",
+     "n": 25,
+     "title": "Should influencer advertising follow stricter rules?",
+     "difficulty": "중",
+     "axes": {
+      "영어_구문_부하": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g26",
+     "n": 26,
+     "title": "One assessment across different learning conditions",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g27",
+     "n": 27,
+     "title": "Shared orbits and responsibility before movement",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g28",
+     "n": 28,
+     "title": "Electricity exchange when both partners face shortages",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g29",
+     "n": 29,
+     "title": "Urgent warnings across languages",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_g30",
+     "n": 30,
+     "title": "Should companies pay a tax on robots that replace workers?",
+     "difficulty": "상",
+     "axes": {
+      "영어_구문_부하": 4,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 4,
+      "합계": 14
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "yonsei-mirae-common",
+   "sku": null,
+   "univ": "연세대학교 미래캠퍼스",
+   "univ_short": "연세대 미래",
+   "track": "2027 학생부종합 학교생활우수자(면접형) 전 모집단위 공통",
+   "label": "연세대 미래 공통형",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "sets": [
+    {
+     "id": "yonsei_mirae_2027_u01",
+     "n": 1,
+     "title": "칭찬의 방식",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u02",
+     "n": 2,
+     "title": "다수결의 한계",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u03",
+     "n": 3,
+     "title": "조건 붙은 기부",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u04",
+     "n": 4,
+     "title": "다음 세대에 지는 빚",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u05",
+     "n": 5,
+     "title": "처벌과 회복",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u06",
+     "n": 6,
+     "title": "순서와 사정",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u07",
+     "n": 7,
+     "title": "표현의 자유와 상처",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u08",
+     "n": 8,
+     "title": "능력과 필요",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u09",
+     "n": 9,
+     "title": "아끼는 마음과 비판",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u10",
+     "n": 10,
+     "title": "익명 평가와 책임",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u11",
+     "n": 11,
+     "title": "전문가와 시민",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u12",
+     "n": 12,
+     "title": "불리한 사람에게 더 주기",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 3,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u13",
+     "n": 13,
+     "title": "쓸모없는 공부",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u14",
+     "n": 14,
+     "title": "도움을 거절할 권리",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u15",
+     "n": 15,
+     "title": "기계 번역 시대의 외국어",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u16",
+     "n": 16,
+     "title": "보이지 않는 노동",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u17",
+     "n": 17,
+     "title": "사라지는 기술",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u18",
+     "n": 18,
+     "title": "공짜의 값",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u19",
+     "n": 19,
+     "title": "실패의 공개",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u20",
+     "n": 20,
+     "title": "기계가 결정했을 때",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u21",
+     "n": 21,
+     "title": "원본과 복제",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u22",
+     "n": 22,
+     "title": "지역의 말",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u23",
+     "n": 23,
+     "title": "광고 속 예술",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u24",
+     "n": 24,
+     "title": "축제의 주인",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u25",
+     "n": 25,
+     "title": "청소년과 작품 선택",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u26",
+     "n": 26,
+     "title": "빌려 쓰는 삶",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 1,
+      "합계": 6
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u27",
+     "n": 27,
+     "title": "가까운 먹거리",
+     "difficulty": "하",
+     "axes": {
+      "제시문_추상도": 1,
+      "관계_복잡도": 2,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 7
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u28",
+     "n": 28,
+     "title": "밤의 고요",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "관계_복잡도": 3,
+      "발문_요구_단계": 2,
+      "의견_근거_부담": 2,
+      "합계": 9
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u29",
+     "n": 29,
+     "title": "건강의 강제",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
+     "explain_script": true
+    },
+    {
+     "id": "yonsei_mirae_2027_u30",
+     "n": 30,
+     "title": "사라진 종의 복원",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "관계_복잡도": 4,
+      "발문_요구_단계": 3,
+      "의견_근거_부담": 3,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 3,
+     "prep_seconds": 600,
+     "interview_seconds": 300,
      "explain_script": true
     }
    ]

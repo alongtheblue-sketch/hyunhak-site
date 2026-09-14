@@ -631,11 +631,13 @@ document.addEventListener('DOMContentLoaded', async function(){
   // ── 내 강의: 보유 단위별 공개/준비 편수 + 바로가기 (공개 편수 = /api/lectures/summary 실값) ──
   (async function(){
     var box=document.getElementById('myLec');
-    var units=[]; try{ units=((await (await fetch('assets/data/sets.json')).json()).units||[]).filter(function(u){return !/-mirae-/.test(u.sku||'')}); }catch(e){}
-    var UNIT_OF=[[/^korea_2027_h/,'korea-hum'],[/^korea_2027_s/,'korea-sci'],[/^yonsei_2027_h/,'yonsei-hum'],[/^yonsei_2027_s/,'yonsei-sci'],[/^yonsei_intl_2027_i/,'yonsei-intl']];
+    var units=[]; try{ units=((await (await fetch('assets/data/sets.json')).json()).units||[]); }catch(e){}
+    var UNIT_OF=[[/^korea_2027_h/,'korea-hum'],[/^korea_2027_s/,'korea-sci'],[/^yonsei_2027_h/,'yonsei-hum'],[/^yonsei_2027_s/,'yonsei-sci'],[/^yonsei_intl_2027_i/,'yonsei-intl'],[/^yonsei_mirae_2027_j/,'yonsei-mirae-free'],[/^yonsei_mirae_2027_d/,'yonsei-mirae-design'],[/^yonsei_mirae_2027_t/,'yonsei-mirae-tech'],[/^yonsei_mirae_2027_h/,'yonsei-mirae-health'],[/^yonsei_mirae_2027_g/,'yonsei-mirae-intl'],[/^yonsei_mirae_2027_u/,'yonsei-mirae-common']];
     function unitOfSet(id){ for(var i=0;i<UNIT_OF.length;i++) if(UNIT_OF[i][0].test(String(id||''))) return UNIT_OF[i][1]; return null; }
     var GICHUL_OF={'korea-hum':1,'korea-sci':1,'yonsei-hum':1,'yonsei-sci':1,'yonsei-intl':1};   // 단위 전권마다 2026 기출 해설 1편 (LC-4 ②, 2026-09-06)
     function unitOf(code){ return units.find(function(u){return u.code===code})||null; }
+    // 전형 상세면은 단위마다 하나가 아니다. 미래 6단위는 interview/yonsei-mirae.html 하나를 함께 쓴다 (2026-09-14)
+    function examOf(code){ return /^yonsei-mirae-/.test(String(code||'')) ? 'yonsei-mirae' : code; }
     function setOf(id){ for(var i=0;i<units.length;i++){ var hit=(units[i].sets||[]).find(function(x){return x.id===id}); if(hit) return {set:hit,unit:units[i]}; } return null; }
     function until(e){ return e&&e.expires_at ? esc(String(e.expires_at).slice(0,10))+' 까지' : ''; }
     function lecText(ready,total){ return ready>0 ? '공개 '+ready+'편, 준비 중 '+Math.max(0,total-ready)+'편' : '공개 준비 중, 준비 중 '+total+'편'; }
@@ -648,10 +650,10 @@ document.addEventListener('DOMContentLoaded', async function(){
     // 인강 행이 없는 구 단위 전권 권리도 단위 근거로 (역호환)
     singles.forEach(function(e){ if(e.kind==='studio_school'&&!e._expired){ var c=String((e._meta||{}).sku||'').replace(/^pass-/,''); if(c&&!owned[c]) owned[c]=e; } });
     var cards=[];
-    // 허용 단위 5종만 단위 카드가 된다 (Global 4). 판매 중단된 구 학교 전권(pass-yonsei, pass-korea)이나
-    // 미래캠 sku 를 단위 코드로 역추적하면 강의가 0편인 가짜 단위 카드가 선다. 이용권 카드(passList)는
-    // 그대로 둔다, 산 것이 사라져 보이면 안 된다.
-    var codes=Object.keys(owned).filter(function(c){ return HH.okUnit(c); });
+    // 허용 단위만 단위 카드가 된다. 판매 중단된 구 학교 전권(pass-yonsei, pass-korea)을 단위 코드로 역추적하면
+    // 강의가 0편인 가짜 단위 카드가 선다. 단독 SKU 가 없는 단위(연세대 미래 공통형)도 구매 목록에 세우지 않는다.
+    // 이용권 카드(passList)는 그대로 둔다, 산 것이 사라져 보이면 안 된다.
+    var codes=Object.keys(owned).filter(function(c){ return HH.okUnit(c)&&!!(unitOf(c)||{}).sku; });
     var setIds=Object.keys(ownedSets).filter(function(id){ return !owned[unitOfSet(id)]; });   // 단위 전권이 덮는 세트는 중복 표시하지 않는다
     if(!codes.length&&!setIds.length&&!commonEnt){
       document.getElementById('myLecSum').textContent='보유한 단위나 세트가 없습니다';   // 자리표시 문안이 남으면 수를 못 읽은 것으로 보인다
@@ -669,7 +671,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     var sums=await Promise.all(codes.map(function(c){ return HH.api('/api/lectures/summary?unit='+encodeURIComponent(c)+'&kind=passage').catch(function(){return null}); }));
     codes.forEach(function(c,i){
       var u=unitOf(c), sm=sums[i], total=u?u.set_count:30;
-      cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의 <a class="tlink" href="interview/'+encodeURIComponent(c)+'.html">출제 유형과 풀이법 보기</a></p>'
+      cards.push('<div class="subcard"><div><p class="nm">'+esc(u?u.label:c)+' 해설 강의 <a class="tlink" href="interview/'+encodeURIComponent(examOf(c))+'.html">출제 유형과 풀이법 보기</a></p>'
         +'<p class="st">'+(sm?esc(lecText(sm.ready||0,total)):'공개 편수를 지금 확인할 수 없습니다')+(GICHUL_OF[c]?', 2026 기출 해설 1편':'')+(until(owned[c])?', '+until(owned[c]):'')+'</p></div>'
         +'<div class="ops"><a class="btn sm" href="lecture.html?unit='+encodeURIComponent(c)+'">강의 목록</a><a class="btn ghost sm" href="studio.html?unit='+encodeURIComponent(c)+'">지문 목록</a></div></div>');
     });
@@ -677,7 +679,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     setIds.forEach(function(id,i){
       var hit=setOf(id), sm=ssums[i], title=hit?hit.set.title:id;
       cards.push('<div class="subcard"><div><p class="nm">'+esc(title)+' 해설</p>'
-        +'<p class="st">'+(hit?esc(hit.unit.label)+(HH.okUnit(hit.unit.code)?' <a class="tlink" href="interview/'+encodeURIComponent(hit.unit.code)+'.html">출제 유형과 풀이법 보기</a>':'')+', ':'')+(sm?(sm.ready>0?'해설 강의 공개':'해설 강의 준비 중'):'상태를 지금 확인할 수 없습니다')+'<span class="mono">'+esc(id)+'</span>'+(until(ownedSets[id])?', '+until(ownedSets[id]):'')+'</p></div>'
+        +'<p class="st">'+(hit?esc(hit.unit.label)+(HH.okUnit(hit.unit.code)?' <a class="tlink" href="interview/'+encodeURIComponent(examOf(hit.unit.code))+'.html">출제 유형과 풀이법 보기</a>':'')+', ':'')+(sm?(sm.ready>0?'해설 강의 공개':'해설 강의 준비 중'):'상태를 지금 확인할 수 없습니다')+'<span class="mono">'+esc(id)+'</span>'+(until(ownedSets[id])?', '+until(ownedSets[id]):'')+'</p></div>'
         +'<div class="ops"><a class="btn sm" href="lecture.html?set='+encodeURIComponent(id)+'">강의 목록</a></div></div>');
     });
     box.innerHTML=cards.join('');
