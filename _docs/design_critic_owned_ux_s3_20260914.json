@@ -1,0 +1,13 @@
+{"deliverable":"hyunhak.com owned-UX s3 (my.html, studio.html, interview-studio/web)","usecase_id":"04 정보+01 전환 혼합 · 디지털 화면(px) · 400 모바일 우선/1280","scored_at":"2026-09-14T16:15+09:00","max":45,"total":32,
+"lenses":[
+{"n":1,"name":"내러티브-비주얼 일치","score":4,"evidence":"promise 2동사(바로 응시 진입/발급 전 환불제한 인지) 모두 시각 실행: 카드 최상단 검은 '응시하러 가기' 48px, studio 단위카드 owned-picks 2행(48x102 실측), PDF 첫클릭 라벨 '문제지 PDF, 제한에 동의하고 받기'+.sr-warn. 감점=낱권 카드는 사전 예고문 없음(my.html L567 사전문구는 전권 분기 한정)"},
+{"n":2,"name":"클리셰","score":4,"evidence":"楮紙 #F4EFE3+먹 #312E2E+朱印 #9E2B22 조판, 단위번호 04 마진배치, 테두리만의 배지. SaaS 그라데이션·드롭섀도 남용 0. 앱 대학배지(#8C1538 on #F6EAEE)만 관례적"},
+{"n":3,"name":"타이포 위계","score":4,"evidence":"h2 32px/카드제목 16px b/meta 13px #696561/warn 12px·line-height 21px(1.75, 한글 floor 1.55 충족). 감점=법적 고지를 --t-xs 12px 하한으로, 응시기록 행 제목+[전권] 배지 2줄 래핑. 외부폰트 차단으로 서체 판정 보류"},
+{"n":4,"name":"그리드·공간","score":3,"evidence":"400px .owned-multi padding '24px 0px' 실측 → 495,000원·응시하러 가기·담기 버튼 gapRight 0px(1280 은 24px). 데스크톱 바닥글 3열 중 좌열 공백 과다. picks 는 grid-row 4 헤더 아래 foot 위 착지, 내부 overflow 0"},
+{"n":5,"name":"컬러 시스템","score":3,"evidence":"#9E2B22 가 가격·잔여 응시 5회·입금 대기 행·환불제한 경고 4역할 겸용(토큰 주석 '가격과 인장에만' 자기위반). 앱 --crit 이 동일 hex 로 치명 의미 재정의. 대비 실측 seal/bg 6.48, seal/card 7.32, gray/bg 5.04, app accent/bg 7.01 전부 AA 통과"},
+{"n":6,"name":"페이지 흐름","score":3,"evidence":"my.html 400px 총높이 18,711px(약 22 뷰포트). 이용권→응시기록→주문→자료실→내강의→계정 순서는 JTBD 순. 감점=전권 카드 details 30세트 동일면 누적, 고정 하단 탭바가 첫 화면 '이용권' 헤딩 가림"},
+{"n":7,"name":"디테일 품질","score":3,"evidence":"마침표 혼재('다시 구매하면 열립니다', '90일 안에 다시 봅니다' 무종지부 vs 인접 문장 종지부). 바닥글 고객센터 3회·환불 규정 2회·admin@hyunhak.com 2회 중복. 만료카드 '응시 0회' vs 낱권 '잔여 응시 4회 / 5회' 라벨 의미 불일치"},
+{"n":8,"name":"매체 적합성","score":4,"evidence":"400px 8면 doc scrollWidth-clientWidth=0 재실측, 응시 버튼 48px, details summary min-height:var(--tap). 감점=PDF 2단계 버튼 40px(자체 --tap 48px 미달, WCAG 2.5.8 AA 24px 통과), armed 상태 해제 타이머·취소 어포던스 부재(my.html L720~730)"},
+{"n":9,"name":"접근성·윤리","score":4,"evidence":"aria-describedby=sdlw_korea_2027_h03_1 연결, #sdlLive role=status 에 동일 문안 주입 실측, ft-legal aria-label='법적 고지', address#business-info 7항목. 감점=2상태 버튼 aria-pressed 없음, 낱권 사전 고지 부재"}],
+"gates":{"lens1_ge4":true,"lens8_ge3":true,"lens9_ge3":true,"G6_overflow_400":"PASS(0px)","release":"YES"},
+"p1":[],"stage3":"미수행(호출 범위 외)"}

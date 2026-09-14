@@ -602,6 +602,8 @@
       return r.json().then(function (d) { d._status = r.status; return d; });
     }).then(function (d) {
       if (d._status === 403 && d.code === "automation") { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
+      // 만료는 미구매와 다른 사유 (R2-JS-03): 산 회원에게 "구매 후 열람" 이라고 말하지 않는다. 서버가 code expired + 만료일을 준다
+      if (d._status === 403 && d.code === "expired") { fail("열람 기간이 " + String(d.expires_at || "").slice(0, 10) + " 에 끝났습니다. 다시 구매하면 이어서 볼 수 있고, 주문 내역은 마이페이지에 남아 있습니다."); return; }
       if (d._status === 403) { fail("구매 후 열람할 수 있는 자료입니다."); return; }
       if (!d.token) { fail(String(d.error || "열 수 없습니다.")); return; }
       state.token = d.token; state.pages = d.pages; state.email = String(d.email || ""); state.exempt = !!d.exempt;

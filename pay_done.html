@@ -220,8 +220,10 @@ document.addEventListener('DOMContentLoaded', async function(){
       lines.hidden = false;
       lines.innerHTML = '<div><dt>주문 번호</dt><dd>' + esc(orderId) + '</dd></div>'
         + '<div><dt>결제 금액</dt><dd>' + HH.won(amount) + '</dd></div>'
-        + (va.accountNumber ? '<div><dt>입금 계좌</dt><dd>' + esc(va.accountNumber) + '</dd></div>' : '')
-        + (va.dueDate ? '<div><dt>입금 기한</dt><dd>' + esc(va.dueDate) + '</dd></div>' : '');
+        // 은행명은 서버가 사람이 읽는 이름으로 준다 (R3-API-02). 재방문(멱등 분기)도 PG 재조회로 같은 값을 받고, 조회가 안 되면 주문 내역 안내로 폴백 (R3-API-01)
+        + (va.accountNumber ? '<div><dt>입금 계좌</dt><dd>' + esc((va.bank ? va.bank + ' ' : '') + va.accountNumber) + '</dd></div>'
+                            : '<div><dt>입금 계좌</dt><dd>계좌와 기한은 마이페이지 주문 내역에서 확인합니다</dd></div>')
+        + (va.dueDate ? '<div><dt>입금 기한</dt><dd>' + esc(String(va.dueDate).slice(0, 16).replace('T', ' ')) + '</dd></div>' : '');
       acts.hidden = false;
       acts.innerHTML = '<a class="btn" href="my.html">마이페이지 <span class="ar" aria-hidden="true">→</span></a>';
       return;

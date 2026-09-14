@@ -79,6 +79,7 @@
 .setrows .r .sr-ops,.bd-list .r .sr-ops{display:flex;gap:12px;white-space:nowrap}
 .setrows .r .sr-ops .tlink,.bd-list .r .sr-ops .tlink{min-height:40px;font-size:var(--t-sm)}
 .setrows .r .sr-ops .tlink.done,.bd-list .r .sr-ops .tlink.done{color:var(--gray)}
+.setrows .r .sr-warn,.bd-list .r .sr-warn{flex-basis:100%;width:100%;margin:var(--s1) 0 0;font-size:var(--t-xs);color:var(--seal);white-space:normal;word-break:keep-all}
 .setrows .sr-h{font-size:var(--t-sm);color:var(--gray);margin-top:10px}
 @media (max-width:700px){.setrows .r,.bd-list .r{flex-wrap:wrap}.setrows .r .sr-u,.bd-list .r .sr-u{white-space:normal}}
 details.bd summary{cursor:pointer;font-size:var(--t-sm);color:var(--gray);margin-top:8px;min-height:44px;display:list-item;list-style-position:inside;padding-block:12px}
@@ -213,6 +214,7 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
         </ol>
         <p class="fu-n">자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.</p>
       </div>
+      <p id="sdlLive" class="vh" role="status" aria-live="polite"></p>
       <div class="subcards" id="passList"><div class="empty">불러오는 중</div></div>
     </div>
 
@@ -321,8 +323,8 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
     <p class="kind">환불 요청</p>
     <h2 id="rfTitle">환불 규정 안내</h2>
     <div class="pol">
-      <p>① 가이드북과 인강, 스튜디오는 디지털 콘텐츠입니다. 이미 연 권, 재생한 강의, 응시한 지문, 발급된 PDF 소장판은 제공이 개시되어 단순 변심에 따른 청약철회가 제한됩니다(전자상거래법 제17조 제2항 제5호, 이용약관 제6조). 제공 개시 시점은 가이드북은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오는 응시를 시작한 때입니다.</p>
-      <p>② 낱권으로 사신 권과 지문, 재생하지 않은 강의는 제공이 개시되기 전까지 청약철회하실 수 있습니다. 31권 전권과 단위 전권은 묶음 하나로 제공되기 때문에 한 권이라도 열람하거나 지문 하나라도 응시하면 이용권 전체의 청약철회가 제한됩니다. 표시 내용과 실제가 다르거나 계약과 다르게 이행된 경우에는 공급받은 날부터 3개월, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회하실 수 있습니다(전자상거래법 제17조 제3항).</p>
+      <p>① 가이드북과 인강, 스튜디오는 디지털 콘텐츠입니다. 이미 연 권, 재생한 강의, 응시한 지문, 발급된 PDF 소장판과 세트 문제지나 해설지 PDF 는 제공이 개시되어 단순 변심에 따른 청약철회가 제한됩니다(전자상거래법 제17조 제2항 제5호, 이용약관 제6조). 제공 개시 시점은 가이드북은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오는 응시를 시작한 때 또는 세트 문제지나 해설지 PDF 를 발급받은 때입니다.</p>
+      <p>② 낱권으로 사신 권과 지문, 재생하지 않은 강의는 제공이 개시되기 전까지 청약철회하실 수 있습니다. 31권 전권과 단위 전권은 묶음 하나로 제공되기 때문에 한 권이라도 열람하거나 지문 하나라도 응시하거나 세트 문제지나 해설지 PDF 를 하나라도 발급받으면 이용권 전체의 청약철회가 제한됩니다. 표시 내용과 실제가 다르거나 계약과 다르게 이행된 경우에는 공급받은 날부터 3개월, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회하실 수 있습니다(전자상거래법 제17조 제3항).</p>
       <p>③ 청약철회는 요청을 보내신 때에 효력이 생기며 연구소의 승인을 요건으로 하지 않습니다. 환불 대금은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드리고, 환급이 늦어지면 지연이자를 더해 지급합니다(전자상거래법 제18조 제2항).</p>
       <p><a href="terms.html#art6" target="_blank" rel="noopener">이용약관 제6조 보기</a></p>
     </div>
@@ -357,7 +359,7 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -375,7 +377,7 @@ dialog.rf::backdrop{background:rgba(49,46,46,.42)}
         <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
       </div>
     </div>
-    <div class="biz"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
+    <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>
     </details>
   </div>
 </footer>
@@ -485,13 +487,15 @@ document.addEventListener('DOMContentLoaded', async function(){
     var attrs = isStudio ? ' data-ent="'+esc(e.id||'')+'" data-kind="'+esc(e.kind)+'" data-sku="'+esc(meta.sku||'')+'"'
       +(HH.okSetId(meta.set_id)?' data-set-id="'+esc(meta.set_id)+'"':'')+(expired?' data-expired="1"':'') : '';
     var st = '<p class="st">'+esc(KIND[e.kind]||e.kind)+usesTx+'<span class="stuse"></span>'+(e.expires_at?', '+esc(e.expires_at.slice(0,10))+' 까지'+(expired?(isStudio?' (응시 기간 종료)':' (열람 기간 종료)'):''):'')+'</p>';
+    // 제목이 없는 권리(구 지급, QA seed)는 종류 이름만 남아 어느 대학 것인지 안 보였다 (critic P2, OU-7). owned.js 와 같은 규칙으로 단위 라벨을 붙인다
+    var nm=isStudio&&HH.studioTitle?HH.studioTitle(e):(meta.title||KIND[e.kind]||e.kind);
     if(e.kind==='studio_school')
-      return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
+      return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(nm)+'</p>'+st+'</div>'
         +'<div class="ops">'+op+'</div>'
         +'<div class="setrows"></div>'
         +'<details class="bd stsets" hidden><summary>세트별 사용과 잔여 펼치기</summary><div class="bd-list"></div></details></div>';
     if(e.kind==='studio_passage')
-      return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
+      return '<div class="subcard" style="grid-template-columns:1fr"'+attrs+'><div><p class="nm">'+esc(nm)+'</p>'+st+'</div>'
         +'<div class="ops">'+op+'</div><div class="setrows"></div></div>';
     return '<div class="subcard"'+attrs+'><div><p class="nm">'+esc(meta.title||KIND[e.kind]||e.kind)+'</p>'+st+'</div>'
       +'<div class="ops">'+op+'</div></div>';
@@ -522,13 +526,14 @@ document.addEventListener('DOMContentLoaded', async function(){
     // 받은 적 있는 세트 파일 (set_id:doc). 원장 = /api/studio/sets/downloads/me. 실패해도 행은 그린다
     var got={}; try{ ((await HH.api('/api/studio/sets/downloads/me')).downloads||[]).forEach(function(d){ got[d.set_id+':'+d.doc]=1; }); }catch(e){}
     // 세트 1행: 제목 · 응시 n회와 잔여 · 문제지·해설지 PDF. expired 면 PDF 링크 대신 종료 문구 (서버도 만료 권리는 403)
-    function setRow(setId, n, expired){
-      var did=n>0, left=Math.max(0,SET_USES-n);
+    // arm = 이 이용권으로 아직 한 번도 응시하지 않았을 때. 그때의 PDF 발급은 제공 개시라 청약철회가 제한되므로 (이용약관 제6조, OU-6(1) 2026-09-14) 버튼을 2단계로 둔다
+    function setRow(setId, n, expired, arm){
+      var did=n>0, left=Math.max(0,SET_USES-n), armAttr=arm?' data-sdl-arm="'+arm+'"'+(noLedger?' data-sdl-unsure="1"':''):'';
       // 원장을 못 받은 화면에서는 횟수를 지어내지 않는다 (JS-R3-01)
       var use = noLedger ? '응시 횟수 미상' : did ? '응시 <b>'+n+'회</b>, 잔여 '+left+'회' : '미응시, 5회 가능';
       var ops = expired ? '<span class="sr-u">응시 기간 종료</span>'
-        : '<span class="sr-ops"><button type="button" class="tlink sdl'+(got[setId+':exam']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="exam">문제지 PDF'+(got[setId+':exam']?' (받음)':'')+'</button>'
-          +'<button type="button" class="tlink sdl'+(got[setId+':key']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="key">해설지 PDF'+(got[setId+':key']?' (받음)':'')+'</button></span>';
+        : '<span class="sr-ops"><button type="button" class="tlink sdl'+(got[setId+':exam']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="exam"'+armAttr+'>문제지 PDF'+(got[setId+':exam']?' (받음)':'')+'</button>'
+          +'<button type="button" class="tlink sdl'+(got[setId+':key']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="key"'+armAttr+'>해설지 PDF'+(got[setId+':key']?' (받음)':'')+'</button></span>';
       return '<div class="r'+(did?' did':'')+'"><span class="sr-t">'+esc(setTitle(setId))+'</span><span class="sr-u">'+use+'</span>'+ops+'</div>';
     }
     var MODE={combined:'실전형',per_question:'연습형'}, KINDS={trial:'체험',studio_passage:'낱권',studio_school:'전권'};
@@ -552,24 +557,25 @@ document.addEventListener('DOMContentLoaded', async function(){
         var all=unitSets[card.dataset.sku]||[];
         var didIds=Object.keys(nOf).sort(function(a,b){ return nOf[b]-nOf[a]; });
         var restIds=all.filter(function(s){ return !nOf[s]; });
+        var arm=!expired&&(noLedger||didIds.length===0)?'school':'';   // 응시 0회 전권 = 첫 PDF 발급이 제공 개시. 원장을 못 받아 응시 여부가 불명확해도 확인 단계를 유지한다 (astra s3 r1)
         if(rowsEl) rowsEl.innerHTML=(expired
             ? '<p class="sr-h">응시 기간이 끝나 문제지와 해설지 PDF 를 받을 수 없습니다. 다시 구매하면 열립니다</p>'+didIds.map(function(s){ return setRow(s,nOf[s],expired); }).join('')
             : noLedger
-            ? '<p class="sr-h">응시 기록을 지금 불러오지 못해 세트별 응시 횟수를 비워 둡니다. 문제지와 해설지 PDF 는 아래에서 받습니다</p>'
+            ? '<p class="sr-h">응시 기록을 지금 불러오지 못해 세트별 응시 횟수를 비워 둡니다. 아래 문제지와 해설지 PDF 는 응시 여부를 확인하지 못한 상태라 버튼을 두 번 눌러 받습니다</p>'
             : didIds.length
             ? '<p class="sr-h">응시한 세트 '+didIds.length+'개. 문제지와 해설지는 복습용 구매자 각인 보안본 PDF 입니다</p>'+didIds.map(function(s){ return setRow(s,nOf[s],expired); }).join('')
-            : '<p class="sr-h">아직 응시한 세트가 없습니다. 응시하러 가기로 시작하면 제시문과 문제가 앱 화면에 나옵니다. 세트마다 '+SET_USES+'회 응시할 수 있고, 아래 문제지와 해설지 PDF 는 응시한 뒤 복습용입니다</p>');
+            : '<p class="sr-h">아직 응시한 세트가 없습니다. 응시하러 가기로 시작하면 제시문과 문제가 앱 화면에 나옵니다. 세트마다 '+SET_USES+'회 응시할 수 있고, 아래 문제지와 해설지 PDF 는 응시한 뒤 복습용입니다. 응시 전에 발급받으면 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조)</p>');
         var d=card.querySelector('.stsets');
         if(d&&(restIds.length||all.length===0)){
           d.hidden=false;
-          d.querySelector('.bd-list').innerHTML=restIds.map(function(s){ return setRow(s,0,expired); }).join('')
+          d.querySelector('.bd-list').innerHTML=restIds.map(function(s){ return setRow(s,0,expired,arm); }).join('')
             ||'<div class="r"><span class="sr-t">세트 목록을 지금 불러올 수 없습니다</span></div>';
           d.querySelector('summary').textContent=(didIds.length?'나머지 세트 ':'세트 ')+restIds.length+'개 '+(expired?'펼치기':'복습용 문제지와 해설지 PDF 펼치기');
         }
       } else if(kind==='studio_passage'){
         if(used) el.textContent=', 응시 '+used+'회';
         var sid=card.dataset.setId;
-        if(rowsEl&&HH.okSetId(sid)) rowsEl.innerHTML=setRow(sid,nOf[sid]||0,expired);
+        if(rowsEl&&HH.okSetId(sid)) rowsEl.innerHTML=setRow(sid,nOf[sid]||0,expired,!expired&&(noLedger||!(nOf[sid]>0))?'passage':'');
       }
     });
     // 응시 기록 표 (최신순, 원장 그대로)
@@ -604,13 +610,17 @@ document.addEventListener('DOMContentLoaded', async function(){
       var k=r.set_id||'?', nth=ordinal[r.ref||r.attempt_id||k+cnt[k]], tot=cnt[k]||0;
       return '<li><div class="row"><span class="d">'+esc(d)+'</span><span class="t">'+esc(setTitle(r.set_id))+(tot>1?' <span class="badge line">이 세트 '+nth+'번째 / '+tot+'회</span>':'')+(r.answer_mode?', '+esc(MODE[r.answer_mode]||r.answer_mode):'')
         +(KINDS[r.kind]?' <span class="badge line">'+esc(KINDS[r.kind])+'</span>':'')+'</span>'
-        +'<span class="s'+(done?'':' red')+'">'+esc(sc)+(old?' <span class="badge line">영상 보관 종료</span>':'')+((done||r.finalized_at)&&lecSet[r.set_id]?' <a class="tlink" href="lecture.html?set='+encodeURIComponent(r.set_id)+'">해설 강의</a>':'')+'</span></div></li>';
+        +'<span class="s'+(done?'':' red')+'">'+esc(sc)+(old?' <span class="badge line">영상 보관 종료</span>':'')+((done||r.finalized_at)&&lecSet[r.set_id]?' <a class="tlink" href="lecture.html?set='+encodeURIComponent(r.set_id)+'">해설 강의</a>':'')
+        // 채점된 응시는 행에서 바로 기록 열람으로 (critic P2, OU-7). 90일 지난 행은 영상과 첨삭이 없어 버튼을 내지 않는다
+        +(done&&!old?' <button type="button" class="tlink hgo" data-view="history">리포트 다시 보기</button>':'')+'</span></div></li>';
     }).join('');
   })();
   // 스튜디오 기록 열람 (view history 토큰): 이용권이 없거나 다 써도 본인 기록은 연다.
   // 진입은 응시 버튼과 같은 HH.studioGo 로 통일한다. fetch 뒤의 window.open 은 iOS Safari 가 팝업으로 막는다.
   // 버튼의 data-view="history" 를 owned.js 가 토큰 요청 본문에 싣는다 (G2 계약)
   document.querySelectorAll('.hgo').forEach(function(b){b.addEventListener('click', function(ev){ ev.preventDefault(); HH.studioGo(b); })});
+  // 응시 기록 행의 리포트 다시 보기는 원장이 온 뒤 그려지므로 위임 (헤더 .hgo 는 #stuRows 밖이라 이중 결속 없음)
+  document.getElementById('stuRows').addEventListener('click', function(ev){ var b=ev.target.closest('.hgo'); if(!b) return; ev.preventDefault(); HH.studioGo(b); });
 
   // ── 내 강의: 보유 단위별 공개/준비 편수 + 바로가기 (공개 편수 = /api/lectures/summary 실값) ──
   (async function(){
@@ -702,11 +712,23 @@ document.addEventListener('DOMContentLoaded', async function(){
   })});
   // 세트 문제지·해설지 PDF (트랙 D, 2026-09-10): 행이 응시 원장 뒤에 그려지므로 위임 리스너. 서버가 권리·기간·한도를 판정하고
   // 구매자 이메일·주문번호·시리얼을 각인한 보안본을 준다. 멱등 idem 은 소장판과 같은 방식으로 sessionStorage 보존
-  var SDL_DOC={exam:'문제지',key:'해설지'};
+  var SDL_DOC={exam:'문제지',key:'해설지'}, sdlWarnSeq=0;   // 경고 id 일련번호: 카드가 달라도 같은 set_id 가 있을 수 있어 세트명만으로는 고유하지 않다
   document.getElementById('passList').addEventListener('click', async function(ev){
     var b=ev.target.closest('.sdl'); if(!b||b.disabled) return;
     var sid=b.dataset.setId, doc=b.dataset.doc;
     if(!HH.okSetId(sid)||!SDL_DOC[doc]) return;
+    // 미응시 이용권의 첫 발급 = 제공 개시 (약관 제6조, 서버 support.js 는 발급 원장을 개시로 본다). 한 번 더 눌러야 받는다 (OU-6(1) A, 2026-09-14)
+    if(b.dataset.sdlArm&&b.dataset.sdlArmed!=='1'){
+      b.dataset.sdlArmed='1'; b.textContent=SDL_DOC[doc]+' PDF, 제한에 동의하고 받기';
+      var row=b.closest('.r'), prev=row&&row.querySelector('.sr-warn'), wid=prev?prev.id:('sdlw_'+sid.replace(/[^a-z0-9_]/g,'')+'_'+(++sdlWarnSeq));
+      // 범위는 약관 제6조와 같게: 낱권은 그 이용권, 전권은 전권 이용권 전체 (astra s3 r1 문안). 경고는 행에 보이고, 미리 둔 role=status 영역에도 실어 스크린리더가 읽는다 (접근성)
+      var scope=b.dataset.sdlArm==='school'?'이 전권 이용권 전체':'이 이용권';
+      var msg=(b.dataset.sdlUnsure==='1'?'응시 여부를 지금 확인하지 못했습니다. 아직 응시하지 않은 이용권이면 문제지나 해설지 PDF 발급으로 제공이 개시되어 ':'아직 응시하지 않은 이용권입니다. 문제지나 해설지 PDF 를 발급받으면 제공이 개시되어 ')+scope+'의 청약철회가 제한됩니다(이용약관 제6조). 받으려면 버튼을 한 번 더 누르세요.';
+      if(row&&!prev){ var w=document.createElement('p'); w.className='sr-warn'; w.id=wid; w.textContent=msg; row.appendChild(w); }
+      b.setAttribute('aria-describedby', wid);
+      var live=document.getElementById('sdlLive'); if(live){ live.textContent=''; setTimeout(function(){ live.textContent=msg; },50); }
+      return;
+    }
     b.disabled=true; var t0=b.textContent; b.textContent=SDL_DOC[doc]+' 준비 중…';
     var ik='hh_sdl_idem_'+sid+'_'+doc, idem=null;
     try{ idem=sessionStorage.getItem(ik); }catch(e){}
@@ -753,6 +775,8 @@ document.addEventListener('DOMContentLoaded', async function(){
       return '<li data-oid="'+esc(o.id||'')+'"><div class="row"><span class="d">'+esc((o.paid_at||o.created_at||'').slice(0,10))+'</span>'
         +'<span class="t">'+esc(o.items.map(function(i){return i.title+(i.qty>1?' x'+i.qty:'')}).join(', '))+', '+HH.won(o.amount)+'</span>'
         +'<span class="s'+(o.status==='paid'?'':' red')+'">'+(ST[o.status]||o.status)
+        // 입금 대기 주문은 서버가 PG 재조회로 계좌와 기한을 실어 준다 (R3-API-01: 성공 화면을 새로고침하면 계좌가 사라지던 결함의 복구 경로)
+        +(o.status==='waiting_deposit'&&o.vaccount&&o.vaccount.accountNumber?', 입금 계좌 '+esc((o.vaccount.bank?o.vaccount.bank+' ':'')+o.vaccount.accountNumber)+(o.vaccount.dueDate?', 기한 '+esc(String(o.vaccount.dueDate).slice(0,16).replace('T',' ')):''):'')
         +(o.receipt_url?', <a class="tlink" target="_blank" rel="noopener" href="'+esc(o.receipt_url)+'">영수증</a>':'')+rf+'</span></div></li>';
     }).join('');
     // 주문 응답에 요청 상태가 없으면 주문별로 최신 요청을 물어 배지로 바꾼다. 실패하면 버튼을 그대로 둔다 (모달에서 다시 확인)

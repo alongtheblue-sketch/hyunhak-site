@@ -175,7 +175,7 @@
   }
 
   async function mount(el){
-    var pre=el.dataset.ownedPrefix||'', guest=el.dataset.ownedGuest||'line';
+    var pre=el.dataset.ownedPrefix||'', guest=el.dataset.ownedGuest||'line', here=selfFile();
     var o=await owned();
     // 비회원 전용 안내(자료실 열람 방식 상자의 로그인 버튼 등)는 회원에게 감춘다
     if(o.member) document.querySelectorAll('[data-owned-guest-only]').forEach(function(x){ x.hidden=true; });
@@ -196,8 +196,9 @@
     el.innerHTML='<section class="owned" aria-labelledby="ownedT"><div class="owned-h"><h2 id="ownedT">내가 산 것</h2><a class="tlink" href="'+pre+'my.html">마이페이지에서 전체 보기</a></div>'
       +'<ul class="owned-list">'+head+'</ul>'
       +(rest?'<details class="owned-more"><summary>나머지 '+(list.length-SHOW)+'개 펼치기</summary><ul class="owned-list">'+rest+'</ul></details>':'')
-      +(o.studio.some(live)?'<p class="owned-note">응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.</p>'
-        :(o.trial&&!o.studio.some(live))?'<p class="owned-note">체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.</p>':'')
+      // 안내 문단은 6면에서 같은 글이 반복돼 접는다 (critic P2, OU-7). 구매가 일어나는 스튜디오 면만 펼친 채로, 그 밖은 요약 한 줄에서 펼친다
+      +(o.studio.some(live)?'<details class="owned-note"'+(here==='studio.html'?' open':'')+'><summary>응시 순서와 자료 구분</summary><p>응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.</p></details>'
+        :(o.trial&&!o.studio.some(live))?'<details class="owned-note"'+(here==='studio.html'?' open':'')+'><summary>체험 응시 순서와 자료 구분</summary><p>체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.</p></details>':'')
       +'</section>';
     el.hidden=false;
     bind(el);
@@ -220,14 +221,13 @@
       foot.querySelectorAll('.btn:not(.ghost)').forEach(function(x){ x.classList.add('ghost'); });
       var tmp=document.createElement('div'); tmp.innerHTML=goBtn(school||passages[0]); var go=tmp.firstChild;
       if(school && buy) buy.remove();
-      foot.insertBefore(go, foot.firstChild);   // 응시가 1차 행동: foot 첫 자리, 채움 버튼은 이것 하나 (critic P1)
-      // 낱권을 두 편 이상 가진 단위에서 이 버튼은 첫 편만 연다. 나머지를 고를 자리를 같이 준다 (R2-04)
+      // 낱권을 두 편 이상 가진 단위: 버튼 하나는 첫 편만 열어 나머지가 안 보였다 (R2-04, OU-7 다편 UI). 편마다 제목, 잔여, 응시 버튼을 목록으로 그린다
       if(!school && passages.length>1){
-        var pick=document.createElement('a');
-        pick.className='tlink';
-        pick.href=prefix()+'my.html#passList';
-        pick.textContent='보유 지문 '+passages.length+'편, 마이페이지에서 고르기';
-        foot.insertBefore(pick, go.nextSibling);
+        var ul=document.createElement('ul'); ul.className='owned-picks'; card.classList.add('owned-multi');   // base.css 가 grid 자리를 준다 (foot 한 칸 아래로)
+        ul.innerHTML=passages.map(function(e){ return '<li><span class="t">'+esc(studioTitle(e))+(e.uses_left!=null?' <span class="st">잔여 응시 '+HH.intIn(e.uses_left,0,9999,0)+'회</span>':'')+'</span>'+goBtn(e,'btn ghost sm')+'</li>'; }).join('');
+        foot.parentNode.insertBefore(ul, foot);
+      } else {
+        foot.insertBefore(go, foot.firstChild);   // 응시가 1차 행동: foot 첫 자리, 채움 버튼은 이것 하나 (critic P1)
       }
     });
     bind(root);
@@ -289,4 +289,6 @@
     }).catch(function(){ mounts.forEach(function(el){ el.hidden=true; }); });
   });
   HH.owned=owned; HH.studioGo=studioGo; HH.ownedApplyUnits=applyUnits; HH.ownedApplySetTable=applySetTable; HH.ownedBind=bind;
+  // 이용권 제목 규칙 공유 (my.html 카드, OU-7): 제목 없는 권리는 단위 라벨 + 종류. _unit 이 없는 행(my.html 의 /api/entitlements 원행)은 여기서 역산한다
+  HH.studioTitle=function(e){ var x=Object.assign({},e); x._meta=x._meta||e.meta||{}; if(typeof x._meta==='string'){ try{ x._meta=JSON.parse(x._meta); }catch(err){ x._meta={}; } } if(!x._unit) x._unit=unitOfEnt(x); return studioTitle(x); };
 })();

@@ -822,6 +822,8 @@
     apiFetch("/api/lecture/open", { method: "POST", body: JSON.stringify({ id: lectureId, sig: sig }) }).then(function (d) {
       if (d._status === 401) return loginRedirect();
       if (d._status === 403 && d.code === "automation") { block("지원하지 않는 접속 환경입니다.\n일반 브라우저에서 로그인 후 이용해 주세요."); return; }
+      // 만료는 "권리 없음"과 다른 사유 (R4-03): 계정 확인 문구와 구매 버튼 대신 기간 종료를 말한다. expires_at 은 서버 ISO, 숫자와 '-' 만 남긴다
+      if (d._status === 403 && d.code === "expired") return notice("인강 시청 기간이 끝났습니다", "이 강의의 시청 기간이 " + String(d.expires_at || "").slice(0, 10).replace(/[^0-9-]/g, "") + " 에 끝났습니다. 이용권을 다시 구매하면 이어서 볼 수 있고, 궁금한 점은 고객센터로 문의해 주세요.", '<a class="btn ghost sm" href="my.html">마이페이지 이용권</a><a class="btn ghost sm" href="support.html">고객센터</a>');
       if (d._status === 403) return notice("이용권이 있는 회원만 시청할 수 있습니다", "이 강의는 해당 지문 이용권이나 강의 상품에 포함됩니다. 구매한 계정으로 로그인했는지 확인해 주세요.", '<a class="btn sm" href="studio.html">제시문 면접 스튜디오 이용권</a><a class="btn ghost sm" href="lecture.html">내 강의</a>');
       if (d._status === 404) return notice("강의를 찾을 수 없습니다", "주소가 바뀌었거나 공개가 끝난 강의입니다.");
       if (d._status === 409) return notice("영상을 준비하고 있습니다", d.has_script ? "대본은 준비되었고 영상을 제작하는 중입니다. 공개되면 이 자리에서 바로 재생됩니다. 공개 일정은 확정되지 않았습니다." : "이 강의는 아직 제작 전입니다. 공개되면 이 자리에서 바로 재생됩니다.");

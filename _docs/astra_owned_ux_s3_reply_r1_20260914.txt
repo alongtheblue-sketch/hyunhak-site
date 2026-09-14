@@ -1,0 +1,19 @@
+[보안][real] HIGH `hyunhak-api/src/trial.js:46` — fallback이 history 권한을 확대한다. 첫 4접두어에 각각 01~15·02~16·03~17·04~18 보유 시 미보유 60세트까지 허용한다.  
+수정: 허용 집합을 보존하는 압축만 사용하고, 표현이 불가능하면 소비자와 길이 상한·전달 계약을 함께 변경한다.  
+[경계][real] MEDIUM `hyunhak-site/my.html:559,577` — 원장 조회 실패 시 `!noLedger`가 확인 단계를 꺼 미응시 이용권도 첫 클릭에 PDF가 발급된다.  
+수정: 응시 여부가 불명확하면 2단계 확인을 유지한다.  
+[접근성][real] MEDIUM `hyunhak-site/my.html:723` — 추가 경고에 알림 역할·버튼 설명 연결이 없어 스크린리더에 환불 제한 설명이 자동 전달되지 않는다.  
+수정: 미리 마련한 `role="status"` 영역을 갱신하고 버튼의 `aria-describedby`로 연결한다.  
+[계약][real] MEDIUM `hyunhak-site/faq.html:29` — JSON-LD에 “응시를 시작하기 전이면 … 청약철회”가 남아 PDF 발급 후 미응시자의 개시 기준과 충돌한다.  
+수정: 해당 답변을 “응시·세트 PDF 발급 등 제공이 개시되기 전”으로 맞추고 본문도 동기화한다.  
+[문안][real] MEDIUM `hyunhak-site/my.html:566,723` — “이 주문의 청약철회”는 약관의 해당 이용권보다 범위가 넓어 함께 구매한 미사용 상품까지 제한한다고 읽힌다.  
+수정: “이 이용권”, 전권은 “이 전권 이용권 전체”로 바꾼다.  
+집계: real 5건, nit 0건.  
+동시성: 제시된 단일 grant 전제에서 batch와 `changes()` 결속은 성립하며 다른 ref 두 건의 원장 삽입 경로는 없다. [D1](https://developers.cloudflare.com/d1/worker-api/d1-database/#batch), [SQLite](https://www.sqlite.org/c3ref/changes.html).  
+정합성: NULL 우선·동일 형식 ISO의 최신 만료 정렬은 맞으며, 만료 조회는 본인 `member_id`로 제한된다. [정렬 규칙](https://www.sqlite.org/lang_select.html#orderby).  
+경계: PG Promise rejection은 개별 `catch`가 흡수한다. `fullmatch` 전제에서 앵커 없는 소스 자체는 안전하다.  
+회귀: `.hgo` 직접 결속은 비동기 행 생성 전에 실행되어 제시된 초기화 흐름에서는 이중 실행되지 않는다. summary의 hidden 제외도 일치한다.  
+확인 한계: confirm 소유자 SQL·PortOne `paymentId` 결속·owned `bind` 정의는 diff에 없어 확정 검증할 수 없다.  
+약관 제6조의 PDF 개시 항과 전권 전체 개시 항 자체는 서로 일치한다.  
+근거: history 권한 확대와 PDF 확인 우회, 접근성·환불 고지 불일치 3건이 남아 있다.  
+VERDICT: NO-GO

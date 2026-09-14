@@ -1,0 +1,3888 @@
+{
+ "owner_400_index_html": {
+  "ox": 0,
+  "height": 7116,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_studio_html": {
+  "ox": 0,
+  "height": 15224,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_programs_studio_html": {
+  "ox": 0,
+  "height": 11837,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_library_html": {
+  "ox": 0,
+  "height": 9384,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 1,
+  "libOwnTag": [
+   "보유 중"
+  ],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_lectures_html": {
+  "ox": 0,
+  "height": 6937,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_my_html": {
+  "ox": 0,
+  "height": 7128,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 0회, 2026-12-13 까지 응시하러 가기 아직 응시한 세트가 없습니다. 응시하러 가기로 시작하면 제시문과 문제가 앱 화면에 나옵니다. 세트마다 5회 응시할 수 있고, 아래 문제지와 해설지 PDF 는 응시한 뒤 복습용입니다. 응시 전에 발급받으면 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조) 세트 30개 복습용 문제지와 해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-1",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": false,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 64,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "연세대 활동우수 인문통합 전권 이용권",
+   "고려대 계열적합 인문 3번 지문 낱권",
+   "고려대 계열적합 인문 지문 낱권",
+   "연세대 활동우수 자연 전권 이용권",
+   "가천대학교 2027 면접가이드북"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": {
+   "before": "문제지 PDF",
+   "after": "문제지 PDF, 제한에 동의하고 받기",
+   "armed": "1",
+   "scope": "school",
+   "describedby": "sdlw_yonsei_2027_h01_1",
+   "describedbyExists": true,
+   "keyLink": {
+    "describedby": "sdlw_yonsei_2027_h01_1",
+    "exists": true,
+    "sameRow": true,
+    "warns": 1
+   },
+   "live": "아직 응시하지 않은 이용권입니다. 문제지나 해설지 PDF 를 발급받으면 제공이 개시되어 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조). 받으려면 버튼을 한 번 더 누르세요.",
+   "warn": "아직 응시하지 않은 이용권입니다. 문제지나 해설지 PDF 를 발급받으면 제공이 개시되어 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조). 받으려면 버튼을 한 번 더 누르세요."
+  }
+ },
+ "owner_400_pastexam_html": {
+  "ox": 0,
+  "height": 4365,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "아직 신청하지 않으셨습니다. 신청하면 48시간 동안 열람합니다. 계정당 한 번입니다. 읽는 자료이며 스튜디오 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_400_classroom_html": {
+  "ox": 0,
+  "height": 2649,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_1280_index_html": {
+  "ox": 0,
+  "height": 4744,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/index.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_studio_html": {
+  "ox": 0,
+  "height": 11480,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 8760,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/programs/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_library_html": {
+  "ox": 0,
+  "height": 6277,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 1,
+  "libOwnTag": [
+   "보유 중"
+  ],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/library.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_lectures_html": {
+  "ox": 0,
+  "height": 5269,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/lectures.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_my_html": {
+  "ox": 0,
+  "height": 5263,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 0회, 2026-12-13 까지 응시하러 가기 아직 응시한 세트가 없습니다. 응시하러 가기로 시작하면 제시문과 문제가 앱 화면에 나옵니다. 세트마다 5회 응시할 수 있고, 아래 문제지와 해설지 PDF 는 응시한 뒤 복습용입니다. 응시 전에 발급받으면 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조) 세트 30개 복습용 문제지와 해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-1",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": false,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 64,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "연세대 활동우수 인문통합 전권 이용권",
+   "고려대 계열적합 인문 3번 지문 낱권",
+   "고려대 계열적합 인문 지문 낱권",
+   "연세대 활동우수 자연 전권 이용권",
+   "가천대학교 2027 면접가이드북"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": {
+   "before": "문제지 PDF",
+   "after": "문제지 PDF, 제한에 동의하고 받기",
+   "armed": "1",
+   "scope": "school",
+   "describedby": "sdlw_yonsei_2027_h01_1",
+   "describedbyExists": true,
+   "keyLink": {
+    "describedby": "sdlw_yonsei_2027_h01_1",
+    "exists": true,
+    "sameRow": true,
+    "warns": 1
+   },
+   "live": "아직 응시하지 않은 이용권입니다. 문제지나 해설지 PDF 를 발급받으면 제공이 개시되어 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조). 받으려면 버튼을 한 번 더 누르세요.",
+   "warn": "아직 응시하지 않은 이용권입니다. 문제지나 해설지 PDF 를 발급받으면 제공이 개시되어 이 전권 이용권 전체의 청약철회가 제한됩니다(이용약관 제6조). 받으려면 버튼을 한 번 더 누르세요."
+  }
+ },
+ "owner_1280_pastexam_html": {
+  "ox": 0,
+  "height": 3441,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "아직 신청하지 않으셨습니다. 신청하면 48시간 동안 열람합니다. 계정당 한 번입니다. 읽는 자료이며 스튜디오 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/pastexam.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_1280_classroom_html": {
+  "ox": 0,
+  "height": 2148,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/classroom.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_400_index_html": {
+  "ox": 0,
+  "height": 7116,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_studio_html": {
+  "ox": 0,
+  "height": 15224,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_programs_studio_html": {
+  "ox": 0,
+  "height": 11837,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_library_html": {
+  "ox": 0,
+  "height": 9384,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 1,
+  "libOwnTag": [
+   "보유 중"
+  ],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_lectures_html": {
+  "ox": 0,
+  "height": 6937,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_my_html": {
+  "ox": 0,
+  "height": 6780,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 1회 (세트 1개), 2026-12-13 까지 응시하러 가기 응시한 세트 1개. 문제지와 해설지는 복습용 구매자 각인 보안본 PDF 입니다 연세대 활동우수 인문통합 03 점수를 믿는 일과 사람을 믿는 일 응시 1회, 잔여 4회 문제지 PDF 해설지 PDF 나머지 세트 29개 복습용 문제지와 해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-12-13 까지 응시하러 가기 고려대 계열적합 인문 ",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": true,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 1,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 1,
+  "armBtns": 4,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "연세대 활동우수 인문통합 전권 이용권",
+   "고려대 계열적합 인문 3번 지문 낱권",
+   "고려대 계열적합 인문 지문 낱권",
+   "연세대 활동우수 자연 전권 이용권",
+   "가천대학교 2027 면접가이드북"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": null
+ },
+ "owner_done_400_pastexam_html": {
+  "ox": 0,
+  "height": 4278,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "열람 중. 남은 시간 39시간 57분. 읽는 자료이며 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_400_classroom_html": {
+  "ox": 0,
+  "height": 2649,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 나머지 3개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "owner_done_1280_index_html": {
+  "ox": 0,
+  "height": 4744,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/index.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_studio_html": {
+  "ox": 0,
+  "height": 11480,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "세트 고르기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "응시하러 가기",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 8760,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": true,
+    "badge": "보유 중, 2026-12-13까지",
+    "foot": [
+     "응시하러 가기",
+     "출제 유형과 풀이법 보기",
+     "이용권 보기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": true,
+    "badge": "지문 2편 보유",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분 응시는 응시하러 가기, 세트 선택, 면접 시작 순서이고 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없습니다. 답변은 그 화면에서 녹음과 녹화가 됩니다. 채점 뒤 점수는 마이페이지 응시 기록에, 해설 강의는 마이페이지 내 강의에 있습니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [
+   "고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회 응시하러 가기",
+   "고려대 계열적합 인문 지문 낱권 잔여 응시 5회 응시하러 가기"
+  ],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/programs/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_library_html": {
+  "ox": 0,
+  "height": 6277,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 1,
+  "libOwnTag": [
+   "보유 중"
+  ],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/library.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_lectures_html": {
+  "ox": 0,
+  "height": 5269,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/lectures.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_my_html": {
+  "ox": 0,
+  "height": 4990,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "연세대 활동우수 인문통합 전권 이용권 단위 전권 이용권, 지문마다 5회, 응시 1회 (세트 1개), 2026-12-13 까지 응시하러 가기 응시한 세트 1개. 문제지와 해설지는 복습용 구매자 각인 보안본 PDF 입니다 연세대 활동우수 인문통합 03 점수를 믿는 일과 사람을 믿는 일 응시 1회, 잔여 4회 문제지 PDF 해설지 PDF 나머지 세트 29개 복습용 문제지와 해설지 PDF 펼치기 고려대 계열적합 인문 3번 지문 낱권 지문 낱권 이용권, 잔여 응시 4회 / 5회, 2026-12-13 까지 응시하러 가기 고려대 계열적합 인문 ",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": true,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 1,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 1,
+  "armBtns": 4,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "연세대 활동우수 인문통합 전권 이용권",
+   "고려대 계열적합 인문 3번 지문 낱권",
+   "고려대 계열적합 인문 지문 낱권",
+   "연세대 활동우수 자연 전권 이용권",
+   "가천대학교 2027 면접가이드북"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": null
+ },
+ "owner_done_1280_pastexam_html": {
+  "ox": 0,
+  "height": 3416,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "열람 중. 남은 시간 39시간 57분. 읽는 자료이며 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/pastexam.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "owner_done_1280_classroom_html": {
+  "ox": 0,
+  "height": 2148,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 연세대 활동우수 인문통합 전권 이용권 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 3번 지문 낱권 잔여 응시 4회, 2026-12-13까지 응시하러 가기 고려대 계열적합 인문 지문 낱권 잔여 응시 5회, 2026-12-13까지 응시하러 가기 나머지 2개 펼치기 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": "{\"entitlement_id\":\"ent_school_yh\"}",
+   "sameTabUrl": "http://localhost:8811/classroom.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_400_index_html": {
+  "ox": 0,
+  "height": 6926,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_studio_html": {
+  "ox": 0,
+  "height": 14805,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "체험 응시 1회 시작",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_programs_studio_html": {
+  "ox": 0,
+  "height": 11418,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_library_html": {
+  "ox": 0,
+  "height": 9195,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_lectures_html": {
+  "ox": 0,
+  "height": 6748,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_my_html": {
+  "ox": 0,
+  "height": 5710,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "스튜디오 체험 응시 신규 회원 무료 응시 1회가 남아 있습니다. 체험 응시",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": false,
+   "text": "처음 응시하기 전에 아래 체험 응시를 누릅니다. 무료 체험 응시 1회가 시작됩니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 이용권을 구매하면 내 강의에 들어옵니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "스튜디오 체험 응시"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": null
+ },
+ "trial_400_pastexam_html": {
+  "ox": 0,
+  "height": 4176,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "아직 신청하지 않으셨습니다. 신청하면 48시간 동안 열람합니다. 계정당 한 번입니다. 읽는 자료이며 스튜디오 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_400_classroom_html": {
+  "ox": 0,
+  "height": 2460,
+  "coarse": true,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": true,
+   "tokenBody": null,
+   "sameTabUrl": "https://studio.hyunhak.com/?hh=stub",
+   "popupUrl": null
+  },
+  "sdl": null
+ },
+ "trial_1280_index_html": {
+  "ox": 0,
+  "height": 4526,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/index.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_studio_html": {
+  "ox": 0,
+  "height": 11120,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "체험 응시 1회 시작",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 8400,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분 체험 응시도 같은 순서입니다. 체험 응시 버튼, 세트 선택, 면접 시작. 제시문과 문제는 준비 화면에 나오므로 따로 풀어 올 자료가 없고, 답변은 그 화면에서 녹음과 녹화가 됩니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다.",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": {
+   "open": true,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/programs/studio.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_library_html": {
+  "ox": 0,
+  "height": 6059,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/library.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_lectures_html": {
+  "ox": 0,
+  "height": 5051,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/lectures.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_my_html": {
+  "ox": 0,
+  "height": 4072,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "스튜디오 체험 응시 신규 회원 무료 응시 1회가 남아 있습니다. 체험 응시",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": false,
+   "text": "처음 응시하기 전에 아래 체험 응시를 누릅니다. 무료 체험 응시 1회가 시작됩니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 이용권을 구매하면 내 강의에 들어옵니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": "2026-09-14 고려대 계열적합 인문 5번 지문 낱권, 33,000원 입금 대기, 입금 계좌 우리은행 X1234567890, 기한 2026-09-21 23:59",
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [
+   "스튜디오 체험 응시"
+  ],
+  "errs": [],
+  "click": null,
+  "sdl": null
+ },
+ "trial_1280_pastexam_html": {
+  "ox": 0,
+  "height": 3223,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "아직 신청하지 않으셨습니다. 신청하면 48시간 동안 열람합니다. 계정당 한 번입니다. 읽는 자료이며 스튜디오 응시와 별개입니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/pastexam.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "trial_1280_classroom_html": {
+  "ox": 0,
+  "height": 1930,
+  "coarse": false,
+  "own": "내가 산 것 마이페이지에서 전체 보기 스튜디오 체험 응시 신규 회원 체험 응시 1회 체험 응시 체험 응시 순서와 자료 구분",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": "체험 응시 순서와 자료 구분",
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": {
+   "open": false,
+   "summary": "체험 응시 순서와 자료 구분"
+  },
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [],
+  "click": {
+   "coarseAtClick": false,
+   "tokenBody": null,
+   "sameTabUrl": "http://localhost:8811/classroom.html",
+   "popupUrl": "https://studio.hyunhak.com/?hh=stub"
+  },
+  "sdl": null
+ },
+ "guest_400_index_html": {
+  "ox": 0,
+  "height": 6577,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_studio_html": {
+  "ox": 0,
+  "height": 14540,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "가입하고 체험 응시 1회",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_programs_studio_html": {
+  "ox": 0,
+  "height": 11088,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_library_html": {
+  "ox": 0,
+  "height": 9024,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_lectures_html": {
+  "ox": 0,
+  "height": 6517,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_my_html": {
+  "ox": 0,
+  "height": 1620,
+  "coarse": true,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "불러오는 중",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": true,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_pastexam_html": {
+  "ox": 0,
+  "height": 3922,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "회원 로그인 후 신청하실 수 있습니다. 신청하면 48시간 동안 열람합니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_400_classroom_html": {
+  "ox": 0,
+  "height": 2800,
+  "coarse": true,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_index_html": {
+  "ox": 0,
+  "height": 4212,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_studio_html": {
+  "ox": 0,
+  "height": 10826,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "세트 고르기",
+     "담기"
+    ]
+   }
+  ],
+  "trialGo": "가입하고 체험 응시 1회",
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_programs_studio_html": {
+  "ox": 0,
+  "height": 8106,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [
+   {
+    "unit": "yonsei-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-intl",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "yonsei-mirae",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-hum",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-sci",
+    "applied": false,
+    "badge": "판매 중",
+    "foot": [
+     "출제 유형과 풀이법 보기",
+     "이용권 보기",
+     "구매하러 가기"
+    ]
+   },
+   {
+    "unit": "korea-eq-hum",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   },
+   {
+    "unit": "korea-eq-sci",
+    "applied": false,
+    "badge": "9월 14일 오픈",
+    "foot": [
+     "출제 유형과 풀이법 보기"
+    ]
+   }
+  ],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 1,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_library_html": {
+  "ox": 0,
+  "height": 5901,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [
+   "자료실 자료(가이드북, 기출 체험판, 인강 자료)는 읽는 자료입니다. 제시문 면접 응시 문제는 스튜디오 앱이 세트마다 화면에 내므로 여기서 미리 풀 필요가 없습니다. 응시 시작은 마이페이지 이용권의 응시하러 가기입니다."
+  ],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_lectures_html": {
+  "ox": 0,
+  "height": 4834,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_my_html": {
+  "ox": 0,
+  "height": 1183,
+  "coarse": false,
+  "own": null,
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "불러오는 중",
+  "tapSmall": 0,
+  "guide": {
+   "hidden": true,
+   "text": "처음 응시하기 전에 아래 응시하러 가기를 누릅니다. 스튜디오가 열립니다. 세트 카드를 누르고 면접 시작을 누릅니다. 준비 시간 뒤 답변이 시작됩니다. 제시문과 문제는 준비 화면에 나옵니다. 자료실에서 미리 풀어 올 자료는 없습니다. 답변 화면에서 말하면 그 자리에서 녹음과 녹화가 됩니다. 답변을 마치면 채점되고 몇 분 뒤 리포트(점수와 첨삭)가 열립니다. 해설 강의는 아래 내 강의에서 봅니다. 자료실의 가이드북과 기출 체험판은 읽는 자료이고 응시와 별개입니다."
+  },
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_pastexam_html": {
+  "ox": 0,
+  "height": 3006,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [
+   "스튜디오 응시는 마이페이지 이용권의 응시하러 가기로 시작하고 응시 문제는 앱이 화면에 냅니다. 여기 문제지를 미리 풀어 갈 필요가 없습니다."
+  ],
+  "stateText": "회원 로그인 후 신청하실 수 있습니다. 신청하면 48시간 동안 열람합니다.",
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "guest_1280_classroom_html": {
+  "ox": 0,
+  "height": 2097,
+  "coarse": false,
+  "own": "이미 구매하셨나요? 로그인하면 산 것과 응시 버튼이 여기에 보입니다.",
+  "cards": [],
+  "trialGo": null,
+  "libOwn": 0,
+  "libOwnTag": [],
+  "passList": "",
+  "tapSmall": 0,
+  "guide": null,
+  "ownedNote": null,
+  "ro": [],
+  "stateText": null,
+  "lecLinks": 0,
+  "faqNew": 0,
+  "noteDetails": null,
+  "picks": [],
+  "histBtns": 0,
+  "armBtns": 0,
+  "orderRow": null,
+  "ftLegal": [
+   "고객센터",
+   "사업자 정보",
+   "결제",
+   "환불 규정",
+   "이용약관",
+   "개인정보처리방침"
+  ],
+  "bizInfo": true,
+  "cardNames": [],
+  "errs": [
+   "console: Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ],
+  "click": null,
+  "sdl": null
+ },
+ "app_exam_400": {
+  "ox": 0,
+  "height": 959,
+  "active": "scr-home",
+  "setcards": 2,
+  "notices": 2,
+  "firstUse": "처음 응시하기 전에 세트 카드를 누르고 면접 시작을 누릅니다. 이 세트의 제시문과 문제가 준비 화면에 나옵니다. 따로 풀어 올 자료가 없습니다. 답변은 이 앱 안에서 녹음과 녹화가 되고 채점 뒤 리포트가 열립니다. 면접 시작마다 응시 1회를 씁니다. 해설 강의는 hyunhak.com 마이페이지의 내 강의에서 봅니다.",
+  "h1": "응시할 면접 세트를 고르세요",
+  "retry": "같은 세트 다시 응시 (응시 1회 사용)",
+  "exit": "응시 종료",
+  "bodyBg": "rgb(244, 239, 227)",
+  "bodyInk": "rgb(49, 46, 46)",
+  "errs": [],
+  "briefActive": true
+ },
+ "app_exam_1280": {
+  "ox": 0,
+  "height": 900,
+  "active": "scr-home",
+  "setcards": 2,
+  "notices": 2,
+  "firstUse": "처음 응시하기 전에 세트 카드를 누르고 면접 시작을 누릅니다. 이 세트의 제시문과 문제가 준비 화면에 나옵니다. 따로 풀어 올 자료가 없습니다. 답변은 이 앱 안에서 녹음과 녹화가 되고 채점 뒤 리포트가 열립니다. 면접 시작마다 응시 1회를 씁니다. 해설 강의는 hyunhak.com 마이페이지의 내 강의에서 봅니다.",
+  "h1": "응시할 면접 세트를 고르세요",
+  "retry": "같은 세트 다시 응시 (응시 1회 사용)",
+  "exit": "응시 종료",
+  "bodyBg": "rgb(244, 239, 227)",
+  "bodyInk": "rgb(49, 46, 46)",
+  "errs": [],
+  "briefActive": true
+ },
+ "app_history_400": {
+  "ox": 0,
+  "height": 860,
+  "active": "scr-history",
+  "setcards": 0,
+  "notices": 2,
+  "firstUse": null,
+  "h1": "내 응시 기록",
+  "retry": "같은 세트 다시 응시 (응시 1회 사용)",
+  "exit": "응시 종료",
+  "bodyBg": "rgb(244, 239, 227)",
+  "bodyInk": "rgb(49, 46, 46)",
+  "errs": [],
+  "briefActive": null
+ },
+ "app_history_1280": {
+  "ox": 0,
+  "height": 900,
+  "active": "scr-history",
+  "setcards": 0,
+  "notices": 2,
+  "firstUse": null,
+  "h1": "내 응시 기록",
+  "retry": "같은 세트 다시 응시 (응시 1회 사용)",
+  "exit": "응시 종료",
+  "bodyBg": "rgb(244, 239, 227)",
+  "bodyInk": "rgb(49, 46, 46)",
+  "errs": [],
+  "briefActive": null
+ }
+}
