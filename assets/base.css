@@ -1439,6 +1439,13 @@ html.ppop-open{overflow:hidden}
   /* 홀수 열은 .unit 760 규범(좌 0 = 페이지 스파인, 괘선 안쪽 s4) 그대로. 짝수 열만 우측도 s4: 색면(--card·--mat) 끝이 글자·solid 버튼 끝과 같은 선이면 잘린 것으로 읽힌다 (Stage 3 외부 시선 3인 동일 지적 + critic Δ2-R1, 2026-09-10 세션). 모바일은 패딩 0 유지 */
   :where(body.v2) .r3-unit:nth-child(even){padding-inline:var(--s4);border-left:var(--rule-ui)}
 }
+/* 2열에서 나란한 두 카드의 행(명패, 규격, 설명, 가격, 발)을 같은 높이로 맞춘다 (subgrid, 2026-09-15 건우 지시 "줄 별로 높낮이"). 제목이 1줄이든 2줄이든 배지·지문 수·가격·버튼이 한 선에 선다. 1열(모바일)은 무관 */
+@media(min-width:47.5em){
+  :where(body.v2) .r3-units .r3-unit{grid-template-rows:subgrid;grid-row:span 5;row-gap:var(--s3)}
+}
+@media(min-width:64em){
+  :where(body.v2) .r3-units .r3-unit{grid-row:span 4}
+}
 @media(max-width:63.999em){
   :where(body.v2) .r3-unit{grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto 1fr auto}
   :where(body.v2) .r3-unit .r3-unit-spec{grid-column:2;grid-row:2;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3)}

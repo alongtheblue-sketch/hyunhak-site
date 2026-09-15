@@ -39,6 +39,14 @@
 main p,.sh p,.phead .lede,.aeo-answer,details.faq .a{max-width:none}
 .kinds{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .kinds .k{border:1px solid var(--hair);border-radius:var(--r-md);padding:18px;background:var(--card)}
+/* 카드 안 4줄(제목, 상태, 규격, 링크)을 같은 행의 카드끼리 같은 높이로 맞춘다 (subgrid, 2026-09-15 건우 지시). 제목이 1~3줄로 갈려도 상태·규격·링크 줄이 한 선에 선다 */
+.kinds .k{display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:0;align-content:start}
+.kinds .k>*{margin-top:0}
+.kinds .k b{align-self:end}
+.kinds .k small{padding-top:4px}
+.kinds .k p{padding-top:10px}
+.kinds .k .tlink{margin-top:12px;align-self:start}
+@supports not (grid-template-rows:subgrid){.kinds .k{display:block}.kinds .k b{min-height:calc(var(--t-h4) * 1.3 * 3)}}
 .kinds .k b{display:block;font-size:var(--t-h4);letter-spacing:-0.02em}
 .kinds .k small{display:block;margin-top:4px;font-size:var(--t-sm);color:var(--gray)}
 .kinds .k p{margin-top:10px;font-size:var(--t-sm);line-height:1.7;color:var(--body)}
