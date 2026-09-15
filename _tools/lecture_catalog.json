@@ -1,21 +1,8 @@
 {
- "snapshot_at": "2026-09-08T19:48+09:00",
+ "snapshot_at": "2026-09-15T15:42+09:00",
  "source": "D1 hyunhak.lectures (remote, read-only)",
  "n": 382,
  "partial_updates_superseded": [
-  {
-   "at": "2026-09-08T15:38+09:00",
-   "ids": [
-    "lec_passage_yonsei_2026_gichul_hum",
-    "lec_passage_yonsei_2026_gichul_sci",
-    "lec_passage_yonsei_2026_gichul_intl",
-    "lec_passage_korea_2026_gichul_hum_am",
-    "lec_passage_korea_2026_gichul_sci_pm"
-   ],
-   "source": "offline /Users/gregory/Workspace/hyunhak-api/tools/out/_lecture_catalog_full_20260908T1535.json"
-  }
- ],
- "partial_updates": [
   {
    "at": "2026-09-14",
    "note": "2026-09-14 미래 180행 로컬 원장 합류, D1 스냅샷 전",
@@ -1850,11 +1837,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u01",
    "seq": 1,
-   "title": "칭찬의 방식",
-   "subtitle": "U-01 세트 해설",
+   "title": "연세대 미래 공통형 01번 세트 해설 강의",
+   "subtitle": "칭찬의 방식",
    "duration_sec": 1100,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1863,11 +1850,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u02",
    "seq": 2,
-   "title": "다수결의 한계",
-   "subtitle": "U-02 세트 해설",
+   "title": "연세대 미래 공통형 02번 세트 해설 강의",
+   "subtitle": "다수결의 한계",
    "duration_sec": 1080,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1876,11 +1863,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u03",
    "seq": 3,
-   "title": "조건 붙은 기부",
-   "subtitle": "U-03 세트 해설",
+   "title": "연세대 미래 공통형 03번 세트 해설 강의",
+   "subtitle": "조건 붙은 기부",
    "duration_sec": 1116,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1889,11 +1876,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u04",
    "seq": 4,
-   "title": "다음 세대에 지는 빚",
-   "subtitle": "U-04 세트 해설",
+   "title": "연세대 미래 공통형 04번 세트 해설 강의",
+   "subtitle": "다음 세대에 지는 빚",
    "duration_sec": 1066,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1902,11 +1889,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u05",
    "seq": 5,
-   "title": "처벌과 회복",
-   "subtitle": "U-05 세트 해설",
+   "title": "연세대 미래 공통형 05번 세트 해설 강의",
+   "subtitle": "처벌과 회복",
    "duration_sec": 1010,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1915,11 +1902,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u06",
    "seq": 6,
-   "title": "순서와 사정",
-   "subtitle": "U-06 세트 해설",
+   "title": "연세대 미래 공통형 06번 세트 해설 강의",
+   "subtitle": "순서와 사정",
    "duration_sec": 992,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1928,11 +1915,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u07",
    "seq": 7,
-   "title": "표현의 자유와 상처",
-   "subtitle": "U-07 세트 해설",
+   "title": "연세대 미래 공통형 07번 세트 해설 강의",
+   "subtitle": "표현의 자유와 상처",
    "duration_sec": 1032,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1941,11 +1928,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u08",
    "seq": 8,
-   "title": "능력과 필요",
-   "subtitle": "U-08 세트 해설",
+   "title": "연세대 미래 공통형 08번 세트 해설 강의",
+   "subtitle": "능력과 필요",
    "duration_sec": 992,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1954,11 +1941,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u09",
    "seq": 9,
-   "title": "아끼는 마음과 비판",
-   "subtitle": "U-09 세트 해설",
+   "title": "연세대 미래 공통형 09번 세트 해설 강의",
+   "subtitle": "아끼는 마음과 비판",
    "duration_sec": 1056,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1967,11 +1954,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u10",
    "seq": 10,
-   "title": "익명 평가와 책임",
-   "subtitle": "U-10 세트 해설",
+   "title": "연세대 미래 공통형 10번 세트 해설 강의",
+   "subtitle": "익명 평가와 책임",
    "duration_sec": 984,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1980,11 +1967,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u11",
    "seq": 11,
-   "title": "전문가와 시민",
-   "subtitle": "U-11 세트 해설",
+   "title": "연세대 미래 공통형 11번 세트 해설 강의",
+   "subtitle": "전문가와 시민",
    "duration_sec": 1058,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -1993,11 +1980,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u12",
    "seq": 12,
-   "title": "불리한 사람에게 더 주기",
-   "subtitle": "U-12 세트 해설",
+   "title": "연세대 미래 공통형 12번 세트 해설 강의",
+   "subtitle": "불리한 사람에게 더 주기",
    "duration_sec": 1036,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2006,11 +1993,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u13",
    "seq": 13,
-   "title": "쓸모없는 공부",
-   "subtitle": "U-13 세트 해설",
+   "title": "연세대 미래 공통형 13번 세트 해설 강의",
+   "subtitle": "쓸모없는 공부",
    "duration_sec": 1026,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2019,11 +2006,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u14",
    "seq": 14,
-   "title": "도움을 거절할 권리",
-   "subtitle": "U-14 세트 해설",
+   "title": "연세대 미래 공통형 14번 세트 해설 강의",
+   "subtitle": "도움을 거절할 권리",
    "duration_sec": 1026,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2032,11 +2019,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u15",
    "seq": 15,
-   "title": "기계 번역 시대의 외국어",
-   "subtitle": "U-15 세트 해설",
+   "title": "연세대 미래 공통형 15번 세트 해설 강의",
+   "subtitle": "기계 번역 시대의 외국어",
    "duration_sec": 982,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2045,11 +2032,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u16",
    "seq": 16,
-   "title": "보이지 않는 노동",
-   "subtitle": "U-16 세트 해설",
+   "title": "연세대 미래 공통형 16번 세트 해설 강의",
+   "subtitle": "보이지 않는 노동",
    "duration_sec": 994,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2058,11 +2045,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u17",
    "seq": 17,
-   "title": "사라지는 기술",
-   "subtitle": "U-17 세트 해설",
+   "title": "연세대 미래 공통형 17번 세트 해설 강의",
+   "subtitle": "사라지는 기술",
    "duration_sec": 1009,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2071,11 +2058,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u18",
    "seq": 18,
-   "title": "공짜의 값",
-   "subtitle": "U-18 세트 해설",
+   "title": "연세대 미래 공통형 18번 세트 해설 강의",
+   "subtitle": "공짜의 값",
    "duration_sec": 972,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2084,11 +2071,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u19",
    "seq": 19,
-   "title": "실패의 공개",
-   "subtitle": "U-19 세트 해설",
+   "title": "연세대 미래 공통형 19번 세트 해설 강의",
+   "subtitle": "실패의 공개",
    "duration_sec": 1119,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2097,11 +2084,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u20",
    "seq": 20,
-   "title": "기계가 결정했을 때",
-   "subtitle": "U-20 세트 해설",
+   "title": "연세대 미래 공통형 20번 세트 해설 강의",
+   "subtitle": "기계가 결정했을 때",
    "duration_sec": 1082,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2110,11 +2097,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u21",
    "seq": 21,
-   "title": "원본과 복제",
-   "subtitle": "U-21 세트 해설",
+   "title": "연세대 미래 공통형 21번 세트 해설 강의",
+   "subtitle": "원본과 복제",
    "duration_sec": 1001,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2123,11 +2110,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u22",
    "seq": 22,
-   "title": "지역의 말",
-   "subtitle": "U-22 세트 해설",
+   "title": "연세대 미래 공통형 22번 세트 해설 강의",
+   "subtitle": "지역의 말",
    "duration_sec": 999,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2136,11 +2123,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u23",
    "seq": 23,
-   "title": "광고 속 예술",
-   "subtitle": "U-23 세트 해설",
+   "title": "연세대 미래 공통형 23번 세트 해설 강의",
+   "subtitle": "광고 속 예술",
    "duration_sec": 1033,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2149,11 +2136,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u24",
    "seq": 24,
-   "title": "축제의 주인",
-   "subtitle": "U-24 세트 해설",
+   "title": "연세대 미래 공통형 24번 세트 해설 강의",
+   "subtitle": "축제의 주인",
    "duration_sec": 1010,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2162,11 +2149,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u25",
    "seq": 25,
-   "title": "청소년과 작품 선택",
-   "subtitle": "U-25 세트 해설",
+   "title": "연세대 미래 공통형 25번 세트 해설 강의",
+   "subtitle": "청소년과 작품 선택",
    "duration_sec": 980,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2175,11 +2162,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u26",
    "seq": 26,
-   "title": "빌려 쓰는 삶",
-   "subtitle": "U-26 세트 해설",
+   "title": "연세대 미래 공통형 26번 세트 해설 강의",
+   "subtitle": "빌려 쓰는 삶",
    "duration_sec": 986,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2188,11 +2175,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u27",
    "seq": 27,
-   "title": "가까운 먹거리",
-   "subtitle": "U-27 세트 해설",
+   "title": "연세대 미래 공통형 27번 세트 해설 강의",
+   "subtitle": "가까운 먹거리",
    "duration_sec": 1061,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2201,11 +2188,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u28",
    "seq": 28,
-   "title": "밤의 고요",
-   "subtitle": "U-28 세트 해설",
+   "title": "연세대 미래 공통형 28번 세트 해설 강의",
+   "subtitle": "밤의 고요",
    "duration_sec": 1072,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2214,11 +2201,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u29",
    "seq": 29,
-   "title": "건강의 강제",
-   "subtitle": "U-29 세트 해설",
+   "title": "연세대 미래 공통형 29번 세트 해설 강의",
+   "subtitle": "건강의 강제",
    "duration_sec": 1050,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2227,11 +2214,11 @@
    "unit_code": "yonsei-mirae-common",
    "passage_set_id": "yonsei_mirae_2027_u30",
    "seq": 30,
-   "title": "사라진 종의 복원",
-   "subtitle": "U-30 세트 해설",
+   "title": "연세대 미래 공통형 30번 세트 해설 강의",
+   "subtitle": "사라진 종의 복원",
    "duration_sec": 1056,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2240,11 +2227,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d01",
    "seq": 1,
-   "title": "오마주와 표절",
-   "subtitle": "D-01 세트 해설",
+   "title": "연세대 미래 디자인 01번 세트 해설 강의",
+   "subtitle": "오마주와 표절",
    "duration_sec": 1102,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2253,11 +2240,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d02",
    "seq": 2,
-   "title": "제작의 오차와 흔적",
-   "subtitle": "D-02 세트 해설",
+   "title": "연세대 미래 디자인 02번 세트 해설 강의",
+   "subtitle": "제작의 오차와 흔적",
    "duration_sec": 1111,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2266,11 +2253,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d03",
    "seq": 3,
-   "title": "색과 정보 전달",
-   "subtitle": "D-03 세트 해설",
+   "title": "연세대 미래 디자인 03번 세트 해설 강의",
+   "subtitle": "색과 정보 전달",
    "duration_sec": 1110,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2279,11 +2266,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d04",
    "seq": 4,
-   "title": "고쳐 쓰는 문화",
-   "subtitle": "D-04 세트 해설",
+   "title": "연세대 미래 디자인 04번 세트 해설 강의",
+   "subtitle": "고쳐 쓰는 문화",
    "duration_sec": 1113,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2292,11 +2279,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d05",
    "seq": 5,
-   "title": "공원의 안내 표지를 읽는 조건",
-   "subtitle": "D-05 세트 해설",
+   "title": "연세대 미래 디자인 05번 세트 해설 강의",
+   "subtitle": "공원의 안내 표지를 읽는 조건",
    "duration_sec": 1114,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2305,11 +2292,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d06",
    "seq": 6,
-   "title": "모두를 위한 디자인",
-   "subtitle": "D-06 세트 해설",
+   "title": "연세대 미래 디자인 06번 세트 해설 강의",
+   "subtitle": "모두를 위한 디자인",
    "duration_sec": 1122,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2318,11 +2305,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d07",
    "seq": 7,
-   "title": "아름다운 포장",
-   "subtitle": "D-07 세트 해설",
+   "title": "연세대 미래 디자인 07번 세트 해설 강의",
+   "subtitle": "아름다운 포장",
    "duration_sec": 1080,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2331,11 +2318,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d08",
    "seq": 8,
-   "title": "첫 결제를 권하는 화면",
-   "subtitle": "D-08 세트 해설",
+   "title": "연세대 미래 디자인 08번 세트 해설 강의",
+   "subtitle": "첫 결제를 권하는 화면",
    "duration_sec": 1118,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2344,11 +2331,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d09",
    "seq": 9,
-   "title": "사고를 경고하는 그림의 표현",
-   "subtitle": "D-09 세트 해설",
+   "title": "연세대 미래 디자인 09번 세트 해설 강의",
+   "subtitle": "사고를 경고하는 그림의 표현",
    "duration_sec": 1098,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2357,11 +2344,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d10",
    "seq": 10,
-   "title": "전시의 순서",
-   "subtitle": "D-10 세트 해설",
+   "title": "연세대 미래 디자인 10번 세트 해설 강의",
+   "subtitle": "전시의 순서",
    "duration_sec": 1102,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2370,11 +2357,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d11",
    "seq": 11,
-   "title": "기능과 장식",
-   "subtitle": "D-11 세트 해설",
+   "title": "연세대 미래 디자인 11번 세트 해설 강의",
+   "subtitle": "기능과 장식",
    "duration_sec": 1106,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2383,11 +2370,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d12",
    "seq": 12,
-   "title": "대피 지도에 표시할 출구",
-   "subtitle": "D-12 세트 해설",
+   "title": "연세대 미래 디자인 12번 세트 해설 강의",
+   "subtitle": "대피 지도에 표시할 출구",
    "duration_sec": 1028,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2396,11 +2383,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d13",
    "seq": 13,
-   "title": "바구니 제작 전시의 관람 순서",
-   "subtitle": "D-13 세트 해설",
+   "title": "연세대 미래 디자인 13번 세트 해설 강의",
+   "subtitle": "바구니 제작 전시의 관람 순서",
    "duration_sec": 1040,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2409,11 +2396,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d14",
    "seq": 14,
-   "title": "지도의 정치",
-   "subtitle": "D-14 세트 해설",
+   "title": "연세대 미래 디자인 14번 세트 해설 강의",
+   "subtitle": "지도의 정치",
    "duration_sec": 1078,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2422,11 +2409,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d15",
    "seq": 15,
-   "title": "폐허의 보존",
-   "subtitle": "D-15 세트 해설",
-   "duration_sec": 1057,
+   "title": "연세대 미래 디자인 15번 세트 해설 강의",
+   "subtitle": "폐허의 보존",
+   "duration_sec": 1058,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2435,11 +2422,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d16",
    "seq": 16,
-   "title": "지역 축제 안내 표지판의 세 가지 안",
-   "subtitle": "D-16 세트 해설",
+   "title": "연세대 미래 디자인 16번 세트 해설 강의",
+   "subtitle": "지역 축제 안내 표지판의 세 가지 안",
    "duration_sec": 994,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2448,11 +2435,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d17",
    "seq": 17,
-   "title": "예약 앱에서 바꿀 수 있는 조작 범위",
-   "subtitle": "D-17 세트 해설",
+   "title": "연세대 미래 디자인 17번 세트 해설 강의",
+   "subtitle": "예약 앱에서 바꿀 수 있는 조작 범위",
    "duration_sec": 959,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2461,11 +2448,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d18",
    "seq": 18,
-   "title": "대기 시간 그림에 남겨야 할 정보",
-   "subtitle": "D-18 세트 해설",
+   "title": "연세대 미래 디자인 18번 세트 해설 강의",
+   "subtitle": "대기 시간 그림에 남겨야 할 정보",
    "duration_sec": 969,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2474,11 +2461,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d19",
    "seq": 19,
-   "title": "특산물 포장 회수 방식의 세 가지 안",
-   "subtitle": "D-19 세트 해설",
+   "title": "연세대 미래 디자인 19번 세트 해설 강의",
+   "subtitle": "특산물 포장 회수 방식의 세 가지 안",
    "duration_sec": 1013,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2487,11 +2474,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d20",
    "seq": 20,
-   "title": "충전식 독서등의 외형과 수리 구조",
-   "subtitle": "D-20 세트 해설",
+   "title": "연세대 미래 디자인 20번 세트 해설 강의",
+   "subtitle": "충전식 독서등의 외형과 수리 구조",
    "duration_sec": 990,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2500,11 +2487,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d21",
    "seq": 21,
-   "title": "역 앞 공원 벤치의 세 가지 안",
-   "subtitle": "D-21 세트 해설",
+   "title": "연세대 미래 디자인 21번 세트 해설 강의",
+   "subtitle": "역 앞 공원 벤치의 세 가지 안",
    "duration_sec": 1044,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2513,11 +2500,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d22",
    "seq": 22,
-   "title": "어린이 병동 벽화의 세 가지 안",
-   "subtitle": "D-22 세트 해설",
+   "title": "연세대 미래 디자인 22번 세트 해설 강의",
+   "subtitle": "어린이 병동 벽화의 세 가지 안",
    "duration_sec": 1071,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2526,11 +2513,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d23",
    "seq": 23,
-   "title": "재활용 의류 봉제 구조의 세 가지 안",
-   "subtitle": "D-23 세트 해설",
+   "title": "연세대 미래 디자인 23번 세트 해설 강의",
+   "subtitle": "재활용 의류 봉제 구조의 세 가지 안",
    "duration_sec": 1066,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2539,11 +2526,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d24",
    "seq": 24,
-   "title": "광장 야간 조명의 인상과 길 안내",
-   "subtitle": "D-24 세트 해설",
+   "title": "연세대 미래 디자인 24번 세트 해설 강의",
+   "subtitle": "광장 야간 조명의 인상과 길 안내",
    "duration_sec": 993,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2552,11 +2539,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d25",
    "seq": 25,
-   "title": "학교 앱 첫 화면의 세 가지 안",
-   "subtitle": "D-25 세트 해설",
+   "title": "연세대 미래 디자인 25번 세트 해설 강의",
+   "subtitle": "학교 앱 첫 화면의 세 가지 안",
    "duration_sec": 1041,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2565,11 +2552,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d26",
    "seq": 26,
-   "title": "선물 포장을 고르는 사람과 여는 사람",
-   "subtitle": "D-26 세트 해설",
+   "title": "연세대 미래 디자인 26번 세트 해설 강의",
+   "subtitle": "선물 포장을 고르는 사람과 여는 사람",
    "duration_sec": 1071,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2578,11 +2565,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d27",
    "seq": 27,
-   "title": "옛 공방 영상에서 기록과 창작을 표시하는 방법",
-   "subtitle": "D-27 세트 해설",
+   "title": "연세대 미래 디자인 27번 세트 해설 강의",
+   "subtitle": "옛 공방 영상에서 기록과 창작을 표시하는 방법",
    "duration_sec": 1015,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2591,11 +2578,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d28",
    "seq": 28,
-   "title": "생활시설의 상징을 누가 어떤 기준으로 정할 것인가",
-   "subtitle": "D-28 세트 해설",
+   "title": "연세대 미래 디자인 28번 세트 해설 강의",
+   "subtitle": "생활시설의 상징을 누가 어떤 기준으로 정할 것인가",
    "duration_sec": 1010,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2604,11 +2591,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d29",
    "seq": 29,
-   "title": "공공시설 안내를 글과 그림과 소리로 전달하는 방법",
-   "subtitle": "D-29 세트 해설",
+   "title": "연세대 미래 디자인 29번 세트 해설 강의",
+   "subtitle": "공공시설 안내를 글과 그림과 소리로 전달하는 방법",
    "duration_sec": 1036,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2617,11 +2604,11 @@
    "unit_code": "yonsei-mirae-design",
    "passage_set_id": "yonsei_mirae_2027_d30",
    "seq": 30,
-   "title": "대피 앱에서 먼저 보여 줄 정보와 빠르다는 판단",
-   "subtitle": "D-30 세트 해설",
+   "title": "연세대 미래 디자인 30번 세트 해설 강의",
+   "subtitle": "대피 앱에서 먼저 보여 줄 정보와 빠르다는 판단",
    "duration_sec": 1086,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2630,11 +2617,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j01",
    "seq": 1,
-   "title": "잊힐 권리와 기록의 책임",
-   "subtitle": "J-01 세트 해설",
+   "title": "연세대 미래 자율융합 01번 세트 해설 강의",
+   "subtitle": "잊힐 권리와 기록의 책임",
    "duration_sec": 1082,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2643,11 +2630,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j02",
    "seq": 2,
-   "title": "약속의 구속력",
-   "subtitle": "J-02 세트 해설",
+   "title": "연세대 미래 자율융합 02번 세트 해설 강의",
+   "subtitle": "약속의 구속력",
    "duration_sec": 1093,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2656,11 +2643,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j03",
    "seq": 3,
-   "title": "전통 놀이의 변형",
-   "subtitle": "J-03 세트 해설",
+   "title": "연세대 미래 자율융합 03번 세트 해설 강의",
+   "subtitle": "전통 놀이의 변형",
    "duration_sec": 1098,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2669,11 +2656,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j04",
    "seq": 4,
-   "title": "익명의 선행",
-   "subtitle": "J-04 세트 해설",
+   "title": "연세대 미래 자율융합 04번 세트 해설 강의",
+   "subtitle": "익명의 선행",
    "duration_sec": 1086,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2682,11 +2669,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j05",
    "seq": 5,
-   "title": "침묵의 의미",
-   "subtitle": "J-05 세트 해설",
+   "title": "연세대 미래 자율융합 05번 세트 해설 강의",
+   "subtitle": "침묵의 의미",
    "duration_sec": 1118,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2695,11 +2682,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j06",
    "seq": 6,
-   "title": "사과 없는 용서",
-   "subtitle": "J-06 세트 해설",
+   "title": "연세대 미래 자율융합 06번 세트 해설 강의",
+   "subtitle": "사과 없는 용서",
    "duration_sec": 1114,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2708,11 +2695,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j07",
    "seq": 7,
-   "title": "경쟁과 운",
-   "subtitle": "J-07 세트 해설",
+   "title": "연세대 미래 자율융합 07번 세트 해설 강의",
+   "subtitle": "경쟁과 운",
    "duration_sec": 1059,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2721,11 +2708,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j08",
    "seq": 8,
-   "title": "일의 의미",
-   "subtitle": "J-08 세트 해설",
+   "title": "연세대 미래 자율융합 08번 세트 해설 강의",
+   "subtitle": "일의 의미",
    "duration_sec": 1135,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2734,11 +2721,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j09",
    "seq": 9,
-   "title": "번역과 원문",
-   "subtitle": "J-09 세트 해설",
+   "title": "연세대 미래 자율융합 09번 세트 해설 강의",
+   "subtitle": "번역과 원문",
    "duration_sec": 1103,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2747,11 +2734,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j10",
    "seq": 10,
-   "title": "도시의 기억",
-   "subtitle": "J-10 세트 해설",
+   "title": "연세대 미래 자율융합 10번 세트 해설 강의",
+   "subtitle": "도시의 기억",
    "duration_sec": 1100,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2760,11 +2747,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j11",
    "seq": 11,
-   "title": "관용의 역설",
-   "subtitle": "J-11 세트 해설",
+   "title": "연세대 미래 자율융합 11번 세트 해설 강의",
+   "subtitle": "관용의 역설",
    "duration_sec": 1068,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2773,11 +2760,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j12",
    "seq": 12,
-   "title": "공공미술의 철거",
-   "subtitle": "J-12 세트 해설",
-   "duration_sec": 979,
+   "title": "연세대 미래 자율융합 12번 세트 해설 강의",
+   "subtitle": "공공미술의 철거",
+   "duration_sec": 980,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2786,11 +2773,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j13",
    "seq": 13,
-   "title": "의무 너머의 행위",
-   "subtitle": "J-13 세트 해설",
+   "title": "연세대 미래 자율융합 13번 세트 해설 강의",
+   "subtitle": "의무 너머의 행위",
    "duration_sec": 1006,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2799,11 +2786,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j14",
    "seq": 14,
-   "title": "예약 근무의 소득 보장과 시간 선택",
-   "subtitle": "J-14 세트 해설",
+   "title": "연세대 미래 자율융합 14번 세트 해설 강의",
+   "subtitle": "예약 근무의 소득 보장과 시간 선택",
    "duration_sec": 1131,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2812,11 +2799,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j15",
    "seq": 15,
-   "title": "아름다움의 기준",
-   "subtitle": "J-15 세트 해설",
+   "title": "연세대 미래 자율융합 15번 세트 해설 강의",
+   "subtitle": "아름다움의 기준",
    "duration_sec": 1065,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2825,11 +2812,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j16",
    "seq": 16,
-   "title": "LED 가로등 전환",
-   "subtitle": "J-16 세트 해설",
+   "title": "연세대 미래 자율융합 16번 세트 해설 강의",
+   "subtitle": "LED 가로등 전환",
    "duration_sec": 1029,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2838,11 +2825,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j17",
    "seq": 17,
-   "title": "일회용 컵 보증금",
-   "subtitle": "J-17 세트 해설",
+   "title": "연세대 미래 자율융합 17번 세트 해설 강의",
+   "subtitle": "일회용 컵 보증금",
    "duration_sec": 957,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2851,11 +2838,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j18",
    "seq": 18,
-   "title": "드론 배송",
-   "subtitle": "J-18 세트 해설",
+   "title": "연세대 미래 자율융합 18번 세트 해설 강의",
+   "subtitle": "드론 배송",
    "duration_sec": 961,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2864,11 +2851,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j19",
    "seq": 19,
-   "title": "자전거 도로 확장의 편익과 갈등",
-   "subtitle": "J-19 세트 해설",
+   "title": "연세대 미래 자율융합 19번 세트 해설 강의",
+   "subtitle": "자전거 도로 확장의 편익과 갈등",
    "duration_sec": 993,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2877,11 +2864,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j20",
    "seq": 20,
-   "title": "도시 양봉",
-   "subtitle": "J-20 세트 해설",
+   "title": "연세대 미래 자율융합 20번 세트 해설 강의",
+   "subtitle": "도시 양봉",
    "duration_sec": 949,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2890,11 +2877,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j21",
    "seq": 21,
-   "title": "하천 자연화의 이익과 홍수 안전",
-   "subtitle": "J-21 세트 해설",
+   "title": "연세대 미래 자율융합 21번 세트 해설 강의",
+   "subtitle": "하천 자연화의 이익과 홍수 안전",
    "duration_sec": 929,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2903,11 +2890,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j22",
    "seq": 22,
-   "title": "배양육과 축산의 환경 부담",
-   "subtitle": "J-22 세트 해설",
+   "title": "연세대 미래 자율융합 22번 세트 해설 강의",
+   "subtitle": "배양육과 축산의 환경 부담",
    "duration_sec": 956,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2916,11 +2903,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j23",
    "seq": 23,
-   "title": "전자책 독서의 자원 계산",
-   "subtitle": "J-23 세트 해설",
+   "title": "연세대 미래 자율융합 23번 세트 해설 강의",
+   "subtitle": "전자책 독서의 자원 계산",
    "duration_sec": 977,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2929,11 +2916,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j24",
    "seq": 24,
-   "title": "스마트팜과 농촌 공동체",
-   "subtitle": "J-24 세트 해설",
+   "title": "연세대 미래 자율융합 24번 세트 해설 강의",
+   "subtitle": "스마트팜과 농촌 공동체",
    "duration_sec": 1128,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2942,11 +2929,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j25",
    "seq": 25,
-   "title": "해상 풍력과 어민의 바다",
-   "subtitle": "J-25 세트 해설",
+   "title": "연세대 미래 자율융합 25번 세트 해설 강의",
+   "subtitle": "해상 풍력과 어민의 바다",
    "duration_sec": 1122,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2955,11 +2942,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j26",
    "seq": 26,
-   "title": "지열 발전과 유발 지진",
-   "subtitle": "J-26 세트 해설",
+   "title": "연세대 미래 자율융합 26번 세트 해설 강의",
+   "subtitle": "지열 발전과 유발 지진",
    "duration_sec": 1086,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2968,11 +2955,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j27",
    "seq": 27,
-   "title": "유전자 편집 작물과 식량 안보",
-   "subtitle": "J-27 세트 해설",
+   "title": "연세대 미래 자율융합 27번 세트 해설 강의",
+   "subtitle": "유전자 편집 작물과 식량 안보",
    "duration_sec": 1062,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2981,11 +2968,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j28",
    "seq": 28,
-   "title": "탄소 포집 저장과 감축의 책임",
-   "subtitle": "J-28 세트 해설",
+   "title": "연세대 미래 자율융합 28번 세트 해설 강의",
+   "subtitle": "탄소 포집 저장과 감축의 책임",
    "duration_sec": 1040,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -2994,11 +2981,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j29",
    "seq": 29,
-   "title": "위성 군집 통신과 밤하늘",
-   "subtitle": "J-29 세트 해설",
+   "title": "연세대 미래 자율융합 29번 세트 해설 강의",
+   "subtitle": "위성 군집 통신과 밤하늘",
    "duration_sec": 1002,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3007,11 +2994,11 @@
    "unit_code": "yonsei-mirae-free",
    "passage_set_id": "yonsei_mirae_2027_j30",
    "seq": 30,
-   "title": "하수 재이용 식수의 조건",
-   "subtitle": "J-30 세트 해설",
+   "title": "연세대 미래 자율융합 30번 세트 해설 강의",
+   "subtitle": "하수 재이용 식수의 조건",
    "duration_sec": 1106,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3020,11 +3007,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h01",
    "seq": 1,
-   "title": "수치가 된 몸",
-   "subtitle": "H-01 세트 해설",
+   "title": "연세대 미래 보건 01번 세트 해설 강의",
+   "subtitle": "수치가 된 몸",
    "duration_sec": 1093,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3033,11 +3020,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h02",
    "seq": 2,
-   "title": "폭염 속 작업을 멈추는 조건",
-   "subtitle": "H-02 세트 해설",
+   "title": "연세대 미래 보건 02번 세트 해설 강의",
+   "subtitle": "폭염 속 작업을 멈추는 조건",
    "duration_sec": 1131,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3046,11 +3033,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h03",
    "seq": 3,
-   "title": "통증을 말하는 방식",
-   "subtitle": "H-03 세트 해설",
+   "title": "연세대 미래 보건 03번 세트 해설 강의",
+   "subtitle": "통증을 말하는 방식",
    "duration_sec": 1095,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3059,11 +3046,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h04",
    "seq": 4,
-   "title": "결정 지원 화면과 보호자의 선의",
-   "subtitle": "H-04 세트 해설",
+   "title": "연세대 미래 보건 04번 세트 해설 강의",
+   "subtitle": "결정 지원 화면과 보호자의 선의",
    "duration_sec": 1128,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3072,11 +3059,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h05",
    "seq": 5,
-   "title": "유전자 검사 결과와 모를 권리",
-   "subtitle": "H-05 세트 해설",
+   "title": "연세대 미래 보건 05번 세트 해설 강의",
+   "subtitle": "유전자 검사 결과와 모를 권리",
    "duration_sec": 1084,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3085,11 +3072,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h06",
    "seq": 6,
-   "title": "늘어난 시간을 재는 기준",
-   "subtitle": "H-06 세트 해설",
+   "title": "연세대 미래 보건 06번 세트 해설 강의",
+   "subtitle": "늘어난 시간을 재는 기준",
    "duration_sec": 1091,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3098,11 +3085,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h07",
    "seq": 7,
-   "title": "집으로 들어온 의료 기기",
-   "subtitle": "H-07 세트 해설",
+   "title": "연세대 미래 보건 07번 세트 해설 강의",
+   "subtitle": "집으로 들어온 의료 기기",
    "duration_sec": 1100,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3111,11 +3098,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h08",
    "seq": 8,
-   "title": "고치는 기술과 받아들이는 사회",
-   "subtitle": "H-08 세트 해설",
+   "title": "연세대 미래 보건 08번 세트 해설 강의",
+   "subtitle": "고치는 기술과 받아들이는 사회",
    "duration_sec": 1085,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3124,11 +3111,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h09",
    "seq": 9,
-   "title": "재활 예약과 돌아오는 버스",
-   "subtitle": "H-09 세트 해설",
+   "title": "연세대 미래 보건 09번 세트 해설 강의",
+   "subtitle": "재활 예약과 돌아오는 버스",
    "duration_sec": 1047,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3137,11 +3124,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h10",
    "seq": 10,
-   "title": "기분을 조절하는 약과 환자의 선택",
-   "subtitle": "H-10 세트 해설",
+   "title": "연세대 미래 보건 10번 세트 해설 강의",
+   "subtitle": "기분을 조절하는 약과 환자의 선택",
    "duration_sec": 1089,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3150,11 +3137,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h11",
    "seq": 11,
-   "title": "재활 보조 기기의 설정 권한",
-   "subtitle": "H-11 세트 해설",
+   "title": "연세대 미래 보건 11번 세트 해설 강의",
+   "subtitle": "재활 보조 기기의 설정 권한",
    "duration_sec": 1133,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3163,11 +3150,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h12",
    "seq": 12,
-   "title": "예약 부도와 일정 변경의 책임",
-   "subtitle": "H-12 세트 해설",
+   "title": "연세대 미래 보건 12번 세트 해설 강의",
+   "subtitle": "예약 부도와 일정 변경의 책임",
    "duration_sec": 1068,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3176,11 +3163,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h13",
    "seq": 13,
-   "title": "기능 저하의 치료와 지원",
-   "subtitle": "H-13 세트 해설",
+   "title": "연세대 미래 보건 13번 세트 해설 강의",
+   "subtitle": "기능 저하의 치료와 지원",
    "duration_sec": 1022,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3189,11 +3176,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h14",
    "seq": 14,
-   "title": "원격 진료와 환자 신뢰의 조건",
-   "subtitle": "H-14 세트 해설",
+   "title": "연세대 미래 보건 14번 세트 해설 강의",
+   "subtitle": "원격 진료와 환자 신뢰의 조건",
    "duration_sec": 1069,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3202,11 +3189,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h15",
    "seq": 15,
-   "title": "접종 참여와 센터 이용의 조건",
-   "subtitle": "H-15 세트 해설",
+   "title": "연세대 미래 보건 15번 세트 해설 강의",
+   "subtitle": "접종 참여와 센터 이용의 조건",
    "duration_sec": 1044,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3215,11 +3202,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h16",
    "seq": 16,
-   "title": "노인 낙상과 착용형 감지 기기",
-   "subtitle": "H-16 세트 해설",
+   "title": "연세대 미래 보건 16번 세트 해설 강의",
+   "subtitle": "노인 낙상과 착용형 감지 기기",
    "duration_sec": 1137,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3228,11 +3215,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h17",
    "seq": 17,
-   "title": "청소년 수면 부족과 수면 측정 앱",
-   "subtitle": "H-17 세트 해설",
+   "title": "연세대 미래 보건 17번 세트 해설 강의",
+   "subtitle": "청소년 수면 부족과 수면 측정 앱",
    "duration_sec": 1134,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3241,11 +3228,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h18",
    "seq": 18,
-   "title": "구강 검진과 사진 상담 앱의 연계",
-   "subtitle": "H-18 세트 해설",
+   "title": "연세대 미래 보건 18번 세트 해설 강의",
+   "subtitle": "구강 검진과 사진 상담 앱의 연계",
    "duration_sec": 1138,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3254,11 +3241,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h19",
    "seq": 19,
-   "title": "이어폰 사용과 소음성 난청",
-   "subtitle": "H-19 세트 해설",
+   "title": "연세대 미래 보건 19번 세트 해설 강의",
+   "subtitle": "이어폰 사용과 소음성 난청",
    "duration_sec": 1104,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3267,11 +3254,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h20",
    "seq": 20,
-   "title": "교대근무의 휴식과 업무 인계",
-   "subtitle": "H-20 세트 해설",
+   "title": "연세대 미래 보건 20번 세트 해설 강의",
+   "subtitle": "교대근무의 휴식과 업무 인계",
    "duration_sec": 924,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3280,11 +3267,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h21",
    "seq": 21,
-   "title": "근시 증가와 화면 시간 관리 기술",
-   "subtitle": "H-21 세트 해설",
+   "title": "연세대 미래 보건 21번 세트 해설 강의",
+   "subtitle": "근시 증가와 화면 시간 관리 기술",
    "duration_sec": 1128,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3293,11 +3280,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h22",
    "seq": 22,
-   "title": "고령자 다약제 복용과 복약 관리 앱",
-   "subtitle": "H-22 세트 해설",
+   "title": "연세대 미래 보건 22번 세트 해설 강의",
+   "subtitle": "고령자 다약제 복용과 복약 관리 앱",
    "duration_sec": 1129,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3306,11 +3293,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h23",
    "seq": 23,
-   "title": "응급 의료의 지역 격차와 인공지능 구급 배차",
-   "subtitle": "H-23 세트 해설",
+   "title": "연세대 미래 보건 23번 세트 해설 강의",
+   "subtitle": "응급 의료의 지역 격차와 인공지능 구급 배차",
    "duration_sec": 1124,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3319,11 +3306,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h24",
    "seq": 24,
-   "title": "고령 운전자 사고와 운전 능력 검사 제도",
-   "subtitle": "H-24 세트 해설",
-   "duration_sec": 1113,
+   "title": "연세대 미래 보건 24번 세트 해설 강의",
+   "subtitle": "고령 운전자 사고와 운전 능력 검사 제도",
+   "duration_sec": 1114,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3332,11 +3319,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h25",
    "seq": 25,
-   "title": "신체 활동 실천율 추이와 보상형 걷기 앱",
-   "subtitle": "H-25 세트 해설",
+   "title": "연세대 미래 보건 25번 세트 해설 강의",
+   "subtitle": "신체 활동 실천율 추이와 보상형 걷기 앱",
    "duration_sec": 1126,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3345,11 +3332,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h26",
    "seq": 26,
-   "title": "초미세먼지 노출과 개인 노출 측정기",
-   "subtitle": "H-26 세트 해설",
+   "title": "연세대 미래 보건 26번 세트 해설 강의",
+   "subtitle": "초미세먼지 노출과 개인 노출 측정기",
    "duration_sec": 1038,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3358,11 +3345,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h27",
    "seq": 27,
-   "title": "항생제 내성과 처방 감시 시스템",
-   "subtitle": "H-27 세트 해설",
+   "title": "연세대 미래 보건 27번 세트 해설 강의",
+   "subtitle": "항생제 내성과 처방 감시 시스템",
    "duration_sec": 1033,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3371,11 +3358,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h28",
    "seq": 28,
-   "title": "검사 기관의 측정 오차와 결과 통보 기준",
-   "subtitle": "H-28 세트 해설",
+   "title": "연세대 미래 보건 28번 세트 해설 강의",
+   "subtitle": "검사 기관의 측정 오차와 결과 통보 기준",
    "duration_sec": 1147,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3384,11 +3371,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h29",
    "seq": 29,
-   "title": "비대면 재활의 참여와 동작 관찰",
-   "subtitle": "H-29 세트 해설",
+   "title": "연세대 미래 보건 29번 세트 해설 강의",
+   "subtitle": "비대면 재활의 참여와 동작 관찰",
    "duration_sec": 1021,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3397,11 +3384,11 @@
    "unit_code": "yonsei-mirae-health",
    "passage_set_id": "yonsei_mirae_2027_h30",
    "seq": 30,
-   "title": "폭염 온열 질환과 취약 가구 원격 모니터링",
-   "subtitle": "H-30 세트 해설",
+   "title": "연세대 미래 보건 30번 세트 해설 강의",
+   "subtitle": "폭염 온열 질환과 취약 가구 원격 모니터링",
    "duration_sec": 1110,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3410,11 +3397,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g01",
    "seq": 1,
-   "title": "Do urban green spaces make city residents healthier?",
-   "subtitle": "G-01 세트 해설",
+   "title": "연세대 미래 국제 01번 세트 해설 강의",
+   "subtitle": "Do urban green spaces make city residents healthier?",
    "duration_sec": 1131,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3423,11 +3410,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g02",
    "seq": 2,
-   "title": "Who benefits from cross-border student exchange?",
-   "subtitle": "G-02 세트 해설",
+   "title": "연세대 미래 국제 02번 세트 해설 강의",
+   "subtitle": "Who benefits from cross-border student exchange?",
    "duration_sec": 1192,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3436,11 +3423,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g03",
    "seq": 3,
-   "title": "Why do school cafeterias throw away so much food?",
-   "subtitle": "G-03 세트 해설",
+   "title": "연세대 미래 국제 03번 세트 해설 강의",
+   "subtitle": "Why do school cafeterias throw away so much food?",
    "duration_sec": 966,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3449,11 +3436,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g04",
    "seq": 4,
-   "title": "Working hours in an international remote team",
-   "subtitle": "G-04 세트 해설",
+   "title": "연세대 미래 국제 04번 세트 해설 강의",
+   "subtitle": "Working hours in an international remote team",
    "duration_sec": 983,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3462,11 +3449,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g05",
    "seq": 5,
-   "title": "Can remote work revive small towns?",
-   "subtitle": "G-05 세트 해설",
+   "title": "연세대 미래 국제 05번 세트 해설 강의",
+   "subtitle": "Can remote work revive small towns?",
    "duration_sec": 1060,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3475,11 +3462,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g06",
    "seq": 6,
-   "title": "Should public transport be free for everyone?",
-   "subtitle": "G-06 세트 해설",
+   "title": "연세대 미래 국제 06번 세트 해설 강의",
+   "subtitle": "Should public transport be free for everyone?",
    "duration_sec": 1077,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3488,11 +3475,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g07",
    "seq": 7,
-   "title": "The true cost of cheap clothes",
-   "subtitle": "G-07 세트 해설",
+   "title": "연세대 미래 국제 07번 세트 해설 강의",
+   "subtitle": "The true cost of cheap clothes",
    "duration_sec": 1025,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3501,11 +3488,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g08",
    "seq": 8,
-   "title": "Ending the twice-a-year clock change",
-   "subtitle": "G-08 세트 해설",
+   "title": "연세대 미래 국제 08번 세트 해설 강의",
+   "subtitle": "Ending the twice-a-year clock change",
    "duration_sec": 1078,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3514,11 +3501,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g09",
    "seq": 9,
-   "title": "Is spending on space exploration justified?",
-   "subtitle": "G-09 세트 해설",
+   "title": "연세대 미래 국제 09번 세트 해설 강의",
+   "subtitle": "Is spending on space exploration justified?",
    "duration_sec": 1052,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3527,11 +3514,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g10",
    "seq": 10,
-   "title": "When disasters cross borders",
-   "subtitle": "G-10 세트 해설",
+   "title": "연세대 미래 국제 10번 세트 해설 강의",
+   "subtitle": "When disasters cross borders",
    "duration_sec": 1067,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3540,11 +3527,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g11",
    "seq": 11,
-   "title": "Preventing or compensating climate damage",
-   "subtitle": "G-11 세트 해설",
+   "title": "연세대 미래 국제 11번 세트 해설 강의",
+   "subtitle": "Preventing or compensating climate damage",
    "duration_sec": 1071,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3553,11 +3540,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g12",
    "seq": 12,
-   "title": "Recognizing skills acquired abroad",
-   "subtitle": "G-12 세트 해설",
+   "title": "연세대 미래 국제 12번 세트 해설 강의",
+   "subtitle": "Recognizing skills acquired abroad",
    "duration_sec": 994,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3566,11 +3553,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g13",
    "seq": 13,
-   "title": "Is water a basic right or a priced product?",
-   "subtitle": "G-13 세트 해설",
+   "title": "연세대 미래 국제 13번 세트 해설 강의",
+   "subtitle": "Is water a basic right or a priced product?",
    "duration_sec": 1103,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3579,11 +3566,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g14",
    "seq": 14,
-   "title": "Is it fair to show different customers different prices?",
-   "subtitle": "G-14 세트 해설",
+   "title": "연세대 미래 국제 14번 세트 해설 강의",
+   "subtitle": "Is it fair to show different customers different prices?",
    "duration_sec": 1054,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3592,11 +3579,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g15",
    "seq": 15,
-   "title": "Language support at a public service counter",
-   "subtitle": "G-15 세트 해설",
+   "title": "연세대 미래 국제 15번 세트 해설 강의",
+   "subtitle": "Language support at a public service counter",
    "duration_sec": 974,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3605,11 +3592,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g16",
    "seq": 16,
-   "title": "Who should explain a digital heritage collection?",
-   "subtitle": "G-16 세트 해설",
+   "title": "연세대 미래 국제 16번 세트 해설 강의",
+   "subtitle": "Who should explain a digital heritage collection?",
    "duration_sec": 942,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3618,11 +3605,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g17",
    "seq": 17,
-   "title": "Should schools move to a four-day week?",
-   "subtitle": "G-17 세트 해설",
+   "title": "연세대 미래 국제 17번 세트 해설 강의",
+   "subtitle": "Should schools move to a four-day week?",
    "duration_sec": 972,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3631,11 +3618,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g18",
    "seq": 18,
-   "title": "More visitors and clear routes through a town",
-   "subtitle": "G-18 세트 해설",
+   "title": "연세대 미래 국제 18번 세트 해설 강의",
+   "subtitle": "More visitors and clear routes through a town",
    "duration_sec": 1107,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3644,11 +3631,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g19",
    "seq": 19,
-   "title": "Refund help when an overseas seller does not reply",
-   "subtitle": "G-19 세트 해설",
+   "title": "연세대 미래 국제 19번 세트 해설 강의",
+   "subtitle": "Refund help when an overseas seller does not reply",
    "duration_sec": 1014,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3657,11 +3644,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g20",
    "seq": 20,
-   "title": "Should pet owners be required to hold a license?",
-   "subtitle": "G-20 세트 해설",
+   "title": "연세대 미래 국제 20번 세트 해설 강의",
+   "subtitle": "Should pet owners be required to hold a license?",
    "duration_sec": 1058,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3670,11 +3657,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g21",
    "seq": 21,
-   "title": "Should school rankings be published?",
-   "subtitle": "G-21 세트 해설",
+   "title": "연세대 미래 국제 21번 세트 해설 강의",
+   "subtitle": "Should school rankings be published?",
    "duration_sec": 1063,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3683,11 +3670,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g22",
    "seq": 22,
-   "title": "Should students be paid for good grades?",
-   "subtitle": "G-22 세트 해설",
+   "title": "연세대 미래 국제 22번 세트 해설 강의",
+   "subtitle": "Should students be paid for good grades?",
    "duration_sec": 1049,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3696,11 +3683,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g23",
    "seq": 23,
-   "title": "Sharing a road report before its meaning is checked",
-   "subtitle": "G-23 세트 해설",
+   "title": "연세대 미래 국제 23번 세트 해설 강의",
+   "subtitle": "Sharing a road report before its meaning is checked",
    "duration_sec": 1021,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3709,11 +3696,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g24",
    "seq": 24,
-   "title": "How much of a joint research method should be public?",
-   "subtitle": "G-24 세트 해설",
+   "title": "연세대 미래 국제 24번 세트 해설 강의",
+   "subtitle": "How much of a joint research method should be public?",
    "duration_sec": 1073,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3722,11 +3709,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g25",
    "seq": 25,
-   "title": "Should influencer advertising follow stricter rules?",
-   "subtitle": "G-25 세트 해설",
-   "duration_sec": 969,
+   "title": "연세대 미래 국제 25번 세트 해설 강의",
+   "subtitle": "Should influencer advertising follow stricter rules?",
+   "duration_sec": 970,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3735,11 +3722,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g26",
    "seq": 26,
-   "title": "One assessment across different learning conditions",
-   "subtitle": "G-26 세트 해설",
+   "title": "연세대 미래 국제 26번 세트 해설 강의",
+   "subtitle": "One assessment across different learning conditions",
    "duration_sec": 1008,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3748,11 +3735,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g27",
    "seq": 27,
-   "title": "Shared orbits and responsibility before movement",
-   "subtitle": "G-27 세트 해설",
+   "title": "연세대 미래 국제 27번 세트 해설 강의",
+   "subtitle": "Shared orbits and responsibility before movement",
    "duration_sec": 996,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3761,11 +3748,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g28",
    "seq": 28,
-   "title": "Electricity exchange when both partners face shortages",
-   "subtitle": "G-28 세트 해설",
+   "title": "연세대 미래 국제 28번 세트 해설 강의",
+   "subtitle": "Electricity exchange when both partners face shortages",
    "duration_sec": 1084,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3774,11 +3761,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g29",
    "seq": 29,
-   "title": "Urgent warnings across languages",
-   "subtitle": "G-29 세트 해설",
+   "title": "연세대 미래 국제 29번 세트 해설 강의",
+   "subtitle": "Urgent warnings across languages",
    "duration_sec": 1068,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3787,11 +3774,11 @@
    "unit_code": "yonsei-mirae-intl",
    "passage_set_id": "yonsei_mirae_2027_g30",
    "seq": 30,
-   "title": "Should companies pay a tax on robots that replace workers?",
-   "subtitle": "G-30 세트 해설",
+   "title": "연세대 미래 국제 30번 세트 해설 강의",
+   "subtitle": "Should companies pay a tax on robots that replace workers?",
    "duration_sec": 1078,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3800,11 +3787,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t01",
    "seq": 1,
-   "title": "자동화 이익의 분배",
-   "subtitle": "T-01 세트 해설",
+   "title": "연세대 미래 첨단 01번 세트 해설 강의",
+   "subtitle": "자동화 이익의 분배",
    "duration_sec": 1112,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3813,11 +3800,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t02",
    "seq": 2,
-   "title": "추천과 취향",
-   "subtitle": "T-02 세트 해설",
+   "title": "연세대 미래 첨단 02번 세트 해설 강의",
+   "subtitle": "추천과 취향",
    "duration_sec": 1102,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3826,11 +3813,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t03",
    "seq": 3,
-   "title": "기억의 외주",
-   "subtitle": "T-03 세트 해설",
+   "title": "연세대 미래 첨단 03번 세트 해설 강의",
+   "subtitle": "기억의 외주",
    "duration_sec": 1075,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3839,11 +3826,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t04",
    "seq": 4,
-   "title": "건조 설비를 가동할 시간",
-   "subtitle": "T-04 세트 해설",
+   "title": "연세대 미래 첨단 04번 세트 해설 강의",
+   "subtitle": "건조 설비를 가동할 시간",
    "duration_sec": 1121,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3852,11 +3839,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t05",
    "seq": 5,
-   "title": "빠른 설비의 하루 생산",
-   "subtitle": "T-05 세트 해설",
+   "title": "연세대 미래 첨단 05번 세트 해설 강의",
+   "subtitle": "빠른 설비의 하루 생산",
    "duration_sec": 1080,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3865,11 +3852,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t06",
    "seq": 6,
-   "title": "예측의 불확실성을 전하는 두 방식",
-   "subtitle": "T-06 세트 해설",
+   "title": "연세대 미래 첨단 06번 세트 해설 강의",
+   "subtitle": "예측의 불확실성을 전하는 두 방식",
    "duration_sec": 1099,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3878,11 +3865,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t07",
    "seq": 7,
-   "title": "결함 공개의 시점",
-   "subtitle": "T-07 세트 해설",
+   "title": "연세대 미래 첨단 07번 세트 해설 강의",
+   "subtitle": "결함 공개의 시점",
    "duration_sec": 1093,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3891,11 +3878,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t08",
    "seq": 8,
-   "title": "보조와 향상 사이",
-   "subtitle": "T-08 세트 해설",
+   "title": "연세대 미래 첨단 08번 세트 해설 강의",
+   "subtitle": "보조와 향상 사이",
    "duration_sec": 1078,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3904,11 +3891,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t09",
    "seq": 9,
-   "title": "울리지 않은 경보와 잘못 울린 경보",
-   "subtitle": "T-09 세트 해설",
+   "title": "연세대 미래 첨단 09번 세트 해설 강의",
+   "subtitle": "울리지 않은 경보와 잘못 울린 경보",
    "duration_sec": 1035,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3917,11 +3904,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t10",
    "seq": 10,
-   "title": "멈추지 않는 화면",
-   "subtitle": "T-10 세트 해설",
+   "title": "연세대 미래 첨단 10번 세트 해설 강의",
+   "subtitle": "멈추지 않는 화면",
    "duration_sec": 1046,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3930,11 +3917,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t11",
    "seq": 11,
-   "title": "함께 끊기는 두 통신선",
-   "subtitle": "T-11 세트 해설",
+   "title": "연세대 미래 첨단 11번 세트 해설 강의",
+   "subtitle": "함께 끊기는 두 통신선",
    "duration_sec": 995,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3943,11 +3930,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t12",
    "seq": 12,
-   "title": "표준을 정하는 힘",
-   "subtitle": "T-12 세트 해설",
+   "title": "연세대 미래 첨단 12번 세트 해설 강의",
+   "subtitle": "표준을 정하는 힘",
    "duration_sec": 1065,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3956,11 +3943,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t13",
    "seq": 13,
-   "title": "통로에 멈춘 안내 로봇",
-   "subtitle": "T-13 세트 해설",
+   "title": "연세대 미래 첨단 13번 세트 해설 강의",
+   "subtitle": "통로에 멈춘 안내 로봇",
    "duration_sec": 1057,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3969,11 +3956,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t14",
    "seq": 14,
-   "title": "공공 연구 성과의 공개와 독점 사용권",
-   "subtitle": "T-14 세트 해설",
+   "title": "연세대 미래 첨단 14번 세트 해설 강의",
+   "subtitle": "공공 연구 성과의 공개와 독점 사용권",
    "duration_sec": 1090,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3982,11 +3969,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t15",
    "seq": 15,
-   "title": "출입 장치의 자동 업데이트와 유예 조건",
-   "subtitle": "T-15 세트 해설",
+   "title": "연세대 미래 첨단 15번 세트 해설 강의",
+   "subtitle": "출입 장치의 자동 업데이트와 유예 조건",
    "duration_sec": 1043,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -3995,11 +3982,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t16",
    "seq": 16,
-   "title": "스마트 계량기와 전력 수요 조절의 공정성",
-   "subtitle": "T-16 세트 해설",
+   "title": "연세대 미래 첨단 16번 세트 해설 강의",
+   "subtitle": "스마트 계량기와 전력 수요 조절의 공정성",
    "duration_sec": 1133,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4008,11 +3995,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t17",
    "seq": 17,
-   "title": "댐 유입량 예측의 오차와 방류 결정 책임",
-   "subtitle": "T-17 세트 해설",
+   "title": "연세대 미래 첨단 17번 세트 해설 강의",
+   "subtitle": "댐 유입량 예측의 오차와 방류 결정 책임",
    "duration_sec": 1146,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4021,11 +4008,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t18",
    "seq": 18,
-   "title": "자율주행 버스의 비용 계산과 사고 책임",
-   "subtitle": "T-18 세트 해설",
+   "title": "연세대 미래 첨단 18번 세트 해설 강의",
+   "subtitle": "자율주행 버스의 비용 계산과 사고 책임",
    "duration_sec": 1076,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4034,11 +4021,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t19",
    "seq": 19,
-   "title": "온라인 강의 완료율과 표본의 대표성",
-   "subtitle": "T-19 세트 해설",
+   "title": "연세대 미래 첨단 19번 세트 해설 강의",
+   "subtitle": "온라인 강의 완료율과 표본의 대표성",
    "duration_sec": 1104,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4047,11 +4034,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t20",
    "seq": 20,
-   "title": "전동킥보드 이용 급증과 사고율 해석",
-   "subtitle": "T-20 세트 해설",
+   "title": "연세대 미래 첨단 20번 세트 해설 강의",
+   "subtitle": "전동킥보드 이용 급증과 사고율 해석",
    "duration_sec": 1058,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4060,11 +4047,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t21",
    "seq": 21,
-   "title": "재활용 선별 로봇 도입과 일자리 전환",
-   "subtitle": "T-21 세트 해설",
+   "title": "연세대 미래 첨단 21번 세트 해설 강의",
+   "subtitle": "재활용 선별 로봇 도입과 일자리 전환",
    "duration_sec": 1059,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4073,11 +4060,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t22",
    "seq": 22,
-   "title": "예약 서비스의 공통 연결 규칙과 기능 개발",
-   "subtitle": "T-22 세트 해설",
+   "title": "연세대 미래 첨단 22번 세트 해설 강의",
+   "subtitle": "예약 서비스의 공통 연결 규칙과 기능 개발",
    "duration_sec": 1038,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4086,11 +4073,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t23",
    "seq": 23,
-   "title": "건축용 3D 프린팅과 벽체의 책임",
-   "subtitle": "T-23 세트 해설",
+   "title": "연세대 미래 첨단 23번 세트 해설 강의",
+   "subtitle": "건축용 3D 프린팅과 벽체의 책임",
    "duration_sec": 1013,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4099,11 +4086,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t24",
    "seq": 24,
-   "title": "센서 자동 제어와 공정 불량률",
-   "subtitle": "T-24 세트 해설",
+   "title": "연세대 미래 첨단 24번 세트 해설 강의",
+   "subtitle": "센서 자동 제어와 공정 불량률",
    "duration_sec": 1119,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4112,11 +4099,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t25",
    "seq": 25,
-   "title": "배차 알고리즘과 배달 노동의 데이터",
-   "subtitle": "T-25 세트 해설",
+   "title": "연세대 미래 첨단 25번 세트 해설 강의",
+   "subtitle": "배차 알고리즘과 배달 노동의 데이터",
    "duration_sec": 1053,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4125,11 +4112,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t26",
    "seq": 26,
-   "title": "음향 센서 누수 탐지와 수돗물 공급 관리",
-   "subtitle": "T-26 세트 해설",
+   "title": "연세대 미래 첨단 26번 세트 해설 강의",
+   "subtitle": "음향 센서 누수 탐지와 수돗물 공급 관리",
    "duration_sec": 1081,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4138,11 +4125,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t27",
    "seq": 27,
-   "title": "취약점 공개와 수정본의 실제 적용",
-   "subtitle": "T-27 세트 해설",
+   "title": "연세대 미래 첨단 27번 세트 해설 강의",
+   "subtitle": "취약점 공개와 수정본의 실제 적용",
    "duration_sec": 1081,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4151,11 +4138,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t28",
    "seq": 28,
-   "title": "데이터센터의 재생에너지 비중과 지역의 부담",
-   "subtitle": "T-28 세트 해설",
+   "title": "연세대 미래 첨단 28번 세트 해설 강의",
+   "subtitle": "데이터센터의 재생에너지 비중과 지역의 부담",
    "duration_sec": 1140,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4164,11 +4151,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t29",
    "seq": 29,
-   "title": "안면 인식 출입의 처리 시간과 생체 정보의 수집",
-   "subtitle": "T-29 세트 해설",
+   "title": "연세대 미래 첨단 29번 세트 해설 강의",
+   "subtitle": "안면 인식 출입의 처리 시간과 생체 정보의 수집",
    "duration_sec": 1069,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
@@ -4177,11 +4164,11 @@
    "unit_code": "yonsei-mirae-tech",
    "passage_set_id": "yonsei_mirae_2027_t30",
    "seq": 30,
-   "title": "위성 저수율의 오차와 제한급수 판단",
-   "subtitle": "T-30 세트 해설",
+   "title": "연세대 미래 첨단 30번 세트 해설 강의",
+   "subtitle": "위성 저수율의 오차와 제한급수 판단",
    "duration_sec": 1099,
    "status": "ready",
-   "published_at": "2026-09-14",
+   "published_at": "2026-09-15",
    "access": "entitled"
   },
   {
