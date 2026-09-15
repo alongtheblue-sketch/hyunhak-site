@@ -27,14 +27,1090 @@
    "2027 입학전형시행계획 p.13(모집 199명)",
    "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"
   ],
-  "status": "opening",
+  "status": "on_sale",
   "open_date": "2026-09-14",
-  "sku": null,
-  "price": null,
-  "single_price": null,
+  "sku": "pass-korea-eq-hum",
+  "price": 495000,
+  "single_price": 33000,
   "lecture_count": null,
   "admission_quota": 199
  },
- "bank": null,
+ "bank": {
+  "dir": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "인문25형": 12,
+   "인문26형": 12,
+   "인문24형": 6
+  },
+  "track": {
+   "2027 학생부종합 고른기회전형 | 인문": 30
+  },
+  "difficulty": {
+   "상": 16,
+   "최상": 5,
+   "중": 9
+  },
+  "verb_tail": {
+   "말해 보시오": 48,
+   "기타": 12,
+   "평가하시오": 12,
+   "설명하시오": 18
+  },
+  "passages_mode": 4,
+  "questions_mode": 3,
+  "sets": [
+   {
+    "id": "korea_gorun_2027_h01",
+    "title": "함께 거둔 것의 몫",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '분배적 정의'와 제시문 (나)의 '사회적 연대'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '기여에 따른 분배'와 '필요에 따른 분배'의 관점에서 각각 (다)의 '능력주의'를 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '두식'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h01.json"
+   },
+   {
+    "id": "korea_gorun_2027_h02",
+    "title": "숲의 회복과 마을의 규칙",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '천이'와 제시문 (나)의 '사회 규범'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '사회 규범' 관점에서 제시문 (다)의 '자연법'을 평가하시오.",
+     "제시문 (나)의 '사회 규범'과 제시문 (다)의 '자연법'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h02.json"
+   },
+   {
+    "id": "korea_gorun_2027_h03",
+    "title": "독서 모임의 약속",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 명제의 부정과 (나)와 (다)의 현상 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h03.json"
+   },
+   {
+    "id": "korea_gorun_2027_h04",
+    "title": "공연을 앞두고",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '도덕 판단의 기준'과 제시문 (나)의 '신뢰'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '동기에 따른 판단'과 '결과에 따른 판단'의 관점에서 각각 (다)의 '선의의 거짓말'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '지수'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h04.json"
+   },
+   {
+    "id": "korea_gorun_2027_h05",
+    "title": "법의 목적과 절차의 공정",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '법의 목적'과 제시문 (나)의 '공정'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '질서 유지'와 '권리 보장'의 관점에서 각각 (다)의 '시민 불복종'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '만길'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h05.json"
+   },
+   {
+    "id": "korea_gorun_2027_h06",
+    "title": "공동 작업장의 겨울 준비",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '세대 간 정의'와 제시문 (나)의 '지속 가능한 발전'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '현재 세대의 필요'와 '미래 세대의 권리'의 관점에서 각각 (다)의 '재생 가능 에너지'를 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '윤서'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h06.json"
+   },
+   {
+    "id": "korea_gorun_2027_h07",
+    "title": "말한 뜻과 들은 뜻",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '의미 구성'과 제시문 (나)의 '표현의 자유'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '말한 사람의 의도'와 '듣는 사람의 해석'의 관점에서 각각 (다)의 '광고'를 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '덕수'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h07.json"
+   },
+   {
+    "id": "korea_gorun_2027_h08",
+    "title": "회의가 끝나기 전",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '집단 의사 결정'과 제시문 (나)의 '대표'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '다수의 동의'와 '소수의 권리'의 관점에서 각각 (다)의 '만장일치제'를 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '지수'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h08.json"
+   },
+   {
+    "id": "korea_gorun_2027_h09",
+    "title": "기계가 들어온 공방",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '노동의 가치'와 제시문 (나)의 '장인 정신'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '생산성'과 '자아실현'의 관점에서 각각 (다)의 '자동화'를 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '강 목수'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h09.json"
+   },
+   {
+    "id": "korea_gorun_2027_h10",
+    "title": "숙소의 저녁",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '환대'와 제시문 (나)의 '공동체 의식'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '조건 없는 환대'와 '상호성에 따른 환대'의 관점에서 각각 (다)의 '동화 정책'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '정우'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h10.json"
+   },
+   {
+    "id": "korea_gorun_2027_h11",
+    "title": "위급한 순간의 판단과 습관",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '판단의 두 방식'과 제시문 (나)의 '습관'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '직관적 판단'과 '숙고적 판단'의 관점에서 각각 (다)의 '근삿값'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '덕이'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h11.json"
+   },
+   {
+    "id": "korea_gorun_2027_h12",
+    "title": "전해 들은 이야기",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '정보의 신뢰성'과 제시문 (나)의 '여론'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '출처의 신뢰성'과 '내용의 검증 가능성'의 관점에서 각각 (다)의 '입소문'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '수현'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h12.json"
+   },
+   {
+    "id": "korea_gorun_2027_h13",
+    "title": "새벽 배",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '알 권리'와 제시문 (나)의 '비밀 유지 의무'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '개인의 자기 결정'과 '공동체의 안전'의 관점에서 각각 (다)의 '내부 고발'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '영수'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h13.json"
+   },
+   {
+    "id": "korea_gorun_2027_h14",
+    "title": "잘못한 사람을 대하는 방식",
+    "subtype": "인문25형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '처벌의 목적'과 제시문 (나)의 '용서'의 공통점과 차이점을 말해 보시오.",
+     "(가)의 '응보'와 '교화'의 관점에서 각각 (다)의 '회복적 사법'을 평가해 보시오.",
+     "(나)와 (다)를 참고하여 (라)에 보이는 '서 노인'의 행위에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h14.json"
+   },
+   {
+    "id": "korea_gorun_2027_h15",
+    "title": "실험 기록과 전시 안내문",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '중화 반응'과 제시문 (나)의 '타협'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '타협' 관점에서 제시문 (다)의 '원칙'을 평가하시오.",
+     "제시문 (나)의 '타협'과 제시문 (다)의 '원칙'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h15.json"
+   },
+   {
+    "id": "korea_gorun_2027_h16",
+    "title": "효소와 화폐, 그리고 두 장터",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '효소'와 제시문 (나)의 '화폐'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '화폐' 관점에서 제시문 (다)의 '물물 교환'을 평가하시오.",
+     "제시문 (나)의 '화폐'와 제시문 (다)의 '물물 교환'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h16.json"
+   },
+   {
+    "id": "korea_gorun_2027_h17",
+    "title": "면접 예상문제 KG-H17",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '함수'와 제시문 (나)의 '법 앞의 평등'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '법 앞의 평등' 관점에서 제시문 (다)의 '재량'을 평가하시오.",
+     "제시문 (나)의 '법 앞의 평등'과 제시문 (다)의 '재량'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h17.json"
+   },
+   {
+    "id": "korea_gorun_2027_h18",
+    "title": "발전소의 열과 배추의 값",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '에너지 전환'과 제시문 (나)의 '유통'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '유통' 관점에서 제시문 (다)의 '직거래'를 평가하시오.",
+     "제시문 (나)의 '유통'과 제시문 (다)의 '직거래'를 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h18.json"
+   },
+   {
+    "id": "korea_gorun_2027_h19",
+    "title": "상황과 선택",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '충격량'과 제시문 (나)의 '통과 의례'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '통과 의례' 관점에서 제시문 (다)의 '급진적 개혁'을 평가하시오.",
+     "제시문 (나)의 '통과 의례'와 제시문 (다)의 '급진적 개혁'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h19.json"
+   },
+   {
+    "id": "korea_gorun_2027_h20",
+    "title": "별명과 원칙",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '낙인'과 제시문 (나)의 '자율'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '자율' 관점에서 제시문 (다)의 '재사회화'를 평가하시오.",
+     "제시문 (나)의 '자율'과 제시문 (다)의 '재사회화'를 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h20.json"
+   },
+   {
+    "id": "korea_gorun_2027_h21",
+    "title": "신청서와 진열대",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '기회비용'과 제시문 (나)의 '절제'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '절제' 관점에서 제시문 (다)의 '충동구매'를 평가하시오.",
+     "제시문 (나)의 '절제'와 제시문 (다)의 '충동구매'를 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h21.json"
+   },
+   {
+    "id": "korea_gorun_2027_h22",
+    "title": "두 나루의 사공",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '협력'과 제시문 (나)의 '경쟁'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '경쟁' 관점에서 제시문 (다)의 '담합'을 평가하시오.",
+     "제시문 (나)의 '경쟁'과 제시문 (다)의 '담합'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h22.json"
+   },
+   {
+    "id": "korea_gorun_2027_h23",
+    "title": "작업실의 공구",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '소유권'과 제시문 (나)의 '공유 경제'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '공유 경제' 관점에서 제시문 (다)의 '임대차'를 평가하시오.",
+     "제시문 (나)의 '공유 경제'와 제시문 (다)의 '임대차'를 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h23.json"
+   },
+   {
+    "id": "korea_gorun_2027_h24",
+    "title": "결정 앞의 태도",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '용기'와 제시문 (나)의 '신중'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '신중' 관점에서 제시문 (다)의 '기술 혁신'을 평가하시오.",
+     "제시문 (나)의 '신중'과 제시문 (다)의 '기술 혁신'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h24.json"
+   },
+   {
+    "id": "korea_gorun_2027_h25",
+    "title": "낭독회 원고",
+    "subtype": "인문26형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)의 '이자'와 제시문 (나)의 '인내'의 공통점과 차이점을 말해 보시오.",
+     "제시문 (나)의 '인내' 관점에서 제시문 (다)의 '즉시 배송'을 평가하시오.",
+     "제시문 (나)의 '인내'와 제시문 (다)의 '즉시 배송'을 바탕으로 제시문 (라)의 화자의 언행에 대해 자유롭게 말해 보시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h25.json"
+   },
+   {
+    "id": "korea_gorun_2027_h26",
+    "title": "조건이 다른 두 밭",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 변인 통제와 (나)와 (다)의 조건 고려 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h26.json"
+   },
+   {
+    "id": "korea_gorun_2027_h27",
+    "title": "모임 신청서",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 순열과 조합과 (나)와 (다)의 순서 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h27.json"
+   },
+   {
+    "id": "korea_gorun_2027_h28",
+    "title": "만들어지는 시간과 없어지는 시간",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 화석 연료와 (나)와 (다)의 현상들 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h28.json"
+   },
+   {
+    "id": "korea_gorun_2027_h29",
+    "title": "인문계열 면접 예상문제 H29",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 필요조건과 충분조건과 (나)와 (다)의 조건 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h29.json"
+   },
+   {
+    "id": "korea_gorun_2027_h30",
+    "title": "규모와 진도",
+    "subtype": "인문24형",
+    "track": "2027 학생부종합 고른기회전형 | 인문",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "(가)의 밑줄 친 ㉠과 유사한 점을 (나)와 (다)에서 찾아 설명하시오.",
+     "(나) 또는 (다)의 내용과 유사한 사례를 우리 주변에서 찾아 설명하시오.",
+     "(라)의 ㉡과 ㉢이 다른 이유를 설명하고, 이를 토대로 (가)의 규모와 진도와 (나)와 (다)의 현상들 간의 차이를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_h30.json"
+   }
+  ]
+ },
  "pastexam": null
 }

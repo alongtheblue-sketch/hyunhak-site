@@ -1,6 +1,6 @@
 {
  "generated_at": "2026-09-02T00:00:00Z",
- "catalog_hash": "d403edfa998c2295f9819bd7f11e9394380b0d48ad172fc4991edbe37b1caf9c",
+ "catalog_hash": "0770232a2779eae1444c44ccbb37fa249670e8f9d9b5f10a7e1345bbe4e6d74d",
  "units": [
   {
    "code": "korea-hum",
@@ -12,6 +12,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "korea_2027_h01",
@@ -565,6 +566,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "korea_2027_s01",
@@ -1118,6 +1120,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_2027_h01",
@@ -1641,6 +1644,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_2027_s01",
@@ -2164,6 +2168,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_intl_2027_i01",
@@ -2687,6 +2692,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_j01",
@@ -3240,6 +3246,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_d01",
@@ -3793,6 +3800,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_t01",
@@ -4346,6 +4354,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_h01",
@@ -4899,6 +4908,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_g01",
@@ -5452,6 +5462,7 @@
    "price": 495000,
    "single_price": 33000,
    "set_count": 30,
+   "lectures": true,
    "sets": [
     {
      "id": "yonsei_mirae_2027_u01",
@@ -5992,6 +6003,1114 @@
      "prep_seconds": 600,
      "interview_seconds": 300,
      "explain_script": true
+    }
+   ]
+  },
+  {
+   "code": "korea-eq-hum",
+   "sku": "pass-korea-eq-hum",
+   "univ": "고려대학교",
+   "univ_short": "고려대",
+   "track": "2027 학생부종합 고른기회전형 | 인문",
+   "label": "고려대 고른기회 인문",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "lectures": false,
+   "sets": [
+    {
+     "id": "korea_gorun_2027_h01",
+     "n": 1,
+     "title": "함께 거둔 것의 몫",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h02",
+     "n": 2,
+     "title": "숲의 회복과 마을의 규칙",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h03",
+     "n": 3,
+     "title": "독서 모임의 약속",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h04",
+     "n": 4,
+     "title": "공연을 앞두고",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h05",
+     "n": 5,
+     "title": "법의 목적과 절차의 공정",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h06",
+     "n": 6,
+     "title": "공동 작업장의 겨울 준비",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h07",
+     "n": 7,
+     "title": "말한 뜻과 들은 뜻",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h08",
+     "n": 8,
+     "title": "회의가 끝나기 전",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h09",
+     "n": 9,
+     "title": "기계가 들어온 공방",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h10",
+     "n": 10,
+     "title": "숙소의 저녁",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h11",
+     "n": 11,
+     "title": "위급한 순간의 판단과 습관",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h12",
+     "n": 12,
+     "title": "전해 들은 이야기",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h13",
+     "n": 13,
+     "title": "새벽 배",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h14",
+     "n": 14,
+     "title": "잘못한 사람을 대하는 방식",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h15",
+     "n": 15,
+     "title": "실험 기록과 전시 안내문",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h16",
+     "n": 16,
+     "title": "효소와 화폐, 그리고 두 장터",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h17",
+     "n": 17,
+     "title": "면접 예상문제 KG-H17",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h18",
+     "n": 18,
+     "title": "발전소의 열과 배추의 값",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h19",
+     "n": 19,
+     "title": "상황과 선택",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h20",
+     "n": 20,
+     "title": "별명과 원칙",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h21",
+     "n": 21,
+     "title": "신청서와 진열대",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h22",
+     "n": 22,
+     "title": "두 나루의 사공",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h23",
+     "n": 23,
+     "title": "작업실의 공구",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h24",
+     "n": 24,
+     "title": "결정 앞의 태도",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h25",
+     "n": 25,
+     "title": "낭독회 원고",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 2,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h26",
+     "n": 26,
+     "title": "조건이 다른 두 밭",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h27",
+     "n": 27,
+     "title": "모임 신청서",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 15
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h28",
+     "n": 28,
+     "title": "만들어지는 시간과 없어지는 시간",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h29",
+     "n": 29,
+     "title": "인문계열 면접 예상문제 H29",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_h30",
+     "n": 30,
+     "title": "규모와 진도",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 4,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "korea-eq-sci",
+   "sku": "pass-korea-eq-sci",
+   "univ": "고려대학교",
+   "univ_short": "고려대",
+   "track": "2027 학생부종합 고른기회전형 | 자연",
+   "label": "고려대 고른기회 자연",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "lectures": false,
+   "sets": [
+    {
+     "id": "korea_gorun_2027_s01",
+     "n": 1,
+     "title": "시간에 따른 양의 비교",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s02",
+     "n": 2,
+     "title": "양수 발전소와 곡식 곳간",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s03",
+     "n": 3,
+     "title": "관찰과 기록",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 13
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s04",
+     "n": 4,
+     "title": "자료와 관측",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s05",
+     "n": 5,
+     "title": "잉크 한 병과 물 두 비커",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s06",
+     "n": 6,
+     "title": "자료와 현상의 분석",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s07",
+     "n": 7,
+     "title": "소금과 여름 햇빛",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s08",
+     "n": 8,
+     "title": "자료와 경로",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s09",
+     "n": 9,
+     "title": "스펀지와 얼음 아래의 땅",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s10",
+     "n": 10,
+     "title": "제시문과 면접 문항",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s11",
+     "n": 11,
+     "title": "구슬 병과 빈 공장",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s12",
+     "n": 12,
+     "title": "자연계열 제시문 면접 연습 12",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s13",
+     "n": 13,
+     "title": "한쪽으로 몰린 뒤",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s14",
+     "n": 14,
+     "title": "쇠못과 두 금속판",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s15",
+     "n": 15,
+     "title": "다섯 장면의 관찰",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s16",
+     "n": 16,
+     "title": "마른 논바닥과 옛 골목",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s17",
+     "n": 17,
+     "title": "자연계열 제시문 면접 17",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s18",
+     "n": 18,
+     "title": "얕은 못과 젖은 수건",
+     "difficulty": "중",
+     "axes": {
+      "제시문_추상도": 1,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 10
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s19",
+     "n": 19,
+     "title": "자연계열 제시문 면접 연습 19",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 3,
+      "합계": 14
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s20",
+     "n": 20,
+     "title": "신발 바닥과 강바닥의 돌",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s21",
+     "n": 21,
+     "title": "자연계열 면접 자료 21",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s22",
+     "n": 22,
+     "title": "굵은 알갱이와 대장간의 물통",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 3,
+      "합계": 11
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s23",
+     "n": 23,
+     "title": "자연계열 제시문과 문항",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s24",
+     "n": 24,
+     "title": "속력, 규모, 열량, 허용 오차, 거리",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 14
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s25",
+     "n": 25,
+     "title": "자연계열 면접 자료 S25",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s26",
+     "n": 26,
+     "title": "주기율표에서 이진법까지",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s27",
+     "n": 27,
+     "title": "수량과 눈금",
+     "difficulty": "최상",
+     "axes": {
+      "제시문_추상도": 4,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 4,
+      "개념_전이_거리": 4,
+      "합계": 15
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s28",
+     "n": 28,
+     "title": "먼 곳까지의 거리",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 3,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 13
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s29",
+     "n": 29,
+     "title": "수치의 기록과 비교",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
+    },
+    {
+     "id": "korea_gorun_2027_s30",
+     "n": 30,
+     "title": "다섯 사례와 한 수열",
+     "difficulty": "상",
+     "axes": {
+      "제시문_추상도": 2,
+      "연쇄_통합_폭": 3,
+      "근거_자료_처리_부하": 3,
+      "개념_전이_거리": 4,
+      "합계": 12
+     },
+     "passages": 5,
+     "questions": 3,
+     "prep_seconds": 720,
+     "interview_seconds": 360,
+     "explain_script": false
     }
    ]
   }

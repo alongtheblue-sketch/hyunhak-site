@@ -22,6 +22,7 @@
        {method_rules}  #method 핵심 원칙 (li) 반복, 3~5개
        {time_cap}      #method 시간 배분 표 머리 (총 시간과 단계 수)
        {time_rows}     #method 시간 배분 행 (div.row) 반복
+       {lock_head}     #method 비공개 층 표제 (인강 없는 단위는 '스튜디오'만)
        {lock_items}    #method 비공개 층 항목 (li) 반복
        {sample_doc}    #sample 시험지 상자 안쪽 (doc_head + 제시문 + 문항)
        {sample_steps}  #sample 풀이 골격 (li) 반복, 마지막 단계는 li.off
@@ -93,7 +94,7 @@
    {time_rows}
   </div>
   <div class="xlock">
-   <div class="xhd"><h3>여기서부터는 스튜디오와 인강</h3><span class="k">이 면에 싣지 않는 층</span></div>
+   <div class="xhd"><h3>{lock_head}</h3><span class="k">이 면에 싣지 않는 층</span></div>
    <ul>{lock_items}</ul>
    <p class="note">이 세 가지는 응시와 첨삭에 붙어 있는 층이라 정보면에 옮겨 적지 않습니다.</p>
   </div>

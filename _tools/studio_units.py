@@ -93,11 +93,12 @@ def sync_purchase(source):
     cards = "\n".join(card(row, prefix="", purchase=True, number=f"{i:02}")
                       for i, row in enumerate(on_sale, 1))
     upcoming = [row for row in rows if row["spec"]["status"] == "opening"]
+    # 예정 단위가 하나도 없으면(2026-09-14 고른기회 2단위 개시로 전 단위 on_sale) 안내 줄 자체를 내린다
     links = ", ".join(f'<a class="tlink" href="interview/{row["code"]}.html">{html.escape(row["label"])}</a>'
                       for row in upcoming)
+    opening_note = (f'\n<p class="note r3-opening-links">{EX.OPEN_DATE}에 여는 단위: {links}</p>' if upcoming else "")
     block = ('<!-- ia1:units:begin -->\n<template id="r3-unit-template">\n' + cards
-             + '\n</template>\n<p class="note r3-opening-links">'
-             + f'{EX.OPEN_DATE}에 여는 단위: {links}</p>\n<!-- ia1:units:end -->')
+             + '\n</template>' + opening_note + '\n<!-- ia1:units:end -->')
     source, count = re.subn(r'<!-- ia1:units:begin -->.*?<!-- ia1:units:end -->',
                             lambda _: block, source, flags=re.S)
     if count != 1:

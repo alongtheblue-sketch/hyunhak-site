@@ -85,16 +85,32 @@
  },
  "korea-eq-hum": {
   "label": "고려대 고른기회전형 인문",
-  "status": "opening",
-  "n_sets": null,
-  "subtype": null,
-  "verb_tail": null
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "인문25형": 12,
+   "인문26형": 12,
+   "인문24형": 6
+  },
+  "verb_tail": {
+   "말해 보시오": 48,
+   "기타": 12,
+   "평가하시오": 12,
+   "설명하시오": 18
+  }
  },
  "korea-eq-sci": {
   "label": "고려대 고른기회전형 자연",
-  "status": "opening",
-  "n_sets": null,
-  "subtype": null,
-  "verb_tail": null
+  "status": "on_sale",
+  "n_sets": 30,
+  "subtype": {
+   "자연26형": 12,
+   "자연25형": 9,
+   "자연24형": 9
+  },
+  "verb_tail": {
+   "기타": 12,
+   "설명하시오": 78
+  }
  }
 }

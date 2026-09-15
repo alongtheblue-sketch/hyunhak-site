@@ -27,14 +27,1124 @@
    "2027 입학전형시행계획 p.13(모집 199명)",
    "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"
   ],
-  "status": "opening",
+  "status": "on_sale",
   "open_date": "2026-09-14",
-  "sku": null,
-  "price": null,
-  "single_price": null,
+  "sku": "pass-korea-eq-sci",
+  "price": 495000,
+  "single_price": 33000,
   "lecture_count": null,
   "admission_quota": 199
  },
- "bank": null,
+ "bank": {
+  "dir": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "자연26형": 12,
+   "자연25형": 9,
+   "자연24형": 9
+  },
+  "track": {
+   "2027 학생부종합 고른기회전형 | 자연": 30
+  },
+  "difficulty": {
+   "최상": 5,
+   "상": 22,
+   "중": 3
+  },
+  "verb_tail": {
+   "기타": 12,
+   "설명하시오": 78
+  },
+  "passages_mode": 5,
+  "questions_mode": 3,
+  "sets": [
+   {
+    "id": "korea_gorun_2027_s01",
+    "title": "시간에 따른 양의 비교",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 빗면과 쇠구슬을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 변화 속도의 증가가 생활의 질 향상으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s01.json"
+   },
+   {
+    "id": "korea_gorun_2027_s02",
+    "title": "양수 발전소와 곡식 곳간",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s02.json"
+   },
+   {
+    "id": "korea_gorun_2027_s03",
+    "title": "관찰과 기록",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "부등식의 양변에 같은 수를 더하면 부등호의 방향이 유지되고, 양변에 같은 음수를 곱하면 부등호의 방향이 바뀐다. 부등식의 덧셈에 대한 성질과 음수 곱셈에 대한 성질의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s03.json"
+   },
+   {
+    "id": "korea_gorun_2027_s04",
+    "title": "자료와 관측",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 용수철과 추를 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s04.json"
+   },
+   {
+    "id": "korea_gorun_2027_s05",
+    "title": "잉크 한 병과 물 두 비커",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 잉크와 물을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s05.json"
+   },
+   {
+    "id": "korea_gorun_2027_s06",
+    "title": "자료와 현상의 분석",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 구멍 뚫린 병과 물을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s06.json"
+   },
+   {
+    "id": "korea_gorun_2027_s07",
+    "title": "소금과 여름 햇빛",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 얼음과 소금을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s07.json"
+   },
+   {
+    "id": "korea_gorun_2027_s08",
+    "title": "자료와 경로",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 유리컵과 물을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s08.json"
+   },
+   {
+    "id": "korea_gorun_2027_s09",
+    "title": "스펀지와 얼음 아래의 땅",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 스펀지와 추를 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s09.json"
+   },
+   {
+    "id": "korea_gorun_2027_s10",
+    "title": "제시문과 면접 문항",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 검은 통과 흰 통을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s10.json"
+   },
+   {
+    "id": "korea_gorun_2027_s11",
+    "title": "구슬 병과 빈 공장",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 모래와 구슬을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s11.json"
+   },
+   {
+    "id": "korea_gorun_2027_s12",
+    "title": "자연계열 제시문 면접 연습 12",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 긴 용수철을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s12.json"
+   },
+   {
+    "id": "korea_gorun_2027_s13",
+    "title": "한쪽으로 몰린 뒤",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 물통과 모래를 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s13.json"
+   },
+   {
+    "id": "korea_gorun_2027_s14",
+    "title": "쇠못과 두 금속판",
+    "subtype": "자연26형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 4,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (나)의 못과 소금물을 활용하여 제시문 (가)와 연관지을 수 있는 과학적 실험과 이론을 설명해 보시오.",
+     "제시문 (가)와 (다)를 비교하여 '공통점'과 '차이점'을 설명하고 제시문 (가)에서의 사회의 변화가 사회의 발전으로 이어지기 위한 과정을 제시문 (다)의 관점에서 설명하시오.",
+     "'2번 문제'에서 설명한 '차이점'의 관점에서 제시문 (라)를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s14.json"
+   },
+   {
+    "id": "korea_gorun_2027_s15",
+    "title": "다섯 장면의 관찰",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s15.json"
+   },
+   {
+    "id": "korea_gorun_2027_s16",
+    "title": "마른 논바닥과 옛 골목",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s16.json"
+   },
+   {
+    "id": "korea_gorun_2027_s17",
+    "title": "자연계열 제시문 면접 17",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s17.json"
+   },
+   {
+    "id": "korea_gorun_2027_s18",
+    "title": "얕은 못과 젖은 수건",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s18.json"
+   },
+   {
+    "id": "korea_gorun_2027_s19",
+    "title": "자연계열 제시문 면접 연습 19",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s19.json"
+   },
+   {
+    "id": "korea_gorun_2027_s20",
+    "title": "신발 바닥과 강바닥의 돌",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s20.json"
+   },
+   {
+    "id": "korea_gorun_2027_s21",
+    "title": "자연계열 면접 자료 21",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s21.json"
+   },
+   {
+    "id": "korea_gorun_2027_s22",
+    "title": "굵은 알갱이와 대장간의 물통",
+    "subtype": "자연25형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(라)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "'문제 1'에서 답한 개념을 바탕으로 제시문 (마)를 설명하시오.",
+     "'문제 1'에서 답한 개념에 대한 예를 자연현상에서 찾고, 그 이유를 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s22.json"
+   },
+   {
+    "id": "korea_gorun_2027_s23",
+    "title": "자연계열 제시문과 문항",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "덧셈에서 a의 역원은 −a이고 곱셈에서 a의 역원은 1/a이며, 0은 곱셈의 역원이 없다. 덧셈의 역원과 곱셈의 역원의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s23.json"
+   },
+   {
+    "id": "korea_gorun_2027_s24",
+    "title": "속력, 규모, 열량, 허용 오차, 거리",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "|a| 는 a ≥ 0 이면 a 이고 a < 0 이면 −a 이며, |a − b| 는 수직선에서 두 수 사이의 거리이다. 절댓값과 거리의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s24.json"
+   },
+   {
+    "id": "korea_gorun_2027_s25",
+    "title": "자연계열 면접 자료 S25",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "정수의 나눗셈은 몫과 나머지로 나타내고 나머지는 0 이상 나누는 수 미만이며, 실수의 나눗셈은 하나의 수로 나타낸다. 몫과 나머지와 실수의 몫의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s25.json"
+   },
+   {
+    "id": "korea_gorun_2027_s26",
+    "title": "주기율표에서 이진법까지",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "진법에서 각 자리의 값은 밑의 거듭제곱이며, 일의 자리의 값은 밑과 무관하게 1 이고 그 왼쪽 자리의 값은 밑이 바뀌면 함께 바뀐다. 자리의 값과 진법의 밑의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s26.json"
+   },
+   {
+    "id": "korea_gorun_2027_s27",
+    "title": "수량과 눈금",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "aᵐ × aⁿ = aᵐ⁺ⁿ 이고 (aᵐ)ⁿ = aᵐⁿ 이다. 곱의 지수 법칙과 거듭의 지수 법칙의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s27.json"
+   },
+   {
+    "id": "korea_gorun_2027_s28",
+    "title": "먼 곳까지의 거리",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "두 점 사이의 거리는 좌표 차의 제곱합의 제곱근이고, 점과 직선 사이의 거리는 그 점에서 직선에 내린 수선의 길이다. 두 점 사이의 거리와 점과 직선 사이의 거리의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s28.json"
+   },
+   {
+    "id": "korea_gorun_2027_s29",
+    "title": "수치의 기록과 비교",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "도형을 평행이동하면 위치는 바뀌지만 두 점 사이의 거리는 변하지 않는다. 평행이동과 거리 불변의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s29.json"
+   },
+   {
+    "id": "korea_gorun_2027_s30",
+    "title": "다섯 사례와 한 수열",
+    "subtype": "자연24형",
+    "track": "2027 학생부종합 고른기회전형 | 자연",
+    "prep_seconds": 720,
+    "interview_seconds": 360,
+    "n_passages": 5,
+    "n_questions": 3,
+    "q_texts": [
+     "제시문 (가)~(마)를 읽고 공통적으로 떠오르는 개념을 말하고, 그 이유를 설명하시오.",
+     "문항 1에서 제시한 개념이나 이와 유사한 개념이 사회현상에 적용된 예를 찾고, 어떤 긍정적 효과가 발생했는지 혹은 발생할 수 있는지 설명하시오.",
+     "같은 수를 더해 가는 수열의 n 번째 항은 첫째항에 공차를 (n − 1) 번 더한 값이고, 첫째항부터 n 번째 항까지의 합은 첫째항과 n 번째 항의 합에 n 을 곱해 2 로 나눈 값이다. 일반항과 합의 관점에서 제시문 (라)와 (마)를 비교 설명하시오."
+    ],
+    "q_points": [
+     35,
+     35,
+     30
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "(가)",
+     "(나)",
+     "(다)",
+     "(라)",
+     "(마)"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/korea_gorun_interview_bank_2027/sets/korea_gorun_2027_s30.json"
+   }
+  ]
+ },
  "pastexam": null
 }

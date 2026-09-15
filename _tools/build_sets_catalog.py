@@ -57,9 +57,9 @@ UNITS = [
      "sets_dir": "sets_u", "sku": None},
     # 고려대 고른기회 2단위 (2026-09-14 판매 개시, S9-3 2단계). 인강은 없다 (build_lectures ORDER 밖)
     {"code": "korea-eq-hum", "label": "고려대 고른기회 인문", "univ_short": "고려대",
-     "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_h", "script_bank": "gorun"},
+     "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_h", "script_bank": "gorun", "lectures": False},
     {"code": "korea-eq-sci", "label": "고려대 고른기회 자연", "univ_short": "고려대",
-     "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_s", "script_bank": "gorun"},
+     "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_s", "script_bank": "gorun", "lectures": False},
 ]
 
 # 세트 id 정규식 (서버 검증 hyunhak-api src/pay.js 와 같은 문자열, 2026-09-11 고려대 고른기회 korea_gorun,
@@ -153,6 +153,8 @@ def build():
             "price": PRICE,
             "single_price": SINGLE_PRICE,
             "set_count": len(sets_out),
+            # 해설 인강이 붙는 단위인가. 고른기회 2단위는 인강이 없어 false 다 (2026-09-14). 소비처 = my.html 내 강의 카드
+            "lectures": bool(unit.get("lectures", True)),
             "sets": sets_out,
         })
 

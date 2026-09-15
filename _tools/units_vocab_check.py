@@ -44,6 +44,9 @@ def main():
         bad.append("assets/lectures.js UNITS != 판매 13단위")
     if js_array((ROOT / "assets/rank.js").read_text("utf-8"), "UNITS") != RANK_UNITS:
         bad.append("assets/rank.js UNITS != 순위표 12탭")
+    tabs = re.findall(r'role="tab"[^>]*data-unit="([^"]+)"', (ROOT / "ranking.html").read_text("utf-8"))
+    if tabs != RANK_UNITS:
+        bad.append(f"ranking.html 탭 = {tabs} != 순위표 12탭")
 
     cat = (ROOT / "_tools/build_sets_catalog.py").read_text("utf-8")
     m = re.search(r"^UNITS = \[(.*?)^\]", cat, re.S | re.M)
@@ -65,6 +68,10 @@ def main():
                 bad.append(f"sets.json {u['code']} sku = {u.get('sku')!r} != {want!r}")
             if u.get("set_count") != 30:
                 bad.append(f"sets.json {u['code']} set_count = {u.get('set_count')} != 30")
+            if u.get("lectures") is not (u["code"] not in EQ):
+                bad.append(f"sets.json {u['code']} lectures = {u.get('lectures')!r} (고른기회만 false)")
+    if "u.lectures!==false" not in (ROOT / "my.html").read_text("utf-8"):
+        bad.append("my.html 내 강의 카드가 lectures:false 단위를 거르지 않는다")
 
     # 전형 상세면 원장 — 미래(묶음 면)
     fb = (ROOT / "_tools/exam_pages/facts_build.py").read_text("utf-8")

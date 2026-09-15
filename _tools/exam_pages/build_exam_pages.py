@@ -150,9 +150,12 @@ def build_one(code, mod):
                    + f'<div class="xcta"><a class="tlink" href="../programs/studio.html#u-{sp["units"][0]["code"]}">스튜디오 소개</a>'
                      f'<a class="tlink" href="../interview.html#exam">면접 형태 판정표</a></div>')
         else:
+            # 인강이 없는 단위(고른기회 2, 2026-09-14)는 인강 면이 서지 않으므로 그 링크를 걸지 않는다
+            lec_link = (f'<a class="tlink" href="../lectures/{code}.html">풀이법 인강 <span class="ar" aria-hidden="true">&rarr;</span></a>'
+                        if sp.get("lecture_count") else "")
             cta = (f'<div class="xcta"><a class="btn" href="../studio.html?unit={code}">이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a>'
                    f'<a class="tlink" href="../programs/studio.html#u-{code}">스튜디오 소개</a>'
-                   f'<a class="tlink" href="../lectures/{code}.html">풀이법 인강 <span class="ar" aria-hidden="true">&rarr;</span></a></div>')
+                   + lec_link + '</div>')
         badge = '<span class="badge seal">판매 중</span><span class="k">2027학년도 기준</span>'
     spec_html, used_notes = spec_rows(f, notes, ratio_idx, opening)
     sib = "".join(f'<li><a href="{c}.html"{" aria-current=\"page\"" if c == code else ""}><span>{E(n)}</span><span class="k">{E(s)}</span></a></li>'
@@ -169,6 +172,8 @@ def build_one(code, mod):
         "type_cards": "".join(tc),
         "method_rules": "".join(f'<li><span><b>{E(p["title"])}</b> {E(p["body"])}</span></li>' for p in d["method"]["principles"]),   # li 격자(24px+1fr)라 span 1개로 감싼다 (critic B-2)
         "time_cap": time_cap, "time_rows": "".join(rows),
+        # 인강이 없는 단위(고른기회 2)는 표제에서 인강을 뺀다
+        "lock_head": "여기서부터는 스튜디오와 인강" if sp.get("lecture_count") else "여기서부터는 스튜디오",
         "lock_items": "".join(f"<li><span>{E(t)}</span></li>" for t in [d["method"]["boundary"]] + LOCK),   # li 격자(16px+1fr)의 첫 칸은 ::before, 자식은 span 1개 (디렉터 결함4 「격자 자식 수」)
         "sample_note": SAMPLE_NOTE_CARD if code.startswith("korea-eq") else SAMPLE_NOTE_BANK,
         "sample_doc": doc, "sample_src": E(sm["source_note"]), "sample_steps": steps,
