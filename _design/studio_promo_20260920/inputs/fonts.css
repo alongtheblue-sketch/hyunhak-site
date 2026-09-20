@@ -1,0 +1,29 @@
+/* 현학적 연구소 홍보물 전용 서체 (2종 상한, 브랜드 가이드 v1.2)
+   family 이름은 아래 둘만 쓴다. 파일은 TTF (Chromium PDF Type3 방지). */
+
+@font-face { font-family: 'HH Serif'; font-weight: 300; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/KoPubBatang-Light.ttf') format('truetype'); }
+@font-face { font-family: 'HH Serif'; font-weight: 500; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/KoPubBatang-Medium.ttf') format('truetype'); }
+@font-face { font-family: 'HH Serif'; font-weight: 700; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/KoPubBatang-Bold.ttf') format('truetype'); }
+
+@font-face { font-family: 'HH Sans'; font-weight: 400; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/Pretendard-Regular.ttf') format('truetype'); }
+@font-face { font-family: 'HH Sans'; font-weight: 600; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/Pretendard-SemiBold.ttf') format('truetype'); }
+@font-face { font-family: 'HH Sans'; font-weight: 700; font-style: normal; font-display: block;
+  src: url('/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/inputs/fonts/Pretendard-Bold.ttf') format('truetype'); }
+
+:root {
+  --serif: 'HH Serif', 'KoPubBatang', serif;
+  --sans: 'HH Sans', 'Pretendard', sans-serif;
+  /* 브랜드 팔레트 (WCAG 실측치는 project_hyeonhakjeok_lab_logo.md) */
+  --ink: #312E2E;     /* 玄墨  종이 위 11.12:1 */
+  --paper: #EFE9DC;   /* 楮紙 */
+  --gray: #696561;    /* 灰墨  종이 위 4.78:1 */
+  --verm: #BC3529;    /* 朱印  종이 위 4.72:1, 점·가격 표시 한정 */
+  --brown: #3B2C20;   /* 玄褐  어두운 바탕 */
+  --gold: #D0AC6E;    /* 金泥  어두운 바탕 위 로고 전용 6.26:1 */
+  --paper-web: #F6F2E9; --card: #FBF9F4; --mat: #F1EBDD; --body: #4A4644;
+}

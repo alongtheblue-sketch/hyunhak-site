@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<title>현학적 연구소 — 소형 픽토그램 A · 인주</title>
+<g fill="#BC3529">
+<path d="M43 12 L57 12 L59 26 L41 26 Z"/>
+<rect x="4" y="26" width="92" height="6" rx="3"/>
+<path fill-rule="evenodd" d="M50 43 C64 43 72 56 92 88 L8 88 C28 56 36 43 50 43 Z M50 62 L31 57 L31 74 L50 79 L69 74 L69 57 Z"/>
+</g>
+<path d="M50 62 L50 79" stroke="#BC3529" stroke-width="4.3"/>
+</svg>

@@ -1,0 +1,127 @@
+/* F: C's opaque photographic sheet, A's ink band and serif, B's quiet tables.
+   Brand colors and family fallback chains are inherited from inputs/fonts.css. */
+:root {
+  --grid-gap: 5mm;
+  --ko-tracking-body: -0.01em;
+  --ko-tracking-display: -0.04em;
+  --ko-tracking-print: -0.025em;
+  --ko-leading-body: 1.7;
+  --ko-leading-display: 1.3;
+  --ko-leading-caption: 1.6;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body, h1, h2, h3, p, figure, dl, dd, ol { margin: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--paper); font-weight: 400; font-feature-settings: "halt" 1, "palt" 1, "kern" 1; font-variant-numeric: tabular-nums; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: var(--ko-tracking-display); line-height: var(--ko-leading-display); }
+p, h1, h2, h3, dt, dd, td, th, figcaption { word-break: keep-all; overflow-wrap: normal; }
+img { display: block; height: auto; }
+.url, .email { overflow-wrap: anywhere; }
+.brand-mask, .logo-full { display: block; background-color: currentColor; }
+.full-logo, .logo-full { aspect-ratio: 1124 / 1136; -webkit-mask: url('../../inputs/logo/logo_full.svg') center / contain no-repeat; mask: url('../../inputs/logo/logo_full.svg') center / contain no-repeat; }
+.picto { flex: 0 0 20px; width: 20px; height: 20px; background: var(--ink); -webkit-mask: url('../../inputs/logo/small/picto_b.svg') center / contain no-repeat; mask: url('../../inputs/logo/small/picto_b.svg') center / contain no-repeat; }
+
+/* S1–S8. Sheet ends at 1376, leaving 44px before the real sticker area.
+   No scrim. The only promo difference is one sentence and its small sale dot. */
+html.story-document, body.story-body { width: 1080px; height: 1920px; margin: 0; overflow: hidden; }
+.story { position: relative; width: 1080px; height: 1920px; overflow: hidden; letter-spacing: var(--ko-tracking-body); }
+.story-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% center; }
+.story-sheet { position: absolute; left: 64px; top: 680px; width: 952px; height: 696px; background: var(--paper); }
+.story-logo { position: absolute; right: 96px; top: 704px; height: 144px; color: var(--ink); }
+.story-url { position: absolute; left: 96px; top: 720px; font-size: 32px; line-height: 1.5; }
+.story-promo { position: absolute; left: 96px; top: 800px; width: 704px; font-size: 38px; line-height: 1.5; white-space: nowrap; }
+.promo-dot { display: inline-block; width: 8px; height: 8px; margin-right: 16px; border-radius: 50%; vertical-align: middle; background: var(--verm); }
+.story-title { position: absolute; left: 96px; top: 912px; width: 888px; font-size: 96px; line-height: 1.15; letter-spacing: -0.04em; }
+.story-title > span { display: block; white-space: nowrap; }
+.story-lead { position: absolute; left: 96px; top: 1144px; width: 888px; font-size: 36px; line-height: 1.5; white-space: nowrap; }
+.story-facts { position: absolute; left: 96px; top: 1200px; width: 888px; height: 104px; display: grid; grid-template-columns: 328px 232px 296px; column-gap: 16px; }
+.story-facts > div { display: grid; grid-template-columns: max-content 1fr; grid-template-rows: 48px 48px; column-gap: 8px; align-items: center; padding-block: 4px; }
+.story-facts dt { grid-column: 2; grid-row: 1; font-size: 32px; line-height: 1.5; white-space: nowrap; }
+.story-facts dd { display: contents; }
+.story-facts strong { grid-column: 1; grid-row: 1 / 3; font-size: 76px; line-height: 1; font-weight: 600; letter-spacing: -0.04em; white-space: nowrap; }
+.story-facts dd > span { grid-column: 2; grid-row: 2; font-size: 32px; line-height: 1.5; }
+.story-facts strong small { font-size: 32px; line-height: 1.5; font-weight: 400; letter-spacing: -0.01em; margin-left: 8px; }
+.story-fact-primary strong { font-size: 104px; }
+.story-fact-secondary dt { grid-row: 1 / 3; }
+.story-cta { position: absolute; left: 96px; top: 1312px; width: 888px; font-size: 36px; line-height: 1.5; white-space: nowrap; }
+.link-sticker-zone { position: absolute; left: 0; top: 1420px; width: 1080px; height: 160px; }
+
+/* B8/B13. All main blocks participate in one 8-column grid with a 5mm gap.
+   Trim starts at 3mm; the 170 × 257mm content frame is 20mm inside it. */
+@page { size: 216mm 303mm; margin: 0; }
+.brochure { font-size: 9.5pt; line-height: var(--ko-leading-body); letter-spacing: var(--ko-tracking-print); word-break: keep-all; overflow-wrap: break-word; widows: 3; orphans: 3; }
+.brochure h1, .brochure h2, .brochure h3, .brochure p, .brochure dt, .brochure dd, .brochure figcaption { overflow-wrap: break-word; widows: 3; orphans: 3; }
+.brochure .url, .brochure .email { overflow-wrap: anywhere; }
+.brochure h2 { font-size: 13.435pt; }
+.page { width: 216mm; height: 303mm; overflow: hidden; position: relative; page-break-after: always; break-after: page; background: var(--paper); }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page > .wrap { position: absolute; inset: 23mm; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: var(--grid-gap); }
+.wrap > * { grid-column: 1 / -1; flex-shrink: 0; min-width: 0; }
+.front .wrap { grid-template-rows: 10mm 30mm 115mm 35mm 47mm; }
+.back .wrap { grid-template-rows: 90mm 70mm 20mm 20mm 37mm; }
+
+/* Front, exactly five zones: masthead, hero, walkthrough, metrics, signature. */
+.front-field { position: absolute; inset: 0 0 auto; height: 67mm; background: var(--ink); }
+.mast { color: var(--paper); }
+.mast h2 { font-size: 13.435pt; }
+.mast p { font-size: 9.5pt; line-height: 1.7; }
+.front-hero { color: var(--paper); }
+.front-hero h1 { font-size: 36pt; line-height: 1.3; white-space: normal; word-break: keep-all; }
+.walkthrough { display: grid; grid-template-rows: 10mm 100mm; gap: var(--grid-gap); }
+.front-subtitle { font-size: 10.5pt; line-height: 1.7; }
+.screen-and-steps { display: grid; grid-template-columns: 38.75mm 126.25mm; gap: var(--grid-gap); }
+/* B2/B3: 1400×801 original, crop [932,84,320,112] at 27/320 mm per px.
+   Original pixels are unchanged; background-position selects the rectangle.
+   Visible pixels only: the large timer and its unlabelled progress rule. */
+.answer-crop { width: 27mm; height: 9.45mm; background-image: url('../../inputs/photo/std_answer.jpg'); background-repeat: no-repeat; background-size: 118.125mm 67.584375mm; background-position: -78.6375mm -7.0875mm; }
+figcaption { font-size: 7.5pt; line-height: var(--ko-leading-caption); letter-spacing: -0.01em; color: var(--gray); }
+.answer-screen figcaption { margin-top: var(--grid-gap); }
+.steps { list-style: none; padding: 0; display: grid; grid-template-rows: 20mm 30mm 20mm 15mm; gap: var(--grid-gap); }
+.steps li { display: grid; grid-template-columns: 7mm 1fr; column-gap: var(--grid-gap); min-width: 0; }
+.step-number { color: var(--ink); font-size: 13.435pt; font-weight: 600; line-height: 1.3; }
+.step-name { font-weight: 700; font-size: 9.5pt; line-height: 1.7; }
+.step-note { font-size: 9.5pt; line-height: 1.7; color: var(--gray); }
+.exam-spec { font-size: 9.5pt; line-height: 1.7; white-space: nowrap; }
+.metrics { border-top: 0.5pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); display: grid; grid-template-columns: 38.75mm repeat(5, minmax(0, 1fr)); column-gap: var(--grid-gap); align-items: center; padding: 5.5mm 0 5mm; }
+.metrics dt { font-size: 8.5pt; line-height: 1.6; white-space: nowrap; }
+.metrics dd { font-size: 17pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.04em; white-space: nowrap; }
+.metrics .metric-primary dd { font-size: 28pt; }
+.metrics dd span { font-size: 9.5pt; margin-left: 0.5mm; font-weight: 400; }
+.signature { position: relative; display: grid; grid-template-columns: 38.75mm 126.25mm; column-gap: var(--grid-gap); }
+.signature .logo-full { position: absolute; left: 0; bottom: 0; height: 27mm; color: var(--ink); }
+.signature-copy { grid-column: 2; }
+.signature-copy h2 { font-size: 13.435pt; margin-bottom: var(--grid-gap); }
+.signature-meta { position: absolute; left: 43.75mm; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; font-size: 9.5pt; line-height: 1.7; }
+
+/* Back: units → comparison → correction → FAQ → contact and business line. */
+table { border-collapse: collapse; width: 100%; table-layout: fixed; border-top: 0.5pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); font-size: 9.5pt; line-height: 1.6; }
+thead { border-bottom: 0.5pt solid var(--ink); }
+th, td { text-align: left; vertical-align: top; font-weight: 400; padding: 0 1.5mm; overflow-wrap: normal; }
+th { font-weight: 600; }
+th:first-child, td:first-child { padding-left: 0; }
+th:last-child, td:last-child { padding-right: 0; }
+.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nowrap { white-space: nowrap; }
+.back-heading { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: var(--grid-gap); }
+.back-heading h1 { font-size: 19pt; line-height: 1.3; }
+.back-heading p { font-size: 9.5pt; line-height: 1.7; text-align: right; }
+.units th, .units td { white-space: nowrap; }
+.units .group-start td { border-top: 0.25pt solid var(--gray); }
+.comparison h2 { margin-bottom: var(--grid-gap); }
+/* B1: every comparison cell has symmetric 2.5mm padding: 5mm text gutter.
+   Only the three price cells carry .num; other cells remain left aligned. */
+.comparison th, .comparison td { padding: 0.15mm 2.5mm; }
+.comparison .price { font-family: var(--sans); font-size: 12.5pt; font-weight: 700; line-height: 1.5; color: var(--verm); }
+.comparison td { line-height: 1.7; }
+.correction, .faq { display: grid; grid-template-columns: 38.75mm 126.25mm; column-gap: var(--grid-gap); }
+.correction-copy { max-width: 126.25mm; }
+.correction .score { font-size: 9.5pt; line-height: 1.7; }
+.faq dl > div { display: grid; grid-template-columns: 25mm 96.25mm; gap: var(--grid-gap); }
+.faq dt { font-weight: 600; }
+.contact { position: relative; }
+.contact-title { display: flex; align-items: center; gap: var(--grid-gap); height: 6.5mm; }
+.contact-copy { width: 110mm; }
+.contact-copy p { font-size: 9.5pt; line-height: 1.7; }
+.qr-block { position: absolute; top: 0; right: 0; width: 59mm; }
+.qr { width: 20mm; height: 20mm; object-fit: contain; margin-left: auto; font-size: 0; }
+.qr-block figcaption { margin-top: var(--grid-gap); text-align: right; color: var(--ink); }
+.business { position: absolute; left: 0; right: 0; bottom: 0; font-size: 7pt; line-height: 1.2; letter-spacing: -0.025em; white-space: nowrap; }

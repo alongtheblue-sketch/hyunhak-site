@@ -1,0 +1,115 @@
+:root {
+  --serif: 'HH Serif';
+  --sans: 'HH Sans';
+  --ink: #312E2E;
+  --paper: #EFE9DC;
+  --gray: #696561;
+  --verm: #BC3529;
+  --grid-gap: 5mm;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body, h1, h2, p, figure, dl, dd, ol { margin: 0; }
+body { color: var(--ink); background: var(--paper); font-family: var(--sans); font-weight: 400; font-feature-settings: "halt" 1, "palt" 1, "kern" 1; font-variant-numeric: tabular-nums; }
+h1, h2, .service-name { font-family: var(--serif); font-weight: 700; letter-spacing: -.04em; }
+p, h1, h2, dt, dd, td, th, figcaption { word-break: keep-all; overflow-wrap: normal; }
+.url, .email { overflow-wrap: anywhere; }
+.brand-mask { display: block; background-color: currentColor; mask-repeat: no-repeat; mask-size: contain; mask-position: center; -webkit-mask-repeat: no-repeat; -webkit-mask-size: contain; -webkit-mask-position: center; }
+.full-logo { mask-image: url('../../inputs/logo/logo_full.svg'); -webkit-mask-image: url('../../inputs/logo/logo_full.svg'); aspect-ratio: 1124 / 1136; }
+
+/* Story. The photograph opens the upper field. All type and logo are on the opaque lower sheet, x96..984 and y688..1384. */
+html.story-document, body.story-body { width: 1080px; height: 1920px; margin: 0; overflow: hidden; }
+.story { width: 1080px; height: 1920px; position: relative; overflow: hidden; }
+.story-background { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 78% center; }
+.story-sheet { position: absolute; left: 64px; top: 648px; width: 952px; height: 768px; background: var(--paper); }
+.story-logo { position: absolute; right: 96px; top: 688px; height: 120px; }
+.story-title { position: absolute; left: 96px; top: 768px; width: 888px; font-size: 80px; line-height: 1.2; }
+.story-title > span { display: block; white-space: nowrap; }
+.story-universities { font-size: 90px; }
+.story-service { font-size: 80px; }
+.story-lead { position: absolute; left: 96px; top: 1040px; width: 888px; font-size: 40px; line-height: 1.5; letter-spacing: -.01em; }
+.story-trial { position: absolute; left: 96px; top: 1328px; width: 560px; font-size: 36px; line-height: 1.5; letter-spacing: -.01em; }
+.story-trial strong { font-weight: 700; }
+.story-url { position: absolute; right: 96px; top: 1336px; width: 264px; text-align: right; font-size: 32px; line-height: 1.5; letter-spacing: -.01em; }
+.link-sticker-zone { position: absolute; left: 0; top: 1420px; width: 1080px; height: 160px; }
+
+/* Print. The trim starts 3 mm from the page edge. The type area is 170 x 257 mm. */
+@page { size: 216mm 303mm; margin: 0; }
+html.brochure-document, body.brochure-body { margin: 0; }
+.brochure-body { font-size: 9.5pt; line-height: 1.7; letter-spacing: -.025em; widows: 3; orphans: 3; }
+.page { width: 216mm; height: 303mm; overflow: hidden; position: relative; page-break-after: always; break-after: page; background: var(--paper); }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page > .wrap { position: absolute; inset: 23mm; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); column-gap: var(--grid-gap); }
+.wrap > * { flex-shrink: 0; min-width: 0; }
+.brochure-body p, .brochure-body h1, .brochure-body h2, .brochure-body dt, .brochure-body dd, .brochure-body figcaption { overflow-wrap: break-word; widows: 3; orphans: 3; }
+.brochure-body .url, .brochure-body .email { overflow-wrap: anywhere; }
+.brochure-body h2 { font-size: 13.435pt; line-height: 1.3; }
+table { border-collapse: collapse; table-layout: fixed; width: 100%; border-top: .6pt solid var(--ink); border-bottom: .6pt solid var(--ink); font-size: 9.5pt; line-height: 1.7; letter-spacing: -.025em; }
+thead { border-bottom: .4pt solid var(--ink); }
+th, td { text-align: left; font-weight: 400; padding: 0; vertical-align: top; overflow-wrap: normal; }
+th { font-weight: 600; }
+.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+/* Front. Five visual groups: masthead, title, lead, evidence, signature. */
+.front-masthead { position: absolute; inset: 0 0 auto; display: flex; align-items: baseline; justify-content: space-between; }
+.service-name { font-size: 13.435pt; line-height: 1.3; }
+.front-masthead > p:last-child { white-space: nowrap; }
+.front-title { position: absolute; left: 43.75mm; right: 0; top: 17mm; font-size: 26.87pt; line-height: 1.3; white-space: nowrap; }
+.front-lead { position: absolute; left: 43.75mm; right: 0; top: 35mm; white-space: nowrap; }
+.rail-background { position: absolute; left: 0; top: 36mm; width: 61.75mm; height: 162mm; background: var(--ink); }
+.front-evidence { position: absolute; inset: 0; }
+.number-rail { position: absolute; top: 18mm; left: 0; width: 38.75mm; height: 156mm; color: var(--paper); display: flex; flex-direction: column; gap: 5mm; }
+.number-rail > div { height: 21mm; flex-shrink: 0; }
+.number-rail dd { white-space: nowrap; font-size: 9.5pt; line-height: 1.3; }
+.number-rail strong { font-size: 26.87pt; line-height: 1.3; font-weight: 600; margin-right: 1mm; }
+.number-rail dt { font-size: 9.5pt; line-height: 1.7; white-space: nowrap; }
+.screen { position: absolute; left: 43.75mm; width: 126.25mm; display: grid; grid-template-columns: 33.25mm 88mm; column-gap: 5mm; }
+.screen-prep { top: 54mm; }
+.screen-answer { top: 114mm; }
+.screen figcaption { font-size: 9.5pt; line-height: 1.7; }
+.screen img { display: block; width: 88mm; height: auto; }
+.front-flow { position: absolute; left: 0; right: 0; top: 181mm; }
+.front-flow h2 { margin-bottom: 2mm; }
+.front-flow ol { padding: 0; list-style: none; counter-reset: flow; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 5mm; }
+.front-flow li { counter-increment: flow; }
+.front-flow strong { display: block; font-weight: 600; white-space: nowrap; }
+.front-flow strong::before { content: counter(flow) ". "; color: var(--ink); }
+.front-flow p { font-size: 9.5pt; line-height: 1.7; }
+.front-specs { position: absolute; left: 0; right: 0; top: 212mm; display: grid; grid-template-columns: 38.75mm 126.25mm; gap: 5mm; align-items: start; }
+.front-specs h2 { max-width: 38mm; }
+.front-specs table { width: 126.25mm; }
+.front-signature { position: absolute; left: 0; right: 0; bottom: 0; height: 22mm; }
+.print-logo { position: absolute; left: 3.1mm; bottom: 0; height: 22mm; }
+.maker { position: absolute; left: 43.75mm; right: 0; top: 0; }
+.front-url { position: absolute; right: 0; bottom: 0; }
+
+/* Back. Whole-width tables are separated by a quiet two-column reading area. */
+.back-units { position: absolute; left: 0; right: 0; top: 0; }
+.back h2 { margin-bottom: 3mm; }
+.units-table .unit-no { width: 12mm; }
+.units-table .unit-univ { width: 30mm; }
+.units-table .unit-course { width: 56mm; }
+.units-table .unit-time { width: 18mm; }
+.units-table th, .units-table td { white-space: nowrap; }
+.units-table th:nth-child(2), .units-table td:nth-child(2), .units-table th:nth-child(3), .units-table td:nth-child(3) { padding-left: 3mm; }
+.back-middle { position: absolute; left: 0; right: 0; top: 88.5mm; height: 39mm; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5mm; }
+.back-middle h2 { margin-bottom: 2mm; }
+.correction-names { font-weight: 600; }
+.score { position: absolute; left: 0; right: 0; bottom: 0; white-space: nowrap; }
+.faq dl > div { display: block; }
+.faq dt { display: inline; font-weight: 600; margin-right: 2mm; }
+.faq dd { display: inline; white-space: nowrap; }
+.back-compare { position: absolute; left: 0; right: 0; top: 136mm; }
+.compare-label { width: 24.5mm; }
+.compare-table th, .compare-table td { padding-left: 2.5mm; }
+.compare-table th:first-child { padding-left: 0; white-space: nowrap; }
+.compare-table .price { font-weight: 700; color: var(--ink); }
+.back-contact { position: absolute; left: 0; right: 0; top: 213mm; }
+.back-contact h2 { margin-bottom: 2mm; }
+.contact-copy { width: 124mm; }
+.contact-copy .email { margin-left: 6mm; }
+.qr-block { position: absolute; right: 0; top: 0; width: 53mm; text-align: right; }
+.qr { display: block; width: 20mm; height: 20mm; margin-left: 33mm; font-size: 0; }
+.qr-block figcaption { margin-top: 2mm; font-size: 7.5pt; line-height: 1.7; white-space: nowrap; }
+.back-footer { position: absolute; left: 0; right: 0; bottom: 0; height: 5mm; display: flex; align-items: flex-end; justify-content: space-between; }
+.back-footer p { font-size: 7pt; line-height: 1.7; white-space: nowrap; }
+.back-picto { width: 5mm; height: 5mm; mask-image: url('../../inputs/logo/small/picto_b.svg'); -webkit-mask-image: url('../../inputs/logo/small/picto_b.svg'); }

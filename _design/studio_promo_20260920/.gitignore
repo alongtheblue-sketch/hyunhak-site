@@ -1,0 +1,11 @@
+# 재생성 가능 산출과 대용량 입력은 추적하지 않는다 (2026-09-20). 재생성 = python3 build_r3.py && node render.mjs r3
+inputs/photo/
+inputs/fonts/*.ttf
+_selftest/
+*/render/_trash/
+*/render/dir*_story*.png
+*/render/dir*_brochure_p-*.png
+!r3/render/dirG_brochure_p-*.png
+!r3/render/dirI_story*.png
+*/render/*@2x.png
+*/astra_*_run.log

@@ -1,0 +1,276 @@
+{
+  "round": "r3",
+  "ts": "2026-09-20T08:20:51.590Z",
+  "dirs": {
+    "dirG": {
+      "story": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirG_story.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "story_promo": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirG_story_promo.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "brochure": {
+        "pdf": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirG_brochure.pdf",
+        "pageCount": 2,
+        "pages": [
+          {
+            "i": 1,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 20,
+              "right": 20,
+              "bottom": 19.6
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          },
+          {
+            "i": 2,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 20.5,
+              "right": 20,
+              "bottom": 20
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          }
+        ],
+        "pdfinfo": {
+          "pages": 2,
+          "size": "612 x 858.96 pts"
+        },
+        "type3": 0,
+        "notEmbedded": 0
+      }
+    },
+    "dirH": {
+      "story": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirH_story.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "story_promo": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirH_story_promo.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "brochure": {
+        "pdf": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirH_brochure.pdf",
+        "pageCount": 2,
+        "pages": [
+          {
+            "i": 1,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 20,
+              "right": 20,
+              "bottom": 20.7
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          },
+          {
+            "i": 2,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 20.5,
+              "right": 20,
+              "bottom": 20
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          }
+        ],
+        "pdfinfo": {
+          "pages": 2,
+          "size": "612 x 858.96 pts"
+        },
+        "type3": 0,
+        "notEmbedded": 0
+      }
+    },
+    "dirI": {
+      "story": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirI_story.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "story_promo": {
+        "png": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirI_story_promo.png",
+        "overflow": {
+          "sw": 1080,
+          "sh": 1920,
+          "over": false
+        },
+        "safezoneHits": [],
+        "smallText": [],
+        "smallCount": 0,
+        "fonts": [
+          "\"HH Sans\", Pretendard, sans-serif",
+          "\"HH Serif\", KoPubBatang, serif"
+        ]
+      },
+      "brochure": {
+        "pdf": "/Users/gregory/Workspace/hyunhak-site/_design/studio_promo_20260920/r3/render/dirI_brochure.pdf",
+        "pageCount": 2,
+        "pages": [
+          {
+            "i": 1,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 19.4,
+              "right": 20,
+              "bottom": 21.1
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          },
+          {
+            "i": 2,
+            "size_mm": [
+              216,
+              303
+            ],
+            "overflow": false,
+            "inner": {
+              "sw": 816,
+              "sh": 1145,
+              "cw": 816,
+              "ch": 1145
+            },
+            "margins_mm": {
+              "left": 20,
+              "top": 20.5,
+              "right": 20,
+              "bottom": 20
+            },
+            "safelineHits": [],
+            "safelineCount": 0,
+            "smallText": []
+          }
+        ],
+        "pdfinfo": {
+          "pages": 2,
+          "size": "612 x 858.96 pts"
+        },
+        "type3": 0,
+        "notEmbedded": 0
+      }
+    }
+  }
+}

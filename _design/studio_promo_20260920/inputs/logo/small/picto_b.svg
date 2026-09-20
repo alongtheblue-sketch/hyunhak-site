@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+<title>현학적 연구소 — 소형 픽토그램 B (최소판) · 먹</title>
+<g fill="#312E2E">
+<path d="M43 13 L57 13 L59 27 L41 27 Z"/>
+<rect x="5" y="27" width="90" height="6.5" rx="3.2"/>
+<path fill-rule="evenodd" d="M50 41 C63 41 71 54 90 87 L10 87 C29 54 37 41 50 41 Z M50 60 L32 55 L32 73 L50 78 L68 73 L68 55 Z"/>
+</g>
+<path d="M50 60 L50 78" stroke="#312E2E" stroke-width="4"/>
+</svg>

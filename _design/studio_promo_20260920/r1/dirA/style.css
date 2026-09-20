@@ -1,0 +1,115 @@
+:root {
+  --serif: 'HH Serif';
+  --sans: 'HH Sans';
+  --ink: #312E2E;
+  --paper: #EFE9DC;
+  --gray: #696561;
+  --verm: #BC3529;
+  --ko-tracking-body: -0.01em;
+  --ko-tracking-display: -0.04em;
+  --ko-tracking-print: -0.025em;
+  --ko-leading-body: 1.7;
+  --ko-leading-display: 1.3;
+  --ko-leading-caption: 1.6;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; }
+body { font-family: var(--sans); color: var(--ink); background: var(--paper); font-weight: 400; font-feature-settings: "halt" 1, "palt" 1, "kern" 1; font-variant-numeric: tabular-nums; }
+h1, h2, h3, p, figure, dl, dd, ol { margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: var(--ko-tracking-display); line-height: var(--ko-leading-display); }
+img { display: block; height: auto; }
+.url, .email { overflow-wrap: anywhere; }
+.logo-full { aspect-ratio: 1124 / 1136; background: currentColor; -webkit-mask: url('../../inputs/logo/logo_full.svg') center / contain no-repeat; mask: url('../../inputs/logo/logo_full.svg') center / contain no-repeat; }
+.picto { width: 20px; height: 20px; background: var(--ink); -webkit-mask: url('../../inputs/logo/small/picto_a.svg') center / contain no-repeat; mask: url('../../inputs/logo/small/picto_a.svg') center / contain no-repeat; }
+
+/* Story. All text and logo bounds remain between y=250 and y=1420. */
+html.story-document, body.story { width: 1080px; height: 1920px; margin: 0; overflow: hidden; }
+.story { background: var(--ink); color: var(--paper); font-size: 40px; line-height: 1.55; letter-spacing: var(--ko-tracking-body); word-break: keep-all; overflow-wrap: normal; }
+.story-canvas { width: 1080px; height: 1920px; position: relative; }
+.story-brand { position: absolute; left: 96px; top: 272px; height: 144px; color: var(--paper); }
+.story-rule { position: absolute; left: 288px; right: 96px; top: 416px; height: 2px; background: var(--paper); }
+.story h1 { position: absolute; top: 472px; left: 96px; right: 96px; font-size: 96px; font-weight: 700; line-height: 1.2; letter-spacing: -0.04em; }
+.story-subtitle { position: absolute; top: 880px; left: 96px; right: 96px; font-size: 40px; line-height: 1.55; }
+.story-facts { position: absolute; top: 1120px; left: 96px; right: 96px; display: grid; grid-template-columns: 460px 396px; column-gap: 32px; }
+.story-facts dt { font-size: 32px; line-height: 1.5; white-space: nowrap; }
+.story-facts dd { margin-top: 8px; font-size: 80px; line-height: 1.15; font-weight: 600; letter-spacing: -0.04em; }
+.story-facts .story-fact-primary dd { font-size: 112px; line-height: 1; }
+.story-facts dd span { font-size: 36px; font-weight: 400; margin-left: 8px; letter-spacing: -0.01em; }
+.story-url { position: absolute; top: 1344px; left: 96px; font-size: 32px; line-height: 1.5; }
+.link-sticker-zone { position: absolute; left: 0; top: 1420px; width: 1080px; height: 160px; }
+
+/* Print. Eight columns, 5 mm gutters, equal 20 mm trim margins. */
+@page { size: 216mm 303mm; margin: 0; }
+.brochure { font-size: 9.5pt; line-height: var(--ko-leading-body); letter-spacing: var(--ko-tracking-print); word-break: keep-all; overflow-wrap: break-word; widows: 3; orphans: 3; }
+.brochure h1, .brochure h2, .brochure h3 { word-break: keep-all; overflow-wrap: break-word; }
+.brochure p, .brochure td { widows: 3; orphans: 3; }
+.page { width: 216mm; height: 303mm; overflow: hidden; position: relative; page-break-after: always; break-after: page; background: var(--paper); }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.page > .wrap { position: absolute; inset: 23mm; display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 5mm; }
+.wrap > * { flex-shrink: 0; }
+.front-field { position: absolute; inset: 0 0 auto; height: 67mm; background: var(--ink); }
+.mast { position: absolute; inset: 0 0 auto; height: 13mm; display: flex; align-items: flex-start; justify-content: space-between; color: var(--paper); }
+.mast h2 { font-size: 13.435pt; }
+.mast p { font-size: 9.5pt; line-height: 1.7; }
+.mast .url { font-size: 9.5pt; text-align: right; }
+.front-hero { position: absolute; top: 20mm; left: 0; right: 0; color: var(--paper); }
+.front-hero h1 { font-size: 38pt; line-height: 1.3; white-space: nowrap; }
+.walkthrough { position: absolute; left: 0; right: 0; top: 52mm; height: 111mm; }
+.front-subtitle { font-size: 10.5pt; line-height: 1.7; }
+.screen-and-steps { position: absolute; top: 14mm; left: 0; right: 0; display: grid; grid-template-columns: 82.5mm 82.5mm; gap: 5mm; }
+.prep-screen img { width: 82.5mm; }
+figcaption { font-size: 7.5pt; line-height: 1.6; letter-spacing: -0.01em; color: var(--gray); }
+.prep-screen figcaption { padding-top: 2mm; }
+.steps { list-style: none; padding: 0; display: flex; flex-direction: column; gap: 5mm; }
+.steps li { flex-shrink: 0; display: grid; grid-template-columns: 7mm 1fr; column-gap: 3mm; }
+.step-number { color: var(--ink); font-size: 13.435pt; font-weight: 600; line-height: 1.3; }
+.step-name { font-weight: 700; font-size: 9.5pt; line-height: 1.7; }
+.step-note { font-size: 9.5pt; line-height: 1.7; color: var(--gray); }
+.exam-format { position: absolute; top: 83mm; left: 0; right: 0; display: grid; grid-template-columns: 38.75mm 126.25mm; gap: 5mm; }
+.exam-format h2 { font-size: 13.435pt; padding-top: 1mm; }
+table { border-collapse: collapse; width: 100%; table-layout: fixed; border-top: 0.5pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); font-size: 9.5pt; line-height: 1.7; }
+thead { border-bottom: 0.5pt solid var(--ink); }
+th, td { text-align: left; vertical-align: top; font-weight: 400; padding: 0 1.5mm; overflow-wrap: normal; }
+th { font-weight: 600; }
+th:first-child, td:first-child { padding-left: 0; }
+th:last-child, td:last-child { padding-right: 0; }
+.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.nowrap { white-space: nowrap; }
+.metrics { position: absolute; left: 0; right: 0; top: 174mm; border-top: 0.5pt solid var(--ink); border-bottom: 0.5pt solid var(--ink); display: grid; grid-template-columns: 1.16fr 1fr 1fr 1fr 1fr 1fr; padding: 5.5mm 0 5mm; column-gap: 2mm; }
+.metrics dt { font-size: 7.5pt; line-height: 1.6; white-space: nowrap; }
+.metrics dd { font-size: 19pt; font-weight: 600; line-height: 1.3; letter-spacing: -0.04em; margin-top: 1mm; white-space: nowrap; }
+.metrics dd span { font-size: 9.5pt; margin-left: 0.5mm; font-weight: 400; }
+.signature { position: absolute; left: 0; right: 0; top: 224mm; bottom: 0; }
+.signature .logo-full { position: absolute; left: 0; bottom: 0; height: 27mm; color: var(--ink); }
+.signature-copy { position: absolute; left: 43.75mm; right: 0; top: 0; }
+.signature-copy h2 { font-size: 13.435pt; margin-bottom: 2mm; }
+.signature-meta { position: absolute; left: 43.75mm; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; font-size: 9.5pt; line-height: 1.7; }
+.back-heading { position: absolute; inset: 0 0 auto; display: flex; justify-content: space-between; align-items: flex-start; }
+.back-heading h1 { font-size: 19pt; line-height: 1.3; }
+.back-heading p { font-size: 9.5pt; line-height: 1.7; text-align: right; }
+.units { position: absolute; left: 0; right: 0; top: 13mm; }
+.units th, .units td { white-space: nowrap; }
+.units .group-start td { border-top: 0.25pt solid var(--gray); }
+.comparison { position: absolute; left: 0; right: 0; top: 95mm; }
+.comparison h2 { font-size: 13.435pt; margin-bottom: 2mm; }
+.comparison td, .comparison th { padding-top: 0.15mm; padding-bottom: 0.15mm; }
+.comparison .price { font-weight: 700; text-align: right; white-space: nowrap; color: var(--ink); }
+.comparison td { line-height: 1.7; }
+.correction { position: absolute; left: 0; right: 0; top: 169mm; }
+.correction h2 { font-size: 13.435pt; display: inline; margin-right: 4mm; }
+.correction .correction-stages { display: inline; }
+.correction .score { margin-top: 1.5mm; font-size: 9.5pt; line-height: 1.7; }
+.faq { position: absolute; left: 0; right: 0; top: 189mm; display: grid; grid-template-columns: 38.75mm 126.25mm; column-gap: 5mm; }
+.faq h2 { font-size: 13.435pt; }
+.faq dl > div { display: grid; grid-template-columns: 25mm 1fr; gap: 3mm; }
+.faq dt { font-weight: 600; }
+.contact { position: absolute; left: 0; right: 0; top: 223mm; }
+.contact-title { display: flex; align-items: center; gap: 3mm; height: 6.5mm; }
+.contact-title h2 { font-size: 13.435pt; }
+.contact-copy { width: 110mm; }
+.contact-copy p { font-size: 9.5pt; line-height: 1.7; }
+.contact-copy .address { font-size: 9.5pt; }
+.qr-block { position: absolute; top: 0; right: 0; width: 59mm; }
+.qr { width: 20mm; height: 20mm; object-fit: contain; margin-left: auto; font-size: 0; }
+.qr-block figcaption { margin-top: 1.5mm; text-align: right; color: var(--ink); }
+.business { position: absolute; left: 0; right: 0; bottom: 0; font-size: 7pt; line-height: 1.2; letter-spacing: -0.025em; white-space: nowrap; }
