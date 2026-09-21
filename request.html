@@ -71,6 +71,16 @@
 @media (max-width:900px){.req .steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:700px){.req .steps{grid-template-columns:1fr}.req .grid2{grid-template-columns:1fr}}
 :where(body.v2) .req .agree,:where(body.v2) .req .mailbox{border-color:var(--edge, var(--hair))}
+/* critic r2 반영 */
+.req .paynote{font-size:var(--t-xs)}
+.req .agree{min-height:var(--tap);align-items:center}
+.req .fe{margin-top:6px;font-size:var(--t-xs);line-height:var(--lh-body);color:var(--seal);font-weight:600;max-width:none}
+.req [aria-invalid="true"]{border-color:var(--seal)}
+.req .nojs{border:var(--rule-strong);padding:var(--s3);margin-bottom:var(--s4);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--ink)}
+.req .done .no{font-family:var(--mono);font-weight:500}
+.req select#rqStatus{appearance:none;-webkit-appearance:none;padding-right:44px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6.5l4 4 4-4' stroke='%23312E2E' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 16px center;background-size:14px}
 </style>
 </head>
 <body class="v2">
@@ -137,6 +147,7 @@
   <!-- aeo-slot -->
   <!-- aeo --><p class="aeo-answer">학교별 면접 질문지 제작 의뢰는 생기부와 지원 대학 요강으로 대학별 면접 질문지를 만드는 상품입니다. 질문지만 1개 학교 100,000원.</p><!-- /aeo -->
    </div>
+    <div class="acts"><a class="btn" href="#form">의뢰서 쓰기 <span class="ar" aria-hidden="true">&rarr;</span></a></div>
   </div>
 </section>
 
@@ -169,16 +180,17 @@
   <section class="blk" id="form">
     <div class="sh"><div><h2>의뢰서</h2><p>연락처와 지원 학교를 적어 보내 주세요.</p></div></div>
     <p class="formnote" id="reqWho">이미 결제하신 회원도 같은 의뢰서를 작성합니다.</p>
-    <form id="reqForm" novalidate>
+    <noscript><p class="nojs">이 의뢰서는 스크립트가 켜져야 보낼 수 있습니다. 대신 아래 양식으로 admin@hyunhak.com 에 보내 주세요.</p></noscript>
+    <form id="reqForm" action="#record" method="get" novalidate>
       <div class="grid2">
-        <div class="field"><label for="rqName">이름 (필수)</label><input id="rqName" type="text" autocomplete="name" maxlength="40" placeholder="학생 이름"></div>
-        <div class="field"><label for="rqPhone">휴대전화 (필수)</label><input id="rqPhone" type="tel" autocomplete="tel" inputmode="numeric" maxlength="20" placeholder="010-0000-0000"></div>
+        <div class="field"><label for="rqName">이름 (필수)</label><input id="rqName" type="text" autocomplete="name" maxlength="40" placeholder="학생 이름" required aria-required="true" aria-describedby="feName"><p class="fe" id="feName" hidden></p></div>
+        <div class="field"><label for="rqPhone">휴대전화 (필수)</label><input id="rqPhone" type="tel" autocomplete="tel" inputmode="numeric" maxlength="20" placeholder="010-0000-0000" required aria-required="true" aria-describedby="fePhone"><p class="fe" id="fePhone" hidden></p></div>
       </div>
-      <div class="field"><label for="rqEmail">이메일 (선택)</label><input id="rqEmail" type="email" autocomplete="email" maxlength="120" placeholder="생기부를 보내실 주소"></div>
+      <div class="field"><label for="rqEmail">이메일 (선택)</label><input id="rqEmail" type="email" autocomplete="email" maxlength="120" placeholder="생기부를 보내실 주소" aria-describedby="feEmail"><p class="fe" id="feEmail" hidden></p></div>
       <div class="field">
         <label for="rqUni1">지원 학교 (필수, 최대 6곳)</label>
         <div class="unis">
-          <input id="rqUni1" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 1">
+          <input id="rqUni1" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 1" required aria-required="true" aria-describedby="feUni">
           <input id="rqUni2" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 2">
           <input id="rqUni3" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 3">
           <input id="rqUni4" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 4">
@@ -186,42 +198,29 @@
           <input id="rqUni6" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 6">
         </div>
         <p class="help">첫 칸은 반드시 적어 주세요. 나머지는 지원하는 만큼만 적으시면 됩니다.</p>
+        <p class="fe" id="feUni" hidden></p>
       </div>
       <div class="grid2">
         <div class="field"><label for="rqStatus">구분 (필수)</label>
-          <select id="rqStatus">
+          <select id="rqStatus" required aria-required="true" aria-describedby="feStatus">
             <option value="">구분 선택</option>
             <option value="hs3">고3 재학</option>
             <option value="nsu">N수(졸업생)</option>
-          </select></div>
-        <div class="field"><label for="rqSchool" id="rqSchoolLb">현재 고교 (필수)</label><input id="rqSchool" type="text" maxlength="40" placeholder="예: 가나고등학교"></div>
+          </select><p class="fe" id="feStatus" hidden></p></div>
+        <div class="field"><label for="rqSchool" id="rqSchoolLb">현재 고교 (필수)</label><input id="rqSchool" type="text" maxlength="40" placeholder="예: 가나고등학교" required aria-required="true" aria-describedby="feSchool"><p class="fe" id="feSchool" hidden></p></div>
       </div>
       <div class="check" id="rqFbRow"><input type="checkbox" id="rqFeedback"><label for="rqFeedback">첨삭과 예상 꼬리질문까지 받겠습니다 (400,000원 추가)</label></div>
       <div class="field" style="margin-top:var(--s4)"><label for="rqMemo">요청사항 (선택)</label><textarea id="rqMemo" rows="5" maxlength="500" placeholder="바라는 점이나 일정이 있으면 적어 주세요"></textarea></div>
-      <div class="check agree" id="rqAgreeRow"><input type="checkbox" id="rqAgree"><label for="rqAgree"><span>연락을 위해 이름, 휴대전화, 이메일을 수집하며 의뢰 처리 뒤 1년 보관합니다 (필수)</span> <a class="tlink" href="privacy.html">개인정보처리방침</a></label></div>
-      <div class="acts"><button type="submit" class="btn sm" id="rqSend">의뢰서 보내기</button><p class="msgs" id="rqMsg" role="status" aria-live="polite"></p></div>
+      <div class="check agree" id="rqAgreeRow"><input type="checkbox" id="rqAgree" required aria-required="true" aria-describedby="feAgree"><label for="rqAgree"><span>연락을 위해 이름, 휴대전화, 이메일을 수집하며 의뢰 처리 뒤 1년 보관합니다 (필수)</span> <a class="tlink" href="privacy.html">개인정보처리방침</a></label></div>
+      <p class="fe" id="feAgree" hidden></p>
+      <div class="acts"><button type="submit" class="btn sm" id="rqSend">의뢰서 보내기</button><p class="msgs" id="rqMsg" role="alert"></p></div>
     </form>
 
     <div class="done" id="rqDone" hidden tabindex="-1">
       <h2>의뢰서를 받았습니다. 곧 컨설턴트 현학자가 직접 연락드립니다.</h2>
-      <p>연락을 기다리시는 동안 생기부를 이메일로 보내 주시면 제작이 빨라집니다.</p>
-      <div class="mailbox">
-        <dl class="dl">
-          <dt>받는 곳</dt><dd><a href="mailto:admin@hyunhak.com">admin@hyunhak.com</a></dd>
-          <dt>첨부</dt><dd>생기부 PDF (나이스 출력본)</dd>
-        </dl>
-        <p>본문에 아래 양식을 그대로 적어 주세요.</p>
-        <pre class="tpl" id="rqTplDone">이름:
-학교(현재 고교 또는 출신 고교, N수 여부):
-지원학교/전형/학과:
-바라는 점:
-질문지 제작을 위한 개인정보 활용 동의 여부: 동의함 / 동의하지 않음</pre>
-        <div class="mailacts">
-          <a class="btn sm" id="rqMailDone" href="mailto:admin@hyunhak.com">메일 앱으로 열기</a>
-          <button type="button" class="tlink" data-copy-tpl="rqTplDone">양식 복사</button>
-        </div>
-        <p class="warn">동의하지 않음으로 보내시면 생기부를 열지 않고 삭제하며 질문지를 만들 수 없습니다.</p>
-      </div>
+      <p id="rqDoneNo" hidden>접수번호 <b class="no"></b></p>
+      <p>생기부는 아래 생기부 보내기 절의 양식으로 admin@hyunhak.com 에 보내 주세요.</p>
+      <p><a class="tlink" href="#record">생기부 보내기로 이동 <span class="ar" aria-hidden="true">&rarr;</span></a></p>
     </div>
   </section>
 
@@ -238,7 +237,7 @@
 바라는 점:
 질문지 제작을 위한 개인정보 활용 동의 여부: 동의함 / 동의하지 않음</pre>
     <div class="mailacts">
-      <a class="btn sm" id="rqMail" href="mailto:admin@hyunhak.com">메일 앱으로 열기</a>
+      <a class="tlink" id="rqMail" href="mailto:admin@hyunhak.com">메일 앱으로 열기</a>
       <button type="button" class="tlink" data-copy-tpl="rqTpl">양식 복사</button>
       <p class="msgs" id="rqCopyMsg" role="status" aria-live="polite"></p>
     </div>
@@ -294,31 +293,59 @@
 <script>
 /* 학교별 면접 질문지 제작 의뢰 (request.html).
    폼은 회원과 비회원이 같은 마크업이고, 로그인 상태면 이름, 이메일, 전화를 채워 두되 수정할 수 있게 둔다.
-   접수는 POST /api/service-requests. API 가 없거나 실패해도 면은 그대로 서고 생기부 안내 절은 계속 보인다. */
+   접수는 POST /api/service-requests. API 가 없거나 실패해도 면은 그대로 서고 생기부 안내 절은 계속 보인다.
+   양식 블록은 #record 한 곳에만 둔다. 접수에 성공하면 접수번호를 그 양식 첫 줄과 메일 제목에 채운다. */
 (function () {
   var MAIL = 'admin@hyunhak.com';
   var TPL = ['이름:', '학교(현재 고교 또는 출신 고교, N수 여부):', '지원학교/전형/학과:', '바라는 점:',
              '질문지 제작을 위한 개인정보 활용 동의 여부: 동의함 / 동의하지 않음'].join('\n');
+  var reqId = '';
   function $(s) { return document.querySelector(s); }
   function say(el, text, err) { if (!el) return; el.textContent = text || ''; el.classList.toggle('err', !!err); }
   function okEmail(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
   function digits(v) { return String(v || '').replace(/[^0-9]/g, ''); }
 
-  // 메일 링크: 제목은 [질문지 의뢰] 뒤에 이름, 본문은 위 양식 그대로
+  // 양식 본문: 접수번호가 있으면 첫 줄에 붙이고, 없으면 그 줄을 빼고 그대로 둔다
+  function tplText() { return (reqId ? '접수번호: ' + reqId + '\n' : '') + TPL; }
+  // 메일 링크: 제목은 [질문지 의뢰] 뒤에 이름과 접수번호, 본문은 위 양식 그대로
   function mailHref(name) {
-    var subject = '[질문지 의뢰] ' + (name || '이름');
-    return 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(TPL);
+    var subject = '[질문지 의뢰] ' + (name || '이름') + (reqId ? ' ' + reqId : '');
+    return 'mailto:' + MAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(tplText());
   }
   function syncMail() {
     var name = ($('#rqName') && $('#rqName').value.trim()) || '';
-    ['#rqMail', '#rqMailDone'].forEach(function (sel) { var a = $(sel); if (a) a.href = mailHref(name); });
+    var a = $('#rqMail'); if (a) a.href = mailHref(name);
+    var pre = $('#rqTpl'); if (pre) pre.textContent = tplText();
+  }
+
+  // 필드 오류: 요약 한 줄(role=alert) + 그 필드의 aria-invalid + 바로 아래 붉은 한 줄 + 초점 이동
+  function clearField(el) {
+    if (!el) return;
+    el.removeAttribute('aria-invalid');
+    var fe = document.getElementById(el.getAttribute('aria-describedby') || '');
+    if (fe) { fe.textContent = ''; fe.hidden = true; }
+  }
+  function clearAll() {
+    ['#rqName', '#rqPhone', '#rqEmail', '#rqUni1', '#rqStatus', '#rqSchool', '#rqMemo', '#rqAgree']
+      .forEach(function (sel) { clearField($(sel)); });
+  }
+  function fail(sel, text) {
+    var el = $(sel);
+    say($('#rqMsg'), text, true);
+    if (el) {
+      el.setAttribute('aria-invalid', 'true');
+      var fe = document.getElementById(el.getAttribute('aria-describedby') || '');
+      if (fe) { fe.textContent = text; fe.hidden = false; }
+      try { el.focus(); } catch (e) {}
+    }
+    return false;
   }
 
   function initCopy() {
     document.querySelectorAll('[data-copy-tpl]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var pre = document.getElementById(btn.getAttribute('data-copy-tpl'));
-        var text = pre ? pre.textContent : TPL;
+        var text = pre ? pre.textContent : tplText();
         var done = function (ok) { say($('#rqCopyMsg'), ok ? '양식을 복사했습니다.' : '복사하지 못했습니다. 양식을 직접 옮겨 적어 주세요.', !ok); };
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); });
@@ -340,6 +367,7 @@
     var msg = $('#rqMsg'), send = $('#rqSend'), done = $('#rqDone');
     form.addEventListener('submit', async function (ev) {
       ev.preventDefault();
+      clearAll();
       var name = $('#rqName').value.trim();
       var phone = $('#rqPhone').value.trim();
       var email = $('#rqEmail').value.trim();
@@ -351,14 +379,14 @@
         var v = $('#rqUni' + i).value.trim();
         if (v) unis.push(v.slice(0, 60));
       }
-      if (!name) return say(msg, '이름을 적어 주세요.', true);
-      if (digits(phone).length < 9) return say(msg, '연락 가능한 휴대전화 번호를 적어 주세요.', true);
-      if (email && !okEmail(email)) return say(msg, '이메일 주소를 확인해 주세요.', true);
-      if (!unis.length) return say(msg, '지원 학교를 한 곳 이상 적어 주세요.', true);
-      if (!status) return say(msg, '고3 재학인지 N수인지 골라 주세요.', true);
-      if (!school) return say(msg, (status === 'nsu' ? '출신' : '현재') + ' 고교를 적어 주세요.', true);
-      if (memo.length > 500) return say(msg, '요청사항은 500자 이내로 적어 주세요.', true);
-      if (!$('#rqAgree').checked) return say(msg, '개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.', true);
+      if (!name) return fail('#rqName', '이름을 적어 주세요.');
+      if (digits(phone).length < 9) return fail('#rqPhone', '연락 가능한 휴대전화 번호를 적어 주세요.');
+      if (email && !okEmail(email)) return fail('#rqEmail', '이메일 주소를 확인해 주세요.');
+      if (!unis.length) return fail('#rqUni1', '지원 학교를 한 곳 이상 적어 주세요.');
+      if (!status) return fail('#rqStatus', '고3 재학인지 N수인지 골라 주세요.');
+      if (!school) return fail('#rqSchool', (status === 'nsu' ? '출신' : '현재') + ' 고교를 적어 주세요.');
+      if (memo.length > 500) return fail('#rqMemo', '요청사항은 500자 이내로 적어 주세요.');
+      if (!$('#rqAgree').checked) return fail('#rqAgree', '개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.');
 
       var payload = {
         name: name, phone: phone, email: email,
@@ -367,15 +395,18 @@
       };
       send.disabled = true; say(msg, '보내는 중');
       try {
-        await HH.api('/api/service-requests', { method: 'POST', body: JSON.stringify(payload) });
+        var r = await HH.api('/api/service-requests', { method: 'POST', body: JSON.stringify(payload) });
         say(msg, '');
+        reqId = r && r.id != null ? String(r.id) : '';
         syncMail();
         form.hidden = true;
         var note = $('#reqWho'); if (note) note.hidden = true;
+        var no = $('#rqDoneNo');
+        if (no) { if (reqId) { no.querySelector('.no').textContent = reqId; no.hidden = false; } else { no.hidden = true; } }
         if (done) { done.hidden = false; done.focus(); }
         try { if (window.HH_TRACK) HH_TRACK('generate_lead', { content: '학교별 면접 질문지 제작 의뢰' }); } catch (e) {}
       } catch (e) {
-        if (e.status === 429) say(msg, '의뢰서는 시간당 몇 건까지만 접수됩니다. 잠시 후 다시 보내 주세요.', true);
+        if (e.status === 429) say(msg, '의뢰서는 시간당 5건까지 접수됩니다. 잠시 후 다시 보내 주세요.', true);
         else if (e.status === 400) say(msg, (e.message || '입력 내용을 확인해 주세요') + '.', true);
         else say(msg, '지금은 접수할 수 없습니다. ' + MAIL + ' 으로 보내 주세요.', true);
         send.disabled = false;
@@ -383,6 +414,13 @@
     });
     var nameEl = $('#rqName');
     if (nameEl) nameEl.addEventListener('input', syncMail);
+    // 고치는 동안 그 필드의 오류 표시는 지운다
+    ['#rqName', '#rqPhone', '#rqEmail', '#rqUni1', '#rqSchool', '#rqMemo'].forEach(function (sel) {
+      var el = $(sel); if (el) el.addEventListener('input', function () { clearField(el); });
+    });
+    ['#rqStatus', '#rqAgree'].forEach(function (sel) {
+      var el = $(sel); if (el) el.addEventListener('change', function () { clearField(el); });
+    });
   }
 
   async function prefill() {
