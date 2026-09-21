@@ -190,12 +190,12 @@
       <div class="field">
         <label for="rqUni1">지원 학교 (필수, 최대 6곳)</label>
         <div class="unis">
-          <input id="rqUni1" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 1" required aria-required="true" aria-describedby="feUni">
-          <input id="rqUni2" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 2">
-          <input id="rqUni3" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 3">
-          <input id="rqUni4" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 4">
-          <input id="rqUni5" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 5">
-          <input id="rqUni6" type="text" maxlength="60" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 6">
+          <input id="rqUni1" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 1" required aria-required="true" aria-describedby="feUni">
+          <input id="rqUni2" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 2">
+          <input id="rqUni3" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 3">
+          <input id="rqUni4" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 4">
+          <input id="rqUni5" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 5">
+          <input id="rqUni6" type="text" maxlength="40" placeholder="예: 고려대학교 학업우수전형" aria-label="지원 학교 6">
         </div>
         <p class="help">첫 칸은 반드시 적어 주세요. 나머지는 지원하는 만큼만 적으시면 됩니다.</p>
         <p class="fe" id="feUni" hidden></p>
@@ -377,7 +377,7 @@
       var unis = [];
       for (var i = 1; i <= 6; i++) {
         var v = $('#rqUni' + i).value.trim();
-        if (v) unis.push(v.slice(0, 60));
+        if (v) unis.push(v.slice(0, 40));   // API UNIV_MAX 40 과 같은 상한
       }
       if (!name) return fail('#rqName', '이름을 적어 주세요.');
       if (digits(phone).length < 9) return fail('#rqPhone', '연락 가능한 휴대전화 번호를 적어 주세요.');
