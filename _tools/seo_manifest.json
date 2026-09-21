@@ -26,7 +26,13 @@
           "name": "제시문 면접 스튜디오 (연세대, 고려대)",
           "path": "/studio.html",
           "price": "단위 전권 495,000원(인강 포함), 지문 1편 33,000원(응시 5회), 공통 풀이 인강 220,000원",
-          "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단."
+          "desc": "학교별 기출 제시문으로 실전 규격 온라인 응시, 전면 카메라 녹화, 전사와 진단과 재구성의 첨삭 세 단. 혼자서도 응시부터 첨삭까지 완성하며 고려대 고른기회전형과 연세대 미래캠퍼스를 포함한 열두 단위입니다."
+        },
+        {
+          "name": "학교별 면접 질문지 제작 의뢰",
+          "path": "/request.html",
+          "price": "질문지만 1개 학교 100,000원, 학교 추가 1곳마다 50,000원, 첨삭과 예상 꼬리질문 400,000원",
+          "desc": "내 생기부와 지원 대학 요강을 바탕으로 그 대학 면접에서 나올 질문지를 대학별로 만듭니다. 대치동 13년 경력 입시 컨설턴트 현학자가 직접 제작하고 직접 첨삭합니다. 4개 학교 기준 질문지 약 3일."
         }
       ],
       "free": [
@@ -79,7 +85,12 @@
         "가천대 면접",
         "가톨릭대 면접",
         "부산대 면접",
-        "경북대 면접"
+        "경북대 면접",
+        "면접 질문지 제작",
+        "생기부 면접 예상질문",
+        "학종 면접 질문 만들기",
+        "대학별 면접 질문지",
+        "면접 첨삭"
       ],
       "contact": "admin@hyunhak.com"
     },
@@ -2653,8 +2664,8 @@
       "answer": ""
     },
     "studio.html": {
-      "title": "연세대 고려대 제시문 면접 스튜디오, 대입 모의면접 촬영 응시와 첨삭 세 단, 현학적 연구소",
-      "description": "연세대, 고려대 기출 규격으로 새로 저작한 제시문으로 치르는 대입 모의면접 스튜디오. 지문 1편 33,000원에 5회 응시, 단위 전권 495,000원 인강 포함. 첨삭 세 단.",
+      "title": "혼자서도 완성하는 연세대 고려대 제시문 면접 스튜디오, 고른기회와 미래캠퍼스 포함, 촬영 응시와 첨삭 세 단",
+      "description": "혼자서도 응시부터 첨삭 세 단까지 완성하는 연세대, 고려대 제시문 면접 스튜디오. 고려대 고른기회전형과 연세대 미래캠퍼스 포함, 단위 전권 495,000원.",
       "type": "product",
       "priority": 0.9,
       "changefreq": "weekly",
@@ -2702,6 +2713,48 @@
             "offer_url": "/studio.html"
           },
           {
+            "name": "고려대 고른기회전형 인문 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-eq-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "고려대 고른기회전형 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-eq-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 자율융합 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-free",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 디자인 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-design",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 첨단 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-tech",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 보건 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-health",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 국제 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-intl",
+            "offer_url": "/studio.html"
+          },
+          {
             "name": "스튜디오 지문 이용권 1편 (응시 5회)",
             "price": 33000,
             "sku": "passage-single",
@@ -2716,7 +2769,7 @@
         ],
         "return_kind": "pass"
       },
-      "answer": "제시문 면접 스튜디오는 연세대, 고려대 제시문을 온라인으로 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 지문 1편 33,000원, 단위 전권 495,000원 인강 포함.",
+      "answer": "혼자서도 응시부터 첨삭 세 단까지 완성합니다. 고려대 고른기회전형과 연세대 미래캠퍼스를 포함한 열두 단위를 촬영 응시합니다.",
       "keywords": [
         "제시문 면접 스튜디오",
         "모의면접",
@@ -2834,8 +2887,8 @@
       ]
     },
     "programs/studio.html": {
-      "title": "연세대 고려대 제시문 면접 스튜디오 소개, 대입 모의면접 기출 390세트 촬영 응시와 세 단 첨삭",
-      "description": "연세대, 고려대 제시문 면접 스튜디오. 기출 규격으로 새로 저작한 390세트를 실전 규격으로 촬영 응시, 세 단 첨삭. 단위 전권 495,000원 인강 포함, 13년차 입시 컨설턴트 운영.",
+      "title": "혼자서도 완성하는 제시문 면접 스튜디오 소개, 고려대 고른기회와 연세대 미래캠퍼스 포함, 기출 규격 390세트",
+      "description": "혼자서도 응시부터 첨삭 세 단까지 완성하는 제시문 면접 스튜디오 소개. 고려대 고른기회전형과 연세대 미래캠퍼스를 포함한 열두 단위 390세트.",
       "type": "product",
       "priority": 0.8,
       "changefreq": "monthly",
@@ -2889,6 +2942,48 @@
             "offer_url": "/studio.html"
           },
           {
+            "name": "고려대 고른기회전형 인문 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-eq-hum",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "고려대 고른기회전형 자연 전권 이용권",
+            "price": 495000,
+            "sku": "pass-korea-eq-sci",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 자율융합 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-free",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 디자인 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-design",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 첨단 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-tech",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 보건 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-health",
+            "offer_url": "/studio.html"
+          },
+          {
+            "name": "연세대 미래캠퍼스 국제 전권 이용권",
+            "price": 495000,
+            "sku": "pass-yonsei-mirae-intl",
+            "offer_url": "/studio.html"
+          },
+          {
             "name": "스튜디오 지문 이용권 1편 (응시 5회)",
             "price": 33000,
             "sku": "passage-single",
@@ -2903,7 +2998,7 @@
         ],
         "return_kind": "pass"
       },
-      "answer": "제시문 면접 스튜디오는 연세대, 고려대 기출 규격 390세트를 촬영 응시하고 세 단 첨삭을 받는 대입 모의면접 과정입니다. 단위 전권 495,000원 인강 포함, 지문 1편 33,000원.",
+      "answer": "혼자서도 응시부터 첨삭까지 완성하는 과정입니다. 고려대 고른기회전형과 연세대 미래캠퍼스를 포함해 열두 단위 390세트를 촬영 응시합니다.",
       "keywords": [
         "제시문 면접",
         "제시문 면접 스튜디오",
@@ -3348,7 +3443,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/yonsei-sci.html": {
@@ -3395,7 +3490,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/yonsei-intl.html": {
@@ -3442,7 +3537,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/yonsei-mirae.html": {
@@ -3490,7 +3585,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/korea-hum.html": {
@@ -3537,7 +3632,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/korea-sci.html": {
@@ -3584,7 +3679,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/korea-eq-hum.html": {
@@ -3631,7 +3726,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "interview/korea-eq-sci.html": {
@@ -3678,7 +3773,7 @@
         ".aeo-answer",
         ".xspec"
       ],
-      "date_modified": "2026-09-16",
+      "date_modified": "2026-09-22",
       "date_published": "2026-09-10"
     },
     "lectures/yonsei-mirae-free.html": {
@@ -3845,6 +3940,37 @@
         "return_kind": "pass"
       },
       "answer": "연세대 미래 국제 풀이법 인강은 공통 풀이 4편과 국제계열 세트 해설 30편, 전 모집단위 공통형 해설 30편으로 이루며 단위 전권 이용권에 포함됩니다."
+    },
+    "request.html": {
+      "title": "학교별 면접 질문지 제작 의뢰, 대치동 13년 경력 현학자 직접 제작과 직접 첨삭 | 현학적 연구소",
+      "description": "내 생기부와 지원 대학 요강으로 그 대학 면접 질문지를 만듭니다. 대치동 13년 경력 입시 컨설턴트 현학자가 직접 제작하고 직접 첨삭합니다.",
+      "type": "hub",
+      "noindex": false,
+      "priority": 0.8,
+      "changefreq": "monthly",
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "학교별 면접 질문지 제작 의뢰",
+          "path": "/request.html"
+        }
+      ],
+      "answer": "학교별 면접 질문지 제작 의뢰는 생기부와 지원 대학 요강으로 대학별 면접 질문지를 만드는 상품입니다. 질문지만 1개 학교 100,000원.",
+      "keywords": [
+        "면접 질문지 제작",
+        "생기부 면접 예상질문",
+        "학종 면접 질문 만들기",
+        "대학별 면접 질문지",
+        "면접 첨삭",
+        "생기부 면접",
+        "서류기반 면접",
+        "면접 예상문제",
+        "대입 면접컨설팅",
+        "면접 꼬리질문"
+      ]
     }
   }
 }

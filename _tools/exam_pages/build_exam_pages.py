@@ -24,6 +24,11 @@ LOCK = ["채점 기준 세부와 배점 추정", "유형별 모범답안과 첨�
 CONTACT_HOURS = "전화가 연결되지 않으면 고객센터 1:1 문의로 남겨 주세요. 영업일 기준 순차 답변합니다."   # 운영 시간은 사이트 어디에도 공표된 값이 없다 (2026-09-10 실측) → 결재 큐 정보 항목
 SAMPLE_NOTE_BANK = "아래 시험지는 연구소 은행의 자체 저작 예시 세트에서 제시문 일부와 발문을 옮긴 것입니다. 대학 기출 지문이 아닙니다."
 SAMPLE_NOTE_CARD = "아래 시험지는 대학이 공개한 선행학습영향평가 보고서의 2026 문항카드에서 옮긴 것입니다. 제시문은 요약이고 발문은 원문 그대로입니다."
+# 2026-09-22: 고른기회 2면과 미래캠퍼스 1면에 스튜디오 판매 안내 한 단락. 문면은 사실 진술 2문장 + 이용권 링크 하나.
+STUDIO_CTA_CODES = {"korea-eq-hum", "korea-eq-sci", "yonsei-mirae"}
+STUDIO_CTA_NOTE = ('<p class="xunote">이 전형의 응시 단위가 면접 스튜디오에서 판매 중입니다. '
+                   '혼자서도 응시부터 첨삭 세 단까지 완성합니다. '
+                   '<a class="tlink" href="../studio.html#plans">이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></p>')
 
 E = lambda s: html.escape(str(s), quote=False)
 def san(s):
@@ -157,6 +162,8 @@ def build_one(code, mod):
                    f'<a class="tlink" href="../programs/studio.html#u-{code}">스튜디오 소개</a>'
                    + lec_link + '</div>')
         badge = '<span class="badge seal">판매 중</span><span class="k">2027학년도 기준</span>'
+    if code in STUDIO_CTA_CODES and not opening:
+        cta += STUDIO_CTA_NOTE
     spec_html, used_notes = spec_rows(f, notes, ratio_idx, opening)
     sib = "".join(f'<li><a href="{c}.html"{" aria-current=\"page\"" if c == code else ""}><span>{E(n)}</span><span class="k">{E(s)}</span></a></li>'
                   for c, n, s in EX.CODES)

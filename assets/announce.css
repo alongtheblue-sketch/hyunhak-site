@@ -1,0 +1,43 @@
+/* 안내 띠 (2026-09-22). 학교별 면접 질문지 제작 의뢰 + 응시 단위 판매 안내.
+   색과 크기는 base.css 토큰만 쓴다. 곡률 0, 그림자 0, 새 색 0.
+   A .abnd = 괘선 띠(본면 적용) / B .abnd2 = 2열 카드 / C .abnd3 = 한 줄 리본. B, C 는 시안 비교용. */
+
+:where(body.v2) .abnd,:where(body.v2) .abnd2,:where(body.v2) .abnd3{border-radius:0;box-shadow:none}
+:where(body.v2) .abnd p,:where(body.v2) .abnd2 p,:where(body.v2) .abnd3 p{max-width:none}
+:where(body.v2) .abnd .go,:where(body.v2) .abnd2 .go,:where(body.v2) .abnd3 a{display:inline-flex;align-items:center;gap:6px;
+  min-height:var(--tap);font-weight:600;font-size:var(--t-sm);color:var(--ink);
+  text-decoration:underline;text-underline-offset:6px;text-decoration-color:var(--hair);white-space:nowrap}
+:where(body.v2) .abnd .go:hover,:where(body.v2) .abnd2 .go:hover,:where(body.v2) .abnd3 a:hover{text-decoration-color:var(--ink)}
+
+/* ── A 괘선 띠 ── */
+:where(body.v2) .abnd{border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4) 0 var(--s3);margin-top:var(--s5)}
+:where(body.v2) .abnd .ln{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3) var(--s4);flex-wrap:wrap}
+:where(body.v2) .abnd .ln+.ln{margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
+:where(body.v2) .abnd h2{font-size:var(--t-h4);letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
+:where(body.v2) .abnd .dot{display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;
+  margin-right:10px;vertical-align:middle}
+:where(body.v2) .abnd .sub{margin-top:var(--s2);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+:where(body.v2) .abnd .ln2{font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+
+/* ── B 2열 카드 ── */
+:where(body.v2) .abnd2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;margin-top:var(--s5);
+  border-top:var(--rule-strong);border-bottom:var(--rule-strong)}
+:where(body.v2) .abnd2>div{padding:var(--s4) var(--s4) var(--s3) 0}
+:where(body.v2) .abnd2>div+div{padding-left:var(--s4);border-left:var(--rule-strong)}
+:where(body.v2) .abnd2 h2{font-size:var(--t-h4);letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
+:where(body.v2) .abnd2 p{margin-top:var(--s2);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+:where(body.v2) .abnd2 .go{margin-top:var(--s2)}
+
+/* ── C 한 줄 리본 ── */
+:where(body.v2) .abnd3{display:flex;align-items:center;justify-content:space-between;gap:var(--s3) var(--s4);flex-wrap:wrap;
+  margin-top:var(--s4);padding-block:var(--s2);border-top:var(--rule);border-bottom:var(--rule)}
+:where(body.v2) .abnd3 p{font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+:where(body.v2) .abnd3 .lk{display:flex;align-items:center;gap:var(--s4);flex-wrap:wrap}
+
+@media (max-width:900px){
+  :where(body.v2) .abnd{margin-top:var(--s4)}
+  :where(body.v2) .abnd .ln{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+  :where(body.v2) .abnd2{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .abnd2>div+div{padding-left:0;border-left:0;border-top:var(--rule)}
+  :where(body.v2) .abnd3{align-items:flex-start;flex-direction:column;gap:var(--s2)}
+}
