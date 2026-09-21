@@ -13,7 +13,8 @@
 :where(body.v2) .abnd{border-top:var(--rule-strong);border-bottom:var(--rule-strong);padding:var(--s4) 0 var(--s3);margin-top:var(--s5)}
 :where(body.v2) .abnd .ln{display:flex;align-items:baseline;justify-content:space-between;gap:var(--s3) var(--s4);flex-wrap:wrap}
 :where(body.v2) .abnd .ln+.ln{margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule)}
-:where(body.v2) .abnd h2{font-size:var(--t-h4);letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
+/* 띠 제목은 p.abndT 다 (2026-09-22 critic P2: 띠가 면 h1 앞에 서므로 h2 면 헤딩 순회가 h2 → h1 로 역전된다). 시안 B 는 h2 그대로. */
+:where(body.v2) .abnd h2,:where(body.v2) .abnd .abndT{font-size:var(--t-h4);font-weight:700;letter-spacing:var(--tr-head);line-height:var(--lh-tight);color:var(--ink);margin:0;max-width:none}
 :where(body.v2) .abnd .dot{display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;
   margin-right:10px;vertical-align:middle}
 :where(body.v2) .abnd .sub{margin-top:var(--s2);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
