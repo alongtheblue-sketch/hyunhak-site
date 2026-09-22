@@ -42,7 +42,7 @@
   --container:1120px;
   --frame:14px;
   --hd-h:72px;
-  --util-h:32px;--promo-h:44px;
+  --util-h:32px;--promo-h:calc(var(--tap) + var(--line));   /* 띠 안쪽 = --tap 48 (2026-09-23 astra 터치 타깃) */
   --line:1px;
   --s-sec:var(--s8);
   --hd-h-sm:65px;        /* 900px 미만 헤더 실측 높이 (row 64 + 괘선 1) */
@@ -148,12 +148,12 @@ body.v2{background:var(--ink)}
   box-shadow:inset 0 -2px 0 transparent;white-space:nowrap;flex:0 0 auto;transition:box-shadow var(--dur-1) var(--ease)}
 :where(body.v2) .gnb a:hover,:where(body.v2) .gnb a.on{box-shadow:inset 0 -2px 0 var(--ink)}
 :where(body.v2) .hd .tools{display:flex;align-items:center;gap:var(--s3);justify-self:end}
-:where(body.v2) .search{display:flex;align-items:center;height:var(--tap);box-shadow:var(--shadow-ui);border-radius:var(--r-pill);background:var(--card);padding:0 2px 0 18px;width:clamp(180px,17vw,240px);flex:0 1 auto}
-:where(body.v2) .search .ph{font-size:var(--t-sm);color:var(--gray);white-space:nowrap;margin-right:8px}
-:where(body.v2) .search input{border:0;background:transparent;font:inherit;font-size:var(--t-base);color:var(--ink);width:100%;outline:none;min-height:44px}
+:where(body.v2) .search{display:flex;align-items:center;height:var(--tap);box-shadow:var(--shadow-ui);border-radius:var(--r-pill);background:var(--card);padding:0 0 0 var(--s3);width:clamp(180px,17vw,240px);flex:0 1 auto}
+:where(body.v2) .search .ph{font-size:var(--t-sm);color:var(--gray);white-space:nowrap;margin-right:var(--s2)}
+:where(body.v2) .search input{border:0;background:transparent;font:inherit;font-size:var(--t-base);color:var(--ink);width:100%;outline:none;min-height:var(--tap)}
 :where(body.v2) .search input:focus-visible{outline:none}
 :where(body.v2) .search:focus-within{box-shadow:inset 0 0 0 2px var(--ink)}   /* 2.4.7 포커스 가시성: 1px 는 hair→ink 변화가 안 보임 (2026-09-06 critic) */
-:where(body.v2) .search button{width:44px;height:44px;border-radius:var(--r-pill);background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:var(--t-sm);font-weight:700;flex:none;transition:background var(--dur-1) var(--ease)}
+:where(body.v2) .search button{width:var(--tap);height:var(--tap);border-radius:var(--r-pill);background:var(--ink);color:var(--paper);display:grid;place-items:center;font-size:var(--t-sm);font-weight:700;flex:none;transition:background var(--dur-1) var(--ease)}
 :where(body.v2) .search button:hover{background:var(--brown)}
 :where(body.v2) .menu{display:none;font-size:var(--t-sm);font-weight:600;min-height:var(--tap);min-width:var(--tap);padding:0 10px;box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-md)}
 :where(body.v2) .mnav{display:none}
@@ -337,7 +337,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .sh p{color:var(--gray);font-size:var(--t-sm);margin-top:6px}
 :where(body.v2) .eyebrow{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);display:block;margin-bottom:var(--s3)}
 :where(body.v2) .crumb{font-size:var(--t-sm);color:var(--gray);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-:where(body.v2) .crumb a{display:inline-flex;align-items:center;min-height:44px}
+:where(body.v2) .crumb a{display:inline-flex;align-items:center;min-height:var(--tap)}
 :where(body.v2) .crumb a:hover{color:var(--ink)}
 
 /* 숫자 밴드: 값은 모노 */
@@ -360,15 +360,18 @@ body.v2{background:var(--ink)}
 
 /* 대학 타일 */
 /* 대학 타일 (2026-09-23 정리: 상자 12장 → 괘선 목록 3열. 학년도와 가격은 타일마다 반복하지 않고 리드 한 문장에 둔다. 상자·그림자·점 0) */
-:where(body.v2) .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--s5);border-top:var(--rule-strong)}
-:where(body.v2) .tile{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);padding:var(--s2) 0;border-bottom:var(--rule);color:var(--ink)}
-:where(body.v2) .tile .n{flex:1;min-width:0;font-weight:600;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;gap:8px;align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+:where(body.v2) .find .search{width:min(100%,28em)}   /* 구역 주 조작은 헤더 유틸(clamp 180~240) 크기를 상속하지 않는다 (critic L3) */
+:where(body.v2) .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--rule-strong);border-bottom:var(--rule-strong)}   /* 열 간격은 gap 이 아니라 타일 우측 패딩: 행 괘선이 거터에서 끊기지 않는다 (critic L4) */
+:where(body.v2) .tile{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);padding:var(--s2) var(--s5) var(--s2) 0;border-top:var(--rule);color:var(--ink)}
+:where(body.v2) .tile:nth-child(-n+3){border-top:0}
+:where(body.v2) .tile:nth-child(3n){padding-right:0}
+:where(body.v2) .tile .n{flex:1;min-width:0;font-weight:600;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;gap:var(--s2);align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(body.v2) .tile .n small{font-weight:500;font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .w{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .ar{color:var(--gray);flex:none;transition:transform var(--dur-1) var(--ease),color var(--dur-1) var(--ease)}
-:where(body.v2) .tile:hover .ar{color:var(--ink);transform:translateX(2px)}
+:where(body.v2) .tile:hover .ar{color:var(--ink);transform:translateX(var(--s1))}
 :where(body.v2) .tile.ready .n{color:var(--gray)}
-@media (max-width:600px){:where(body.v2) .tiles{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:37.5em){:where(body.v2) .tiles{grid-template-columns:minmax(0,1fr)} :where(body.v2) .tile{padding-right:0} :where(body.v2) .tile:nth-child(-n+3){border-top:var(--rule)} :where(body.v2) .tile:first-child{border-top:0}}
 
 /* 상품 카드: 그림자 없이 괘선 */
 :where(body.v2) .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
@@ -447,7 +450,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) footer .han{font-family:var(--serif);font-weight:300;color:var(--ink);letter-spacing:.06em}
 :where(body.v2) footer ul{display:flex;flex-direction:column;gap:2px}
 :where(body.v2) footer li{min-height:32px;display:flex;align-items:center}
-:where(body.v2) footer a{display:inline-flex;align-items:center;min-height:var(--tap);min-width:44px}
+:where(body.v2) footer a{display:inline-flex;align-items:center;min-height:var(--tap);min-width:var(--tap)}
 :where(body.v2) footer a:hover{color:var(--ink)}
 :where(body.v2) footer .biz{margin-top:var(--s5);padding-top:var(--s3);border-top:var(--rule);font-size:var(--t-xs);display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
 :where(body.v2) footer .biz img{height:auto}
@@ -486,7 +489,9 @@ body.v2{background:var(--ink)}
   :where(body.v2) .final{grid-template-columns:1fr;padding:var(--s6) var(--s4)}
   :where(body.v2) .sec{padding:var(--s7) 0}
   :where(body.v2) .sec.tight{padding:var(--s6) 0}
-  :where(body.v2) footer .g{grid-template-columns:1fr;gap:var(--s4)}
+  :where(body.v2) footer .g{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s4) var(--s3)}   /* 2026-09-23 astra: 바로가기와 고객센터를 나란히, 브랜드만 전폭 */
+  :where(body.v2) footer .g .ft-brand{grid-column:1/-1}
+  :where(body.v2) footer a{min-width:var(--tap);overflow-wrap:anywhere}
   body.v2{padding-bottom:calc(72px + env(safe-area-inset-bottom))}
   :where(body.v2) .fix{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:6px 8px calc(6px + env(safe-area-inset-bottom));
     background:rgba(var(--paper-rgb),.96);backdrop-filter:blur(10px);border-top:var(--rule-strong)}
@@ -559,16 +564,17 @@ body.v2{background:var(--ink)}
 :where(body.v2) .field .help{font-size:var(--t-sm);color:var(--gray);line-height:1.6}
 :where(body.v2) .field .err{font-size:var(--t-sm);color:var(--ink)}
 :where(body.v2) .pair{display:grid;grid-template-columns:1fr 1fr;gap:0 var(--s4)}
-:where(body.v2) .check{display:flex;align-items:flex-start;gap:12px;padding:14px 0;border-top:var(--rule);cursor:pointer;font-size:var(--t-sm);line-height:1.5}
+:where(body.v2) .check{display:flex;align-items:center;gap:var(--s3);padding:var(--s1) 0;border-top:var(--rule);cursor:pointer;font-size:var(--t-sm);line-height:1.5}   /* 2026-09-23 astra: 라벨이 --tap 을 채우고 행 여백은 s1 */
 :where(body.v2) .check.all{border-top:2px solid var(--ink);font-weight:700}
 :where(body.v2) .check:last-of-type{border-bottom:var(--rule)}
 :where(body.v2) .check input{appearance:none;width:22px;height:22px;flex:none;margin-top:1px;border:var(--rule-ui);border-radius:var(--r-md);background:var(--card);cursor:pointer}
 :where(body.v2) .check input:checked{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat;border-color:var(--ink)}
 :where(body.v2) .check input[type=radio],:where(body.v2) .check input[type=radio]:checked{border-radius:50%;background-image:none}
 :where(body.v2) .check input[type=radio]:checked{box-shadow:inset 0 0 0 4px var(--paper)}
-:where(body.v2) .check label{flex:1;cursor:pointer}
+:where(body.v2) .check label{flex:1;cursor:pointer;display:flex;flex-wrap:wrap;align-items:center;gap:0 var(--s1);min-height:var(--tap)}
+:where(body.v2) .check label>small{flex-basis:100%}
 :where(body.v2) .check small{display:block;font-size:var(--t-sm);color:var(--gray);margin-top:2px}
-:where(body.v2) .check .view{margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:44px;font-size:var(--t-sm);color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:0 var(--s2)}
+:where(body.v2) .check .view{margin-left:auto;flex:none;display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);font-size:var(--t-sm);color:var(--gray);text-decoration:underline;text-underline-offset:3px;padding:0 var(--s2)}
 :where(body.v2) .check .view:hover{color:var(--ink)}
 :where(body.v2) .ckfoot{margin:14px 0 0;font-size:var(--t-sm);line-height:1.6;color:var(--gray)}
 :where(body.v2) .oauthmsg{margin:0 0 var(--s4);padding:12px 16px;border-radius:var(--r-md);background:rgba(49,46,46,.06);border-left:3px solid var(--ink);font-size:var(--t-sm);line-height:var(--lh-body)}
@@ -688,7 +694,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .maker .num{font-family:var(--mono);font-weight:400;font-variant-numeric:tabular-nums;line-height:.9;letter-spacing:-0.03em}
 :where(body.v2) .maker .num em{display:block;font-style:normal;font-family:var(--mono);font-size:var(--t-sm);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-top:var(--s3)}
 
-:where(body.v2) .maker.a{background:var(--mat);padding:var(--s6);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:var(--s7);align-items:start}
+:where(body.v2) .maker.a{background:var(--mat);padding:var(--s5);display:grid;grid-template-columns:minmax(0,1fr);gap:0;align-items:start}   /* 2026-09-23 astra B P1-4: 위 통계에 있는 13 을 다시 크게 쓰던 우측 열을 없애고 경력에 폭을 준다 */
 :where(body.v2) .maker.a dl{margin-top:var(--s5);display:grid;grid-template-columns:104px minmax(0,1fr)}
 :where(body.v2) .maker.a dt{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--gray);padding:14px 0;border-top:var(--rule-strong)}
 :where(body.v2) .maker.a dd{font-size:var(--t-base);line-height:var(--lh-body);color:var(--ink);padding:13px 0;border-top:var(--rule-strong)}
@@ -696,11 +702,11 @@ body.v2{background:var(--ink)}
 :where(body.v2) .maker.a dd .tn{font-family:var(--mono);font-variant-numeric:tabular-nums}
 :where(body.v2) .maker.a .colo{margin-top:var(--s4);font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);letter-spacing:.04em}
 :where(body.v2) .maker.a .colo .han{font-family:var(--serif);font-weight:300}
-:where(body.v2) .maker.a .mk-side{display:grid;justify-items:center;align-self:stretch;align-content:space-between;gap:var(--s4);padding-top:var(--s2)}
+:where(body.v2) .maker.a .mk-side{display:none}
 :where(body.v2) .maker.a .num{font-size:clamp(96px,10vw,140px);color:var(--ink)}
 :where(body.v2) .maker.a .seal{width:44px;height:44px;box-shadow:inset 0 0 0 1.5px var(--seal);color:var(--seal);display:grid;place-items:center;font-family:var(--serif);font-weight:500;font-size:var(--t-h4);border-radius:var(--r-md)}
 :where(body.v2) .maker .career{display:grid;gap:8px;list-style:none;margin:0;padding:0}
-:where(body.v2) .maker.a .career li{font-size:var(--t-sm);line-height:1.6;color:var(--body);padding-left:14px;position:relative}
+:where(body.v2) .maker.a .career li{font-size:var(--t-base);line-height:var(--lh-body);color:var(--body);padding-left:14px;position:relative}
 :where(body.v2) .maker.a .career li::before{content:"";position:absolute;left:0;top:.68em;width:6px;height:1px;background:var(--gray)}
 
 :where(body.v2) .makerband{background:var(--card);box-shadow:inset 0 0 0 1px var(--hairs);border-radius:var(--r-md);padding:var(--s5) var(--s6);display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:var(--s6);align-items:center}
@@ -711,8 +717,10 @@ body.v2{background:var(--ink)}
 :where(body.v2) .makerband .tlink{white-space:nowrap}
 
 @media (max-width:900px){
-  :where(body.v2) .maker.a{grid-template-columns:1fr;gap:var(--s5);padding:var(--s5)}
-  :where(body.v2) .maker.a .mk-side{grid-auto-flow:column;justify-content:start;align-items:center;align-self:auto;gap:var(--s5);order:-1}
+  :where(body.v2) .maker.a{padding:var(--s4)}
+  :where(body.v2) .maker.a dl{grid-template-columns:minmax(0,1fr)}
+  :where(body.v2) .maker.a dt{padding:var(--s3) 0 var(--s1)}
+  :where(body.v2) .maker.a dd{border-top:0;padding:0 0 var(--s3)}
   :where(body.v2) .maker.a .num{font-size:var(--t-display)}
   :where(body.v2) .makerband{grid-template-columns:auto minmax(0,1fr);gap:var(--s4);padding:var(--s4) var(--s4)}
   :where(body.v2) .makerband .tlink{grid-column:2}
@@ -817,7 +825,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .lv.top i b.f{background:var(--ink)}
 :where(body.v2) .setnav{display:flex;flex-wrap:wrap;gap:var(--s3);align-items:center;justify-content:space-between;margin:var(--s4) 0 var(--s3)}
 :where(body.v2) .chips{display:flex;flex-wrap:wrap;gap:var(--s1)}
-:where(body.v2) .chips button{min-height:44px;min-width:44px;padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--body);border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2) .chips button{min-height:var(--tap);min-width:var(--tap);padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:.04em;color:var(--body);border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .chips button[aria-pressed="true"]{background:var(--ink);color:var(--paper);box-shadow:none}
 :where(body.v2) .setmore{display:flex;justify-content:center;margin-top:var(--s4)}
 :where(body.v2) .setmore:empty{display:none}
@@ -873,6 +881,7 @@ body.v2{background:var(--ink)}
    구조  .pdim(뿌리 role=dialog) > .pback(딤) + .pstage(무대) > .pslot × N > .pop(카드) [+ .pbar = 활성 카드 아래 하단바, app.js 가 옮겨 붙인다]
    카드  행사 = 빌드 주입(_tools/promo_popup.html) · 의뢰 개시 = index.html 정적 · 공지 = app.js 가 API 로 조판. 골격은 셋이 같다(.pfr > .prib .ptxt .pbot).
    무대  카드 전부 같은 칸(grid-area 1/1)에 겹쳐 세우고 측면은 translateX(--d × (100% + 간격)) scale(.9) + 반투명(단일 focal: 크기와 명도 두 축으로 종속).
+         측면 명도 종속 = 슬롯 전체 opacity 가 아니라 카드 바탕 --mat 불투명 + 안 내용(.pfr)만 .55. 슬롯을 반투명하게 하면 지면 글자가 카드를 관통한다(critic 2026-09-23 L4=2).
          활성 카드만 조작 가능(측면 .pop 은 inert). 폰에서는 측면을 숨기고 스와이프·화살표로만 넘긴다.
    하단바 오늘 하루 보지 않기(전 팝업 공통) · ← n/N → · 자동 넘김 정지(WCAG 2.2.2, 둘 이상일 때만) · 닫기.
    딤   공지 팝업 선례 .42. 가운데 판은 楮紙 배경 비침 문제가 없어 하단 시트 시절의 .72 를 쓰지 않는다(SSOT 무근거, 선례만).
@@ -883,8 +892,9 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pslot{grid-area:1/1;width:min(440px,100%);pointer-events:auto;display:flex;flex-direction:column;
   transition:transform var(--dur-2) var(--ease),opacity var(--dur-2) var(--ease);will-change:transform}
 :where(body.v2) .pslot[data-on]{z-index:2}
-:where(body.v2) .pslot[data-side]{z-index:1;opacity:.55;cursor:pointer;transform:translateX(calc(var(--d,1) * (100% + var(--s4)))) scale(.9)}
-:where(body.v2) .pslot[data-side] .pop{pointer-events:none}
+:where(body.v2) .pslot[data-side]{z-index:1;cursor:pointer;transform:translateX(calc(var(--d,1) * (100% + var(--s4)))) scale(.9)}
+:where(body.v2) .pslot[data-side] .pop{pointer-events:none;background:var(--mat)}
+:where(body.v2) .pslot[data-side] .pfr{opacity:.55}
 @media (prefers-reduced-motion:reduce){:where(body.v2) .pslot{transition:none}}
 
 :where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s4);background:var(--card);color:var(--ink);
@@ -893,20 +903,21 @@ body.v2{background:var(--ink)}
 @supports (height:100dvh){:where(body.v2) .pop{max-height:min(72vh,72dvh)}}
 :where(body.v2) .pfr{margin:0;padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s3)}
 :where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;max-width:none}
-:where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:10px;flex:none}
+:where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:var(--s2);flex:none}
 :where(body.v2) .pkv{margin:0;position:relative}
 :where(body.v2) .pkv .ph,:where(body.v2) .pkv img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover}
 :where(body.v2) .pkv .ph{display:grid;place-items:center;background:var(--mat);box-shadow:inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .pkv .ph span{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
 :where(body.v2) .pop--noimg .pkv{display:none}
 :where(body.v2) .ptxt h2{font-size:var(--t-h4);line-height:var(--lh-tight);max-width:none}
+:where(body.v2) .ptxt h2:focus{outline:none}   /* 스크립트가 옮긴 초점의 자리 표시는 대화상자 틀이 대신한다. 조작 요소의 :focus-visible 은 그대로 (astra A P0-2, D §5) */
 :where(body.v2) .ptxt .rate{display:none}   /* 표제가 이미 30% 를 말한다 */
 :where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;color:var(--gray);margin-top:var(--s2);max-width:none}
 :where(body.v2) .ptxt .pnote{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);max-width:none}
 :where(body.v2) .ptxt .pnote .tlink{margin-left:var(--s1);white-space:nowrap}
 :where(body.v2) .ptxt .pbody{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
 :where(body.v2) .ptxt .pbody p+p{margin-top:var(--s2)}
-:where(body.v2) .ptxt .pbody a{text-decoration:underline;text-underline-offset:4px}
+:where(body.v2) .ptxt .pbody a{text-decoration:underline;text-underline-offset:var(--s1)}
 /* 가격 표: 세로 괘선 0, 헤더 채움 0. 행사 카드는 [data-list-price] 를 app.js 가 정가 취소선 + 할인가(.sale 朱印)로, 의뢰 카드는 .amt 먹색 */
 :where(body.v2) .ptbl{width:100%;border-collapse:collapse}
 :where(body.v2) .ptbl th,:where(body.v2) .ptbl td{padding:var(--s2) 0;border-top:var(--rule);font-size:var(--t-sm)}
@@ -919,14 +930,14 @@ body.v2{background:var(--ink)}
 :where(body.v2) .ptbl .per{margin-right:var(--s1)}
 :where(body.v2) .ptbl s.was{font-size:var(--t-sm)}
 :where(body.v2) .pbot{display:flex;flex-direction:column;gap:var(--s3)}
-:where(body.v2) .pacts{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);align-items:stretch}
+:where(body.v2) .pacts{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:var(--s2);align-items:stretch}   /* 주 CTA 가 더 넓다 (슬롭 뿌리 #9 균등 50:50 회피) */
 :where(body.v2) .pacts .btn{width:100%}
 /* 하단바 */
 :where(body.v2) .pbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s1) var(--s3);
   background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}
 :where(body.v2) .pbar .pmute{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);color:var(--gray);cursor:pointer;white-space:nowrap}
-:where(body.v2) .pbar .pmute input{appearance:none;width:18px;height:18px;border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card);flex:none}
-:where(body.v2) .pbar .pmute input:checked{background:var(--ink);border-color:var(--ink)}
+:where(body.v2) .pbar .pmute input{appearance:none;width:calc(var(--s3) + var(--s1) / 2);height:calc(var(--s3) + var(--s1) / 2);border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card);flex:none}
+:where(body.v2) .pbar .pmute input:checked{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/var(--s3) no-repeat;border-color:var(--ink)}
 :where(body.v2) .pbar .pnav{display:flex;align-items:center;gap:var(--s1);margin-left:auto}
 :where(body.v2) .pbar .parr{min-width:var(--tap);min-height:var(--tap);display:grid;place-items:center;padding:0 var(--s2);font-size:var(--t-sm);font-weight:600;color:var(--ink);border-radius:var(--r-md);white-space:nowrap}
 :where(body.v2) .pbar .parr:hover{background:var(--mat)}
@@ -1168,7 +1179,7 @@ body.v2{background:var(--ink)}
 /* --- 메인 세션 보강 (design 원천에 없다. 재병합은 merge_promo_css.py) --- */
 /* 행사 팝업이 열린 동안 본문 스크롤을 잠근다 (app.js openPromoPopup / closePromoPopup) */
 /* 규범 예외: 모달의 문서 스크롤 잠금은 body 밖 html 에 있어야 한다. JS 는 v2 에서만 이 클래스를 적용한다. */
-html.ppop-open{overflow:hidden}
+html.ppop-open{overflow:hidden;scrollbar-gutter:stable}   /* 개폐 시 가로 점프 0 (critic P2) */
 /* ==== promo_popup_20260907 end ==== */
 
 /* B안 공용 경계와 가격: 설명 문장에 가격색이 상속되지 않게 한다. */
@@ -1225,6 +1236,7 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-card-price b .per{display:block;margin-bottom:var(--s1);font-size:var(--t-sm);font-weight:500;line-height:1.4;letter-spacing:0;color:var(--body)}   /* 할인 없는 행의 과금 단위(학교마다) = 정가 줄과 같은 자리. 정가(취소선, 12px 회색)와 구별되게 13px 500 body (astra 2026-09-22 수정 1) */
 :where(body.v2) .r2-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s2) var(--s4)}
 :where(body.v2) .r2-actions .btn{min-width:calc(var(--tap) * 2)}
+:where(body.v2) .r2-actions .tlink{min-width:var(--tap);justify-content:center}
 :where(body.v2) .r2-section{padding-block:var(--s5);border-top:var(--rule-ui)}
 :where(body.v2) .r2-section>h2{font-size:var(--t-h2);margin-bottom:var(--s3)}
 :where(body.v2) .r2-section>p+p{margin-top:var(--s2)}
@@ -1367,9 +1379,12 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r3-sample-gallery{margin-top:var(--s4)}
 :where(body.v2) .r3-sample-gallery>h2{font-size:var(--t-h3);margin-bottom:var(--s3)}
 :where(body.v2) .r3-sample-gallery .openers{display:grid;grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:28%;overflow-x:auto;gap:var(--s3);padding-bottom:var(--s3);margin-bottom:var(--s3)}
-:where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:45%;overflow-x:auto;gap:var(--s4);padding-bottom:var(--s3);align-items:stretch}  /* R2 의 align-items:start 를 덮어 카드가 행 높이를 채운다 (critic 2회차 수리 6) */
+:where(body.v2) .r3-sample-gallery .r2-samples{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:45%;overflow-x:auto;gap:var(--s4);padding-bottom:var(--s3);align-items:start}  /* 2026-09-23 astra A P1-4: 행 높이를 늘리던 .sample.pgs 를 가로 목록 밖으로 옮겨 stretch(critic 2회차 수리 6)를 되돌린다. 세로 가운데 여백이 표본보다 컸다 */
 :where(body.v2) .r3-sample-gallery .r2-samples .pgs{grid-column:auto}
-:where(body.v2) .r3-sample-gallery .r2-samples figure.pgv{margin:0;padding:var(--s3);border:var(--rule-ui);background:var(--card);display:grid;grid-template-rows:minmax(0,1fr) auto;align-items:center}  /* 이미지 세로 가운데, 캡션 아래 고정: 높이 차이가 카드 위아래 대칭 여백으로 (critic 2회차 수리 6) */  /* 높이가 다른 표본 카드를 같은 높이의 테두리 카드로: 빈 자리가 결함이 아니라 카드 안 여백으로 읽히게 (critic 수리 6) */
+:where(body.v2) .r3-sample-gallery .r2-samples figure.pgv{margin:0;padding:var(--s3);border:var(--rule-ui);background:var(--card);display:block}
+:where(body.v2) .r3-sample-gallery .r2-samples figure.pgv>figcaption{margin-top:var(--s3)}
+:where(body.v2) #preview .r3-spreads figure>a{display:block;min-height:var(--tap)}
+:where(body.v2) #preview .r3-spreads figure:not(.r3-report-spread)>a+a{margin-top:var(--s3)}  /* 이미지 세로 가운데, 캡션 아래 고정: 높이 차이가 카드 위아래 대칭 여백으로 (critic 2회차 수리 6) */  /* 높이가 다른 표본 카드를 같은 높이의 테두리 카드로: 빈 자리가 결함이 아니라 카드 안 여백으로 읽히게 (critic 수리 6) */
 :where(body.v2) .r3-sample-gallery .pgcols{grid-template-columns:minmax(0,1fr)}
 :where(body.v2) .r3-covers{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:var(--s4) var(--s3)}
 :where(body.v2) .r3-covers a,:where(body.v2) .r3-book-names a{display:flex;flex-direction:column;min-height:var(--tap);gap:var(--s2);font-size:var(--t-sm)}
@@ -1415,6 +1430,10 @@ html.ppop-open{overflow:hidden}
 }
 @media(min-width:64em){
   :where(body.v2) .r3-units .r3-unit{grid-row:span 4}
+}
+@media(max-width:47.499em){
+  :where(body.v2) .r3-unit{padding-inline:var(--s3)}   /* 2026-09-23 astra D P1-7: 색면(--card) 끝에 번호·가격·버튼이 붙지 않게 */
+  :where(body.v2) .r3-unit .foot{flex-wrap:wrap;gap:var(--s2) var(--s3)}
 }
 @media(max-width:63.999em){
   :where(body.v2) .r3-unit{grid-template-columns:auto minmax(0,1fr);grid-template-rows:auto auto auto 1fr auto}

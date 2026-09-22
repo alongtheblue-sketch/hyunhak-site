@@ -228,21 +228,22 @@ CSS_COMMON = '''/* 인강 상품면 공용 (2026-09-06). 크기는 토큰만, �
 # ---------------- 강좌 목록 ----------------
 CSS_LIST = CSS_COMMON + '''
 .lecp .crs{border-top:var(--rule-strong);margin-top:var(--s4)}
-.lecp .cr{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr) auto;gap:var(--s2) var(--s4);padding:var(--s4) 0;border-bottom:var(--rule);align-items:center}
+.lecp .cr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,18em);gap:var(--s2) var(--s5);padding:var(--s4) 0;border-bottom:var(--rule);align-items:start}   /* 제목 아래 구성, 오른쪽 열에 가격과 행동 (astra 2026-09-23 out_B P1-1) */
+.lecp .cr>div:first-child,.lecp .cr .comp{grid-column:1}
 .lecp .cr[hidden]{display:none}
 .lecp .cr .kn{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
 .lecp .cr h2{font-size:var(--t-h4);margin-top:4px}
 .lecp .cr h2 a{display:inline-flex;align-items:center;min-height:var(--tap);padding:3px 0}
 .lecp .cr h2 a:hover{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--hair)}
-.lecp .cr .sub{font-size:var(--t-sm);color:var(--gray);margin-top:4px}
-.lecp .cr .comp{font-size:var(--t-sm);color:var(--body);display:grid;gap:4px}
+.lecp .cr .sub{display:none}   /* 60자에서 잘린 설명문은 목록에서 뺀다 (astra out_B P1-1) */
+.lecp .cr .comp{font-size:var(--t-base);color:var(--body);display:grid;gap:var(--s1)}
 .lecp .cr .comp b{font-weight:700;color:var(--ink)}
 .lecp .cr .comp .mono{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray)}
 .lecp .cr .comp .pub{color:var(--gray)}
-.lecp .cr .acts{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.lecp .cr .pr{font-family:var(--mono);font-size:var(--t-sm);color:var(--seal);font-weight:500;white-space:nowrap}
+.lecp .cr .acts{grid-column:2;grid-row:1/span 2;display:flex;gap:var(--s2);flex-wrap:wrap;justify-content:flex-end}
+.lecp .cr .pr{flex-basis:100%;text-align:right;font-family:var(--mono);font-size:var(--t-base);color:var(--seal);font-weight:500;white-space:nowrap}
 .lecp .cr .pr small{display:block;font-family:var(--sans);color:var(--gray);font-weight:400;font-size:var(--t-xs);margin-top:2px}
-@media (max-width:820px){.lecp .cr{grid-template-columns:1fr}.lecp .cr .acts{justify-content:flex-start}}
+@media (max-width:820px){.lecp .cr{grid-template-columns:minmax(0,1fr)}.lecp .cr .acts{grid-column:1;grid-row:auto;justify-content:flex-start}.lecp .cr .pr{text-align:left}}
 .lecp .chips{margin-top:var(--s4)}
 .lecp .chips button[aria-pressed="true"]{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink);font-weight:700}   /* 상태 표식은 테두리, 솔리드 채움은 주 행동 하나만 (critic NNN3) */
 .lecp .otgrid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:var(--s4);margin-top:var(--s4)}
@@ -254,6 +255,11 @@ CSS_LIST = CSS_COMMON + '''
 .lecp .poster .badge{position:absolute;top:12px;left:12px}
 
 .lecp .facts b{font-size:var(--t-h3)}
+/* 朱印 축소 (astra 2026-09-23 out_B P0-1): 목록 면의 맛보기 표식과 OT 순서 번호는 회색. 상세 면(lecd)과 base.css 원 정의는 그대로 */
+:where(body.v2).lecp .sample .badge.seal{color:var(--gray);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2).lecp .ot .steps4 li::before{color:var(--gray)}
+/* 축소 OT 도식은 글자가 판독 한계 밑으로 줄어 숨긴다. 같은 순서를 .steps4 목록이 싣는다 (astra out_B P1-9) */
+:where(body.v2).lecp #ot svg.order{display:none}
 '''
 
 

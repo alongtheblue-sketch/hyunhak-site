@@ -14,7 +14,6 @@
 /* 목록은 전폭, 구성과 환불 안내는 목록 뒤. 공통 토큰은 base.css에서 상속한다. */
 :where(body.v2) .bar{position:sticky;top:var(--hd-h);z-index:30;background:rgba(var(--paper-rgb),.96);border-bottom:var(--rule);padding:var(--s2) 0}
 :where(body.v2) .bar .in{display:flex;justify-content:space-between;align-items:center;gap:var(--s4);flex-wrap:wrap}
-:where(body.v2) .bar .tabs{border-bottom:0}
 :where(body.v2) .bar .search{height:var(--tap);min-width:min(100%,var(--rail-w));background:var(--card)}
 :where(body.v2) .bar .cnt{font-size:var(--t-sm);color:var(--gray);white-space:nowrap}
 :where(body.v2) .catalog{padding-block:var(--s4) var(--s6)}
@@ -23,7 +22,6 @@
 :where(body.v2) .ini:first-child{padding-top:0}
 :where(body.v2) .gb{display:grid;grid-template-columns:var(--tap) minmax(0,1fr);gap:var(--s2) var(--s3);align-items:center;padding:var(--s3);border:var(--rule-strong);border-color:var(--edge,var(--hair));border-radius:var(--r-md)}
 :where(body.v2) .gb:hover{background:var(--card)}
-:where(body.v2) .gb .cv{width:var(--tap);height:auto;aspect-ratio:210/297;object-fit:cover;border:var(--rule);border-radius:var(--r-md)}
 :where(body.v2) .gb h3{font-size:var(--t-h4);font-weight:700;letter-spacing:var(--tr-head);line-height:var(--lh-tight)}
 :where(body.v2) .gb h3 small{display:block;margin-top:var(--s1);font-size:var(--t-sm);font-weight:500;color:var(--gray)}
 :where(body.v2) .gb .pr{grid-column:2;font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--gray);font-family:var(--mono);font-variant-numeric:tabular-nums}
@@ -31,7 +29,6 @@
 :where(body.v2) .gb .pr .sale{color:var(--seal)}
 :where(body.v2) .gb .acts{grid-column:2;display:flex;gap:var(--s2) var(--s3);align-items:center;flex-wrap:wrap}
 :where(body.v2) .gb .acts .btn{min-height:var(--tap);min-width:var(--s7)}
-:where(body.v2) .gb .acts .tlink{overflow-wrap:anywhere}
 :where(body.v2) .empty{grid-column:1/-1;padding:var(--s5) 0}
 :where(body.v2) .catalog-notes{padding-bottom:var(--s8)}
 :where(body.v2) .catalog-notes .side{position:static;display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4)}
@@ -43,9 +40,20 @@
 }
 @media (max-width:56.25rem){
   :where(body.v2) .bar{top:var(--hd-h-sm)}
-  :where(body.v2) .bar .in{flex-direction:column;align-items:stretch}
-  :where(body.v2) .bar .search{min-width:0}
 }
+/* 2026-09-23 astra P1: 목록 괘선 행(대학명 링크 + 담기), 탭 제거 뒤 검색 행, 요약 가격 수치 위계 */
+:where(body.v2) .bar .in{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:var(--s3)}
+:where(body.v2) .bar .search{width:100%;max-width:28em;min-width:0}   /* 홈 .find .search 와 같은 상한: 검색칸이 목록 폭 전부를 차지하지 않는다 */
+:where(body.v2) .catalog .grid{gap:0 var(--s4)}
+:where(body.v2) .catalog .gb{grid-template-columns:minmax(0,1fr) auto;gap:var(--s2) var(--s3);padding:var(--s2) 0;border:0;border-bottom:var(--rule);border-radius:0}
+:where(body.v2) .catalog .gb{text-align:left;justify-items:start}   /* 표지 카드 시절 가운데 정렬 해제 */
+:where(body.v2) .catalog .gb h3{grid-column:1;grid-row:1;display:flex;align-items:baseline;gap:var(--s2);min-width:0}
+:where(body.v2) .catalog .gb h3 a{display:inline-flex;align-items:center;min-height:var(--tap);font-size:var(--t-base);font-weight:700}
+:where(body.v2) .catalog .gb h3 small{font-size:var(--t-xs);color:var(--gray);white-space:nowrap}   /* 캠퍼스는 대학명 옆 한 줄 */
+:where(body.v2) .catalog .gb .acts{grid-column:2;grid-row:1}
+:where(body.v2) .catalog .gb .pr{grid-column:1/-1;grid-row:2}
+:where(body.v2) .phead .facts [data-list-price] b .sale{font-size:inherit;line-height:inherit;margin-top:var(--s1)}
+:where(body.v2) .phead .facts [data-list-price] b .was{display:block}
 </style>
 </head>
 <body class="v2">
@@ -68,17 +76,13 @@
       <div><b>__N__</b><span>권, __SALE__권 판매 중</span></div>
       <div><b>2027</b><span>학년도 대비, 전권 판매 중</span></div>
       <div><b>전환 규칙</b><span>생기부에서 질문 뽑기</span></div>
-      <div data-list-price="__PRICE_RAW__"><b>__PRICE__원</b><span>, 권당</span></div>
+      <div data-list-price="__PRICE_RAW__"><b>__PRICE__원</b><span>권당</span></div>
     </div>
   </div>
 </section>
 
 <div class="bar">
   <div class="wrap in">
-    <div class="tabs" role="tablist" aria-label="판매 상태">
-      <button role="tab" aria-selected="true" data-f="all">전체 <span>__N__</span></button>
-      <button role="tab" aria-selected="false" data-f="sale">판매 중 <span>__SALE__</span></button>
-    </div>
     <form class="search" role="search" onsubmit="return false">
       <label for="q2" class="ph">대학 이름</label>
       <input id="q2" type="search" autocomplete="off">
@@ -86,6 +90,10 @@
     </form>
     <span class="cnt" id="cnt" aria-live="polite">__N__권</span>
   </div>
+</div>
+
+<div class="wrap catalog">
+  <div class="grid" id="grid" data-search-target></div>
 </div>
 
 <section class="sec tight" id="allpass">
@@ -108,9 +116,6 @@
   </div>
 </section>
 
-<div class="wrap catalog">
-  <div class="grid" id="grid" data-search-target></div>
-</div>
 <div class="wrap catalog-notes">
   <aside class="side">
     <div class="box spec rv">
@@ -149,17 +154,15 @@
 <script>
 var HH_GB=__HH_GB__;
 (function(){
-  var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),tabs=document.querySelectorAll('.bar [role=tab]'),q=document.getElementById('q2'),f='all';
+  var grid=document.getElementById('grid'),cnt=document.getElementById('cnt'),q=document.getElementById('q2');
   var uniformPrice=HH_GB.every(function(o){return o.price===HH_GB[0].price});
   function card(o){
     var camp=o.name.match(/\((.*?)\)/),base=o.name.replace(/\(.*?\)/,'');
-    // 표지 48px 은 표지 제목이 판독 한계 아래라 장식이다. 식별은 이름이 진다 (alt 비움).
-    var act='<button type="button" class="btn sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="'+o.price+'">담기</button><a class="tlink" href="'+o.slug+'.html">'+o.name+' 자세히</a>';
+    // 괘선 한 행 = 대학명(상세 링크) + 담기. 표지와 "자세히" 중복 링크는 두지 않는다.
     return '<article class="gb" id="'+o.slug+'">'
-      +'<img class="cv" src="../assets/covers/'+o.slug+'.jpg" alt="" width="210" height="297" loading="lazy">'
-      +'<h3>'+base+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
+      +'<h3><a class="tlink" href="'+o.slug+'.html">'+base+'</a>'+(camp?'<small>'+camp[1]+'</small>':'')+'</h3>'
       +'<span class="pr" data-list-price="'+o.price+'"'+(uniformPrice?' hidden':'')+'>'+o.price.toLocaleString('ko-KR')+'원</span>'
-      +'<div class="acts">'+act+'</div></article>';
+      +'<div class="acts"><button type="button" class="btn ghost sm" data-cart-sku="'+o.sku+'" data-cart-title="'+o.name+' 2027 서류기반면접 가이드북" data-cart-price="'+o.price+'">담기</button></div></article>';
   }
   // 31행을 훑을 때 눈이 짚을 자리. 초성 단위로 묶는다.
   var CHO='ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ'.split(''), CHO_G={'ㄲ':'ㄱ','ㄸ':'ㄷ','ㅃ':'ㅂ','ㅆ':'ㅅ','ㅉ':'ㅈ'};
@@ -171,7 +174,7 @@ var HH_GB=__HH_GB__;
   }
   function render(){
     var kw=(q.value||'').trim();
-    var list=HH_GB.filter(function(o){return (f==='all'||f==='sale')&&(!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
+    var list=HH_GB.filter(function(o){return (!kw||o.name.indexOf(kw)>-1||o.short.indexOf(kw)>-1)});
     var prev='',html='';
     list.forEach(function(o){
       var ini=initial(o.name);
@@ -181,7 +184,6 @@ var HH_GB=__HH_GB__;
     grid.innerHTML=html||'<div class="empty">일치하는 대학이 없습니다. 철자를 줄여서 다시 검색.</div>';
     cnt.textContent=list.length+'권';
   }
-  tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected','false')});b.setAttribute('aria-selected','true');f=b.dataset.f;render()})});
   // 다른 면의 헤더 검색에서 넘어온 ?q=
   var qs=new URLSearchParams(location.search).get('q'); if(qs){q.value=qs;}
   q.addEventListener('input',render); render();

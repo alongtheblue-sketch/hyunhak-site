@@ -236,7 +236,7 @@ def footer(rel, compact=False):
     :where(body.v2.ft-compact) footer.ft .biz{{margin-top:var(--s3)}}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="{p}support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="{p}faq.html#q-pay">결제</a><a href="{p}terms.html">환불 규정</a><a href="{p}terms.html">이용약관</a><a href="{p}privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="{p}support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="{p}faq.html#q-pay">결제</a><a href="{p}terms.html#art6">환불 규정</a><a href="{p}terms.html">이용약관</a><a href="{p}privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more"{disclosure}>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -251,7 +251,7 @@ def footer(rel, compact=False):
       </div>
       <div>
         <h2>고객센터</h2>
-        <ul><li><a href="{p}support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html">환불 규정</a></li></ul>
+        <ul><li><a href="{p}support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="{p}faq.html">자주 묻는 질문</a></li><li><a href="{p}notice.html">공지</a></li><li><a href="{p}terms.html#art6">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>

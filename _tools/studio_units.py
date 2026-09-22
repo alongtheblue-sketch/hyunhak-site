@@ -59,7 +59,8 @@ def card(row, prefix="../", purchase=False, number=None):
                                  ("r3_unit_answer", row["answer"], "r3_unit_minutes"),
                                  ("r3_unit_questions", row["spec"]["questions"], "r3_unit_count")))
     # 위계: 면의 목적 행동 하나만 solid (critic H2·H3). 소개면 = ⑤ 안내, 구매면 = ⑦ 담기.
-    guide_cls = "btn ghost sm" if purchase else "btn sm"
+    # 2026-09-23 astra P1-6: 소개면은 설명 링크를 글 링크로 낮추고 ⑦ 구매 이동을 버튼으로 올린다.
+    guide_cls = "btn ghost sm" if purchase else "tlink"
     actions = (f'<a class="{guide_cls}" href="{prefix}interview/{row.get("guide", code)}.html">'
                f'{esc(copy_text("r3_unit_guide"))}</a>')
     if not opening:
@@ -71,7 +72,7 @@ def card(row, prefix="../", purchase=False, number=None):
                     f'{esc(copy_text(go_key))}</a>')
         actions += (f'<button type="button" class="btn sm" data-r3-unit-cart>{esc(copy_text("add"))}</button>'
                     # 소개면 ⑦ 은 담지 않고 구매 블록으로 옮기기만 한다(g①) — 문면도 이동 행동으로 (critic M8, IA2 §5)
-                    if purchase else f'<a class="tlink" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("r3_unit_go_buy"))}</a>')
+                    if purchase else f'<a class="btn sm" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("r3_unit_go_buy"))}</a>')
     return (f'<article class="unit r3-unit{" r3-unit-opening" if opening else ""}" id="u-{code}" data-r3-unit="{code}">'
             f'<span class="kn">{number or row["number"]}</span>'
             f'<div class="r3-unit-heading"><p class="uni">{esc(row["uni"])}</p>'

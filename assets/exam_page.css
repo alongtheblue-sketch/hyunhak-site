@@ -19,7 +19,7 @@
   overflow-x:auto;-webkit-overflow-scrolling:touch;position:sticky;top:var(--hd-h);background:var(--paper);z-index:4}
 :where(body.exam) .anch a{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 var(--s3);
   font-size:var(--t-sm);font-weight:600;color:var(--gray);border-bottom:2px solid transparent;margin-bottom:-1px;white-space:nowrap;flex:0 0 auto}
-:where(body.exam) .anch a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--seal)}
+:where(body.exam) .anch a[aria-current="true"]{color:var(--ink);border-bottom-color:var(--ink)}
 :where(body.exam) .anch a:hover{color:var(--ink)}
 @media (max-width:900px){:where(body.exam) .anch{top:var(--hd-h-sm)}:where(body.exam) .anch a{padding:0 var(--s2)}}
 @media (max-width:400px){:where(body.exam) .anch{gap:0}:where(body.exam) .anch a{padding:0 var(--s2);font-size:var(--t-xs)}}
@@ -34,12 +34,12 @@
 /* 자리표: 빌드가 채울 값. 모노 + 점선 밑줄로 미확정임을 드러낸다 */
 :where(body.exam) .ph{font-family:var(--mono);font-size:var(--t-sm);font-weight:500;color:var(--gray);
   border-bottom:1px dashed var(--hair);padding-bottom:1px;white-space:nowrap}
-:where(body.exam) sup.fn{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--seal);
+:where(body.exam) sup.fn{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--gray);
   vertical-align:super;line-height:0;margin-left:2px}
 :where(body.exam) .fnlist{margin-top:var(--s3);border-top:var(--rule);padding-top:var(--s2);display:grid;gap:var(--s1)}
 :where(body.exam) .fnlist li{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s2);
   font-size:var(--t-xs);color:var(--gray);line-height:1.6}
-:where(body.exam) .fnlist li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--seal)}
+:where(body.exam) .fnlist li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--gray)}
 
 /* ══ ① 규격표 #spec ══ */
 :where(body.exam) .xspec{margin-top:var(--s4);border-top:var(--rule-hd)}
@@ -72,16 +72,15 @@
 :where(body.exam) .xtype .n b{font-family:var(--mono);font-weight:500;font-size:var(--t-sm);color:var(--ink);font-variant-numeric:tabular-nums}
 /* A 괘선 표 */
 :where(body.xa) .xtypes{border-top:var(--rule-hd)}
-:where(body.xa) .xtype{display:grid;grid-template-columns:minmax(0,9em) minmax(0,1.15fr) minmax(0,1fr) minmax(0,8em);
-  gap:var(--s2) var(--s4);padding:var(--s3) 0;border-bottom:var(--rule);align-items:start}
+:where(body.xa) .xtype{display:grid;grid-template-columns:minmax(0,8em) minmax(0,1fr) minmax(0,1fr) minmax(0,1.2fr);
+  gap:var(--s2) var(--s4);padding:var(--s4) 0;border-bottom:var(--rule);align-items:start}
 :where(body.xa) .xtype h3{grid-column:1;font-size:var(--t-base)}
 :where(body.xa) .xtype .def{grid-column:2}
 :where(body.xa) .xtype .q{grid-column:3;color:var(--body)}
 :where(body.xa) .xtype .n{grid-column:4;flex-direction:column;gap:var(--s1);align-items:flex-start}
-@media (max-width:820px){
-  :where(body.xa) .xtype{grid-template-columns:minmax(0,1fr) minmax(0,7em)}
-  :where(body.xa) .xtype h3{grid-column:1}:where(body.xa) .xtype .n{grid-column:2;grid-row:1/span 2}
-  :where(body.xa) .xtype .def,:where(body.xa) .xtype .q{grid-column:1/-1}
+@media (max-width:820px){   /* 모바일 1열 (astra 2026-09-23 out_B P1-2). 종전 7em 보조열이 근거 문장을 한 줄 몇 자로 쪼갰다 */
+  :where(body.xa) .xtype{grid-template-columns:minmax(0,1fr);gap:var(--s3)}
+  :where(body.xa) .xtype :is(h3,.def,.q,.n){grid-column:1;grid-row:auto}
 }
 /* B 카드 격자 */
 :where(body.xb) .xtypes{grid-template-columns:repeat(auto-fit,minmax(16em,1fr));gap:var(--s3)}
@@ -103,7 +102,7 @@
 :where(body.exam) .xrules li{counter-increment:xr;display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s3);
   padding:var(--s2) 0;border-top:var(--rule);font-size:var(--t-base);line-height:var(--lh-body);color:var(--body)}
 :where(body.exam) .xrules li::before{content:counter(xr,decimal-leading-zero);font-family:var(--mono);font-size:var(--t-xs);
-  font-weight:500;color:var(--seal);letter-spacing:var(--tr-label);line-height:2.2}
+  font-weight:500;color:var(--gray);letter-spacing:var(--tr-label);line-height:2.2}
 :where(body.exam) .xrules li b{color:var(--ink);font-weight:700}
 /* 시간 배분 */
 :where(body.exam) .xtime{margin-top:var(--s5);border-top:var(--rule-hd)}
@@ -150,12 +149,12 @@
   flex-wrap:wrap;padding-bottom:var(--s2);border-bottom:var(--rule-strong)}
 :where(body.exam) .xdoc .doc_head .t{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--ink)}
 :where(body.exam) .xdoc .pass{margin-top:var(--s3);display:grid;gap:var(--s3)}
-:where(body.exam) .xdoc .pass p{font-size:var(--t-sm);line-height:1.85;color:var(--ink);max-width:none}
+:where(body.exam) .xdoc .pass p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--ink);max-width:none}
 :where(body.exam) .xdoc .pass p .lb{font-weight:700;margin-right:var(--s1)}
 :where(body.exam) .xdoc .qs{margin-top:var(--s4);padding-top:var(--s3);border-top:var(--rule-strong);display:grid;gap:var(--s2)}
 :where(body.exam) .xdoc .qs li{display:grid;grid-template-columns:var(--s4) minmax(0,1fr);gap:var(--s2);
-  font-size:var(--t-sm);line-height:1.8;color:var(--ink)}
-:where(body.exam) .xdoc .qs li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--seal)}
+  font-size:var(--t-base);line-height:var(--lh-body);color:var(--ink)}
+:where(body.exam) .xdoc .qs li>span:first-child{font-family:var(--mono);font-weight:500;color:var(--gray)}
 /* A 괘선 이중 테두리 (인쇄물 인용 꼴) */
 :where(body.xa) .xdoc{box-shadow:inset 0 0 0 1px var(--hair),inset 0 0 0 var(--s1) var(--paper),inset 0 0 0 5px var(--hairs)}
 /* B 지면 배경 */
@@ -170,16 +169,16 @@
 :where(body.exam) .xsteps li:first-child{border-top:var(--rule-hd)}
 :where(body.exam) .xsteps li h4{font-size:var(--t-base);display:flex;gap:var(--s2);align-items:baseline}
 :where(body.exam) .xsteps li h4::before{content:counter(xs);font-family:var(--mono);font-size:var(--t-xs);
-  font-weight:500;color:var(--seal);letter-spacing:var(--tr-label);flex:none}
-:where(body.exam) .xsteps li p{font-size:var(--t-sm);color:var(--body);line-height:var(--lh-body);margin-top:var(--s1);max-width:none}
+  font-weight:500;color:var(--gray);letter-spacing:var(--tr-label);flex:none}
+:where(body.exam) .xsteps li p{font-size:var(--t-base);color:var(--body);line-height:var(--lh-body);margin-top:var(--s1);max-width:none}
 :where(body.exam) .xsteps li.off h4,:where(body.exam) .xsteps li.off p{color:var(--gray)}
 :where(body.exam) .xsteps li.off{border-top:1px dashed var(--hair)}
 :where(body.exam) .xfirst{margin-top:var(--s4);padding:var(--s3);background:var(--mat);border-radius:var(--r-md)}
 :where(body.exam) .xfirst .k{display:block;margin-bottom:var(--s2)}
-:where(body.exam) .xfirst p{font-size:var(--t-sm);line-height:1.8;color:var(--ink);max-width:none}
+:where(body.exam) .xfirst p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--ink);max-width:none}
 :where(body.exam) .xtrap{margin-top:var(--s3);padding-top:var(--s3);border-top:var(--rule-strong)}
-:where(body.exam) .xtrap .k{display:block;margin-bottom:var(--s2);color:var(--seal)}
-:where(body.exam) .xtrap p{font-size:var(--t-sm);line-height:1.8;color:var(--body);max-width:none}
+:where(body.exam) .xtrap .k{display:block;margin-bottom:var(--s2);color:var(--gray)}
+:where(body.exam) .xtrap p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--body);max-width:none}
 /* C 절차형은 풀이 골격을 오른쪽 단계 레일로 세운다 */
 :where(body.xc) .xsteps{border-left:var(--rule-strong);margin-left:var(--s2)}
 :where(body.xc) .xsteps li{position:relative;padding-left:var(--s5);border-top:0}
@@ -250,3 +249,6 @@
 :where(body.exam) .xsrc{margin-top:var(--s2);font-size:var(--t-xs);color:var(--gray);line-height:1.6}
 :where(body.exam) .xtype .n>span:not(.k){font-size:var(--t-sm);color:var(--body);line-height:var(--lh-ui)}
 :where(body.exam) .xtime .row .xsec.txt{font-family:var(--sans);font-weight:400;font-size:var(--t-sm);color:var(--gray)}
+
+/* ── 朱印 축소 (astra 2026-09-23 out_B P0-1): 상태 배지(판매 중 등)는 인장 아님. base.css .badge.seal 원 정의는 인장 용도로 보존, 이 면에서만 회색 */
+:where(body.exam) .badge.seal{color:var(--gray);box-shadow:inset 0 0 0 1px var(--hairs)}

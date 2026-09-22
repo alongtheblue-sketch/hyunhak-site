@@ -22,6 +22,8 @@
       button.dataset.cartTitle = mode === 'lecture' ? block.dataset.lectureTitle : option.textContent + ' 전권 이용권';
       button.dataset.cartPrice = mode === 'lecture' ? '220000' : mode === 'single' ? '33000' : '495000';
     }
+    // 스튜디오 지문 낱권은 담지 않고 응시실 지문 선택으로 이동한다. 문구가 결과를 미리 말한다 (astra 2026-09-23 D P1-5).
+    button.textContent = !isGuide && mode === 'single' ? '지문 고르기' : '장바구니 담기';
     button.disabled = false;
     block.querySelectorAll('[data-plan]').forEach(function (node) {
       node.hidden = node.dataset.plan !== mode;

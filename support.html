@@ -100,6 +100,14 @@
 
 :where(body.v2) .sup .pn,:where(body.v2) .sup .agree,:where(body.v2) .sup .quick,:where(body.v2) .sup .doc .blk,:where(body.v2) .sup .menu2 a,:where(body.v2) .sup .box{border-color:var(--edge, var(--hair))}
 :where(body.v2) .sup .panel,:where(body.v2) .sup .card,:where(body.v2) .sup .th .msg:not(.admin){box-shadow:inset 0 0 0 var(--line) var(--edge, var(--hair))}
+/* astra 09-23 P0-3 동의 행 전체 클릭, P1-8 안내와 동의를 제출 직전으로, P1-3 환불 요약 본문 크기 */
+:where(body.v2) #inqAgreeRow{display:flex;align-items:center;min-height:var(--tap);gap:var(--s2);padding-block:var(--s2);cursor:pointer}
+:where(body.v2) #inqAgreeRow input{width:var(--s4);height:var(--s4);margin:0;flex:none}
+:where(body.v2) #inqAgreeRow span{font-weight:600}
+:where(body.v2) .sup #inqPn{margin-top:var(--s3);margin-bottom:var(--s2)}
+:where(body.v2) .sup #inqAgreeRow{margin-bottom:var(--s4)}
+:where(body.v2) .sup #refund p{font-size:var(--t-base);line-height:var(--lh-body);word-break:keep-all;overflow-wrap:break-word}
+:where(body.v2) .sup #refund p + p{margin-top:var(--s3)}
 </style>
 </head>
 <body class="v2">
@@ -176,10 +184,6 @@
       <div class="sh"><div><h2>1:1 문의</h2><p>영업일 기준 순차 답변</p></div></div>
       <form id="inqForm" novalidate>
         <p class="who" id="inqWho" hidden></p>
-        <details class="pn" id="inqPn"><summary>개인정보 수집 안내</summary>
-          <div class="body"><p>문의를 받고 답하기 위해 아래 정보를 수집합니다.</p><p>목적: 문의 접수와 답변, 처리 기록의 보관</p><p>항목: 이름, 이메일, 문의 내용</p><p>보유 기간: 답변을 마친 뒤 1년. 거래에 관한 불만과 분쟁 처리 기록은 전자상거래법 제6조에 따라 3년간 보관합니다.</p><p>거부할 권리: 동의를 거부하실 수 있습니다. 다만 이름과 이메일이 없으면 답을 보내 드릴 수 없습니다.</p><p>문의 내용에는 주민등록번호, 성적표처럼 민감한 정보를 적지 말아 주세요. 만 14세 미만은 법정대리인의 동의를 받은 뒤 문의해 주세요.</p></div>
-        </details>
-        <div class="check agree" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><label for="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label></div>
         <div class="grid2" id="inqGuest">
           <div class="field"><label for="inqEmail">이메일</label><input id="inqEmail" type="email" autocomplete="email" placeholder="답변을 받을 주소"></div>
           <div class="field"><label for="inqName">이름</label><input id="inqName" type="text" autocomplete="name" placeholder="선택"></div>
@@ -191,6 +195,10 @@
           </select></div>
         <div class="field"><label for="inqTitle">제목</label><input id="inqTitle" type="text" maxlength="120"></div>
         <div class="field"><label for="inqBody">내용</label><textarea id="inqBody" rows="6" maxlength="3000" placeholder="주문번호나 대학 이름이 있으면 함께 적어 주세요"></textarea></div>
+        <details class="pn" id="inqPn"><summary>개인정보 수집 안내</summary>
+          <div class="body"><p>문의를 받고 답하기 위해 아래 정보를 수집합니다.</p><p>목적: 문의 접수와 답변, 처리 기록의 보관</p><p>항목: 이름, 이메일, 문의 내용</p><p>보유 기간: 답변을 마친 뒤 1년. 거래에 관한 불만과 분쟁 처리 기록은 전자상거래법 제6조에 따라 3년간 보관합니다.</p><p>거부할 권리: 동의를 거부하실 수 있습니다. 다만 이름과 이메일이 없으면 답을 보내 드릴 수 없습니다.</p><p>문의 내용에는 주민등록번호, 성적표처럼 민감한 정보를 적지 말아 주세요. 만 14세 미만은 법정대리인의 동의를 받은 뒤 문의해 주세요.</p></div>
+        </details>
+        <label class="check agree" id="inqAgreeRow"><input type="checkbox" id="inqAgree"><span>위 안내를 읽고 동의합니다 (필수)</span></label>
         <div class="acts"><button type="submit" class="btn sm" id="inqSend">문의 보내기</button><p class="msgs" id="inqMsg" role="status" aria-live="polite"></p></div>
       </form>
       <div class="done" id="inqDone" hidden tabindex="-1"><span class="k">접수번호</span><span class="no" id="inqDoneNo"></span><p>문의를 접수했습니다. 답변은 영업일 기준으로 순서대로 보냅니다.</p><p><button type="button" class="tlink" id="inqAgain">다른 문의 보내기</button></p></div>
@@ -229,7 +237,7 @@
     <section class="blk pol" id="refund">
       <div class="sh"><div><h2>환불 규정 요약</h2></div></div>
       <p>① 가이드북과 인강, 스튜디오는 디지털 콘텐츠입니다. 이미 연 권, 재생한 강의, 응시한 지문, 발급된 PDF 소장판과 세트 문제지나 해설지 PDF 는 제공이 개시되어 단순 변심에 따른 청약철회가 제한됩니다(전자상거래법 제17조 제2항 제5호, 이용약관 제6조). 제공 개시 시점은 가이드북은 보안 리더에서 열람을 시작한 때, PDF 소장판은 파일이 발급된 때, 스튜디오는 응시를 시작한 때 또는 세트 문제지나 해설지 PDF 를 발급받은 때입니다.</p><p>② 낱권으로 사신 권과 지문, 재생하지 않은 강의는 제공이 개시되기 전까지 청약철회하실 수 있습니다. 31권 전권과 단위 전권은 묶음 하나로 제공되기 때문에 한 권이라도 열람하거나 지문 하나라도 응시하거나 세트 PDF 를 하나라도 발급받으면 이용권 전체의 청약철회가 제한됩니다. 표시 내용과 실제가 다르거나 계약과 다르게 이행된 경우에는 공급받은 날부터 3개월, 그 사실을 안 날 또는 알 수 있었던 날부터 30일 이내에 청약철회하실 수 있습니다(전자상거래법 제17조 제3항).</p><p>③ 청약철회는 요청을 보내신 때에 효력이 생기며 연구소의 승인을 요건으로 하지 않습니다. 환불 대금은 청약철회일부터 3영업일 이내에 결제 수단으로 돌려드리고, 환급이 늦어지면 지연이자를 더해 지급합니다(전자상거래법 제18조 제2항).</p>
-      <a class="tlink" href="terms.html">이용약관 제6조 전문 →</a>
+      <a class="tlink" href="terms.html#art6">이용약관 제6조 전문 →</a>
     </section>
   </section>
   <aside class="side">
@@ -273,7 +281,7 @@
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html#art6">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -288,7 +296,7 @@
       </div>
       <div>
         <h2>고객센터</h2>
-        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html#art6">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>

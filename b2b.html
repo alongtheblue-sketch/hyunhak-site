@@ -58,6 +58,19 @@
 :where(body.v2) #schoolDone{margin-top:var(--s3);color:var(--ink)}
 :where(body.v2) #schoolStatus{color:var(--paper)}
 @media (max-width:56.25rem){:where(body.v2) .ways{grid-template-columns:1fr!important}}
+/* astra 09-23 P0-3 동의 행 전체 클릭 */
+:where(body.v2) #schoolForm label.check{display:flex;align-items:center;min-height:var(--tap);gap:var(--s2);padding-block:var(--s2);cursor:pointer}
+:where(body.v2) #schoolForm label.check input{width:var(--s4);height:var(--s4);margin:0;flex:none}
+/* astra 09-23 P1-6 긴 문의 폼은 마무리 배너(.final) 대신 괘선 패널 */
+:where(body.v2) .school-inquiry{display:grid;grid-template-columns:minmax(0,1fr);gap:var(--s4);padding:var(--s5);background:var(--card);color:var(--ink);border:var(--rule);border-color:var(--edge, var(--hair));border-radius:var(--r-md);box-shadow:var(--shadow-1)}
+:where(body.v2) .school-inquiry > div:first-child h2{font-size:var(--t-h2)}
+:where(body.v2) .school-inquiry > div:first-child p{margin-top:var(--s2);color:var(--body)}
+:where(body.v2) .school-inquiry .school-consent .body{font-size:var(--t-base);line-height:var(--lh-body)}
+:where(body.v2) .school-inquiry #schoolStatus{color:var(--body)}
+@media (max-width:900px){:where(body.v2) .school-inquiry{padding:var(--s4)}}
+/* astra 09-23 P1-7 기능 제목이 설명보다 작지 않게 */
+:where(body.v2) :is(#season,#teacher) .box h3{font-family:var(--sans);font-size:var(--t-base);font-weight:700;line-height:var(--lh-ui);letter-spacing:0;color:var(--ink);margin-bottom:var(--s2)}
+:where(body.v2) :is(#season,#teacher) .box p{font-size:var(--t-base);line-height:var(--lh-body);color:var(--body)}
 </style>
 </head>
 <body class="v2">
@@ -180,7 +193,7 @@
 
 <section class="sec tight">
   <div class="wrap">
-    <div class="final school-inquiry" id="school-inquiry">
+    <div class="panel school-inquiry" id="school-inquiry">
       <div><h2>도입 상담</h2><p>좌석 수와 학생 구성을 알려주시면 하루 안에 견적과 온보딩 일정을 드립니다.</p></div>
 
       <form id="schoolForm" method="post">
@@ -194,11 +207,11 @@
         <details class="school-consent" open><summary>개인정보 수집 안내</summary>
           <div class="body"><p>문의를 받고 답하기 위해 아래 정보를 수집합니다.</p><p>목적: 문의 접수와 답변, 처리 기록의 보관</p><p>항목: 이름, 이메일, 문의 내용</p><p>보유 기간: 답변을 마친 뒤 1년. 거래에 관한 불만과 분쟁 처리 기록은 전자상거래법 제6조에 따라 3년간 보관합니다.</p><p>거부할 권리: 동의를 거부하실 수 있습니다. 다만 이름과 이메일이 없으면 답을 보내 드릴 수 없습니다.</p><p>문의 내용에는 주민등록번호, 성적표처럼 민감한 정보를 적지 말아 주세요. 만 14세 미만은 법정대리인의 동의를 받은 뒤 문의해 주세요.</p></div>
         </details>
-        <div class="check"><input type="checkbox" id="schoolAgree" required><label for="schoolAgree">위 안내를 읽고 동의합니다 (필수)</label></div>
+        <label class="check" for="schoolAgree"><input type="checkbox" id="schoolAgree" required><span>위 안내를 읽고 동의합니다 (필수)</span></label>
         <div class="acts"><button type="submit" class="btn" id="schoolSend" disabled>문의 보내기</button><p class="note" id="schoolStatus" role="status" aria-live="polite"></p></div>
       </form>
       <div class="box" id="schoolDone" hidden tabindex="-1"><span>접수번호</span> <span id="schoolDoneNo"></span><p>문의를 접수했습니다. 답변은 영업일 기준으로 순서대로 보냅니다.</p></div>
-      <div class="acts"><a class="btn" href="mailto:admin@hyunhak.com?subject=%EC%8A%A4%EC%BF%A8%20%ED%94%8C%EB%9E%9C%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">이메일 문의 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html">스튜디오 소개</a></div>
+      <div class="acts"><a class="tlink" href="mailto:admin@hyunhak.com?subject=%EC%8A%A4%EC%BF%A8%20%ED%94%8C%EB%9E%9C%20%EB%8F%84%EC%9E%85%20%EB%AC%B8%EC%9D%98">이메일 문의 <span aria-hidden="true">→</span></a><a class="btn ghost" href="studio.html">스튜디오 소개</a></div>
     </div>
   </div>
 </section>
@@ -223,7 +236,7 @@
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html#art6">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -238,7 +251,7 @@
       </div>
       <div>
         <h2>고객센터</h2>
-        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html#art6">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>

@@ -336,7 +336,7 @@
   //   하단바 정지 단추(WCAG 2.2.2)·호버·카드 안 어떤 조작이든 멈춘다. ←/→ 키와 스와이프. 세션당 1회(sessionStorage hh_popup_shown).
   // 억제: "오늘 하루 보지 않기" = 전 팝업 공통, KST 자정까지(localStorage hh_popup_mute_v1 의 키 all). 구 id 별 억제(공지, promo:id)도 그대로 본다.
   const POPUP_KEY = "hh_popup_mute_v1";
-  const POPUP_AUTO_MS = 5000;
+  const POPUP_AUTO_MS = 8000;   // 2행 가격표 + 본문 + CTA 2 묵독 분량. 5초는 짧았다 (critic 2026-09-23 L6, astra)
   function popupMutes() {
     try { return JSON.parse(localStorage.getItem(POPUP_KEY) || "{}"); } catch { return {}; }
   }
@@ -418,6 +418,7 @@
   function noticeCard(it) {
     const card = document.createElement("div");
     card.className = "pop pop--noimg";
+    card.setAttribute("role", "group");   // aria-labelledby 가 AT 에 닿으려면 역할이 있어야 한다 (critic P2)
     const tid = "hhPopupTitle_" + String(it.id).replace(/[^\w-]/g, "");
     card.setAttribute("aria-labelledby", tid);
     const link = it.link_url && /^(https:\/\/|\/)/.test(it.link_url)
@@ -543,8 +544,9 @@
         if (dx <= -40) go(cur + 1); else if (dx >= 40) go(cur - 1);
       }, { passive: true });
       // 카드 안 어떤 조작이든(초점 이동 포함) 벨트를 멈춘다. 사람 통제 우선(WCAG 2.2.2)
-      stage.addEventListener("pointerdown", () => { if (!stopped) setPause(true); });
-      stage.addEventListener("focusin", () => { if (!stopped && !autoFocus) setPause(true); });
+      // 정지 단추 자신은 뺀다: pointerdown 이 먼저 stopped=true 로 만들면 뒤따르는 click 의 setPause(!stopped) 가 다시 재생시켰다 (astra D P0-2)
+      stage.addEventListener("pointerdown", (e) => { if (!stopped && !e.target.closest("[data-ppop-pause]")) setPause(true); });
+      stage.addEventListener("focusin", (e) => { if (!stopped && !autoFocus && !e.target.closest("[data-ppop-pause]")) setPause(true); });
     }
     root.querySelectorAll("[data-ppop-go]").forEach((a) => a.addEventListener("click", () => {
       const c = cards.find((x) => x.card.contains(a));

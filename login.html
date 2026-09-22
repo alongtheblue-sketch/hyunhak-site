@@ -39,6 +39,9 @@
 .auth .keep{border-top:0;border-bottom:0;padding:6px 0 var(--s3)}
 .auth .entry{margin-top:var(--s2)}
 .auth .reset{margin-top:14px;font-size:13px;color:var(--gray)}
+/* astra 09-23 C P0-2 제출 버튼 폭을 입력칸에 맞추고 공용 .entry 여백과 괘선 제거 */
+:where(body.v2) .auth #loginForm > .entry{margin-top:var(--s3);padding:0;border:0;gap:0}
+:where(body.v2) .auth #loginForm > .entry > .btn{width:100%}
 </style>
 </head>
 <body class="v2 ft-compact">

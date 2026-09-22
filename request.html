@@ -81,6 +81,12 @@
 .req select#rqStatus{appearance:none;-webkit-appearance:none;padding-right:44px;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M4 6.5l4 4 4-4' stroke='%23312E2E' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat:no-repeat;background-position:right 16px center;background-size:14px}
+/* 2026-09-23 astra P0-1: 공용 .tbl 의 min-width 520 이 350 본문에서 금액 열을 가로 스크롤 밖으로 밀었다. 두 열 가격표는 본문 폭에 맞춘다 */
+@media (max-width:43.75em){
+  :where(body.v2) #price .tbl{min-width:0;width:100%;table-layout:fixed}
+  :where(body.v2) #price .tbl th:first-child,:where(body.v2) #price .tbl td:first-child{width:62%;padding-right:var(--s2);word-break:keep-all;overflow-wrap:anywhere;white-space:normal}
+  :where(body.v2) #price .tbl .num{width:38%;padding-right:0}
+}
 </style>
 </head>
 <body class="v2">
@@ -265,7 +271,7 @@
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html#art6">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -280,7 +286,7 @@
       </div>
       <div>
         <h2>고객센터</h2>
-        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html#art6">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>

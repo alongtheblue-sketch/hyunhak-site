@@ -47,9 +47,16 @@
 .lf .m a{text-decoration:underline;text-underline-offset:3px;padding:13px 6px;margin:-13px -6px;display:inline-block}
 .lf .m a:hover{color:var(--ink)}
 @media (max-width:37.5rem){:where(body.v2) .lf{grid-template-columns:var(--s5) minmax(0,1fr)}:where(body.v2) .lf .btn{grid-column:2}:where(body.v2) .lf.doc{grid-template-columns:minmax(0,1fr)}:where(body.v2) .lf.doc .btn{grid-column:1}}
+/* astra 2026-09-23 out_C P0-1: 할인가가 .facts span 소형 회색을 상속하지 않게 */
+:where(body.v2).library-page .facts b[data-list-price]{display:flex;flex-wrap:wrap;align-items:baseline;gap:var(--s2);font-size:var(--t-h4);line-height:var(--lh-ui)}
+:where(body.v2).library-page .facts b[data-list-price] .sale{display:inline;margin:0;font:inherit;color:var(--seal)}
+/* astra 2026-09-23 out_C P1-2: 목록 폭을 제목 폭에 맞추고 열람 안내를 옆 열로 */
+:where(body.v2).library-page .lay{padding-top:0;max-width:var(--container);grid-template-columns:minmax(0,1fr) calc(var(--s10) * 2);gap:var(--s5);align-items:start}
+:where(body.v2).library-page .lay .side{position:sticky;top:calc(var(--hd-h) + var(--s4))}
+@media (max-width:56.25rem){:where(body.v2).library-page .lay{grid-template-columns:minmax(0,1fr)}:where(body.v2).library-page .lay .side{position:static}}
 </style>
 </head>
-<body class="v2">
+<body class="v2 library-page">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <div class="frame"><div class="sheet">
 
@@ -119,7 +126,7 @@
 </div>
     <div class="facts rv">
       <div><b>31</b><span>자료실 수록 대학</span></div>
-      <div><b>33,000</b><span>원, 권당. 구매 후 열람하실 수 있습니다</span></div>
+      <div><b data-list-price="33000">33,000원</b><span>권당, 구매 후 열람</span></div>
       <div><b>3</b><span>회, 계정당 인쇄</span></div>
       <div><b>2027</b><span>대비 학년도</span></div>
     </div>
@@ -302,7 +309,7 @@
   </aside>
 </div>
 
-<section id="lecdocs" class="wrap" style="padding:var(--s6) 0 var(--s8)">
+<section id="lecdocs" class="wrap" style="padding-block:var(--s6) var(--s8)">
   <div class="sh rv"><div><h2 class="t">인강 자료</h2><p>로그인 없이 받는 공개 자료입니다. 강의 영상은 인강실에서 봅니다.</p></div><a class="tlink" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">&rarr;</span></a></div>
   <ul class="liblist rv">
     <li class="lf doc"><div class="meta"><p class="t">인강 OT 대본, 이 인강을 어떤 순서로 듣나</p><p class="m">PDF, 5분 안내 영상 대본. 영상은 로그인 뒤 인강실에서 회원 무료 0강으로 봅니다.</p></div><a class="btn ghost sm" href="assets/docs/lecture_ot_script.pdf">PDF 열기</a></li>
@@ -334,7 +341,7 @@
     :where(body.v2.ft-compact) footer.ft .biz{margin-top:var(--s3)}
   </style>
   <div class="wrap">
-    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
+    <nav class="ft-legal" aria-label="법적 고지"><a href="support.html">고객센터</a><a href="#business-info">사업자 정보</a><a href="faq.html#q-pay">결제</a><a href="terms.html#art6">환불 규정</a><a href="terms.html">이용약관</a><a href="privacy.html">개인정보처리방침</a></nav>
     <details class="ft-more" open>
     <summary>현학적 연구소</summary>
     <div class="g">
@@ -349,7 +356,7 @@
       </div>
       <div>
         <h2>고객센터</h2>
-        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html">환불 규정</a></li></ul>
+        <ul><li><a href="support.html">고객센터</a></li><li>이메일 admin@hyunhak.com</li><li><a href="faq.html">자주 묻는 질문</a></li><li><a href="notice.html">공지</a></li><li><a href="terms.html#art6">환불 규정</a></li></ul>
       </div>
     </div>
     <div class="biz" id="business-info"><address class="bizinfo">상호: 현학적 연구소<br>대표: 현건우<br>사업자등록번호: 293-38-01827<br>통신판매업 신고: 신고 면제 대상(전자상거래법 제12조 제1항 단서)<br>주소: 서울특별시 강남구 테헤란로 70길 12, 402-941A호(대치동,&nbsp;H&nbsp;타워)<br>전화: 070-8098-0671<br>호스팅 제공자: Cloudflare,&nbsp;Inc.</address></div>

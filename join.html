@@ -54,6 +54,19 @@
 .mtype input:checked+label{border-color:var(--ink);box-shadow:0 0 0 3px rgba(49,46,46,.08)}
 .mtype input:focus-visible+label{outline:2px solid var(--ink);outline-offset:2px}
 @media (max-width:600px){.pass .opts{grid-template-columns:1fr}.mtype{grid-template-columns:1fr}}
+/* astra 09-23 C P0-3 약관 항목 행 전체 클릭, 전문 링크 48 */
+:where(body.v2) #joinForm .check{align-items:center;padding-block:var(--s2)}
+:where(body.v2) #joinForm .check .check-choice{display:flex;align-items:flex-start;flex:1;gap:var(--s2);min-height:var(--tap);padding-block:var(--s2);cursor:pointer}
+:where(body.v2) #joinForm .check .view{min-width:var(--tap);min-height:var(--tap)}
+/* astra 09-23 C P1-4 단계 레일 숨김(DOM 보존, JS 참조), 단계 상자를 괘선 구획으로, 회원 구분 토큰화 */
+:where(body.v2) #joinForm > .rail{display:none}
+:where(body.v2) #joinForm > .step{padding:var(--s4) 0 0;margin-bottom:var(--s5);background:transparent;border-top:var(--rule-strong);border-radius:0;box-shadow:var(--shadow-1)}
+:where(body.v2) #joinForm > .step h2{font-size:var(--t-h4);margin-bottom:var(--s4)}
+:where(body.v2) #joinForm .mtype{gap:var(--s2)}
+:where(body.v2) #joinForm .mtype label{padding:var(--s3);border:var(--rule-ui);border-radius:var(--r-md);box-shadow:var(--shadow-1)}
+:where(body.v2) #joinForm .mtype label .t{font-size:var(--t-base)}
+:where(body.v2) #joinForm .mtype label small{margin-top:var(--s1);font-size:var(--t-xs)}
+:where(body.v2) #joinForm .mtype input:checked + label{background:var(--mat);border-color:var(--ink);box-shadow:var(--shadow-1)}
 </style>
 </head>
 <body class="v2">
@@ -135,26 +148,36 @@
     <section class="step terms">
       <h2><span class="no">1</span>약관 동의</h2>
       <div class="check all">
-        <input type="checkbox" id="ck-all">
-        <label for="ck-all"><span>전체 동의 <small>선택 항목까지 함께 체크됩니다</small></span></label>
+        <label class="check-choice" for="ck-all">
+          <input type="checkbox" id="ck-all">
+          <span>전체 동의 <small>선택 항목까지 함께 체크됩니다</small></span>
+        </label>
       </div>
       <div class="check">
-        <input type="checkbox" id="ck-terms" class="ck-item">
-        <label for="ck-terms"><span>이용약관 동의 <small>필수</small></span></label>
+        <label class="check-choice" for="ck-terms">
+          <input type="checkbox" id="ck-terms" class="ck-item">
+          <span>이용약관 동의 <small>필수</small></span>
+        </label>
         <a class="view" href="terms.html" target="_blank" rel="noopener">전문</a>
       </div>
       <div class="check">
-        <input type="checkbox" id="ck-priv" class="ck-item">
-        <label for="ck-priv"><span>개인정보 수집과 이용 동의 <small>필수. 이름, 연락처, 이메일을 계정 식별과 주문 처리에 씁니다</small></span></label>
+        <label class="check-choice" for="ck-priv">
+          <input type="checkbox" id="ck-priv" class="ck-item">
+          <span>개인정보 수집과 이용 동의 <small>필수. 이름, 연락처, 이메일을 계정 식별과 주문 처리에 씁니다</small></span>
+        </label>
         <a class="view" href="privacy.html" target="_blank" rel="noopener">전문</a>
       </div>
       <div class="check">
-        <input type="checkbox" id="ck-age" class="ck-item">
-        <label for="ck-age"><span>만 14세 이상 확인 <small>필수. 연구소 서비스는 만 14세 이상만 가입할 수 있습니다</small></span></label>
+        <label class="check-choice" for="ck-age">
+          <input type="checkbox" id="ck-age" class="ck-item">
+          <span>만 14세 이상 확인 <small>필수. 연구소 서비스는 만 14세 이상만 가입할 수 있습니다</small></span>
+        </label>
       </div>
       <div class="check">
-        <input type="checkbox" id="ck-mkt" class="ck-item">
-        <label for="ck-mkt"><span>광고성 정보 수신 동의 <small>선택. 새 자료와 강좌 안내를 이메일과 문자로 보냅니다. 동의하지 않아도 가입과 이용에 제한이 없고, 마이페이지에서 언제든 해지할 수 있습니다</small></span></label>
+        <label class="check-choice" for="ck-mkt">
+          <input type="checkbox" id="ck-mkt" class="ck-item">
+          <span>광고성 정보 수신 동의 <small>선택. 새 자료와 강좌 안내를 이메일과 문자로 보냅니다. 동의하지 않아도 가입과 이용에 제한이 없고, 마이페이지에서 언제든 해지할 수 있습니다</small></span>
+        </label>
         <a class="view" href="privacy.html#ads" target="_blank" rel="noopener">전문</a>
       </div>
       <p class="ckfoot">필수 항목은 동의를 거부할 수 있으나, 거부하시면 회원 가입과 서비스 이용이 어렵습니다.
@@ -210,12 +233,12 @@
         <div class="field">
           <label for="nm">이름</label>
           <input id="nm" type="text" autocomplete="name">
-          <span class="help">본인인증 도입 전에는 직접 입력</span>
+          <span class="help">가입자 이름을 입력해 주세요</span>
         </div>
         <div class="field">
           <label for="ph">연락처</label>
           <input id="ph" type="tel" autocomplete="tel">
-          <span class="help">본인인증 도입 전에는 직접 입력</span>
+          <span class="help">연락 가능한 전화번호를 입력해 주세요</span>
         </div>
       </div>
       <div class="field">

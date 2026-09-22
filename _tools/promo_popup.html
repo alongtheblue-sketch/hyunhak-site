@@ -6,7 +6,7 @@
       세우는 판정은 app.js 무대 몫: /api/config.promo 가 [data-promo-popup] 과 같은 id 로 살아 있을 때만. [data-promo-until] 은 만료 자체 판정용.
      붙는 JS  하단바(닫기 · 오늘 하루 보지 않기 · ←/→ · 정지) 와 ESC · 포커스 트랩 · 포커스 복귀는 app.js openStage 가 준다. [data-ppop-go=studio|guidebook] 은 클릭 계측. -->
 <div hidden id="promoPopup" data-hh-popup="promo" data-promo-popup="{promo_id}" data-promo-until="{ends_at}">
-  <div class="pop {mod}" data-ppop-card aria-labelledby="ppopT" aria-describedby="ppopU">
+  <div class="pop {mod}" role="group" data-ppop-card aria-labelledby="ppopT" aria-describedby="ppopU">
     <div class="pfr">
       <div class="prib"><p class="k">행사 안내</p></div>
       <figure class="pkv"><img src="{img}" alt="" width="1600" height="686"></figure>
