@@ -222,7 +222,9 @@
         frag.appendChild(document.createTextNode(t.data.slice(0, m.index)));
         const s0 = document.createElement("s"); s0.className = "was"; s0.textContent = won(list);
         const b0 = document.createElement("span"); b0.className = "sale"; b0.textContent = won(salePrice(list, p));
-        frag.appendChild(s0); frag.appendChild(document.createTextNode(" ")); frag.appendChild(b0);
+        // 낭독용 라벨. <s> 는 취소선 뜻을 읽어 주지 않아 숫자 둘이 연달아 들리므로 "정가", "할인가" 를 화면 밖 텍스트로 앞에 둔다 (2026-09-22 astra, critic 공통 지적)
+        const sr = (tx) => { const e = document.createElement("span"); e.className = "sr"; e.textContent = tx; return e; };
+        frag.appendChild(sr("정가 ")); frag.appendChild(s0); frag.appendChild(document.createTextNode(" ")); frag.appendChild(sr("할인가 ")); frag.appendChild(b0);
         frag.appendChild(document.createTextNode(t.data.slice(m.index + m[0].length)));
         t.parentNode.replaceChild(frag, t);
         el.dataset.promoApplied = "1";
