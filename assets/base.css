@@ -359,20 +359,16 @@ body.v2{background:var(--ink)}
 :where(body.v2) .tabs button span,:where(body.v2) .tabs button b{font-family:var(--mono);font-weight:500;font-size:var(--t-xs);color:var(--gray);margin-left:6px;font-variant-numeric:tabular-nums}
 
 /* 대학 타일 */
-:where(body.v2) .tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)}
-:where(body.v2) .tile{display:flex;flex-direction:column;gap:6px;background:var(--card);box-shadow:var(--shadow-ui);border-radius:var(--r-md);padding:var(--s3);min-height:var(--tap);
-  transition:box-shadow var(--dur-1) var(--ease)}
-:where(body.v2) .tile:hover{box-shadow:var(--shadow-ui)}
-:where(body.v2) .tile .n{font-weight:700;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+/* 대학 타일 (2026-09-23 정리: 상자 12장 → 괘선 목록 3열. 학년도와 가격은 타일마다 반복하지 않고 리드 한 문장에 둔다. 상자·그림자·점 0) */
+:where(body.v2) .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 var(--s5);border-top:var(--rule-strong)}
+:where(body.v2) .tile{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);padding:var(--s2) 0;border-bottom:var(--rule);color:var(--ink)}
+:where(body.v2) .tile .n{flex:1;min-width:0;font-weight:600;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;gap:8px;align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(body.v2) .tile .n small{font-weight:500;font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
-:where(body.v2) .tile .m{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums}
-:where(body.v2) .tile .s{display:flex;gap:6px;align-items:center;margin-top:4px;font-size:var(--t-sm)}
-:where(body.v2) .tile .s .p{color:var(--ink);font-weight:700;font-family:var(--mono);font-size:var(--t-xs)}
-:where(body.v2) .tile .s .p::before{content:"";display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:6px;vertical-align:1px}
-:where(body.v2) .tile .s .w{color:var(--gray)}
-:where(body.v2) .tile .s .a{color:var(--gray)}
-:where(body.v2) .tile .s .a::before{content:"";display:inline-block;width:6px;height:6px;border:1px solid var(--gray);border-radius:50%;margin-right:5px;vertical-align:1px}
-:where(body.v2) .tile.ready{background:transparent}
+:where(body.v2) .tile .w{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
+:where(body.v2) .tile .ar{color:var(--gray);flex:none;transition:transform var(--dur-1) var(--ease),color var(--dur-1) var(--ease)}
+:where(body.v2) .tile:hover .ar{color:var(--ink);transform:translateX(2px)}
+:where(body.v2) .tile.ready .n{color:var(--gray)}
+@media (max-width:600px){:where(body.v2) .tiles{grid-template-columns:minmax(0,1fr)}}
 
 /* 상품 카드: 그림자 없이 괘선 */
 :where(body.v2) .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
@@ -676,33 +672,12 @@ body.v2{background:var(--ink)}
 :where(body.v2) .qty button:hover{background:var(--mat)}
 :where(body.v2) .qty span{font-family:var(--mono);width:40px;display:inline-flex;align-items:center;justify-content:center;font-size:var(--t-sm);font-weight:500;border-left:var(--rule);border-right:var(--rule);align-self:stretch}
 
-/* 공지 팝업 (app.js 가 그린다) */
-:where(body.v2) .hh-popup{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:20px}
-:where(body.v2) .hh-popup-back{position:absolute;inset:0;background:rgba(49,46,46,.42)}
-:where(body.v2) .hh-popup-card{position:relative;width:min(520px,100%);background:var(--paper);color:var(--ink);border-radius:var(--r-md);box-shadow:var(--shadow-2);padding:var(--s5) var(--s5) var(--s4);max-height:86vh;overflow:auto}
-:where(body.v2) .hh-popup-kind{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:12px}
-:where(body.v2) .hh-popup-kind::before{content:"";display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:8px;vertical-align:1px}
-:where(body.v2) .hh-popup-title{font-size:var(--t-h3)}
-:where(body.v2) .hh-popup-body{margin-top:14px;font-size:var(--t-base);line-height:1.8;color:var(--body)}
-:where(body.v2) .hh-popup-body p+p{margin-top:10px}
-:where(body.v2) .hh-popup-body a{text-decoration:underline;text-underline-offset:4px}
-:where(body.v2) .hh-popup-link{margin-top:16px}
-:where(body.v2) .hh-popup-foot{margin-top:var(--s4);padding-top:var(--s3);border-top:var(--rule);display:flex;justify-content:space-between;align-items:center;gap:16px}
-:where(body.v2) .hh-popup-mute{font-size:var(--t-sm);color:var(--gray);display:flex;align-items:center;gap:8px;cursor:pointer;min-height:44px}
-:where(body.v2) .hh-popup-mute input{appearance:none;width:18px;height:18px;border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card)}
-:where(body.v2) .hh-popup-mute input:checked{background:var(--ink);border-color:var(--ink)}
-:where(body.v2) .hh-popup-close{font-size:var(--t-sm);font-weight:600;min-height:44px;padding:0 16px;box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-md)}
-:where(body.v2) .hh-popup-close:hover{background:var(--ink);color:var(--paper);box-shadow:none}
 
 @media (max-width:900px){
   :where(body.v2) .lay,:where(body.v2) .lay.rev,:where(body.v2) .plans,:where(body.v2) .pair{grid-template-columns:1fr}
   :where(body.v2) .side{position:static}
   :where(body.v2) .phead{padding:var(--s5) 0 var(--s4)}
   :where(body.v2) .auth{padding:var(--s6) 0 var(--s7)}
-}
-@media (max-width:600px){
-  :where(body.v2) .hh-popup{place-items:end center;padding:0}
-  :where(body.v2) .hh-popup-card{width:100%;border-radius:var(--r-lg) var(--r-lg) 0 0;max-height:80vh}
 }
 
 /* ═══ [2c] 「읽은 사람」 제작자 프로필 (2026-08-31 건우 픽 A 판권면). 숫자는 모노 ═══ */
@@ -893,99 +868,84 @@ body.v2{background:var(--ink)}
   :where(body.v2) .toc .a{grid-column:2;justify-content:flex-start}
 }
 
-/* ==== promo_popup_20260907 begin (design-director promo_popup.css + ranking.css 사본, 재병합 = 이 블록 교체) ==== */
-/* ============ 행사 팝업 모달 3안 (2026-09-07 design-director) ============
-   전제  assets/base.css 뒤에 로드한다. 신규 색 0, 신규 서체 0, 신규 곡률 0.
-         값은 base.css :root 토큰과 그 토큰에서 유도한 수만 쓴다.
-   범위  전 입구 면(index, studio, guidebook/index, lectures, library, about) 진입 시 1회.
-         결제와 리더 화면은 base.css 계약대로 body[data-no-popup] 로 제외한다.
-   계약  DOM 훅은 메인 세션이 준 계약 그대로다. 클래스만 이 파일이 정하고 속성과 id 는 손대지 않는다.
-         뿌리 #promoPopup[data-promo-popup][data-promo-until][role=dialog][aria-modal][aria-labelledby=ppopT][hidden]
-         딤 [data-ppop-back] · 카드 [data-ppop-card] · 제목 #ppopT
-         닫기 [data-ppop-close] · 오늘 하루 [data-ppop-mute] · 행동 [data-ppop-go=studio|guidebook]
-   ★주의 뿌리에 [data-promo] 를 달면 안 된다. app.js renderPromoPrices 가 행사 중이면 hidden 을 false 로 되돌려
-         새로고침마다 팝업이 뜬다. 팝업의 노출 판정은 세션 1회 규칙을 가진 메인 세션 JS 몫이고,
-         [data-promo-until] 은 그 JS 가 만료를 스스로 보라고 남긴 값이다. 가격 칸의 [data-list-price] 만 app.js 가 읽는다.
-   마크업은 기존 행사 문구와 상품행을 유지한다. 현재 .pop--gwak 한 안만 사용한다.
-         도판이 없는 회차는 .pop--noimg 로 숨긴다. 하단 시트는 단일 경계와 45vh 내부 스크롤을 쓴다.
-   가격  지면에는 정가와 [data-list-price] 를 두고 app.js 가 .was 와 .sale 을 만든다. .sale 값에만 朱印을 준다.
-   충돌  .hd .rows .kv .card .promo .pband 는 base.css 기존 컴포넌트라 쓰지 않는다.
-         이 파일의 새 이름 = .pdim .pback .pop .pfr .prib .pclose .pkv .ptxt .ptbl .pacts .pfoot
-   리터럴 px 는 두 곳뿐이며 각각 근거를 주석에 적었다: 딤 rgba(玄墨) 1곳 · 朱印 점 6px 1곳(base.css 149행과 동일값).
-   그 밖 모든 치수는 --s1~--s11 --tap --t-* --container 토큰과 그 토큰의 calc 유도다. */
+/* ==== popup_stage_20260922 begin (2026-09-22 통합. 구 promo_popup_20260907 하단 시트 + 공지 .hh-popup 을 한 무대로. 재병합 = 이 블록 교체) ====
+   건우: 팝업은 아래에서 올라오는 시트가 아니라 화면 가운데(iruriedu.kr /assets/v4/popup.js 의 컨베이어 계약 이식).
+   구조  .pdim(뿌리 role=dialog) > .pback(딤) + .pstage(무대) > .pslot × N > .pop(카드) [+ .pbar = 활성 카드 아래 하단바, app.js 가 옮겨 붙인다]
+   카드  행사 = 빌드 주입(_tools/promo_popup.html) · 의뢰 개시 = index.html 정적 · 공지 = app.js 가 API 로 조판. 골격은 셋이 같다(.pfr > .prib .ptxt .pbot).
+   무대  카드 전부 같은 칸(grid-area 1/1)에 겹쳐 세우고 측면은 translateX(--d × (100% + 간격)) scale(.9) + 반투명(단일 focal: 크기와 명도 두 축으로 종속).
+         활성 카드만 조작 가능(측면 .pop 은 inert). 폰에서는 측면을 숨기고 스와이프·화살표로만 넘긴다.
+   하단바 오늘 하루 보지 않기(전 팝업 공통) · ← n/N → · 자동 넘김 정지(WCAG 2.2.2, 둘 이상일 때만) · 닫기.
+   딤   공지 팝업 선례 .42. 가운데 판은 楮紙 배경 비침 문제가 없어 하단 시트 시절의 .72 를 쓰지 않는다(SSOT 무근거, 선례만).
+   리터럴 px 셋: 카드 폭 440(iruriedu 카드 규격과 같은 값) · 딤 rgba(玄墨) · 朱印 점 6px(149행 공지 띠 점과 같은 값). 나머지는 토큰. */
+:where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:var(--s3) var(--gut);overflow:hidden}
+:where(body.v2) .pback{position:absolute;inset:0;background:rgba(49,46,46,.42)}
+:where(body.v2) .pstage{position:relative;width:100%;max-width:var(--container);display:grid;place-items:center;pointer-events:none}
+:where(body.v2) .pslot{grid-area:1/1;width:min(440px,100%);pointer-events:auto;display:flex;flex-direction:column;
+  transition:transform var(--dur-2) var(--ease),opacity var(--dur-2) var(--ease);will-change:transform}
+:where(body.v2) .pslot[data-on]{z-index:2}
+:where(body.v2) .pslot[data-side]{z-index:1;opacity:.55;cursor:pointer;transform:translateX(calc(var(--d,1) * (100% + var(--s4)))) scale(.9)}
+:where(body.v2) .pslot[data-side] .pop{pointer-events:none}
+@media (prefers-reduced-motion:reduce){:where(body.v2) .pslot{transition:none}}
 
-/* ═══════ 공통 ═══════ */
-:where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:end center;padding:0 var(--gut)}
-/* 공지 팝업 .hh-popup 이 z-index 90 이다. 같은 층에 둔다. 한 화면에 둘이 동시에 뜨지 않게 하는 것은 JS 몫(SELF_CHECK 결재 1) */
-:where(body.v2) .pback{position:absolute;inset:0;background:rgba(49,46,46,.72)}
-/* 玄墨 #312E2E 의 알파. base.css 선례 --hair .40, .hh-popup-back .42. .72 로 올린 이유 둘:
-   ① 공지 팝업 .42 와 딤 농도가 갈려 층이 구별된다 ② 지면 판 뒤로 楮紙 배경이 비쳐 판이 뜨는 것을 막는다 */
-
-:where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s5);
-  background:var(--card);color:var(--ink);
-  border-radius:var(--r-lg) var(--r-lg) 0 0;box-shadow:var(--shadow-1);
-  max-height:45vh;overflow:auto;overscroll-behavior:contain}
-@supports (height:100dvh){:where(body.v2) .pop{max-height:min(45vh,45dvh)}}
-
-:where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;
-  letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;min-height:var(--tap);max-width:none}
-:where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;
-  margin-right:10px;flex:none}   /* 朱印 1점. base.css 149행 공지 띠 점과 같은 6px. 안마다 한 역할로만 쓴다 */
-
-:where(body.v2) .pclose{position:absolute;top:0;right:0;width:var(--tap);height:var(--tap);
-  display:grid;place-items:center;color:var(--ink);z-index:2}
-:where(body.v2) .pclose svg{width:var(--s4);height:var(--s4)}
-:where(body.v2) .pclose:hover{color:var(--ink)}
-
+:where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s4);background:var(--card);color:var(--ink);
+  border:var(--rule-ui);border-radius:var(--r-md) var(--r-md) 0 0;box-shadow:var(--shadow-2);
+  max-height:72vh;overflow:auto;overscroll-behavior:contain}
+@supports (height:100dvh){:where(body.v2) .pop{max-height:min(72vh,72dvh)}}
+:where(body.v2) .pfr{margin:0;padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s3)}
+:where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;max-width:none}
+:where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:10px;flex:none}
 :where(body.v2) .pkv{margin:0;position:relative}
 :where(body.v2) .pkv .ph,:where(body.v2) .pkv img{display:block;width:100%;aspect-ratio:21/9;object-fit:cover}
 :where(body.v2) .pkv .ph{display:grid;place-items:center;background:var(--mat);box-shadow:inset 0 0 0 1px var(--hairs)}
 :where(body.v2) .pkv .ph span{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
-:where(body.v2) .pop--noimg .pkv{display:none}   /* 도판 없는 회차. 나머지 칸은 그대로 선다 */
-
-:where(body.v2) .ptxt h2{font-size:var(--t-h3)}
-:where(body.v2) .ptxt .rate{display:none}   /* 계기 숫자는 먹판 안에서만 세운다. 지면에서는 표제가 이미 30%를 말한다 */
-:where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;
-  color:var(--gray);margin-top:var(--s2);max-width:none}
-:where(body.v2) .ptxt .pnote{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);max-width:none}   /* 안내 한 줄 (2026-09-10 9/14 오픈). 마감 줄과 다른 층이라 mono 가 아니라 본문 small */
+:where(body.v2) .pop--noimg .pkv{display:none}
+:where(body.v2) .ptxt h2{font-size:var(--t-h4);line-height:var(--lh-tight);max-width:none}
+:where(body.v2) .ptxt .rate{display:none}   /* 표제가 이미 30% 를 말한다 */
+:where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;color:var(--gray);margin-top:var(--s2);max-width:none}
+:where(body.v2) .ptxt .pnote{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);max-width:none}
 :where(body.v2) .ptxt .pnote .tlink{margin-left:var(--s1);white-space:nowrap}
-
-/* 가격 예시 표: 세로 괘선 0, 헤더 채움 0, 얼룩말 줄 0 */
+:where(body.v2) .ptxt .pbody{margin-top:var(--s3);font-size:var(--t-sm);line-height:var(--lh-body);color:var(--body)}
+:where(body.v2) .ptxt .pbody p+p{margin-top:var(--s2)}
+:where(body.v2) .ptxt .pbody a{text-decoration:underline;text-underline-offset:4px}
+/* 가격 표: 세로 괘선 0, 헤더 채움 0. 행사 카드는 [data-list-price] 를 app.js 가 정가 취소선 + 할인가(.sale 朱印)로, 의뢰 카드는 .amt 먹색 */
 :where(body.v2) .ptbl{width:100%;border-collapse:collapse}
 :where(body.v2) .ptbl th,:where(body.v2) .ptbl td{padding:var(--s2) 0;border-top:var(--rule);font-size:var(--t-sm)}
 :where(body.v2) .ptbl tr:first-child th,:where(body.v2) .ptbl tr:first-child td{border-top:var(--rule-strong)}
 :where(body.v2) .ptbl th[scope=row]{text-align:left;font-weight:600;letter-spacing:-0.01em}
 :where(body.v2) .ptbl td{text-align:right;white-space:nowrap}
-:where(body.v2) .ptbl [data-list-price]{font-family:var(--mono);font-weight:500;font-size:var(--t-base);
-  letter-spacing:-0.01em;color:var(--seal);font-variant-numeric:tabular-nums}
-:where(body.v2) .ptbl s.was{font-size:var(--t-sm)}   /* 정가는 본문 소형 토큰으로 고정 */
-
-/* 행동 4. 커머스 확정 행동 둘만 잉크 사각, 나머지 둘은 텍스트 */
-/* 지면 묶음. 가격과 행동과 각주를 한 덩어리로 감싼다.
-   P1 P3 은 display:contents 라 배치에 아무 영향이 없고, P2 만 이 덩어리에 지면을 칠한다.
-   ★ border-collapse:collapse 인 table 은 CSS 규정상 자기 padding 이 0 이다. 그래서 표에 직접
-     여백을 주면 P2 에서 가격이 판 밖으로 붙어 나간다(첫 렌더 실측). 여백은 이 묶음이 갖는다 */
-:where(body.v2) .pbot{display:contents}
+:where(body.v2) .ptbl [data-list-price],:where(body.v2) .ptbl .amt{font-family:var(--mono);font-weight:500;font-size:var(--t-base);letter-spacing:-0.01em;font-variant-numeric:tabular-nums}
+:where(body.v2) .ptbl [data-list-price]{color:var(--seal)}
+:where(body.v2) .ptbl .amt{color:var(--ink)}
+:where(body.v2) .ptbl .per{margin-right:var(--s1)}
+:where(body.v2) .ptbl s.was{font-size:var(--t-sm)}
+:where(body.v2) .pbot{display:flex;flex-direction:column;gap:var(--s3)}
 :where(body.v2) .pacts{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);align-items:stretch}
 :where(body.v2) .pacts .btn{width:100%}
-:where(body.v2) .pfoot{display:flex;justify-content:flex-start;max-width:none}
-:where(body.v2) .pfoot .tlink{font-weight:500;color:var(--gray);text-decoration-color:var(--hairs)}
-:where(body.v2) .pfoot .tlink:hover{color:var(--ink);text-decoration-color:var(--hair)}
-
-/* B안 하단 시트: 단일 경계, 최대 45vh. 카피와 상품행은 스크롤 안에서 전부 제공한다. */
-:where(body.v2) .pop--gwak{max-width:var(--container);background:var(--card);border:var(--rule-ui);border-bottom:0;--pop-pad:var(--s3)}
-:where(body.v2) .pop--gwak .pfr{margin:0;padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s2)}
-:where(body.v2) .pop--gwak .prib .k{min-height:var(--s4)}
-:where(body.v2) .pop--gwak .ptxt{padding-right:var(--tap)}
-:where(body.v2) .pop--gwak .ptxt h2{font-size:var(--t-h4)}
-:where(body.v2) .pop--gwak .pclose{top:var(--s2);right:var(--s2)}
+/* 하단바 */
+:where(body.v2) .pbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s1) var(--s3);
+  background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}
+:where(body.v2) .pbar .pmute{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);color:var(--gray);cursor:pointer;white-space:nowrap}
+:where(body.v2) .pbar .pmute input{appearance:none;width:18px;height:18px;border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card);flex:none}
+:where(body.v2) .pbar .pmute input:checked{background:var(--ink);border-color:var(--ink)}
+:where(body.v2) .pbar .pnav{display:flex;align-items:center;gap:var(--s1);margin-left:auto}
+:where(body.v2) .pbar .parr{min-width:var(--tap);min-height:var(--tap);display:grid;place-items:center;padding:0 var(--s2);font-size:var(--t-sm);font-weight:600;color:var(--ink);border-radius:var(--r-md);white-space:nowrap}
+:where(body.v2) .pbar .parr:hover{background:var(--mat)}
+:where(body.v2) .pbar .pcnt{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);font-variant-numeric:tabular-nums;padding:0 var(--s1);white-space:nowrap}
+:where(body.v2) .pbar .pclose{font-size:var(--t-sm);font-weight:600;min-height:var(--tap);padding:0 var(--s3);box-shadow:inset 0 0 0 1px var(--hair);border-radius:var(--r-md);color:var(--ink);white-space:nowrap}
+:where(body.v2) .pbar .pclose:hover{background:var(--ink);color:var(--paper);box-shadow:none}
 @media (max-width:37.5em){
-  :where(body.v2) .pdim{padding:0}
+  :where(body.v2) .pdim{padding:var(--s3)}
+  :where(body.v2) .pslot[data-side]{opacity:0;pointer-events:none}
   :where(body.v2) .pacts{grid-template-columns:1fr}
   :where(body.v2) .ptbl td{white-space:normal}
+  /* 폰 하단바 = 2줄 고정: 1줄 오늘 하루 보지 않기 + 닫기, 2줄 ← n/N → 정지 가운데(한 줄에 셋이 안 들어가 닫기만 홀로 꺾이던 것을 막는다) */
+  :where(body.v2) .pbar{gap:0 var(--s2)}
+  :where(body.v2) .pbar .pmute{order:1}
+  :where(body.v2) .pbar .pclose{order:2;margin-left:auto}
+  :where(body.v2) .pbar .pnav{order:3;width:100%;justify-content:center;margin-left:0;border-top:var(--rule)}
 }
-
-:where(body.v2) .pdim[hidden],:where(body.v2) [data-promo-popup][hidden]{display:none!important}
+:where(body.v2) .pdim[hidden],:where(body.v2) [data-promo-popup][hidden],:where(body.v2) [data-hh-popup][hidden]{display:none!important}
+/* ==== popup_stage_20260922 end ==== */
 
 /* ============ 응시 순위표 3안: 卷六 지면 + phead 응시 현황 + 홈 위젯 (2026-09-07 design-director) ============
    전제  assets/base.css 뒤에 로드한다. 신규 색 0, 신규 서체 0, 신규 곡률 0.

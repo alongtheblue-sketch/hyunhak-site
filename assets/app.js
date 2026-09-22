@@ -328,26 +328,34 @@
       if (tg) tg.addEventListener("click", function () { track("generate_lead", { content: "studio_trial" }); });
     } catch (e) {}
   });
-  // ── 공지 팝업 (2026-08-23) ──
-  // 정책: 관리자가 게시한 popup 중 노출 기간 안의 것을 최대 1건 띄운다.
-  // "오늘 하루 보지 않기" = id 별로 24시간 억제(localStorage). 세션 안에서는 1회만.
+  // ── 팝업 무대 (2026-09-22 통합. 구 공지 팝업 2026-08-23 + 행사 팝업 2026-09-07 을 한 무대로) ──
+  // 건우: 팝업은 아래에서 올라오는 시트가 아니라 화면 가운데. iruriedu.kr /assets/v4/popup.js 의 컨베이어 계약을 이 사이트 토큰으로 옮겼다.
+  // 카드 원천 셋: 행사 = 빌드가 입구 면에 넣는 #promoPopup[data-hh-popup=promo] (세우는 판정은 /api/config.promo 가 같은 id 로 살아 있을 때만.
+  //   판정 미확정·없음·만료 = 안 세움, critic P1-1) · 의뢰 개시 = index.html 의 [data-hh-popup=request] 정적 · 공지 = /api/notices/active?kind=popup.
+  // 무대: 한 장이면 가운데 한 장, 둘 이상이면 활성 카드 가운데 + 나머지 측면 0.9 축소 상시 노출. 5초 자동 넘김은 모션 무감 선호가 아닐 때만 돌고,
+  //   하단바 정지 단추(WCAG 2.2.2)·호버·카드 안 어떤 조작이든 멈춘다. ←/→ 키와 스와이프. 세션당 1회(sessionStorage hh_popup_shown).
+  // 억제: "오늘 하루 보지 않기" = 전 팝업 공통, KST 자정까지(localStorage hh_popup_mute_v1 의 키 all). 구 id 별 억제(공지, promo:id)도 그대로 본다.
   const POPUP_KEY = "hh_popup_mute_v1";
+  const POPUP_AUTO_MS = 5000;
   function popupMutes() {
     try { return JSON.parse(localStorage.getItem(POPUP_KEY) || "{}"); } catch { return {}; }
   }
-  function mutePopup(id, hours) {
-    const m = popupMutes(); m[id] = Date.now() + hours * 3600 * 1000;
-    try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {}
+  function savePopupMutes(m) { try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {} }
+  function kstMidnight(now) {
+    const t = (now || Date.now()) + 9 * 3600 * 1000;
+    const d = new Date(t);
+    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1) - 9 * 3600 * 1000;
   }
-  // 노출 판정 함수. 건우 선택 지점: 팝업이 여러 건일 때 무엇을 보일지, 얼마나 자주 볼지.
-  // 기본 = 억제 안 된 것 중 서버 정렬(pinned, priority) 첫 건, 세션당 1회.
-  function pickPopup(items) {
+  function muteAllPopups() { const m = popupMutes(); m.all = kstMidnight(); savePopupMutes(m); }
+  function popupMuted(key) {
     const m = popupMutes(), now = Date.now();
-    let shown = false;
-    try { shown = sessionStorage.getItem("hh_popup_shown") === "1"; } catch {}
-    if (shown) return null;
-    return (items || []).find((it) => !(m[it.id] && m[it.id] > now)) || null;
+    return !!((m.all && m.all > now) || (key && m[key] && m[key] > now));
   }
+  function promoPopupMuted(id) { return popupMuted("promo:" + id); }
+  function popupShownThisSession() { try { return sessionStorage.getItem("hh_popup_shown") === "1"; } catch { return false; } }
+  // 공지 후보 = 억제 안 된 것 전부, 서버 정렬(pinned, priority) 순. pickPopup 은 구 계약(첫 한 건) 호환.
+  function pickPopups(items) { return (items || []).filter((it) => it && it.id != null && !popupMuted(String(it.id))); }
+  function pickPopup(items) { return popupShownThisSession() ? null : (pickPopups(items)[0] || null); }
   function esc(t) { return String(t || "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
   // 공지 body_html allowlist 정화 (저장형 XSS 차단): 허용 태그 외 언랩, 속성은 a[href https/절대경로] 만 유지
   function sanitizeHtml(html) {
@@ -367,7 +375,7 @@
     walk(doc.body);
     return doc.body.innerHTML;
   }
-  // 공지와 행사 모달의 제목 초점, Tab 순환, 배경 비활성화와 복귀를 같은 함수로 처리한다.
+  // 모달의 제목 초점, Tab 순환, 배경 비활성화와 복귀를 한 함수로 처리한다.
   function popupFocus(root, title, dismiss) {
     const previous = document.activeElement;
     const locked = document.documentElement.classList.contains("ppop-open");
@@ -406,126 +414,163 @@
     initial.focus({ preventScroll: true });
     return close;
   }
-  function renderPopup(it) {
+  // 공지 한 건을 무대 카드로 조판한다. 행사·의뢰 카드와 같은 골격(.pop > .pfr > .prib .ptxt).
+  function noticeCard(it) {
+    const card = document.createElement("div");
+    card.className = "pop pop--noimg";
+    const tid = "hhPopupTitle_" + String(it.id).replace(/[^\w-]/g, "");
+    card.setAttribute("aria-labelledby", tid);
+    const link = it.link_url && /^(https:\/\/|\/)/.test(it.link_url)
+      ? '<p class="pnote"><a class="tlink" href="' + esc(it.link_url) + '">' + esc(it.link_label || "자세히 보기") + "</a></p>" : "";
+    card.innerHTML =
+      '<div class="pfr"><div class="prib"><p class="k">공지</p></div>' +
+      '<div class="ptxt"><h2 id="' + tid + '">' + esc(it.title) + "</h2>" +
+      '<div class="pbody">' + (it.body_html ? sanitizeHtml(it.body_html) : esc(it.body_md || "")) + "</div>" + link + "</div></div>";
+    return { key: String(it.id), kind: "notice", card, title: card.querySelector("h2"), promoId: null };
+  }
+  // 지면에 박힌 카드. 뿌리 [data-hh-popup] 은 hidden 그대로 두고 안의 .pop 만 무대로 옮긴다.
+  function staticCards() {
+    const p = promo(), out = [];
+    document.querySelectorAll("[data-hh-popup]").forEach((root) => {
+      const kind = root.getAttribute("data-hh-popup") || "";
+      const until = root.getAttribute("data-promo-until") || root.getAttribute("data-popup-until");
+      if (until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until)) return;
+      let key = kind, promoId = null;
+      if (root.hasAttribute("data-promo-popup")) {
+        if (!p || p.id !== root.getAttribute("data-promo-popup")) return;
+        promoId = p.id; key = "promo:" + p.id;
+      }
+      if (popupMuted(key)) return;
+      const card = root.querySelector(".pop");
+      if (card) out.push({ key, kind, card, title: card.querySelector("h2"), promoId });
+    });
+    return out;
+  }
+  function openStage(cards) {
+    const N = cards.length;
+    if (!N || document.querySelector(".pdim")) return false;
     const root = document.createElement("div");
-    root.className = "hh-popup";
+    root.className = "pdim";
     root.setAttribute("role", "dialog");
     root.setAttribute("aria-modal", "true");
-    root.setAttribute("aria-labelledby", "hhPopupTitle");
-    const link = it.link_url && /^(https:\/\/|\/)/.test(it.link_url)
-      ? '<a class="tlink" href="' + esc(it.link_url) + '">' + esc(it.link_label || "자세히 보기") + "</a>" : "";
-    root.innerHTML =
-      '<div class="hh-popup-back"></div>' +
-      '<div class="hh-popup-card">' +
-        '<p class="hh-popup-kind">공지</p>' +
-        '<h2 id="hhPopupTitle" class="hh-popup-title">' + esc(it.title) + "</h2>" +
-        '<div class="hh-popup-body">' + (it.body_html ? sanitizeHtml(it.body_html) : esc(it.body_md || "")) + "</div>" +
-        (link ? '<p class="hh-popup-link">' + link + "</p>" : "") +
-        '<div class="hh-popup-foot">' +
-          '<label class="hh-popup-mute"><input type="checkbox" id="hhPopupMute"> 오늘 하루 보지 않기</label>' +
-          '<button type="button" class="hh-popup-close" id="hhPopupClose">닫기</button>' +
-        "</div>" +
-      "</div>";
+    root.setAttribute("aria-label", N > 1 ? "안내 " + N + "건" : "안내");
+    root.innerHTML = '<div class="pback" data-ppop-back></div><div class="pstage"></div>';
+    const stage = root.querySelector(".pstage");
+    const slots = cards.map((c, i) => {
+      const s = document.createElement("div");
+      s.className = "pslot"; s.dataset.i = String(i);
+      c.card.hidden = false;
+      s.appendChild(c.card); stage.appendChild(s);
+      return s;
+    });
+    const bar = document.createElement("div");
+    bar.className = "pbar";
+    bar.innerHTML =
+      '<label class="pmute"><input type="checkbox" data-ppop-mute-all> 오늘 하루 보지 않기</label>' +
+      (N > 1
+        ? '<div class="pnav"><button type="button" class="parr" data-ppop-prev aria-label="이전 안내">←</button>' +
+          '<span class="pcnt"><b data-ppop-cur>1</b>/' + N + "</span>" +
+          '<button type="button" class="parr" data-ppop-next aria-label="다음 안내">→</button>' +
+          '<button type="button" class="parr ppause" data-ppop-pause aria-pressed="false">정지</button></div>'
+        : "") +
+      '<button type="button" class="pclose" data-ppop-close>닫기</button>';
     document.body.appendChild(root);
-    const close = popupFocus(root, root.querySelector("#hhPopupTitle"), () => {
-      if (root.querySelector("#hhPopupMute").checked) mutePopup(it.id, 24);
+    let cur = 0, timer = null, hover = false, autoFocus = false;   // autoFocus = 자동 넘김이 옮기는 초점(사람 조작이 아니라 벨트를 안 멈춘다)
+    let stopped = N < 2 || !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+    const pauseBtn = bar.querySelector("[data-ppop-pause]");
+    const curEl = bar.querySelector("[data-ppop-cur]");
+    // 활성 카드 가운데, 나머지는 가장 짧은 방향의 측면(--d = 칸 수). 하단바는 활성 카드 아래로 옮겨 붙는다. 측면 .pop 은 inert.
+    function layout() {
+      slots.forEach((s, i) => {
+        let d = i - cur;
+        if (N > 2) { if (d > N / 2) d -= N; else if (d < -N / 2) d += N; }
+        const card = s.firstElementChild;
+        if (i === cur) { s.removeAttribute("data-side"); s.style.removeProperty("--d"); s.setAttribute("data-on", ""); card.removeAttribute("inert"); s.appendChild(bar); }
+        else { s.removeAttribute("data-on"); s.setAttribute("data-side", d < 0 ? "-1" : "1"); s.style.setProperty("--d", String(d)); card.setAttribute("inert", ""); }
+      });
+      if (curEl) curEl.textContent = String(cur + 1);
+    }
+    function setPause(on) {
+      stopped = on; clearTimeout(timer);
+      if (pauseBtn) { pauseBtn.setAttribute("aria-pressed", on ? "true" : "false"); pauseBtn.textContent = on ? "재생" : "정지"; }
+      if (!on) tick();
+    }
+    function tick() {
+      clearTimeout(timer);
+      if (stopped || hover) return;
+      timer = setTimeout(() => {
+        if (stopped || hover) return;
+        const hadFocus = slots[cur].contains(document.activeElement);   // 초점이 넘어가는 카드 안에 있었으면(측면이 되며 inert) 새 카드 제목으로 옮겨 대화상자 밖으로 떨어지지 않게 한다
+        cur = (cur + 1) % N; layout();
+        if (hadFocus) { const t = cards[cur].title || cards[cur].card; t.setAttribute("tabindex", "-1"); autoFocus = true; t.focus({ preventScroll: true }); autoFocus = false; }
+        tick();
+      }, POPUP_AUTO_MS);
+    }
+    function go(n) {   // 사람 조작: 벨트를 멈추고 새 활성 카드의 제목에 초점
+      if (!stopped) setPause(true);
+      cur = ((n % N) + N) % N; layout();
+      const t = cards[cur].title || cards[cur].card;
+      t.setAttribute("tabindex", "-1"); t.focus({ preventScroll: true });
+    }
+    const onArrow = (e) => {
+      if (N < 2 || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
+    };
+    layout();
+    const close = popupFocus(root, cards[0].title, () => {
+      clearTimeout(timer);
+      document.removeEventListener("keydown", onArrow);
+      const mute = bar.querySelector("[data-ppop-mute-all]");
+      if (mute && mute.checked) { muteAllPopups(); track("popup_mute", { keys: cards.map((c) => c.key).join(",") }); }
       root.remove();
     });
-    root.querySelector("#hhPopupClose").addEventListener("click", close);
-    root.querySelector(".hh-popup-back").addEventListener("click", close);
+    document.addEventListener("keydown", onArrow);
+    root.querySelector("[data-ppop-back]").addEventListener("click", close);
+    bar.querySelector("[data-ppop-close]").addEventListener("click", close);
+    if (N > 1) {
+      bar.querySelector("[data-ppop-prev]").addEventListener("click", () => go(cur - 1));
+      bar.querySelector("[data-ppop-next]").addEventListener("click", () => go(cur + 1));
+      pauseBtn.addEventListener("click", () => setPause(!stopped));
+      slots.forEach((s, i) => s.addEventListener("click", (e) => { if (s.hasAttribute("data-side")) { e.preventDefault(); go(i); } }));
+      stage.addEventListener("mouseenter", () => { hover = true; clearTimeout(timer); });
+      stage.addEventListener("mouseleave", () => { hover = false; tick(); });
+      let tx = null;
+      stage.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
+      stage.addEventListener("touchend", (e) => {
+        if (tx === null) return;
+        const dx = e.changedTouches[0].clientX - tx; tx = null;
+        if (dx <= -40) go(cur + 1); else if (dx >= 40) go(cur - 1);
+      }, { passive: true });
+      // 카드 안 어떤 조작이든(초점 이동 포함) 벨트를 멈춘다. 사람 통제 우선(WCAG 2.2.2)
+      stage.addEventListener("pointerdown", () => { if (!stopped) setPause(true); });
+      stage.addEventListener("focusin", () => { if (!stopped && !autoFocus) setPause(true); });
+    }
+    root.querySelectorAll("[data-ppop-go]").forEach((a) => a.addEventListener("click", () => {
+      const c = cards.find((x) => x.card.contains(a));
+      track(c && c.promoId ? "promo_popup_click" : "popup_click", { promo_id: (c && c.promoId) || undefined, key: c && c.key, target: a.dataset.ppopGo });
+    }));
     try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
+    cards.forEach((c) => track(c.promoId ? "promo_popup_view" : "popup_view", { promo_id: c.promoId || undefined, key: c.key }));
+    if (!stopped) tick();
+    return true;
   }
-  async function showPopup() {
-    if (document.body.dataset.noPopup !== undefined) return;   // body[data-no-popup] = 결제, 리더 화면 제외
-    let data;
-    try { data = await api("/api/notices/active?kind=popup"); } catch { return; }
-    const items = Array.isArray(data) ? data : (data.items || data.notices || []);
-    const it = pickPopup(items);
-    if (it && !document.querySelector('.hh-popup, #promoPopup:not([hidden])')) renderPopup(it);
+  let stagePending = null;
+  async function attemptStage() {
+    if (document.body.dataset.noPopup !== undefined) return false;   // body[data-no-popup] = 결제, 리더 화면 제외
+    if (popupShownThisSession() || document.querySelector(".pdim")) return false;
+    await promoReady;   // 행사 판정을 기다린다. 미확정이면 행사 카드만 빠진다
+    let notices = [];
+    try { const data = await api("/api/notices/active?kind=popup"); notices = Array.isArray(data) ? data : (data.items || data.notices || []); } catch {}
+    return openStage(staticCards().concat(pickPopups(notices).map(noticeCard)));
   }
-  // ── 행사 팝업 (2026-09-07) ──
-  // 마크업은 빌드가 입구 면에 넣는다(_tools/apply_promo.py, #promoPopup[data-promo-popup=행사 id]). 여는 조건은 배너와 같은 서버 판정 하나:
-  // /api/config.promo 가 같은 id 로 살아 있을 때만. 판정 미확정·없음·만료 = 열지 않는다(할인 광고에 정가 화면 차단, critic P1-1).
-  // "오늘 하루 보지 않기" = 그 행사 id 를 KST 자정까지 억제(localStorage, 공지 팝업과 같은 저장소). 닫기 = 이 세션에서만 안 뜸.
-  // 공지 팝업과 한 세션에 하나만: 행사 팝업이 먼저 판정하고, 떴으면 공지 팝업은 건너뛴다.
-  function kstMidnight(now) {
-    const t = (now || Date.now()) + 9 * 3600 * 1000;
-    const d = new Date(t);
-    return Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate() + 1) - 9 * 3600 * 1000;
+  // 구 이름 둘(showPopup = 공지, showPromoPopup = 행사)은 같은 무대를 연다. 한 번만 돈다.
+  function showPromoPopup() {
+    if (!stagePending) stagePending = attemptStage().finally(() => { stagePending = null; });
+    return stagePending;
   }
-  function promoPopupMuted(id) {
-    const m = popupMutes();
-    return !!(m["promo:" + id] && m["promo:" + id] > Date.now());
-  }
-  function mutePromoPopup(id) {
-    const m = popupMutes(); m["promo:" + id] = kstMidnight();
-    try { localStorage.setItem(POPUP_KEY, JSON.stringify(m)); } catch {}
-  }
-  function openPromoPopup(root, p) {
-    root.hidden = false;
-    const close = popupFocus(root, root.querySelector("#ppopT"), () => { root.hidden = true; });
-    root.querySelectorAll("[data-ppop-close]").forEach((b) => b.addEventListener("click", close));
-    root.querySelectorAll("[data-ppop-back]").forEach((b) => b.addEventListener("click", close));
-    root.querySelectorAll("[data-ppop-mute]").forEach((b) => b.addEventListener("click", () => { mutePromoPopup(p.id); track("promo_popup_mute", { promo_id: p.id }); close(); }));
-    root.querySelectorAll("[data-ppop-go]").forEach((a) => a.addEventListener("click", () => track("promo_popup_click", { promo_id: p.id, target: a.dataset.ppopGo })));
-    try { sessionStorage.setItem("hh_popup_shown", "1"); } catch {}
-    track("promo_popup_view", { promo_id: p.id });
-  }
-  // 첫 40% 스크롤 또는 DOMContentLoaded 뒤 8초. 둘 중 먼저 도달하면 나머지를 정리한다.
-  function promoTrigger() {
-    let finish, timer;
-    const promise = new Promise((resolve) => {
-      let done = false;
-      finish = (ready) => {
-        if (done) return;
-        done = true; clearTimeout(timer);
-        window.removeEventListener("scroll", onScroll);
-        resolve(ready);
-      };
-      const onScroll = () => {
-        const page = document.scrollingElement || document.documentElement;
-        const distance = page.scrollHeight - window.innerHeight;
-        if (distance > 0 && page.scrollTop / distance >= .4) finish(true);
-      };
-      window.addEventListener("scroll", onScroll, { passive: true });
-      timer = setTimeout(() => finish(true), 8000);
-    });
-    return { promise, cancel: () => finish(false) };
-  }
-  function canOpenPromoPopup(root) {
-    const p = promo();
-    if (document.body.dataset.noPopup !== undefined || !p || p.id !== root.getAttribute("data-promo-popup")) return false;
-    const until = root.getAttribute("data-promo-until");
-    if (until && !Number.isNaN(Date.parse(until)) && Date.now() > Date.parse(until)) return false;
-    if (promoPopupMuted(p.id)) return false;
-    try { if (sessionStorage.getItem("hh_popup_shown") === "1") return false; } catch {}
-    return !document.querySelector('.hh-popup, #promoPopup:not([hidden])');
-  }
-  let promoPopupPending = null;
-  async function attemptPromoPopup() {
-    if (document.body.dataset.noPopup !== undefined) return false;
-    const root = document.getElementById("promoPopup");
-    if (!root || !root.hasAttribute("data-promo-popup")) return false;
-    const trigger = promoTrigger();
-    try {
-      await promoReady;
-      if (!canOpenPromoPopup(root)) return false;
-      if (!await trigger.promise || !canOpenPromoPopup(root)) return false;
-      openPromoPopup(root, promo());
-      return true;
-    } finally { trigger.cancel(); }
-  }
-  // 공지가 행사 판정과 지연 노출을 기다리게 하여 두 모달이 겹치지 않는다.
-  async function showPromoPopup() {
-    if (promoPopupPending) return promoPopupPending;
-    promoPopupPending = attemptPromoPopup();
-    try { return await promoPopupPending; } finally { promoPopupPending = null; }
-  }
-  document.addEventListener("DOMContentLoaded", async () => {
-    let opened = false;
-    try { opened = await showPromoPopup(); } catch { opened = false; }
-    if (!opened) showPopup();
-  });
+  const showPopup = showPromoPopup;
+  document.addEventListener("DOMContentLoaded", () => { showPromoPopup().catch(() => {}); });
 
   // 가로 스크롤 표: 실제로 넘칠 때만 키보드 초점과 이름을 준다 (WCAG 2.1.1, 1.3.1).
   // 넘치지 않는 표에 tabindex 를 걸면 불필요한 탭 정거장이 되므로 실측 후 부여한다.
