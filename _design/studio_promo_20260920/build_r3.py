@@ -553,14 +553,132 @@ def story_I(promo=False):
     return HEAD.format(t='면접 스튜디오 스토리') + '<body class="story i">' + ''.join(o) + '</body></html>'
 
 
+# ================================================================= r4 dirG: 앞면 = 리포트와 첨삭 세 단(실제 문장 조판) + 혼자서도 되는 이유 / 뒷면 = 절차 + 숫자 + 단위 + 가격 + 문의
+CSS_G4 = r"""
+.sp-col h4 { font-family: var(--serif); font-weight: 700; font-size: 10.5pt; letter-spacing: -0.04em; line-height: 1.3; white-space: nowrap; margin-bottom: 0.6mm; }
+.sp-col h4 i { display: block; font-style: normal; font-family: var(--sans); font-weight: 400; font-size: 7.6pt; color: var(--gray); letter-spacing: -0.02em; line-height: 1.4; margin-top: 0.4mm; white-space: normal; }
+.sp-quote { border-left: 0.75pt solid var(--ink); padding: 0.6mm 0 0.6mm 2.6mm; font-size: 8pt; line-height: 1.6; letter-spacing: -0.025em; }
+.sp-quote mark { background: transparent; color: inherit; box-shadow: inset 0 -0.55em 0 rgba(105,101,97,.22); }
+.dg { padding: 1.9mm 0 2.1mm; border-top: 0.25pt solid rgba(105,101,97,.55); }
+.dg:last-child { border-bottom: 0.25pt solid rgba(105,101,97,.55); }
+.dg .tag { display: inline-block; background: var(--ink); color: var(--paper); font-size: 7pt; font-weight: 700; line-height: 1; padding: 0.9mm 1.5mm 0.8mm; border-radius: 0.6mm; letter-spacing: 0; vertical-align: 0.3mm; margin-right: 1.6mm; }
+.dg .q { font-size: 7.8pt; line-height: 1.55; color: var(--gray); letter-spacing: -0.02em; }
+.dg .d { font-size: 7.8pt; line-height: 1.55; letter-spacing: -0.025em; margin-top: 0.9mm; color: var(--ink); }
+.dg .f { font-size: 7.8pt; line-height: 1.55; letter-spacing: -0.025em; margin-top: 0.9mm; font-weight: 600; display: flex; gap: 1.6mm; }
+.dg .f b { flex: 0 0 auto; font-weight: 700; color: var(--gray); font-size: 7pt; letter-spacing: 0.02em; line-height: 1.6; padding-top: 0.15mm; }
+.why .n { font-family: var(--serif); font-weight: 500; font-size: 22pt; line-height: 1; letter-spacing: -0.04em; }
+.why .t { font-weight: 700; font-size: 10pt; letter-spacing: -0.03em; white-space: nowrap; }
+.why .d { font-size: 7.9pt; line-height: 1.6; letter-spacing: -0.025em; color: var(--body); }
+.g4-made { font-size: 7.8pt; color: var(--body); letter-spacing: -0.025em; white-space: nowrap; }
+.wrap.flow > .steps-blk, .steps-blk { position: relative; }
+.steps-blk > * { position: absolute; }
+.g-made-line { font-size: 8pt; color: var(--body); letter-spacing: -0.025em; white-space: nowrap; }
+"""
+
+TRANSCRIPT = '네, <mark>제시문 [가]는 지능이 다양하다는 내용입니다.</mark> <mark>제시문 [나]는 IQ 테스트 이야기이고, [다]는 똑똑함에 대한 내용입니다.</mark> <mark>둘 다 지능으로 사람을 판단해서 문제라고 생각합니다.</mark> [라] 실험은 직업으로 지능을 평가한 실험인데, <mark>편견이 있다는 것 같습니다.</mark> 이상입니다.'
+DIAG = [
+    ('질문 미응답', '제시문 [나]는 IQ 테스트 이야기이고, [다]는 똑똑함에 대한 내용입니다.',
+     '문항은 [나]와 [다]를 비교하라고 요구했는데 소재만 나열하고 차이점 비교를 전혀 수행하지 않았습니다.',
+     '차별의 방식(제도적 법적 대 사회문화적 편견), 대상(인종 민족 집단 대 개인의 학력 직업), 정당화 논리(과학적 객관성 대 능력주의)처럼 최소 두 축을 세워 대응시켜 말해야 합니다.'),
+    ('근거 부족', '둘 다 지능으로 사람을 판단해서 문제라고 생각합니다.',
+     '공통점 주장에 제시문 근거가 하나도 붙지 않은 단정입니다. 생물학적 결정론이나 사회 위계 정당화 같은 층위도 빠졌습니다.',
+     '[나]의 우생학과 1924년 이민법, [다]의 학력 기반 가치 판단을 근거로 들어 두 사례 모두 단일 지표로 사람의 전체 가치를 재고 위계를 정당화한다고 말해야 합니다.'),
+    ('표현', '편견이 있다는 것 같습니다',
+     '추측형 어미로 끝나 판단이 흐려지고 답변 전체가 두세 문장으로 끝나 분량이 절대적으로 부족합니다.',
+     '단정형으로 마무리하고, 관점 정리, 공통점, 차이점, 비판의 네 단락 구조로 늘려 말하십시오.'),
+]
+RECON = '문제 1번 답변하겠습니다. 먼저 제시문 [가]의 두 관점을 정리하겠습니다. 가드너는 지능이 복합적이고 다차원적이라고 보고, 언어, 논리수학, 공간, 음악, 신체운동, 대인관계, 개인이해, 자연탐구 등 최소 여덟 가지 독립된 지능이 있으며 한 영역의 능력이 다른 영역의 능력을 예측하지 못한다고 주장합니다.'
+WHY = [
+    ('01', '고사장이 앱 안에', '실제 규격의 준비 시간과 답변 시간. 준비 시간이 끝나면 답변 단계로 자동 전환', 'std_prep_y.jpg', (900, 20, 1380, 330), '제시문 준비 화면의 타이머'),
+    ('02', '촬영도 그 자리에서', '답변 화면에서 말하면 그 자리에서 녹음과 녹화. 따로 찍어 올리는 절차 없음', 'std_answer.jpg', (105, 12, 880, 430), '답변 촬영 화면'),
+    ('03', '채점 뒤 리포트가 온다', '전사, 진단, 재구성 세 단과 말속도, 필러 표현, 침묵 비율, 답변 시간 사용 수치', 'std_delivery.jpg', (0, 62, 700, 262), '전달과 태도 화면'),
+    ('04', '막힌 자리만 다시', '연습형 재응시로 막힌 자리만 끊어 다시 응시. 해설 강의는 마이페이지 내 강의에서', 'std_brief.jpg', (320, 372, 1080, 716), '실전형과 연습형 선택 화면'),
+]
+
+
+def brochure_G4():
+    W = 170.0
+    o = ['<section class="page front"><div class="field" style="left:0;top:0;width:216mm;height:92mm"></div><div class="wrap">']
+    o.append('<p class="g-mast" style="left:0;top:0">제시문 면접 스튜디오<span class="dim">연세대, 고려대 대입 모의면접</span></p>')
+    o.append('<h1 class="g-h1" style="left:0;top:10mm">연세대, 고려대 제시문 면접을<br>실전 규격으로 연습합니다</h1>')
+    o.append('<p class="g-sub" style="left:0;top:37.5mm">실전 규격으로 촬영 응시하고 첨삭 세 단을 받습니다.</p>')
+    o.append(inline_svg('logo_full.svg', 'position:absolute;right:0;top:0;height:30mm;width:29.68mm;color:var(--gold)', '현학적 연구소'))
+    # hero = 채점 리포트 화면 (제목 띠 + 본문, 메타 줄 제외)
+    hx, hy, hw = 0, 48, 100
+    im, hh = report_split(hx, hy, hw, body_bottom=720); o.append(im)
+    for n, (mx, my) in zip('123', [(1.6, 8.0), (39.6, 8.0), (87.0, 1.2)]):
+        o.append(f'<span class="marker" style="left:{hx + mx:.1f}mm;top:{hy + my:.1f}mm">{n}</span>')
+    sx = 107
+    o.append(f'<div class="g-side-top" style="left:{sx}mm;top:{hy}mm;width:{W - sx}mm"><p class="k">03 첨삭 세 단</p><p class="t">채점 리포트 화면</p></div>')
+    o.append(f'<ol class="g-legend" style="left:{sx}mm;top:73.5mm;width:{W - sx}mm">'
+             '<li><span class="marker inline">1</span><span><b>여섯 축 평가</b><span class="d">이해력, 분석력, 논리성, 적용력, 전달력, 태도</span></span></li>'
+             '<li><span class="marker inline">2</span><span><b>문항별 루브릭 채점</b><span class="d">항목마다 점수와 부족한 근거를 문장으로. 예: [가] 두 관점의 정확한 정리 4/15</span></span></li>'
+             '<li><span class="marker inline">3</span><span><b>종합 점수와 밴드</b><span class="d">100점 만점. 고려대 3번 문항은 종합적 사고력도 채점</span></span></li></ol>')
+    # 첨삭 세 단 실제 문장
+    y = hy + hh + 7
+    o.append(f'<h2 class="sec-h" style="left:0;top:{y:.1f}mm;width:{W}mm">실제 리포트에서 옮긴 첨삭 세 단<span class="sub">문제 1 답변 한 건. 진단 5건 중 2건</span></h2>')
+    y += 10
+    c1, c2, c3 = (0, 36), (40, 90), (134, 36)
+    o.append(f'<div class="sp-col" style="left:{c1[0]}mm;top:{y:.1f}mm;width:{c1[1]}mm"><h4>1단 전사<i>내 답변을 글로 옮긴 정리본</i></h4><p class="sp-quote">{TRANSCRIPT}</p>'
+             '<p class="cap" style="margin-top:1.6mm;white-space:normal">밑줄 = 진단이 붙은 문장</p></div>')
+    dg = ''.join(f'<div class="dg"><span class="tag">{t}</span><span class="q">「{q}」</span><p class="d">{d}</p><p class="f"><b>고치기</b><span>{f}</span></p></div>' for t, q, d, f in DIAG[:2])
+    o.append(f'<div class="sp-col" style="left:{c2[0]}mm;top:{y:.1f}mm;width:{c2[1]}mm"><h4>2단 오독과 비약 진단<i>문장마다 무엇이 빠졌고 어떻게 고치는지</i></h4>{dg}</div>')
+    o.append(f'<div class="sp-col" style="left:{c3[0]}mm;top:{y:.1f}mm;width:{c3[1]}mm"><h4>3단 구술체 재구성<i>따라 말하는 모범</i></h4><p class="sp-quote">{RECON}</p>'
+             '<p class="cap" style="margin-top:1.6mm;white-space:normal">이하 리포트에서 계속. 소리 내어 따라 말하는 용도</p></div>')
+    # 혼자서도 되는 이유
+    wy = 203.5
+    o.append(f'<h2 class="sec-h" style="left:0;top:{wy:.1f}mm;width:{W}mm">혼자서도 되는 이유 네 가지<span class="sub">고사장, 촬영, 채점, 재응시가 모두 앱 화면 안에서</span></h2>')
+    wy += 9
+    colw, gut = 38.75, 5.0
+    base = wy + 21 + 15.5
+    for i, (n, t, d, src, crop, cap) in enumerate(WHY):
+        x = i * (colw + gut)
+        o.append(f'<div class="why" style="left:{x}mm;top:{wy:.1f}mm;width:{colw}mm"><span class="n">{n}</span> <span class="t">{t}</span><p class="d" style="margin-top:1.2mm">{d}</p></div>')
+        ih = colw * (crop[3] - crop[1]) / (crop[2] - crop[0])
+        ih = min(ih, 13.0)
+        im, _ = shot(src, x, base - ih, colw, crop=crop, alt=cap, h=ih); o.append(im)
+    o.append(f'<p class="g4-made" style="left:0;top:252.5mm">만든 사람. 한 사람이 제시문 390세트를 같은 기준으로 편집합니다. 13년차 입시 컨설턴트 운영</p>')
+    o.append('<p class="g-url url" style="right:0;top:251.5mm">hyunhak.com</p>')
+    o.append('</div></section>')
+    # ---------- 뒷면 (흐름): 절차 4단 + 숫자 + 단위(규격 막대) + 이용권 + 문의
+    b = ['<section class="page back"><div class="wrap flow" style="gap:2.6mm">']
+    b.append('<h2 class="sec-h">스튜디오 응시 절차<span class="sub">지문 선택부터 재응시까지 네 단계를 앱 화면 안에서</span></h2>')
+    colw, gut = 38.75, 5.0
+    crops = {'std_home.jpg': (30, 120, 520, 420), 'std_prep_y.jpg': (900, 40, 1380, 337), 'std_report.jpg': (100, 300, 560, 585), 'std_brief.jpg': (320, 372, 800, 716)}
+    cap_h = 24.0
+    short = ['앱 안의 세트 카드에서 선택. 제시문과 문제는 준비 화면에', '실제 고사장 규격으로 응시. 답변은 그 화면에서 녹음과 녹화', '채점 뒤 리포트에 전사, 오독과 비약 진단, 구술체 재구성', '막힌 자리만 끊어 다시 응시. 해설 강의는 마이페이지에서']
+    blk = [f'<div class="g-spine" style="left:0;top:1.1mm;width:{W}mm"></div>']
+    for i, (n, t, _d, src, cap) in enumerate(STEPS):
+        d = short[i]
+        x = i * (colw + gut)
+        blk.append(f'<span class="g-node" style="left:{x}mm;top:0"></span>')
+        blk.append(f'<div class="g-step" style="left:{x}mm;top:4.2mm;width:{colw}mm"><span class="n">{n}</span> <span class="t">{t}</span></div>')
+        blk.append(f'<p class="g-step" style="left:{x}mm;top:14mm;width:{colw}mm"><span class="d">{d}</span></p>')
+        x0, y0, x1, y1 = crops[src]
+        ih = min(colw * (y1 - y0) / (x1 - x0), cap_h)
+        im, _ = shot(src, x, 25 + cap_h - ih, colw, crop=crops[src], alt=cap, h=ih); blk.append(im)
+        blk.append(f'<p class="cap" style="left:{x}mm;top:{25 + cap_h + 1.6:.1f}mm">{cap}</p>')
+    b.append(f'<div class="steps-blk" style="height:{25 + cap_h + 6:.1f}mm;margin-top:4.5mm">{"".join(blk)}</div>')
+    b.append('<div class="g-facts" style="position:relative;padding:2.2mm 0 1.8mm">' + ''.join(f'<div class="f"><span class="l">{l}</span><span class="v">{v}<small>{u}</small></span></div>' for v, u, l in FACTS6) + '</div>')
+    b.append(sec_units('delivery'))
+    b.append(sec_pricing())
+    b.append(sec_foot())
+    b.append('</div></section>')
+    return HEAD.format(t='제시문 면접 스튜디오 브로슈어') + '<body>' + ''.join(o) + ''.join(b) + '</body></html>'
+
+
 DIRS = {'dirG': (CSS_G, brochure_G, story_G), 'dirH': (CSS_G + CSS_H, brochure_H, story_H), 'dirI': (CSS_G + CSS_I, brochure_I, story_I)}
 
 
 def main():
-    only = sys.argv[1].split(',') if len(sys.argv) > 1 else list(DIRS)
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    rnd = next((a.split('=', 1)[1] for a in sys.argv[1:] if a.startswith('--round=')), 'r3')
+    if rnd == 'r4':
+        DIRS['dirG'] = (CSS_G + CSS_G4, brochure_G4, story_G)
+    only = args[0].split(',') if args else list(DIRS)
     for d in only:
         css, bro, sto = DIRS[d]
-        out = os.path.join(HERE, 'r3', d)
+        out = os.path.join(HERE, rnd, d)
         os.makedirs(out, exist_ok=True)
         open(os.path.join(out, 'style.css'), 'w', encoding='utf-8').write(CSS_COMMON + css)
         open(os.path.join(out, 'brochure.html'), 'w', encoding='utf-8').write(bro())

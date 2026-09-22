@@ -479,6 +479,7 @@
     let cur = 0, timer = null, hover = false, autoFocus = false;   // autoFocus = 자동 넘김이 옮기는 초점(사람 조작이 아니라 벨트를 안 멈춘다)
     let stopped = N < 2 || !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
     const pauseBtn = bar.querySelector("[data-ppop-pause]");
+    if (stopped && pauseBtn) { pauseBtn.setAttribute("aria-pressed", "true"); pauseBtn.textContent = "재생"; }   // 모션 감소 설정이면 멈춘 채 시작하므로 단추도 「재생」 (critic 2차 L9)
     const curEl = bar.querySelector("[data-ppop-cur]");
     // 활성 카드 가운데, 나머지는 가장 짧은 방향의 측면(--d = 칸 수). 하단바는 활성 카드 아래로 옮겨 붙는다. 측면 .pop 은 inert.
     function layout() {

@@ -363,8 +363,8 @@ body.v2{background:var(--ink)}
 :where(body.v2) .find .search{width:min(100%,28em)}   /* 구역 주 조작은 헤더 유틸(clamp 180~240) 크기를 상속하지 않는다 (critic L3) */
 :where(body.v2) .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:var(--rule-strong);border-bottom:var(--rule-strong)}   /* 열 간격은 gap 이 아니라 타일 우측 패딩: 행 괘선이 거터에서 끊기지 않는다 (critic L4) */
 :where(body.v2) .tile{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);padding:var(--s2) var(--s5) var(--s2) 0;border-top:var(--rule);color:var(--ink)}
-:where(body.v2) .tile:nth-child(-n+3){border-top:0}
-:where(body.v2) .tile:nth-child(3n){padding-right:0}
+@media (min-width:1101px){:where(body.v2) .tile:nth-child(-n+3){border-top:0} :where(body.v2) .tile:nth-child(3n){padding-right:0}}   /* 3열 구간만. 1100px 이하는 465행이 2열 (critic 2차 L4 회귀) */
+@media (min-width:37.501em) and (max-width:1100px){:where(body.v2) .tile:nth-child(-n+2){border-top:0} :where(body.v2) .tile:nth-child(2n){padding-right:0}}
 :where(body.v2) .tile .n{flex:1;min-width:0;font-weight:600;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;gap:var(--s2);align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(body.v2) .tile .n small{font-weight:500;font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .w{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
@@ -881,7 +881,7 @@ body.v2{background:var(--ink)}
    구조  .pdim(뿌리 role=dialog) > .pback(딤) + .pstage(무대) > .pslot × N > .pop(카드) [+ .pbar = 활성 카드 아래 하단바, app.js 가 옮겨 붙인다]
    카드  행사 = 빌드 주입(_tools/promo_popup.html) · 의뢰 개시 = index.html 정적 · 공지 = app.js 가 API 로 조판. 골격은 셋이 같다(.pfr > .prib .ptxt .pbot).
    무대  카드 전부 같은 칸(grid-area 1/1)에 겹쳐 세우고 측면은 translateX(--d × (100% + 간격)) scale(.9) + 반투명(단일 focal: 크기와 명도 두 축으로 종속).
-         측면 명도 종속 = 슬롯 전체 opacity 가 아니라 카드 바탕 --mat 불투명 + 안 내용(.pfr)만 .55. 슬롯을 반투명하게 하면 지면 글자가 카드를 관통한다(critic 2026-09-23 L4=2).
+         측면 명도 종속 = 슬롯 전체 opacity 가 아니라 카드 바탕 --mat 불투명 + 안 내용(.pfr)만 .55 (옛 「반투명」 표현은 폐기). 슬롯을 반투명하게 하면 지면 글자가 카드를 관통한다(critic 2026-09-23 L4=2).
          활성 카드만 조작 가능(측면 .pop 은 inert). 폰에서는 측면을 숨기고 스와이프·화살표로만 넘긴다.
    하단바 오늘 하루 보지 않기(전 팝업 공통) · ← n/N → · 자동 넘김 정지(WCAG 2.2.2, 둘 이상일 때만) · 닫기.
    딤   공지 팝업 선례 .42. 가운데 판은 楮紙 배경 비침 문제가 없어 하단 시트 시절의 .72 를 쓰지 않는다(SSOT 무근거, 선례만).
