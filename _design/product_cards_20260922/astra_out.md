@@ -1,0 +1,15 @@
+1. **A2 선택.** 가격 시작선과 CTA를 맞추면서 금액의 가독성을 유지함. B는 가격 배경의 강조가 과하고, C는 `--t-h5` 미정의로 금액이 본문 크기로 축소됨.
+
+2. **수정 1: 과금 단위 구별.** ‘학교마다’가 취소선 정가와 같은 보조 정보처럼 보임. `.r2-home .r2-card-price b .per{font-size:var(--t-sm);font-weight:500;color:var(--body)}`.
+
+3. **수정 2: 좁은 3열의 라벨 공간 확보.** 1024px에서 ‘첨삭과 꼬리질문’이 금액에 밀림. `@media(min-width:56.25em) and (max-width:70em){.r2-home .r2-card{padding:var(--s3)}.r2-home .r2-card-price{column-gap:var(--s2)}}`.
+
+4. **수정 3: 모바일 가격과 CTA 간격 확보.** 데스크톱에만 적용된 간격을 모바일에도 적용. `@media(max-width:56.249em){.r2-home .r2-actions{margin-top:var(--s3)}}`.
+
+5. **색 의미: 충돌 없음.** 카드 3의 일반 가격은 ink, 카드 1과 2의 할인가만 seal 유지. `.r2-home .r2-card-price b{color:var(--ink)} .r2-home .r2-card-price b .sale{color:var(--seal)}`. 취소선이 할인 여부를 색 외에도 전달함.
+
+6. **1024px 위험:** 금액의 `white-space:nowrap`과 라벨의 `overflow-wrap:anywhere` 때문에 글자 확대 시 라벨이 낱글자로 분절될 가능성. 3번 적용 후 확대 상태에서도 확인 필요.
+
+7. **390px 위험:** 캡처에서 헤더가 제목을, 하단 메뉴가 스튜디오 CTA를 가림. 캡처 영향과 실제 조작 문제를 구별해 스크롤 및 포커스 이동으로 버튼 접근 확인 필요.
+
+8. **NO-GO — A2의 2~4번 수정 후 가격과 CTA 정렬, 1024px 라벨 가독성, 390px 버튼 접근을 확인하면 GO.**

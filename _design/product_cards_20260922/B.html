@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head>
+<head><base href="http://localhost:8092/">
 <meta charset="utf-8">
 <!-- analytics:begin -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZM01XDLNT"></script>
@@ -61,7 +61,12 @@
 }
 </style>
 
-</head>
+<style id="variant">/* 안 B */
+:where(body.v2) .r2-card-prices{background:var(--mat);border-radius:calc(var(--r-md) - var(--s2));padding:var(--s1) var(--s2)}
+:where(body.v2) .r2-card-price{border-top:0;padding-block:var(--s2)}
+:where(body.v2) .r2-card-price+.r2-card-price{border-top:var(--rule-ui)}
+:where(body.v2) .r2-card-price>span{font-size:var(--t-xs);color:var(--gray)}
+:where(body.v2.r2-home) .r2-actions{margin-top:var(--s3)}</style></head>
 <body class="v2 r2-home">
 <a class="skip" href="#main">본문으로 건너뛰기</a>
 <div class="frame"><div class="sheet">

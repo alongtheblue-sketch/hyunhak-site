@@ -1249,18 +1249,20 @@ html.ppop-open{overflow:hidden}
 :where(body.v2) .r2-card .r2-audience{font-size:var(--t-sm);font-weight:600;color:var(--body);margin-bottom:var(--s2)}
 :where(body.v2) .r2-card h2{font-size:var(--t-h3);margin-bottom:var(--s3)}
 :where(body.v2) .r2-card-copy{font-size:var(--t-sm);line-height:var(--lh-ui);color:var(--body);margin-bottom:var(--s3)}
-:where(body.v2) .r2-card-copy p{max-width:none}
+:where(body.v2) .r2-card-copy p{max-width:none;word-break:keep-all;overflow-wrap:anywhere}   /* 본문 어절 유지: 「첨삭 세 / 단」 분리 방지 (critic P1-2, 2026-09-22) */
 :where(body.v2) .r2-card-copy p+p{margin-top:var(--s1)}
 /* 가격 행 (2026-09-22 재설계): 이름 왼쪽(접힘 허용) + 금액 오른쪽 한 줄. 행사 중이면 app.js 가 금액 안에 s.was(정가) 와 span.sale(할인가) 를 만들고
    여기서는 정가를 위 작은 회색 줄, 할인가를 아래 한 줄로 쌓는다. 이름의 마지막 줄과 금액을 last baseline 으로 맞춘다.
    금액 서체 = Pretendard 700 + tabular-nums. 원 단위가 붙는 금액은 --mono 를 쓰지 않는다 (JetBrains Mono 는 한글이 없어 한 금액이 두 서체로 갈리고
    쉼표 좌우 구멍이 0.5em, 로드 굵기 500 뿐이라 b 에서 합성 볼드. 서체선택 SSOT: 데이터 숫자는 비례 폰트 + tnum 이 모노보다 우월). 순 라틴 계기값은 --mono 유지. */
-:where(body.v2) .r2-card-price{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;align-items:last baseline;gap:var(--s1) var(--s3);border-top:var(--rule-ui);padding-block:var(--s2);margin-top:auto;font-size:var(--t-sm)}
-:where(body.v2) .r2-card-price+.r2-card-price{margin-top:0}
+:where(body.v2) .r2-card-prices{margin-top:auto}
+:where(body.v2) .r2-card-price{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;align-items:last baseline;gap:var(--s1) var(--s3);border-top:var(--rule-ui);padding-block:var(--s2);font-size:var(--t-sm)}
 :where(body.v2) .r2-card-price>span{min-width:0;color:var(--body);line-height:var(--lh-ui);word-break:keep-all;overflow-wrap:anywhere}
 :where(body.v2) .r2-card-price b{display:block;text-align:right;white-space:nowrap;font-family:var(--sans);font-weight:700;font-variant-numeric:lining-nums tabular-nums;font-size:var(--t-h4);line-height:1.2;letter-spacing:-.015em}
 :where(body.v2) .r2-card-price b s.was{display:block;margin-bottom:var(--s1);font-size:var(--t-xs);font-weight:400;line-height:1.4;letter-spacing:0;color:var(--gray);text-decoration:line-through;text-decoration-thickness:1px}
+:where(body.v2) .r2-card-price b{color:var(--ink)}   /* 일반 가격 = ink, 할인가만 seal (astra 색 의미 판정 2026-09-22) */
 :where(body.v2) .r2-card-price b .sale{display:block;color:var(--seal)}
+:where(body.v2) .r2-card-price b .per{display:block;margin-bottom:var(--s1);font-size:var(--t-sm);font-weight:500;line-height:1.4;letter-spacing:0;color:var(--body)}   /* 할인 없는 행의 과금 단위(학교마다) = 정가 줄과 같은 자리. 정가(취소선, 12px 회색)와 구별되게 13px 500 body (astra 2026-09-22 수정 1) */
 :where(body.v2) .r2-actions{display:flex;align-items:center;flex-wrap:wrap;gap:var(--s2) var(--s4)}
 :where(body.v2) .r2-actions .btn{min-width:calc(var(--tap) * 2)}
 :where(body.v2) .r2-section{padding-block:var(--s5);border-top:var(--rule-ui)}
