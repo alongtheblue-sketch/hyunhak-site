@@ -533,10 +533,11 @@
     const onArrow = (e) => {
       if (e.altKey || e.ctrlKey || e.metaKey) return;
       // 첫 초점이 대화상자 틀(N>1)일 때 위아래 키로 넘치는 활성 카드를 스크롤한다. 틀은 overflow:hidden 이라 브라우저 기본 스크롤이 닿지 않았다 (반증 6차 P2)
-      if (document.activeElement === root && /^(ArrowDown|ArrowUp|PageDown|PageUp| )$/.test(e.key)) {
+      if (document.activeElement === root && /^(ArrowDown|ArrowUp|PageDown|PageUp|End|Home| )$/.test(e.key)) {
         const sc = cards[cur].card;
         if (sc.scrollHeight > sc.clientHeight) {
           if (!stopped) setPause(true);   // 키로 읽는 중에는 벨트를 멈춘다(WCAG 2.2.2). 초점이 .pdim 에 남아 focusin, pointerdown 정지가 걸리지 않았다 (Codex 7차 P2)
+          if (e.key === "End" || e.key === "Home") { e.preventDefault(); sc.scrollTo({ top: e.key === "End" ? sc.scrollHeight : 0 }); return; }   // 틀 초점에서는 브라우저 기본 End/Home 이 카드에 닿지 않는다 (반증 7차 behavior P2, 라이브 대비 신규 회귀)
           const page = e.key !== "ArrowDown" && e.key !== "ArrowUp";
           const up = e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
           e.preventDefault(); sc.scrollBy({ top: (up ? -1 : 1) * (page ? Math.round(sc.clientHeight * 0.85) : 48) });
