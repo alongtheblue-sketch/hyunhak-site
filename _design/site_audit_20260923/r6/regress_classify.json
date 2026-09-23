@@ -1,0 +1,762 @@
+{
+ "pre": "94f577b",
+ "post": "3d2ada3",
+ "route_files": [
+  "assets/app.js",
+  "assets/base.css"
+ ],
+ "b_jitter_sources": {
+  "page_frame_corner": "玄墨 바탕 위 종이 inset 14px 둥근 모서리 안티에일리어싱(문서 위 y14-18, 아래 docH-19~-14), 같은 판 재촬영에서 재현",
+  "vermilion_dot": "행사 띠 朱 점 6px 테두리(x216-222 y139-145 @1440)",
+  "arrow_glyph": "interview_1440 링크 화살표 → 글리프(y1527-1530)",
+  "misc_1px": "interview_1440 (1173,2616) 2px, guidebook_index_1440 (524,507) 1px"
+ },
+ "joint_slit": {
+  "dsf1": {
+   "slit_post": [
+    [
+     "post",
+     "index_cur2",
+     1440
+    ],
+    [
+     "post",
+     "about_n1",
+     1440
+    ],
+    [
+     "post",
+     "index_cur2",
+     1280
+    ],
+    [
+     "post",
+     "about_n1",
+     1280
+    ],
+    [
+     "post",
+     "index_cur1",
+     1024
+    ]
+   ],
+   "pre_slit": 0,
+   "n_states_per_variant": 18
+  },
+  "dsf2": {
+   "slit_post": [
+    [
+     "post",
+     "index_cur2",
+     1440
+    ],
+    [
+     "post",
+     "about_n1",
+     1440
+    ],
+    [
+     "post",
+     "index_cur2",
+     1280
+    ],
+    [
+     "post",
+     "about_n1",
+     1280
+    ],
+    [
+     "post",
+     "index_cur1",
+     1024
+    ]
+   ],
+   "pre_slit": 0
+  },
+  "model": "카드(활성 슬롯, will-change:transform) 는 위 좌표를 CSS px 로 반올림해 통째로 옮기고 하단바는 제 위 좌표를 따로 반올림한다. round(onBottom + (round(onTop)-onTop)) < round(barTop) 이면 1행 틈. 36/36(dsf1), 36/36(dsf2 CSS px) 일치",
+  "slit_row_color": "(150~156,146~153,140~150) = 딤 너머 지면. 수리 전 같은 자리 = 하단바 윗선 (206,204,200) 한 줄"
+ },
+ "corner_notch": "수리 후 활성 카드 좌우 테두리의 접합 바로 위 1행이 (198,196,192) (수리 전 (142,139,137)). border-bottom-color:transparent 의 모서리 사선 분할",
+ "popup_outside_rects": {
+  "index_popup_1440": {
+   "diff_px_gt5": 103000,
+   "outside_card_bar_side_rects": 211
+  },
+  "index_popup_390": {
+   "diff_px_gt5": 61515,
+   "outside_card_bar_side_rects": 0
+  },
+  "index_popup_n3_1440": {
+   "diff_px_gt5": 194466,
+   "outside_card_bar_side_rects": 1125
+  },
+  "index_popup_n3_390": {
+   "diff_px_gt5": 61518,
+   "outside_card_bar_side_rects": 0
+  },
+  "about_popup_1440": {
+   "diff_px_gt5": 19515,
+   "outside_card_bar_side_rects": 0
+  },
+  "about_popup_390": {
+   "diff_px_gt5": 712,
+   "outside_card_bar_side_rects": 0
+  },
+  "studio_popup_1440": {
+   "diff_px_gt5": 19523,
+   "outside_card_bar_side_rects": 0
+  },
+  "lectures_popup_1440": {
+   "diff_px_gt5": 19523,
+   "outside_card_bar_side_rects": 0
+  },
+  "interview_popup_1440": {
+   "diff_px_gt5": 19523,
+   "outside_card_bar_side_rects": 0
+  },
+  "guidebook_index_popup_1440": {
+   "diff_px_gt5": 19523,
+   "outside_card_bar_side_rects": 0
+  }
+ },
+ "classes": {
+  "about_1440": {
+   "ae": 18,
+   "class": "b",
+   "rep_pre": 18,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "bands": [
+    [
+     14,
+     14,
+     1426,
+     19,
+     10
+    ],
+    [
+     216,
+     139,
+     222,
+     145,
+     8
+    ]
+   ]
+  },
+  "about_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "about_popup_1440": {
+   "ae": 19213,
+   "class": "a_entry_n1 (+ c 후보: 1440 접합 슬릿)",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 19213,
+   "bands": [
+    [
+     500,
+     198,
+     940,
+     202,
+     882
+    ],
+    [
+     525,
+     227,
+     592,
+     239,
+     237
+    ],
+    [
+     525,
+     265,
+     815,
+     359,
+     5596
+    ],
+    [
+     525,
+     384,
+     819,
+     435,
+     2477
+    ],
+    [
+     525,
+     464,
+     915,
+     541,
+     5299
+    ],
+    [
+     500,
+     570,
+     940,
+     702,
+     4722
+    ]
+   ]
+  },
+  "about_popup_390": {
+   "ae": 693,
+   "class": "a_entry_n1",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ]
+  },
+  "b2b_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "b2b_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "faq_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "faq_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "guidebook_index_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "guidebook_index_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "guidebook_index_popup_1440": {
+   "ae": 19220,
+   "class": "a_entry_n1 (+ c 후보: 1440 접합 슬릿)",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 19220,
+   "bands": [
+    [
+     500,
+     198,
+     940,
+     202,
+     882
+    ],
+    [
+     525,
+     227,
+     592,
+     239,
+     237
+    ],
+    [
+     525,
+     265,
+     815,
+     359,
+     5596
+    ],
+    [
+     525,
+     384,
+     819,
+     435,
+     2477
+    ],
+    [
+     525,
+     464,
+     915,
+     541,
+     5299
+    ],
+    [
+     500,
+     570,
+     940,
+     702,
+     4729
+    ]
+   ]
+  },
+  "guidebook_index_popup_390": {
+   "ae": 693,
+   "class": "a_entry_n1",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ]
+  },
+  "index_nopop_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "index_nopop_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "index_popup_1440": {
+   "ae": 101332,
+   "class": "a",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 101332,
+   "bands": [
+    [
+     500,
+     206,
+     1382,
+     702,
+     101332
+    ]
+   ]
+  },
+  "index_popup_390": {
+   "ae": 61124,
+   "class": "a",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 61124,
+   "bands": [
+    [
+     16,
+     140,
+     374,
+     729,
+     61124
+    ]
+   ]
+  },
+  "index_popup_n3_1440": {
+   "ae": 191676,
+   "class": "a",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 191676,
+   "bands": [
+    [
+     58,
+     206,
+     1382,
+     702,
+     191676
+    ]
+   ]
+  },
+  "index_popup_n3_390": {
+   "ae": 61131,
+   "class": "a",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 61131,
+   "bands": [
+    [
+     16,
+     140,
+     374,
+     729,
+     61131
+    ]
+   ]
+  },
+  "index_tiles_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "index_tiles_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "interview_1440": {
+   "ae": 36,
+   "class": "b",
+   "rep_pre": 0,
+   "rep_post": 36,
+   "rep_cross": 0,
+   "bands": [
+    [
+     14,
+     14,
+     1426,
+     19,
+     10
+    ],
+    [
+     216,
+     139,
+     222,
+     145,
+     8
+    ],
+    [
+     444,
+     1527,
+     1039,
+     1530,
+     6
+    ],
+    [
+     1173,
+     2616,
+     1174,
+     2619,
+     2
+    ],
+    [
+     14,
+     11818,
+     1426,
+     11823,
+     10
+    ]
+   ]
+  },
+  "interview_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "interview_popup_1440": {
+   "ae": 19220,
+   "class": "a_entry_n1 (+ c 후보: 1440 접합 슬릿)",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 19220,
+   "bands": [
+    [
+     500,
+     198,
+     940,
+     202,
+     882
+    ],
+    [
+     525,
+     227,
+     592,
+     239,
+     237
+    ],
+    [
+     525,
+     265,
+     815,
+     359,
+     5596
+    ],
+    [
+     525,
+     384,
+     819,
+     435,
+     2477
+    ],
+    [
+     525,
+     464,
+     915,
+     541,
+     5299
+    ],
+    [
+     500,
+     570,
+     940,
+     702,
+     4729
+    ]
+   ]
+  },
+  "interview_popup_390": {
+   "ae": 693,
+   "class": "a_entry_n1",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ]
+  },
+  "interview_yonsei-hum_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "interview_yonsei-hum_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "join_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "join_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "lectures_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "lectures_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "lectures_popup_1440": {
+   "ae": 19220,
+   "class": "a_entry_n1 (+ c 후보: 1440 접합 슬릿)",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 19220,
+   "bands": [
+    [
+     500,
+     198,
+     940,
+     202,
+     882
+    ],
+    [
+     525,
+     227,
+     592,
+     239,
+     237
+    ],
+    [
+     525,
+     265,
+     815,
+     359,
+     5596
+    ],
+    [
+     525,
+     384,
+     819,
+     435,
+     2477
+    ],
+    [
+     525,
+     464,
+     915,
+     541,
+     5299
+    ],
+    [
+     500,
+     570,
+     940,
+     702,
+     4729
+    ]
+   ]
+  },
+  "lectures_popup_390": {
+   "ae": 693,
+   "class": "a_entry_n1",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ]
+  },
+  "library_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "library_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "login_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "login_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "notice_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "notice_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "pastexam_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "pastexam_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "programs_guidebook_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "programs_guidebook_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "programs_studio_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "programs_studio_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "ranking_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "ranking_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "request_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "request_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "studio_1440": {
+   "ae": 10,
+   "class": "b",
+   "rep_pre": 10,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "bands": [
+    [
+     14,
+     14,
+     1426,
+     19,
+     10
+    ]
+   ]
+  },
+  "studio_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "studio_popup_1440": {
+   "ae": 19220,
+   "class": "a_entry_n1 (+ c 후보: 1440 접합 슬릿)",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 19220,
+   "bands": [
+    [
+     500,
+     198,
+     940,
+     202,
+     882
+    ],
+    [
+     525,
+     227,
+     592,
+     239,
+     237
+    ],
+    [
+     525,
+     265,
+     815,
+     359,
+     5596
+    ],
+    [
+     525,
+     384,
+     819,
+     435,
+     2477
+    ],
+    [
+     525,
+     464,
+     915,
+     541,
+     5299
+    ],
+    [
+     500,
+     570,
+     940,
+     702,
+     4729
+    ]
+   ]
+  },
+  "studio_popup_390": {
+   "ae": 693,
+   "class": "a_entry_n1",
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ]
+  },
+  "support_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "support_390": {
+   "ae": 0,
+   "class": "none"
+  },
+  "terms_1440": {
+   "ae": 0,
+   "class": "none"
+  },
+  "terms_390": {
+   "ae": 0,
+   "class": "none"
+  }
+ }
+}

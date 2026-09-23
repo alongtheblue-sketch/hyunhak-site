@@ -1,0 +1,2508 @@
+{
+  "rows": {
+    "1440_x1_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 445.125,
+      "barTop": 643.5625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 2,
+          "len": 2,
+          "px": [
+            156,
+            153,
+            150
+          ]
+        }
+      ],
+      "bandFrac": [
+        1
+      ],
+      "bandPx": [
+        [
+          156,
+          153,
+          150
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": true
+    },
+    "1440_x1_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 162.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.0625,
+      "w": 440,
+      "h": 444.125,
+      "barTop": 643.0625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.0625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 161.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x1_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x1_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 445.125,
+      "barTop": 643.5625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 5,
+          "len": 4,
+          "px": [
+            156,
+            154,
+            151
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        1
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          156,
+          154,
+          151
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": true
+    },
+    "1440_x2_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 162.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.0625,
+      "w": 440,
+      "h": 444.125,
+      "barTop": 643.0625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.0625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 161.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x2_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x2_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 445.125,
+      "barTop": 643.5625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 7,
+          "len": 6,
+          "px": [
+            156,
+            154,
+            151
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        1,
+        1
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          156,
+          154,
+          151
+        ],
+        [
+          156,
+          154,
+          151
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": true
+    },
+    "1440_x3_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 162.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 430.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "1px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 500,
+      "b": 643.0625,
+      "w": 440,
+      "h": 444.125,
+      "barTop": 643.0625,
+      "scrollH": 443,
+      "clientH": 443,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.0625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 161.688,
+      "barTop": 643.5625,
+      "scrollH": 161,
+      "clientH": 161,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "1440_x3_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 500,
+      "b": 643.5625,
+      "w": 440,
+      "h": 429.875,
+      "barTop": 643.5625,
+      "scrollH": 429,
+      "clientH": 429,
+      "bb": "0px",
+      "clip": {
+        "x": 500,
+        "y": 640.5625,
+        "width": 440,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_1440_x3_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 10,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        0,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 506.75,
+      "barTop": 621.875,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 174.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.375,
+      "w": 358,
+      "h": 505.75,
+      "barTop": 621.375,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.375,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 173.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x1_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x1_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 3,
+          "len": 1,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 506.75,
+      "barTop": 621.875,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 174.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.375,
+      "w": 358,
+      "h": 505.75,
+      "barTop": 621.375,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.375,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 5,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        1
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          206,
+          204,
+          200
+        ]
+      ],
+      "lineFrac": [
+        1,
+        0
+      ],
+      "doubleLine": false
+    },
+    "390_x2_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 173.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x2_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x2_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 6,
+          "len": 2,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 506.75,
+      "barTop": 621.875,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 174.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 458.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "1px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_ctl_k0": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_ctl_k0_slot0.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_ctl_k1": {
+      "slot": 1,
+      "kind": "행사 안내",
+      "l": 16,
+      "b": 621.375,
+      "w": 358,
+      "h": 505.75,
+      "barTop": 621.375,
+      "scrollH": 505,
+      "clientH": 505,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.375,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_ctl_k1_slot1.png",
+      "darkRuns": [
+        {
+          "start": 8,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        1
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          206,
+          204,
+          200
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        0
+      ],
+      "doubleLine": false
+    },
+    "390_x3_ctl_k2": {
+      "slot": 2,
+      "kind": "공지",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 173.25,
+      "barTop": 621.875,
+      "scrollH": 172,
+      "clientH": 172,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_ctl_k2_slot2.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    },
+    "390_x3_ctl_k3": {
+      "slot": 0,
+      "kind": "의뢰 개시",
+      "l": 16,
+      "b": 621.875,
+      "w": 358,
+      "h": 457.25,
+      "barTop": 621.875,
+      "scrollH": 456,
+      "clientH": 456,
+      "bb": "0px",
+      "clip": {
+        "x": 16,
+        "y": 618.875,
+        "width": 358,
+        "height": 6
+      },
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/popnav_joindiag_390_x3_ctl_k3_slot0.png",
+      "darkRuns": [
+        {
+          "start": 9,
+          "len": 3,
+          "px": [
+            206,
+            204,
+            200
+          ]
+        }
+      ],
+      "bandFrac": [
+        0,
+        0,
+        0
+      ],
+      "bandPx": [
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ],
+        [
+          255,
+          253,
+          248
+        ]
+      ],
+      "lineFrac": [
+        1,
+        1,
+        1
+      ],
+      "doubleLine": false
+    }
+  },
+  "summary": {
+    "doubleByKey": {
+      "1440_x1_k0": "0:1선",
+      "1440_x1_k1": "1:2선",
+      "1440_x1_k2": "2:1선",
+      "1440_x1_k3": "0:1선",
+      "1440_x1_ctl_k0": "0:1선",
+      "1440_x1_ctl_k1": "1:1선",
+      "1440_x1_ctl_k2": "2:1선",
+      "1440_x1_ctl_k3": "0:1선",
+      "1440_x2_k0": "0:1선",
+      "1440_x2_k1": "1:2선",
+      "1440_x2_k2": "2:1선",
+      "1440_x2_k3": "0:1선",
+      "1440_x2_ctl_k0": "0:1선",
+      "1440_x2_ctl_k1": "1:1선",
+      "1440_x2_ctl_k2": "2:1선",
+      "1440_x2_ctl_k3": "0:1선",
+      "1440_x3_k0": "0:1선",
+      "1440_x3_k1": "1:2선",
+      "1440_x3_k2": "2:1선",
+      "1440_x3_k3": "0:1선",
+      "1440_x3_ctl_k0": "0:1선",
+      "1440_x3_ctl_k1": "1:1선",
+      "1440_x3_ctl_k2": "2:1선",
+      "1440_x3_ctl_k3": "0:1선",
+      "390_x1_k0": "0:1선",
+      "390_x1_k1": "1:1선",
+      "390_x1_k2": "2:1선",
+      "390_x1_k3": "0:1선",
+      "390_x1_ctl_k0": "0:1선",
+      "390_x1_ctl_k1": "1:1선",
+      "390_x1_ctl_k2": "2:1선",
+      "390_x1_ctl_k3": "0:1선",
+      "390_x2_k0": "0:1선",
+      "390_x2_k1": "1:1선",
+      "390_x2_k2": "2:1선",
+      "390_x2_k3": "0:1선",
+      "390_x2_ctl_k0": "0:1선",
+      "390_x2_ctl_k1": "1:1선",
+      "390_x2_ctl_k2": "2:1선",
+      "390_x2_ctl_k3": "0:1선",
+      "390_x3_k0": "0:1선",
+      "390_x3_k1": "1:1선",
+      "390_x3_k2": "2:1선",
+      "390_x3_k3": "0:1선",
+      "390_x3_ctl_k0": "0:1선",
+      "390_x3_ctl_k1": "1:1선",
+      "390_x3_ctl_k2": "2:1선",
+      "390_x3_ctl_k3": "0:1선"
+    },
+    "doubleCount": 3,
+    "total": 24,
+    "ctlDoubleCount": 0,
+    "ctlTotal": 24
+  }
+}

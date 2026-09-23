@@ -1,0 +1,3961 @@
+{
+ "pre": "94f577b",
+ "post": "3d2ada3",
+ "at": "2026-09-23T05:53:55.955Z",
+ "recs": [
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1440,
+   "onTop": 206.06,
+   "onBottom": 635.94,
+   "barTop": 635.94,
+   "x0": 500,
+   "x1": 940,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 631,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_1440.png",
+   "rows": [
+    {
+     "y": 631,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 632,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 633,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 634,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 635,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 636,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 637,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1440,
+   "onTop": 198.94,
+   "onBottom": 643.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1440,
+   "onTop": 198.94,
+   "onBottom": 643.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1280,
+   "onTop": 156.06,
+   "onBottom": 585.94,
+   "barTop": 585.94,
+   "x0": 420,
+   "x1": 860,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 581,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_1280.png",
+   "rows": [
+    {
+     "y": 581,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 582,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 583,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 584,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 585,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 586,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 587,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 588,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1280,
+   "onTop": 148.94,
+   "onBottom": 593.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1280,
+   "onTop": 148.94,
+   "onBottom": 593.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1024,
+   "onTop": 142.83,
+   "onBottom": 567.17,
+   "barTop": 567.17,
+   "x0": 292,
+   "x1": 732,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 563,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_1024.png",
+   "rows": [
+    {
+     "y": 563,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 564,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 565,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 566,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 567,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 568,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 569,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1024,
+   "onTop": 135.7,
+   "onBottom": 574.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1024,
+   "onTop": 135.7,
+   "onBottom": 574.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 768,
+   "onTop": 292.13,
+   "onBottom": 673.88,
+   "barTop": 673.88,
+   "x0": 164,
+   "x1": 604,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 669,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_768.png",
+   "rows": [
+    {
+     "y": 669,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 670,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 671,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 768,
+   "onTop": 285,
+   "onBottom": 681,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 768,
+   "onTop": 285,
+   "onBottom": 681,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 430,
+   "onTop": 183.88,
+   "onBottom": 641.13,
+   "barTop": 641.13,
+   "x0": 16,
+   "x1": 414,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 637,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_430.png",
+   "rows": [
+    {
+     "y": 637,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 430,
+   "onTop": 173.63,
+   "onBottom": 651.38,
+   "barTop": 651.38,
+   "x0": 16,
+   "x1": 414,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 647,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_430.png",
+   "rows": [
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 430,
+   "onTop": 198.13,
+   "onBottom": 675.88,
+   "barTop": 675.88,
+   "x0": 16,
+   "x1": 414,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 671,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_430.png",
+   "rows": [
+    {
+     "y": 671,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 390,
+   "onTop": 139.88,
+   "onBottom": 597.13,
+   "barTop": 597.13,
+   "x0": 16,
+   "x1": 374,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 593,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur1_390.png",
+   "rows": [
+    {
+     "y": 593,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 598,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 599,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 600,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 601,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 390,
+   "onTop": 115.63,
+   "onBottom": 621.38,
+   "barTop": 621.38,
+   "x0": 16,
+   "x1": 374,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 617,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_index_cur2_390.png",
+   "rows": [
+    {
+     "y": 617,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 390,
+   "onTop": 140.13,
+   "onBottom": 645.88,
+   "barTop": 645.88,
+   "x0": 16,
+   "x1": 374,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 641,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_pre_about_n1_390.png",
+   "rows": [
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1440,
+   "onTop": 212.69,
+   "onBottom": 643.56,
+   "barTop": 643.56,
+   "x0": 500,
+   "x1": 940,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1440,
+   "onTop": 198.44,
+   "onBottom": 643.56,
+   "barTop": 643.56,
+   "x0": 500,
+   "x1": 940,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      156,
+      153,
+      150
+     ],
+     "share": 0.472,
+     "dark": 1
+    },
+    {
+     "y": 644,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [
+    [
+     643,
+     [
+      156,
+      153,
+      150
+     ],
+     1
+    ]
+   ],
+   "slit": true
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1440,
+   "onTop": 198.44,
+   "onBottom": 643.56,
+   "barTop": 643.56,
+   "x0": 500,
+   "x1": 940,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      150,
+      146,
+      140
+     ],
+     "share": 0.376,
+     "dark": 1
+    },
+    {
+     "y": 644,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [
+    [
+     643,
+     [
+      150,
+      146,
+      140
+     ],
+     1
+    ]
+   ],
+   "slit": true
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1280,
+   "onTop": 162.69,
+   "onBottom": 593.56,
+   "barTop": 593.56,
+   "x0": 420,
+   "x1": 860,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1280,
+   "onTop": 148.44,
+   "onBottom": 593.56,
+   "barTop": 593.56,
+   "x0": 420,
+   "x1": 860,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "mode": [
+      156,
+      153,
+      150
+     ],
+     "share": 0.353,
+     "dark": 1
+    },
+    {
+     "y": 594,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [
+    [
+     593,
+     [
+      156,
+      153,
+      150
+     ],
+     1
+    ]
+   ],
+   "slit": true
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1280,
+   "onTop": 148.44,
+   "onBottom": 593.56,
+   "barTop": 593.56,
+   "x0": 420,
+   "x1": 860,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "mode": [
+      150,
+      146,
+      140
+     ],
+     "share": 0.369,
+     "dark": 1
+    },
+    {
+     "y": 594,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [
+    [
+     593,
+     [
+      150,
+      146,
+      140
+     ],
+     1
+    ]
+   ],
+   "slit": true
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1024,
+   "onTop": 149.45,
+   "onBottom": 574.8,
+   "barTop": 574.8,
+   "x0": 292,
+   "x1": 732,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "mode": [
+      156,
+      153,
+      150
+     ],
+     "share": 0.329,
+     "dark": 1
+    },
+    {
+     "y": 575,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [
+    [
+     574,
+     [
+      156,
+      153,
+      150
+     ],
+     1
+    ]
+   ],
+   "slit": true
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1024,
+   "onTop": 135.2,
+   "onBottom": 574.8,
+   "barTop": 574.8,
+   "x0": 292,
+   "x1": 732,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1024,
+   "onTop": 135.2,
+   "onBottom": 574.8,
+   "barTop": 574.8,
+   "x0": 292,
+   "x1": 732,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 768,
+   "onTop": 298.75,
+   "onBottom": 681.5,
+   "barTop": 681.5,
+   "x0": 164,
+   "x1": 604,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 685,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 768,
+   "onTop": 284.5,
+   "onBottom": 681.5,
+   "barTop": 681.5,
+   "x0": 164,
+   "x1": 604,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 685,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 768,
+   "onTop": 284.5,
+   "onBottom": 681.5,
+   "barTop": 681.5,
+   "x0": 164,
+   "x1": 604,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 685,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 430,
+   "onTop": 193.63,
+   "onBottom": 651.88,
+   "barTop": 651.88,
+   "x0": 16,
+   "x1": 414,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 647,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_430.png",
+   "rows": [
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 430,
+   "onTop": 173.13,
+   "onBottom": 651.88,
+   "barTop": 651.88,
+   "x0": 16,
+   "x1": 414,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 647,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_430.png",
+   "rows": [
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 430,
+   "onTop": 197.63,
+   "onBottom": 676.38,
+   "barTop": 676.38,
+   "x0": 16,
+   "x1": 414,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 672,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_430.png",
+   "rows": [
+    {
+     "y": 672,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 390,
+   "onTop": 163.63,
+   "onBottom": 621.88,
+   "barTop": 621.88,
+   "x0": 16,
+   "x1": 374,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 617,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur1_390.png",
+   "rows": [
+    {
+     "y": 617,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 390,
+   "onTop": 115.13,
+   "onBottom": 621.88,
+   "barTop": 621.88,
+   "x0": 16,
+   "x1": 374,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 617,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_index_cur2_390.png",
+   "rows": [
+    {
+     "y": 617,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 390,
+   "onTop": 139.63,
+   "onBottom": 646.38,
+   "barTop": 646.38,
+   "x0": 16,
+   "x1": 374,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 642,
+   "file": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r6/shots/joint/joint_post_about_n1_390.png",
+   "rows": [
+    {
+     "y": 642,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  }
+ ]
+}

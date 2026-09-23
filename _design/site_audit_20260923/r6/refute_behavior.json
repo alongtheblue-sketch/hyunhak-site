@@ -1,0 +1,3514 @@
+{
+  "meta": {
+    "head": "bb8c71a",
+    "at": "2026-09-23T06:28:12.401Z",
+    "served": {
+      "assets/app.js": {
+        "served": "795d9cf2e3bcd14c",
+        "head": "795d9cf2e3bcd14c",
+        "old94f577b": "332ffe29281a179d"
+      },
+      "assets/base.css": {
+        "served": "a60de62a7d3dbe5a",
+        "head": "a60de62a7d3dbe5a",
+        "old94f577b": "3aa349c81ec7cc74"
+      }
+    }
+  },
+  "A": {
+    "out": {
+      "head_1440_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "outline": "solid 2px",
+        "focusVisible": true,
+        "pause": "재생"
+      },
+      "head_1440_load_tab": {
+        "load": {
+          "open": true,
+          "cur": 1,
+          "pause": "정지",
+          "muted": false,
+          "ae": "div.pdim[안내 2건]",
+          "aeText": "의뢰 개시\n      \n        학교별",
+          "aeIsRoot": true,
+          "aeInBar": false,
+          "aeInActive": false,
+          "aeInInert": false,
+          "aeOutline": "none 3px",
+          "aeFocusVisible": true,
+          "pop": {
+            "scrollTop": 0,
+            "scrollH": 429,
+            "clientH": 429,
+            "overflows": false
+          },
+          "onIdx": 0
+        },
+        "axLoad": [
+          {
+            "role": "dialog",
+            "name": "안내 2건",
+            "props": [
+              "focusable=true",
+              "focused=true",
+              "modal=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "focusVisible": true,
+          "pause": "재생"
+        },
+        "errors": []
+      },
+      "head_1440_escape": {
+        "immediately": {
+          "ae": "pdim"
+        },
+        "after": "div.pdim[안내 2건]",
+        "isRoot": true
+      },
+      "head_390_escape": {
+        "immediately": {
+          "ae": "pdim"
+        },
+        "after": "div.pdim[안내 2건]",
+        "isRoot": true
+      },
+      "head_390_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "outline": "solid 2px",
+        "focusVisible": true,
+        "pause": "재생"
+      },
+      "head_390_load_tab": {
+        "load": {
+          "open": true,
+          "cur": 1,
+          "pause": "정지",
+          "muted": false,
+          "ae": "div.pdim[안내 2건]",
+          "aeText": "의뢰 개시\n      \n        학교별",
+          "aeIsRoot": true,
+          "aeInBar": false,
+          "aeInActive": false,
+          "aeInInert": false,
+          "aeOutline": "none 3px",
+          "aeFocusVisible": true,
+          "pop": {
+            "scrollTop": 0,
+            "scrollH": 456,
+            "clientH": 456,
+            "overflows": false
+          },
+          "onIdx": 0
+        },
+        "axLoad": [
+          {
+            "role": "dialog",
+            "name": "안내 2건",
+            "props": [
+              "focusable=true",
+              "focused=true",
+              "modal=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "focusVisible": true,
+          "pause": "재생"
+        },
+        "errors": []
+      },
+      "old_1440_load_tab": {
+        "load": {
+          "open": true,
+          "cur": 1,
+          "pause": "정지",
+          "muted": false,
+          "ae": "h2",
+          "aeText": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+          "aeIsRoot": false,
+          "aeInBar": false,
+          "aeInActive": true,
+          "aeInInert": false,
+          "aeOutline": "none 3px",
+          "aeFocusVisible": true,
+          "pop": {
+            "scrollTop": 0,
+            "scrollH": 429,
+            "clientH": 429,
+            "overflows": false
+          },
+          "onIdx": 0
+        },
+        "axLoad": [
+          {
+            "role": "heading",
+            "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+            "props": [
+              "focusable=true",
+              "focused=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "focusVisible": true,
+          "pause": "재생"
+        },
+        "errors": []
+      },
+      "old_1440_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "outline": "solid 2px",
+        "focusVisible": true,
+        "pause": "재생"
+      },
+      "old_390_load_tab": {
+        "load": {
+          "open": true,
+          "cur": 1,
+          "pause": "정지",
+          "muted": false,
+          "ae": "h2",
+          "aeText": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+          "aeIsRoot": false,
+          "aeInBar": false,
+          "aeInActive": true,
+          "aeInInert": false,
+          "aeOutline": "none 3px",
+          "aeFocusVisible": true,
+          "pop": {
+            "scrollTop": 0,
+            "scrollH": 456,
+            "clientH": 456,
+            "overflows": false
+          },
+          "onIdx": 0
+        },
+        "axLoad": [
+          {
+            "role": "heading",
+            "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+            "props": [
+              "focusable=true",
+              "focused=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "focusVisible": true,
+          "pause": "재생"
+        },
+        "errors": []
+      },
+      "old_390_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "outline": "solid 2px",
+        "focusVisible": true,
+        "pause": "재생"
+      },
+      "old_390_escape": {
+        "immediately": {
+          "ae": "rpopT"
+        },
+        "after": "h2",
+        "isRoot": false
+      },
+      "old_1440_escape": {
+        "immediately": {
+          "ae": "rpopT"
+        },
+        "after": "h2",
+        "isRoot": false
+      }
+    },
+    "v": {
+      "headRootFirst": true,
+      "headFirstTabInActive": true,
+      "headShiftToClose": true,
+      "headEscapeReturns": true,
+      "visibleMarkerBeforeTab": {
+        "head": [
+          "none 3px fv=true",
+          "none 3px fv=true"
+        ],
+        "old": [
+          "h2 none 3px fv=true",
+          "h2 none 3px fv=true"
+        ]
+      }
+    }
+  },
+  "B": {
+    "out": {
+      "head_844x390_ArrowDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 279,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 104,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_844x390_Space": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 279,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 104,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_844x390_PageDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 279,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 104,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_360x640_Space": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 459,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 23,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_360x640_ArrowDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 459,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 23,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_360x640_PageDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 459,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 23,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_640x360_ArrowDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 257,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 124,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_640x360_PageDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 257,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 124,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_640x360_Space": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 257,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 124,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_720x450_PageDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 322,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 59,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_720x450_ArrowDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 322,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 59,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_720x450_Space": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 322,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 59,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_683x384_ArrowDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 274,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 107,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_683x384_PageDown": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 274,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 107,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_683x384_Space": {
+        "ae0": "div.pdim[안내 2건]",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 274,
+          "overflows": true
+        },
+        "scrollTopAfter3": 0,
+        "maxScroll": 107,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_844x390_Space": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 280,
+          "overflows": true
+        },
+        "scrollTopAfter3": 103,
+        "maxScroll": 103,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_844x390_PageDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 280,
+          "overflows": true
+        },
+        "scrollTopAfter3": 103,
+        "maxScroll": 103,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_844x390_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 383,
+          "clientH": 280,
+          "overflows": true
+        },
+        "scrollTopAfter3": 103,
+        "maxScroll": 103,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_360x640_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 460,
+          "overflows": true
+        },
+        "scrollTopAfter3": 22,
+        "maxScroll": 22,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_360x640_PageDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 460,
+          "overflows": true
+        },
+        "scrollTopAfter3": 22,
+        "maxScroll": 22,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_640x360_PageDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 258,
+          "overflows": true
+        },
+        "scrollTopAfter3": 123,
+        "maxScroll": 123,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_640x360_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 258,
+          "overflows": true
+        },
+        "scrollTopAfter3": 120,
+        "maxScroll": 123,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_360x640_Space": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 482,
+          "clientH": 460,
+          "overflows": true
+        },
+        "scrollTopAfter3": 22,
+        "maxScroll": 22,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_640x360_Space": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 258,
+          "overflows": true
+        },
+        "scrollTopAfter3": 123,
+        "maxScroll": 123,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_720x450_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 323,
+          "overflows": true
+        },
+        "scrollTopAfter3": 58,
+        "maxScroll": 58,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_720x450_PageDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 323,
+          "overflows": true
+        },
+        "scrollTopAfter3": 58,
+        "maxScroll": 58,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_683x384_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 275,
+          "overflows": true
+        },
+        "scrollTopAfter3": 106,
+        "maxScroll": 106,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_720x450_Space": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 323,
+          "overflows": true
+        },
+        "scrollTopAfter3": 58,
+        "maxScroll": 58,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_683x384_Space": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 275,
+          "overflows": true
+        },
+        "scrollTopAfter3": 106,
+        "maxScroll": 106,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "old_683x384_PageDown": {
+        "ae0": "h2",
+        "pop0": {
+          "scrollTop": 0,
+          "scrollH": 381,
+          "clientH": 275,
+          "overflows": true
+        },
+        "scrollTopAfter3": 106,
+        "maxScroll": 106,
+        "cur0": 1,
+        "cur1": 1,
+        "turns": 0,
+        "pause": "정지"
+      },
+      "head_844x390_TabThenArrowUp": {
+        "afterTab": {
+          "ae": "a.btn",
+          "scrollTop": 104
+        },
+        "afterUp3": {
+          "ae": "a.btn",
+          "scrollTop": 0
+        },
+        "pause": "재생"
+      },
+      "head_360x640_TabThenArrowUp": {
+        "afterTab": {
+          "ae": "a.btn",
+          "scrollTop": 0
+        },
+        "afterUp3": {
+          "ae": "a.btn",
+          "scrollTop": 0
+        },
+        "pause": "재생"
+      },
+      "head_640x360_TabThenArrowUp": {
+        "afterTab": {
+          "ae": "a.btn",
+          "scrollTop": 124
+        },
+        "afterUp3": {
+          "ae": "a.btn",
+          "scrollTop": 4
+        },
+        "pause": "재생"
+      },
+      "head_683x384_TabThenArrowUp": {
+        "afterTab": {
+          "ae": "a.btn",
+          "scrollTop": 107
+        },
+        "afterUp3": {
+          "ae": "a.btn",
+          "scrollTop": 0
+        },
+        "pause": "재생"
+      },
+      "head_720x450_TabThenArrowUp": {
+        "afterTab": {
+          "ae": "a.btn",
+          "scrollTop": 35
+        },
+        "afterUp3": {
+          "ae": "a.btn",
+          "scrollTop": 0
+        },
+        "pause": "재생"
+      }
+    },
+    "v": {
+      "rows": [
+        {
+          "vp": "844x390",
+          "key": "ArrowDown",
+          "overflowPx": 104,
+          "head": 0,
+          "old": 103,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "844x390",
+          "key": "PageDown",
+          "overflowPx": 104,
+          "head": 0,
+          "old": 103,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "844x390",
+          "key": "Space",
+          "overflowPx": 104,
+          "head": 0,
+          "old": 103,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "360x640",
+          "key": "ArrowDown",
+          "overflowPx": 23,
+          "head": 0,
+          "old": 22,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "360x640",
+          "key": "PageDown",
+          "overflowPx": 23,
+          "head": 0,
+          "old": 22,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "360x640",
+          "key": "Space",
+          "overflowPx": 23,
+          "head": 0,
+          "old": 22,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "640x360",
+          "key": "ArrowDown",
+          "overflowPx": 124,
+          "head": 0,
+          "old": 120,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "640x360",
+          "key": "PageDown",
+          "overflowPx": 124,
+          "head": 0,
+          "old": 123,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "640x360",
+          "key": "Space",
+          "overflowPx": 124,
+          "head": 0,
+          "old": 123,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "720x450",
+          "key": "ArrowDown",
+          "overflowPx": 59,
+          "head": 0,
+          "old": 58,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "720x450",
+          "key": "PageDown",
+          "overflowPx": 59,
+          "head": 0,
+          "old": 58,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "720x450",
+          "key": "Space",
+          "overflowPx": 59,
+          "head": 0,
+          "old": 58,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "683x384",
+          "key": "ArrowDown",
+          "overflowPx": 107,
+          "head": 0,
+          "old": 106,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "683x384",
+          "key": "PageDown",
+          "overflowPx": 107,
+          "head": 0,
+          "old": 106,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        },
+        {
+          "vp": "683x384",
+          "key": "Space",
+          "overflowPx": 107,
+          "head": 0,
+          "old": 106,
+          "headAe": "div.pdim[안내 2건]",
+          "oldAe": "h2",
+          "headTurns": 0,
+          "oldTurns": 0
+        }
+      ],
+      "overflowingCells": 15,
+      "headScrolled": 0,
+      "oldScrolled": 15
+    }
+  },
+  "stopped": false,
+  "C": {
+    "out": {
+      "head_1440": {
+        "beforeEnter": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "afterResume": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "pause": "정지"
+        },
+        "turnMs": 8001,
+        "afterTurn": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "inBar": true,
+          "pause": "정지",
+          "cur": 2
+        },
+        "afterEnter2": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "turnsIn9_5sAfterEnter2": 0
+      },
+      "head_390": {
+        "beforeEnter": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "afterResume": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "pause": "정지"
+        },
+        "turnMs": 8001,
+        "afterTurn": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "inBar": true,
+          "pause": "정지",
+          "cur": 2
+        },
+        "afterEnter2": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "turnsIn9_5sAfterEnter2": 0
+      },
+      "old_390": {
+        "beforeEnter": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "afterResume": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "pause": "정지"
+        },
+        "turnMs": 8003,
+        "afterTurn": {
+          "ae": "h2",
+          "inBar": false,
+          "pause": "정지",
+          "cur": 2
+        },
+        "afterEnter2": {
+          "ae": "h2",
+          "pause": "정지"
+        },
+        "turnsIn9_5sAfterEnter2": 1
+      },
+      "old_1440": {
+        "beforeEnter": {
+          "ae": "button.parr.ppause[자동 넘김 재생]",
+          "pause": "재생"
+        },
+        "afterResume": {
+          "ae": "button.parr.ppause[자동 넘김 정지]",
+          "pause": "정지"
+        },
+        "turnMs": 8002,
+        "afterTurn": {
+          "ae": "h2",
+          "inBar": false,
+          "pause": "정지",
+          "cur": 2
+        },
+        "afterEnter2": {
+          "ae": "h2",
+          "pause": "정지"
+        },
+        "turnsIn9_5sAfterEnter2": 1
+      }
+    },
+    "v": {
+      "headFocusStaysOnPause": true,
+      "old": [
+        {
+          "k": "old_1440",
+          "afterTurnAe": "h2",
+          "turnsAfterEnter2": 1,
+          "pauseAfterEnter2": "정지"
+        },
+        {
+          "k": "old_390",
+          "afterTurnAe": "h2",
+          "turnsAfterEnter2": 1,
+          "pauseAfterEnter2": "정지"
+        }
+      ]
+    }
+  },
+  "D": {
+    "out": {
+      "head_focusin_prev": {
+        "ae": "button.parr[이전 안내]",
+        "pause": "재생",
+        "cur": 1
+      },
+      "head_focusin_pause": {
+        "ae": "button.parr.ppause[자동 넘김 정지]",
+        "pause": "정지",
+        "cur": 1
+      },
+      "head_focusin_next": {
+        "ae": "button.parr[다음 안내]",
+        "pause": "재생",
+        "cur": 1
+      },
+      "head_focusin_close": {
+        "ae": "button.pclose",
+        "pause": "재생",
+        "cur": 1
+      },
+      "head_focusin_mute": {
+        "ae": "input",
+        "pause": "재생",
+        "cur": 1
+      },
+      "old_focusin_mute": {
+        "ae": "input",
+        "pause": "재생",
+        "cur": 1
+      },
+      "old_focusin_prev": {
+        "ae": "button.parr[이전 안내]",
+        "pause": "재생",
+        "cur": 1
+      },
+      "old_focusin_next": {
+        "ae": "button.parr[다음 안내]",
+        "pause": "재생",
+        "cur": 1
+      },
+      "old_focusin_close": {
+        "ae": "button.pclose",
+        "pause": "재생",
+        "cur": 1
+      },
+      "old_focusin_pause": {
+        "ae": "button.parr.ppause[자동 넘김 정지]",
+        "pause": "정지",
+        "cur": 1
+      },
+      "head_pdown_pcnt_390": {
+        "pause": "재생",
+        "open": true,
+        "turnsIn9_5s": 0
+      },
+      "head_pdown_pcnt_1440": {
+        "pause": "재생",
+        "open": true,
+        "turnsIn9_5s": 0
+      },
+      "old_pdown_pcnt_390": {
+        "pause": "재생",
+        "open": true,
+        "turnsIn9_5s": 0
+      },
+      "old_pdown_pcnt_1440": {
+        "pause": "재생",
+        "open": true,
+        "turnsIn9_5s": 0
+      }
+    },
+    "v": {
+      "headFocusinPauses": {
+        "mute": "재생",
+        "prev": "재생",
+        "next": "재생",
+        "pause": "정지",
+        "close": "재생"
+      },
+      "oldFocusinPauses": {
+        "mute": "재생",
+        "prev": "재생",
+        "next": "재생",
+        "pause": "정지",
+        "close": "재생"
+      },
+      "headPointerdown": [
+        {
+          "pause": "재생",
+          "open": true,
+          "turnsIn9_5s": 0
+        },
+        {
+          "pause": "재생",
+          "open": true,
+          "turnsIn9_5s": 0
+        }
+      ],
+      "oldPointerdown": [
+        {
+          "pause": "재생",
+          "open": true,
+          "turnsIn9_5s": 0
+        },
+        {
+          "pause": "재생",
+          "open": true,
+          "turnsIn9_5s": 0
+        }
+      ]
+    }
+  },
+  "E": {
+    "out": {
+      "head_pcnt_left": {
+        "start": [
+          169,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_mute_left": {
+        "start": [
+          110,
+          650.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_pcnt_right": {
+        "start": [
+          169,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_next_right": {
+        "start": [
+          211.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_next_left": {
+        "start": [
+          211.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_close_right": {
+        "start": [
+          280,
+          650.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_mute_right": {
+        "start": [
+          110,
+          650.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_close_left": {
+        "start": [
+          280,
+          650.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_prev_left": {
+        "start": [
+          126.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_prev_right": {
+        "start": [
+          126.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_pause_left": {
+        "start": [
+          263.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "head_pause_right": {
+        "start": [
+          263.5,
+          699.9
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_mute_left": {
+        "start": [
+          110,
+          626.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_pcnt_right": {
+        "start": [
+          169,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_pcnt_left": {
+        "start": [
+          169,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_mute_right": {
+        "start": [
+          110,
+          626.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_close_left": {
+        "start": [
+          280,
+          626.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_next_left": {
+        "start": [
+          211.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_close_right": {
+        "start": [
+          280,
+          626.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_next_right": {
+        "start": [
+          211.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_prev_right": {
+        "start": [
+          126.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_prev_left": {
+        "start": [
+          126.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_pause_left": {
+        "start": [
+          263.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      },
+      "old_pause_right": {
+        "start": [
+          263.5,
+          675.1
+        ],
+        "cur0": 1,
+        "cur1": 2,
+        "expCur": 2,
+        "open": true,
+        "muted": false,
+        "pause": "재생",
+        "clicks": [],
+        "ae": "h2"
+      }
+    },
+    "v": {
+      "head": [
+        {
+          "k": "head_pcnt_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_mute_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_pcnt_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_next_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_next_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_close_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_mute_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_close_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_prev_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_prev_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_pause_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "head_pause_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        }
+      ],
+      "old": [
+        {
+          "k": "old_mute_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_pcnt_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_pcnt_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_mute_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_close_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_next_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_close_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_next_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_prev_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_prev_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_pause_left",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        },
+        {
+          "k": "old_pause_right",
+          "ok": true,
+          "cur": "1->2",
+          "open": true,
+          "muted": false,
+          "clicks": 0,
+          "pause": "재생"
+        }
+      ],
+      "headOk": 12,
+      "headN": 12,
+      "oldOk": 12
+    }
+  },
+  "F": {
+    "out": {
+      "head_cardTapThenPlay": {
+        "afterCardTap": {
+          "pause": "재생",
+          "ae": "div.pdim[안내 2건]"
+        },
+        "firstTurnMs": 8001
+      },
+      "head_pcntThenPlay": {
+        "afterPcnt": "재생",
+        "firstTurnMs": 8000
+      },
+      "old_cardTapThenPlay": {
+        "afterCardTap": {
+          "pause": "재생",
+          "ae": "h2"
+        },
+        "firstTurnMs": 8003
+      },
+      "head_nextThenPlay": {
+        "afterNext": {
+          "cur": 2,
+          "pause": "재생"
+        },
+        "firstTurnMs": 8000
+      },
+      "old_nextThenPlay": {
+        "afterNext": {
+          "cur": 2,
+          "pause": "재생"
+        },
+        "firstTurnMs": 8001
+      },
+      "old_pcntThenPlay": {
+        "afterPcnt": "재생",
+        "firstTurnMs": 8001
+      },
+      "head_pausePlay": {
+        "afterTap1": "재생",
+        "afterTap2": "정지",
+        "firstTurnMs": 8001,
+        "secondTurnMs": 7911,
+        "ae": "button.parr.ppause[자동 넘김 정지]"
+      },
+      "old_pausePlay": {
+        "afterTap1": "재생",
+        "afterTap2": "정지",
+        "firstTurnMs": 8002,
+        "secondTurnMs": 7917,
+        "ae": "h2"
+      }
+    },
+    "v": {
+      "head": {
+        "head_cardTapThenPlay": 8001,
+        "head_pcntThenPlay": 8000,
+        "head_nextThenPlay": 8000,
+        "head_pausePlay": 8001
+      },
+      "old": {
+        "old_cardTapThenPlay": 8003,
+        "old_nextThenPlay": 8001,
+        "old_pcntThenPlay": 8001,
+        "old_pausePlay": 8002
+      },
+      "headAllResume": true,
+      "headSecond": 7911
+    }
+  },
+  "G": {
+    "out": {
+      "head_1440x900_none": {
+        "popBottom": 643.56,
+        "barTop": 643.56,
+        "hits": {
+          "pop": 10,
+          "pbar": 20
+        },
+        "ints": [
+          [
+            642,
+            "pop"
+          ],
+          [
+            643,
+            "pbar"
+          ],
+          [
+            644,
+            "pbar"
+          ]
+        ]
+      },
+      "head_1024x768_none": {
+        "popBottom": 574.8,
+        "barTop": 574.8,
+        "hits": {
+          "pop": 8,
+          "pbar": 22
+        },
+        "ints": [
+          [
+            573,
+            "pop"
+          ],
+          [
+            574,
+            "pbar"
+          ],
+          [
+            575,
+            "pbar"
+          ]
+        ]
+      },
+      "old_1440x900_none": {
+        "popBottom": 635.94,
+        "barTop": 635.94,
+        "hits": {
+          "pop": 6,
+          "pbar": 24
+        },
+        "ints": [
+          [
+            634,
+            "pop"
+          ],
+          [
+            635,
+            "pbar"
+          ],
+          [
+            636,
+            "pbar"
+          ]
+        ]
+      },
+      "old_1024x768_none": {
+        "popBottom": 567.17,
+        "barTop": 567.17,
+        "hits": {
+          "pop": 7,
+          "pbar": 23
+        },
+        "ints": [
+          [
+            566,
+            "pop"
+          ],
+          [
+            567,
+            "pbar"
+          ],
+          [
+            568,
+            "pbar"
+          ]
+        ]
+      },
+      "head_1280x800_next": {
+        "popBottom": 593.56,
+        "barTop": 593.56,
+        "hits": {
+          "pop": 10,
+          "pbar": 20
+        },
+        "ints": [
+          [
+            592,
+            "pop"
+          ],
+          [
+            593,
+            "pbar"
+          ],
+          [
+            594,
+            "pbar"
+          ]
+        ]
+      },
+      "head_1440x900_next": {
+        "popBottom": 643.56,
+        "barTop": 643.56,
+        "hits": {
+          "pop": 10,
+          "pbar": 20
+        },
+        "ints": [
+          [
+            642,
+            "pop"
+          ],
+          [
+            643,
+            "pbar"
+          ],
+          [
+            644,
+            "pbar"
+          ]
+        ]
+      },
+      "old_1440x900_next": {
+        "popBottom": 643.06,
+        "barTop": 643.06,
+        "hits": {
+          "pop": 6,
+          "pbar": 24
+        },
+        "ints": [
+          [
+            642,
+            "pop"
+          ],
+          [
+            643,
+            "pbar"
+          ],
+          [
+            644,
+            "pbar"
+          ]
+        ]
+      },
+      "old_1280x800_next": {
+        "popBottom": 593.06,
+        "barTop": 593.06,
+        "hits": {
+          "pop": 6,
+          "pbar": 24
+        },
+        "ints": [
+          [
+            592,
+            "pop"
+          ],
+          [
+            593,
+            "pbar"
+          ],
+          [
+            594,
+            "pbar"
+          ]
+        ]
+      }
+    },
+    "v": {
+      "pbackHits": {
+        "head_1440x900_none": 0,
+        "head_1024x768_none": 0,
+        "old_1440x900_none": 0,
+        "old_1024x768_none": 0,
+        "head_1280x800_next": 0,
+        "head_1440x900_next": 0,
+        "old_1440x900_next": 0,
+        "old_1280x800_next": 0
+      }
+    }
+  },
+  "H": {
+    "out": {
+      "old": {
+        "t0": {
+          "focused": [
+            {
+              "role": "heading",
+              "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+              "props": [
+                "focusable=true",
+                "focused=true"
+              ]
+            }
+          ],
+          "liveRegions": 0,
+          "popupHeadings": [
+            {
+              "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+              "ignored": false
+            }
+          ]
+        },
+        "t8_8s": {
+          "focused": [
+            {
+              "role": "heading",
+              "name": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
+              "props": [
+                "focusable=true",
+                "focused=true"
+              ]
+            }
+          ],
+          "liveRegions": 0,
+          "popupHeadings": [
+            {
+              "name": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
+              "ignored": false
+            }
+          ]
+        },
+        "cur8_8s": 2,
+        "ae8_8s": "h2"
+      },
+      "head": {
+        "t0": {
+          "focused": [
+            {
+              "role": "dialog",
+              "name": "안내 2건",
+              "props": [
+                "focusable=true",
+                "focused=true",
+                "modal=true"
+              ]
+            }
+          ],
+          "liveRegions": 0,
+          "popupHeadings": [
+            {
+              "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+              "ignored": false
+            }
+          ]
+        },
+        "t8_8s": {
+          "focused": [
+            {
+              "role": "dialog",
+              "name": "안내 2건",
+              "props": [
+                "focusable=true",
+                "focused=true",
+                "modal=true"
+              ]
+            }
+          ],
+          "liveRegions": 0,
+          "popupHeadings": [
+            {
+              "name": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
+              "ignored": false
+            }
+          ]
+        },
+        "cur8_8s": 2,
+        "ae8_8s": "div.pdim[안내 2건]"
+      }
+    }
+  },
+  "I": {
+    "out": {
+      "head_320x480": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 480,
+            "bar": {
+              "t": 361.6,
+              "b": 468.6,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 366.6,
+              "b": 414.6,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 361.6,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 480,
+            "bar": {
+              "t": 361.6,
+              "b": 468.6,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 366.6,
+              "b": 414.6,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 361.6,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_568x320": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 353.4,
+              "l": 64,
+              "r": 504
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 432.5,
+              "r": 487
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 64,
+              "r": 504
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 353.4,
+              "l": 64,
+              "r": 504
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 432.5,
+              "r": 487
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 64,
+              "r": 504
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_375x300": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 300,
+            "bar": {
+              "t": 232,
+              "b": 339,
+              "l": 16,
+              "r": 359
+            },
+            "close": {
+              "t": 237,
+              "b": 285,
+              "l": 287.5,
+              "r": 342
+            },
+            "pop": {
+              "t": 16,
+              "b": 232,
+              "l": 16,
+              "r": 359
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 300,
+            "bar": {
+              "t": 232,
+              "b": 339,
+              "l": 16,
+              "r": 359
+            },
+            "close": {
+              "t": 237,
+              "b": 285,
+              "l": 287.5,
+              "r": 342
+            },
+            "pop": {
+              "t": 16,
+              "b": 232,
+              "l": 16,
+              "r": 359
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_568x320": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 353.4,
+              "l": 64,
+              "r": 504
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 432.5,
+              "r": 487
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 64,
+              "r": 504
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 353.4,
+              "l": 64,
+              "r": 504
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 432.5,
+              "r": 487
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 64,
+              "r": 504
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 300.4,
+              "b": 348.4,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_667x375": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 375,
+            "bar": {
+              "t": 293.5,
+              "b": 351.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "close": {
+              "t": 298.5,
+              "b": 346.5,
+              "l": 482,
+              "r": 536.5
+            },
+            "pop": {
+              "t": 23.5,
+              "b": 293.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 375,
+            "bar": {
+              "t": 293.5,
+              "b": 351.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "close": {
+              "t": 298.5,
+              "b": 346.5,
+              "l": 482,
+              "r": 536.5
+            },
+            "pop": {
+              "t": 23.5,
+              "b": 293.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_640x320": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 304.4,
+              "l": 100,
+              "r": 540
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 468.5,
+              "r": 523
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 100,
+              "r": 540
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 304.4,
+              "l": 100,
+              "r": 540
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 468.5,
+              "r": 523
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 100,
+              "r": 540
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_1280x400": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 400,
+            "bar": {
+              "t": 315,
+              "b": 373,
+              "l": 420,
+              "r": 860
+            },
+            "close": {
+              "t": 320,
+              "b": 368,
+              "l": 788.5,
+              "r": 843
+            },
+            "pop": {
+              "t": 27,
+              "b": 315,
+              "l": 420,
+              "r": 860
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 400,
+            "bar": {
+              "t": 315,
+              "b": 373,
+              "l": 420,
+              "r": 860
+            },
+            "close": {
+              "t": 320,
+              "b": 368,
+              "l": 788.5,
+              "r": 843
+            },
+            "pop": {
+              "t": 27,
+              "b": 315,
+              "l": 420,
+              "r": 860
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_320x256": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 256,
+            "bar": {
+              "t": 200.3,
+              "b": 307.3,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 205.3,
+              "b": 253.3,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 200.3,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 256,
+            "bar": {
+              "t": 200.3,
+              "b": 307.3,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 205.3,
+              "b": 253.3,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 200.3,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "head_320x256_kbdPause": {
+        "ae": "parr ppause",
+        "t": 208.3,
+        "b": 256.3,
+        "vh": 256,
+        "inView": false,
+        "pdimScrollTop": 46
+      },
+      "head_568x320_kbdPause": {
+        "ae": "parr ppause",
+        "t": 272.4,
+        "b": 320.4,
+        "vh": 320,
+        "inView": false,
+        "pdimScrollTop": 28
+      },
+      "old_320x480": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 480,
+            "bar": {
+              "t": 361.6,
+              "b": 468.6,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 366.6,
+              "b": 414.6,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 361.6,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 480,
+            "bar": {
+              "t": 361.6,
+              "b": 468.6,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 366.6,
+              "b": 414.6,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 361.6,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 415.6,
+              "b": 463.6,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_667x375": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 375,
+            "bar": {
+              "t": 293.5,
+              "b": 351.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "close": {
+              "t": 298.5,
+              "b": 346.5,
+              "l": 482,
+              "r": 536.5
+            },
+            "pop": {
+              "t": 23.5,
+              "b": 293.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 375,
+            "bar": {
+              "t": 293.5,
+              "b": 351.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "close": {
+              "t": 298.5,
+              "b": 346.5,
+              "l": 482,
+              "r": 536.5
+            },
+            "pop": {
+              "t": 23.5,
+              "b": 293.5,
+              "l": 113.5,
+              "r": 553.5
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 298.5,
+              "b": 346.5,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_1280x400": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 400,
+            "bar": {
+              "t": 315,
+              "b": 373,
+              "l": 420,
+              "r": 860
+            },
+            "close": {
+              "t": 320,
+              "b": 368,
+              "l": 788.5,
+              "r": 843
+            },
+            "pop": {
+              "t": 27,
+              "b": 315,
+              "l": 420,
+              "r": 860
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 400,
+            "bar": {
+              "t": 315,
+              "b": 373,
+              "l": 420,
+              "r": 860
+            },
+            "close": {
+              "t": 320,
+              "b": 368,
+              "l": 788.5,
+              "r": 843
+            },
+            "pop": {
+              "t": 27,
+              "b": 315,
+              "l": 420,
+              "r": 860
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 320,
+              "b": 368,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_640x320": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 304.4,
+              "l": 100,
+              "r": 540
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 468.5,
+              "r": 523
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 100,
+              "r": 540
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 320,
+            "bar": {
+              "t": 246.4,
+              "b": 304.4,
+              "l": 100,
+              "r": 540
+            },
+            "close": {
+              "t": 251.4,
+              "b": 299.4,
+              "l": 468.5,
+              "r": 523
+            },
+            "pop": {
+              "t": 16,
+              "b": 246.4,
+              "l": 100,
+              "r": 540
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "next": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "prev": {
+              "t": 251.4,
+              "b": 299.4,
+              "centerInView": true,
+              "hittable": true
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_320x256": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 256,
+            "bar": {
+              "t": 200.3,
+              "b": 307.3,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 205.3,
+              "b": 253.3,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 200.3,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 256,
+            "bar": {
+              "t": 200.3,
+              "b": 307.3,
+              "l": 16,
+              "r": 304
+            },
+            "close": {
+              "t": 205.3,
+              "b": 253.3,
+              "l": 232.5,
+              "r": 287
+            },
+            "pop": {
+              "t": 16,
+              "b": 200.3,
+              "l": 16,
+              "r": 304
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 254.3,
+              "b": 302.3,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_375x300": {
+        "n": 2,
+        "rows": [
+          {
+            "slot": 0,
+            "vh": 300,
+            "bar": {
+              "t": 232,
+              "b": 339,
+              "l": 16,
+              "r": 359
+            },
+            "close": {
+              "t": 237,
+              "b": 285,
+              "l": 287.5,
+              "r": 342
+            },
+            "pop": {
+              "t": 16,
+              "b": 232,
+              "l": 16,
+              "r": 359
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          },
+          {
+            "slot": 1,
+            "vh": 300,
+            "bar": {
+              "t": 232,
+              "b": 339,
+              "l": 16,
+              "r": 359
+            },
+            "close": {
+              "t": 237,
+              "b": 285,
+              "l": 287.5,
+              "r": 342
+            },
+            "pop": {
+              "t": 16,
+              "b": 232,
+              "l": 16,
+              "r": 359
+            },
+            "closeHittable": true,
+            "closeInView": true,
+            "popTopInView": true,
+            "pause": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "next": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "prev": {
+              "t": 286,
+              "b": 334,
+              "centerInView": false,
+              "hittable": false
+            },
+            "pdimScrollTop": 0
+          }
+        ]
+      },
+      "old_320x256_kbdPause": {
+        "ae": "parr ppause",
+        "t": 208.3,
+        "b": 256.3,
+        "vh": 256,
+        "inView": false,
+        "pdimScrollTop": 46
+      },
+      "old_568x320_kbdPause": {
+        "ae": "parr ppause",
+        "t": 272.4,
+        "b": 320.4,
+        "vh": 320,
+        "inView": false,
+        "pdimScrollTop": 28
+      }
+    },
+    "v": {
+      "head_320x480": [
+        "s0: bar 361.6-468.6/480 close in hit=true pause 415.6-463.6 hit next hit popTop 16",
+        "s1: bar 361.6-468.6/480 close in hit=true pause 415.6-463.6 hit next hit popTop 16"
+      ],
+      "old_568x320": [
+        "s0: bar 246.4-353.4/320 close in hit=true pause 300.4-348.4 NOHIT next NOHIT popTop 16",
+        "s1: bar 246.4-353.4/320 close in hit=true pause 300.4-348.4 NOHIT next NOHIT popTop 16"
+      ],
+      "head_375x300": [
+        "s0: bar 232-339/300 close in hit=true pause 286-334 NOHIT next NOHIT popTop 16",
+        "s1: bar 232-339/300 close in hit=true pause 286-334 NOHIT next NOHIT popTop 16"
+      ],
+      "head_568x320": [
+        "s0: bar 246.4-353.4/320 close in hit=true pause 300.4-348.4 NOHIT next NOHIT popTop 16",
+        "s1: bar 246.4-353.4/320 close in hit=true pause 300.4-348.4 NOHIT next NOHIT popTop 16"
+      ],
+      "head_667x375": [
+        "s0: bar 293.5-351.5/375 close in hit=true pause 298.5-346.5 hit next hit popTop 23.5",
+        "s1: bar 293.5-351.5/375 close in hit=true pause 298.5-346.5 hit next hit popTop 23.5"
+      ],
+      "head_640x320": [
+        "s0: bar 246.4-304.4/320 close in hit=true pause 251.4-299.4 hit next hit popTop 16",
+        "s1: bar 246.4-304.4/320 close in hit=true pause 251.4-299.4 hit next hit popTop 16"
+      ],
+      "head_1280x400": [
+        "s0: bar 315-373/400 close in hit=true pause 320-368 hit next hit popTop 27",
+        "s1: bar 315-373/400 close in hit=true pause 320-368 hit next hit popTop 27"
+      ],
+      "head_320x256": [
+        "s0: bar 200.3-307.3/256 close in hit=true pause 254.3-302.3 NOHIT next NOHIT popTop 16",
+        "s1: bar 200.3-307.3/256 close in hit=true pause 254.3-302.3 NOHIT next NOHIT popTop 16"
+      ],
+      "head_320x256_kbdPause": {
+        "ae": "parr ppause",
+        "t": 208.3,
+        "b": 256.3,
+        "vh": 256,
+        "inView": false,
+        "pdimScrollTop": 46
+      },
+      "head_568x320_kbdPause": {
+        "ae": "parr ppause",
+        "t": 272.4,
+        "b": 320.4,
+        "vh": 320,
+        "inView": false,
+        "pdimScrollTop": 28
+      },
+      "old_320x480": [
+        "s0: bar 361.6-468.6/480 close in hit=true pause 415.6-463.6 hit next hit popTop 16",
+        "s1: bar 361.6-468.6/480 close in hit=true pause 415.6-463.6 hit next hit popTop 16"
+      ],
+      "old_667x375": [
+        "s0: bar 293.5-351.5/375 close in hit=true pause 298.5-346.5 hit next hit popTop 23.5",
+        "s1: bar 293.5-351.5/375 close in hit=true pause 298.5-346.5 hit next hit popTop 23.5"
+      ],
+      "old_1280x400": [
+        "s0: bar 315-373/400 close in hit=true pause 320-368 hit next hit popTop 27",
+        "s1: bar 315-373/400 close in hit=true pause 320-368 hit next hit popTop 27"
+      ],
+      "old_640x320": [
+        "s0: bar 246.4-304.4/320 close in hit=true pause 251.4-299.4 hit next hit popTop 16",
+        "s1: bar 246.4-304.4/320 close in hit=true pause 251.4-299.4 hit next hit popTop 16"
+      ],
+      "old_320x256": [
+        "s0: bar 200.3-307.3/256 close in hit=true pause 254.3-302.3 NOHIT next NOHIT popTop 16",
+        "s1: bar 200.3-307.3/256 close in hit=true pause 254.3-302.3 NOHIT next NOHIT popTop 16"
+      ],
+      "old_375x300": [
+        "s0: bar 232-339/300 close in hit=true pause 286-334 NOHIT next NOHIT popTop 16",
+        "s1: bar 232-339/300 close in hit=true pause 286-334 NOHIT next NOHIT popTop 16"
+      ],
+      "old_320x256_kbdPause": {
+        "ae": "parr ppause",
+        "t": 208.3,
+        "b": 256.3,
+        "vh": 256,
+        "inView": false,
+        "pdimScrollTop": 46
+      },
+      "old_568x320_kbdPause": {
+        "ae": "parr ppause",
+        "t": 272.4,
+        "b": 320.4,
+        "vh": 320,
+        "inView": false,
+        "pdimScrollTop": 28
+      }
+    }
+  }
+}

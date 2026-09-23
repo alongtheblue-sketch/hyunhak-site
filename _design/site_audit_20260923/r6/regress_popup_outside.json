@@ -1,0 +1,42 @@
+{
+ "index_popup_1440": {
+  "diff_px_gt5": 103000,
+  "outside_card_bar_side_rects": 211
+ },
+ "index_popup_390": {
+  "diff_px_gt5": 61515,
+  "outside_card_bar_side_rects": 0
+ },
+ "index_popup_n3_1440": {
+  "diff_px_gt5": 194466,
+  "outside_card_bar_side_rects": 1125
+ },
+ "index_popup_n3_390": {
+  "diff_px_gt5": 61518,
+  "outside_card_bar_side_rects": 0
+ },
+ "about_popup_1440": {
+  "diff_px_gt5": 19515,
+  "outside_card_bar_side_rects": 0
+ },
+ "about_popup_390": {
+  "diff_px_gt5": 712,
+  "outside_card_bar_side_rects": 0
+ },
+ "studio_popup_1440": {
+  "diff_px_gt5": 19523,
+  "outside_card_bar_side_rects": 0
+ },
+ "lectures_popup_1440": {
+  "diff_px_gt5": 19523,
+  "outside_card_bar_side_rects": 0
+ },
+ "interview_popup_1440": {
+  "diff_px_gt5": 19523,
+  "outside_card_bar_side_rects": 0
+ },
+ "guidebook_index_popup_1440": {
+  "diff_px_gt5": 19523,
+  "outside_card_bar_side_rects": 0
+ }
+}
