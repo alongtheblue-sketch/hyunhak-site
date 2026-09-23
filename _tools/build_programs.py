@@ -78,6 +78,9 @@ def build():
             if source.count("__UNITS__") != 1:
                 raise ValueError("studio: expected one units slot")
             source = source.replace("__UNITS__", studio_units.render())
+            if source.count("__STUDIO_OPTIONS__") != 1:
+                raise ValueError("studio: expected one select options slot")
+            source = source.replace("__STUDIO_OPTIONS__", studio_units.options())
         if kind in {"guidebook", "studio"}:
             if source.count("__R2_FAQ__") != 1:
                 raise ValueError(f"{rel}: expected one R2 FAQ slot")
@@ -87,7 +90,7 @@ def build():
             source = V.apply_shell(source, rel)
             source = V.apply_footer(source, rel)
             source = V.apply_fix(source, rel)
-        if re.search(r"__(?:C_|GUIDE_|UNITS__)", source):
+        if re.search(r"__(?:C_|GUIDE_|UNITS__|STUDIO_)", source):
             raise ValueError(f"{rel}: 치환되지 않은 자리표시")
         (ROOT / rel).write_text(source, encoding="utf-8")
     home = ROOT / "index.html"

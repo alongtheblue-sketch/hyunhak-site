@@ -81,7 +81,7 @@
   function n0(v, hi) { return intIn(v, 0, hi == null ? 9999 : hi, 0); }
   function loadSets() {
     return fetch("assets/data/sets.json").then(function (r) { return r.json(); })
-      .then(function (d) { return (d.units || []).filter(function (u) { return okUnit(u.code); }); })   // 허용 단위 5종만 (미래캠 제외)
+      .then(function (d) { return (d.units || []).filter(function (u) { return okUnit(u.code); }); })   // app.js UNITS 의 판매 단위만 (13단위, 공통형 포함. 2026-09-14 미래캠 6 + 고른기회 2 추가)
       .catch(function () { return []; });
   }
   function summary(q) { return apiFetch("/api/lectures/summary?" + q).then(function (d) { return d._status === 200 ? d : null; }).catch(function () { return null; }); }

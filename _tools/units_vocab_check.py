@@ -3,6 +3,7 @@
 """단위 어휘 동기 게이트 (연세대 미래캠퍼스 + 고려대 고른기회 판매 개시, 2026-09-14).
 판매 13단위(기존 5 + 미래 6(공통형 포함) + 고른기회 2)가 사이트 안 표 세 곳(app.js, lectures.js, build_sets_catalog)에,
 순위 12단위가 rank.js 에, 전형 상세면 원장(facts, codes.py)의 yonsei-mirae·korea-eq 2면이 on_sale 로 같은 값으로 박혀 있어야 한다.
+구매면 programs/studio.html 의 select#studio-unit 은 판매 12단위(공통형 제외)를 카드 순서로 담아야 한다 (2026-09-23 추가, build_all 6k).
 원문 = hyunhak-api src/pay.js UNIT_SET_RE 키 + src/ranking.js RANK_UNITS 키 순서.
 고른기회 2단위는 인강이 없다 (LECTURE_UNITS·build_lectures ORDER 밖, lectures/<code>.html 도 서지 않는다).
 실행: python3 _tools/units_vocab_check.py  (어긋나면 exit 1)
@@ -29,6 +30,8 @@ NO_LECTURE = NO_SKU | set(EQ)
 EXAM_UNITS = {"yonsei-mirae": [u for u in MIRAE if u not in NO_SKU]}
 # 전형 상세면 원장이 on_sale 이어야 하는 code (단위 code 와 1:1 인 면 + 미래 묶음 면)
 EXAM_ON_SALE = ["yonsei-hum", "yonsei-sci", "yonsei-intl", "yonsei-mirae", "korea-hum", "korea-sci"] + EQ
+# 구매면 select#studio-unit = 판매 12단위, 카드 01~12 순서(codes.py CODES 순 → 미래 5 → 고려대). 공통형은 단독 SKU 없음
+SELECT_UNITS = ["yonsei-hum", "yonsei-sci", "yonsei-intl"] + [u for u in MIRAE if u not in NO_SKU] + ["korea-hum", "korea-sci"] + EQ
 
 
 def js_array(text, name):
@@ -138,12 +141,27 @@ def main():
         if (ROOT / "lectures" / f"{code}.html").exists():
             bad.append(f"lectures/{code}.html 이 있다 (고른기회는 인강 없음)")
 
+    # 구매 블록 select = 판매 12단위 (2026-09-23: 템플릿 option 5개 하드코딩으로 미래캠 5, 고른기회 2 카드가 직전 단위 SKU 를 담던 돈 결함 재발 방지)
+    if sorted(SELECT_UNITS) != sorted(u for u in UNITS if u not in NO_SKU):
+        bad.append("SELECT_UNITS 집합 != UNITS - NO_SKU (게이트 상수 불일치)")
+    tpl = (ROOT / "_tools/program_studio_v2.html").read_text("utf-8")
+    if tpl.count('<select id="studio-unit">__STUDIO_OPTIONS__</select>') != 1:
+        bad.append("_tools/program_studio_v2.html select#studio-unit 이 __STUDIO_OPTIONS__ 자리표시가 아니다 (option 하드코딩 금지)")
+    built = ROOT / "programs/studio.html"
+    m = re.search(r'<select id="studio-unit">(.*?)</select>', built.read_text("utf-8"), re.S) if built.exists() else None
+    got = re.findall(r'<option value="([^"]+)">', m.group(1)) if m else []
+    if got != SELECT_UNITS:
+        bad.append(f"programs/studio.html select#studio-unit option = {got} != 판매 12단위(카드 순서)")
+    cards = re.findall(r'data-r3-unit-buy="([^"]+)"', built.read_text("utf-8")) if built.exists() else []
+    if cards != SELECT_UNITS:
+        bad.append(f"programs/studio.html 카드 data-r3-unit-buy = {cards} != 판매 12단위(카드 순서)")
+
     if bad:
         print("[units_vocab_check] FAIL")
         for b in bad:
             print(" -", b)
         sys.exit(1)
-    print("[units_vocab_check] PASS: 판매 13단위, 순위표 12탭, facts yonsei-mirae on_sale 180세트, 고른기회 2면 on_sale 30세트(인강 없음)")
+    print("[units_vocab_check] PASS: 판매 13단위, 순위표 12탭, 구매 select 12단위 = 카드 12, facts yonsei-mirae on_sale 180세트, 고른기회 2면 on_sale 30세트(인강 없음)")
 
 
 if __name__ == "__main__":

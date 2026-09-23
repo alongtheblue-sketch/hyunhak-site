@@ -9,9 +9,25 @@
   var cartLink = block.querySelector('[data-cart-link]');
   var isGuide = block.dataset.productBuy === 'guidebook';
 
+  function optionFor(value) {
+    for (var i = 0; i < select.options.length; i++) if (select.options[i].value === value) return select.options[i];
+    return null;
+  }
+  // 고른 단위의 option 이 없으면 담기를 닫는다 (fail closed). 2026-09-23: select 에 5단위만 있을 때 카드 7장이
+  // select.value 를 못 바꾸고(selectedIndex -1) update() 가 TypeError 로 멈춰 직전 단위 SKU 가 담기 버튼에 남았다.
+  function closeBuy() {
+    button.disabled = true;
+    button.dataset.cartSku = '';
+    button.dataset.cartTitle = '';
+    button.dataset.cartPrice = '0';
+    status.textContent = '이 단위는 구매 목록에 없습니다. 응시 단위를 다시 골라 주세요.';
+    cartLink.hidden = true;
+  }
+
   function update() {
     var mode = block.querySelector('input[type="radio"]:checked').value;
     var option = select.options[select.selectedIndex];
+    if (!option) { closeBuy(); return; }
     select.disabled = isGuide ? mode !== 'single' : mode === 'lecture';
     if (isGuide) {
       button.dataset.cartSku = mode === 'pdf' ? 'guide-all-pdf' : mode === 'all' ? 'guide-all-view' : option.value;
@@ -36,6 +52,7 @@
   document.addEventListener('click', function (event) {
     var link = event.target.closest('[data-r3-unit-buy]');
     if (!link || isGuide || !HH.okUnit(link.dataset.r3UnitBuy)) return;
+    if (!optionFor(link.dataset.r3UnitBuy)) { closeBuy(); return; }
     select.value = link.dataset.r3UnitBuy;
     block.querySelector('input[name="product"][value="pass"]').checked = true;
     update();

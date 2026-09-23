@@ -7,7 +7,7 @@
   if(!window.HH) return;
   var esc=HH.esc;
   var ENT_ID_RE=/^ent[A-Za-z0-9_]{1,80}$/;
-  // 단위 코드 → 표시 이름. app.js UNITS(판매 11종) 밖의 미개시 단위도 권리가 오면 이름을 붙인다
+  // 단위 코드 → 표시 이름. app.js UNITS(판매 13단위) 밖의 미개시 단위도 권리가 오면 이름을 붙인다
   var UNIT_LABEL={'korea-hum':'고려대 계열적합 인문','korea-sci':'고려대 계열적합 자연','yonsei-hum':'연세대 활동우수 인문통합','yonsei-sci':'연세대 활동우수 자연','yonsei-intl':'연세대 국제형','korea-eq-hum':'고려대 고른기회 인문','korea-eq-sci':'고려대 고른기회 자연','yonsei-mirae-free':'연세대 미래 자율융합','yonsei-mirae-design':'연세대 미래 디자인','yonsei-mirae-tech':'연세대 미래 첨단','yonsei-mirae-health':'연세대 미래 보건','yonsei-mirae-intl':'연세대 미래 국제','yonsei-mirae-common':'연세대 미래 전 모집단위 공통형'};
   var BD_TITLE={'guide-all-view':'2027 서류기반면접 가이드북 전권 열람권','guide-all-pdf':'2027 서류기반면접 가이드북 전권 PDF 소장판'};
   var KIND={studio_passage:'지문 낱권 이용권',studio_school:'단위 전권 이용권'};
