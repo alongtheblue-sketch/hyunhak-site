@@ -1,0 +1,896 @@
+{
+  "run": "2026-09-23T02:12:22.320Z",
+  "url": "http://localhost:8092/index.html",
+  "autoMsExpected": 8000,
+  "watchMs": 9500,
+  "widths": {
+    "390": {
+      "reduce_mouse": {
+        "s0": {
+          "now": 649.9000000953674,
+          "openAt": 202.40000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "idle": {
+          "from": "1",
+          "to": "1",
+          "elapsedMs": 9503,
+          "changes": []
+        },
+        "s1_afterClick": {
+          "now": 10320.400000095367,
+          "openAt": 202.40000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hoverStay": {
+          "from": "1",
+          "to": "1",
+          "elapsedMs": 9503,
+          "changes": []
+        },
+        "backdropPoint": {
+          "x": 4,
+          "y": 4
+        },
+        "s2_afterLeave": {
+          "now": 19881.900000095367,
+          "openAt": 202.40000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "afterLeave": {
+          "from": "1",
+          "to": "2",
+          "elapsedMs": 9504,
+          "changes": [
+            {
+              "dt": 8000,
+              "v": "2"
+            }
+          ]
+        }
+      },
+      "reduce_kbd": {
+        "s0": {
+          "now": 591.5999999046326,
+          "openAt": 168.90000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "s1_afterEnter": {
+          "now": 600.9000000953674,
+          "openAt": 168.90000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "after": {
+          "from": "1",
+          "to": "2",
+          "elapsedMs": 9503,
+          "changes": [
+            {
+              "dt": 8000,
+              "v": "2"
+            }
+          ]
+        }
+      },
+      "nopref_mouse": {
+        "s0": {
+          "now": 553.6000001430511,
+          "openAt": 133.79999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "openToCheckMs": 9502,
+        "sA": {
+          "now": 9636.200000047684,
+          "openAt": 133.79999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "H2"
+        },
+        "autoFromOpen": [
+          {
+            "dt": 8003,
+            "v": "2"
+          }
+        ],
+        "s1_afterClick": {
+          "now": 9651.200000047684,
+          "openAt": 133.79999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "backdropPoint": {
+          "x": 4,
+          "y": 4
+        },
+        "s2_afterLeave": {
+          "now": 9730.799999952316,
+          "openAt": 133.79999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hold": {
+          "from": "2",
+          "to": "2",
+          "elapsedMs": 9503,
+          "changes": []
+        }
+      },
+      "nopref_kbd": {
+        "s0": {
+          "now": 622,
+          "openAt": 155,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "sA": {
+          "now": 9658,
+          "openAt": 155,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "H2"
+        },
+        "autoFromOpen": [
+          {
+            "dt": 8004,
+            "v": "2"
+          }
+        ],
+        "s_afterFocus": {
+          "now": 9663.300000190735,
+          "openAt": 155,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "s1_afterEnter": {
+          "now": 9665.800000190735,
+          "openAt": 155,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 676,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hold": {
+          "from": "2",
+          "to": "2",
+          "elapsedMs": 9502,
+          "changes": []
+        }
+      },
+      "tab_reduce": {
+        "s0": {
+          "now": 575.5999999046326,
+          "openAt": 137.79999995231628,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "reachedAt": 6,
+        "seq": [
+          {
+            "i": 1,
+            "active": "A.btn",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 2,
+            "active": "A.btn.ghost",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 3,
+            "active": "INPUT",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 4,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 5,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 6,
+            "active": "BUTTON.parr.ppause[data-ppop-pause]",
+            "btnText": "재생",
+            "btnPressed": "true"
+          }
+        ]
+      },
+      "tab_no-preference": {
+        "s0": {
+          "now": 621.2999999523163,
+          "openAt": 146.79999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 240,
+            "y": 652,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "reachedAt": 6,
+        "seq": [
+          {
+            "i": 1,
+            "active": "A.btn",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 2,
+            "active": "A.btn.ghost",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 3,
+            "active": "INPUT",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 4,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 5,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 6,
+            "active": "BUTTON.parr.ppause[data-ppop-pause]",
+            "btnText": "재생",
+            "btnPressed": "true"
+          }
+        ]
+      }
+    },
+    "1440": {
+      "reduce_mouse": {
+        "s0": {
+          "now": 624.8999998569489,
+          "openAt": 184.59999990463257,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "idle": {
+          "from": "1",
+          "to": "1",
+          "elapsedMs": 9504,
+          "changes": []
+        },
+        "s1_afterClick": {
+          "now": 10514.099999904633,
+          "openAt": 184.59999990463257,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hoverStay": {
+          "from": "1",
+          "to": "1",
+          "elapsedMs": 9502,
+          "changes": []
+        },
+        "backdropPoint": {
+          "x": 4,
+          "y": 4
+        },
+        "s2_afterLeave": {
+          "now": 20058.099999904633,
+          "openAt": 184.59999990463257,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "afterLeave": {
+          "from": "1",
+          "to": "2",
+          "elapsedMs": 9503,
+          "changes": [
+            {
+              "dt": 7968,
+              "v": "2"
+            }
+          ]
+        }
+      },
+      "reduce_kbd": {
+        "s0": {
+          "now": 648.7000000476837,
+          "openAt": 158.40000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "s1_afterEnter": {
+          "now": 703.9000000953674,
+          "openAt": 158.40000009536743,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "after": {
+          "from": "1",
+          "to": "2",
+          "elapsedMs": 9504,
+          "changes": [
+            {
+              "dt": 8000,
+              "v": "2"
+            }
+          ]
+        }
+      },
+      "nopref_mouse": {
+        "s0": {
+          "now": 578.3000001907349,
+          "openAt": 146.40000009536743,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "openToCheckMs": 9503,
+        "sA": {
+          "now": 9649.600000143051,
+          "openAt": 146.40000009536743,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "H2"
+        },
+        "autoFromOpen": [
+          {
+            "dt": 8003,
+            "v": "2"
+          }
+        ],
+        "s1_afterClick": {
+          "now": 9679.100000143051,
+          "openAt": 146.40000009536743,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "backdropPoint": {
+          "x": 4,
+          "y": 4
+        },
+        "s2_afterLeave": {
+          "now": 9756.700000047684,
+          "openAt": 146.40000009536743,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hold": {
+          "from": "2",
+          "to": "2",
+          "elapsedMs": 9508,
+          "changes": []
+        }
+      },
+      "nopref_kbd": {
+        "s0": {
+          "now": 643.7999999523163,
+          "openAt": 144.39999985694885,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "sA": {
+          "now": 9648.799999952316,
+          "openAt": 144.39999985694885,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "H2"
+        },
+        "autoFromOpen": [
+          {
+            "dt": 8003,
+            "v": "2"
+          }
+        ],
+        "s_afterFocus": {
+          "now": 9662.899999856949,
+          "openAt": 144.39999985694885,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "s1_afterEnter": {
+          "now": 9671.099999904633,
+          "openAt": 144.39999985694885,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "2/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 649,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "2",
+          "active": "BUTTON.parr.ppause[data-ppop-pause]"
+        },
+        "hold": {
+          "from": "2",
+          "to": "2",
+          "elapsedMs": 9503,
+          "changes": []
+        }
+      },
+      "tab_reduce": {
+        "s0": {
+          "now": 578.7999999523163,
+          "openAt": 155.5,
+          "reduceMatches": true,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "재생",
+          "btnPressed": "true",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "reachedAt": 6,
+        "seq": [
+          {
+            "i": 1,
+            "active": "A.btn",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 2,
+            "active": "A.btn.ghost",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 3,
+            "active": "INPUT",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 4,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 5,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 6,
+            "active": "BUTTON.parr.ppause[data-ppop-pause]",
+            "btnText": "재생",
+            "btnPressed": "true"
+          }
+        ]
+      },
+      "tab_no-preference": {
+        "s0": {
+          "now": 602,
+          "openAt": 145.29999995231628,
+          "reduceMatches": false,
+          "N": 2,
+          "pcnt": "1/2",
+          "btnExists": true,
+          "btnText": "정지",
+          "btnPressed": "false",
+          "btnRect": {
+            "x": 805,
+            "y": 641,
+            "w": 48,
+            "h": 48
+          },
+          "btnInViewport": true,
+          "cur": "1",
+          "active": "H2"
+        },
+        "reachedAt": 6,
+        "seq": [
+          {
+            "i": 1,
+            "active": "A.btn",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 2,
+            "active": "A.btn.ghost",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 3,
+            "active": "INPUT",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 4,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 5,
+            "active": "BUTTON.parr",
+            "btnText": "재생",
+            "btnPressed": "true"
+          },
+          {
+            "i": 6,
+            "active": "BUTTON.parr.ppause[data-ppop-pause]",
+            "btnText": "재생",
+            "btnPressed": "true"
+          }
+        ]
+      }
+    }
+  }
+}

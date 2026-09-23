@@ -1,0 +1,427 @@
+{
+  "at": "2026-09-23T02:26:44.713Z",
+  "static": {
+    "htmlFilesScanned": 81,
+    "placeholders": [],
+    "buyDamgi": [],
+    "booksLink": [
+      {
+        "href": "#buy",
+        "key": "return_buy",
+        "text": "구매할 상품 고르기"
+      }
+    ],
+    "closeBtn": {
+      "href": "#buy",
+      "key": "return_buy",
+      "text": "구매할 상품 고르기"
+    },
+    "buyIdCount": 1,
+    "template92": "return_buy"
+  },
+  "links": [
+    {
+      "w": 1440,
+      "h": 900,
+      "info": {
+        "booksExists": true,
+        "linkText": "구매할 상품 고르기",
+        "linkHref": "#buy",
+        "linkCopyKey": "return_buy",
+        "linkBox": {
+          "w": 94.2,
+          "h": 48
+        },
+        "linkMinHeight": "48px",
+        "linkDisplay": "inline-flex",
+        "closeText": "구매할 상품 고르기",
+        "closeHref": "#buy",
+        "closeCopyKey": "return_buy",
+        "buyCount": 1,
+        "buyTag": "SECTION.r2-buy r3-buy",
+        "buyScrollMarginTop": "88px",
+        "placeholderInDom": false,
+        "primaryBtnText": "장바구니 담기"
+      },
+      "before": {
+        "scrollY": 8206,
+        "buyTop": -7935.3,
+        "hash": "",
+        "linkHitSelf": true,
+        "linkTop": 450.3
+      },
+      "after": {
+        "scrollY": 183,
+        "buyTop": 87.7,
+        "hash": "#buy",
+        "headerBottom": 72,
+        "headerPos": "sticky"
+      },
+      "settleMs": 1972,
+      "lazy": {
+        "total": 34,
+        "loaded": 34,
+        "broken": [],
+        "pending": [],
+        "hiddenLazy": 0,
+        "horizScrollers": 2,
+        "waitedMs": 3
+      },
+      "imgErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/books_1440.png",
+      "unstuck": [
+        "header.hd:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky"
+      ],
+      "moved": true,
+      "buyTopDeltaFromMargin": -0.3,
+      "buyBelowHeader": true
+    },
+    {
+      "w": 390,
+      "h": 844,
+      "info": {
+        "booksExists": true,
+        "linkText": "구매할 상품 고르기",
+        "linkHref": "#buy",
+        "linkCopyKey": "return_buy",
+        "linkBox": {
+          "w": 94.2,
+          "h": 48
+        },
+        "linkMinHeight": "48px",
+        "linkDisplay": "inline-flex",
+        "closeText": "구매할 상품 고르기",
+        "closeHref": "#buy",
+        "closeCopyKey": "return_buy",
+        "buyCount": 1,
+        "buyTag": "SECTION.r2-buy r3-buy",
+        "buyScrollMarginTop": "88px",
+        "placeholderInDom": false,
+        "primaryBtnText": "장바구니 담기"
+      },
+      "before": {
+        "scrollY": 8319,
+        "buyTop": -8079.6,
+        "hash": "",
+        "linkHitSelf": true,
+        "linkTop": 422.1
+      },
+      "after": {
+        "scrollY": 151,
+        "buyTop": 88.4,
+        "hash": "#buy",
+        "headerBottom": 65,
+        "headerPos": "sticky"
+      },
+      "settleMs": 1996,
+      "lazy": {
+        "total": 34,
+        "loaded": 22,
+        "broken": [],
+        "pending": [
+          {
+            "src": "http://localhost:8092/assets/covers/gachon.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/catholic.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/konkuk.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/kyonggi.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/khu.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/kwangwoon.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/kookmin.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/dankook.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/duksung.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/dongguk.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/dongduk.jpg",
+            "loading": "lazy",
+            "visible": false
+          },
+          {
+            "src": "http://localhost:8092/assets/covers/donga.jpg",
+            "loading": "lazy",
+            "visible": false
+          }
+        ],
+        "hiddenLazy": 12,
+        "horizScrollers": 2,
+        "waitedMs": 6
+      },
+      "imgErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/books_390.png",
+      "unstuck": [
+        "header.hd:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "th.:sticky",
+        "nav.fix:fixed"
+      ],
+      "moved": true,
+      "buyTopDeltaFromMargin": 0.4,
+      "buyBelowHeader": true
+    }
+  ],
+  "lazy": [
+    {
+      "page": "programs/guidebook",
+      "w": 1440,
+      "total": 34,
+      "loaded": 34,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 2,
+      "waitedMs": 4,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_programs_guidebook_1440.png",
+      "unstuckFixed": [],
+      "scrollW": 1440,
+      "scrollH": 10825
+    },
+    {
+      "page": "programs/studio",
+      "w": 1440,
+      "total": 9,
+      "loaded": 9,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 1,
+      "waitedMs": 2,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_programs_studio_1440.png",
+      "unstuckFixed": [],
+      "scrollW": 1440,
+      "scrollH": 8518
+    },
+    {
+      "page": "guidebook/index",
+      "w": 1440,
+      "total": 0,
+      "loaded": 0,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 0,
+      "waitedMs": 21,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_guidebook_index_1440.png",
+      "unstuckFixed": [],
+      "scrollW": 1440,
+      "scrollH": 5045
+    },
+    {
+      "page": "studio",
+      "w": 1440,
+      "total": 0,
+      "loaded": 0,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 0,
+      "waitedMs": 3,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_studio_1440.png",
+      "unstuckFixed": [],
+      "scrollW": 1440,
+      "scrollH": 11977
+    },
+    {
+      "page": "programs/guidebook",
+      "w": 390,
+      "total": 34,
+      "loaded": 22,
+      "broken": [],
+      "pending": [
+        {
+          "src": "http://localhost:8092/assets/covers/gachon.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/catholic.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/konkuk.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/kyonggi.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/khu.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/kwangwoon.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/kookmin.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/dankook.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/duksung.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/dongguk.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/dongduk.jpg",
+          "loading": "lazy",
+          "visible": false
+        },
+        {
+          "src": "http://localhost:8092/assets/covers/donga.jpg",
+          "loading": "lazy",
+          "visible": false
+        }
+      ],
+      "hiddenLazy": 12,
+      "horizScrollers": 2,
+      "waitedMs": 2,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_programs_guidebook_390.png",
+      "unstuckFixed": [
+        "nav.fix:fixed"
+      ],
+      "scrollW": 390,
+      "scrollH": 11187
+    },
+    {
+      "page": "programs/studio",
+      "w": 390,
+      "total": 9,
+      "loaded": 9,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 1,
+      "waitedMs": 2,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_programs_studio_390.png",
+      "unstuckFixed": [
+        "nav.fix:fixed"
+      ],
+      "scrollW": 390,
+      "scrollH": 12793
+    },
+    {
+      "page": "guidebook/index",
+      "w": 390,
+      "total": 0,
+      "loaded": 0,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 0,
+      "waitedMs": 1,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_guidebook_index_390.png",
+      "unstuckFixed": [
+        "nav.fix:fixed"
+      ],
+      "scrollW": 390,
+      "scrollH": 6495
+    },
+    {
+      "page": "studio",
+      "w": 390,
+      "total": 0,
+      "loaded": 0,
+      "broken": [],
+      "pending": [],
+      "hiddenLazy": 0,
+      "horizScrollers": 0,
+      "waitedMs": 1,
+      "imgHttpErrors": [],
+      "shot": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/lazy_studio_390.png",
+      "unstuckFixed": [
+        "nav.fix:fixed"
+      ],
+      "scrollW": 390,
+      "scrollH": 17749
+    }
+  ]
+}

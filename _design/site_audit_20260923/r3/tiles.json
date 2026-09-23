@@ -1,0 +1,10663 @@
+{
+ "at": "2026-09-23T02:24:16.434Z",
+ "head": "87106d8",
+ "widths": {
+  "360": {
+   "vw": 360,
+   "docW": 360,
+   "clientW": 360,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": true
+   },
+   "gtc": "320px",
+   "ncols": 1,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 20,
+    "right": 340,
+    "width": 320
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 1,
+     "bts": [
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 6,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 7,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 8,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 9,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 10,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 11,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [],
+   "minGap": null,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2484.39,
+     "bottom": 2532.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2532.39,
+     "bottom": 2580.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 20,
+     "right": 340,
+     "top": 2580.39,
+     "bottom": 2628.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2628.39,
+     "bottom": 2676.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2676.39,
+     "bottom": 2724.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2724.39,
+     "bottom": 2772.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2772.39,
+     "bottom": 2820.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 6,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 20,
+     "right": 340,
+     "top": 2820.39,
+     "bottom": 2868.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 7,
+     "col": 0
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2868.39,
+     "bottom": 2916.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 8,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2916.39,
+     "bottom": 2964.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 9,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 20,
+     "right": 340,
+     "top": 2964.39,
+     "bottom": 3012.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 10,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 20,
+     "right": 340,
+     "top": 3012.39,
+     "bottom": 3060.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 340,
+     "contentRight": 340,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 298,
+     "nCW": 298,
+     "row": 11,
+     "col": 0
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "390": {
+   "vw": 390,
+   "docW": 390,
+   "clientW": 390,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": true
+   },
+   "gtc": "350px",
+   "ncols": 1,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 20,
+    "right": 370,
+    "width": 350
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 1,
+     "bts": [
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 6,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 7,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 8,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 9,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 10,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 11,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [],
+   "minGap": null,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2423.31,
+     "bottom": 2471.31,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2471.31,
+     "bottom": 2519.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 20,
+     "right": 370,
+     "top": 2519.31,
+     "bottom": 2567.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2567.31,
+     "bottom": 2615.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2615.31,
+     "bottom": 2663.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2663.31,
+     "bottom": 2711.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2711.31,
+     "bottom": 2759.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 6,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 20,
+     "right": 370,
+     "top": 2759.31,
+     "bottom": 2807.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 7,
+     "col": 0
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2807.31,
+     "bottom": 2855.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 8,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2855.31,
+     "bottom": 2903.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 9,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2903.31,
+     "bottom": 2951.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 10,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 20,
+     "right": 370,
+     "top": 2951.31,
+     "bottom": 2999.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 370,
+     "contentRight": 370,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 328,
+     "nCW": 328,
+     "row": 11,
+     "col": 0
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "600": {
+   "vw": 600,
+   "docW": 600,
+   "clientW": 600,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "276px 276px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 24,
+    "right": 576,
+    "width": 552
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 24,
+     "right": 300,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 300,
+     "right": 576,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "601": {
+   "vw": 601,
+   "docW": 601,
+   "clientW": 601,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "276.469px 276.469px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 24.03,
+    "right": 576.97,
+    "width": 552.94
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "768": {
+   "vw": 768,
+   "docW": 768,
+   "clientW": 768,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "353.281px 353.281px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 30.72,
+    "right": 737.28,
+    "width": 706.56
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 30.72,
+     "right": 384,
+     "top": 2288.73,
+     "bottom": 2336.73,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 384,
+     "right": 737.28,
+     "top": 2288.73,
+     "bottom": 2336.73,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 30.72,
+     "right": 384,
+     "top": 2336.73,
+     "bottom": 2384.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 384,
+     "right": 737.28,
+     "top": 2336.73,
+     "bottom": 2384.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 30.72,
+     "right": 384,
+     "top": 2384.73,
+     "bottom": 2432.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 384,
+     "right": 737.28,
+     "top": 2384.73,
+     "bottom": 2432.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 30.72,
+     "right": 384,
+     "top": 2432.73,
+     "bottom": 2480.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 384,
+     "right": 737.28,
+     "top": 2432.73,
+     "bottom": 2480.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 30.72,
+     "right": 384,
+     "top": 2480.73,
+     "bottom": 2528.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 384,
+     "right": 737.28,
+     "top": 2480.73,
+     "bottom": 2528.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 30.72,
+     "right": 384,
+     "top": 2528.73,
+     "bottom": 2576.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 344,
+     "contentRight": 344,
+     "textLeft": 30.72,
+     "nOverflow": false,
+     "nSW": 291,
+     "nCW": 291,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 384,
+     "right": 737.28,
+     "top": 2528.73,
+     "bottom": 2576.73,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 737.28,
+     "contentRight": 737.28,
+     "textLeft": 384,
+     "nOverflow": false,
+     "nSW": 331,
+     "nCW": 331,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "900": {
+   "vw": 900,
+   "docW": 900,
+   "clientW": 900,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "414px 414px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 36,
+    "right": 864,
+    "width": 828
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 36,
+     "right": 450,
+     "top": 1622.77,
+     "bottom": 1670.77,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 450,
+     "right": 864,
+     "top": 1622.77,
+     "bottom": 1670.77,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 36,
+     "right": 450,
+     "top": 1670.77,
+     "bottom": 1718.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 450,
+     "right": 864,
+     "top": 1670.77,
+     "bottom": 1718.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 36,
+     "right": 450,
+     "top": 1718.77,
+     "bottom": 1766.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 450,
+     "right": 864,
+     "top": 1718.77,
+     "bottom": 1766.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 36,
+     "right": 450,
+     "top": 1766.77,
+     "bottom": 1814.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 450,
+     "right": 864,
+     "top": 1766.77,
+     "bottom": 1814.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 36,
+     "right": 450,
+     "top": 1814.77,
+     "bottom": 1862.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 450,
+     "right": 864,
+     "top": 1814.77,
+     "bottom": 1862.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 36,
+     "right": 450,
+     "top": 1862.77,
+     "bottom": 1910.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 410,
+     "contentRight": 410,
+     "textLeft": 36,
+     "nOverflow": false,
+     "nSW": 352,
+     "nCW": 352,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 450,
+     "right": 864,
+     "top": 1862.77,
+     "bottom": 1910.77,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 864,
+     "contentRight": 864,
+     "textLeft": 450,
+     "nOverflow": false,
+     "nSW": 392,
+     "nCW": 392,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "1024": {
+   "vw": 1024,
+   "docW": 1024,
+   "clientW": 1024,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "457.047px 457.047px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 54.95,
+    "right": 969.05,
+    "width": 914.09
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1601.67,
+     "bottom": 1649.67,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 1601.67,
+     "bottom": 1649.67,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 54.95,
+     "right": 512,
+     "top": 1649.67,
+     "bottom": 1697.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 1649.67,
+     "bottom": 1697.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1697.67,
+     "bottom": 1745.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 1697.67,
+     "bottom": 1745.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1745.67,
+     "bottom": 1793.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 512,
+     "right": 969.05,
+     "top": 1745.67,
+     "bottom": 1793.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1793.67,
+     "bottom": 1841.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 1793.67,
+     "bottom": 1841.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1841.67,
+     "bottom": 1889.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 1841.67,
+     "bottom": 1889.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "1100": {
+   "vw": 1100,
+   "docW": 1100,
+   "clientW": 1100,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "492px 492px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 58,
+    "right": 1042,
+    "width": 984
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 58,
+     "right": 550,
+     "top": 1623.86,
+     "bottom": 1671.86,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 550,
+     "right": 1042,
+     "top": 1623.86,
+     "bottom": 1671.86,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 58,
+     "right": 550,
+     "top": 1671.86,
+     "bottom": 1719.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 550,
+     "right": 1042,
+     "top": 1671.86,
+     "bottom": 1719.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 58,
+     "right": 550,
+     "top": 1719.86,
+     "bottom": 1767.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 550,
+     "right": 1042,
+     "top": 1719.86,
+     "bottom": 1767.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 58,
+     "right": 550,
+     "top": 1767.86,
+     "bottom": 1815.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 550,
+     "right": 1042,
+     "top": 1767.86,
+     "bottom": 1815.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 58,
+     "right": 550,
+     "top": 1815.86,
+     "bottom": 1863.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 550,
+     "right": 1042,
+     "top": 1815.86,
+     "bottom": 1863.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 58,
+     "right": 550,
+     "top": 1863.86,
+     "bottom": 1911.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 510,
+     "contentRight": 510,
+     "textLeft": 58,
+     "nOverflow": false,
+     "nSW": 430,
+     "nCW": 430,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 550,
+     "right": 1042,
+     "top": 1863.86,
+     "bottom": 1911.86,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042,
+     "contentRight": 1042,
+     "textLeft": 550,
+     "nOverflow": false,
+     "nSW": 470,
+     "nCW": 470,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "1101": {
+   "vw": 1101,
+   "docW": 1101,
+   "clientW": 1101,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "328.312px 328.312px 328.312px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 58.03,
+    "right": 1042.97,
+    "width": 984.94
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    40,
+    0,
+    40,
+    40,
+    0,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0,
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 40
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "1280": {
+   "vw": 1280,
+   "docW": 1280,
+   "clientW": 1280,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "339.203px 339.203px 339.219px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 131.19,
+    "right": 1148.81,
+    "width": 1017.63
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    40,
+    0,
+    40,
+    40,
+    0,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0,
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 40
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 131.19,
+     "right": 470.39,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 430.39,
+     "contentRight": 430.39,
+     "textLeft": 131.19,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 470.39,
+     "right": 809.59,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 769.59,
+     "contentRight": 769.59,
+     "textLeft": 470.39,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 809.59,
+     "right": 1148.81,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1148.81,
+     "contentRight": 1148.81,
+     "textLeft": 809.59,
+     "nOverflow": false,
+     "nSW": 317,
+     "nCW": 317,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 131.19,
+     "right": 470.39,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 430.39,
+     "contentRight": 430.39,
+     "textLeft": 131.19,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 470.39,
+     "right": 809.59,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 769.59,
+     "contentRight": 769.59,
+     "textLeft": 470.39,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 809.59,
+     "right": 1148.81,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1148.81,
+     "contentRight": 1148.81,
+     "textLeft": 809.59,
+     "nOverflow": false,
+     "nSW": 317,
+     "nCW": 317,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 131.19,
+     "right": 470.39,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 430.39,
+     "contentRight": 430.39,
+     "textLeft": 131.19,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 470.39,
+     "right": 809.59,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 769.59,
+     "contentRight": 769.59,
+     "textLeft": 470.39,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 809.59,
+     "right": 1148.81,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1148.81,
+     "contentRight": 1148.81,
+     "textLeft": 809.59,
+     "nOverflow": false,
+     "nSW": 317,
+     "nCW": 317,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 131.19,
+     "right": 470.39,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 430.39,
+     "contentRight": 430.39,
+     "textLeft": 131.19,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 470.39,
+     "right": 809.59,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 769.59,
+     "contentRight": 769.59,
+     "textLeft": 470.39,
+     "nOverflow": false,
+     "nSW": 277,
+     "nCW": 277,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 809.59,
+     "right": 1148.81,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1148.81,
+     "contentRight": 1148.81,
+     "textLeft": 809.59,
+     "nOverflow": false,
+     "nSW": 317,
+     "nCW": 317,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "1440": {
+   "vw": 1440,
+   "docW": 1440,
+   "clientW": 1440,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "336px 336px 336px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 216,
+    "right": 1224,
+    "width": 1008
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    40,
+    0,
+    40,
+    40,
+    0,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0,
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 40
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 216,
+     "right": 552,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 552,
+     "right": 888,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 888,
+     "right": 1224,
+     "top": 1641.39,
+     "bottom": 1689.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1224,
+     "contentRight": 1224,
+     "textLeft": 888,
+     "nOverflow": false,
+     "nSW": 314,
+     "nCW": 314,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 216,
+     "right": 552,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 552,
+     "right": 888,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 888,
+     "right": 1224,
+     "top": 1689.39,
+     "bottom": 1737.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1224,
+     "contentRight": 1224,
+     "textLeft": 888,
+     "nOverflow": false,
+     "nSW": 314,
+     "nCW": 314,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 216,
+     "right": 552,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 552,
+     "right": 888,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 888,
+     "right": 1224,
+     "top": 1737.39,
+     "bottom": 1785.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1224,
+     "contentRight": 1224,
+     "textLeft": 888,
+     "nOverflow": false,
+     "nSW": 314,
+     "nCW": 314,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 216,
+     "right": 552,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 552,
+     "right": 888,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 888,
+     "right": 1224,
+     "top": 1785.39,
+     "bottom": 1833.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1224,
+     "contentRight": 1224,
+     "textLeft": 888,
+     "nOverflow": false,
+     "nSW": 314,
+     "nCW": 314,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  }
+ },
+ "band": {
+  "420": {
+   "vw": 420,
+   "docW": 420,
+   "clientW": 420,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": true
+   },
+   "gtc": "380px",
+   "ncols": 1,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 20,
+    "right": 400,
+    "width": 380
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 1,
+     "bts": [
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 6,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 7,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 8,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 9,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 10,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 11,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [],
+   "minGap": null,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2423.31,
+     "bottom": 2471.31,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2471.31,
+     "bottom": 2519.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 20,
+     "right": 400,
+     "top": 2519.31,
+     "bottom": 2567.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2567.31,
+     "bottom": 2615.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2615.31,
+     "bottom": 2663.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2663.31,
+     "bottom": 2711.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2711.31,
+     "bottom": 2759.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 6,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 20,
+     "right": 400,
+     "top": 2759.31,
+     "bottom": 2807.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 7,
+     "col": 0
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2807.31,
+     "bottom": 2855.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 8,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2855.31,
+     "bottom": 2903.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 9,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2903.31,
+     "bottom": 2951.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 10,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 20,
+     "right": 400,
+     "top": 2951.31,
+     "bottom": 2999.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 400,
+     "contentRight": 400,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 358,
+     "nCW": 358,
+     "row": 11,
+     "col": 0
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "421": {
+   "vw": 421,
+   "docW": 421,
+   "clientW": 421,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "190.5px 190.5px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 20,
+    "right": 401,
+    "width": 381
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 20,
+     "right": 210.5,
+     "top": 2423.31,
+     "bottom": 2471.31,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 210.5,
+     "right": 401,
+     "top": 2423.31,
+     "bottom": 2471.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 20,
+     "right": 210.5,
+     "top": 2471.31,
+     "bottom": 2519.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 210.5,
+     "right": 401,
+     "top": 2471.31,
+     "bottom": 2519.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 20,
+     "right": 210.5,
+     "top": 2519.31,
+     "bottom": 2567.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 210.5,
+     "right": 401,
+     "top": 2519.31,
+     "bottom": 2567.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 20,
+     "right": 210.5,
+     "top": 2567.31,
+     "bottom": 2615.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 210.5,
+     "right": 401,
+     "top": 2567.31,
+     "bottom": 2615.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 20,
+     "right": 210.5,
+     "top": 2615.31,
+     "bottom": 2663.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 210.5,
+     "right": 401,
+     "top": 2615.31,
+     "bottom": 2663.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 20,
+     "right": 210.5,
+     "top": 2663.31,
+     "bottom": 2711.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 210.5,
+     "contentRight": 210.5,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 210.5,
+     "right": 401,
+     "top": 2663.31,
+     "bottom": 2711.31,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 401,
+     "contentRight": 401,
+     "textLeft": 210.5,
+     "nOverflow": false,
+     "nSW": 168,
+     "nCW": 168,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "480": {
+   "vw": 480,
+   "docW": 480,
+   "clientW": 480,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "220px 220px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 20,
+    "right": 460,
+    "width": 440
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 20,
+     "right": 240,
+     "top": 2400.56,
+     "bottom": 2448.56,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 240,
+     "right": 460,
+     "top": 2400.56,
+     "bottom": 2448.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 20,
+     "right": 240,
+     "top": 2448.56,
+     "bottom": 2496.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 240,
+     "right": 460,
+     "top": 2448.56,
+     "bottom": 2496.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 20,
+     "right": 240,
+     "top": 2496.56,
+     "bottom": 2544.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 240,
+     "right": 460,
+     "top": 2496.56,
+     "bottom": 2544.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 20,
+     "right": 240,
+     "top": 2544.56,
+     "bottom": 2592.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 240,
+     "right": 460,
+     "top": 2544.56,
+     "bottom": 2592.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 20,
+     "right": 240,
+     "top": 2592.56,
+     "bottom": 2640.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 240,
+     "right": 460,
+     "top": 2592.56,
+     "bottom": 2640.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 20,
+     "right": 240,
+     "top": 2640.56,
+     "bottom": 2688.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 240,
+     "contentRight": 240,
+     "textLeft": 20,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 240,
+     "right": 460,
+     "top": 2640.56,
+     "bottom": 2688.56,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 460,
+     "contentRight": 460,
+     "textLeft": 240,
+     "nOverflow": false,
+     "nSW": 198,
+     "nCW": 198,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "560": {
+   "vw": 560,
+   "docW": 560,
+   "clientW": 560,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "257.609px 257.609px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 22.39,
+    "right": 537.61,
+    "width": 515.22
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 22.39,
+     "right": 280,
+     "top": 2377.81,
+     "bottom": 2425.81,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 280,
+     "right": 537.61,
+     "top": 2377.81,
+     "bottom": 2425.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 22.39,
+     "right": 280,
+     "top": 2425.81,
+     "bottom": 2473.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 280,
+     "right": 537.61,
+     "top": 2425.81,
+     "bottom": 2473.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 22.39,
+     "right": 280,
+     "top": 2473.81,
+     "bottom": 2521.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 280,
+     "right": 537.61,
+     "top": 2473.81,
+     "bottom": 2521.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 22.39,
+     "right": 280,
+     "top": 2521.81,
+     "bottom": 2569.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 280,
+     "right": 537.61,
+     "top": 2521.81,
+     "bottom": 2569.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 22.39,
+     "right": 280,
+     "top": 2569.81,
+     "bottom": 2617.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 280,
+     "right": 537.61,
+     "top": 2569.81,
+     "bottom": 2617.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 22.39,
+     "right": 280,
+     "top": 2617.81,
+     "bottom": 2665.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 280,
+     "contentRight": 280,
+     "textLeft": 22.39,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 280,
+     "right": 537.61,
+     "top": 2617.81,
+     "bottom": 2665.81,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 537.61,
+     "contentRight": 537.61,
+     "textLeft": 280,
+     "nOverflow": false,
+     "nSW": 235,
+     "nCW": 235,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  },
+  "599": {
+   "vw": 599,
+   "docW": 599,
+   "clientW": 599,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "275.547px 275.547px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 23.95,
+    "right": 575.05,
+    "width": 551.09
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 23.95,
+     "right": 299.5,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 299.5,
+     "contentRight": 299.5,
+     "textLeft": 23.95,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 299.5,
+     "right": 575.05,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 575.05,
+     "contentRight": 575.05,
+     "textLeft": 299.5,
+     "nOverflow": false,
+     "nSW": 253,
+     "nCW": 253,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   }
+  }
+ },
+ "zoom": {
+  "vw": 720,
+  "docW": 720,
+  "clientW": 720,
+  "mq": {
+   "min1101": false,
+   "max1100": true,
+   "min37501": true,
+   "max375": false,
+   "max420": false
+  },
+  "gtc": "331.203px 331.203px",
+  "ncols": 2,
+  "containerBt": 1,
+  "containerBtStyle": "solid",
+  "containerBb": 1,
+  "tilesRect": {
+   "left": 28.8,
+   "right": 691.2,
+   "width": 662.41
+  },
+  "nTiles": 12,
+  "nKids": 12,
+  "hiddenKids": 0,
+  "bt8": [
+   0,
+   0,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1
+  ],
+  "pr8": [
+   40,
+   0,
+   40,
+   0,
+   40,
+   0,
+   40,
+   0
+  ],
+  "rows": [
+   {
+    "row": 0,
+    "count": 2,
+    "bts": [
+     0,
+     0
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   },
+   {
+    "row": 1,
+    "count": 2,
+    "bts": [
+     1,
+     1
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   },
+   {
+    "row": 2,
+    "count": 2,
+    "bts": [
+     1,
+     1
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   },
+   {
+    "row": 3,
+    "count": 2,
+    "bts": [
+     1,
+     1
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   },
+   {
+    "row": 4,
+    "count": 2,
+    "bts": [
+     1,
+     1
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   },
+   {
+    "row": 5,
+    "count": 2,
+    "bts": [
+     1,
+     1
+    ],
+    "same": true,
+    "maxSeam": 0,
+    "gapLeft": 0,
+    "gapRight": 0
+   }
+  ],
+  "firstRowBt0": true,
+  "otherRowsBtPos": true,
+  "rowsConsistent": true,
+  "prRule": true,
+  "prViol": [],
+  "gaps": [
+   {
+    "from": "가천대학교",
+    "to": "가톨릭대학교",
+    "gap": 40
+   },
+   {
+    "from": "건국대학교(서울)",
+    "to": "경기대학교",
+    "gap": 40
+   },
+   {
+    "from": "경희대학교",
+    "to": "광운대학교",
+    "gap": 40
+   },
+   {
+    "from": "국민대학교",
+    "to": "단국대학교(죽전)",
+    "gap": 40
+   },
+   {
+    "from": "덕성여자대학교",
+    "to": "동국대학교",
+    "gap": 40
+   },
+   {
+    "from": "동덕여자대학교",
+    "to": "동아대학교",
+    "gap": 40
+   }
+  ],
+  "minGap": 40,
+  "arOutside": [],
+  "overflowCount": 0,
+  "overflowNames": [],
+  "empty": null,
+  "tiles": [
+   {
+    "i": 0,
+    "name": "가천대학교",
+    "left": 28.8,
+    "right": 360,
+    "top": 2288.73,
+    "bottom": 2336.73,
+    "bt": 0,
+    "btStyle": "none",
+    "btColor": "rgb(49, 46, 46)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 0,
+    "col": 0
+   },
+   {
+    "i": 1,
+    "name": "가톨릭대학교",
+    "left": 360,
+    "right": 691.2,
+    "top": 2288.73,
+    "bottom": 2336.73,
+    "bt": 0,
+    "btStyle": "none",
+    "btColor": "rgb(49, 46, 46)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 0,
+    "col": 1
+   },
+   {
+    "i": 2,
+    "name": "건국대학교(서울)",
+    "left": 28.8,
+    "right": 360,
+    "top": 2336.73,
+    "bottom": 2384.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 1,
+    "col": 0
+   },
+   {
+    "i": 3,
+    "name": "경기대학교",
+    "left": 360,
+    "right": 691.2,
+    "top": 2336.73,
+    "bottom": 2384.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 1,
+    "col": 1
+   },
+   {
+    "i": 4,
+    "name": "경희대학교",
+    "left": 28.8,
+    "right": 360,
+    "top": 2384.73,
+    "bottom": 2432.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 2,
+    "col": 0
+   },
+   {
+    "i": 5,
+    "name": "광운대학교",
+    "left": 360,
+    "right": 691.2,
+    "top": 2384.73,
+    "bottom": 2432.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 2,
+    "col": 1
+   },
+   {
+    "i": 6,
+    "name": "국민대학교",
+    "left": 28.8,
+    "right": 360,
+    "top": 2432.73,
+    "bottom": 2480.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 3,
+    "col": 0
+   },
+   {
+    "i": 7,
+    "name": "단국대학교(죽전)",
+    "left": 360,
+    "right": 691.2,
+    "top": 2432.73,
+    "bottom": 2480.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 3,
+    "col": 1
+   },
+   {
+    "i": 8,
+    "name": "덕성여자대학교",
+    "left": 28.8,
+    "right": 360,
+    "top": 2480.73,
+    "bottom": 2528.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 4,
+    "col": 0
+   },
+   {
+    "i": 9,
+    "name": "동국대학교",
+    "left": 360,
+    "right": 691.2,
+    "top": 2480.73,
+    "bottom": 2528.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 4,
+    "col": 1
+   },
+   {
+    "i": 10,
+    "name": "동덕여자대학교",
+    "left": 28.8,
+    "right": 360,
+    "top": 2528.73,
+    "bottom": 2576.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 40,
+    "arRight": 320,
+    "contentRight": 320,
+    "textLeft": 28.8,
+    "nOverflow": false,
+    "nSW": 269,
+    "nCW": 269,
+    "row": 5,
+    "col": 0
+   },
+   {
+    "i": 11,
+    "name": "동아대학교",
+    "left": 360,
+    "right": 691.2,
+    "top": 2528.73,
+    "bottom": 2576.73,
+    "bt": 1,
+    "btStyle": "solid",
+    "btColor": "rgba(49, 46, 46, 0.24)",
+    "pr": 0,
+    "arRight": 691.2,
+    "contentRight": 691.2,
+    "textLeft": 360,
+    "nOverflow": false,
+    "nSW": 309,
+    "nCW": 309,
+    "row": 5,
+    "col": 1
+   }
+  ],
+  "popup": {
+   "had": true,
+   "closedByEsc": true,
+   "removed": false
+  },
+  "dpr": 2
+ },
+ "frac": {
+  "1100.5": {
+   "vw": 1101,
+   "docW": 1101,
+   "clientW": 1101,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "328.312px 328.312px 328.312px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 58.03,
+    "right": 1042.97,
+    "width": 984.94
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    40,
+    0,
+    40,
+    40,
+    0,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0,
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      1,
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 40
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1624.11,
+     "bottom": 1672.11,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1672.11,
+     "bottom": 1720.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1720.11,
+     "bottom": 1768.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 58.03,
+     "right": 386.34,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.34,
+     "contentRight": 346.34,
+     "textLeft": 58.03,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 386.34,
+     "right": 714.66,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.66,
+     "contentRight": 674.66,
+     "textLeft": 386.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 714.66,
+     "right": 1042.97,
+     "top": 1768.11,
+     "bottom": 1816.11,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 1042.97,
+     "contentRight": 1042.97,
+     "textLeft": 714.66,
+     "nOverflow": false,
+     "nSW": 306,
+     "nCW": 306,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "iframeCssWidth": 1100.5
+  },
+  "600.5": {
+   "vw": 601,
+   "docW": 601,
+   "clientW": 601,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "276.469px 276.469px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 24.03,
+    "right": 576.97,
+    "width": 552.94
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 24.03,
+     "right": 300.5,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.5,
+     "contentRight": 260.5,
+     "textLeft": 24.03,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 300.5,
+     "right": 576.97,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.97,
+     "contentRight": 576.97,
+     "textLeft": 300.5,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "iframeCssWidth": 600.5
+  },
+  "600.01": {
+   "vw": 600,
+   "docW": 600,
+   "clientW": 600,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": false,
+    "max375": true,
+    "max420": false
+   },
+   "gtc": "276px 276px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 24,
+    "right": 576,
+    "width": 552
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      1
+     ],
+     "same": false,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": false,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "가천대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "건국대학교(서울)",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "경희대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "국민대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 0,
+     "pr": 0
+    },
+    {
+     "name": "동덕여자대학교",
+     "col": 0,
+     "pr": 0
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 0
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 0
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 0
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 0
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 0
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 0
+    }
+   ],
+   "minGap": 0,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2355.06,
+     "bottom": 2403.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 24,
+     "right": 300,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2403.06,
+     "bottom": 2451.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2451.06,
+     "bottom": 2499.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 300,
+     "right": 576,
+     "top": 2499.06,
+     "bottom": 2547.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2547.06,
+     "bottom": 2595.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 24,
+     "right": 300,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 300,
+     "contentRight": 300,
+     "textLeft": 24,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 300,
+     "right": 576,
+     "top": 2595.06,
+     "bottom": 2643.06,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576,
+     "contentRight": 576,
+     "textLeft": 300,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "iframeCssWidth": 600.01
+  }
+ },
+ "fracDsf": {
+  "1100@1.125": {
+   "vw": 1100,
+   "docW": 1100.44,
+   "clientW": 1100,
+   "mq": {
+    "min1101": false,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "328.139px 328.139px 328.139px",
+   "ncols": 3,
+   "containerBt": 0.888889,
+   "containerBtStyle": "solid",
+   "containerBb": 0.888889,
+   "tilesRect": {
+    "left": 58.01,
+    "right": 1042.43,
+    "width": 984.42
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0.888889,
+    0.888889,
+    0.888889,
+    0.888889,
+    0.888889,
+    0.888889,
+    0.888889,
+    0.888889
+   ],
+   "pr8": [
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0.888889,
+      0.888889,
+      0.888889
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      0.888889,
+      0.888889,
+      0.888889
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      0.888889,
+      0.888889,
+      0.888889
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      0.888889,
+      0.888889,
+      0.888889
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "건국대학교(서울)",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "광운대학교",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "동아대학교",
+     "col": 2,
+     "pr": 40
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 40
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 58.01,
+     "right": 386.15,
+     "top": 1622.04,
+     "bottom": 1670.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.15,
+     "contentRight": 346.15,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 386.15,
+     "right": 714.29,
+     "top": 1622.04,
+     "bottom": 1670.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.29,
+     "contentRight": 674.29,
+     "textLeft": 386.15,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 714.29,
+     "right": 1042.43,
+     "top": 1622.04,
+     "bottom": 1670.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.43,
+     "contentRight": 1002.43,
+     "textLeft": 714.29,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 58.01,
+     "right": 386.15,
+     "top": 1670.04,
+     "bottom": 1718.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.15,
+     "contentRight": 346.15,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 386.15,
+     "right": 714.29,
+     "top": 1670.04,
+     "bottom": 1718.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.29,
+     "contentRight": 674.29,
+     "textLeft": 386.15,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 714.29,
+     "right": 1042.43,
+     "top": 1670.04,
+     "bottom": 1718.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.43,
+     "contentRight": 1002.43,
+     "textLeft": 714.29,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 58.01,
+     "right": 386.15,
+     "top": 1718.04,
+     "bottom": 1766.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.15,
+     "contentRight": 346.15,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 386.15,
+     "right": 714.29,
+     "top": 1718.04,
+     "bottom": 1766.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.29,
+     "contentRight": 674.29,
+     "textLeft": 386.15,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 714.29,
+     "right": 1042.43,
+     "top": 1718.04,
+     "bottom": 1766.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.43,
+     "contentRight": 1002.43,
+     "textLeft": 714.29,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 58.01,
+     "right": 386.15,
+     "top": 1766.04,
+     "bottom": 1814.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.15,
+     "contentRight": 346.15,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 386.15,
+     "right": 714.29,
+     "top": 1766.04,
+     "bottom": 1814.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.29,
+     "contentRight": 674.29,
+     "textLeft": 386.15,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 714.29,
+     "right": 1042.43,
+     "top": 1766.04,
+     "bottom": 1814.04,
+     "bt": 0.888889,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.43,
+     "contentRight": 1002.43,
+     "textLeft": 714.29,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "dsf": 1.125,
+   "win": 1100,
+   "vv": 1100.4444580078125
+  },
+  "1100@1.333": {
+   "vw": 1100,
+   "docW": 1100.53,
+   "clientW": 1100,
+   "mq": {
+    "min1101": false,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "328.16px 328.172px 328.16px",
+   "ncols": 3,
+   "containerBt": 0.750188,
+   "containerBtStyle": "solid",
+   "containerBb": 0.750188,
+   "tilesRect": {
+    "left": 58.01,
+    "right": 1042.51,
+    "width": 984.5
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188
+   ],
+   "pr8": [
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0.750188,
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0.01
+    },
+    {
+     "row": 1,
+     "count": 3,
+     "bts": [
+      0.750188,
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0.01
+    },
+    {
+     "row": 2,
+     "count": 3,
+     "bts": [
+      0.750188,
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0.01
+    },
+    {
+     "row": 3,
+     "count": 3,
+     "bts": [
+      0.750188,
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0.01
+    }
+   ],
+   "firstRowBt0": false,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": false,
+   "prViol": [
+    {
+     "name": "건국대학교(서울)",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "광운대학교",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "덕성여자대학교",
+     "col": 2,
+     "pr": 40
+    },
+    {
+     "name": "동아대학교",
+     "col": 2,
+     "pr": 40
+    }
+   ],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 39.99
+    },
+    {
+     "from": "가톨릭대학교",
+     "to": "건국대학교(서울)",
+     "gap": 39.99
+    },
+    {
+     "from": "경기대학교",
+     "to": "경희대학교",
+     "gap": 39.99
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 39.99
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 39.99
+    },
+    {
+     "from": "단국대학교(죽전)",
+     "to": "덕성여자대학교",
+     "gap": 39.99
+    },
+    {
+     "from": "동국대학교",
+     "to": "동덕여자대학교",
+     "gap": 39.99
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 39.99
+    }
+   ],
+   "minGap": 39.99,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 58.01,
+     "right": 386.17,
+     "top": 1600.77,
+     "bottom": 1648.76,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.18,
+     "contentRight": 346.17,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 386.17,
+     "right": 714.34,
+     "top": 1600.77,
+     "bottom": 1648.76,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.35,
+     "contentRight": 674.34,
+     "textLeft": 386.17,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 714.34,
+     "right": 1042.5,
+     "top": 1600.77,
+     "bottom": 1648.76,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.51,
+     "contentRight": 1002.5,
+     "textLeft": 714.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 58.01,
+     "right": 386.17,
+     "top": 1648.76,
+     "bottom": 1696.75,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.18,
+     "contentRight": 346.17,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 386.17,
+     "right": 714.34,
+     "top": 1648.76,
+     "bottom": 1696.75,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.35,
+     "contentRight": 674.34,
+     "textLeft": 386.17,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 714.34,
+     "right": 1042.5,
+     "top": 1648.76,
+     "bottom": 1696.75,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.51,
+     "contentRight": 1002.5,
+     "textLeft": 714.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 1,
+     "col": 2
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 58.01,
+     "right": 386.17,
+     "top": 1696.75,
+     "bottom": 1744.74,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.18,
+     "contentRight": 346.17,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 386.17,
+     "right": 714.34,
+     "top": 1696.75,
+     "bottom": 1744.74,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.35,
+     "contentRight": 674.34,
+     "textLeft": 386.17,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 714.34,
+     "right": 1042.5,
+     "top": 1696.75,
+     "bottom": 1744.74,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.51,
+     "contentRight": 1002.5,
+     "textLeft": 714.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 2,
+     "col": 2
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 58.01,
+     "right": 386.17,
+     "top": 1744.74,
+     "bottom": 1792.73,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 346.18,
+     "contentRight": 346.17,
+     "textLeft": 58.01,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 386.17,
+     "right": 714.34,
+     "top": 1744.74,
+     "bottom": 1792.73,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 674.35,
+     "contentRight": 674.34,
+     "textLeft": 386.17,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 714.34,
+     "right": 1042.5,
+     "top": 1744.74,
+     "bottom": 1792.73,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 1002.51,
+     "contentRight": 1002.5,
+     "textLeft": 714.34,
+     "nOverflow": false,
+     "nSW": 266,
+     "nCW": 266,
+     "row": 3,
+     "col": 2
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "dsf": 1.333,
+   "win": 1100,
+   "vv": 1100.525146484375
+  },
+  "600@1.333": {
+   "vw": 600,
+   "docW": 600.15,
+   "clientW": 600,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "276.069px 276.069px",
+   "ncols": 2,
+   "containerBt": 0.750188,
+   "containerBtStyle": "solid",
+   "containerBb": 0.750188,
+   "tilesRect": {
+    "left": 24.01,
+    "right": 576.14,
+    "width": 552.14
+   },
+   "nTiles": 12,
+   "nKids": 12,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188,
+    0.750188
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 2,
+     "bts": [
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 3,
+     "count": 2,
+     "bts": [
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 4,
+     "count": 2,
+     "bts": [
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 5,
+     "count": 2,
+     "bts": [
+      0.750188,
+      0.750188
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "가천대학교",
+     "to": "가톨릭대학교",
+     "gap": 40
+    },
+    {
+     "from": "건국대학교(서울)",
+     "to": "경기대학교",
+     "gap": 40
+    },
+    {
+     "from": "경희대학교",
+     "to": "광운대학교",
+     "gap": 40
+    },
+    {
+     "from": "국민대학교",
+     "to": "단국대학교(죽전)",
+     "gap": 40
+    },
+    {
+     "from": "덕성여자대학교",
+     "to": "동국대학교",
+     "gap": 40
+    },
+    {
+     "from": "동덕여자대학교",
+     "to": "동아대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "가천대학교",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2357.75,
+     "bottom": 2405.73,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "가톨릭대학교",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2357.75,
+     "bottom": 2405.73,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "건국대학교(서울)",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2405.73,
+     "bottom": 2453.72,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "경기대학교",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2405.73,
+     "bottom": 2453.72,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "경희대학교",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2453.72,
+     "bottom": 2501.71,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 2,
+     "col": 0
+    },
+    {
+     "i": 5,
+     "name": "광운대학교",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2453.72,
+     "bottom": 2501.71,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 2,
+     "col": 1
+    },
+    {
+     "i": 6,
+     "name": "국민대학교",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2501.71,
+     "bottom": 2549.7,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 3,
+     "col": 0
+    },
+    {
+     "i": 7,
+     "name": "단국대학교(죽전)",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2501.71,
+     "bottom": 2549.7,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 3,
+     "col": 1
+    },
+    {
+     "i": 8,
+     "name": "덕성여자대학교",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2549.7,
+     "bottom": 2597.69,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 4,
+     "col": 0
+    },
+    {
+     "i": 9,
+     "name": "동국대학교",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2549.7,
+     "bottom": 2597.69,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 4,
+     "col": 1
+    },
+    {
+     "i": 10,
+     "name": "동덕여자대학교",
+     "left": 24.01,
+     "right": 300.08,
+     "top": 2597.69,
+     "bottom": 2645.68,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 260.08,
+     "contentRight": 260.08,
+     "textLeft": 24.01,
+     "nOverflow": false,
+     "nSW": 214,
+     "nCW": 214,
+     "row": 5,
+     "col": 0
+    },
+    {
+     "i": 11,
+     "name": "동아대학교",
+     "left": 300.08,
+     "right": 576.14,
+     "top": 2597.69,
+     "bottom": 2645.68,
+     "bt": 0.750188,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 576.14,
+     "contentRight": 576.14,
+     "textLeft": 300.08,
+     "nOverflow": false,
+     "nSW": 254,
+     "nCW": 254,
+     "row": 5,
+     "col": 1
+    }
+   ],
+   "popup": {
+    "had": true,
+    "closedByEsc": true,
+    "removed": false
+   },
+   "dsf": 1.333,
+   "win": 600,
+   "vv": 600.1500854492188
+  }
+ },
+ "filter": {
+  "1024": {
+   "vw": 1024,
+   "docW": 1024,
+   "clientW": 1024,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "457.047px 457.047px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 54.95,
+    "right": 969.05,
+    "width": 914.09
+   },
+   "nTiles": 5,
+   "nKids": 5,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    0,
+    40,
+    0,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 2,
+     "bts": [
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 2,
+     "count": 1,
+     "bts": [
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 457.05
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "건국대학교(서울)",
+     "to": "서울과학기술대학교",
+     "gap": 40
+    },
+    {
+     "from": "서울대학교",
+     "to": "서울시립대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "건국대학교(서울)",
+     "left": 54.95,
+     "right": 512,
+     "top": 943.67,
+     "bottom": 991.67,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "서울과학기술대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 943.67,
+     "bottom": 991.67,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "서울대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 991.67,
+     "bottom": 1039.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 3,
+     "name": "서울시립대학교",
+     "left": 512,
+     "right": 969.05,
+     "top": 991.67,
+     "bottom": 1039.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 0,
+     "arRight": 969.05,
+     "contentRight": 969.05,
+     "textLeft": 512,
+     "nOverflow": false,
+     "nSW": 435,
+     "nCW": 435,
+     "row": 1,
+     "col": 1
+    },
+    {
+     "i": 4,
+     "name": "서울여자대학교",
+     "left": 54.95,
+     "right": 512,
+     "top": 1039.67,
+     "bottom": 1087.67,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 472,
+     "contentRight": 472,
+     "textLeft": 54.95,
+     "nOverflow": false,
+     "nSW": 395,
+     "nCW": 395,
+     "row": 2,
+     "col": 0
+    }
+   ]
+  },
+  "1440": {
+   "vw": 1440,
+   "docW": 1440,
+   "clientW": 1440,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "336px 336px 336px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 216,
+    "right": 1224,
+    "width": 1008
+   },
+   "nTiles": 5,
+   "nKids": 5,
+   "hiddenKids": 0,
+   "bt8": [
+    0,
+    0,
+    0,
+    1,
+    1
+   ],
+   "pr8": [
+    40,
+    40,
+    0,
+    40,
+    40
+   ],
+   "rows": [
+    {
+     "row": 0,
+     "count": 3,
+     "bts": [
+      0,
+      0,
+      0
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 0
+    },
+    {
+     "row": 1,
+     "count": 2,
+     "bts": [
+      1,
+      1
+     ],
+     "same": true,
+     "maxSeam": 0,
+     "gapLeft": 0,
+     "gapRight": 336
+    }
+   ],
+   "firstRowBt0": true,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [
+    {
+     "from": "건국대학교(서울)",
+     "to": "서울과학기술대학교",
+     "gap": 40
+    },
+    {
+     "from": "서울과학기술대학교",
+     "to": "서울대학교",
+     "gap": 40
+    },
+    {
+     "from": "서울시립대학교",
+     "to": "서울여자대학교",
+     "gap": 40
+    }
+   ],
+   "minGap": 40,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": null,
+   "tiles": [
+    {
+     "i": 0,
+     "name": "건국대학교(서울)",
+     "left": 216,
+     "right": 552,
+     "top": 943.39,
+     "bottom": 991.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 0,
+     "col": 0
+    },
+    {
+     "i": 1,
+     "name": "서울과학기술대학교",
+     "left": 552,
+     "right": 888,
+     "top": 943.39,
+     "bottom": 991.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 0,
+     "col": 1
+    },
+    {
+     "i": 2,
+     "name": "서울대학교",
+     "left": 888,
+     "right": 1224,
+     "top": 943.39,
+     "bottom": 991.39,
+     "bt": 0,
+     "btStyle": "none",
+     "btColor": "rgb(49, 46, 46)",
+     "pr": 0,
+     "arRight": 1224,
+     "contentRight": 1224,
+     "textLeft": 888,
+     "nOverflow": false,
+     "nSW": 314,
+     "nCW": 314,
+     "row": 0,
+     "col": 2
+    },
+    {
+     "i": 3,
+     "name": "서울시립대학교",
+     "left": 216,
+     "right": 552,
+     "top": 991.39,
+     "bottom": 1039.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 512,
+     "contentRight": 512,
+     "textLeft": 216,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 1,
+     "col": 0
+    },
+    {
+     "i": 4,
+     "name": "서울여자대학교",
+     "left": 552,
+     "right": 888,
+     "top": 991.39,
+     "bottom": 1039.39,
+     "bt": 1,
+     "btStyle": "solid",
+     "btColor": "rgba(49, 46, 46, 0.24)",
+     "pr": 40,
+     "arRight": 848,
+     "contentRight": 848,
+     "textLeft": 552,
+     "nOverflow": false,
+     "nSW": 274,
+     "nCW": 274,
+     "row": 1,
+     "col": 1
+    }
+   ]
+  },
+  "1440_empty": {
+   "vw": 1440,
+   "docW": 1440,
+   "clientW": 1440,
+   "mq": {
+    "min1101": true,
+    "max1100": false,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "336px 336px 336px",
+   "ncols": 3,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 216,
+    "right": 1224,
+    "width": 1008
+   },
+   "nTiles": 0,
+   "nKids": 1,
+   "hiddenKids": 0,
+   "bt8": [],
+   "pr8": [],
+   "rows": [],
+   "firstRowBt0": null,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [],
+   "minGap": null,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": {
+    "width": 336,
+    "gridColumn": "auto"
+   },
+   "tiles": []
+  },
+  "1024_empty": {
+   "vw": 1024,
+   "docW": 1024,
+   "clientW": 1024,
+   "mq": {
+    "min1101": false,
+    "max1100": true,
+    "min37501": true,
+    "max375": false,
+    "max420": false
+   },
+   "gtc": "457.047px 457.047px",
+   "ncols": 2,
+   "containerBt": 1,
+   "containerBtStyle": "solid",
+   "containerBb": 1,
+   "tilesRect": {
+    "left": 54.95,
+    "right": 969.05,
+    "width": 914.09
+   },
+   "nTiles": 0,
+   "nKids": 1,
+   "hiddenKids": 0,
+   "bt8": [],
+   "pr8": [],
+   "rows": [],
+   "firstRowBt0": null,
+   "otherRowsBtPos": true,
+   "rowsConsistent": true,
+   "prRule": true,
+   "prViol": [],
+   "gaps": [],
+   "minGap": null,
+   "arOutside": [],
+   "overflowCount": 0,
+   "overflowNames": [],
+   "empty": {
+    "width": 457.05,
+    "gridColumn": "auto"
+   },
+   "tiles": []
+  }
+ },
+ "filter_c5dff51": {
+  "600": {
+   "base": {
+    "gtc": "276px 276px",
+    "bt8": [
+     0,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "pr8": [
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0,
+     0
+    ],
+    "ncols": 2,
+    "firstRowBt0": false,
+    "rowsConsistent": false,
+    "prRule": false,
+    "minGap": 0
+   },
+   "filter": null
+  },
+  "1024": {
+   "base": {
+    "gtc": "457.047px 457.047px",
+    "bt8": [
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "pr8": [
+     40,
+     40,
+     0,
+     40,
+     40,
+     0,
+     40,
+     40
+    ],
+    "ncols": 2,
+    "firstRowBt0": true,
+    "rowsConsistent": false,
+    "prRule": false,
+    "minGap": 0
+   },
+   "filter": {
+    "vw": 1024,
+    "docW": 1024,
+    "clientW": 1024,
+    "mq": {
+     "min1101": false,
+     "max1100": true,
+     "min37501": true,
+     "max375": false,
+     "max420": false
+    },
+    "gtc": "457.047px 457.047px",
+    "ncols": 2,
+    "containerBt": 1,
+    "containerBtStyle": "solid",
+    "containerBb": 1,
+    "tilesRect": {
+     "left": 54.95,
+     "right": 969.05,
+     "width": 914.09
+    },
+    "nTiles": 5,
+    "nKids": 5,
+    "hiddenKids": 0,
+    "bt8": [
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "pr8": [
+     40,
+     40,
+     0,
+     40,
+     40
+    ],
+    "rows": [
+     {
+      "row": 0,
+      "count": 2,
+      "bts": [
+       0,
+       0
+      ],
+      "same": true,
+      "maxSeam": 0,
+      "gapLeft": 0,
+      "gapRight": 0
+     },
+     {
+      "row": 1,
+      "count": 2,
+      "bts": [
+       0,
+       1
+      ],
+      "same": false,
+      "maxSeam": 0,
+      "gapLeft": 0,
+      "gapRight": 0
+     },
+     {
+      "row": 2,
+      "count": 1,
+      "bts": [
+       1
+      ],
+      "same": true,
+      "maxSeam": 0,
+      "gapLeft": 0,
+      "gapRight": 457.05
+     }
+    ],
+    "firstRowBt0": true,
+    "otherRowsBtPos": false,
+    "rowsConsistent": false,
+    "prRule": false,
+    "prViol": [
+     {
+      "name": "서울과학기술대학교",
+      "col": 1,
+      "pr": 40
+     },
+     {
+      "name": "서울대학교",
+      "col": 0,
+      "pr": 0
+     },
+     {
+      "name": "서울시립대학교",
+      "col": 1,
+      "pr": 40
+     }
+    ],
+    "gaps": [
+     {
+      "from": "건국대학교(서울)",
+      "to": "서울과학기술대학교",
+      "gap": 40
+     },
+     {
+      "from": "서울대학교",
+      "to": "서울시립대학교",
+      "gap": 0
+     }
+    ],
+    "minGap": 0,
+    "arOutside": [],
+    "overflowCount": 0,
+    "overflowNames": [],
+    "empty": null,
+    "tiles": [
+     {
+      "i": 0,
+      "name": "건국대학교(서울)",
+      "left": 54.95,
+      "right": 512,
+      "top": 943.67,
+      "bottom": 991.67,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 40,
+      "arRight": 472,
+      "contentRight": 472,
+      "textLeft": 54.95,
+      "nOverflow": false,
+      "nSW": 395,
+      "nCW": 395,
+      "row": 0,
+      "col": 0
+     },
+     {
+      "i": 1,
+      "name": "서울과학기술대학교",
+      "left": 512,
+      "right": 969.05,
+      "top": 943.67,
+      "bottom": 991.67,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 40,
+      "arRight": 929.05,
+      "contentRight": 929.05,
+      "textLeft": 512,
+      "nOverflow": false,
+      "nSW": 395,
+      "nCW": 395,
+      "row": 0,
+      "col": 1
+     },
+     {
+      "i": 2,
+      "name": "서울대학교",
+      "left": 54.95,
+      "right": 512,
+      "top": 991.67,
+      "bottom": 1039.67,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 0,
+      "arRight": 512,
+      "contentRight": 512,
+      "textLeft": 54.95,
+      "nOverflow": false,
+      "nSW": 435,
+      "nCW": 435,
+      "row": 1,
+      "col": 0
+     },
+     {
+      "i": 3,
+      "name": "서울시립대학교",
+      "left": 512,
+      "right": 969.05,
+      "top": 991.67,
+      "bottom": 1039.67,
+      "bt": 1,
+      "btStyle": "solid",
+      "btColor": "rgba(49, 46, 46, 0.24)",
+      "pr": 40,
+      "arRight": 929.05,
+      "contentRight": 929.05,
+      "textLeft": 512,
+      "nOverflow": false,
+      "nSW": 395,
+      "nCW": 395,
+      "row": 1,
+      "col": 1
+     },
+     {
+      "i": 4,
+      "name": "서울여자대학교",
+      "left": 54.95,
+      "right": 512,
+      "top": 1039.67,
+      "bottom": 1087.67,
+      "bt": 1,
+      "btStyle": "solid",
+      "btColor": "rgba(49, 46, 46, 0.24)",
+      "pr": 40,
+      "arRight": 472,
+      "contentRight": 472,
+      "textLeft": 54.95,
+      "nOverflow": false,
+      "nSW": 395,
+      "nCW": 395,
+      "row": 2,
+      "col": 0
+     }
+    ]
+   }
+  },
+  "1440": {
+   "base": {
+    "gtc": "336px 336px 336px",
+    "bt8": [
+     0,
+     0,
+     0,
+     1,
+     1,
+     1,
+     1,
+     1
+    ],
+    "pr8": [
+     40,
+     40,
+     0,
+     40,
+     40,
+     0,
+     40,
+     40
+    ],
+    "ncols": 3,
+    "firstRowBt0": true,
+    "rowsConsistent": true,
+    "prRule": true,
+    "minGap": 40
+   },
+   "filter": {
+    "vw": 1440,
+    "docW": 1440,
+    "clientW": 1440,
+    "mq": {
+     "min1101": true,
+     "max1100": false,
+     "min37501": true,
+     "max375": false,
+     "max420": false
+    },
+    "gtc": "336px 336px 336px",
+    "ncols": 3,
+    "containerBt": 1,
+    "containerBtStyle": "solid",
+    "containerBb": 1,
+    "tilesRect": {
+     "left": 216,
+     "right": 1224,
+     "width": 1008
+    },
+    "nTiles": 5,
+    "nKids": 5,
+    "hiddenKids": 0,
+    "bt8": [
+     0,
+     0,
+     0,
+     1,
+     1
+    ],
+    "pr8": [
+     40,
+     40,
+     0,
+     40,
+     40
+    ],
+    "rows": [
+     {
+      "row": 0,
+      "count": 3,
+      "bts": [
+       0,
+       0,
+       0
+      ],
+      "same": true,
+      "maxSeam": 0,
+      "gapLeft": 0,
+      "gapRight": 0
+     },
+     {
+      "row": 1,
+      "count": 2,
+      "bts": [
+       1,
+       1
+      ],
+      "same": true,
+      "maxSeam": 0,
+      "gapLeft": 0,
+      "gapRight": 336
+     }
+    ],
+    "firstRowBt0": true,
+    "otherRowsBtPos": true,
+    "rowsConsistent": true,
+    "prRule": true,
+    "prViol": [],
+    "gaps": [
+     {
+      "from": "건국대학교(서울)",
+      "to": "서울과학기술대학교",
+      "gap": 40
+     },
+     {
+      "from": "서울과학기술대학교",
+      "to": "서울대학교",
+      "gap": 40
+     },
+     {
+      "from": "서울시립대학교",
+      "to": "서울여자대학교",
+      "gap": 40
+     }
+    ],
+    "minGap": 40,
+    "arOutside": [],
+    "overflowCount": 0,
+    "overflowNames": [],
+    "empty": null,
+    "tiles": [
+     {
+      "i": 0,
+      "name": "건국대학교(서울)",
+      "left": 216,
+      "right": 552,
+      "top": 943.39,
+      "bottom": 991.39,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 40,
+      "arRight": 512,
+      "contentRight": 512,
+      "textLeft": 216,
+      "nOverflow": false,
+      "nSW": 274,
+      "nCW": 274,
+      "row": 0,
+      "col": 0
+     },
+     {
+      "i": 1,
+      "name": "서울과학기술대학교",
+      "left": 552,
+      "right": 888,
+      "top": 943.39,
+      "bottom": 991.39,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 40,
+      "arRight": 848,
+      "contentRight": 848,
+      "textLeft": 552,
+      "nOverflow": false,
+      "nSW": 274,
+      "nCW": 274,
+      "row": 0,
+      "col": 1
+     },
+     {
+      "i": 2,
+      "name": "서울대학교",
+      "left": 888,
+      "right": 1224,
+      "top": 943.39,
+      "bottom": 991.39,
+      "bt": 0,
+      "btStyle": "none",
+      "btColor": "rgb(49, 46, 46)",
+      "pr": 0,
+      "arRight": 1224,
+      "contentRight": 1224,
+      "textLeft": 888,
+      "nOverflow": false,
+      "nSW": 314,
+      "nCW": 314,
+      "row": 0,
+      "col": 2
+     },
+     {
+      "i": 3,
+      "name": "서울시립대학교",
+      "left": 216,
+      "right": 552,
+      "top": 991.39,
+      "bottom": 1039.39,
+      "bt": 1,
+      "btStyle": "solid",
+      "btColor": "rgba(49, 46, 46, 0.24)",
+      "pr": 40,
+      "arRight": 512,
+      "contentRight": 512,
+      "textLeft": 216,
+      "nOverflow": false,
+      "nSW": 274,
+      "nCW": 274,
+      "row": 1,
+      "col": 0
+     },
+     {
+      "i": 4,
+      "name": "서울여자대학교",
+      "left": 552,
+      "right": 888,
+      "top": 991.39,
+      "bottom": 1039.39,
+      "bt": 1,
+      "btStyle": "solid",
+      "btColor": "rgba(49, 46, 46, 0.24)",
+      "pr": 40,
+      "arRight": 848,
+      "contentRight": 848,
+      "textLeft": 552,
+      "nOverflow": false,
+      "nSW": 274,
+      "nCW": 274,
+      "row": 1,
+      "col": 1
+     }
+    ]
+   }
+  }
+ },
+ "shots": [
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_1440.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_filter_1440.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_1024.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_filter_1024.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_768.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_600.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_390.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_480.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_720z2.png",
+  "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/tiles_1100frac.png"
+ ]
+}

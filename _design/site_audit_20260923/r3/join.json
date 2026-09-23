@@ -1,0 +1,1970 @@
+{
+  "url": "http://localhost:8092/join.html",
+  "at": "2026-09-23T02:15:43.818Z",
+  "widths": {
+    "320": {
+      "docScrollW": 320,
+      "innerW": 320,
+      "bodyScrollW": 320,
+      "rows": [
+        {
+          "id": "ck-all",
+          "isAll": true,
+          "text": "전체 동의 선택 항목까지 함께 체크됩니다",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 740.58,
+              "left": 20,
+              "right": 300,
+              "bottom": 797.58,
+              "width": 280,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 748.58,
+              "left": 50,
+              "right": 300,
+              "bottom": 789.58,
+              "width": 250,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 749.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 771.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 750.58,
+            "bottom": 765.58,
+            "left": 50,
+            "right": 96.98,
+            "text": "전체 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 760.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 75,
+          "rowOverflowX": false,
+          "rowScrollW": 280,
+          "rowClientW": 280
+        },
+        {
+          "id": "ck-terms",
+          "isAll": false,
+          "text": "이용약관 동의 필수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 814.58,
+              "left": 20,
+              "right": 236,
+              "bottom": 871.58,
+              "width": 216,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 822.58,
+              "left": 50,
+              "right": 236,
+              "bottom": 863.58,
+              "width": 186,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 823.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 845.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 824.58,
+            "bottom": 839.58,
+            "left": 50,
+            "right": 119.34,
+            "text": "이용약관 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 834.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 819.08,
+              "left": 252,
+              "right": 300,
+              "bottom": 867.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "terms.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 280,
+          "rowClientW": 280
+        },
+        {
+          "id": "ck-priv",
+          "isAll": false,
+          "text": "개인정보 수집과 이용 동의 필수. 이름, 연락처, 이메일을 계정 식별과 ",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 888.58,
+              "left": 20,
+              "right": 236,
+              "bottom": 965.08,
+              "width": 216,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 896.58,
+              "left": 50,
+              "right": 236,
+              "bottom": 957.08,
+              "width": 186,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 897.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 919.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 898.58,
+            "bottom": 913.58,
+            "left": 50,
+            "right": 180.7,
+            "text": "개인정보 수집과 이용 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 908.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 902.83,
+              "left": 252,
+              "right": 300,
+              "bottom": 950.83,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 20.75
+          },
+          "rowHeight": 93.5,
+          "rowOverflowX": false,
+          "rowScrollW": 280,
+          "rowClientW": 280
+        },
+        {
+          "id": "ck-age",
+          "isAll": false,
+          "text": "만 14세 이상 확인 필수. 연구소 서비스는 만 14세 이상만 가입할 수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 982.08,
+              "left": 20,
+              "right": 300,
+              "bottom": 1058.58,
+              "width": 280,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 990.08,
+              "left": 50,
+              "right": 300,
+              "bottom": 1050.58,
+              "width": 250,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 991.08,
+            "left": 20,
+            "right": 42,
+            "bottom": 1013.08,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 992.08,
+            "bottom": 1007.08,
+            "left": 50,
+            "right": 141.06,
+            "text": "만 14세 이상 확인",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1002.08,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 93.5,
+          "rowOverflowX": false,
+          "rowScrollW": 280,
+          "rowClientW": 280
+        },
+        {
+          "id": "ck-mkt",
+          "isAll": false,
+          "text": "광고성 정보 수신 동의 선택. 새 자료와 강좌 안내를 이메일과 문자로 보",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1075.58,
+              "left": 20,
+              "right": 236,
+              "bottom": 1210.58,
+              "width": 216,
+              "height": 135
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1083.58,
+              "left": 50,
+              "right": 236,
+              "bottom": 1202.58,
+              "width": 186,
+              "height": 119
+            }
+          },
+          "checkbox": {
+            "top": 1084.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 1106.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1085.58,
+            "bottom": 1100.58,
+            "left": 50,
+            "right": 158.61,
+            "text": "광고성 정보 수신 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1095.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 1119.08,
+              "left": 252,
+              "right": 300,
+              "bottom": 1167.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html#ads",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 50
+          },
+          "rowHeight": 153,
+          "rowOverflowX": false,
+          "rowScrollW": 280,
+          "rowClientW": 280
+        }
+      ],
+      "termsVisible": true,
+      "overflowX": false
+    },
+    "360": {
+      "docScrollW": 360,
+      "innerW": 360,
+      "bodyScrollW": 360,
+      "rows": [
+        {
+          "id": "ck-all",
+          "isAll": true,
+          "text": "전체 동의 선택 항목까지 함께 체크됩니다",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 740.58,
+              "left": 20,
+              "right": 340,
+              "bottom": 797.58,
+              "width": 320,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 748.58,
+              "left": 50,
+              "right": 340,
+              "bottom": 789.58,
+              "width": 290,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 749.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 771.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 750.58,
+            "bottom": 765.58,
+            "left": 50,
+            "right": 96.98,
+            "text": "전체 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 760.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 75,
+          "rowOverflowX": false,
+          "rowScrollW": 320,
+          "rowClientW": 320
+        },
+        {
+          "id": "ck-terms",
+          "isAll": false,
+          "text": "이용약관 동의 필수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 814.58,
+              "left": 20,
+              "right": 276,
+              "bottom": 871.58,
+              "width": 256,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 822.58,
+              "left": 50,
+              "right": 276,
+              "bottom": 863.58,
+              "width": 226,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 823.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 845.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 824.58,
+            "bottom": 839.58,
+            "left": 50,
+            "right": 119.34,
+            "text": "이용약관 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 834.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 819.08,
+              "left": 292,
+              "right": 340,
+              "bottom": 867.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "terms.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 320,
+          "rowClientW": 320
+        },
+        {
+          "id": "ck-priv",
+          "isAll": false,
+          "text": "개인정보 수집과 이용 동의 필수. 이름, 연락처, 이메일을 계정 식별과 ",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 888.58,
+              "left": 20,
+              "right": 276,
+              "bottom": 965.08,
+              "width": 256,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 896.58,
+              "left": 50,
+              "right": 276,
+              "bottom": 957.08,
+              "width": 226,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 897.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 919.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 898.58,
+            "bottom": 913.58,
+            "left": 50,
+            "right": 180.7,
+            "text": "개인정보 수집과 이용 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 908.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 902.83,
+              "left": 292,
+              "right": 340,
+              "bottom": 950.83,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 20.75
+          },
+          "rowHeight": 93.5,
+          "rowOverflowX": false,
+          "rowScrollW": 320,
+          "rowClientW": 320
+        },
+        {
+          "id": "ck-age",
+          "isAll": false,
+          "text": "만 14세 이상 확인 필수. 연구소 서비스는 만 14세 이상만 가입할 수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 982.08,
+              "left": 20,
+              "right": 340,
+              "bottom": 1039.08,
+              "width": 320,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 990.08,
+              "left": 50,
+              "right": 340,
+              "bottom": 1031.08,
+              "width": 290,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 991.08,
+            "left": 20,
+            "right": 42,
+            "bottom": 1013.08,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 992.08,
+            "bottom": 1007.08,
+            "left": 50,
+            "right": 141.06,
+            "text": "만 14세 이상 확인",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1002.08,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 320,
+          "rowClientW": 320
+        },
+        {
+          "id": "ck-mkt",
+          "isAll": false,
+          "text": "광고성 정보 수신 동의 선택. 새 자료와 강좌 안내를 이메일과 문자로 보",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1056.08,
+              "left": 20,
+              "right": 276,
+              "bottom": 1171.58,
+              "width": 256,
+              "height": 115.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1064.08,
+              "left": 50,
+              "right": 276,
+              "bottom": 1163.58,
+              "width": 226,
+              "height": 99.5
+            }
+          },
+          "checkbox": {
+            "top": 1065.08,
+            "left": 20,
+            "right": 42,
+            "bottom": 1087.08,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1066.08,
+            "bottom": 1081.08,
+            "left": 50,
+            "right": 158.61,
+            "text": "광고성 정보 수신 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1076.08,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 1089.83,
+              "left": 292,
+              "right": 340,
+              "bottom": 1137.83,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html#ads",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 40.25
+          },
+          "rowHeight": 133.5,
+          "rowOverflowX": false,
+          "rowScrollW": 320,
+          "rowClientW": 320
+        }
+      ],
+      "termsVisible": true,
+      "overflowX": false
+    },
+    "390": {
+      "docScrollW": 390,
+      "innerW": 390,
+      "bodyScrollW": 390,
+      "rows": [
+        {
+          "id": "ck-all",
+          "isAll": true,
+          "text": "전체 동의 선택 항목까지 함께 체크됩니다",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 740.58,
+              "left": 20,
+              "right": 370,
+              "bottom": 797.58,
+              "width": 350,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 748.58,
+              "left": 50,
+              "right": 370,
+              "bottom": 789.58,
+              "width": 320,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 749.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 771.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 750.58,
+            "bottom": 765.58,
+            "left": 50,
+            "right": 96.98,
+            "text": "전체 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 760.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 75,
+          "rowOverflowX": false,
+          "rowScrollW": 350,
+          "rowClientW": 350
+        },
+        {
+          "id": "ck-terms",
+          "isAll": false,
+          "text": "이용약관 동의 필수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 814.58,
+              "left": 20,
+              "right": 306,
+              "bottom": 871.58,
+              "width": 286,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 822.58,
+              "left": 50,
+              "right": 306,
+              "bottom": 863.58,
+              "width": 256,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 823.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 845.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 824.58,
+            "bottom": 839.58,
+            "left": 50,
+            "right": 119.34,
+            "text": "이용약관 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 834.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 819.08,
+              "left": 322,
+              "right": 370,
+              "bottom": 867.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "terms.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 350,
+          "rowClientW": 350
+        },
+        {
+          "id": "ck-priv",
+          "isAll": false,
+          "text": "개인정보 수집과 이용 동의 필수. 이름, 연락처, 이메일을 계정 식별과 ",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 888.58,
+              "left": 20,
+              "right": 306,
+              "bottom": 965.08,
+              "width": 286,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 896.58,
+              "left": 50,
+              "right": 306,
+              "bottom": 957.08,
+              "width": 256,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 897.58,
+            "left": 20,
+            "right": 42,
+            "bottom": 919.58,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 898.58,
+            "bottom": 913.58,
+            "left": 50,
+            "right": 180.7,
+            "text": "개인정보 수집과 이용 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 908.58,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 902.83,
+              "left": 322,
+              "right": 370,
+              "bottom": 950.83,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 20.75
+          },
+          "rowHeight": 93.5,
+          "rowOverflowX": false,
+          "rowScrollW": 350,
+          "rowClientW": 350
+        },
+        {
+          "id": "ck-age",
+          "isAll": false,
+          "text": "만 14세 이상 확인 필수. 연구소 서비스는 만 14세 이상만 가입할 수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 982.08,
+              "left": 20,
+              "right": 370,
+              "bottom": 1039.08,
+              "width": 350,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 990.08,
+              "left": 50,
+              "right": 370,
+              "bottom": 1031.08,
+              "width": 320,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 991.08,
+            "left": 20,
+            "right": 42,
+            "bottom": 1013.08,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 992.08,
+            "bottom": 1007.08,
+            "left": 50,
+            "right": 141.06,
+            "text": "만 14세 이상 확인",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1002.08,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 350,
+          "rowClientW": 350
+        },
+        {
+          "id": "ck-mkt",
+          "isAll": false,
+          "text": "광고성 정보 수신 동의 선택. 새 자료와 강좌 안내를 이메일과 문자로 보",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1056.08,
+              "left": 20,
+              "right": 306,
+              "bottom": 1152.08,
+              "width": 286,
+              "height": 96
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1064.08,
+              "left": 50,
+              "right": 306,
+              "bottom": 1144.08,
+              "width": 256,
+              "height": 80
+            }
+          },
+          "checkbox": {
+            "top": 1065.08,
+            "left": 20,
+            "right": 42,
+            "bottom": 1087.08,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1066.08,
+            "bottom": 1081.08,
+            "left": 50,
+            "right": 158.61,
+            "text": "광고성 정보 수신 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1076.08,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 1080.08,
+              "left": 322,
+              "right": 370,
+              "bottom": 1128.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html#ads",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 30.5
+          },
+          "rowHeight": 114,
+          "rowOverflowX": false,
+          "rowScrollW": 350,
+          "rowClientW": 350
+        }
+      ],
+      "termsVisible": true,
+      "overflowX": false
+    },
+    "768": {
+      "docScrollW": 768,
+      "innerW": 768,
+      "bodyScrollW": 768,
+      "rows": [
+        {
+          "id": "ck-all",
+          "isAll": true,
+          "text": "전체 동의 선택 항목까지 함께 체크됩니다",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 717.83,
+              "left": 64,
+              "right": 704,
+              "bottom": 774.83,
+              "width": 640,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 725.83,
+              "left": 94,
+              "right": 704,
+              "bottom": 766.83,
+              "width": 610,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 726.83,
+            "left": 64,
+            "right": 86,
+            "bottom": 748.83,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 727.83,
+            "bottom": 742.83,
+            "left": 94,
+            "right": 140.98,
+            "text": "전체 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 737.83,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 75,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-terms",
+          "isAll": false,
+          "text": "이용약관 동의 필수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 791.83,
+              "left": 64,
+              "right": 640,
+              "bottom": 848.83,
+              "width": 576,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 799.83,
+              "left": 94,
+              "right": 640,
+              "bottom": 840.83,
+              "width": 546,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 800.83,
+            "left": 64,
+            "right": 86,
+            "bottom": 822.83,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 801.83,
+            "bottom": 816.83,
+            "left": 94,
+            "right": 163.34,
+            "text": "이용약관 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 811.83,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 796.33,
+              "left": 656,
+              "right": 704,
+              "bottom": 844.33,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "terms.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-priv",
+          "isAll": false,
+          "text": "개인정보 수집과 이용 동의 필수. 이름, 연락처, 이메일을 계정 식별과 ",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 865.83,
+              "left": 64,
+              "right": 640,
+              "bottom": 922.83,
+              "width": 576,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 873.83,
+              "left": 94,
+              "right": 640,
+              "bottom": 914.83,
+              "width": 546,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 874.83,
+            "left": 64,
+            "right": 86,
+            "bottom": 896.83,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 875.83,
+            "bottom": 890.83,
+            "left": 94,
+            "right": 224.7,
+            "text": "개인정보 수집과 이용 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 885.83,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 870.33,
+              "left": 656,
+              "right": 704,
+              "bottom": 918.33,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-age",
+          "isAll": false,
+          "text": "만 14세 이상 확인 필수. 연구소 서비스는 만 14세 이상만 가입할 수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 939.83,
+              "left": 64,
+              "right": 704,
+              "bottom": 996.83,
+              "width": 640,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 947.83,
+              "left": 94,
+              "right": 704,
+              "bottom": 988.83,
+              "width": 610,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 948.83,
+            "left": 64,
+            "right": 86,
+            "bottom": 970.83,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 949.83,
+            "bottom": 964.83,
+            "left": 94,
+            "right": 185.06,
+            "text": "만 14세 이상 확인",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 959.83,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-mkt",
+          "isAll": false,
+          "text": "광고성 정보 수신 동의 선택. 새 자료와 강좌 안내를 이메일과 문자로 보",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1013.83,
+              "left": 64,
+              "right": 640,
+              "bottom": 1090.33,
+              "width": 576,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1021.83,
+              "left": 94,
+              "right": 640,
+              "bottom": 1082.33,
+              "width": 546,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 1022.83,
+            "left": 64,
+            "right": 86,
+            "bottom": 1044.83,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1023.83,
+            "bottom": 1038.83,
+            "left": 94,
+            "right": 202.61,
+            "text": "광고성 정보 수신 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1033.83,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 1028.08,
+              "left": 656,
+              "right": 704,
+              "bottom": 1076.08,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html#ads",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 20.75
+          },
+          "rowHeight": 94.5,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        }
+      ],
+      "termsVisible": true,
+      "overflowX": false
+    },
+    "1440": {
+      "docScrollW": 1440,
+      "innerW": 1440,
+      "bodyScrollW": 1440,
+      "rows": [
+        {
+          "id": "ck-all",
+          "isAll": true,
+          "text": "전체 동의 선택 항목까지 함께 체크됩니다",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 812.48,
+              "left": 400,
+              "right": 1040,
+              "bottom": 869.48,
+              "width": 640,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 820.48,
+              "left": 430,
+              "right": 1040,
+              "bottom": 861.48,
+              "width": 610,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 821.48,
+            "left": 400,
+            "right": 422,
+            "bottom": 843.48,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 822.48,
+            "bottom": 837.48,
+            "left": 430,
+            "right": 476.98,
+            "text": "전체 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 832.48,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 75,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-terms",
+          "isAll": false,
+          "text": "이용약관 동의 필수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 886.48,
+              "left": 400,
+              "right": 976,
+              "bottom": 943.48,
+              "width": 576,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 894.48,
+              "left": 430,
+              "right": 976,
+              "bottom": 935.48,
+              "width": 546,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 895.48,
+            "left": 400,
+            "right": 422,
+            "bottom": 917.48,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 896.48,
+            "bottom": 911.48,
+            "left": 430,
+            "right": 499.34,
+            "text": "이용약관 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 906.48,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 890.98,
+              "left": 992,
+              "right": 1040,
+              "bottom": 938.98,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "terms.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-priv",
+          "isAll": false,
+          "text": "개인정보 수집과 이용 동의 필수. 이름, 연락처, 이메일을 계정 식별과 ",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 960.48,
+              "left": 400,
+              "right": 976,
+              "bottom": 1017.48,
+              "width": 576,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 968.48,
+              "left": 430,
+              "right": 976,
+              "bottom": 1009.48,
+              "width": 546,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 969.48,
+            "left": 400,
+            "right": 422,
+            "bottom": 991.48,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 970.48,
+            "bottom": 985.48,
+            "left": 430,
+            "right": 560.7,
+            "text": "개인정보 수집과 이용 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 980.48,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 964.98,
+              "left": 992,
+              "right": 1040,
+              "bottom": 1012.98,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 11
+          },
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-age",
+          "isAll": false,
+          "text": "만 14세 이상 확인 필수. 연구소 서비스는 만 14세 이상만 가입할 수",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1034.48,
+              "left": 400,
+              "right": 1040,
+              "bottom": 1091.48,
+              "width": 640,
+              "height": 57
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1042.48,
+              "left": 430,
+              "right": 1040,
+              "bottom": 1083.48,
+              "width": 610,
+              "height": 41
+            }
+          },
+          "checkbox": {
+            "top": 1043.48,
+            "left": 400,
+            "right": 422,
+            "bottom": 1065.48,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1044.48,
+            "bottom": 1059.48,
+            "left": 430,
+            "right": 521.06,
+            "text": "만 14세 이상 확인",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1054.48,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": null,
+          "rowHeight": 74,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        },
+        {
+          "id": "ck-mkt",
+          "isAll": false,
+          "text": "광고성 정보 수신 동의 선택. 새 자료와 강좌 안내를 이메일과 문자로 보",
+          "label": {
+            "flexWrap": "nowrap",
+            "display": "flex",
+            "alignItems": "flex-start",
+            "rect": {
+              "top": 1108.48,
+              "left": 400,
+              "right": 976,
+              "bottom": 1184.98,
+              "width": 576,
+              "height": 76.5
+            }
+          },
+          "span": {
+            "flex": "1 1 0%",
+            "minWidth": "0px",
+            "rect": {
+              "top": 1116.48,
+              "left": 430,
+              "right": 976,
+              "bottom": 1176.98,
+              "width": 546,
+              "height": 60.5
+            }
+          },
+          "checkbox": {
+            "top": 1117.48,
+            "left": 400,
+            "right": 422,
+            "bottom": 1139.48,
+            "width": 22,
+            "height": 22
+          },
+          "firstLine": {
+            "top": 1118.48,
+            "bottom": 1133.48,
+            "left": 430,
+            "right": 538.61,
+            "text": "광고성 정보 수신 동의",
+            "lineCountFirstTextNode": 1
+          },
+          "cbMidY": 1128.48,
+          "midInFirstLine": true,
+          "spanRightOfCb": true,
+          "firstLineRightOfCb": true,
+          "sameLine": true,
+          "spanTopMinusCbTop": -1,
+          "view": {
+            "rect": {
+              "top": 1122.73,
+              "left": 992,
+              "right": 1040,
+              "bottom": 1170.73,
+              "width": 48,
+              "height": 48
+            },
+            "ge48": true,
+            "href": "privacy.html#ads",
+            "sameRowAsLabel": true,
+            "rightOfSpan": true,
+            "centerYMinusFirstLineCenterY": 20.75
+          },
+          "rowHeight": 94.5,
+          "rowOverflowX": false,
+          "rowScrollW": 640,
+          "rowClientW": 640
+        }
+      ],
+      "termsVisible": true,
+      "overflowX": false
+    }
+  },
+  "clicks390": {
+    "spanClicks": [
+      {
+        "id": "ck-all",
+        "point": {
+          "x": 66.56,
+          "y": 439.08,
+          "scrollY": 319,
+          "ch": "체",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 24.56
+        },
+        "point2": {
+          "x": 66.56,
+          "y": 439.08,
+          "scrollY": 319,
+          "ch": "체",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 24.56
+        },
+        "scrolledBetween": false,
+        "before": false,
+        "afterClick1": true,
+        "afterClick2": false,
+        "statesAfter1": {
+          "ck-all": true,
+          "ck-terms": true,
+          "ck-priv": true,
+          "ck-age": true,
+          "ck-mkt": true
+        },
+        "toggledOn": true,
+        "toggledOff": true
+      },
+      {
+        "id": "ck-terms",
+        "point": {
+          "x": 88.66,
+          "y": 439.08,
+          "scrollY": 393,
+          "ch": "관",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 46.66
+        },
+        "point2": {
+          "x": 88.66,
+          "y": 439.08,
+          "scrollY": 393,
+          "ch": "관",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 46.66
+        },
+        "scrolledBetween": false,
+        "before": false,
+        "afterClick1": true,
+        "afterClick2": false,
+        "statesAfter1": {
+          "ck-all": false,
+          "ck-terms": true,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "toggledOn": true,
+        "toggledOff": true
+      },
+      {
+        "id": "ck-priv",
+        "point": {
+          "x": 124.85,
+          "y": 429.08,
+          "scrollY": 477,
+          "ch": "과",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 82.85
+        },
+        "point2": {
+          "x": 124.85,
+          "y": 429.08,
+          "scrollY": 477,
+          "ch": "과",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 82.85
+        },
+        "scrolledBetween": false,
+        "before": false,
+        "afterClick1": true,
+        "afterClick2": false,
+        "statesAfter1": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": true,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "toggledOn": true,
+        "toggledOff": true
+      },
+      {
+        "id": "ck-age",
+        "point": {
+          "x": 85.22,
+          "y": 438.58,
+          "scrollY": 561,
+          "ch": "세",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 43.22
+        },
+        "point2": {
+          "x": 85.22,
+          "y": 438.58,
+          "scrollY": 561,
+          "ch": "세",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 43.22
+        },
+        "scrolledBetween": false,
+        "before": false,
+        "afterClick1": true,
+        "afterClick2": false,
+        "statesAfter1": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": true,
+          "ck-mkt": false
+        },
+        "toggledOn": true,
+        "toggledOff": true
+      },
+      {
+        "id": "ck-mkt",
+        "point": {
+          "x": 102.77,
+          "y": 419.58,
+          "scrollY": 654,
+          "ch": "보",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 60.77
+        },
+        "point2": {
+          "x": 102.77,
+          "y": 419.58,
+          "scrollY": 654,
+          "ch": "보",
+          "hitTag": "SPAN",
+          "hitInSpan": true,
+          "hitIsCheckbox": false,
+          "xMinusCbRight": 60.77
+        },
+        "scrolledBetween": false,
+        "before": false,
+        "afterClick1": true,
+        "afterClick2": false,
+        "statesAfter1": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": true
+        },
+        "toggledOn": true,
+        "toggledOff": true
+      }
+    ],
+    "viewPreventNav": [
+      {
+        "row": "ck-terms",
+        "before": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "after": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "rowCheckedChanged": false,
+        "anyChanged": false,
+        "pagesBefore": 1,
+        "pagesAfter": 1,
+        "url": "http://localhost:8092/join.html"
+      },
+      {
+        "row": "ck-priv",
+        "before": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "after": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "rowCheckedChanged": false,
+        "anyChanged": false,
+        "pagesBefore": 1,
+        "pagesAfter": 1,
+        "url": "http://localhost:8092/join.html"
+      },
+      {
+        "row": "ck-mkt",
+        "before": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "after": {
+          "ck-all": false,
+          "ck-terms": false,
+          "ck-priv": false,
+          "ck-age": false,
+          "ck-mkt": false
+        },
+        "rowCheckedChanged": false,
+        "anyChanged": false,
+        "pagesBefore": 1,
+        "pagesAfter": 1,
+        "url": "http://localhost:8092/join.html"
+      }
+    ],
+    "viewNewTab": [
+      {
+        "row": "ck-terms",
+        "popupOpened": true,
+        "popUrl": "http://localhost:8092/terms.html",
+        "openerUrl": "http://localhost:8092/join.html",
+        "rowCheckedChanged": false,
+        "anyChanged": false
+      },
+      {
+        "row": "ck-priv",
+        "popupOpened": true,
+        "popUrl": "http://localhost:8092/privacy.html",
+        "openerUrl": "http://localhost:8092/join.html",
+        "rowCheckedChanged": false,
+        "anyChanged": false
+      },
+      {
+        "row": "ck-mkt",
+        "popupOpened": true,
+        "popUrl": "http://localhost:8092/privacy.html#ads",
+        "openerUrl": "http://localhost:8092/join.html",
+        "rowCheckedChanged": false,
+        "anyChanged": false
+      }
+    ],
+    "allPropagatesOn": true
+  },
+  "shots": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/join_360.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/join_390.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots/join_1440.png"
+  ]
+}

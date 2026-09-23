@@ -1,0 +1,124 @@
+{
+ "base": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots_all",
+ "new": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/shots_rep3",
+ "pairs": {
+  "lectures_1440": {
+   "name": "lectures_1440",
+   "new_mtime": 1790132107.4297874,
+   "base_mtime": 1790129504.383058,
+   "base_size": [
+    1440,
+    6347
+   ],
+   "new_size": [
+    1440,
+    6347
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/diff_rep3_vs_all/lectures_1440.png"
+  },
+  "pastexam_390": {
+   "name": "pastexam_390",
+   "new_mtime": 1790132110.8986206,
+   "base_mtime": 1790129645.2827764,
+   "base_size": [
+    390,
+    2309
+   ],
+   "new_size": [
+    390,
+    2309
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/diff_rep3_vs_all/pastexam_390.png"
+  },
+  "programs_guidebook_1440": {
+   "name": "programs_guidebook_1440",
+   "new_mtime": 1790132103.9193966,
+   "base_mtime": 1790129491.6770833,
+   "base_size": [
+    1440,
+    10609
+   ],
+   "new_size": [
+    1440,
+    10609
+   ],
+   "same_size": true,
+   "ae": 1579500,
+   "ae_raw": "1.5795e+06",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/diff_rep3_vs_all/programs_guidebook_1440.png",
+   "bbox": [
+    216,
+    1655,
+    1224,
+    5758
+   ],
+   "bands": [
+    {
+     "y0": 1655,
+     "y1": 2105,
+     "x0": 905,
+     "x1": 1223,
+     "px": 143099
+    },
+    {
+     "y0": 4333,
+     "y1": 5758,
+     "x0": 216,
+     "x1": 1224,
+     "px": 1436400
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/diff_rep3_vs_all/pair/programs_guidebook_1440__band0_y1655-2105.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r3/diff_rep3_vs_all/pair/programs_guidebook_1440__band1_y4333-5758.png"
+   ]
+  }
+ },
+ "base_only": [
+  "about_1440.png",
+  "about_390.png",
+  "b2b_1440.png",
+  "b2b_390.png",
+  "faq_1440.png",
+  "faq_390.png",
+  "guidebook_index_1440.png",
+  "guidebook_index_390.png",
+  "index_nopop_1440.png",
+  "index_nopop_390.png",
+  "index_popup_1440.png",
+  "index_popup_390.png",
+  "interview_1440.png",
+  "interview_390.png",
+  "interview_yonsei-hum_1440.png",
+  "interview_yonsei-hum_390.png",
+  "join_1440.png",
+  "join_390.png",
+  "lectures_390.png",
+  "library_1440.png",
+  "library_390.png",
+  "login_1440.png",
+  "login_390.png",
+  "notice_1440.png",
+  "notice_390.png",
+  "pastexam_1440.png",
+  "programs_guidebook_390.png",
+  "programs_studio_1440.png",
+  "programs_studio_390.png",
+  "ranking_1440.png",
+  "ranking_390.png",
+  "request_1440.png",
+  "request_390.png",
+  "studio_1440.png",
+  "studio_390.png",
+  "support_1440.png",
+  "support_390.png",
+  "terms_1440.png",
+  "terms_390.png"
+ ]
+}
