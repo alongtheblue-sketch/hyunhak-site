@@ -472,14 +472,16 @@
         ? '<div class="pnav"><button type="button" class="parr" data-ppop-prev aria-label="이전 안내">←</button>' +
           '<span class="pcnt"><b data-ppop-cur>1</b>/' + N + "</span>" +
           '<button type="button" class="parr" data-ppop-next aria-label="다음 안내">→</button>' +
-          '<button type="button" class="parr ppause" data-ppop-pause aria-pressed="false">정지</button></div>'
+          '<button type="button" class="parr ppause" data-ppop-pause>정지</button></div>'
         : "") +
       '<button type="button" class="pclose" data-ppop-close>닫기</button>';
     document.body.appendChild(root);
     let cur = 0, timer = null, hover = false, autoFocus = false;   // autoFocus = 자동 넘김이 옮기는 초점(사람 조작이 아니라 벨트를 안 멈춘다)
     let stopped = N < 2 || !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
     const pauseBtn = bar.querySelector("[data-ppop-pause]");
-    if (stopped && pauseBtn) { pauseBtn.setAttribute("aria-pressed", "true"); pauseBtn.textContent = "재생"; }   // 모션 감소 설정이면 멈춘 채 시작하므로 단추도 「재생」 (critic 2차 L9)
+    // 단추 이름 = 누르면 일어날 동작(APG 캐러셀 회전 단추). aria-pressed 는 겹치지 않는다: 이름이 바뀌는 단추에 눌림 상태를 더하면 「재생, 눌림」 으로 뒤집혀 읽힌다 (Codex 3차와 4차)
+    const paintPause = () => { if (pauseBtn) { const t = stopped ? "재생" : "정지"; pauseBtn.textContent = t; pauseBtn.setAttribute("aria-label", "자동 넘김 " + t); } };
+    paintPause();   // 모션 감소 설정이면 멈춘 채 시작하므로 「재생」 (critic 2차 L9)
     const curEl = bar.querySelector("[data-ppop-cur]");
     // 활성 카드 가운데, 나머지는 가장 짧은 방향의 측면(--d = 칸 수). 하단바는 활성 카드 아래로 옮겨 붙는다. 측면 .pop 은 inert.
     function layout() {
@@ -494,7 +496,7 @@
     }
     function setPause(on) {
       stopped = on; clearTimeout(timer);
-      if (pauseBtn) { pauseBtn.setAttribute("aria-pressed", on ? "true" : "false"); pauseBtn.textContent = on ? "재생" : "정지"; }
+      paintPause();
       if (!on) tick();
     }
     function tick() {
@@ -534,7 +536,8 @@
       bar.querySelector("[data-ppop-prev]").addEventListener("click", () => go(cur - 1));
       bar.querySelector("[data-ppop-next]").addEventListener("click", () => go(cur + 1));
       pauseBtn.addEventListener("click", () => setPause(!stopped));
-      slots.forEach((s, i) => s.addEventListener("click", (e) => { if (s.hasAttribute("data-side")) { e.preventDefault(); go(i); } }));
+      // 측면 카드 클릭 = 그 카드로. 하단바 안 클릭은 뺀다: ←/→ 가 go() 로 넘긴 뒤 같은 클릭이 옛 활성 슬롯(이제 측면)까지 버블해 되돌리던 결함 (critic 4차 P1)
+      slots.forEach((s, i) => s.addEventListener("click", (e) => { if (s.hasAttribute("data-side") && !e.target.closest(".pbar")) { e.preventDefault(); go(i); } }));
       stage.addEventListener("mouseenter", () => { hover = true; clearTimeout(timer); });
       stage.addEventListener("mouseleave", () => { hover = false; tick(); });
       let tx = null;

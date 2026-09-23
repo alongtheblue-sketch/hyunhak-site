@@ -365,14 +365,14 @@ body.v2{background:var(--ink)}
 :where(body.v2) .tile{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);padding:var(--s2) var(--s5) var(--s2) 0;border-top:var(--rule);color:var(--ink)}
 @media not all and (max-width:1100px){:where(body.v2) .tile:nth-child(-n+3){border-top:0} :where(body.v2) .tile:nth-child(3n){padding-right:0}}   /* 3열 = 1100px 초과 전부. max-width 의 여집합이라 1100~1101 소수 폭 틈이 없다 */
 @media (max-width:1100px){:where(body.v2) .tiles{grid-template-columns:repeat(2,minmax(0,1fr))} :where(body.v2) .tile:nth-child(-n+2){border-top:0} :where(body.v2) .tile:nth-child(2n){padding-right:0}}   /* 열 수와 리셋을 같은 블록에 둔다. 열 수를 다른 구획(옛 465, 487, 506행)에 두면 리셋과 어긋난다 (critic 3차 P1) */
-:where(body.v2) .tiles .empty{grid-column:1/-1;padding-block:var(--s3)}   /* 검색 0건 안내는 행 전폭 */
+:where(body.v2) .tiles .empty{grid-column:1/-1;padding-block:var(--s3);border:0;border-radius:0}   /* 검색 0건 안내는 행 전폭. 일반 .empty 점선 테두리는 목록 괘선과 겹선이 되므로 뺀다 (critic 4차 P2) */
 :where(body.v2) .tile .n{flex:1;min-width:0;font-weight:600;font-size:var(--t-base);letter-spacing:-0.01em;display:flex;gap:var(--s2);align-items:baseline;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 :where(body.v2) .tile .n small{font-weight:500;font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .w{font-family:var(--mono);font-size:var(--t-xs);color:var(--gray);white-space:nowrap}
 :where(body.v2) .tile .ar{color:var(--gray);flex:none;transition:transform var(--dur-1) var(--ease),color var(--dur-1) var(--ease)}
 :where(body.v2) .tile:hover .ar{color:var(--ink);transform:translateX(var(--s1))}
 :where(body.v2) .tile.ready .n{color:var(--gray)}
-@media (max-width:37.5em){:where(body.v2) .tiles{grid-template-columns:minmax(0,1fr)} :where(body.v2) .tile{padding-right:0} :where(body.v2) .tile:nth-child(2){border-top:var(--rule)}}   /* 1열. 위 2열 블록보다 뒤라 같은 특이도에서 이긴다(2번 타일 윗선 복원) */
+@media (max-width:37.5em){:where(body.v2) .tiles{grid-template-columns:minmax(0,1fr)} :where(body.v2) .tile{padding-right:0} :where(body.v2) .tile:nth-child(n+2){border-top:var(--rule)}}   /* 1열. 위 블록들보다 뒤라 같은 특이도에서 이긴다. 2번부터 전부 복원: 기본 글꼴이 커서 37.5em 이 1100px 을 넘으면 3열 리셋(-n+3)과 겹친다 (Codex 4차) */
 
 /* 상품 카드: 그림자 없이 괘선 */
 :where(body.v2) .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4)}
@@ -452,6 +452,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) footer ul{display:flex;flex-direction:column;gap:2px}
 :where(body.v2) footer li{min-height:32px;display:flex;align-items:center}
 :where(body.v2) footer a{display:inline-flex;align-items:center;min-height:var(--tap);min-width:var(--tap)}
+:where(body.v2) footer .ft-legal a{justify-content:center}   /* 법적 고지 짧은 링크(결제)가 48 상자 한쪽에 빈칸을 남기지 않게. 면 인라인 사본 77개 대신 여기 한 곳 (critic 4차 P2) */
 :where(body.v2) footer a:hover{color:var(--ink)}
 :where(body.v2) footer .biz{margin-top:var(--s5);padding-top:var(--s3);border-top:var(--rule);font-size:var(--t-xs);display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap}
 :where(body.v2) footer .biz img{height:auto}
@@ -894,7 +895,10 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pslot[data-side]{z-index:1;cursor:pointer;transform:translateX(calc(var(--d,1) * (100% + var(--s4)))) scale(.9)}
 :where(body.v2) .pslot[data-side] .pop{pointer-events:none;background:var(--mat);border-radius:var(--r-md)}   /* 하단바는 활성 카드에만 붙으므로 측면 카드는 아래 모서리도 둥글게 */
 :where(body.v2) .pslot[data-side] .pfr{opacity:.55}
-@media (prefers-reduced-motion:reduce){:where(body.v2) .pslot{transition:none}}
+:where(body.v2) .pslot .pop{transition:background-color var(--dur-2) var(--ease)}   /* 넘길 때 바탕과 명도가 transform 과 같은 시간에 바뀌게 (critic 4차 P2) */
+:where(body.v2) .pslot .pfr{transition:opacity var(--dur-2) var(--ease)}
+:where(body.v2) .pslot[data-on] .pop{border-bottom:0}   /* 활성 카드 아래는 하단바 윗선 하나만(.55 와 .24 2px 겹선 해소) */
+@media (prefers-reduced-motion:reduce){:where(body.v2) .pslot,:where(body.v2) .pslot .pop,:where(body.v2) .pslot .pfr{transition:none}}
 
 :where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s4);background:var(--card);color:var(--ink);
   border:var(--rule-ui);border-radius:var(--r-md) var(--r-md) 0 0;box-shadow:var(--shadow-2);
