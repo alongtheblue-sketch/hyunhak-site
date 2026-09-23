@@ -1,0 +1,428 @@
+{
+ "base": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/ab_post",
+ "new": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/ab_post_rep1",
+ "pairs": {
+  "guidebook_index_1440": {
+   "name": "guidebook_index_1440",
+   "new_mtime": 1790134012.0489678,
+   "base_mtime": 1790133393.6403074,
+   "base_size": [
+    1440,
+    5045
+   ],
+   "new_size": [
+    1440,
+    5045
+   ],
+   "same_size": true,
+   "ae": 19,
+   "ae_raw": "19",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/guidebook_index_1440.png",
+   "bbox": [
+    14,
+    14,
+    1426,
+    508
+   ],
+   "bands": [
+    {
+     "y0": 14,
+     "y1": 19,
+     "x0": 14,
+     "x1": 1426,
+     "px": 10
+    },
+    {
+     "y0": 139,
+     "y1": 145,
+     "x0": 216,
+     "x1": 222,
+     "px": 8
+    },
+    {
+     "y0": 507,
+     "y1": 508,
+     "x0": 524,
+     "x1": 525,
+     "px": 1
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/guidebook_index_1440__band0_y14-19.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/guidebook_index_1440__band1_y139-145.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/guidebook_index_1440__band2_y507-508.png"
+   ]
+  },
+  "guidebook_index_390": {
+   "name": "guidebook_index_390",
+   "new_mtime": 1790134029.8504379,
+   "base_mtime": 1790133458.7780423,
+   "base_size": [
+    390,
+    6495
+   ],
+   "new_size": [
+    390,
+    6495
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/guidebook_index_390.png"
+  },
+  "index_nopop_1440": {
+   "name": "index_nopop_1440",
+   "new_mtime": 1790134008.1488094,
+   "base_mtime": 1790133387.0017576,
+   "base_size": [
+    1440,
+    4858
+   ],
+   "new_size": [
+    1440,
+    4858
+   ],
+   "same_size": true,
+   "ae": 18,
+   "ae_raw": "18",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_nopop_1440.png",
+   "bbox": [
+    14,
+    14,
+    1426,
+    4844
+   ],
+   "bands": [
+    {
+     "y0": 14,
+     "y1": 19,
+     "x0": 14,
+     "x1": 1426,
+     "px": 10
+    },
+    {
+     "y0": 4839,
+     "y1": 4844,
+     "x0": 14,
+     "x1": 1425,
+     "px": 8
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/index_nopop_1440__band0_y14-19.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/index_nopop_1440__band1_y4839-4844.png"
+   ]
+  },
+  "index_nopop_390": {
+   "name": "index_nopop_390",
+   "new_mtime": 1790134026.5241342,
+   "base_mtime": 1790133453.3008785,
+   "base_size": [
+    390,
+    6639
+   ],
+   "new_size": [
+    390,
+    6639
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_nopop_390.png"
+  },
+  "index_popup_1440": {
+   "name": "index_popup_1440",
+   "new_mtime": 1790134006.8243077,
+   "base_mtime": 1790133385.9947329,
+   "base_size": [
+    1440,
+    900
+   ],
+   "new_size": [
+    1440,
+    900
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_popup_1440.png"
+  },
+  "index_popup_390": {
+   "name": "index_popup_390",
+   "new_mtime": 1790134025.5184152,
+   "base_mtime": 1790133452.4501429,
+   "base_size": [
+    390,
+    844
+   ],
+   "new_size": [
+    390,
+    844
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_popup_390.png"
+  },
+  "index_tiles_1440": {
+   "name": "index_tiles_1440",
+   "new_mtime": 1790134008.2669497,
+   "base_mtime": 1790133387.0950525,
+   "base_size": [
+    1008,
+    195
+   ],
+   "new_size": [
+    1008,
+    195
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_tiles_1440.png"
+  },
+  "index_tiles_390": {
+   "name": "index_tiles_390",
+   "new_mtime": 1790134026.676154,
+   "base_mtime": 1790133453.3752258,
+   "base_size": [
+    350,
+    579
+   ],
+   "new_size": [
+    350,
+    579
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/index_tiles_390.png"
+  },
+  "programs_guidebook_1440": {
+   "name": "programs_guidebook_1440",
+   "new_mtime": 1790134016.1460702,
+   "base_mtime": 1790133397.1135907,
+   "base_size": [
+    1440,
+    10825
+   ],
+   "new_size": [
+    1440,
+    10825
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/programs_guidebook_1440.png"
+  },
+  "programs_guidebook_390": {
+   "name": "programs_guidebook_390",
+   "new_mtime": 1790134032.7041042,
+   "base_mtime": 1790133461.8535838,
+   "base_size": [
+    390,
+    11187
+   ],
+   "new_size": [
+    390,
+    11187
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/programs_guidebook_390.png"
+  },
+  "programs_studio_1440": {
+   "name": "programs_studio_1440",
+   "new_mtime": 1790134019.8453436,
+   "base_mtime": 1790133399.815945,
+   "base_size": [
+    1440,
+    8518
+   ],
+   "new_size": [
+    1440,
+    8518
+   ],
+   "same_size": true,
+   "ae": 2637,
+   "ae_raw": "2637",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/programs_studio_1440.png",
+   "bbox": [
+    233,
+    515,
+    722,
+    2501
+   ],
+   "bands": [
+    {
+     "y0": 515,
+     "y1": 519,
+     "x0": 233,
+     "x1": 246,
+     "px": 8
+    },
+    {
+     "y0": 566,
+     "y1": 567,
+     "x0": 233,
+     "x1": 234,
+     "px": 1
+    },
+    {
+     "y0": 614,
+     "y1": 615,
+     "x0": 233,
+     "x1": 234,
+     "px": 1
+    },
+    {
+     "y0": 2142,
+     "y1": 2151,
+     "x0": 240,
+     "x1": 257,
+     "px": 39
+    },
+    {
+     "y0": 2179,
+     "y1": 2217,
+     "x0": 253,
+     "x1": 530,
+     "px": 150
+    },
+    {
+     "y0": 2252,
+     "y1": 2422,
+     "x0": 237,
+     "x1": 722,
+     "px": 2113
+    },
+    {
+     "y0": 2460,
+     "y1": 2468,
+     "x0": 244,
+     "x1": 487,
+     "px": 319
+    },
+    {
+     "y0": 2496,
+     "y1": 2501,
+     "x0": 240,
+     "x1": 243,
+     "px": 6
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band0_y515-519.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band1_y566-567.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band2_y614-615.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band3_y2142-2151.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band4_y2179-2217.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band5_y2252-2422.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band6_y2460-2468.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_1440__band7_y2496-2501.png"
+   ]
+  },
+  "programs_studio_390": {
+   "name": "programs_studio_390",
+   "new_mtime": 1790134035.1370006,
+   "base_mtime": 1790133465.013105,
+   "base_size": [
+    390,
+    12793
+   ],
+   "new_size": [
+    390,
+    12793
+   ],
+   "same_size": true,
+   "ae": 150,
+   "ae_raw": "150",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/programs_studio_390.png",
+   "bbox": [
+    246,
+    2313,
+    335,
+    2374
+   ],
+   "bands": [
+    {
+     "y0": 2313,
+     "y1": 2374,
+     "x0": 246,
+     "x1": 335,
+     "px": 150
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/pair/programs_studio_390__band0_y2313-2374.png"
+   ]
+  },
+  "support_1440": {
+   "name": "support_1440",
+   "new_mtime": 1790134022.8086946,
+   "base_mtime": 1790133429.8353837,
+   "base_size": [
+    1440,
+    3900
+   ],
+   "new_size": [
+    1440,
+    3900
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/support_1440.png"
+  },
+  "support_390": {
+   "name": "support_390",
+   "new_mtime": 1790134037.5035787,
+   "base_mtime": 1790133488.55554,
+   "base_size": [
+    390,
+    4889
+   ],
+   "new_size": [
+    390,
+    4889
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_post_rep1/support_390.png"
+  }
+ },
+ "base_only": [
+  "about_1440.png",
+  "about_390.png",
+  "b2b_1440.png",
+  "b2b_390.png",
+  "faq_1440.png",
+  "faq_390.png",
+  "interview_1440.png",
+  "interview_390.png",
+  "interview_yonsei-hum_1440.png",
+  "interview_yonsei-hum_390.png",
+  "join_1440.png",
+  "join_390.png",
+  "lectures_1440.png",
+  "lectures_390.png",
+  "library_1440.png",
+  "library_390.png",
+  "login_1440.png",
+  "login_390.png",
+  "notice_1440.png",
+  "notice_390.png",
+  "pastexam_1440.png",
+  "pastexam_390.png",
+  "ranking_1440.png",
+  "ranking_390.png",
+  "request_1440.png",
+  "request_390.png",
+  "studio_1440.png",
+  "studio_390.png",
+  "terms_1440.png",
+  "terms_390.png"
+ ]
+}

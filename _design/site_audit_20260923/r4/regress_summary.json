@@ -1,0 +1,1023 @@
+{
+ "pre": "87106d8",
+ "post": "c342aff",
+ "c_count": 0,
+ "rows": [
+  {
+   "name": "about_1440",
+   "size": "1440x5428",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     4637,
+     4648,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "about_390",
+   "size": "390x6491",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     5489,
+     5500,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "b2b_1440",
+   "size": "1440x4910",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     4120,
+     4131,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "b2b_390",
+   "size": "390x6280",
+   "ae": 1224,
+   "n_bands": 1,
+   "bands": [
+    [
+     5278,
+     5289,
+     20,
+     327,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "faq_1440",
+   "size": "1440x8031",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     7241,
+     7252,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "faq_390",
+   "size": "390x7626",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     6624,
+     6635,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "guidebook_index_1440",
+   "size": "1440x5045",
+   "ae": 1244,
+   "n_bands": 4,
+   "bands": [
+    [
+     14,
+     19,
+     14,
+     1426,
+     10,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     139,
+     145,
+     216,
+     222,
+     8,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     507,
+     508,
+     524,
+     525,
+     1,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     4254,
+     4265,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1225,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "guidebook_index_390",
+   "size": "390x6495",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     5494,
+     5505,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1235,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "index_nopop_1440",
+   "size": "1440x4842->1440x4858",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     4052,
+     4063,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "",
+   "shift": {
+    "dy": 16,
+    "split_pre_y": 1640,
+    "above_ae": 0,
+    "below_ae": 1225
+   }
+  },
+  {
+   "name": "index_nopop_390",
+   "size": "390x6623->390x6639",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     5621,
+     5632,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "",
+   "shift": {
+    "dy": 16,
+    "split_pre_y": 2422,
+    "above_ae": 0,
+    "below_ae": 1225
+   }
+  },
+  {
+   "name": "index_popup_1440",
+   "size": "1440x900",
+   "ae": 12,
+   "n_bands": 1,
+   "bands": [
+    [
+     647,
+     650,
+     986,
+     1382,
+     12,
+     "a"
+    ]
+   ],
+   "rep_ab": 12,
+   "rep3_ab": null,
+   "note": "a 팝업 측면 카드 아래 두 모서리가 각에서 둥근 4px 로(y647-650 x986-1382, 12px). 재촬영 A/B 도 12 로 같음"
+  },
+  {
+   "name": "index_popup_390",
+   "size": "390x844",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": 0,
+   "rep3_ab": null,
+   "note": "0 (폰 폭은 측면 카드 숨김)"
+  },
+  {
+   "name": "index_tiles_1440",
+   "size": "1008x195",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": 0,
+   "rep3_ab": null,
+   "note": "0 (#tiles 요소 캡처, 3열 그대로)"
+  },
+  {
+   "name": "index_tiles_390",
+   "size": "350x579",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": 0,
+   "rep3_ab": null,
+   "note": "0 (#tiles 요소 캡처, 1열 그대로)"
+  },
+  {
+   "name": "interview_1440",
+   "size": "1440x11837",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     11047,
+     11058,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "interview_390",
+   "size": "390x14396",
+   "ae": 1224,
+   "n_bands": 1,
+   "bands": [
+    [
+     13394,
+     13405,
+     20,
+     327,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "interview_yonsei-hum_1440",
+   "size": "1440x7956",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     7165,
+     7176,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "interview_yonsei-hum_390",
+   "size": "390x10986",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     9984,
+     9995,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "join_1440",
+   "size": "1440x3167",
+   "ae": 857,
+   "n_bands": 3,
+   "bands": [
+    [
+     904,
+     923,
+     1005,
+     1027,
+     260,
+     "a-join"
+    ],
+    [
+     978,
+     997,
+     1005,
+     1027,
+     260,
+     "a-join"
+    ],
+    [
+     1126,
+     1155,
+     1005,
+     1027,
+     337,
+     "a-join"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "a 약관 행 3개의 「전문」 이 행 가운데에서 제목 줄 옆으로(행 rect 동일, .view y -5/-5/-15px). 푸터는 compact 셸이라 빌드 제외(가운데 정렬 미적용, 차이 0)"
+  },
+  {
+   "name": "join_390",
+   "size": "390x3684",
+   "ae": 751,
+   "n_bands": 3,
+   "bands": [
+    [
+     844,
+     851,
+     335,
+     357,
+     76,
+     "a-join"
+    ],
+    [
+     906,
+     935,
+     335,
+     357,
+     337,
+     "a-join"
+    ],
+    [
+     1073,
+     1112,
+     335,
+     357,
+     338,
+     "a-join"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "a 약관 행 3개의 「전문」 이 제목 줄 옆으로(행 rect 동일, .view y -4/-14/-24px). 푸터 차이 0(compact 셸 빌드 제외)"
+  },
+  {
+   "name": "lectures_1440",
+   "size": "1440x6347",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     5556,
+     5567,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "lectures_390",
+   "size": "390x8253",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     7252,
+     7263,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "library_1440",
+   "size": "1440x5416",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     4625,
+     4636,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "library_390",
+   "size": "390x8663",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     7661,
+     7672,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "login_1440",
+   "size": "1440x1433",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "0 (compact 셸이라 푸터 빌드 제외, justify-content normal 그대로)"
+  },
+  {
+   "name": "login_390",
+   "size": "390x1381",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "0 (compact 셸이라 푸터 빌드 제외)"
+  },
+  {
+   "name": "notice_1440",
+   "size": "1440x1211",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     1094,
+     1105,
+     216,
+     491,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "notice_390",
+   "size": "390x1217",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     993,
+     1004,
+     20,
+     295,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "pastexam_1440",
+   "size": "1440x1962",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     1171,
+     1182,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "pastexam_390",
+   "size": "390x2309",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     1308,
+     1319,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "programs_guidebook_1440",
+   "size": "1440x10825",
+   "ae": 1505,
+   "n_bands": 8,
+   "bands": [
+    [
+     312,
+     330,
+     786,
+     1201,
+     16,
+     "b(post__post_rep2)"
+    ],
+    [
+     458,
+     476,
+     233,
+     1201,
+     28,
+     "b(post__post_rep2)"
+    ],
+    [
+     508,
+     521,
+     233,
+     246,
+     16,
+     "b(post__post_rep2)"
+    ],
+    [
+     575,
+     578,
+     243,
+     246,
+     2,
+     "b(post__post_rep2)"
+    ],
+    [
+     3058,
+     3095,
+     848,
+     939,
+     212,
+     "b(pre__pre_rep2)"
+    ],
+    [
+     3140,
+     3175,
+     848,
+     895,
+     6,
+     "b(pre__pre_rep2)"
+    ],
+    [
+     3338,
+     3339,
+     877,
+     878,
+     1,
+     "b(pre__pre_rep2)"
+    ],
+    [
+     10035,
+     10046,
+     216,
+     523,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1224,
+   "rep3_ab": 1224,
+   "note": ""
+  },
+  {
+   "name": "programs_guidebook_390",
+   "size": "390x11187",
+   "ae": 1274,
+   "n_bands": 4,
+   "bands": [
+    [
+     428,
+     441,
+     37,
+     50,
+     16,
+     "b(pre_rep2__pre_rep3)"
+    ],
+    [
+     495,
+     508,
+     37,
+     50,
+     16,
+     "b(pre_rep2__pre_rep3)"
+    ],
+    [
+     553,
+     576,
+     37,
+     272,
+     18,
+     "b(pre_rep2__pre_rep3)"
+    ],
+    [
+     10185,
+     10196,
+     20,
+     327,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1274,
+   "rep3_ab": 1224,
+   "note": ""
+  },
+  {
+   "name": "programs_studio_1440",
+   "size": "1440x8518",
+   "ae": 3851,
+   "n_bands": 6,
+   "bands": [
+    [
+     2142,
+     2151,
+     240,
+     257,
+     39,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     2179,
+     2217,
+     253,
+     530,
+     151,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     2252,
+     2422,
+     237,
+     722,
+     2112,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     2460,
+     2468,
+     244,
+     487,
+     319,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     2496,
+     2501,
+     240,
+     243,
+     6,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     7728,
+     7739,
+     216,
+     523,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1234,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "programs_studio_390",
+   "size": "390x12793",
+   "ae": 1374,
+   "n_bands": 2,
+   "bands": [
+    [
+     2313,
+     2374,
+     246,
+     335,
+     150,
+     "b(regress_post_vs_post_rep1)"
+    ],
+    [
+     11792,
+     11803,
+     20,
+     327,
+     1224,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1224,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "ranking_1440",
+   "size": "1440x1856",
+   "ae": 1223,
+   "n_bands": 1,
+   "bands": [
+    [
+     1065,
+     1076,
+     216,
+     523,
+     1223,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "ranking_390",
+   "size": "390x2123",
+   "ae": 1223,
+   "n_bands": 1,
+   "bands": [
+    [
+     1121,
+     1132,
+     20,
+     327,
+     1223,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "request_1440",
+   "size": "1440x4345",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     3555,
+     3566,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "request_390",
+   "size": "390x5229",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     4228,
+     4239,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "studio_1440",
+   "size": "1440x11977",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     11187,
+     11198,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "studio_390",
+   "size": "390x17749",
+   "ae": 0,
+   "n_bands": 0,
+   "bands": [],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": "전체 캡처 0 은 무효(문서 17749px > 16384px, 16384 아래가 반복 판). 꼬리 비교: footer 요소 1225 = a, 스크롤 16384 창 1225(y16748-16759 = 법적 고지 줄) = a, 스크롤 16905 창 0"
+  },
+  {
+   "name": "support_1440",
+   "size": "1440x3900",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     3110,
+     3121,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1225,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "support_390",
+   "size": "390x4889",
+   "ae": 1233,
+   "n_bands": 2,
+   "bands": [
+    [
+     86,
+     92,
+     20,
+     26,
+     8,
+     "b(regress_pre_vs_pre_rep1)"
+    ],
+    [
+     3887,
+     3898,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": 1225,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "terms_1440",
+   "size": "1440x4659",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     3868,
+     3879,
+     216,
+     523,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  },
+  {
+   "name": "terms_390",
+   "size": "390x6064",
+   "ae": 1225,
+   "n_bands": 1,
+   "bands": [
+    [
+     5063,
+     5074,
+     20,
+     327,
+     1225,
+     "a-footer"
+    ]
+   ],
+   "rep_ab": null,
+   "rep3_ab": null,
+   "note": ""
+  }
+ ],
+ "tail_studio_390": {
+  "studio_390_footer": {
+   "ae": 1225,
+   "bands": [
+    [
+     75,
+     86,
+     20,
+     327,
+     1225
+    ]
+   ]
+  },
+  "studio_390_scroll16384": {
+   "ae": 1225,
+   "bands": [
+    [
+     364,
+     375,
+     20,
+     327,
+     1225
+    ]
+   ]
+  },
+  "studio_390_scroll16905": {
+   "ae": 0,
+   "bands": []
+  }
+ }
+}

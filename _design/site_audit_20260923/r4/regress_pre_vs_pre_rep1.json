@@ -1,0 +1,412 @@
+{
+ "base": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/ab_pre",
+ "new": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/ab_pre_rep1",
+ "pairs": {
+  "guidebook_index_1440": {
+   "name": "guidebook_index_1440",
+   "new_mtime": 1790133957.4853008,
+   "base_mtime": 1790133255.2734559,
+   "base_size": [
+    1440,
+    5045
+   ],
+   "new_size": [
+    1440,
+    5045
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/guidebook_index_1440.png"
+  },
+  "guidebook_index_390": {
+   "name": "guidebook_index_390",
+   "new_mtime": 1790133975.748526,
+   "base_mtime": 1790133316.465573,
+   "base_size": [
+    390,
+    6495
+   ],
+   "new_size": [
+    390,
+    6495
+   ],
+   "same_size": true,
+   "ae": 10,
+   "ae_raw": "10",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/guidebook_index_390.png",
+   "bbox": [
+    20,
+    86,
+    329,
+    472
+   ],
+   "bands": [
+    {
+     "y0": 86,
+     "y1": 92,
+     "x0": 20,
+     "x1": 26,
+     "px": 8
+    },
+    {
+     "y0": 469,
+     "y1": 472,
+     "x0": 328,
+     "x1": 329,
+     "px": 2
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/guidebook_index_390__band0_y86-92.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/guidebook_index_390__band1_y469-472.png"
+   ]
+  },
+  "index_nopop_1440": {
+   "name": "index_nopop_1440",
+   "new_mtime": 1790133953.7129788,
+   "base_mtime": 1790133248.9119465,
+   "base_size": [
+    1440,
+    4842
+   ],
+   "new_size": [
+    1440,
+    4842
+   ],
+   "same_size": true,
+   "ae": 18,
+   "ae_raw": "18",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_nopop_1440.png",
+   "bbox": [
+    14,
+    14,
+    1426,
+    4828
+   ],
+   "bands": [
+    {
+     "y0": 14,
+     "y1": 19,
+     "x0": 14,
+     "x1": 1426,
+     "px": 10
+    },
+    {
+     "y0": 4823,
+     "y1": 4828,
+     "x0": 14,
+     "x1": 1425,
+     "px": 8
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/index_nopop_1440__band0_y14-19.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/index_nopop_1440__band1_y4823-4828.png"
+   ]
+  },
+  "index_nopop_390": {
+   "name": "index_nopop_390",
+   "new_mtime": 1790133972.3107564,
+   "base_mtime": 1790133310.7837105,
+   "base_size": [
+    390,
+    6623
+   ],
+   "new_size": [
+    390,
+    6623
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_nopop_390.png"
+  },
+  "index_popup_1440": {
+   "name": "index_popup_1440",
+   "new_mtime": 1790133952.5838304,
+   "base_mtime": 1790133247.9307933,
+   "base_size": [
+    1440,
+    900
+   ],
+   "new_size": [
+    1440,
+    900
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_popup_1440.png"
+  },
+  "index_popup_390": {
+   "name": "index_popup_390",
+   "new_mtime": 1790133971.353972,
+   "base_mtime": 1790133309.9063973,
+   "base_size": [
+    390,
+    844
+   ],
+   "new_size": [
+    390,
+    844
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_popup_390.png"
+  },
+  "index_tiles_1440": {
+   "name": "index_tiles_1440",
+   "new_mtime": 1790133953.8484874,
+   "base_mtime": 1790133248.9915755,
+   "base_size": [
+    1008,
+    195
+   ],
+   "new_size": [
+    1008,
+    195
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_tiles_1440.png"
+  },
+  "index_tiles_390": {
+   "name": "index_tiles_390",
+   "new_mtime": 1790133972.4053211,
+   "base_mtime": 1790133310.8671765,
+   "base_size": [
+    350,
+    579
+   ],
+   "new_size": [
+    350,
+    579
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/index_tiles_390.png"
+  },
+  "programs_guidebook_1440": {
+   "name": "programs_guidebook_1440",
+   "new_mtime": 1790133961.7607596,
+   "base_mtime": 1790133258.9256084,
+   "base_size": [
+    1440,
+    10825
+   ],
+   "new_size": [
+    1440,
+    10825
+   ],
+   "same_size": true,
+   "ae": 281,
+   "ae_raw": "281",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/programs_guidebook_1440.png",
+   "bbox": [
+    233,
+    312,
+    1201,
+    3339
+   ],
+   "bands": [
+    {
+     "y0": 312,
+     "y1": 330,
+     "x0": 786,
+     "x1": 1201,
+     "px": 16
+    },
+    {
+     "y0": 458,
+     "y1": 476,
+     "x0": 233,
+     "x1": 1201,
+     "px": 28
+    },
+    {
+     "y0": 508,
+     "y1": 521,
+     "x0": 233,
+     "x1": 246,
+     "px": 16
+    },
+    {
+     "y0": 575,
+     "y1": 578,
+     "x0": 243,
+     "x1": 246,
+     "px": 2
+    },
+    {
+     "y0": 3058,
+     "y1": 3095,
+     "x0": 848,
+     "x1": 939,
+     "px": 212
+    },
+    {
+     "y0": 3140,
+     "y1": 3175,
+     "x0": 848,
+     "x1": 895,
+     "px": 6
+    },
+    {
+     "y0": 3338,
+     "y1": 3339,
+     "x0": 877,
+     "x1": 878,
+     "px": 1
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band0_y312-330.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band1_y458-476.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band2_y508-521.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band3_y575-578.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band4_y3058-3095.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band5_y3140-3175.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/programs_guidebook_1440__band6_y3338-3339.png"
+   ]
+  },
+  "programs_guidebook_390": {
+   "name": "programs_guidebook_390",
+   "new_mtime": 1790133979.2178354,
+   "base_mtime": 1790133319.5222902,
+   "base_size": [
+    390,
+    11187
+   ],
+   "new_size": [
+    390,
+    11187
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/programs_guidebook_390.png"
+  },
+  "programs_studio_1440": {
+   "name": "programs_studio_1440",
+   "new_mtime": 1790133965.5699723,
+   "base_mtime": 1790133262.4165356,
+   "base_size": [
+    1440,
+    8518
+   ],
+   "new_size": [
+    1440,
+    8518
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/programs_studio_1440.png"
+  },
+  "programs_studio_390": {
+   "name": "programs_studio_390",
+   "new_mtime": 1790133982.6311686,
+   "base_mtime": 1790133322.924598,
+   "base_size": [
+    390,
+    12793
+   ],
+   "new_size": [
+    390,
+    12793
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/programs_studio_390.png"
+  },
+  "support_1440": {
+   "name": "support_1440",
+   "new_mtime": 1790133968.89798,
+   "base_mtime": 1790133287.4528456,
+   "base_size": [
+    1440,
+    3900
+   ],
+   "new_size": [
+    1440,
+    3900
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/support_1440.png"
+  },
+  "support_390": {
+   "name": "support_390",
+   "new_mtime": 1790133985.7663836,
+   "base_mtime": 1790133346.984906,
+   "base_size": [
+    390,
+    4889
+   ],
+   "new_size": [
+    390,
+    4889
+   ],
+   "same_size": true,
+   "ae": 8,
+   "ae_raw": "8",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/support_390.png",
+   "bbox": [
+    20,
+    86,
+    26,
+    92
+   ],
+   "bands": [
+    {
+     "y0": 86,
+     "y1": 92,
+     "x0": 20,
+     "x1": 26,
+     "px": 8
+    }
+   ],
+   "pairs": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/diff_pre_rep1/pair/support_390__band0_y86-92.png"
+   ]
+  }
+ },
+ "base_only": [
+  "about_1440.png",
+  "about_390.png",
+  "b2b_1440.png",
+  "b2b_390.png",
+  "faq_1440.png",
+  "faq_390.png",
+  "interview_1440.png",
+  "interview_390.png",
+  "interview_yonsei-hum_1440.png",
+  "interview_yonsei-hum_390.png",
+  "join_1440.png",
+  "join_390.png",
+  "lectures_1440.png",
+  "lectures_390.png",
+  "library_1440.png",
+  "library_390.png",
+  "login_1440.png",
+  "login_390.png",
+  "notice_1440.png",
+  "notice_390.png",
+  "pastexam_1440.png",
+  "pastexam_390.png",
+  "ranking_1440.png",
+  "ranking_390.png",
+  "request_1440.png",
+  "request_390.png",
+  "studio_1440.png",
+  "studio_390.png",
+  "terms_1440.png",
+  "terms_390.png"
+ ]
+}

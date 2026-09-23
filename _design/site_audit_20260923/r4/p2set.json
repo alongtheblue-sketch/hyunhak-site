@@ -1,0 +1,4263 @@
+{
+  "meta": {
+    "head": "c342aff",
+    "at": "2026-09-23T03:37:44.415Z"
+  },
+  "popup": {
+    "still1440": {
+      "m": {
+        "n": 2,
+        "cur": "1",
+        "vw": 1440,
+        "slots": [
+          {
+            "i": "0",
+            "on": true,
+            "side": null,
+            "d": null,
+            "opacity": "1",
+            "visibility": "visible",
+            "pointerEvents": "auto",
+            "transform": "none",
+            "slot": {
+              "l": 500,
+              "t": 205.56,
+              "r": 940,
+              "b": 694.44,
+              "w": 440,
+              "h": 488.88
+            },
+            "pop": {
+              "l": 500,
+              "t": 205.56,
+              "r": 940,
+              "b": 636.44,
+              "w": 440,
+              "h": 430.88
+            },
+            "popRadius": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "popBg": "rgb(255, 253, 248)",
+            "popBorder": {
+              "t": "1px",
+              "r": "1px",
+              "b": "1px",
+              "l": "1px",
+              "tc": "rgba(49, 46, 46, 0.55)",
+              "bc": "rgba(49, 46, 46, 0.55)"
+            },
+            "pfrOpacity": "1",
+            "inert": false,
+            "inViewportPx": 440,
+            "bar": {
+              "rect": {
+                "l": 500,
+                "t": 636.44,
+                "r": 940,
+                "b": 694.44,
+                "w": 440,
+                "h": 58
+              },
+              "radius": [
+                0,
+                0,
+                4,
+                4
+              ],
+              "border": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.24)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "gapTop": 0,
+              "dLeft": 0,
+              "dRight": 0
+            }
+          },
+          {
+            "i": "1",
+            "on": false,
+            "side": "1",
+            "d": "1",
+            "opacity": "1",
+            "visibility": "visible",
+            "pointerEvents": "auto",
+            "transform": "matrix(0.9, 0, 0, 0.9, 464, 0)",
+            "slot": {
+              "l": 986,
+              "t": 249.69,
+              "r": 1382,
+              "b": 650.31,
+              "w": 396,
+              "h": 400.61
+            },
+            "pop": {
+              "l": 986,
+              "t": 249.69,
+              "r": 1382,
+              "b": 650.31,
+              "w": 396,
+              "h": 400.61
+            },
+            "popRadius": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "popBg": "rgb(235, 228, 212)",
+            "popBorder": {
+              "t": "1px",
+              "r": "1px",
+              "b": "1px",
+              "l": "1px",
+              "tc": "rgba(49, 46, 46, 0.55)",
+              "bc": "rgba(49, 46, 46, 0.55)"
+            },
+            "pfrOpacity": "0.55",
+            "inert": true,
+            "inViewportPx": 396
+          }
+        ]
+      },
+      "v": {
+        "oneActive": true,
+        "activeTopOnly": true,
+        "sideAllFour": true,
+        "barOnActiveOnly": true,
+        "barRadius": [
+          [
+            0,
+            0,
+            4,
+            4
+          ]
+        ],
+        "barBottomOnly": true,
+        "barGap": [
+          0
+        ],
+        "barDL": [
+          0
+        ],
+        "barDR": [
+          0
+        ],
+        "barJoinOk": true
+      }
+    },
+    "zoom": [
+      {
+        "p": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_1440_side_corner_x3.png",
+        "c": {
+          "x": 980,
+          "y": 626.31,
+          "width": 48,
+          "height": 30
+        }
+      },
+      {
+        "p": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_1440_join_x3.png",
+        "c": {
+          "x": 494,
+          "y": 612.44,
+          "width": 60,
+          "height": 48
+        }
+      }
+    ],
+    "navClick": {
+      "390": {
+        "init": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "정지",
+          "focus": "H2#rpopT",
+          "mut": []
+        },
+        "nextClick": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "재생",
+          "focus": "H2#rpopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on=",
+            "0:data-on=",
+            "1:data-on=null"
+          ]
+        },
+        "prevClick": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "재생",
+          "focus": "H2#rpopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on=",
+            "0:data-on=",
+            "1:data-on=null"
+          ]
+        },
+        "arrowKey": {
+          "cur": "2",
+          "onSlot": 1,
+          "pause": "재생",
+          "focus": "H2#ppopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on="
+          ]
+        },
+        "nextClickTurns": false,
+        "prevClickTurns": false
+      },
+      "1440": {
+        "init": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "정지",
+          "focus": "H2#rpopT",
+          "mut": []
+        },
+        "nextClick": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "재생",
+          "focus": "H2#rpopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on=",
+            "0:data-on=",
+            "1:data-on=null"
+          ]
+        },
+        "prevClick": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "재생",
+          "focus": "H2#rpopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on=",
+            "0:data-on=",
+            "1:data-on=null"
+          ]
+        },
+        "arrowKey": {
+          "cur": "2",
+          "onSlot": 1,
+          "pause": "재생",
+          "focus": "H2#ppopT",
+          "mut": [
+            "0:data-on=null",
+            "1:data-on="
+          ]
+        },
+        "sideCardClick": {
+          "cur": "1",
+          "onSlot": 0,
+          "pause": "재생",
+          "focus": "H2#rpopT",
+          "mut": [
+            "0:data-on=",
+            "1:data-on=null"
+          ]
+        },
+        "nextClickTurns": false,
+        "prevClickTurns": false
+      }
+    },
+    "turn": {
+      "0": {
+        "beforeCur": "1",
+        "anims": [
+          {
+            "prop": "transform",
+            "slot": "0",
+            "dur": 500,
+            "ct": 0
+          },
+          {
+            "prop": "transform",
+            "slot": "1",
+            "dur": 500,
+            "ct": 0
+          }
+        ],
+        "m": {
+          "n": 2,
+          "cur": "2",
+          "vw": 1440,
+          "slots": [
+            {
+              "i": "0",
+              "on": false,
+              "side": "-1",
+              "d": "-1",
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(1, 0, 0, 1, 0, 0)",
+              "slot": {
+                "l": 500,
+                "t": 234.56,
+                "r": 940,
+                "b": 665.44,
+                "w": 440,
+                "h": 430.88
+              },
+              "pop": {
+                "l": 500,
+                "t": 234.56,
+                "r": 940,
+                "b": 665.44,
+                "w": 440,
+                "h": 430.88
+              },
+              "popRadius": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "popBg": "rgb(235, 228, 212)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "0.55",
+              "inert": true,
+              "inViewportPx": 440
+            },
+            {
+              "i": "1",
+              "on": true,
+              "side": null,
+              "d": null,
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(0.9, 0, 0, 0.9, 464, 0)",
+              "slot": {
+                "l": 986,
+                "t": 223.59,
+                "r": 1382,
+                "b": 676.41,
+                "w": 396,
+                "h": 452.81
+              },
+              "pop": {
+                "l": 986,
+                "t": 223.59,
+                "r": 1382,
+                "b": 624.21,
+                "w": 396,
+                "h": 400.61
+              },
+              "popRadius": [
+                4,
+                4,
+                0,
+                0
+              ],
+              "popBg": "rgb(255, 253, 248)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "1",
+              "inert": false,
+              "inViewportPx": 396,
+              "bar": {
+                "rect": {
+                  "l": 986,
+                  "t": 624.21,
+                  "r": 1382,
+                  "b": 676.41,
+                  "w": 396,
+                  "h": 52.2
+                },
+                "radius": [
+                  0,
+                  0,
+                  4,
+                  4
+                ],
+                "border": {
+                  "t": "1px",
+                  "r": "1px",
+                  "b": "1px",
+                  "l": "1px",
+                  "tc": "rgba(49, 46, 46, 0.24)",
+                  "bc": "rgba(49, 46, 46, 0.55)"
+                },
+                "gapTop": 0,
+                "dLeft": 0,
+                "dRight": 0
+              }
+            }
+          ]
+        },
+        "v": {
+          "oneActive": true,
+          "activeTopOnly": true,
+          "sideAllFour": true,
+          "barOnActiveOnly": true,
+          "barRadius": [
+            [
+              0,
+              0,
+              4,
+              4
+            ]
+          ],
+          "barBottomOnly": true,
+          "barGap": [
+            0
+          ],
+          "barDL": [
+            0
+          ],
+          "barDR": [
+            0
+          ],
+          "barJoinOk": true
+        }
+      },
+      "150": {
+        "beforeCur": "1",
+        "anims": [
+          {
+            "prop": "transform",
+            "slot": "0",
+            "dur": 500,
+            "ct": 150
+          },
+          {
+            "prop": "transform",
+            "slot": "1",
+            "dur": 500,
+            "ct": 150
+          }
+        ],
+        "m": {
+          "n": 2,
+          "cur": "2",
+          "vw": 1440,
+          "slots": [
+            {
+              "i": "0",
+              "on": false,
+              "side": "-1",
+              "d": "-1",
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(0.913878, 0, 0, 0.913878, -399.607, 0)",
+              "slot": {
+                "l": 119.34,
+                "t": 253.12,
+                "r": 521.45,
+                "b": 646.88,
+                "w": 402.11,
+                "h": 393.77
+              },
+              "pop": {
+                "l": 119.34,
+                "t": 253.12,
+                "r": 521.45,
+                "b": 646.88,
+                "w": 402.11,
+                "h": 393.77
+              },
+              "popRadius": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "popBg": "rgb(235, 228, 212)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "0.55",
+              "inert": true,
+              "inViewportPx": 402.1062316894531
+            },
+            {
+              "i": "1",
+              "on": true,
+              "side": null,
+              "d": null,
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(0.986122, 0, 0, 0.986122, 64.3933, 0)",
+              "slot": {
+                "l": 567.45,
+                "t": 201.93,
+                "r": 1001.34,
+                "b": 698.07,
+                "w": 433.89,
+                "h": 496.14
+              },
+              "pop": {
+                "l": 567.45,
+                "t": 201.93,
+                "r": 1001.34,
+                "b": 640.88,
+                "w": 433.89,
+                "h": 438.95
+              },
+              "popRadius": [
+                4,
+                4,
+                0,
+                0
+              ],
+              "popBg": "rgb(255, 253, 248)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "1",
+              "inert": false,
+              "inViewportPx": 433.89373779296875,
+              "bar": {
+                "rect": {
+                  "l": 567.45,
+                  "t": 640.88,
+                  "r": 1001.34,
+                  "b": 698.07,
+                  "w": 433.89,
+                  "h": 57.2
+                },
+                "radius": [
+                  0,
+                  0,
+                  4,
+                  4
+                ],
+                "border": {
+                  "t": "1px",
+                  "r": "1px",
+                  "b": "1px",
+                  "l": "1px",
+                  "tc": "rgba(49, 46, 46, 0.24)",
+                  "bc": "rgba(49, 46, 46, 0.55)"
+                },
+                "gapTop": 0,
+                "dLeft": 0,
+                "dRight": 0
+              }
+            }
+          ]
+        },
+        "v": {
+          "oneActive": true,
+          "activeTopOnly": true,
+          "sideAllFour": true,
+          "barOnActiveOnly": true,
+          "barRadius": [
+            [
+              0,
+              0,
+              4,
+              4
+            ]
+          ],
+          "barBottomOnly": true,
+          "barGap": [
+            0
+          ],
+          "barDL": [
+            0
+          ],
+          "barDR": [
+            0
+          ],
+          "barJoinOk": true
+        }
+      },
+      "400": {
+        "beforeCur": "1",
+        "anims": [
+          {
+            "prop": "transform",
+            "slot": "0",
+            "dur": 500,
+            "ct": 400
+          },
+          {
+            "prop": "transform",
+            "slot": "1",
+            "dur": 500,
+            "ct": 400
+          }
+        ],
+        "m": {
+          "n": 2,
+          "cur": "2",
+          "vw": 1440,
+          "slots": [
+            {
+              "i": "0",
+              "on": false,
+              "side": "-1",
+              "d": "-1",
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(0.900512, 0, 0, 0.900512, -461.623, 0)",
+              "slot": {
+                "l": 60.26,
+                "t": 256,
+                "r": 456.49,
+                "b": 644,
+                "w": 396.23,
+                "h": 388.01
+              },
+              "pop": {
+                "l": 60.26,
+                "t": 256,
+                "r": 456.49,
+                "b": 644,
+                "w": 396.23,
+                "h": 388.01
+              },
+              "popRadius": [
+                4,
+                4,
+                4,
+                4
+              ],
+              "popBg": "rgb(235, 228, 212)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "0.55",
+              "inert": true,
+              "inViewportPx": 396.2254333496094
+            },
+            {
+              "i": "1",
+              "on": true,
+              "side": null,
+              "d": null,
+              "opacity": "1",
+              "visibility": "visible",
+              "pointerEvents": "auto",
+              "transform": "matrix(0.999488, 0, 0, 0.999488, 2.37726, 0)",
+              "slot": {
+                "l": 502.49,
+                "t": 198.57,
+                "r": 942.26,
+                "b": 701.43,
+                "w": 439.77,
+                "h": 502.87
+              },
+              "pop": {
+                "l": 502.49,
+                "t": 198.57,
+                "r": 942.26,
+                "b": 643.46,
+                "w": 439.77,
+                "h": 444.9
+              },
+              "popRadius": [
+                4,
+                4,
+                0,
+                0
+              ],
+              "popBg": "rgb(255, 253, 248)",
+              "popBorder": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.55)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "pfrOpacity": "1",
+              "inert": false,
+              "inViewportPx": 439.7745361328125,
+              "bar": {
+                "rect": {
+                  "l": 502.49,
+                  "t": 643.46,
+                  "r": 942.26,
+                  "b": 701.43,
+                  "w": 439.77,
+                  "h": 57.97
+                },
+                "radius": [
+                  0,
+                  0,
+                  4,
+                  4
+                ],
+                "border": {
+                  "t": "1px",
+                  "r": "1px",
+                  "b": "1px",
+                  "l": "1px",
+                  "tc": "rgba(49, 46, 46, 0.24)",
+                  "bc": "rgba(49, 46, 46, 0.55)"
+                },
+                "gapTop": 0,
+                "dLeft": 0,
+                "dRight": 0
+              }
+            }
+          ]
+        },
+        "v": {
+          "oneActive": true,
+          "activeTopOnly": true,
+          "sideAllFour": true,
+          "barOnActiveOnly": true,
+          "barRadius": [
+            [
+              0,
+              0,
+              4,
+              4
+            ]
+          ],
+          "barBottomOnly": true,
+          "barGap": [
+            0
+          ],
+          "barDL": [
+            0
+          ],
+          "barDR": [
+            0
+          ],
+          "barJoinOk": true
+        }
+      }
+    },
+    "raf": {
+      "frames": 44,
+      "firstT": 2.4,
+      "lastT": 705.8,
+      "badFrames": 0,
+      "radiusChanges": {
+        "0": [
+          {
+            "t": 2.4,
+            "v": "4,4,4,4",
+            "on": false
+          }
+        ],
+        "1": [
+          {
+            "t": 2.4,
+            "v": "4,4,0,0",
+            "on": true
+          }
+        ]
+      },
+      "maxAbsGap": 0,
+      "maxAbsEdge": 0,
+      "sample0": {
+        "t": 2.4,
+        "slots": [
+          {
+            "i": "0",
+            "on": false,
+            "r": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "bar": null,
+            "tf": "matrix(1, 0, 0, 1, 0, 0)",
+            "bg": "rgb(235, 228, 212)"
+          },
+          {
+            "i": "1",
+            "on": true,
+            "r": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "bar": {
+              "gap": 0,
+              "dl": 0,
+              "dr": 0,
+              "r": [
+                0,
+                0,
+                4,
+                4
+              ]
+            },
+            "tf": "matrix(0.9, 0, 0, 0.9, 464, 0)",
+            "bg": "rgb(255, 253, 248)"
+          }
+        ]
+      },
+      "sampleMid": {
+        "t": 355.1,
+        "slots": [
+          {
+            "i": "0",
+            "on": false,
+            "r": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "bar": null,
+            "tf": "matrix(0.900977, 0, 0, 0.900977, -459.467, 0)",
+            "bg": "rgb(235, 228, 212)"
+          },
+          {
+            "i": "1",
+            "on": true,
+            "r": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "bar": {
+              "gap": 0,
+              "dl": 0,
+              "dr": 0,
+              "r": [
+                0,
+                0,
+                4,
+                4
+              ]
+            },
+            "tf": "matrix(0.999023, 0, 0, 0.999023, 4.53324, 0)",
+            "bg": "rgb(255, 253, 248)"
+          }
+        ]
+      },
+      "sampleLast": {
+        "t": 705.8,
+        "slots": [
+          {
+            "i": "0",
+            "on": false,
+            "r": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "bar": null,
+            "tf": "matrix(0.9, 0, 0, 0.9, -464, 0)",
+            "bg": "rgb(235, 228, 212)"
+          },
+          {
+            "i": "1",
+            "on": true,
+            "r": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "bar": {
+              "gap": 0,
+              "dl": 0,
+              "dr": 0,
+              "r": [
+                0,
+                0,
+                4,
+                4
+              ]
+            },
+            "tf": "none",
+            "bg": "rgb(255, 253, 248)"
+          }
+        ]
+      }
+    },
+    "still390": {
+      "m": {
+        "n": 2,
+        "cur": "1",
+        "vw": 390,
+        "slots": [
+          {
+            "i": "0",
+            "on": true,
+            "side": null,
+            "d": null,
+            "opacity": "1",
+            "visibility": "visible",
+            "pointerEvents": "auto",
+            "transform": "none",
+            "slot": {
+              "l": 16,
+              "t": 139.38,
+              "r": 374,
+              "b": 704.63,
+              "w": 358,
+              "h": 565.25
+            },
+            "pop": {
+              "l": 16,
+              "t": 139.38,
+              "r": 374,
+              "b": 597.63,
+              "w": 358,
+              "h": 458.25
+            },
+            "popRadius": [
+              4,
+              4,
+              0,
+              0
+            ],
+            "popBg": "rgb(255, 253, 248)",
+            "popBorder": {
+              "t": "1px",
+              "r": "1px",
+              "b": "1px",
+              "l": "1px",
+              "tc": "rgba(49, 46, 46, 0.55)",
+              "bc": "rgba(49, 46, 46, 0.55)"
+            },
+            "pfrOpacity": "1",
+            "inert": false,
+            "inViewportPx": 358,
+            "bar": {
+              "rect": {
+                "l": 16,
+                "t": 597.63,
+                "r": 374,
+                "b": 704.63,
+                "w": 358,
+                "h": 107
+              },
+              "radius": [
+                0,
+                0,
+                4,
+                4
+              ],
+              "border": {
+                "t": "1px",
+                "r": "1px",
+                "b": "1px",
+                "l": "1px",
+                "tc": "rgba(49, 46, 46, 0.24)",
+                "bc": "rgba(49, 46, 46, 0.55)"
+              },
+              "gapTop": 0,
+              "dLeft": 0,
+              "dRight": 0
+            }
+          },
+          {
+            "i": "1",
+            "on": false,
+            "side": "1",
+            "d": "1",
+            "opacity": "0",
+            "visibility": "visible",
+            "pointerEvents": "none",
+            "transform": "matrix(0.9, 0, 0, 0.9, 382, 0)",
+            "slot": {
+              "l": 415.9,
+              "t": 193.96,
+              "r": 738.1,
+              "b": 650.04,
+              "w": 322.2,
+              "h": 456.07
+            },
+            "pop": {
+              "l": 415.9,
+              "t": 193.96,
+              "r": 738.1,
+              "b": 650.04,
+              "w": 322.2,
+              "h": 456.07
+            },
+            "popRadius": [
+              4,
+              4,
+              4,
+              4
+            ],
+            "popBg": "rgb(235, 228, 212)",
+            "popBorder": {
+              "t": "1px",
+              "r": "1px",
+              "b": "1px",
+              "l": "1px",
+              "tc": "rgba(49, 46, 46, 0.55)",
+              "bc": "rgba(49, 46, 46, 0.55)"
+            },
+            "pfrOpacity": "0.55",
+            "inert": true,
+            "inViewportPx": 0
+          }
+        ]
+      },
+      "v": {
+        "oneActive": true,
+        "activeTopOnly": true,
+        "sideAllFour": true,
+        "barOnActiveOnly": true,
+        "barRadius": [
+          [
+            0,
+            0,
+            4,
+            4
+          ]
+        ],
+        "barBottomOnly": true,
+        "barGap": [
+          0
+        ],
+        "barDL": [
+          0
+        ],
+        "barDR": [
+          0
+        ],
+        "barJoinOk": true
+      },
+      "sideHidden": [
+        {
+          "i": "1",
+          "opacity": "0",
+          "pointerEvents": "none",
+          "inViewportPx": 0,
+          "radius": [
+            4,
+            4,
+            4,
+            4
+          ]
+        }
+      ]
+    }
+  },
+  "shots": [
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_1440.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_1440_side_corner_x3.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_1440_join_x3.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_turn_0.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_turn_150.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_turn_400.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/popup_390.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/footer_index_1440.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/footer_index_1440_boxes.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/footer_index_390.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/footer_index_390_boxes.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/join_320.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/join_390.png",
+    "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r4/shots/p2set_empty_320.png"
+  ],
+  "caption": {
+    "390": {
+      "vw": 390,
+      "caption": "가나다 순입니다.",
+      "qBox": {
+        "t": 243.31,
+        "b": 271.31,
+        "l": 20,
+        "r": 370,
+        "h": 28
+      },
+      "qGlyph": {
+        "t": 247.31,
+        "b": 266.31,
+        "l": 20,
+        "r": 123.16,
+        "h": 19
+      },
+      "qMarginTop": "0px",
+      "qMarginBottom": "16px",
+      "qLineHeight": "28px",
+      "qFontSize": "16px",
+      "tilesTop": 287.31,
+      "tilesBorderTop": "1px solid",
+      "tilesMarginTop": "0px",
+      "topDisplay": "block",
+      "topPaddingBottom": "0px",
+      "topBottom": 271.31,
+      "searchBox": {
+        "t": 195.31,
+        "b": 243.31,
+        "l": 20,
+        "r": 370,
+        "h": 48
+      },
+      "inputBox": {
+        "t": 195.31,
+        "b": 243.31,
+        "l": 36,
+        "r": 322,
+        "h": 48
+      },
+      "labelBox": {
+        "t": 171.31,
+        "b": 190.31,
+        "l": 20,
+        "r": 78.38,
+        "h": 19
+      },
+      "q2nBox": {
+        "t": 243.31,
+        "b": 244.31,
+        "l": 20,
+        "r": 21,
+        "h": 1
+      },
+      "gapCaptionBoxToTiles": 16,
+      "gapCaptionGlyphToTiles": 21,
+      "gapSearchToCaptionBox": 0,
+      "gapSearchToCaptionGlyph": 4,
+      "captionBelowSearch": true,
+      "pass16": true
+    },
+    "1024": {
+      "vw": 1024,
+      "caption": "가나다 순입니다.",
+      "qBox": {
+        "t": 227.67,
+        "b": 255.67,
+        "l": 54.95,
+        "r": 630.95,
+        "h": 28
+      },
+      "qGlyph": {
+        "t": 231.67,
+        "b": 250.67,
+        "l": 54.95,
+        "r": 158.11,
+        "h": 19
+      },
+      "qMarginTop": "0px",
+      "qMarginBottom": "16px",
+      "qLineHeight": "28px",
+      "qFontSize": "16px",
+      "tilesTop": 271.67,
+      "tilesBorderTop": "1px solid",
+      "tilesMarginTop": "0px",
+      "topDisplay": "block",
+      "topPaddingBottom": "0px",
+      "topBottom": 255.67,
+      "searchBox": {
+        "t": 179.67,
+        "b": 227.67,
+        "l": 54.95,
+        "r": 502.95,
+        "h": 48
+      },
+      "inputBox": {
+        "t": 179.67,
+        "b": 227.67,
+        "l": 70.95,
+        "r": 454.95,
+        "h": 48
+      },
+      "labelBox": {
+        "t": 155.67,
+        "b": 174.67,
+        "l": 54.95,
+        "r": 113.33,
+        "h": 19
+      },
+      "q2nBox": {
+        "t": 227.67,
+        "b": 228.67,
+        "l": 54.95,
+        "r": 55.95,
+        "h": 1
+      },
+      "gapCaptionBoxToTiles": 16,
+      "gapCaptionGlyphToTiles": 21,
+      "gapSearchToCaptionBox": 0,
+      "gapSearchToCaptionGlyph": 4,
+      "captionBelowSearch": true,
+      "pass16": true
+    },
+    "1440": {
+      "vw": 1440,
+      "caption": "가나다 순입니다.",
+      "qBox": {
+        "t": 232.39,
+        "b": 260.39,
+        "l": 216,
+        "r": 792,
+        "h": 28
+      },
+      "qGlyph": {
+        "t": 236.39,
+        "b": 255.39,
+        "l": 216,
+        "r": 319.16,
+        "h": 19
+      },
+      "qMarginTop": "0px",
+      "qMarginBottom": "16px",
+      "qLineHeight": "28px",
+      "qFontSize": "16px",
+      "tilesTop": 276.39,
+      "tilesBorderTop": "1px solid",
+      "tilesMarginTop": "0px",
+      "topDisplay": "block",
+      "topPaddingBottom": "0px",
+      "topBottom": 260.39,
+      "searchBox": {
+        "t": 184.39,
+        "b": 232.39,
+        "l": 216,
+        "r": 664,
+        "h": 48
+      },
+      "inputBox": {
+        "t": 184.39,
+        "b": 232.39,
+        "l": 232,
+        "r": 616,
+        "h": 48
+      },
+      "labelBox": {
+        "t": 160.39,
+        "b": 179.39,
+        "l": 216,
+        "r": 274.38,
+        "h": 19
+      },
+      "q2nBox": {
+        "t": 232.39,
+        "b": 233.39,
+        "l": 216,
+        "r": 217,
+        "h": 1
+      },
+      "gapCaptionBoxToTiles": 16,
+      "gapCaptionGlyphToTiles": 21,
+      "gapSearchToCaptionBox": 0,
+      "gapSearchToCaptionGlyph": 4,
+      "captionBelowSearch": true,
+      "pass16": true
+    }
+  },
+  "footer": {
+    "index.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 r2-home",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 216,
+          "boxT": 4050.45,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 280,
+          "boxT": 4050.45,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 4050.45,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 413.72,
+          "boxT": 4050.45,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 477.72,
+          "boxT": 4050.45,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 541.72,
+          "boxT": 4050.45,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 4050.45,
+          "n": 6,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 623.16,
+          "rightSlack": 600.84,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "index.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 r2-home",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 20,
+          "boxT": 5619.5,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 84,
+          "boxT": 5619.5,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 5619.5,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 217.72,
+          "boxT": 5619.5,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 281.72,
+          "boxT": 5619.5,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 20,
+          "boxT": 5667.5,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 5619.5,
+          "n": 5,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 329.72,
+          "rightSlack": 40.28,
+          "height": 48
+        },
+        {
+          "top": 5667.5,
+          "n": 1,
+          "texts": [
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 101.44,
+          "rightSlack": 268.56,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "faq.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 216,
+          "boxT": 7223.16,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 280,
+          "boxT": 7223.16,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 7223.16,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 413.72,
+          "boxT": 7223.16,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 477.72,
+          "boxT": 7223.16,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 541.72,
+          "boxT": 7223.16,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 7223.16,
+          "n": 6,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 623.16,
+          "rightSlack": 600.84,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "faq.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 20,
+          "boxT": 6606.88,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 84,
+          "boxT": 6606.88,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 6606.88,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 217.72,
+          "boxT": 6606.88,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 281.72,
+          "boxT": 6606.88,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 20,
+          "boxT": 6654.88,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 6606.88,
+          "n": 5,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 329.72,
+          "rightSlack": 40.28,
+          "height": 48
+        },
+        {
+          "top": 6654.88,
+          "n": 1,
+          "texts": [
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 101.44,
+          "rightSlack": 268.56,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "support.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 216,
+          "boxT": 3092.23,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 280,
+          "boxT": 3092.23,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 3092.23,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 413.72,
+          "boxT": 3092.23,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 477.72,
+          "boxT": 3092.23,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 541.72,
+          "boxT": 3092.23,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 3092.23,
+          "n": 6,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 623.16,
+          "rightSlack": 600.84,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "support.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 20,
+          "boxT": 3869.94,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 84,
+          "boxT": 3869.94,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 3869.94,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 217.72,
+          "boxT": 3869.94,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 281.72,
+          "boxT": 3869.94,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 20,
+          "boxT": 3917.94,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 3869.94,
+          "n": 5,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 329.72,
+          "rightSlack": 40.28,
+          "height": 48
+        },
+        {
+          "top": 3917.94,
+          "n": 1,
+          "texts": [
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 101.44,
+          "rightSlack": 268.56,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "terms.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 216,
+          "boxT": 3850.98,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 280,
+          "boxT": 3850.98,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 3850.98,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 413.72,
+          "boxT": 3850.98,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 477.72,
+          "boxT": 3850.98,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 541.72,
+          "boxT": 3850.98,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 3850.98,
+          "n": 6,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 623.16,
+          "rightSlack": 600.84,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "terms.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 20,
+          "boxT": 5045.17,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 84,
+          "boxT": 5045.17,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 5045.17,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 217.72,
+          "boxT": 5045.17,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 281.72,
+          "boxT": 5045.17,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 20,
+          "boxT": 5093.17,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 5045.17,
+          "n": 5,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 329.72,
+          "rightSlack": 40.28,
+          "height": 48
+        },
+        {
+          "top": 5093.17,
+          "n": 1,
+          "texts": [
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 101.44,
+          "rightSlack": 268.56,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "programs/guidebook.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 r2-product",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 216,
+          "boxT": 9801.33,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 280,
+          "boxT": 9801.33,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 9801.33,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 413.72,
+          "boxT": 9801.33,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 477.72,
+          "boxT": 9801.33,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 541.72,
+          "boxT": 9801.33,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 9801.33,
+          "n": 6,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 623.16,
+          "rightSlack": 600.84,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "programs/guidebook.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 r2-product",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "고객센터",
+          "boxL": 20,
+          "boxT": 9584.11,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "사업자 정보",
+          "boxL": 84,
+          "boxT": 9584.11,
+          "boxW": 53.72,
+          "boxH": 48,
+          "textW": 53.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 9584.11,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 13.81,
+          "rightBlank": 13.83,
+          "diff": -0.02,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 217.72,
+          "boxT": 9584.11,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 2.22,
+          "rightBlank": 2.23,
+          "diff": -0.01,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 281.72,
+          "boxT": 9584.11,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 3.64,
+          "rightBlank": 3.64,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 20,
+          "boxT": 9632.11,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "center",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 9584.11,
+          "n": 5,
+          "texts": [
+            "고객센터",
+            "사업자 정보",
+            "결제",
+            "환불 규정",
+            "이용약관"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 329.72,
+          "rightSlack": 40.28,
+          "height": 48
+        },
+        {
+          "top": 9632.11,
+          "n": 1,
+          "texts": [
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 101.44,
+          "rightSlack": 268.56,
+          "height": 48
+        }
+      ],
+      "allCentered": true,
+      "allH48": true,
+      "maxAbsDiff": 0.02
+    },
+    "join.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "결제",
+          "boxL": 216,
+          "boxT": 2459.47,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 280,
+          "boxT": 2459.47,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 4.45,
+          "diff": -4.45,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 344,
+          "boxT": 2459.47,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 7.28,
+          "diff": -7.28,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 408,
+          "boxT": 2459.47,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 2459.47,
+          "n": 4,
+          "texts": [
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 489.44,
+          "rightSlack": 734.56,
+          "height": 48
+        }
+      ],
+      "allCentered": false,
+      "allH48": true,
+      "maxAbsDiff": 27.64
+    },
+    "join.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 16px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "결제",
+          "boxL": 20,
+          "boxT": 2812.36,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 84,
+          "boxT": 2812.36,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 4.45,
+          "diff": -4.45,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 148,
+          "boxT": 2812.36,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 7.28,
+          "diff": -7.28,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 212,
+          "boxT": 2812.36,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 2812.36,
+          "n": 4,
+          "texts": [
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 293.44,
+          "rightSlack": 76.56,
+          "height": 48
+        }
+      ],
+      "allCentered": false,
+      "allH48": true,
+      "maxAbsDiff": 27.64
+    },
+    "login.html@1440": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 ft-compact",
+      "legalPresent": true,
+      "nav": {
+        "l": 216,
+        "r": 1224,
+        "w": 1008,
+        "justify": "normal",
+        "gap": "0px / 8px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "결제",
+          "boxL": 216,
+          "boxT": 1297.73,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 272,
+          "boxT": 1297.73,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 4.45,
+          "diff": -4.45,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 328,
+          "boxT": 1297.73,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 7.28,
+          "diff": -7.28,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 384,
+          "boxT": 1297.73,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 1297.73,
+          "n": 4,
+          "texts": [
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 216,
+          "leftFromNav": 0,
+          "lastRight": 465.44,
+          "rightSlack": 758.56,
+          "height": 48
+        }
+      ],
+      "allCentered": false,
+      "allH48": true,
+      "maxAbsDiff": 27.64
+    },
+    "login.html@390": {
+      "footerPresent": true,
+      "footerClass": "ft",
+      "bodyClass": "v2 ft-compact",
+      "legalPresent": true,
+      "nav": {
+        "l": 20,
+        "r": 370,
+        "w": 350,
+        "justify": "normal",
+        "gap": "0px / 8px",
+        "wrap": "wrap"
+      },
+      "links": [
+        {
+          "text": "결제",
+          "boxL": 20,
+          "boxT": 1188.08,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "환불 규정",
+          "boxL": 76,
+          "boxT": 1188.08,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 43.55,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 4.45,
+          "diff": -4.45,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "이용약관",
+          "boxL": 132,
+          "boxT": 1188.08,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 40.72,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 7.28,
+          "diff": -7.28,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        {
+          "text": "개인정보처리방침",
+          "boxL": 188,
+          "boxT": 1188.08,
+          "boxW": 81.44,
+          "boxH": 48,
+          "textW": 81.44,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 0,
+          "diff": 0,
+          "centered": true,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        }
+      ],
+      "rows": [
+        {
+          "top": 1188.08,
+          "n": 4,
+          "texts": [
+            "결제",
+            "환불 규정",
+            "이용약관",
+            "개인정보처리방침"
+          ],
+          "firstLeft": 20,
+          "leftFromNav": 0,
+          "lastRight": 269.44,
+          "rightSlack": 100.56,
+          "height": 48
+        }
+      ],
+      "allCentered": false,
+      "allH48": true,
+      "maxAbsDiff": 27.64
+    },
+    "baseline_87106d8": {
+      "390": {
+        "justify": "normal",
+        "pay": {
+          "text": "결제",
+          "boxL": 153.72,
+          "boxT": 5012.06,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        "maxAbsDiff": 27.64,
+        "links": [
+          {
+            "text": "고객센터",
+            "boxW": 48,
+            "textW": 40.72,
+            "leftBlank": 0,
+            "rightBlank": 7.28
+          },
+          {
+            "text": "사업자 정보",
+            "boxW": 53.72,
+            "textW": 53.72,
+            "leftBlank": 0,
+            "rightBlank": 0
+          },
+          {
+            "text": "결제",
+            "boxW": 48,
+            "textW": 20.36,
+            "leftBlank": 0,
+            "rightBlank": 27.64
+          },
+          {
+            "text": "환불 규정",
+            "boxW": 48,
+            "textW": 43.55,
+            "leftBlank": 0,
+            "rightBlank": 4.45
+          },
+          {
+            "text": "이용약관",
+            "boxW": 48,
+            "textW": 40.72,
+            "leftBlank": 0,
+            "rightBlank": 7.28
+          },
+          {
+            "text": "개인정보처리방침",
+            "boxW": 81.44,
+            "textW": 81.44,
+            "leftBlank": 0,
+            "rightBlank": 0
+          }
+        ]
+      },
+      "1440": {
+        "justify": "normal",
+        "pay": {
+          "text": "결제",
+          "boxL": 349.72,
+          "boxT": 3580.77,
+          "boxW": 48,
+          "boxH": 48,
+          "textW": 20.36,
+          "textLines": 1,
+          "leftBlank": 0,
+          "rightBlank": 27.64,
+          "diff": -27.64,
+          "centered": false,
+          "h48": true,
+          "w48": true,
+          "display": "flex",
+          "justify": "normal",
+          "minW": "48px",
+          "padL": "0px",
+          "padR": "0px"
+        },
+        "maxAbsDiff": 27.64,
+        "links": [
+          {
+            "text": "고객센터",
+            "boxW": 48,
+            "textW": 40.72,
+            "leftBlank": 0,
+            "rightBlank": 7.28
+          },
+          {
+            "text": "사업자 정보",
+            "boxW": 53.72,
+            "textW": 53.72,
+            "leftBlank": 0,
+            "rightBlank": 0
+          },
+          {
+            "text": "결제",
+            "boxW": 48,
+            "textW": 20.36,
+            "leftBlank": 0,
+            "rightBlank": 27.64
+          },
+          {
+            "text": "환불 규정",
+            "boxW": 48,
+            "textW": 43.55,
+            "leftBlank": 0,
+            "rightBlank": 4.45
+          },
+          {
+            "text": "이용약관",
+            "boxW": 48,
+            "textW": 40.72,
+            "leftBlank": 0,
+            "rightBlank": 7.28
+          },
+          {
+            "text": "개인정보처리방침",
+            "boxW": 81.44,
+            "textW": 81.44,
+            "leftBlank": 0,
+            "rightBlank": 0
+          }
+        ]
+      }
+    }
+  },
+  "join": {
+    "320": {
+      "rows": [
+        {
+          "id": "ck-all",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 75,
+          "rowTop": 730.58,
+          "labelTop": 740.58,
+          "firstLine": {
+            "t": 750.58,
+            "b": 765.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 749.58,
+            "b": 771.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-terms",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 805.58,
+          "labelTop": 814.58,
+          "firstLine": {
+            "t": 824.58,
+            "b": 839.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 823.58,
+            "b": 845.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 814.58,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 11,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-priv",
+          "spanLines": 3,
+          "smallLines": 2,
+          "smallDisplay": "block",
+          "rowH": 93.5,
+          "rowTop": 879.58,
+          "labelTop": 888.58,
+          "firstLine": {
+            "t": 898.58,
+            "b": 913.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 897.58,
+            "b": 919.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 888.58,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 20.75,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-age",
+          "spanLines": 3,
+          "smallLines": 2,
+          "smallDisplay": "block",
+          "rowH": 93.5,
+          "rowTop": 973.08,
+          "labelTop": 982.08,
+          "firstLine": {
+            "t": 992.08,
+            "b": 1007.08
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 991.08,
+            "b": 1013.08
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-mkt",
+          "spanLines": 6,
+          "smallLines": 5,
+          "smallDisplay": "block",
+          "rowH": 153,
+          "rowTop": 1066.58,
+          "labelTop": 1075.58,
+          "firstLine": {
+            "t": 1085.58,
+            "b": 1100.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 1084.58,
+            "b": 1106.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 1075.58,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 50,
+            "improvedOrSame": true
+          }
+        }
+      ],
+      "clicks": [
+        {
+          "id": "ck-all",
+          "ch": "체",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-terms",
+          "ch": "관",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-priv",
+          "ch": "과",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-age",
+          "ch": "세",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-mkt",
+          "ch": "보",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        }
+      ],
+      "viewClicks": [
+        {
+          "row": "ck-terms",
+          "changed": false
+        },
+        {
+          "row": "ck-priv",
+          "changed": false
+        },
+        {
+          "row": "ck-mkt",
+          "changed": false
+        }
+      ],
+      "docOverflow": false
+    },
+    "390": {
+      "rows": [
+        {
+          "id": "ck-all",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 75,
+          "rowTop": 730.58,
+          "labelTop": 740.58,
+          "firstLine": {
+            "t": 750.58,
+            "b": 765.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 749.58,
+            "b": 771.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-terms",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 805.58,
+          "labelTop": 814.58,
+          "firstLine": {
+            "t": 824.58,
+            "b": 839.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 823.58,
+            "b": 845.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 814.58,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 11,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-priv",
+          "spanLines": 3,
+          "smallLines": 2,
+          "smallDisplay": "block",
+          "rowH": 93.5,
+          "rowTop": 879.58,
+          "labelTop": 888.58,
+          "firstLine": {
+            "t": 898.58,
+            "b": 913.58
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 897.58,
+            "b": 919.58
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 888.58,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 20.75,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-age",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 973.08,
+          "labelTop": 982.08,
+          "firstLine": {
+            "t": 992.08,
+            "b": 1007.08
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 991.08,
+            "b": 1013.08
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-mkt",
+          "spanLines": 4,
+          "smallLines": 3,
+          "smallDisplay": "block",
+          "rowH": 114,
+          "rowTop": 1047.08,
+          "labelTop": 1056.08,
+          "firstLine": {
+            "t": 1066.08,
+            "b": 1081.08
+          },
+          "cb": {
+            "l": 20,
+            "r": 42,
+            "t": 1065.08,
+            "b": 1087.08
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 1056.08,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 30.5,
+            "improvedOrSame": true
+          }
+        }
+      ],
+      "clicks": [
+        {
+          "id": "ck-all",
+          "ch": "체",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-terms",
+          "ch": "관",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-priv",
+          "ch": "과",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-age",
+          "ch": "세",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-mkt",
+          "ch": "보",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        }
+      ],
+      "viewClicks": [
+        {
+          "row": "ck-terms",
+          "changed": false
+        },
+        {
+          "row": "ck-priv",
+          "changed": false
+        },
+        {
+          "row": "ck-mkt",
+          "changed": false
+        }
+      ],
+      "docOverflow": false
+    },
+    "1440": {
+      "rows": [
+        {
+          "id": "ck-all",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 75,
+          "rowTop": 802.48,
+          "labelTop": 812.48,
+          "firstLine": {
+            "t": 822.48,
+            "b": 837.48
+          },
+          "cb": {
+            "l": 400,
+            "r": 422,
+            "t": 821.48,
+            "b": 843.48
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-terms",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 877.48,
+          "labelTop": 886.48,
+          "firstLine": {
+            "t": 896.48,
+            "b": 911.48
+          },
+          "cb": {
+            "l": 400,
+            "r": 422,
+            "t": 895.48,
+            "b": 917.48
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 886.48,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 11,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-priv",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 951.48,
+          "labelTop": 960.48,
+          "firstLine": {
+            "t": 970.48,
+            "b": 985.48
+          },
+          "cb": {
+            "l": 400,
+            "r": 422,
+            "t": 969.48,
+            "b": 991.48
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 960.48,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 11,
+            "improvedOrSame": true
+          }
+        },
+        {
+          "id": "ck-age",
+          "spanLines": 2,
+          "smallLines": 1,
+          "smallDisplay": "block",
+          "rowH": 74,
+          "rowTop": 1025.48,
+          "labelTop": 1034.48,
+          "firstLine": {
+            "t": 1044.48,
+            "b": 1059.48
+          },
+          "cb": {
+            "l": 400,
+            "r": 422,
+            "t": 1043.48,
+            "b": 1065.48
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false
+        },
+        {
+          "id": "ck-mkt",
+          "spanLines": 3,
+          "smallLines": 2,
+          "smallDisplay": "block",
+          "rowH": 94.5,
+          "rowTop": 1099.48,
+          "labelTop": 1108.48,
+          "firstLine": {
+            "t": 1118.48,
+            "b": 1133.48
+          },
+          "cb": {
+            "l": 400,
+            "r": 422,
+            "t": 1117.48,
+            "b": 1139.48
+          },
+          "sameLine": true,
+          "labelWrap": "nowrap",
+          "rowOverflowX": false,
+          "view": {
+            "w": 48,
+            "h": 48,
+            "t": 1108.48,
+            "alignSelf": "flex-start",
+            "ge48": true,
+            "dCenter": 6.5,
+            "viewTopMinusRowContentTop": 1,
+            "rightOfSpan": true,
+            "sameRow": true,
+            "r3dCenter": 20.75,
+            "improvedOrSame": true
+          }
+        }
+      ],
+      "clicks": [
+        {
+          "id": "ck-all",
+          "ch": "체",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-terms",
+          "ch": "관",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-priv",
+          "ch": "과",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-age",
+          "ch": "세",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        },
+        {
+          "id": "ck-mkt",
+          "ch": "보",
+          "hitInSpan": true,
+          "on": true,
+          "off": true
+        }
+      ],
+      "viewClicks": [
+        {
+          "row": "ck-terms",
+          "changed": false
+        },
+        {
+          "row": "ck-priv",
+          "changed": false
+        },
+        {
+          "row": "ck-mkt",
+          "changed": false
+        }
+      ],
+      "docOverflow": false
+    }
+  },
+  "empty": {
+    "320": {
+      "present": true,
+      "vw": 320,
+      "pW": 280,
+      "tilesW": 280,
+      "fullWidth": true,
+      "gridColumn": "1 / -1",
+      "pLines": [
+        "일치하는 대학이 없습니다.",
+        "가이드북 전체 목록에서 확인"
+      ],
+      "pWordBreak": "keep-all",
+      "links": [
+        {
+          "text": "가이드북 전체 목록에서 확인",
+          "w": 141.22,
+          "h": 48,
+          "l": 89.39,
+          "r": 230.61,
+          "h48": true,
+          "lines": [
+            "가이드북 전체 목록에서 확인"
+          ],
+          "display": "inline-flex",
+          "wordBreak": "keep-all",
+          "whiteSpace": "normal"
+        }
+      ],
+      "overflowX": false
+    },
+    "390": {
+      "present": true,
+      "vw": 390,
+      "pW": 350,
+      "tilesW": 350,
+      "fullWidth": true,
+      "gridColumn": "1 / -1",
+      "pLines": [
+        "일치하는 대학이 없습니다.",
+        "가이드북 전체 목록에서 확인"
+      ],
+      "pWordBreak": "keep-all",
+      "links": [
+        {
+          "text": "가이드북 전체 목록에서 확인",
+          "w": 141.22,
+          "h": 48,
+          "l": 124.39,
+          "r": 265.61,
+          "h48": true,
+          "lines": [
+            "가이드북 전체 목록에서 확인"
+          ],
+          "display": "inline-flex",
+          "wordBreak": "keep-all",
+          "whiteSpace": "normal"
+        }
+      ],
+      "overflowX": false
+    },
+    "1024": {
+      "present": true,
+      "vw": 1024,
+      "pW": 914.09,
+      "tilesW": 914.09,
+      "fullWidth": true,
+      "gridColumn": "1 / -1",
+      "pLines": [
+        "일치하는 대학이 없습니다. 가이드북 전체 목록에서 확인"
+      ],
+      "pWordBreak": "keep-all",
+      "links": [
+        {
+          "text": "가이드북 전체 목록에서 확인",
+          "w": 141.22,
+          "h": 48,
+          "l": 508.3,
+          "r": 649.52,
+          "h48": true,
+          "lines": [
+            "가이드북 전체 목록에서 확인"
+          ],
+          "display": "inline-flex",
+          "wordBreak": "keep-all",
+          "whiteSpace": "normal"
+        }
+      ],
+      "overflowX": false
+    },
+    "1440": {
+      "present": true,
+      "vw": 1440,
+      "pW": 1008,
+      "tilesW": 1008,
+      "fullWidth": true,
+      "gridColumn": "1 / -1",
+      "pLines": [
+        "일치하는 대학이 없습니다. 가이드북 전체 목록에서 확인"
+      ],
+      "pWordBreak": "keep-all",
+      "links": [
+        {
+          "text": "가이드북 전체 목록에서 확인",
+          "w": 141.22,
+          "h": 48,
+          "l": 716.3,
+          "r": 857.52,
+          "h48": true,
+          "lines": [
+            "가이드북 전체 목록에서 확인"
+          ],
+          "display": "inline-flex",
+          "wordBreak": "keep-all",
+          "whiteSpace": "normal"
+        }
+      ],
+      "overflowX": false
+    }
+  }
+}

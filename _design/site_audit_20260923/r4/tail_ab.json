@@ -1,0 +1,22 @@
+{
+ "pre": {
+  "unstuck": [
+   "header.hd:sticky",
+   "div.setnav:sticky",
+   "nav.fix:fixed"
+  ],
+  "scroll16384": 16384,
+  "scroll16905": 16905,
+  "docH": 17749
+ },
+ "post": {
+  "unstuck": [
+   "header.hd:sticky",
+   "div.setnav:sticky",
+   "nav.fix:fixed"
+  ],
+  "scroll16384": 16384,
+  "scroll16905": 16905,
+  "docH": 17749
+ }
+}
