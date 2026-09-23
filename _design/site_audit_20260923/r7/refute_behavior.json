@@ -1,0 +1,3786 @@
+{
+  "meta": {
+    "head": "93ff89d",
+    "at": "2026-09-23T08:17:20.939Z",
+    "served": {
+      "assets/app.js": {
+        "served": "e57e42611f9e87aa",
+        "head": "e57e42611f9e87aa",
+        "old96be167": "332ffe29281a179d",
+        "old94f577b": "332ffe29281a179d"
+      },
+      "assets/base.css": {
+        "served": "97e550d7da150959",
+        "head": "97e550d7da150959",
+        "old96be167": "3aa349c81ec7cc74",
+        "old94f577b": "3aa349c81ec7cc74"
+      }
+    }
+  },
+  "A": {
+    "out": {
+      "head_1440_escape": {
+        "after": "div.pdim",
+        "isRoot": true
+      },
+      "head_1440_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "fv": true,
+        "outline": "solid 2px",
+        "pause": "재생"
+      },
+      "head_390_escape": {
+        "after": "div.pdim",
+        "isRoot": true
+      },
+      "head_390_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "fv": true,
+        "outline": "solid 2px",
+        "pause": "재생"
+      },
+      "head_390_load_tab": {
+        "load": {
+          "ae": "div.pdim",
+          "isRoot": true,
+          "outline": "none 3px",
+          "shadow": "none",
+          "fv": true,
+          "pause": "정지"
+        },
+        "axLoad": [
+          {
+            "role": "dialog",
+            "name": "안내 2건",
+            "props": [
+              "focused=true",
+              "modal=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "fv": true,
+          "pause": "재생"
+        },
+        "axTab": [
+          {
+            "role": "link",
+            "name": "의뢰하기",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      "head_1440_load_tab": {
+        "load": {
+          "ae": "div.pdim",
+          "isRoot": true,
+          "outline": "none 3px",
+          "shadow": "none",
+          "fv": true,
+          "pause": "정지"
+        },
+        "axLoad": [
+          {
+            "role": "dialog",
+            "name": "안내 2건",
+            "props": [
+              "focused=true",
+              "modal=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "fv": true,
+          "pause": "재생"
+        },
+        "axTab": [
+          {
+            "role": "link",
+            "name": "의뢰하기",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      "head_1440_blurfocus": {
+        "hasFocus": [
+          true,
+          false,
+          true
+        ],
+        "ae0": "div.pdim",
+        "aeMid": "div.pdim",
+        "ae2": "div.pdim",
+        "isRoot2": true,
+        "pause0": "정지",
+        "pause2": "정지",
+        "fev": [
+          {
+            "t": 2129.6,
+            "ty": "blur",
+            "tg": "div.pdim"
+          },
+          {
+            "t": 2129.7,
+            "ty": "blur",
+            "tg": "window"
+          },
+          {
+            "t": 2935.8,
+            "ty": "focus",
+            "tg": "window"
+          },
+          {
+            "t": 2936,
+            "ty": "focus",
+            "tg": "div.pdim"
+          }
+        ]
+      },
+      "old_1440_escape": {
+        "after": "h2",
+        "isRoot": false
+      },
+      "old_1440_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "fv": true,
+        "outline": "solid 2px",
+        "pause": "재생"
+      },
+      "old_1440_load_tab": {
+        "load": {
+          "ae": "h2",
+          "isRoot": false,
+          "outline": "none 3px",
+          "shadow": "none",
+          "fv": true,
+          "pause": "정지"
+        },
+        "axLoad": [
+          {
+            "role": "heading",
+            "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "fv": true,
+          "pause": "재생"
+        },
+        "axTab": [
+          {
+            "role": "link",
+            "name": "의뢰하기",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      "head_390_blurfocus": {
+        "hasFocus": [
+          true,
+          false,
+          true
+        ],
+        "ae0": "div.pdim",
+        "aeMid": "div.pdim",
+        "ae2": "div.pdim",
+        "isRoot2": true,
+        "pause0": "정지",
+        "pause2": "정지",
+        "fev": [
+          {
+            "t": 2374.2,
+            "ty": "blur",
+            "tg": "div.pdim"
+          },
+          {
+            "t": 2374.3,
+            "ty": "blur",
+            "tg": "window"
+          },
+          {
+            "t": 2825.8,
+            "ty": "focus",
+            "tg": "window"
+          },
+          {
+            "t": 2825.9,
+            "ty": "focus",
+            "tg": "div.pdim"
+          }
+        ]
+      },
+      "old_1440_blurfocus": {
+        "hasFocus": [
+          true,
+          false,
+          true
+        ],
+        "ae0": "h2",
+        "aeMid": "h2",
+        "ae2": "h2",
+        "isRoot2": false,
+        "pause0": "정지",
+        "pause2": "재생",
+        "fev": [
+          {
+            "t": 2261.9,
+            "ty": "blur",
+            "tg": "h2"
+          },
+          {
+            "t": 2261.9,
+            "ty": "blur",
+            "tg": "window"
+          },
+          {
+            "t": 2819.3,
+            "ty": "focus",
+            "tg": "window"
+          },
+          {
+            "t": 2819.5,
+            "ty": "focus",
+            "tg": "h2"
+          }
+        ]
+      },
+      "old_390_load_tab": {
+        "load": {
+          "ae": "h2",
+          "isRoot": false,
+          "outline": "none 3px",
+          "shadow": "none",
+          "fv": true,
+          "pause": "정지"
+        },
+        "axLoad": [
+          {
+            "role": "heading",
+            "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "afterTab": {
+          "ae": "a.btn",
+          "text": "의뢰하기 →",
+          "inActive": true,
+          "outline": "solid 2px",
+          "fv": true,
+          "pause": "재생"
+        },
+        "axTab": [
+          {
+            "role": "link",
+            "name": "의뢰하기",
+            "props": [
+              "focused=true"
+            ]
+          }
+        ],
+        "errors": []
+      },
+      "old_390_escape": {
+        "after": "h2",
+        "isRoot": false
+      },
+      "old_390_shift": {
+        "ae": "button.pclose",
+        "inBar": true,
+        "fv": true,
+        "outline": "solid 2px",
+        "pause": "재생"
+      },
+      "head_1440_autoTab": {
+        "turnMs": 6284,
+        "afterTurn": {
+          "cur": 2,
+          "ae": "div.pdim"
+        },
+        "afterTab": {
+          "ae": "a.tlink",
+          "text": "오픈 안내 보기",
+          "inActive": true,
+          "pause": "재생"
+        },
+        "expectFirst": "a.tlink 오픈 안내 보기"
+      },
+      "old_390_blurfocus": {
+        "hasFocus": [
+          true,
+          false,
+          true
+        ],
+        "ae0": "h2",
+        "aeMid": "h2",
+        "ae2": "h2",
+        "isRoot2": false,
+        "pause0": "정지",
+        "pause2": "재생",
+        "fev": [
+          {
+            "t": 2036.7,
+            "ty": "blur",
+            "tg": "h2"
+          },
+          {
+            "t": 2036.7,
+            "ty": "blur",
+            "tg": "window"
+          },
+          {
+            "t": 2622.7,
+            "ty": "focus",
+            "tg": "window"
+          },
+          {
+            "t": 2622.8,
+            "ty": "focus",
+            "tg": "h2"
+          }
+        ]
+      },
+      "head_390_autoTab": {
+        "turnMs": 6300,
+        "afterTurn": {
+          "cur": 2,
+          "ae": "div.pdim"
+        },
+        "afterTab": {
+          "ae": "a.tlink",
+          "text": "오픈 안내 보기",
+          "inActive": true,
+          "pause": "재생"
+        },
+        "expectFirst": "a.tlink 오픈 안내 보기"
+      },
+      "head_n3notice": {
+        "cur": 3,
+        "afterClick": {
+          "ae": "div.pdim",
+          "isRoot": true,
+          "pause": "재생"
+        },
+        "tab": {
+          "ae": "input",
+          "inBar": true
+        },
+        "shiftTab": {
+          "ae": "button.pclose"
+        }
+      },
+      "old_n3notice": {
+        "cur": 3,
+        "afterClick": {
+          "ae": "div.pdim",
+          "isRoot": true,
+          "pause": "재생"
+        },
+        "tab": {
+          "ae": "input",
+          "inBar": true
+        },
+        "shiftTab": {
+          "ae": "button.pclose"
+        }
+      },
+      "old_1440_autoTab": {
+        "turnMs": 6259,
+        "afterTurn": {
+          "cur": 2,
+          "ae": "h2"
+        },
+        "afterTab": {
+          "ae": "a.tlink",
+          "text": "오픈 안내 보기",
+          "inActive": true,
+          "pause": "재생"
+        },
+        "expectFirst": "a.tlink 오픈 안내 보기"
+      },
+      "old_390_autoTab": {
+        "turnMs": 6087,
+        "afterTurn": {
+          "cur": 2,
+          "ae": "h2"
+        },
+        "afterTab": {
+          "ae": "a.tlink",
+          "text": "오픈 안내 보기",
+          "inActive": true,
+          "pause": "재생"
+        },
+        "expectFirst": "a.tlink 오픈 안내 보기"
+      }
+    },
+    "v": {
+      "firstFocus": {
+        "head_1440": "div.pdim outline=none 3px shadow=none fv=true ax=[{\"role\":\"dialog\",\"name\":\"안내 2건\",\"props\":[\"focused=true\",\"modal=true\"]}]",
+        "head_390": "div.pdim outline=none 3px shadow=none fv=true ax=[{\"role\":\"dialog\",\"name\":\"안내 2건\",\"props\":[\"focused=true\",\"modal=true\"]}]",
+        "old_1440": "h2 outline=none 3px shadow=none fv=true ax=[{\"role\":\"heading\",\"name\":\"학교별 면접 질문지 제작 의뢰를 받습니다.\",\"props\":[\"focused=true\"]}]",
+        "old_390": "h2 outline=none 3px shadow=none fv=true ax=[{\"role\":\"heading\",\"name\":\"학교별 면접 질문지 제작 의뢰를 받습니다.\",\"props\":[\"focused=true\"]}]"
+      },
+      "firstTab": {
+        "head_1440": "a.btn \"의뢰하기 →\" inActive=true fv=true pause=재생",
+        "head_390": "a.btn \"의뢰하기 →\" inActive=true fv=true pause=재생",
+        "old_1440": "a.btn \"의뢰하기 →\" inActive=true fv=true pause=재생",
+        "old_390": "a.btn \"의뢰하기 →\" inActive=true fv=true pause=재생"
+      },
+      "firstShiftTab": {
+        "head_1440": "button.pclose fv=true pause=재생",
+        "head_390": "button.pclose fv=true pause=재생",
+        "old_1440": "button.pclose fv=true pause=재생",
+        "old_390": "button.pclose fv=true pause=재생"
+      },
+      "escapeReturn": {
+        "head_1440": "div.pdim",
+        "head_390": "div.pdim",
+        "old_1440": "h2",
+        "old_390": "h2"
+      },
+      "blurfocus": {
+        "head_1440": "hasFocus=true,false,true ae div.pdim -> div.pdim pause 정지 -> 정지",
+        "head_390": "hasFocus=true,false,true ae div.pdim -> div.pdim pause 정지 -> 정지",
+        "old_1440": "hasFocus=true,false,true ae h2 -> h2 pause 정지 -> 재생",
+        "old_390": "hasFocus=true,false,true ae h2 -> h2 pause 정지 -> 재생"
+      },
+      "autoTab": {
+        "head_1440": "turn 6284ms cur=2 ae=div.pdim tab=a.tlink \"오픈 안내 보기\" expect=a.tlink 오픈 안내 보기",
+        "head_390": "turn 6300ms cur=2 ae=div.pdim tab=a.tlink \"오픈 안내 보기\" expect=a.tlink 오픈 안내 보기",
+        "old_1440": "turn 6259ms cur=2 ae=h2 tab=a.tlink \"오픈 안내 보기\" expect=a.tlink 오픈 안내 보기",
+        "old_390": "turn 6087ms cur=2 ae=h2 tab=a.tlink \"오픈 안내 보기\" expect=a.tlink 오픈 안내 보기"
+      },
+      "n3notice": {
+        "head": {
+          "cur": 3,
+          "afterClick": {
+            "ae": "div.pdim",
+            "isRoot": true,
+            "pause": "재생"
+          },
+          "tab": {
+            "ae": "input",
+            "inBar": true
+          },
+          "shiftTab": {
+            "ae": "button.pclose"
+          }
+        },
+        "old": {
+          "cur": 3,
+          "afterClick": {
+            "ae": "div.pdim",
+            "isRoot": true,
+            "pause": "재생"
+          },
+          "tab": {
+            "ae": "input",
+            "inBar": true
+          },
+          "shiftTab": {
+            "ae": "button.pclose"
+          }
+        }
+      }
+    }
+  },
+  "B": {
+    "out": {
+      "head_ctrl_cta_Space": {
+        "ae0": "a.btn",
+        "ae1": "a.btn",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_cta_ArrowDown": {
+        "ae0": "a.btn",
+        "ae1": "a.btn",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_ghost_Space": {
+        "ae0": "a.btn.ghost",
+        "ae1": "a.btn.ghost",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_ghost_ArrowDown": {
+        "ae0": "a.btn.ghost",
+        "ae1": "a.btn.ghost",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_mute_Space": {
+        "ae0": "input",
+        "ae1": "input",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          true,
+          false
+        ],
+        "clicks": [
+          "input"
+        ]
+      },
+      "head_space_shiftspace_end": {
+        "seq": [
+          [
+            "Space",
+            129
+          ],
+          [
+            "Space",
+            129
+          ],
+          [
+            "Shift+Space",
+            0
+          ],
+          [
+            "PageDown",
+            129
+          ],
+          [
+            "PageUp",
+            0
+          ],
+          [
+            "ArrowUp",
+            0
+          ]
+        ],
+        "atEnd": {
+          "st": 129,
+          "max": 129
+        },
+        "dpLast30": 30,
+        "scrollY": 0,
+        "pdimST": 0,
+        "bg": {
+          "bodyKids": 5,
+          "inert": 5,
+          "htmlOverflow": "hidden",
+          "docMaxScroll": 4438
+        },
+        "paints": [
+          "재생"
+        ],
+        "ae": "div.pdim"
+      },
+      "head_ctrl_mute_ArrowDown": {
+        "ae0": "input",
+        "ae1": "input",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_prev_ArrowDown": {
+        "ae0": "button.parr",
+        "ae1": "button.parr",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_prev_Space": {
+        "ae0": "button.parr",
+        "ae1": "h2",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          0
+        ],
+        "cur": [
+          1,
+          2
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": [
+          "button.parr"
+        ]
+      },
+      "head_ctrl_next_Space": {
+        "ae0": "button.parr",
+        "ae1": "h2",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          0
+        ],
+        "cur": [
+          1,
+          2
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": [
+          "button.parr"
+        ]
+      },
+      "head_ctrl_next_ArrowDown": {
+        "ae0": "button.parr",
+        "ae1": "button.parr",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_pause_Space": {
+        "ae0": "button.parr.ppause[pause]",
+        "ae1": "button.parr.ppause[pause]",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "정지"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": [
+          "button.parr.ppause[pause]"
+        ]
+      },
+      "head_ime": {
+        "aeIsRoot": false,
+        "out": [
+          {
+            "key": " ",
+            "dp": true,
+            "st": [
+              0,
+              129
+            ],
+            "cur": [
+              "1",
+              "1"
+            ],
+            "pause": "재생"
+          },
+          {
+            "key": "ArrowDown",
+            "dp": true,
+            "st": [
+              129,
+              129
+            ],
+            "cur": [
+              "1",
+              "1"
+            ],
+            "pause": "재생"
+          },
+          {
+            "key": "ArrowRight",
+            "dp": true,
+            "st": [
+              129,
+              129
+            ],
+            "cur": [
+              "1",
+              "2"
+            ],
+            "pause": "재생"
+          }
+        ]
+      },
+      "head_ctrl_pause_ArrowDown": {
+        "ae0": "button.parr.ppause[pause]",
+        "ae1": "button.parr.ppause[pause]",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_ctrl_close_Space": {
+        "ae0": "button.pclose",
+        "ae1": "body",
+        "open1": false,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          null
+        ],
+        "cur": [
+          1,
+          null
+        ],
+        "pause": [
+          "재생",
+          null
+        ],
+        "muted": [
+          false,
+          null,
+          null
+        ],
+        "clicks": [
+          "button.pclose"
+        ]
+      },
+      "head_ctrl_close_ArrowDown": {
+        "ae0": "button.pclose",
+        "ae1": "button.pclose",
+        "open1": true,
+        "dp": [
+          false
+        ],
+        "st": [
+          129,
+          129
+        ],
+        "cur": [
+          1,
+          1
+        ],
+        "pause": [
+          "재생",
+          "재생"
+        ],
+        "muted": [
+          false,
+          false,
+          null
+        ],
+        "clicks": []
+      },
+      "head_homeEnd": {
+        "ae": "div.pdim",
+        "start": 0,
+        "afterEnd": 0,
+        "max": 129,
+        "afterDownHome": 48
+      },
+      "old_homeEnd": {
+        "ae": "h2",
+        "start": 0,
+        "afterEnd": 128,
+        "max": 128,
+        "afterDownHome": 0
+      },
+      "head_titleFocus": {
+        "ae": "h2",
+        "cur": 2,
+        "st": [
+          0,
+          80
+        ],
+        "max": 143,
+        "dp": [
+          false,
+          false,
+          false
+        ],
+        "pause": "재생"
+      },
+      "old_titleFocus": {
+        "ae": "h2",
+        "cur": 2,
+        "st": [
+          0,
+          80
+        ],
+        "max": 142,
+        "dp": [
+          false,
+          false,
+          false
+        ],
+        "pause": "재생"
+      },
+      "head_repeat_ArrowDown": {
+        "ae0": "div.pdim",
+        "pop0": {
+          "st": 0,
+          "sh": 429,
+          "ch": 300,
+          "max": 129
+        },
+        "st1": 129,
+        "max": 129,
+        "keydowns": 20,
+        "repeats": 19,
+        "dpCount": 20,
+        "paintPauseCalls": 1,
+        "paints": [
+          "재생"
+        ],
+        "pause1": "재생",
+        "cur0": 1,
+        "cur9_5s": 1,
+        "turns": 0,
+        "scrollY": 0,
+        "errors": []
+      },
+      "old_repeat_ArrowDown": {
+        "ae0": "h2",
+        "pop0": {
+          "st": 0,
+          "sh": 429,
+          "ch": 301,
+          "max": 128
+        },
+        "st1": 128,
+        "max": 128,
+        "keydowns": 20,
+        "repeats": 19,
+        "dpCount": 0,
+        "paintPauseCalls": 0,
+        "paints": [],
+        "pause1": "정지",
+        "cur0": 1,
+        "cur9_5s": 2,
+        "turns": 1,
+        "scrollY": 0,
+        "errors": []
+      },
+      "head_reduce": {
+        "ae0": "div.pdim",
+        "pause0": "재생",
+        "st": [
+          0,
+          129
+        ],
+        "paints": [],
+        "turns": 0,
+        "pause1": "재생"
+      },
+      "old_reduce": {
+        "ae0": "h2",
+        "pause0": "재생",
+        "st": [
+          0,
+          117
+        ],
+        "paints": [],
+        "turns": 0,
+        "pause1": "재생"
+      }
+    },
+    "v": {
+      "repeat": {
+        "head": "ae=div.pdim kd=20 rep=19 dp=20 paintPause=1 st 0->129/129 pause=재생 cur 1->1 turns=0",
+        "old": "ae=h2 kd=20 rep=19 dp=0 paintPause=0 st 0->128/128 pause=정지 cur 1->2 turns=1"
+      },
+      "spaceEnd": {
+        "seq": [
+          [
+            "Space",
+            129
+          ],
+          [
+            "Space",
+            129
+          ],
+          [
+            "Shift+Space",
+            0
+          ],
+          [
+            "PageDown",
+            129
+          ],
+          [
+            "PageUp",
+            0
+          ],
+          [
+            "ArrowUp",
+            0
+          ]
+        ],
+        "atEnd": {
+          "st": 129,
+          "max": 129
+        },
+        "dpLast30": 30,
+        "scrollY": 0,
+        "pdimST": 0,
+        "bg": {
+          "bodyKids": 5,
+          "inert": 5,
+          "htmlOverflow": "hidden",
+          "docMaxScroll": 4438
+        },
+        "paints": [
+          "재생"
+        ],
+        "ae": "div.pdim"
+      },
+      "ctrl": {
+        "cta_Space": "ae=a.btn dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "cta_ArrowDown": "ae=a.btn dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "ghost_Space": "ae=a.btn.ghost dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "ghost_ArrowDown": "ae=a.btn.ghost dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "mute_Space": "ae=input dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,true,false] clicks=[\"input\"] open=true",
+        "mute_ArrowDown": "ae=input dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "prev_ArrowDown": "ae=button.parr dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "prev_Space": "ae=button.parr dp=[false] st=[129,0] cur=[1,2] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[\"button.parr\"] open=true",
+        "next_Space": "ae=button.parr dp=[false] st=[129,0] cur=[1,2] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[\"button.parr\"] open=true",
+        "next_ArrowDown": "ae=button.parr dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "pause_Space": "ae=button.parr.ppause[pause] dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"정지\"] muted=[false,false,null] clicks=[\"button.parr.ppause[pause]\"] open=true",
+        "pause_ArrowDown": "ae=button.parr.ppause[pause] dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true",
+        "close_Space": "ae=button.pclose dp=[false] st=[129,null] cur=[1,null] pause=[\"재생\",null] muted=[false,null,null] clicks=[\"button.pclose\"] open=false",
+        "close_ArrowDown": "ae=button.pclose dp=[false] st=[129,129] cur=[1,1] pause=[\"재생\",\"재생\"] muted=[false,false,null] clicks=[] open=true"
+      },
+      "ime": {
+        "aeIsRoot": false,
+        "out": [
+          {
+            "key": " ",
+            "dp": true,
+            "st": [
+              0,
+              129
+            ],
+            "cur": [
+              "1",
+              "1"
+            ],
+            "pause": "재생"
+          },
+          {
+            "key": "ArrowDown",
+            "dp": true,
+            "st": [
+              129,
+              129
+            ],
+            "cur": [
+              "1",
+              "1"
+            ],
+            "pause": "재생"
+          },
+          {
+            "key": "ArrowRight",
+            "dp": true,
+            "st": [
+              129,
+              129
+            ],
+            "cur": [
+              "1",
+              "2"
+            ],
+            "pause": "재생"
+          }
+        ]
+      },
+      "reduce": {
+        "head": {
+          "ae0": "div.pdim",
+          "pause0": "재생",
+          "st": [
+            0,
+            129
+          ],
+          "paints": [],
+          "turns": 0,
+          "pause1": "재생"
+        },
+        "old": {
+          "ae0": "h2",
+          "pause0": "재생",
+          "st": [
+            0,
+            117
+          ],
+          "paints": [],
+          "turns": 0,
+          "pause1": "재생"
+        }
+      },
+      "titleFocus": {
+        "head": {
+          "ae": "h2",
+          "cur": 2,
+          "st": [
+            0,
+            80
+          ],
+          "max": 143,
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "pause": "재생"
+        },
+        "old": {
+          "ae": "h2",
+          "cur": 2,
+          "st": [
+            0,
+            80
+          ],
+          "max": 142,
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "pause": "재생"
+        }
+      },
+      "homeEnd": {
+        "head": {
+          "ae": "div.pdim",
+          "start": 0,
+          "afterEnd": 0,
+          "max": 129,
+          "afterDownHome": 48
+        },
+        "old": {
+          "ae": "h2",
+          "start": 0,
+          "afterEnd": 128,
+          "max": 128,
+          "afterDownHome": 0
+        }
+      }
+    }
+  },
+  "C": {
+    "out": {
+      "head_kbdResume": {
+        "afterKey": "재생",
+        "onPause": {
+          "ae": "button.parr.ppause[pause]",
+          "pause": "재생"
+        },
+        "afterEnter": "정지",
+        "firstTurnMs": 8001,
+        "afterKeysAe": "button.parr.ppause[pause]",
+        "pauseAfterKeys": "정지",
+        "turnsIn9sAfterKeys": 1
+      },
+      "head_mouseResume": {
+        "afterKey": {
+          "pause": "재생",
+          "st": 48
+        },
+        "afterPlayClick": {
+          "ae": "button.parr.ppause[pause]",
+          "pause": "정지"
+        },
+        "firstTurnMs": 8001,
+        "afterTurn": {
+          "cur": 2,
+          "ae": "button.parr.ppause[pause]",
+          "st": 0,
+          "max": 143
+        },
+        "keysAfterResume": {
+          "ae": "button.parr.ppause[pause]",
+          "st": [
+            0,
+            0
+          ],
+          "pause": "정지",
+          "dp": [
+            false,
+            false
+          ]
+        },
+        "turnsIn9sAfterKeys": 1,
+        "cardClick": {
+          "ae": "div.pdim",
+          "isRoot": true,
+          "pause": "재생"
+        },
+        "keysAfterCardClick": {
+          "st": [
+            48,
+            129
+          ],
+          "pause": "재생"
+        }
+      }
+    }
+  },
+  "D": {
+    "out": {
+      "head_focusin_mute": {
+        "ae": "input",
+        "pause": "재생"
+      },
+      "head_focusin_close": {
+        "ae": "button.pclose",
+        "pause": "재생"
+      },
+      "head_focusin_prev": {
+        "ae": "button.parr",
+        "pause": "재생"
+      },
+      "head_focusin_next": {
+        "ae": "button.parr",
+        "pause": "재생"
+      },
+      "head_focusin_pause": {
+        "ae": "button.parr.ppause[pause]",
+        "pause": "정지"
+      },
+      "head_swipe_mute_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_swipe_pcnt_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_swipe_pcnt_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_swipe_mute_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_focusin_prev": {
+        "ae": "button.parr",
+        "pause": "재생"
+      },
+      "old_focusin_mute": {
+        "ae": "input",
+        "pause": "재생"
+      },
+      "head_swipe_close_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_swipe_close_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_focusin_next": {
+        "ae": "button.parr",
+        "pause": "재생"
+      },
+      "old_focusin_pause": {
+        "ae": "button.parr.ppause[pause]",
+        "pause": "정지"
+      },
+      "old_focusin_close": {
+        "ae": "button.pclose",
+        "pause": "재생"
+      },
+      "head_pdown_pcnt_1440": {
+        "pause": "재생",
+        "open": true,
+        "muted": false,
+        "turns": 0,
+        "muteBox": [
+          517,
+          648.0625
+        ]
+      },
+      "head_pdown_pcnt_390": {
+        "pause": "재생",
+        "open": true,
+        "muted": false,
+        "turns": 0,
+        "muteBox": [
+          33,
+          626.375
+        ]
+      },
+      "old_swipe_mute_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_swipe_mute_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_swipe_pcnt_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_swipe_pcnt_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_barfocus_1440": {
+        "onPause": "button.parr.ppause[pause]",
+        "turnMs": 7900,
+        "afterTurnAe": "button.parr.ppause[pause]",
+        "afterTurnInBar": true,
+        "turnsAfterEnter2": 0,
+        "pause": "재생"
+      },
+      "old_pdown_pcnt_1440": {
+        "pause": "재생",
+        "open": true,
+        "muted": false,
+        "turns": 0,
+        "muteBox": [
+          517,
+          640.9375
+        ]
+      },
+      "old_swipe_close_L": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "old_swipe_close_R": {
+        "cur": [
+          1,
+          2
+        ],
+        "open": true,
+        "muted": false,
+        "clicks": [],
+        "pause": "재생"
+      },
+      "head_barfocus_390": {
+        "onPause": "button.parr.ppause[pause]",
+        "turnMs": 8000,
+        "afterTurnAe": "button.parr.ppause[pause]",
+        "afterTurnInBar": true,
+        "turnsAfterEnter2": 0,
+        "pause": "재생"
+      },
+      "old_pdown_pcnt_390": {
+        "pause": "재생",
+        "open": true,
+        "muted": false,
+        "turns": 0,
+        "muteBox": [
+          33,
+          602.125
+        ]
+      },
+      "head_sidebar_1440x900_n2": {
+        "bar": [
+          500,
+          643.1,
+          940,
+          701.1
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "d": "1",
+            "rect": [
+              986,
+              221.2,
+              1382,
+              621.8
+            ],
+            "hits": {
+              "side": 4422
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            1184,
+            619.8
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "head_sidebar_1440x900_n3": {
+        "bar": [
+          500,
+          643.1,
+          940,
+          701.1
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "d": "1",
+            "rect": [
+              986,
+              221.2,
+              1382,
+              621.8
+            ],
+            "hits": {
+              "side": 4422
+            },
+            "op": "1"
+          },
+          {
+            "d": "-1",
+            "rect": [
+              58,
+              489.5,
+              454,
+              635.9
+            ],
+            "hits": {
+              "side": 1650
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            1184,
+            619.8
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "head_sidebar_768x1024_n3": {
+        "bar": [
+          164,
+          681,
+          604,
+          739
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "d": "1",
+            "rect": [
+              650,
+              304.9,
+              1046,
+              662.2
+            ],
+            "hits": {
+              "side": 1200,
+              "null": 2760
+            },
+            "op": "1"
+          },
+          {
+            "d": "-1",
+            "rect": [
+              -278,
+              538.1,
+              118,
+              674.4
+            ],
+            "hits": {
+              "null": 1081,
+              "side": 437
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            848,
+            660.2
+          ],
+          "cur": [
+            1,
+            1
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "head_sidebar_1024x768_n3": {
+        "bar": [
+          292,
+          574.3,
+          732,
+          632.3
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "d": "1",
+            "rect": [
+              778,
+              157.7,
+              1174,
+              553.3
+            ],
+            "hits": {
+              "side": 2706,
+              "null": 1650
+            },
+            "op": "1"
+          },
+          {
+            "d": "-1",
+            "rect": [
+              -150,
+              423.4,
+              246,
+              567.3
+            ],
+            "hits": {
+              "null": 600,
+              "side": 984
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            976,
+            551.3
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "old_sidebar_1440x900_n2": {
+        "bar": [
+          500,
+          635.9,
+          940,
+          693.9
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "rect": [
+              986,
+              249.7,
+              1382,
+              650.3
+            ],
+            "hits": {
+              "side": 4422
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            1184,
+            648.3
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "old_sidebar_1440x900_n3": {
+        "bar": [
+          500,
+          635.9,
+          940,
+          693.9
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "rect": [
+              986,
+              249.7,
+              1382,
+              650.3
+            ],
+            "hits": {
+              "side": 4422
+            },
+            "op": "1"
+          },
+          {
+            "rect": [
+              58,
+              376.8,
+              454,
+              523.2
+            ],
+            "hits": {
+              "side": 1650
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            1184,
+            648.3
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "old_sidebar_1024x768_n3": {
+        "bar": [
+          292,
+          567.2,
+          732,
+          625.2
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "rect": [
+              778,
+              186.2,
+              1174,
+              581.8
+            ],
+            "hits": {
+              "side": 2706,
+              "null": 1650
+            },
+            "op": "1"
+          },
+          {
+            "rect": [
+              -150,
+              312,
+              246,
+              456
+            ],
+            "hits": {
+              "null": 600,
+              "side": 984
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            976,
+            579.8
+          ],
+          "cur": [
+            1,
+            2
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "old_sidebar_768x1024_n3": {
+        "bar": [
+          164,
+          673.9,
+          604,
+          731.9
+        ],
+        "inBar": {
+          "pbar": 1650
+        },
+        "sides": [
+          {
+            "rect": [
+              650,
+              333.4,
+              1046,
+              690.7
+            ],
+            "hits": {
+              "side": 1200,
+              "null": 2760
+            },
+            "op": "1"
+          },
+          {
+            "rect": [
+              -278,
+              443.8,
+              118,
+              580.2
+            ],
+            "hits": {
+              "null": 1081,
+              "side": 437
+            },
+            "op": "1"
+          }
+        ],
+        "sideClick": {
+          "at": [
+            848,
+            688.7
+          ],
+          "cur": [
+            1,
+            1
+          ],
+          "muted": false,
+          "open": true
+        }
+      },
+      "old_barfocus_390": {
+        "onPause": "button.parr.ppause[pause]",
+        "turnMs": 8003,
+        "afterTurnAe": "h2",
+        "afterTurnInBar": false,
+        "turnsAfterEnter2": 1,
+        "pause": "정지"
+      },
+      "old_barfocus_1440": {
+        "onPause": "button.parr.ppause[pause]",
+        "turnMs": 8002,
+        "afterTurnAe": "h2",
+        "afterTurnInBar": false,
+        "turnsAfterEnter2": 1,
+        "pause": "정지"
+      }
+    },
+    "v": {
+      "focusin": {
+        "head": {
+          "mute": "재생",
+          "prev": "재생",
+          "next": "재생",
+          "pause": "정지",
+          "close": "재생"
+        },
+        "old": {
+          "mute": "재생",
+          "prev": "재생",
+          "next": "재생",
+          "pause": "정지",
+          "close": "재생"
+        }
+      },
+      "pointerdown": {
+        "head_pdown_pcnt_1440": "pause=재생 turns9.5s=0 muted=false",
+        "head_pdown_pcnt_390": "pause=재생 turns9.5s=0 muted=false",
+        "old_pdown_pcnt_1440": "pause=재생 turns9.5s=0 muted=false",
+        "old_pdown_pcnt_390": "pause=재생 turns9.5s=0 muted=false"
+      },
+      "barfocus": {
+        "head_barfocus_1440": "on=button.parr.ppause[pause] turn=7900 afterTurnAe=button.parr.ppause[pause] turnsAfterEnter2=0 pause=재생",
+        "head_barfocus_390": "on=button.parr.ppause[pause] turn=8000 afterTurnAe=button.parr.ppause[pause] turnsAfterEnter2=0 pause=재생",
+        "old_barfocus_390": "on=button.parr.ppause[pause] turn=8003 afterTurnAe=h2 turnsAfterEnter2=1 pause=정지",
+        "old_barfocus_1440": "on=button.parr.ppause[pause] turn=8002 afterTurnAe=h2 turnsAfterEnter2=1 pause=정지"
+      },
+      "swipe": {
+        "head_swipe_mute_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "head_swipe_pcnt_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "head_swipe_pcnt_R": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "head_swipe_mute_R": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "head_swipe_close_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "head_swipe_close_R": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_mute_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_mute_R": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_pcnt_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_pcnt_R": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_close_L": "cur 1->2 open=true muted=false clicks=0 pause=재생",
+        "old_swipe_close_R": "cur 1->2 open=true muted=false clicks=0 pause=재생"
+      },
+      "sidebar": {
+        "head_sidebar_1440x900_n2": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "d": "1",
+              "op": "1",
+              "hits": {
+                "side": 4422
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              1184,
+              619.8
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "head_sidebar_1440x900_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "d": "1",
+              "op": "1",
+              "hits": {
+                "side": 4422
+              }
+            },
+            {
+              "d": "-1",
+              "op": "1",
+              "hits": {
+                "side": 1650
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              1184,
+              619.8
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "head_sidebar_768x1024_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "d": "1",
+              "op": "1",
+              "hits": {
+                "side": 1200,
+                "null": 2760
+              }
+            },
+            {
+              "d": "-1",
+              "op": "1",
+              "hits": {
+                "null": 1081,
+                "side": 437
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              848,
+              660.2
+            ],
+            "cur": [
+              1,
+              1
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "head_sidebar_1024x768_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "d": "1",
+              "op": "1",
+              "hits": {
+                "side": 2706,
+                "null": 1650
+              }
+            },
+            {
+              "d": "-1",
+              "op": "1",
+              "hits": {
+                "null": 600,
+                "side": 984
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              976,
+              551.3
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "old_sidebar_1440x900_n2": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "op": "1",
+              "hits": {
+                "side": 4422
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              1184,
+              648.3
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "old_sidebar_1440x900_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "op": "1",
+              "hits": {
+                "side": 4422
+              }
+            },
+            {
+              "op": "1",
+              "hits": {
+                "side": 1650
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              1184,
+              648.3
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "old_sidebar_1024x768_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "op": "1",
+              "hits": {
+                "side": 2706,
+                "null": 1650
+              }
+            },
+            {
+              "op": "1",
+              "hits": {
+                "null": 600,
+                "side": 984
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              976,
+              579.8
+            ],
+            "cur": [
+              1,
+              2
+            ],
+            "muted": false,
+            "open": true
+          }
+        },
+        "old_sidebar_768x1024_n3": {
+          "inBar": {
+            "pbar": 1650
+          },
+          "sides": [
+            {
+              "op": "1",
+              "hits": {
+                "side": 1200,
+                "null": 2760
+              }
+            },
+            {
+              "op": "1",
+              "hits": {
+                "null": 1081,
+                "side": 437
+              }
+            }
+          ],
+          "sideClick": {
+            "at": [
+              848,
+              688.7
+            ],
+            "cur": [
+              1,
+              1
+            ],
+            "muted": false,
+            "open": true
+          }
+        }
+      }
+    }
+  },
+  "E": {
+    "out": {
+      "head_1920_N5": {
+        "N": 5,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 0,
+        "violations": 0,
+        "viol": [],
+        "frames": 94,
+        "crossN": 0,
+        "crossSlots": [],
+        "cross": [],
+        "far": [
+          {
+            "d": "-2",
+            "at": [
+              32,
+              519
+            ],
+            "hit": "div.pback",
+            "inert": true,
+            "focusables": 2
+          },
+          {
+            "d": "2",
+            "at": [
+              1888,
+              537
+            ],
+            "hit": "div.pback",
+            "inert": true,
+            "focusables": 2
+          }
+        ],
+        "rows": [
+          {
+            "i": 0,
+            "expD": -2,
+            "d": "-2",
+            "tr": "",
+            "far": true,
+            "on": false,
+            "inert": true,
+            "op": "0",
+            "pe": "none"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "d": "-1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "d": "0",
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 3,
+            "expD": 1,
+            "d": "1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 4,
+            "expD": 2,
+            "d": "2",
+            "tr": "",
+            "far": true,
+            "on": false,
+            "inert": true,
+            "op": "0",
+            "pe": "none"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1596
+      },
+      "head_1440_N4": {
+        "N": 4,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 0,
+        "violations": 0,
+        "viol": [],
+        "frames": 96,
+        "crossN": 0,
+        "crossSlots": [],
+        "cross": [],
+        "far": [
+          {
+            "d": "-2",
+            "at": [
+              2,
+              429
+            ],
+            "hit": "div.pback",
+            "inert": true,
+            "focusables": 2
+          }
+        ],
+        "rows": [
+          {
+            "i": 0,
+            "expD": -2,
+            "d": "-2",
+            "tr": "",
+            "far": true,
+            "on": false,
+            "inert": true,
+            "op": "0",
+            "pe": "none"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "d": "-1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "d": "0",
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 3,
+            "expD": 1,
+            "d": "1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1712
+      },
+      "head_1920_N4": {
+        "N": 4,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 0,
+        "violations": 0,
+        "viol": [],
+        "frames": 95,
+        "crossN": 0,
+        "crossSlots": [],
+        "cross": [],
+        "far": [
+          {
+            "d": "-2",
+            "at": [
+              32,
+              519
+            ],
+            "hit": "div.pback",
+            "inert": true,
+            "focusables": 2
+          }
+        ],
+        "rows": [
+          {
+            "i": 0,
+            "expD": -2,
+            "d": "-2",
+            "tr": "",
+            "far": true,
+            "on": false,
+            "inert": true,
+            "op": "0",
+            "pe": "none"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "d": "-1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "d": "0",
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 3,
+            "expD": 1,
+            "d": "1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1749
+      },
+      "head_1440_N3": {
+        "N": 3,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 0,
+        "violations": 0,
+        "viol": [],
+        "frames": 98,
+        "crossN": 0,
+        "crossSlots": [],
+        "cross": [],
+        "far": [],
+        "rows": [
+          {
+            "i": 0,
+            "expD": 1,
+            "d": "1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "d": "-1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "d": "0",
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1881
+      },
+      "head_1920_N4_reduce": {
+        "N": 4,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 0,
+        "violations": 0,
+        "viol": [],
+        "frames": 95,
+        "crossN": 0,
+        "crossSlots": [],
+        "cross": [],
+        "far": [
+          {
+            "d": "-2",
+            "at": [
+              32,
+              519
+            ],
+            "hit": "div.pback",
+            "inert": true,
+            "focusables": 2
+          }
+        ],
+        "rows": [
+          {
+            "i": 0,
+            "expD": -2,
+            "d": "-2",
+            "tr": "",
+            "far": true,
+            "on": false,
+            "inert": true,
+            "op": "0",
+            "pe": "none"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "d": "-1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "d": "0",
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 3,
+            "expD": 1,
+            "d": "1",
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1577
+      },
+      "old_1920_N4": {
+        "N": 4,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 4,
+        "violations": 0,
+        "viol": [],
+        "frames": 95,
+        "crossN": 72,
+        "crossSlots": [
+          1,
+          3,
+          2
+        ],
+        "cross": [
+          {
+            "t": 2005.5,
+            "i": 1,
+            "dx": 91,
+            "op": 1
+          },
+          {
+            "t": 2005.5,
+            "i": 3,
+            "dx": -91,
+            "op": 1
+          },
+          {
+            "t": 2022.5,
+            "i": 1,
+            "dx": 80.9,
+            "op": 1
+          },
+          {
+            "t": 2022.5,
+            "i": 3,
+            "dx": 22.3,
+            "op": 1
+          },
+          {
+            "t": 2038.9,
+            "i": 1,
+            "dx": 68.8,
+            "op": 1
+          },
+          {
+            "t": 2055.8,
+            "i": 1,
+            "dx": 9.2,
+            "op": 1
+          },
+          {
+            "t": 2072.2,
+            "i": 1,
+            "dx": -62,
+            "op": 1
+          },
+          {
+            "t": 2089,
+            "i": 1,
+            "dx": -55.1,
+            "op": 1
+          },
+          {
+            "t": 2105.5,
+            "i": 1,
+            "dx": -46.8,
+            "op": 1
+          },
+          {
+            "t": 2122.4,
+            "i": 1,
+            "dx": 10.3,
+            "op": 1
+          },
+          {
+            "t": 2138.8,
+            "i": 1,
+            "dx": 78.6,
+            "op": 1
+          },
+          {
+            "t": 2155.7,
+            "i": 1,
+            "dx": 69.9,
+            "op": 1
+          }
+        ],
+        "far": [],
+        "rows": [
+          {
+            "i": 0,
+            "expD": -2,
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 3,
+            "expD": 1,
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1581
+      },
+      "old_1440_N3": {
+        "N": 3,
+        "expCur": 3,
+        "cur": 3,
+        "residue": 0,
+        "mismatch": 3,
+        "violations": 0,
+        "viol": [],
+        "frames": 95,
+        "crossN": 125,
+        "crossSlots": [
+          1,
+          2,
+          0
+        ],
+        "cross": [
+          {
+            "t": 2048.3,
+            "i": 1,
+            "dx": 90.1,
+            "op": 1
+          },
+          {
+            "t": 2065,
+            "i": 1,
+            "dx": 80.1,
+            "op": 1
+          },
+          {
+            "t": 2081.6,
+            "i": 1,
+            "dx": 68.1,
+            "op": 1
+          },
+          {
+            "t": 2081.6,
+            "i": 2,
+            "dx": -95.7,
+            "op": 1
+          },
+          {
+            "t": 2098.4,
+            "i": 1,
+            "dx": 8.5,
+            "op": 1
+          },
+          {
+            "t": 2098.4,
+            "i": 2,
+            "dx": -85,
+            "op": 1
+          },
+          {
+            "t": 2115,
+            "i": 1,
+            "dx": -62.1,
+            "op": 1
+          },
+          {
+            "t": 2115,
+            "i": 2,
+            "dx": -72.3,
+            "op": 1
+          },
+          {
+            "t": 2131.7,
+            "i": 1,
+            "dx": -55.2,
+            "op": 1
+          },
+          {
+            "t": 2131.7,
+            "i": 2,
+            "dx": -12.3,
+            "op": 1
+          },
+          {
+            "t": 2148.4,
+            "i": 1,
+            "dx": -46.9,
+            "op": 1
+          },
+          {
+            "t": 2148.4,
+            "i": 2,
+            "dx": 58.9,
+            "op": 1
+          }
+        ],
+        "far": [],
+        "rows": [
+          {
+            "i": 0,
+            "expD": 1,
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 1,
+            "expD": -1,
+            "tr": "",
+            "far": false,
+            "on": false,
+            "inert": true,
+            "op": "1",
+            "pe": "auto"
+          },
+          {
+            "i": 2,
+            "expD": 0,
+            "tr": "",
+            "far": false,
+            "on": true,
+            "inert": false,
+            "op": "1",
+            "pe": "auto"
+          }
+        ],
+        "errors": [],
+        "elapsedMs": 1569
+      }
+    },
+    "v": {
+      "head_1920_N5": "N=5 cur 3/3 residue=0 mismatch=0 noneMissing=0 frames=94 crossFrames=0 crossSlots=[] far=[{\"d\":\"-2\",\"at\":[32,519],\"hit\":\"div.pback\",\"inert\":true,\"focusables\":2},{\"d\":\"2\",\"at\":[1888,537],\"hit\":\"div.pback\",\"inert\":true,\"focusables\":2}] errors=0",
+      "head_1440_N4": "N=4 cur 3/3 residue=0 mismatch=0 noneMissing=0 frames=96 crossFrames=0 crossSlots=[] far=[{\"d\":\"-2\",\"at\":[2,429],\"hit\":\"div.pback\",\"inert\":true,\"focusables\":2}] errors=0",
+      "head_1920_N4": "N=4 cur 3/3 residue=0 mismatch=0 noneMissing=0 frames=95 crossFrames=0 crossSlots=[] far=[{\"d\":\"-2\",\"at\":[32,519],\"hit\":\"div.pback\",\"inert\":true,\"focusables\":2}] errors=0",
+      "head_1440_N3": "N=3 cur 3/3 residue=0 mismatch=0 noneMissing=0 frames=98 crossFrames=0 crossSlots=[] far=[] errors=0",
+      "head_1920_N4_reduce": "N=4 cur 3/3 residue=0 mismatch=0 noneMissing=0 frames=95 crossFrames=0 crossSlots=[] far=[{\"d\":\"-2\",\"at\":[32,519],\"hit\":\"div.pback\",\"inert\":true,\"focusables\":2}] errors=0",
+      "old_1920_N4": "N=4 cur 3/3 residue=0 mismatch=4 noneMissing=0 frames=95 crossFrames=72 crossSlots=[1,3,2] far=[] errors=0",
+      "old_1440_N3": "N=3 cur 3/3 residue=0 mismatch=3 noneMissing=0 frames=95 crossFrames=125 crossSlots=[1,2,0] far=[] errors=0"
+    }
+  },
+  "F": {
+    "out": {
+      "head_baseline": {
+        "pdim": false,
+        "listeners": {
+          "document": {
+            "keydown": 2
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "ro": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": []
+        }
+      },
+      "head_mute_none": {
+        "muted": false,
+        "ls": null,
+        "newTabPopup": true
+      },
+      "head_mute_closeBtn": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "head_mute_esc": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "head_mute_backdrop": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "head_close_backdrop": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 0,
+          "cb": 1
+        },
+        "roClosed": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 1,
+          "cb": 1
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "head_close_closeBtn": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 0,
+          "cb": 1
+        },
+        "roClosed": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 1,
+          "cb": 1
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "head_close_esc": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 0,
+          "cb": 1
+        },
+        "roClosed": {
+          "made": 1,
+          "observe": 1,
+          "disconnect": 1,
+          "cb": 1
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "head_mute_cta": {
+        "url": "http://localhost:8092/request.html#form",
+        "ls": null,
+        "newTabPopup": true
+      },
+      "old_baseline": {
+        "pdim": false,
+        "listeners": {
+          "document": {
+            "keydown": 2
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "ro": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": []
+        }
+      },
+      "old_mute_backdrop": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "old_mute_esc": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "old_close_esc": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roClosed": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "old_mute_closeBtn": {
+        "muted": true,
+        "ls": "{\"all\":1790175600000}",
+        "newTabPopup": false
+      },
+      "old_close_backdrop": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roClosed": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "old_close_closeBtn": {
+        "listenersOpen": {
+          "document": {
+            "keydown": 4,
+            "focusin": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "listenersClosed": {
+          "document": {
+            "keydown": 1
+          },
+          "window": {
+            "keydown": 1,
+            "resize": 2
+          }
+        },
+        "roOpen": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roClosed": {
+          "made": 0,
+          "observe": 0,
+          "disconnect": 0,
+          "cb": 0
+        },
+        "roCbAfterClose": 0,
+        "closed": {
+          "open": false,
+          "htmlLocked": false,
+          "inertBg": 0,
+          "ae": "body"
+        },
+        "afterKeys": {
+          "dp": [
+            false,
+            false,
+            false
+          ],
+          "open": false,
+          "scrollY": 900
+        },
+        "errors": [],
+        "reloadPdim": false
+      },
+      "old_mute_none": {
+        "muted": false,
+        "ls": null,
+        "newTabPopup": true
+      },
+      "old_mute_cta": {
+        "url": "http://localhost:8092/request.html#form",
+        "ls": null,
+        "newTabPopup": true
+      }
+    },
+    "v": {
+      "listeners": {
+        "head": {
+          "baseline": {
+            "document": {
+              "keydown": 2
+            },
+            "window": {
+              "keydown": 1,
+              "resize": 2
+            }
+          },
+          "esc": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          },
+          "closeBtn": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          },
+          "backdrop": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          }
+        },
+        "old": {
+          "baseline": {
+            "document": {
+              "keydown": 2
+            },
+            "window": {
+              "keydown": 1,
+              "resize": 2
+            }
+          },
+          "esc": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          },
+          "closeBtn": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          },
+          "backdrop": {
+            "open": {
+              "keydown": 4,
+              "focusin": 1
+            },
+            "closed": {
+              "keydown": 1
+            }
+          }
+        }
+      },
+      "ro": {
+        "head": {
+          "esc": "made=1 disconnect=1 cbAfterClose+resize=0",
+          "closeBtn": "made=1 disconnect=1 cbAfterClose+resize=0",
+          "backdrop": "made=1 disconnect=1 cbAfterClose+resize=0"
+        },
+        "old": {
+          "esc": "made=0 disconnect=0 cbAfterClose+resize=0",
+          "closeBtn": "made=0 disconnect=0 cbAfterClose+resize=0",
+          "backdrop": "made=0 disconnect=0 cbAfterClose+resize=0"
+        }
+      },
+      "closedState": {
+        "head_close_backdrop": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false",
+        "head_close_closeBtn": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false",
+        "head_close_esc": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false",
+        "old_close_esc": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false",
+        "old_close_backdrop": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false",
+        "old_close_closeBtn": "open=false htmlLocked=false inertBg=0 ae=body keysAfter dp=[false,false,false] open=false errors=0 reloadPopup=false"
+      },
+      "mute": {
+        "head_mute_none": "muted=false ls=null newTabPopup=true",
+        "head_mute_closeBtn": "muted=true ls=set newTabPopup=false",
+        "head_mute_esc": "muted=true ls=set newTabPopup=false",
+        "head_mute_backdrop": "muted=true ls=set newTabPopup=false",
+        "head_mute_cta": "muted=undefined ls=null newTabPopup=true url=request.html#form",
+        "old_mute_backdrop": "muted=true ls=set newTabPopup=false",
+        "old_mute_esc": "muted=true ls=set newTabPopup=false",
+        "old_mute_closeBtn": "muted=true ls=set newTabPopup=false",
+        "old_mute_none": "muted=false ls=null newTabPopup=true",
+        "old_mute_cta": "muted=undefined ls=null newTabPopup=true url=request.html#form"
+      }
+    }
+  },
+  "G": {
+    "out": {
+      "head_nextThenPlay": {
+        "afterNext": {
+          "cur": 2,
+          "pause": "재생"
+        },
+        "firstTurnMs": 7999
+      },
+      "head_cardTapThenPlay": {
+        "afterCardTap": {
+          "pause": "재생",
+          "ae": "div.pdim"
+        },
+        "firstTurnMs": 7999
+      },
+      "old_cardTapThenPlay": {
+        "afterCardTap": {
+          "pause": "재생",
+          "ae": "h2"
+        },
+        "firstTurnMs": 8001
+      },
+      "old_nextThenPlay": {
+        "afterNext": {
+          "cur": 2,
+          "pause": "재생"
+        },
+        "firstTurnMs": 8000
+      },
+      "head_pausePlay": {
+        "afterTap1": "재생",
+        "afterTap2": "정지",
+        "firstTurnMs": 8001,
+        "secondTurnMs": 7942
+      },
+      "old_pausePlay": {
+        "afterTap1": "재생",
+        "afterTap2": "정지",
+        "firstTurnMs": 8001,
+        "secondTurnMs": 7965
+      }
+    }
+  },
+  "H": {
+    "out": {
+      "head_1440x900_to_320x256": {
+        "before": {
+          "vh": 900,
+          "barTop": 643.1,
+          "barBottom": 701.1,
+          "barH": 58,
+          "pbarH": "58px",
+          "popTop": 213.2,
+          "popMaxH": "648px",
+          "inView": true
+        },
+        "after": {
+          "vh": 256,
+          "barTop": 132.5,
+          "barBottom": 239.5,
+          "barH": 107,
+          "pbarH": "107px",
+          "popTop": 16.5,
+          "popMaxH": "117px",
+          "inView": true
+        },
+        "pbarMatches": true,
+        "errors": [],
+        "roCb": 2
+      },
+      "head_1440x420_to_390x420": {
+        "before": {
+          "vh": 420,
+          "barTop": 331.7,
+          "barBottom": 389.7,
+          "barH": 58,
+          "pbarH": "58px",
+          "popTop": 30.3,
+          "popMaxH": "302.4px",
+          "inView": true
+        },
+        "after": {
+          "vh": 420,
+          "barTop": 296.5,
+          "barBottom": 403.5,
+          "barH": 107,
+          "pbarH": "107px",
+          "popTop": 16.5,
+          "popMaxH": "281px",
+          "inView": true
+        },
+        "pbarMatches": true,
+        "errors": [],
+        "roCb": 2
+      },
+      "head_390x844_to_844x390": {
+        "before": {
+          "vh": 844,
+          "barTop": 621.4,
+          "barBottom": 728.4,
+          "barH": 107,
+          "pbarH": "107px",
+          "popTop": 164.1,
+          "popMaxH": "607.68px",
+          "inView": true
+        },
+        "after": {
+          "vh": 390,
+          "barTop": 305.9,
+          "barBottom": 363.9,
+          "barH": 58,
+          "pbarH": "58px",
+          "popTop": 26.1,
+          "popMaxH": "280.8px",
+          "inView": true
+        },
+        "pbarMatches": true,
+        "errors": [],
+        "roCb": 2
+      },
+      "old_1440x420_to_390x420": {
+        "before": {
+          "vh": 420,
+          "barTop": 332.2,
+          "barBottom": 390.2,
+          "barH": 58,
+          "pbarH": null,
+          "popTop": 29.8,
+          "popMaxH": "302.4px",
+          "inView": true
+        },
+        "after": {
+          "vh": 420,
+          "barTop": 318.4,
+          "barBottom": 425.4,
+          "barH": 107,
+          "pbarH": null,
+          "popTop": 16,
+          "popMaxH": "302.4px",
+          "inView": false
+        },
+        "pbarMatches": null,
+        "errors": [],
+        "roCb": 0
+      },
+      "old_1440x900_to_320x256": {
+        "before": {
+          "vh": 900,
+          "barTop": 635.9,
+          "barBottom": 693.9,
+          "barH": 58,
+          "pbarH": null,
+          "popTop": 206.1,
+          "popMaxH": "648px",
+          "inView": true
+        },
+        "after": {
+          "vh": 256,
+          "barTop": 200.3,
+          "barBottom": 307.3,
+          "barH": 107,
+          "pbarH": null,
+          "popTop": 16,
+          "popMaxH": "184.32px",
+          "inView": false
+        },
+        "pbarMatches": null,
+        "errors": [],
+        "roCb": 0
+      },
+      "head_390x420_to_1440x420": {
+        "before": {
+          "vh": 420,
+          "barTop": 296.5,
+          "barBottom": 403.5,
+          "barH": 107,
+          "pbarH": "107px",
+          "popTop": 16.5,
+          "popMaxH": "281px",
+          "inView": true
+        },
+        "after": {
+          "vh": 420,
+          "barTop": 331.7,
+          "barBottom": 389.7,
+          "barH": 58,
+          "pbarH": "58px",
+          "popTop": 30.3,
+          "popMaxH": "302.4px",
+          "inView": true
+        },
+        "pbarMatches": true,
+        "errors": [],
+        "roCb": 2
+      },
+      "old_390x420_to_1440x420": {
+        "before": {
+          "vh": 420,
+          "barTop": 318.4,
+          "barBottom": 425.4,
+          "barH": 107,
+          "pbarH": null,
+          "popTop": 16,
+          "popMaxH": "302.4px",
+          "inView": false
+        },
+        "after": {
+          "vh": 420,
+          "barTop": 332.2,
+          "barBottom": 390.2,
+          "barH": 58,
+          "pbarH": null,
+          "popTop": 29.8,
+          "popMaxH": "302.4px",
+          "inView": true
+        },
+        "pbarMatches": null,
+        "errors": [],
+        "roCb": 0
+      },
+      "old_390x844_to_844x390": {
+        "before": {
+          "vh": 844,
+          "barTop": 597.1,
+          "barBottom": 704.1,
+          "barH": 107,
+          "pbarH": null,
+          "popTop": 139.9,
+          "popMaxH": "607.68px",
+          "inView": true
+        },
+        "after": {
+          "vh": 390,
+          "barTop": 306.4,
+          "barBottom": 364.4,
+          "barH": 58,
+          "pbarH": null,
+          "popTop": 25.6,
+          "popMaxH": "280.8px",
+          "inView": true
+        },
+        "pbarMatches": null,
+        "errors": [],
+        "roCb": 0
+      }
+    },
+    "v": {
+      "head_1440x900_to_320x256": "after: bar 132.5-239.5/256 barH=107 --pbar-h=107px popTop=16.5 inView=true errors=0",
+      "head_1440x420_to_390x420": "after: bar 296.5-403.5/420 barH=107 --pbar-h=107px popTop=16.5 inView=true errors=0",
+      "head_390x844_to_844x390": "after: bar 305.9-363.9/390 barH=58 --pbar-h=58px popTop=26.1 inView=true errors=0",
+      "old_1440x420_to_390x420": "after: bar 318.4-425.4/420 barH=107 --pbar-h=null popTop=16 inView=false errors=0",
+      "old_1440x900_to_320x256": "after: bar 200.3-307.3/256 barH=107 --pbar-h=null popTop=16 inView=false errors=0",
+      "head_390x420_to_1440x420": "after: bar 331.7-389.7/420 barH=58 --pbar-h=58px popTop=30.3 inView=true errors=0",
+      "old_390x420_to_1440x420": "after: bar 332.2-390.2/420 barH=58 --pbar-h=null popTop=29.8 inView=true errors=0",
+      "old_390x844_to_844x390": "after: bar 306.4-364.4/390 barH=58 --pbar-h=null popTop=25.6 inView=true errors=0"
+    }
+  },
+  "I": {
+    "out": {
+      "head_n1": {
+        "servedSha": "e57e42611f9e87aa",
+        "slots": 1,
+        "ae0": "h2",
+        "keysOnTitle": [
+          0,
+          80
+        ],
+        "max": 129,
+        "afterTextClick": "div.pdim",
+        "keysOnRoot": 96,
+        "endOnRoot": 96
+      },
+      "old_n1": {
+        "servedSha": "332ffe29281a179d",
+        "slots": 1,
+        "ae0": "h2",
+        "keysOnTitle": [
+          0,
+          80
+        ],
+        "max": 128,
+        "afterTextClick": "div.pdim",
+        "keysOnRoot": 0,
+        "endOnRoot": 0
+      },
+      "head_back": {
+        "pdim": false,
+        "locked": false,
+        "persisted": "back_forward",
+        "cur": null,
+        "pause": null,
+        "ae": "body",
+        "url": "index.html",
+        "errors": []
+      },
+      "old_back": {
+        "pdim": false,
+        "locked": false,
+        "persisted": "back_forward",
+        "cur": null,
+        "pause": null,
+        "ae": "body",
+        "url": "index.html",
+        "errors": []
+      },
+      "head_resumeThenKeys": {
+        "ae": "button.parr.ppause[pause]",
+        "pause0": "정지",
+        "st": [
+          0,
+          0
+        ],
+        "max": 129,
+        "dp": [
+          false,
+          false
+        ],
+        "pause1": "정지",
+        "turnsIn9s": 1
+      },
+      "old_resumeThenKeys": {
+        "ae": "button.parr.ppause[pause]",
+        "pause0": "정지",
+        "st": [
+          0,
+          0
+        ],
+        "max": 128,
+        "dp": [
+          false,
+          false
+        ],
+        "pause1": "정지",
+        "turnsIn9s": 1
+      }
+    }
+  },
+  "summary": {
+    "lens": "behavior",
+    "target": "e1955be (served app.js e57e4261, base.css 97e550d7; HEAD 93ff89d docs-only)",
+    "control": "96be167 (popup code = 94f577b, app.js 332ffe29)",
+    "blockers": [
+      {
+        "title": "N>1 첫 초점 .pdim 에서 End/Home 무반응 (ab9160d 키 스크롤이 ArrowDown/Up/PageDown/PageUp/Space 5종만 처리)",
+        "severity": "P2",
+        "evidence": {
+          "head": {
+            "ae": "div.pdim",
+            "start": 0,
+            "afterEnd": 0,
+            "max": 129,
+            "afterDownHome": 48
+          },
+          "old": {
+            "ae": "h2",
+            "start": 0,
+            "afterEnd": 128,
+            "max": 128,
+            "afterDownHome": 0
+          }
+        },
+        "repro": "1440x420 새 컨텍스트 index.html, Tab 없이 End → 활성 카드 scrollTop 0→0(max 129). old(96be167)는 첫 초점 h2 라 브라우저 기본으로 0→128. ArrowDown 뒤 Home: head 48→48, old →0",
+        "new_regression": true
+      },
+      {
+        "title": "「오늘 하루 보지 않기」 체크 뒤 카드 CTA 로 떠나면 억제가 저장되지 않음(close() 경로에서만 읽음)",
+        "severity": "P2",
+        "evidence": {
+          "head_cta": {
+            "url": "http://localhost:8092/request.html#form",
+            "ls": null,
+            "newTabPopup": true
+          },
+          "old_cta": {
+            "url": "http://localhost:8092/request.html#form",
+            "ls": null,
+            "newTabPopup": true
+          },
+          "head_closeBtn_control": {
+            "muted": true,
+            "ls": "{\"all\":1790175600000}",
+            "newTabPopup": false
+          }
+        },
+        "repro": "1440x900 체크박스 클릭 → 의뢰하기 클릭(request.html#form) → localStorage hh_popup_mute_v1 = null → 같은 컨텍스트 새 탭 index.html 팝업 다시 뜸. 대조: 체크 → 닫기 = 저장, 새 탭 안 뜸",
+        "new_regression": false
+      }
+    ],
+    "verdict_refuted": false
+  }
+}
