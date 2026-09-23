@@ -58,7 +58,7 @@
 :where(body.v2) #joinForm .check{align-items:center;padding-block:var(--s2)}
 :where(body.v2) #joinForm .check .check-choice{display:flex;flex-wrap:nowrap;align-items:flex-start;flex:1;gap:var(--s2);min-height:var(--tap);padding-block:var(--s2);cursor:pointer}   /* base .check label 의 wrap 을 푼다: 체크박스가 혼자 한 줄 차지하던 회귀 (critic 2차) */
 :where(body.v2) #joinForm .check .check-choice>span{flex:1;min-width:0}
-:where(body.v2) #joinForm .check .view{min-width:var(--tap);min-height:var(--tap)}
+:where(body.v2) #joinForm .check .view{min-width:var(--tap);min-height:var(--tap);align-self:flex-start}   /* 여러 줄 행에서 「전문」 을 제목 줄 옆에 (critic 3차 P2) */
 /* astra 09-23 C P1-4 단계 레일 숨김(DOM 보존, JS 참조), 단계 상자를 괘선 구획으로, 회원 구분 토큰화 */
 :where(body.v2) #joinForm > .rail{display:none}
 :where(body.v2) #joinForm > .step{padding:var(--s4) 0 0;margin-bottom:var(--s5);background:transparent;border-top:var(--rule-strong);border-radius:0;box-shadow:var(--shadow-1)}
