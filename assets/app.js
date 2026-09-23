@@ -475,7 +475,6 @@
           '<button type="button" class="parr ppause" data-ppop-pause>정지</button></div>'
         : "") +
       '<button type="button" class="pclose" data-ppop-close>닫기</button>';
-    stage.appendChild(bar);   // 하단바는 무대 둘째 행에 고정한다. 활성 슬롯을 따라 옮겨 붙이면 넘길 때 ←/→ 가 옆으로 미끄러지고 카드 높이마다 위아래로 움직여 연타가 딤과 체크에 맞았다 (critic 5차 P2, Codex 5차)
     document.body.appendChild(root);
     let cur = 0, timer = null, hover = false, autoFocus = false;   // autoFocus = 자동 넘김이 옮기는 초점(사람 조작이 아니라 벨트를 안 멈춘다)
     let stopped = N < 2 || !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
@@ -484,13 +483,13 @@
     const paintPause = () => { if (pauseBtn) { const t = stopped ? "재생" : "정지"; pauseBtn.textContent = t; pauseBtn.setAttribute("aria-label", "자동 넘김 " + t); } };
     paintPause();   // 모션 감소 설정이면 멈춘 채 시작하므로 「재생」 (critic 2차 L9)
     const curEl = bar.querySelector("[data-ppop-cur]");
-    // 활성 카드 가운데, 나머지는 가장 짧은 방향의 측면(--d = 칸 수). 슬롯은 아래 맞춤이라 활성 카드가 고정 하단바 바로 위에 선다. 측면 .pop 은 inert.
+    // 활성 카드 가운데, 나머지는 가장 짧은 방향의 측면(--d = 칸 수). 하단바는 활성 카드 아래로 옮겨 붙는다. 측면 .pop 은 inert.
     function layout() {
       slots.forEach((s, i) => {
         let d = i - cur;
         if (N > 2) { if (d > N / 2) d -= N; else if (d < -N / 2) d += N; }
         const card = s.firstElementChild;
-        if (i === cur) { s.removeAttribute("data-side"); s.style.removeProperty("--d"); s.setAttribute("data-on", ""); card.removeAttribute("inert"); }
+        if (i === cur) { s.removeAttribute("data-side"); s.style.removeProperty("--d"); s.setAttribute("data-on", ""); card.removeAttribute("inert"); s.appendChild(bar); }
         else { s.removeAttribute("data-on"); s.setAttribute("data-side", d < 0 ? "-1" : "1"); s.style.setProperty("--d", String(d)); card.setAttribute("inert", ""); }
       });
       if (curEl) curEl.textContent = String(cur + 1);
@@ -523,8 +522,7 @@
       else if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
     };
     layout();
-    // 첫 초점: 두 장 이상이면 대화상자 틀(aria-label 「안내 N건」). 제목에 두면 자동 넘김이 8초마다 초점을 새 제목으로 옮겨 스크린리더가 읽던 자리를 잃는다 (반증 5차 P2)
-    const close = popupFocus(root, N > 1 ? null : cards[0].title, () => {
+    const close = popupFocus(root, cards[0].title, () => {
       clearTimeout(timer);
       document.removeEventListener("keydown", onArrow);
       const mute = bar.querySelector("[data-ppop-mute-all]");

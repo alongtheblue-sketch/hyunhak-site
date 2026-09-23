@@ -878,7 +878,7 @@ body.v2{background:var(--ink)}
 
 /* ==== popup_stage_20260922 begin (2026-09-22 통합. 구 promo_popup_20260907 하단 시트 + 공지 .hh-popup 을 한 무대로. 재병합 = 이 블록 교체) ====
    건우: 팝업은 아래에서 올라오는 시트가 아니라 화면 가운데(iruriedu.kr /assets/v4/popup.js 의 컨베이어 계약 이식).
-   구조  .pdim(뿌리 role=dialog) > .pback(딤) + .pstage(무대) > .pslot × N > .pop(카드) + .pbar(하단바, 무대 둘째 행 고정)
+   구조  .pdim(뿌리 role=dialog) > .pback(딤) + .pstage(무대) > .pslot × N > .pop(카드) [+ .pbar = 활성 카드 아래 하단바, app.js 가 옮겨 붙인다]
    카드  행사 = 빌드 주입(_tools/promo_popup.html) · 의뢰 개시 = index.html 정적 · 공지 = app.js 가 API 로 조판. 골격은 셋이 같다(.pfr > .prib .ptxt .pbot).
    무대  카드 전부 같은 칸(grid-area 1/1)에 겹쳐 세우고 측면은 translateX(--d × (100% + 간격)) scale(.9) + 명도 종속(단일 focal: 크기와 명도 두 축).
          측면 명도 종속 = 슬롯 전체 opacity 가 아니라 카드 바탕 --mat 불투명 + 안 내용(.pfr)만 .55. 슬롯을 반투명하게 하면 지면 글자가 카드를 관통한다(critic 2026-09-23 L4=2).
@@ -888,7 +888,7 @@ body.v2{background:var(--ink)}
    리터럴 px 셋: 카드 폭 440(iruriedu 카드 규격과 같은 값) · 딤 rgba(玄墨) · 朱印 점 6px(149행 공지 띠 점과 같은 값). 나머지는 토큰. */
 :where(body.v2) .pdim{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:var(--s3) var(--gut);overflow:hidden}
 :where(body.v2) .pback{position:absolute;inset:0;background:rgba(49,46,46,.42)}
-:where(body.v2) .pstage{position:relative;width:100%;max-width:var(--container);display:grid;grid-template-rows:auto auto;place-items:end center;pointer-events:none}   /* 1행 = 카드 슬롯(아래 맞춤), 2행 = 하단바 고정. 넘겨도 조작부가 움직이지 않는다 (critic 5차 P2) */
+:where(body.v2) .pstage{position:relative;width:100%;max-width:var(--container);display:grid;place-items:center;pointer-events:none}
 :where(body.v2) .pslot{grid-area:1/1;width:min(440px,100%);pointer-events:auto;display:flex;flex-direction:column;
   transition:transform var(--dur-2) var(--ease),opacity var(--dur-2) var(--ease);will-change:transform}
 :where(body.v2) .pslot[data-on]{z-index:2}
@@ -897,7 +897,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pslot[data-side] .pfr{opacity:.55}
 :where(body.v2) .pslot .pop{transition:background-color var(--dur-2) var(--ease)}   /* 넘길 때 바탕과 명도가 transform 과 같은 시간에 바뀌게 (critic 4차 P2) */
 :where(body.v2) .pslot .pfr{transition:opacity var(--dur-2) var(--ease)}
-:where(body.v2) .pslot[data-on] .pop{border-bottom-color:transparent}   /* 활성 카드 아래는 하단바 윗선 하나만(.55 와 .24 2px 겹선 해소). 폭 0 이 아니라 투명: 카드 높이가 활성 여부로 1px 바뀌면 고정 하단바가 0.5px 흔들린다 */
+:where(body.v2) .pslot[data-on] .pop{border-bottom:0}   /* 활성 카드 아래는 하단바 윗선 하나만(.55 와 .24 2px 겹선 해소) */
 @media (prefers-reduced-motion:reduce){:where(body.v2) .pslot,:where(body.v2) .pslot .pop,:where(body.v2) .pslot .pfr{transition:none}}
 
 :where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s4);background:var(--card);color:var(--ink);
@@ -913,7 +913,6 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pkv .ph span{font-family:var(--mono);font-size:var(--t-xs);letter-spacing:var(--tr-label);color:var(--gray)}
 :where(body.v2) .pop--noimg .pkv{display:none}
 :where(body.v2) .ptxt h2{font-size:var(--t-h4);line-height:var(--lh-tight);max-width:none}
-:where(body.v2) .pdim:focus{outline:none}   /* 두 장 이상일 때 첫 초점 = 대화상자 틀. 조작 요소가 아니라 탭 순서 밖이다 */
 :where(body.v2) .ptxt h2:focus{outline:none}   /* 스크립트가 옮긴 초점의 자리 표시는 대화상자 틀이 대신한다. 조작 요소의 :focus-visible 은 그대로 (astra A P0-2, D §5) */
 :where(body.v2) .ptxt .rate{display:none}   /* 표제가 이미 30% 를 말한다 */
 :where(body.v2) .ptxt .until{font-family:var(--mono);font-size:var(--t-mono);letter-spacing:0;color:var(--gray);margin-top:var(--s2);max-width:none}
@@ -938,7 +937,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pacts .btn{width:100%}
 /* 하단바 */
 :where(body.v2) .pbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s1) var(--s3);
-  grid-area:2/1;width:min(440px,100%);pointer-events:auto;z-index:2;position:relative;background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}   /* position:relative = 위 카드(.pop, relative) 그림자가 하단바 위에 칠해지지 않게 (critic 5차 P3) */
+  position:relative;background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}   /* position:relative = 위 카드(.pop, relative) 그림자가 하단바 위에 칠해지지 않게 (critic 5차 P3) */
 :where(body.v2) .pbar .pmute{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);color:var(--gray);cursor:pointer;white-space:nowrap}
 :where(body.v2) .pbar .pmute input{appearance:none;width:calc(var(--s3) + var(--s1) / 2);height:calc(var(--s3) + var(--s1) / 2);border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card);flex:none}
 :where(body.v2) .pbar .pmute input:checked{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/var(--s3) no-repeat;border-color:var(--ink)}
