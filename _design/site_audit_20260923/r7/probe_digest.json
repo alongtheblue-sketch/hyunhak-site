@@ -1,0 +1,290 @@
+{
+ "head": "c-keypause = ab9160d + Codex 7차 P2 수리(onArrow setPause, rAF 세대). 프로브 2종은 ab9160d 서빙에서 측정, 수리 delta = app.js onArrow 1줄 + layout() rAF 세대 검사 3줄(CSS 무변경)",
+ "probe:popnav (ab9160d, pass)": {
+  "nav": "96/96, 되돌아감 0, 조작 뒤 초점 = 새 제목 96/96, 700ms 뒤 barGap -1 x96, 하단바 이동 0, 단추 초점 Space 16/16 누름(dp false)",
+  "seq+sweep": "seq 23/23; sweep 64/64 클릭 160 넘김 160 → 명중 160, 닫힘 0, 체크 0, 간격 50~700ms 8/8, hit-test 50/50 x4",
+  "restpos": "→ 정지 위치 X/Y 차이 0/0, barGap -1 전행, 활성 카드 위 빈 공간 1440 [14.3, 0, 282.4] 390 [48.5, 0, 332.5] (아래 맞춤, 의도)",
+  "pause": "자동 8002/8001ms, 재개 8001/8003/8039ms, reduce 9507/9501 넘김 0, 390 탭 20초 2회, aria-pressed 없음",
+  "focus": "로드 직후 dialog 「안내 2건/3건」, 자동 넘김 20초 focusin div.pdim 1회, Tab → a.btn 의뢰하기, 순환 [0..6,0]/[6..0,6], ESC → a.skip 4/4, N=1 제목",
+  "short": "14/14 조합 35카드: 하단바 bottom ≤ vh-16.5, 활성 top ≥ 16.5, --pbar-h = offsetHeight 35/35(107/58px), max-height 일치 35/35, 넘치는 21카드 끝까지 스크롤 21/21, 측면 겹침 0",
+  "wrap": "8/8 실행 56단계 1616프레임: 교차 0, 측면 최대 겹침 0px, 감아 도는 슬롯 56회 none@키직후+첫프레임 → 둘째 프레임 복구, 먼 슬롯 opacity 0 pointer-events none(1920 230px 자리 elementFromPoint = div.pback), reduce 동일",
+  "keys": "1440x420 0>48, 0>129, 0>129(Space), 129>81, 129>0(Shift+Space), 129>0(PageUp), dp true, 초점 pdim 유지; 1440x320 +48 +194 -48 -194; ArrowRight/Left 넘김+제목 초점; Tab 으로 ← 초점 뒤 Space = 단추 클릭 1, 스크롤 0",
+  "visual": "접합 crop 5장 선 1개(3장치px, 206,204,200), 딤 행 0, 그림자 행 0; 측면 radius 4; 넘김 0/150/300/500ms 하단바 이동 0; rAF 41프레임 이동 0; reduce 전이 0",
+  "observations": [
+   "카드 안 조작은 a.btn 링크라 Space 는 브라우저 기본(스크롤), 이전부터",
+   "390x640 의뢰 카드 넘침 없음(456=456)",
+   "320x256/568x320 하단바 2줄 107px 라 카드 보이는 높이 117/181px, 안 스크롤 387~418/258~272px (ab9160d 신규 결과)"
+  ]
+ },
+ "probe:regress (ab9160d vs 라이브 96be167, pass)": "64장 = 차이 0 49, (a) 의도 14(홈 팝업 무대 안: N=2 첫 장 1440 100302/390 60769 = 카드와 하단바 아래로 7.1/24.2px, 둘째 장 활성 카드 영역 0, N=3 측면 아래 맞춤, 390x640 1.2px, N=1 390 하단바 글자 1px), (b) 흔들림 1(programs_studio 1440 표본 이미지 4889, rep1 대조 0), (c) 의도 밖 0. 팝업 없는 면 40쌍 AE 0. 접합 38장 선 1행 슬릿 0, barTop-onBottom pre 0 post -1",
+ "selfcheck (메인 세션)": {
+  "quick_check(1440x900,390x844,1440x700)": "→ 단추 위치 카드 3회 전환 동안 이동 0px, barTop = popBottom - 1.0 (margin-top -1 겹침), 같은 좌표 3연타 100/150/250ms 닫힘 0 체크 0, 터치 재개 9.3초 1→2, 자동 넘김 17.5초 focusin = pdim 1회",
+  "regress_joint(6폭 × index cur1/cur2 + about N=1 = 18상태)": "post 슬릿 0/18 (dsf 1), 0/18 (dsf 2). pre(94f577b) 0/18",
+  "short(하단바 bottom ≤ innerHeight, 카드별)": [
+   [
+    "390x640",
+    [
+     [
+      "1",
+      603.4,
+      640,
+      true
+     ],
+     [
+      "2",
+      603.4,
+      640,
+      true
+     ]
+    ]
+   ],
+   [
+    "360x640",
+    [
+     [
+      "1",
+      603.4,
+      640,
+      true
+     ],
+     [
+      "2",
+      603.4,
+      640,
+      true
+     ]
+    ]
+   ],
+   [
+    "844x390",
+    [
+     [
+      "1",
+      363.9,
+      390,
+      true
+     ],
+     [
+      "2",
+      363.9,
+      390,
+      true
+     ]
+    ]
+   ],
+   [
+    "568x320",
+    [
+     [
+      "1",
+      303.5,
+      320,
+      true
+     ],
+     [
+      "2",
+      303.5,
+      320,
+      true
+     ]
+    ]
+   ],
+   [
+    "320x256",
+    [
+     [
+      "1",
+      239.5,
+      256,
+      true
+     ],
+     [
+      "2",
+      239.5,
+      256,
+      true
+     ]
+    ]
+   ],
+   [
+    "1440x600",
+    [
+     [
+      "1",
+      544.5,
+      600,
+      true
+     ],
+     [
+      "2",
+      544.5,
+      600,
+      true
+     ]
+    ]
+   ],
+   [
+    "390x844",
+    [
+     [
+      "1",
+      728.4,
+      844,
+      true
+     ],
+     [
+      "2",
+      728.4,
+      844,
+      true
+     ]
+    ]
+   ]
+  ],
+  "wrap(N=4 복제 카드, 폭, N, data-far 슬롯 [i,d,opacity], 전이 중 활성 영역과 겹친 표본 수, 그 슬롯 i)": [
+   [
+    1920,
+    4,
+    [
+     [
+      "2",
+      "2",
+      "0"
+     ]
+    ],
+    2,
+    [
+     "0",
+     "0"
+    ]
+   ],
+   [
+    1440,
+    4,
+    [
+     [
+      "2",
+      "2",
+      "0"
+     ]
+    ],
+    2,
+    [
+     "0",
+     "0"
+    ]
+   ]
+  ],
+  "wrap 해석": "겹친 표본은 전부 i=0 = 나가는 활성 카드(d 0→-1)로 정상. 감아 도는 슬롯 3(d -1→2)은 transition none 으로 즉시 이동 + data-far opacity 0",
+  "keys(1440x420, 첫 초점 .pdim)": {
+   "start": {
+    "st": 0,
+    "sh": 429,
+    "ch": 300,
+    "active": "pdim"
+   },
+   "arrowDown": {
+    "st": 48,
+    "sh": 429,
+    "ch": 300,
+    "active": "pdim"
+   },
+   "pageDown": {
+    "st": 129,
+    "sh": 429,
+    "ch": 300,
+    "active": "pdim"
+   },
+   "arrowUp": {
+    "st": 81,
+    "sh": 429,
+    "ch": 300,
+    "active": "pdim"
+   },
+   "space": {
+    "st": 129,
+    "sh": 429,
+    "ch": 300,
+    "active": "pdim"
+   },
+   "ok": true
+  }
+ },
+ "keys_pause_check (수리 후 c-keypause)": {
+  "short_1440x420": {
+   "start": {
+    "cur": "1",
+    "pause": "정지",
+    "st": 0,
+    "scrollable": true,
+    "active": "pdim"
+   },
+   "afterKey": {
+    "cur": "1",
+    "pause": "재생",
+    "st": 48,
+    "scrollable": true,
+    "active": "pdim"
+   },
+   "after9_5s": {
+    "cur": "1",
+    "pause": "재생",
+    "st": 48,
+    "scrollable": true,
+    "active": "pdim"
+   },
+   "ok": true
+  },
+  "tall_1440x900": {
+   "start": {
+    "cur": "1",
+    "pause": "정지",
+    "st": 0,
+    "scrollable": false,
+    "active": "pdim"
+   },
+   "afterKey": {
+    "cur": "1",
+    "pause": "정지",
+    "st": 0,
+    "scrollable": false,
+    "active": "pdim"
+   },
+   "after9_5s": {
+    "cur": "2",
+    "pause": "정지",
+    "st": 0,
+    "scrollable": false,
+    "active": "pdim"
+   },
+   "ok": true
+  },
+  "rapidWrap": {
+   "N": 4,
+   "transitions": [
+    [
+     "0",
+     "1",
+     ""
+    ],
+    [
+     "1",
+     "-2",
+     ""
+    ],
+    [
+     "2",
+     "-1",
+     ""
+    ],
+    [
+     "3",
+     "0",
+     ""
+    ]
+   ],
+   "ok": true
+  }
+ },
+ "codex 7차 (ab9160d)": "RELEASE: NO. 6차 슬릿 해결(36 crop 독립 재검사 0), 반증 P2 4 해결 + 빈 공간 수용 가능, 차단 P2 1 = .pdim 초점 키 스크롤이 자동 넘김을 안 멈춤 → 본 수리로 setPause. 비차단 관찰: --pbar-h 폴백은 최초 동기 측정 + resize, rAF 세대 검사 없음(→ 본 수리로 추가), Space 는 .pdim 초점일 때만, 스크린리더 가상 커서 실낭독 미검증"
+}

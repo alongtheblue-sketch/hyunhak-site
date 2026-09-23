@@ -1,0 +1,1461 @@
+{
+ "probe": "regress r7",
+ "pre": "96be167",
+ "post": "ab9160d",
+ "route_files": [
+  "assets/app.js",
+  "assets/base.css"
+ ],
+ "served_check": "8092 assets/app.js sha256 7c650612... = 리포, base.css 97e550d7... = 리포. 스크립트 served != ab9160d: 0, disk != ab9160d: 0",
+ "determinism": "DOMContentLoaded + networkidle(최대 5초) + document.fonts.ready + 300ms 에 팝업 촬영, → 는 ArrowRight 1회 + 1000ms. 본문은 ESC 뒤 FREEZE(.rv 강제 표시, animation/transition none, video 숨김) + lazy eager + decode 대기 + 400ms. dsf 1, ko-KR, --disable-features=LocalNetworkAccessChecks 두 판 같음",
+ "compare": "magick compare -metric AE -fuzz 2% (r3/probe_regress_compare.py). 재촬영 = 두 판 전 61장 + tail 3장 rep1(shots/ab_pre_rep1, ab_post_rep1)",
+ "b_jitter_sources": {
+  "sample_image": "programs_studio_1440 표본 이미지 래스터(pre 첫 촬영, AE 4889)",
+  "radio_border": "programs_studio_1440 라디오 테두리 x233-245 y515-518 (post vs post_rep1 10)",
+  "page_frame_corner_and_vermilion_dot": "about_1440 문서 위 y14-19 모서리 + 朱 점 x216-222 y139-145 (두 판 각 재촬영 18)",
+  "mono_digits": "행사 띠와 팝업 안 mono 숫자 글리프(33,000원 23,100원, 2026년 9월 30일 23시 59분) 적용 시점. guidebook_index_1440 post 재촬영 333, guidebook_index_popup_1440 post 재촬영 1022, terms_1440 pre 재촬영 229, programs_guidebook_1440 pre 재촬영 1509. A/B 차이는 넷 모두 0"
+ },
+ "joint": {
+  "method": "하단바 윗선 행 ±3 행에서 카드 폭(좌우 12px 안쪽) 30% 이상이 max 채널 <190(딤 너머 지면색)이면 슬릿 행",
+  "shots": 38,
+  "slit_rows": 0,
+  "line_rows": "두 판 모두 선 (206,204,200) 1행, 카드 좌우 테두리 접합 행 (174,171,168) 1행(수리 전과 같은 값, r6 corner_notch (198,196,192) 재현 0)",
+  "barTop_minus_onBottom": {
+   "pre": [
+    0
+   ],
+   "post": [
+    -1
+   ]
+  },
+  "bar_parent": {
+   "pre": [
+    "pslot"
+   ],
+   "post": [
+    "pstage"
+   ]
+  }
+ },
+ "popup_outside": "팝업 19쌍 모두 차이 화소를 두 판 활성 카드, 하단바, 측면 카드 rect(그림자 shadow-2 여유 좌우 28 위 16 아래 40px) 밖에서 세면 0 (popup_outside_shadowpad.json). 여유 4px 로 세면 index_popup_n3_1440 과 n3_cur2_1440 에 343px(y640-641) = 측면 카드 그림자",
+ "short_screen_observation": "390x640 에서 ab9160d 의 max-height calc(100vh - 2*s3 - --pbar-h) = 640-32-107 = 501px 가 72vh 460.8px 보다 커서 카드 높이는 두 판 같다(456). 이 크기에서 의도한 카드 높이 차이는 나타나지 않았고 차이는 1.2~1.3px 위치 이동뿐",
+ "geometry_home": {
+  "index_popup_1440": {
+   "pre": {
+    "cur": "1",
+    "on": [
+     500,
+     206.1,
+     940,
+     635.9
+    ],
+    "bar": [
+     500,
+     635.9,
+     940,
+     693.9
+    ],
+    "onMaxH": "648px",
+    "onSH": 429,
+    "onCH": 429,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     693.9,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "1",
+    "on": [
+     500,
+     213.2,
+     940,
+     644.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 429,
+    "onCH": 429,
+    "pbarH": "58px",
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "div.pdim[안내 2건]"
+   },
+   "sides_pre": [
+    [
+     986,
+     249.7,
+     1382,
+     650.3
+    ]
+   ],
+   "sides_post": [
+    [
+     986,
+     221.2,
+     1382,
+     621.8
+    ]
+   ]
+  },
+  "index_popup_cur2_1440": {
+   "pre": {
+    "cur": "2",
+    "on": [
+     500,
+     198.9,
+     940,
+     643.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 443,
+    "onCH": 443,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "2",
+    "on": [
+     500,
+     198.9,
+     940,
+     644.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 443,
+    "onCH": 443,
+    "pbarH": "58px",
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "sides_pre": [
+    [
+     58,
+     256.1,
+     454,
+     643.9
+    ]
+   ],
+   "sides_post": [
+    [
+     58,
+     234.7,
+     454,
+     622.5
+    ]
+   ]
+  },
+  "index_popup_n3_1440": {
+   "pre": {
+    "cur": "1",
+    "on": [
+     500,
+     206.1,
+     940,
+     635.9
+    ],
+    "bar": [
+     500,
+     635.9,
+     940,
+     693.9
+    ],
+    "onMaxH": "648px",
+    "onSH": 429,
+    "onCH": 429,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     693.9,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "1",
+    "on": [
+     500,
+     213.2,
+     940,
+     644.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 429,
+    "onCH": 429,
+    "pbarH": "58px",
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "div.pdim[안내 3건]"
+   },
+   "sides_pre": [
+    [
+     986,
+     249.7,
+     1382,
+     650.3
+    ],
+    [
+     58,
+     376.8,
+     454,
+     523.2
+    ]
+   ],
+   "sides_post": [
+    [
+     986,
+     221.2,
+     1382,
+     621.8
+    ],
+    [
+     58,
+     489.5,
+     454,
+     635.9
+    ]
+   ]
+  },
+  "index_popup_n3_cur2_1440": {
+   "pre": {
+    "cur": "2",
+    "on": [
+     500,
+     198.9,
+     940,
+     643.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 443,
+    "onCH": 443,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "2",
+    "on": [
+     500,
+     198.9,
+     940,
+     644.1
+    ],
+    "bar": [
+     500,
+     643.1,
+     940,
+     701.1
+    ],
+    "onMaxH": "648px",
+    "onSH": 443,
+    "onCH": 443,
+    "pbarH": "58px",
+    "barBottom_vs_innerH": [
+     701.1,
+     900
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "sides_pre": [
+    [
+     58,
+     256.1,
+     454,
+     643.9
+    ],
+    [
+     986,
+     376.8,
+     1382,
+     523.2
+    ]
+   ],
+   "sides_post": [
+    [
+     58,
+     234.7,
+     454,
+     622.5
+    ],
+    [
+     986,
+     489.5,
+     1382,
+     635.9
+    ]
+   ]
+  },
+  "index_popup_390": {
+   "pre": {
+    "cur": "1",
+    "on": [
+     16,
+     139.9,
+     374,
+     597.1
+    ],
+    "bar": [
+     16,
+     597.1,
+     374,
+     704.1
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     704.1,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "1",
+    "on": [
+     16,
+     164.1,
+     374,
+     622.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": "107px",
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "div.pdim[안내 2건]"
+   },
+   "sides_pre": [
+    [
+     415.9,
+     194,
+     738.1,
+     650
+    ]
+   ],
+   "sides_post": [
+    [
+     415.9,
+     141,
+     738.1,
+     597
+    ]
+   ]
+  },
+  "index_popup_cur2_390": {
+   "pre": {
+    "cur": "2",
+    "on": [
+     16,
+     115.6,
+     374,
+     621.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 505,
+    "onCH": 505,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "2",
+    "on": [
+     16,
+     115.6,
+     374,
+     622.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 505,
+    "onCH": 505,
+    "pbarH": "107px",
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "sides_pre": [
+    [
+     -348.1,
+     215.8,
+     -25.9,
+     628.2
+    ]
+   ],
+   "sides_post": [
+    [
+     -348.1,
+     187,
+     -25.9,
+     599.5
+    ]
+   ]
+  },
+  "index_popup_n3_390": {
+   "pre": {
+    "cur": "1",
+    "on": [
+     16,
+     139.9,
+     374,
+     597.1
+    ],
+    "bar": [
+     16,
+     597.1,
+     374,
+     704.1
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     704.1,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "1",
+    "on": [
+     16,
+     164.1,
+     374,
+     622.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": "107px",
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "div.pdim[안내 3건]"
+   },
+   "sides_pre": [
+    [
+     415.9,
+     194,
+     738.1,
+     650
+    ],
+    [
+     -348.1,
+     343.6,
+     -25.9,
+     500.4
+    ]
+   ],
+   "sides_post": [
+    [
+     415.9,
+     141,
+     738.1,
+     597
+    ],
+    [
+     -348.1,
+     456.8,
+     -25.9,
+     613.7
+    ]
+   ]
+  },
+  "index_popup_n3_cur2_390": {
+   "pre": {
+    "cur": "2",
+    "on": [
+     16,
+     115.6,
+     374,
+     621.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 505,
+    "onCH": 505,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "2",
+    "on": [
+     16,
+     115.6,
+     374,
+     622.4
+    ],
+    "bar": [
+     16,
+     621.4,
+     374,
+     728.4
+    ],
+    "onMaxH": "607.68px",
+    "onSH": 505,
+    "onCH": 505,
+    "pbarH": "107px",
+    "barBottom_vs_innerH": [
+     728.4,
+     844
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "sides_pre": [
+    [
+     -348.1,
+     215.8,
+     -25.9,
+     628.2
+    ],
+    [
+     415.9,
+     343.6,
+     738.1,
+     500.4
+    ]
+   ],
+   "sides_post": [
+    [
+     -348.1,
+     187,
+     -25.9,
+     599.5
+    ],
+    [
+     415.9,
+     456.8,
+     738.1,
+     613.7
+    ]
+   ]
+  },
+  "index_popup_short_390x640": {
+   "pre": {
+    "cur": "1",
+    "on": [
+     16,
+     37.9,
+     374,
+     495.1
+    ],
+    "bar": [
+     16,
+     495.1,
+     374,
+     602.1
+    ],
+    "onMaxH": "460.8px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": null,
+    "barBottom_vs_innerH": [
+     602.1,
+     640
+    ],
+    "far": 0,
+    "focus": "h2"
+   },
+   "post": {
+    "cur": "1",
+    "on": [
+     16,
+     39.1,
+     374,
+     497.4
+    ],
+    "bar": [
+     16,
+     496.4,
+     374,
+     603.4
+    ],
+    "onMaxH": "460.8px",
+    "onSH": 456,
+    "onCH": 456,
+    "pbarH": "107px",
+    "barBottom_vs_innerH": [
+     603.4,
+     640
+    ],
+    "far": 0,
+    "focus": "div.pdim[안내 2건]"
+   },
+   "sides_pre": [
+    [
+     415.9,
+     112.6,
+     738.1,
+     527.4
+    ]
+   ],
+   "sides_post": [
+    [
+     415.9,
+     59.6,
+     738.1,
+     474.4
+    ]
+   ]
+  }
+ },
+ "counts": {
+  "none": 49,
+  "a": 14,
+  "b": 1
+ },
+ "c_count": 0,
+ "pass": true,
+ "classes": {
+  "about_1440": {
+   "ae": 0,
+   "rep_pre": 18,
+   "rep_post": 18,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "about_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "about_popup_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "outside_popup_px_shadowpad": 0,
+   "class": "none"
+  },
+  "about_popup_390": {
+   "ae": 693,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "stable_px_th5": 714,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ],
+   "class": "a",
+   "note": "a: 입구 면 N=1 팝업(같은 무대 코드). 하단바 rect 같음(645.9-703.9), 하단바 틀과 선 차이 0, 안의 글자(오늘 하루 보지 않기, 닫기)만 1px 아래 래스터(잉크 무게중심 y 672.798→673.798, 잉크 합 37044 같음). 하단바가 슬롯(will-change 합성 레이어) 자식에서 무대 격자 자식으로 옮겨 소수 y .9 반올림이 바뀐 것. 재촬영 두 판 각 0 = 흔들림 아님. 무대 밖 0"
+  },
+  "b2b_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "b2b_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "faq_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "faq_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "guidebook_index_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 333,
+   "rep_cross": 333,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "guidebook_index_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "guidebook_index_popup_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 1022,
+   "rep_cross": 1022,
+   "stable_px_th5": 0,
+   "outside_popup_px_shadowpad": 0,
+   "class": "none"
+  },
+  "guidebook_index_popup_390": {
+   "ae": 693,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "stable_px_th5": 714,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ],
+   "class": "a",
+   "note": "a: 입구 면 N=1 팝업(같은 무대 코드). 하단바 rect 같음(645.9-703.9), 하단바 틀과 선 차이 0, 안의 글자(오늘 하루 보지 않기, 닫기)만 1px 아래 래스터(잉크 무게중심 y 672.798→673.798, 잉크 합 37044 같음). 하단바가 슬롯(will-change 합성 레이어) 자식에서 무대 격자 자식으로 옮겨 소수 y .9 반올림이 바뀐 것. 재촬영 두 판 각 0 = 흔들림 아님. 무대 밖 0"
+  },
+  "index_nopop_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "index_nopop_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "index_popup_1440": {
+   "ae": 100302,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 100302,
+   "stable_px_th5": 101971,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     500,
+     206,
+     1382,
+     701,
+     100302
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=2 첫 장. 활성 카드와 하단바 7.1~7.2px 아래(카드 206.1→213.2, 하단바 635.9→643.1 = 둘째 장과 같은 자리 고정), 측면 카드 아래 맞춤(249.7→221.2). 무대 밖 0"
+  },
+  "index_popup_390": {
+   "ae": 60769,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 60769,
+   "stable_px_th5": 61175,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     16,
+     140,
+     374,
+     728,
+     60769
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=2 첫 장. 활성 카드와 하단바 24.2~24.3px 아래(하단바 597.1→621.4 = 둘째 장과 같은 자리). 측면 카드는 뷰포트 밖. 무대 밖 0"
+  },
+  "index_popup_cur2_1440": {
+   "ae": 55053,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 55053,
+   "stable_px_th5": 56717,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     58,
+     234,
+     454,
+     646,
+     55053
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=2 둘째 장. 활성 카드(x500-940)와 하단바 차이 0, 차이 전부 왼쪽 측면 카드(x58-454) 아래 맞춤 이동(256.1→234.7). 무대 밖 0"
+  },
+  "index_popup_cur2_390": {
+   "ae": 2350,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 2350,
+   "stable_px_th5": 2356,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     16,
+     621,
+     374,
+     676,
+     1632
+    ],
+    [
+     16,
+     725,
+     374,
+     729,
+     718
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=2 둘째 장. 하단바 rect 같음(621.4-728.4), 하단바 가로선(윗선, 체크 상자, 닫기 테두리, 아랫선) 래스터 1행 위(선 행 622→621). 글자 차이 0. 무대 밖 0"
+  },
+  "index_popup_n3_1440": {
+   "ae": 190646,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 190646,
+   "stable_px_th5": 194084,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     58,
+     206,
+     1382,
+     701,
+     190646
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=3 첫 장. 활성 카드와 하단바 7.1~7.2px 아래, 측면 카드 둘 아래 맞춤(오른쪽 249.7→221.2, 왼쪽 376.8→489.5). 측면 카드 그림자(shadow-2 0 12px 28px) 포함 무대 밖 0"
+  },
+  "index_popup_n3_390": {
+   "ae": 60773,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 60773,
+   "stable_px_th5": 61175,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     16,
+     140,
+     374,
+     728,
+     60773
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=3 첫 장. index_popup_390 과 같은 이동. 측면 카드 뷰포트 밖. 무대 밖 0"
+  },
+  "index_popup_n3_cur2_1440": {
+   "ae": 145345,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 145345,
+   "stable_px_th5": 148737,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     58,
+     234,
+     1382,
+     646,
+     145345
+    ]
+   ],
+   "class": "a",
+   "note": "a: 홈 N=3 둘째 장(→ 1회, 공지 카드 -1→+1 칸 2 이동 = transition none 경로). 활성 카드와 하단바 차이 0, 측면 카드 둘 아래 맞춤. 최종 배치(왼쪽 의뢰 개시, 오른쪽 공지)는 두 판 같음. 무대 밖 0"
+  },
+  "index_popup_n3_cur2_390": {
+   "ae": 2350,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 2350,
+   "stable_px_th5": 2356,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     16,
+     621,
+     374,
+     676,
+     1632
+    ],
+    [
+     16,
+     725,
+     374,
+     729,
+     718
+    ]
+   ],
+   "class": "a",
+   "note": "a: index_popup_cur2_390 과 같은 하단바 가로선 1행"
+  },
+  "index_popup_short_390x640": {
+   "ae": 18282,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 18282,
+   "stable_px_th5": 18692,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     16,
+     38,
+     374,
+     42,
+     718
+    ],
+    [
+     41,
+     67,
+     108,
+     79,
+     232
+    ],
+    [
+     41,
+     103,
+     349,
+     338,
+     11452
+    ],
+    [
+     16,
+     367,
+     374,
+     603,
+     5880
+    ]
+   ],
+   "class": "a",
+   "note": "a: 짧은 화면 첫 장. 카드와 하단바 1.2~1.3px 아래(카드 37.9→39.1, 하단바 495.1→496.4), 측면 카드가 72vh 로 잘린 높이 460.8 이라 1행이 더 높아진 아래 맞춤. 카드 높이 변화 없음(max-height 460.8px 두 판 같음, scrollHeight=clientHeight=456 두 판 같음). 하단바 bottom 603.4 < 640. 무대 밖 0"
+  },
+  "index_tiles_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "index_tiles_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "interview_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "interview_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "interview_popup_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "outside_popup_px_shadowpad": 0,
+   "class": "none"
+  },
+  "interview_popup_390": {
+   "ae": 693,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "stable_px_th5": 714,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ],
+   "class": "a",
+   "note": "a: 입구 면 N=1 팝업(같은 무대 코드). 하단바 rect 같음(645.9-703.9), 하단바 틀과 선 차이 0, 안의 글자(오늘 하루 보지 않기, 닫기)만 1px 아래 래스터(잉크 무게중심 y 672.798→673.798, 잉크 합 37044 같음). 하단바가 슬롯(will-change 합성 레이어) 자식에서 무대 격자 자식으로 옮겨 소수 y .9 반올림이 바뀐 것. 재촬영 두 판 각 0 = 흔들림 아님. 무대 밖 0"
+  },
+  "interview_yonsei-hum_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "interview_yonsei-hum_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "join_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "join_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "lectures_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "lectures_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "lectures_popup_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "outside_popup_px_shadowpad": 0,
+   "class": "none"
+  },
+  "lectures_popup_390": {
+   "ae": 693,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "stable_px_th5": 714,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ],
+   "class": "a",
+   "note": "a: 입구 면 N=1 팝업(같은 무대 코드). 하단바 rect 같음(645.9-703.9), 하단바 틀과 선 차이 0, 안의 글자(오늘 하루 보지 않기, 닫기)만 1px 아래 래스터(잉크 무게중심 y 672.798→673.798, 잉크 합 37044 같음). 하단바가 슬롯(will-change 합성 레이어) 자식에서 무대 격자 자식으로 옮겨 소수 y .9 반올림이 바뀐 것. 재촬영 두 판 각 0 = 흔들림 아님. 무대 밖 0"
+  },
+  "library_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "library_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "login_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "login_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "notice_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "notice_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "pastexam_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "pastexam_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "programs_guidebook_1440": {
+   "ae": 0,
+   "rep_pre": 1509,
+   "rep_post": 0,
+   "rep_cross": 1509,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "programs_guidebook_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "programs_studio_1440": {
+   "ae": 4889,
+   "rep_pre": 4889,
+   "rep_post": 10,
+   "rep_cross": 10,
+   "stable_px_th5": 0,
+   "bands": [
+    [
+     534,
+     1769,
+     1180,
+     1945,
+     1249
+    ],
+    [
+     240,
+     2098,
+     1184,
+     2223,
+     534
+    ],
+    [
+     237,
+     2252,
+     1022,
+     2422,
+     2167
+    ],
+    [
+     244,
+     2460,
+     487,
+     2468,
+     319
+    ],
+    [
+     240,
+     2496,
+     243,
+     2501,
+     6
+    ],
+    [
+     862,
+     3159,
+     1195,
+     3298,
+     614
+    ]
+   ],
+   "class": "b",
+   "note": "b: 표본 이미지(스튜디오 화면 캡처 이미지 안 글자와 배지) 래스터. pre 첫 촬영만 다르다: pre vs pre_rep1 AE 4889(같은 자리), pre_rep1 vs post AE 0. post vs post_rep1 10 = 라디오 테두리(x233-245 y515-518) 와 1px"
+  },
+  "programs_studio_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "ranking_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "ranking_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "request_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "request_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "studio_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "studio_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "studio_popup_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "outside_popup_px_shadowpad": 0,
+   "class": "none"
+  },
+  "studio_popup_390": {
+   "ae": 693,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 693,
+   "stable_px_th5": 714,
+   "outside_popup_px_shadowpad": 0,
+   "bands": [
+    [
+     59,
+     667,
+     340,
+     681,
+     693
+    ]
+   ],
+   "class": "a",
+   "note": "a: 입구 면 N=1 팝업(같은 무대 코드). 하단바 rect 같음(645.9-703.9), 하단바 틀과 선 차이 0, 안의 글자(오늘 하루 보지 않기, 닫기)만 1px 아래 래스터(잉크 무게중심 y 672.798→673.798, 잉크 합 37044 같음). 하단바가 슬롯(will-change 합성 레이어) 자식에서 무대 격자 자식으로 옮겨 소수 y .9 반올림이 바뀐 것. 재촬영 두 판 각 0 = 흔들림 아님. 무대 밖 0"
+  },
+  "support_1440": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "support_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "terms_1440": {
+   "ae": 0,
+   "rep_pre": 229,
+   "rep_post": 0,
+   "rep_cross": 229,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "terms_390": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "stable_px_th5": 0,
+   "class": "none"
+  },
+  "tail_studio_390_footer": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "class": "none"
+  },
+  "tail_studio_390_scroll16384": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "class": "none"
+  },
+  "tail_studio_390_scroll16905": {
+   "ae": 0,
+   "rep_pre": 0,
+   "rep_post": 0,
+   "rep_cross": 0,
+   "class": "none"
+  }
+ }
+}
