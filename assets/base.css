@@ -895,6 +895,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pslot[data-side]{z-index:1;cursor:pointer;transform:translateX(calc(var(--d,1) * (100% + var(--s4)))) scale(.9)}
 :where(body.v2) .pslot[data-side] .pop{pointer-events:none;background:var(--mat);border-radius:var(--r-md)}   /* 하단바는 활성 카드에만 붙으므로 측면 카드는 아래 모서리도 둥글게 */
 :where(body.v2) .pslot[data-side] .pfr{opacity:.55}
+:where(body.v2) .pslot[data-far]{opacity:0;pointer-events:none}   /* 칸 2 이상 밖(N≥4)은 보이지 않는다. app.js layout() 이 |d|≥2 에 붙인다 */
 :where(body.v2) .pslot .pop{transition:background-color var(--dur-2) var(--ease)}   /* 넘길 때 바탕과 명도가 transform 과 같은 시간에 바뀌게 (critic 4차 P2) */
 :where(body.v2) .pslot .pfr{transition:opacity var(--dur-2) var(--ease)}
 :where(body.v2) .pslot[data-on] .pop{border-bottom-color:transparent}   /* 활성 카드 아래는 하단바 윗선 하나만(.55 와 .24 2px 겹선 해소). 폭 0 이 아니라 투명: 카드 높이가 활성 여부로 1px 바뀌면 고정 하단바가 0.5px 흔들린다 */
@@ -902,8 +903,8 @@ body.v2{background:var(--ink)}
 
 :where(body.v2) .pop{position:relative;width:100%;--pop-pad:var(--s4);background:var(--card);color:var(--ink);
   border:var(--rule-ui);border-radius:var(--r-md) var(--r-md) 0 0;box-shadow:var(--shadow-2);
-  max-height:72vh;overflow:auto;overscroll-behavior:contain}
-@supports (height:100dvh){:where(body.v2) .pop{max-height:min(72vh,72dvh)}}
+  max-height:min(72vh,calc(100vh - 2 * var(--s3) - var(--pbar-h,0px)));overflow:auto;overscroll-behavior:contain}   /* --pbar-h = app.js 가 재는 하단바 높이. 짧은 화면에서 카드 + 하단바가 뷰포트(.pdim 위아래 여백 s3) 안에 들게 (반증 6차 P2) */
+@supports (height:100dvh){:where(body.v2) .pop{max-height:min(72vh,72dvh,calc(100dvh - 2 * var(--s3) - var(--pbar-h,0px)))}}
 :where(body.v2) .pfr{margin:0;padding:var(--pop-pad);display:flex;flex-direction:column;gap:var(--s3)}
 :where(body.v2) .prib .k{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);display:flex;align-items:center;max-width:none}
 :where(body.v2) .prib .k::before{content:"";width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:var(--s2);flex:none}
@@ -938,7 +939,7 @@ body.v2{background:var(--ink)}
 :where(body.v2) .pacts .btn{width:100%}
 /* 하단바 */
 :where(body.v2) .pbar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:var(--s1) var(--s3);
-  grid-area:2/1;width:min(440px,100%);pointer-events:auto;z-index:2;position:relative;background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}   /* position:relative = 위 카드(.pop, relative) 그림자가 하단바 위에 칠해지지 않게 (critic 5차 P3) */
+  grid-area:2/1;width:min(440px,100%);margin-top:calc(-1 * var(--line));pointer-events:auto;z-index:2;position:relative;background:var(--card);border:var(--rule-ui);border-top:var(--rule);border-radius:0 0 var(--r-md) var(--r-md);padding:var(--s1) var(--s3);font-size:var(--t-sm);color:var(--ink)}   /* position:relative = 위 카드(.pop, relative) 그림자가 하단바 위에 칠해지지 않게 (critic 5차 P3). margin-top -1px = 하단바 윗선이 활성 카드의 투명 아래 선 자리를 덮는다: 슬롯(합성 레이어)과 하단바의 좌표 반올림이 갈려 딤 1px 슬릿이 비치던 것 (Codex 6차 P2, critic 6차 §5 주입 실측 0/36) */
 :where(body.v2) .pbar .pmute{display:flex;align-items:center;gap:var(--s2);min-height:var(--tap);color:var(--gray);cursor:pointer;white-space:nowrap}
 :where(body.v2) .pbar .pmute input{appearance:none;width:calc(var(--s3) + var(--s1) / 2);height:calc(var(--s3) + var(--s1) / 2);border:var(--rule-ui);border-radius:var(--r-md);margin:0;cursor:pointer;background:var(--card);flex:none}
 :where(body.v2) .pbar .pmute input:checked{background:var(--ink) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3.5 8.5l3 3 6-6' stroke='%23F6F2E9' stroke-width='1.8' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/var(--s3) no-repeat;border-color:var(--ink)}

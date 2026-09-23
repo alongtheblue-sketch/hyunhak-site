@@ -1,0 +1,7350 @@
+{
+ "pre": "94f577b",
+ "post": "r7",
+ "dsf": 2,
+ "at": "2026-09-23T07:03:09.190Z",
+ "recs": [
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 206.06,
+   "onBottom": 635.94,
+   "barTop": 635.94,
+   "x0": 500,
+   "x1": 940,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 631,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_1440.png",
+   "rows": [
+    {
+     "y": 631,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 631.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 632,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 632.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 633,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 633.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 634,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 634.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 635,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 635.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 636,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 636.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 637,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 637.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 198.94,
+   "onBottom": 643.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 198.94,
+   "onBottom": 643.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 639,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_1440.png",
+   "rows": [
+    {
+     "y": 639,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 156.06,
+   "onBottom": 585.94,
+   "barTop": 585.94,
+   "x0": 420,
+   "x1": 860,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 581,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_1280.png",
+   "rows": [
+    {
+     "y": 581,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 581.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 582,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 582.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 583,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 583.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 584,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 584.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 585,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 585.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 586,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 586.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 587,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 587.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 588,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 588.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 589,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 589.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 148.94,
+   "onBottom": 593.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 589.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 148.94,
+   "onBottom": 593.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 589,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_1280.png",
+   "rows": [
+    {
+     "y": 589,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 589.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 142.83,
+   "onBottom": 567.17,
+   "barTop": 567.17,
+   "x0": 292,
+   "x1": 732,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 563,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_1024.png",
+   "rows": [
+    {
+     "y": 563,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 563.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 564,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 564.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 565,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 565.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 566,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 566.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 567,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 567.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 568,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 568.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 569,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 569.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 570,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 570.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 135.7,
+   "onBottom": 574.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 570.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 135.7,
+   "onBottom": 574.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 570,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_1024.png",
+   "rows": [
+    {
+     "y": 570,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 570.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 292.13,
+   "onBottom": 673.88,
+   "barTop": 673.88,
+   "x0": 164,
+   "x1": 604,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 669,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_768.png",
+   "rows": [
+    {
+     "y": 669,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 669.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 670,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 670.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 671,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 671.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 285,
+   "onBottom": 681,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 285,
+   "onBottom": 681,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 677,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_768.png",
+   "rows": [
+    {
+     "y": 677,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 183.88,
+   "onBottom": 641.13,
+   "barTop": 641.13,
+   "x0": 16,
+   "x1": 414,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 637,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_430.png",
+   "rows": [
+    {
+     "y": 637,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 637.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 638.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 639.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 173.63,
+   "onBottom": 651.38,
+   "barTop": 651.38,
+   "x0": 16,
+   "x1": 414,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 647,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_430.png",
+   "rows": [
+    {
+     "y": 647,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 198.13,
+   "onBottom": 675.88,
+   "barTop": 675.88,
+   "x0": 16,
+   "x1": 414,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 671,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_430.png",
+   "rows": [
+    {
+     "y": 671,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 671.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur1",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 139.88,
+   "onBottom": 597.13,
+   "barTop": 597.13,
+   "x0": 16,
+   "x1": 374,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 593,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur1_390.png",
+   "rows": [
+    {
+     "y": 593,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 598,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 598.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 599,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 599.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 600,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 600.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 601,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 601.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "index_cur2",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 115.63,
+   "onBottom": 621.38,
+   "barTop": 621.38,
+   "x0": 16,
+   "x1": 374,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 617,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_index_cur2_390.png",
+   "rows": [
+    {
+     "y": 617,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 617.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "pre",
+   "state": "about_n1",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 140.13,
+   "onBottom": 645.88,
+   "barTop": 645.88,
+   "x0": 16,
+   "x1": 374,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pslot",
+   "clipY0": 641,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_pre_about_n1_390.png",
+   "rows": [
+    {
+     "y": 641,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 10,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 11,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "row": 16,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649.5,
+     "row": 17,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 213.19,
+   "onBottom": 644.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 640,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_1440.png",
+   "rows": [
+    {
+     "y": 640,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 198.94,
+   "onBottom": 644.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 640,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_1440.png",
+   "rows": [
+    {
+     "y": 640,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1440,
+   "dsf": 2,
+   "onTop": 198.94,
+   "onBottom": 644.06,
+   "barTop": 643.06,
+   "x0": 500,
+   "x1": 940,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 640,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_1440.png",
+   "rows": [
+    {
+     "y": 640,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 640.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 641.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 163.19,
+   "onBottom": 594.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 590,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_1280.png",
+   "rows": [
+    {
+     "y": 590,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 148.94,
+   "onBottom": 594.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 590,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_1280.png",
+   "rows": [
+    {
+     "y": 590,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1280,
+   "dsf": 2,
+   "onTop": 148.94,
+   "onBottom": 594.06,
+   "barTop": 593.06,
+   "x0": 420,
+   "x1": 860,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 590,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_1280.png",
+   "rows": [
+    {
+     "y": 590,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 590.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 591.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 592.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 593.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 594.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 595.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 596.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 597.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 149.95,
+   "onBottom": 575.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 571,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_1024.png",
+   "rows": [
+    {
+     "y": 571,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 135.7,
+   "onBottom": 575.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 571,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_1024.png",
+   "rows": [
+    {
+     "y": 571,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 1024,
+   "dsf": 2,
+   "onTop": 135.7,
+   "onBottom": 575.3,
+   "barTop": 574.3,
+   "x0": 292,
+   "x1": 732,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 571,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_1024.png",
+   "rows": [
+    {
+     "y": 571,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 571.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 572.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 573.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 574.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 575.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 576.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 577.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 578.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 299.25,
+   "onBottom": 682,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 678,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_768.png",
+   "rows": [
+    {
+     "y": 678,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 285,
+   "onBottom": 682,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 678,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_768.png",
+   "rows": [
+    {
+     "y": 678,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 768,
+   "dsf": 2,
+   "onTop": 285,
+   "onBottom": 682,
+   "barTop": 681,
+   "x0": 164,
+   "x1": 604,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 678,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_768.png",
+   "rows": [
+    {
+     "y": 678,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 680.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 681.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 682.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 683.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 684.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 194.13,
+   "onBottom": 652.38,
+   "barTop": 651.38,
+   "x0": 16,
+   "x1": 414,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 648,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_430.png",
+   "rows": [
+    {
+     "y": 648,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 173.63,
+   "onBottom": 652.38,
+   "barTop": 651.38,
+   "x0": 16,
+   "x1": 414,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 648,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_430.png",
+   "rows": [
+    {
+     "y": 648,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 650.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 651.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 652.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 653.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 654.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 655.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 430,
+   "dsf": 2,
+   "onTop": 198.13,
+   "onBottom": 676.88,
+   "barTop": 675.88,
+   "x0": 16,
+   "x1": 414,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 672,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_430.png",
+   "rows": [
+    {
+     "y": 672,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 672.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 673.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 674.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 675.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 676.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 677.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 678.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 679.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur1",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 164.13,
+   "onBottom": 622.38,
+   "barTop": 621.38,
+   "x0": 16,
+   "x1": 374,
+   "cur": "1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 618,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur1_390.png",
+   "rows": [
+    {
+     "y": 618,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "index_cur2",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 115.63,
+   "onBottom": 622.38,
+   "barTop": 621.38,
+   "x0": 16,
+   "x1": 374,
+   "cur": "2",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 618,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_index_cur2_390.png",
+   "rows": [
+    {
+     "y": 618,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 618.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 619.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 620.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621,
+     "row": 6,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 621.5,
+     "row": 7,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622,
+     "row": 8,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 622.5,
+     "row": 9,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 623.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 624.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 625.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  },
+  {
+   "variant": "post",
+   "state": "about_n1",
+   "w": 390,
+   "dsf": 2,
+   "onTop": 140.13,
+   "onBottom": 646.88,
+   "barTop": 645.88,
+   "x0": 16,
+   "x1": 374,
+   "cur": "n1",
+   "slotTransform": "none",
+   "barParent": "pstage",
+   "clipY0": 642,
+   "file": "/Users/gregory/Workspace/_wt/hh-studio12/_design/site_audit_20260923/r7/shots/joint_dsf2/joint_post_about_n1_390.png",
+   "rows": [
+    {
+     "y": 642,
+     "row": 0,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 642.5,
+     "row": 1,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643,
+     "row": 2,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 643.5,
+     "row": 3,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644,
+     "row": 4,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 644.5,
+     "row": 5,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645,
+     "row": 6,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 645.5,
+     "row": 7,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646,
+     "row": 8,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 646.5,
+     "row": 9,
+     "mode": [
+      206,
+      204,
+      200
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647,
+     "row": 10,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 647.5,
+     "row": 11,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648,
+     "row": 12,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 648.5,
+     "row": 13,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649,
+     "row": 14,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    },
+    {
+     "y": 649.5,
+     "row": 15,
+     "mode": [
+      255,
+      253,
+      248
+     ],
+     "share": 1,
+     "dark": 0
+    }
+   ],
+   "slit_rows": [],
+   "slit": false
+  }
+ ]
+}

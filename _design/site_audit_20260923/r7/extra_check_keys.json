@@ -1,0 +1,37 @@
+{
+ "short": [],
+ "wrap": [],
+ "keys": {
+  "start": {
+   "st": 0,
+   "sh": 429,
+   "ch": 300,
+   "active": "pdim"
+  },
+  "arrowDown": {
+   "st": 48,
+   "sh": 429,
+   "ch": 300,
+   "active": "pdim"
+  },
+  "pageDown": {
+   "st": 129,
+   "sh": 429,
+   "ch": 300,
+   "active": "pdim"
+  },
+  "arrowUp": {
+   "st": 81,
+   "sh": 429,
+   "ch": 300,
+   "active": "pdim"
+  },
+  "space": {
+   "st": 129,
+   "sh": 429,
+   "ch": 300,
+   "active": "pdim"
+  },
+  "ok": true
+ }
+}

@@ -477,6 +477,11 @@
       '<button type="button" class="pclose" data-ppop-close>닫기</button>';
     stage.appendChild(bar);   // 하단바는 무대 둘째 행에 고정한다. 활성 슬롯을 따라 옮겨 붙이면 넘길 때 ←/→ 가 옆으로 미끄러지고 카드 높이마다 위아래로 움직여 연타가 딤과 체크에 맞았다 (critic 5차 P2, Codex 5차)
     document.body.appendChild(root);
+    // 카드 max-height 가 하단바 자리를 남기게 하단바 높이를 변수로 준다(base.css .pop 이 읽는다). 폭 600 미만, 높이 약 382 이하에서 카드 72vh + 하단바 2줄이 뷰포트를 넘어 둘째 줄(← n/N → 정지)이 잘리던 것 (반증 6차 P2)
+    const fitBar = () => root.style.setProperty("--pbar-h", bar.offsetHeight + "px");
+    fitBar();
+    const barRO = window.ResizeObserver ? new ResizeObserver(fitBar) : null;
+    if (barRO) barRO.observe(bar); else window.addEventListener("resize", fitBar);
     let cur = 0, timer = null, hover = false, autoFocus = false;   // autoFocus = 자동 넘김이 옮기는 초점(사람 조작이 아니라 벨트를 안 멈춘다)
     let stopped = N < 2 || !!(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
     const pauseBtn = bar.querySelector("[data-ppop-pause]");
@@ -490,6 +495,11 @@
         let d = i - cur;
         if (N > 2) { if (d > N / 2) d -= N; else if (d < -N / 2) d += N; }
         const card = s.firstElementChild;
+        // 칸 2 이상 옮기는 카드(N≥3 감아 돌기)는 전이 없이 자리를 바꾼다: 반대편으로 가는 카드가 활성 카드 위를 가로질렀다. |d|≥2 는 숨긴다: N=4 의 1920 에서 셋째 측면 카드가 한쪽에 230px 드러났다 (반증 6차 P2)
+        const pd = s.dataset.d === undefined ? null : Number(s.dataset.d);
+        if (pd !== null && Math.abs(d - pd) > 1) { s.style.transition = "none"; requestAnimationFrame(() => requestAnimationFrame(() => s.style.removeProperty("transition"))); }
+        s.dataset.d = String(d);
+        if (Math.abs(d) >= 2) s.setAttribute("data-far", ""); else s.removeAttribute("data-far");
         if (i === cur) { s.removeAttribute("data-side"); s.style.removeProperty("--d"); s.setAttribute("data-on", ""); card.removeAttribute("inert"); }
         else { s.removeAttribute("data-on"); s.setAttribute("data-side", d < 0 ? "-1" : "1"); s.style.setProperty("--d", String(d)); card.setAttribute("inert", ""); }
       });
@@ -518,7 +528,18 @@
       t.setAttribute("tabindex", "-1"); t.focus({ preventScroll: true });
     }
     const onArrow = (e) => {
-      if (N < 2 || e.altKey || e.ctrlKey || e.metaKey) return;
+      if (e.altKey || e.ctrlKey || e.metaKey) return;
+      // 첫 초점이 대화상자 틀(N>1)일 때 위아래 키로 넘치는 활성 카드를 스크롤한다. 틀은 overflow:hidden 이라 브라우저 기본 스크롤이 닿지 않았다 (반증 6차 P2)
+      if (document.activeElement === root && /^(ArrowDown|ArrowUp|PageDown|PageUp| )$/.test(e.key)) {
+        const sc = cards[cur].card;
+        if (sc.scrollHeight > sc.clientHeight) {
+          const page = e.key !== "ArrowDown" && e.key !== "ArrowUp";
+          const up = e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
+          e.preventDefault(); sc.scrollBy({ top: (up ? -1 : 1) * (page ? Math.round(sc.clientHeight * 0.85) : 48) });
+        }
+        return;
+      }
+      if (N < 2) return;
       if (e.key === "ArrowRight") { e.preventDefault(); go(cur + 1); }
       else if (e.key === "ArrowLeft") { e.preventDefault(); go(cur - 1); }
     };
@@ -527,6 +548,7 @@
     const close = popupFocus(root, N > 1 ? null : cards[0].title, () => {
       clearTimeout(timer);
       document.removeEventListener("keydown", onArrow);
+      if (barRO) barRO.disconnect(); else window.removeEventListener("resize", fitBar);
       const mute = bar.querySelector("[data-ppop-mute-all]");
       if (mute && mute.checked) { muteAllPopups(); track("popup_mute", { keys: cards.map((c) => c.key).join(",") }); }
       root.remove();
