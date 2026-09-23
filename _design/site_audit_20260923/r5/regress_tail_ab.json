@@ -1,0 +1,58 @@
+{
+ "base": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r5/shots/ab_tail_pre",
+ "new": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r5/shots/ab_tail_post",
+ "pairs": {
+  "studio_390_footer": {
+   "name": "studio_390_footer",
+   "new_mtime": 1790136177.669983,
+   "base_mtime": 1790136046.1180942,
+   "base_size": [
+    390,
+    1005
+   ],
+   "new_size": [
+    390,
+    1005
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r5/diff_tail_ab/studio_390_footer.png"
+  },
+  "studio_390_scroll16384": {
+   "name": "studio_390_scroll16384",
+   "new_mtime": 1790136177.1850612,
+   "base_mtime": 1790136045.634504,
+   "base_size": [
+    390,
+    844
+   ],
+   "new_size": [
+    390,
+    844
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r5/diff_tail_ab/studio_390_scroll16384.png"
+  },
+  "studio_390_scroll16905": {
+   "name": "studio_390_scroll16905",
+   "new_mtime": 1790136177.6038582,
+   "base_mtime": 1790136046.049632,
+   "base_size": [
+    390,
+    844
+   ],
+   "new_size": [
+    390,
+    844
+   ],
+   "same_size": true,
+   "ae": 0,
+   "ae_raw": "0",
+   "diff_png": "/Users/gregory/Workspace/hyunhak-site/_design/site_audit_20260923/r5/diff_tail_ab/studio_390_scroll16905.png"
+  }
+ },
+ "base_only": []
+}

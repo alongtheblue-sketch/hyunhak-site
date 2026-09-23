@@ -1,0 +1,6866 @@
+{
+ "pre": "44aea38",
+ "post": "507edf1",
+ "widths": [
+  320,
+  768
+ ],
+ "pages": 81,
+ "diff": {
+  "checkout@320": {
+   "obscured": [
+    {
+     "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2554.2,
+     "x": 153,
+     "cy": 506.2,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2675.2,
+     "x": 165.6,
+     "cy": 115.2,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div > ul > li > a",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2698.5,
+     "x": 167.2,
+     "cy": 138.5,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2866.3,
+     "x": 165.6,
+     "cy": 306.3,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2913.1,
+     "x": 165.6,
+     "cy": 353.1,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3034,
+     "x": 167.2,
+     "cy": 474,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.frame > div.sheet > footer.ft",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3104.2,
+     "x": 158.2,
+     "cy": 544.2,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "기술적 보호조치 위반 신호(캡처 시도 이벤트)",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2852.8,
+     "x": 118.3,
+     "cy": 292.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "가이드북 열람",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2852.8,
+     "x": 287.4,
+     "cy": 292.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "인쇄 이력(횟수, 시리얼, 시각)",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2928.8,
+     "x": 113,
+     "cy": 368.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "가이드북 인쇄",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2928.8,
+     "x": 287.4,
+     "cy": 368.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "강사 열람 판정 기록(강사와 학생 계정, 열람 자원, ",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3004.8,
+     "x": 132.8,
+     "cy": 444.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "스쿨 플랜 강사 열람",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3004.8,
+     "x": 277.2,
+     "cy": 444.8,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    },
+    {
+     "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+     "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+     "hit": "div.frame > div.sheet > footer.ft",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3123.3,
+     "x": 155.1,
+     "cy": 563.3,
+     "fr": "header#hd.hd@0-65,nav.fix@575-640"
+    }
+   ]
+  },
+  "checkout@768": {
+   "obscured": [
+    {
+     "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2250.8,
+     "x": 142.6,
+     "cy": 612.8,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "지문 낱권 이용권은 지문 1편에 대해 5회 응시를 제공",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2278.2,
+     "x": 216.4,
+     "cy": 640.2,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "가이드북 열람",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2503.7,
+     "x": 390.7,
+     "cy": 865.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "가이드북 인쇄",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2558.7,
+     "x": 390.7,
+     "cy": 920.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "제2항 위반이 확인되면 연구소는 사전 통지 후 열람 제",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2732.6,
+     "x": 378.4,
+     "cy": 636.6,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "이용 정지 시 위반 사실과 무관한 잔여 이용권은 이용하",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2783.4,
+     "x": 371.5,
+     "cy": 687.4,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "위반으로 연구소에 손해가 발생하면 회원은 그 손해를 배",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2834.2,
+     "x": 259.8,
+     "cy": 738.2,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "제9조 (서비스의 중단과 책임 제한)",
+     "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2878.6,
+     "x": 131.9,
+     "cy": 782.6,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "연구소는 시스템 점검, 천재지변 등 부득이한 사유로 서",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2908.7,
+     "x": 281,
+     "cy": 812.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "연구소의 고의 또는 중과실이 없는 한, 무료로 제공되는",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2936.1,
+     "x": 322.7,
+     "cy": 840.1,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "제10조 (광고성 정보의 전송)",
+     "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2980.5,
+     "x": 118.5,
+     "cy": 884.5,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "연구소는 회원이 광고성 정보 수신에 동의한 경우에 한하",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.frame > div.sheet > footer.ft",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3010.7,
+     "x": 360.5,
+     "cy": 914.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "수신 동의는 선택 사항입니다. 동의하지 않거나 동의를 ",
+     "el": "section.lgb > div.lgb-b.prose > ol > li",
+     "hit": "div.frame > div.sheet > footer.ft",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 3038.1,
+     "x": 373.1,
+     "cy": 942.1,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "Google 14개월(도구 설정값), Meta 는 Me",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2427.7,
+     "x": 603.6,
+     "cy": 331.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "스쿨 플랜 강사 열람",
+     "el": "table.tbl > tbody > tr > td",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2613.7,
+     "x": 380.5,
+     "cy": 517.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "결제 처리: 포트원(KG이니시스, NHN KCP 결제 ",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2785.7,
+     "x": 244.5,
+     "cy": 689.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "인프라 운영: Cloudflare (웹 호스팅, 보안,",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.biz",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2813.1,
+     "x": 235.3,
+     "cy": 717.1,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "본인인증(도입 시): NHN KCP (휴대폰 본인확인)",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2840.5,
+     "x": 237.4,
+     "cy": 744.5,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "이메일 발송: Resend (인증 메일, 주문과 이용권",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2867.9,
+     "x": 200.9,
+     "cy": 771.9,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "문자, 알림톡 발송(도입 시): 솔라피 (주문과 이용권",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2895.3,
+     "x": 206,
+     "cy": 799.3,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "방문 통계와 광고 성과 측정: Google LLC (G",
+     "el": "section.lgb > div.lgb-b.prose > ul > li",
+     "hit": "footer.ft > div.wrap > details.ft-more > div.biz",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2922.7,
+     "x": 385,
+     "cy": 826.7,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    },
+    {
+     "text": "Google 애널리틱스 데이터는 Google LLC 의",
+     "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+     "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+     "hitBg": "rgba(0, 0, 0, 0)",
+     "docY": 2979.5,
+     "x": 272.1,
+     "cy": 883.5,
+     "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+    }
+   ]
+  },
+  "interview/korea-eq-sci@768": {
+   "fixedOverlap": [
+    {
+     "a": "div.frame > div.sheet > header#hd.hd",
+     "b": "div.sheet > main#main > div.wrap > nav.anch",
+     "ix": 706.6,
+     "iy": 6.3,
+     "scrollY": 8190
+    }
+   ]
+  },
+  "ranking@768": {
+   "fixedOverlap": [
+    {
+     "a": "div.frame > div.sheet > header#hd.hd",
+     "b": "main#main > section#ranking.page.wrap.rank > div#rp-yonsei-hum.rpanel > div.setnav",
+     "ix": 706.6,
+     "iy": 3.5,
+     "scrollY": 819
+    }
+   ]
+  },
+  "studio@320": {
+   "fixedOverlap": [
+    {
+     "a": "div.wrap.book > div.pages > section#sets.page > div.setnav",
+     "b": "nav.fix",
+     "ix": 280,
+     "iy": 6.5,
+     "scrollY": 7168
+    }
+   ]
+  }
+ },
+ "raw": {
+  "404@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "404@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "about@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 14
+   }
+  },
+  "about@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "b2b@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 14
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 14
+   }
+  },
+  "b2b@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 7
+   }
+  },
+  "cart@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "cart@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "checkout@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "\"회원\"은 이 약관에 동의하고 계정을 등록한 사람을 말",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1489.9,
+      "x": 98.7,
+      "cy": 465.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"이용권\"은 면접 스튜디오의 지문 응시 권리(지문 낱권",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1517.3,
+      "x": 163.3,
+      "cy": 493.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"이용권\"은 면접 스튜디오의 지문 응시 권리(지문 낱권",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1540.7,
+      "x": 142.3,
+      "cy": 516.7,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"디지털 콘텐츠\"는 이용권, 가이드북 PDF 등 실물이",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1568.1,
+      "x": 165.5,
+      "cy": 544.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"디지털 콘텐츠\"는 이용권, 가이드북 PDF 등 실물이",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.legalbox > section.lgb > div.lgb-b.prose > p.tblnote",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1591.5,
+      "x": 129.4,
+      "cy": 567.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제3조 (약관의 게시와 개정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1635.9,
+      "x": 103.7,
+      "cy": 99.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > thead > tr > th",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1666,
+      "x": 140.4,
+      "cy": 130,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1689.4,
+      "x": 98.7,
+      "cy": 153.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1716.8,
+      "x": 169.6,
+      "cy": 180.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1884.9,
+      "x": 149.8,
+      "cy": 348.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1908.3,
+      "x": 169.4,
+      "cy": 372.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "계정 정보의 관리 책임은 회원에게 있으며, 타인에게 계",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1959.1,
+      "x": 160.1,
+      "cy": 423.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2009.9,
+      "x": 164.1,
+      "cy": 473.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2033.3,
+      "x": 162.7,
+      "cy": 497.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2056.6,
+      "x": 129.4,
+      "cy": 520.6,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제5조 (구매와 결제)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2101,
+      "x": 86.2,
+      "cy": 565,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "간편 로그인(카카오, 구글, 네이버)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1896,
+      "x": 272.7,
+      "cy": 360,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1930,
+      "x": 141.9,
+      "cy": 394,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1951,
+      "x": 79.9,
+      "cy": 415,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "약관 동의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1930,
+      "x": 277.2,
+      "cy": 394,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "배송지 주소, 수령인 정보",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2006,
+      "x": 102.6,
+      "cy": 470,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품 주문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2006,
+      "x": 288.8,
+      "cy": 470,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제 기록(결제수단 정보는 결제대행사가 보관)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2040,
+      "x": 106.8,
+      "cy": 504,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2040,
+      "x": 265.6,
+      "cy": 504,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "본인인증 결과값(CI)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2095,
+      "x": 92.4,
+      "cy": 559,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "본인인증(도입 시)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2095,
+      "x": 288,
+      "cy": 559,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제는 연구소가 계약한 전자결제대행사(포트원을 통한 K",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2131.2,
+      "x": 155.5,
+      "cy": 83.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "주문 금액은 서버에 등록된 판매가를 기준으로 확정하며,",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2252.1,
+      "x": 93.2,
+      "cy": 204.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품의 배송비는 3,000원이며 5만원 이상 주문",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2279.5,
+      "x": 161.5,
+      "cy": 231.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품의 배송비는 3,000원이며 5만원 이상 주문",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2302.9,
+      "x": 118.4,
+      "cy": 254.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제6조 (청약철회, 취소와 환불)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-art6",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2347.3,
+      "x": 110.7,
+      "cy": 299.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2377.5,
+      "x": 149,
+      "cy": 329.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div.ft-brand > h2 > span.han",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2400.9,
+      "x": 165.6,
+      "cy": 352.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2424.3,
+      "x": 158.5,
+      "cy": 376.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.g > div.ft-brand",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2471,
+      "x": 133.4,
+      "cy": 423,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2494.4,
+      "x": 109.8,
+      "cy": 446.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2521.8,
+      "x": 150.9,
+      "cy": 473.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2545.2,
+      "x": 153,
+      "cy": 497.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이메일, 워터마크 시리얼",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2281,
+      "x": 101.1,
+      "cy": 233,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2281,
+      "x": 288.8,
+      "cy": 233,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2302,
+      "x": 275.8,
+      "cy": 254,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2323,
+      "x": 282.3,
+      "cy": 275,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "열람과 검색 기록(콘텐츠 ID, 시각, IP, 세션 수",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2378,
+      "x": 130.6,
+      "cy": 330,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "열람과 검색 기록(콘텐츠 ID, 시각, IP, 세션 수",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2399,
+      "x": 64.6,
+      "cy": 351,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2378,
+      "x": 287.4,
+      "cy": 330,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이름, 이메일, 문의 내용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2454,
+      "x": 98.9,
+      "cy": 406,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2454,
+      "x": 280.8,
+      "cy": 406,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2475,
+      "x": 265.6,
+      "cy": 427,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2551,
+      "x": 123.5,
+      "cy": 503,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "(이메일 첨부)",
+      "el": "tbody > tr > td > small",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2593.5,
+      "x": 79.4,
+      "cy": 545.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2551,
+      "x": 270.7,
+      "cy": 503,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2666.2,
+      "x": 165.6,
+      "cy": 106.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2857.3,
+      "x": 165.6,
+      "cy": 297.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2880.7,
+      "x": 169.6,
+      "cy": 320.7,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2904.1,
+      "x": 165.6,
+      "cy": 344.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3025,
+      "x": 167.2,
+      "cy": 465,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "환불 요청 사유, 요청 시각, 판정 내역",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2628.8,
+      "x": 128.6,
+      "cy": 68.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2628.8,
+      "x": 280.9,
+      "cy": 68.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2704.8,
+      "x": 140.2,
+      "cy": 144.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "사이트 방문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2704.8,
+      "x": 282.3,
+      "cy": 144.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "기술적 보호조치 위반 신호(캡처 시도 이벤트)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2843.8,
+      "x": 118.3,
+      "cy": 283.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2843.8,
+      "x": 287.4,
+      "cy": 283.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "인쇄 이력(횟수, 시리얼, 시각)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2919.8,
+      "x": 113,
+      "cy": 359.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 인쇄",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2919.8,
+      "x": 287.4,
+      "cy": 359.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "강사 열람 판정 기록(강사와 학생 계정, 열람 자원, ",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2995.8,
+      "x": 132.8,
+      "cy": 435.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "스쿨 플랜 강사 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2995.8,
+      "x": 277.2,
+      "cy": 435.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3114.3,
+      "x": 155.1,
+      "cy": 554.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3142,
+      "x": 96,
+      "cy": 283,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제7조 (면접 스튜디오 이용)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3186.4,
+      "x": 103.7,
+      "cy": 327.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3216.5,
+      "x": 165.6,
+      "cy": 357.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "지문 낱권 이용권은 지문 1편에 대해 5회 응시를 제공",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3314.1,
+      "x": 156.8,
+      "cy": 455.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "채점 결과는 학습 참고용 평가이며, 실제 대학 면접의 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3364.9,
+      "x": 167.2,
+      "cy": 505.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "채점 결과는 학습 참고용 평가이며, 실제 대학 면접의 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3388.3,
+      "x": 140.5,
+      "cy": 529.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3137.7,
+      "x": 149.6,
+      "cy": 278.7,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "2. 처리 위탁과 제3자 제공",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3182.1,
+      "x": 100.6,
+      "cy": 323.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제 처리: 포트원(KG이니시스, NHN KCP 결제 ",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3212.2,
+      "x": 162.9,
+      "cy": 353.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "인프라 운영: Cloudflare (웹 호스팅, 보안,",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3263,
+      "x": 161.1,
+      "cy": 404,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "본인인증(도입 시): NHN KCP (휴대폰 본인확인)",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3313.8,
+      "x": 151.9,
+      "cy": 454.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이메일 발송: Resend (인증 메일, 주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3364.6,
+      "x": 157.4,
+      "cy": 505.6,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이메일 발송: Resend (인증 메일, 주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3388,
+      "x": 88.3,
+      "cy": 529,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "문자, 알림톡 발송(도입 시): 솔라피 (주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3415.4,
+      "x": 162.5,
+      "cy": 556.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     }
+    ],
+    "steps": 7
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "\"회원\"은 이 약관에 동의하고 계정을 등록한 사람을 말",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1498.9,
+      "x": 98.7,
+      "cy": 474.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"이용권\"은 면접 스튜디오의 지문 응시 권리(지문 낱권",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1526.3,
+      "x": 163.3,
+      "cy": 502.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"이용권\"은 면접 스튜디오의 지문 응시 권리(지문 낱권",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1549.7,
+      "x": 142.3,
+      "cy": 525.7,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "\"디지털 콘텐츠\"는 이용권, 가이드북 PDF 등 실물이",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1577.1,
+      "x": 165.5,
+      "cy": 553.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제3조 (약관의 게시와 개정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1644.9,
+      "x": 103.7,
+      "cy": 108.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > thead > tr > th",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1675,
+      "x": 140.4,
+      "cy": 139,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1698.4,
+      "x": 98.7,
+      "cy": 162.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1725.8,
+      "x": 169.6,
+      "cy": 189.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1893.9,
+      "x": 149.8,
+      "cy": 357.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1917.3,
+      "x": 169.4,
+      "cy": 381.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "계정 정보의 관리 책임은 회원에게 있으며, 타인에게 계",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1968.1,
+      "x": 160.1,
+      "cy": 432.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2018.9,
+      "x": 164.1,
+      "cy": 482.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2042.3,
+      "x": 162.7,
+      "cy": 506.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2065.6,
+      "x": 129.4,
+      "cy": 529.6,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "간편 로그인(카카오, 구글, 네이버)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1905,
+      "x": 272.7,
+      "cy": 369,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1939,
+      "x": 141.9,
+      "cy": 403,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "동의 항목, 동의와 철회 시각, 접속 기록(IP, 브라",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1960,
+      "x": 79.9,
+      "cy": 424,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "약관 동의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1939,
+      "x": 277.2,
+      "cy": 403,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "배송지 주소, 수령인 정보",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2015,
+      "x": 102.6,
+      "cy": 479,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품 주문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2015,
+      "x": 288.8,
+      "cy": 479,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제 기록(결제수단 정보는 결제대행사가 보관)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2049,
+      "x": 106.8,
+      "cy": 513,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2049,
+      "x": 265.6,
+      "cy": 513,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "본인인증 결과값(CI)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2104,
+      "x": 92.4,
+      "cy": 568,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "본인인증(도입 시)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2104,
+      "x": 288,
+      "cy": 568,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "결제는 연구소가 계약한 전자결제대행사(포트원을 통한 K",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2140.2,
+      "x": 155.5,
+      "cy": 92.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "주문 금액은 서버에 등록된 판매가를 기준으로 확정하며,",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2261.1,
+      "x": 93.2,
+      "cy": 213.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품의 배송비는 3,000원이며 5만원 이상 주문",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2288.5,
+      "x": 161.5,
+      "cy": 240.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품의 배송비는 3,000원이며 5만원 이상 주문",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2311.9,
+      "x": 118.4,
+      "cy": 263.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제6조 (청약철회, 취소와 환불)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-art6",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2356.3,
+      "x": 110.7,
+      "cy": 308.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2386.5,
+      "x": 149,
+      "cy": 338.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div.ft-brand > h2 > span.han",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2409.9,
+      "x": 165.6,
+      "cy": 361.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2433.3,
+      "x": 158.5,
+      "cy": 385.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.g > div.ft-brand",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2480,
+      "x": 133.4,
+      "cy": 432,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2503.4,
+      "x": 109.8,
+      "cy": 455.4,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2530.8,
+      "x": 150.9,
+      "cy": 482.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2554.2,
+      "x": 153,
+      "cy": 506.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이메일, 워터마크 시리얼",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2290,
+      "x": 101.1,
+      "cy": 242,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2290,
+      "x": 288.8,
+      "cy": 242,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2311,
+      "x": 275.8,
+      "cy": 263,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "열람과 검색 기록(콘텐츠 ID, 시각, IP, 세션 수",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2387,
+      "x": 130.6,
+      "cy": 339,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "열람과 검색 기록(콘텐츠 ID, 시각, IP, 세션 수",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2408,
+      "x": 64.6,
+      "cy": 360,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2387,
+      "x": 287.4,
+      "cy": 339,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이름, 이메일, 문의 내용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2463,
+      "x": 98.9,
+      "cy": 415,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2463,
+      "x": 280.8,
+      "cy": 415,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2484,
+      "x": 265.6,
+      "cy": 436,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2560,
+      "x": 123.5,
+      "cy": 512,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "(이메일 첨부)",
+      "el": "tbody > tr > td > small",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2602.5,
+      "x": 79.4,
+      "cy": 554.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2560,
+      "x": 270.7,
+      "cy": 512,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2675.2,
+      "x": 165.6,
+      "cy": 115.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div > ul > li > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2698.5,
+      "x": 167.2,
+      "cy": 138.5,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2838.9,
+      "x": 115.3,
+      "cy": 278.9,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2866.3,
+      "x": 165.6,
+      "cy": 306.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2913.1,
+      "x": 165.6,
+      "cy": 353.1,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3034,
+      "x": 167.2,
+      "cy": 474,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "출고 전 취소는 전액 환불합니다. 환불 대금은 청약철회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3104.2,
+      "x": 158.2,
+      "cy": 544.2,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "환불 요청 사유, 요청 시각, 판정 내역",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2637.8,
+      "x": 128.6,
+      "cy": 77.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2637.8,
+      "x": 280.9,
+      "cy": 77.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2713.8,
+      "x": 140.2,
+      "cy": 153.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "사이트 방문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2713.8,
+      "x": 282.3,
+      "cy": 153.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "기술적 보호조치 위반 신호(캡처 시도 이벤트)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2852.8,
+      "x": 118.3,
+      "cy": 292.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2852.8,
+      "x": 287.4,
+      "cy": 292.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "인쇄 이력(횟수, 시리얼, 시각)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2928.8,
+      "x": 113,
+      "cy": 368.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "가이드북 인쇄",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2928.8,
+      "x": 287.4,
+      "cy": 368.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "강사 열람 판정 기록(강사와 학생 계정, 열람 자원, ",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3004.8,
+      "x": 132.8,
+      "cy": 444.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "스쿨 플랜 강사 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3004.8,
+      "x": 277.2,
+      "cy": 444.8,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     },
+     {
+      "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3123.3,
+      "x": 155.1,
+      "cy": 563.3,
+      "fr": "header#hd.hd@0-65,nav.fix@575-640"
+     }
+    ],
+    "steps": 7
+   }
+  },
+  "checkout@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "제3조 (약관의 게시와 개정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.legalbox > section.lgb > div.lgb-h > h3",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1433.1,
+      "x": 114.4,
+      "cy": 614.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1463.2,
+      "x": 194.4,
+      "cy": 644.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1490.6,
+      "x": 371.4,
+      "cy": 671.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1514,
+      "x": 199.4,
+      "cy": 695,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제4조 (회원 가입과 계정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-age",
+      "hit": "table.tbl > thead > tr > th",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1558.4,
+      "x": 109,
+      "cy": 739.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1588.6,
+      "x": 359.5,
+      "cy": 769.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "계정 정보의 관리 책임은 회원에게 있으며, 타인에게 계",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1639.3,
+      "x": 277,
+      "cy": 820.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1666.7,
+      "x": 356,
+      "cy": 847.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제6조 (청약철회, 취소와 환불)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-art6",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1840.5,
+      "x": 121.4,
+      "cy": 202.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1870.6,
+      "x": 372.9,
+      "cy": 232.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1894,
+      "x": 288,
+      "cy": 256,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1921.4,
+      "x": 368.4,
+      "cy": 283.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1972.2,
+      "x": 373.7,
+      "cy": 334.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1995.6,
+      "x": 392.3,
+      "cy": 357.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2046.3,
+      "x": 381,
+      "cy": 408.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2069.7,
+      "x": 386.3,
+      "cy": 431.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제7조 (면접 스튜디오 이용)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2188.3,
+      "x": 114.4,
+      "cy": 550.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2218.5,
+      "x": 384.1,
+      "cy": 580.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2241.8,
+      "x": 142.6,
+      "cy": 603.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "지문 낱권 이용권은 지문 1편에 대해 5회 응시를 제공",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2269.2,
+      "x": 216.4,
+      "cy": 631.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점 결과는 학습 참고용 평가이며, 실제 대학 면접의 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2296.6,
+      "x": 262.9,
+      "cy": 658.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제8조 (지식재산권)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2341,
+      "x": 95.6,
+      "cy": 703,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "사이트와 자료실의 콘텐츠(가이드북 PDF 포함)에 대한",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2371.2,
+      "x": 274.2,
+      "cy": 733.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "자료는 개인 학습 용도로만 사용할 수 있으며, 무단 전",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2398.6,
+      "x": 267.5,
+      "cy": 760.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제8조의2 (가이드북 열람 서비스)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2443,
+      "x": 129.3,
+      "cy": 805,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북은 파일을 전달하지 않고 웹 열람 방식으로 제공",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2473.1,
+      "x": 375.5,
+      "cy": 835.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "회원은 다음 행위를 할 수 없습니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2547.3,
+      "x": 154.3,
+      "cy": 909.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "화면 촬영, 캡처, 화면 녹화 등 방법을 불문한 본문의",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2580.7,
+      "x": 244.2,
+      "cy": 942.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "배송지 주소, 수령인 정보",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1845.9,
+      "x": 113.3,
+      "cy": 207.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품 주문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1845.9,
+      "x": 392.1,
+      "cy": 207.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "상품 배송",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1845.9,
+      "x": 477.9,
+      "cy": 207.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1845.9,
+      "x": 609.7,
+      "cy": 207.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제 기록(결제수단 정보는 결제대행사가 보관)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1879.9,
+      "x": 163,
+      "cy": 241.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1879.9,
+      "x": 368.9,
+      "cy": 241.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "대금 정산, 환불",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1879.9,
+      "x": 490.9,
+      "cy": 241.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1879.9,
+      "x": 609.7,
+      "cy": 241.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증 결과값(CI)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "aside.side > div.panel.bill > div.total > span",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1913.9,
+      "x": 103.1,
+      "cy": 275.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증(도입 시)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1913.9,
+      "x": 391.2,
+      "cy": 275.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인 확인, 중복 가입 방지",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1913.9,
+      "x": 490.9,
+      "cy": 275.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "회원 탈퇴 시 파기",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1913.9,
+      "x": 592.3,
+      "cy": 275.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "면접 스튜디오 답변 음성, 영상, 전사문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1968.9,
+      "x": 143,
+      "cy": 330.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1968.9,
+      "x": 390.7,
+      "cy": 330.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점, 첨삭, 리포트 생성",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1968.9,
+      "x": 480.8,
+      "cy": 330.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점, 첨삭, 리포트 생성",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1989.9,
+      "x": 483,
+      "cy": 351.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "응시일로부터 90일 후 파기",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1968.9,
+      "x": 614.7,
+      "cy": 330.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "접속 기록, 다운로드 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2023.9,
+      "x": 113.3,
+      "cy": 385.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "서비스 이용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2023.9,
+      "x": 385.6,
+      "cy": 385.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 방지, 통계",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2023.9,
+      "x": 477.9,
+      "cy": 385.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 방지, 통계",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2044.9,
+      "x": 479.4,
+      "cy": 406.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "통신비밀보호법에 따라 3개월 이상",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2023.9,
+      "x": 631.5,
+      "cy": 385.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이메일, 워터마크 시리얼",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2078.9,
+      "x": 111.9,
+      "cy": 440.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2078.9,
+      "x": 379.1,
+      "cy": 440.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "콘텐츠 보호 워터마크 표시, 유출 사본 추적",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2078.9,
+      "x": 483,
+      "cy": 440.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이용권 종료 후 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2078.9,
+      "x": 595.9,
+      "cy": 440.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 이메일, 문의 내용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2209.9,
+      "x": 109.6,
+      "cy": 571.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2209.9,
+      "x": 395.6,
+      "cy": 571.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문의 접수와 답변, 처리 기록 보관",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2209.9,
+      "x": 483,
+      "cy": 571.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문의 접수와 답변, 처리 기록 보관",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2251.9,
+      "x": 477.9,
+      "cy": 613.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "답변 완료 후 1년. 거래 관련 불만과 분쟁 처리 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2209.9,
+      "x": 615.4,
+      "cy": 571.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "답변 완료 후 1년. 거래 관련 불만과 분쟁 처리 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2251.9,
+      "x": 624.9,
+      "cy": 613.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2285.9,
+      "x": 193.6,
+      "cy": 647.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2307.9,
+      "x": 72,
+      "cy": 669.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "(이메일 첨부)",
+      "el": "tbody > tr > td > small",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2307.4,
+      "x": 120.6,
+      "cy": 669.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2285.9,
+      "x": 385.6,
+      "cy": 647.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2306.9,
+      "x": 397.2,
+      "cy": 668.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 회신과 질문지 제작",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2285.9,
+      "x": 483,
+      "cy": 647.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 회신과 질문지 제작",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2306.9,
+      "x": 483,
+      "cy": 668.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 처리 후 1년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2285.9,
+      "x": 590.8,
+      "cy": 647.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "환불 요청 사유, 요청 시각, 판정 내역",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div.ft-brand > h2 > span.han",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2342.7,
+      "x": 139.3,
+      "cy": 704.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2342.7,
+      "x": 395.8,
+      "cy": 704.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2363.7,
+      "x": 368.9,
+      "cy": 725.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "청약철회 처리, 분쟁 대비",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2342.7,
+      "x": 489.5,
+      "cy": 704.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "청약철회 처리, 분쟁 대비",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2363.7,
+      "x": 477.9,
+      "cy": 725.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2342.7,
+      "x": 609.7,
+      "cy": 704.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2397.7,
+      "x": 190.8,
+      "cy": 759.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2418.7,
+      "x": 187.9,
+      "cy": 780.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2439.7,
+      "x": 197.9,
+      "cy": 801.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2460.7,
+      "x": 118.3,
+      "cy": 822.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "사이트 방문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2397.7,
+      "x": 385.6,
+      "cy": 759.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계, 광고 성과 측정",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2397.7,
+      "x": 490.9,
+      "cy": 759.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계, 광고 성과 측정",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2418.7,
+      "x": 477.9,
+      "cy": 780.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 14개월(도구 설정값), Meta 는 Me",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.g > div.ft-brand",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2397.7,
+      "x": 622,
+      "cy": 759.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "기술적 보호조치 위반 신호(캡처 시도 이벤트)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2494.7,
+      "x": 159.3,
+      "cy": 856.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2494.7,
+      "x": 390.7,
+      "cy": 856.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 탐지, 유출 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2494.7,
+      "x": 490.9,
+      "cy": 856.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "365일",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2494.7,
+      "x": 568.3,
+      "cy": 856.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인쇄 이력(횟수, 시리얼, 시각)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div > ul > li > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2549.7,
+      "x": 123.7,
+      "cy": 911.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 인쇄",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2549.7,
+      "x": 390.7,
+      "cy": 911.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인쇄 한도 관리, 유출 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2549.7,
+      "x": 490.9,
+      "cy": 911.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마지막 인쇄 또는 이용권 종료 중 늦은 날부터 3년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2549.7,
+      "x": 625.6,
+      "cy": 911.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "무단 전재, 재배포, 판매, 공중송신",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2608.1,
+      "x": 170.3,
+      "cy": 239.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "자동화 프로그램을 이용한 열람, 수집, 저장",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2635.5,
+      "x": 192.4,
+      "cy": 266.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "계정의 판매, 대여 등 영리 목적의 공유",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2662.8,
+      "x": 181.3,
+      "cy": 293.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "열람 제한, 워터마크 등 기술적 보호조치의 회피 또는 ",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2690.2,
+      "x": 234.1,
+      "cy": 321.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제2항 위반이 확인되면 연구소는 사전 통지 후 열람 제",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2723.6,
+      "x": 378.4,
+      "cy": 354.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이용 정지 시 위반 사실과 무관한 잔여 이용권은 이용하",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2774.4,
+      "x": 371.5,
+      "cy": 405.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "위반으로 연구소에 손해가 발생하면 회원은 그 손해를 배",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2825.2,
+      "x": 259.8,
+      "cy": 456.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제9조 (서비스의 중단과 책임 제한)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2869.6,
+      "x": 131.9,
+      "cy": 500.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 시스템 점검, 천재지변 등 부득이한 사유로 서",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2899.7,
+      "x": 281,
+      "cy": 530.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소의 고의 또는 중과실이 없는 한, 무료로 제공되는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2927.1,
+      "x": 322.7,
+      "cy": 558.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제10조 (광고성 정보의 전송)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2971.5,
+      "x": 118.5,
+      "cy": 602.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 회원이 광고성 정보 수신에 동의한 경우에 한하",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3001.7,
+      "x": 360.5,
+      "cy": 632.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "수신 동의는 선택 사항입니다. 동의하지 않거나 동의를 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3029.1,
+      "x": 373.1,
+      "cy": 660.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "회원은 마이페이지에서 언제든 수신 동의를 철회할 수 있",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3056.5,
+      "x": 357.4,
+      "cy": 687.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "주문 확인, 결제와 환불 안내, 이용권 만료 고지처럼 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.biz",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3083.8,
+      "x": 358,
+      "cy": 714.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제11조 (분쟁 해결)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3151.6,
+      "x": 95.5,
+      "cy": 782.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "서비스 이용과 관련한 분쟁은 연구소와 이용자가 성실히 ",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3177.8,
+      "x": 280,
+      "cy": 808.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문서 버전: 2026-09-11. 시행일: 2026-0",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p.updated",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3261.6,
+      "x": 279.2,
+      "cy": 892.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 14개월(도구 설정값), Meta 는 Me",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2439.7,
+      "x": 579.3,
+      "cy": 70.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "강사 열람 판정 기록(강사와 학생 계정, 열람 자원, ",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2604.7,
+      "x": 192.7,
+      "cy": 235.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스쿨 플랜 강사 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2604.7,
+      "x": 380.5,
+      "cy": 235.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제3자 제공 사실의 증빙, 부정 열람 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2604.7,
+      "x": 481.5,
+      "cy": 235.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "1년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2604.7,
+      "x": 561.1,
+      "cy": 235.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2702.2,
+      "x": 280,
+      "cy": 333.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "2. 처리 위탁과 제3자 제공",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2746.6,
+      "x": 111.3,
+      "cy": 377.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제 처리: 포트원(KG이니시스, NHN KCP 결제 ",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2776.7,
+      "x": 244.5,
+      "cy": 407.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인프라 운영: Cloudflare (웹 호스팅, 보안,",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.g > div",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2804.1,
+      "x": 235.3,
+      "cy": 435.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증(도입 시): NHN KCP (휴대폰 본인확인)",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2831.5,
+      "x": 237.4,
+      "cy": 462.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이메일 발송: Resend (인증 메일, 주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2858.9,
+      "x": 200.9,
+      "cy": 489.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문자, 알림톡 발송(도입 시): 솔라피 (주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2886.3,
+      "x": 206,
+      "cy": 517.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계와 광고 성과 측정: Google LLC (G",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2913.7,
+      "x": 385,
+      "cy": 544.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 애널리틱스 데이터는 Google LLC 의",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2970.5,
+      "x": 272.1,
+      "cy": 601.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Meta 픽셀 데이터는 Meta Platforms Ir",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3076,
+      "x": 279.9,
+      "cy": 707,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "위 수탁자 외 제3자에게 개인정보를 제공하지 않습니다.",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3251.8,
+      "x": 268.8,
+      "cy": 882.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제3자 제공 (스쿨 플랜 강사 열람)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h4",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3311.5,
+      "x": 127.7,
+      "cy": 942.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이용 정지 시 위반 사실과 무관한 잔여 이용권은 이용하",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2797.8,
+      "x": 163.8,
+      "cy": 428.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "주문 확인, 결제와 환불 안내, 이용권 만료 고지처럼 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3107.2,
+      "x": 120.5,
+      "cy": 738.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 애널리틱스 데이터는 Google LLC 의",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3040.6,
+      "x": 95,
+      "cy": 671.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Meta 픽셀 데이터는 Meta Platforms Ir",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3099.4,
+      "x": 265.6,
+      "cy": 730.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "위 수탁자 외 제3자에게 개인정보를 제공하지 않습니다.",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3275.1,
+      "x": 227.1,
+      "cy": 906.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     }
+    ],
+    "steps": 5
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "제3조 (약관의 게시와 개정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.legalbox > section.lgb > div.lgb-h > h3",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1442.1,
+      "x": 114.4,
+      "cy": 623.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 이 약관을 사이트 하단에 상시 게시합니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-h",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1472.2,
+      "x": 194.4,
+      "cy": 653.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1499.6,
+      "x": 371.4,
+      "cy": 680.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 관련 법령을 위배하지 않는 범위에서 약관을 개",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.blk.pay > div.legalbox > section.lgb > div.lgb-b.prose",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1523,
+      "x": 199.4,
+      "cy": 704,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제4조 (회원 가입과 계정)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-age",
+      "hit": "table.tbl > thead > tr > th",
+      "hitBg": "rgb(235, 228, 212)",
+      "docY": 1567.4,
+      "x": 109,
+      "cy": 748.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가입은 약관 동의와 정보 입력으로 성립합니다. 연구소는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1597.6,
+      "x": 359.5,
+      "cy": 778.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "계정 정보의 관리 책임은 회원에게 있으며, 타인에게 계",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1648.3,
+      "x": 277,
+      "cy": 829.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "신규 회원에게 제공하는 무료 맛보기 응시는 계정당 1회",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "table.tbl > tbody > tr > td",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1675.7,
+      "x": 356,
+      "cy": 856.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제6조 (청약철회, 취소와 환불)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3#약관-art6",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1849.5,
+      "x": 121.4,
+      "cy": 211.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1879.6,
+      "x": 372.9,
+      "cy": 241.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품은 수령 후 7일 이내, 상품이 훼손되지 않은",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1903,
+      "x": 288,
+      "cy": 265,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "디지털 콘텐츠(이용권, PDF)는 제공이 개시되기 전까",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1930.4,
+      "x": 368.4,
+      "cy": 292.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1981.2,
+      "x": 373.7,
+      "cy": 343.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제공 개시 시점은 다음과 같습니다. 가이드북 열람 상품",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2004.6,
+      "x": 392.3,
+      "cy": 366.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2055.3,
+      "x": 381,
+      "cy": 417.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전권, 단위 전권처럼 여러 구성으로 이루어진 이용권은 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2078.7,
+      "x": 386.3,
+      "cy": 440.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제7조 (면접 스튜디오 이용)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2197.3,
+      "x": 114.4,
+      "cy": 559.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2227.5,
+      "x": 384.1,
+      "cy": 589.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시 과정에서 녹음, 녹화된 학생의 답변은 채",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2250.8,
+      "x": 142.6,
+      "cy": 612.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "지문 낱권 이용권은 지문 1편에 대해 5회 응시를 제공",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2278.2,
+      "x": 216.4,
+      "cy": 640.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점 결과는 학습 참고용 평가이며, 실제 대학 면접의 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2305.6,
+      "x": 262.9,
+      "cy": 667.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제8조 (지식재산권)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2350,
+      "x": 95.6,
+      "cy": 712,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "사이트와 자료실의 콘텐츠(가이드북 PDF 포함)에 대한",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2380.2,
+      "x": 274.2,
+      "cy": 742.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "자료는 개인 학습 용도로만 사용할 수 있으며, 무단 전",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2407.6,
+      "x": 267.5,
+      "cy": 769.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제8조의2 (가이드북 열람 서비스)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2452,
+      "x": 129.3,
+      "cy": 814,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북은 파일을 전달하지 않고 웹 열람 방식으로 제공",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2482.1,
+      "x": 375.5,
+      "cy": 844.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "회원은 다음 행위를 할 수 없습니다.",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2556.3,
+      "x": 154.3,
+      "cy": 918.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "화면 촬영, 캡처, 화면 녹화 등 방법을 불문한 본문의",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2589.7,
+      "x": 244.2,
+      "cy": 951.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "배송지 주소, 수령인 정보",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1854.9,
+      "x": 113.3,
+      "cy": 216.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "실물 상품 주문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1854.9,
+      "x": 392.1,
+      "cy": 216.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "상품 배송",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1854.9,
+      "x": 477.9,
+      "cy": 216.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1854.9,
+      "x": 609.7,
+      "cy": 216.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제 기록(결제수단 정보는 결제대행사가 보관)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1888.9,
+      "x": 163,
+      "cy": 250.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1888.9,
+      "x": 368.9,
+      "cy": 250.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "대금 정산, 환불",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1888.9,
+      "x": 490.9,
+      "cy": 250.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1888.9,
+      "x": 609.7,
+      "cy": 250.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증 결과값(CI)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "aside.side > div.panel.bill > div.total > span",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 1922.9,
+      "x": 103.1,
+      "cy": 284.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증(도입 시)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1922.9,
+      "x": 391.2,
+      "cy": 284.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인 확인, 중복 가입 방지",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1922.9,
+      "x": 490.9,
+      "cy": 284.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "회원 탈퇴 시 파기",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > div.total",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1922.9,
+      "x": 592.3,
+      "cy": 284.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "면접 스튜디오 답변 음성, 영상, 전사문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1977.9,
+      "x": 143,
+      "cy": 339.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스튜디오 응시",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1977.9,
+      "x": 390.7,
+      "cy": 339.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점, 첨삭, 리포트 생성",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1977.9,
+      "x": 480.8,
+      "cy": 339.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "채점, 첨삭, 리포트 생성",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 1998.9,
+      "x": 483,
+      "cy": 360.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "응시일로부터 90일 후 파기",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 1977.9,
+      "x": 614.7,
+      "cy": 339.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "접속 기록, 다운로드 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2032.9,
+      "x": 113.3,
+      "cy": 394.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "서비스 이용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2032.9,
+      "x": 385.6,
+      "cy": 394.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 방지, 통계",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2032.9,
+      "x": 477.9,
+      "cy": 394.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 방지, 통계",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > p#authStatus.note",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2053.9,
+      "x": 479.4,
+      "cy": 415.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "통신비밀보호법에 따라 3개월 이상",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap.lay > aside.side > div.panel.bill > button#payBtn.btn",
+      "hitBg": "rgb(49, 46, 46)",
+      "docY": 2032.9,
+      "x": 631.5,
+      "cy": 394.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이메일, 워터마크 시리얼",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2087.9,
+      "x": 111.9,
+      "cy": 449.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 열람, 인쇄본과 소장판 발급",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2087.9,
+      "x": 379.1,
+      "cy": 449.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "콘텐츠 보호 워터마크 표시, 유출 사본 추적",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2087.9,
+      "x": 483,
+      "cy": 449.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이용권 종료 후 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "main#main > div.wrap.lay > aside.side > div.panel.bill",
+      "hitBg": "rgb(255, 253, 248)",
+      "docY": 2087.9,
+      "x": 595.9,
+      "cy": 449.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 이메일, 문의 내용",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2218.9,
+      "x": 109.6,
+      "cy": 580.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "비회원 1:1 문의",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2218.9,
+      "x": 395.6,
+      "cy": 580.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문의 접수와 답변, 처리 기록 보관",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2218.9,
+      "x": 483,
+      "cy": 580.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문의 접수와 답변, 처리 기록 보관",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2260.9,
+      "x": 477.9,
+      "cy": 622.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "답변 완료 후 1년. 거래 관련 불만과 분쟁 처리 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2218.9,
+      "x": 615.4,
+      "cy": 580.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "답변 완료 후 1년. 거래 관련 불만과 분쟁 처리 기록",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2260.9,
+      "x": 624.9,
+      "cy": 622.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > nav.ft-legal > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2294.9,
+      "x": 193.6,
+      "cy": 656.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이름, 휴대전화, 이메일, 지원 학교, 현재 고교 또는",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2316.9,
+      "x": 72,
+      "cy": 678.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "(이메일 첨부)",
+      "el": "tbody > tr > td > small",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2316.4,
+      "x": 120.6,
+      "cy": 678.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2294.9,
+      "x": 385.6,
+      "cy": 656.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "학교별 면접 질문지 제작 의뢰",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2315.9,
+      "x": 397.2,
+      "cy": 677.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 회신과 질문지 제작",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2294.9,
+      "x": 483,
+      "cy": 656.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 회신과 질문지 제작",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.frame > div.sheet > footer.ft > div.wrap",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2315.9,
+      "x": 483,
+      "cy": 677.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "의뢰 처리 후 1년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.sheet > footer.ft > div.wrap > nav.ft-legal",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2294.9,
+      "x": 590.8,
+      "cy": 656.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "환불 요청 사유, 요청 시각, 판정 내역",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div.ft-brand > h2 > span.han",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2351.7,
+      "x": 139.3,
+      "cy": 713.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2351.7,
+      "x": 395.8,
+      "cy": 713.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마이페이지 환불 요청",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2372.7,
+      "x": 368.9,
+      "cy": 734.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "청약철회 처리, 분쟁 대비",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2351.7,
+      "x": 489.5,
+      "cy": 713.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "청약철회 처리, 분쟁 대비",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2372.7,
+      "x": 477.9,
+      "cy": 734.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "전자상거래법에 따라 5년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2351.7,
+      "x": 609.7,
+      "cy": 713.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2406.7,
+      "x": 190.8,
+      "cy": 768.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2427.7,
+      "x": 187.9,
+      "cy": 789.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div > h2",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2448.7,
+      "x": 197.9,
+      "cy": 810.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 페이지, 유입 경로, 기기 종류, 쿠키와 브라우저",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2469.7,
+      "x": 118.3,
+      "cy": 831.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "사이트 방문",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2406.7,
+      "x": 385.6,
+      "cy": 768.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계, 광고 성과 측정",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "details.ft-more > div.g > div.ft-brand > p.ft-contact",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2406.7,
+      "x": 490.9,
+      "cy": 768.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계, 광고 성과 측정",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2427.7,
+      "x": 477.9,
+      "cy": 789.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 14개월(도구 설정값), Meta 는 Me",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.wrap > details.ft-more > div.g > div.ft-brand",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2406.7,
+      "x": 622,
+      "cy": 768.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "기술적 보호조치 위반 신호(캡처 시도 이벤트)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2503.7,
+      "x": 159.3,
+      "cy": 865.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2503.7,
+      "x": 390.7,
+      "cy": 865.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "부정 이용 탐지, 유출 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2503.7,
+      "x": 490.9,
+      "cy": 865.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "365일",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2503.7,
+      "x": 568.3,
+      "cy": 865.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인쇄 이력(횟수, 시리얼, 시각)",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div > ul > li > a",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2558.7,
+      "x": 123.7,
+      "cy": 920.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "가이드북 인쇄",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2558.7,
+      "x": 390.7,
+      "cy": 920.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인쇄 한도 관리, 유출 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2558.7,
+      "x": 490.9,
+      "cy": 920.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "마지막 인쇄 또는 이용권 종료 중 늦은 날부터 3년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2558.7,
+      "x": 625.6,
+      "cy": 920.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "무단 전재, 재배포, 판매, 공중송신",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2617.1,
+      "x": 170.3,
+      "cy": 521.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "자동화 프로그램을 이용한 열람, 수집, 저장",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2644.5,
+      "x": 192.4,
+      "cy": 548.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "계정의 판매, 대여 등 영리 목적의 공유",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2671.8,
+      "x": 181.3,
+      "cy": 575.8,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "열람 제한, 워터마크 등 기술적 보호조치의 회피 또는 ",
+      "el": "ol > li > ol > li",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2699.2,
+      "x": 234.1,
+      "cy": 603.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제2항 위반이 확인되면 연구소는 사전 통지 후 열람 제",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2732.6,
+      "x": 378.4,
+      "cy": 636.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이용 정지 시 위반 사실과 무관한 잔여 이용권은 이용하",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2783.4,
+      "x": 371.5,
+      "cy": 687.4,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "위반으로 연구소에 손해가 발생하면 회원은 그 손해를 배",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2834.2,
+      "x": 259.8,
+      "cy": 738.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제9조 (서비스의 중단과 책임 제한)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2878.6,
+      "x": 131.9,
+      "cy": 782.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 시스템 점검, 천재지변 등 부득이한 사유로 서",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2908.7,
+      "x": 281,
+      "cy": 812.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소의 고의 또는 중과실이 없는 한, 무료로 제공되는",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2936.1,
+      "x": 322.7,
+      "cy": 840.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제10조 (광고성 정보의 전송)",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2980.5,
+      "x": 118.5,
+      "cy": 884.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 회원이 광고성 정보 수신에 동의한 경우에 한하",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3010.7,
+      "x": 360.5,
+      "cy": 914.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "수신 동의는 선택 사항입니다. 동의하지 않거나 동의를 ",
+      "el": "section.lgb > div.lgb-b.prose > ol > li",
+      "hit": "div.frame > div.sheet > footer.ft",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 3038.1,
+      "x": 373.1,
+      "cy": 942.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 14개월(도구 설정값), Meta 는 Me",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2427.7,
+      "x": 603.6,
+      "cy": 331.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "강사 열람 판정 기록(강사와 학생 계정, 열람 자원, ",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2613.7,
+      "x": 192.7,
+      "cy": 517.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "스쿨 플랜 강사 열람",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.g",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2613.7,
+      "x": 380.5,
+      "cy": 517.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "제3자 제공 사실의 증빙, 부정 열람 대응",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2613.7,
+      "x": 481.5,
+      "cy": 517.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "1년",
+      "el": "table.tbl > tbody > tr > td",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2613.7,
+      "x": 561.1,
+      "cy": 517.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "연구소는 서비스 제공에 필요한 최소한의 정보만 수집하며",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2711.2,
+      "x": 280,
+      "cy": 615.2,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "2. 처리 위탁과 제3자 제공",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > h3",
+      "hit": "div.g > div > ul > li",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2755.6,
+      "x": 111.3,
+      "cy": 659.6,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "결제 처리: 포트원(KG이니시스, NHN KCP 결제 ",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.sheet > footer.ft > div.wrap > details.ft-more",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2785.7,
+      "x": 244.5,
+      "cy": 689.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "인프라 운영: Cloudflare (웹 호스팅, 보안,",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.biz",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2813.1,
+      "x": 235.3,
+      "cy": 717.1,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "본인인증(도입 시): NHN KCP (휴대폰 본인확인)",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2840.5,
+      "x": 237.4,
+      "cy": 744.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "이메일 발송: Resend (인증 메일, 주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2867.9,
+      "x": 200.9,
+      "cy": 771.9,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "문자, 알림톡 발송(도입 시): 솔라피 (주문과 이용권",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2895.3,
+      "x": 206,
+      "cy": 799.3,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "방문 통계와 광고 성과 측정: Google LLC (G",
+      "el": "section.lgb > div.lgb-b.prose > ul > li",
+      "hit": "footer.ft > div.wrap > details.ft-more > div.biz",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2922.7,
+      "x": 385,
+      "cy": 826.7,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     },
+     {
+      "text": "Google 애널리틱스 데이터는 Google LLC 의",
+      "el": "div.legalbox > section.lgb > div.lgb-b.prose > p",
+      "hit": "div.wrap > details.ft-more > div.biz > address.bizinfo",
+      "hitBg": "rgba(0, 0, 0, 0)",
+      "docY": 2979.5,
+      "x": 272.1,
+      "cy": 883.5,
+      "fr": "header#hd.hd@0-65,nav.fix@959-1024"
+     }
+    ],
+    "steps": 4
+   }
+  },
+  "classroom@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 4
+   }
+  },
+  "classroom@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "faq@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 16
+   }
+  },
+  "faq@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 10
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 10
+   }
+  },
+  "guidebook/ajou@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/ajou@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/catholic@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/catholic@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/cau@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/cau@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/dankook@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/dankook@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/donga@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/donga@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/dongduk@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/dongduk@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/dongguk@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/dongguk@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/duksung@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/duksung@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/ewha@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/ewha@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/gachon@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/gachon@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/hanyang-erica@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 21
+   }
+  },
+  "guidebook/hanyang-erica@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/hufs@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/hufs@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/incheon@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/incheon@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/index@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > main#main > div.bar",
+      "b": "nav.fix",
+      "ix": 320,
+      "iy": 65,
+      "scrollY": 512
+     }
+    ],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > main#main > div.bar",
+      "b": "nav.fix",
+      "ix": 320,
+      "iy": 22.3,
+      "scrollY": 512
+     }
+    ],
+    "obscured": [],
+    "steps": 14
+   }
+  },
+  "guidebook/index@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "guidebook/inha@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/inha@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/khu@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/khu@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/konkuk@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/konkuk@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/kookmin@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/kookmin@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/kwangwoon@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/kwangwoon@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/kyonggi@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/kyonggi@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/myongji@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/myongji@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/pusan@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/pusan@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/sahmyook@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/sahmyook@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/sejong@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   }
+  },
+  "guidebook/sejong@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/seoultech@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/seoultech@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/snu@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/snu@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/sookmyung@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/sookmyung@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/soongsil@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "guidebook/soongsil@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/sungshin@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/sungshin@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/swu@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/swu@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/ulsan@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 23
+   }
+  },
+  "guidebook/ulsan@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "guidebook/uos@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   }
+  },
+  "guidebook/uos@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "index@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 14
+   }
+  },
+  "index@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 9
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "insta@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "insta@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "interview@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 31
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 30
+   }
+  },
+  "interview@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "interview/korea-eq-hum@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   }
+  },
+  "interview/korea-eq-hum@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "interview/korea-eq-sci@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 25
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 25
+   }
+  },
+  "interview/korea-eq-sci@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 6.3,
+      "scrollY": 8190
+     }
+    ],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "interview/korea-hum@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 26
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 26
+   }
+  },
+  "interview/korea-hum@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "interview/korea-sci@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 280,
+      "iy": 14,
+      "scrollY": 10752
+     }
+    ],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 25
+   }
+  },
+  "interview/korea-sci@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "interview/yonsei-hum@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 25
+   }
+  },
+  "interview/yonsei-hum@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "interview/yonsei-intl@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 25
+   }
+  },
+  "interview/yonsei-intl@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "interview/yonsei-mirae@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 280,
+      "iy": 21.8,
+      "scrollY": 12288
+     }
+    ],
+    "obscured": [],
+    "steps": 27
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 280,
+      "iy": 7.1,
+      "scrollY": 12800
+     }
+    ],
+    "obscured": [],
+    "steps": 28
+   }
+  },
+  "interview/yonsei-mirae@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 13
+   }
+  },
+  "interview/yonsei-sci@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 24
+   }
+  },
+  "interview/yonsei-sci@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "join@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 9
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "join@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   }
+  },
+  "lecture@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 9
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 9
+   }
+  },
+  "lecture@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   }
+  },
+  "lectures@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   }
+  },
+  "lectures@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 10
+   }
+  },
+  "lectures/common@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 26.1,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 14.9,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 280,
+      "iy": 48,
+      "scrollY": 3584
+     }
+    ],
+    "obscured": [],
+    "steps": 10
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 17.1,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 23.9,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 280,
+      "iy": 41.8,
+      "scrollY": 3584
+     }
+    ],
+    "obscured": [],
+    "steps": 10
+   }
+  },
+  "lectures/common@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 42,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 6
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 48,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 6
+   }
+  },
+  "lectures/korea-hum@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 2.5,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 17
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 16
+   }
+  },
+  "lectures/korea-hum@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 35.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 5.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 9
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 26.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 14.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/korea-sci@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   }
+  },
+  "lectures/korea-sci@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 35.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 5.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 9
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 26.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 14.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-hum@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 2.5,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-hum@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 35.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 5.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 48,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 26.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 14.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 48,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-intl@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 2.5,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-intl@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 35.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 5.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 36.3,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 26.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 14.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 27.3,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-mirae-design@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 41.7,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 48,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-mirae-design@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-mirae-free@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 19,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 28,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-mirae-free@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-mirae-health@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 19,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 28,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-mirae-health@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-mirae-intl@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 19,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 28,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   }
+  },
+  "lectures/yonsei-mirae-intl@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-mirae-tech@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 19,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 280,
+      "iy": 28,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-mirae-tech@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "lectures/yonsei-sci@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 2.5,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 16
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 15
+   }
+  },
+  "lectures/yonsei-sci@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 35.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 5.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 20.7,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "div.frame > div.sheet > main#main > div.sticky",
+      "ix": 706.6,
+      "iy": 26.8,
+      "scrollY": 819
+     },
+     {
+      "a": "div.sheet > main#main > div.wrap > nav.anch",
+      "b": "nav.fix",
+      "ix": 706.6,
+      "iy": 14.2,
+      "scrollY": 819
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "div.sheet > main#main > div.wrap > nav.anch",
+      "ix": 706.6,
+      "iy": 29.7,
+      "scrollY": 4914
+     }
+    ],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "library@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 19
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   }
+  },
+  "library@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "login@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "login@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "my@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 4
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "my@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "notice@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "notice@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "pastexam@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 5
+   }
+  },
+  "pastexam@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 4
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "pay_done@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "pay_done@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "privacy@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 17
+   }
+  },
+  "privacy@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "programs/guidebook@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 84.2,
+      "iy": 21.6,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 84.2,
+      "iy": 32.1,
+      "scrollY": 1536
+     }
+    ],
+    "obscured": [],
+    "steps": 22
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 84.2,
+      "iy": 21.6,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 84.2,
+      "iy": 32.1,
+      "scrollY": 1536
+     }
+    ],
+    "obscured": [],
+    "steps": 22
+   }
+  },
+  "programs/guidebook@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 169.6,
+      "iy": 18.8,
+      "scrollY": 0
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 169.6,
+      "iy": 19.8,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 11
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 169.6,
+      "iy": 18.8,
+      "scrollY": 0
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 169.6,
+      "iy": 19.8,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "programs/korea@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   }
+  },
+  "programs/korea@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 8
+   }
+  },
+  "programs/studio@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 91.2,
+      "iy": 2.5,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 91.2,
+      "iy": 13,
+      "scrollY": 1536
+     }
+    ],
+    "obscured": [],
+    "steps": 27
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 91.2,
+      "iy": 2.5,
+      "scrollY": 1024
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 91.2,
+      "iy": 13,
+      "scrollY": 1536
+     }
+    ],
+    "obscured": [],
+    "steps": 26
+   }
+  },
+  "programs/studio@768": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 169.6,
+      "iy": 34.3,
+      "scrollY": 0
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 169.6,
+      "iy": 4.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "table.r3-table > tbody > tr > th",
+      "b": "nav.fix",
+      "ix": 169.6,
+      "iy": 34.3,
+      "scrollY": 0
+     },
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "table.r3-table > tbody > tr > th",
+      "ix": 169.6,
+      "iy": 4.2,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 12
+   }
+  },
+  "programs/yonsei@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   }
+  },
+  "programs/yonsei@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 7
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 7
+   }
+  },
+  "ranking@320": {
+   "pre": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "main#main > section#ranking.page.wrap.rank > div#rp-yonsei-hum.rpanel > div.setnav",
+      "ix": 280,
+      "iy": 38.3,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 6
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "main#main > section#ranking.page.wrap.rank > div#rp-yonsei-hum.rpanel > div.setnav",
+      "ix": 280,
+      "iy": 47.3,
+      "scrollY": 1024
+     }
+    ],
+    "obscured": [],
+    "steps": 5
+   }
+  },
+  "ranking@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 3
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.frame > div.sheet > header#hd.hd",
+      "b": "main#main > section#ranking.page.wrap.rank > div#rp-yonsei-hum.rpanel > div.setnav",
+      "ix": 706.6,
+      "iy": 3.5,
+      "scrollY": 819
+     }
+    ],
+    "obscured": [],
+    "steps": 3
+   }
+  },
+  "reader@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "reader@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 2
+   }
+  },
+  "request@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "request@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   }
+  },
+  "studio@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 39
+   },
+   "post": {
+    "fixedOverlap": [
+     {
+      "a": "div.wrap.book > div.pages > section#sets.page > div.setnav",
+      "b": "nav.fix",
+      "ix": 280,
+      "iy": 6.5,
+      "scrollY": 7168
+     }
+    ],
+    "obscured": [],
+    "steps": 38
+   }
+  },
+  "studio@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 18
+   }
+  },
+  "support@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 11
+   }
+  },
+  "support@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   }
+  },
+  "terms@320": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 15
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 14
+   }
+  },
+  "terms@768": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 7
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [],
+    "steps": 6
+   }
+  }
+ }
+}

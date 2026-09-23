@@ -1,0 +1,290 @@
+{
+ "ranking@1440_pre": {
+  "top": "auto",
+  "hdH": 72,
+  "samples": 1,
+  "overlapMaxPx": -0.3,
+  "overlapModePx": -0.3,
+  "nOverlap": 0
+ },
+ "ranking@1440_post": {
+  "top": "auto",
+  "hdH": 72,
+  "samples": 1,
+  "overlapMaxPx": 10.7,
+  "overlapModePx": 10.7,
+  "nOverlap": 0
+ },
+ "ranking@900_pre": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 58.2,
+  "overlapModePx": 58.2,
+  "nOverlap": 0
+ },
+ "ranking@900_post": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 69.2,
+  "overlapModePx": 69.2,
+  "nOverlap": 0
+ },
+ "ranking@899_pre": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 58.3,
+  "overlapModePx": 58.3,
+  "nOverlap": 0
+ },
+ "ranking@899_post": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 69.3,
+  "overlapModePx": 69.3,
+  "nOverlap": 0
+ },
+ "ranking@768_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 62.5,
+  "overlapModePx": 62.5,
+  "nOverlap": 0
+ },
+ "ranking@768_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 57.5,
+  "overlapModePx": 57.5,
+  "nOverlap": 0
+ },
+ "ranking@390_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 100.2,
+  "overlapModePx": 100.2,
+  "nOverlap": 0
+ },
+ "ranking@390_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 95.2,
+  "overlapModePx": 95.2,
+  "nOverlap": 0
+ },
+ "ranking@320_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 113.7,
+  "overlapModePx": 113.7,
+  "nOverlap": 0
+ },
+ "ranking@320_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 3,
+  "overlapMaxPx": 108.7,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "studio@1440_pre": {
+  "top": "auto",
+  "hdH": 72,
+  "samples": 2,
+  "overlapMaxPx": 33,
+  "overlapModePx": 33,
+  "nOverlap": 0
+ },
+ "studio@1440_post": {
+  "top": "auto",
+  "hdH": 72,
+  "samples": 2,
+  "overlapMaxPx": 33,
+  "overlapModePx": 33,
+  "nOverlap": 0
+ },
+ "studio@900_pre": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 41,
+  "overlapModePx": 41,
+  "nOverlap": 0
+ },
+ "studio@900_post": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 41,
+  "overlapModePx": 41,
+  "nOverlap": 0
+ },
+ "studio@899_pre": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 41.9,
+  "overlapModePx": 41.9,
+  "nOverlap": 0
+ },
+ "studio@899_post": {
+  "top": "auto",
+  "hdH": 65,
+  "samples": 2,
+  "overlapMaxPx": 41.9,
+  "overlapModePx": 41.9,
+  "nOverlap": 0
+ },
+ "studio@768_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 21,
+  "overlapMaxPx": 85.1,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "studio@768_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 21,
+  "overlapMaxPx": 85.1,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "studio@390_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 18,
+  "overlapMaxPx": 93.4,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "studio@390_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 18,
+  "overlapMaxPx": 21.4,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "studio@320_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 20,
+  "overlapMaxPx": 153.5,
+  "overlapModePx": 0,
+  "nOverlap": 2
+ },
+ "studio@320_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 20,
+  "overlapMaxPx": 99.5,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@1440_pre": {
+  "top": "72px",
+  "hdH": 72,
+  "samples": 47,
+  "overlapMaxPx": 107.6,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@1440_post": {
+  "top": "72px",
+  "hdH": 72,
+  "samples": 46,
+  "overlapMaxPx": 105.9,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@900_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 49,
+  "overlapMaxPx": 0,
+  "overlapModePx": 0,
+  "nOverlap": 0
+ },
+ "interview/korea-eq-sci@900_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 49,
+  "overlapMaxPx": 46.9,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@899_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 49,
+  "overlapMaxPx": 0,
+  "overlapModePx": 0,
+  "nOverlap": 0
+ },
+ "interview/korea-eq-sci@899_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 49,
+  "overlapMaxPx": 47.7,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@768_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 53,
+  "overlapMaxPx": 23.3,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@768_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 53,
+  "overlapMaxPx": 66.3,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@390_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 67,
+  "overlapMaxPx": 86.7,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@390_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 68,
+  "overlapMaxPx": 46,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@320_pre": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 71,
+  "overlapMaxPx": 22.8,
+  "overlapModePx": 0,
+  "nOverlap": 1
+ },
+ "interview/korea-eq-sci@320_post": {
+  "top": "65px",
+  "hdH": 65,
+  "samples": 73,
+  "overlapMaxPx": 0,
+  "overlapModePx": 0,
+  "nOverlap": 0
+ }
+}

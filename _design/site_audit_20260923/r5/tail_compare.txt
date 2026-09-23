@@ -1,0 +1,4 @@
+studio_390_footer	390x1005	AE=0	bands=0
+studio_390_scroll16384	390x844	AE=0	bands=0
+studio_390_scroll16905	390x844	AE=0	bands=0
+base_only: []

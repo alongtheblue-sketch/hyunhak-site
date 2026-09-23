@@ -1,0 +1,1788 @@
+{
+ "index_1440x900": {
+  "open": true,
+  "n": 2,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   206.1,
+   940,
+   635.9
+  ],
+  "onScroll": [
+   429,
+   429
+  ],
+  "bar": [
+   500,
+   635.9,
+   940,
+   693.9
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     640.9,
+     640.6,
+     688.9
+    ]
+   },
+   {
+    "c": "pnav",
+    "r": [
+     667.5,
+     640.9,
+     852.5,
+     688.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     640.9,
+     923,
+     688.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [
+   {
+    "r": [
+     986,
+     249.7,
+     1382,
+     650.3
+    ],
+    "op": "1"
+   }
+  ],
+  "docSW": 1440,
+  "kind": [
+   "의뢰 개시",
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking"
+   ],
+   "failed": [
+    "net::ERR_BLOCKED_BY_ORB https://connect.facebook.net//log/error?p=pixel&pn=SmartSetup&sl=1&v=2.9.406&e=Error%3A%20%5BSmartSetup%5D%20Rule%20processing%20issues&s=Error%3A%20%5BSmartSetup%5D%20Rule%20processing%20issues%0A%20"
+   ]
+  }
+ },
+ "index_390x844": {
+  "open": true,
+  "n": 2,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   139.9,
+   374,
+   597.1
+  ],
+  "onScroll": [
+   456,
+   456
+  ],
+  "bar": [
+   16,
+   597.1,
+   374,
+   704.1
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     602.1,
+     156.6,
+     650.1
+    ]
+   },
+   {
+    "c": "pnav",
+    "r": [
+     33,
+     650.1,
+     357,
+     699.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     602.1,
+     357,
+     650.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [
+   {
+    "r": [
+     415.9,
+     194,
+     738.1,
+     650
+    ],
+    "op": "0"
+   }
+  ],
+  "docSW": 390,
+  "kind": [
+   "의뢰 개시",
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking"
+   ],
+   "failed": []
+  }
+ },
+ "index_320x568": {
+  "open": true,
+  "n": 2,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   26,
+   304,
+   435
+  ],
+  "onScroll": [
+   502,
+   408
+  ],
+  "bar": [
+   16,
+   435,
+   304,
+   542
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     440,
+     156.6,
+     488
+    ]
+   },
+   {
+    "c": "pnav",
+    "r": [
+     33,
+     488,
+     287,
+     537
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     440,
+     287,
+     488
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [
+   {
+    "r": [
+     342.4,
+     100,
+     601.6,
+     468
+    ],
+    "op": "0"
+   }
+  ],
+  "docSW": 320,
+  "kind": [
+   "의뢰 개시",
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking"
+   ],
+   "failed": []
+  }
+ },
+ "index_1440x640": {
+  "open": true,
+  "n": 2,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   76.1,
+   940,
+   505.9
+  ],
+  "onScroll": [
+   429,
+   429
+  ],
+  "bar": [
+   500,
+   505.9,
+   940,
+   563.9
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     510.9,
+     640.6,
+     558.9
+    ]
+   },
+   {
+    "c": "pnav",
+    "r": [
+     667.5,
+     510.9,
+     852.5,
+     558.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     510.9,
+     923,
+     558.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [
+   {
+    "r": [
+     986,
+     119.7,
+     1382,
+     520.3
+    ],
+    "op": "1"
+   }
+  ],
+  "docSW": 1440,
+  "kind": [
+   "의뢰 개시",
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/studio/ranking",
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "about_1440x900": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   198.9,
+   940,
+   643.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   643.1,
+   940,
+   701.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     648.1,
+     640.6,
+     696.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     648.1,
+     923,
+     696.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "about_390x844": {
+  "open": true,
+  "n": 1,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   140.1,
+   374,
+   645.9
+  ],
+  "onScroll": [
+   505,
+   505
+  ],
+  "bar": [
+   16,
+   645.9,
+   374,
+   703.9
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     650.9,
+     156.6,
+     698.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     650.9,
+     357,
+     698.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 390,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "about_320x568": {
+  "open": true,
+  "n": 1,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   50.5,
+   304,
+   459.5
+  ],
+  "onScroll": [
+   533,
+   408
+  ],
+  "bar": [
+   16,
+   459.5,
+   304,
+   517.5
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     464.5,
+     156.6,
+     512.5
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     464.5,
+     287,
+     512.5
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 320,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "about_1440x640": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   68.9,
+   940,
+   513.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   513.1,
+   940,
+   571.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     518.1,
+     640.6,
+     566.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     518.1,
+     923,
+     566.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "guidebook_index_1440x900": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   198.9,
+   940,
+   643.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   643.1,
+   940,
+   701.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     648.1,
+     640.6,
+     696.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     648.1,
+     923,
+     696.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "guidebook_index_390x844": {
+  "open": true,
+  "n": 1,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   140.1,
+   374,
+   645.9
+  ],
+  "onScroll": [
+   505,
+   505
+  ],
+  "bar": [
+   16,
+   645.9,
+   374,
+   703.9
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     650.9,
+     156.6,
+     698.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     650.9,
+     357,
+     698.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 390,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "guidebook_index_320x568": {
+  "open": true,
+  "n": 1,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   50.5,
+   304,
+   459.5
+  ],
+  "onScroll": [
+   533,
+   408
+  ],
+  "bar": [
+   16,
+   459.5,
+   304,
+   517.5
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     464.5,
+     156.6,
+     512.5
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     464.5,
+     287,
+     512.5
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 320,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "guidebook_index_1440x640": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   68.9,
+   940,
+   513.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   513.1,
+   940,
+   571.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     518.1,
+     640.6,
+     566.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     518.1,
+     923,
+     566.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "interview_1440x900": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   198.9,
+   940,
+   643.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   643.1,
+   940,
+   701.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     648.1,
+     640.6,
+     696.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     648.1,
+     923,
+     696.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "interview_390x844": {
+  "open": true,
+  "n": 1,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   140.1,
+   374,
+   645.9
+  ],
+  "onScroll": [
+   505,
+   505
+  ],
+  "bar": [
+   16,
+   645.9,
+   374,
+   703.9
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     650.9,
+     156.6,
+     698.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     650.9,
+     357,
+     698.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 390,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "interview_320x568": {
+  "open": true,
+  "n": 1,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   50.5,
+   304,
+   459.5
+  ],
+  "onScroll": [
+   533,
+   408
+  ],
+  "bar": [
+   16,
+   459.5,
+   304,
+   517.5
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     464.5,
+     156.6,
+     512.5
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     464.5,
+     287,
+     512.5
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 320,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "interview_1440x640": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   68.9,
+   940,
+   513.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   513.1,
+   940,
+   571.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     518.1,
+     640.6,
+     566.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     518.1,
+     923,
+     566.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "lectures_1440x900": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   198.9,
+   940,
+   643.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   643.1,
+   940,
+   701.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     648.1,
+     640.6,
+     696.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     648.1,
+     923,
+     696.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?kind=common",
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "lectures_390x844": {
+  "open": true,
+  "n": 1,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   140.1,
+   374,
+   645.9
+  ],
+  "onScroll": [
+   505,
+   505
+  ],
+  "bar": [
+   16,
+   645.9,
+   374,
+   703.9
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     650.9,
+     156.6,
+     698.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     650.9,
+     357,
+     698.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 390,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?kind=common",
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "lectures_320x568": {
+  "open": true,
+  "n": 1,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   50.5,
+   304,
+   459.5
+  ],
+  "onScroll": [
+   533,
+   408
+  ],
+  "bar": [
+   16,
+   459.5,
+   304,
+   517.5
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     464.5,
+     156.6,
+     512.5
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     464.5,
+     287,
+     512.5
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 320,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?kind=common",
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "lectures_1440x640": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   68.9,
+   940,
+   513.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   513.1,
+   940,
+   571.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     518.1,
+     640.6,
+     566.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     518.1,
+     923,
+     566.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?kind=common",
+    "404 http://localhost:8799/api/auth/me"
+   ],
+   "failed": []
+  }
+ },
+ "studio_1440x900": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 900,
+  "on": [
+   500,
+   198.9,
+   940,
+   643.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   643.1,
+   940,
+   701.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     648.1,
+     640.6,
+     696.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     648.1,
+     923,
+     696.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-common&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/public?unit=korea-hum"
+   ],
+   "failed": []
+  }
+ },
+ "studio_390x844": {
+  "open": true,
+  "n": 1,
+  "iw": 390,
+  "ih": 844,
+  "on": [
+   16,
+   140.1,
+   374,
+   645.9
+  ],
+  "onScroll": [
+   505,
+   505
+  ],
+  "bar": [
+   16,
+   645.9,
+   374,
+   703.9
+  ],
+  "barSW": [
+   356,
+   356
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     650.9,
+     156.6,
+     698.9
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     302.5,
+     650.9,
+     357,
+     698.9
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 390,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-common&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/public?unit=korea-hum"
+   ],
+   "failed": []
+  }
+ },
+ "studio_320x568": {
+  "open": true,
+  "n": 1,
+  "iw": 320,
+  "ih": 568,
+  "on": [
+   16,
+   50.5,
+   304,
+   459.5
+  ],
+  "onScroll": [
+   533,
+   408
+  ],
+  "bar": [
+   16,
+   459.5,
+   304,
+   517.5
+  ],
+  "barSW": [
+   286,
+   286
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     33,
+     464.5,
+     156.6,
+     512.5
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     232.5,
+     464.5,
+     287,
+     512.5
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 320,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-common&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/public?unit=korea-hum"
+   ],
+   "failed": []
+  }
+ },
+ "studio_1440x640": {
+  "open": true,
+  "n": 1,
+  "iw": 1440,
+  "ih": 640,
+  "on": [
+   500,
+   68.9,
+   940,
+   513.1
+  ],
+  "onScroll": [
+   443,
+   443
+  ],
+  "bar": [
+   500,
+   513.1,
+   940,
+   571.1
+  ],
+  "barSW": [
+   438,
+   438
+  ],
+  "kids": [
+   {
+    "c": "pmute",
+    "r": [
+     517,
+     518.1,
+     640.6,
+     566.1
+    ]
+   },
+   {
+    "c": "pclose",
+    "r": [
+     868.5,
+     518.1,
+     923,
+     566.1
+    ]
+   }
+  ],
+  "overl": [],
+  "sideVisible": [],
+  "docSW": 1440,
+  "kind": [
+   "행사 안내"
+  ],
+  "log": {
+   "console": [
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "error: Failed to load resource: the server responded with a status of 404 (Not Found)"
+   ],
+   "pageerror": [],
+   "bad": [
+    "404 http://localhost:8799/api/auth/me",
+    "404 http://localhost:8799/api/studio/ranking",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-free&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-design&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-tech&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-health&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-intl&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=yonsei-mirae-common&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-hum&kind=passage",
+    "404 http://localhost:8799/api/lectures/summary?unit=korea-eq-sci&kind=passage",
+    "404 http://localhost:8799/api/lectures/public?unit=korea-hum"
+   ],
+   "failed": []
+  }
+ }
+}

@@ -1,0 +1,36 @@
+== pre__pre_rep1
+index_nopop_1440	1440x4858	AE=0	bands=0
+index_nopop_390	390x6639	AE=0	bands=0
+index_popup_1440	1440x900	AE=0	bands=0
+index_popup_390	390x844	AE=0	bands=0
+index_tiles_1440	1008x195	AE=0	bands=0
+index_tiles_390	350x579	AE=0	bands=0
+programs_guidebook_1440	1440x10825	AE=0	bands=0
+programs_guidebook_390	390x11187	AE=0	bands=0
+support_1440	1440x3900	AE=0	bands=0
+support_390	390x4889	AE=8	bands=1
+base_only: ['404_1440.png', '404_390.png', 'about_1440.png', 'about_390.png', 'b2b_1440.png', 'b2b_390.png', 'cart_1440.png', 'cart_390.png', 'checkout_1440.png', 'checkout_390.png', 'faq_1440.png', 'faq_390.png', 'guidebook_index_1440.png', 'guidebook_index_390.png', 'interview_1440.png', 'interview_390.png', 'interview_yonsei-hum_1440.png', 'interview_yonsei-hum_390.png', 'join_1440.png', 'join_390.png', 'lectures_1440.png', 'lectures_390.png', 'library_1440.png', 'library_390.png', 'login_1440.png', 'login_390.png', 'my_1440.png', 'my_390.png', 'notice_1440.png', 'notice_390.png', 'pastexam_1440.png', 'pastexam_390.png', 'programs_studio_1440.png', 'programs_studio_390.png', 'ranking_1440.png', 'ranking_390.png', 'request_1440.png', 'request_390.png', 'studio_1440.png', 'studio_390.png', 'terms_1440.png', 'terms_390.png']
+== post__post_rep1
+index_nopop_1440	1440x4858	AE=0	bands=0
+index_nopop_390	390x6639	AE=0	bands=0
+index_popup_1440	1440x900	AE=0	bands=0
+index_popup_390	390x844	AE=0	bands=0
+index_tiles_1440	1008x195	AE=0	bands=0
+index_tiles_390	350x579	AE=0	bands=0
+programs_guidebook_1440	1440x10825	AE=0	bands=0
+programs_guidebook_390	390x11187	AE=106	bands=5
+support_1440	1440x3900	AE=0	bands=0
+support_390	390x4889	AE=0	bands=0
+base_only: ['404_1440.png', '404_390.png', 'about_1440.png', 'about_390.png', 'b2b_1440.png', 'b2b_390.png', 'cart_1440.png', 'cart_390.png', 'checkout_1440.png', 'checkout_390.png', 'faq_1440.png', 'faq_390.png', 'guidebook_index_1440.png', 'guidebook_index_390.png', 'interview_1440.png', 'interview_390.png', 'interview_yonsei-hum_1440.png', 'interview_yonsei-hum_390.png', 'join_1440.png', 'join_390.png', 'lectures_1440.png', 'lectures_390.png', 'library_1440.png', 'library_390.png', 'login_1440.png', 'login_390.png', 'my_1440.png', 'my_390.png', 'notice_1440.png', 'notice_390.png', 'pastexam_1440.png', 'pastexam_390.png', 'programs_studio_1440.png', 'programs_studio_390.png', 'ranking_1440.png', 'ranking_390.png', 'request_1440.png', 'request_390.png', 'studio_1440.png', 'studio_390.png', 'terms_1440.png', 'terms_390.png']
+== pre_rep1__post_rep1
+index_nopop_1440	1440x4858	AE=0	bands=0
+index_nopop_390	390x6639	AE=0	bands=0
+index_popup_1440	1440x900	AE=3141	bands=2
+index_popup_390	390x844	AE=15222	bands=4
+index_tiles_1440	1008x195	AE=0	bands=0
+index_tiles_390	350x579	AE=0	bands=0
+programs_guidebook_1440	1440x10825	AE=0	bands=0
+programs_guidebook_390	390x11187	AE=0	bands=0
+support_1440	1440x3900	AE=0	bands=0
+support_390	390x4889	AE=0	bands=0
+base_only: []

@@ -1,0 +1,2786 @@
+{
+  "meta": {
+    "head": "507edf1",
+    "at": "2026-09-23T05:01:15.617Z",
+    "servedEqualsHead": {
+      "assets/app.js": true,
+      "assets/base.css": true,
+      "index.html": true,
+      "request.html": true,
+      "cart.html": true,
+      "checkout.html": true,
+      "programs/guidebook.html": true
+    }
+  },
+  "popup": {
+    "cases": [
+      {
+        "name": "label_click_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 664.9,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click label again",
+            "info": {
+              "x": 578.8,
+              "y": 664.9,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "next_label_close_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 664.9,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 672.1,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click close",
+            "info": {
+              "x": 895.8,
+              "y": 672.1,
+              "hit": "button.pclose"
+            },
+            "open": false,
+            "newlyOn": [],
+            "muteStore": "{\"all\":1790175600000}"
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "next_close_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 664.9,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click close",
+            "info": {
+              "x": 895.8,
+              "y": 672.1,
+              "hit": "button.pclose"
+            },
+            "open": false,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "next_pause_blank_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 664.9,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click pause",
+            "info": {
+              "x": 828.5,
+              "y": 672.1,
+              "hit": "button.parr ppause"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "button.parr.ppause",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click bar blank",
+            "info": {
+              "x": 502,
+              "y": 645.0625
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "div.pdim",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click side",
+            "info": {
+              "i": 0,
+              "x": 256,
+              "y": 450,
+              "hit": 0
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              0
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click bar blank",
+            "info": {
+              "x": 502,
+              "y": 637.9375
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "div.pdim",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "n3_side_label_prev_1440",
+        "w": 1440,
+        "N": 3,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 3,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click left side",
+            "info": {
+              "i": 2,
+              "x": 256,
+              "y": 449.99998474121094,
+              "hit": 2
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              2
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 530.8,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click prev",
+            "info": {
+              "x": 691.5,
+              "y": 530.8,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click right side",
+            "info": {
+              "i": 2,
+              "x": 1184,
+              "y": 449.99998474121094,
+              "hit": 2
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              2
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "tap_label_next_390",
+        "w": 390,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "tap label",
+            "info": {
+              "x": 94.8,
+              "y": 626.1,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "tap next",
+            "info": {
+              "x": 211.5,
+              "y": 675.1,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "tap label",
+            "info": {
+              "x": 94.8,
+              "y": 650.4,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "swipe_from_label_390",
+        "w": 390,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe -80 from label",
+            "info": {
+              "x": 94.8,
+              "y": 626.1,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "swipe_from_close_390",
+        "w": 390,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe -80 from 닫기",
+            "info": {
+              "x": 329.8,
+              "y": 626.1,
+              "hit": "button.pclose"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "swipe_from_next_390",
+        "w": 390,
+        "N": 3,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 3,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe +80 from →",
+            "info": {
+              "x": 211.5,
+              "y": 675.1,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": false,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              2
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "kbd_space_mute_arrow_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": false,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/자동 넘김 정지",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "focus mute + Space",
+            "info": null,
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "ArrowRight",
+            "info": null,
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": true,
+            "pause": "재생/자동 넘김 재생",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "Enter on close",
+            "info": null,
+            "open": false,
+            "newlyOn": [],
+            "muteStore": "{\"all\":1790175600000}"
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "label_click_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 665.4,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click label again",
+            "info": {
+              "x": 578.8,
+              "y": 665.4,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "next_label_close_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 665.4,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1,
+              0
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 665.4,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click close",
+            "info": {
+              "x": 895.8,
+              "y": 665.4,
+              "hit": "button.pclose"
+            },
+            "open": false,
+            "newlyOn": [],
+            "muteStore": "{\"all\":1790175600000}"
+          }
+        ],
+        "errors": [],
+        "bad": [
+          "click next: expected 2 got 1"
+        ],
+        "pass": false
+      },
+      {
+        "name": "next_close_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 665.4,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1,
+              0
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click close",
+            "info": {
+              "x": 895.8,
+              "y": 665.4,
+              "hit": "button.pclose"
+            },
+            "open": false,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [
+          "click next: expected 2 got 1"
+        ],
+        "pass": false
+      },
+      {
+        "name": "next_pause_blank_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click next",
+            "info": {
+              "x": 776.5,
+              "y": 665.4,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1,
+              0
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click pause",
+            "info": {
+              "x": 828.5,
+              "y": 665.4,
+              "hit": "button.parr ppause"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "button.parr.ppause",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click bar blank",
+            "info": {
+              "x": 502,
+              "y": 638.4375
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "div.pdim",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click side",
+            "info": null,
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "div.pdim",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click bar blank",
+            "info": {
+              "x": 502,
+              "y": 638.4375
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "div.pdim",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [
+          "click next: expected 2 got 1"
+        ],
+        "pass": false
+      },
+      {
+        "name": "n3_side_label_prev_1440",
+        "w": 1440,
+        "N": 3,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 3,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "click left side",
+            "info": {
+              "i": 2,
+              "x": 256,
+              "y": 449.99998474121094,
+              "hit": 2
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              2
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click label",
+            "info": {
+              "x": 578.8,
+              "y": 531.3,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "click prev",
+            "info": {
+              "x": 691.5,
+              "y": 531.3,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              1,
+              2
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "click right side",
+            "info": {
+              "i": 0,
+              "x": 1184,
+              "y": 450,
+              "hit": 0
+            },
+            "open": true,
+            "n": 3,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              0
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [
+          "click prev: prev expected got 3"
+        ],
+        "pass": false
+      },
+      {
+        "name": "tap_label_next_390",
+        "w": 390,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "tap label",
+            "info": {
+              "x": 94.8,
+              "y": 626.6,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "tap next",
+            "info": {
+              "x": 211.5,
+              "y": 675.6,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1,
+              0
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "tap label",
+            "info": {
+              "x": 94.8,
+              "y": 626.6,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [
+          "tap next: expected 2 got 1"
+        ],
+        "pass": false
+      },
+      {
+        "name": "swipe_from_label_390",
+        "w": 390,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe -80 from label",
+            "info": {
+              "x": 94.8,
+              "y": 626.6,
+              "hit": "label.pmute"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "swipe_from_close_390",
+        "w": 390,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe -80 from 닫기",
+            "info": {
+              "x": 329.8,
+              "y": 626.6,
+              "hit": "button.pclose"
+            },
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "swipe_from_next_390",
+        "w": 390,
+        "N": 3,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 3,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "swipe +80 from →",
+            "info": {
+              "x": 211.5,
+              "y": 675.6,
+              "hit": "button.parr"
+            },
+            "open": true,
+            "n": 3,
+            "cur": 3,
+            "on": 2,
+            "barSlot": 2,
+            "mute": false,
+            "pause": "재생/null",
+            "focus": "h2#hhPopupTitle_ntc_probe_n3",
+            "focusInDialog": true,
+            "newlyOn": [
+              2
+            ],
+            "muteStore": null
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      },
+      {
+        "name": "kbd_space_mute_arrow_1440",
+        "w": 1440,
+        "N": 2,
+        "pre": true,
+        "trace": [
+          {
+            "step": "load",
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": false,
+            "pause": "정지/null",
+            "focus": "h2#rpopT",
+            "focusInDialog": true
+          },
+          {
+            "step": "focus mute + Space",
+            "info": null,
+            "open": true,
+            "n": 2,
+            "cur": 1,
+            "on": 0,
+            "barSlot": 0,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "input",
+            "focusInDialog": true,
+            "newlyOn": [],
+            "muteStore": null
+          },
+          {
+            "step": "ArrowRight",
+            "info": null,
+            "open": true,
+            "n": 2,
+            "cur": 2,
+            "on": 1,
+            "barSlot": 1,
+            "mute": true,
+            "pause": "재생/null",
+            "focus": "h2#ppopT",
+            "focusInDialog": true,
+            "newlyOn": [
+              1
+            ],
+            "muteStore": null
+          },
+          {
+            "step": "Enter on close",
+            "info": null,
+            "open": false,
+            "newlyOn": [],
+            "muteStore": "{\"all\":1790175600000}"
+          }
+        ],
+        "errors": [],
+        "bad": [],
+        "pass": true
+      }
+    ],
+    "summary": [
+      "HEAD label_click_1440: PASS | load=>1 , click label=>1✓ , click label again=>1",
+      "HEAD next_label_close_1440: PASS | load=>1 , click next=>2 , click label=>2✓ , click close=>closed",
+      "HEAD next_close_1440: PASS | load=>1 , click next=>2 , click close=>closed",
+      "HEAD next_pause_blank_1440: PASS | load=>1 , click next=>2 , click pause=>2 , click bar blank=>2 , click side=>1 , click bar blank=>1",
+      "HEAD n3_side_label_prev_1440: PASS | load=>1 , click left side=>3 , click label=>3✓ , click prev=>2✓ , click right side=>3✓",
+      "HEAD tap_label_next_390: PASS | load=>1 , tap label=>1✓ , tap next=>2✓ , tap label=>2",
+      "HEAD swipe_from_label_390: PASS | load=>1 , swipe -80 from label=>2",
+      "HEAD swipe_from_close_390: PASS | load=>1 , swipe -80 from 닫기=>2",
+      "HEAD swipe_from_next_390: PASS | load=>1 , swipe +80 from →=>3",
+      "HEAD kbd_space_mute_arrow_1440: PASS | load=>1 , focus mute + Space=>1✓ , ArrowRight=>2✓ , Enter on close=>closed",
+      "c342aff label_click_1440: PASS | load=>1 , click label=>1✓ , click label again=>1",
+      "c342aff next_label_close_1440: FAIL click next: expected 2 got 1 | load=>1 , click next=>1 , click label=>1✓ , click close=>closed",
+      "c342aff next_close_1440: FAIL click next: expected 2 got 1 | load=>1 , click next=>1 , click close=>closed",
+      "c342aff next_pause_blank_1440: FAIL click next: expected 2 got 1 | load=>1 , click next=>1 , click pause=>1 , click bar blank=>1 , click side=>1 , click bar blank=>1",
+      "c342aff n3_side_label_prev_1440: FAIL click prev: prev expected got 3 | load=>1 , click left side=>3 , click label=>3✓ , click prev=>3✓ , click right side=>1✓",
+      "c342aff tap_label_next_390: FAIL tap next: expected 2 got 1 | load=>1 , tap label=>1✓ , tap next=>1✓ , tap label=>1",
+      "c342aff swipe_from_label_390: PASS | load=>1 , swipe -80 from label=>2",
+      "c342aff swipe_from_close_390: PASS | load=>1 , swipe -80 from 닫기=>2",
+      "c342aff swipe_from_next_390: PASS | load=>1 , swipe +80 from →=>3",
+      "c342aff kbd_space_mute_arrow_1440: PASS | load=>1 , focus mute + Space=>1✓ , ArrowRight=>2✓ , Enter on close=>closed"
+    ]
+  },
+  "a11y": {
+    "HEAD_turn": {
+      "live": [],
+      "dialog": {
+        "role": "dialog",
+        "modal": "true",
+        "label": "안내 2건",
+        "roledesc": 0
+      },
+      "loadFocus": "h2#rpopT",
+      "afterNext": {
+        "cur": 2,
+        "focus": "h2#ppopT"
+      },
+      "axFocused": [
+        {
+          "role": "RootWebArea",
+          "name": "현학적 연구소, 대입 면접 준비, 대학별 서류기반 면접 가이드북 2027과 연세대 고려대 제시문 면접 모의면접 스튜디오",
+          "props": [
+            "focusable=true",
+            "focused=true",
+            "url=\"http://localhost:8092/index.html\""
+          ]
+        },
+        {
+          "role": "heading",
+          "name": "9월 30일까지 전 상품을 정가에서 30% 할인합니다.",
+          "props": [
+            "focusable=true",
+            "focused=true",
+            "level=2"
+          ]
+        }
+      ],
+      "btns": [
+        {
+          "role": "button",
+          "name": "이전 안내",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        },
+        {
+          "role": "button",
+          "name": "다음 안내",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        },
+        {
+          "role": "button",
+          "name": "자동 넘김 재생",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        },
+        {
+          "role": "button",
+          "name": "닫기",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        }
+      ],
+      "vis": [
+        {
+          "text": "←",
+          "label": "이전 안내"
+        },
+        {
+          "text": "→",
+          "label": "다음 안내"
+        },
+        {
+          "text": "재생",
+          "label": "자동 넘김 재생"
+        },
+        {
+          "text": "닫기",
+          "label": null
+        }
+      ],
+      "byVisible": {
+        "정지": {
+          "substring": 1,
+          "exact": 0
+        },
+        "재생": {
+          "substring": 1,
+          "exact": 0
+        },
+        "닫기": {
+          "substring": 1,
+          "exact": 1
+        }
+      },
+      "tabsFromTitleToNext": 6,
+      "errors": []
+    },
+    "HEAD_autofocus": {
+      "t0": 757,
+      "focusMoves": [
+        {
+          "t": 8103.2,
+          "el": "h2#ppopT",
+          "dt": 7346
+        },
+        {
+          "t": 16106.6,
+          "el": "h2#rpopT",
+          "dt": 15350
+        }
+      ],
+      "turns": [
+        {
+          "i": 1,
+          "dt": 7346
+        },
+        {
+          "i": 0,
+          "dt": 15350
+        }
+      ],
+      "end": {
+        "cur": 1,
+        "focus": "h2#rpopT",
+        "pause": "정지/자동 넘김 정지"
+      },
+      "errors": []
+    },
+    "HEAD_touchResume390": {
+      "afterFirstTap": "재생/자동 넘김 재생",
+      "afterSecondTap": "정지/자동 넘김 정지",
+      "after10s": {
+        "cur": 1,
+        "pause": "정지/자동 넘김 정지"
+      },
+      "turnsIn10s": 0,
+      "errors": []
+    },
+    "c342aff_turn": {
+      "live": [],
+      "dialog": {
+        "role": "dialog",
+        "modal": "true",
+        "label": "안내 2건",
+        "roledesc": 0
+      },
+      "loadFocus": "h2#rpopT",
+      "afterNext": {
+        "cur": 1,
+        "focus": "h2#rpopT"
+      },
+      "axFocused": [
+        {
+          "role": "RootWebArea",
+          "name": "현학적 연구소, 대입 면접 준비, 대학별 서류기반 면접 가이드북 2027과 연세대 고려대 제시문 면접 모의면접 스튜디오",
+          "props": [
+            "focusable=true",
+            "focused=true",
+            "url=\"http://localhost:8092/index.html\""
+          ]
+        },
+        {
+          "role": "heading",
+          "name": "학교별 면접 질문지 제작 의뢰를 받습니다.",
+          "props": [
+            "focusable=true",
+            "focused=true",
+            "level=2"
+          ]
+        }
+      ],
+      "btns": [
+        {
+          "role": "button",
+          "name": "이전 안내",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        },
+        {
+          "role": "button",
+          "name": "다음 안내",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        },
+        {
+          "role": "button",
+          "name": "닫기",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true"
+          ]
+        }
+      ],
+      "vis": [
+        {
+          "text": "←",
+          "label": "이전 안내"
+        },
+        {
+          "text": "→",
+          "label": "다음 안내"
+        },
+        {
+          "text": "재생",
+          "label": null
+        },
+        {
+          "text": "닫기",
+          "label": null
+        }
+      ],
+      "byVisible": {
+        "정지": {
+          "substring": 1,
+          "exact": 0
+        },
+        "재생": {
+          "substring": 1,
+          "exact": 1
+        },
+        "닫기": {
+          "substring": 1,
+          "exact": 1
+        }
+      },
+      "tabsFromTitleToNext": 5,
+      "errors": []
+    },
+    "c342aff_autofocus": {
+      "t0": 775,
+      "focusMoves": [
+        {
+          "t": 8123.9,
+          "el": "h2#ppopT",
+          "dt": 7349
+        },
+        {
+          "t": 16125.6,
+          "el": "h2#rpopT",
+          "dt": 15350
+        }
+      ],
+      "turns": [
+        {
+          "i": 1,
+          "dt": 7349
+        },
+        {
+          "i": 0,
+          "dt": 15350
+        }
+      ],
+      "end": {
+        "cur": 1,
+        "focus": "h2#rpopT",
+        "pause": "정지/null"
+      },
+      "errors": []
+    },
+    "c342aff_touchResume390": {
+      "afterFirstTap": "재생/null",
+      "afterSecondTap": "정지/null",
+      "after10s": {
+        "cur": 1,
+        "pause": "정지/null"
+      },
+      "turnsIn10s": 0,
+      "errors": []
+    }
+  },
+  "checkout": {
+    "popup_link_1440": {
+      "steps": [
+        {
+          "s": "popup link visible",
+          "url": "/index.html",
+          "visible": true
+        },
+        {
+          "s": "product page",
+          "url": "/programs/guidebook.html#buy"
+        },
+        {
+          "s": "added",
+          "url": "/programs/guidebook.html#buy",
+          "bi": {
+            "sku": "guide-khu",
+            "price": "33000",
+            "text": "장바구니 담기",
+            "disabled": false
+          },
+          "status": "장바구니에 담았습니다.",
+          "cartLinkVisible": true
+        },
+        {
+          "s": "cart",
+          "url": "/cart.html",
+          "rows": 1,
+          "total": "23,100원",
+          "go": {
+            "tag": "A",
+            "href": "checkout.html",
+            "ariaDisabled": "false"
+          },
+          "items": [
+            "guide-khu:23100/33000"
+          ]
+        },
+        {
+          "s": "checkout loaded",
+          "url": "/checkout.html",
+          "notice": true,
+          "focus": "gbNoticeTitle",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": true
+          },
+          "total": "23,100원",
+          "auth": null
+        },
+        {
+          "s": "after notice ack",
+          "url": "/checkout.html",
+          "notice": false,
+          "focus": "payBtn",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": false
+          },
+          "pm": "결제 수단 카드 일시불휴대폰 번호결제 확인을 받는 번호입니다. 숫자만",
+          "msgs": []
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "http": [
+        "404 /api/studio/ranking"
+      ],
+      "blockedHosts": [
+        "www.googletagmanager.com",
+        "cdn.jsdelivr.net",
+        "connect.facebook.net",
+        "fonts.googleapis.com"
+      ]
+    },
+    "tile_1440": {
+      "steps": [
+        {
+          "s": "product page",
+          "url": "/guidebook/khu.html"
+        },
+        {
+          "s": "added",
+          "url": "/guidebook/khu.html",
+          "toast": [
+            "장바구니 1"
+          ],
+          "cart": [
+            "guide-khu:23100"
+          ]
+        },
+        {
+          "s": "cart",
+          "url": "/cart.html",
+          "rows": 1,
+          "total": "23,100원",
+          "go": {
+            "tag": "A",
+            "href": "checkout.html",
+            "ariaDisabled": "false"
+          },
+          "items": [
+            "guide-khu:23100/33000"
+          ]
+        },
+        {
+          "s": "checkout loaded",
+          "url": "/checkout.html",
+          "notice": true,
+          "focus": "gbNoticeTitle",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": true
+          },
+          "total": "23,100원",
+          "auth": null
+        },
+        {
+          "s": "after notice ack",
+          "url": "/checkout.html",
+          "notice": false,
+          "focus": "payBtn",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": false
+          },
+          "pm": "결제 수단 카드 일시불휴대폰 번호결제 확인을 받는 번호입니다. 숫자만",
+          "msgs": []
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "http": [
+        "404 /api/studio/ranking"
+      ],
+      "blockedHosts": [
+        "www.googletagmanager.com",
+        "cdn.jsdelivr.net",
+        "connect.facebook.net",
+        "fonts.googleapis.com"
+      ]
+    },
+    "popup_link_390": {
+      "steps": [
+        {
+          "s": "popup link visible",
+          "url": "/index.html",
+          "visible": true
+        },
+        {
+          "s": "product page",
+          "url": "/programs/guidebook.html#buy"
+        },
+        {
+          "s": "added",
+          "url": "/programs/guidebook.html#buy",
+          "bi": {
+            "sku": "guide-khu",
+            "price": "33000",
+            "text": "장바구니 담기",
+            "disabled": false
+          },
+          "status": "장바구니에 담았습니다.",
+          "cartLinkVisible": true
+        },
+        {
+          "s": "cart",
+          "url": "/cart.html",
+          "rows": 1,
+          "total": "23,100원",
+          "go": {
+            "tag": "A",
+            "href": "checkout.html",
+            "ariaDisabled": "false"
+          },
+          "items": [
+            "guide-khu:23100/33000"
+          ]
+        },
+        {
+          "s": "checkout loaded",
+          "url": "/checkout.html",
+          "notice": true,
+          "focus": "gbNoticeTitle",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": true
+          },
+          "total": "23,100원",
+          "auth": null
+        },
+        {
+          "s": "after notice ack",
+          "url": "/checkout.html",
+          "notice": false,
+          "focus": "payBtn",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": false
+          },
+          "pm": "결제 수단 카드 일시불휴대폰 번호결제 확인을 받는 번호입니다. 숫자만",
+          "msgs": []
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "http": [
+        "404 /api/studio/ranking"
+      ],
+      "blockedHosts": [
+        "www.googletagmanager.com",
+        "cdn.jsdelivr.net",
+        "connect.facebook.net",
+        "fonts.googleapis.com"
+      ]
+    },
+    "tile_390": {
+      "steps": [
+        {
+          "s": "product page",
+          "url": "/guidebook/khu.html"
+        },
+        {
+          "s": "added",
+          "url": "/guidebook/khu.html",
+          "toast": [
+            "장바구니 1"
+          ],
+          "cart": [
+            "guide-khu:23100"
+          ]
+        },
+        {
+          "s": "cart",
+          "url": "/cart.html",
+          "rows": 1,
+          "total": "23,100원",
+          "go": {
+            "tag": "A",
+            "href": "checkout.html",
+            "ariaDisabled": "false"
+          },
+          "items": [
+            "guide-khu:23100/33000"
+          ]
+        },
+        {
+          "s": "checkout loaded",
+          "url": "/checkout.html",
+          "notice": true,
+          "focus": "gbNoticeTitle",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": true
+          },
+          "total": "23,100원",
+          "auth": null
+        },
+        {
+          "s": "after notice ack",
+          "url": "/checkout.html",
+          "notice": false,
+          "focus": "payBtn",
+          "payBtn": {
+            "text": "23,100원 결제",
+            "disabled": false
+          },
+          "pm": "결제 수단 카드 일시불휴대폰 번호결제 확인을 받는 번호입니다. 숫자만",
+          "msgs": []
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED"
+      ],
+      "http": [
+        "404 /api/studio/ranking"
+      ],
+      "blockedHosts": [
+        "www.googletagmanager.com",
+        "cdn.jsdelivr.net",
+        "connect.facebook.net",
+        "fonts.googleapis.com"
+      ]
+    }
+  },
+  "request": {
+    "1440_mock": {
+      "seq": [
+        {
+          "k": "empty",
+          "msg": "이름을 적어 주세요.",
+          "focus": "rqName",
+          "invalid": [
+            "rqName"
+          ],
+          "fes": [
+            "feName:이름을 적어 주세요."
+          ],
+          "focusDescribedText": "이름을 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "name",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "phone short",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email bad",
+          "msg": "이메일 주소를 확인해 주세요.",
+          "focus": "rqEmail",
+          "invalid": [
+            "rqEmail"
+          ],
+          "fes": [
+            "feEmail:이메일 주소를 확인해 주세요."
+          ],
+          "focusDescribedText": "이메일 주소를 확인해 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email empty ok",
+          "msg": "지원 학교를 한 곳 이상 적어 주세요.",
+          "focus": "rqUni1",
+          "invalid": [
+            "rqUni1"
+          ],
+          "fes": [
+            "feUni:지원 학교를 한 곳 이상 적어 주세요."
+          ],
+          "focusDescribedText": "지원 학교를 한 곳 이상 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "uni",
+          "msg": "고3 재학인지 N수인지 골라 주세요.",
+          "focus": "rqStatus",
+          "invalid": [
+            "rqStatus"
+          ],
+          "fes": [
+            "feStatus:고3 재학인지 N수인지 골라 주세요."
+          ],
+          "focusDescribedText": "고3 재학인지 N수인지 골라 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "status nsu",
+          "msg": "출신 고교를 적어 주세요.",
+          "focus": "rqSchool",
+          "invalid": [
+            "rqSchool"
+          ],
+          "fes": [
+            "feSchool:출신 고교를 적어 주세요."
+          ],
+          "focusDescribedText": "출신 고교를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "school",
+          "msg": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "focus": "rqAgree",
+          "invalid": [
+            "rqAgree"
+          ],
+          "fes": [
+            "feAgree:개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다."
+          ],
+          "focusDescribedText": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "agree -> POST",
+          "msg": "지금은 접수할 수 없습니다. admin@hyunhak.com 으로 보내 주세요.",
+          "focus": "",
+          "invalid": [],
+          "fes": [],
+          "focusDescribedText": null,
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        }
+      ],
+      "ax": [
+        {
+          "role": "textbox",
+          "name": "이름 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feName\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "휴대전화 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"fePhone\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "지원 학교 1",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feUni\""
+          ]
+        },
+        {
+          "role": "combobox",
+          "name": "구분 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "hasPopup=\"menu\"",
+            "expanded=false",
+            "describedby=\"feStatus\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "출신 고교 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feSchool\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "checkbox",
+          "name": "연락을 위해 이름, 휴대전화, 이메일을 수집하며 의뢰 처리 뒤 1년 보관합니다 (필수) 개인정보처리방침",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "checked=\"true\"",
+            "describedby=\"feAgree\"",
+            "labelledby=undefined"
+          ]
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "http": [
+        "404 /api/auth/me",
+        "404 /api/auth/me",
+        "404 /api/service-requests"
+      ]
+    },
+    "390_mock": {
+      "seq": [
+        {
+          "k": "empty",
+          "msg": "이름을 적어 주세요.",
+          "focus": "rqName",
+          "invalid": [
+            "rqName"
+          ],
+          "fes": [
+            "feName:이름을 적어 주세요."
+          ],
+          "focusDescribedText": "이름을 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "name",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "phone short",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email bad",
+          "msg": "이메일 주소를 확인해 주세요.",
+          "focus": "rqEmail",
+          "invalid": [
+            "rqEmail"
+          ],
+          "fes": [
+            "feEmail:이메일 주소를 확인해 주세요."
+          ],
+          "focusDescribedText": "이메일 주소를 확인해 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email empty ok",
+          "msg": "지원 학교를 한 곳 이상 적어 주세요.",
+          "focus": "rqUni1",
+          "invalid": [
+            "rqUni1"
+          ],
+          "fes": [
+            "feUni:지원 학교를 한 곳 이상 적어 주세요."
+          ],
+          "focusDescribedText": "지원 학교를 한 곳 이상 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "uni",
+          "msg": "고3 재학인지 N수인지 골라 주세요.",
+          "focus": "rqStatus",
+          "invalid": [
+            "rqStatus"
+          ],
+          "fes": [
+            "feStatus:고3 재학인지 N수인지 골라 주세요."
+          ],
+          "focusDescribedText": "고3 재학인지 N수인지 골라 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "status nsu",
+          "msg": "출신 고교를 적어 주세요.",
+          "focus": "rqSchool",
+          "invalid": [
+            "rqSchool"
+          ],
+          "fes": [
+            "feSchool:출신 고교를 적어 주세요."
+          ],
+          "focusDescribedText": "출신 고교를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "school",
+          "msg": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "focus": "rqAgree",
+          "invalid": [
+            "rqAgree"
+          ],
+          "fes": [
+            "feAgree:개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다."
+          ],
+          "focusDescribedText": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "agree -> POST",
+          "msg": "지금은 접수할 수 없습니다. admin@hyunhak.com 으로 보내 주세요.",
+          "focus": "",
+          "invalid": [],
+          "fes": [],
+          "focusDescribedText": null,
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        }
+      ],
+      "ax": [
+        {
+          "role": "textbox",
+          "name": "이름 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feName\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "휴대전화 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"fePhone\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "지원 학교 1",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feUni\""
+          ]
+        },
+        {
+          "role": "combobox",
+          "name": "구분 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "hasPopup=\"menu\"",
+            "expanded=false",
+            "describedby=\"feStatus\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "textbox",
+          "name": "출신 고교 (필수)",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "editable=\"plaintext\"",
+            "settable=true",
+            "multiline=false",
+            "readonly=false",
+            "required=true",
+            "describedby=\"feSchool\"",
+            "labelledby=undefined"
+          ]
+        },
+        {
+          "role": "checkbox",
+          "name": "연락을 위해 이름, 휴대전화, 이메일을 수집하며 의뢰 처리 뒤 1년 보관합니다 (필수) 개인정보처리방침",
+          "props": [
+            "invalid=\"false\"",
+            "focusable=true",
+            "checked=\"true\"",
+            "describedby=\"feAgree\"",
+            "labelledby=undefined"
+          ]
+        }
+      ],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "http": [
+        "404 /api/auth/me",
+        "404 /api/auth/me",
+        "404 /api/service-requests"
+      ]
+    },
+    "1440_ok200": {
+      "seq": [
+        {
+          "k": "empty",
+          "msg": "이름을 적어 주세요.",
+          "focus": "rqName",
+          "invalid": [
+            "rqName"
+          ],
+          "fes": [
+            "feName:이름을 적어 주세요."
+          ],
+          "focusDescribedText": "이름을 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "name",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "phone short",
+          "msg": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "focus": "rqPhone",
+          "invalid": [
+            "rqPhone"
+          ],
+          "fes": [
+            "fePhone:연락 가능한 휴대전화 번호를 적어 주세요."
+          ],
+          "focusDescribedText": "연락 가능한 휴대전화 번호를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email bad",
+          "msg": "이메일 주소를 확인해 주세요.",
+          "focus": "rqEmail",
+          "invalid": [
+            "rqEmail"
+          ],
+          "fes": [
+            "feEmail:이메일 주소를 확인해 주세요."
+          ],
+          "focusDescribedText": "이메일 주소를 확인해 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "email empty ok",
+          "msg": "지원 학교를 한 곳 이상 적어 주세요.",
+          "focus": "rqUni1",
+          "invalid": [
+            "rqUni1"
+          ],
+          "fes": [
+            "feUni:지원 학교를 한 곳 이상 적어 주세요."
+          ],
+          "focusDescribedText": "지원 학교를 한 곳 이상 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "uni",
+          "msg": "고3 재학인지 N수인지 골라 주세요.",
+          "focus": "rqStatus",
+          "invalid": [
+            "rqStatus"
+          ],
+          "fes": [
+            "feStatus:고3 재학인지 N수인지 골라 주세요."
+          ],
+          "focusDescribedText": "고3 재학인지 N수인지 골라 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "status nsu",
+          "msg": "출신 고교를 적어 주세요.",
+          "focus": "rqSchool",
+          "invalid": [
+            "rqSchool"
+          ],
+          "fes": [
+            "feSchool:출신 고교를 적어 주세요."
+          ],
+          "focusDescribedText": "출신 고교를 적어 주세요.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "school",
+          "msg": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "focus": "rqAgree",
+          "invalid": [
+            "rqAgree"
+          ],
+          "fes": [
+            "feAgree:개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다."
+          ],
+          "focusDescribedText": "개인정보 수집에 동의해야 의뢰서를 보낼 수 있습니다.",
+          "sendDisabled": false,
+          "formHidden": false,
+          "done": false,
+          "doneFocus": false
+        },
+        {
+          "k": "agree -> POST",
+          "msg": "",
+          "focus": "rqDone",
+          "invalid": [],
+          "fes": [],
+          "focusDescribedText": null,
+          "sendDisabled": true,
+          "formHidden": true,
+          "done": true,
+          "doneFocus": true
+        }
+      ],
+      "ax": [],
+      "errors": [],
+      "consoleErr": [
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: net::ERR_FAILED",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+      ],
+      "http": [
+        "404 /api/auth/me",
+        "404 /api/auth/me"
+      ]
+    }
+  },
+  "extra": {
+    "requestSameInC342": true,
+    "requestFail_click": {
+      "msg": "지금은 접수할 수 없습니다. admin@hyunhak.com 으로 보내 주세요.",
+      "ae": "body",
+      "disabled": false,
+      "afterTab": "a admin@hyunhak.com"
+    },
+    "requestFail_enter": {
+      "msg": "지금은 접수할 수 없습니다. admin@hyunhak.com 으로 보내 주세요.",
+      "ae": "input#rqSchool",
+      "disabled": false,
+      "afterTab": "input#rqFeedback "
+    },
+    "cta_request_1440": {
+      "had": 1,
+      "url": "/request.html#form",
+      "formInView": {
+        "top": 4,
+        "vis": true
+      },
+      "errors": []
+    },
+    "cta_request_390": {
+      "had": 1,
+      "url": "/request.html#form",
+      "formInView": {
+        "top": 25,
+        "vis": true
+      },
+      "errors": []
+    },
+    "HEAD_autofocus390": [
+      {
+        "el": "h2#ppopT",
+        "dt": 7337
+      },
+      {
+        "el": "h2#rpopT",
+        "dt": 15339
+      }
+    ],
+    "c342aff_autofocus390": [
+      {
+        "el": "h2#ppopT",
+        "dt": 7339
+      },
+      {
+        "el": "h2#rpopT",
+        "dt": 15340
+      }
+    ],
+    "guest_checkout_1440": {
+      "login": "login.html?next=checkout.html",
+      "loginVisible": true,
+      "layHidden": true,
+      "notice": false,
+      "errors": []
+    },
+    "guest_checkout_390": {
+      "login": "login.html?next=checkout.html",
+      "loginVisible": true,
+      "layHidden": true,
+      "notice": false,
+      "errors": []
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+ "pre": "44aea38",
+ "post": "507edf1",
+ "widths": [
+  390
+ ],
+ "pages": 1,
+ "diff": {
+  "index@390": {
+   "obscured": [
+    {
+     "text": "첨삭과 꼬리질문",
+     "el": "div.r2-card-prices > div.r2-card-price > span > span",
+     "hit": "nav.fix",
+     "hitBg": "rgba(244, 239, 227, 0.96)",
+     "docY": 1453.7,
+     "x": 77.2,
+     "cy": 778.7,
+     "fr": "header#hd.hd@0-65,nav.fix@779-844"
+    }
+   ]
+  }
+ },
+ "raw": {
+  "index@390": {
+   "pre": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "생기부 면접 질문지를 대학별로 받고 싶은 준비생",
+      "el": "div.r2-products > article.r2-card > p.r2-audience > span",
+      "hit": "nav.fix",
+      "hitBg": "rgba(244, 239, 227, 0.96)",
+      "docY": 1453.9,
+      "x": 156.1,
+      "cy": 778.9,
+      "fr": "header#hd.hd@0-65,nav.fix@779-844"
+     }
+    ],
+    "steps": 12
+   },
+   "post": {
+    "fixedOverlap": [],
+    "obscured": [
+     {
+      "text": "첨삭과 꼬리질문",
+      "el": "div.r2-card-prices > div.r2-card-price > span > span",
+      "hit": "nav.fix",
+      "hitBg": "rgba(244, 239, 227, 0.96)",
+      "docY": 1453.7,
+      "x": 77.2,
+      "cy": 778.7,
+      "fr": "header#hd.hd@0-65,nav.fix@779-844"
+     }
+    ],
+    "steps": 10
+   }
+  }
+ }
+}

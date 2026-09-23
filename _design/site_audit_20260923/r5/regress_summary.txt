@@ -1,0 +1,54 @@
+404_1440	1440x900	AE=920	bands=1	['a-footer']	repAB=None
+404_390	390x844	AE=920	bands=1	['a-footer']	repAB=None
+about_1440	1440x5428	AE=0	bands=0	[]	repAB=None
+about_390	390x6491	AE=0	bands=0	[]	repAB=None
+b2b_1440	1440x4910	AE=0	bands=0	[]	repAB=None
+b2b_390	390x6280	AE=0	bands=0	[]	repAB=None
+cart_1440	1440x1105	AE=920	bands=1	['a-footer']	repAB=None
+cart_390	390x1299	AE=920	bands=1	['a-footer']	repAB=None
+checkout_1440	1440x2646	AE=920	bands=1	['a-footer']	repAB=None
+checkout_390	390x3152	AE=920	bands=1	['a-footer']	repAB=None
+faq_1440	1440x8031	AE=0	bands=0	[]	repAB=None
+faq_390	390x7626	AE=0	bands=0	[]	repAB=None
+guidebook_index_1440	1440x5045	AE=0	bands=0	[]	repAB=None
+guidebook_index_390	390x6495	AE=0	bands=0	[]	repAB=None
+index_nopop_1440	1440x4858	AE=0	bands=0	[]	repAB=0
+index_nopop_390	390x6639	AE=0	bands=0	[]	repAB=0
+index_popup_1440	1440x900	AE=3141	bands=2	['a-popup', 'a-popup']	repAB=3141
+index_popup_390	390x844	AE=15222	bands=4	['a-popup', 'a-popup', 'a-popup', 'a-popup']	repAB=15222
+index_tiles_1440	1008x195	AE=0	bands=0	[]	repAB=0
+index_tiles_390	350x579	AE=0	bands=0	[]	repAB=0
+interview_1440	1440x11837	AE=0	bands=0	[]	repAB=None
+interview_390	390x14396	AE=0	bands=0	[]	repAB=None
+interview_yonsei-hum_1440	1440x7956	AE=0	bands=0	[]	repAB=None
+interview_yonsei-hum_390	390x10986	AE=0	bands=0	[]	repAB=None
+join_1440	1440x3167	AE=920	bands=1	['a-footer']	repAB=None
+join_390	390x3684	AE=920	bands=1	['a-footer']	repAB=None
+lectures_1440	1440x6347	AE=0	bands=0	[]	repAB=None
+lectures_390	390x8253	AE=0	bands=0	[]	repAB=None
+library_1440	1440x5416	AE=0	bands=0	[]	repAB=None
+library_390	390x8663	AE=0	bands=0	[]	repAB=None
+login_1440	1440x1433	AE=920	bands=1	['a-footer']	repAB=None
+login_390	390x1381	AE=920	bands=1	['a-footer']	repAB=None
+my_1440	1440x1210	AE=1225	bands=1	['a-footer']	repAB=None
+my_390	390x1366	AE=1225	bands=1	['a-footer']	repAB=None
+notice_1440	1440x1211	AE=0	bands=0	[]	repAB=None
+notice_390	390x1217	AE=0	bands=0	[]	repAB=None
+pastexam_1440	1440x1962	AE=0	bands=0	[]	repAB=None
+pastexam_390	390x2309	AE=0	bands=0	[]	repAB=None
+programs_guidebook_1440	1440x10825	AE=0	bands=0	[]	repAB=0
+programs_guidebook_390	390x11187	AE=106	bands=5	['b(post__post_rep1)', 'b(post__post_rep1)', 'b(post__post_rep1)', 'b(post__post_rep1)', 'b(post__post_rep1)']	repAB=0
+programs_studio_1440	1440x8518	AE=0	bands=0	[]	repAB=None
+programs_studio_390	390x12793	AE=0	bands=0	[]	repAB=None
+ranking_1440	1440x1856	AE=0	bands=0	[]	repAB=None
+ranking_390	390x2123	AE=0	bands=0	[]	repAB=None
+request_1440	1440x4345	AE=0	bands=0	[]	repAB=None
+request_390	390x5229	AE=0	bands=0	[]	repAB=None
+studio_1440	1440x11977	AE=0	bands=0	[]	repAB=None
+studio_390	390x17749	AE=0	bands=0	[]	repAB=None
+support_1440	1440x3900	AE=0	bands=0	[]	repAB=0
+support_390	390x4889	AE=8	bands=1	['b(pre__pre_rep1)']	repAB=0
+terms_1440	1440x4659	AE=0	bands=0	[]	repAB=None
+terms_390	390x6064	AE=0	bands=0	[]	repAB=None
+tail studio_390: {'studio_390_footer': {'ae': 0, 'bands': 0}, 'studio_390_scroll16384': {'ae': 0, 'bands': 0}, 'studio_390_scroll16905': {'ae': 0, 'bands': 0}}
+c_count = 0
