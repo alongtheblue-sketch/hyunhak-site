@@ -1,0 +1,137 @@
+{
+ "short_1440x420": {
+  "start": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 129,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "afterEnd": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 129,
+   "max": 129,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "afterHome": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 0,
+   "max": 129,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "afterDown": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 48,
+   "max": 129,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "afterDownHome": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 0,
+   "max": 129,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "ok": true
+ },
+ "tall_1440x900": {
+  "start": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterEnd": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterHome": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterDown": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterDownHome": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "ok": true
+ },
+ "phone_390x640": {
+  "start": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterEnd": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterHome": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterDown": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterDownHome": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "max": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "ok": true
+ },
+ "tabThenEnd": {
+  "active": "A.btn",
+  "prevented": false,
+  "ok": true
+ },
+ "ok": true
+}

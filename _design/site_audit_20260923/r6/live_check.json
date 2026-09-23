@@ -1,0 +1,296 @@
+{
+ "base": "https://hyunhak.com/",
+ "popup": {
+  "390": {
+   "open": true,
+   "cards": 2,
+   "btn": {
+    "text": "정지",
+    "label": "자동 넘김 정지",
+    "pressed": null
+   },
+   "cur": "1",
+   "slots": [
+    {
+     "on": true,
+     "side": false,
+     "slotOpacity": "1",
+     "popBg": "rgb(255, 253, 248)",
+     "pfrOpacity": "1",
+     "radius": "4px 4px 0px 0px"
+    },
+    {
+     "on": false,
+     "side": true,
+     "slotOpacity": "0",
+     "popBg": "rgb(235, 228, 212)",
+     "pfrOpacity": "0.55",
+     "radius": "4px"
+    }
+   ]
+  },
+  "1440": {
+   "open": true,
+   "cards": 2,
+   "btn": {
+    "text": "정지",
+    "label": "자동 넘김 정지",
+    "pressed": null
+   },
+   "cur": "1",
+   "slots": [
+    {
+     "on": true,
+     "side": false,
+     "slotOpacity": "1",
+     "popBg": "rgb(255, 253, 248)",
+     "pfrOpacity": "1",
+     "radius": "4px 4px 0px 0px"
+    },
+    {
+     "on": false,
+     "side": true,
+     "slotOpacity": "1",
+     "popBg": "rgb(235, 228, 212)",
+     "pfrOpacity": "0.55",
+     "radius": "4px"
+    }
+   ]
+  }
+ },
+ "reduce": {
+  "390": {
+   "btn": {
+    "text": "재생",
+    "label": "자동 넘김 재생",
+    "pressed": null
+   },
+   "curBefore": "1",
+   "curAfter9s": "1"
+  },
+  "1440": {
+   "btn": {
+    "text": "재생",
+    "label": "자동 넘김 재생",
+    "pressed": null
+   },
+   "curBefore": "1",
+   "curAfter9s": "1"
+  }
+ },
+ "tiles": {
+  "430": {
+   "cols": 1,
+   "bt": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "minGap": null,
+   "n": 12,
+   "sw": 430
+  },
+  "600": {
+   "cols": 1,
+   "bt": [
+    0,
+    1,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ],
+   "minGap": null,
+   "n": 12,
+   "sw": 600
+  },
+  "601": {
+   "cols": 2,
+   "bt": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "minGap": 40,
+   "n": 12,
+   "sw": 601
+  },
+  "1024": {
+   "cols": 2,
+   "bt": [
+    0,
+    0,
+    1,
+    1,
+    1,
+    1
+   ],
+   "pr": [
+    40,
+    0,
+    40,
+    0,
+    40,
+    0
+   ],
+   "minGap": 40,
+   "n": 12,
+   "sw": 1024
+  },
+  "1440": {
+   "cols": 3,
+   "bt": [
+    0,
+    0,
+    0,
+    1,
+    1,
+    1
+   ],
+   "pr": [
+    40,
+    40,
+    0,
+    40,
+    40,
+    0
+   ],
+   "minGap": 40,
+   "n": 12,
+   "sw": 1440
+  }
+ },
+ "join": [
+  {
+   "sameLine": true,
+   "cbTop": 750,
+   "spTop": 749
+  },
+  {
+   "sameLine": true,
+   "cbTop": 824,
+   "spTop": 823
+  },
+  {
+   "sameLine": true,
+   "cbTop": 898,
+   "spTop": 897
+  },
+  {
+   "sameLine": true,
+   "cbTop": 991,
+   "spTop": 990
+  },
+  {
+   "sameLine": true,
+   "cbTop": 1065,
+   "spTop": 1064
+  }
+ ],
+ "footer": [
+  {
+   "t": "고객센터",
+   "left": 3.6,
+   "right": 3.6,
+   "h": 48
+  },
+  {
+   "t": "사업자 정보",
+   "left": 0,
+   "right": 0,
+   "h": 48
+  },
+  {
+   "t": "결제",
+   "left": 13.8,
+   "right": 13.8,
+   "h": 48
+  },
+  {
+   "t": "환불 규정",
+   "left": 2.2,
+   "right": 2.2,
+   "h": 48
+  },
+  {
+   "t": "이용약관",
+   "left": 3.6,
+   "right": 3.6,
+   "h": 48
+  },
+  {
+   "t": "개인정보처리방침",
+   "left": 0,
+   "right": 0,
+   "h": 48
+  }
+ ],
+ "nav": {
+  "390": {
+   "before": "1",
+   "initialFocus": "pdim",
+   "nextPos0": [
+    187.5,
+    675.4
+   ],
+   "afterNext": "2",
+   "nextPos1": [
+    187.5,
+    675.4
+   ],
+   "barAttach": [
+    621.4,
+    622.4
+   ],
+   "afterPrev": "1"
+  },
+  "1440": {
+   "before": "1",
+   "initialFocus": "pdim",
+   "nextPos0": [
+    752.5,
+    648.1
+   ],
+   "afterNext": "2",
+   "nextPos1": [
+    752.5,
+    648.1
+   ],
+   "barAttach": [
+    643.1,
+    644.1
+   ],
+   "afterPrev": "1"
+  }
+ }
+}

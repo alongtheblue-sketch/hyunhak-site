@@ -1,0 +1,323 @@
+{
+ "base": "https://hyunhak.com/",
+ "gen": "e22841e3201a6d0c96e9181def18cd453a412ea9",
+ "options": [
+  [
+   "yonsei-hum",
+   "연세대 활동우수형 인문통합"
+  ],
+  [
+   "yonsei-sci",
+   "연세대 활동우수형 자연"
+  ],
+  [
+   "yonsei-intl",
+   "연세대 국제형"
+  ],
+  [
+   "yonsei-mirae-free",
+   "연세대 미래 자율융합"
+  ],
+  [
+   "yonsei-mirae-design",
+   "연세대 미래 디자인"
+  ],
+  [
+   "yonsei-mirae-tech",
+   "연세대 미래 첨단"
+  ],
+  [
+   "yonsei-mirae-health",
+   "연세대 미래 보건"
+  ],
+  [
+   "yonsei-mirae-intl",
+   "연세대 미래 국제"
+  ],
+  [
+   "korea-hum",
+   "고려대 계열적합전형 인문"
+  ],
+  [
+   "korea-sci",
+   "고려대 계열적합전형 자연"
+  ],
+  [
+   "korea-eq-hum",
+   "고려대 고른기회전형 인문"
+  ],
+  [
+   "korea-eq-sci",
+   "고려대 고른기회전형 자연"
+  ]
+ ],
+ "cards": [
+  {
+   "code": "yonsei-hum",
+   "select": "yonsei-hum",
+   "idx": 0,
+   "disabled": false,
+   "sku": "pass-yonsei-hum",
+   "title": "연세대 활동우수형 인문통합 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-hum",
+     "연세대 활동우수형 인문통합 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-sci",
+   "select": "yonsei-sci",
+   "idx": 1,
+   "disabled": false,
+   "sku": "pass-yonsei-sci",
+   "title": "연세대 활동우수형 자연 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-sci",
+     "연세대 활동우수형 자연 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-intl",
+   "select": "yonsei-intl",
+   "idx": 2,
+   "disabled": false,
+   "sku": "pass-yonsei-intl",
+   "title": "연세대 국제형 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-intl",
+     "연세대 국제형 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-mirae-free",
+   "select": "yonsei-mirae-free",
+   "idx": 3,
+   "disabled": false,
+   "sku": "pass-yonsei-mirae-free",
+   "title": "연세대 미래 자율융합 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-mirae-free",
+     "연세대 미래 자율융합 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-mirae-design",
+   "select": "yonsei-mirae-design",
+   "idx": 4,
+   "disabled": false,
+   "sku": "pass-yonsei-mirae-design",
+   "title": "연세대 미래 디자인 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-mirae-design",
+     "연세대 미래 디자인 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-mirae-tech",
+   "select": "yonsei-mirae-tech",
+   "idx": 5,
+   "disabled": false,
+   "sku": "pass-yonsei-mirae-tech",
+   "title": "연세대 미래 첨단 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-mirae-tech",
+     "연세대 미래 첨단 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-mirae-health",
+   "select": "yonsei-mirae-health",
+   "idx": 6,
+   "disabled": false,
+   "sku": "pass-yonsei-mirae-health",
+   "title": "연세대 미래 보건 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-mirae-health",
+     "연세대 미래 보건 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "yonsei-mirae-intl",
+   "select": "yonsei-mirae-intl",
+   "idx": 7,
+   "disabled": false,
+   "sku": "pass-yonsei-mirae-intl",
+   "title": "연세대 미래 국제 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-yonsei-mirae-intl",
+     "연세대 미래 국제 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "korea-hum",
+   "select": "korea-hum",
+   "idx": 8,
+   "disabled": false,
+   "sku": "pass-korea-hum",
+   "title": "고려대 계열적합전형 인문 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-korea-hum",
+     "고려대 계열적합전형 인문 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "korea-sci",
+   "select": "korea-sci",
+   "idx": 9,
+   "disabled": false,
+   "sku": "pass-korea-sci",
+   "title": "고려대 계열적합전형 자연 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-korea-sci",
+     "고려대 계열적합전형 자연 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "korea-eq-hum",
+   "select": "korea-eq-hum",
+   "idx": 10,
+   "disabled": false,
+   "sku": "pass-korea-eq-hum",
+   "title": "고려대 고른기회전형 인문 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-korea-eq-hum",
+     "고려대 고른기회전형 인문 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  },
+  {
+   "code": "korea-eq-sci",
+   "select": "korea-eq-sci",
+   "idx": 11,
+   "disabled": false,
+   "sku": "pass-korea-eq-sci",
+   "title": "고려대 고른기회전형 자연 전권 이용권",
+   "price": "495000",
+   "mode": "pass",
+   "hash": "#buy",
+   "cart": [
+    [
+     "pass-korea-eq-sci",
+     "고려대 고른기회전형 자연 전권 이용권",
+     346500,
+     1
+    ]
+   ],
+   "status": "장바구니에 담았습니다.",
+   "ok": true
+  }
+ ],
+ "errors": [],
+ "net": [
+  "requestfailed: https://www.google-analytics.com/g/collect?v=2&tid=G-2ZM01XDLNT&gtm=45je69l1h1v9263095947za208zd9263095947xf1&_p=1790153736265&gcd=13l3l3l3l1l1&npa=0&dma=0&cid=1231289078.1790153737&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=ko-kr&_s=1&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280971&sid=1790153736&sct=1&seg=0&dl=https%3A%2F%2Fhyunhak.com%2Fprograms%2Fstudio.html&dt=%ED%98%BC%EC%9E%90%EC%84%9C%EB%8F%84%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%A0%9C%EC%8B%9C%EB%AC%B8%20%EB%A9%B4%EC%A0%91%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%86%8C%EA%B0%9C%2C%20%EA%B3%A0%EB%A0%A4%EB%8C%80%20%EA%B3%A0%EB%A5%B8%EA%B8%B0%ED%9A%8C%EC%99%80%20%EC%97%B0%EC%84%B8%EB%8C%80%20%EB%AF%B8%EB%9E%98%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%8F%AC%ED%95%A8%2C%20%EA%B8%B0%EC%B6%9C%20%EA%B7%9C%EA%B2%A9%20390%EC%84%B8%ED%8A%B8&en=page_view&_fv=1&_nsi=1&_ss=1&_ee=1&tfd=917",
+  "requestfailed: https://www.google-analytics.com/g/collect?v=2&tid=G-2ZM01XDLNT&gtm=45je69l1h1v9263095947za200zd9263095947xf1&_p=1790153736265&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&cid=1231289078.1790153737&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=ko-kr&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280971&cu=KRW&sid=1790153736&sct=1&seg=0&dl=https%3A%2F%2Fhyunhak.com%2Fprograms%2Fstudio.html&dt=%ED%98%BC%EC%9E%90%EC%84%9C%EB%8F%84%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%A0%9C%EC%8B%9C%EB%AC%B8%20%EB%A9%B4%EC%A0%91%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%86%8C%EA%B0%9C%2C%20%EA%B3%A0%EB%A0%A4%EB%8C%80%20%EA%B3%A0%EB%A5%B8%EA%B8%B0%ED%9A%8C%EC%99%80%20%EC%97%B0%EC%84%B8%EB%8C%80%20%EB%AF%B8%EB%9E%98%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%8F%AC%ED%95%A8%2C%20%EA%B8%B0%EC%B6%9C%20%EA%B7%9C%EA%B2%A9%20390%EC%84%B8%ED%8A%B8&_s=2&tfd=9705",
+  "requestfailed: https://www.google-analytics.com/g/collect?v=2&tid=G-2ZM01XDLNT&gtm=45je69l1h1v9263095947za200zd9263095947xf1&_p=1790153736265&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&cid=1231289078.1790153737&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=ko-kr&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280971&cu=KRW&sid=1790153736&sct=1&seg=1&dl=https%3A%2F%2Fhyunhak.com%2Fprograms%2Fstudio.html&dt=%ED%98%BC%EC%9E%90%EC%84%9C%EB%8F%84%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%A0%9C%EC%8B%9C%EB%AC%B8%20%EB%A9%B4%EC%A0%91%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%86%8C%EA%B0%9C%2C%20%EA%B3%A0%EB%A0%A4%EB%8C%80%20%EA%B3%A0%EB%A5%B8%EA%B8%B0%ED%9A%8C%EC%99%80%20%EC%97%B0%EC%84%B8%EB%8C%80%20%EB%AF%B8%EB%9E%98%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%8F%AC%ED%95%A8%2C%20%EA%B8%B0%EC%B6%9C%20%EA%B7%9C%EA%B2%A9%20390%EC%84%B8%ED%8A%B8&_s=3&tfd=16585",
+  "requestfailed: https://www.google-analytics.com/g/collect?v=2&tid=G-2ZM01XDLNT&gtm=45je69l1h1v9263095947za200zd9263095947xf1&_p=1790153736265&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&cid=1231289078.1790153737&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=ko-kr&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280971&cu=KRW&sid=1790153736&sct=1&seg=1&dl=https%3A%2F%2Fhyunhak.com%2Fprograms%2Fstudio.html&dt=%ED%98%BC%EC%9E%90%EC%84%9C%EB%8F%84%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%A0%9C%EC%8B%9C%EB%AC%B8%20%EB%A9%B4%EC%A0%91%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%86%8C%EA%B0%9C%2C%20%EA%B3%A0%EB%A0%A4%EB%8C%80%20%EA%B3%A0%EB%A5%B8%EA%B8%B0%ED%9A%8C%EC%99%80%20%EC%97%B0%EC%84%B8%EB%8C%80%20%EB%AF%B8%EB%9E%98%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%8F%AC%ED%95%A8%2C%20%EA%B8%B0%EC%B6%9C%20%EA%B7%9C%EA%B2%A9%20390%EC%84%B8%ED%8A%B8&_s=4&tfd=21902",
+  "requestfailed: https://www.google-analytics.com/g/collect?v=2&tid=G-2ZM01XDLNT&gtm=45je69l1h1v9263095947za200zd9263095947xf1&_p=1790153736265&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&cid=1231289078.1790153737&frm=0&ngs=1&pscdl=noapi&rcb=12&sr=1280x900&uaa=arm&uab=64&uafvl=Google%2520Chrome%3B153.0.8010.53%7CNot_A%2520Brand%3B8.0.0.0%7CChromium%3B153.0.8010.53&uam=&uamb=0&uap=macOS&uapv=26.6.2&uaw=0&ul=ko-kr&tag_exp=115616985~115938466~115938469~118897920~118897930~120213116~120385422~120469145~120469153~121280971&cu=KRW&sid=1790153736&sct=1&seg=1&dl=https%3A%2F%2Fhyunhak.com%2Fprograms%2Fstudio.html&dt=%ED%98%BC%EC%9E%90%EC%84%9C%EB%8F%84%20%EC%99%84%EC%84%B1%ED%95%98%EB%8A%94%20%EC%A0%9C%EC%8B%9C%EB%AC%B8%20%EB%A9%B4%EC%A0%91%20%EC%8A%A4%ED%8A%9C%EB%94%94%EC%98%A4%20%EC%86%8C%EA%B0%9C%2C%20%EA%B3%A0%EB%A0%A4%EB%8C%80%20%EA%B3%A0%EB%A5%B8%EA%B8%B0%ED%9A%8C%EC%99%80%20%EC%97%B0%EC%84%B8%EB%8C%80%20%EB%AF%B8%EB%9E%98%EC%BA%A0%ED%8D%BC%EC%8A%A4%20%ED%8F%AC%ED%95%A8%2C%20%EA%B8%B0%EC%B6%9C%20%EA%B7%9C%EA%B2%A9%20390%EC%84%B8%ED%8A%B8&_s=5&tfd=27219"
+ ],
+ "summary": {
+  "options": 12,
+  "cards": 12,
+  "ok": 12,
+  "errors": 0,
+  "net": 5
+ }
+}
