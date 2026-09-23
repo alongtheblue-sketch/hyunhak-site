@@ -497,7 +497,10 @@
         const card = s.firstElementChild;
         // 칸 2 이상 옮기는 카드(N≥3 감아 돌기)는 전이 없이 자리를 바꾼다: 반대편으로 가는 카드가 활성 카드 위를 가로질렀다. |d|≥2 는 숨긴다: N=4 의 1920 에서 셋째 측면 카드가 한쪽에 230px 드러났다 (반증 6차 P2)
         const pd = s.dataset.d === undefined ? null : Number(s.dataset.d);
-        if (pd !== null && Math.abs(d - pd) > 1) { s.style.transition = "none"; requestAnimationFrame(() => requestAnimationFrame(() => s.style.removeProperty("transition"))); }
+        if (pd !== null && Math.abs(d - pd) > 1) {
+          const gen = (Number(s.dataset.gen) || 0) + 1; s.dataset.gen = String(gen); s.style.transition = "none";   // 세대 검사: 두 프레임 안에 다시 감아 돌면 앞 rAF 가 뒤 슬롯의 none 을 지우지 않게 (Codex 7차 관찰)
+          requestAnimationFrame(() => requestAnimationFrame(() => { if (s.dataset.gen === String(gen)) s.style.removeProperty("transition"); }));
+        }
         s.dataset.d = String(d);
         if (Math.abs(d) >= 2) s.setAttribute("data-far", ""); else s.removeAttribute("data-far");
         if (i === cur) { s.removeAttribute("data-side"); s.style.removeProperty("--d"); s.setAttribute("data-on", ""); card.removeAttribute("inert"); }
@@ -533,6 +536,7 @@
       if (document.activeElement === root && /^(ArrowDown|ArrowUp|PageDown|PageUp| )$/.test(e.key)) {
         const sc = cards[cur].card;
         if (sc.scrollHeight > sc.clientHeight) {
+          if (!stopped) setPause(true);   // 키로 읽는 중에는 벨트를 멈춘다(WCAG 2.2.2). 초점이 .pdim 에 남아 focusin, pointerdown 정지가 걸리지 않았다 (Codex 7차 P2)
           const page = e.key !== "ArrowDown" && e.key !== "ArrowUp";
           const up = e.key === "ArrowUp" || e.key === "PageUp" || (e.key === " " && e.shiftKey);
           e.preventDefault(); sc.scrollBy({ top: (up ? -1 : 1) * (page ? Math.round(sc.clientHeight * 0.85) : 48) });

@@ -1,0 +1,76 @@
+{
+ "short_1440x420": {
+  "start": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "afterKey": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 48,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "after9_5s": {
+   "cur": "1",
+   "pause": "재생",
+   "st": 48,
+   "scrollable": true,
+   "active": "pdim"
+  },
+  "ok": true
+ },
+ "tall_1440x900": {
+  "start": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "afterKey": {
+   "cur": "1",
+   "pause": "정지",
+   "st": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "after9_5s": {
+   "cur": "2",
+   "pause": "정지",
+   "st": 0,
+   "scrollable": false,
+   "active": "pdim"
+  },
+  "ok": true
+ },
+ "rapidWrap": {
+  "N": 4,
+  "transitions": [
+   [
+    "0",
+    "1",
+    ""
+   ],
+   [
+    "1",
+    "-2",
+    ""
+   ],
+   [
+    "2",
+    "-1",
+    ""
+   ],
+   [
+    "3",
+    "0",
+    ""
+   ]
+  ],
+  "ok": true
+ }
+}
