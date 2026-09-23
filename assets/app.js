@@ -538,8 +538,9 @@
       pauseBtn.addEventListener("click", () => setPause(!stopped));
       // 측면 카드 클릭 = 그 카드로. 하단바 안 클릭은 뺀다: ←/→ 가 go() 로 넘긴 뒤 같은 클릭이 옛 활성 슬롯(이제 측면)까지 버블해 되돌리던 결함 (critic 4차 P1)
       slots.forEach((s, i) => s.addEventListener("click", (e) => { if (s.hasAttribute("data-side") && !e.target.closest(".pbar")) { e.preventDefault(); go(i); } }));
-      stage.addEventListener("mouseenter", () => { hover = true; clearTimeout(timer); });
-      stage.addEventListener("mouseleave", () => { hover = false; tick(); });
+      // 호버 멈춤은 마우스만 센다. 터치의 호환 mouseenter 는 짝이 되는 mouseleave 가 없어 hover 가 남고, 「재생」 을 눌러도 벨트가 돌지 않았다 (critic 5차 P2, Codex 5차 P1)
+      stage.addEventListener("pointerenter", (e) => { if (e.pointerType !== "mouse") return; hover = true; clearTimeout(timer); });
+      stage.addEventListener("pointerleave", (e) => { if (e.pointerType !== "mouse") return; hover = false; tick(); });
       let tx = null;
       stage.addEventListener("touchstart", (e) => { tx = e.touches[0].clientX; }, { passive: true });
       stage.addEventListener("touchend", (e) => {
