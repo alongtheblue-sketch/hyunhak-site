@@ -77,6 +77,22 @@
 .legalbox .lgb-b th,.legalbox .lgb-b td{border:1px solid var(--hairs);padding:6px 8px;text-align:left;vertical-align:top}
 .legalbox .lgb-b th{background:var(--mat);font-weight:600;color:var(--ink)}
 .legalbox .lgb-b .tblwrap{overflow-x:auto}
+/* 가이드북 구매 전 안내 모달 (아래 openNotice). e76030a(2026-09-23 팝업 무대 통합)가 base.css 의 .hh-popup 규칙을 지웠는데
+   이 모달만 그 클래스를 계속 쓴다. 규칙이 없으면 안내가 페이지 맨 아래에 스타일 없이 붙고, 나머지 화면은 inert 로 잠겨
+   결제 버튼이 켜지지 않는다 (09-23~09-26 포트원 카드 결제 0건, 모바일에서 막힘 제보 09-26 23:36). 지운 규칙을 이 면에만 되살린다.
+   z-index 90 = 하단 탭바(60) 위, 팝업 무대 .pdim 과 같은 층 (이 면은 data-no-popup 이라 무대가 뜨지 않는다). */
+:where(body.v2) .hh-popup{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:20px}
+:where(body.v2) .hh-popup-back{position:absolute;inset:0;background:rgba(49,46,46,.42)}
+:where(body.v2) .hh-popup-card{position:relative;width:min(520px,100%);background:var(--paper);color:var(--ink);border-radius:var(--r-md);box-shadow:var(--shadow-2);padding:var(--s5) var(--s5) var(--s4);max-height:86vh;overflow:auto}
+:where(body.v2) .hh-popup-kind{font-family:var(--mono);font-size:var(--t-xs);font-weight:500;letter-spacing:var(--tr-label);color:var(--gray);margin-bottom:12px}
+:where(body.v2) .hh-popup-kind::before{content:"";display:inline-block;width:6px;height:6px;background:var(--seal);border-radius:50%;margin-right:8px;vertical-align:1px}
+:where(body.v2) .hh-popup-title{font-size:var(--t-h3)}
+:where(body.v2) .hh-popup-body{margin-top:14px;font-size:var(--t-base);line-height:1.8;color:var(--body)}
+:where(body.v2) .hh-popup-body p+p{margin-top:10px}
+@media (max-width:600px){
+  :where(body.v2) .hh-popup{place-items:end center;padding:0}
+  :where(body.v2) .hh-popup-card{width:100%;border-radius:var(--r-lg) var(--r-lg) 0 0;max-height:80vh}
+}
 </style>
 </head>
 <body class="v2" data-no-popup>
