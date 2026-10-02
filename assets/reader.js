@@ -480,12 +480,174 @@
 
   // ---------- 인쇄 (공식 경로) ----------
   // 숨은 iframe + contentWindow.print() 는 Safari/Firefox 가 PDF 대신 부모 문서(빈 면)를
-  // 인쇄 대상으로 잡는다 → 새 탭에 스탬프 PDF 를 열고 그 탭에서 인쇄하는 단일 경로.
+  // 인쇄 대상으로 잡는다 → 데스크톱은 새 탭에 스탬프 PDF 를 열고 그 탭에서 인쇄한다.
   // 팝업 차단 회피: 클릭 제스처 안에서 동기로 창을 먼저 열고, 응답 후 blob 으로 이동만 한다.
+  //
+  // 2026-10-02 고객 문의 수리 ("인쇄 준비 중" 에서 멈춤 → 재시도 → 인쇄 한도 초과):
+  // ① 안드로이드 Chrome 은 내장 PDF 뷰어가 없어 blob 으로 이동한 새 탭이 "인쇄본 준비 중" 문구에 그대로 멈춘다.
+  //    모바일과 태블릿은 새 탭을 미리 열지 않고, 준비가 끝나면 화면 안 상자에서 [인쇄 또는 공유] [PDF 열기] [파일로 저장] 을
+  //    한 번 더 누르게 한다 (공유와 저장은 사용자가 누른 순간에만 열리는 기능이라 응답을 기다린 뒤 자동으로는 못 연다).
+  // ② 종전엔 누를 때마다 새 idem 이라 화면에 못 띄운 시도도 문서당 3회 한도를 깎았다. 같은 계정, 같은 문서의 재시도는
+  //    30분 동안 같은 idem 을 다시 쓴다. 서버는 같은 회원, 문서, idem 의 발급분을 횟수 차감 없이 같은 시리얼로 다시 만든다.
+  // ③ 서버가 같은 인쇄본을 만드는 중(429 print_in_flight)이면 실패로 끝내지 않고 잠시 뒤 같은 idem 으로 다시 묻는다.
+  // ④ 다른 탭에서 계정이 바뀌었으면(리더는 A 로 열렸는데 쿠키는 B) 발급하지 않고 새로고침을 안내한다 (astra r1 #5).
+  var PRINT_IDEM_TTL = 30 * 60 * 1000;
+  var PRINT_WAIT_MAX = 45;                 // 429 재문의 상한. 3초 간격 약 135초 = 서버 렌더 lease 120초를 넘겨 고아 예약 회수까지 기다린다
+  var PRINT_TIMEOUT = 120 * 1000;          // 응답이 아예 안 오는 연결 (탭 멈춤 방지). 느린 모바일망의 5MB 수신을 덮는 폭
+  var printMem = {};                       // localStorage 를 못 쓰는 창(사생활 보호 모드 등)용 같은 탭 기억
+  function printIdemKey() { return "hh_print_idem:" + (state.email || "") + ":" + slug; }
+  function printIdem() {
+    var k = printIdemKey(), now = Date.now(), v = null;
+    try { v = JSON.parse(store.get(k) || "null"); } catch (e) {}
+    if (!v) v = printMem[k] || null;
+    if (v && typeof v.id === "string" && now - v.t < PRINT_IDEM_TTL && now >= v.t) return v.id;
+    v = { id: "web-" + now + "-" + Math.random().toString(36).slice(2, 10), t: now };
+    printMem[k] = v; store.set(k, JSON.stringify(v));
+    return v.id;
+  }
+  function dropPrintIdem() {
+    var k = printIdemKey();
+    delete printMem[k];
+    try { localStorage.removeItem(k); } catch (e) {}
+  }
+  // 지금 로그인된 계정이 리더를 연 계정과 같은가. "same" | "changed" | "out"(로그아웃됨).
+  // 확인이 안 되면(네트워크, 5xx) 막지 않고 서버 판정(401, 409)에 맡긴다
+  function memberCheck() {
+    return fetch(API + "/api/auth/me", { credentials: "include" })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) {
+        if (!d) return "same";
+        if (!d.member) return "out";
+        return String(d.member.email || "").toLowerCase() === String(state.email || "").toLowerCase() ? "same" : "changed";
+      }, function () { return "same"; });
+  }
+  function accountChanged(kind) {
+    var e = new Error(kind === "out" ? "로그인이 끊겼습니다. 새로고침한 뒤 다시 로그인해 주세요"
+      : "다른 계정으로 로그인이 바뀌었습니다. 새로고침한 뒤 다시 눌러 주세요");
+    e.status = kind === "out" ? 401 : 409; e.ready = true; e.reload = true;
+    return e;
+  }
+  // 새 탭 blob 이동으로 PDF 를 띄울 수 있는 환경인가. 모바일과 태블릿(iPadOS 데스크톱 UA 포함)과 앱 안 브라우저는 상자 경로
+  function inlinePdfOk() {
+    var ua = navigator.userAgent || "";
+    if (navigator.pdfViewerEnabled === false) return false;
+    if (/Android|iPhone|iPad|iPod|Mobile|SamsungBrowser|KAKAOTALK|NAVER\(|Instagram|FBAN|FBAV|Line\//i.test(ua)) return false;
+    if (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) return false;
+    return true;
+  }
+  function printFileName() {
+    var t = String(titleEl.textContent || "현학적 연구소").replace(/[\\/:*?"<>|]+/g, " ").trim().slice(0, 60);
+    return t + " 인쇄본.pdf";
+  }
+  // 오류는 전부 여기서 화면 문구로 바꾼다. 본문(blob) 수신 중의 시간 제한도 마지막 catch 가 받는다 (astra r1 #7:
+  // 종전엔 r.blob() 거절이 같은 then 의 실패 콜백을 건너뛰어 원시 AbortError 문구가 그대로 떴다). e.ready = 이미 풀어 쓴 오류
+  function requestPrint(idem, tries) {
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = ctl ? setTimeout(function () { ctl.abort(); }, PRINT_TIMEOUT) : null;
+    var stop = function () { if (timer) { clearTimeout(timer); timer = null; } };
+    return fetch(API + "/api/reader/print", {
+      method: "POST", credentials: "include", signal: ctl ? ctl.signal : undefined,
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, idem: idem }),
+    }).then(function (r) {
+      if (r.ok) return r.blob();
+      return r.json().catch(function () { return {}; }).then(function (d) {
+        stop();
+        if (r.status === 429 && d.code === "print_in_flight" && tries < PRINT_WAIT_MAX) {
+          printBtn.textContent = "인쇄본 만드는 중…";
+          return new Promise(function (res) { setTimeout(res, 3000); })
+            .then(function () { return requestPrint(idem, tries + 1); });
+        }
+        if (r.status === 409) throw accountChanged();   // idem 이 다른 회원 결속 = 계정이 바뀐 탭
+        var e = new Error(d.error || (r.status === 401 ? "로그인이 끊겼습니다. 새로고침 후 다시 시도해 주세요"
+          : "인쇄본을 만들지 못했습니다. 잠시 후 다시 눌러 주세요. 같은 인쇄본으로 이어지므로 횟수가 더 차감되지 않습니다"));
+        e.status = r.status; e.ready = true;
+        throw e;
+      });
+    }).then(function (v) { stop(); return v; }, function (err) {
+      stop();
+      if (err && err.ready) throw err;
+      var e = new Error(err && err.name === "AbortError"
+        ? "응답이 늦습니다. 잠시 후 다시 눌러 주세요. 같은 인쇄본으로 이어지므로 횟수가 더 차감되지 않습니다"
+        : "네트워크가 끊겼습니다. 연결을 확인한 뒤 다시 눌러 주세요");
+      e.ready = true;
+      throw e;
+    });
+  }
+  // 인쇄본 받기 상자 (모바일, 태블릿, 팝업 차단). 버튼마다 새 사용자 제스처라 공유, 열기, 저장이 막히지 않는다.
+  // blob URL 은 상자를 닫아도 해제하지 않는다. 「PDF 열기」 로 연 탭이 새로고침이나 인쇄 때 다시 읽을 수 있어서다 (astra r1 #8).
+  // 이 리더 화면을 떠날 때 한꺼번에 해제한다
+  var readyBox = null, readyUrls = [];
+  function closeReady() {
+    if (readyBox) { readyBox.remove(); readyBox = null; }
+  }
+  window.addEventListener("pagehide", function (ev) {
+    if (ev && ev.persisted) return;   // 뒤로 가기 캐시로 보존되는 경우는 그대로 둔다
+    readyUrls.forEach(function (u) { try { URL.revokeObjectURL(u); } catch (e) {} });
+    readyUrls = [];
+  });
+  function showReady(blob) {
+    closeReady();
+    var name = printFileName();
+    var readyUrl = URL.createObjectURL(blob);
+    readyUrls.push(readyUrl);
+    var box = el("div", "pready");
+    box.setAttribute("role", "dialog"); box.setAttribute("aria-label", "인쇄본 준비 완료");
+    box.appendChild(el("p", "h", "인쇄본이 준비되었습니다"));
+    box.appendChild(el("p", "d", "아래 버튼으로 여신 뒤 인쇄해 주세요. 30분 안에 다시 받으셔도 인쇄 횟수는 더 차감되지 않습니다."));
+    var row = el("div", "acts");
+    var file = null;
+    try { file = new File([blob], name, { type: "application/pdf" }); } catch (e) {}
+    if (file && navigator.canShare && navigator.share) {
+      var ok = false;
+      try { ok = navigator.canShare({ files: [file] }); } catch (e) {}
+      if (ok) {
+        var sh = el("button", "pri", "인쇄 또는 공유");
+        sh.type = "button";
+        sh.addEventListener("click", function () { navigator.share({ files: [file], title: name }).catch(function () {}); });
+        row.appendChild(sh);
+      }
+    }
+    var op = el("a", row.firstChild ? null : "pri", "PDF 열기");
+    op.href = readyUrl; op.target = "_blank"; op.rel = "noopener";
+    var dl = el("a", null, "파일로 저장");
+    dl.href = readyUrl; dl.download = name;
+    var x = el("button", "x", "닫기");
+    x.type = "button"; x.addEventListener("click", closeReady);
+    row.appendChild(op); row.appendChild(dl); row.appendChild(x);
+    box.appendChild(row);
+    document.body.appendChild(box);
+    readyBox = box;
+    try { (row.firstChild || op).focus(); } catch (e) {}
+  }
+  // 안내 상자: 한도 초과(받지 못한 시도로 찼을 수 있어 문의 경로를 준다) 또는 계정 바뀜(새로고침)
+  function showPrintNotice(text, kind) {
+    closeReady();
+    var box = el("div", "pready");
+    box.setAttribute("role", "alertdialog"); box.setAttribute("aria-label", "인쇄 안내");
+    box.appendChild(el("p", "h", text));
+    var row = el("div", "acts");
+    if (kind === "reload") {
+      var rl = el("button", "pri", "새로고침");
+      rl.type = "button"; rl.addEventListener("click", function () { location.reload(); });
+      row.appendChild(rl);
+    } else {
+      box.appendChild(el("p", "d", "인쇄본을 받지 못한 채 횟수가 차감되었다면 1:1 문의로 알려 주세요. 기록을 확인한 뒤 복구해 드립니다."));
+      var q = el("a", "pri", "1:1 문의하기");
+      q.href = "support.html"; q.target = "_blank"; q.rel = "noopener";
+      row.appendChild(q);
+    }
+    var x = el("button", "x", "닫기");
+    x.type = "button"; x.addEventListener("click", closeReady);
+    row.appendChild(x);
+    box.appendChild(row);
+    document.body.appendChild(box);
+    readyBox = box;
+  }
   function doPrint() {
     if (state.printing) return; state.printing = true;
+    closeReady();
     printBtn.disabled = true; printBtn.textContent = "인쇄본 준비 중…";
-    var w = window.open("", "_blank");
+    var w = inlinePdfOk() ? window.open("", "_blank") : null;   // 팝업 차단 회피: 창은 클릭 제스처 안에서 먼저 연다
     if (w) {
       try {
         w.document.title = "인쇄본 준비 중";
@@ -495,33 +657,24 @@
         w.document.body.appendChild(msg);
       } catch (e) {}
     }
-    var idem = "web-" + Date.now() + "-" + Math.random().toString(36).slice(2, 8);
-    fetch(API + "/api/reader/print", {
-      method: "POST", credentials: "include",
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, idem: idem }),
-    }).then(function (r) {
-      if (r.status === 403) return r.json().then(function (d) { throw new Error(d.error || "인쇄할 수 없습니다"); });
-      if (!r.ok) throw new Error("인쇄 생성 실패");
-      return r.blob();
+    memberCheck().then(function (who) {
+      if (who !== "same") throw accountChanged(who);
+      return requestPrint(printIdem(), 0);
     }).then(function (blob) {
-      var url = URL.createObjectURL(blob);
       if (w && !w.closed) {
-        w.location.replace(url);
+        var u = URL.createObjectURL(blob);
+        readyUrls.push(u);
+        w.location.replace(u);
         showToast("새 탭에 인쇄본을 열었습니다. 그 화면에서 인쇄(⌘P)해 주세요", 5000);
       } else {
-        // 팝업이 차단된 경우의 보조 경로 (Chromium 은 iframe 인쇄가 동작한다)
-        var f = el("iframe");
-        f.style.position = "fixed"; f.style.right = "0"; f.style.bottom = "0";
-        f.style.width = "0"; f.style.height = "0"; f.style.border = "0";
-        f.src = url; document.body.appendChild(f);
-        f.onload = function () { try { f.contentWindow.focus(); f.contentWindow.print(); } catch (e) {} };
+        showReady(blob);
       }
-      printBtn.textContent = "인쇄";
     }).catch(function (e) {
       if (w && !w.closed) { try { w.close(); } catch (e2) {} }
-      showToast(e.message || "인쇄에 실패했습니다", 3500);
-      printBtn.textContent = "인쇄";
-    }).finally(function () { state.printing = false; printBtn.disabled = false; });
+      if (e && e.reload) { dropPrintIdem(); showPrintNotice(e.message, "reload"); }
+      else if (e && e.status === 403 && /한도/.test(e.message || "")) showPrintNotice(e.message, "limit");
+      else showToast((e && e.message) || "인쇄에 실패했습니다", 6000);
+    }).then(function () { state.printing = false; printBtn.disabled = false; printBtn.textContent = "인쇄"; });
   }
 
   // ---------- 키보드 · 바 ----------
