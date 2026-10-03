@@ -17,7 +17,7 @@
       searchBtn = $("searchBtn"), toast = $("toast");
 
   var slug = new URLSearchParams(location.search).get("slug");
-  var state = { token: null, pages: 0, email: "", drawn: {}, printing: false, dead: false,
+  var state = { token: null, idToken: null, member0: null, pages: 0, email: "", drawn: {}, printing: false, dead: false,
                 toc: [], search: false, wraps: [], cur: 1, zoom: 2,
                 hits: [], hitIdx: -1, hitPages: {}, reqSeq: 0, searchCtl: null };
   var ZOOMS = [640, 760, 900, 1040, 1200, 1400, 1600];
@@ -98,6 +98,15 @@
   var refreshing = null;
   // auto:true = 자동 갱신 표식 — 서버는 밀려난 세션의 auto 를 409 로 거부한다 (사람 손 재진입만, Codex A-3)
   // 실패는 throw 로 전파 — 옛 토큰으로 재시도하는 무한 루프 차단 (Codex A-4)
+  // 재발급 토큰의 회원이 처음 연 회원과 다르면(다른 탭에서 계정을 바꿈) 이 화면을 멈춘다. 종전엔 토큰만 바뀐 회원 것으로 갈아 끼워
+  // 화면은 A, 열람과 인쇄 신원은 B 인 탭이 남았다 (astra r3 R3-1)
+  function tokenMember(t) {
+    try {
+      var b = String(t || "").split(".")[0].replace(/-/g, "+").replace(/_/g, "/");
+      while (b.length % 4) b += "=";
+      return JSON.parse(atob(b)).m || null;
+    } catch (e) { return null; }
+  }
   function reopen() {
     if (refreshing) return refreshing;
     refreshing = fetch(API + "/api/reader/open", {
@@ -105,7 +114,14 @@
       headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, auto: true, sig: automationSignals() }),
     }).then(function (r) {
       return r.json().catch(function () { return {}; }).then(function (d) {
-        if (d.token) { state.token = d.token; return; }
+        if (d.token) {
+          if (state.member0 && tokenMember(d.token) !== state.member0) {
+            state.printBlocked = "다른 계정으로 로그인이 바뀌었습니다. 새로고침한 뒤 다시 열어 주세요";
+            evictOverlay(state.printBlocked);
+            throw new Error("reopen account");
+          }
+          state.token = d.token; return;
+        }
         if (r.status === 409) evictOverlay(String(d.error || ""));
         else block(String(d.error || "세션이 만료되었습니다. 다시 로그인해 주세요."));
         throw new Error("reopen " + r.status);
@@ -491,9 +507,12 @@
   //    30분 동안 같은 idem 을 다시 쓴다. 서버는 같은 회원, 문서, idem 의 발급분을 횟수 차감 없이 같은 시리얼로 다시 만든다.
   // ③ 서버가 같은 인쇄본을 만드는 중(429 print_in_flight)이면 실패로 끝내지 않고 잠시 뒤 같은 idem 으로 다시 묻는다.
   // ④ 다른 탭에서 계정이 바뀌었으면(리더는 A 로 열렸는데 쿠키는 B) 발급하지 않고 새로고침을 안내한다 (astra r1 #5).
+  //    요청에 리더를 처음 연 토큰(rt, 자동 갱신본 아님)을 실어 서버도 토큰 회원과 쿠키 회원을 대조한다. 한 번 바뀐 것을 확인한 화면은 새로고침 전까지
+  //    인쇄를 막는다 (astra r2 R2-4: 계정 확인 실패 + 409 뒤 새 idem 으로 다시 누르면 바뀐 계정 이름으로 발급되던 경로)
   var PRINT_IDEM_TTL = 30 * 60 * 1000;
   var PRINT_WAIT_MAX = 45;                 // 429 재문의 상한. 3초 간격 약 135초 = 서버 렌더 lease 120초를 넘겨 고아 예약 회수까지 기다린다
   var PRINT_TIMEOUT = 120 * 1000;          // 응답이 아예 안 오는 연결 (탭 멈춤 방지). 느린 모바일망의 5MB 수신을 덮는 폭
+  var PRINT_ME_TIMEOUT = 10 * 1000;        // 발급 전 계정 확인의 기한. 넘기면 확인을 건너뛰고 서버 대조(rt)에 맡긴다 (astra r2 R2-3)
   var printMem = {};                       // localStorage 를 못 쓰는 창(사생활 보호 모드 등)용 같은 탭 기억
   function printIdemKey() { return "hh_print_idem:" + (state.email || "") + ":" + slug; }
   function printIdem() {
@@ -510,16 +529,25 @@
     delete printMem[k];
     try { localStorage.removeItem(k); } catch (e) {}
   }
-  // 지금 로그인된 계정이 리더를 연 계정과 같은가. "same" | "changed" | "out"(로그아웃됨).
-  // 확인이 안 되면(네트워크, 5xx) 막지 않고 서버 판정(401, 409)에 맡긴다
+  // 지금 로그인된 계정이 리더를 연 계정과 같은가. "same" | "changed" | "out"(로그아웃됨) | "unknown".
+  // 확인이 안 되면(네트워크, 5xx, 기한 10초 초과) 막지 않고 서버 판정(401, 409 계정 대조)에 맡긴다.
+  // 기한이 없으면 응답이 멈춘 연결에서 버튼이 「인쇄본 준비 중」 으로 영구히 잠겼다 (astra r2 R2-3)
   function memberCheck() {
-    return fetch(API + "/api/auth/me", { credentials: "include" })
+    var ctl = typeof AbortController === "function" ? new AbortController() : null;
+    var timer = null;
+    var limit = new Promise(function (res) {
+      timer = setTimeout(function () { if (ctl) ctl.abort(); res("unknown"); }, PRINT_ME_TIMEOUT);
+    });
+    var ask = fetch(API + "/api/auth/me", { credentials: "include", signal: ctl ? ctl.signal : undefined })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (d) {
-        if (!d) return "same";
-        if (!d.member) return "out";
-        return String(d.member.email || "").toLowerCase() === String(state.email || "").toLowerCase() ? "same" : "changed";
-      }, function () { return "same"; });
+        // 명시적 member:null 만 로그아웃이다. 구조가 어긋난 응답은 확인 실패로 본다 (astra r3 R3-2: {} 를 로그아웃으로 확정해 막았다)
+        if (!d || typeof d !== "object" || !("member" in d)) return "unknown";
+        if (d.member === null) return "out";
+        if (!d.member || typeof d.member.email !== "string") return "unknown";
+        return d.member.email.toLowerCase() === String(state.email || "").toLowerCase() ? "same" : "changed";
+      }, function () { return "unknown"; });
+    return Promise.race([ask, limit]).then(function (v) { clearTimeout(timer); return v; });
   }
   function accountChanged(kind) {
     var e = new Error(kind === "out" ? "로그인이 끊겼습니다. 새로고침한 뒤 다시 로그인해 주세요"
@@ -547,7 +575,7 @@
     var stop = function () { if (timer) { clearTimeout(timer); timer = null; } };
     return fetch(API + "/api/reader/print", {
       method: "POST", credentials: "include", signal: ctl ? ctl.signal : undefined,
-      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, idem: idem }),
+      headers: { "Content-Type": "application/json" }, body: JSON.stringify({ slug: slug, idem: idem, rt: state.idToken || state.token }),
     }).then(function (r) {
       if (r.ok) return r.blob();
       return r.json().catch(function () { return {}; }).then(function (d) {
@@ -557,7 +585,13 @@
           return new Promise(function (res) { setTimeout(res, 3000); })
             .then(function () { return requestPrint(idem, tries + 1); });
         }
-        if (r.status === 409) throw accountChanged();   // idem 이 다른 회원 결속 = 계정이 바뀐 탭
+        if (r.status === 409) {
+          // account_changed = 서버의 토큰 회원, 쿠키 회원 대조. 이 계정의 idem 은 그대로 쓸 수 있어 남긴다.
+          // 그 밖의 409 = idem 이 다른 회원이나 자료에 묶였다는 뜻이라 이 idem 은 다시 못 쓴다
+          var ac = accountChanged();
+          ac.dropIdem = d.code !== "account_changed";
+          throw ac;
+        }
         var e = new Error(d.error || (r.status === 401 ? "로그인이 끊겼습니다. 새로고침 후 다시 시도해 주세요"
           : "인쇄본을 만들지 못했습니다. 잠시 후 다시 눌러 주세요. 같은 인쇄본으로 이어지므로 횟수가 더 차감되지 않습니다"));
         e.status = r.status; e.ready = true;
@@ -644,7 +678,9 @@
     readyBox = box;
   }
   function doPrint() {
-    if (state.printing) return; state.printing = true;
+    if (state.printing) return;
+    if (state.printBlocked) { showPrintNotice(state.printBlocked, "reload"); return; }   // 계정이 바뀐 화면 = 새로고침 전까지 인쇄 안 함
+    state.printing = true;
     closeReady();
     printBtn.disabled = true; printBtn.textContent = "인쇄본 준비 중…";
     var w = inlinePdfOk() ? window.open("", "_blank") : null;   // 팝업 차단 회피: 창은 클릭 제스처 안에서 먼저 연다
@@ -658,7 +694,7 @@
       } catch (e) {}
     }
     memberCheck().then(function (who) {
-      if (who !== "same") throw accountChanged(who);
+      if (who === "changed" || who === "out") throw accountChanged(who);   // unknown(확인 실패, 기한 초과) = 서버 대조(rt)에 맡긴다
       return requestPrint(printIdem(), 0);
     }).then(function (blob) {
       if (w && !w.closed) {
@@ -671,7 +707,7 @@
       }
     }).catch(function (e) {
       if (w && !w.closed) { try { w.close(); } catch (e2) {} }
-      if (e && e.reload) { dropPrintIdem(); showPrintNotice(e.message, "reload"); }
+      if (e && e.reload) { if (e.dropIdem) dropPrintIdem(); state.printBlocked = e.message; showPrintNotice(e.message, "reload"); }
       else if (e && e.status === 403 && /한도/.test(e.message || "")) showPrintNotice(e.message, "limit");
       else showToast((e && e.message) || "인쇄에 실패했습니다", 6000);
     }).then(function () { state.printing = false; printBtn.disabled = false; printBtn.textContent = "인쇄"; });
@@ -759,7 +795,7 @@
       if (d._status === 403 && d.code === "expired") { fail("열람 기간이 " + String(d.expires_at || "").slice(0, 10) + " 에 끝났습니다. 다시 구매하면 이어서 볼 수 있고, 주문 내역은 마이페이지에 남아 있습니다."); return; }
       if (d._status === 403) { fail("구매 후 열람할 수 있는 자료입니다."); return; }
       if (!d.token) { fail(String(d.error || "열 수 없습니다.")); return; }
-      state.token = d.token; state.pages = d.pages; state.email = String(d.email || ""); state.exempt = !!d.exempt;
+      state.token = d.token; state.idToken = d.token; state.member0 = tokenMember(d.token); state.pages = d.pages; state.email = String(d.email || ""); state.exempt = !!d.exempt;
       state.toc = Array.isArray(d.toc) ? d.toc : []; state.search = !!d.search;
       if (Array.isArray(d.size) && d.size.length === 2 && d.size[0] > 0 && d.size[1] > 0)
         document.documentElement.style.setProperty("--pgar", d.size[0] + " / " + d.size[1]);
