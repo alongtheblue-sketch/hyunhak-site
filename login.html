@@ -2,13 +2,13 @@
 <html lang="ko">
 <head>
 <meta charset="utf-8">
-<!-- analytics:begin -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2ZM01XDLNT"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-2ZM01XDLNT',{send_page_view:true});</script>
-<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','1788228408971711');fbq('track','PageView');</script>
-<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=1788228408971711&amp;ev=PageView&amp;noscript=1"></noscript>
-<script>window.HH_TRACK=function(n,p){p=p||{};try{gtag('event',n,p);}catch(e){}try{var M={view_item:'ViewContent',add_to_cart:'AddToCart',begin_checkout:'InitiateCheckout',purchase:'Purchase',generate_lead:'Lead'};if(window.fbq&&M[n]){var q={currency:p.currency||'KRW'};if(p.value!=null)q.value=p.value;if(p.items&&p.items.length){q.content_ids=p.items.map(function(i){return String(i.item_id);});q.content_type='product';}if(p.content)q.content_name=p.content;if(p.transaction_id!=null){fbq('track',M[n],q,{eventID:String(p.transaction_id)});}else{fbq('track',M[n],q);}}}catch(e){}};</script>
-<!-- analytics:end -->
+<script>
+/* 비밀번호 재설정 링크(#reset=토큰, 2026-10-03): 다른 어떤 스크립트보다 먼저 토큰을 꺼내 주소창에서 지운다. 토큰은 이 클로저에만 있고
+   HH_RESET_TAKE() 가 한 번만 내준다. 형식이 틀린 #reset= 도 지우고 빈 문자열(무효 링크)로 알린다. 이 면은 분석 태그 주입 제외(_tools/apply_analytics.py)
+   이미 열린 로그인 탭에 링크를 붙여 넣으면 해시만 바뀌고 다시 읽히지 않는다(같은 문서 이동). 그때는 새로 읽어 이 스크립트가 다시 돌게 한다 */
+var HH_RESET_TAKE=(function(){var h=location.hash||'';if(h.indexOf('#reset=')!==0)return null;var m=/^#reset=([0-9a-f]{64})$/.exec(h),t=m?m[1]:'';try{history.replaceState(null,'',location.pathname+location.search);}catch(e){}return function(){var v=t;t=null;return v;};})();
+window.addEventListener('hashchange',function(){if((location.hash||'').indexOf('#reset=')===0)location.reload();});
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>로그인, 현학적 연구소</title>
 <!-- seo:begin -->
@@ -40,8 +40,12 @@
 .auth .entry{margin-top:var(--s2)}
 .auth .reset{margin-top:14px;font-size:13px;color:var(--gray)}
 /* astra 09-23 C P0-2 제출 버튼 폭을 입력칸에 맞추고 공용 .entry 여백과 괘선 제거 */
-:where(body.v2) .auth #loginForm > .entry{margin-top:var(--s3);padding:0;border:0;gap:0}
-:where(body.v2) .auth #loginForm > .entry > .btn{width:100%}
+:where(body.v2) .auth form > .entry{margin-top:var(--s3);padding:0;border:0;gap:0}
+:where(body.v2) .auth form > .entry > .btn{width:100%}
+/* 비밀번호 재설정 (2026-10-03): 화면 전환 버튼을 .tlink 링크 모양으로 */
+.auth button.tlink{background:none;border:0;padding:0;color:inherit;cursor:pointer;font-family:inherit}
+.auth .reset .tlink + .tlink{margin-left:var(--s3)}
+.auth .pwhelp{margin-top:var(--s3);font-size:13px;color:var(--gray);line-height:var(--lh-body)}
 </style>
 </head>
 <body class="v2 ft-compact">
@@ -104,7 +108,7 @@
   <div class="auth">
     <nav class="crumb" aria-label="위치"><a href="index.html">현학적 연구소</a><span aria-hidden="true">/</span><span>로그인</span></nav>
     <h1>로그인</h1>
-    <p class="lede">구매하신 가이드북과 스튜디오 이용권은 로그인 후 이용하실 수 있습니다.</p>
+    <p class="lede" id="lede">구매하신 가이드북과 스튜디오 이용권은 로그인 후 이용하실 수 있습니다.</p>
     <div id="oauthMsg" role="status" aria-live="polite" hidden style="margin-top:var(--s4)"></div>
     <form id="loginForm">
       <div class="field">
@@ -118,16 +122,44 @@
       <div class="entry">
         <button class="btn" type="submit" id="loginBtn">로그인 <span class="ar" aria-hidden="true">→</span></button>
       </div>
-      <p class="reset"><a class="tlink" href="mailto:admin@hyunhak.com?subject=비밀번호 재설정 요청">비밀번호 재설정 문의</a></p>
+      <p class="reset"><button type="button" class="tlink" data-view="forgot">비밀번호를 잊으셨나요?</button></p>
     </form>
 
-    <div class="socwrap">
+    <form id="forgotForm" hidden>
+      <div class="field">
+        <label for="fem">가입한 이메일</label>
+        <input id="fem" type="email" autocomplete="email" required>
+      </div>
+      <div class="entry">
+        <button class="btn" type="submit" id="forgotBtn">재설정 메일 받기</button>
+      </div>
+      <p class="pwhelp">간편 로그인(카카오, 네이버, 구글)으로 가입하셨다면 비밀번호가 없습니다. 로그인 화면의 그 버튼으로 로그인해 주세요. 메일이 계속 오지 않으면 <a href="mailto:admin@hyunhak.com?subject=비밀번호 재설정 문의">admin@hyunhak.com</a> 으로 알려 주세요.</p>
+      <p class="reset"><button type="button" class="tlink" data-view="login">로그인으로 돌아가기</button></p>
+    </form>
+
+    <form id="resetForm" hidden>
+      <input type="email" id="rem" autocomplete="username" hidden tabindex="-1" aria-hidden="true">
+      <div class="field">
+        <label for="npw">새 비밀번호 (10자 이상)</label>
+        <input id="npw" type="password" autocomplete="new-password" minlength="10" maxlength="128" required>
+      </div>
+      <div class="field">
+        <label for="npw2">새 비밀번호 확인</label>
+        <input id="npw2" type="password" autocomplete="new-password" minlength="10" maxlength="128" required>
+      </div>
+      <div class="entry">
+        <button class="btn" type="submit" id="resetBtn">비밀번호 바꾸기</button>
+      </div>
+      <p class="reset"><button type="button" class="tlink" data-view="login">로그인으로 돌아가기</button></p>
+    </form>
+
+    <div class="socwrap" id="socwrap">
       <p class="or">또는 간편 로그인</p>
       <div class="socs" id="socs"></div>
       <p class="socnote">처음 사용하는 계정이면 약관 동의 한 번을 거쳐 가입. 이미 같은 이메일로 가입되어 있으면 비밀번호 로그인 후 연결.</p>
     </div>
 
-    <div class="aux2">
+    <div class="aux2" id="aux2">
       <span>처음이라면</span>
       <a class="tlink" href="join.html" id="joinLink">회원 가입</a>
     </div>
@@ -203,11 +235,85 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   var next=safeNext(q.get('next'));
   document.getElementById('joinLink').href='join.html?next='+encodeURIComponent(next);
-  var linkP=q.get('link');
   var msg=document.getElementById('oauthMsg');
   function show(text, kind){ msg.textContent=text; msg.className='oauthmsg'+(kind==='info'?' info':''); msg.hidden=false; }
+  function $(id){ return document.getElementById(id); }
 
-  var err=q.get('oauth_error');
+  // ---- 비밀번호 재설정 (2026-10-03). 화면 셋: 로그인 / 재설정 요청 / 새 비밀번호 ----
+  // 재설정 링크로 들어오면 그 판정을 간편 로그인 오류, 연결 안내보다 먼저 한다 (그 경우 둘 다 건너뛴다)
+  var resetToken=(typeof HH_RESET_TAKE==='function') ? HH_RESET_TAKE() : null;
+  var resetMode=resetToken!==null;
+  var VIEWS={
+    login:{h:'로그인', lede:'구매하신 가이드북과 스튜디오 이용권은 로그인 후 이용하실 수 있습니다.', show:['loginForm','socwrap','aux2']},
+    forgot:{h:'비밀번호 재설정', lede:'가입하신 이메일을 넣으면 새 비밀번호를 정하는 링크를 메일로 보내 드립니다. 링크는 30분 동안 쓸 수 있습니다.', show:['forgotForm']},
+    reset:{h:'새 비밀번호 정하기', lede:'새로 쓸 비밀번호를 두 번 넣어 주세요. 바꾸면 모든 기기에서 로그아웃됩니다.', show:['resetForm']}
+  };
+  var ALL=['loginForm','socwrap','aux2','forgotForm','resetForm'];
+  function view(name){
+    var v=VIEWS[name];
+    ALL.forEach(function(id){ $(id).hidden=v.show.indexOf(id)<0; });
+    document.querySelector('.auth h1').textContent=v.h;
+    $('lede').textContent=v.lede;
+    msg.hidden=true;
+  }
+  document.querySelectorAll('[data-view]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var to=b.getAttribute('data-view');
+      if(to==='forgot' && !$('fem').value) $('fem').value=$('em').value.trim();
+      view(to);
+      (to==='forgot' ? $('fem') : $('em')).focus();
+    });
+  });
+  function busy(btn, on, idle){ btn.disabled=on; btn.textContent=on?'처리 중':idle; }
+
+  $('forgotForm').addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    var btn=$('forgotBtn'); busy(btn, true);
+    try{
+      await HH.api('/api/auth/password/forgot',{method:'POST',body:JSON.stringify({email:$('fem').value.trim()})});
+      // 서버는 계정 유무를 알려 주지 않는다. 문구도 조건부로 (메일이 실제로 갔는지는 화면이 알 수 없다)
+      show('입력하신 이메일로 가입된 계정이 있으면 몇 분 안에 안내 메일이 갑니다. 링크는 30분 동안 쓸 수 있고, 여러 번 요청하면 가장 늦게 요청한 메일(본문의 요청 시각)의 링크만 쓸 수 있습니다. 메일이 오지 않으면 스팸함을 확인하고, 몇 분 뒤 다시 요청해 주세요.','info');
+    }catch(e){
+      if(e.status===429) show('요청이 많습니다. 몇 분 뒤 다시 시도해 주세요.');
+      else if(e.status===400) show(e.message||'이메일 형식을 확인해 주세요');
+      else show('일시적인 오류입니다. 잠시 후 다시 눌러 주세요.');
+    }
+    busy(btn, false, '재설정 메일 받기');
+  });
+
+  $('resetForm').addEventListener('submit', async function(ev){
+    ev.preventDefault();
+    var a=$('npw').value, b=$('npw2').value;
+    if(a.length<10){ show('비밀번호는 10자 이상이어야 합니다.'); $('npw').focus(); return; }
+    if(a!==b){ show('두 칸의 비밀번호가 다릅니다.'); $('npw2').focus(); return; }
+    var btn=$('resetBtn'); busy(btn, true);
+    try{
+      var done=await HH.api('/api/auth/password/reset',{method:'POST',body:JSON.stringify({token:resetToken,new_password:a})});
+      resetToken=null; $('npw').value=''; $('npw2').value='';
+      view('login');
+      // 이메일 확인이 안 된 간편 로그인 연결은 재설정 때 해제된다 (서버가 이름을 돌려준다). 다시 연결하는 길을 같이 알린다
+      var un=(done&&done.unlinked&&done.unlinked.length) ? ' 이메일 확인이 안 된 간편 로그인 연결('+done.unlinked.join(', ')+')을 해제했습니다. 새 비밀번호로 로그인한 뒤 그 버튼을 누르면 다시 연결할 수 있습니다.' : '';
+      show('비밀번호를 바꿨습니다. 새 비밀번호로 로그인해 주세요. 다른 기기의 로그인은 모두 해제했습니다.'+un,'info');
+      $('em').focus();
+    }catch(e){
+      if(e.code==='bad_password'){ show(e.message||'비밀번호는 10자 이상이어야 합니다.'); }
+      else if(e.code==='expired_link' || e.code==='invalid_link'){
+        resetToken=null; view('forgot');
+        show((e.message||'링크가 만료되었습니다')+'. 아래에서 재설정 메일을 다시 받을 수 있습니다.');
+      }
+      else if(e.status===429) show('요청이 많습니다. 잠시 후 다시 시도해 주세요.');
+      else show('일시적인 오류입니다. 잠시 후 다시 눌러 주세요.');   // 토큰은 메모리에 남겨 같은 링크로 다시 누를 수 있다
+    }
+    busy(btn, false, '비밀번호 바꾸기');
+  });
+
+  if(resetMode){
+    if(resetToken){ view('reset'); $('npw').focus(); }
+    else { view('forgot'); show('링크가 올바르지 않습니다. 메일의 링크를 다시 누르거나 아래에서 재설정 메일을 다시 받아 주세요.'); }
+  }
+
+  var linkP=resetMode ? null : q.get('link');
+  var err=resetMode ? null : q.get('oauth_error');
   if(err) show((HH.OAUTH_ERR&&HH.OAUTH_ERR[err])||'간편 로그인에 실패했습니다. 다시 시도해 주세요');
   if(linkP){
     var label=(HH.OAUTH_LABEL&&HH.OAUTH_LABEL[linkP])||linkP;
@@ -249,7 +355,7 @@ document.addEventListener('DOMContentLoaded', function(){
       // 2026-10-02 고객 문의: 간편 로그인(카카오, 네이버, 구글)으로 가입한 계정은 비밀번호가 없어서, 그 서비스의 이메일과
       // 비밀번호를 여기에 넣으면 실패한다. 서버는 가입 여부를 숨기려고 실패 사유를 하나로 묶으므로 안내도 모든 401 에 같이 붙인다
       var t=e.message||'로그인에 실패했습니다';
-      if(e.status===401) t+='. 카카오, 네이버, 구글 간편 로그인으로 가입하셨다면 아래 간편 로그인 버튼으로 로그인해 주세요. 비밀번호가 기억나지 않으면 아래 「비밀번호 재설정 문의」를 눌러 주세요.';
+      if(e.status===401) t+='. 카카오, 네이버, 구글 간편 로그인으로 가입하셨다면 아래 간편 로그인 버튼으로 로그인해 주세요. 비밀번호가 기억나지 않으면 「비밀번호를 잊으셨나요?」를 눌러 주세요.';
       show(t); btn.disabled=false; btn.textContent='로그인';
     }
   });

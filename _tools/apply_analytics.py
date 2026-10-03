@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """GA4(gtag.js), Meta 픽셀(fbevents.js), 네이버 프리미엄 로그분석(wcs) 태그를 전 페이지 head 에 주입. 멱등.
    원장 = _tools/analytics.json. 마커 <!-- analytics:begin --> ... <!-- analytics:end --> 사이를 통째로 교체한다.
-   제외 = reader.html(리더 셸), _design/ _tools/ design/ 및 백업(*.bak*). noindex 면(장바구니, 결제 등)도 전환 계측을 위해 주입한다.
+   제외 = reader.html(리더 셸), login.html(비밀번호 재설정 링크 토큰이 주소에 실리는 면, 2026-10-03 astra pwr r1 #11), _design/ _tools/ design/ 및 백업(*.bak*). noindex 면(장바구니, 결제 등)도 전환 계측을 위해 주입한다.
    전환 이벤트: window.HH_TRACK(name, params) 한 번 호출로 GA4 와 Meta 양쪽에 발화한다(이름은 GA4 규약, Meta 표준 이벤트로 대응).
    호출 지점 = assets/app.js(view_item 가이드북 상품 면, add_to_cart 담기 성공, begin_checkout 결제 면, generate_lead 스튜디오 체험 시작), pay_done.html(purchase, 서버 확정 금액)."""
 import json, glob, os, re, sys
@@ -10,7 +10,7 @@ CFG = json.load(open(os.path.join(ROOT, "_tools", "analytics.json"), encoding="u
 GA4 = (CFG.get("ga4") or "").strip()
 WCS = (CFG.get("naver_wcs") or "").strip()
 PIX = (CFG.get("meta_pixel") or "").strip()
-SKIP = {"reader.html"}
+SKIP = {"reader.html", "login.html"}
 BEGIN, END = "<!-- analytics:begin -->", "<!-- analytics:end -->"
 BLOCK_RE = re.compile(re.escape(BEGIN) + r".*?" + re.escape(END) + r"\n?", re.S)
 
