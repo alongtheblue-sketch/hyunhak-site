@@ -13,11 +13,11 @@ const html = readFileSync(new URL('programs/studio.html', root), 'utf8');
 const NO_SKU = ['yonsei-mirae-common'];
 const UNITS = [...app.match(/const UNITS = \[([^\]]*)\];/)[1].matchAll(/"([^"]+)"/g)].map(m => m[1]);
 const sale = UNITS.filter(u => !NO_SKU.includes(u));
-assert.equal(sale.length, 12, 'app.js UNITS - 공통형 = 12');
+assert.equal(sale.length, 13, 'app.js UNITS - 공통형 = 13');   // 2026-10 연세대 기회균형 추가로 12 에서 13 으로
 const options = [...html.match(/<select id="studio-unit">([\s\S]*?)<\/select>/)[1].matchAll(/<option value="([^"]+)">([^<]+)<\/option>/g)].map(m => ({ value: m[1], textContent: m[2] }));
-assert.deepEqual([...options.map(o => o.value)].sort(), [...sale].sort(), 'select option 집합 = 판매 12단위');
+assert.deepEqual([...options.map(o => o.value)].sort(), [...sale].sort(), 'select option 집합 = 판매 13단위');
 const cards = [...html.matchAll(/data-r3-unit-buy="([^"]+)"/g)].map(m => m[1]);
-assert.deepEqual(cards, options.map(o => o.value), '카드 01~12 순서 = select 순서');
+assert.deepEqual(cards, options.map(o => o.value), '카드 01~13 순서 = select 순서');
 let mode = 'pass';
 const select = { options, selectedIndex: 0, disabled: false,
   get value() { return options[this.selectedIndex]?.value; },
@@ -59,8 +59,8 @@ for (const { value: code, textContent } of options) {
   n += 1;
 }
 console.log(`PASS card click selects its own unit ${n}/${options.length}, restores pass, adds nothing`);
-// 판매 단위가 아닌 값 = 무시 (select 와 담기 불변)
-for (const code of ['yonsei-mirae', 'korea-eq', 'unknown', '"><script>']) {
+// 판매 단위가 아닌 값 = 무시 (select 와 담기 불변). yonsei-eq-hum = 폐기된 기회균형 가안 코드 (2026-10, 정본은 yonsei-eq)
+for (const code of ['yonsei-mirae', 'korea-eq', 'yonsei-eq-hum', 'unknown', '"><script>']) {
   const before = select.value, sku = button.dataset.cartSku;
   clickCard(code);
   assert.equal(select.value, before);

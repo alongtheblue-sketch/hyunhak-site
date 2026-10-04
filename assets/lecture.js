@@ -12,7 +12,7 @@
   // 목록 진입 인자 (PLAN s30 Task 5): ?unit=<단위코드> 또는 ?set=<세트 id>. set 만 오면 단위는 id 접두로 푼다.
   // 쿼리, 카탈로그, API 어디서 온 값이든 계약(HH.SET_ID_RE, HH.UNITS)을 통과한 것만 그린다 (Codex r1 #1, #2)
   var okSetId = window.HH.okSetId, okUnit = window.HH.okUnit, intIn = window.HH.intIn;
-  var UNIT_OF = [[/^korea_2027_h/, "korea-hum"], [/^korea_2027_s/, "korea-sci"], [/^korea_gorun_2027_h/, "korea-eq-hum"], [/^korea_gorun_2027_s/, "korea-eq-sci"], [/^yonsei_2027_h/, "yonsei-hum"], [/^yonsei_2027_s/, "yonsei-sci"], [/^yonsei_intl_2027_i/, "yonsei-intl"], [/^yonsei_mirae_2027_j/, "yonsei-mirae-free"], [/^yonsei_mirae_2027_d/, "yonsei-mirae-design"], [/^yonsei_mirae_2027_t/, "yonsei-mirae-tech"], [/^yonsei_mirae_2027_h/, "yonsei-mirae-health"], [/^yonsei_mirae_2027_g/, "yonsei-mirae-intl"], [/^yonsei_mirae_2027_u/, "yonsei-mirae-common"]];
+  var UNIT_OF = [[/^korea_2027_h/, "korea-hum"], [/^korea_2027_s/, "korea-sci"], [/^korea_gorun_2027_h/, "korea-eq-hum"], [/^korea_gorun_2027_s/, "korea-eq-sci"], [/^yonsei_2027_h/, "yonsei-hum"], [/^yonsei_2027_s/, "yonsei-sci"], [/^yonsei_intl_2027_i/, "yonsei-intl"], [/^yonsei_mirae_2027_j/, "yonsei-mirae-free"], [/^yonsei_mirae_2027_d/, "yonsei-mirae-design"], [/^yonsei_mirae_2027_t/, "yonsei-mirae-tech"], [/^yonsei_mirae_2027_h/, "yonsei-mirae-health"], [/^yonsei_mirae_2027_g/, "yonsei-mirae-intl"], [/^yonsei_mirae_2027_u/, "yonsei-mirae-common"], [/^yonsei_eq_2027_/, "yonsei-eq"]];
   function unitOfSet(id) { if (!okSetId(id)) return null; for (var i = 0; i < UNIT_OF.length; i++) if (UNIT_OF[i][0].test(String(id))) return UNIT_OF[i][1]; return null; }
   // 2026 기출 해설 1편 = 단위 전권에 일대일 편입 (LC-4 ②, 2026-09-06). 단위 그룹 안에 그 대학 계열 편 하나. 여섯 번째 단위 축은 만들지 않는다. hyunhak-api pay.js 와 같은 표
   var GICHUL_UNIT = "yeongo-gichul", GICHUL_OF = { "korea-hum": "korea_2026_gichul_hum_am", "korea-sci": "korea_2026_gichul_sci_pm", "yonsei-hum": "yonsei_2026_gichul_hum", "yonsei-sci": "yonsei_2026_gichul_sci", "yonsei-intl": "yonsei_2026_gichul_intl" };
@@ -81,7 +81,7 @@
   function n0(v, hi) { return intIn(v, 0, hi == null ? 9999 : hi, 0); }
   function loadSets() {
     return fetch("assets/data/sets.json").then(function (r) { return r.json(); })
-      .then(function (d) { return (d.units || []).filter(function (u) { return okUnit(u.code); }); })   // app.js UNITS 의 판매 단위만 (13단위, 공통형 포함. 2026-09-14 미래캠 6 + 고른기회 2 추가)
+      .then(function (d) { return (d.units || []).filter(function (u) { return okUnit(u.code); }); })   // app.js UNITS 의 판매 단위만 (14단위, 공통형 포함. 2026-09-14 미래캠 6 + 고른기회 2, 2026-10 연세대 기회균형 1 추가)
       .catch(function () { return []; });
   }
   function summary(q) { return apiFetch("/api/lectures/summary?" + q).then(function (d) { return d._status === 200 ? d : null; }).catch(function () { return null; }); }

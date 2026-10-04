@@ -7,6 +7,7 @@
   3 비공개 층 어휘: 루브릭·모범답안·배점 세부 낱말
   4 금지어·가운뎃점·줄표·감탄부호·명령형·반말 종결
   5 verbatim: sample.questions == 은행 세트 questions[].text, passages excerpt ⊂ passages[].text (고른기회 = 원문 카드 txt 안에 있는가)
+  6 자리표시: codes.PENDING 이 남은 칸은 하드 결함 (2026-10 연세대 기회균형. 은행 완주 전 초안은 이 칸들만 hard 로 남는다)
   + 문체 게이트(style_gate scan --profile deliverable --gate-only) 등급
 실행: python3 check_drafts.py [code ...]   (인자 없으면 drafts/*.json 전부). rc 1 = 하드 결함 1건 이상.
 """
@@ -14,6 +15,8 @@ import json, re, sys, subprocess, tempfile, os
 from pathlib import Path
 
 D = Path(__file__).resolve().parent
+sys.path.insert(0, str(D))
+import codes as EX            # noqa: E402  PENDING 자리표시 상수 (build_exam_pages.py 와 같은 값)
 STYLE = Path.home() / "unjang/_shared/style_gate/style_gate.py"
 
 KEYS = ["code", "h1", "title_tag", "meta_description", "keywords", "lead", "answer_box", "spec_notes", "types", "method",
@@ -31,6 +34,14 @@ def walk_str(o):
         for v in o.values(): yield from walk_str(v)
     elif isinstance(o, list):
         for v in o: yield from walk_str(v)
+
+def walk_paths(o, path=""):
+    """(경로, 문자열) 쌍. 자리표시가 남은 칸을 이름으로 짚는다."""
+    if isinstance(o, str): yield path, o
+    elif isinstance(o, dict):
+        for k, v in o.items(): yield from walk_paths(v, f"{path}.{k}" if path else str(k))
+    elif isinstance(o, list):
+        for i, v in enumerate(o): yield from walk_paths(v, f"{path}[{i}]")
 
 def walk_num(o):
     if isinstance(o, bool): return
@@ -106,6 +117,9 @@ def main(codes):
         if "070-8098-0671" not in d.get("offline_note", ""): hard.append("offline_note 에 070-8098-0671 없음")
         if facts["spec"].get("status") != "on_sale" and not any("9월 14일" in s for s in walk_str(d.get("plan"))):
             hard.append("오픈 예정 전형인데 plan 에 '9월 14일 오픈' 문장 없음")
+        # 6 자리표시 (은행 세트가 생겨야 채우는 칸)
+        pend = [p for p, v in walk_paths(d) if EX.PENDING in v]
+        for p in pend: hard.append(f"자리표시 남음: {p}")
         # 2 숫자
         ok = allowed_numbers(facts) | YEARS | FREE
         verbatim_fields = set(sm.get("questions", [])) | {p.get("excerpt", "") for p in sm.get("passages", [])}
@@ -166,6 +180,9 @@ def main(codes):
             if first_low["id"] != sid: soft.append(f"예시 세트 규칙(난이도 하 첫 세트 {first_low['id']}) 대신 {sid}")
         elif (facts.get("bank") or {}).get("n_sets") and code not in SAMPLE_FROM_CARDS:
             hard.append(f"sample.set_id {sid!r} 이 은행에 없음")
+        elif code not in SAMPLE_FROM_CARDS:
+            # 은행 세트가 아직 없는 전형(2026-10 연세대 기회균형 완주 전). 종전에는 아래 고른기회 카드 대조로 떨어져 엉뚱한 hard 를 냈다
+            hard.append(f"facts bank 세트 0건: sample.set_id {sid!r} 를 대조할 은행 세트가 없다 (facts_build.py 를 은행 완주 뒤 다시 돌린다)")
         else:
             # 고른기회: 원문 카드 txt 에서 발문 실재 확인
             srcs = "".join(p.read_text(encoding="utf-8") for p in (D / "src").glob("korea_*_eq_cards_raw.txt"))

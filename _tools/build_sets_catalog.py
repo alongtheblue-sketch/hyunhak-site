@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """세트 카탈로그 빌더 (assets/data/sets.json).
 
-원천 = 다섯 은행의 sets/*.json 읽기 전용. 단위 13종 x 30세트 = 390세트만 담는다
-(기존 5 x 30 = 150 + 연세대 미래캠퍼스 6 x 30 = 180 + 고려대 고른기회 2 x 30 = 60, 2026-09-14 판매 개시).
+원천 = 여섯 은행의 sets/*.json 읽기 전용. 단위 14종 x 30세트 = 420세트만 담는다
+(기존 5 x 30 = 150 + 연세대 미래캠퍼스 6 x 30 = 180 + 고려대 고른기회 2 x 30 = 60, 2026-09-14 판매 개시
+ + 연세대 기회균형 1 x 30 = 30, 2026-10).
 미래 공통형(U)만 은행 하위 디렉토리가 sets_u 라 항목별 sets_dir 로 덮어쓴다.
 미래 공통형은 단독 SKU 가 없다 (미래 판매 5단위 전권 어느 것에나 들어간다). 그 항목의 sku 는 null 이다.
 정원 밖 세트(korea s31 이상 등)와 .bak 파일은 카탈로그에서 제외한다.
@@ -26,7 +27,7 @@ GENERATED_AT = "2026-09-02T00:00:00Z"
 PRICE = 495000   # 2026-09-03 건우 결재 GS-8a: 인강 포함 495,000 (종전 396,000)
 SINGLE_PRICE = 33000
 
-# 단위 13종 정의. bank_dir = 은행 저장소, prefix = 세트 id 접두, script_bank = 해설 대본 디렉토리명
+# 단위 14종 정의. bank_dir = 은행 저장소, prefix = 세트 id 접두, script_bank = 해설 대본 디렉토리명
 # 선택 키: sets_dir = 은행 하위 디렉토리(기본 "sets"), sku = 상품 코드(기본 "pass-<code>", None 이면 단독 판매 없음),
 #          track = 단위 안에서 track 이 갈리는 경우의 표기(없으면 첫 세트 값을 쓰고 갈리면 빌드를 멈춘다)
 UNITS = [
@@ -60,11 +61,15 @@ UNITS = [
      "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_h", "script_bank": "gorun", "lectures": False},
     {"code": "korea-eq-sci", "label": "고려대 고른기회 자연", "univ_short": "고려대",
      "bank_dir": "korea_gorun_interview_bank_2027", "prefix": "korea_gorun_2027_s", "script_bank": "gorun", "lectures": False},
+    # 연세대 기회균형 1단위 (2026-10 판매 개시 예정). 전 계열 1세트 형식이라 접두 끝에 계열 글자가 없다(yonsei_eq_2027_01).
+    # 인강은 없다 (build_lectures ORDER 밖). script_bank "yeq" 디렉토리는 만들지 않으므로 대본 보유는 0이다
+    {"code": "yonsei-eq", "label": "연세대 기회균형", "univ_short": "연세대",
+     "bank_dir": "yonsei_eq_interview_bank_2027", "prefix": "yonsei_eq_2027_", "script_bank": "yeq", "lectures": False},
 ]
 
 # 세트 id 정규식 (서버 검증 hyunhak-api src/pay.js 와 같은 문자열, 2026-09-11 고려대 고른기회 korea_gorun,
-# 2026-09-14 연세대 미래캠퍼스 yonsei_mirae 추가. 동기 게이트 = _tools/set_id_contract_check.py)
-SET_ID_RE = re.compile(r"^(korea_2027_[hs]|korea_gorun_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i|yonsei_mirae_2027_[jdthgu])(0[1-9]|[12][0-9]|30)$")
+# 2026-09-14 연세대 미래캠퍼스 yonsei_mirae, 2026-10 연세대 기회균형 yonsei_eq 추가. 동기 게이트 = _tools/set_id_contract_check.py)
+SET_ID_RE = re.compile(r"^(korea_2027_[hs]|korea_gorun_2027_[hs]|yonsei_2027_[hs]|yonsei_intl_2027_i|yonsei_mirae_2027_[jdthgu]|yonsei_eq_2027_)(0[1-9]|[12][0-9]|30)$")
 
 # 난이도 폐쇄 어휘. 원천 실측이 네 값이라 최상을 포함한다 (2026-09-02 실측: 하 30, 중 50, 상 50, 최상 20)
 DIFFICULTY_VOCAB = ("하", "중", "상", "최상")
@@ -153,7 +158,7 @@ def build():
             "price": PRICE,
             "single_price": SINGLE_PRICE,
             "set_count": len(sets_out),
-            # 해설 인강이 붙는 단위인가. 고른기회 2단위는 인강이 없어 false 다 (2026-09-14). 소비처 = my.html 내 강의 카드
+            # 해설 인강이 붙는 단위인가. 고른기회 2단위(2026-09-14)와 연세대 기회균형(2026-10)은 인강이 없어 false 다. 소비처 = my.html 내 강의 카드
             "lectures": bool(unit.get("lectures", True)),
             "sets": sets_out,
         })
@@ -167,17 +172,17 @@ def self_check(catalog):
     all_sets = [s for u in catalog["units"] for s in u["sets"]]
     ids = [s["id"] for s in all_sets]
     checks = [
-        ("단위 수", 13, len(catalog["units"])),
-        ("세트 수 (13 x 30)", 390, len(all_sets)),
-        ("난이도 폐쇄어휘 적합", 390, sum(1 for s in all_sets if s["difficulty"] in DIFFICULTY_VOCAB)),
+        ("단위 수", 14, len(catalog["units"])),
+        ("세트 수 (14 x 30)", 420, len(all_sets)),
+        ("난이도 폐쇄어휘 적합", 420, sum(1 for s in all_sets if s["difficulty"] in DIFFICULTY_VOCAB)),
         ("id 중복", 0, len(ids) - len(set(ids))),
-        ("id 정규식 적합", 390, sum(1 for i in ids if SET_ID_RE.match(i or ""))),
+        ("id 정규식 적합", 420, sum(1 for i in ids if SET_ID_RE.match(i or ""))),
         ("제목 빈 값", 0, sum(1 for s in all_sets if not (s["title"] or "").strip())),
-        ("제시문 1편 이상", 390, sum(1 for s in all_sets if s["passages"] >= 1)),
-        ("문제 1개 이상", 390, sum(1 for s in all_sets if s["questions"] >= 1)),
+        ("제시문 1편 이상", 420, sum(1 for s in all_sets if s["passages"] >= 1)),
+        ("문제 1개 이상", 420, sum(1 for s in all_sets if s["questions"] >= 1)),
         ("제목 em대시, 가운뎃점", 0,
          sum(1 for s in all_sets if any(c in s["title"] for c in EM_DASHES + MIDDLE_DOTS))),
-        ("단위별 30세트", 13, sum(1 for u in catalog["units"] if u["set_count"] == 30)),
+        ("단위별 30세트", 14, sum(1 for u in catalog["units"] if u["set_count"] == 30)),
     ]
     width = max(len(c[0]) for c in checks)
     print("%-*s %8s %8s %6s" % (width, "검사", "기대", "실측", "판정"))

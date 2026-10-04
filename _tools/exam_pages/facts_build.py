@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""전형별 면접 상세면 8본의 사실 원장(facts) 생성기. 2026-09-10.
+"""전형별 면접 상세면의 사실 원장(facts) 생성기. 2026-09-10 8본, 2026-10 연세대 기회균형 추가로 9본.
 
-원천 = 4 은행(sets/*.json + spec/SPEC_v1.md) + 2026 기출 해설 세트(interview_pastexam_2026) + 요강 실측값(아래 상수, 각 값에 출처).
+원천 = 은행(sets/*.json + spec/SPEC_v1.md) + 2026 기출 해설 세트(interview_pastexam_2026) + 요강 실측값(아래 상수, 각 값에 출처).
+은행 세트가 0건인 code 가 있으면 산출 전에 멈춘다 (연세대 기회균형은 은행 sets/ 30본 완주 뒤에만 돈다).
 산출 = _tools/exam_pages/facts/<code>.json. 지면 생성기(build_exam_pages.py)와 집필 레그(astra 브리프)가 같은 파일을 읽는다.
 숫자는 여기서만 나온다 — 지면·집필 문안의 숫자는 전부 이 원장의 값과 대조된다(facts_check).
 """
@@ -22,6 +23,8 @@ BANKS = {
     "korea-sci":   (W / "korea_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
     "korea-eq-hum": (W / "korea_gorun_interview_bank_2027/sets", lambda j: "인문" in j.get("track", "")),   # track "… 고른기회전형 | 인문" (2026-09-11)
     "korea-eq-sci": (W / "korea_gorun_interview_bank_2027/sets", lambda j: "자연" in j.get("track", "")),
+    # 연세대 기회균형 (2026-10). 전 계열 1단위라 계열 판별이 없다. 세트 id 접두로만 거른다 (파일럿, 골든은 sets/ 밖)
+    "yonsei-eq":   (W / "yonsei_eq_interview_bank_2027/sets", lambda j: str(j.get("id") or "").startswith("yonsei_eq_2027_")),
 }
 
 # 요강·시행계획·선행학습영향평가 실측값. 출처 문자열은 지면 각주로 나간다.
@@ -84,6 +87,19 @@ SPEC = {
         lang="한국어", scope="사회·과학·수학 교과 통합(2026 문항카드: 과학 실험·이론과 비교·설명)", eval_axes=["분석력", "적용력", "종합적 사고력"],
         src=["2027 고려대 수시모집요강 Ⅴ 면접평가 안내 p.29(준비 12분·면접 6분)", "2027 입학전형시행계획 p.13(모집 199명)", "고려대 선행학습영향평가 보고서 2024~2026 고른기회전형 문항카드"],
         status="on_sale", open_date="2026-09-14", sku="pass-korea-eq-sci", price=495000, single_price=33000, lecture_count=None, admission_quota=199),
+    # 연세대 기회균형 (2026-10 판매 개시 예정, 인강 없음). 출처 = 2027 연세대 수시모집요강 R3_sources/yonsei_2027_susi_mojip.txt
+    # :2489, :2498 (1단계 서류 100 선발 300%, 2단계 1단계 60 + 면접 40), :2497~2501 (현장 녹화 면접, 제시문 기반 논리적 사고력 및 의사소통 능력),
+    # :2511 (수능최저 적용하지 않음), :2535, :4002 (면접 11.1.(일)), :4006 (답변 준비 8분, 면접 5분), :4013~4014 (출제 범위), :2395 (모집 합계 195).
+    # 2024~2026 기회균형 문항카드 3장 = 전 계열 1세트, 제시문 4/3/4편, 문제 2개, 60점과 40점 (은행 research/PASTEXAM_YEQ.md, _ops/understand/R3_gigyun_exam.md §2-3).
+    # passages 는 정수 하나만 받는다(허브 카드 %d). 2026 문항카드 값 4 를 싣고 2025 의 3편은 초안 각주가 밝힌다
+    "yonsei-eq": dict(univ="연세대학교", univ_short="연세대", track="학생부종합 기회균형", unit="전 계열", label="연세대 기회균형",
+        form="제시문 기반 면접", passages=4, prep_sec=480, answer_sec=300, questions=2, points="문항별 배점 공개(2024~2026 기출 문제 1 60점, 문제 2 40점)",
+        stage="1단계 서류 100%(3배수) → 2단계 1단계 성적 60% + 면접 40%, 수능 최저 없음", ratio_src="2027 수시모집요강 Ⅴ_5",
+        lang="한국어", scope="전 계열 공통 1세트(2024~2026 문항카드), 인문과 사회 제시문에 과학 제시문 1~2편 통합, 2027 요강상 수리, 통계 자료나 과학 관련 제시문 포함 가능",
+        eval_axes=["제시문 기반 논리적 사고력", "의사소통 능력"],
+        src=["2027 연세대 수시모집요강 Ⅴ_5(p.38) 전형 방법, Ⅸ_3(p.63) 답변 준비 8분과 면접 5분", "2027 연세대 수시모집요강 모집인원 표(기회균형 합계 195명)",
+             "연세대 선행학습영향평가 보고서 2024~2026 기회균형 문항카드(2024 카드 28, 2025 카드 18, 2026 카드 12)"],
+        status="on_sale", sku="pass-yonsei-eq", price=495000, single_price=33000, lecture_count=None, admission_quota=195, exam_date="2026-11-01"),
 }
 
 PASTEXAM = {
@@ -121,6 +137,9 @@ def bank_summary(code):
                          passage_tags=[p.get("tag") for p in (j.get("passages") or [])],
                          passage_langs=[p.get("lang") for p in (j.get("passages") or [])],
                          has_explanation=bool(j.get("explanation"))))
+    if not rows:
+        # 종전에는 빈 은행이 아래 most_common(1)[0] 에서 IndexError 로 죽었다. 어느 은행이 비었는지 말하고 멈춘다
+        sys.exit(f"facts_build: {code} 은행 세트 0건 ({', '.join(str(x) for x in dirs)}). 은행 sets/ 완주 뒤 다시 실행한다")
     sub = collections.Counter(r["subtype"] for r in rows)
     trk = collections.Counter(r["track"] for r in rows)
     diff = collections.Counter(r["difficulty"] for r in rows)

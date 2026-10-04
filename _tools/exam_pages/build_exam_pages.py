@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""전형별 면접 출제 유형·풀이법 상세면 8본 생성기 (2026-09-10).
+"""전형별 면접 출제 유형·풀이법 상세면 생성기 (2026-09-10 8본, 2026-10 연세대 기회균형 추가로 9본. 면 목록 = codes.py CODES).
    interview/<code>.html = tpl.html(자리표 28) × drafts/<code>.json(astra 집필, check_drafts.py 통과분) × facts/<code>.json(요강 실측 원장)
    + assets/exam_page.css(이 폴더의 exam_page.css 사본) + seo_manifest.json 8항목.
    셸(GNB·푸터·모바일 바)·SEO 머리·AEO 단락·FAQ JSON-LD 는 build_all.sh 후공정이 붙인다. 이 파일은 마크업과 manifest 값만 낸다.
@@ -25,7 +25,8 @@ CONTACT_HOURS = "전화가 연결되지 않으면 고객센터 1:1 문의로 남
 SAMPLE_NOTE_BANK = "아래 시험지는 연구소 은행의 자체 저작 예시 세트에서 제시문 일부와 발문을 옮긴 것입니다. 대학 기출 지문이 아닙니다."
 SAMPLE_NOTE_CARD = "아래 시험지는 대학이 공개한 선행학습영향평가 보고서의 2026 문항카드에서 옮긴 것입니다. 제시문은 요약이고 발문은 원문 그대로입니다."
 # 2026-09-22: 고른기회 2면과 미래캠퍼스 1면에 스튜디오 판매 안내 한 단락. 문면은 사실 진술 2문장 + 이용권 링크 하나.
-STUDIO_CTA_CODES = {"korea-eq-hum", "korea-eq-sci", "yonsei-mirae"}
+# 2026-10: 연세대 기회균형 1면 추가 (같은 단락, 인강 언급 없음)
+STUDIO_CTA_CODES = {"korea-eq-hum", "korea-eq-sci", "yonsei-mirae", "yonsei-eq"}
 STUDIO_CTA_NOTE = ('<p class="xunote">이 전형의 응시 단위가 면접 스튜디오에서 판매 중입니다. '
                    '혼자서도 응시부터 첨삭 세 단까지 완성합니다. '
                    '<a class="tlink" href="../studio.html#plans">이용권 보기 <span class="ar" aria-hidden="true">&rarr;</span></a></p>')
@@ -91,6 +92,15 @@ def spec_rows(f, notes, ratio_note_idx, opening):
         sup = f'<sup class="fn">{remap[fn]}</sup>' if fn else ""
         out.append(f'<div class="r"><dt>{k}</dt><dd>{v}{sup}</dd></div>')
     return "".join(out), [notes[i - 1] for i in used]
+
+def pending_drafts():
+    """은행 세트가 있어야 채우는 칸의 자리표시(codes.PENDING)가 남은 초안 목록 [(code, 개수)] (2026-10 연세대 기회균형)."""
+    out = []
+    for code, _, _ in EX.CODES:
+        raw = (D / "drafts" / f"{code}.json").read_text(encoding="utf-8")
+        if EX.PENDING in raw:
+            out.append((code, raw.count(EX.PENDING)))
+    return out
 
 def build_one(code, mod):
     d = json.loads((D / "drafts" / f"{code}.json").read_text(encoding="utf-8"))
@@ -210,6 +220,12 @@ def build_one(code, mod):
 
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument("--mod", default=MOD, choices=["xa", "xb", "xc"]); a = ap.parse_args()
+    # 자리표시가 남은 초안이 하나라도 있으면 어떤 면도 쓰기 전에 멈춘다 (부분 산출 금지)
+    left = pending_drafts()
+    if left:
+        sys.exit("build_exam_pages: 자리표시 " + EX.PENDING + " 가 남은 초안이 있어 멈춘다: "
+                 + ", ".join(f"drafts/{c}.json {n}곳" for c, n in left)
+                 + ". 은행 세트로 채우고 check_drafts.py 가 hard 0 일 때 다시 돈다")
     (ROOT / "interview").mkdir(exist_ok=True)
     CSS_DST.write_text(CSS_SRC.read_text(encoding="utf-8"), encoding="utf-8")
     m = C.load_manifest(); changed = 0
@@ -223,7 +239,7 @@ def main():
         if ent != entry: ent.clear(); ent.update(entry); changed += 1
         print(f"{rel}: {len(page):,}자 {'변경' if before != page else '동일'} · manifest {'갱신' if ent == entry else ''}")
     C.save_manifest(m)
-    print(f"build_exam_pages: 8면 · manifest 갱신 {changed}건 · css {CSS_DST.relative_to(ROOT)} · mod {a.mod}")
+    print(f"build_exam_pages: {len(EX.CODES)}면 · manifest 갱신 {changed}건 · css {CSS_DST.relative_to(ROOT)} · mod {a.mod}")
 
 if __name__ == "__main__":
     main()

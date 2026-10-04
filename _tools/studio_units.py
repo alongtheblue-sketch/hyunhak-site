@@ -47,7 +47,7 @@ def units():
 
 
 def options():
-    """구매 블록 select#studio-unit 의 option. 카드 01~12 순서(units() 의 on_sale 행), 문안 = 카드 표제(critic M1 라벨 = 목적지).
+    """구매 블록 select#studio-unit 의 option. 카드 01~13 순서(units() 의 on_sale 행), 문안 = 카드 표제(critic M1 라벨 = 목적지).
     2026-09-23 수리: 템플릿에 option 5개가 하드코딩되어 미래캠 5, 고른기회 2 카드의 「구매하러 가기」가 직전 단위 SKU 를 담았다
     (_design/studio_units_20260923/FINDINGS.md §1). 판매 단위 집합이 assets/data/sets.json 의 sku 보유 단위와 다르면 빌드가 멈춘다."""
     rows = [row for row in units() if row["spec"]["status"] == "on_sale"]
@@ -56,8 +56,8 @@ def options():
     sold = [unit["code"] for unit in catalog if unit.get("sku")]
     if len(codes) != len(set(codes)) or sorted(codes) != sorted(sold):
         raise ValueError(f"studio select: 카드 판매 단위 {codes} != sets.json sku 보유 단위 {sold}")
-    if len(codes) != 12:
-        raise ValueError(f"studio select: 판매 단위 {len(codes)}개, 12개 기대")
+    if len(codes) != 13:   # 2026-10 연세대 기회균형 추가로 12 에서 13 으로
+        raise ValueError(f"studio select: 판매 단위 {len(codes)}개, 13개 기대")
     return "".join(f'<option value="{html.escape(row["code"], quote=True)}">{html.escape(row["label"])}</option>'
                    for row in rows)
 
