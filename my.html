@@ -509,8 +509,9 @@ document.addEventListener('DOMContentLoaded', async function(){
   // 유료 응시권이 살아 있으면 체험 응시 카드를 내지 않는다: 인자 없는 토큰 요청은 서버(trial.js)가 유료권을 먼저 골라 체험 대신 유료 횟수를 쓴다 (astra r2)
   var hasLiveStudio = singles.some(function(e){ return (e.kind==='studio_school'||e.kind==='studio_passage') && !(e.expires_at && Date.parse(e.expires_at)<=Date.now()) && (e.kind==='studio_school' || e.uses_left==null || HH.intIn(e.uses_left,0,9999,0)>0); });
   if(st.trial_available && !hasLiveStudio)
-    rows.push('<div class="subcard"><div><p class="nm">스튜디오 체험 응시</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다.</p></div>'
-      +'<div class="ops"><button type="button" class="btn sm sgo">체험 응시</button></div></div>');
+    // 마이크 점검 링크 (2026-10-07, 건우 「기기 음량 확인을 반드시 해볼 수 있어야」): 로그인 없이 열리고 체험 1회를 쓰지 않는다
+    rows.push('<div class="subcard"><div><p class="nm">스튜디오 체험 응시</p><p class="st">신규 회원 무료 응시 1회가 남아 있습니다. 응시 전에 마이크 점검으로 기기 음량을 확인해 주세요. 점검은 응시 기회를 쓰지 않습니다.</p></div>'
+      +'<div class="ops"><a class="btn ghost sm" href="https://studio.hyunhak.com/mic" target="_blank" rel="noopener">마이크 점검</a><button type="button" class="btn sm sgo">체험 응시</button></div></div>');
   // 강의 권리만 있는 회원에게 "이용권이 없습니다" 를 보이면 산 것이 사라진 것으로 읽힌다.
   // 빈 상태는 보유한 상품 권리 전체로 판정한다 (Codex r1 #14)
   if(!rows.length&&lectureEnts.length)
