@@ -599,7 +599,8 @@
     await promoReady;   // 행사 판정을 기다린다. 미확정이면 행사 카드만 빠진다
     let notices = [];
     try { const data = await api("/api/notices/active?kind=popup"); notices = Array.isArray(data) ? data : (data.items || data.notices || []); } catch {}
-    return openStage(staticCards().concat(pickPopups(notices).map(noticeCard)));
+    // 서버 공지 카드를 앞에 세운다 (2026-10-07 건우): 기한 있는 공지가 상시 의뢰 카드 뒤에서 8초 자동 넘김을 기다리지 않게
+    return openStage(pickPopups(notices).map(noticeCard).concat(staticCards()));
   }
   // 구 이름 둘(showPopup = 공지, showPromoPopup = 행사)은 같은 무대를 연다. 한 번만 돈다.
   function showPromoPopup() {
