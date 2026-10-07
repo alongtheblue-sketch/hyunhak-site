@@ -1,6 +1,6 @@
 {
  "generated_at": "2026-09-02T00:00:00Z",
- "catalog_hash": "0770232a2779eae1444c44ccbb37fa249670e8f9d9b5f10a7e1345bbe4e6d74d",
+ "catalog_hash": "4ffcb8433a3584945d0f72e1f94d51966dad2a14a58ab2b0a3fae83218c82989",
  "units": [
   {
    "code": "korea-hum",
@@ -7110,6 +7110,560 @@
      "questions": 3,
      "prep_seconds": 720,
      "interview_seconds": 360,
+     "explain_script": false
+    }
+   ]
+  },
+  {
+   "code": "yonsei-eq",
+   "sku": "pass-yonsei-eq",
+   "univ": "연세대학교",
+   "univ_short": "연세대",
+   "track": "2027 학생부종합 기회균형 | 전 계열",
+   "label": "연세대 기회균형",
+   "price": 495000,
+   "single_price": 33000,
+   "set_count": 30,
+   "lectures": false,
+   "sets": [
+    {
+     "id": "yonsei_eq_2027_01",
+     "n": 1,
+     "title": "코일 속 자석과 공영 주차장 민원",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 3,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 12
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_02",
+     "n": 2,
+     "title": "꽃눈과 도시의 규정",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 2,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_03",
+     "n": 3,
+     "title": "자주색 양배추 즙과 나이만 다른 이력서",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 3,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_04",
+     "n": 4,
+     "title": "관측 기록과 경기 조사",
+     "difficulty": "최상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_05",
+     "n": 5,
+     "title": "어린 철새의 방향 찾기와 공정함의 판단",
+     "difficulty": "최상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_06",
+     "n": 6,
+     "title": "자명종과 지역 신문",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 2,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_07",
+     "n": 7,
+     "title": "금속판의 반응 순서와 회의의 발언 시간",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 2,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_08",
+     "n": 8,
+     "title": "빙하의 움직임과 생활의 변화",
+     "difficulty": "최상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_09",
+     "n": 9,
+     "title": "귀리 싹의 끝과 주민 참여 예산",
+     "difficulty": "최상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_10",
+     "n": 10,
+     "title": "도가니 속 탄산 칼슘과 의원 명단",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 13
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_11",
+     "n": 11,
+     "title": "색 띠 바깥의 온도계와 월급날의 외식",
+     "difficulty": "최상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 14
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_12",
+     "n": 12,
+     "title": "병 속의 변화와 상가의 대응",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 2,
+      "과제_구조": 4,
+      "계열_전이": 2,
+      "합계": 10
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_13",
+     "n": 13,
+     "title": "기업 규모별 이직 경로",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_14",
+     "n": 14,
+     "title": "대형 마트 입점의 이익과 비용",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_15",
+     "n": 15,
+     "title": "두 나라의 관세 조치",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_16",
+     "n": 16,
+     "title": "방송 영상물의 수출입과 문화 교류",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_17",
+     "n": 17,
+     "title": "가계 지출 조사",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_18",
+     "n": 18,
+     "title": "교통 투자의 순서와 도시 상권의 변화",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_19",
+     "n": 19,
+     "title": "문화 이용권 사용 조사",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 10
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_20",
+     "n": 20,
+     "title": "카드 포인트 적립과 결제 수단",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 12
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_21",
+     "n": 21,
+     "title": "생활 체육 사업의 예산과 이용",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 11
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_22",
+     "n": 22,
+     "title": "금리 인상과 주거비 부담",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 4,
+      "수치_부하": 4,
+      "과제_구조": 1,
+      "계열_전이": 4,
+      "합계": 13
+     },
+     "passages": 3,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_23",
+     "n": 23,
+     "title": "고기즙 플라스크, 보행자 버튼, 직접 고른 복권",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 4,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_24",
+     "n": 24,
+     "title": "지난 일에 관한 설명",
+     "difficulty": "하",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_25",
+     "n": 25,
+     "title": "위성의 가려짐과 나누기 게임",
+     "difficulty": "하",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_26",
+     "n": 26,
+     "title": "연소 실험과 상자 선택",
+     "difficulty": "하",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_27",
+     "n": 27,
+     "title": "포신의 열과 글씨 판정",
+     "difficulty": "상",
+     "axes": {
+      "개념_부하": 3,
+      "수치_부하": 4,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 11
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_28",
+     "n": 28,
+     "title": "알려진 조건과 선택",
+     "difficulty": "중",
+     "axes": {
+      "개념_부하": 2,
+      "수치_부하": 3,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 9
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_29",
+     "n": 29,
+     "title": "하늘에서 떨어진 돌과 성격 유형 묘사",
+     "difficulty": "하",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
+     "explain_script": false
+    },
+    {
+     "id": "yonsei_eq_2027_30",
+     "n": 30,
+     "title": "결정을 다시 검토하는 상황",
+     "difficulty": "하",
+     "axes": {
+      "개념_부하": 1,
+      "수치_부하": 2,
+      "과제_구조": 1,
+      "계열_전이": 3,
+      "합계": 7
+     },
+     "passages": 4,
+     "questions": 2,
+     "prep_seconds": 480,
+     "interview_seconds": 300,
      "explain_script": false
     }
    ]

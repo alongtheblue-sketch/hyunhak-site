@@ -3159,6 +3159,7 @@
           "interview/yonsei-sci.html",
           "interview/yonsei-intl.html",
           "interview/yonsei-mirae.html",
+          "interview/yonsei-eq.html",
           "interview/korea-hum.html",
           "interview/korea-sci.html",
           "interview/korea-eq-hum.html",
@@ -3983,6 +3984,53 @@
         "대입 면접컨설팅",
         "면접 꼬리질문"
       ]
+    },
+    "interview/yonsei-eq.html": {
+      "title": "연세대 기회균형 면접 전 계열 | 2027 출제 유형과 기출 풀이법 | 현학적 연구소",
+      "description": "연세대 기회균형 면접은 제시문을 읽고 답하는 면접입니다. 답변 준비 8분과 면접 5분이 주어집니다. 2024~2026 기출은 전 계열 1세트에 문제 2개였고 과학 제시문이 함께 나왔습니다.",
+      "answer": "연세대 기회균형 면접은 제시문 기반 면접입니다. 답변 준비 8분과 면접 5분이 주어집니다.",
+      "keywords": [
+        "연세대 기회균형 면접",
+        "연세대학교 기회균형 면접",
+        "연세대 기회균형전형 면접",
+        "연세대학교 학생부종합 기회균형 면접",
+        "연세대 기회균형 면접 기출",
+        "연세대 기회균형 제시문 면접",
+        "연세대 기회균형 면접 시간",
+        "연세대 기회균형 면접 문제",
+        "연세대 기회균형 면접 준비",
+        "연세대 기회균형 과학 제시문",
+        "2027 연세대 기회균형 면접",
+        "연세대 기회균형 활동우수형 면접 차이"
+      ],
+      "type": "article",
+      "priority": 0.8,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "연세대 기회균형",
+          "path": "/interview/yonsei-eq.html"
+        }
+      ],
+      "schema": {
+        "about": "연세대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".xspec"
+      ],
+      "date_modified": "2026-10-07",
+      "date_published": "2026-10-07"
     }
   }
 }
