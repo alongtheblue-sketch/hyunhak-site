@@ -1,7 +1,7 @@
 {
   "_doc": "공지 띠 원천 (2026-10-07 건우). 할인 행사(promo.json)와 별개다. apply_promo.py 가 pages 면의 <main 바로 앞에 aside[data-notice] 한 줄을 넣고, 빌드 시각이 ends_at 을 지나면 걷는다. 빌드 전 지면은 블록 안 인라인 스크립트가 ends_at 뒤에 숨긴다. data-promo 를 달지 않는다: app.js 가 서버 행사 판정이 없으면 data-promo 면을 숨기기 때문이다. link 는 절대 URL 이면 새 탭, 상대경로면 뿌리 기준 같은 탭.",
   "id": "ntc_1007_sangmyung",
-  "published": true,
+  "published": false,
   "text": "상명대 약술형 논술 1일 특강이 10월 9일 금요일 오후 3시에 열립니다.",
   "link": "https://iruriedu.kr/news/yaksul-sangmyung-2026/",
   "link_label": "특강 안내 보기",
