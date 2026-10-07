@@ -1,0 +1,1035 @@
+{
+ "code": "yonsei-eq",
+ "generated_at": "2026-09-10",
+ "spec": {
+  "univ": "연세대학교",
+  "univ_short": "연세대",
+  "track": "학생부종합 기회균형",
+  "unit": "전 계열",
+  "label": "연세대 기회균형",
+  "form": "제시문 기반 면접",
+  "passages": 4,
+  "prep_sec": 480,
+  "answer_sec": 300,
+  "questions": 2,
+  "points": "문항별 배점 공개(2024~2026 기출 문제 1 60점, 문제 2 40점)",
+  "stage": "1단계 서류 100%(3배수) → 2단계 1단계 성적 60% + 면접 40%, 수능 최저 없음",
+  "ratio_src": "2027 수시모집요강 Ⅴ_5",
+  "lang": "한국어",
+  "scope": "전 계열 공통 1세트(2024~2026 문항카드), 인문과 사회 제시문에 과학 제시문 1~2편 통합, 2027 요강상 수리, 통계 자료나 과학 관련 제시문 포함 가능",
+  "eval_axes": [
+   "제시문 기반 논리적 사고력",
+   "의사소통 능력"
+  ],
+  "src": [
+   "2027 연세대 수시모집요강 Ⅴ_5(p.38) 전형 방법, Ⅸ_3(p.63) 답변 준비 8분과 면접 5분",
+   "2027 연세대 수시모집요강 모집인원 표(기회균형 합계 195명)",
+   "연세대 선행학습영향평가 보고서 2024~2026 기회균형 문항카드(2024 카드 28, 2025 카드 18, 2026 카드 12)"
+  ],
+  "status": "on_sale",
+  "sku": "pass-yonsei-eq",
+  "price": 495000,
+  "single_price": 33000,
+  "lecture_count": null,
+  "admission_quota": 195,
+  "exam_date": "2026-11-01"
+ },
+ "bank": {
+  "dir": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets",
+  "n_sets": 30,
+  "subtype": {
+   "2026형": 12,
+   "2025형": 10,
+   "2024형": 8
+  },
+  "track": {
+   "2027 학생부종합 기회균형 | 전 계열": 30
+  },
+  "difficulty": {
+   "상": 12,
+   "중": 8,
+   "최상": 5,
+   "하": 5
+  },
+  "verb_tail": {
+   "설명하시오": 40,
+   "논하시오": 10,
+   "평가하시오": 10
+  },
+  "passages_mode": 4,
+  "questions_mode": 2,
+  "sets": [
+   {
+    "id": "yonsei_eq_2027_01",
+    "title": "코일 속 자석과 공영 주차장 민원",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 전류의 발생 과정이나 사회 문제의 인식 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 물리학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_01.json"
+   },
+   {
+    "id": "yonsei_eq_2027_02",
+    "title": "꽃눈과 도시의 규정",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 개화 시기의 결정 과정이나 사회 규칙의 정착 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 식물학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_02.json"
+   },
+   {
+    "id": "yonsei_eq_2027_03",
+    "title": "자주색 양배추 즙과 나이만 다른 이력서",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 용액 성질의 판정 과정이나 차별 여부의 판단 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 화학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_03.json"
+   },
+   {
+    "id": "yonsei_eq_2027_04",
+    "title": "관측 기록과 경기 조사",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 흑점 관측 결과의 해석 과정이나 사회적 판단의 형성 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 천문학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_04.json"
+   },
+   {
+    "id": "yonsei_eq_2027_05",
+    "title": "어린 철새의 방향 찾기와 공정함의 판단",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 방향 기준의 형성 과정이나 공정함 판단 기준의 형성 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 생물학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_05.json"
+   },
+   {
+    "id": "yonsei_eq_2027_06",
+    "title": "자명종과 지역 신문",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 소리의 전달 과정이나 공동체 소식의 전달 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 물리학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_06.json"
+   },
+   {
+    "id": "yonsei_eq_2027_07",
+    "title": "금속판의 반응 순서와 회의의 발언 시간",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 금속 반응 순서의 결정 과정이나 발언권의 형성 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 화학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_07.json"
+   },
+   {
+    "id": "yonsei_eq_2027_08",
+    "title": "빙하의 움직임과 생활의 변화",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 빙하 움직임의 확인 과정이나 사회 가치의 변화 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 지질학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_08.json"
+   },
+   {
+    "id": "yonsei_eq_2027_09",
+    "title": "귀리 싹의 끝과 주민 참여 예산",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 빛 자극에 대한 반응 과정이나 현장 의견의 반영 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 생물학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_09.json"
+   },
+   {
+    "id": "yonsei_eq_2027_10",
+    "title": "도가니 속 탄산 칼슘과 의원 명단",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 물질에 관한 판단 과정이나 의회에 관한 판단 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 화학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_10.json"
+   },
+   {
+    "id": "yonsei_eq_2027_11",
+    "title": "색 띠 바깥의 온도계와 월급날의 외식",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 물체를 데우는 빛의 확인 과정이나 개인 행동의 해석 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 과학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "최상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_11.json"
+   },
+   {
+    "id": "yonsei_eq_2027_12",
+    "title": "병 속의 변화와 상가의 대응",
+    "subtype": "2026형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "제시문 [가], [나], [다] 각각에서 구름의 생성 과정이나 집단 행동의 형성 과정을 비교하고, 그 차이를 설명하시오.",
+     "제시문 [가]의 기상학자가 제시문 [라]의 탐구 방법을 택했을 때 처음에 세웠을 가설은 무엇이며, 만약 실험 도중 가설을 수정하였다면 새로운 가설은 무엇일지 설명하시오. 제시문 [가]의 실험에서 발생할 수 있는 결과 중 제시문 [가]와 다른 결론을 얻을 수 있는 것은 무엇이 있을지 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_12.json"
+   },
+   {
+    "id": "yonsei_eq_2027_13",
+    "title": "기업 규모별 이직 경로",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 추적 조사 결과를 [가]의 동일 보수 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘혼합층’과 ‘수온 약층’ 각각의 관점에서 [나]의 추적 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_13.json"
+   },
+   {
+    "id": "yonsei_eq_2027_14",
+    "title": "대형 마트 입점의 이익과 비용",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 대형 마트 입점 조사 결과를 [가]의 수익자 부담 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘상리 공생’과 ‘기생’ 각각의 관점에서 [나]의 대형 마트 입점 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_14.json"
+   },
+   {
+    "id": "yonsei_eq_2027_15",
+    "title": "두 나라의 관세 조치",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 관세 영향 조사 결과를 [가]의 상호주의 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘작용 반작용’과 ‘가속도 법칙’ 각각의 관점에서 [나]의 관세 영향 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_15.json"
+   },
+   {
+    "id": "yonsei_eq_2027_16",
+    "title": "방송 영상물의 수출입과 문화 교류",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 영상물 수출입 조사 결과를 [가]의 대등 교류 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘전기 음성도’와 ‘극성 공유 결합’ 각각의 관점에서 [나]의 영상물 수출입 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_16.json"
+   },
+   {
+    "id": "yonsei_eq_2027_17",
+    "title": "가계 지출 조사",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 가계 지출 조사 결과를 [가]의 소비 과세 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘기초 대사량’과 ‘활동 대사량’ 각각의 관점에서 [나]의 가계 지출 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_17.json"
+   },
+   {
+    "id": "yonsei_eq_2027_18",
+    "title": "교통 투자의 순서와 도시 상권의 변화",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 상권 매출 조사 결과를 [가]의 수요 우선 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘용승’과 ‘엘니뇨’ 각각의 관점에서 [나]의 상권 매출 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_18.json"
+   },
+   {
+    "id": "yonsei_eq_2027_19",
+    "title": "문화 이용권 사용 조사",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 이용권 사용 조사 결과를 [가]의 동일 조건 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘자유 낙하’와 ‘공기 저항’ 각각의 관점에서 [나]의 이용권 사용 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_19.json"
+   },
+   {
+    "id": "yonsei_eq_2027_20",
+    "title": "카드 포인트 적립과 결제 수단",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 포인트 적립 조사 결과를 [가]의 실적 비례 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘산화’와 ‘환원’ 각각의 관점에서 [나]의 포인트 적립 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_20.json"
+   },
+   {
+    "id": "yonsei_eq_2027_21",
+    "title": "생활 체육 사업의 예산과 이용",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 운동 실천 조사 결과를 [가]의 균형 투자 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘한정 요인’과 ‘보상점’ 각각의 관점에서 [나]의 운동 실천 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_21.json"
+   },
+   {
+    "id": "yonsei_eq_2027_22",
+    "title": "금리 인상과 주거비 부담",
+    "subtype": "2025형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 3,
+    "n_questions": 2,
+    "q_texts": [
+     "[나]에 제시된 주거비 부담 조사 결과를 [가]의 자기 책임 기준에 비추어 논하시오.",
+     "[다]에 제시된 ‘잠열’과 ‘위험 반원’ 각각의 관점에서 [나]의 주거비 부담 조사 결과를 평가하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_22.json"
+   },
+   {
+    "id": "yonsei_eq_2027_23",
+    "title": "고기즙 플라스크, 보행자 버튼, 직접 고른 복권",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "원인을 확인하는 방식에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 번호를 직접 고른 참가자가 더 높은 값을 부르는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_23.json"
+   },
+   {
+    "id": "yonsei_eq_2027_24",
+    "title": "지난 일에 관한 설명",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "지난 일을 해석하는 방식에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 결말을 들은 사람들이 그 결말에 더 높은 확률을 매기는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_24.json"
+   },
+   {
+    "id": "yonsei_eq_2027_25",
+    "title": "위성의 가려짐과 나누기 게임",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "판단의 근거로 삼는 것에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 사람이 정한 제안을 컴퓨터가 정한 제안보다 더 자주 거절하는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_25.json"
+   },
+   {
+    "id": "yonsei_eq_2027_26",
+    "title": "연소 실험과 상자 선택",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "눈앞의 경험을 대하는 태도에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 직접 눌러 본 집단이 위험 상자를 더 많이 고르는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_26.json"
+   },
+   {
+    "id": "yonsei_eq_2027_27",
+    "title": "포신의 열과 글씨 판정",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "판단을 믿게 되는 과정에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 결과를 확인받지 않은 집단이 실제보다 높게 확신하는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "상",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_27.json"
+   },
+   {
+    "id": "yonsei_eq_2027_28",
+    "title": "알려진 조건과 선택",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "알 수 없는 것을 대하는 태도에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 보상 색이 달라져도 더 많은 참가자가 갑 상자를 고르는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "중",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_28.json"
+   },
+   {
+    "id": "yonsei_eq_2027_29",
+    "title": "하늘에서 떨어진 돌과 성격 유형 묘사",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "어긋나는 것을 대하는 태도에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 긴 묘사를 읽은 집단이 두 조건이 겹친 쪽을 더 자주 고르는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_29.json"
+   },
+   {
+    "id": "yonsei_eq_2027_30",
+    "title": "결정을 다시 검토하는 상황",
+    "subtype": "2024형",
+    "track": "2027 학생부종합 기회균형 | 전 계열",
+    "prep_seconds": 480,
+    "interview_seconds": 300,
+    "n_passages": 4,
+    "n_questions": 2,
+    "q_texts": [
+     "기존 생각을 바꾸는 계기에 있어서 제시문 [가], [나], [다]를 비교하여 설명하시오.",
+     "제시문 [라]에서 직접 결정 집단이 사전 규칙 집단보다 처음 선택을 유지한 비율이 높게 나타나는 이유를 제시문 [다]의 내용과 연관 지어 설명하시오."
+    ],
+    "q_points": [
+     60,
+     40
+    ],
+    "difficulty": "하",
+    "passage_tags": [
+     "[가]",
+     "[나]",
+     "[다]",
+     "[라]"
+    ],
+    "passage_langs": [
+     null,
+     null,
+     null,
+     null
+    ],
+    "has_explanation": true,
+    "file": "/Users/gregory/Workspace/yonsei_eq_interview_bank_2027/sets/yonsei_eq_2027_30.json"
+   }
+  ]
+ },
+ "pastexam": null
+}
