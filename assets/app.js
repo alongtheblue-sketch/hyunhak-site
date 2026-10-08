@@ -36,7 +36,8 @@
   // localStorage 는 사용자가 고칠 수 있다. 읽는 즉시 스키마를 강제해 화면과 주문 body 양쪽을 지킨다.
   // 규격에 안 맞는 줄은 통째로 버린다 (수량에 문자열이 박혀 innerHTML 로 흘러가는 경로 차단)
   // 1개 한정 SKU (서버 pay.js: digital_file, bundle_view, bundle_file, lecture_common 은 qty≠1 → 400). cart.html single() 과 같은 집합
-  const SINGLE_SKU = /^(guide-(all-view|all-pdf|.+-pdf)|lecture-common)$/;
+  // svc-* = 회원 1명에게 담기 링크로 보내는 1:1 서비스 상품(type service, 2026-10-08). 서버는 수량을 막지 않으므로 화면에서 1로 묶는다
+  const SINGLE_SKU = /^(guide-(all-view|all-pdf|.+-pdf)|lecture-common|svc-.+)$/;
   function normLine(x) {
     if (!x || typeof x !== "object" || Array.isArray(x)) return null;
     const sku = String(x.sku == null ? "" : x.sku);
