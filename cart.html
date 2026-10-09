@@ -209,7 +209,8 @@ document.addEventListener('DOMContentLoaded', function(){
   // 1개 한정 상품 (서버도 400 으로 막지만, 화면에서 수량 조절을 없애 마찰을 줄인다)
   // = PDF 소장판(guide-*-pdf)과 전권 번들(guide-all-*). 권리가 계정 결속이라 2개가 의미 없다
   // 세트 결속 낱권(passage-single + set_id)도 줄마다 1 (서버가 qty 1 강제, 세트마다 별 줄)
-  function single(it){ return /^(guide-(all-view|all-pdf|.+-pdf)|lecture-common)$/.test(String(it.sku||'')) || (String(it.sku||'')==='passage-single' && !!it.set_id); }   // lecture-common 도 1개 (pay.js GS-8e)
+  function single(it){ return /^(guide-(all-view|all-pdf|.+-pdf)|lecture-common|svc-.+)$/.test(String(it.sku||'')) || (String(it.sku||'')==='passage-single' && !!it.set_id); }   // lecture-common 도 1개 (pay.js GS-8e), svc-* 1:1 서비스도 1개
+  function svc(it){ return /^svc-/.test(String(it.sku||'')); }
   function render(){
     var items=HH.cart(), rows=document.getElementById('cartRows');
     var fixed=false;
@@ -223,9 +224,9 @@ document.addEventListener('DOMContentLoaded', function(){
     rows.innerHTML=items.map(function(it,i){
       return '<li class="line">'+thumb(it)
         +'<div><p class="t">'+esc(it.title)+'</p>'
-        +'<p class="m">'+(it.ship?'실물 배송':'디지털, 결제 즉시 열림')+(it.set_id?', 응시 5회<span class="mono">'+esc(it.set_id)+'</span>':'')+'</p>'
+        +'<p class="m">'+(it.ship?'실물 배송':svc(it)?'1:1 진행, 일정은 따로 안내':'디지털, 결제 즉시 열림')+(it.set_id?', 응시 5회<span class="mono">'+esc(it.set_id)+'</span>':'')+'</p>'
         +'<div class="ops">'+(single(it)
-          ?'<span class="qty" aria-label="수량">'+(it.set_id?'1개, 지문 1편':'1개, 계정당 1개')+'</span>'
+          ?'<span class="qty" aria-label="수량">'+(it.set_id?'1개, 지문 1편':svc(it)?'1개':'1개, 계정당 1개')+'</span>'
           :'<span class="qty"><button type="button" data-i="'+i+'" data-d="-1" aria-label="수량 줄이기">&minus;</button><span>'+it.qty+'</span><button type="button" data-i="'+i+'" data-d="1" aria-label="수량 늘리기">+</button></span>')
         +'<button type="button" class="tlink" data-rm="'+i+'">빼기</button></div></div>'
         +'<p class="p">'+HH.won(it.price*it.qty)+'</p></li>';
@@ -262,6 +263,34 @@ document.addEventListener('DOMContentLoaded', function(){
   }
   render();
   document.addEventListener('hh:promo', render);   // 할인 행사 판정 도착 시 단가 재렌더 (2026-09-07)
+  // 담기 링크 (2026-10-08): cart.html?add=svc-... 로 1:1 서비스 상품을 담는다. 관리자가 회원에게 보내는 링크다.
+  // 바로 결제 링크: cart.html?buy=svc-... 는 담은 뒤 결제 화면으로 넘긴다. 결제 화면은 장바구니 전체를 결제하므로
+  // 다른 상품이 함께 담겨 있으면 넘기지 않고 여기서 안내한다 (모르는 사이 함께 결제되는 일을 막는다).
+  // 상품명과 가격은 쿼리를 믿지 않고 /api/products 에서 읽는다. 결제 금액은 서버가 다시 센다.
+  // 쿼리는 바로 지워 새로고침, 뒤로 가기로 다시 담기지 않게 한다 (svc 는 1개 한정이라 다시 담겨도 수량은 그대로다).
+  (function(){
+    var sku=null, buy=false;
+    try{ var qs=new URLSearchParams(location.search); buy=!!qs.get('buy'); sku=qs.get('buy')||qs.get('add'); }catch(e){}
+    if(!sku) return;
+    try{ history.replaceState(null,'',location.pathname+location.hash); }catch(e){}
+    var box=document.getElementById('cartStale');
+    function say(t){ box.textContent=t; box.hidden=false; }
+    if(!/^svc-[a-z0-9-]{1,60}$/.test(sku)){ say('담기 링크가 올바르지 않습니다. 받으신 링크를 다시 확인해 주세요.'); return; }
+    HH.api('/api/products').then(function(d){
+      var p=((d&&d.products)||[]).filter(function(x){ return x.sku===sku; })[0];
+      if(!p||p.status!=='active'){ say('판매가 끝났거나 찾을 수 없는 상품입니다. admin@hyunhak.com 으로 문의해 주세요.'); return; }
+      var r=HH.addToCart({ sku:p.sku, title:p.title, price:p.price, list_price:p.price, ship:!!p.requires_shipping });
+      if(r.ok && buy){
+        var others=HH.cart().filter(function(x){ return x.sku!==p.sku; }).length;
+        if(!others){ location.replace('checkout.html'); return; }   // replace = 결제 화면에서 뒤로 가도 이 링크로 돌아오지 않는다
+        render();
+        say(p.title+' 상품을 담았습니다. 장바구니에 다른 상품 '+others+'개가 함께 있어 결제 화면으로 바로 넘어가지 않았습니다. 함께 결제하지 않을 상품은 빼고 결제하기를 눌러 주세요.');
+        return;
+      }
+      render();
+      say(r.ok ? (r.already ? p.title+' 상품은 이미 담겨 있습니다.' : p.title+' 상품을 장바구니에 담았습니다.') : r.message);
+    }).catch(function(){ say('상품 정보를 불러오지 못했습니다. 잠시 뒤 링크를 다시 열어 주세요.'); });
+  })();
 });
 </script>
 </body>
