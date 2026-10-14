@@ -58,7 +58,14 @@ def options():
         raise ValueError(f"studio select: 카드 판매 단위 {codes} != sets.json sku 보유 단위 {sold}")
     if len(codes) != 13:   # 2026-10 연세대 기회균형 추가로 12 에서 13 으로
         raise ValueError(f"studio select: 판매 단위 {len(codes)}개, 13개 기대")
-    return "".join(f'<option value="{html.escape(row["code"], quote=True)}">{html.escape(row["label"])}</option>'
+    # data-lv = 그 단위의 난이도별 세트 수 (낱권 난이도 바로가기, 2026-10-14). 세트가 없는 난이도는 싣지 않는다
+    levels = ("하", "중", "상", "최상")
+    lv = {}
+    for unit in catalog:
+        counts = [sum(1 for item in unit["sets"] if item["difficulty"] == level) for level in levels]
+        lv[unit["code"]] = ",".join(f"{level}:{n}" for level, n in zip(levels, counts) if n)
+    return "".join(f'<option value="{html.escape(row["code"], quote=True)}" data-lv="{html.escape(lv[row["code"]], quote=True)}">'
+                   f'{html.escape(row["label"])}</option>'
                    for row in rows)
 
 
@@ -82,11 +89,12 @@ def card(row, prefix="../", purchase=False, number=None):
     if not opening:
         # ⑥ 라벨 = 목적지 (critic M1). 소개면은 구매면으로 나가고, 구매면은 같은 면의 세트 표로 간다.
         # 정적 빌드에는 보유 판정이 없으므로 「응시실」은 쓰지 않는다 (IA2 §5, 2026-09-11 결재 C).
-        go_key = "r3_unit_sets" if purchase else "r3_unit_pass"
+        # 2026-10-14 낱권 가시성: 두 면 모두 세트 표로 가는 링크를 "세트 1편씩 고르기" 로 부른다(고객이 전권만 있는 줄 알았다).
+        # 구매면 채움 버튼은 무엇을 담는지 문면에 적는다(전권 담기).
         room_attr = f' data-unit-go="{code}"' if purchase else ""
         actions += (f'<a class="btn ghost sm" href="{prefix}studio.html?unit={code}"{room_attr}>'
-                    f'{esc(copy_text(go_key))}</a>')
-        actions += (f'<button type="button" class="btn sm" data-r3-unit-cart>{esc(copy_text("add"))}</button>'
+                    f'{esc(copy_text("r3_unit_single"))}</a>')
+        actions += (f'<button type="button" class="btn sm" data-r3-unit-cart>{esc(copy_text("r3_unit_add_pass"))}</button>'
                     # 소개면 ⑦ 은 담지 않고 구매 블록으로 옮기기만 한다(g①) — 문면도 이동 행동으로 (critic M8, IA2 §5)
                     if purchase else f'<a class="btn sm" href="#buy" data-r3-unit-buy="{code}">{esc(copy_text("r3_unit_go_buy"))}</a>')
     return (f'<article class="unit r3-unit{" r3-unit-opening" if opening else ""}" id="u-{code}" data-r3-unit="{code}">'
@@ -94,7 +102,8 @@ def card(row, prefix="../", purchase=False, number=None):
             f'<div class="r3-unit-heading"><p class="uni">{esc(row["uni"])}</p>'
             f'<h3>{esc(row["title"])}</h3><span class="r3-unit-badge">{esc(badge)}</span></div>'
             f'<dl class="dl r3-unit-spec">{specs}</dl>'
-            f'<p class="r3-unit-note">{esc(note)}</p>'
+            # 구매면 판매 카드는 가격 줄이 "전권 30편" 을 말하므로 같은 뜻의 "지문 30편" 줄을 싣지 않는다 (2026-10-14 critic 7)
+            + ('' if purchase and not opening else f'<p class="r3-unit-note">{esc(note)}</p>')
             # 구매면은 JS 가 채우는 빈 슬롯, 소개면은 미출력 (critic M2). 소개면 가격 사본은 IA2 g② 커밋 d438cbe 에 있다
             + ('<div class="r3-unit-commerce"></div>' if purchase else '')
             + f'<div class="foot">{actions}</div></article>')

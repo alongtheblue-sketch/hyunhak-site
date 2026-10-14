@@ -1421,6 +1421,29 @@ html.ppop-open{overflow:hidden;scrollbar-gutter:stable}   /* 개폐 시 가로 �
 :where(body.v2) .r3-unit .foot{grid-column:1 / -1;grid-row:4;margin:0;align-self:end;justify-content:flex-end;gap:var(--s3);border-top:var(--rule-ui)}
 :where(body.v2) .r3-unit .foot :is(.btn,.tlink){display:inline-flex;align-items:center;min-height:var(--tap);white-space:normal;word-break:keep-all}
 :where(body.v2) .r3-unit .foot .tlink{min-width:var(--tap);justify-content:center}  /* 담기 tap 폭 (critic L1) */
+/* 2026-10-14 낱권 가시성: 카드 가격 두 줄(세트 1편씩, 전권)과 난이도 바로가기. 두 줄은 같은 크기로 둔다 */
+:where(body.v2) .r3-buyrow{display:grid;grid-template-columns:1fr auto;grid-template-areas:"k price" "sub price";column-gap:var(--s3);row-gap:2px;align-items:center;padding:var(--s2) 0;border-top:var(--rule-ui)}
+:where(body.v2) .r3-buyrow .k{grid-area:k;font-weight:600;color:var(--ink);font-size:var(--t-sm)}
+:where(body.v2) .r3-buyrow .sub{grid-area:sub;font-size:var(--t-xs);color:var(--gray);word-break:keep-all}
+:where(body.v2) .r3-unit-commerce .r3-buyrow .price{grid-area:price;align-self:center;justify-self:end}
+:where(body.v2) .r3-lvpick{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s1);margin:0 0 var(--s1)}
+:where(body.v2) .r3-lvpick .k{font-size:var(--t-xs);color:var(--gray);margin-right:var(--s1)}
+:where(body.v2) .r3-lvpick a{display:inline-flex;align-items:center;justify-content:center;gap:4px;min-height:var(--tap);min-width:var(--tap);padding:0 var(--s3);font-family:var(--mono);font-size:var(--t-xs);font-weight:500;color:var(--body);text-decoration:none;border-radius:var(--r-pill);box-shadow:inset 0 0 0 1px var(--hairs)}
+:where(body.v2) .r3-lvpick a:hover{box-shadow:inset 0 0 0 1px var(--ink);color:var(--ink)}
+:where(body.v2) :is(.r3-lvpick a,#lvChips button) .n{color:var(--gray);font-weight:400}
+:where(body.v2) #lvChips button[aria-pressed="true"] .n{color:inherit}
+:where(body.v2) #lvChips button:disabled{opacity:.4;cursor:default}
+:where(body.v2) [data-single-entry] .n{font-family:var(--mono);margin-left:4px}
+:where(body.v2) #sets .setnav{scroll-margin-top:calc(var(--hd-h-sm, 65px) + var(--s2))}
+@media (min-width:56.25rem){:where(body.v2) #sets .setnav{scroll-margin-top:calc(var(--hd-h, 72px) + var(--s3))}}
+:where(body.v2) .r2-single{display:flex;flex-direction:column;gap:2px}
+:where(body.v2) .r2-single small{font-size:var(--t-xs);color:var(--gray);line-height:var(--lh-ui)}
+:where(body.v2) .r3-buy .r3-lvpick{margin:0;padding:0 0 var(--s2) calc(var(--s2) + 13px)}
+@media (max-width:600px){
+  /* 좁은 폭: 라벨을 한 줄로 올려 난이도 칩 네 개가 한 줄에 서게 한다 (390px 에서 최상 칩이 둘째 줄로 밀렸다) */
+  :where(body.v2) .r3-lvpick .k{flex-basis:100%;margin:0}
+  :where(body.v2) .r3-lvpick a{padding:0 var(--s2)}
+}
 :where(body.v2) .r3-opening-links{margin-top:var(--s3);max-width:none}
 :where(body.v2) .r3-opening-links .tlink{display:inline-flex;align-items:center;min-height:var(--tap)}
 :where(body.v2) .xsoon .r3-opening-cta{gap:var(--s3);margin:0}

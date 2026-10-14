@@ -171,7 +171,7 @@ def main():
         bad.append("_tools/program_studio_v2.html select#studio-unit 이 __STUDIO_OPTIONS__ 자리표시가 아니다 (option 하드코딩 금지)")
     built = ROOT / "programs/studio.html"
     m = re.search(r'<select id="studio-unit">(.*?)</select>', built.read_text("utf-8"), re.S) if built.exists() else None
-    got = re.findall(r'<option value="([^"]+)">', m.group(1)) if m else []
+    got = re.findall(r'<option value="([^"]+)"[^>]*>', m.group(1)) if m else []   # data-lv 속성 허용 (2026-10-14)
     if got != SELECT_UNITS:
         bad.append(f"programs/studio.html select#studio-unit option = {got} != 판매 13단위(카드 순서)")
     cards = re.findall(r'data-r3-unit-buy="([^"]+)"', built.read_text("utf-8")) if built.exists() else []

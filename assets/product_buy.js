@@ -24,10 +24,31 @@
     cartLink.hidden = true;
   }
 
+  // 낱권 난이도 바로가기 (2026-10-14). 고른 단위 option 의 data-lv="하:5,중:10,..." 로 응시실 세트 표의 그 난이도로 보낸다.
+  // 세트가 없는 난이도는 option 에 실리지 않으므로 링크도 없다 (고른기회 하 0).
+  var LEVELS = ['하', '중', '상', '최상'];
+  var lvPick = block.querySelector('[data-lv-pick]');
+  function renderLvPick(option) {
+    if (!lvPick || isGuide) return;
+    lvPick.querySelectorAll('a').forEach(function (a) { a.remove(); });
+    String(option.dataset && option.dataset.lv || '').split(',').forEach(function (pair) {
+      var kv = pair.split(':'), level = kv[0], n = parseInt(kv[1], 10);
+      if (LEVELS.indexOf(level) < 0 || !(n > 0)) return;
+      var a = document.createElement('a');
+      a.href = '../studio.html?unit=' + encodeURIComponent(option.value) + '&lv=' + encodeURIComponent(level) + '#sets';
+      a.setAttribute('aria-label', '난이도 ' + level + ', 세트 ' + n + '편 보기');
+      a.appendChild(document.createTextNode(level + ' '));
+      var count = document.createElement('span'); count.className = 'n'; count.textContent = String(n);
+      a.appendChild(count);
+      lvPick.appendChild(a);
+    });
+  }
+
   function update() {
     var mode = block.querySelector('input[type="radio"]:checked').value;
     var option = select.options[select.selectedIndex];
     if (!option) { closeBuy(); return; }
+    renderLvPick(option);
     select.disabled = isGuide ? mode !== 'single' : mode === 'lecture';
     if (isGuide) {
       button.dataset.cartSku = mode === 'pdf' ? 'guide-all-pdf' : mode === 'all' ? 'guide-all-view' : option.value;
