@@ -211,13 +211,13 @@
 
 <!-- 지면 3. 이용권 두 가지 -->
 <section class="page" id="plans">
-    <div class="sh"><div><h2 class="t">이용권 세 가지</h2><p>지문 1편 낱권, 응시 단위 전권, 공통 풀이 인강, 세 가지입니다. 부가세 포함 가격입니다.</p></div></div>
-  <p class="deal">낱권 33,000원 × 30편 = 990,000원. 전권은 495,000원, <b>한 편에 16,500원, 인강까지.</b> 990,000원은 합산 금액이며 따로 파는 상품이 아닙니다.</p>
+    <div class="sh"><div><h2 class="t">이용권 세 가지</h2><p>세트 1편(지문 낱권), 응시 단위 전권, 공통 풀이 인강, 세 가지입니다. 부가세 포함 가격입니다.</p></div></div>
+  <p class="deal">세트 1편 33,000원 × 30편 = 990,000원. 전권은 495,000원, <b>한 편에 16,500원, 인강까지.</b> 990,000원은 합산 금액이며 따로 파는 상품이 아닙니다.</p>
   <div class="plans">
     <div class="plan">
-      <h3>지문 낱권</h3>
-      <p class="who">지문 1편 단위. 지원 대학 지문을 하나씩 고를 때.</p>
-      <span class="price" data-list-price="33000">33,000원<small>지문 1편, 5회 응시</small></span>
+      <h3>세트 1편 <small>(지문 낱권)</small></h3>
+      <p class="who">세트 1편 단위. 지원 대학 세트를 난이도별로 하나씩 고를 때.</p>
+      <span class="price" data-list-price="33000">33,000원<small>세트 1편, 5회 응시</small></span>
       <ul class="inc">
         <li><span>응시 횟수</span><span>지문당 5회</span></li>
         <li><span>첨삭</span><span>응시마다 세 단 전량</span></li>
@@ -225,7 +225,7 @@
         <li><span>풀이법 인강</span><span>그 세트 1편 포함</span></li>
         <li><span>유효 기간</span><span>응시 3개월(구매일부터), 인강 3개월(지급일부터)</span></li>
       </ul>
-      <div class="acts"><a class="btn ghost" href="#sets">지문 고르기</a></div>
+      <div class="acts"><a class="btn ghost" href="#sets">세트 1편씩 고르기</a></div>
     </div>
     <div class="plan pick">
       <span class="badge seal">단위 전권</span>
@@ -297,7 +297,7 @@
     <div>
       <div class="box">
         <h3>가격 요약</h3>
-        <p>지문 낱권 33,000원, 지문 1편에 5회 응시, 그 세트 풀이법 인강 1편 포함.</p>
+        <p>세트 1편(지문 낱권)은 33,000원입니다. 그 세트에 5회 응시하고 그 세트 풀이법 인강 1편이 붙습니다.</p>
         <p>단위 전권 495,000원, 그 단위 지문 30편에 각 5회 응시, 구매일부터 3개월. 세트별 풀이법 인강 30편과 공통 풀이 인강이 포함되고 인강은 3개월. 전권이면 한 편에 16,500원 꼴입니다.</p>
         <p>공통 풀이 인강만 따로는 220,000원, 시청 3개월.</p>
 
@@ -312,7 +312,7 @@
 <!-- 마지막 CTA 라벨 = COPY.md §1 §2 -->
 <section class="page">
   <div class="final">
-    <div><h2>지문 하나로 시작</h2><p>낱권 33,000원, 단위 전권 495,000원 인강 포함, 공통 풀이 인강 220,000원. 회원 체험 응시 1회.</p></div>
+    <div><h2>지문 하나로 시작</h2><p>세트 1편 33,000원, 단위 전권 495,000원 인강 포함, 공통 풀이 인강 220,000원. 회원 체험 응시 1회.</p></div>
     <div class="acts"><a class="btn" href="#units">응시 단위 고르기 <span class="ar" aria-hidden="true">→</span></a></div>
   </div>
 </section>
@@ -416,7 +416,7 @@ document.addEventListener('DOMContentLoaded', function(){
       var c=node.querySelector('.uni').textContent+' '+node.querySelector('h3').textContent;
       // 2026-10-14 낱권 가시성: 카드에 495,000원 하나만 보여 고객이 전권만 있는 줄 알았다. 세트 1편 가격과 난이도 바로가기를 전권과 같은 무게로 둔다
       node.querySelector('.r3-unit-commerce').innerHTML='<p class="lec"><span data-lec="'+esc(u.code)+'">해설 강의 상태 확인 중</span></p>'
-        +'<div class="r3-buyrow"><span class="k">세트 1편씩</span><span class="sub">'+(u.lectures?'응시 5회, 그 세트 풀이법 인강 1편':'응시 5회')+'</span>'
+        +'<div class="r3-buyrow"><span class="k">세트 1편</span><span class="sub">'+(u.lectures?'응시 5회, 그 세트 풀이법 인강 1편':'응시 5회')+'</span>'
         +'<span class="price" data-list-price="'+PRICE_SET+'">'+HH.won(PRICE_SET)+'</span></div>'
         +lvPickHtml(u)
         +'<div class="r3-buyrow"><span class="k">전권 '+n0(u.set_count,999)+'편</span><span class="sub">'+(u.lectures?'지문 전량, 인강 포함':'지문 전량')+'</span>'
@@ -541,6 +541,21 @@ document.addEventListener('DOMContentLoaded', function(){
     });
   }
   function setLv(v){ lv=(LV.indexOf(v)>=0)?v:''; }
+  // 링크 진입 착지 고정 (2026-10-14 라이브 실측). 주소의 #sets 로 시작된 브라우저의 부드러운 스크롤과, 늦게 오는 해설 강의 상태와
+  // 순위표 위젯의 높이 변화가 겹쳐 칩 줄이 머리 밑(데스크톱 -23px)이나 아래(모바일 +35px)로 빗나갔다. 한 번 이동으로는 못 막는다.
+  // 진입 뒤 2.5초 동안 사용자 입력이 없으면, 면 높이나 스크롤 위치가 바뀔 때마다 칩 줄로 다시 맞춘다. 사용자가 손대면 바로 놓는다.
+  function holdAnchor(el){
+    if(!el) return;
+    var done=false, until=Date.now()+2500, evs=['wheel','touchstart','keydown','pointerdown'], ro=null;
+    function off(){ return el.getBoundingClientRect().top-(parseFloat(getComputedStyle(el).scrollMarginTop)||0); }
+    function fix(){ if(done) return; if(Date.now()>until){ end(); return; } if(Math.abs(off())>2) el.scrollIntoView({block:'start',behavior:'instant'}); }
+    function end(){ if(done) return; done=true; evs.forEach(function(t){ window.removeEventListener(t,end,true); }); window.removeEventListener('scroll',fix); if(ro) ro.disconnect(); }
+    evs.forEach(function(t){ window.addEventListener(t,end,{capture:true,passive:true}); });
+    window.addEventListener('scroll',fix,{passive:true});
+    if('ResizeObserver' in window){ ro=new ResizeObserver(fix); ro.observe(document.body); }
+    setTimeout(function(){ fix(); end(); },2600);
+    el.scrollIntoView({block:'start',behavior:'instant'});
+  }
   function selectUnit(code, scroll){
     if(!okUnit(code)) return;   // 허용 단위(app.js UNITS 11종) 밖은 무시한다
     cur=code; renderTabs(); renderRows();
@@ -595,7 +610,7 @@ document.addEventListener('DOMContentLoaded', function(){
     setLv(params.get('lv')||'');
     renderTabs(); renderRows();
     // 링크 진입은 즉시 이동한다. 면의 smooth 스크롤은 카드가 그려지며 위 높이가 바뀌는 동안 목표를 잃어 칩 줄 위아래로 빗나갔다 (2026-10-14 실측 모바일 +702px, 데스크톱 -103px)
-    if(q) document.querySelector('#sets .setnav').scrollIntoView({block:'start',behavior:'instant'});
+    if(q) holdAnchor(document.querySelector('#sets .setnav'));
   }).catch(function(){
     document.getElementById('unitCards').innerHTML='<p class="note">단위 목록을 불러오지 못했습니다. 새로고침해 주세요.</p>';
   });
