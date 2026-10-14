@@ -120,6 +120,8 @@
             evictOverlay(state.printBlocked);
             throw new Error("reopen account");
           }
+          // 화면을 연 사이 같은 계정이 소장판을 사면 인쇄 판정이 바뀐다. 갱신 응답의 판정을 따른다 (astra gp r1 #3, 2026-10-12)
+          if ("print_block" in d) state.viewOnly = d.print_block === "view_only";
           state.token = d.token; return;
         }
         if (r.status === 409) evictOverlay(String(d.error || ""));
@@ -594,7 +596,7 @@
         }
         var e = new Error(d.error || (r.status === 401 ? "로그인이 끊겼습니다. 새로고침 후 다시 시도해 주세요"
           : "인쇄본을 만들지 못했습니다. 잠시 후 다시 눌러 주세요. 같은 인쇄본으로 이어지므로 횟수가 더 차감되지 않습니다"));
-        e.status = r.status; e.ready = true;
+        e.status = r.status; e.code = d.code; e.ready = true;
         throw e;
       });
     }).then(function (v) { stop(); return v; }, function (err) {
@@ -653,14 +655,21 @@
     readyBox = box;
     try { (row.firstChild || op).focus(); } catch (e) {}
   }
-  // 안내 상자: 한도 초과(받지 못한 시도로 찼을 수 있어 문의 경로를 준다) 또는 계정 바뀜(새로고침)
+  var VIEW_ONLY_TEXT = "2026년 11월 16일부터 구매한 열람권은 인쇄를 제공하지 않습니다.";
+  // 안내 상자: 한도 초과(받지 못한 시도로 찼을 수 있어 문의 경로를 준다), 계정 바뀜(새로고침), 열람권 인쇄 종료(소장판 안내)
   function showPrintNotice(text, kind) {
     closeReady();
     var box = el("div", "pready");
     box.setAttribute("role", "alertdialog"); box.setAttribute("aria-label", "인쇄 안내");
     box.appendChild(el("p", "h", text));
     var row = el("div", "acts");
-    if (kind === "reload") {
+    if (kind === "view_only") {
+      // 열람권 인쇄 종료 (2026-10-12 결재, 2026-11-16 구매분부터): 문의 대신 소장판 비교로 보낸다. 서버 판정이 기준이고 여기는 안내만 한다
+      box.appendChild(el("p", "d", "그 전에 구매한 열람권과 PDF 소장판은 권당 3회 인쇄할 수 있습니다. 화면 열람은 이용 기간 동안 그대로 이용하실 수 있습니다."));
+      var cp = el("a", "pri", "PDF 소장판 보기");
+      cp.href = "programs/guidebook.html#compare"; cp.target = "_blank"; cp.rel = "noopener";
+      row.appendChild(cp);
+    } else if (kind === "reload") {
       var rl = el("button", "pri", "새로고침");
       rl.type = "button"; rl.addEventListener("click", function () { location.reload(); });
       row.appendChild(rl);
@@ -680,6 +689,7 @@
   function doPrint() {
     if (state.printing) return;
     if (state.printBlocked) { showPrintNotice(state.printBlocked, "reload"); return; }   // 계정이 바뀐 화면 = 새로고침 전까지 인쇄 안 함
+    if (state.viewOnly) { showPrintNotice(VIEW_ONLY_TEXT, "view_only"); return; }       // 2026-11-16 부터 산 열람권 = 인쇄 없음 (open 응답 print_block)
     state.printing = true;
     closeReady();
     printBtn.disabled = true; printBtn.textContent = "인쇄본 준비 중…";
@@ -708,6 +718,7 @@
     }).catch(function (e) {
       if (w && !w.closed) { try { w.close(); } catch (e2) {} }
       if (e && e.reload) { if (e.dropIdem) dropPrintIdem(); state.printBlocked = e.message; showPrintNotice(e.message, "reload"); }
+      else if (e && e.status === 403 && e.code === "view_only") { state.viewOnly = true; showPrintNotice(e.message || VIEW_ONLY_TEXT, "view_only"); }
       else if (e && e.status === 403 && /한도/.test(e.message || "")) showPrintNotice(e.message, "limit");
       else showToast((e && e.message) || "인쇄에 실패했습니다", 6000);
     }).then(function () { state.printing = false; printBtn.disabled = false; printBtn.textContent = "인쇄"; });
@@ -805,7 +816,12 @@
       // 인쇄 한도 0 인 자료(체험판)는 버튼 자체를 띄우지 않는다. 서버는 403 으로 막지만
       // 뷰어가 그것을 모르면 누를 때마다 실패하는 버튼이 남는다.
       // 구 서버 응답에는 printable 이 없다 — 값이 없으면 종전대로 노출한다(하위 호환).
+      // 2026-11-16 부터 산 열람권(print_block view_only)은 버튼을 두되 누르면 소장판 안내를 띄운다. 숨기면 인쇄를 찾는 회원이 이유를 모른다
       if (d.printable !== false) {
+        printBtn.hidden = false;
+        printBtn.addEventListener("click", doPrint);
+      } else if (d.print_block === "view_only") {
+        state.viewOnly = true;
         printBtn.hidden = false;
         printBtn.addEventListener("click", doPrint);
       }
