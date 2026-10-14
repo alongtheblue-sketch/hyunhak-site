@@ -16,7 +16,8 @@
 | checkout.html | 약관 사본(apply_checkout_legal.py 로 동기화), 결제 전 팝업 문구 |
 | 상품면, FAQ, 홈, 비교표 | 원천 = _tools/build_guidebook.py, guidebook_page_v3.html, guidebook_index_v2.html, r2_copy.json, faq.html, index.html |
 | 리더 | assets/reader.js 안내 상자 문구, reader.html reader.js?v=20261014 |
-| API | hyunhak-api src/reader.js VIEW_PRINT_UNTIL = 2026-11-15T15:00:00.000Z |
+| API | hyunhak-api src/reader.js VIEW_PRINT_UNTIL = 2026-11-15T15:00:00.000Z. 구매 시각 후보 = 지급 시각, 결제 시각(paid_at), 주문 뒤 7일 안에 결제된 주문의 생성 시각 중 가장 이른 것. 결제 시각 후보는 부칙 문구보다 회원에게 유리한 쪽으로만 넓다(시행 전 결제, 시행 뒤 재지급 회원 보호, 2026-10-14 독립 검토). 다음 약관 정리 때 문구에 넣을지 검토 |
+| 관리자 지급 | 시행 뒤 /admin/api/members/:id/grants 로 열람권(digital)을 주면 새 주문 시각이 지급 때라 인쇄 없음. 인쇄까지 주려면 소장판으로 지급한다 |
 
 ## 게시 절차
 
