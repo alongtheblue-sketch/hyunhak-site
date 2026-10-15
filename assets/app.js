@@ -88,7 +88,7 @@
     const line = normLine(Object.assign({ qty: 1 }, item));
     if (!line) return { ok: false, reason: "sku", message: "담을 수 없는 상품입니다." };
     if (line.sku === "passage-single" && !line.set_id)
-      return { ok: false, reason: "set", message: "지문 낱권은 지문 목록에서 세트를 고른 뒤 담아 주세요." };
+      return { ok: false, reason: "set", message: "세트 1편은 지문 목록에서 세트를 고른 뒤 담아 주세요." };
     const items = cart();
     const hit = items.find((x) => sameLine(x, line));
     if (hit) {

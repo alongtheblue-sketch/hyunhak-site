@@ -258,7 +258,7 @@ document.addEventListener('DOMContentLoaded', function(){
   var dropped=HH.pruneCart();
   if(dropped){
     var s=document.getElementById('cartStale');
-    s.innerHTML='세트가 지정되지 않은 지문 낱권 '+dropped+'줄을 장바구니에서 뺐습니다. <a class="tlink" href="studio.html#sets">지문 목록</a>에서 세트를 골라 다시 담아 주세요.';
+    s.innerHTML='세트를 고르지 않고 담긴 세트 1편 '+dropped+'줄을 장바구니에서 뺐습니다. <a class="tlink" href="studio.html#sets">지문 목록</a>에서 세트를 골라 다시 담아 주세요.';
     s.hidden=false;
   }
   render();

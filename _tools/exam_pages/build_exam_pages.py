@@ -80,7 +80,7 @@ def spec_rows(f, notes, ratio_note_idx, opening):
     if opening:
         rows.append(("이용권", f'{EX.OPEN_DATE} 오픈 예정'))
     else:
-        rows.append(("이용권", f'단위 전권 <b>{sp["price"]:,}</b>원, 지문 낱권 <b>{sp["single_price"]:,}</b>원'))
+        rows.append(("이용권", f'단위 전권 <b>{sp["price"]:,}</b>원, 세트 1편 <b>{sp["single_price"]:,}</b>원'))
         rows.append(("스튜디오 세트", f'<b>{bank["n_sets"]}</b>세트, 세트마다 <b>5</b>회 응시'))
         if sp.get("lecture_count"):   # 인강 미인제스트 단위(고른기회 9/14 시점)는 행 생략
             rows.append(("해설 인강", f'<b>{sp["lecture_count"]}</b>편'))

@@ -511,7 +511,7 @@ document.addEventListener('DOMContentLoaded', function(){
         +'<td class="c-x" data-l="축 요약">'+axesHtml(s.axes)+'</td>'
         +'<td class="c-s" data-l="해설 강의"><span class="badge mute" data-st="'+esc(s.id)+'">확인 중</span></td>'
         +'<td class="c-a">'+(okSetId(s.id)
-          ? '<button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-set-id="'+esc(s.id)+'" data-cart-title="지문 낱권, '+esc(s.title)+'" data-cart-price="'+PRICE_SET+'">'+HH.won(PRICE_SET)+' 담기</button>'
+          ? '<button type="button" class="btn ghost sm" data-cart-sku="passage-single" data-set-id="'+esc(s.id)+'" data-cart-title="세트 1편, '+esc(s.title)+'" data-cart-price="'+PRICE_SET+'">'+HH.won(PRICE_SET)+' 담기</button>'
           : '<span class="badge mute">준비 중</span>')+'</td></tr>';
     }).join('')||'<tr class="nohit"><td colspan="6">이 난이도의 지문이 없습니다.</td></tr>';
     document.getElementById('setSum').textContent=u.label+', '+list.length+' / '+all.length+'편'+(lv?', 난이도 '+lv:'');
@@ -594,7 +594,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var el=ev.target.closest('[data-cart-sku]'); if(!el) return;
     ev.preventDefault();
     var sid=el.dataset.setId||'';
-    if(el.dataset.cartSku==='passage-single'&&!okSetId(sid)){ cartMsg('지문 낱권은 지문 목록에서 세트를 고른 뒤 담아 주세요.'); return; }
+    if(el.dataset.cartSku==='passage-single'&&!okSetId(sid)){ cartMsg('세트 1편은 지문 목록에서 세트를 고른 뒤 담아 주세요.'); return; }
     var r=HH.addToCart({ sku: el.dataset.cartSku, set_id: okSetId(sid)?sid:undefined, title: el.dataset.cartTitle, price: +el.dataset.cartPrice, ship: el.dataset.cartShip === '1' });
     if(!r.ok){ cartMsg(r.message); return; }
     if(r.already){ cartMsg(r.message); return; }   // 1개 한정 상품 재클릭 = 변경 없음. 담았다는 확인창 대신 안내만

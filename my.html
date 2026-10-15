@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', async function(){
   document.getElementById('whoName').textContent = st.member.name || st.member.email;
   document.getElementById('whoSince').textContent = st.member.email;
 
-  var KIND = {studio_passage:'지문 낱권 이용권', studio_school:'단위 전권 이용권', download:'읽는 자료, 디지털 자료', file_download:'PDF 소장판', trial:'체험 응시'};
+  var KIND = {studio_passage:'세트 1편 이용권', studio_school:'단위 전권 이용권', download:'읽는 자료, 디지털 자료', file_download:'PDF 소장판', trial:'체험 응시'};
   var BD_TITLE = {'guide-all-view':'2027 서류기반면접 가이드북 전권 열람권','guide-all-pdf':'2027 서류기반면접 가이드북 전권 PDF 소장판'};
   function slugOf(meta){ return (meta.slug)||String(meta.file_key||'').replace(/^library\//,'').replace(/\.pdf$/,''); }
   // 전권 번들 구매분(meta.bundle)은 권당 권리 행이 최대 76행이라 번들당 1카드로 묶는다 (DESIGN_v5 §2-2)
@@ -518,7 +518,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     rows.push('<div class="subcard"><div><p class="nm">해설 강의 이용권</p><p class="st">응시 이용권 없이 해설 강의 권리만 보유하고 있습니다. 인강실에서 공개 편수와 이어보기를 봅니다.</p></div>'
       +'<div class="ops"><a class="btn sm" href="classroom.html">인강실</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   if(!rows.length)
-    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 지문 낱권 또는 단위 전권을, 가이드북 목록에서 서류기반면접 가이드북을 담아 주세요.</p></div>'
+    rows.push('<div class="subcard"><div><p class="nm">보유한 이용권이 없습니다</p><p class="st">스튜디오에서 세트 1편 또는 단위 전권을, 가이드북 목록에서 서류기반면접 가이드북을 담아 주세요.</p></div>'
       +'<div class="ops"><a class="btn ghost sm" href="guidebook/index.html">가이드북</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>');
   document.getElementById('passList').innerHTML = rows.join('');
 
@@ -543,7 +543,7 @@ document.addEventListener('DOMContentLoaded', async function(){
           +'<button type="button" class="tlink sdl'+(got[setId+':key']?' done':'')+'" data-set-id="'+esc(setId)+'" data-doc="key"'+armAttr+'>해설지 PDF'+(got[setId+':key']?' (받음)':'')+'</button></span>';
       return '<div class="r'+(did?' did':'')+'"><span class="sr-t">'+esc(setTitle(setId))+'</span><span class="sr-u">'+use+'</span>'+ops+'</div>';
     }
-    var MODE={combined:'실전형',per_question:'연습형'}, KINDS={trial:'체험',studio_passage:'낱권',studio_school:'전권'};
+    var MODE={combined:'실전형',per_question:'연습형'}, KINDS={trial:'체험',studio_passage:'세트 1편',studio_school:'전권'};
     var ol=document.getElementById('stuRows'), sum=document.getElementById('stuSum');
     var data=null;
     try{ data=await HH.api('/api/studio/attempts'); }catch(e){}
@@ -659,7 +659,7 @@ document.addEventListener('DOMContentLoaded', async function(){
     var setIds=Object.keys(ownedSets).filter(function(id){ return !owned[unitOfSet(id)]; });   // 단위 전권이 덮는 세트는 중복 표시하지 않는다
     if(!codes.length&&!setIds.length&&!commonEnt){
       document.getElementById('myLecSum').textContent='보유한 단위나 세트가 없습니다';   // 자리표시 문안이 남으면 수를 못 읽은 것으로 보인다
-      box.innerHTML='<div class="subcard"><div><p class="nm">보유한 단위가 없습니다</p><p class="st">단위 전권이나 세트를 고른 지문 낱권을 구매하면 해설 강의의 공개 편수가 여기에 표시됩니다.</p></div><div class="ops"><a class="btn ghost sm" href="classroom.html">인강실</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>';
+      box.innerHTML='<div class="subcard"><div><p class="nm">보유한 단위가 없습니다</p><p class="st">단위 전권이나 세트 1편을 구매하면 해설 강의의 공개 편수가 여기에 표시됩니다.</p></div><div class="ops"><a class="btn ghost sm" href="classroom.html">인강실</a><a class="btn ghost sm" href="studio.html">스튜디오</a></div></div>';
       return;
     }
     // 공통 풀이 인강 단독 상품(meta.scope common)은 단위도 세트도 없다. 카드 1장으로 따로 낸다 (C3)

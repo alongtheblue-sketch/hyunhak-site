@@ -311,7 +311,7 @@ def list_page(cs):
  <div class="crs rv" id="crs">
 {chr(10).join(rows)}
  </div>
- <p class="note" style="margin-top:var(--s3)">지문 낱권 33,000원에는 그 세트의 해설 1편이 붙습니다. 연세대와 고려대 2026 기출 해설 강의는 이용권 경로가 정해지면 이 목록에 올립니다.</p>
+ <p class="note" style="margin-top:var(--s3)">세트 1편 33,000원에는 그 세트의 해설 1편이 붙습니다. 연세대와 고려대 2026 기출 해설 강의는 이용권 경로가 정해지면 이 목록에 올립니다.</p>
 
  <section id="ot" style="margin-top:var(--s7)">
   <div class="sh rv"><div><h2 class="t">인강 OT 와 맛보기</h2><p>사기 전에 순서와 말하는 속도를 확인합니다. 맛보기는 로그인 없이, OT 영상은 로그인 뒤 무료로 봅니다.</p></div></div>
@@ -329,7 +329,7 @@ def list_page(cs):
  <section style="padding-bottom:var(--s8)">
   <div class="sh rv"><div><h2 class="t">자주 묻는 것</h2></div></div>
   <div class="rv">
-  <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
+  <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 세트 1편이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
   <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>지급일부터 3개월입니다. 응시 이용 기간은 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
   <details class="faq"><summary>공개 편수는 어디서 확인하나요</summary><div class="a"><p>강좌 상세와 인강실에 열람 시점 기준으로 적힙니다. 준비 중인 편은 공개되는 대로 순차 업로드됩니다.</p></div></details>
@@ -402,7 +402,7 @@ def room_page():
    <div class="band"><div><h2>목차표와 OT 대본</h2><p>강좌별 강의 목차표와 OT 대본은 자료실에 있습니다. 인강 OT 영상은 회원 무료 0강이라 전체 목록 맨 위에서 이용권 없이 봅니다. 자료실 자료는 읽는 자료이고 응시와 별개입니다.</p></div><div style="display:flex;gap:10px;flex-wrap:wrap"><a class="btn" href="library.html#lecdocs">인강 자료 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lectures.html">강좌 목록</a></div></div>
   </div>
   <div data-for="none">
-   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h2>아직 들어온 강의가 없습니다</h2><p>단위 전권이나 지문 낱권을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다. 인강 OT 영상은 회원 무료 0강이라 이용권이 없어도 전체 목록 맨 위에서 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lecture.html">전체 목록</a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
+   <div class="ot"><span class="eyebrow">보유 이용권 없음</span><h2>아직 들어온 강의가 없습니다</h2><p>단위 전권이나 세트 1편을 사면 그 강의가 여기에 섭니다. 공통 풀이 인강은 따로 살 수 있습니다. 인강 OT 영상은 회원 무료 0강이라 이용권이 없어도 전체 목록 맨 위에서 봅니다.</p><div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:var(--s3)"><a class="btn" href="lectures.html">강좌 목록 <span class="ar" aria-hidden="true">→</span></a><a class="btn ghost" href="lecture.html">전체 목록</a><a class="btn ghost" href="studio.html#plans">이용권 세 가지</a></div></div>
   </div>
   <div data-for="down"><div class="ot"><span class="eyebrow">상태 미상</span><h2>강의 목록을 지금 불러올 수 없습니다</h2><p>잠시 후 다시 열어 주세요. 권리가 사라진 것이 아닙니다.</p></div></div>
  </div>
@@ -472,7 +472,7 @@ def detail_page(c, cs):
 <ul class="inc"><li><span>이 인강 {c["n"]}편</span><span>전부 포함</span></li><li><span>응시</span><span>{E(c["sets_tx"])}</span></li><li><span>첨삭</span><span>전사, 진단, 재구성</span></li></ul>
 <div class="acts"><button type="button" class="btn" data-cart-sku="{E(c["sku"])}" data-cart-title="{E(c["label"])} 전권 이용권" data-cart-price="{c["price"]}">단위 전권 담기 <span class="ar" aria-hidden="true">→</span></button></div>
 <p class="cartmsg note" role="status" aria-live="polite"></p>
-<p class="alt">지문 낱권 {c["single"]:,}원에는 그 세트 해설 1편이 붙습니다. 공통 풀이 4편만 들으려면 <a href="common.html">220,000원</a>.</p></div>'''
+<p class="alt">세트 1편 {c["single"]:,}원에는 그 세트 해설 1편이 붙습니다. 공통 풀이 4편만 들으려면 <a href="common.html">220,000원</a>.</p></div>'''
     else:
         buy = f'''<div class="buybox" id="plan"><p class="k">공통 풀이 이용권</p><p class="price" data-list-price="{c["price"]}">{c["price"]:,}원<small>인강만, 지급일부터 3개월</small></p>
 <ul class="inc"><li><span>내용</span><span>공통 풀이 4편</span></li><li><span>시청</span><span>인강실, 배속과 책갈피</span></li><li><span>단위 전권</span><span>이미 포함</span></li></ul>
@@ -531,7 +531,7 @@ def detail_page(c, cs):
  <section class="page" id="toc"><h2 class="t">{c["n"]}편, {NGRP[len(groups)]}</h2><p class="note">공개 편수와 시청 버튼은 열람 시점 값입니다. 로그인하면 이용권 범위에서 시청과 이어보기 버튼이 섭니다.</p>{"".join(groups)}</section>
  <section class="page" id="intro"><h2 class="t">{"절차 네 문장" if is_common else E(c["spec"]) + eul(c["spec"]) + " 절차로 만든다"}</h2><div style="margin-top:var(--s4);max-width:var(--measure)">{intro}</div>{("<div style='margin-top:var(--s5)'>" + tracks + "</div>") if tracks else ""}</section>
  <section class="page" id="faq"><h2 class="t">자주 묻는 것</h2><div style="margin-top:var(--s4)">
-  <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 지문 낱권이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
+  <details class="faq"><summary>인강만 따로 살 수 있나요</summary><div class="a"><p>공통 풀이 인강 4편은 220,000원에 따로 삽니다. 단위 강의와 세트 해설은 세트 1편이나 단위 전권에 붙어 오고, 인강만 파는 상품은 없습니다.</p></div></details>
   <details class="faq"><summary>시청 기간은 얼마인가요</summary><div class="a"><p>지급일부터 3개월입니다. 응시 이용 기간은 구매일부터 3개월입니다. 기간 안에 공개되는 편은 추가 비용 없이 봅니다.</p></div></details>
   <details class="faq"><summary>어디서 보나요</summary><div class="a"><p>로그인한 뒤 인강실에서 봅니다. 배속 0.75배에서 2배, 목차 점프, 책갈피가 되고 시청 위치는 계정에 저장됩니다. 동시 재생은 세 기기까지입니다.</p></div></details>
  </div>

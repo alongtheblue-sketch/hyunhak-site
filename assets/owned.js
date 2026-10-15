@@ -10,7 +10,7 @@
   // 단위 코드 → 표시 이름. app.js UNITS(판매 14단위) 밖의 미개시 단위도 권리가 오면 이름을 붙인다
   var UNIT_LABEL={'korea-hum':'고려대 계열적합 인문','korea-sci':'고려대 계열적합 자연','yonsei-hum':'연세대 활동우수 인문통합','yonsei-sci':'연세대 활동우수 자연','yonsei-intl':'연세대 국제형','korea-eq-hum':'고려대 고른기회 인문','korea-eq-sci':'고려대 고른기회 자연','yonsei-mirae-free':'연세대 미래 자율융합','yonsei-mirae-design':'연세대 미래 디자인','yonsei-mirae-tech':'연세대 미래 첨단','yonsei-mirae-health':'연세대 미래 보건','yonsei-mirae-intl':'연세대 미래 국제','yonsei-mirae-common':'연세대 미래 전 모집단위 공통형','yonsei-eq':'연세대 기회균형'};
   var BD_TITLE={'guide-all-view':'2027 서류기반면접 가이드북 전권 열람권','guide-all-pdf':'2027 서류기반면접 가이드북 전권 PDF 소장판'};
-  var KIND={studio_passage:'지문 낱권 이용권',studio_school:'단위 전권 이용권'};
+  var KIND={studio_passage:'세트 1편 이용권',studio_school:'단위 전권 이용권'};
 
   // set_id → 단위 코드. app.js SET_ID_RE 와 같은 접두 어휘 (korea_2027_h, korea_gorun_2027_s, yonsei_intl_2027_i ...)
   function unitOfSet(id){
@@ -129,7 +129,7 @@
   function studioTitle(e){
     if(e._meta.title) return String(e._meta.title);
     var u=UNIT_LABEL[e._unit];
-    return u ? u+(e.kind==='studio_school'?' 전권 이용권':' 지문 낱권') : (KIND[e.kind]||e.kind);
+    return u ? u+(e.kind==='studio_school'?' 전권 이용권':' 세트 1편') : (KIND[e.kind]||e.kind);
   }
   // setId 를 넘기면 그 세트로 연다 (세트 표). 서버는 권리 id 와 세트를 함께 받으면 권리의 허용 세트 정규식으로 대조한다 (trial.js)
   function goBtn(e, cls, setId){
