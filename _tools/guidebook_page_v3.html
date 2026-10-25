@@ -66,6 +66,15 @@
 .trk .f{color:var(--body)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:var(--s3)}
 .chips span{font-size:var(--t-sm);border:1px solid var(--hair);border-radius:999px;padding:4px 11px;color:var(--body);background:var(--card)}
+/* 공식 모집요강 제원 (2026-10-25) */
+.ofc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.ofc .o{border:1px solid var(--hair);border-radius:var(--r-md);padding:14px 16px;background:var(--card)}
+.ofc .o.off{background:none}
+.ofc h3{font-size:var(--t-base);font-weight:700;line-height:1.45}
+.ofc dl{margin-top:8px}
+.ofc dl > div{display:grid;grid-template-columns:minmax(0,72px) minmax(0,1fr);gap:12px;padding:6px 0;border-top:1px solid var(--hairs);font-size:var(--t-sm)}
+.ofc dt{color:var(--gray)}
+.ofc dd{color:var(--body);overflow-wrap:anywhere}
 /* 규칙 티저 */
 .rules3{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .rules3 .r{border:1px solid var(--hair);border-radius:var(--r-md);padding:16px;background:var(--card)}
@@ -179,6 +188,8 @@ __SPEC_CHIPS__
     </div>
     <p class="note rv" style="margin-top:var(--s4)"><a class="tlink" href="../interview.html">38개 대학 전형별 면접 형태 판정표, 서류기반 면접과 제시문 면접 <span class="ar" aria-hidden="true">→</span></a></p>
   </section>
+
+__OFFICIAL__
 
   <section class="sec">
     <div class="sh rv"><div><h2>질문 유형</h2><p>실제로 나온 질문을 이 유형들로 나눠 싣습니다.</p></div></div>

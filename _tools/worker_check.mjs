@@ -50,12 +50,13 @@ for (const [k, v] of table) {
   else rows.push(["FAIL", `301 ${k}`, `${r.status} ${loc(r)}`]), fails++;
 }
 chk("표 전건 301 + Location 일치", tblOk === table.length, `${tblOk}/${table.length}`);
-for (const [p, want] of [["/interview/", "/interview.html"], ["/store", "/guidebook/index.html"], ["/programs/", "/programs/guidebook.html"], ["/programs", "/programs/guidebook.html"], ["/lectures/", "/lectures.html"], ["/interview/korea", "/programs/korea.html"]]) {
+for (const [p, want] of [["/interview/", "/interview.html"], ["/store", "/guidebook/"], ["/programs/", "/programs/guidebook.html"], ["/programs", "/programs/guidebook.html"], ["/lectures/", "/lectures.html"], ["/interview/korea", "/interview/korea-hum.html"]]) {
   const r = await call(p); chk(`정규화 ${p} → 301 ${want}`, r.status === 301 && loc(r) === `https://hyunhak.com${want}`, `${r.status} ${loc(r)}`);
 }
-{ const r = await call("/interview/korea.html?utm_source=chatgpt.com"); chk("301 이 쿼리를 보존(utm → 목적지 ai_referrals)", r.status === 301 && loc(r) === "https://hyunhak.com/programs/korea.html?utm_source=chatgpt.com", loc(r)); }
+{ const r = await call("/interview/korea.html?utm_source=chatgpt.com"); chk("301 이 쿼리를 보존(utm → 목적지 ai_referrals)", r.status === 301 && loc(r) === "https://hyunhak.com/interview/korea-hum.html?utm_source=chatgpt.com", loc(r)); }
 { const r = await call("/interview"); chk("/interview (허브, 산 면) 200", r.status === 200, `${r.status}`); }
-{ const r = await call("/guidebook/korea.html"); chk("철거 7권 301 (기존 REMOVED_GUIDEBOOK 유지)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/index.html", `${r.status} ${loc(r)}`); }
+{ const r = await call("/guidebook/knu.html"); chk("철거 7권 301 = 목록 canonical /guidebook/ (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/", `${r.status} ${loc(r)}`); }
+{ const r = await call("/guidebook/korea.html"); chk("철거 고려대 가이드북 301 = 스튜디오 면 (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/programs/korea.html", `${r.status} ${loc(r)}`); }
 { const r = await call("/faq"); chk("확장자 없는 경로 /faq 200 (기존 해석 유지)", r.status === 200, `${r.status}`); }
 { const r = await call("/guidebook"); chk("/guidebook → 301 슬래시 (기존 유지)", r.status === 301 && loc(r).endsWith("/guidebook/"), `${r.status} ${loc(r)}`); }
 { const r = await call("/", { host: "www.hyunhak.com" }); chk("www → apex 301 (기존 유지)", r.status === 301 && loc(r) === "https://hyunhak.com/", `${r.status} ${loc(r)}`); }

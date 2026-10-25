@@ -14,6 +14,10 @@ const REMOVED_GUIDEBOOK = new Set([
   "/guidebook/pknu.html",
   "/guidebook/hongik.html",
 ]);
+const REMOVED_GUIDEBOOK_TO = {
+  "/guidebook/korea.html": "/programs/korea.html",
+  "/guidebook/yonsei.html": "/programs/yonsei.html",
+};
 
 // 2026-09-09 구 URL 301 표. GA4 「현학적 연구소, 없는 면」 51회(전체 1위)의 원인 = 08-26(f74ccfc) 철거한 면접 아카이브 26면 /interview/<slug>.html 과
 // 08-26~31 철거한 store·store_item·programs/skku 가 301 없이 내려가 답변엔진(ChatGPT-User, PerplexityBot)과 검색 색인에 남아 계속 불린다
@@ -43,12 +47,14 @@ const LEGACY_REDIRECTS = {
   "/interview/soongsil.html": "/guidebook/soongsil.html",
   "/interview/sungshin.html": "/guidebook/sungshin.html",
   "/interview/uos.html": "/guidebook/uos.html",
-  "/interview/korea.html": "/programs/korea.html",     // 고려대 제시문 면접 스튜디오 상세
-  "/interview/yonsei.html": "/programs/yonsei.html",   // 연세대 제시문 면접 스튜디오 상세
+  // 2026-10-25: 구 고려대, 연세대 아카이브는 정보 면(기출 유형과 풀이법)으로 보낸다. 판매 면 착지는 검색 의도(「고려대 면접 기출」)와 어긋나
+  // 09-06~13 노출 497회 1위 URL 의 순위 신호가 이어지지 않았다(GSC). 정보 면은 스튜디오 소개면 programs/studio.html 로 잇는다.
+  "/interview/korea.html": "/interview/korea-hum.html",
+  "/interview/yonsei.html": "/interview/yonsei-hum.html",
   "/interview/knu.html": "/interview.html",            // 비판매 대학 → 38개 대학 면접 형태 판정표
   "/interview/skku.html": "/interview.html",
-  "/store.html": "/guidebook/index.html",              // 08-26 v2 플랫폼 전환 전 상점 면
-  "/store_item.html": "/guidebook/index.html",
+  "/store.html": "/guidebook/",                        // 08-26 v2 플랫폼 전환 전 상점 면. 목적지 = 목록 canonical (10-25, 구 /guidebook/index.html 은 GSC 「대체 페이지」)
+  "/store_item.html": "/guidebook/",
   "/programs/skku.html": "/studio.html",               // 08-27 성균관대 스튜디오 폐지
   "/programs/index.html": "/programs/guidebook.html",  // 디렉터리 인덱스 없음 → 대표 소개면
   "/programs.html": "/programs/guidebook.html",
@@ -226,7 +232,8 @@ export default {
     {
       const p0 = url.pathname.replace(/\/$/, "");
       const k = p0.endsWith(".html") ? p0 : p0 + ".html";
-      if (REMOVED_GUIDEBOOK.has(k)) { url.pathname = "/guidebook/index.html"; url.search = ""; return Response.redirect(url.toString(), 301); }
+      // 목적지 = 목록 canonical /guidebook/ (2026-10-25). 고려대, 연세대는 2027 서류기반 판이 없어 스튜디오 면으로.
+      if (REMOVED_GUIDEBOOK.has(k)) { url.pathname = REMOVED_GUIDEBOOK_TO[k] || "/guidebook/"; url.search = ""; return Response.redirect(url.toString(), 301); }
     }
     {
       const to = LEGACY_REDIRECTS[legacyKey(url.pathname)];

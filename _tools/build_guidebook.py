@@ -92,7 +92,7 @@ UNIV_SITE = {
 
 # 지면에 싣고 JSON-LD dateModified 로 나가는 문서 갱신일. 내용이 바뀔 때만 손으로 올린다
 # (빌드할 때마다 자동으로 오늘로 바꾸면 안 바뀐 지면도 새 문서처럼 보인다).
-CONTENT_DATE = "2026-09-04"
+CONTENT_DATE = "2026-10-25"   # 2026-10-25 공식 모집요강 제원 절 신설 (구 2026-09-04)
 
 STUDIO = ("yonsei", "korea")
 AUTHOR = "13년차 대치동 입시 컨설턴트"   # about.html "입시 컨설턴트 13년차" + 前 대치우리학원 출강 경력 근거 (09-07 부원장 문구 삭제)
@@ -884,6 +884,9 @@ def faq_of(e, mv, price, sale, pdfp):
             q4 = "2027 판은 언제 판매하나요?"
             a4 = f"{name} 2027 판은 보안 리더 준비 중입니다. 판매 개시는 공지에 기록하며, 판매 중인 다른 대학 가이드북은 권당 {won(price)}입니다."
         faq = [(q1, a1), (f"{U} {R1} 면접 기출문제는 몇 문항 실려 있나요?", a2), (f"{U} 면접 예상문제는 생기부에서 어떻게 뽑나요?", a3), (q4, a4)]
+        of = _official_faq(e)   # 2026-10-25 공식 요강 선발 방식과 면접 시간 (원장 구조 필드)
+        if of:
+            faq.insert(1, of)
         # 검색과 답변 엔진에서 실제로 들어오는 갈래를 5문 더 (2026-09-04). 값은 meta v3 와 카탈로그에만 근거한다.
         on = set(_forms_on(mv))
         has = lambda k: any(k in x for x in on)
@@ -1000,6 +1003,112 @@ def _related_html(items, i, meta, cur_forms):
             '    <div class="rel rv">\n' + links + '\n    </div>\n  </section>')
 
 
+# 2026-10-25 공식 모집요강 제원 절. 구글 색인 탈락(09-14, 「크롤링됨, 현재 색인 미생성」 43면)의 대응으로
+# 지면마다 그 대학에만 있는 공개 사실을 싣는다. 원천 = 2027 학종 감사 원장(sha 핀)의 구조 필드만.
+# evidence.claim 은 감사 메모(필드 기록 방식 등)가 섞여 있어 싣지 않고 쪽수만 인용한다. 책 본문은 넣지 않는다(판매 방어선 S1~S3 밖).
+BASIS_KO = {"record_based": "서류기반 면접", "prompt_based": "제시문 면접", "mixed": "서류기반과 제시문 혼합 면접",
+            "practical_only": "실기 중심", "unknown": "면접 형태 요강 미기재"}
+_LEDGER = None
+
+
+def _ledger_univ(slug):
+    global _LEDGER
+    if _LEDGER is None:
+        _LEDGER = load_ledger()
+    return _LEDGER.get(dict(SLUGS).get(slug)) or {}
+
+
+def _minutes_ko(t):
+    p, m = t.get("prep_minutes"), t.get("interview_minutes")
+    if m is None:
+        return "요강에 시간 미기재"
+    if p == 0:
+        return f"준비시간 없이 면접 {m}분"
+    return f"준비 {p}분, 면접 {m}분" if p else f"면접 {m}분"
+
+
+def _ratio_ko(t):
+    return clean((t.get("selection_ratio") or "").replace("; ", ", ").replace(";", ", "))
+
+
+def _official_rows(slug):
+    """원장 전형 행 → (전형명, 면접, 선발 방식, 시간, 요강 쪽수). 면접 없는 전형도 싣는다(검색어 'OO대 학종 면접 있나')."""
+    rows = []
+    for t in _ledger_univ(slug).get("tracks", []):
+        on = t.get("interview_status") == "conducted"
+        pages = sorted({e["page"] for e in t.get("evidence", []) if isinstance(e.get("page"), int)})
+        rows.append({"track": clean(t["name"]), "on": on,
+                     "form": BASIS_KO.get(t.get("interview_basis"), "면접 형태 요강 미기재") if on else "면접 없음, 서류평가로 선발",
+                     "ratio": _ratio_ko(t), "time": _minutes_ko(t) if on else "",
+                     "pages": ", ".join(str(p) for p in pages)})
+    return rows
+
+
+def _official_html(e):
+    u = _ledger_univ(e["slug"])
+    rows = _official_rows(e["slug"])
+    if not rows:
+        return ""
+    docs = u.get("documents", [])
+    full = full_name(e)
+    cards = []
+    for r in rows:
+        dl = [("면접", r["form"]), ("선발 방식", r["ratio"])]
+        if r["time"]:
+            dl.append(("면접 시간", r["time"]))
+        if r["pages"]:
+            dl.append(("요강 쪽수", f"{r['pages']}쪽"))
+        body = "".join(f"<div><dt>{esc(k)}</dt><dd>{esc(v)}</dd></div>" for k, v in dl if v)
+        cards.append(f'      <div class="o{"" if r["on"] else " off"}"><h3>{esc(r["track"])}</h3><dl>{body}</dl></div>')
+    src = ", ".join(f'<a class="tlink" href="{esc(d["official_url"])}" target="_blank" rel="noopener">{esc(clean(d["title"]))}</a>'
+                    + (f' ({esc(d["published_at"])} 공고)' if d.get("published_at") else "") for d in docs if d.get("official_url"))
+    checked = sorted({d.get("checked_at") for d in docs if d.get("checked_at")})
+    tail = f" 원문 대조 {checked[-1]}." if checked else ""
+    return ('  <section class="sec" id="official">\n'
+            f'    <div class="sh rv"><div><h2>{esc(full)} 2027 학생부종합 면접, 공식 모집요강 기준</h2>'
+            '<p>전형마다 면접이 있는지, 몇 단계로 뽑고 면접을 몇 퍼센트 반영하는지, 면접이 몇 분인지를 요강 원문에서 옮겼습니다.</p></div></div>\n'
+            '    <div class="ofc rv">\n' + "\n".join(cards) + '\n    </div>\n'
+            + (f'    <p class="note rv">출처 {src}.{esc(tail)} 모집 인원과 일정은 대학 발표가 우선합니다.</p>\n' if src else "")
+            + '  </section>')
+
+
+def _official_faq(e):
+    """FAQ 1문: 대표 전형의 선발 방식과 면접 시간 (원장 첫 실시 전형). 답 40~110자를 못 맞추면 싣지 않는다."""
+    rows = [r for r in _official_rows(e["slug"]) if r["on"] and r["ratio"]]
+    if not rows:
+        return None
+    r = rows[0]
+    t = r["time"] if r["time"] != "요강에 시간 미기재" else ""
+    cands = [f"{r['track']}{_eun(r['track'])} {r['ratio']}로 선발합니다." + (f" 면접 시간은 {t.replace('면접 ', '')}입니다." if t else " 면접 시간은 요강에 따로 적혀 있지 않습니다."),
+             f"{r['track']}{_eun(r['track'])} {r['ratio']}로 선발합니다."]
+    ok = [c for c in cands if 40 <= len(c) <= 110]
+    if not ok:
+        return None
+    return (f"{full_name(e)} {r['track']} 면접 반영 비율과 면접 시간은 어떻게 되나요?", ok[0])
+
+
+def _grid_html(gb):
+    """목록 카드 31장을 HTML 에 미리 싣는다 (2026-10-25). 템플릿 스크립트 card() 와 같은 마크업이라 render() 가 덮어써도 화면은 같다.
+    전에는 카드가 스크립트로만 그려져 첫 HTML 에 대학 면 링크가 0개였다(크롤러가 목록에서 대학 면으로 가는 길이 없었다)."""
+    cho = "ㄱㄲㄴㄷㄸㄹㅁㅂㅃㅅㅆㅇㅈㅉㅊㅋㅌㅍㅎ"
+    fold = {"ㄲ": "ㄱ", "ㄸ": "ㄷ", "ㅃ": "ㅂ", "ㅆ": "ㅅ", "ㅉ": "ㅈ"}
+    uniform = all(o["price"] == gb[0]["price"] for o in gb)
+    out, prev = [], ""
+    for o in gb:
+        c = ord(o["name"][0])
+        ini = "#" if not 0xAC00 <= c <= 0xD7A3 else (lambda k: fold.get(k, k))(cho[(c - 0xAC00) // 588])
+        if ini != prev:
+            out.append(f'<div class="ini" aria-hidden="true">{ini}</div>')
+            prev = ini
+        camp = re.search(r"\((.*?)\)", o["name"])
+        base = re.sub(r"\(.*?\)", "", o["name"], count=1)
+        out.append(f'<article class="gb" id="{o["slug"]}">'
+                   f'<h3><a class="tlink" href="{o["slug"]}.html">{esc(base)}</a>' + (f'<small>{esc(camp.group(1))}</small>' if camp else "") + '</h3>'
+                   f'<span class="pr" data-list-price="{o["price"]}"' + (" hidden" if uniform else "") + f'>{o["price"]:,}원</span>'
+                   f'<div class="acts"><button type="button" class="btn ghost sm" data-cart-sku="{esc(o["sku"])}" data-cart-title="{esc(o["name"])} 2027 서류기반면접 가이드북" data-cart-price="{o["price"]}">담기</button></div></article>')
+    return "".join(out)
+
+
 def _faq_html(name, faq, sub="이 가이드북"):
     rows = "\n".join(f'      <details class="faq"><summary>{esc(x["q"])}</summary><div class="a"><p>{esc(x["a"])}</p></div></details>'
                       for x in faq)
@@ -1083,6 +1192,7 @@ def render_page(cat, items, i, meta):
          "__FINAL_H2__": final_h2, "__FINAL_P__": esc(final_p), "__FINAL_ACTS__": final_acts,
          "__FACTS__": _facts_html(name, _facts(e, mv, cat, price, sale, pdfp)),
          "__RELATED__": _related_html(items, i, meta, _forms_on(mv)),
+         "__OFFICIAL__": _official_html(e) if not studio else "",
          "__DATE_ISO__": CONTENT_DATE,
          "__DATE_KO__": "{}년 {}월 {}일".format(*[int(x) for x in CONTENT_DATE.split("-")])}
     return fill(PAGE_TPL.read_text(encoding="utf-8"), m)
@@ -1103,7 +1213,8 @@ def render_index(cat, items, meta):
     h1 = "학교별 2027 면접 가이드북"
     fillmap = {"__TITLE__": esc(seo_hub_texts(cat, items, meta)["title"]), "__N__": str(n), "__SALE__": str(sale), "__READY__": str(n - sale),
                "__PRICE_RAW__": str(price), "__PRICE__": f"{price:,}",
-               "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":"))}
+               "__HH_GB__": json.dumps(gb, ensure_ascii=False, separators=(",", ":")),
+               "__GRID__": _grid_html(gb)}
     t = INDEX_TPL.read_text(encoding="utf-8")
     for k, v in fillmap.items():
         t = t.replace(k, v)

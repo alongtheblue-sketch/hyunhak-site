@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-07T06:21:41.916895+00:00",
+ "generated_at": "2026-10-25T12:04:18.119467+00:00",
  "products": [
   {
    "sku": "guide-ajou",
@@ -147,13 +147,13 @@
   },
   {
    "sku": "guide-hanyang-erica",
-   "status": "active",
+   "status": "hidden",
    "price": 33000,
    "type": "digital"
   },
   {
    "sku": "guide-hanyang-erica-pdf",
-   "status": "active",
+   "status": "hidden",
    "price": 110000,
    "type": "digital_file"
   },
