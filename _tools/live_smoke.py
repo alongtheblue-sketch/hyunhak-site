@@ -122,9 +122,11 @@ def main():
         if by.get("lecture-common", {}).get("price") != 220000: fails.append("lecture-common 220,000 아님")
         if by.get("passage-single", {}).get("price") != 33000: fails.append("passage-single 33,000 아님")
     # 2026-09-04 비판매 7권 철거: 면은 목록으로 301, 목록에는 준비 중 0 과 31권
-    for slug in ["knu", "korea", "skku", "yonsei", "dgist", "pknu", "hongik"]:
+    # 2026-10-25 목적지 = 목록 canonical /guidebook/ (고려대, 연세대는 스튜디오 상품 소개 면), 2026-10-26 ERICA 추가
+    dest = {"korea": "/programs/korea.html", "yonsei": "/programs/yonsei.html"}
+    for slug in ["knu", "korea", "skku", "yonsei", "dgist", "pknu", "hongik", "hanyang-erica"]:
         st, loc = status_noredirect(SITE + f"/guidebook/{slug}.html")
-        ok = st == 301 and loc.endswith("/guidebook/index.html")
+        ok = st == 301 and loc.endswith(dest.get(slug, "/guidebook/"))
         print(f"removed guidebook/{slug} {st} -> {loc or '-'} {'OK' if ok else 'FAIL'}")
         if not ok:
             fails.append(f"guidebook/{slug} 301 아님 ({st} {loc})")
