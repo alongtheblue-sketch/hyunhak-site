@@ -7,6 +7,7 @@
   python3 _tools/apply_counts.py --check   낡음 판정만 (rc 1 = 낡음)
   python3 _tools/apply_counts.py           반영
 """
+import html
 import json
 import re
 import sys
@@ -34,6 +35,17 @@ def ledger():
             for e in sorted(sale, key=lambda e: e["name"])
         ],
     }
+
+
+def home_tile(o):
+    """index.html 스크립트 tile(o) 와 같은 문자열."""
+    name = html.escape(o["name"])
+    camp = (re.search(r"\((.*?)\)", o["name"]) or [None, ""])[1]
+    label = re.sub(r"\(.*?\)", "", name, count=1) + (f"<small>{html.escape(camp)}</small>" if camp else "")
+    st = "" if o["sale"] else '<span class="w">준비 중</span>'
+    ready = "" if o["sale"] else " ready"
+    return (f'<a class="tile{ready}" href="guidebook/{o["slug"]}.html" title="{name}"><span class="n">{label}</span>'
+            f'{st}<span class="ar" aria-hidden="true">→</span></a>')
 
 
 # (파일, 정규식, 채울 키, 기대 매치 수). 정규식의 그룹 1 이 교체 대상 숫자다.
@@ -92,6 +104,19 @@ def main():
                 stale.append("index.html: HH_GB의 slug/name/short/pages/q/sale != 원장")
                 payload = json.dumps(L["books"], ensure_ascii=False, separators=(",", ":"))
                 edits["index.html"] = home[:match.start(1)] + payload + home[match.end(1):]
+
+    # 2026-10-26 SEO: 홈 #tiles 첫 12장을 첫 HTML 에 싣는다. 스크립트 render() 가 같은 문자열로 덮어써 화면은 그대로이고,
+    # 크롤러는 스크립트 실행 전에 대학 면 링크를 본다. 문자열은 index.html 의 tile(o) 와 같아야 한다(LIMIT 12).
+    home = edits.get("index.html", home)
+    boxes = list(re.finditer(r'(<div class="tiles" id="tiles"[^>]*>)(.*?)(</div>)', home, re.S))
+    if len(boxes) != 1:
+        errors.append(f"index.html: #tiles 상자 {len(boxes)}건, 기대 1건")
+    else:
+        box = boxes[0]
+        tiles = "".join(home_tile(o) for o in L["books"][:12])
+        if box.group(2) != tiles:
+            stale.append("index.html: #tiles 정적 타일 != 원장 첫 12권")
+            edits["index.html"] = home[:box.start(2)] + tiles + home[box.end(2):]
 
     if errors:
         for e in errors:
