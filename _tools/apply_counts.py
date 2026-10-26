@@ -60,8 +60,8 @@ ANCHORS = [
     ("about.html", r"질문 ([\d,]+)개", "q", 2),
     ("about.html", r"<b>([\d,]+)</b><span>수록 질문</span>", "q", 1),
     ("about.html", r"가이드북, ([\d,]+)면", "p", 1),
-    ("about.html", r"31권 ([\d,]+)면", "p", 1),
-    ("about.html", r"31개 대학, ([\d,]+)면", "p", 1),
+    ("about.html", r"\d+권 ([\d,]+)면", "p", 1),   # 권수는 판매 권수 따라 바뀐다(2026-10-26 ERICA 닫기 31→30). 권수 대조는 removed_volumes_check
+    ("about.html", r"\d+개 대학, ([\d,]+)면", "p", 1),
 ]
 
 

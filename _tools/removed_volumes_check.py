@@ -9,7 +9,8 @@ import json, re, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-EXPECTED = {"knu", "korea", "skku", "yonsei", "dgist", "pknu", "hongik"}   # 2026-09-04 결재 시점 집합. 카탈로그와 어긋나면 FAIL
+EXPECTED = {"knu", "korea", "skku", "yonsei", "dgist", "pknu", "hongik", "hanyang-erica"}   # 2026-09-04 결재 7권 + 2026-10-26 한양대 ERICA(건우 「그냥 닫아」). 카탈로그와 어긋나면 FAIL
+N_SALE = 30
 
 def main():
     cat = json.load(open(ROOT / "_tools/guidebook_catalog.json", encoding="utf-8"))
@@ -18,8 +19,8 @@ def main():
     fails = []
     if off != EXPECTED:
         fails.append(f"카탈로그 onsale=false 집합 {sorted(off)} != 결재 집합 {sorted(EXPECTED)}")
-    if len(on) != 31:
-        fails.append(f"판매 권수 {len(on)} != 31")
+    if len(on) != N_SALE:
+        fails.append(f"판매 권수 {len(on)} != {N_SALE}")
     # 1 면 파일
     for s in off:
         if (ROOT / f"guidebook/{s}.html").exists():
@@ -33,8 +34,8 @@ def main():
         slugs = {o["slug"] for o in json.loads(m.group(1))}
         if slugs & off:
             fails.append(f"guidebook/index.html HH_GB 에 제거 대상 {sorted(slugs & off)}")
-        if len(slugs) != 31:
-            fails.append(f"guidebook/index.html HH_GB {len(slugs)}권 != 31")
+        if len(slugs) != N_SALE:
+            fails.append(f"guidebook/index.html HH_GB {len(slugs)}권 != {N_SALE}")
     if "준비 중" in gi:
         fails.append("guidebook/index.html 에 '준비 중' 잔존")
     # 3 홈 선택기
@@ -47,8 +48,8 @@ def main():
         slugs = {o["slug"] for o in arr}
         if slugs & off:
             fails.append(f"index.html HH_GB 에 제거 대상 {sorted(slugs & off)}")
-        if len(slugs) != 31:
-            fails.append(f"index.html HH_GB {len(slugs)}권 != 31")
+        if len(slugs) != N_SALE:
+            fails.append(f"index.html HH_GB {len(slugs)}권 != {N_SALE}")
         if any(not o.get("sale", True) for o in arr):
             fails.append("index.html HH_GB 에 sale=false 항목 잔존")
     # 4 색인 산출물
@@ -60,9 +61,11 @@ def main():
         hit = [s for s in off if f"guidebook/{s}.html" in t]
         if hit:
             fails.append(f"{rel} 에 제거 대상 {sorted(hit)}")
-    n_loc = len(re.findall(r"<loc>", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))) if (ROOT / "sitemap.xml").exists() else -1
-    if n_loc != 46:
-        fails.append(f"sitemap loc {n_loc} != 46 (53 - 7)")
+    # 2026-10-26: 전체 loc 수 고정(46)은 사이트가 늘며 낡았다. 가이드북 loc = 판매 권수 + 목록 1 로 본다
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8") if (ROOT / "sitemap.xml").exists() else ""
+    n_gb_loc = len(re.findall(r"<loc>https://hyunhak\.com/guidebook/", sm))
+    if n_gb_loc != N_SALE + 1:
+        fails.append(f"sitemap 가이드북 loc {n_gb_loc} != {N_SALE + 1} (판매 {N_SALE} + 목록 1)")
     # 5 SEO 매니페스트
     man = json.load(open(ROOT / "_tools/seo_manifest.json", encoding="utf-8"))
     hit = [s for s in off if f"guidebook/{s}.html" in man["pages"]]
@@ -70,7 +73,7 @@ def main():
         fails.append(f"seo_manifest pages 에 제거 대상 {sorted(hit)}")
     # 6 FAQ 문안
     faq = (ROOT / "faq.html").read_text(encoding="utf-8")
-    for needle in ["준비 중인 7권", "38개 대학"]:
+    for needle in ["준비 중인 7권", "38권", "38개 대학 가이드북"]:   # '38개 대학 면접 형태 판정표'는 판정표 대학 수라 정상 (2026-10-26)
         if needle in faq:
             fails.append(f"faq.html 에 '{needle}' 잔존")
     # 7 워커 301 표

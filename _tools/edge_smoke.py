@@ -42,6 +42,7 @@ s, h, b = get("/interview/korea.html", follow=False); chk("/interview/korea.html
 s, h, b = get("/interview/", follow=False); chk("/interview/ → 301 interview.html", s == 301 and h.get("Location", "").endswith("/interview.html"), f"{s} {h.get('Location')}")
 s, h, b = get("/store.html", follow=False); chk("/store.html → 301 guidebook/", s == 301 and h.get("Location", "").endswith("/guidebook/"), f"{s} {h.get('Location')}")
 s, h, b = get("/guidebook/knu.html", follow=False); chk("/guidebook/knu.html → 301 guidebook/ (철거 7권, 목록 canonical)", s == 301 and h.get("Location", "").endswith("/guidebook/"), f"{s} {h.get('Location')}")
+s, h, b = get("/guidebook/hanyang-erica.html", follow=False); chk("/guidebook/hanyang-erica.html → 301 guidebook/ (10-26 판매 종료)", s == 301 and h.get("Location", "").endswith("/guidebook/"), f"{s} {h.get('Location')}")
 s, h, b = get("/favicon.ico"); chk("/favicon.ico 200 image/png", s == 200 and h.get("Content-Type", "").startswith("image/png"), f"{s} {h.get('Content-Type', '-')}")
 s, h, b = get("/_tools/seo_manifest.json"); chk("_tools 비공개", s == 404, f"{s}")
 s, h, b = get("/wrangler.toml"); chk("wrangler.toml 비공개", s == 404, f"{s}")

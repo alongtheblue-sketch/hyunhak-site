@@ -1664,7 +1664,7 @@
    "slug": "hanyang-erica",
    "sku": "guide-hanyang-erica",
    "price": null,
-   "onsale": true,
+   "onsale": false,
    "archive": false,
    "name": "한양대학교(ERICA)",
    "file": "한양대학교(ERICA)_2027면접가이드북.pdf",

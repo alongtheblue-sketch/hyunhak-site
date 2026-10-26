@@ -13,6 +13,7 @@ const REMOVED_GUIDEBOOK = new Set([
   "/guidebook/dgist.html",
   "/guidebook/pknu.html",
   "/guidebook/hongik.html",
+  "/guidebook/hanyang-erica.html",   // 2026-10-26 판매 종료(건우 「한양대 ERICA는 그냥 닫아」)
 ]);
 const REMOVED_GUIDEBOOK_TO = {
   "/guidebook/korea.html": "/programs/korea.html",

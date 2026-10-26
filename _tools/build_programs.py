@@ -31,8 +31,8 @@ def guide_options():
     catalog = json.loads((HERE / "guidebook_catalog.json").read_text(encoding="utf-8"))
     items = sorted((x for x in catalog["items"] if x.get("onsale", True)
                     and x["slug"] not in {"yonsei", "korea"}), key=lambda x: x["name"])
-    if len(items) != 31:
-        raise ValueError(f"R2 대학 선택지: {len(items)}개, 31개 기대")
+    if len(items) != 30:
+        raise ValueError(f"R2 대학 선택지: {len(items)}개, 30개 기대 (2026-10-26 ERICA 닫기)")
     return "\n".join(
         f'<option value="{html.escape(x["sku"], quote=True)}" '
         f'data-cart-title="{html.escape(x["name"], quote=True)} 2027 서류기반면접 가이드북" '
@@ -45,8 +45,8 @@ def guide_catalog():
     catalog = json.loads((HERE / "guidebook_catalog.json").read_text(encoding="utf-8"))
     items = sorted((x for x in catalog["items"] if x.get("onsale", True)
                     and x["slug"] not in {"yonsei", "korea"}), key=lambda x: x["name"])
-    if len(items) != 31:
-        raise ValueError("R3 대학 목록은 판매 31권이어야 합니다")
+    if len(items) != 30:
+        raise ValueError("R3 대학 목록은 판매 30권이어야 합니다")
     covers, names = [], []
     for i, item in enumerate(items):
         slug, name = html.escape(item["slug"]), html.escape(item["name"])

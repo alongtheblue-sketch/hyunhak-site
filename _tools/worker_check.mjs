@@ -56,6 +56,7 @@ for (const [p, want] of [["/interview/", "/interview.html"], ["/store", "/guideb
 { const r = await call("/interview/korea.html?utm_source=chatgpt.com"); chk("301 이 쿼리를 보존(utm → 목적지 ai_referrals)", r.status === 301 && loc(r) === "https://hyunhak.com/interview/korea-hum.html?utm_source=chatgpt.com", loc(r)); }
 { const r = await call("/interview"); chk("/interview (허브, 산 면) 200", r.status === 200, `${r.status}`); }
 { const r = await call("/guidebook/knu.html"); chk("철거 7권 301 = 목록 canonical /guidebook/ (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/", `${r.status} ${loc(r)}`); }
+{ const r = await call("/guidebook/hanyang-erica.html"); chk("ERICA 판매 종료 301 = 목록 canonical /guidebook/ (2026-10-26)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/", `${r.status} ${loc(r)}`); }
 { const r = await call("/guidebook/korea.html"); chk("철거 고려대 가이드북 301 = 스튜디오 면 (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/programs/korea.html", `${r.status} ${loc(r)}`); }
 { const r = await call("/faq"); chk("확장자 없는 경로 /faq 200 (기존 해석 유지)", r.status === 200, `${r.status}`); }
 { const r = await call("/guidebook"); chk("/guidebook → 301 슬래시 (기존 유지)", r.status === 301 && loc(r).endsWith("/guidebook/"), `${r.status} ${loc(r)}`); }
