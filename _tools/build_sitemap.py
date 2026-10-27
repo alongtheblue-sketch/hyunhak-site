@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """sitemap.xml / robots.txt / llms.txt / llms-full.txt 재생성 (manifest 기준, 멱등).
 
-lastmod = git log -1 --format=%cI -- <file> (미추적/미커밋 신규 파일은 오늘), priority/changefreq = manifest.
+lastmod = 본문 기준 수정일(content_date.py 원장, 공통 틀만 바뀐 날은 올리지 않는다. 2026-10-26), 원장에 없는 면은 git 마지막 커밋일. priority/changefreq = manifest.
 robots.txt = Allow / + noindex 경로 Disallow + /_tools/ Disallow + Sitemap 라인.
 llms.txt = 서비스 요약, 상품 3군, 가격, 경로 목록, 연락처(admin@hyunhak.com).
 llms-full.txt = 색인 페이지마다 제목 | description | URL 한 줄.
@@ -11,6 +11,7 @@ import datetime
 import os
 import subprocess
 
+import content_date as CD
 import seo_common as C
 
 TYPE_ORDER = {"home": 0, "hub": 1, "product": 2, "faq": 3, "article": 4, "utility": 5, "legal": 6}
@@ -54,16 +55,18 @@ def write_text(name, text):
 
 
 def build_sitemap(m, pages):
+    ledger = CD.load()
     lines = ['<?xml version="1.0" encoding="UTF-8"?>',
              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     for rel, e in sorted(pages, key=lambda x: sort_key(x[0])):
         lines.append("  <url>")
         lines.append(f"    <loc>{C.attr(C.canonical_url(m, rel))}</loc>")
-        lines.append(f"    <lastmod>{git_lastmod(rel)}</lastmod>")
+        lines.append(f"    <lastmod>{CD.date_for(rel, ledger, fallback=git_lastmod(rel))}</lastmod>")
         lines.append(f"    <changefreq>{e['changefreq']}</changefreq>")
         lines.append(f"    <priority>{float(e['priority']):.1f}</priority>")
         lines.append("  </url>")
     lines.append("</urlset>")
+    CD.save(ledger)
     return "\n".join(lines) + "\n"
 
 

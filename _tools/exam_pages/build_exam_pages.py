@@ -6,7 +6,7 @@
    셸(GNB·푸터·모바일 바)·SEO 머리·AEO 단락·FAQ JSON-LD 는 build_all.sh 후공정이 붙인다. 이 파일은 마크업과 manifest 값만 낸다.
    실행: python3 _tools/exam_pages/build_exam_pages.py [--mod xa|xb|xc]   (기본 = MOD 상수, design-critic 권고안)
 """
-import argparse, html, json, re, sys
+import argparse, hashlib, html, json, os, re, sys
 from datetime import date
 from pathlib import Path
 
@@ -19,7 +19,10 @@ import seo_common as C        # noqa: E402
 MOD = "xa"        # design-critic 권고안 (2026-09-10 채점 뒤 고정). xa 문서형 / xb 카드형 / xc 절차형
 TPL = (D / "tpl.html").read_text(encoding="utf-8")
 CSS_SRC, CSS_DST = D / "exam_page.css", ROOT / "assets" / "exam_page.css"
-TODAY = date.today().isoformat()
+TODAY = os.environ.get("HH_TODAY") or date.today().isoformat()
+# 2026-10-26: date_modified 를 빌드한 날로 찍으면 내용이 같아도 날마다 9면과 사이트맵 수정일이 바뀐다.
+# 원천 출력(마크업 + 날짜 뺀 manifest 값)의 해시가 바뀐 날만 올린다. 첫 값 = _tools/lastmod_ledger.json 의 본문 수정일
+DATES = D / "content_dates.json"
 LOCK = ["채점 기준 세부와 배점 추정", "유형별 모범답안과 첨삭 세 단", "세트별 전략과 시간 재배분"]
 CONTACT_HOURS = "전화가 연결되지 않으면 고객센터 1:1 문의로 남겨 주세요. 영업일 기준 순차 답변합니다."   # 운영 시간은 사이트 어디에도 공표된 값이 없다 (2026-09-10 실측) → 결재 큐 정보 항목
 SAMPLE_NOTE_BANK = "아래 시험지는 연구소 은행의 자체 저작 예시 세트에서 제시문 일부와 발문을 옮긴 것입니다. 대학 기출 지문이 아닙니다."
@@ -229,16 +232,25 @@ def main():
     (ROOT / "interview").mkdir(exist_ok=True)
     CSS_DST.write_text(CSS_SRC.read_text(encoding="utf-8"), encoding="utf-8")
     m = C.load_manifest(); changed = 0
+    dates = json.loads(DATES.read_text(encoding="utf-8")) if DATES.exists() else {}
+    lm = ROOT / "_tools" / "lastmod_ledger.json"
+    seed = json.loads(lm.read_text(encoding="utf-8")) if lm.exists() else {}
     for code, _, _ in EX.CODES:
         page, entry = build_one(code, a.mod)
         rel = f"interview/{code}.html"; p = ROOT / rel
         before = p.read_text(encoding="utf-8") if p.exists() else None
         p.write_text(page, encoding="utf-8")   # 후공정이 셸·SEO 를 덧씌우므로 매번 다시 쓴다 (허브와 같은 방식). 멱등은 build_all.sh 2회 해시
         ent = m["pages"].setdefault(rel, {})
+        h = hashlib.sha256((page + json.dumps({k: v for k, v in entry.items() if k != "date_modified"}, ensure_ascii=False, sort_keys=True)).encode("utf-8")).hexdigest()[:16]
+        rec = dates.get(code)
+        if not (rec and rec["sha"] == h):
+            rec = dates[code] = {"sha": h, "date": TODAY if rec else seed.get(rel, {}).get("date", TODAY)}
+        entry["date_modified"] = rec["date"]
         entry["date_published"] = ent.get("date_published") or TODAY
         if ent != entry: ent.clear(); ent.update(entry); changed += 1
         print(f"{rel}: {len(page):,}자 {'변경' if before != page else '동일'} · manifest {'갱신' if ent == entry else ''}")
     C.save_manifest(m)
+    DATES.write_text(json.dumps(dict(sorted(dates.items())), ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"build_exam_pages: {len(EX.CODES)}면 · manifest 갱신 {changed}건 · css {CSS_DST.relative_to(ROOT)} · mod {a.mod}")
 
 if __name__ == "__main__":

@@ -1,0 +1,38 @@
+{
+ "korea-eq-hum": {
+  "sha": "e7c3ba43658800fc",
+  "date": "2026-10-15"
+ },
+ "korea-eq-sci": {
+  "sha": "2bb367fed9631d44",
+  "date": "2026-10-15"
+ },
+ "korea-hum": {
+  "sha": "2396646ffa1ab410",
+  "date": "2026-10-15"
+ },
+ "korea-sci": {
+  "sha": "26a8b3514c8a21e9",
+  "date": "2026-10-15"
+ },
+ "yonsei-eq": {
+  "sha": "da1f2beecd2cdc0f",
+  "date": "2026-10-15"
+ },
+ "yonsei-hum": {
+  "sha": "fdb289a7d3013665",
+  "date": "2026-10-15"
+ },
+ "yonsei-intl": {
+  "sha": "fa37cbe1a7263050",
+  "date": "2026-10-15"
+ },
+ "yonsei-mirae": {
+  "sha": "5765f8ff79b78e28",
+  "date": "2026-10-15"
+ },
+ "yonsei-sci": {
+  "sha": "6a1665e0bab5176b",
+  "date": "2026-10-15"
+ }
+}

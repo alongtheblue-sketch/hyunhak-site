@@ -1,0 +1,282 @@
+{
+ "about.html": {
+  "sha": "8f8483e94b320a26",
+  "date": "2026-10-26"
+ },
+ "b2b.html": {
+  "sha": "375445abedc02216",
+  "date": "2026-09-09"
+ },
+ "faq.html": {
+  "sha": "e254efcc89e2edc0",
+  "date": "2026-10-26"
+ },
+ "guidebook/ajou.html": {
+  "sha": "e4c20bd5a31b956f",
+  "date": "2026-10-25"
+ },
+ "guidebook/catholic.html": {
+  "sha": "82964b87fedae13d",
+  "date": "2026-10-25"
+ },
+ "guidebook/cau.html": {
+  "sha": "5f230f1923125f8f",
+  "date": "2026-10-26"
+ },
+ "guidebook/dankook.html": {
+  "sha": "de4d0a1c9bd1b357",
+  "date": "2026-10-25"
+ },
+ "guidebook/donga.html": {
+  "sha": "9cfa2f9416ab3f72",
+  "date": "2026-10-25"
+ },
+ "guidebook/dongduk.html": {
+  "sha": "8b1a25a8dab17337",
+  "date": "2026-10-25"
+ },
+ "guidebook/dongguk.html": {
+  "sha": "2d5c7744ec665004",
+  "date": "2026-10-25"
+ },
+ "guidebook/duksung.html": {
+  "sha": "606fab8635b09db5",
+  "date": "2026-10-25"
+ },
+ "guidebook/ewha.html": {
+  "sha": "0f4f3c1ec6711428",
+  "date": "2026-10-25"
+ },
+ "guidebook/gachon.html": {
+  "sha": "bbd132b56a9f70e5",
+  "date": "2026-10-25"
+ },
+ "guidebook/hufs.html": {
+  "sha": "8e36d917501f7239",
+  "date": "2026-10-26"
+ },
+ "guidebook/incheon.html": {
+  "sha": "e4c1cfdcd34aa2fe",
+  "date": "2026-10-25"
+ },
+ "guidebook/index.html": {
+  "sha": "e763231dfb3ca6cd",
+  "date": "2026-10-26"
+ },
+ "guidebook/inha.html": {
+  "sha": "f3f95aa39bf899b5",
+  "date": "2026-10-26"
+ },
+ "guidebook/khu.html": {
+  "sha": "77be954961d7d4db",
+  "date": "2026-10-25"
+ },
+ "guidebook/konkuk.html": {
+  "sha": "aa98de8e665171e1",
+  "date": "2026-10-25"
+ },
+ "guidebook/kookmin.html": {
+  "sha": "6ed6443718b92d69",
+  "date": "2026-10-25"
+ },
+ "guidebook/kwangwoon.html": {
+  "sha": "5280b29ad1d57fa9",
+  "date": "2026-10-25"
+ },
+ "guidebook/kyonggi.html": {
+  "sha": "f7c7852357515e5e",
+  "date": "2026-10-25"
+ },
+ "guidebook/myongji.html": {
+  "sha": "e785e819c958eb8d",
+  "date": "2026-10-25"
+ },
+ "guidebook/pusan.html": {
+  "sha": "c087698b6b0423b5",
+  "date": "2026-10-25"
+ },
+ "guidebook/sahmyook.html": {
+  "sha": "b1bcdf5848177829",
+  "date": "2026-10-25"
+ },
+ "guidebook/sejong.html": {
+  "sha": "3a095d9d271d69c0",
+  "date": "2026-10-25"
+ },
+ "guidebook/seoultech.html": {
+  "sha": "687f066be092d7eb",
+  "date": "2026-10-25"
+ },
+ "guidebook/snu.html": {
+  "sha": "f579a3ee207ba73d",
+  "date": "2026-10-25"
+ },
+ "guidebook/sookmyung.html": {
+  "sha": "f81be20da56cade9",
+  "date": "2026-10-25"
+ },
+ "guidebook/soongsil.html": {
+  "sha": "44446ccc1f31080c",
+  "date": "2026-10-25"
+ },
+ "guidebook/sungshin.html": {
+  "sha": "f1c8d736b09a33c0",
+  "date": "2026-10-25"
+ },
+ "guidebook/swu.html": {
+  "sha": "95bb554f81789d7c",
+  "date": "2026-10-25"
+ },
+ "guidebook/ulsan.html": {
+  "sha": "13b8e6dbc4e1cb9a",
+  "date": "2026-10-25"
+ },
+ "guidebook/uos.html": {
+  "sha": "914e392497544676",
+  "date": "2026-10-25"
+ },
+ "index.html": {
+  "sha": "d58d6bbf1a076d61",
+  "date": "2026-10-26"
+ },
+ "interview.html": {
+  "sha": "c2e77c00798d354a",
+  "date": "2026-10-26"
+ },
+ "interview/korea-eq-hum.html": {
+  "sha": "bfe386da48883490",
+  "date": "2026-10-15"
+ },
+ "interview/korea-eq-sci.html": {
+  "sha": "eda1cc0af2d23bf2",
+  "date": "2026-10-15"
+ },
+ "interview/korea-hum.html": {
+  "sha": "295a9b207de94498",
+  "date": "2026-10-15"
+ },
+ "interview/korea-sci.html": {
+  "sha": "2f068b19a1c1614a",
+  "date": "2026-10-15"
+ },
+ "interview/yonsei-eq.html": {
+  "sha": "f9008e8f77fe2875",
+  "date": "2026-10-15"
+ },
+ "interview/yonsei-hum.html": {
+  "sha": "2e4f4c62f3e83f76",
+  "date": "2026-10-15"
+ },
+ "interview/yonsei-intl.html": {
+  "sha": "68afb6fb231608ae",
+  "date": "2026-10-15"
+ },
+ "interview/yonsei-mirae.html": {
+  "sha": "0b0821099a44c592",
+  "date": "2026-10-15"
+ },
+ "interview/yonsei-sci.html": {
+  "sha": "dddc91307c2330d5",
+  "date": "2026-10-15"
+ },
+ "lectures.html": {
+  "sha": "f57b8fd3a7f1983c",
+  "date": "2026-10-15"
+ },
+ "lectures/common.html": {
+  "sha": "d77bb9da4b981a06",
+  "date": "2026-10-15"
+ },
+ "lectures/korea-hum.html": {
+  "sha": "f4a731e73bd740db",
+  "date": "2026-10-15"
+ },
+ "lectures/korea-sci.html": {
+  "sha": "206a6ea15c1ef9fd",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-hum.html": {
+  "sha": "7ca8f8f3725e35d5",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-intl.html": {
+  "sha": "f2eb00d622acc072",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-mirae-design.html": {
+  "sha": "61482b0b88aef281",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-mirae-free.html": {
+  "sha": "766a437861a9a45c",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-mirae-health.html": {
+  "sha": "597bfeda7c6f466a",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-mirae-intl.html": {
+  "sha": "eacc2bbf2da749ae",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-mirae-tech.html": {
+  "sha": "1006c1ae8c4da1fe",
+  "date": "2026-10-15"
+ },
+ "lectures/yonsei-sci.html": {
+  "sha": "4c646d37044663bf",
+  "date": "2026-10-15"
+ },
+ "library.html": {
+  "sha": "7f664138704d4315",
+  "date": "2026-10-26"
+ },
+ "notice.html": {
+  "sha": "b1d86fcd315c5dc1",
+  "date": "2026-10-01"
+ },
+ "pastexam.html": {
+  "sha": "ad683c057d6b8a8c",
+  "date": "2026-10-01"
+ },
+ "privacy.html": {
+  "sha": "660a4f06cb0cc16e",
+  "date": "2026-10-01"
+ },
+ "programs/guidebook.html": {
+  "sha": "bd7197f2b84be101",
+  "date": "2026-10-26"
+ },
+ "programs/korea.html": {
+  "sha": "0433a075b2b266fe",
+  "date": "2026-10-01"
+ },
+ "programs/studio.html": {
+  "sha": "8e5863dc380f5352",
+  "date": "2026-10-15"
+ },
+ "programs/yonsei.html": {
+  "sha": "6d69070f9787bca6",
+  "date": "2026-10-01"
+ },
+ "ranking.html": {
+  "sha": "f82d10dd13e8250a",
+  "date": "2026-10-04"
+ },
+ "request.html": {
+  "sha": "61c72d7dee524607",
+  "date": "2026-10-01"
+ },
+ "studio.html": {
+  "sha": "af0060940058a232",
+  "date": "2026-10-14"
+ },
+ "support.html": {
+  "sha": "eff298d111fa4302",
+  "date": "2026-10-26"
+ },
+ "terms.html": {
+  "sha": "92c51997892151ba",
+  "date": "2026-10-26"
+ }
+}
