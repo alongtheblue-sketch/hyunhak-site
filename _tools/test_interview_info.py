@@ -840,7 +840,10 @@ class SourceContract(unittest.TestCase):
 
 
 # ---------------------------------------------------------------- 원장 재대조 반영 생성기 (2026-11-16 명세 E 4절 3, 4항)
-PUSAN_MED_TIME = "학생부 기반 면접 10분 내외 / 공통문제 답변 준비 10분 내외, 면접 10분 내외"
+# 부산대 의예과 표기: 정보 면 줄 단위 보정(compile_interview_info.TRACK_FIX)과 같은 순서와 낱말(2026-11-17 검토 지적 수리).
+# 두 대조가 적은 글(PUSAN_MED_AUDIT)은 요강 67쪽 두 칸을 「 / 」로 이은 것이고, 수와 꾸밈말(10분 내외 셋)은 같다
+PUSAN_MED_TIME = "공통문제 답변 준비 10분 내외, 공통문제 답변 면접 10분 내외, 학생부 기반 면접 10분 내외"
+PUSAN_MED_AUDIT = "학생부 기반 면접 10분 내외 / 공통문제 답변 준비 10분 내외, 면접 10분 내외"
 
 
 class ReauditGenerator(unittest.TestCase):
@@ -1017,8 +1020,8 @@ class LedgerCorrection(unittest.TestCase):
         self.assertEqual([(t["interview_basis"], t["interview_minutes"], t["prep_minutes"]) for t in (t1, t2, t3)],
                          [("record_based", None, None), ("record_based", 15, None), ("record_based", 15, None)])
         self.assertEqual(t1.get("interview_time_text"), "8~10분 내외")
-        self.assertNotIn("interview_time_text", t2)
-        self.assertNotIn("interview_time_text", t3)
+        # 의예과 두 전형은 15쪽, 20쪽 「15분 내외(각 면접실별 7~8분 내외)」의 꾸밈말을 싣는다(명세 E 4절 3항, 2026-11-17 검토 지적 수리)
+        self.assertEqual((t2.get("interview_time_text"), t3.get("interview_time_text")), ("15분 내외", "15분 내외"))
         self.assertEqual(t1["selection_ratio"], "전형 총 모집 939명 중 의예과를 제외한 모집단위; 1단계 서류 100%(3.5배수), 2단계 1단계 70%+면접 30%")
         self.assertEqual(t3["selection_ratio"], "모집 6명; 1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%")
         self.assertEqual([sorted({e["page"] for e in t["evidence"]}) for t in (t1, t2, t3)], [[14, 15], [10, 14, 15], [19, 20]])
@@ -1111,27 +1114,31 @@ AUDIT_DIR = Path.home() / "unjang/_shared/ops/20261116_SEO_GEO_AEO_재부양/s2_
 PAGE_OFF = {"ajou": 2, "catholic": 2, "dankook": 2, "donga": 0, "dongduk": 4, "dongguk": 2, "duksung": 0, "ewha": -1, "gachon": 0,
             "hufs": 2, "incheon": 0, "khu": 2, "konkuk": 0, "kookmin": 4, "kwangwoon": 0, "myongji": 0, "sahmyook": 2, "sejong": 0,
             "seoultech": 0, "snu": 4, "sookmyung": 0, "soongsil": 0, "sungshin": 0, "swu": 0, "ulsan": 0, "uos": 0}
-RENAMED = {("catholic", "잠재능력우수자(면접)전형"): "잠재능력우수자면접전형",
-           ("ulsan", "지역인재전형(저소득층)-의예과"): "지역인재(기초생활/차상위)전형-의예과"}
+RENAMED = {("catholic", "잠재능력우수자(면접)전형"): "잠재능력우수자면접전형"}
 # 두 파일이 일치했으나 명세 2절 인용 규칙(그 쪽 pdftotext 기본 모드 글에 이어진 글)을 채울 수 없어 반영하지 않은 칸(글자 층 없는 쪽)
 HELD = {("kyonggi", "KGU학생부종합전형", "evidence[0]"), ("kyonggi", "SW우수자전형", "evidence[0]"), ("donga", "잠재능력우수자전형", "time_text")}
 # 문서 sha 가 달랐고 대조 칸이 모두 same 이거나 반영된 differs 인 대학(4절 2항: 문서 sha 와 대조일을 지금 판으로)
 RESOLVED = {"ajou", "gachon", "hufs", "konkuk", "kookmin", "sookmyung", "swu", "uos"}
+# 문서 sha 가 달랐고 풀리지 않은 칸이 남아 documents 를 그대로 둔 대학(4절 2항). 근거 쪽도 원장 문서 판의 쪽 그대로 두고(지금 판 쪽으로 바꾸지 않는다),
+# 값 칸은 원장 근거 쪽의 요강 글에서 다시 확인될 때만 싣는다(5절 5항). 부산대는 원장판 PDF 가 있어 그 판(원장 쪽 = PDF 쪽 차례 - 1)으로 본다
+UNRESOLVED = {"incheon", "pusan", "sejong", "snu", "soongsil", "ulsan"}
+# 그래서 싣지 않은 꾸밈말(두 파일은 일치했으나 지금 판 쪽에서만 확인된다)과 이름(울산대, 지금 판 66쪽에서만 확인된다)
+HELD_TT = {("incheon", "자기추천전형"), ("sejong", "세종인재전형(면접형)-인문·자연계열"),
+           ("sejong", "세종인재전형(면접형)-디자인이노베이션·만화애니메이션텍"), ("soongsil", "SSU미래인재전형(면접형)"),
+           ("ulsan", "잠재역량전형-아산아너스칼리지 자율전공학부"), ("ulsan", "잠재역량전형-간호학과"), ("ulsan", "잠재역량전형-의예과"),
+           ("ulsan", "지역인재전형-의예과"), ("ulsan", "지역인재전형(저소득층)-의예과")}
+PUSAN_OLD_PDF = FACTS_DIR / "_dl" / "pusan" / "pusan_2027_susi.pdf"
 # 반영 뒤 전형별 근거 쪽(원장 체계)과 그 쪽 요강 글에서 다시 확인하는 글(명세 5절 5항)
 REAUDIT_PAGES = {
     ("ajou", "ACE전형-의학과"): [9, 10], ("catholic", "잠재능력우수자면접전형"): [30, 56], ("duksung", "덕성인재전형Ⅱ"): [29, 74],
-    ("ewha", "미래인재전형-면접형"): [19, 20, 40], ("hufs", "학생부종합전형(면접형)"): [14, 23], ("incheon", "자기추천전형"): [27, 49],
+    ("ewha", "미래인재전형-면접형"): [19, 20, 40], ("hufs", "학생부종합전형(면접형)"): [14, 23],
     ("khu", "네오르네상스전형"): [38, 62], ("konkuk", "KU자기추천전형"): [72], ("myongji", "명지인재면접전형"): [64],
-    ("sahmyook", "세움인재전형"): [27, 54], ("sejong", "세종인재전형(면접형)-인문·자연계열"): [51],
-    ("sejong", "세종인재전형(면접형)-디자인이노베이션·만화애니메이션텍"): [51],
+    ("sahmyook", "세움인재전형"): [27, 54],
     **{("seoultech", n): [11, 62, 63] for n in ("학교생활우수자전형", "창의융합인재전형", "기회균형전형(국가보훈대상자)", "기회균형전형(기회균등)",
                                                 "기회균형전형(농어촌학생)", "기회균형전형(평생학습자)", "기회균형전형(특수교육대상자)", "군위탁전형")},
-    ("snu", "학생부종합(일반전형)-면접 실시 모집단위"): [20, 21, 23, 24], ("sookmyung", "숙명인재(면접형)전형"): [18, 19],
-    ("sookmyung", "소프트웨어인재전형"): [20, 21], ("soongsil", "SSU미래인재전형(면접형)"): [19, 20, 66],
+    ("sookmyung", "숙명인재(면접형)전형"): [18, 19], ("sookmyung", "소프트웨어인재전형"): [20, 21],
     ("sungshin", "자기주도인재전형"): [9, 18, 19, 44], ("sungshin", "특수교육대상자전형(정원외)"): [10, 28, 44],
-    ("ulsan", "잠재역량전형-아산아너스칼리지 자율전공학부"): [62, 81], ("ulsan", "잠재역량전형-간호학과"): [62, 81],
-    ("ulsan", "잠재역량전형-의예과"): [62, 81], ("ulsan", "지역인재전형-의예과"): [64, 81],
-    ("ulsan", "지역인재(기초생활/차상위)전형-의예과"): [24, 66, 81], ("uos", "기회균형전형Ⅰ"): [31, 32], ("kyonggi", "KGU학생부종합전형"): [42],
+    ("uos", "기회균형전형Ⅰ"): [31, 32], ("kyonggi", "KGU학생부종합전형"): [42],
 }
 PDF_FACTS = {   # (대학, PDF 쪽 차례): 그 쪽 글에 있어야 하는 글(공백은 한 칸으로 줄여 대조, 기본 모드와 -layout 어느 한쪽)
     ("ajou", 11): ["1. 모집단위 및 모집인원: 519명", "의과대학 의학과 17", "서류평가 100% (3배수 선발)", "1단계 성적 70% 면접평가 30%"],
@@ -1142,33 +1149,16 @@ PDF_FACTS = {   # (대학, PDF 쪽 차례): 그 쪽 글에 있어야 하는 글(
     ("ewha", 18): ["학생부종합[미래인재전형-면접형] 209명"],
     ("ewha", 19): ["1단계(5배수) 서류 100%", "1단계 성적 70%", "면접 30%", "나. 면접 평가방법: 제출서류를 기반으로 한 일반면접"],
     ("hufs", 16): ["1단계 : 서류 100% (3배수 선발)", "학생부종합전형(면접형) 478", "2단계 : 서류 50%[1단계 성적] + 면접 50%"],
-    ("incheon", 27): ["1단계 사정에서 서류평가 산출점수 순으로 모집인원의 3배수"],
-    ("incheon", 49): ["나. 전형자료: 학교생활기록부", "나. 면접형식: 개별면접(면접위원 2인이 지원자 1인 평가)", "라. 소요시간: 지원자 1인당 10분 내외"],
     ("khu", 40): ["1단계 성적(70%)과 면접평가 성적(30%)을 합산하여 총점 순으로"],
     ("konkuk", 72): ["면접평가자(2인) 대(對) 지원자(1인) / 개인당 10분 내외"],
     ("myongji", 64): ["1) 1단계 합격자(면접대상자)는 서류평가 성적 순으로 모집인원의 4배수 선발"],
     ("sahmyook", 56): ["서류평가 내용 확인 및", "개별질문", "8분 이내"],
-    ("sejong", 51): ["서류평가와 연계된 질의응답을 통해 제출서류의 진실성 확인", "총 9분 내외 소요",
-                     "면접 준비시간 동안 작성한 자료를 토대로 3~5분 발표 및 질의응답"],
     ("seoultech", 62): ["2인의 면접위원이 학생 1명당 10분 내외로 면접 시행"],
     ("seoultech", 63): ["제출서류에 기초하여 개별면접 진행", "다수의 면접위원(2인)이 면접대상자(1인) 평가"],
-    ("snu", 24): ["서류평가 1단계 성적 면접 및 구술고사", "(2배수)"],
-    ("snu", 25): ["관련 제시문을 활용하여"],
-    ("snu", 27): ["상황/제시문 기반 면접과 서류 기반 면접을 복수의 면접실에서 진행함"],
-    ("snu", 28): ["다양한 상황 제시와 제출서류 내용을 확인함"],
     ("sookmyung", 18): ["총 361명", "모집단위별 4배수", "1단계 성적 70 30"],
     ("sookmyung", 20): ["총 35명", "모집단위별 4배수", "1단계 성적 70 30"],
-    ("soongsil", 19): ["모집인원 522명"],
-    ("soongsil", 20): ["(3~3.5배수 선발)", "1단계 성적 50%", "면접평가 50%"],
-    ("soongsil", 66): ["면접위원 2인, 지원자 1인의 서류 기반 블라인드 면접", "지원자 1인당 12분 내외"],
     ("sungshin", 9): ["합계 533"], ("sungshin", 10): ["합계 23명"],
     ("sungshin", 18): ["(3배수 선발)", "60%(60점)", "40%(40점)"], ("sungshin", 28): ["(3배수 선발)", "60%(60점)", "40%(40점)"],
-    ("ulsan", 62): ["아산아너스칼리지 자율전공학부 20", "간호학과 18", "의예과 10", "1단계 400% 100%(500점)", "1단계 500% 100%(500점)",
-                    "2단계 100% 50%(500점) 50%(500점)"],
-    ("ulsan", 64): ["의예과 13", "1단계 500% 100%(500점)", "2단계 100% 50%(500점) 50%(500점)"],
-    ("ulsan", 66): ["지역인재(기초생활/차상위) 특별전형 학생부종합형"],
-    ("ulsan", 81): ["제출서류 기반 다대일 개인별 종합면접", "10분 이내", "다양한 상황 제시 및 제출서류 기반 면접을 복수의 면접실에서 진행",
-                    "30분 내외", "지역인재(기초생활/차상위_의예과)"],
     ("uos", 31): ["가. 모집인원: 132명"], ("uos", 32): ["1단계(3배수) 100%(500점)", "2단계 50%(500점) 50%(500점)"],
 }
 
@@ -1221,15 +1211,18 @@ class LedgerReaudit(unittest.TestCase):
                 tt = at.get("time_text")
                 x = ct.get(at["ledger_name"]) or {}
                 mine = x.get("my_text", x.get("my_time_text"))
-                if not tt or (slug, at["ledger_name"], "time_text") in HELD:
+                if not tt or (slug, at["ledger_name"], "time_text") in HELD or (slug, at["ledger_name"]) in HELD_TT:
                     self.assertNotIn("interview_time_text", t, (slug, t["name"]))
                     continue
                 self.assertTrue(x.get("agree"), (slug, t["name"]))
                 self.assertEqual(mine, tt["text"], (slug, t["name"]))
-                self.assertEqual(t.get("interview_time_text"), tt["text"], (slug, t["name"]))
+                if (slug, at["ledger_name"]) == ("pusan", "학생부종합전형(의예과)"):   # 정보 면 표기와 같은 순서와 낱말(4절 4항)
+                    self.assertEqual((tt["text"], t.get("interview_time_text")), (PUSAN_MED_AUDIT, PUSAN_MED_TIME))
+                else:
+                    self.assertEqual(t.get("interview_time_text"), tt["text"], (slug, t["name"]))
                 self.assertIn(re.sub(r"\s+", " ", tt["quote"]).strip(), re.sub(r"\s+", " ", _pdf_page_reading(slug, tt["page"])), (slug, t["name"]))
                 n += 1
-        self.assertEqual(n, 47)   # 두 파일이 일치한 48칸 가운데 글자 층 없는 동아대 1칸을 뺀 수
+        self.assertEqual(n, 38)   # 두 파일이 일치한 48칸에서 글자 층 없는 동아대 1칸과 4절 2항 보류 9칸(HELD_TT)을 뺀 수
 
     def test_applied_differs_are_agreed_and_in_pdf(self):
         """4절 1항, 5절 5항: 반영한 칸은 두 파일이 같은 값의 differs 로 일치했고, 원장 근거 쪽의 요강 글에서 값이 다시 확인된다."""
@@ -1243,7 +1236,7 @@ class LedgerReaudit(unittest.TestCase):
                     if f["verdict"] == "differs" and x["my_verdict"] == "differs" and x["agree"]:
                         agreed.add((slug, at["ledger_name"], f["field"]))
         self.assertEqual(len(agreed), 46)
-        ev_touched = {(s, RENAMED.get((s, n), n)) for s, n, f in agreed if f.startswith("evidence") and (s, n, f) not in HELD}
+        ev_touched = {(s, RENAMED.get((s, n), n)) for s, n, f in agreed if f.startswith("evidence") and (s, n, f) not in HELD and s not in UNRESOLVED}
         self.assertEqual(ev_touched - set(REAUDIT_PAGES), set())   # 반영한 근거 칸은 모두 아래 쪽 표에 있다
         for (slug, name), pages in REAUDIT_PAGES.items():
             orig = next((o for (s, o), new in RENAMED.items() if s == slug and new == name), name)
@@ -1261,17 +1254,13 @@ class LedgerReaudit(unittest.TestCase):
         self.assertNotIn("502", json.dumps(self._univ("ajou"), ensure_ascii=False))
         self.assertTrue(any(t["name"] == "잠재능력우수자면접전형" for t in self._univ("catholic")["tracks"]))
         self.assertFalse(any(t["name"] == "잠재능력우수자(면접)전형" for t in self._univ("catholic")["tracks"]))
-        self.assertTrue(any(t["name"] == "지역인재(기초생활/차상위)전형-의예과" for t in self._univ("ulsan")["tracks"]))
-        low = self._track("ulsan", "지역인재전형(저소득층)-의예과")
-        # 근거 [0](모집 1명, 단계별 비율)은 두 파일이 고칠 쪽을 66 과 67 로 달리 적어 반영하지 않았다(쪽 24, 글 그대로)
-        self.assertEqual((low["evidence"][0]["page"], "저소득" in low["evidence"][0]["claim"]), (24, True))
-        self.assertNotIn("저소득", json.dumps({**self._univ("ulsan"), "tracks": [{**low, "evidence": low["evidence"][1:]}]}, ensure_ascii=False))
+        # 울산대 이름은 두 파일이 일치했으나 요강 표기가 지금 판 66쪽에만 있고 원장 문서(옛 판) 근거 쪽 24, 42 에서는 확인되지 않아 싣지 않는다(4절 2항)
+        self.assertTrue(any(t["name"] == "지역인재전형(저소득층)-의예과" for t in self._univ("ulsan")["tracks"]))
+        self.assertFalse(any(t["name"] == "지역인재(기초생활/차상위)전형-의예과" for t in self._univ("ulsan")["tracks"]))
         # 고친 이름의 요강 표기가 그 전형의 근거 쪽 가운데 하나의 요강 글에 있다(5절 5항)
-        for ((slug, _), new0), (new, needle) in zip(RENAMED.items(), (("잠재능력우수자면접전형", "잠재능력우수자면접전형"),
-                                                             ("지역인재(기초생활/차상위)전형-의예과", "지역인재(기초생활/차상위) 특별전형 학생부종합형"))):
-            self.assertEqual(new0, new)
-            t = next(x for x in self._univ(slug)["tracks"] if x["name"] == new)
-            self.assertTrue(any(needle in _both_text(slug, e["page"] + PAGE_OFF[slug]) for e in t["evidence"]), (slug, new))
+        self.assertEqual(RENAMED, {("catholic", "잠재능력우수자(면접)전형"): "잠재능력우수자면접전형"})
+        t = next(x for x in self._univ("catholic")["tracks"] if x["name"] == "잠재능력우수자면접전형")
+        self.assertTrue(any("잠재능력우수자면접전형" in _both_text("catholic", e["page"] + PAGE_OFF["catholic"]) for e in t["evidence"]))
         sah = self._track("sahmyook", "세움인재전형")
         self.assertNotIn("전공적합", json.dumps(sah["evidence"], ensure_ascii=False))
         # 반영하지 않은 칸은 그대로(경기대 근거 쪽 42)
@@ -1287,9 +1276,14 @@ class LedgerReaudit(unittest.TestCase):
         _, c = _audit("pusan")
         x = next(i for i in c["items"] if i["track"] == "학생부종합전형(의예과)" and i["field"] == "interview_minutes")
         self.assertTrue(x["agree"] and x["my_verdict"] == "differs")
-        p67 = _both_text("pusan", 67)
+        p67 = _pdf_page_reading("pusan", 67)   # 지금 판 67쪽 기본 모드 글
         for q in ("학생부 기반 면접 10분 내외", "공통문제 답변", "준비 10분 내외, 면접 10분 내외"):
             self.assertIn(q, p67)
+        # 판매 면 표기와 정보 면 표기가 같다(검토 지적: 두 면이 순서와 낱말을 달리 적었다)
+        b = json.loads(BUNDLE.read_text(encoding="utf-8"))
+        info = next(x for u in b["univs"] if u["slug"] == "pusan" for x in u["tracks"] if x.get("time_text"))
+        self.assertEqual(info["time_text"], PUSAN_MED_TIME)
+        self.assertEqual(sorted(re.findall(r"\d+분 내외", PUSAN_MED_TIME)), sorted(re.findall(r"\d+분 내외", PUSAN_MED_AUDIT)))
         self.assertNotRegex(p67, r"(?<!\d)20\s*분")
         # 원장 문서는 원장판(풀리지 않은 칸이 있어 그대로 둔다). 원장 근거 72쪽 = 원장판 PDF 쪽 차례 73 에서도 같은 표기다
         doc = self._univ("pusan")["documents"][0]
@@ -1300,7 +1294,7 @@ class LedgerReaudit(unittest.TestCase):
         self.assertEqual([e["page"] for e in t["evidence"]], [72])
         t73 = re.sub(r"\s+", " ", subprocess.run([shutil.which("pdftotext"), "-q", "-layout", "-f", "73", "-l", "73", str(old), "-"],
                                                  capture_output=True, text=True, check=True).stdout)
-        for q in ("학생부 기반 면접 10분 내외", "준비 10분 내외, 면접 10분 내외"):
+        for q in ("학생부 기반 면접 10분 내외", "공통문제 답변", "준비 10분 내외, 면접 10분 내외"):
             self.assertIn(q, t73)
 
     def test_cau_fusion_medical_ratio_has_multiple(self):
@@ -1352,6 +1346,86 @@ class LedgerReaudit(unittest.TestCase):
         q, a = B._official_faq(cat["duksung"])
         self.assertTrue(a.startswith("덕성인재전형Ⅱ는 "), a)
 
+    def test_unresolved_documents_keep_ledger_pages(self):
+        """4절 2항(검토 지적 수리): 문서 sha 가 달랐고 풀리지 않은 칸이 남은 대학은 documents 를 두므로 근거 쪽도 원장 문서 판의 쪽 그대로다.
+        두 파일이 일치한 근거 differs 도 이 대학에서는 반영하지 않는다(쪽 번호가 가리키는 판이 원장 문서와 달라진다).
+        값 칸(꾸밈말)은 원장 근거 쪽의 요강 글에서 다시 확인되는 것만 싣는다(5절 5항)."""
+        self.assertEqual({s for s in self.slugs if not _audit(s)[0]["pdf_sha_same"]} - RESOLVED, UNRESOLVED)
+        n_ev = 0
+        for slug in sorted(UNRESOLVED):
+            a, c = _audit(slug)
+            u = self._univ(slug)
+            doc = u["documents"]
+            self.assertEqual([d["sha256"] for d in doc], [a["ledger_doc_sha256"]], slug)
+            for at in a["tracks"]:
+                t = self._track(slug, at["ledger_name"])
+                self.assertEqual({e["doc_id"] for e in t["evidence"]}, {doc[0]["doc_id"]}, (slug, t["name"]))
+                for f in at["fields"]:
+                    m = re.fullmatch(r"evidence\[(\d+)\]", f["field"])
+                    if not m:
+                        continue
+                    lv = f["ledger_value"]   # 대조 파일마다 「<claim> (원장 page N)」 또는 「page N: <claim>」 꼴로 원장 값을 옮겨 적었다
+                    m2 = re.fullmatch(r"(.*) \(원장 page (\d+)\)", lv)
+                    claim, page = m2.groups() if m2 else re.fullmatch(r"page (\d+): (.*)", lv).groups()[::-1]
+                    e = t["evidence"][int(m.group(1))]
+                    self.assertEqual((e["claim"], e["page"]), (claim, int(page)), (slug, t["name"], f["field"]))
+                    n_ev += 1
+        self.assertGreaterEqual(n_ev, 14)
+        # 꾸밈말: 원장 근거 쪽(옛 판 쪽 번호 + 쪽 차이)의 요강 글에 그 글자가 있는 것만 실렸다. 부산대는 원장판 PDF
+        if not PUSAN_OLD_PDF.is_file():
+            raise unittest.SkipTest(f"원장판 PDF 부재(검사 불가): {PUSAN_OLD_PDF}")
+        old_pages = {}
+        def ledger_page(slug, p):
+            if slug != "pusan":
+                return _both_text(slug, p + PAGE_OFF[slug])
+            if p not in old_pages:
+                exe = shutil.which("pdftotext")
+                old_pages[p] = " | ".join(re.sub(r"\s+", " ", subprocess.run([exe, "-q", *lay, "-f", str(p + 1), "-l", str(p + 1), str(PUSAN_OLD_PDF), "-"],
+                                          capture_output=True, text=True, check=True).stdout) for lay in ([], ["-layout"]))
+            return old_pages[p]
+        self.assertEqual(hashlib.sha256(PUSAN_OLD_PDF.read_bytes()).hexdigest(), self._univ("pusan")["documents"][0]["sha256"])
+        kept, held = set(), set()
+        for slug in sorted(UNRESOLVED):
+            a, c = _audit(slug)
+            for at in a["tracks"]:
+                tt = at.get("time_text")
+                if not tt or (slug, at["ledger_name"], "time_text") in HELD:
+                    continue
+                t = self._track(slug, at["ledger_name"])
+                need = ("공통문제 답변", "준비 10분 내외, 면접 10분 내외", "학생부 기반 면접 10분 내외") if " / " in tt["text"] else (tt["text"],)
+                found = any(all(q in ledger_page(slug, e["page"]) for q in need) for e in t["evidence"])
+                (kept if found else held).add((slug, at["ledger_name"]))
+                self.assertEqual("interview_time_text" in t, found, (slug, t["name"]))
+        self.assertEqual(held, HELD_TT)
+        self.assertEqual(kept, {("pusan", "학생부종합전형(일반 모집단위)"), ("pusan", "학생부종합전형(의예과)"), ("snu", "학생부종합(지역균형전형)-의과대학 제외"),
+                                ("snu", "학생부종합(지역균형전형)-의과대학"), ("soongsil", "SW우수자전형")})
+        # 판매 면은 이 대학들에 대조일 08-30 과 옛 판 쪽을 싣는다(세종대 21쪽, 울산대 24쪽)
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        self.assertNotIn("51쪽", self.B._official_html(cat["sejong"]))
+        self.assertNotIn("81쪽", self.B._official_html(cat["ulsan"]))
+
+    def test_cau_inha_time_text(self):
+        """4절 3항(검토 지적 수리): 재대조 28곳 밖이라 빠졌던 중앙대 세 전형과 인하대 의예과 두 전형의 꾸밈말. 두 대학 원장 문서는 받은 PDF 와
+        sha 가 같고, 꾸밈말 쪽이 원장 근거 쪽이며(원장 쪽 = PDF 쪽 차례), 그 쪽 기본 모드 글에 인용이 있다."""
+        want = {("중앙대학교", "cau", "탐구형인재전형"): ("10분 이내", 95, "지원자 1인당 10분 이내"),
+                ("중앙대학교", "cau", "성장형인재전형"): ("10분 이내", 95, "지원자 1인당 10분 이내"),
+                ("중앙대학교", "cau", "융합형인재전형-의학부"): ("10분 이내", 95, "지원자 1인당 10분 이내"),
+                ("인하대학교", "inha", "인하미래인재(면접형)-의예과"): ("15분 내외", 15, "15분 내외(각 면접실별 7~8분 내외)"),
+                ("인하대학교", "inha", "지역의사선발전형"): ("15분 내외", 20, "15분 내외(각 면접실별 7~8분 내외)")}
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        b = {u["slug"]: {t["name"]: t for t in u["tracks"]} for u in json.loads(BUNDLE.read_text(encoding="utf-8"))["univs"]}
+        for (univ, slug, name), (txt, pg, quote) in want.items():
+            u = self.L[univ]
+            t = next(x for x in u["tracks"] if x["name"] == name)
+            self.assertEqual(u["documents"][0]["sha256"], _facts(slug)["doc"]["sha256_actual"], slug)
+            self.assertEqual(t.get("interview_time_text"), txt, name)
+            self.assertIn(pg, {e["page"] for e in t["evidence"]}, name)
+            self.assertIn(quote, _pdf_page_reading(slug, pg), name)
+            self.assertIn(txt, quote)
+            card = self.B._official_html(cat[slug]).split(f"<h3>{self.B.esc(self.B.clean(name))}</h3>", 1)[1].split("</dl>", 1)[0]
+            self.assertIn(f"<dt>면접 시간</dt><dd>면접 {txt}</dd>", card, name)
+            self.assertEqual(b[slug][name]["minutes_text"], txt, name)
+
     def test_info_bundle_follows_reaudit(self):
         """정보 면 묶음: 원장 꾸밈말이 있는 전형은 minutes_text 가 그 글자다(부산대 의예과는 줄 단위 보정 표기). 중앙대 의학부 선발 방식에 3.5배수."""
         import build_interview_info as G
@@ -1370,7 +1444,7 @@ class LedgerReaudit(unittest.TestCase):
                     self.assertEqual(t["minutes_text"], L["interview_time_text"], (u["slug"], name))
                     self.assertIn(L["interview_time_text"], G.minutes_ko(t), (u["slug"], name))
                     n += 1
-        self.assertEqual(n, 47)   # 반영한 꾸밈말 47칸 가운데 부산대 의예과(줄 단위 보정 표기)를 뺀 46 + 인하대 의예과 제외 1
+        self.assertEqual(n, 43)   # 재대조 꾸밈말 38칸 가운데 부산대 의예과(줄 단위 보정 표기)를 뺀 37 + 인하대 의예과 제외 1 + 중앙대 3, 인하대 2
         cau = next(u for u in b["univs"] if u["slug"] == "cau")
         med = next(t for t in cau["tracks"] if "의학부" in t["name"])
         self.assertEqual(med["ratio"], "1단계 서류 100%(3.5배수), 2단계 1단계 70%+면접 30%")
