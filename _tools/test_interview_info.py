@@ -1121,8 +1121,10 @@ HELD = {("kyonggi", "KGU학생부종합전형", "evidence[0]"), ("kyonggi", "SW�
 RESOLVED = {"ajou", "gachon", "hufs", "konkuk", "kookmin", "sookmyung", "swu", "uos"}
 # 추가 명세 E 2절 1항(2026-11-17): 위 8곳의 판 표기(published_at)와 주소(official_url)는 실제로 대조한 파일(11-16 에 받은 판)의 것이다.
 # 대학이 그 파일에 붙인 날짜가 확인되면 그 날짜와 근거 표기, 확인되지 않으면 「2026-11-16 입학처 게시본」. 원장 주소가 그 파일을 주지 않으면 받은 주소
+# 추가 명세 E2 2절 1항(2026-11-17): 한국외대는 모집요강 면이 내주는 서버 파일 이름 시각(1780106172399)이 2026-05-30 이고 입학처 공지 21193 의
+# 작성일이 2026-05-30, 첨부 이름이 받은 파일 이름과 같아 공지 날짜 「2026-05-30」으로 적는다
 EDITION = {
-    "hufs": ("2026-11-16 입학처 게시본", "https://adms.hufs.ac.kr/cms/FrCon/index.do?MENU_ID=650"),
+    "hufs": ("2026-05-30", "https://adms.hufs.ac.kr/cms/FrCon/index.do?MENU_ID=650"),
     "sookmyung": ("2026-09-07 업로드본", "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54119"),
     "uos": ("2026-08-31 수정본", "https://admission.uos.ac.kr/admissionNew/html/susi/info.do?menuid=2002001001000000000"),
     "kookmin": ("2026-09-08 PDF 작성본", "https://admission.kookmin.ac.kr/common/file_download.php?col=1&id=contents&no=180"),
@@ -1132,8 +1134,20 @@ EDITION = {
     "swu": ("2026-05-29", "https://admission.swu.ac.kr/bbs/board.php?bo_table=flashpaper&wr_id=27978&sca=%EC%88%98%EC%8B%9C"),
 }
 # 고친 다섯 곳의 출처 줄에서 없어져야 하는 글(실제로 대조하지 않은 판의 날짜와, 파일을 주지 않는 원장 주소)
-EDITION_STALE = {"hufs": ["2026-08-25"], "sookmyung": ["2026-05-29", "2026-06-18"], "uos": ["2026-07-13"], "kookmin": ["2026-06-22"],
-                 "konkuk": ["enter.konkuk.ac.kr", "20260625041927583"]}
+EDITION_STALE = {"hufs": ["2026-08-25", "2026-11-16 입학처 게시본", "입학처 게시본"], "sookmyung": ["2026-05-29", "2026-06-18"], "uos": ["2026-07-13"],
+                 "kookmin": ["2026-06-22"], "konkuk": ["enter.konkuk.ac.kr", "20260625041927583"]}
+# 추가 명세 E2 2절 2항(2026-11-17): 인하대 문서(11-16 에 받은 판, sha 7fae6685)의 판 표기. 이 파일을 실은 공지는 없고 확인되는 날짜는 PDF 작성일뿐이라
+# 국민대 선례대로 적는다. 앞 값 2026-08-26 은 원장이 08-30 에 적은 다른 판(sha c821075b)의 날짜다
+INHA_EDITION = ("2026-10-30 PDF 작성본", "https://admission.inha.ac.kr/cms/FR_CON/index.do?MENU_ID=80",
+                "7fae6685fabc2cf444ad07feb5bfd19caca496bfad3e0ae91b3371d9e6afd7f7")
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+
+def _ms_kst_date(ms):
+    """서버 파일 이름의 13자리 밀리초 시각을 KST 날짜로."""
+    return datetime.datetime.fromtimestamp(int(ms) / 1000, KST).date().isoformat()
+
+
 # 문서 sha 가 달랐고 풀리지 않은 칸이 남아 documents 를 그대로 둔 대학(4절 2항). 근거 쪽도 원장 문서 판의 쪽 그대로 두고(지금 판 쪽으로 바꾸지 않는다),
 # 값 칸은 원장 근거 쪽의 요강 글에서 다시 확인될 때만 싣는다(5절 5항). 부산대는 원장판 PDF 가 있어 그 판(원장 쪽 = PDF 쪽 차례 - 1)으로 본다
 UNRESOLVED = {"incheon", "pusan", "sejong", "snu", "soongsil", "ulsan"}
@@ -1355,10 +1369,23 @@ class LedgerReaudit(unittest.TestCase):
 
         def page(path, enc="utf-8"):
             return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", path.read_bytes().decode(enc, errors="replace")))
-        # 한국외대: 11-16 에 입학처가 내준 파일은 PDF 수정일 2026-05-29 이고 8월 수정본을 찾지 못했다(대학이 붙인 판 날짜 확인 안 됨)
+        # 한국외대: 11-16 에 입학처가 내준 파일은 PDF 수정일 2026-05-29 이고 8월 수정본을 찾지 못했다(원장의 2026-08-25 수정본은 다른 판)
         self.assertTrue(info["hufs"]["ModDate"].startswith("2026-05-29"))
         self.assertIn("8월 수정본은 찾지 못해", fd["hufs"]["note"])
         self.assertEqual(hashlib.sha256((dl / "hufs/recheck_live/fileView.bin").read_bytes()).hexdigest(), fd["hufs"]["sha256_actual"])
+        # 추가 명세 E2 2절 1항: 모집요강 면 내려받기 단추가 내주는 서버 파일 이름 시각이 2026-05-30 이고(파일 이름 = 받은 파일 이름),
+        # 입학처 공지 21193 「2027학년도 수시모집 모집요강 안내」의 작성일이 2026-05-30, 첨부 이름이 받은 파일 이름과 같다
+        hufs_name = "2027학년도 수시모집 모집요강(홈페이지 공지).pdf"
+        p650 = (dl / "hufs/page650.html").read_text(encoding="utf-8")
+        self.assertIn(f"encodeURIComponent('{hufs_name}'))+\"&FILE_NM=202605/1780106172399_0.pdf\"", p650)
+        self.assertEqual(_ms_kst_date("1780106172399"), "2026-05-30")
+        self.assertIn(f"(파일명: {hufs_name})", fd["hufs"]["title"])
+        n21193 = json.loads((dl / "hufs/viewdata_21193.json").read_text(encoding="utf-8"))["data"]
+        self.assertEqual((n21193["BBS_SEQ"], n21193["SUBJECT"]), (21193, "2027학년도 수시모집 모집요강 안내"))
+        self.assertTrue(n21193["WRITE_DT"].startswith("2026-05-30"), n21193["WRITE_DT"])
+        attach = re.findall(r'data-bbsseq="21193" data-fileseq="\d+" onclick="fileDown\(this\);">([^<]+)</a>',
+                            (dl / "hufs/view_21193.html").read_text(encoding="utf-8"))
+        self.assertEqual(attach, [hufs_name])
         # 숙명여대: 모집요강 면이 내주는 파일의 업로드 이름 20260907095555 (PDF 수정일 2026-09-04)
         self.assertIn("/upload/BBS0021/20260907095555QDLVUJ.PDF", fd["sookmyung"]["url"])
         self.assertIn("/upload/BBS0021/20260907095555QDLVUJ.PDF", (dl / "sookmyung/guide.html").read_bytes().decode("cp949", errors="replace"))
@@ -1397,6 +1424,50 @@ class LedgerReaudit(unittest.TestCase):
             self.assertEqual(built, [note], slug)
             for s in EDITION_STALE.get(slug, []):
                 self.assertNotIn(s, note, slug)
+
+    def test_inha_edition_is_compared_file(self):
+        """추가 명세 E2 2절 2항: 인하대 출처 줄의 판 표기는 실제로 대조한 파일(11-16 에 받은 판)의 날짜다.
+        이 파일을 실은 공지는 없다(수시 공지 「2027학년도 수시모집요강」 1302 는 2026-05-29 첨부 0, 저장한 목록의 가장 늦은 공지 2026-10-06).
+        모집요강 면 변경사항 목록의 마지막 항목 2026.09.03. 은 파일 작성일보다 앞선다. 확인되는 날짜는 PDF 작성일 2026-10-30 뿐이다."""
+        exe = shutil.which("pdfinfo")
+        if not exe:
+            raise unittest.SkipTest("pdfinfo 없음(검사 불가)")
+        pub, url, sha = INHA_EDITION
+        _, p = _guide_pdf("inha")
+        self.assertEqual(hashlib.sha256(p.read_bytes()).hexdigest(), sha)
+        doc = self._univ("inha")["documents"]
+        self.assertEqual(len(doc), 1)
+        self.assertEqual((doc[0]["published_at"], doc[0]["official_url"], doc[0]["sha256"], doc[0]["checked_at"]), (pub, url, sha, "2026-11-16"))
+        out = subprocess.run([exe, "-isodates", str(p)], capture_output=True, text=True, check=True).stdout
+        info = dict(re.findall(r"^(CreationDate|ModDate):\s+(\S+)", out, re.M))
+        self.assertTrue(info["CreationDate"].startswith("2026-10-30"), info)
+        dl = FACTS_DIR / "_dl" / "inha"
+        fd = _facts("inha")["doc"]
+        # 모집요강 면(원장 주소)의 PDF 내려받기 단추가 받은 파일의 서버 이름을 준다. 그 이름의 시각도 같은 날이다
+        p80 = (dl / "page_menu80.html").read_text(encoding="utf-8")
+        self.assertIn("FILE_NM=202610/1793287376827_0.pdf", p80)
+        self.assertIn("FILE_NM=202610/1793287376827_0.pdf", fd["url"])
+        self.assertEqual(_ms_kst_date("1793287376827"), "2026-10-30")
+        # 공지: 「2027학년도 수시모집요강」 공지는 05-29 이고 첨부가 없다. 저장한 목록에 10-30 뒤 공지가 없다
+        board = json.loads((dl / "board90.json").read_text(encoding="utf-8"))["data"]["list"]
+        n1302 = next(r for r in board if r["BBS_SEQ"] == 1302)
+        self.assertEqual((n1302["SUBJECT"], n1302["WRITE_DATE"], n1302["FILE_CNT"]), ("2027학년도 수시모집요강", "2026.05.29", 0))
+        self.assertLess(max(r["SORT"] for r in board), "2026-10-30")
+        # 변경사항 목록의 날짜는 모두 파일 작성일보다 앞선다(마지막 2026.09.03.). 앞 값 2026-08-26 은 이 목록의 한 항목이다
+        changes = re.findall(r"- (2026\.\d\d\.\d\d)\.", re.sub(r"<[^>]+>", " ", p80))
+        self.assertEqual(max(changes), "2026.09.03")
+        self.assertIn("2026.08.26", changes)
+        # 판매 면 출처 줄
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        B = self.B
+        h = B._official_html(cat["inha"])
+        want = (f'출처 <a class="tlink" href="{B.esc(url)}" target="_blank" rel="noopener">{B.esc(B.clean(doc[0]["title"]))}</a>'
+                f" ({B.esc(pub)} 공고). 원문 대조 2026-11-16.")
+        self.assertIn(want, h)
+        note = re.search(r'<p class="note rv">출처 .*?</p>', h).group(0)
+        built = re.findall(r'<p class="note rv">출처 .*?</p>', (ROOT / "guidebook" / "inha.html").read_text(encoding="utf-8"))
+        self.assertEqual(built, [note])
+        self.assertNotIn("2026-08-26", note)
 
     def test_sales_cards_follow_reaudit(self):
         cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}

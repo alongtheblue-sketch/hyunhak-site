@@ -230,8 +230,10 @@ def _track_match(name, track):
 # 중앙대, 인하대 꾸밈말 5칸, 부산대 의예과 표기를 정보 면과 같은 순서로)로 8547e6fe 에서 5356d675 로 바뀜
 # 같은 날 추가 명세 E 2절 1항(문서 sha 를 11-16 받은 파일로 올린 8곳의 출처 줄 판 표기: 한국외대, 숙명여대, 서울시립대, 국민대 published_at 과
 # 건국대 official_url 을 실제로 대조한 파일에 맞게)으로 5356d675 에서 90be4fd6 으로 바뀜
-LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_90be4fd6.json"
-LEDGER_SHA16 = "90be4fd645ffaf1a"
+# 같은 날 추가 명세 E2 2절 1항과 2항(출처 줄 판 날짜: 한국외대 published_at 을 공지 21193 작성일 2026-05-30 으로, 인하대 published_at 을
+# 대조한 파일의 PDF 작성일 2026-10-30 으로)으로 90be4fd6 에서 37d07933 으로 바뀜
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_37d07933.json"
+LEDGER_SHA16 = "37d079336d278ef6"
 EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
 EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
 

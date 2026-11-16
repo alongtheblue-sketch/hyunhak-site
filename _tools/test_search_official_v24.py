@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """SEARCH 표 2층 검증 (GB-V24-6 (d), 2026-09-07 Codex 협의).
-1층 공식 실재: 전형명이 2027 학종 감사 원장(fixtures/admissions_ledger_2027_90be4fd6.json, conducted) 또는
+1층 공식 실재: 전형명이 2027 학종 감사 원장(fixtures/admissions_ledger_2027_37d07933.json, conducted) 또는
    search_official_extra.json(status conducted, 요강 근거) 에 있어야 빌드 통과. blocked/absent/not_conducted/pending/미분류 = 정지.
 2층 상품 수록범위: 책 1부·2부(meta v3 tracks = v24 qualifying)에 있는 전형만 상품 title/description/keywords/FAQ 에 쓴다.
    hub 는 검증된 전 전형을 싣되 수록 여부 표식을 단다. 상세면은 수록 범위 고지 문장을 낸다.

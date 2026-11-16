@@ -3,7 +3,7 @@
 
 저장소 밖 원천을 한 번 읽어 _tools/fixtures/interview_info_2027.json 을 만든다. 빌드(build_interview_info.py)는 그 묶음만 읽는다.
   원천 1  요강 사실 파일 ~/unjang/_shared/ops/20261116_SEO_GEO_AEO_재부양/s2_facts/<slug>.json 30개 (면접일, 발표일, 모집 인원, 면접 방식 인용)
-  원천 2  2027 학종 감사 원장 _tools/fixtures/admissions_ledger_2027_90be4fd6.json (sha 핀. interview_basis, interview_minutes, selection_ratio)
+  원천 2  2027 학종 감사 원장 _tools/fixtures/admissions_ledger_2027_37d07933.json (sha 핀. interview_basis, interview_minutes, selection_ratio)
   원천 3  v24 판매 정본 승자 HTML (guidebook_sources.V24_BUILD_ROOT, winner.json) 3부 유형 군과 문항
   원천 4  _tools/guidebook_catalog.json (판매 30곳, 판매 면 맛보기 samples)
   원천 5  사실 파일 doc.local_path 의 요강 PDF (줄 단위 보정 TRACK_FIX, STAGE1_NONE 의 인용 대조와 면접 방식 절 요강 문구 대조에만. pdftotext 필요)
