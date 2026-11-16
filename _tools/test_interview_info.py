@@ -886,9 +886,13 @@ class LedgerCorrection(unittest.TestCase):
         t3 = self._track("인하대학교", "지역의사선발전형")
         self.assertEqual(t2["selection_ratio"], "전형 총 모집 939명 중 의예과 16명; 1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%")
         self.assertNotIn("15명", json.dumps(u["tracks"], ensure_ascii=False))
-        # 인원 밖의 값(면접 근거, 시간, 선발 비율)은 지금 판에서도 같다
+        # 인원 밖의 값(면접 근거, 시간, 선발 비율)은 지금 판에서도 같다. 의예과 제외 면접 시간은 범위(15쪽 평가시간 8~10분 내외)라
+        # 정수 칸은 null 이고 요강 표기는 interview_time_text 에 둔다(검토 지적 수리: 판매 면이 「요강에 시간 미기재」로 적던 값)
         self.assertEqual([(t["interview_basis"], t["interview_minutes"], t["prep_minutes"]) for t in (t1, t2, t3)],
                          [("record_based", None, None), ("record_based", 15, None), ("record_based", 15, None)])
+        self.assertEqual(t1.get("interview_time_text"), "8~10분 내외")
+        self.assertNotIn("interview_time_text", t2)
+        self.assertNotIn("interview_time_text", t3)
         self.assertEqual(t1["selection_ratio"], "전형 총 모집 939명 중 의예과를 제외한 모집단위; 1단계 서류 100%(3.5배수), 2단계 1단계 70%+면접 30%")
         self.assertEqual(t3["selection_ratio"], "모집 6명; 1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%")
         self.assertEqual([sorted({e["page"] for e in t["evidence"]}) for t in (t1, t2, t3)], [[14, 15], [10, 14, 15], [19, 20]])
@@ -897,22 +901,75 @@ class LedgerCorrection(unittest.TestCase):
         self.assertIn("합계 939", p10)
         for q in ("1. 모집단위 및 모집인원: 939명", "3.5배수", "(의예과: 3배수)", "반영비율 70% 30%"):
             self.assertIn(q, p14)
-        for q in ("면접위원 2인과 지원자 1인의 개별 면접", "(2개의 면접실을 이동하면서 진행)", "8~10분 내외", "15분 내외(각 면접실별 7~8분 내외)"):
+        for q in ("면접위원 2인과 지원자 1인의 개별 면접", "(2개의 면접실을 이동하면서 진행)", "8~10분 내외", "15분 내외(각 면접실별 7~8분 내외)",
+                  "전 모집단위(의예과 제외)", "평가시간 8~10분 내외"):
             self.assertIn(q, p15)
         self.assertIn("1. 모집단위 및 모집인원: 의예과 6명", p19)
         for q in ("3배수", "반영비율 70% 30%", "평가시간 15분 내외", "(2개의 면접실을 이동하면서 진행)"):
             self.assertIn(q, p20)
+
+    def test_null_minutes_with_guide_time_carry_text(self):
+        """검토 지적 수리: 원장 면접 시간이 null 인데 근거 글에 분 표기가 있는 전형은 그 요강 표기를 interview_time_text 로 갖는다
+        (판매 면이 「요강에 시간 미기재」로 적지 않게). 원장 전수에서 그런 전형은 인하대 의예과 제외 하나다."""
+        n = 0
+        for univ, u in self.L.items():
+            for t in u.get("tracks", []):
+                txt = t.get("interview_time_text")
+                if txt is not None:
+                    self.assertIsNone(t["interview_minutes"], (univ, t["name"]))
+                    self.assertRegex(txt, r"^\d+(?:~\d+)?분(?: 내외| 이내)?$", (univ, t["name"]))
+                if t.get("interview_status") != "conducted" or t.get("interview_minutes") is not None:
+                    continue
+                claims = " ".join(e["claim"] for e in t.get("evidence", []))
+                if re.search(r"\d+\s*(?:~\s*\d+\s*)?분", claims):
+                    n += 1
+                    self.assertTrue(txt, (univ, t["name"]))
+                    self.assertIn(txt, re.sub(r"\s*~\s*", "~", claims), (univ, t["name"]))
+        self.assertEqual(n, 1)
+
+    def test_cau_tracks_match_guide_on_check_date(self):
+        """검토 지적 수리: 중앙대 원장 문서(받은 PDF 와 같은 sha)의 세 전형 값 전부를 2026-11-16 에 다시 대조했으므로 대조일을 그날로 둔다."""
+        u = self.L["중앙대학교"]
+        doc = u["documents"][0]
+        self.assertEqual(doc["checked_at"], "2026-11-16")
+        self.assertEqual(doc["sha256"], _facts("cau")["doc"]["sha256_actual"])
+        tr = {t["name"]: t for t in u["tracks"]}
+        self.assertEqual(sorted(tr), ["성장형인재전형", "융합형인재전형-의학부", "탐구형인재전형"])
+        self.assertEqual({(t["interview_basis"], t["interview_minutes"], t["prep_minutes"]) for t in tr.values()}, {("record_based", 10, None)})
+        self.assertEqual(tr["탐구형인재전형"]["selection_ratio"], "모집 512명; 1단계 서류 100%, 2단계 1단계 70%+면접 30%")
+        self.assertEqual(tr["성장형인재전형"]["selection_ratio"], "모집 108명; 1단계 서류 100%, 2단계 1단계 70%+면접 30%")
+        p = {n: _pdf_page("cau", n) for n in (26, 28, 31, 32, 36, 37, 95)}
+        self.assertIn("학생부종합(탐구형인재) 총계 512", p[26])
+        self.assertIn("1단계 100 - -", p[28])
+        self.assertIn("2단계 - - 70 30", p[28])
+        self.assertIn("학생부종합(융합형인재) 총계 378", p[31])
+        self.assertIn("의과 의학부 7", p[31])
+        self.assertIn("1단계 (3.5배수) 100 - -", p[32])
+        self.assertIn("2단계 - 70 30", p[32])
+        self.assertIn("학생부종합(성장형인재) 총계 108", p[36])
+        self.assertIn("1단계(5배수) 100 - -", p[37])
+        self.assertIn("2단계 - 70 30", p[37])
+        for q in ("면접방식 학교생활기록부 기반 면접평가", "지원자 1인당 10분 이내", "입학사정관 2인이 평가"):
+            self.assertIn(q, p[95])
 
     def test_sales_page_official_cards(self):
         cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
         cau = self.B._official_html(cat["cau"])
         self.assertIn("모집 7명, 1단계 서류 100%, 2단계 1단계 70%+면접 30%", cau)
         self.assertNotIn("모집 15명", cau)
+        self.assertIn("원문 대조 2026-11-16.", cau)
         inha = self.B._official_html(cat["inha"])
         self.assertIn("전형 총 모집 939명 중 의예과 16명, 1단계 서류 100%(3배수)", inha)
         self.assertNotIn("의예과 15명", inha)
         self.assertIn("원문 대조 2026-11-16.", inha)
         self.assertIn("<dt>요강 쪽수</dt><dd>10, 14, 15쪽</dd>", inha)
+        card = inha.split("<h3>인하미래인재(면접형)-의예과 제외</h3>", 1)[1].split("</dl>", 1)[0]
+        self.assertIn("<dt>면접 시간</dt><dd>면접 8~10분 내외</dd>", card)
+        self.assertNotIn("요강에 시간 미기재", inha)
+        # 정보 면과 판매 면이 같은 전형의 면접 시간을 같게 적는다
+        b = json.loads(BUNDLE.read_text(encoding="utf-8"))
+        info = {t["name"]: t for u in b["univs"] if u["slug"] == "inha" for t in u["tracks"]}
+        self.assertEqual(info["인하미래인재(면접형)-의예과 제외"]["minutes_text"], "8~10분 내외")
 
 
 # ---------------------------------------------------------------- 허브, llms, 워커

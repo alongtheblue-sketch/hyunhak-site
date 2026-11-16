@@ -224,8 +224,9 @@ def _track_match(name, track):
 
 
 # 이름 꼬리 = 내용 sha256 앞 8자, 핀 = 앞 16자. 2026-11-16 정정(중앙대 융합형인재 의학부 7명, 인하대 의예과 16명과 지금 요강 판 sha, 근거 쪽)으로 a58b7d76 에서 바뀜
-LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_29a478ba.json"
-LEDGER_SHA16 = "29a478ba61aefef0"
+# 같은 날 2차(인하대 의예과 제외 면접 시간 요강 표기 interview_time_text, 중앙대 대조일)로 29a478ba 에서 바뀜
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_e8642035.json"
+LEDGER_SHA16 = "e864203554291325"
 EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
 EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
 
@@ -1021,8 +1022,11 @@ def _ledger_univ(slug):
 
 def _minutes_ko(t):
     p, m = t.get("prep_minutes"), t.get("interview_minutes")
-    if m is None:
-        return "요강에 시간 미기재"
+    if m is None:   # 정수 칸이 null 이어도 요강이 범위로 적은 시간(interview_time_text, 인하대 의예과 제외 8~10분 내외)은 그 표기를 싣는다
+        txt = t.get("interview_time_text")
+        if txt and not re.fullmatch(r"\d+(?:~\d+)?분(?: 내외| 이내)?", txt):
+            sys.exit(f"2027 학종 원장 interview_time_text 꼴이 아니다: {txt!r} ({t.get('name')})")
+        return f"면접 {txt}" if txt else "요강에 시간 미기재"
     if p == 0:
         return f"준비시간 없이 면접 {m}분"
     return f"준비 {p}분, 면접 {m}분" if p else f"면접 {m}분"
