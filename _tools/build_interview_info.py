@@ -71,8 +71,14 @@ def fmt_item(x, where="", year=True):
     return s
 
 
+# 로마 숫자는 읽는 소리(일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십, 십일, 십이)의 받침으로 조사를 고른다(덕성인재전형Ⅱ는, 2026-11-16 검토 지적)
+_ROMAN_EUN = dict(zip("ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ", "은는은는는은은은는은은는")) | dict(zip("ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻ", "은는은는는은은은는은은는"))
+
+
 def _eun(word):
     for ch in reversed(str(word)):
+        if ch in _ROMAN_EUN:
+            return _ROMAN_EUN[ch]
         o = ord(ch)
         if 0xAC00 <= o <= 0xD7A3:
             return "은" if (o - 0xAC00) % 28 else "는"

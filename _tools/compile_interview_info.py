@@ -6,7 +6,7 @@
   원천 2  2027 학종 감사 원장 _tools/fixtures/admissions_ledger_2027_29a478ba.json (sha 핀. interview_basis, interview_minutes, selection_ratio)
   원천 3  v24 판매 정본 승자 HTML (guidebook_sources.V24_BUILD_ROOT, winner.json) 3부 유형 군과 문항
   원천 4  _tools/guidebook_catalog.json (판매 30곳, 판매 면 맛보기 samples)
-  원천 5  사실 파일 doc.local_path 의 요강 PDF (줄 단위 보정 TRACK_FIX, STAGE1_NONE 의 인용 대조에만. pdftotext 필요)
+  원천 5  사실 파일 doc.local_path 의 요강 PDF (줄 단위 보정 TRACK_FIX, STAGE1_NONE 의 인용 대조와 면접 방식 절 요강 문구 대조에만. pdftotext 필요)
 싣지 않는 것: 사실 파일의 official_notices, unresolved, notes, null_reasons(요강 밖 공지 값과 작업 메모), 원장의 모집 인원 문구,
 유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②). null_reasons 는 TRACK_FIX, STAGE1_NONE 의 근거 문구 대조에만 읽는다.
 면에 싣는 날짜, 인원, 면접 시간은 사실 파일 tracks 값이거나 요강 쪽 번호와 인용이 붙은 보정 값뿐이다(2026-11-16 추가 명세 결정 3).
@@ -438,17 +438,18 @@ def stage1_none(slug, t):
 _PDF_TEXT = {}
 
 
-def pdf_page_text(doc, page):
-    """사실 파일 doc 의 요강 PDF 한 쪽 글(pdftotext -layout, 연속 공백 한 칸). PDF sha 가 사실 파일 값과 다르면 멈춘다."""
+def pdf_page_text(doc, page, layout=True):
+    """사실 파일 doc 의 요강 PDF 한 쪽 글(연속 공백 한 칸). layout=True 는 pdftotext -layout(같은 높이의 칸을 한 줄로 잇는다),
+    False 는 기본 읽기 순서(칸마다 따로 나온다). PDF sha 가 사실 파일 값과 다르면 멈춘다."""
     p = Path(doc["local_path"])
-    key = (str(p), page)
+    key = (str(p), page, layout)
     if key not in _PDF_TEXT:
         if hashlib.sha256(p.read_bytes()).hexdigest() != doc["sha256_actual"]:
             raise ValueError(f"요강 PDF sha 가 사실 파일 값과 다르다: {p}")
         exe = shutil.which("pdftotext")
         if not exe:
-            raise ValueError("pdftotext 가 없어 보정 근거를 대조할 수 없다")
-        out = subprocess.run([exe, "-q", "-layout", "-f", str(page), "-l", str(page), str(p), "-"],
+            raise ValueError("pdftotext 가 없어 요강 PDF 글을 대조할 수 없다")
+        out = subprocess.run([exe, "-q"] + (["-layout"] if layout else []) + ["-f", str(page), "-l", str(page), str(p), "-"],
                              capture_output=True, text=True, check=True).stdout
         _PDF_TEXT[key] = re.sub(r"\s+", " ", out)
     return _PDF_TEXT[key]
@@ -458,6 +459,28 @@ def check_evidence(slug, doc, evs):
     for e in evs:
         if e["quote"] not in pdf_page_text(doc, e["page"]):
             raise ValueError(f"{slug}: 보정 근거 인용이 요강 {e['page']}쪽에 없다 {e['quote']!r}")
+
+
+_QNORM = re.compile(r"[\s,·∙•‧・]")
+
+
+def quote_in_text(q, page_text):
+    """인용 q 가 요강 쪽 글 page_text 에 이어진 글로 있는가. 공백, 쉼표, 글머리표 차이는 보지 않는다(san 이 가운뎃점을 쉼표로 바꾼다)."""
+    q = _QNORM.sub("", str(q or ""))
+    return bool(q) and q in _QNORM.sub("", str(page_text or ""))
+
+
+def page_quote(doc, page, q):
+    """면접 방식 절에 싣는 요강 문구. 요강 PDF 그 쪽 읽기 순서 글에 이어진 글로 없으면 싣지 않는다(None, 근거 쪽 번호는 남는다).
+    표의 서로 다른 칸을 이은 사실 파일 인용(부산대 67쪽 평가기준 칸 「논리적 의사표현능력」과 소요시간 칸 「준비 10분 내외, 면접 10분 내외」)은
+    -layout 글에서는 같은 높이라 한 줄로 이어 보이지만 읽기 순서 글에서는 끊긴다(2026-11-16 검토 지적).
+    글자 층이 없는 쪽(경기대 53쪽, 사실 파일이 렌더 그림에서 읽음)은 대조할 수 없어 사실 파일 인용을 그대로 둔다."""
+    if not q:
+        return None
+    txt = pdf_page_text(doc, page, layout=False)
+    if not txt.strip():
+        return q
+    return q if quote_in_text(q, txt) else None
 
 
 # ---------------------------------------------------------------- 대학 한 곳
@@ -543,7 +566,7 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
             "minutes_varies": mvaries,
             "prep": L.get("prep_minutes"),
             "ratio": clean_ratio(L.get("selection_ratio")),
-            "quote": clean_quote(fmt["quote"]),
+            "quote": page_quote(f["doc"], fmt["page"], clean_quote(fmt["quote"])),
             "page": fmt["page"],
         }
         if fx:

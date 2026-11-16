@@ -86,6 +86,18 @@ def _pdf_page(slug, page):
     return _PDF[(slug, page)]
 
 
+_PDF_RAW = {}
+
+
+def _pdf_page_reading(slug, page):
+    """요강 PDF 한 쪽의 읽기 순서 글(pdftotext 기본 모드, -layout 없음). 표의 칸은 칸마다 따로 나온다."""
+    if (slug, page) not in _PDF_RAW:
+        exe, p = _guide_pdf(slug)
+        _PDF_RAW[(slug, page)] = subprocess.run([exe, "-q", "-f", str(page), "-l", str(page), str(p), "-"],
+                                                capture_output=True, text=True, check=True).stdout
+    return _PDF_RAW[(slug, page)]
+
+
 def _pdf_words(slug, page):
     """요강 PDF 한 쪽의 낱말 [(x, y, 글)] (pdftotext -bbox)."""
     exe, p = _guide_pdf(slug)
@@ -293,6 +305,16 @@ class CompilerUnits(unittest.TestCase):
         with self.assertRaises(ValueError):
             K.stage1_none("seoultech", t3)
         self.assertIsNone(K.stage1_none("seoultech", {"name": "학교생활우수자전형", "stage1_announce": {"iso": "2026-11-20"}}))
+
+    def test_quote_in_text_reading_order(self):
+        """검토 지적 수리(2026-11-16): 요강 문구는 요강 쪽 읽기 순서 글에 이어진 글일 때만 싣는다.
+        표의 다른 칸을 이은 인용(부산대 67쪽 평가기준 칸 「논리적 의사표현능력」과 소요시간 칸)은 읽기 순서 글에서 끊긴다."""
+        K = self.K
+        page = "평가기준 소요시간\n논리적 의사표현능력\n공통문제 답변\n준비 10분 내외, 면접 10분 내외\n학생부 기반 면접 10분 내외"
+        self.assertFalse(K.quote_in_text("논리적 의사표현능력 준비 10분 내외, 면접 10분 내외", page))
+        self.assertTrue(K.quote_in_text("공통문제 답변 준비 10분 내외, 면접 10분 내외", page))   # 한 칸 안의 줄바꿈은 잇는다
+        self.assertTrue(K.quote_in_text("교직적성, 인성면접", "사범대학은 교직적성·인성면접 포함"))   # san 의 쉼표 바꿈은 같은 글
+        self.assertFalse(K.quote_in_text("", page))
 
     def test_clean_ratio_drops_quota_segments(self):
         K = self.K
@@ -581,6 +603,29 @@ class GeneratorContract(unittest.TestCase):
         self.assertNotIn("20분", sec)
         self.assertIn("공통문제 답변 준비 10분 내외, 공통문제 답변 면접 10분 내외, 학생부 기반 면접 10분 내외", sec)
 
+    def test_pusan_medical_no_column_joined_quote(self):
+        """검토 지적 수리: 부산대 의예과 묶음에 평가기준 칸과 소요시간 칸을 이은 「요강 문구」를 싣지 않는다. 근거 쪽 번호는 남는다."""
+        sec = _section(self.pages["pusan"][0], "format")
+        self.assertNotIn("논리적 의사표현능력", sec)
+        blk = sec.split("의예과(지역인재전형Ⅰ, 지역의사선발전형)</h3>", 1)[1].split("</dl>", 1)[0]
+        self.assertNotIn("요강 문구", blk)
+        self.assertIn("요강 PDF 67쪽", blk)
+
+    def test_roman_numeral_particle(self):
+        """검토 지적 수리: 로마 숫자로 끝나는 전형명 뒤 조사는 읽는 소리(Ⅰ 일, Ⅱ 이, Ⅲ 삼, Ⅳ 사)의 받침을 따른다."""
+        G = self.G
+        self.assertEqual(G._eun("덕성인재전형Ⅱ"), "는")
+        self.assertEqual(G._iga("덕성인재전형Ⅱ"), "가")
+        self.assertEqual(G._eun("지역인재전형Ⅰ"), "은")
+        self.assertEqual(G._eun("기회균형전형Ⅲ"), "은")
+        self.assertEqual(G._eun("전형Ⅳ"), "는")
+        self.assertEqual(G._eun("학생부종합전형Ⅰ(면접형)"), "은")   # 괄호 뒤 글자가 끝 소리
+        self.assertIn("덕성인재전형Ⅱ는", self.pages["duksung"][0])
+        for slug, (h, _) in self.pages.items():
+            vis = _visible(h)
+            self.assertEqual(re.findall(r"[ⅡⅣⅤⅨⅫ](?:은|이|을|과)(?![가-힣])", vis), [], slug)
+            self.assertEqual(re.findall(r"[ⅠⅢⅥⅦⅧⅩⅪ](?:는|가|를|와)(?![가-힣])", vis), [], slug)
+
     def test_render_stops_on_sale_defense_breach(self):
         """판매 방어선(SEO2-11 ② 4문, 맛보기 겹침 0, SEO2-12 ② 수치 없음)은 생성기도 빌드마다 막는다(build_all 과 deploy.sh 경로)."""
         sale = _onsale()
@@ -689,6 +734,37 @@ class SourceContract(unittest.TestCase):
                     n += 1
                     self.assertIn(e["quote"], _pdf_page(u["slug"], e["page"]), (u["slug"], t["name"], e))
         self.assertGreaterEqual(n, 8)
+
+    def test_format_quotes_contiguous_in_reading_order(self):
+        """검토 지적 수리: 면접 방식 절의 요강 문구는 요강 PDF 그 쪽 읽기 순서 글에 이어진 글로 있다(공백, 쉼표, 글머리표 차이만 허용).
+        사실 파일 인용 가운데 거기 없는 것(표의 다른 칸을 이은 글)은 묶음에서 빠진다. 글자 층이 없는 쪽은 대조할 수 없어 따로 센다."""
+        norm = lambda s: re.sub(r"[\s,·∙•‧・]", "", s)
+        import compile_interview_info as K
+        shown = dropped = blind = 0
+        for u in self.b["univs"]:
+            f = _facts(u["slug"])
+            for ft, t in zip(f["tracks"], u["tracks"]):
+                where = (u["slug"], ft["name"])
+                q0 = K.clean_quote(ft["interview_format"]["quote"])
+                if not q0:
+                    self.assertIsNone(t["quote"], where)
+                    continue
+                txt = _pdf_page_reading(u["slug"], t["page"])
+                if not txt.strip():
+                    blind += 1
+                    self.assertEqual(t["quote"], q0, where)
+                elif norm(q0) in norm(txt):
+                    shown += 1
+                    self.assertEqual(t["quote"], q0, where)
+                else:
+                    dropped += 1
+                    self.assertIsNone(t["quote"], where)
+        med = next(t for t in {x["slug"]: x for x in self.b["univs"]}["pusan"]["tracks"] if t["name"].startswith("의예과"))
+        self.assertIsNone(med["quote"])
+        self.assertEqual(med["page"], 67)
+        self.assertGreaterEqual(shown, 30)
+        self.assertGreaterEqual(dropped, 1)
+        self.assertLessEqual(blind, 2)   # 경기대 53쪽(렌더 그림 판독)
 
     def test_pusan_medical_30_is_regional_column(self):
         """결정 2: 부산대 2차 수정판 36쪽 의예과 줄의 30 은 지역인재Ⅰ 열에 있고 학생부종합 열은 비어 있다(글자 위치로 대조)."""
