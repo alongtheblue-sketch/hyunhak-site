@@ -6,8 +6,12 @@
 """
 import copy
 import datetime
+import hashlib
+import html as _html
 import json
 import re
+import shutil
+import subprocess
 import sys
 import unittest
 from pathlib import Path
@@ -47,6 +51,48 @@ def _visible(html):
 def _section(html, sid):
     m = re.search(r'<section[^>]*id="%s"[^>]*>(.*?)</section>' % re.escape(sid), html, re.S)
     return m.group(1) if m else ""
+
+
+def _facts(slug):
+    return json.loads((FACTS_DIR / f"{slug}.json").read_text(encoding="utf-8"))
+
+
+def _guide_pdf(slug):
+    """사실 파일 doc 이 가리키는 요강 PDF 와 pdftotext. 원천이나 도구가 없으면 skip(통과로 세지 않는다). sha 가 사실 파일 값과 다르면 실패."""
+    if not FACTS_DIR.is_dir():
+        raise unittest.SkipTest(f"사실 파일 부재(검사 불가): {FACTS_DIR}")
+    exe = shutil.which("pdftotext")
+    if not exe:
+        raise unittest.SkipTest("pdftotext 없음(검사 불가)")
+    doc = _facts(slug)["doc"]
+    p = Path(doc["local_path"])
+    if not p.is_file():
+        raise unittest.SkipTest(f"요강 PDF 부재(검사 불가): {p}")
+    if hashlib.sha256(p.read_bytes()).hexdigest() != doc["sha256_actual"]:
+        raise AssertionError(f"{slug}: 요강 PDF sha 가 사실 파일 값과 다르다 {p}")
+    return exe, p
+
+
+_PDF = {}
+
+
+def _pdf_page(slug, page):
+    """요강 PDF 한 쪽 글(pdftotext -layout, 연속 공백은 한 칸)."""
+    if (slug, page) not in _PDF:
+        exe, p = _guide_pdf(slug)
+        out = subprocess.run([exe, "-q", "-layout", "-f", str(page), "-l", str(page), str(p), "-"],
+                             capture_output=True, text=True, check=True).stdout
+        _PDF[(slug, page)] = re.sub(r"\s+", " ", out)
+    return _PDF[(slug, page)]
+
+
+def _pdf_words(slug, page):
+    """요강 PDF 한 쪽의 낱말 [(x, y, 글)] (pdftotext -bbox)."""
+    exe, p = _guide_pdf(slug)
+    out = subprocess.run([exe, "-q", "-bbox", "-f", str(page), "-l", str(page), str(p), "-"],
+                         capture_output=True, text=True, check=True).stdout
+    return [(float(x), float(y), _html.unescape(w)) for x, y, w in
+            re.findall(r'<word xMin="([\d.]+)" yMin="([\d.]+)" xMax="[\d.]+" yMax="[\d.]+">(.*?)</word>', out)]
 
 
 # ---------------------------------------------------------------- 컴파일러 순수 함수
@@ -194,20 +240,59 @@ class CompilerUnits(unittest.TestCase):
         self.assertEqual(K.minutes_note(None, "면접 시간과 평가자 수는 요강에 적혀 있지 않다."), (None, False))
         self.assertEqual(K.minutes_note(10, "평가시간은 8~10분 내외다."), (None, False))   # 원장 값이 있으면 원장만 쓴다
 
+    def _pusan_med(self):
+        return {"name": "학생부종합전형(의예과)", "quota": None,
+                "interview_format": {"text": "의예과는 준비실에서 공통문제 답변 준비 10분, 고사실A에서 공통문제 답변 면접 10분, 고사실B에서 학생부 기반 면접 10분 순서다."},
+                "null_reasons": {"quota": "의예과의 학생부종합 칸은 비어 있고 지역인재Ⅰ 칸이 30이다. 의예과는 그 밖에 지역의사선발전형 합계 31(p.39)로 모집한다.",
+                                 "dates_basis": "의예과 면접 대상 전형(지역인재전형Ⅰ, 지역의사선발전형)의 전형일정"}}
+
     def test_track_fix_requires_facts_wording(self):
         """원장 전형명이 요강 구분과 다른 줄(부산대 의예과)은 사실 파일 근거 문구가 그대로일 때만 요강 이름과 전형별 인원으로 바꾼다."""
         K = self.K
-        t = {"name": "학생부종합전형(의예과)", "quota": None,
-             "null_reasons": {"quota": "의예과의 학생부종합 칸은 비어 있고 지역인재Ⅰ 칸이 30이다. 의예과는 그 밖에 지역의사선발전형 합계 31(p.39)로 모집한다.",
-                              "dates_basis": "의예과 면접 대상 전형(지역인재전형Ⅰ, 지역의사선발전형)의 전형일정"}}
-        name, parts = K.track_fix("pusan", t)
-        self.assertEqual(name, "의예과(지역인재전형Ⅰ, 지역의사선발전형)")
-        self.assertEqual(parts, [{"label": "지역인재전형Ⅰ", "value": 30}, {"label": "지역의사선발전형", "value": 31}])
+        t = self._pusan_med()
+        fx = K.track_fix("pusan", t)
+        self.assertEqual(fx["name"], "의예과(지역인재전형Ⅰ, 지역의사선발전형)")
+        self.assertEqual([(x["label"], x["value"]) for x in fx["quota_parts"]], [("지역인재전형Ⅰ", 30), ("지역의사선발전형", 31)])
         t2 = copy.deepcopy(t)
         t2["null_reasons"]["quota"] = "지역인재Ⅰ 칸이 32이다"
         with self.assertRaises(ValueError):
             K.track_fix("pusan", t2)
-        self.assertEqual(K.track_fix("ajou", {"name": "ACE전형-의학과", "quota": {"value": 17}}), ("ACE전형-의학과", None))
+        self.assertIsNone(K.track_fix("ajou", {"name": "ACE전형-의학과", "quota": {"value": 17}}))
+
+    def test_track_fix_values_carry_page_and_quote(self):
+        """결정 2, 3(2026-11-16 추가 명세): 보정 값(전형명, 전형별 인원, 면접 시간)마다 요강 쪽 번호와 인용이 붙는다."""
+        fx = self.K.track_fix("pusan", self._pusan_med())
+        evs = fx["name_evidence"] + fx["time_evidence"] + [e for x in fx["quota_parts"] for e in x["evidence"]]
+        self.assertTrue(fx["name_evidence"] and fx["time_evidence"])
+        for x in fx["quota_parts"]:
+            self.assertTrue(x["evidence"], x["label"])
+        for e in evs:
+            self.assertEqual(set(e), {"page", "quote"})
+            self.assertIsInstance(e["page"], int)
+            self.assertGreaterEqual(len(e["quote"]), 4)
+        self.assertEqual({e["page"] for e in fx["quota_parts"][0]["evidence"]}, {36})
+        self.assertEqual({e["page"] for e in fx["quota_parts"][1]["evidence"]}, {39})
+        # 원장 면접 시간 20분은 공통문제 답변 면접 10분과 학생부 기반 면접 10분의 합이라 요강에 없는 값이다. 요강 표기 그대로 싣는다
+        self.assertNotIn("20분", fx["time_text"])
+        self.assertEqual(re.findall(r"\d+분", fx["time_text"]), ["10분", "10분", "10분"])
+
+    def test_stage1_none_needs_lump_sum_wording(self):
+        """결정 6: 요강이 일괄합산이라고 적은 전형만 1단계 발표 칸을 「1단계 없음(일괄합산)」으로 적는다."""
+        K = self.K
+        t = {"name": "군위탁전형", "stage1_announce": None,
+             "null_reasons": {"stage1_announce": "군위탁전형은 일괄합산 전형이라 1단계 합격자 발표가 없다(p63)"}}
+        s = K.stage1_none("seoultech", t)
+        self.assertEqual(s["text"], "1단계 없음(일괄합산)")
+        self.assertIn(63, {e["page"] for e in s["evidence"]})
+        t2 = copy.deepcopy(t)
+        t2["null_reasons"]["stage1_announce"] = "요강에 1단계 발표일이 없다"
+        with self.assertRaises(ValueError):
+            K.stage1_none("seoultech", t2)
+        t3 = copy.deepcopy(t)
+        t3["stage1_announce"] = {"iso": "2026-11-20"}
+        with self.assertRaises(ValueError):
+            K.stage1_none("seoultech", t3)
+        self.assertIsNone(K.stage1_none("seoultech", {"name": "학교생활우수자전형", "stage1_announce": {"iso": "2026-11-20"}}))
 
     def test_clean_ratio_drops_quota_segments(self):
         K = self.K
@@ -363,7 +448,7 @@ class GeneratorContract(unittest.TestCase):
     def test_null_cells_text(self):
         NULL = "요강에 따로 적혀 있지 않습니다"
         cases = [("ajou", "ACE전형-의학과 제외", "quota"), ("inha", "인하미래인재(면접형)-의예과 제외", "quota"),
-                 ("seoultech", "군위탁전형", "stage1"), ("gachon", "가천바람개비전형", "final")]
+                 ("seoultech", "군위탁전형", "quota"), ("gachon", "가천바람개비전형", "final")]
         for slug, track, col in cases:
             sec = _section(self.pages[slug][0], "schedule")
             rows = re.findall(r"<tr[^>]*>(.*?)</tr>", sec, re.S)
@@ -439,6 +524,62 @@ class GeneratorContract(unittest.TestCase):
         row = next(r for r in re.findall(r"<tr[^>]*>(.*?)</tr>", sec, re.S) if "의예과(지역인재전형Ⅰ, 지역의사선발전형)" in r)
         self.assertIn("지역인재전형Ⅰ 30명", row)
         self.assertIn("지역의사선발전형 31명", row)
+
+    def _row(self, slug, track):
+        sec = _section(self.pages[slug][0], "schedule")
+        return next(r for r in re.findall(r"<tr[^>]*>(.*?)</tr>", sec, re.S) if f">{track}<" in r)
+
+    def _cell(self, row, col):
+        m = re.search(r'<td[^>]*data-c="%s"[^>]*>(.*?)</td>' % col, row, re.S)
+        return m.group(1) if m else None
+
+    def test_stage1_none_lump_sum_cell_and_faq(self):
+        """결정 6(2026-11-16 추가 명세): 요강이 일괄합산이라고 적은 전형의 1단계 발표 칸은 「1단계 없음(일괄합산)」. FAQ 답(FAQPage 원천)에도 같은 글."""
+        TXT = "1단계 없음(일괄합산)"
+        self.assertEqual(self._cell(self._row("seoultech", "군위탁전형"), "stage1"), TXT)
+        a = self._faq("seoultech")["서울과기대 1단계 합격자 발표는 언제인가요?"]
+        self.assertIn(f"군위탁전형은 {TXT}", a)
+        self.assertIn("학교생활우수자전형 1단계 합격자 발표는 2026년 11월 20일(금)입니다.", a)
+        n_none = 0
+        for u in self.b["univs"]:
+            for t in u["tracks"]:
+                if t.get("stage1_none"):
+                    n_none += 1
+                    self.assertEqual(t["stage1_none"]["text"], TXT)
+                    self.assertEqual(t["stage1"], [])
+                    self.assertTrue(t["stage1_none"]["evidence"], (u["slug"], t["name"]))
+                    self.assertIn(TXT, self._faq(u["slug"])[f"{u['short']} 1단계 합격자 발표는 언제인가요?"])
+                else:
+                    self.assertTrue(t["stage1"], (u["slug"], t["name"]))   # 일괄합산이 아닌 전형은 1단계 발표일이 있다
+        self.assertEqual(n_none, 1)
+
+    def test_source_notice_wording(self):
+        """결정 5: 출처 안내 끝맺음을 「다시 확인하시기 바랍니다」로(면 전체 합쇼체 한 단계)."""
+        for slug, (html, _) in self.pages.items():
+            self.assertIn("면접 시간과 고사장은 대학 입학처 공지로 다시 확인하시기 바랍니다.", _section(html, "source"), slug)
+            own = _visible(re.sub(r'(?s)<span class="q">.*?</span>', "", html))   # 기출 원문(span.q) 밖 지면 글
+            self.assertNotIn("주세요", own, slug)
+
+    def test_past_interview_dates_kept_without_build_time_words(self):
+        """결정 4: 면접일이 지난 대학도 날짜를 그대로 싣고, 빌드 시각에 따라 달라지는 글은 넣지 않는다."""
+        past = 0
+        for u in self.b["univs"]:
+            html, e = self.pages[u["slug"]]
+            text = _visible(html) + e["description"] + e["answer"]
+            for w in ("종료", "지났", "지남", "마감", "남았", "D-", "예정입니다"):
+                self.assertNotIn(w, text, (u["slug"], w))
+            for t in u["tracks"]:
+                for x in t["interviews"]:
+                    if x["iso"] < self.b["checked"]:
+                        past += 1
+                        self.assertIn(self.G.fmt_item(x), _visible(html), (u["slug"], x["iso"]))
+        self.assertGreater(past, 0)
+
+    def test_pusan_medical_time_from_guide_wording(self):
+        """결정 3: 면접 시간은 사실 파일 값이나 근거가 붙은 보정 값만. 부산대 의예과는 요강 67쪽 표기(공통문제 답변 준비, 면접, 학생부 기반 면접 각 10분 내외)."""
+        sec = _section(self.pages["pusan"][0], "format")
+        self.assertNotIn("20분", sec)
+        self.assertIn("공통문제 답변 준비 10분 내외, 공통문제 답변 면접 10분 내외, 학생부 기반 면접 10분 내외", sec)
 
     def test_render_stops_on_sale_defense_breach(self):
         """판매 방어선(SEO2-11 ② 4문, 맛보기 겹침 0, SEO2-12 ② 수치 없음)은 생성기도 빌드마다 막는다(build_all 과 deploy.sh 경로)."""
@@ -535,6 +676,80 @@ class SourceContract(unittest.TestCase):
                 self.assertEqual(K.type_name(groups[gi][0]), q["type"], u["slug"])
                 self.assertEqual(groups[gi][1][li], q["q"], u["slug"])
                 self.assertTrue(groups[gi][2], (u["slug"], q["type"]))   # 후기 군에서만 뽑는다
+
+    def test_fix_evidence_quotes_in_guide_pdf(self):
+        """결정 2, 6: 묶음의 보정 값과 일괄합산 칸에 붙은 인용이 요강 PDF 그 쪽에 글자 그대로 있다(사실 파일 doc 의 PDF, sha 대조)."""
+        n = 0
+        for u in self.b["univs"]:
+            for t in u["tracks"]:
+                evs = list(t.get("name_evidence", [])) + list(t.get("time_evidence", []))
+                evs += [e for x in t.get("quota_parts", []) for e in x["evidence"]]
+                evs += list((t.get("stage1_none") or {}).get("evidence", []))
+                for e in evs:
+                    n += 1
+                    self.assertIn(e["quote"], _pdf_page(u["slug"], e["page"]), (u["slug"], t["name"], e))
+        self.assertGreaterEqual(n, 8)
+
+    def test_pusan_medical_30_is_regional_column(self):
+        """결정 2: 부산대 2차 수정판 36쪽 의예과 줄의 30 은 지역인재Ⅰ 열에 있고 학생부종합 열은 비어 있다(글자 위치로 대조)."""
+        words = _pdf_words("pusan", 36)
+        row = [w for w in words if w[2] == "의예과" and w[0] > 350]
+        self.assertEqual(len(row), 1)
+        y = row[0][1]
+        nums = [w for w in words if abs(w[1] - y) < 1.5 and w[0] > row[0][0] and re.fullmatch(r"\d+", w[2])]
+        self.assertEqual([w[2] for w in nums], ["30"])
+        heads = [w for w in words if w[2] in ("학생부", "지역") and w[0] > 450]
+        self.assertEqual(sorted(w[2] for w in heads), ["지역", "학생부"])
+        nearest = min(heads, key=lambda w: abs(w[0] - nums[0][0]))
+        self.assertEqual(nearest[2], "지역")
+        t39 = _pdf_page("pusan", 39)
+        for q in ("전형 4. 학생부종합(지역의사선발전형)", "의과대학 의예과", "합계 31"):
+            self.assertIn(q, t39)
+
+    def test_page_values_trace_to_facts_or_evidence(self):
+        """결정 3: 면에 싣는 날짜, 인원, 면접 시간은 사실 파일 tracks 값이거나 쪽과 인용이 붙은 보정 값이다."""
+        if not FACTS_DIR.is_dir():
+            raise unittest.SkipTest(f"사실 파일 부재(검사 불가): {FACTS_DIR}")
+        for u in self.b["univs"]:
+            f = _facts(u["slug"])
+            self.assertEqual(len(f["tracks"]), len(u["tracks"]), u["slug"])
+            for ft, t in zip(f["tracks"], u["tracks"]):
+                where = (u["slug"], ft["name"])
+                ivs = {d["iso_start"] for d in ft["interview_dates"]} | {d["iso_end"] for d in ft["interview_dates"]}
+                for x in t["interviews"]:
+                    self.assertIn(x["iso"], ivs, where)
+                    if x.get("iso_end"):
+                        self.assertIn(x["iso_end"], ivs, where)
+                for key, split in (("stage1", ("stage1_announce", "stage1_announce_split")), ("final", ("final_announce", "final_announce_by_scope"))):
+                    isos = set()
+                    if ft.get(split[0]):
+                        isos.add(ft[split[0]]["iso"])
+                        isos |= {x["iso"] for x in ft[split[0]].get("by_scope", [])}
+                    isos |= {x["iso"] for x in ft.get(split[1]) or []}
+                    for x in t[key]:
+                        self.assertIn(x["iso"], isos, (where, key))
+                fq = (ft.get("quota") or {}).get("value")
+                if t.get("quota_parts"):
+                    self.assertIsNone(t["quota"], where)
+                    for x in t["quota_parts"]:
+                        self.assertTrue(x["evidence"], where)
+                elif t["quota"] is not None:
+                    self.assertEqual(t["quota"], fq, where)
+                fmt = json.dumps(ft["interview_format"], ensure_ascii=False)
+                mins = {int(m) for m in re.findall(r"(\d+)\s*분", fmt)}
+                if t.get("time_text"):
+                    self.assertTrue(t.get("time_evidence"), where)
+                    self.assertIsNone(t["minutes"], where)
+                    for m in re.findall(r"(\d+)분", t["time_text"]):
+                        self.assertIn(int(m), mins, where)
+                if t["minutes"] is not None:
+                    self.assertIn(t["minutes"], mins, where)
+                if t["prep"] == 0:
+                    self.assertRegex(ft["interview_format"]["text"], r"준비 ?시간 ?없", where)
+                elif t["prep"] is not None:
+                    self.assertIn(t["prep"], mins, where)
+                if t.get("minutes_text"):
+                    self.assertIn(t["minutes_text"], re.sub(r"\s*~\s*", "~", ft["interview_format"]["text"]), where)
 
     def test_bundle_recompiles_identically(self):
         try:

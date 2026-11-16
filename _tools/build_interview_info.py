@@ -125,6 +125,8 @@ def track_span(t, where, year=True):
 
 
 def minutes_ko(t):
+    if t.get("time_text"):   # 줄 단위 보정(요강 쪽과 인용이 붙은 값, 부산대 의예과)
+        return t["time_text"]
     p, m = t.get("prep"), t.get("minutes")
     if m is None:
         return f"면접 {t['minutes_text']}" if t.get("minutes_text") else None
@@ -134,6 +136,8 @@ def minutes_ko(t):
 
 
 def time_sentence(t):
+    if t.get("time_text"):
+        return f"면접 시간은 {t['time_text']}입니다."
     p, m = t.get("prep"), t.get("minutes")
     if m is None:
         if t.get("minutes_text"):
@@ -152,7 +156,9 @@ def interview_pct(t):
 
 
 # ---------------------------------------------------------------- 지면 조각
-def _ann_cell(lst, where):
+def _ann_cell(lst, where, none=None):
+    if none:   # 요강이 일괄합산이라고 적은 전형(1단계 선발 없음)
+        return E(none["text"])
     if not lst:
         return E(NULL)
     if len(lst) == 1 and not lst[0]["label"]:
@@ -178,7 +184,7 @@ def rows_html(u):
             label = f'<br><small>{E(x["label"])}</small>' if x.get("label") else ""
             cell = f'<td data-c="interview">{date_s}{label}</td>'
             if i == 0:
-                out.append(f'     <tr><td data-c="track"{rs}><b>{E(t["name"])}</b></td><td data-c="stage1"{rs}>{_ann_cell(t["stage1"], where)}</td>'
+                out.append(f'     <tr><td data-c="track"{rs}><b>{E(t["name"])}</b></td><td data-c="stage1"{rs}>{_ann_cell(t["stage1"], where, t.get("stage1_none"))}</td>'
                            f'{cell}<td data-c="final"{rs}>{_ann_cell(t["final"], where)}</td><td data-c="quota"{qcls}{rs}>{quota_html}</td></tr>')
             else:
                 out.append(f"     <tr>{cell}</tr>")
@@ -188,14 +194,14 @@ def rows_html(u):
 def format_html(u):
     groups, order = {}, []
     for t in u["tracks"]:
-        k = (t["basis"], t["minutes"], t.get("minutes_text"), t["prep"], t["ratio"], t["quote"], t["page"])
+        k = (t["basis"], t["minutes"], t.get("minutes_text"), t.get("time_text"), t["prep"], t["ratio"], t["quote"], t["page"])
         if k not in groups:
             groups[k] = []
             order.append(k)
         groups[k].append(t["name"])
     out = []
     for k in order:
-        basis, _, _, _, ratio, quote, page = k
+        basis, _, _, _, _, ratio, quote, page = k
         t = next(x for x in u["tracks"] if x["name"] == groups[k][0])
         rows = [("면접 형태", BASIS_KO.get(basis, BASIS_KO["unknown"]))]
         mk = minutes_ko(t)
@@ -239,11 +245,16 @@ def faq_pairs(u):
         a += f" {other['name']}{_eun(other['name'])} {BASIS_KO.get(other['basis'], BASIS_KO['unknown'])}입니다."
     qa.append((f"{S} 면접은 어떤 방식인가요?", a))
     qa.append((f"{S} 면접 반영 비율은 얼마인가요?", f"{t0['name']}{_eun(t0['name'])} {t0['ratio']}로 선발합니다."))
+    lump = [t for t in tr if t.get("stage1_none")]   # 일괄합산 전형은 표의 1단계 칸과 같은 글을 FAQ 답(FAQPage 원천)에도 적는다
+    parts = []
     if t0["stage1"]:
         s1 = ", ".join(f"{x['label']} {fmt_item(x, u['slug'])}" if x["label"] else fmt_item(x, u["slug"]) for x in t0["stage1"])
         fa = ", ".join(f"{x['label']} {fmt_item(x, u['slug'])}" if x["label"] else fmt_item(x, u["slug"]) for x in t0["final"]) or None
-        a = f"{t0['name']} 1단계 합격자 발표는 {s1}입니다." + (f" 최초 합격자 발표는 {fa}입니다." if fa else "")
-        qa.append((f"{S} 1단계 합격자 발표는 언제인가요?", a))
+        parts.append(f"{t0['name']} 1단계 합격자 발표는 {s1}입니다." + (f" 최초 합격자 발표는 {fa}입니다." if fa else ""))
+    for t in lump:
+        parts.append(f"{t['name']}{_eun(t['name'])} {t['stage1_none']['text']} 전형이라 1단계 합격자 발표가 없습니다.")
+    if parts:
+        qa.append((f"{S} 1단계 합격자 발표는 언제인가요?", " ".join(parts)))
     return qa
 
 
@@ -304,7 +315,7 @@ def render(u, b):
     sources = [
         f'{E(F)} 「{E(u["doc"]["title"])}」, <a href="{E(u["doc"]["url"])}" target="_blank" rel="noopener">대학 입학처 원문</a>. 확인일 {y}년 {m}월 {d}일({w}).',
         f"질문 유형과 대표 기출은 {E(S)} 면접 가이드북 2027(현학적 연구소 편집)에서 옮겼습니다.",
-        "면접 시간과 고사장은 대학 입학처 공지로 다시 확인해 주세요.",
+        "면접 시간과 고사장은 대학 입학처 공지로 다시 확인하시기 바랍니다.",
     ]
     vals = {
         "__TITLE__": E(entry["title"]),

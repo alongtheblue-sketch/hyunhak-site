@@ -6,8 +6,10 @@
   원천 2  2027 학종 감사 원장 _tools/fixtures/admissions_ledger_2027_a58b7d76.json (sha 핀. interview_basis, interview_minutes, selection_ratio)
   원천 3  v24 판매 정본 승자 HTML (guidebook_sources.V24_BUILD_ROOT, winner.json) 3부 유형 군과 문항
   원천 4  _tools/guidebook_catalog.json (판매 30곳, 판매 면 맛보기 samples)
+  원천 5  사실 파일 doc.local_path 의 요강 PDF (줄 단위 보정 TRACK_FIX, STAGE1_NONE 의 인용 대조에만. pdftotext 필요)
 싣지 않는 것: 사실 파일의 official_notices, unresolved, notes, null_reasons(요강 밖 공지 값과 작업 메모), 원장의 모집 인원 문구,
-유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②). null_reasons 는 TRACK_FIX 의 근거 문구 대조에만 읽는다.
+유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②). null_reasons 는 TRACK_FIX, STAGE1_NONE 의 근거 문구 대조에만 읽는다.
+면에 싣는 날짜, 인원, 면접 시간은 사실 파일 tracks 값이거나 요강 쪽 번호와 인용이 붙은 보정 값뿐이다(2026-11-16 추가 명세 결정 3).
 요일: 요강 표기의 요일과 달력에서 계산한 요일이 다르면 멈춘다.
 사용: python3 _tools/compile_interview_info.py [--check]   (--check = 다시 만들어 저장소 묶음과 바이트 대조만)
 """
@@ -15,6 +17,8 @@ import hashlib
 import json
 import math
 import re
+import shutil
+import subprocess
 import sys
 from datetime import date
 from pathlib import Path
@@ -369,29 +373,91 @@ def minutes_note(ledger_minutes, fmt_text):
     return None, len(set(_MIN_ANY.findall(s))) > 1
 
 
+# 줄 단위 보정. 면에 싣는 값은 사실 파일 tracks 값이거나, 여기 적은 값처럼 요강 쪽 번호와 인용이 붙은 값뿐이다(2026-11-16 추가 명세 결정 3).
+# 인용은 컴파일 때 사실 파일 doc 의 요강 PDF(sha 대조) 그 쪽 글에 글자 그대로 있는지 본다(check_evidence, 없으면 멈춘다).
 TRACK_FIX = {   # 원장 전형명이 요강 구분과 맞지 않는 줄. 사실 파일 unresolved 가 「트랙명 재정의가 필요하다」고 적었다
     ("pusan", "학생부종합전형(의예과)"): {
-        # 요강 2차 수정판 36쪽: 의예과의 학생부종합 칸은 비고 지역인재Ⅰ 30. 39쪽: 지역의사선발전형 의예과 합계 31.
-        # 37, 40, 67쪽: 두 전형 의예과 모두 4배수, 1단계 80%+면접 20%, 면접일 12-05(원장 선발 방식과 같다)
+        # 요강 2차 수정판(sha e68314ac) 36쪽: 의예과의 학생부종합 칸은 비고 지역인재Ⅰ 30. 39쪽: 지역의사선발전형 의예과 합계 31.
+        # 37, 40, 67쪽: 두 전형 의예과 모두 4배수, 1단계 80%+면접 20%, 면접일 12-05(원장 선발 방식과 같다). 2026-11-16 본 세션 결정 2 로 재대조
         "name": "의예과(지역인재전형Ⅰ, 지역의사선발전형)",
+        "name_evidence": [(67, "1. 대상자 : 학생부종합(학생부종합전형, 지역인재전형Ⅰ, 지역의사선발전형) 1단계 합격자")],
         "dates_basis": "지역인재전형Ⅰ, 지역의사선발전형",
-        "parts": [("지역인재전형Ⅰ", 30, "지역인재Ⅰ 칸이 30"), ("지역의사선발전형", 31, "지역의사선발전형 합계 31")],
+        "parts": [("지역인재전형Ⅰ", 30, "지역인재Ⅰ 칸이 30",
+                   [(36, "전형 3. 학생부종합(학생부종합전형/지역인재전형Ⅰ)"), (36, "의과대학 의예과 30")]),   # 30 은 지역인재Ⅰ 열(시험이 글자 위치로 본다)
+                  ("지역의사선발전형", 31, "지역의사선발전형 합계 31",
+                   [(39, "전형 4. 학생부종합(지역의사선발전형)"), (39, "의과대학 의예과"), (39, "합계 31")])],
+        # 원장 면접 시간 20분은 공통문제 답변 면접 10분과 학생부 기반 면접 10분의 합이라 요강에 없는 값이다. 요강 표의 소요시간 표기를 싣는다
+        "time_text": "공통문제 답변 준비 10분 내외, 공통문제 답변 면접 10분 내외, 학생부 기반 면접 10분 내외",
+        "time_facts": "공통문제 답변 준비 10분, 고사실A에서 공통문제 답변 면접 10분, 고사실B에서 학생부 기반 면접 10분",
+        "time_evidence": [(67, "의과대학 의예과"), (67, "공통문제 답변"), (67, "준비 10분 내외, 면접 10분 내외"), (67, "학생부 기반 면접 10분 내외")],
     },
 }
 
 
+def _evs(pairs):
+    return [{"page": p, "quote": q} for p, q in pairs]
+
+
 def track_fix(slug, t):
-    """(지면 전형명, 전형별 인원 목록 또는 None). 고친 줄은 사실 파일의 근거 문구(null_reasons)가 그대로일 때만 쓰고, 다르면 멈춘다."""
+    """줄 단위 보정 {'name', 'name_evidence', 'quota_parts', 'time_text', 'time_evidence'} 또는 None.
+    고친 줄은 사실 파일의 근거 문구(null_reasons, interview_format)가 그대로일 때만 쓰고, 다르면 멈춘다."""
     fx = TRACK_FIX.get((slug, t["name"]))
     if not fx:
-        return t["name"], None
+        return None
     nr = t.get("null_reasons") or {}
     if t.get("quota") is not None or fx["dates_basis"] not in str(nr.get("dates_basis", "")):
         raise ValueError(f"{slug} {t['name']}: 사실 파일이 바뀌었다. 전형명 보정(TRACK_FIX)을 요강과 다시 대조한다")
-    for _, _, ev in fx["parts"]:
+    for _, _, ev, _ in fx["parts"]:
         if ev not in str(nr.get("quota", "")):
             raise ValueError(f"{slug} {t['name']}: 사실 파일 인원 근거에 {ev!r} 가 없다. 전형명 보정(TRACK_FIX)을 다시 대조한다")
-    return fx["name"], [{"label": a, "value": v} for a, v, _ in fx["parts"]]
+    if fx["time_facts"] not in str((t.get("interview_format") or {}).get("text", "")):
+        raise ValueError(f"{slug} {t['name']}: 사실 파일 면접 방식 글에 {fx['time_facts']!r} 가 없다. 시간 보정(TRACK_FIX)을 다시 대조한다")
+    return {"name": fx["name"], "name_evidence": _evs(fx["name_evidence"]),
+            "quota_parts": [{"label": a, "value": v, "evidence": _evs(pq)} for a, v, _, pq in fx["parts"]],
+            "time_text": fx["time_text"], "time_evidence": _evs(fx["time_evidence"])}
+
+
+STAGE1_NONE_TEXT = "1단계 없음(일괄합산)"
+STAGE1_NONE = {   # 요강이 일괄합산(1단계 선발 없음)이라고 적은 전형. 30곳 60전형 가운데 1단계 발표일이 없는 줄은 이것 하나다(2026-11-16 결정 6)
+    ("seoultech", "군위탁전형"): [(63, "※ 학생부종합(군위탁전형)은 일괄합산 전형으로 지원자 전원이 면접 대상"),
+                              (51, "10. 학생부종합(군위탁전형)"), (51, "일괄합산 1,000점")],
+}
+
+
+def stage1_none(slug, t):
+    """일괄합산 전형의 1단계 칸 {'text', 'evidence'} 또는 None. 사실 파일에 1단계 발표일이 있거나 null 사유가 일괄합산이 아니면 멈춘다."""
+    ev = STAGE1_NONE.get((slug, t["name"]))
+    if not ev:
+        return None
+    why = str((t.get("null_reasons") or {}).get("stage1_announce", ""))
+    if t.get("stage1_announce") or t.get("stage1_announce_split") or "일괄합산" not in why:
+        raise ValueError(f"{slug} {t['name']}: 사실 파일의 1단계 칸이 일괄합산 근거와 맞지 않는다. STAGE1_NONE 을 요강과 다시 대조한다")
+    return {"text": STAGE1_NONE_TEXT, "evidence": _evs(ev)}
+
+
+_PDF_TEXT = {}
+
+
+def pdf_page_text(doc, page):
+    """사실 파일 doc 의 요강 PDF 한 쪽 글(pdftotext -layout, 연속 공백 한 칸). PDF sha 가 사실 파일 값과 다르면 멈춘다."""
+    p = Path(doc["local_path"])
+    key = (str(p), page)
+    if key not in _PDF_TEXT:
+        if hashlib.sha256(p.read_bytes()).hexdigest() != doc["sha256_actual"]:
+            raise ValueError(f"요강 PDF sha 가 사실 파일 값과 다르다: {p}")
+        exe = shutil.which("pdftotext")
+        if not exe:
+            raise ValueError("pdftotext 가 없어 보정 근거를 대조할 수 없다")
+        out = subprocess.run([exe, "-q", "-layout", "-f", str(page), "-l", str(page), str(p), "-"],
+                             capture_output=True, text=True, check=True).stdout
+        _PDF_TEXT[key] = re.sub(r"\s+", " ", out)
+    return _PDF_TEXT[key]
+
+
+def check_evidence(slug, doc, evs):
+    for e in evs:
+        if e["quote"] not in pdf_page_text(doc, e["page"]):
+            raise ValueError(f"{slug}: 보정 근거 인용이 요강 {e['page']}쪽에 없다 {e['quote']!r}")
 
 
 # ---------------------------------------------------------------- 대학 한 곳
@@ -462,10 +528,11 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
         if L is None or L.get("interview_status") != "conducted":
             raise ValueError(f"{slug}: 원장에 면접 실시 전형 {t['name']!r} 없음")
         fmt = t["interview_format"]
-        name, parts = track_fix(slug, t)
+        fx = track_fix(slug, t)
+        s1none = stage1_none(slug, t)
         mtext, mvaries = minutes_note(L.get("interview_minutes"), fmt.get("text"))
         tr = {
-            "name": san(name),
+            "name": san(fx["name"] if fx else t["name"]),
             "interviews": _interviews(slug, t),
             "stage1": _announce(slug, t, "stage1_announce", "stage1_announce_split"),
             "final": _announce(slug, t, "final_announce", "final_announce_by_scope"),
@@ -479,8 +546,21 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
             "quote": clean_quote(fmt["quote"]),
             "page": fmt["page"],
         }
-        if parts:
-            tr["quota_parts"] = parts
+        if fx:
+            tr["name_evidence"] = fx["name_evidence"]
+            tr["quota_parts"] = fx["quota_parts"]
+            tr.update(minutes=None, prep=None, minutes_text=None, minutes_varies=False,
+                      time_text=fx["time_text"], time_evidence=fx["time_evidence"])
+            check_evidence(slug, f["doc"], fx["name_evidence"] + fx["time_evidence"] + [e for x in fx["quota_parts"] for e in x["evidence"]])
+        else:   # 원장 시간 값도 사실 파일 면접 방식 글에 있는 값만 싣는다(결정 3)
+            mins = {int(m) for m in re.findall(r"(\d+)\s*분", json.dumps(fmt, ensure_ascii=False))}
+            for what, v in (("면접 시간", tr["minutes"]), ("준비 시간", tr["prep"])):
+                if v is None or v in mins or (v == 0 and what == "준비 시간" and re.search(r"준비 ?시간 ?없", str(fmt.get("text", "")))):
+                    continue
+                raise ValueError(f"{slug} {t['name']}: 원장 {what} {v}분이 사실 파일 면접 방식 글에 없다. TRACK_FIX 에 근거를 붙이거나 값을 뺀다")
+        if s1none:
+            tr["stage1_none"] = s1none
+            check_evidence(slug, f["doc"], s1none["evidence"])
         tracks.append(tr)
     qs = pick_questions(groups, samples, used)
     if len(qs) != 4:
