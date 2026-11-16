@@ -130,30 +130,36 @@ def track_span(t, where, year=True):
     return ", ".join(out), ("range" if len(runs) == 1 else "runs")
 
 
+def _interview_time(t):
+    """면접 시간 글. 요강이 붙인 꾸밈말까지 적은 minutes_text(「10분 내외」)가 있으면 그것, 없으면 정수 분, 둘 다 없으면 None.
+    minutes_text 는 원장 interview_time_text 나 사실 파일 글에서 온다(compile_interview_info, 2026-11-16 명세 E 4절 3항)."""
+    if t.get("minutes_text"):
+        return t["minutes_text"]
+    return f"{t['minutes']}분" if t.get("minutes") is not None else None
+
+
 def minutes_ko(t):
     if t.get("time_text"):   # 줄 단위 보정(요강 쪽과 인용이 붙은 값, 부산대 의예과)
         return t["time_text"]
-    p, m = t.get("prep"), t.get("minutes")
-    if m is None:
-        return f"면접 {t['minutes_text']}" if t.get("minutes_text") else None
+    p, iv = t.get("prep"), _interview_time(t)
+    if iv is None:
+        return None
     if p == 0:
-        return f"준비시간 없이 면접 {m}분"
-    return f"준비 {p}분, 면접 {m}분" if p else f"면접 {m}분"
+        return f"준비시간 없이 면접 {iv}"
+    return f"준비 {p}분, 면접 {iv}" if p else f"면접 {iv}"
 
 
 def time_sentence(t):
     if t.get("time_text"):
         return f"면접 시간은 {t['time_text']}입니다."
-    p, m = t.get("prep"), t.get("minutes")
-    if m is None:
-        if t.get("minutes_text"):
-            return f"면접 시간은 {t['minutes_text']}입니다."
+    p, iv = t.get("prep"), _interview_time(t)
+    if iv is None:
         if t.get("minutes_varies"):
             return "면접 시간은 모집단위마다 다릅니다."
         return f"면접 시간은 {NULL}."
     if p == 0:
-        return f"준비 시간 없이 면접 시간 {m}분입니다."
-    return f"준비 시간 {p}분, 면접 시간 {m}분입니다." if p else f"면접 시간은 {m}분입니다."
+        return f"준비 시간 없이 면접 시간 {iv}입니다."
+    return f"준비 시간 {p}분, 면접 시간 {iv}입니다." if p else f"면접 시간은 {iv}입니다."
 
 
 def interview_pct(t):

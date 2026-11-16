@@ -823,9 +823,16 @@ def _strat_sec_html(mv):
             '    <ol class="strat rv">\n' + "\n".join(out) + '\n    </ol>' + tail + '\n  </section>')
 
 
+# 로마 숫자는 읽는 소리(일, 이, 삼, 사, 오, 육, 칠, 팔, 구, 십, 십일, 십이)의 받침으로 조사를 고른다(덕성인재전형Ⅱ는, 2026-11-16 명세 E 4절 4항).
+# 정보 면 build_interview_info._ROMAN_EUN 과 같은 표다
+_ROMAN_EUN = dict(zip("ⅠⅡⅢⅣⅤⅥⅦⅧⅨⅩⅪⅫ", "은는은는는은은은는은은는")) | dict(zip("ⅰⅱⅲⅳⅴⅵⅶⅷⅸⅹⅺⅻ", "은는은는는은은은는은은는"))
+
+
 def _eun(word):
-    """은/는 조사: 마지막 한글 음절의 받침 유무 (괄호, 공백 등 뒤꼬리는 건너뛴다)."""
+    """은/는 조사: 마지막 한글 음절의 받침 유무 (괄호, 공백 등 뒤꼬리는 건너뛴다). 로마 숫자는 읽는 소리로 본다."""
     for ch in reversed(str(word)):
+        if ch in _ROMAN_EUN:
+            return _ROMAN_EUN[ch]
         o = ord(ch)
         if 0xAC00 <= o <= 0xD7A3:
             return "은" if (o - 0xAC00) % 28 else "는"
@@ -1020,16 +1027,41 @@ def _ledger_univ(slug):
     return _LEDGER.get(dict(SLUGS).get(slug)) or {}
 
 
+# 원장 interview_time_text = 요강이 면접 시간에 붙인 글자 그대로(「10분 내외」, 「약 10분간」, 인하대 의예과 제외 「8~10분 내외」).
+# 정수 칸 interview_minutes 가 있으면 표기 속 수가 그 값과 같아야 한다. 요강이 면접을 둘로 나눠 적은 전형(부산대 의예과 67쪽)은
+# 칸 이름이 붙은 표기(「학생부 기반 면접 10분 내외 / 공통문제 답변 준비 10분 내외, 면접 10분 내외」)를 싣고 정수 칸은 null 이다(합산 값 없음).
+# 2026-11-16 명세 E 4절 3항, 4항. 꼴이 어긋나면 빌드를 멈춘다
+_TIME_SIMPLE = re.compile(r"(?:약 )?\d+(?:~\d+)?분(?: 내외| 이내|간)?")
+_TIME_PART = r"[가-힣]+(?: [가-힣]+)* \d+분(?: 내외| 이내)?"
+_TIME_LABELED = re.compile(rf"{_TIME_PART}(?:(?:, | / ){_TIME_PART})+")
+
+
+def _time_text(t):
+    """(요강 시간 표기, 꼴). 꼴 = 'simple' 수 하나와 꾸밈말, 'labeled' 칸 이름이 붙은 여러 시간, 표기가 없으면 (None, None)."""
+    txt, m = t.get("interview_time_text"), t.get("interview_minutes")
+    if txt is None:
+        return None, None
+    if _TIME_SIMPLE.fullmatch(txt):
+        nums = [int(x) for x in re.findall(r"\d+", txt)]
+        if m is not None and nums != [m]:
+            sys.exit(f"2027 학종 원장 interview_time_text 의 수가 interview_minutes({m})와 다르다: {txt!r} ({t.get('name')})")
+        return txt, "simple"
+    if _TIME_LABELED.fullmatch(txt) and m is None:
+        return txt, "labeled"
+    sys.exit(f"2027 학종 원장 interview_time_text 꼴이 아니다: {txt!r} (interview_minutes={m}, {t.get('name')})")
+
+
 def _minutes_ko(t):
     p, m = t.get("prep_minutes"), t.get("interview_minutes")
-    if m is None:   # 정수 칸이 null 이어도 요강이 범위로 적은 시간(interview_time_text, 인하대 의예과 제외 8~10분 내외)은 그 표기를 싣는다
-        txt = t.get("interview_time_text")
-        if txt and not re.fullmatch(r"\d+(?:~\d+)?분(?: 내외| 이내)?", txt):
-            sys.exit(f"2027 학종 원장 interview_time_text 꼴이 아니다: {txt!r} ({t.get('name')})")
-        return f"면접 {txt}" if txt else "요강에 시간 미기재"
+    txt, kind = _time_text(t)
+    if kind == "labeled":   # 준비 시간도 칸 이름과 함께 표기 안에 있다
+        return txt
+    iv = txt or (f"{m}분" if m is not None else None)
+    if iv is None:
+        return "요강에 시간 미기재"
     if p == 0:
-        return f"준비시간 없이 면접 {m}분"
-    return f"준비 {p}분, 면접 {m}분" if p else f"면접 {m}분"
+        return f"준비시간 없이 면접 {iv}"
+    return f"준비 {p}분, 면접 {iv}" if p else f"면접 {iv}"
 
 
 def _ratio_ko(t):

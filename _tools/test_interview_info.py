@@ -837,6 +837,77 @@ class SourceContract(unittest.TestCase):
         self.assertEqual(K.compile_bundle(), json.loads(BUNDLE.read_text(encoding="utf-8")))
 
 
+# ---------------------------------------------------------------- 원장 재대조 반영 생성기 (2026-11-16 명세 E 4절 3, 4항)
+PUSAN_MED_TIME = "학생부 기반 면접 10분 내외 / 공통문제 답변 준비 10분 내외, 면접 10분 내외"
+
+
+class ReauditGenerator(unittest.TestCase):
+    """요강 꾸밈말(interview_time_text)을 판매 면 카드와 정보 면이 그대로 싣고, 판매 면 조사가 로마 숫자를 읽는 소리로 받침을 고른다."""
+
+    @classmethod
+    def setUpClass(cls):
+        import build_guidebook as B
+        import build_interview_info as G
+        import compile_interview_info as K
+        cls.B, cls.G, cls.K = B, G, K
+
+    def test_guidebook_eun_reads_roman_numerals(self):
+        B = self.B
+        self.assertEqual(B._eun("덕성인재전형Ⅱ"), "는")   # 이(二): 받침 없음
+        self.assertEqual(B._eun("기회균형전형Ⅰ"), "은")   # 일(一): 받침 있음
+        self.assertEqual(B._eun("전형Ⅳ"), "는")
+        self.assertEqual(B._eun("전형Ⅲ"), "은")
+        self.assertEqual(B._eun("학생부종합전형Ⅰ(면접형)"), "은")   # 괄호 앞 글자가 아니라 마지막 한글 '형'
+        self.assertEqual(B._eun("ACE전형"), "은")
+
+    def test_guidebook_card_time_uses_guide_wording(self):
+        f = self.B._minutes_ko
+        self.assertEqual(f({"interview_minutes": 10, "prep_minutes": None}), "면접 10분")   # 꾸밈말이 없으면 지금 표기 그대로
+        self.assertEqual(f({"interview_minutes": 10, "prep_minutes": None, "interview_time_text": "10분 내외"}), "면접 10분 내외")
+        self.assertEqual(f({"interview_minutes": 10, "prep_minutes": None, "interview_time_text": "약 10분간"}), "면접 약 10분간")
+        self.assertEqual(f({"interview_minutes": 12, "prep_minutes": None, "interview_time_text": "약 12분 내외"}), "면접 약 12분 내외")
+        self.assertEqual(f({"interview_minutes": 9, "prep_minutes": 0, "interview_time_text": "9분 내외"}), "준비시간 없이 면접 9분 내외")
+        self.assertEqual(f({"interview_minutes": 9, "prep_minutes": 40, "interview_time_text": "9분 내외"}), "준비 40분, 면접 9분 내외")
+        self.assertEqual(f({"interview_minutes": None, "prep_minutes": None, "interview_time_text": "8~10분 내외"}), "면접 8~10분 내외")
+        self.assertEqual(f({"interview_minutes": None, "prep_minutes": None}), "요강에 시간 미기재")
+        # 요강이 면접을 둘로 나눠 적은 전형(부산대 의예과 67쪽)은 칸 이름이 붙은 표기를 그대로 싣는다(합산 값을 만들지 않는다)
+        self.assertEqual(f({"interview_minutes": None, "prep_minutes": 10, "interview_time_text": PUSAN_MED_TIME}), PUSAN_MED_TIME)
+        for bad in ({"interview_minutes": 10, "interview_time_text": "12분 내외"},       # 정수 칸과 다른 수
+                    {"interview_minutes": 20, "interview_time_text": PUSAN_MED_TIME},     # 나눠 적은 표기인데 정수 칸이 남음
+                    {"interview_minutes": 10, "interview_time_text": "10분쯤"}):          # 요강 꾸밈말 꼴이 아님
+            with self.assertRaises(SystemExit, msg=bad):
+                f(bad)
+
+    def test_info_time_uses_guide_wording(self):
+        G = self.G
+        t = {"minutes": 10, "prep": None, "minutes_text": "10분 내외"}
+        self.assertEqual(G.minutes_ko(t), "면접 10분 내외")
+        self.assertEqual(G.time_sentence(t), "면접 시간은 10분 내외입니다.")
+        t = {"minutes": 9, "prep": 0, "minutes_text": "9분 내외"}
+        self.assertEqual(G.minutes_ko(t), "준비시간 없이 면접 9분 내외")
+        self.assertEqual(G.time_sentence(t), "준비 시간 없이 면접 시간 9분 내외입니다.")
+        t = {"minutes": 9, "prep": 40, "minutes_text": "9분 내외"}
+        self.assertEqual(G.minutes_ko(t), "준비 40분, 면접 9분 내외")
+        self.assertEqual(G.time_sentence(t), "준비 시간 40분, 면접 시간 9분 내외입니다.")
+        t = {"minutes": 10, "prep": None, "minutes_text": None}
+        self.assertEqual(G.minutes_ko(t), "면접 10분")
+        self.assertEqual(G.time_sentence(t), "면접 시간은 10분입니다.")
+        t = {"minutes": None, "prep": None, "minutes_text": "8~10분 내외"}
+        self.assertEqual(G.minutes_ko(t), "면접 8~10분 내외")
+
+    def test_compile_time_text_needs_facts_wording(self):
+        K = self.K
+        fmt = {"text": "2인 대 1인 개별면접을 10분 내외 진행한다.", "page": 12, "quote": "지원자 1인당 면접시간은 10분 내외"}
+        self.assertEqual(K.ledger_time_text({"interview_minutes": 10, "interview_time_text": "10분 내외"}, fmt), "10분 내외")
+        self.assertIsNone(K.ledger_time_text({"interview_minutes": 10}, fmt))
+        fmt2 = {"text": "약 10분 진행한다.", "page": 44, "quote": "2:1 평가이며 약 10분간 진행합니다.", "quotes_extra": []}
+        self.assertEqual(K.ledger_time_text({"interview_minutes": 10, "interview_time_text": "약 10분간"}, fmt2), "약 10분간")   # 인용에 있는 글자도 사실 파일 글이다
+        with self.assertRaises(ValueError):
+            K.ledger_time_text({"interview_minutes": 10, "interview_time_text": "10분 이내"}, fmt)   # 사실 파일 글에 없는 표기
+        with self.assertRaises(ValueError):
+            K.ledger_time_text({"interview_minutes": None, "interview_time_text": PUSAN_MED_TIME}, fmt)   # 나눠 적은 표기는 줄 단위 보정(TRACK_FIX)만 싣는다
+
+
 # ---------------------------------------------------------------- 판매 면 요강 원장 정정 (2026-11-16 추가 명세 결정 7)
 class LedgerCorrection(unittest.TestCase):
     """판매 면이 쓰는 2027 학종 원장의 두 값을 요강과 다시 대조해 고친다. 중앙대 융합형인재 의학부 모집 15명(요강 31쪽 7명),

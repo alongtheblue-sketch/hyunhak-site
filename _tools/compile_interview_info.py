@@ -360,6 +360,30 @@ _MIN_SPOT = re.compile(r"(?:평가시간|면접 ?시간)[은는이가]?\s*(\d+\s
 _MIN_ANY = re.compile(r"\d+\s*(?:~\s*\d+\s*)?분(?:\s*(?:내외|이내))?")
 
 
+_TIME_SIMPLE = re.compile(r"(?:약 )?\d+(?:~\d+)?분(?: 내외| 이내|간)?")
+
+
+def _time_norm(s):
+    return re.sub(r"\s*~\s*", "~", re.sub(r"\s+", " ", str(s or "")))
+
+
+def ledger_time_text(L, fmt):
+    """원장 interview_time_text(요강이 면접 시간에 붙인 글자 그대로, 「10분 내외」, 「약 10분간」) 또는 None.
+    면에 싣는 시간은 사실 파일 글에 있는 값만이라(결정 3) 그 표기가 사실 파일 면접 방식 글이나 인용에 없으면 멈춘다.
+    칸 이름이 붙은 여러 시간 표기(부산대 의예과)는 여기서 받지 않는다. 그런 줄은 TRACK_FIX 의 쪽과 인용이 붙은 표기만 싣는다.
+    2026-11-16 명세 E 4절 3항(원장 재대조 s2_ledger 의 대조와 독립 대조가 일치한 꾸밈말)."""
+    txt = L.get("interview_time_text")
+    if txt is None:
+        return None
+    if not _TIME_SIMPLE.fullmatch(txt):
+        raise ValueError(f"원장 interview_time_text {txt!r} 는 수 하나와 꾸밈말 꼴이 아니다. 줄 단위 보정(TRACK_FIX)으로만 싣는다")
+    hay = _time_norm(" ".join([str(fmt.get("text") or ""), str(fmt.get("quote") or "")]
+                              + [str(x.get("quote") or "") for x in fmt.get("quotes_extra") or []]))
+    if _time_norm(txt) not in hay:
+        raise ValueError(f"원장 interview_time_text {txt!r} 가 사실 파일 면접 방식 글과 인용에 없다")
+    return txt
+
+
 def minutes_note(ledger_minutes, fmt_text):
     """(면접 시간 표기, 모집단위마다 다름 여부). 원장 interview_minutes 가 있으면 원장만 쓴다((None, False)).
     원장이 null 이면 사실 파일 interview_format 글에서 「평가시간은 8~10분 내외」처럼 시간 낱말에 붙은 표기가 하나뿐일 때 그 표기를,
@@ -553,7 +577,8 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
         fmt = t["interview_format"]
         fx = track_fix(slug, t)
         s1none = stage1_none(slug, t)
-        mtext, mvaries = minutes_note(L.get("interview_minutes"), fmt.get("text"))
+        ltext = None if fx else ledger_time_text(L, fmt)   # 원장이 요강 꾸밈말을 적었으면 그 글자(정수 칸과 함께 둔다)
+        mtext, mvaries = (ltext, False) if ltext else minutes_note(L.get("interview_minutes"), fmt.get("text"))
         tr = {
             "name": san(fx["name"] if fx else t["name"]),
             "interviews": _interviews(slug, t),
