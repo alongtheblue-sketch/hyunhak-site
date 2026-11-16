@@ -3103,7 +3103,37 @@
           "interview/korea-hum.html",
           "interview/korea-sci.html",
           "interview/korea-eq-hum.html",
-          "interview/korea-eq-sci.html"
+          "interview/korea-eq-sci.html",
+          "interview/gachon.html",
+          "interview/catholic.html",
+          "interview/konkuk.html",
+          "interview/kyonggi.html",
+          "interview/khu.html",
+          "interview/kwangwoon.html",
+          "interview/kookmin.html",
+          "interview/dankook.html",
+          "interview/duksung.html",
+          "interview/dongguk.html",
+          "interview/dongduk.html",
+          "interview/donga.html",
+          "interview/myongji.html",
+          "interview/pusan.html",
+          "interview/sahmyook.html",
+          "interview/seoultech.html",
+          "interview/snu.html",
+          "interview/uos.html",
+          "interview/swu.html",
+          "interview/sungshin.html",
+          "interview/sejong.html",
+          "interview/sookmyung.html",
+          "interview/soongsil.html",
+          "interview/ajou.html",
+          "interview/ulsan.html",
+          "interview/ewha.html",
+          "interview/incheon.html",
+          "interview/inha.html",
+          "interview/cau.html",
+          "interview/hufs.html"
         ],
         "list_name": "대학별 면접 준비 자료"
       },
@@ -3971,6 +4001,1416 @@
       ],
       "date_modified": "2026-10-15",
       "date_published": "2026-10-07"
+    },
+    "interview/ajou.html": {
+      "title": "아주대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "아주대 2027학년도 수시 면접 일정입니다. ACE전형-의학과 제외 면접은 11월 22일(일)~12월 14일(월), 1단계 발표는 11월 17일(화)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "아주대 ACE전형-의학과 제외 면접은 2026년 11월 22일(일)~12월 14일(월)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "아주대 면접 일정",
+        "아주대 면접 일정 2027",
+        "아주대학교 면접 일정",
+        "아주대 면접 날짜",
+        "아주대 ACE전형-의학과 제외 면접",
+        "아주대 면접 방식",
+        "아주대 면접 기출",
+        "아주대 면접 기출 유형",
+        "아주대 면접 질문",
+        "아주대 1단계 발표",
+        "2027 아주대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "아주대 면접 일정과 기출 유형",
+          "path": "/interview/ajou.html"
+        }
+      ],
+      "schema": {
+        "about": "아주대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/catholic.html": {
+      "title": "가톨릭대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "가톨릭대 2027학년도 수시 면접 일정입니다. 잠재능력우수자(면접)전형 면접은 10월 30일(금)~12월 5일(토), 1단계 발표는 11월 27일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "가톨릭대 잠재능력우수자(면접)전형 면접은 2026년 10월 30일(금)~12월 5일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "가톨릭대 면접 일정",
+        "가톨릭대 면접 일정 2027",
+        "가톨릭대학교 면접 일정",
+        "가톨릭대 면접 날짜",
+        "가톨릭대 잠재능력우수자(면접)전형 면접",
+        "가톨릭대 면접 방식",
+        "가톨릭대 면접 기출",
+        "가톨릭대 면접 기출 유형",
+        "가톨릭대 면접 질문",
+        "가톨릭대 1단계 발표",
+        "2027 가톨릭대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "가톨릭대 면접 일정과 기출 유형",
+          "path": "/interview/catholic.html"
+        }
+      ],
+      "schema": {
+        "about": "가톨릭대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/cau.html": {
+      "title": "중앙대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "중앙대 2027학년도 수시 면접 일정입니다. 탐구형인재전형 면접은 12월 5일(토)~12월 6일(일), 1단계 발표는 11월 26일(목)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "중앙대 탐구형인재전형 면접은 2026년 12월 5일(토)~12월 6일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "중앙대 면접 일정",
+        "중앙대 면접 일정 2027",
+        "중앙대학교 면접 일정",
+        "중앙대 면접 날짜",
+        "중앙대 탐구형인재전형 면접",
+        "중앙대 면접 방식",
+        "중앙대 면접 기출",
+        "중앙대 면접 기출 유형",
+        "중앙대 면접 질문",
+        "중앙대 1단계 발표",
+        "2027 중앙대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "중앙대 면접 일정과 기출 유형",
+          "path": "/interview/cau.html"
+        }
+      ],
+      "schema": {
+        "about": "중앙대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/dankook.html": {
+      "title": "단국대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "단국대 2027학년도 수시 면접 일정입니다. DKU인재(면접형) 면접은 12월 5일(토)~12월 6일(일), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "단국대 DKU인재(면접형) 면접은 2026년 12월 5일(토)~12월 6일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "단국대 면접 일정",
+        "단국대 면접 일정 2027",
+        "단국대학교 면접 일정",
+        "단국대 면접 날짜",
+        "단국대 DKU인재(면접형) 면접",
+        "단국대 면접 방식",
+        "단국대 면접 기출",
+        "단국대 면접 기출 유형",
+        "단국대 면접 질문",
+        "단국대 1단계 발표",
+        "2027 단국대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "단국대 면접 일정과 기출 유형",
+          "path": "/interview/dankook.html"
+        }
+      ],
+      "schema": {
+        "about": "단국대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/donga.html": {
+      "title": "동아대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "동아대 2027학년도 수시 면접 일정입니다. 잠재능력우수자전형 면접은 11월 27일(금)~11월 28일(토), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "동아대 잠재능력우수자전형 면접은 2026년 11월 27일(금)~11월 28일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "동아대 면접 일정",
+        "동아대 면접 일정 2027",
+        "동아대학교 면접 일정",
+        "동아대 면접 날짜",
+        "동아대 잠재능력우수자전형 면접",
+        "동아대 면접 방식",
+        "동아대 면접 기출",
+        "동아대 면접 기출 유형",
+        "동아대 면접 질문",
+        "동아대 1단계 발표",
+        "2027 동아대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "동아대 면접 일정과 기출 유형",
+          "path": "/interview/donga.html"
+        }
+      ],
+      "schema": {
+        "about": "동아대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/dongduk.html": {
+      "title": "동덕여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "동덕여대 2027학년도 수시 면접 일정입니다. 동덕창의리더전형 면접은 10월 31일(토)~11월 1일(일), 1단계 발표는 10월 27일(화)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "동덕여대 동덕창의리더전형 면접은 2026년 10월 31일(토)~11월 1일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 60%입니다.",
+      "keywords": [
+        "동덕여대 면접 일정",
+        "동덕여대 면접 일정 2027",
+        "동덕여자대학교 면접 일정",
+        "동덕여대 면접 날짜",
+        "동덕여대 동덕창의리더전형 면접",
+        "동덕여대 면접 방식",
+        "동덕여대 면접 기출",
+        "동덕여대 면접 기출 유형",
+        "동덕여대 면접 질문",
+        "동덕여대 1단계 발표",
+        "2027 동덕여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "동덕여대 면접 일정과 기출 유형",
+          "path": "/interview/dongduk.html"
+        }
+      ],
+      "schema": {
+        "about": "동덕여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/dongguk.html": {
+      "title": "동국대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "동국대 2027학년도 수시 면접 일정입니다. Do Dream전형 면접은 12월 11일(금)~12월 13일(일), 1단계 발표는 11월 13일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "동국대 Do Dream전형 면접은 2026년 12월 11일(금)~12월 13일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "동국대 면접 일정",
+        "동국대 면접 일정 2027",
+        "동국대학교 면접 일정",
+        "동국대 면접 날짜",
+        "동국대 Do Dream전형 면접",
+        "동국대 면접 방식",
+        "동국대 면접 기출",
+        "동국대 면접 기출 유형",
+        "동국대 면접 질문",
+        "동국대 1단계 발표",
+        "2027 동국대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "동국대 면접 일정과 기출 유형",
+          "path": "/interview/dongguk.html"
+        }
+      ],
+      "schema": {
+        "about": "동국대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/duksung.html": {
+      "title": "덕성여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "덕성여대 2027학년도 수시 면접 일정입니다. 덕성인재전형Ⅱ 면접은 11월 21일(토)~11월 22일(일), 1단계 발표는 11월 12일(목)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "덕성여대 덕성인재전형Ⅱ 면접은 2026년 11월 21일(토)~11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "덕성여대 면접 일정",
+        "덕성여대 면접 일정 2027",
+        "덕성여자대학교 면접 일정",
+        "덕성여대 면접 날짜",
+        "덕성여대 덕성인재전형Ⅱ 면접",
+        "덕성여대 면접 방식",
+        "덕성여대 면접 기출",
+        "덕성여대 면접 기출 유형",
+        "덕성여대 면접 질문",
+        "덕성여대 1단계 발표",
+        "2027 덕성여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "덕성여대 면접 일정과 기출 유형",
+          "path": "/interview/duksung.html"
+        }
+      ],
+      "schema": {
+        "about": "덕성여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/ewha.html": {
+      "title": "이화여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "이화여대 2027학년도 수시 면접 일정입니다. 미래인재전형-면접형 면접은 11월 21일(토)~11월 22일(일), 1단계 발표는 11월 12일(목)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "이화여대 미래인재전형-면접형 면접은 2026년 11월 21일(토)~11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "이화여대 면접 일정",
+        "이화여대 면접 일정 2027",
+        "이화여자대학교 면접 일정",
+        "이화여대 면접 날짜",
+        "이화여대 미래인재전형-면접형 면접",
+        "이화여대 면접 방식",
+        "이화여대 면접 기출",
+        "이화여대 면접 기출 유형",
+        "이화여대 면접 질문",
+        "이화여대 1단계 발표",
+        "2027 이화여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "이화여대 면접 일정과 기출 유형",
+          "path": "/interview/ewha.html"
+        }
+      ],
+      "schema": {
+        "about": "이화여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/gachon.html": {
+      "title": "가천대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "가천대 2027학년도 수시 면접 일정입니다. 가천바람개비전형 면접은 10월 31일(토)~11월 8일(일), 1단계 발표는 10월 29일(목)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "가천대 가천바람개비전형 면접은 2026년 10월 31일(토)~11월 8일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "가천대 면접 일정",
+        "가천대 면접 일정 2027",
+        "가천대학교 면접 일정",
+        "가천대 면접 날짜",
+        "가천대 가천바람개비전형 면접",
+        "가천대 면접 방식",
+        "가천대 면접 기출",
+        "가천대 면접 기출 유형",
+        "가천대 면접 질문",
+        "가천대 1단계 발표",
+        "2027 가천대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "가천대 면접 일정과 기출 유형",
+          "path": "/interview/gachon.html"
+        }
+      ],
+      "schema": {
+        "about": "가천대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/hufs.html": {
+      "title": "한국외대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "한국외대 2027학년도 수시 면접 일정입니다. 학생부종합전형(면접형) 면접은 11월 21일(토)~11월 22일(일), 1단계 발표는 11월 16일(월)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "한국외대 학생부종합전형(면접형) 면접은 2026년 11월 21일(토)~11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "한국외대 면접 일정",
+        "한국외대 면접 일정 2027",
+        "한국외국어대학교 면접 일정",
+        "한국외대 면접 날짜",
+        "한국외대 학생부종합전형(면접형) 면접",
+        "한국외대 면접 방식",
+        "한국외대 면접 기출",
+        "한국외대 면접 기출 유형",
+        "한국외대 면접 질문",
+        "한국외대 1단계 발표",
+        "2027 한국외대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "한국외대 면접 일정과 기출 유형",
+          "path": "/interview/hufs.html"
+        }
+      ],
+      "schema": {
+        "about": "한국외국어대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/incheon.html": {
+      "title": "인천대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "인천대 2027학년도 수시 면접 일정입니다. 자기추천전형 면접은 11월 21일(토), 1단계 합격자 발표는 11월 6일(금)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "인천대 자기추천전형 면접은 2026년 11월 21일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "인천대 면접 일정",
+        "인천대 면접 일정 2027",
+        "인천대학교 면접 일정",
+        "인천대 면접 날짜",
+        "인천대 자기추천전형 면접",
+        "인천대 면접 방식",
+        "인천대 면접 기출",
+        "인천대 면접 기출 유형",
+        "인천대 면접 질문",
+        "인천대 1단계 발표",
+        "2027 인천대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "인천대 면접 일정과 기출 유형",
+          "path": "/interview/incheon.html"
+        }
+      ],
+      "schema": {
+        "about": "인천대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/inha.html": {
+      "title": "인하대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "인하대 2027학년도 수시 인하미래인재(면접형)-의예과 제외 면접은 11월 21일(토)~11월 22일(일)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "인하대 인하미래인재(면접형)-의예과 제외 면접은 2026년 11월 21일(토)~11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "인하대 면접 일정",
+        "인하대 면접 일정 2027",
+        "인하대학교 면접 일정",
+        "인하대 면접 날짜",
+        "인하대 인하미래인재(면접형)-의예과 제외 면접",
+        "인하대 면접 방식",
+        "인하대 면접 기출",
+        "인하대 면접 기출 유형",
+        "인하대 면접 질문",
+        "인하대 1단계 발표",
+        "2027 인하대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "인하대 면접 일정과 기출 유형",
+          "path": "/interview/inha.html"
+        }
+      ],
+      "schema": {
+        "about": "인하대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/khu.html": {
+      "title": "경희대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "경희대 2027학년도 수시 면접 일정입니다. 네오르네상스전형 면접은 12월 5일(토)~12월 6일(일), 1단계 발표는 11월 25일(수)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "경희대 네오르네상스전형 면접은 2026년 12월 5일(토)~12월 6일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "경희대 면접 일정",
+        "경희대 면접 일정 2027",
+        "경희대학교 면접 일정",
+        "경희대 면접 날짜",
+        "경희대 네오르네상스전형 면접",
+        "경희대 면접 방식",
+        "경희대 면접 기출",
+        "경희대 면접 기출 유형",
+        "경희대 면접 질문",
+        "경희대 1단계 발표",
+        "2027 경희대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "경희대 면접 일정과 기출 유형",
+          "path": "/interview/khu.html"
+        }
+      ],
+      "schema": {
+        "about": "경희대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/konkuk.html": {
+      "title": "건국대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "건국대 2027학년도 수시 면접 일정입니다. KU자기추천전형 면접은 12월 5일(토)~12월 6일(일), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "건국대 KU자기추천전형 면접은 2026년 12월 5일(토)~12월 6일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "건국대 면접 일정",
+        "건국대 면접 일정 2027",
+        "건국대학교 면접 일정",
+        "건국대 면접 날짜",
+        "건국대 KU자기추천전형 면접",
+        "건국대 면접 방식",
+        "건국대 면접 기출",
+        "건국대 면접 기출 유형",
+        "건국대 면접 질문",
+        "건국대 1단계 발표",
+        "2027 건국대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "건국대 면접 일정과 기출 유형",
+          "path": "/interview/konkuk.html"
+        }
+      ],
+      "schema": {
+        "about": "건국대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/kookmin.html": {
+      "title": "국민대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "국민대 2027학년도 수시 면접 일정입니다. 국민프런티어전형 면접은 11월 21일(토)~11월 22일(일), 1단계 발표는 11월 17일(화)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "국민대 국민프런티어전형 면접은 2026년 11월 21일(토)~11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "국민대 면접 일정",
+        "국민대 면접 일정 2027",
+        "국민대학교 면접 일정",
+        "국민대 면접 날짜",
+        "국민대 국민프런티어전형 면접",
+        "국민대 면접 방식",
+        "국민대 면접 기출",
+        "국민대 면접 기출 유형",
+        "국민대 면접 질문",
+        "국민대 1단계 발표",
+        "2027 국민대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "국민대 면접 일정과 기출 유형",
+          "path": "/interview/kookmin.html"
+        }
+      ],
+      "schema": {
+        "about": "국민대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/kwangwoon.html": {
+      "title": "광운대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "광운대 2027학년도 수시 면접 일정입니다. 광운참빛인재전형Ⅰ-면접형 면접은 10월 31일(토)~11월 1일(일), 1단계 발표는 10월 28일(수)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "광운대 광운참빛인재전형Ⅰ-면접형 면접은 2026년 10월 31일(토)~11월 1일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "광운대 면접 일정",
+        "광운대 면접 일정 2027",
+        "광운대학교 면접 일정",
+        "광운대 면접 날짜",
+        "광운대 광운참빛인재전형Ⅰ-면접형 면접",
+        "광운대 면접 방식",
+        "광운대 면접 기출",
+        "광운대 면접 기출 유형",
+        "광운대 면접 질문",
+        "광운대 1단계 발표",
+        "2027 광운대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "광운대 면접 일정과 기출 유형",
+          "path": "/interview/kwangwoon.html"
+        }
+      ],
+      "schema": {
+        "about": "광운대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/kyonggi.html": {
+      "title": "경기대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "경기대 2027학년도 수시 면접 일정입니다. KGU학생부종합전형 면접은 11월 29일(일)~12월 6일(일), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "경기대 KGU학생부종합전형 면접은 2026년 11월 29일(일)~12월 6일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "경기대 면접 일정",
+        "경기대 면접 일정 2027",
+        "경기대학교 면접 일정",
+        "경기대 면접 날짜",
+        "경기대 KGU학생부종합전형 면접",
+        "경기대 면접 방식",
+        "경기대 면접 기출",
+        "경기대 면접 기출 유형",
+        "경기대 면접 질문",
+        "경기대 1단계 발표",
+        "2027 경기대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "경기대 면접 일정과 기출 유형",
+          "path": "/interview/kyonggi.html"
+        }
+      ],
+      "schema": {
+        "about": "경기대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/myongji.html": {
+      "title": "명지대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "명지대 2027학년도 수시 면접 일정입니다. 명지인재면접전형 면접은 11월 28일(토)~11월 29일(일), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "명지대 명지인재면접전형 면접은 2026년 11월 28일(토)~11월 29일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "명지대 면접 일정",
+        "명지대 면접 일정 2027",
+        "명지대학교 면접 일정",
+        "명지대 면접 날짜",
+        "명지대 명지인재면접전형 면접",
+        "명지대 면접 방식",
+        "명지대 면접 기출",
+        "명지대 면접 기출 유형",
+        "명지대 면접 질문",
+        "명지대 1단계 발표",
+        "2027 명지대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "명지대 면접 일정과 기출 유형",
+          "path": "/interview/myongji.html"
+        }
+      ],
+      "schema": {
+        "about": "명지대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/pusan.html": {
+      "title": "부산대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "부산대 2027학년도 수시 면접 일정입니다. 학생부종합전형(일반 모집단위) 면접은 12월 5일(토), 1단계 발표는 12월 1일(화)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "부산대 학생부종합전형(일반 모집단위) 면접은 2026년 12월 5일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 20%입니다.",
+      "keywords": [
+        "부산대 면접 일정",
+        "부산대 면접 일정 2027",
+        "부산대학교 면접 일정",
+        "부산대 면접 날짜",
+        "부산대 학생부종합전형(일반 모집단위) 면접",
+        "부산대 면접 방식",
+        "부산대 면접 기출",
+        "부산대 면접 기출 유형",
+        "부산대 면접 질문",
+        "부산대 1단계 발표",
+        "2027 부산대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "부산대 면접 일정과 기출 유형",
+          "path": "/interview/pusan.html"
+        }
+      ],
+      "schema": {
+        "about": "부산대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/sahmyook.html": {
+      "title": "삼육대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "삼육대 2027학년도 수시 면접 일정입니다. 세움인재전형 면접은 10월 25일(일), 1단계 합격자 발표는 10월 22일(목)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "삼육대 세움인재전형 면접은 2026년 10월 25일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "삼육대 면접 일정",
+        "삼육대 면접 일정 2027",
+        "삼육대학교 면접 일정",
+        "삼육대 면접 날짜",
+        "삼육대 세움인재전형 면접",
+        "삼육대 면접 방식",
+        "삼육대 면접 기출",
+        "삼육대 면접 기출 유형",
+        "삼육대 면접 질문",
+        "삼육대 1단계 발표",
+        "2027 삼육대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "삼육대 면접 일정과 기출 유형",
+          "path": "/interview/sahmyook.html"
+        }
+      ],
+      "schema": {
+        "about": "삼육대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/sejong.html": {
+      "title": "세종대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "세종대 2027학년도 수시 면접 일정입니다. 세종인재전형(면접형)-인문, 자연계열 면접은 11월 22일(일), 1단계 발표는 11월 13일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "세종대 세종인재전형(면접형)-인문, 자연계열 면접은 2026년 11월 22일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "세종대 면접 일정",
+        "세종대 면접 일정 2027",
+        "세종대학교 면접 일정",
+        "세종대 면접 날짜",
+        "세종대 세종인재전형(면접형)-인문, 자연계열 면접",
+        "세종대 면접 방식",
+        "세종대 면접 기출",
+        "세종대 면접 기출 유형",
+        "세종대 면접 질문",
+        "세종대 1단계 발표",
+        "2027 세종대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "세종대 면접 일정과 기출 유형",
+          "path": "/interview/sejong.html"
+        }
+      ],
+      "schema": {
+        "about": "세종대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/seoultech.html": {
+      "title": "서울과기대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "서울과기대 2027학년도 수시 면접 일정입니다. 학교생활우수자전형 면접은 11월 28일(토), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "서울과기대 학교생활우수자전형 면접은 2026년 11월 28일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "서울과기대 면접 일정",
+        "서울과기대 면접 일정 2027",
+        "서울과학기술대학교 면접 일정",
+        "서울과기대 면접 날짜",
+        "서울과기대 학교생활우수자전형 면접",
+        "서울과기대 면접 방식",
+        "서울과기대 면접 기출",
+        "서울과기대 면접 기출 유형",
+        "서울과기대 면접 질문",
+        "서울과기대 1단계 발표",
+        "2027 서울과기대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "서울과기대 면접 일정과 기출 유형",
+          "path": "/interview/seoultech.html"
+        }
+      ],
+      "schema": {
+        "about": "서울과학기술대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/snu.html": {
+      "title": "서울대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "서울대 2027학년도 수시 학생부종합(지역균형전형)-의과대학 제외 면접은 12월 4일(금)~12월 5일(토)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "서울대 학생부종합(지역균형전형)-의과대학 제외 면접은 2026년 12월 4일(금)~12월 5일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "서울대 면접 일정",
+        "서울대 면접 일정 2027",
+        "서울대학교 면접 일정",
+        "서울대 면접 날짜",
+        "서울대 학생부종합(지역균형전형)-의과대학 제외 면접",
+        "서울대 면접 방식",
+        "서울대 면접 기출",
+        "서울대 면접 기출 유형",
+        "서울대 면접 질문",
+        "서울대 1단계 발표",
+        "2027 서울대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "서울대 면접 일정과 기출 유형",
+          "path": "/interview/snu.html"
+        }
+      ],
+      "schema": {
+        "about": "서울대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/sookmyung.html": {
+      "title": "숙명여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "숙명여대 2027학년도 수시 면접 일정입니다. 숙명인재(면접형)전형 면접은 11월 28일(토)~11월 29일(일), 1단계 발표는 11월 19일(목)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "숙명여대 숙명인재(면접형)전형 면접은 2026년 11월 28일(토)~11월 29일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 30%입니다.",
+      "keywords": [
+        "숙명여대 면접 일정",
+        "숙명여대 면접 일정 2027",
+        "숙명여자대학교 면접 일정",
+        "숙명여대 면접 날짜",
+        "숙명여대 숙명인재(면접형)전형 면접",
+        "숙명여대 면접 방식",
+        "숙명여대 면접 기출",
+        "숙명여대 면접 기출 유형",
+        "숙명여대 면접 질문",
+        "숙명여대 1단계 발표",
+        "2027 숙명여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "숙명여대 면접 일정과 기출 유형",
+          "path": "/interview/sookmyung.html"
+        }
+      ],
+      "schema": {
+        "about": "숙명여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/soongsil.html": {
+      "title": "숭실대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "숭실대 2027학년도 수시 면접 일정입니다. SSU미래인재전형(면접형) 면접은 11월 27일(금), 1단계 발표는 11월 23일(월)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "숭실대 SSU미래인재전형(면접형) 면접은 2026년 11월 27일(금)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "숭실대 면접 일정",
+        "숭실대 면접 일정 2027",
+        "숭실대학교 면접 일정",
+        "숭실대 면접 날짜",
+        "숭실대 SSU미래인재전형(면접형) 면접",
+        "숭실대 면접 방식",
+        "숭실대 면접 기출",
+        "숭실대 면접 기출 유형",
+        "숭실대 면접 질문",
+        "숭실대 1단계 발표",
+        "2027 숭실대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "숭실대 면접 일정과 기출 유형",
+          "path": "/interview/soongsil.html"
+        }
+      ],
+      "schema": {
+        "about": "숭실대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/sungshin.html": {
+      "title": "성신여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "성신여대 2027학년도 수시 면접 일정입니다. 자기주도인재전형 면접은 11월 21일(토)~11월 29일(일), 1단계 발표는 11월 13일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "성신여대 자기주도인재전형 면접은 2026년 11월 21일(토)~11월 29일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 40%입니다.",
+      "keywords": [
+        "성신여대 면접 일정",
+        "성신여대 면접 일정 2027",
+        "성신여자대학교 면접 일정",
+        "성신여대 면접 날짜",
+        "성신여대 자기주도인재전형 면접",
+        "성신여대 면접 방식",
+        "성신여대 면접 기출",
+        "성신여대 면접 기출 유형",
+        "성신여대 면접 질문",
+        "성신여대 1단계 발표",
+        "2027 성신여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "성신여대 면접 일정과 기출 유형",
+          "path": "/interview/sungshin.html"
+        }
+      ],
+      "schema": {
+        "about": "성신여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/swu.html": {
+      "title": "서울여대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "서울여대 2027학년도 수시 면접 일정입니다. 바롬인재면접전형 면접은 11월 28일(토), 1단계 합격자 발표는 11월 25일(수)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "서울여대 바롬인재면접전형 면접은 2026년 11월 28일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "서울여대 면접 일정",
+        "서울여대 면접 일정 2027",
+        "서울여자대학교 면접 일정",
+        "서울여대 면접 날짜",
+        "서울여대 바롬인재면접전형 면접",
+        "서울여대 면접 방식",
+        "서울여대 면접 기출",
+        "서울여대 면접 기출 유형",
+        "서울여대 면접 질문",
+        "서울여대 1단계 발표",
+        "2027 서울여대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "서울여대 면접 일정과 기출 유형",
+          "path": "/interview/swu.html"
+        }
+      ],
+      "schema": {
+        "about": "서울여자대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/ulsan.html": {
+      "title": "울산대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "울산대 2027학년도 수시 면접 일정입니다. 잠재역량전형-아산아너스칼리지 자율전공학부 면접은 11월 28일(토), 1단계 발표는 11월 20일(금)입니다. 면접 방식과 질문 유형도 정리했습니다.",
+      "answer": "울산대 잠재역량전형-아산아너스칼리지 자율전공학부 면접은 2026년 11월 28일(토)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "울산대 면접 일정",
+        "울산대 면접 일정 2027",
+        "울산대학교 면접 일정",
+        "울산대 면접 날짜",
+        "울산대 잠재역량전형-아산아너스칼리지 자율전공학부 면접",
+        "울산대 면접 방식",
+        "울산대 면접 기출",
+        "울산대 면접 기출 유형",
+        "울산대 면접 질문",
+        "울산대 1단계 발표",
+        "2027 울산대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "울산대 면접 일정과 기출 유형",
+          "path": "/interview/ulsan.html"
+        }
+      ],
+      "schema": {
+        "about": "울산대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
+    },
+    "interview/uos.html": {
+      "title": "서울시립대 면접 일정, 방식, 기출 유형 (2027학년도 수시) | 현학적 연구소",
+      "description": "서울시립대 2027학년도 수시 학생부종합전형Ⅰ(면접형) 면접은 11월 28일(토)~11월 29일(일)입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
+      "answer": "서울시립대 학생부종합전형Ⅰ(면접형) 면접은 2026년 11월 28일(토)~11월 29일(일)에 봅니다. 서류기반 면접이며 면접 반영 비율은 50%입니다.",
+      "keywords": [
+        "서울시립대 면접 일정",
+        "서울시립대 면접 일정 2027",
+        "서울시립대학교 면접 일정",
+        "서울시립대 면접 날짜",
+        "서울시립대 학생부종합전형Ⅰ(면접형) 면접",
+        "서울시립대 면접 방식",
+        "서울시립대 면접 기출",
+        "서울시립대 면접 기출 유형",
+        "서울시립대 면접 질문",
+        "서울시립대 1단계 발표",
+        "2027 서울시립대 수시 면접"
+      ],
+      "type": "article",
+      "priority": 0.7,
+      "changefreq": "weekly",
+      "noindex": false,
+      "breadcrumb": [
+        {
+          "name": "현학적 연구소",
+          "path": "/"
+        },
+        {
+          "name": "면접 형태 판정표",
+          "path": "/interview.html"
+        },
+        {
+          "name": "서울시립대 면접 일정과 기출 유형",
+          "path": "/interview/uos.html"
+        }
+      ],
+      "schema": {
+        "about": "서울시립대학교",
+        "about_type": "CollegeOrUniversity"
+      },
+      "speakable": [
+        ".aeo-answer",
+        ".tbl"
+      ],
+      "group": "interview_info",
+      "date_modified": "2026-11-16",
+      "date_published": "2026-11-16"
     }
   }
 }

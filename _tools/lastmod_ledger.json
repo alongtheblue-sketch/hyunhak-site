@@ -140,8 +140,72 @@
   "date": "2026-10-26"
  },
  "interview.html": {
-  "sha": "c2e77c00798d354a",
-  "date": "2026-10-26"
+  "sha": "84b68812caa73675",
+  "date": "2026-11-16"
+ },
+ "interview/ajou.html": {
+  "sha": "803c178a978c9bde",
+  "date": "2026-11-16"
+ },
+ "interview/catholic.html": {
+  "sha": "d8a201b3600394be",
+  "date": "2026-11-16"
+ },
+ "interview/cau.html": {
+  "sha": "d51ddf2ba32b73eb",
+  "date": "2026-11-16"
+ },
+ "interview/dankook.html": {
+  "sha": "9c3ee7f5ae5f4619",
+  "date": "2026-11-16"
+ },
+ "interview/donga.html": {
+  "sha": "cc148988c04ac934",
+  "date": "2026-11-16"
+ },
+ "interview/dongduk.html": {
+  "sha": "e8cbef1a53e1155b",
+  "date": "2026-11-16"
+ },
+ "interview/dongguk.html": {
+  "sha": "c7bcb21495b22d49",
+  "date": "2026-11-16"
+ },
+ "interview/duksung.html": {
+  "sha": "1dc34bd1106687bf",
+  "date": "2026-11-16"
+ },
+ "interview/ewha.html": {
+  "sha": "a0fd6cdb0232b04f",
+  "date": "2026-11-16"
+ },
+ "interview/gachon.html": {
+  "sha": "e448d4cb1e9b7a48",
+  "date": "2026-11-16"
+ },
+ "interview/hufs.html": {
+  "sha": "bd9ae6d51552b746",
+  "date": "2026-11-16"
+ },
+ "interview/incheon.html": {
+  "sha": "c389b67fa8d5b384",
+  "date": "2026-11-16"
+ },
+ "interview/inha.html": {
+  "sha": "aec10816a21cc69c",
+  "date": "2026-11-16"
+ },
+ "interview/khu.html": {
+  "sha": "a4bd175c41d45636",
+  "date": "2026-11-16"
+ },
+ "interview/konkuk.html": {
+  "sha": "2a14f17b80bcad2c",
+  "date": "2026-11-16"
+ },
+ "interview/kookmin.html": {
+  "sha": "60855db4e7527212",
+  "date": "2026-11-16"
  },
  "interview/korea-eq-hum.html": {
   "sha": "bfe386da48883490",
@@ -158,6 +222,62 @@
  "interview/korea-sci.html": {
   "sha": "2f068b19a1c1614a",
   "date": "2026-10-15"
+ },
+ "interview/kwangwoon.html": {
+  "sha": "8e2c83588a2a2ecc",
+  "date": "2026-11-16"
+ },
+ "interview/kyonggi.html": {
+  "sha": "0ac310bfe5d8bfb7",
+  "date": "2026-11-16"
+ },
+ "interview/myongji.html": {
+  "sha": "e7b0ef99dc5bdf0a",
+  "date": "2026-11-16"
+ },
+ "interview/pusan.html": {
+  "sha": "c78600ca8917b8d0",
+  "date": "2026-11-16"
+ },
+ "interview/sahmyook.html": {
+  "sha": "c2bdd53b4c51575b",
+  "date": "2026-11-16"
+ },
+ "interview/sejong.html": {
+  "sha": "0417e945731925eb",
+  "date": "2026-11-16"
+ },
+ "interview/seoultech.html": {
+  "sha": "7ab0afded067e028",
+  "date": "2026-11-16"
+ },
+ "interview/snu.html": {
+  "sha": "0dbccda23082ba4a",
+  "date": "2026-11-16"
+ },
+ "interview/sookmyung.html": {
+  "sha": "ac54a2c6ee934cc4",
+  "date": "2026-11-16"
+ },
+ "interview/soongsil.html": {
+  "sha": "520806ec0e391d5e",
+  "date": "2026-11-16"
+ },
+ "interview/sungshin.html": {
+  "sha": "91bb193fb33eeac0",
+  "date": "2026-11-16"
+ },
+ "interview/swu.html": {
+  "sha": "8e4152b30027b332",
+  "date": "2026-11-16"
+ },
+ "interview/ulsan.html": {
+  "sha": "99b2208fc22840c1",
+  "date": "2026-11-16"
+ },
+ "interview/uos.html": {
+  "sha": "a5fdb87be7b3510b",
+  "date": "2026-11-16"
  },
  "interview/yonsei-eq.html": {
   "sha": "f9008e8f77fe2875",
