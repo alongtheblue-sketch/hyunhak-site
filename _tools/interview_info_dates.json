@@ -28,7 +28,7 @@
   "date": "2026-11-16"
  },
  "duksung": {
-  "sha": "a33d97c05f01400b",
+  "sha": "59c702647f458f34",
   "date": "2026-11-16"
  },
  "ewha": {
@@ -76,7 +76,7 @@
   "date": "2026-11-16"
  },
  "pusan": {
-  "sha": "5f81341fed9ec268",
+  "sha": "4c2ef9603eb3d827",
   "date": "2026-11-16"
  },
  "sahmyook": {
@@ -84,7 +84,7 @@
   "date": "2026-11-16"
  },
  "sejong": {
-  "sha": "e7fa3bf50faa3596",
+  "sha": "6cdb5fcca2e9713f",
   "date": "2026-11-16"
  },
  "seoultech": {
@@ -112,11 +112,11 @@
   "date": "2026-11-16"
  },
  "ulsan": {
-  "sha": "378f584877ae96cc",
+  "sha": "ba73dece0d2c0dfa",
   "date": "2026-11-16"
  },
  "uos": {
-  "sha": "a8f4564ea3ce3bed",
+  "sha": "b64de9a8bcf0298f",
   "date": "2026-11-16"
  }
 }
