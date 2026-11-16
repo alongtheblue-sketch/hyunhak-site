@@ -1,122 +1,122 @@
 {
  "ajou": {
-  "sha": "92bc5d8bc620567a",
+  "sha": "0ff902b95df2a8df",
   "date": "2026-11-16"
  },
  "catholic": {
-  "sha": "d2c92609212b14d5",
+  "sha": "8f6c929c090ac6b1",
   "date": "2026-11-16"
  },
  "cau": {
-  "sha": "252754a754c939ea",
+  "sha": "16037a913c45ca53",
   "date": "2026-11-16"
  },
  "dankook": {
-  "sha": "d080ab66ae5e385f",
+  "sha": "16a5569e1667324a",
   "date": "2026-11-16"
  },
  "donga": {
-  "sha": "c278833a329f357b",
+  "sha": "5e1ed39152d9e1c3",
   "date": "2026-11-16"
  },
  "dongduk": {
-  "sha": "03cd85b82b0078b0",
+  "sha": "85819255387619c1",
   "date": "2026-11-16"
  },
  "dongguk": {
-  "sha": "1eea82aa068b3e90",
+  "sha": "f3f20390c1b4877d",
   "date": "2026-11-16"
  },
  "duksung": {
-  "sha": "e96d191f7a630dc3",
+  "sha": "a33d97c05f01400b",
   "date": "2026-11-16"
  },
  "ewha": {
-  "sha": "391da437a9973c8a",
+  "sha": "8431bc5d108a55ed",
   "date": "2026-11-16"
  },
  "gachon": {
-  "sha": "6cd66a447fc20156",
+  "sha": "0c587de3a9ac5646",
   "date": "2026-11-16"
  },
  "hufs": {
-  "sha": "ffe952a3a37e0600",
+  "sha": "991576c14d12b33c",
   "date": "2026-11-16"
  },
  "incheon": {
-  "sha": "52e296abe2780910",
+  "sha": "a2012c67084d1870",
   "date": "2026-11-16"
  },
  "inha": {
-  "sha": "fb595838676abe64",
+  "sha": "9133015f60d16577",
   "date": "2026-11-16"
  },
  "khu": {
-  "sha": "6d879c40a812c9bf",
+  "sha": "e215d9aa5a4b0383",
   "date": "2026-11-16"
  },
  "konkuk": {
-  "sha": "62eff8cfd84c3065",
+  "sha": "2732f8236fce50fa",
   "date": "2026-11-16"
  },
  "kookmin": {
-  "sha": "b6f3bef3aad23624",
+  "sha": "2368272afd6f7f02",
   "date": "2026-11-16"
  },
  "kwangwoon": {
-  "sha": "b90675dd7c26129d",
+  "sha": "6632fb8aff56be09",
   "date": "2026-11-16"
  },
  "kyonggi": {
-  "sha": "24246fb8b1a656ba",
+  "sha": "132e200ac3144e54",
   "date": "2026-11-16"
  },
  "myongji": {
-  "sha": "5a58d3d2143a8869",
+  "sha": "16712f49e80b875b",
   "date": "2026-11-16"
  },
  "pusan": {
-  "sha": "60472079207a15e7",
+  "sha": "5f81341fed9ec268",
   "date": "2026-11-16"
  },
  "sahmyook": {
-  "sha": "8db1658465563cfe",
+  "sha": "30c572f10e27985b",
   "date": "2026-11-16"
  },
  "sejong": {
-  "sha": "3104606b8f36335e",
+  "sha": "e7fa3bf50faa3596",
   "date": "2026-11-16"
  },
  "seoultech": {
-  "sha": "0a8ab3015622ad94",
+  "sha": "3bd287f167943f02",
   "date": "2026-11-16"
  },
  "snu": {
-  "sha": "7464dca1daac5b48",
+  "sha": "c8d7cfdface61c91",
   "date": "2026-11-16"
  },
  "sookmyung": {
-  "sha": "0fe2c78d83b6a49e",
+  "sha": "1e89a8cc9110a59a",
   "date": "2026-11-16"
  },
  "soongsil": {
-  "sha": "7c97b91f9454e35c",
+  "sha": "979978d4721002ae",
   "date": "2026-11-16"
  },
  "sungshin": {
-  "sha": "9ee284144adf9f0f",
+  "sha": "8b09698864a297ab",
   "date": "2026-11-16"
  },
  "swu": {
-  "sha": "725677f6ccb2f3b4",
+  "sha": "26329b7ba6f3e7cf",
   "date": "2026-11-16"
  },
  "ulsan": {
-  "sha": "9c78ea83cef57c68",
+  "sha": "378f584877ae96cc",
   "date": "2026-11-16"
  },
  "uos": {
-  "sha": "073bc8f6de8064f8",
+  "sha": "a8f4564ea3ce3bed",
   "date": "2026-11-16"
  }
 }
