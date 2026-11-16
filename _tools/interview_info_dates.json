@@ -1,18 +1,18 @@
 {
  "ajou": {
-  "sha": "0ff902b95df2a8df",
+  "sha": "4a50daff7dadc0d3",
   "date": "2026-11-16"
  },
  "catholic": {
-  "sha": "8f6c929c090ac6b1",
+  "sha": "502f8f2d0b31f41d",
   "date": "2026-11-16"
  },
  "cau": {
-  "sha": "16037a913c45ca53",
+  "sha": "c83983c30f00caa5",
   "date": "2026-11-16"
  },
  "dankook": {
-  "sha": "16a5569e1667324a",
+  "sha": "b9700bfc4f3074a2",
   "date": "2026-11-16"
  },
  "donga": {
@@ -20,15 +20,15 @@
   "date": "2026-11-16"
  },
  "dongduk": {
-  "sha": "85819255387619c1",
+  "sha": "538ab93c6a3508e9",
   "date": "2026-11-16"
  },
  "dongguk": {
-  "sha": "f3f20390c1b4877d",
+  "sha": "10e301b53960b2c0",
   "date": "2026-11-16"
  },
  "duksung": {
-  "sha": "59c702647f458f34",
+  "sha": "729e9f4345a428ac",
   "date": "2026-11-16"
  },
  "ewha": {
@@ -44,7 +44,7 @@
   "date": "2026-11-16"
  },
  "incheon": {
-  "sha": "a2012c67084d1870",
+  "sha": "7c7e022612cc7406",
   "date": "2026-11-16"
  },
  "inha": {
@@ -52,19 +52,19 @@
   "date": "2026-11-16"
  },
  "khu": {
-  "sha": "e215d9aa5a4b0383",
+  "sha": "b635a6724f605348",
   "date": "2026-11-16"
  },
  "konkuk": {
-  "sha": "2732f8236fce50fa",
+  "sha": "018d4f6e07a160a7",
   "date": "2026-11-16"
  },
  "kookmin": {
-  "sha": "2368272afd6f7f02",
+  "sha": "78b8c81c267a0578",
   "date": "2026-11-16"
  },
  "kwangwoon": {
-  "sha": "6632fb8aff56be09",
+  "sha": "7d6481dfe4bca94c",
   "date": "2026-11-16"
  },
  "kyonggi": {
@@ -72,51 +72,51 @@
   "date": "2026-11-16"
  },
  "myongji": {
-  "sha": "16712f49e80b875b",
+  "sha": "9b800782e25ccdbf",
   "date": "2026-11-16"
  },
  "pusan": {
-  "sha": "4c2ef9603eb3d827",
+  "sha": "e5586c622f81f766",
   "date": "2026-11-16"
  },
  "sahmyook": {
-  "sha": "30c572f10e27985b",
+  "sha": "a1fcf3cdac271401",
   "date": "2026-11-16"
  },
  "sejong": {
-  "sha": "6cdb5fcca2e9713f",
+  "sha": "e2ac618df8fdbdb1",
   "date": "2026-11-16"
  },
  "seoultech": {
-  "sha": "3bd287f167943f02",
+  "sha": "f02071898a783c0c",
   "date": "2026-11-16"
  },
  "snu": {
-  "sha": "c8d7cfdface61c91",
+  "sha": "6f3dc64a747b9f56",
   "date": "2026-11-16"
  },
  "sookmyung": {
-  "sha": "1e89a8cc9110a59a",
+  "sha": "bd2c5e7006e86f17",
   "date": "2026-11-16"
  },
  "soongsil": {
-  "sha": "979978d4721002ae",
+  "sha": "3c35abb0442c47bb",
   "date": "2026-11-16"
  },
  "sungshin": {
-  "sha": "8b09698864a297ab",
+  "sha": "2e047be421249588",
   "date": "2026-11-16"
  },
  "swu": {
-  "sha": "26329b7ba6f3e7cf",
+  "sha": "082efa47f7c896a1",
   "date": "2026-11-16"
  },
  "ulsan": {
-  "sha": "ba73dece0d2c0dfa",
+  "sha": "9f39647960b36f82",
   "date": "2026-11-16"
  },
  "uos": {
-  "sha": "b64de9a8bcf0298f",
+  "sha": "c103d33c0774e363",
   "date": "2026-11-16"
  }
 }
