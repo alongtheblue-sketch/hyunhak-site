@@ -1119,6 +1119,21 @@ RENAMED = {("catholic", "잠재능력우수자(면접)전형"): "잠재능력우
 HELD = {("kyonggi", "KGU학생부종합전형", "evidence[0]"), ("kyonggi", "SW우수자전형", "evidence[0]"), ("donga", "잠재능력우수자전형", "time_text")}
 # 문서 sha 가 달랐고 대조 칸이 모두 same 이거나 반영된 differs 인 대학(4절 2항: 문서 sha 와 대조일을 지금 판으로)
 RESOLVED = {"ajou", "gachon", "hufs", "konkuk", "kookmin", "sookmyung", "swu", "uos"}
+# 추가 명세 E 2절 1항(2026-11-17): 위 8곳의 판 표기(published_at)와 주소(official_url)는 실제로 대조한 파일(11-16 에 받은 판)의 것이다.
+# 대학이 그 파일에 붙인 날짜가 확인되면 그 날짜와 근거 표기, 확인되지 않으면 「2026-11-16 입학처 게시본」. 원장 주소가 그 파일을 주지 않으면 받은 주소
+EDITION = {
+    "hufs": ("2026-11-16 입학처 게시본", "https://adms.hufs.ac.kr/cms/FrCon/index.do?MENU_ID=650"),
+    "sookmyung": ("2026-09-07 업로드본", "https://admission.sookmyung.ac.kr/admission/html/counsel/noticeView.asp?p_board_idx=54119"),
+    "uos": ("2026-08-31 수정본", "https://admission.uos.ac.kr/admissionNew/html/susi/info.do?menuid=2002001001000000000"),
+    "kookmin": ("2026-09-08 PDF 작성본", "https://admission.kookmin.ac.kr/common/file_download.php?col=1&id=contents&no=180"),
+    "konkuk": ("2026-06-25", "https://admission.konkuk.ac.kr/enterTbc/admission/1/69/pdf/fileDownload.do"),
+    "ajou": ("공식 요강에 별도 명시되지 않음", "https://www.iajou.ac.kr/_common/new_download_file.php?file_no=4601&menu=boardfile"),
+    "gachon": ("2026-06-05", "https://admission.gachon.ac.kr/upload/BBS0021/20260522154511HBZYTW.PDF"),
+    "swu": ("2026-05-29", "https://admission.swu.ac.kr/bbs/board.php?bo_table=flashpaper&wr_id=27978&sca=%EC%88%98%EC%8B%9C"),
+}
+# 고친 다섯 곳의 출처 줄에서 없어져야 하는 글(실제로 대조하지 않은 판의 날짜와, 파일을 주지 않는 원장 주소)
+EDITION_STALE = {"hufs": ["2026-08-25"], "sookmyung": ["2026-05-29", "2026-06-18"], "uos": ["2026-07-13"], "kookmin": ["2026-06-22"],
+                 "konkuk": ["enter.konkuk.ac.kr", "20260625041927583"]}
 # 문서 sha 가 달랐고 풀리지 않은 칸이 남아 documents 를 그대로 둔 대학(4절 2항). 근거 쪽도 원장 문서 판의 쪽 그대로 두고(지금 판 쪽으로 바꾸지 않는다),
 # 값 칸은 원장 근거 쪽의 요강 글에서 다시 확인될 때만 싣는다(5절 5항). 부산대는 원장판 PDF 가 있어 그 판(원장 쪽 = PDF 쪽 차례 - 1)으로 본다
 UNRESOLVED = {"incheon", "pusan", "sejong", "snu", "soongsil", "ulsan"}
@@ -1318,6 +1333,70 @@ class LedgerReaudit(unittest.TestCase):
                 self.assertEqual((doc["sha256"], doc["checked_at"]), (a["ledger_doc_sha256"], "2026-08-30"), slug)
         self.assertEqual({s for s in self.slugs if not _audit(s)[0]["pdf_sha_same"]} - RESOLVED,
                          {"incheon", "pusan", "sejong", "snu", "soongsil", "ulsan"})
+
+    def test_documents_edition_is_compared_file(self):
+        """추가 명세 E 2절 1항: 문서 sha 를 11-16 받은 파일로 올린 8곳의 출처 줄 판 표기와 주소가 실제로 대조한 파일과 맞는다.
+        값마다 근거(사실 파일 doc 과 note, 받은 자료 폴더의 공지와 파일 이름, pdfinfo 날짜)를 다시 확인하고, 판매 면 출처 줄을 그 값으로 그린다."""
+        exe = shutil.which("pdfinfo")
+        if not exe:
+            raise unittest.SkipTest("pdfinfo 없음(검사 불가)")
+        self.assertEqual(set(EDITION), RESOLVED)
+        dl = FACTS_DIR / "_dl"
+        info = {}
+        for slug in sorted(EDITION):
+            _, p = _guide_pdf(slug)
+            out = subprocess.run([exe, "-isodates", str(p)], capture_output=True, text=True, check=True).stdout
+            info[slug] = dict(re.findall(r"^(CreationDate|ModDate):\s+(\S+)", out, re.M))
+            doc = self._univ(slug)["documents"]
+            self.assertEqual(len(doc), 1, slug)
+            self.assertEqual(doc[0]["sha256"], hashlib.sha256(p.read_bytes()).hexdigest(), slug)   # 원장 문서 = 대조한 파일
+            self.assertEqual((doc[0]["published_at"], doc[0]["official_url"]), EDITION[slug], slug)
+        fd = {s: _facts(s)["doc"] for s in EDITION}
+
+        def page(path, enc="utf-8"):
+            return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", path.read_bytes().decode(enc, errors="replace")))
+        # 한국외대: 11-16 에 입학처가 내준 파일은 PDF 수정일 2026-05-29 이고 8월 수정본을 찾지 못했다(대학이 붙인 판 날짜 확인 안 됨)
+        self.assertTrue(info["hufs"]["ModDate"].startswith("2026-05-29"))
+        self.assertIn("8월 수정본은 찾지 못해", fd["hufs"]["note"])
+        self.assertEqual(hashlib.sha256((dl / "hufs/recheck_live/fileView.bin").read_bytes()).hexdigest(), fd["hufs"]["sha256_actual"])
+        # 숙명여대: 모집요강 면이 내주는 파일의 업로드 이름 20260907095555 (PDF 수정일 2026-09-04)
+        self.assertIn("/upload/BBS0021/20260907095555QDLVUJ.PDF", fd["sookmyung"]["url"])
+        self.assertIn("/upload/BBS0021/20260907095555QDLVUJ.PDF", (dl / "sookmyung/guide.html").read_bytes().decode("cp949", errors="replace"))
+        self.assertTrue(info["sookmyung"]["ModDate"].startswith("2026-09-04"))
+        # 서울시립대: 파일 이름 끝 _260831, PDF 수정일 2026-08-31, 2026-08-31 수정 공지
+        self.assertTrue(fd["uos"]["url"].endswith("모집요강_260831.pdf"))
+        self.assertTrue(info["uos"]["ModDate"].startswith("2026-08-31"))
+        self.assertIn("수정 공지」(2026-08-31", fd["uos"]["note"])
+        # 국민대: PDF 작성일 2026-09-08 (마지막 재게시 공지 2026-06-22 보다 뒤)
+        self.assertTrue(info["kookmin"]["CreationDate"].startswith("2026-09-08"))
+        # 건국대: 원장 주소는 「페이지를 찾을 수 없습니다」 HTML 을 준다. 파일은 입학처 모집요강 면의 링크(받은 주소)에서 받았다. 날짜(PDF 작성일)는 원장과 같다
+        self.assertIn("원하시는 페이지를 찾을 수가 없습니다", page(dl / "konkuk/ledger_url_response.html"))
+        self.assertEqual(fd["konkuk"]["url"], EDITION["konkuk"][1])
+        self.assertIn('"/enterTbc/admission/1/69/pdf/fileDownload.do"', (dl / "konkuk/susi_guide.html").read_text(encoding="utf-8", errors="replace"))
+        self.assertIn(f"Content-Length: {Path(fd['konkuk']['local_path']).stat().st_size}", (dl / "konkuk/hdr_guide.txt").read_text(encoding="utf-8"))
+        self.assertTrue(info["konkuk"]["CreationDate"].startswith("2026-06-25"))
+        # 그대로 두는 세 곳: 아주대(요강에 판 날짜 없음, 원장 주소 = 받은 주소), 가천대(2026-06-05 공지 첨부와 같은 파일), 서울여대(첨부 이름 0529, PDF 수정일 2026-05-29)
+        self.assertEqual(fd["ajou"]["url"], EDITION["ajou"][1])
+        self.assertEqual(fd["gachon"]["url"], EDITION["gachon"][1])
+        self.assertEqual(hashlib.sha256((dl / "gachon/notice_susi_yogang_BBS0004.pdf").read_bytes()).hexdigest(), fd["gachon"]["sha256_actual"])
+        self.assertIn("2027학년도 수시 모집요강 2026.06.05", page(dl / "gachon/notice_list.html", "cp949"))
+        self.assertIn('filename="2027학년도 서울여대 수시 모집요강0529.pdf"', (dl / "swu/hdr.txt").read_text(encoding="utf-8"))
+        self.assertTrue(info["swu"]["ModDate"].startswith("2026-05-29"))
+        self.assertIn("download.php?bo_table=flashpaper&amp;wr_id=27978&amp;no=0", (dl / "swu/board.html").read_text(encoding="utf-8"))
+        # 판매 면 출처 줄: 생성기가 그린 줄이 빌드된 면에 그대로 있고, 고친 다섯 곳 줄에 대조하지 않은 판의 날짜와 옛 주소가 없다
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        B = self.B
+        for slug, (pub, url) in sorted(EDITION.items()):
+            h = B._official_html(cat[slug])
+            d = self._univ(slug)["documents"][0]
+            want = (f'출처 <a class="tlink" href="{B.esc(url)}" target="_blank" rel="noopener">{B.esc(B.clean(d["title"]))}</a>'
+                    f" ({B.esc(pub)} 공고). 원문 대조 2026-11-16.")
+            self.assertIn(want, h, slug)
+            note = re.search(r'<p class="note rv">출처 .*?</p>', h).group(0)
+            built = re.findall(r'<p class="note rv">출처 .*?</p>', (ROOT / "guidebook" / f"{slug}.html").read_text(encoding="utf-8"))
+            self.assertEqual(built, [note], slug)
+            for s in EDITION_STALE.get(slug, []):
+                self.assertNotIn(s, note, slug)
 
     def test_sales_cards_follow_reaudit(self):
         cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}

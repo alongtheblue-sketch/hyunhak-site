@@ -1,5 +1,5 @@
 {
- "_note": "SEARCH 공식 검증 보조 원장 (2026-09-07 GB-V24-6 (d)). 2027 학종 감사 원장(fixtures/admissions_ledger_2027_5356d675.json) 밖 전형의 2027 공식 근거. status conducted 만 SEARCH 통과. blocked/not_conducted/absent/pending 은 SEARCH 에 있으면 빌드 실패. 요강 PDF 는 원장 URL 에서 09-07 내려받아 sha 대조(downloaded_sha16≠ledger_sha16 이면 그 뒤 갱신본).",
+ "_note": "SEARCH 공식 검증 보조 원장 (2026-09-07 GB-V24-6 (d)). 2027 학종 감사 원장(fixtures/admissions_ledger_2027_90be4fd6.json) 밖 전형의 2027 공식 근거. status conducted 만 SEARCH 통과. blocked/not_conducted/absent/pending 은 SEARCH 에 있으면 빌드 실패. 요강 PDF 는 원장 URL 에서 09-07 내려받아 sha 대조(downloaded_sha16≠ledger_sha16 이면 그 뒤 갱신본).",
  "entries": [
   {
    "slug": "gachon",

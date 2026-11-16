@@ -228,8 +228,10 @@ def _track_match(name, track):
 # 같은 날 3차(명세 E 원장 재대조: 28곳 요강 꾸밈말 interview_time_text, 두 대조가 일치한 근거 쪽과 이름, 문서 sha, 부산대 의예과 시간, 중앙대 의학부 3.5배수)로 e8642035 에서 4a8833ec 로, 다시 울산대 이름 근거 쪽(66)을 더해 8547e6fe 로 바뀜
 # 11-17 검토 지적 수리(4절 2항: 문서를 그대로 둔 6곳은 근거 쪽을 옛 판 쪽으로 되돌리고 그 쪽에서 확인되지 않는 꾸밈말 9칸과 울산대 이름을 보류,
 # 중앙대, 인하대 꾸밈말 5칸, 부산대 의예과 표기를 정보 면과 같은 순서로)로 8547e6fe 에서 5356d675 로 바뀜
-LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_5356d675.json"
-LEDGER_SHA16 = "5356d675863affd6"
+# 같은 날 추가 명세 E 2절 1항(문서 sha 를 11-16 받은 파일로 올린 8곳의 출처 줄 판 표기: 한국외대, 숙명여대, 서울시립대, 국민대 published_at 과
+# 건국대 official_url 을 실제로 대조한 파일에 맞게)으로 5356d675 에서 90be4fd6 으로 바뀜
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_90be4fd6.json"
+LEDGER_SHA16 = "90be4fd645ffaf1a"
 EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
 EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
 
