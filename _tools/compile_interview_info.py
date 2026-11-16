@@ -567,7 +567,8 @@ def _interviews(slug, t):
 
 
 # 원장 전형 이름을 요강 표기로 고친 줄(2026-11-16 명세 E 4절 1항, 재대조 name 칸의 대조와 독립 대조 일치). 사실 파일 이름은 그대로라
-# 원장 쪽 새 이름으로 잇는다. 새 이름의 요강 표기가 그 쪽 글에 있는지 컴파일 때 본다(check_evidence). 정보 면 표기는 사실 파일 이름 그대로다
+# 원장 쪽 새 이름으로 잇는다. 새 이름의 요강 표기가 그 쪽 글에 있는지 컴파일 때 본다(check_evidence). 정보 면 표기도 원장 새 이름을 쓴다
+# (2026-11-17 검토 지적 수리: 판매 면 카드와 정보 면이 같은 전형을 다른 이름으로 불렀다. build_interview_info.check_ledger 가 이름을 맞대 본다)
 LEDGER_RENAMED = {
     ("catholic", "잠재능력우수자(면접)전형"): ("잠재능력우수자면접전형", [(57, "학생부종합(잠재능력우수자면접전형)")]),
     ("ulsan", "지역인재전형(저소득층)-의예과"): ("지역인재(기초생활/차상위)전형-의예과", [(66, "지역인재(기초생활/차상위) 특별전형 학생부종합형")]),
@@ -599,7 +600,7 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
         ltext = None if fx else ledger_time_text(L, fmt)   # 원장이 요강 꾸밈말을 적었으면 그 글자(정수 칸과 함께 둔다)
         mtext, mvaries = (ltext, False) if ltext else minutes_note(L.get("interview_minutes"), fmt.get("text"))
         tr = {
-            "name": san(fx["name"] if fx else t["name"]),
+            "name": san(fx["name"] if fx else L["name"]),   # 원장 이름(이름을 고친 줄은 새 이름). 줄 단위 보정은 요강 쪽 인용이 붙은 이름
             "interviews": _interviews(slug, t),
             "stage1": _announce(slug, t, "stage1_announce", "stage1_announce_split"),
             "final": _announce(slug, t, "final_announce", "final_announce_by_scope"),

@@ -910,6 +910,59 @@ class ReauditGenerator(unittest.TestCase):
             K.ledger_time_text({"interview_minutes": None, "interview_time_text": PUSAN_MED_TIME}, fmt)   # 나눠 적은 표기는 줄 단위 보정(TRACK_FIX)만 싣는다
 
 
+# ---------------------------------------------------------------- 묶음과 판매 면 원장 맞대기 (2026-11-17 명세 E 검토 지적 수리)
+class LedgerBundleGate(unittest.TestCase):
+    """정보 면 묶음은 판매 면과 같은 원장으로 컴파일돼야 하고, 두 면은 같은 전형을 같은 이름으로 부른다.
+    원장만 고치고 묶음을 다시 컴파일하지 않으면 빌드가 멈춘다(build_interview_info.check_ledger, build_all 1f)."""
+
+    @classmethod
+    def setUpClass(cls):
+        import build_guidebook as B
+        import build_interview_info as G
+        cls.B, cls.G = B, G
+        cls.b = json.loads(BUNDLE.read_text(encoding="utf-8"))
+
+    def test_bundle_pin_is_sales_pin(self):
+        self.assertEqual(self.b["sources"]["ledger_sha16"], self.B.LEDGER_SHA16)
+        self.G.check_ledger(self.b)   # 지금 묶음은 통과한다
+
+    def test_build_stops_on_stale_bundle(self):
+        import copy
+        b = copy.deepcopy(self.b)
+        b["sources"]["ledger_sha16"] = "0" * 16
+        with self.assertRaises(SystemExit):
+            self.G.check_ledger(b)
+
+    def test_build_stops_on_name_drift(self):
+        import copy
+        b = copy.deepcopy(self.b)
+        u = next(x for x in b["univs"] if x["slug"] == "catholic")
+        u["tracks"][0]["name"] = "잠재능력우수자(면접)전형"   # 고치기 전 원장 이름(요강에 없는 표기)
+        with self.assertRaises(SystemExit):
+            self.G.check_ledger(b)
+        b = copy.deepcopy(self.b)
+        u = next(x for x in b["univs"] if x["slug"] == "ajou")
+        u["tracks"] = u["tracks"][:-1]
+        with self.assertRaises(SystemExit):
+            self.G.check_ledger(b)
+
+    def test_sales_and_info_cards_share_names(self):
+        """판매 30곳 전수: 판매 면 요강 제원 절의 면접 실시 카드 이름과 정보 면 면접 방식 절 카드 이름이 같다.
+        요강 쪽 인용이 붙은 줄 단위 보정 이름(부산대 의예과, 판매 면 이름은 재대조에서 두 대조가 갈려 원장을 고치지 않았다)만 다를 수 있다."""
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        n = 0
+        for u in self.b["univs"]:
+            h = self.B._official_html(cat[u["slug"]])
+            sales = [_html.unescape(x) for x in re.findall(r'<div class="o"><h3>([^<]*)</h3>', h)]
+            info = [t["name"] for t in u["tracks"]]
+            fixed = [t["name"] for t in u["tracks"] if t.get("name_evidence")]
+            self.assertEqual(len(sales), len(info), u["slug"])
+            self.assertEqual(sorted(set(info) - set(fixed)), sorted(set(sales) & set(info)), u["slug"])
+            self.assertEqual(len(set(sales) - set(info)), len(fixed), u["slug"])
+            n += 1
+        self.assertEqual(n, 30)
+
+
 # ---------------------------------------------------------------- 판매 면 요강 원장 정정 (2026-11-16 추가 명세 결정 7)
 class LedgerCorrection(unittest.TestCase):
     """판매 면이 쓰는 2027 학종 원장의 두 값을 요강과 다시 대조해 고친다. 중앙대 융합형인재 의학부 모집 15명(요강 31쪽 7명),

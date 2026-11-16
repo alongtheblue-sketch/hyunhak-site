@@ -2,6 +2,7 @@
 """대학별 면접 정보 면 30면 생성기 (2026-11-16, 건우 결재 SEO2-1 ②, SEO2-11 ②, SEO2-12 ②).
 
 입력은 저장소 안 묶음 _tools/fixtures/interview_info_2027.json 하나다(만드는 쪽 = compile_interview_info.py).
+그리기 전에 묶음의 원장 핀과 전형 이름이 판매 면 원장(build_guidebook.LEDGER_SHA16)과 같은지 본다(check_ledger, 2026-11-17).
 산출 = interview/<slug>.html 30면(판매 30곳) + seo_manifest.json 30항목 + _tools/interview_info_dates.json(본문 해시 기준 수정일).
 셸, SEO 머리, aeo 단락, FAQ JSON-LD 는 build_all.sh 후공정이 붙인다. 이 파일은 마크업과 manifest 값만 낸다.
 요일: 묶음의 요강 표기 요일이 달력 요일과 다르면 어떤 면도 쓰지 않고 멈춘다.
@@ -44,6 +45,35 @@ def load_bundle(path=BUNDLE):
 
 def short(slug, b):
     return next(u["short"] for u in b["univs"] if u["slug"] == slug)
+
+
+def _disp_name(s):
+    """원장 전형 이름을 지면 표기로(compile_interview_info.san 과 같은 규칙: 가운뎃점류는 쉼표, 공백 한 칸)."""
+    s = re.sub(r"\s*[·∙‧・•]\s*", ", ", str(s))
+    return re.sub(r"\s+", " ", s).strip()
+
+
+def check_ledger(b, gb=None):
+    """묶음이 판매 면과 같은 원장으로 컴파일됐는지 본다(2026-11-17 명세 E 검토 지적 수리).
+    1 묶음 sources.ledger_sha16 이 판매 면 원장 핀(build_guidebook.LEDGER_SHA16)과 같다. 원장만 고치고 묶음을 다시 컴파일하지 않으면
+      판매 면과 정보 면이 같은 전형의 시간이나 선발 방식을 다르게 싣는데 게이트가 그것을 못 잡았다.
+    2 대학마다 정보 면 전형 이름이 판매 면 카드가 쓰는 원장 면접 실시 전형 이름(지면 표기)과 같다. 요강 쪽 인용이 붙은 줄 단위 보정 이름
+      (name_evidence, 부산대 의예과)만 원장 이름과 다를 수 있고, 전형 수는 같아야 한다.
+    어긋나면 어떤 면도 쓰지 않고 멈춘다."""
+    if gb is None:
+        import build_guidebook as gb
+    got = (b.get("sources") or {}).get("ledger_sha16")
+    if got != gb.LEDGER_SHA16:
+        sys.exit(f"build_interview_info: 묶음 원장 핀 {got} 이 판매 면 원장 핀 {gb.LEDGER_SHA16} 과 다르다. 먼저 python3 _tools/compile_interview_info.py")
+    led = gb.load_ledger()
+    names = dict(gb.SLUGS)
+    for u in b["univs"]:
+        want = [_disp_name(t["name"]) for t in led[names[u["slug"]]]["tracks"] if t.get("interview_status") == "conducted"]
+        if len(want) != len(u["tracks"]):
+            sys.exit(f"build_interview_info: {u['slug']} 정보 면 전형 {len(u['tracks'])}개, 원장 면접 실시 전형 {len(want)}개")
+        for t in u["tracks"]:
+            if not t.get("name_evidence") and t["name"] not in want:
+                sys.exit(f"build_interview_info: {u['slug']} 정보 면 전형 이름 {t['name']!r} 이 판매 면 원장 이름 {want} 에 없다")
 
 
 # ---------------------------------------------------------------- 날짜
@@ -417,6 +447,7 @@ def defense(u, page):
 
 def build(write=True):
     b = load_bundle()
+    check_ledger(b)
     m = C.load_manifest()
     dates = json.loads(DATES.read_text(encoding="utf-8")) if DATES.exists() else {}
     sys.path.insert(0, str(HERE / "exam_pages"))
