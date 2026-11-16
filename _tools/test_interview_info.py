@@ -1078,7 +1078,7 @@ REAUDIT_PAGES = {
     ("sungshin", "자기주도인재전형"): [9, 18, 19, 44], ("sungshin", "특수교육대상자전형(정원외)"): [10, 28, 44],
     ("ulsan", "잠재역량전형-아산아너스칼리지 자율전공학부"): [62, 81], ("ulsan", "잠재역량전형-간호학과"): [62, 81],
     ("ulsan", "잠재역량전형-의예과"): [62, 81], ("ulsan", "지역인재전형-의예과"): [64, 81],
-    ("ulsan", "지역인재(기초생활/차상위)전형-의예과"): [24, 81], ("uos", "기회균형전형Ⅰ"): [31, 32], ("kyonggi", "KGU학생부종합전형"): [42],
+    ("ulsan", "지역인재(기초생활/차상위)전형-의예과"): [24, 66, 81], ("uos", "기회균형전형Ⅰ"): [31, 32], ("kyonggi", "KGU학생부종합전형"): [42],
 }
 PDF_FACTS = {   # (대학, PDF 쪽 차례): 그 쪽 글에 있어야 하는 글(공백은 한 칸으로 줄여 대조, 기본 모드와 -layout 어느 한쪽)
     ("ajou", 11): ["1. 모집단위 및 모집인원: 519명", "의과대학 의학과 17", "서류평가 100% (3배수 선발)", "1단계 성적 70% 면접평가 30%"],
@@ -1213,6 +1213,12 @@ class LedgerReaudit(unittest.TestCase):
         # 근거 [0](모집 1명, 단계별 비율)은 두 파일이 고칠 쪽을 66 과 67 로 달리 적어 반영하지 않았다(쪽 24, 글 그대로)
         self.assertEqual((low["evidence"][0]["page"], "저소득" in low["evidence"][0]["claim"]), (24, True))
         self.assertNotIn("저소득", json.dumps({**self._univ("ulsan"), "tracks": [{**low, "evidence": low["evidence"][1:]}]}, ensure_ascii=False))
+        # 고친 이름의 요강 표기가 그 전형의 근거 쪽 가운데 하나의 요강 글에 있다(5절 5항)
+        for ((slug, _), new0), (new, needle) in zip(RENAMED.items(), (("잠재능력우수자면접전형", "잠재능력우수자면접전형"),
+                                                             ("지역인재(기초생활/차상위)전형-의예과", "지역인재(기초생활/차상위) 특별전형 학생부종합형"))):
+            self.assertEqual(new0, new)
+            t = next(x for x in self._univ(slug)["tracks"] if x["name"] == new)
+            self.assertTrue(any(needle in _both_text(slug, e["page"] + PAGE_OFF[slug]) for e in t["evidence"]), (slug, new))
         sah = self._track("sahmyook", "세움인재전형")
         self.assertNotIn("전공적합", json.dumps(sah["evidence"], ensure_ascii=False))
         # 반영하지 않은 칸은 그대로(경기대 근거 쪽 42)

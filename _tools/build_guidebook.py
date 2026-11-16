@@ -225,9 +225,9 @@ def _track_match(name, track):
 
 # 이름 꼬리 = 내용 sha256 앞 8자, 핀 = 앞 16자. 2026-11-16 정정(중앙대 융합형인재 의학부 7명, 인하대 의예과 16명과 지금 요강 판 sha, 근거 쪽)으로 a58b7d76 에서 바뀜
 # 같은 날 2차(인하대 의예과 제외 면접 시간 요강 표기 interview_time_text, 중앙대 대조일)로 29a478ba 에서 바뀜
-# 같은 날 3차(명세 E 원장 재대조: 28곳 요강 꾸밈말 interview_time_text, 두 대조가 일치한 근거 쪽과 이름, 문서 sha, 부산대 의예과 시간, 중앙대 의학부 3.5배수)로 e8642035 에서 바뀜
-LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_4a8833ec.json"
-LEDGER_SHA16 = "4a8833ecc3fac513"
+# 같은 날 3차(명세 E 원장 재대조: 28곳 요강 꾸밈말 interview_time_text, 두 대조가 일치한 근거 쪽과 이름, 문서 sha, 부산대 의예과 시간, 중앙대 의학부 3.5배수)로 e8642035 에서 4a8833ec 로, 다시 울산대 이름 근거 쪽(66)을 더해 8547e6fe 로 바뀜
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_8547e6fe.json"
+LEDGER_SHA16 = "8547e6fe99ca3d14"
 EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
 EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
 
