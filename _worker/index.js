@@ -26,28 +26,8 @@ const REMOVED_GUIDEBOOK_TO = {
 // 목적지 실재와 삭제 면 전건 등재는 _tools/link_check.py 가 빌드마다 대조한다(누락 = FAIL). 쿼리는 보존한다(utm_source=chatgpt.com 이 목적지 ai_referrals 에 남게).
 const LEGACY_REDIRECTS = {
   "/interview/index.html": "/interview.html",
-  "/interview/ajou.html": "/guidebook/ajou.html",
-  "/interview/catholic.html": "/guidebook/catholic.html",
-  "/interview/cau.html": "/guidebook/cau.html",
-  "/interview/dongguk.html": "/guidebook/dongguk.html",
-  "/interview/ewha.html": "/guidebook/ewha.html",
-  "/interview/gachon.html": "/guidebook/gachon.html",
-  "/interview/hufs.html": "/guidebook/hufs.html",
-  "/interview/inha.html": "/guidebook/inha.html",
-  "/interview/khu.html": "/guidebook/khu.html",
-  "/interview/konkuk.html": "/guidebook/konkuk.html",
-  "/interview/kookmin.html": "/guidebook/kookmin.html",
-  "/interview/kwangwoon.html": "/guidebook/kwangwoon.html",
-  "/interview/kyonggi.html": "/guidebook/kyonggi.html",
-  "/interview/myongji.html": "/guidebook/myongji.html",
-  "/interview/pusan.html": "/guidebook/pusan.html",
-  "/interview/sejong.html": "/guidebook/sejong.html",
-  "/interview/seoultech.html": "/guidebook/seoultech.html",
-  "/interview/snu.html": "/guidebook/snu.html",
-  "/interview/sookmyung.html": "/guidebook/sookmyung.html",
-  "/interview/soongsil.html": "/guidebook/soongsil.html",
-  "/interview/sungshin.html": "/guidebook/sungshin.html",
-  "/interview/uos.html": "/guidebook/uos.html",
+  // 2026-11-16: 판매 30곳의 /interview/<slug>.html 은 대학별 면접 정보 면(build_interview_info.py, 건우 결재 SEO2-1 ②)이 다시 쓴다.
+  // 옛 아카이브 22곳(ajou 부터 uos 까지)의 /guidebook/<slug>.html 301 22건을 이 날 뺐다. 표에 키가 남으면 새 면보다 301 이 먼저 나간다.
   // 2026-10-25: 구 고려대, 연세대 아카이브는 정보 면(기출 유형과 풀이법)으로 보낸다. 판매 면 착지는 검색 의도(「고려대 면접 기출」)와 어긋나
   // 09-06~13 노출 497회 1위 URL 의 순위 신호가 이어지지 않았다(GSC). 정보 면은 스튜디오 소개면 programs/studio.html 로 잇는다.
   "/interview/korea.html": "/interview/korea-hum.html",

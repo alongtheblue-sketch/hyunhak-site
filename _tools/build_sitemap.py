@@ -128,9 +128,15 @@ def build_llms(m, pages):
     for rel in core:
         if rel in by_path:
             out.append(f"- [{by_path[rel]['title']}]({C.canonical_url(m, rel)}): {by_path[rel]['description']}")
+    # 대학별 면접 정보 면 30(2026-11-16, build_interview_info.py). interview/ 아래에 있지만 스튜디오 묶음과 섞지 않는다. 표지 = manifest group
+    info = [(rel, e) for rel, e in sorted(pages, key=lambda x: x[0]) if e.get("group") == "interview_info"]
+    if info:
+        out += ["", "## 대학별 면접 정보"]
+        for rel, e in info:
+            out.append(f"- [{e['title']}]({C.canonical_url(m, rel)}): {e['description']}")
     out += ["", "## 제시문 면접 스튜디오 (학교별)"]
     for rel, e in sorted(pages, key=lambda x: x[0]):
-        if rel.startswith(("programs/", "interview/")):
+        if rel.startswith(("programs/", "interview/")) and e.get("group") != "interview_info":
             out.append(f"- [{e['title']}]({C.canonical_url(m, rel)}): {e['description']}")
     out += ["", "## 학교별 2027 서류기반면접 가이드북"]
     for rel, e in sorted(pages, key=lambda x: x[0]):

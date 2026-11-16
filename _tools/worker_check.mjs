@@ -42,7 +42,8 @@ const loc = (r) => r.headers.get("Location") || "-";
 // 1 구 URL 301 표 — 표 전건 + 정규화 꼴(디렉터리·확장자 없음·쿼리 보존)
 const m = src.match(/LEGACY_REDIRECTS = \{([\s\S]*?)\n\};/);
 const table = m ? [...m[1].replace(/\/\/[^\n]*/g, "").matchAll(/"(\/[^"]+)"\s*:\s*"(\/[^"]+)"/g)].map((x) => [x[1], x[2]]) : [];
-chk("LEGACY_REDIRECTS 표 읽힘", table.length >= 30, `${table.length}건`);
+// 2026-11-16: 판매 30곳 /interview/<slug>.html 22건을 정보 면에 돌려주며 표가 33건에서 11건으로 줄었다(문턱 = 지금 표 건수, 정규식 읽기 실패 감지용)
+chk("LEGACY_REDIRECTS 표 읽힘", table.length >= 11, `${table.length}건`);
 let tblOk = 0;
 for (const [k, v] of table) {
   const r = await call(k);
@@ -55,6 +56,20 @@ for (const [p, want] of [["/interview/", "/interview.html"], ["/store", "/guideb
 }
 { const r = await call("/interview/korea.html?utm_source=chatgpt.com"); chk("301 이 쿼리를 보존(utm → 목적지 ai_referrals)", r.status === 301 && loc(r) === "https://hyunhak.com/interview/korea-hum.html?utm_source=chatgpt.com", loc(r)); }
 { const r = await call("/interview"); chk("/interview (허브, 산 면) 200", r.status === 200, `${r.status}`); }
+// 2026-11-16 대학별 면접 정보 면 30: 표에서 뺀 주소(옛 아카이브 22 + 새 8)가 301 없이 200 으로 면을 낸다. 비판매 4곳(knu, skku, korea, yonsei)은 표 전건 검사가 301 을 본다
+{
+  const info = JSON.parse(fs.readFileSync(path.join(ROOT, "_tools/fixtures/interview_info_2027.json"), "utf8")).univs.map((u) => u.slug);
+  let ok = 0; const bad = [];
+  for (const slug of info) {
+    for (const p of [`/interview/${slug}.html`, `/interview/${slug}`]) {
+      const r = await call(p);
+      if (r.status === 200 && !r.headers.get("Location")) ok++; else bad.push(`${p} ${r.status} ${loc(r)}`);
+    }
+  }
+  chk("정보 면 30 주소(.html, 확장자 없음) 200, 301 없음", info.length === 30 && ok === 60, bad.length ? bad.slice(0, 3).join("; ") : `${ok}/60`);
+  const left = table.filter(([k]) => info.some((s) => k === `/interview/${s}.html`));
+  chk("301 표에 정보 면 주소 0", left.length === 0, left.map(([k]) => k).join(", ") || "0");
+}
 { const r = await call("/guidebook/knu.html"); chk("철거 7권 301 = 목록 canonical /guidebook/ (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/", `${r.status} ${loc(r)}`); }
 { const r = await call("/guidebook/hanyang-erica.html"); chk("ERICA 판매 종료 301 = 목록 canonical /guidebook/ (2026-10-26)", r.status === 301 && loc(r) === "https://hyunhak.com/guidebook/", `${r.status} ${loc(r)}`); }
 { const r = await call("/guidebook/korea.html"); chk("철거 고려대 가이드북 301 = 스튜디오 면 (2026-10-25)", r.status === 301 && loc(r) === "https://hyunhak.com/programs/korea.html", `${r.status} ${loc(r)}`); }

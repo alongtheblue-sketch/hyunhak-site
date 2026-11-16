@@ -130,6 +130,13 @@ def main():
         print(f"removed guidebook/{slug} {st} -> {loc or '-'} {'OK' if ok else 'FAIL'}")
         if not ok:
             fails.append(f"guidebook/{slug} 301 아님 ({st} {loc})")
+    # 2026-11-16 대학별 면접 정보 면 30: 판매 대학 옛 주소 /interview/<slug>.html 은 301 이 아니라 정보 면(200). 비판매 4곳은 301 유지
+    for slug, want in (("gachon", 200), ("kyonggi", 200), ("dankook", 200), ("knu", 301), ("skku", 301)):
+        st, loc = status_noredirect(SITE + f"/interview/{slug}.html")
+        ok = st == want
+        print(f"interview/{slug} {st} -> {loc or '-'} {'OK' if ok else 'FAIL'}")
+        if not ok:
+            fails.append(f"interview/{slug} {st} (기대 {want})")
     s, b = get(SITE + "/guidebook/index.html"); t = b.decode("utf-8", "ignore")
     n_gb = len(re.findall(r'"slug":"', t))
     print(f"guidebook/index {s} HH_GB={n_gb} 준비중잔존={'준비 중' in t}")

@@ -170,6 +170,22 @@ def exam_cards():
     return "\n".join(out)
 
 
+INFO_BUNDLE = Path(__file__).resolve().parent / "fixtures" / "interview_info_2027.json"
+
+
+def info_univs():
+    """대학별 면접 정보 면 30(2026-11-16, build_interview_info.py 의 묶음). [(slug, 짧은 대학명)] 가나다 순."""
+    if not INFO_BUNDLE.is_file():
+        sys.exit(f"대학별 면접 정보 묶음 없음: {INFO_BUNDLE}")
+    b = json.loads(INFO_BUNDLE.read_text(encoding="utf-8"))
+    return sorted(((u["slug"], u["short"]) for u in b["univs"]), key=lambda x: x[1])
+
+
+def info_tiles():
+    """허브 #info 목록. 링크 글 = 대학 약칭 + 면접 일정 (산문 없음, 홈 대학 타일과 같은 .tiles 조판)."""
+    return "\n".join(f'      <a class="tile" href="interview/{slug}.html"><span class="n">{esc(u)} 면접 일정</span></a>' for slug, u in info_univs())
+
+
 def build():
     cat, meta, items = load()
     n = len(items)
@@ -192,7 +208,7 @@ def build():
     m = {"__TITLE__": esc(seo_entry(n, n_doc, n_sale)["title"]), "__LEDE__": lede,
          "__N__": str(n), "__T__": str(n_tracks), "__N_DOC__": str(n_doc), "__N_PAS__": str(n_pas), "__N_MIX__": str(n_mix),
          "__N_SALE__": str(n_sale), "__ROWS__": rows_html(items, meta),
-         "__FAQ_GENERIC__": faq_html(gen), "__FAQ_UNIV__": faq_html(uni), "__EXAM__": exam_cards()}
+         "__FAQ_GENERIC__": faq_html(gen), "__FAQ_UNIV__": faq_html(uni), "__EXAM__": exam_cards(), "__INFO__": info_tiles()}
     html = B.fill(TPL.read_text(encoding="utf-8"), m)
     left = re.findall(r"__[A-Z_]+__", html)
     if left:
@@ -224,7 +240,8 @@ def write_manifest(n, n_doc, n_sale, items):
     m = C.load_manifest()
     e = seo_entry(n, n_doc, n_sale)
     listed = [f"guidebook/{x['slug']}.html" for x in sorted(items.values(), key=sort_key)
-              if x.get("onsale", True) and x["slug"] not in B.STUDIO] + ["programs/yonsei.html", "programs/korea.html"] + [f"interview/{c}.html" for c, _, _ in EX.CODES]
+              if x.get("onsale", True) and x["slug"] not in B.STUDIO] + ["programs/yonsei.html", "programs/korea.html"] + [f"interview/{c}.html" for c, _, _ in EX.CODES] \
+        + [f"interview/{slug}.html" for slug, _ in info_univs()]
     ent = m["pages"].setdefault(REL, {})
     ent.update({"title": e["title"], "description": e["description"], "answer": e["answer"], "keywords": e["keywords"],
                 "type": "hub", "priority": 0.9, "changefreq": "weekly", "noindex": False,
