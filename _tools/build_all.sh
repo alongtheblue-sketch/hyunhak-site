@@ -19,6 +19,7 @@ python3 _tools/apply_promo.py   # 2b 행사 배너: 상세 LP 4면 띠 + 홈 밴
 python3 _tools/apply_fonts.py
 python3 _tools/apply_noscript_rv.py   # 3c GS-24-1 스크립트 차단 시 .rv 폴백(base.css 면 전부, 멱등)
 python3 _tools/apply_analytics.py
+python3 _tools/apply_canonical_links.py   # 3d 내부 링크를 canonical 꼴로: guidebook/index.html → guidebook/, index.html → ./ (서치 콘솔에 두 주소가 따로 잡히던 것 정리, 2026-11-16)
 tail1 python3 _tools/seo_inject.py
 tail1 python3 _tools/build_sitemap.py
 tail1 python3 _tools/build_rss.py
@@ -33,6 +34,7 @@ tail1 python3 _tools/build_brand_captions_v2.py --check   # 6g 브랜드 필름 
 tail1 python3 _tools/caption_check.py   # 6h 사이트 영상 전건에 자막 트랙이 붙었고 그 파일이 실재하는가 (2026-09-07)
 tail1 python3 _tools/link_check.py   # 6i 내부 링크·sitemap·llms·rss 깨짐 0 + git 삭제 면 전건이 워커 301 표에 있고 목적지가 실재하는가 (2026-09-09, GA4 「없는 면」 51회 재발 방지)
 tail1 node _tools/worker_check.mjs   # 6j 워커 로컬 판정: 301 표 전건·정규화·favicon 200·404 원장 배선·UA 분류 (2026-09-09)
+tail1 python3 _tools/apply_canonical_links.py --check   # 6j2 옛 꼴 내부 링크(index.html 로 끝나는 <a href>) 0 (2026-11-16)
 tail1 python3 _tools/units_vocab_check.py   # 6k 단위 어휘 동기: app.js/lectures.js/rank.js/sets.json/facts + 구매 select 12단위 = 카드 12 (2026-09-23: select 5개 하드코딩으로 카드 7장이 직전 단위 SKU 를 담던 돈 결함 뒤 파이프라인 연결. 종전엔 수동 실행)
 tail1 node _tools/studio_buy_check.mjs   # 6l 스튜디오 구매 블록 오라클: 카드 12 클릭 → sku pass-<code> 12/12, 없는 단위 fail closed, 담기 1회 (2026-09-23, 구 _design/ia_20260911/verify_ia2_buy.mjs 이관)
 find . -name "*.html" -o -name "*.xml" -o -name "*.txt" | grep -v "^./.git/" | LC_ALL=C sort | xargs shasum -a 256 | shasum -a 256 | cut -c1-16   # LC_ALL=C: 정렬이 로케일에 따라 달라 같은 바이트가 다른 해시를 냈다(2026-09-09 실측 ko_KR 5c55bb95 / C 6fc4b699 / en_US 786bbbd4). Codex 샌드박스(C)와 세션(ko_KR) 대조 가능하게 고정

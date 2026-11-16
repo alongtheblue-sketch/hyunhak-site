@@ -160,7 +160,8 @@ def resolve_link(rel, href):
     else:
         tgt = os.path.normpath(os.path.join(os.path.dirname(rel), path)).replace(os.sep, "/")
         if path.endswith("/"):
-            tgt = tgt + "/index.html"
+            # 루트 디렉터리를 가리키는 상대 경로(./, ../)는 normpath 가 "." 로 접는다. "./index.html" 로 두면 ids 조회 열쇠와 어긋난다 (2026-11-16)
+            tgt = "index.html" if tgt == "." else tgt + "/index.html"
     full = os.path.join(C.ROOT, tgt)
     if os.path.isdir(full) and os.path.exists(os.path.join(full, "index.html")):
         tgt = tgt.rstrip("/") + "/index.html"
