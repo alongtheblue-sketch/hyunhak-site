@@ -7,7 +7,7 @@
   원천 3  v24 판매 정본 승자 HTML (guidebook_sources.V24_BUILD_ROOT, winner.json) 3부 유형 군과 문항
   원천 4  _tools/guidebook_catalog.json (판매 30곳, 판매 면 맛보기 samples)
 싣지 않는 것: 사실 파일의 official_notices, unresolved, notes, null_reasons(요강 밖 공지 값과 작업 메모), 원장의 모집 인원 문구,
-유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②).
+유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②). null_reasons 는 TRACK_FIX 의 근거 문구 대조에만 읽는다.
 요일: 요강 표기의 요일과 달력에서 계산한 요일이 다르면 멈춘다.
 사용: python3 _tools/compile_interview_info.py [--check]   (--check = 다시 만들어 저장소 묶음과 바이트 대조만)
 """
@@ -205,15 +205,40 @@ def clean_title(s):
 
 
 # ---------------------------------------------------------------- 유형과 문항
+REVIEW_TAG = "선배 후기 확인"   # v24 3부 군 제목의 꼬리표. 이 표가 없는 군(경희대 '공식 예시문항', 부산대 '학종 공식 면접문항 예시')은 대학이 낸 예시 문항이다
+
+
 def v24_groups(html_path):
-    """v24 승자 HTML 3부 → [(유형명, [문항 글, ...]), ...]. 문항 글 = li 에서 학과 연도(qm)와 현행 주의(qnote)를 뺀 글."""
+    """v24 승자 HTML 3부 → [(유형명, [문항 글, ...], 후기 군 여부), ...]. 문항 글 = li 에서 학과 연도(qm)와 현행 주의(qnote)를 뺀 글.
+    후기 군 = 군 제목에 '선배 후기 확인' 꼬리표가 붙은 군(선배 면접 후기에서 회수한 기출). 예시 군은 등급 목록과 대표 기출에서 뺀다."""
     s = Path(html_path).read_text(encoding="utf-8").replace("⁠", "")
     out = []
     for gh, ol in re.findall(r'<div class="qgrp[^"]*">\s*<div class="gh">(.*?)</div>\s*<ol class="qs">(.*?)</ol>', s, flags=re.S):
         lis = re.findall(r"<li>(.*?)</li>", ol, flags=re.S)
         qs = [text(re.sub(r'<span class="(?:qm|qnote)">.*?</span>', "", li, flags=re.S)) for li in lis]
-        out.append((type_label(gh), qs))
+        out.append((type_label(gh), qs, REVIEW_TAG in text(gh)))
     return out
+
+
+def type_name(label):
+    """지면에 싣는 군 이름. 원천의 분류 표지 '학과 미기재'(학과가 적히지 않은 질문을 같은 군에 넣었다는 표지)는 앞 이름에 '외'를 붙이는 꼴로."""
+    out = []
+    for p in (x.strip() for x in str(label).split(",")):
+        if p == "학과 미기재":
+            if out:
+                out[-1] += " 외"
+            continue
+        out.append(p)
+    return ",".join(out)
+
+
+_UNIT_END = ("과", "학부", "대학", "전공")
+
+
+def is_unit_name(name):
+    """군 이름이 모집단위(학과, 학부, 단과대학, 전공) 이름인가. 앞 조각에서 괄호를 걷고 끝말로 본다."""
+    head = re.sub(r"\s*\([^()]*\)", "", str(name).split(",")[0]).strip()
+    return head.endswith(_UNIT_END)
 
 
 def grade_types(groups):
@@ -230,8 +255,13 @@ def grade_types(groups):
     return out
 
 
-_LEAD = re.compile(r"^(n |Q\d|네[ ,.]|아[ ,.]|좋습니다|그렇지만|그럼|그러면|그래|그 |그중|이제|더 |또 |두 |앞서|그런데|근데|음|자,|라고|라는|이라고|학년|학기|구체적으로)")
-_QBAD = ("·", "—", "–", "∙", "‧", "・", "•", "…", "○", "꼬리", "[", "]", "(", ")", "*", '"', "“", "”", "'", "~", "%", "..", "→", "십시오")
+# 앞 문답에 기대는 머리말(오, 마지막으로 포함)과 숫자가 빠진 단위 머리(년간, 개월, 번째)
+_LEAD = re.compile(r"^(n |Q\d|네[ ,.]|아[ ,.]|오[ ,.]|좋습니다|그렇지만|그럼|그러면|그래|그렇군요|그렇다면|그 |그중|이제|더 |또 |두 |앞서|그런데|근데|음|자,|"
+                   r"라고|라는|이라고|학년|학기|년간|년 |개월|번째|마지막으로|한 ?번 |아까|방금|구체적으로)")
+_SPEAKER = re.compile(r"^\S{1,4}\s*:")   # 화자 표지(「L : 」, 「Q:」)
+_QBAD = ("·", "—", "–", "∙", "‧", "・", "•", "…", "○", "꼬리", "[", "]", "(", ")", "<", ">", "*", '"', "“", "”", "'", "~", "%", "..", "→", "십시오")
+# 물음표로 끝나는 문항의 마지막 글자. 이 밖(「…생각?」, 「…봉사활동?」, 「…하고 싶은 말?」)은 끝이 잘렸거나 두 문항이 붙은 전사 조각이다
+_Q_END = "요까죠가나지은는면데다니냐"
 
 
 # 해라체와 개조식 종결 문항은 지면 합쇼체와 섞인다(문체 게이트 R-1). 합쇼체 '-니다' 는 뺀다
@@ -242,7 +272,7 @@ def eligible(q):
     """대표 기출로 옮길 수 있는 문항인가. 앞 질문에 기대는 꼬리 꼴, 원문 표기 기호, 전사 조각, 수치 표기를 거른다(결정적 규칙)."""
     if not 18 <= len(q) <= 60:
         return False
-    if _LEAD.match(q) or re.match(r"^[A-Za-z]\S*[가-힣]", q):
+    if _LEAD.match(q) or _SPEAKER.match(q) or re.match(r"^[A-Za-z]\S*[가-힣]", q):
         return False
     if any(b in q for b in _QBAD) or re.search(r"[ㄱ-ㅎㅏ-ㅣ]", q):
         return False
@@ -250,7 +280,9 @@ def eligible(q):
         return False
     if re.search(r"\d+\.\s", q) or re.search(r"\d[\d,]*\s*(문항|문|건)(?![가-힣])", q):
         return False
-    return bool(re.search(r"[?요까가나지죠다]\.?$", q))
+    if q.endswith("?"):
+        return q[-2] in _Q_END
+    return bool(re.search(r"(?:[요까가나죠]|니다)\.?$", q))
 
 
 PICK_SKIP = ("꼬리", "블라인드", "마무리")   # 앞 문답이나 면접 진행에 기대는 유형은 대표 문항으로 뽑지 않는다(목록에는 싣는다)
@@ -264,10 +296,10 @@ def _is_sample(q, samples):
 
 
 def pick_questions(groups, samples, used, want=4):
-    """대표 기출 want 문. groups = [(유형명, [문항 글])] v24 순서, samples = 판매 면 맛보기 글(앞 len(samples) 유형의 첫 문항).
-    1차: 맛보기에 쓰이지 않은 유형을 비중 큰 순서로 돌며 유형마다 첫 적격 문항 하나.
-    2차(모자라면): 모든 유형을 비중 큰 순서로 돌아가며 같은 유형의 다른 적격 문항(맛보기 자리인 첫 문항 제외).
-    used = 앞 대학에서 이미 쓴 문항(면끼리 같은 문항 금지)."""
+    """대표 기출 want 문. groups = [(유형명, [문항 글], 후기 군 여부)] v24 순서, samples = 판매 면 맛보기 글(앞 len(samples) 유형의 첫 문항).
+    1차: 맛보기에 쓰이지 않은 후기 군을 비중 큰 순서로 돌며 군마다 첫 적격 문항 하나.
+    2차(모자라면): 모든 후기 군을 비중 큰 순서로 돌아가며 같은 군의 다른 적격 문항(맛보기 자리인 첫 문항 제외).
+    대학 공식 예시 군(후기 군 아님)은 고르지 않는다. used = 앞 대학에서 이미 쓴 문항(면끼리 같은 문항 금지)."""
     k = len(samples)
     order = sorted(range(len(groups)), key=lambda i: (-len(groups[i][1]), i))
     picked, taken = [], set()
@@ -275,33 +307,91 @@ def pick_questions(groups, samples, used, want=4):
     def ok(q):
         return eligible(q) and not _is_sample(q, samples) and q not in used and q not in taken
 
+    def skip(gi):
+        t, _, review = groups[gi]
+        return not review or any(w in t for w in PICK_SKIP)
+
     for gi in order:
-        t, qs = groups[gi]
-        if gi < k or any(w in t for w in PICK_SKIP):
+        t, qs, _ = groups[gi]
+        if gi < k or skip(gi):
             continue
         for li, q in enumerate(qs):
             if ok(q):
-                picked.append({"type": t, "q": q, "src": [gi, li]}); taken.add(q)
+                picked.append({"type": type_name(t), "q": q, "src": [gi, li]}); taken.add(q)
                 break
         if len(picked) == want:
             return picked
     while len(picked) < want:
         grew = False
         for gi in order:
-            t, qs = groups[gi]
-            if any(w in t for w in PICK_SKIP):
+            t, qs, _ = groups[gi]
+            if skip(gi):
                 continue
             for li, q in enumerate(qs):
                 if gi < k and li == 0:
                     continue
                 if ok(q):
-                    picked.append({"type": t, "q": q, "src": [gi, li]}); taken.add(q); grew = True
+                    picked.append({"type": type_name(t), "q": q, "src": [gi, li]}); taken.add(q); grew = True
                     break
             if len(picked) == want:
                 return picked
         if not grew:
             break
     return picked
+
+
+# ---------------------------------------------------------------- 인원, 시간, 전형명 보정
+def quota_value(name, quota):
+    """사실 파일 quota 의 값. 전형 이름이 'OO 제외' 인데 근거가 그 OO 를 포함한 전형 전체 값이라고 적으면 이 줄의 값이 아니다(None).
+    인하대 「인하미래인재(면접형)-의예과 제외」 939명 = 의예과 16명을 포함한 면접형 전체, 요강에 제외 부분 합계 줄 없음."""
+    if not quota:
+        return None
+    basis = str(quota.get("basis") or "")
+    if "제외" in name and "포함" in basis and "포함하지 않" not in basis:
+        return None
+    return quota.get("value")
+
+
+_MIN_SPOT = re.compile(r"(?:평가시간|면접 ?시간)[은는이가]?\s*(\d+\s*(?:~\s*\d+\s*)?분(?:\s*(?:내외|이내))?)")
+_MIN_ANY = re.compile(r"\d+\s*(?:~\s*\d+\s*)?분(?:\s*(?:내외|이내))?")
+
+
+def minutes_note(ledger_minutes, fmt_text):
+    """(면접 시간 표기, 모집단위마다 다름 여부). 원장 interview_minutes 가 있으면 원장만 쓴다((None, False)).
+    원장이 null 이면 사실 파일 interview_format 글에서 「평가시간은 8~10분 내외」처럼 시간 낱말에 붙은 표기가 하나뿐일 때 그 표기를,
+    분 표기가 여럿이면 모집단위마다 다름, 하나도 없으면 요강에 없음((None, False))."""
+    if ledger_minutes is not None:
+        return None, False
+    s = str(fmt_text or "")
+    spot = list(dict.fromkeys(re.sub(r"\s*~\s*", "~", m) for m in _MIN_SPOT.findall(s)))
+    if len(spot) == 1:
+        return spot[0], False
+    return None, len(set(_MIN_ANY.findall(s))) > 1
+
+
+TRACK_FIX = {   # 원장 전형명이 요강 구분과 맞지 않는 줄. 사실 파일 unresolved 가 「트랙명 재정의가 필요하다」고 적었다
+    ("pusan", "학생부종합전형(의예과)"): {
+        # 요강 2차 수정판 36쪽: 의예과의 학생부종합 칸은 비고 지역인재Ⅰ 30. 39쪽: 지역의사선발전형 의예과 합계 31.
+        # 37, 40, 67쪽: 두 전형 의예과 모두 4배수, 1단계 80%+면접 20%, 면접일 12-05(원장 선발 방식과 같다)
+        "name": "의예과(지역인재전형Ⅰ, 지역의사선발전형)",
+        "dates_basis": "지역인재전형Ⅰ, 지역의사선발전형",
+        "parts": [("지역인재전형Ⅰ", 30, "지역인재Ⅰ 칸이 30"), ("지역의사선발전형", 31, "지역의사선발전형 합계 31")],
+    },
+}
+
+
+def track_fix(slug, t):
+    """(지면 전형명, 전형별 인원 목록 또는 None). 고친 줄은 사실 파일의 근거 문구(null_reasons)가 그대로일 때만 쓰고, 다르면 멈춘다."""
+    fx = TRACK_FIX.get((slug, t["name"]))
+    if not fx:
+        return t["name"], None
+    nr = t.get("null_reasons") or {}
+    if t.get("quota") is not None or fx["dates_basis"] not in str(nr.get("dates_basis", "")):
+        raise ValueError(f"{slug} {t['name']}: 사실 파일이 바뀌었다. 전형명 보정(TRACK_FIX)을 요강과 다시 대조한다")
+    for _, _, ev in fx["parts"]:
+        if ev not in str(nr.get("quota", "")):
+            raise ValueError(f"{slug} {t['name']}: 사실 파일 인원 근거에 {ev!r} 가 없다. 전형명 보정(TRACK_FIX)을 다시 대조한다")
+    return fx["name"], [{"label": a, "value": v} for a, v, _ in fx["parts"]]
 
 
 # ---------------------------------------------------------------- 대학 한 곳
@@ -372,28 +462,38 @@ def compile_univ(f, ledger_u, groups, samples, used, short):
         if L is None or L.get("interview_status") != "conducted":
             raise ValueError(f"{slug}: 원장에 면접 실시 전형 {t['name']!r} 없음")
         fmt = t["interview_format"]
-        tracks.append({
-            "name": san(t["name"]),
+        name, parts = track_fix(slug, t)
+        mtext, mvaries = minutes_note(L.get("interview_minutes"), fmt.get("text"))
+        tr = {
+            "name": san(name),
             "interviews": _interviews(slug, t),
             "stage1": _announce(slug, t, "stage1_announce", "stage1_announce_split"),
             "final": _announce(slug, t, "final_announce", "final_announce_by_scope"),
-            "quota": (t.get("quota") or {}).get("value"),
+            "quota": quota_value(t["name"], t.get("quota")),
             "basis": L.get("interview_basis"),
             "minutes": L.get("interview_minutes"),
+            "minutes_text": mtext,
+            "minutes_varies": mvaries,
             "prep": L.get("prep_minutes"),
             "ratio": clean_ratio(L.get("selection_ratio")),
             "quote": clean_quote(fmt["quote"]),
             "page": fmt["page"],
-        })
+        }
+        if parts:
+            tr["quota_parts"] = parts
+        tracks.append(tr)
     qs = pick_questions(groups, samples, used)
     if len(qs) != 4:
         raise ValueError(f"{slug}: 대표 기출 {len(qs)}문 (4문이어야 함)")
+    review = [(t, q) for t, q, rv in groups if rv]
     doc = f["doc"]
     return {
         "slug": slug, "short": short, "full": re.sub(r"\(.*?\)", "", f["univ"]).strip(),
         "doc": {"title": clean_title(doc["title"]), "url": doc["url"]},
         "tracks": tracks,
-        "types": grade_types([(t, len(q)) for t, q in groups]),
+        # 질문 군이 전부 모집단위 이름인 책(단국대, 동덕여대, 덕성여대)은 지면이 유형 대신 모집단위 묶음으로 적는다
+        "group_kind": "unit" if all(is_unit_name(t) for t, _ in review) else "type",
+        "types": grade_types([(type_name(t), len(q)) for t, q in review]),
         "questions": qs,
     }
 
@@ -424,10 +524,10 @@ def compile_bundle():
         if h != meta[slug].get("source_html_sha256"):
             raise ValueError(f"{slug}: v24 HTML sha 가 meta v3 source_html_sha256 과 다르다")
         groups = v24_groups(inp["html"])
-        if [t for t, _ in groups] != list(e["types"]):
+        if [g[0] for g in groups] != list(e["types"]):
             raise ValueError(f"{slug}: v24 유형 목록이 카탈로그 types 와 다르다")
         samples = [s["q"] for s in e["samples"]]
-        if [s["type"] for s in e["samples"]] != [t for t, _ in groups[:len(samples)]]:
+        if [s["type"] for s in e["samples"]] != [g[0] for g in groups[:len(samples)]]:
             raise ValueError(f"{slug}: 맛보기 유형이 앞 유형 순서와 다르다")
         u = compile_univ(f, ledger[name], groups, samples, used, B.SEARCH[slug]["u"])
         used |= {q["q"] for q in u["questions"]}

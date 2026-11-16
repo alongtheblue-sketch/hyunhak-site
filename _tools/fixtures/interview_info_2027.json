@@ -125,6 +125,8 @@
      "quota": null,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "3) 지원자 1인당 면접시간은 10분 내외",
@@ -156,6 +158,8 @@
      "quota": 244,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "3) 지원자 1인당 면접시간은 10분 내외",
@@ -187,12 +191,15 @@
      "quota": 17,
      "basis": "mixed",
      "minutes": 20,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "4) 지원자의 제출서류를 바탕으로 한 면접(10분), 윤리의식 등 인성을 확인하기 위한 제시문 활용 면접(10분)",
      "page": 12
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -266,10 +273,10 @@
     },
     {
      "type": "학업,교과",
-     "q": "왜 수학 성적이 상대적으로 낮다고 생각?",
+     "q": "영재수업은 어떤 수업이며 교내에서 한 것입니까?",
      "src": [
       5,
-      2
+      3
      ]
     },
     {
@@ -327,12 +334,15 @@
      "quota": 277,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 70%+면접 30%",
      "quote": "지원자의 제출서류를 기반으로 한 평가자(2인 이상) 대 지원자(1인)의 10분 내외 개별 면접",
      "page": 102
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -458,6 +468,8 @@
      "quota": 512,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%, 2단계 1단계 70%+면접 30%",
      "quote": "면접방식 학교생활기록부 기반 면접평가 면접시간 지원자 1인당 10분 이내 평가위원 입학사정관 2인이 평가",
@@ -489,6 +501,8 @@
      "quota": 108,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%, 2단계 1단계 70%+면접 30%",
      "quote": "면접방식 학교생활기록부 기반 면접평가 면접시간 지원자 1인당 10분 이내 평가위원 입학사정관 2인이 평가",
@@ -520,12 +534,15 @@
      "quota": 7,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%, 2단계 1단계 70%+면접 30%",
      "quote": "면접방식 학교생활기록부 기반 면접평가 면접시간 지원자 1인당 10분 이내 평가위원 입학사정관 2인이 평가",
      "page": 95
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "꼬리질문",
@@ -591,10 +608,10 @@
     },
     {
      "type": "공동체,인성",
-     "q": "년간 반장, 부반장을 했는데 공공인재학부에 어떤 도움이 될까?",
+     "q": "봉사 실적이 우수한데 제일 기억에 남는 거랑 봉사란 무엇이라 생각하는지?",
      "src": [
       5,
-      3
+      5
      ]
     },
     {
@@ -655,12 +672,15 @@
      "quota": 159,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
      "page": 85
     }
    ],
+   "group_kind": "unit",
    "types": [
     {
      "name": "사이버보안학과,SW인재",
@@ -750,12 +770,15 @@
      "quota": 512,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 60%+면접 40%",
      "quote": null,
      "page": 40
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "지원동기,대학이해",
@@ -891,12 +914,15 @@
      "quota": 255,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 40%+면접 60%",
      "quote": null,
      "page": 11
     }
    ],
+   "group_kind": "unit",
    "types": [
     {
      "name": "국어국문학과,국어국문학전공",
@@ -911,7 +937,7 @@
      "grade": "자주 나옴"
     },
     {
-     "name": "식품영양학과,학과 미기재",
+     "name": "식품영양학과 외",
      "grade": "보통"
     },
     {
@@ -921,11 +947,11 @@
    ],
    "questions": [
     {
-     "type": "식품영양학과,학과 미기재",
-     "q": "식품영양학과에서 가장 중요한 과목이 뭐라고 생각하는지.",
+     "type": "식품영양학과 외",
+     "q": "피아제의 인지발달이론에 대해서 배웠다고 하는데 혹시 설명해 줄 수 있나요?",
      "src": [
       4,
-      1
+      3
      ]
     },
     {
@@ -1014,12 +1040,15 @@
      "quota": 655,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(모집단위별 2.5~3.5배수), 2단계 1단계 70%+면접 30%",
      "quote": "② 2인의 평가위원이 10분 내외(불교추천인재전형 7분+5분)의 수험생별 개별면접",
      "page": 85
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -1085,10 +1114,10 @@
    "questions": [
     {
      "type": "공동체,인성",
-     "q": "봉사 시간이 많은데, 기억에 남는 봉사 활동?",
+     "q": "반장과 부반장 활동을 했는데 어떤 것이 본인에게 잘 맞다고 생각하나요?",
      "src": [
       4,
-      2
+      3
      ]
     },
     {
@@ -1157,12 +1186,15 @@
      "quota": 240,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(일반 4배수, 일부 3배수), 2단계 1단계 60%+면접 40%",
      "quote": "면접 시간 및 방법 ● 10분 내외, 개별면접(면접평가위원 2인)",
      "page": 74
     }
    ],
+   "group_kind": "unit",
    "types": [
     {
      "name": "글로벌융합대학 (유아교육과 제외)",
@@ -1184,18 +1216,18 @@
    "questions": [
     {
      "type": "글로벌융합대학 (유아교육과 제외)",
-     "q": "마지막으로 하나만 질문하고 마칠께요. 1학년 때 과학송 불렀네요. 무슨 내용인가요?",
+     "q": "유독 언록 쪽 활동이 많네요. 닷컴 언론 동아리에서 보고서를 작성했다고 했는데 무슨 내용으로 했나요?",
      "src": [
       0,
-      1
+      4
      ]
     },
     {
      "type": "데이터사이언스학과",
-     "q": "오 자신이 있군요. 그럼 어떤 부분이 특히 자신 있나요?",
+     "q": "우리 과는 알고 있겠지만 수학과목이 정말 중요한데 본인이 특히 자신 있는 수학과목이 있나요?",
      "src": [
       1,
-      5
+      9
      ]
     },
     {
@@ -1256,12 +1288,15 @@
      "quota": 209,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
      "page": 19
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -1407,12 +1442,15 @@
      "quota": 437,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접위원 3명이 지원자 1명을 대상으로 질문하는 방식으로 진행됩니다. 지원자의 학교생활기록부에 기록된 내용과 지원자의 답변을 바탕으로 질문하며, 별도의 제시문은 없습니다.",
      "page": 57
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "지원동기,대학이해",
@@ -1546,12 +1584,15 @@
      "quota": 478,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 50%+면접 50%",
      "quote": "2) 평가방법 : 2인의 면접관이 블라인드 처리된 지원자의 제출 서류를 바탕으로 진로개발역량, 협력적소통역량을 종합적으로 평가합니다.",
      "page": 25
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "꼬리질문",
@@ -1680,12 +1721,15 @@
      "quota": 694,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(일반 3배수, 일부 4배수), 2단계 1단계 70%+면접 30%",
      "quote": "나. 면접형식: 개별면접(면접위원 2인이 지원자 1인 평가)",
      "page": 49
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -1816,9 +1860,11 @@
        "wd": "금"
       }
      ],
-     "quota": 939,
+     "quota": null,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": "8~10분 내외",
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3.5배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
@@ -1850,6 +1896,8 @@
      "quota": 16,
      "basis": "record_based",
      "minutes": 15,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
@@ -1881,12 +1929,15 @@
      "quota": 6,
      "basis": "record_based",
      "minutes": 15,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
      "page": 20
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -2050,17 +2101,16 @@
      "quota": 1076,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(일반 3배수, 의, 약학 4배수), 2단계 1단계 70%+면접 30%",
      "quote": "1) 방식 : 공통질문(지원동기, 가치관 및 인성 등) 및 개인 서류확인 면접(※ 모든 모집단위 출제문항 면접 없음) 2) 형식 : 개인면접으로, 면접관(2인) 대(對) 지원자(1인) 10분 내외 면접",
      "page": 64
     }
    ],
+   "group_kind": "type",
    "types": [
-    {
-     "name": "공식 예시문항",
-     "grade": "자주 나옴"
-    },
     {
      "name": "탐구,세특심화",
      "grade": "자주 나옴"
@@ -2189,12 +2239,15 @@
      "quota": 903,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접평가자(2인) 대(對) 지원자(1인) / 개인당 10분 내외",
      "page": 72
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -2328,12 +2381,15 @@
      "quota": 724,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "수험생 개인별 10분 이내 개별 블라인드 면접",
      "page": 20
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -2470,12 +2526,15 @@
      "quota": 250,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3.5배수), 2단계 1단계 60%+면접 40%",
      "quote": "각 평가조별 2인의 입학사정관으로 구성된 평가위원이 지원자에 대하여 개별 대면 면접 방식으로 진행(면접 소요시간 10분 이내)",
      "page": 46
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -2610,6 +2669,8 @@
      "quota": 678,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "3) 평가방법: 지원자가 제출한 대입전형자료를 기반으로 질의응답을 통해 평가기준에 따라 종합정성평가",
@@ -2641,12 +2702,15 @@
      "quota": 15,
      "basis": "record_based",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "1) 대상전형: 학생부종합(KGU학생부종합전형), 학생부종합(SW우수자전형), 학생부종합(특수교육대상자전형)",
      "page": 53
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -2780,12 +2844,15 @@
      "quota": 379,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법, 개별면접(면접위원 2명)",
      "page": 64
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "꼬리질문",
@@ -2910,13 +2977,15 @@
      "quota": 778,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 학생부 서류평가 100%(3~4배수), 2단계 1단계 80%+면접 20%",
      "quote": "4. 면접고사 방법 : 다수의 평가자가 면접응시자 1인을 대면 면접",
      "page": 67
     },
     {
-     "name": "학생부종합전형(의예과)",
+     "name": "의예과(지역인재전형Ⅰ, 지역의사선발전형)",
      "interviews": [
       {
        "label": "의과대학 의예과",
@@ -2941,12 +3010,25 @@
      "quota": null,
      "basis": "mixed",
      "minutes": 20,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": 10,
      "ratio": "1단계 학생부 서류평가 100%(4배수), 2단계 1단계 80%+면접 20%",
      "quote": "논리적 의사표현능력 준비 10분 내외, 면접 10분 내외",
-     "page": 67
+     "page": 67,
+     "quota_parts": [
+      {
+       "label": "지역인재전형Ⅰ",
+       "value": 30
+      },
+      {
+       "label": "지역의사선발전형",
+       "value": 31
+      }
+     ]
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -2965,20 +3047,16 @@
      "grade": "자주 나옴"
     },
     {
-     "name": "학종 공식 면접문항 예시",
+     "name": "독서",
      "grade": "자주 나옴"
     },
     {
-     "name": "독서",
-     "grade": "보통"
-    },
-    {
      "name": "지원동기,대학이해",
-     "grade": "보통"
+     "grade": "자주 나옴"
     },
     {
      "name": "진로,장래",
-     "grade": "보통"
+     "grade": "자주 나옴"
     },
     {
      "name": "학업,교과",
@@ -3007,14 +3085,6 @@
    ],
    "questions": [
     {
-     "type": "학종 공식 면접문항 예시",
-     "q": "학급 반장으로 활동했던데, 활동을 하면서 가장 힘들었던 점과 그것을 해결한 방법은 무엇이었나요?",
-     "src": [
-      13,
-      5
-     ]
-    },
-    {
      "type": "지원동기,대학이해",
      "q": "대기공학과도 있는데 굳이 대기환경과학과에 지원한 이유는 무엇인가요?",
      "src": [
@@ -3035,6 +3105,14 @@
      "q": "영어 부장을 진행했던 것 같은데, 영어 부장을 하면서 어려웠던 점과 새로 생긴 능력이 있나요?",
      "src": [
       6,
+      1
+     ]
+    },
+    {
+     "type": "시사,사회이슈",
+     "q": "인공지능 휴머노이드 제작활동을 했다고 나와있는데 어떤활동이었나요?",
+     "src": [
+      9,
       1
      ]
     }
@@ -3080,12 +3158,15 @@
      "quota": 231,
      "basis": "record_based",
      "minutes": 8,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 60%+면접 40%",
      "quote": null,
      "page": 56
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특,전공지식",
@@ -3174,6 +3255,8 @@
      "quota": null,
      "basis": "record_based",
      "minutes": 9,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": 0,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 60%+면접 40%",
      "quote": "지원자 1인을 다수의 면접위원이 평가하는 ‘일대다(一對多) 면접’이며, 총 9분 내외 소요",
@@ -3205,12 +3288,15 @@
      "quota": 96,
      "basis": "mixed",
      "minutes": 9,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": 40,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 60%+면접 40%",
      "quote": "면접준비시간(40분) 면접 9분 내외 진행",
      "page": 51
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -3331,6 +3417,8 @@
      "quota": 496,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3362,6 +3450,8 @@
      "quota": 91,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3393,6 +3483,8 @@
      "quota": 19,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3424,6 +3516,8 @@
      "quota": 86,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3455,6 +3549,8 @@
      "quota": 68,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3486,6 +3582,8 @@
      "quota": 72,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3517,6 +3615,8 @@
      "quota": 10,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
@@ -3542,12 +3642,15 @@
      "quota": null,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "서류 70%+면접 30% 일괄합산, 지원자 전원 면접",
      "quote": "면접방법: 제출서류에 기초하여 개별면접 진행",
      "page": 63
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -3629,10 +3732,10 @@
     },
     {
      "type": "공동체,인성",
-     "q": "축구 관련 문제를 학급회의로 해결한 경험 밝힘마지막 하고 싶은 말?",
+     "q": "모둠장 등을 많이 했는데, 이러한 활동이 문학계에 어떤 기여를 할 수 있을까요?",
      "src": [
       6,
-      1
+      6
      ]
     }
    ]
@@ -3677,6 +3780,8 @@
      "quota": null,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류평가 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
@@ -3708,6 +3813,8 @@
      "quota": 39,
      "basis": "mixed",
      "minutes": 60,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류평가 100%(3배수), 2단계 1단계 70%+면접 30%",
      "quote": null,
@@ -3749,12 +3856,15 @@
      "quota": null,
      "basis": "mixed",
      "minutes": null,
+     "minutes_text": null,
+     "minutes_varies": true,
      "prep": null,
      "ratio": "1단계 서류평가 100%, 2단계 1단계 성적+면접, 구술(모집단위별 상이)",
      "quote": null,
      "page": 25
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -3812,10 +3922,10 @@
    "questions": [
     {
      "type": "독서",
-     "q": "L : 경영학에 관해 읽은 책 중 가장 기억에 남는 책은?",
+     "q": "읽은 책들이 많은데 가장 의미 있었던 책이 뭐에요? 학술적이거나 공부 관련 책 빼고 말해주세요",
      "src": [
       4,
-      1
+      6
      ]
     },
     {
@@ -3881,6 +3991,8 @@
      "quota": 361,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 70%+면접 30%",
      "quote": "개별면접으로 평가위원 2인",
@@ -3912,6 +4024,8 @@
      "quota": 35,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 70%+면접 30%",
      "quote": "개별면접으로 평가위원 2인",
@@ -3943,12 +4057,15 @@
      "quota": 10,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 70%+면접 30%",
      "quote": "개별면접으로 평가위원 2인",
      "page": 46
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",
@@ -4022,10 +4139,10 @@
     },
     {
      "type": "공동체,인성",
-     "q": "봉사할동을 많이 했는데 어떤 봉사활동?",
+     "q": "갈등 해결 사례로 언급한 내용을 얘기해보세요",
      "src": [
       5,
-      3
+      4
      ]
     },
     {
@@ -4073,6 +4190,8 @@
      "quota": 522,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3~3.5배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접위원 2인, 지원자 1인의 서류 기반 블라인드 면접",
@@ -4104,12 +4223,15 @@
      "quota": 17,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접위원 2인, 지원자 1인의 서류 기반 블라인드 면접",
      "page": 66
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "꼬리질문",
@@ -4243,6 +4365,8 @@
      "quota": 533,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 60%+면접 40%",
      "quote": null,
@@ -4274,12 +4398,15 @@
      "quota": 23,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 60%+면접 40%",
      "quote": null,
      "page": 44
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "진로,장래",
@@ -4396,6 +4523,8 @@
      "quota": 202,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접관 2인과 개별(블라인드)면접, 면접 10분 내외",
@@ -4427,6 +4556,8 @@
      "quota": 33,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접관 2인과 개별(블라인드)면접, 면접 10분 내외",
@@ -4458,12 +4589,15 @@
      "quota": 23,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 1단계 50%+면접 50%",
      "quote": "면접관 2인과 개별(블라인드)면접, 면접 10분 내외",
      "page": 20
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "탐구,세특심화",
@@ -4568,6 +4702,8 @@
      "quota": 20,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 50%+면접 50%",
      "quote": "제출서류 기반 다대일 개인별 종합면접 잠재역량(자율전공학부, 간호학과) 500점 10분 이내",
@@ -4599,6 +4735,8 @@
      "quota": 18,
      "basis": "record_based",
      "minutes": 10,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(4배수), 2단계 1단계 50%+면접 50%",
      "quote": "제출서류 기반 다대일 개인별 종합면접 잠재역량(자율전공학부, 간호학과) 500점 10분 이내",
@@ -4630,6 +4768,8 @@
      "quota": 10,
      "basis": "mixed",
      "minutes": 30,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 50%+면접 50%",
      "quote": "지역인재(의예과), 500점 30분 내외, 다양한 상황 제시 및 제출서류 기반 면접을 복수의 면접실에서 진행",
@@ -4661,6 +4801,8 @@
      "quota": 13,
      "basis": "mixed",
      "minutes": 30,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 50%+면접 50%",
      "quote": "지역인재(의예과), 500점 30분 내외, 다양한 상황 제시 및 제출서류 기반 면접을 복수의 면접실에서 진행",
@@ -4692,12 +4834,15 @@
      "quota": 1,
      "basis": "mixed",
      "minutes": 30,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(5배수), 2단계 1단계 50%+면접 50%",
      "quote": "지역인재(의예과), 500점 30분 내외, 다양한 상황 제시 및 제출서류 기반 면접을 복수의 면접실에서 진행",
      "page": 81
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "꼬리질문",
@@ -4823,6 +4968,8 @@
      "quota": 410,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 서류 50%+면접 50%",
      "quote": "2인의 면접위원이 지원자 1인을 대상으로 학업역량, 잠재역량, 사회역량을 중심으로 지원자의 종합적 사고력, 문제해결능력, 의사소통능력, 공적윤리의식, 제출서류의 진실성 등을 약 12분 내외로 평가합니다.",
@@ -4859,6 +5006,8 @@
      "quota": 132,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 서류 50%+면접 50%",
      "quote": "2인의 면접위원이 지원자 1인을 대상으로 학업역량, 잠재역량, 사회역량을 중심으로 지원자의 종합적 사고력, 문제해결능력, 의사소통능력, 공적윤리의식, 제출서류의 진실성 등을 약 12분 내외로 평가합니다.",
@@ -4895,12 +5044,15 @@
      "quota": 46,
      "basis": "record_based",
      "minutes": 12,
+     "minutes_text": null,
+     "minutes_varies": false,
      "prep": null,
      "ratio": "1단계 서류 100%(3배수), 2단계 서류 50%+면접 50%",
      "quote": "2인의 면접위원이 지원자 1인을 대상으로 학업역량, 잠재역량, 사회역량을 중심으로 지원자의 종합적 사고력, 문제해결능력, 의사소통능력, 공적윤리의식, 제출서류의 진실성 등을 약 12분 내외로 평가합니다.",
      "page": 36
     }
    ],
+   "group_kind": "type",
    "types": [
     {
      "name": "전공지식확인",

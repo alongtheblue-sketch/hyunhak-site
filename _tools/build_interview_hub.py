@@ -21,6 +21,7 @@ ROOT = Path(__file__).resolve().parent.parent
 TPL = Path(__file__).with_name("interview_hub_v1.html")
 OUT = ROOT / "interview.html"
 REL = "interview.html"
+HUB_DATES = Path(__file__).with_name("interview_hub_dates.json")   # 허브 본문 해시 기준 수정일 원장 (2026-11-16)
 
 
 def esc(s):
@@ -236,18 +237,37 @@ def seo_entry(n, n_doc, n_sale):
     return {"title": title, "description": desc, "answer": answer, "keywords": kws}
 
 
-def write_manifest(n, n_doc, n_sale, items):
+def hub_date(html, entry, path=HUB_DATES):
+    """허브 dateModified. 생성기 산출(후공정 전 지면)과 manifest 값의 해시가 바뀐 빌드의 날짜만 새 수정일로 삼는다.
+    판매 면 손 갱신일 B.CONTENT_DATE 에 묶여 #info 절과 ItemList 가 더해져도 날짜가 그대로이던 것을 고쳤다(2026-11-16 검토 지적).
+    오늘 = 환경변수 HH_TODAY 가 있으면 그 값(다음 날 빌드 시험용), 없으면 시스템 날짜. 같은 날 재빌드나 내용 없는 다음 날 빌드는 날짜 그대로."""
+    import datetime
+    import hashlib
+    import os
+    path = Path(path)
+    led = json.loads(path.read_text(encoding="utf-8")) if path.exists() else {}
+    h = hashlib.sha256((html + json.dumps(entry, ensure_ascii=False, sort_keys=True)).encode("utf-8")).hexdigest()[:16]
+    rec = led.get(REL)
+    if not (rec and rec["sha"] == h):
+        rec = led[REL] = {"sha": h, "date": os.environ.get("HH_TODAY") or datetime.date.today().isoformat()}
+        path.write_text(json.dumps(led, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    return rec["date"]
+
+
+def write_manifest(n, n_doc, n_sale, items, html):
     m = C.load_manifest()
     e = seo_entry(n, n_doc, n_sale)
     listed = [f"guidebook/{x['slug']}.html" for x in sorted(items.values(), key=sort_key)
               if x.get("onsale", True) and x["slug"] not in B.STUDIO] + ["programs/yonsei.html", "programs/korea.html"] + [f"interview/{c}.html" for c, _, _ in EX.CODES] \
         + [f"interview/{slug}.html" for slug, _ in info_univs()]
     ent = m["pages"].setdefault(REL, {})
-    ent.update({"title": e["title"], "description": e["description"], "answer": e["answer"], "keywords": e["keywords"],
-                "type": "hub", "priority": 0.9, "changefreq": "weekly", "noindex": False,
-                "breadcrumb": [{"name": "현학적 연구소", "path": "/"}, {"name": "면접 형태 판정표", "path": "/interview.html"}],
-                "schema": {"items": listed, "list_name": "대학별 면접 준비 자료"},
-                "speakable": [".aeo-answer", ".facts"], "date_modified": B.CONTENT_DATE})
+    val = {"title": e["title"], "description": e["description"], "answer": e["answer"], "keywords": e["keywords"],
+           "type": "hub", "priority": 0.9, "changefreq": "weekly", "noindex": False,
+           "breadcrumb": [{"name": "현학적 연구소", "path": "/"}, {"name": "면접 형태 판정표", "path": "/interview.html"}],
+           "schema": {"items": listed, "list_name": "대학별 면접 준비 자료"},
+           "speakable": [".aeo-answer", ".facts"]}
+    val["date_modified"] = hub_date(html, val)
+    ent.update(val)
     C.save_manifest(m)
 
 
@@ -259,7 +279,7 @@ def main():
     before = OUT.read_text(encoding="utf-8") if OUT.exists() else None
     # 후공정(nav, footer, seo, analytics)이 실린 기존 산출은 템플릿 원본과 달라 매번 다시 쓴다. 멱등성은 build_all.sh 2회 해시로 잰다
     OUT.write_text(html, encoding="utf-8")
-    write_manifest(n, n_doc, n_sale, items)
+    write_manifest(n, n_doc, n_sale, items, html)
     print(f"interview.html: {n}개 대학, 서류기반 {n_doc}, 판매 {n_sale}권 -> {'변경' if before != html else '동일'}")
 
 

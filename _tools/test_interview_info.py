@@ -87,9 +87,9 @@ class CompilerUnits(unittest.TestCase):
 
     def test_pick_four_skips_sample_types_and_fills_short_books(self):
         K = self.K
-        groups = [("가유형", ["가유형 첫 질문은 어떤 내용이었나요?", "가유형 두번째 질문은 어떤 내용이었나요?", "가유형 세번째 질문은 어떤 내용이었나요?"]),
-                  ("나유형", ["나유형 첫 질문은 어떤 내용이었나요?", "나유형 두번째 질문은 어떤 내용이었나요?", "나유형 세번째 질문은 어떤 내용이었나요?"]),
-                  ("다유형", ["다유형 첫 질문은 어떤 내용이었나요?"])]
+        groups = [("가유형", ["가유형 첫 질문은 어떤 내용이었나요?", "가유형 두번째 질문은 어떤 내용이었나요?", "가유형 세번째 질문은 어떤 내용이었나요?"], True),
+                  ("나유형", ["나유형 첫 질문은 어떤 내용이었나요?", "나유형 두번째 질문은 어떤 내용이었나요?", "나유형 세번째 질문은 어떤 내용이었나요?"], True),
+                  ("다유형", ["다유형 첫 질문은 어떤 내용이었나요?"], True)]
         samples = ["가유형 첫 질문은 어떤 내용이었나요?", "나유형 첫 질문은 어떤 내용이었나요?", "다유형 첫 질문은 어떤…"]
         out = K.pick_questions(groups, samples, set())
         self.assertEqual(len(out), 4)
@@ -100,12 +100,12 @@ class CompilerUnits(unittest.TestCase):
 
     def test_pick_prefers_unused_types_by_weight(self):
         K = self.K
-        groups = [("s1", ["샘플 질문 하나는 무엇이었나요?", "s1 다른 질문은 무엇이었나요?"]),
-                  ("u1", ["u1 질문은 무엇이었나요 첫번째?"]),
-                  ("u2", ["u2 질문 첫번째는 무엇이었나요?", "u2 질문 두번째는 무엇이었나요?", "u2 질문 세번째는 무엇이었나요?"]),
-                  ("u3", ["u3 질문 첫번째는 무엇이었나요?", "u3 질문 두번째는 무엇이었나요?"]),
-                  ("u4", ["u4 질문 첫번째는 무엇이었나요?"]),
-                  ("u5", ["u5 질문 첫번째는 무엇이었나요?"])]
+        groups = [("s1", ["샘플 질문 하나는 무엇이었나요?", "s1 다른 질문은 무엇이었나요?"], True),
+                  ("u1", ["u1 질문 첫번째는 무엇이었을까요?"], True),
+                  ("u2", ["u2 질문 첫번째는 무엇이었나요?", "u2 질문 두번째는 무엇이었나요?", "u2 질문 세번째는 무엇이었나요?"], True),
+                  ("u3", ["u3 질문 첫번째는 무엇이었나요?", "u3 질문 두번째는 무엇이었나요?"], True),
+                  ("u4", ["u4 질문 첫번째는 무엇이었나요?"], True),
+                  ("u5", ["u5 질문 첫번째는 무엇이었나요?"], True)]
         out = K.pick_questions(groups, ["샘플 질문 하나는 무엇이었나요?"], set())
         self.assertEqual([x["type"] for x in out], ["u2", "u3", "u1", "u4"])
 
@@ -139,6 +139,75 @@ class CompilerUnits(unittest.TestCase):
         for s in ("의과대학 의예과 (15쪽 '모집단위별 면접고사 일정' 표에서도 2026.11.22.(일) 의과대학 의예과)",
                   "인문계열 (물리 p.32 모집인원 표의 계열 '인문': 국어국문학과, 사학과)"):
             self.assertIsNone(K.META.search(K.clean_scope(s)), K.clean_scope(s))
+
+    def test_eligible_rejects_transcript_fragments(self):
+        """검토 지적(2026-11-16): 앞 문답에 기대는 머리말, 숫자 빠진 머리, 화자 표지, 끝이 잘린 꼴, 두 문항이 붙은 전사 조각."""
+        K = self.K
+        for bad in ("왜 수학 성적이 상대적으로 낮다고 생각?", "년간 반장, 부반장을 했는데 공공인재학부에 어떤 도움이 될까?",
+                    "오 자신이 있군요. 그럼 어떤 부분이 특히 자신 있나요?",
+                    "마지막으로 하나만 질문하고 마칠께요. 1학년 때 과학송 불렀네요. 무슨 내용인가요?",
+                    "L : 경영학에 관해 읽은 책 중 가장 기억에 남는 책은?", "축구 관련 문제를 학급회의로 해결한 경험 밝힘마지막 하고 싶은 말?",
+                    "봉사할동을 많이 했는데 어떤 봉사활동?", "봉사 시간이 많은데, 기억에 남는 봉사 활동?",
+                    "식품영양학과에서 가장 중요한 과목이 뭐라고 생각하는지.", "한 번 듣고 싶네요. 불러줄 수 있어요?",
+                    "<질문> AI가 기업경영에 활용될 수 있는 사례를 하나만 제시하세요"):
+            self.assertFalse(K.eligible(bad), bad)
+        for good in ("독서활동이 우수한데 읽은 책 중 가장 기억에 남는 책은?", "지금까지 했던 봉사활동 중 가장 기억에 남는 봉사활동이 있다면?",
+                     "학교생활에서 리더쉽을 발휘한 사례가 있었나요?", "마사 누스바움의 책 중 가장 인상 깊은 책과 그 이유를 말해주세요."):
+            self.assertTrue(K.eligible(good), good)
+
+    def test_pick_skips_non_review_groups(self):
+        """군 제목에 '선배 후기 확인' 꼬리표가 없는 군(대학 공식 예시 문항)은 대표 기출로 뽑지 않는다."""
+        K = self.K
+        groups = [("s1", ["샘플 질문 하나는 무엇이었나요?"], True),
+                  ("공식 예시", ["공식 예시 질문 첫번째는 무엇이었나요?", "공식 예시 질문 두번째는 무엇이었나요?",
+                             "공식 예시 질문 세번째는 무엇이었나요?", "공식 예시 질문 네번째는 무엇이었나요?"], False),
+                  ("u1", ["u1 질문 첫번째는 무엇이었나요?", "u1 질문 두번째는 무엇이었나요?"], True),
+                  ("u2", ["u2 질문 첫번째는 무엇이었나요?", "u2 질문 두번째는 무엇이었나요?"], True)]
+        out = K.pick_questions(groups, ["샘플 질문 하나는 무엇이었나요?"], set())
+        self.assertEqual(len(out), 4)
+        self.assertNotIn("공식 예시", [x["type"] for x in out])
+
+    def test_type_name_and_unit_names(self):
+        K = self.K
+        self.assertEqual(K.type_name("식품영양학과,학과 미기재"), "식품영양학과 외")
+        self.assertEqual(K.type_name("탐구,세특심화"), "탐구,세특심화")
+        for unit in ("사이버보안학과,SW인재", "글로벌융합대학 (유아교육과 제외)", "국어국문학과,국어국문학전공", "문예창작과", "과학기술대학"):
+            self.assertTrue(K.is_unit_name(unit), unit)
+        for typ in ("전공지식확인", "지원동기,대학이해", "탐구,세특,전공지식", "보완,확장,상황 질문", "전공 국가,지역 지식", "기타", "마무리"):
+            self.assertFalse(K.is_unit_name(typ), typ)
+
+    def test_quota_scope_excluded_part(self):
+        """전형 이름이 'OO 제외' 인데 인원 근거가 그 OO 를 포함한 전형 전체 값이면 이 줄의 값이 아니다(인하대 939명)."""
+        K = self.K
+        inha = {"value": 939, "basis": "합계 줄의 인하미래인재 면접형 열. 전형 전체 인원이며 의예과 16명을 포함한다. 의예과 제외 부분만의 합계 줄은 요강에 없다."}
+        self.assertIsNone(K.quota_value("인하미래인재(면접형)-의예과 제외", inha))
+        self.assertEqual(K.quota_value("인하미래인재(면접형)-의예과", {"value": 16, "basis": "의예과 행"}), 16)
+        self.assertEqual(K.quota_value("융합형인재전형-의학부", {"value": 7, "basis": "전형 총계 378 은 면접이 없는 의학부 외 모집단위를 포함"}), 7)
+        self.assertEqual(K.quota_value("학생부종합전형(일반 모집단위)", {"value": 778, "basis": "의예과 칸이 비어 있어 778 은 의예과를 포함하지 않는다"}), 778)
+        self.assertIsNone(K.quota_value("x", None))
+
+    def test_minutes_note_reads_facts_when_ledger_null(self):
+        """원장 면접 시간이 null 이면(범위 값이라 정수로 못 적은 경우 포함) 사실 파일 interview_format 의 시간 표기를 본다."""
+        K = self.K
+        self.assertEqual(K.minutes_note(None, "평가항목은 기초학업역량이고 평가시간은 8~10분 내외다."), ("8~10분 내외", False))
+        self.assertEqual(K.minutes_note(None, "공동 출제 문항은 면접 15분 내외. 간호대학 30분 내외, 의과대학 60분 내외."), (None, True))
+        self.assertEqual(K.minutes_note(None, "면접 시간과 평가자 수는 요강에 적혀 있지 않다."), (None, False))
+        self.assertEqual(K.minutes_note(10, "평가시간은 8~10분 내외다."), (None, False))   # 원장 값이 있으면 원장만 쓴다
+
+    def test_track_fix_requires_facts_wording(self):
+        """원장 전형명이 요강 구분과 다른 줄(부산대 의예과)은 사실 파일 근거 문구가 그대로일 때만 요강 이름과 전형별 인원으로 바꾼다."""
+        K = self.K
+        t = {"name": "학생부종합전형(의예과)", "quota": None,
+             "null_reasons": {"quota": "의예과의 학생부종합 칸은 비어 있고 지역인재Ⅰ 칸이 30이다. 의예과는 그 밖에 지역의사선발전형 합계 31(p.39)로 모집한다.",
+                              "dates_basis": "의예과 면접 대상 전형(지역인재전형Ⅰ, 지역의사선발전형)의 전형일정"}}
+        name, parts = K.track_fix("pusan", t)
+        self.assertEqual(name, "의예과(지역인재전형Ⅰ, 지역의사선발전형)")
+        self.assertEqual(parts, [{"label": "지역인재전형Ⅰ", "value": 30}, {"label": "지역의사선발전형", "value": 31}])
+        t2 = copy.deepcopy(t)
+        t2["null_reasons"]["quota"] = "지역인재Ⅰ 칸이 32이다"
+        with self.assertRaises(ValueError):
+            K.track_fix("pusan", t2)
+        self.assertEqual(K.track_fix("ajou", {"name": "ACE전형-의학과", "quota": {"value": 17}}), ("ACE전형-의학과", None))
 
     def test_clean_ratio_drops_quota_segments(self):
         K = self.K
@@ -181,6 +250,22 @@ class BundleContract(unittest.TestCase):
             for t in u["types"]:
                 self.assertIn(t["grade"], ("자주 나옴", "보통", "가끔 나옴"))
                 self.assertEqual(set(t), {"name", "grade"})
+
+    def test_review_feedback_20261116(self):
+        """검토 지적 수리 단언: 인하대 의예과 제외 인원, 공식 예시 군, 분류 표지, 모집단위 묶음 대학, 부산대 의예과 줄 이름."""
+        inha = {t["name"]: t for t in self.u["inha"]["tracks"]}
+        self.assertIsNone(inha["인하미래인재(면접형)-의예과 제외"]["quota"])
+        self.assertEqual(inha["인하미래인재(면접형)-의예과 제외"]["minutes_text"], "8~10분 내외")
+        raw = BUNDLE.read_text(encoding="utf-8")
+        self.assertNotIn("학과 미기재", raw)
+        for slug, u in self.u.items():
+            self.assertFalse([t["name"] for t in u["types"] if "공식" in t["name"] or "예시" in t["name"]], slug)
+            self.assertFalse([q["type"] for q in u["questions"] if "공식" in q["type"] or "예시" in q["type"]], slug)
+            self.assertEqual(u["group_kind"], "unit" if slug in ("dankook", "dongduk", "duksung") else "type", slug)
+        pusan = [t["name"] for t in self.u["pusan"]["tracks"]]
+        self.assertNotIn("학생부종합전형(의예과)", pusan)
+        med = next(t for t in self.u["pusan"]["tracks"] if t["name"].startswith("의예과"))
+        self.assertEqual([(x["label"], x["value"]) for x in med["quota_parts"]], [("지역인재전형Ⅰ", 30), ("지역의사선발전형", 31)])
 
     def test_weekdays_match_calendar(self):
         n = 0
@@ -277,7 +362,7 @@ class GeneratorContract(unittest.TestCase):
 
     def test_null_cells_text(self):
         NULL = "요강에 따로 적혀 있지 않습니다"
-        cases = [("ajou", "ACE전형-의학과 제외", "quota"), ("pusan", "학생부종합전형(의예과)", "quota"),
+        cases = [("ajou", "ACE전형-의학과 제외", "quota"), ("inha", "인하미래인재(면접형)-의예과 제외", "quota"),
                  ("seoultech", "군위탁전형", "stage1"), ("gachon", "가천바람개비전형", "final")]
         for slug, track, col in cases:
             sec = _section(self.pages[slug][0], "schedule")
@@ -287,6 +372,87 @@ class GeneratorContract(unittest.TestCase):
             cell = re.search(r'<td[^>]*data-c="%s"[^>]*>(.*?)</td>' % col, row, re.S)
             self.assertIsNotNone(cell, (slug, track, col))
             self.assertIn(NULL, cell.group(1), (slug, track, col))
+
+    def _faq(self, slug):
+        import seo_common as C
+        return {x["q"]: x["a"] for x in C.extract_faq(self.pages[slug][0])}
+
+    def test_inha_time_and_quota(self):
+        html = self.pages["inha"][0]
+        self.assertNotIn("면접 시간은 요강에 따로 적혀 있지 않습니다", html)
+        self.assertIn("면접 시간은 8~10분 내외입니다", self._faq("inha")["인하대 면접은 어떤 방식인가요?"])
+        self.assertIn("면접 8~10분 내외", _section(html, "format"))
+        for slug in ("ewha", "gachon", "hufs", "kyonggi"):   # 사실 파일도 요강에 시간 표기가 없다고 적은 곳
+            self.assertIn("면접 시간은 요강에 따로 적혀 있지 않습니다", self._faq(slug)[f"{self.G.short(slug, self.b)} 면접은 어떤 방식인가요?"], slug)
+
+    def test_desc_and_answer_follow_split_schedule(self):
+        """1단계 발표가 모집단위로 갈린 첫 전형은 description 에 한 날짜로 적지 않는다. 면접일 사이가 빈 전형은 기간으로 잇지 않는다."""
+        for u in self.b["univs"]:
+            e = self.pages[u["slug"]][1]
+            t0 = u["tracks"][0]
+            if len(t0["stage1"]) > 1:
+                self.assertNotIn("1단계", e["description"], u["slug"])
+        e = self.pages["catholic"][1]
+        self.assertNotIn("10월 30일(금)~12월 5일(토)", e["description"] + e["answer"])
+        self.assertIn("10월 30일(금), 12월 5일(토)", e["description"])
+        self.assertIn("모집단위별로 2026년 10월 30일(금), 12월 5일(토)", e["answer"])
+        self.assertNotIn("11월 17일(화)", self.pages["ajou"][1]["description"])
+
+    def test_desc_interview_not_before_stage1(self):
+        """description 의 1단계 발표일은 면접 첫날보다 앞서야 한다(가톨릭대 10-30 면접, 11-27 발표 꼴 금지)."""
+        for slug, (_, e) in self.pages.items():
+            d = e["description"]
+            m1 = re.search(r"1단계 (?:합격자 )?발표는 (\d+)월 (\d+)일", d)
+            mi = re.search(r"면접은 (?:모집단위별로 )?(\d+)월 (\d+)일", d)
+            if m1 and mi:
+                self.assertLess((int(m1.group(1)), int(m1.group(2))), (int(mi.group(1)), int(mi.group(2))), (slug, d))
+
+    def test_faq_when_names_every_track(self):
+        """FAQPage 만 읽는 쪽도 모든 전형의 면접일을 받는다('위 표' 참조 금지)."""
+        for u in self.b["univs"]:
+            a = self._faq(u["slug"])[f"{u['short']} 면접은 언제인가요?"]
+            self.assertNotIn("위 표", a, u["slug"])
+            for t in u["tracks"]:
+                self.assertIn(t["name"], a, (u["slug"], t["name"]))
+        a = self._faq("snu")["서울대 면접은 언제인가요?"]
+        self.assertIn("11월 27일(금)", a)
+
+    def test_gichul_phrase(self):
+        for u in self.b["univs"]:
+            html, e = self.pages[u["slug"]]
+            self.assertIn("기출", e["description"], u["slug"])
+            self.assertIn(f"{u['short']} 면접 기출", _visible(html), u["slug"])
+
+    def test_unit_grouped_books_say_so(self):
+        """질문 군이 모집단위인 책(단국대, 동덕여대, 덕성여대)은 유형 절을 모집단위 묶음으로 적는다."""
+        for u in self.b["univs"]:
+            sec = _section(self.pages[u["slug"]][0], "types")
+            if u["group_kind"] == "unit":
+                self.assertIn("모집단위", sec, u["slug"])
+                self.assertNotIn("질문을 유형으로 나눠", sec, u["slug"])
+            else:
+                self.assertIn("자주 나오는 질문 유형", sec, u["slug"])
+
+    def test_pusan_medical_row(self):
+        sec = _section(self.pages["pusan"][0], "schedule")
+        self.assertNotIn("학생부종합전형(의예과)", self.pages["pusan"][0])
+        row = next(r for r in re.findall(r"<tr[^>]*>(.*?)</tr>", sec, re.S) if "의예과(지역인재전형Ⅰ, 지역의사선발전형)" in r)
+        self.assertIn("지역인재전형Ⅰ 30명", row)
+        self.assertIn("지역의사선발전형 31명", row)
+
+    def test_render_stops_on_sale_defense_breach(self):
+        """판매 방어선(SEO2-11 ② 4문, 맛보기 겹침 0, SEO2-12 ② 수치 없음)은 생성기도 빌드마다 막는다(build_all 과 deploy.sh 경로)."""
+        sale = _onsale()
+        base = next(x for x in self.b["univs"] if x["slug"] == "gachon")
+        smp = sale["gachon"]["samples"][0]["q"]
+        breaches = []
+        u = copy.deepcopy(base); u["questions"].append({"type": "기타", "q": "다섯째 문항은 무엇이었나요?", "src": [0, 0]}); breaches.append(u)
+        u = copy.deepcopy(base); u["questions"][0]["q"] = smp; breaches.append(u)
+        u = copy.deepcopy(base); u["questions"][0]["q"] = "이 유형에는 문항이 15문 실려 있나요?"; breaches.append(u)
+        u = copy.deepcopy(base); u["types"][0]["name"] = "탐구 30"; breaches.append(u)
+        for u in breaches:
+            with self.assertRaises(SystemExit):
+                self.G.render(u, self.b)
 
     def test_prose_rules(self):
         for slug, (html, e) in self.pages.items():
@@ -366,8 +532,9 @@ class SourceContract(unittest.TestCase):
             groups = K.v24_groups(inp["html"])
             for q in u["questions"]:
                 gi, li = q["src"]
-                self.assertEqual(groups[gi][0], q["type"], u["slug"])
+                self.assertEqual(K.type_name(groups[gi][0]), q["type"], u["slug"])
                 self.assertEqual(groups[gi][1][li], q["q"], u["slug"])
+                self.assertTrue(groups[gi][2], (u["slug"], q["type"]))   # 후기 군에서만 뽑는다
 
     def test_bundle_recompiles_identically(self):
         try:
@@ -397,6 +564,29 @@ class SiteWiring(unittest.TestCase):
             self.assertIn(f'href="interview/{slug}.html"', sec, slug)
         self.assertEqual(re.findall(r"면접 기출문제 ([\d,]+)문", sec), [])   # apply_counts 앵커(지면 전체 2개)에 새 절이 보태지 않는다
         self.assertNotIn("→", sec)
+
+    def test_hub_date_follows_content(self):
+        """허브 dateModified 는 허브 본문 해시 원장에서 온다. 판매 면 손 갱신일(B.CONTENT_DATE)과 묶지 않는다."""
+        import os
+        import tempfile
+        import build_interview_hub as H
+        with tempfile.TemporaryDirectory() as d:
+            p = Path(d) / "dates.json"
+            old = os.environ.get("HH_TODAY")
+            try:
+                os.environ["HH_TODAY"] = "2026-11-16"
+                a = H.hub_date("<p>본문</p>", {"title": "t"}, p)
+                os.environ["HH_TODAY"] = "2026-11-20"
+                self.assertEqual(H.hub_date("<p>본문</p>", {"title": "t"}, p), a)          # 본문이 같으면 날짜 그대로
+                self.assertEqual(H.hub_date("<p>본문 2</p>", {"title": "t"}, p), "2026-11-20")   # 바뀐 날만 오른다
+            finally:
+                if old is None:
+                    os.environ.pop("HH_TODAY", None)
+                else:
+                    os.environ["HH_TODAY"] = old
+        import seo_common as C
+        led = json.loads((HERE / "interview_hub_dates.json").read_text(encoding="utf-8"))
+        self.assertEqual(C.load_manifest()["pages"]["interview.html"]["date_modified"], led["interview.html"]["date"])
 
     def test_llms_has_info_section(self):
         import build_sitemap as S

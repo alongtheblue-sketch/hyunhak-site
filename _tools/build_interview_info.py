@@ -87,26 +87,47 @@ def _iga(word):
     return "이" if _eun(word) == "은" else "가"
 
 
-def track_span(t, where, year=True):
-    """전형의 면접 기간 한 줄. 줄이 하나면 그 날짜(범위), 여럿이면 가장 이른 날부터 가장 늦은 날까지."""
-    iv = t["interviews"]
-    for x in iv:
+def day_runs(t, where):
+    """전형의 면접일을 이어진 날끼리 묶은 [(시작 iso, 시작 요일, 끝 iso, 끝 요일)]. 줄마다의 기간을 날짜 집합으로 펴서 빈 날에서 끊는다.
+    묶음의 양 끝은 늘 어떤 줄의 시작일이나 끝일이라 요강 표기 요일이 있다."""
+    wd, days = {}, set()
+    for x in t["interviews"]:
         fmt_item(x, where)   # 모든 날짜의 요일 검사
-    if len(iv) == 1:
-        return fmt_item(iv[0], where, year), False
-    first = min(iv, key=lambda x: x["iso"])
-    last = max(iv, key=lambda x: x.get("iso_end") or x["iso"])
-    lo = fmt_day(first["iso"], first["wd"], where, year)
-    hi_iso, hi_wd = (last["iso_end"], last["wd_end"]) if last.get("iso_end") else (last["iso"], last["wd"])
-    if hi_iso == first["iso"]:
-        return lo, True
-    return f"{lo}~{fmt_day(hi_iso, hi_wd, where, year=False)}", True
+        a = date.fromisoformat(x["iso"])
+        b = date.fromisoformat(x.get("iso_end") or x["iso"])
+        wd[x["iso"]] = x["wd"]
+        if x.get("iso_end"):
+            wd[x["iso_end"]] = x["wd_end"]
+        days |= {date.fromordinal(o) for o in range(a.toordinal(), b.toordinal() + 1)}
+    runs, cur = [], []
+    for d in sorted(days):
+        if cur and d.toordinal() != cur[-1].toordinal() + 1:
+            runs.append(cur); cur = []
+        cur.append(d)
+    runs.append(cur)
+    return [(r[0].isoformat(), wd[r[0].isoformat()], r[-1].isoformat(), wd[r[-1].isoformat()]) for r in runs]
+
+
+def track_span(t, where, year=True):
+    """(전형의 면접일 글, 꼴). 꼴 = 'one' 한 줄, 'range' 모집단위별 줄이 이어진 기간 하나, 'runs' 빈 날을 사이에 둔 날짜 묶음 여럿.
+    'runs' 는 처음과 끝을 ~ 로 잇지 않고 묶음을 쉼표로 늘어놓는다(가톨릭대 10월 30일, 12월 5일. 연도는 첫 묶음에만)."""
+    iv = t["interviews"]
+    runs = day_runs(t, where)
+    if len(iv) == 1 and len(runs) == 1:
+        return fmt_item(iv[0], where, year), "one"
+    out = []
+    for i, (a, aw, b, bw) in enumerate(runs):
+        s = fmt_day(a, aw, where, year and i == 0)
+        if b != a:
+            s += "~" + fmt_day(b, bw, where, year=False)
+        out.append(s)
+    return ", ".join(out), ("range" if len(runs) == 1 else "runs")
 
 
 def minutes_ko(t):
     p, m = t.get("prep"), t.get("minutes")
     if m is None:
-        return None
+        return f"면접 {t['minutes_text']}" if t.get("minutes_text") else None
     if p == 0:
         return f"준비시간 없이 면접 {m}분"
     return f"준비 {p}분, 면접 {m}분" if p else f"면접 {m}분"
@@ -115,6 +136,10 @@ def minutes_ko(t):
 def time_sentence(t):
     p, m = t.get("prep"), t.get("minutes")
     if m is None:
+        if t.get("minutes_text"):
+            return f"면접 시간은 {t['minutes_text']}입니다."
+        if t.get("minutes_varies"):
+            return "면접 시간은 모집단위마다 다릅니다."
         return f"면접 시간은 {NULL}."
     if p == 0:
         return f"준비 시간 없이 면접 시간 {m}분입니다."
@@ -142,15 +167,19 @@ def rows_html(u):
         iv = t["interviews"]
         n = len(iv)
         rs = f' rowspan="{n}"' if n > 1 else ""
-        quota = f"{t['quota']:,}명" if t["quota"] is not None else NULL
-        qcls = ' class="num"' if t["quota"] is not None else ""
+        if t.get("quota_parts"):   # 한 줄이 두 전형을 묶은 경우(부산대 의예과) 전형별 인원을 줄을 나눠 적는다
+            quota_html = "<br>".join(E(f"{x['label']} {x['value']:,}명") for x in t["quota_parts"])
+            qcls = ""
+        else:
+            quota_html = E(f"{t['quota']:,}명" if t["quota"] is not None else NULL)
+            qcls = ' class="num"' if t["quota"] is not None else ""
         for i, x in enumerate(iv):
             date_s = E(fmt_item(x, where))
             label = f'<br><small>{E(x["label"])}</small>' if x.get("label") else ""
             cell = f'<td data-c="interview">{date_s}{label}</td>'
             if i == 0:
                 out.append(f'     <tr><td data-c="track"{rs}><b>{E(t["name"])}</b></td><td data-c="stage1"{rs}>{_ann_cell(t["stage1"], where)}</td>'
-                           f'{cell}<td data-c="final"{rs}>{_ann_cell(t["final"], where)}</td><td data-c="quota"{qcls}{rs}>{E(quota)}</td></tr>')
+                           f'{cell}<td data-c="final"{rs}>{_ann_cell(t["final"], where)}</td><td data-c="quota"{qcls}{rs}>{quota_html}</td></tr>')
             else:
                 out.append(f"     <tr>{cell}</tr>")
     return "\n".join(out)
@@ -159,14 +188,14 @@ def rows_html(u):
 def format_html(u):
     groups, order = {}, []
     for t in u["tracks"]:
-        k = (t["basis"], t["minutes"], t["prep"], t["ratio"], t["quote"], t["page"])
+        k = (t["basis"], t["minutes"], t.get("minutes_text"), t["prep"], t["ratio"], t["quote"], t["page"])
         if k not in groups:
             groups[k] = []
             order.append(k)
         groups[k].append(t["name"])
     out = []
     for k in order:
-        basis, _, _, ratio, quote, page = k
+        basis, _, _, _, ratio, quote, page = k
         t = next(x for x in u["tracks"] if x["name"] == groups[k][0])
         rows = [("면접 형태", BASIS_KO.get(basis, BASIS_KO["unknown"]))]
         mk = minutes_ko(t)
@@ -186,12 +215,21 @@ def faq_pairs(u):
     tr = u["tracks"]
     t0 = tr[0]
     qa = []
-    when = []
-    for t in tr[:2]:
-        span, multi = track_span(t, f"{u['slug']} {t['name']}")
-        when.append(f"{t['name']}{_eun(t['name'])} {span}" + (" 사이에 모집단위별로 면접을 봅니다." if multi and "~" in span else "에 면접을 봅니다."))
-    if len(tr) > 2:
-        when.append(f"다른 {len(tr) - 2}개 전형의 날짜는 위 표에 있습니다.")
+    # 모든 전형의 면접일을 적는다(FAQPage 만 읽는 쪽에는 지면의 표가 없다). 같은 날짜 글의 전형은 한 문장으로 묶는다
+    groups, order = {}, []
+    for t in tr:
+        span, kind = track_span(t, f"{u['slug']} {t['name']}")
+        if kind == "runs":
+            tail = f" 모집단위별로 {span}에 면접을 봅니다."
+        elif kind == "range" and "~" in span:
+            tail = f" {span} 사이에 모집단위별로 면접을 봅니다."
+        else:
+            tail = f" {span}에 면접을 봅니다."
+        if tail not in groups:
+            groups[tail] = []
+            order.append(tail)
+        groups[tail].append(t["name"])
+    when = [", ".join(groups[k]) + _eun(groups[k][-1]) + k for k in order]
     qa.append((f"{S} 면접은 언제인가요?", " ".join(when)))
     b0 = BASIS_KO.get(t0["basis"], BASIS_KO["unknown"])
     mk = minutes_ko(t0)
@@ -220,24 +258,26 @@ def seo_entry(u):
     S, F, slug = u["short"], u["full"], u["slug"]
     t0 = u["tracks"][0]
     where = f"{slug} {t0['name']}"
-    span_y, _ = track_span(t0, where)
+    span_y, kind = track_span(t0, where)
     span_n, _ = track_span(t0, where, year=False)
-    s1 = fmt_item(t0["stage1"][0], where, year=False) if t0["stage1"] else None
+    by = "모집단위별로 " if kind == "runs" else ""   # 빈 날을 사이에 둔 면접일은 한 기간으로 읽히지 않게
+    # 1단계 발표가 모집단위로 갈리면(아주대 약학과, 가톨릭대 신학과) 한 날짜로 적지 않는다. 표와 FAQ 는 갈래를 나눠 적는다
+    s1 = fmt_item(t0["stage1"][0], where, year=False) if len(t0["stage1"]) == 1 else None
     b0 = BASIS_KO.get(t0["basis"], BASIS_KO["unknown"])
     pct = interview_pct(t0)
     title = f"{S} 면접 일정, 방식, 기출 유형 (2027학년도 수시){TAIL}"
     desc = _pick_len([
-        f"{S} 2027학년도 수시 면접 일정입니다. {t0['name']} 면접은 {span_n}" + (f", 1단계 합격자 발표는 {s1}입니다." if s1 else "입니다.")
-        + " 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
-        f"{S} 2027학년도 수시 면접 일정입니다. {t0['name']} 면접은 {span_n}" + (f", 1단계 발표는 {s1}입니다." if s1 else "입니다.")
-        + " 면접 방식과 질문 유형도 정리했습니다.",
-        f"{S} 2027학년도 수시 {t0['name']} 면접은 {span_n}입니다. 면접 방식과 자주 나오는 질문 유형을 함께 정리했습니다.",
-        f"{S} {t0['name']} 면접은 {span_n}입니다. 면접 방식과 질문 유형도 정리했습니다.",
+        f"{S} 2027학년도 수시 면접 일정입니다. {t0['name']} 면접은 {by}{span_n}" + (f", 1단계 합격자 발표는 {s1}입니다." if s1 else "입니다.")
+        + " 면접 방식과 자주 나오는 기출 질문 유형을 함께 정리했습니다.",
+        f"{S} 2027학년도 수시 면접 일정입니다. {t0['name']} 면접은 {by}{span_n}" + (f", 1단계 발표는 {s1}입니다." if s1 else "입니다.")
+        + " 면접 방식과 기출 질문 유형도 정리했습니다.",
+        f"{S} 2027학년도 수시 {t0['name']} 면접은 {by}{span_n}입니다. 면접 방식과 자주 나오는 기출 질문 유형을 함께 정리했습니다.",
+        f"{S} {t0['name']} 면접은 {by}{span_n}입니다. 면접 방식과 기출 질문 유형도 정리했습니다.",
     ], 70, 110, "description", slug)
     answer = _pick_len([
-        f"{S} {t0['name']} 면접은 {span_y}에 봅니다. {b0}이며 면접 반영 비율은 {pct}%입니다." if pct else "",
-        f"{S} {t0['name']} 면접은 {span_y}에 봅니다. {b0}입니다.",
-        f"{S} {t0['name']} 면접은 {span_n}에 봅니다.",
+        f"{S} {t0['name']} 면접은 {by}{span_y}에 봅니다. {b0}이며 면접 반영 비율은 {pct}%입니다." if pct else "",
+        f"{S} {t0['name']} 면접은 {by}{span_y}에 봅니다. {b0}입니다.",
+        f"{S} {t0['name']} 면접은 {by}{span_n}에 봅니다.",
     ], 40, 110, "answer", slug)
     kws = [f"{S} 면접 일정", f"{S} 면접 일정 2027", f"{F} 면접 일정", f"{S} 면접 날짜", f"{S} {t0['name']} 면접",
            f"{S} 면접 방식", f"{S} 면접 기출", f"{S} 면접 기출 유형", f"{S} 면접 질문", f"{S} 1단계 발표", f"2027 {S} 수시 면접"]
@@ -253,6 +293,7 @@ def render(u, b):
     """(지면 HTML, manifest 항목). 날짜 요일이 묶음 표기와 다르면 SystemExit."""
     S, F, slug = u["short"], u["full"], u["slug"]
     t0 = u["tracks"][0]
+    unit = {"type": False, "unit": True}[u["group_kind"]]
     entry = seo_entry(u)
     faq = faq_pairs(u)
     links = (f'<a class="btn" href="../guidebook/{E(slug)}.html">{E(S)} 면접 가이드북 2027</a>'
@@ -274,9 +315,13 @@ def render(u, b):
         "__ROWS__": rows_html(u),
         "__FORMAT_NOTE__": E(f"면접 형태, 시간, 선발 방식은 {F} 요강의 전형별 안내에서 옮겼습니다."),
         "__FORMAT__": format_html(u),
-        "__TYPES_NOTE__": E(f"{S} 면접 가이드북에 실린 질문을 유형으로 나눠 많이 실린 유형부터 적었습니다."),
+        "__TYPES_NAV__": E("질문 유형" if unit is False else "모집단위별 질문"),
+        "__TYPES_H2__": E("자주 나오는 질문 유형" if unit is False else "질문이 많이 실린 모집단위"),
+        "__TYPES_NOTE__": E(f"{S} 면접 가이드북에 실린 질문을 유형으로 나눠 많이 실린 유형부터 적었습니다." if unit is False else
+                            f"{S} 면접 가이드북은 질문을 유형 대신 모집단위별로 묶어 싣습니다. 질문이 많이 실린 묶음부터 적었습니다."),
         "__TYPES__": "".join(f'<div class="r"><dt>{E(x["name"])}</dt><dd>{E(x["grade"])}</dd></div>' for x in u["types"]),
-        "__Q_NOTE__": E(f"{S} 면접 가이드북 2027에 실린 기출 질문에서 옮겼고 유형 이름을 함께 적었습니다."),
+        "__Q_NOTE__": E(f"{S} 면접 기출 질문은 {S} 면접 가이드북 2027에 실린 질문에서 옮겼고 "
+                        + ("유형 이름을 함께 적었습니다." if unit is False else "모집단위 묶음 이름을 함께 적었습니다.")),
         "__QUESTIONS__": "".join(f'<li><span><b>{E(q["type"])}</b> <span class="q">{E(q["q"])}</span></span></li>' for q in u["questions"]),
         "__PREP__": E(f"{S} {t0['name']} 면접 준비 자료는 아래 {S} 면접 가이드북 2027 면에 있습니다."),
         "__LINKS__": links,
@@ -300,7 +345,51 @@ def render(u, b):
             sys.exit(f"build_interview_info: {slug} 지면에 금지 문자 {ch!r}")
     if "십시오" in body:
         sys.exit(f"build_interview_info: {slug} 십시오체")
+    defense(u, out)
     return out, entry
+
+
+# ---------------------------------------------------------------- 판매 방어선 (build_all, deploy.sh 경로에서 빌드마다)
+COUNT_RX = re.compile(r"\d[\d,]*\s*(문항|문|건)(?![가-힣])")
+CATALOG = HERE / "guidebook_catalog.json"
+_SAMPLES = {}
+
+
+def _samples(slug):
+    if not _SAMPLES:
+        cat = json.loads(CATALOG.read_text(encoding="utf-8"))
+        _SAMPLES.update({e["slug"]: [s["q"] for s in e.get("samples", [])] for e in cat["items"]})
+    return _SAMPLES.get(slug, [])
+
+
+def _visible(page):
+    body = page.split("</head>", 1)[-1]
+    body = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", body)
+    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", body)))
+
+
+def defense(u, page):
+    """면마다 대표 기출 정확히 4문(SEO2-11 ②), 판매 면 맛보기와 같은 글 0, 유형 절 숫자 0, 문항 수 표기 0,
+    반영 비율 밖 퍼센트 0(SEO2-12 ②). 하나라도 어기면 어떤 면도 쓰지 않고 멈춘다(묶음을 손으로 고치거나 맛보기가 바뀐 뒤 재컴파일을 빠뜨린 경우)."""
+    slug = u["slug"]
+    qs = [q["q"] for q in u["questions"]]
+    if len(qs) != 4 or len(set(qs)) != 4:
+        sys.exit(f"build_interview_info: {slug} 대표 기출 {len(qs)}문 (서로 다른 4문이어야 함, SEO2-11 ②)")
+    vis = _visible(page)
+    for s in _samples(slug):
+        core = s[:-1].rstrip() if s.endswith("…") else s
+        if core in vis or any(q == s or s.startswith(q) or q.startswith(core) for q in qs):
+            sys.exit(f"build_interview_info: {slug} 판매 면 맛보기와 같은 문항 {core[:30]!r}")
+    m = re.search(r'<section[^>]*id="types"[^>]*>(.*?)</section>', page, re.S)
+    if m is None or re.search(r"\d", re.sub(r"<[^>]+>", " ", m.group(1))):
+        sys.exit(f"build_interview_info: {slug} 유형 절이 없거나 숫자가 있다 (SEO2-12 ②)")
+    hit = COUNT_RX.search(vis)
+    if hit:
+        sys.exit(f"build_interview_info: {slug} 문항 수 표기 {hit.group(0)!r} (SEO2-12 ②)")
+    allowed = {p for t in u["tracks"] for p in re.findall(r"\d+%", t["ratio"])}
+    extra = set(re.findall(r"\d+%", vis)) - allowed
+    if extra:
+        sys.exit(f"build_interview_info: {slug} 반영 비율 밖 퍼센트 {sorted(extra)} (SEO2-12 ②)")
 
 
 def build(write=True):
