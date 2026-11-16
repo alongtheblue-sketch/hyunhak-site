@@ -1,0 +1,464 @@
+#!/usr/bin/env python3
+"""대학별 면접 정보 면 30면의 자료 묶음 컴파일러 (2026-11-16, 건우 결재 SEO2-1 ②, SEO2-11 ②, SEO2-12 ②).
+
+저장소 밖 원천을 한 번 읽어 _tools/fixtures/interview_info_2027.json 을 만든다. 빌드(build_interview_info.py)는 그 묶음만 읽는다.
+  원천 1  요강 사실 파일 ~/unjang/_shared/ops/20261116_SEO_GEO_AEO_재부양/s2_facts/<slug>.json 30개 (면접일, 발표일, 모집 인원, 면접 방식 인용)
+  원천 2  2027 학종 감사 원장 _tools/fixtures/admissions_ledger_2027_a58b7d76.json (sha 핀. interview_basis, interview_minutes, selection_ratio)
+  원천 3  v24 판매 정본 승자 HTML (guidebook_sources.V24_BUILD_ROOT, winner.json) 3부 유형 군과 문항
+  원천 4  _tools/guidebook_catalog.json (판매 30곳, 판매 면 맛보기 samples)
+싣지 않는 것: 사실 파일의 official_notices, unresolved, notes, null_reasons(요강 밖 공지 값과 작업 메모), 원장의 모집 인원 문구,
+유형별 문항 수와 비율(등급 세 단계만 남긴다, SEO2-12 ②).
+요일: 요강 표기의 요일과 달력에서 계산한 요일이 다르면 멈춘다.
+사용: python3 _tools/compile_interview_info.py [--check]   (--check = 다시 만들어 저장소 묶음과 바이트 대조만)
+"""
+import hashlib
+import json
+import math
+import re
+import sys
+from datetime import date
+from pathlib import Path
+
+HERE = Path(__file__).resolve().parent
+ROOT = HERE.parent
+sys.path.insert(0, str(HERE))
+from guidebook_sources import V24_BUILD_ROOT as V24_ROOT, text, type_label, v24_inputs   # noqa: E402
+
+OUT = HERE / "fixtures" / "interview_info_2027.json"
+FACTS_DIR = Path.home() / "unjang" / "_shared" / "ops" / "20261116_SEO_GEO_AEO_재부양" / "s2_facts"
+CATALOG = HERE / "guidebook_catalog.json"
+META_V3 = HERE / "guidebook_meta_v3.json"
+CHECKED = "2026-11-16"   # 요강 사실 파일 대조일 (s2_facts 수집, 2026-11-16)
+WD = "월화수목금토일"
+GRADES = ("자주 나옴", "보통", "가끔 나옴")
+BAN = ("·", "—", "–", "∙", "‧", "・", "•", "→")
+
+# 표에 싣는 모집단위 범위 글에서 걷어 낼 작업 메모의 표지. 걷은 뒤에도 남으면 컴파일이 멈춘다.
+META = re.compile(r"official|notices|p\.\s?\d|\d+\s*쪽|요강|참조|렌더|그림|트랙|별도 행|행 표기|같은 칸|모집인원 표|시각은|표의|표에서|"
+                  r"입실|배정은|물리 ?(?:p|\d|쪽)|확인|아래 항목|아래 두|면접 장소|수능|최저")
+
+
+# ---------------------------------------------------------------- 날짜와 요일
+def weekday_ko(iso):
+    return WD[date.fromisoformat(iso).weekday()]
+
+
+_MARK = re.compile(r"(?<!\d)(?:(\d{1,2})\s*[.월/]\s*)?(\d{1,2})\s*[.일]?\s*\(\s*([월화수목금토일])\s*\)")
+
+
+def wd_marks(s):
+    """요강 표기의 (월 또는 None, 일, 요일) 목록. '2026. 12. 5.(토) ~ 6.(일)', '12월 11일(금)', '26.12.11.(금)' 꼴."""
+    return [(int(m.group(1)) if m.group(1) else None, int(m.group(2)), m.group(3)) for m in _MARK.finditer(str(s or ""))]
+
+
+def src_wd(iso, texts):
+    """iso 날짜에 해당하는 요강 표기 요일. 그 날짜의 표기가 없으면 ValueError (대조할 수 없는 날짜는 싣지 않는다)."""
+    d = date.fromisoformat(iso)
+    for s in texts:
+        for mo, dd, w in wd_marks(s):
+            if dd == d.day and (mo is None or mo == d.month):
+                return w
+    raise ValueError(f"{iso}: 요강 표기에서 이 날짜의 요일을 찾지 못함 {texts!r}")
+
+
+def day(iso, texts):
+    """{'iso','wd'}. 요강 표기 요일과 달력 요일이 다르면 ValueError (빌드를 멈춘다)."""
+    w = src_wd(iso, texts)
+    if w != weekday_ko(iso):
+        raise ValueError(f"{iso}: 요강 표기 요일 {w} 와 달력 요일 {weekday_ko(iso)} 가 다르다 {texts!r}")
+    return {"iso": iso, "wd": w}
+
+
+# ---------------------------------------------------------------- 글 정리
+def san(s):
+    """지면 금지 문자(가운뎃점, 줄표류)를 사이트 관행대로 쉼표로, 공백 정리."""
+    s = str(s or "")
+    s = re.sub(r"\s*·\s*", ", ", s)
+    for ch in BAN:
+        s = s.replace(ch, ", ")
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s*,\s*,\s*", ", ", s)
+    s = re.sub(r"\s+,", ",", s)
+    return s.strip(" ,")
+
+
+def _drop_meta_parens(s):
+    """괄호 묶음 가운데 작업 메모 표지가 든 것을 통째로 지운다. 「」 안의 괄호는 짝 셈에서 뺀다."""
+    out, i, n = [], 0, len(s)
+    while i < n:
+        if s[i] == "(":
+            depth, j, q = 0, i, 0
+            while j < n:
+                c = s[j]
+                if c == "「":
+                    q += 1
+                elif c == "」":
+                    q = max(0, q - 1)
+                elif not q and c == "(":
+                    depth += 1
+                elif not q and c == ")":
+                    depth -= 1
+                    if depth == 0:
+                        break
+                j += 1
+            inner = s[i + 1:j]
+            if j < n and META.search(inner):
+                i = j + 1
+                continue
+            if j >= n:   # 짝 없는 괄호는 그대로
+                out.append(s[i:]); break
+            out.append("(" + _drop_meta_parens(inner) + ")")
+            i = j + 1
+            continue
+        out.append(s[i])
+        i += 1
+    return "".join(out)
+
+
+REWRITE = [   # 표지 걷기만으로 뜻이 사라지는 꼴 (사실 파일의 범위 글 원문 꼴 그대로 대응)
+    (re.compile(r"\s*\(물리 p\.\d+ 모집인원 표의 계열 '[^']+': (.*)\)$"), r": \1"),
+    (re.compile(r"\(모집단위 (\S+) \d+명, 물리 \d+쪽\)"), r" \1"),
+    (re.compile(r"^\[\*\] 표시 양일 모집단위"), "양일 중 하루 배정 모집단위"),
+    (re.compile(r"^전체 모집단위\(신학과 제외, 신학과는 별도 행\)$"), "신학과 외 전체 모집단위"),
+    # 개조식 꼬리('포함')로 끝나는 범위 글은 지면 합쇼체와 섞인다(문체 게이트 R-1). 같은 사실을 명사구로
+    (re.compile(r"^인문계/예체능계 \[경영대학 자연계 모집 단위 포함\]$"), "인문계, 예체능계와 경영대학 자연계 모집단위"),
+    (re.compile(r"^전 모집단위\(수의과대학, 의과대학 제외\), 사범대학은 교직적성·인성면접 포함$"),
+     "전 모집단위(수의과대학, 의과대학 제외)와 사범대학 교직적성, 인성면접"),
+]
+
+
+def clean_scope(s):
+    """사실 파일의 모집단위 범위 글에서 작업 메모(쪽 번호, 대조 경위, 공지 참조)를 걷고 지면 꼴로."""
+    s = str(s or "").strip()
+    for pat, rep in REWRITE:
+        s = pat.sub(rep, s)
+    s = _drop_meta_parens(s)
+    m = re.match(r"^(.*?[^\d\s])\.\s+(.*)$", s)
+    if m and META.search(m.group(2)):
+        s = m.group(1)
+    s = re.sub(r"^\d{1,2}\.\s*\d{1,2}\.\s*\([월화수목금토일]\)\s*", "", s)
+    s = re.sub(r"^\d{1,2}월\s*\d{1,2}일\s*\([월화수목금토일]\)\s*", "", s)
+    s = re.sub(r"^면접 모집단위\s*:\s*", "", s)
+    s = re.sub(r"<([^<>]+)>", r"\1", s)
+    s = re.sub(r"\s+:", ":", s)
+    return san(s)
+
+
+LABEL_FIX = {   # 발표일 갈래 표시. 수능 최저 같은 요강의 다른 사항은 싣지 않는다
+    "ACE전형 의학과, 약학과 제외 전 모집단위": "약학과 제외 모집단위",
+    "약학과(ACE전형)": "약학과",
+    "일반학과(부), 약학과 제외(수능최저 없음)": "약학과 제외 모집단위",
+    "약학과(수능최저 적용)": "약학과",
+}
+MAIN_LABEL_FIX = {("catholic", "전체 모집단위"): "신학과 외 전체 모집단위"}
+
+
+def clean_ratio(s):
+    """원장 selection_ratio 에서 선발 방식만. 모집 인원 문구 조각(세미콜론으로 갈린 앞 조각)은 버린다(인원은 사실 파일 값만 싣는다)."""
+    segs = [x.strip() for x in re.split(r";\s*", str(s or "")) if x.strip()]
+    keep = [x for x in segs if "%" in x]
+    if not keep:
+        raise ValueError(f"선발 방식에 반영 비율이 없다: {s!r}")
+    return san(", ".join(keep))
+
+
+# 개조식 종결(-함, -음, -임, -됨)로 끝나는 문장이 든 인용은 지면 합쇼체와 섞인다(문체 게이트 R-1). 그런 인용은 싣지 않고 쪽 번호만 남긴다
+_GAEJO = re.compile(r"(?:함|음|임|됨)(?=\s*(?:\([^()]*\))?\s*(?:[.\]]|$|\s\d\)|\s[가-하]\)))")
+
+
+def clean_quote(s):
+    """요강 인용 한 줄: 머리 글머리표를 떼고 금지 문자를 쉼표로. 표 칸을 이어 붙인 인용(' | ', ' - ')은 문장이 아니라 싣지 않는다(None)."""
+    s = str(s or "")
+    if " | " in s or " - " in s or _GAEJO.search(s):
+        return None
+    s = re.sub(r"^[\s•∙·–\-]+", "", s)
+    return san(s)
+
+
+_TITLE_NOTE = re.compile(r"파일명|표기|공고|첨부|수정")
+
+
+def clean_title(s):
+    """요강 문서 제목에서 수집 메모 괄호(첨부 파일명, 표지 표기, 공고 이력)를 걷는다."""
+    out, depth, start, keep = [], 0, None, []
+    s = str(s or "")
+    i = 0
+    while i < len(s):
+        c = s[i]
+        if c == "(":
+            if depth == 0:
+                start = i
+            depth += 1
+        elif c == ")" and depth:
+            depth -= 1
+            if depth == 0:
+                grp = s[start:i + 1]
+                if not _TITLE_NOTE.search(grp):
+                    keep.append(grp)
+                start = None
+                i += 1
+                continue
+        if depth == 0:
+            keep.append(c)
+        i += 1
+    return san("".join(keep))
+
+
+# ---------------------------------------------------------------- 유형과 문항
+def v24_groups(html_path):
+    """v24 승자 HTML 3부 → [(유형명, [문항 글, ...]), ...]. 문항 글 = li 에서 학과 연도(qm)와 현행 주의(qnote)를 뺀 글."""
+    s = Path(html_path).read_text(encoding="utf-8").replace("⁠", "")
+    out = []
+    for gh, ol in re.findall(r'<div class="qgrp[^"]*">\s*<div class="gh">(.*?)</div>\s*<ol class="qs">(.*?)</ol>', s, flags=re.S):
+        lis = re.findall(r"<li>(.*?)</li>", ol, flags=re.S)
+        qs = [text(re.sub(r'<span class="(?:qm|qnote)">.*?</span>', "", li, flags=re.S)) for li in lis]
+        out.append((type_label(gh), qs))
+    return out
+
+
+def grade_types(groups):
+    """[(유형명, 문항 수)] (v24 순서) → 비중 큰 순서의 [{'name','grade'}]. 등급 = 경쟁 순위(같은 수는 같은 순위)를 셋으로 나눈 칸.
+    순위가 ceil(n/3) 이하 자주 나옴, ceil(2n/3) 이하 보통, 그 밖 가끔 나옴. 수치는 싣지 않는다."""
+    n = len(groups)
+    order = sorted(range(n), key=lambda i: (-groups[i][1], i))
+    a, b = math.ceil(n / 3), math.ceil(2 * n / 3)
+    out = []
+    for i in order:
+        name, c = groups[i]
+        rank = 1 + sum(1 for _, x in groups if x > c)
+        out.append({"name": name, "grade": GRADES[0] if rank <= a else GRADES[1] if rank <= b else GRADES[2]})
+    return out
+
+
+_LEAD = re.compile(r"^(n |Q\d|네[ ,.]|아[ ,.]|좋습니다|그렇지만|그럼|그러면|그래|그 |그중|이제|더 |또 |두 |앞서|그런데|근데|음|자,|라고|라는|이라고|학년|학기|구체적으로)")
+_QBAD = ("·", "—", "–", "∙", "‧", "・", "•", "…", "○", "꼬리", "[", "]", "(", ")", "*", '"', "“", "”", "'", "~", "%", "..", "→", "십시오")
+
+
+# 해라체와 개조식 종결 문항은 지면 합쇼체와 섞인다(문체 게이트 R-1). 합쇼체 '-니다' 는 뺀다
+_HAERA = re.compile(r"(?:는가|은가|인가|한가|던가|느냐|냐|니|(?<!니)다|함|음|임|됨)\s*[?.!]?(?=\s|$)")
+
+
+def eligible(q):
+    """대표 기출로 옮길 수 있는 문항인가. 앞 질문에 기대는 꼬리 꼴, 원문 표기 기호, 전사 조각, 수치 표기를 거른다(결정적 규칙)."""
+    if not 18 <= len(q) <= 60:
+        return False
+    if _LEAD.match(q) or re.match(r"^[A-Za-z]\S*[가-힣]", q):
+        return False
+    if any(b in q for b in _QBAD) or re.search(r"[ㄱ-ㅎㅏ-ㅣ]", q):
+        return False
+    if q.count("?") > 1 or " ?" in q or _HAERA.search(q):
+        return False
+    if re.search(r"\d+\.\s", q) or re.search(r"\d[\d,]*\s*(문항|문|건)(?![가-힣])", q):
+        return False
+    return bool(re.search(r"[?요까가나지죠다]\.?$", q))
+
+
+PICK_SKIP = ("꼬리", "블라인드", "마무리")   # 앞 문답이나 면접 진행에 기대는 유형은 대표 문항으로 뽑지 않는다(목록에는 싣는다)
+
+
+def _is_sample(q, samples):
+    for s in samples:
+        if q == s or s.startswith(q) or (s.endswith("…") and q.startswith(s[:-1].rstrip())):
+            return True
+    return False
+
+
+def pick_questions(groups, samples, used, want=4):
+    """대표 기출 want 문. groups = [(유형명, [문항 글])] v24 순서, samples = 판매 면 맛보기 글(앞 len(samples) 유형의 첫 문항).
+    1차: 맛보기에 쓰이지 않은 유형을 비중 큰 순서로 돌며 유형마다 첫 적격 문항 하나.
+    2차(모자라면): 모든 유형을 비중 큰 순서로 돌아가며 같은 유형의 다른 적격 문항(맛보기 자리인 첫 문항 제외).
+    used = 앞 대학에서 이미 쓴 문항(면끼리 같은 문항 금지)."""
+    k = len(samples)
+    order = sorted(range(len(groups)), key=lambda i: (-len(groups[i][1]), i))
+    picked, taken = [], set()
+
+    def ok(q):
+        return eligible(q) and not _is_sample(q, samples) and q not in used and q not in taken
+
+    for gi in order:
+        t, qs = groups[gi]
+        if gi < k or any(w in t for w in PICK_SKIP):
+            continue
+        for li, q in enumerate(qs):
+            if ok(q):
+                picked.append({"type": t, "q": q, "src": [gi, li]}); taken.add(q)
+                break
+        if len(picked) == want:
+            return picked
+    while len(picked) < want:
+        grew = False
+        for gi in order:
+            t, qs = groups[gi]
+            if any(w in t for w in PICK_SKIP):
+                continue
+            for li, q in enumerate(qs):
+                if gi < k and li == 0:
+                    continue
+                if ok(q):
+                    picked.append({"type": t, "q": q, "src": [gi, li]}); taken.add(q); grew = True
+                    break
+            if len(picked) == want:
+                return picked
+        if not grew:
+            break
+    return picked
+
+
+# ---------------------------------------------------------------- 대학 한 곳
+def _texts(x):
+    out = [x.get("text"), x.get("quote")]
+    cc = x.get("cross_check")
+    if isinstance(cc, dict):
+        out += [cc.get("quote"), cc.get("date_line")]
+    return [s for s in out if s]
+
+
+def _announce(slug, t, key, split_key):
+    """발표일 칸: [{'label','iso','wd'}]. 빈 목록 = 요강에 값 없음. 전형 단위 갈래 목록이 있으면 그것이 전부, 안쪽 by_scope 는 덧붙는 갈래."""
+    main = t.get(key)
+    lst = t.get(split_key)
+    if lst:
+        items = [(LABEL_FIX.get(x["scope"], x["scope"]), x) for x in lst]
+    elif main:
+        items = [(None, main)]
+        if main.get("by_scope"):
+            ml = MAIN_LABEL_FIX.get((slug, main.get("scope")), main.get("scope") or "그 밖의 모집단위")
+            items = [(ml, main)] + [(LABEL_FIX.get(x["scope"], x["scope"]), x) for x in main["by_scope"]]
+    else:
+        return []
+    out = []
+    for label, x in items:
+        lab = clean_scope(label) if label else None
+        if lab and META.search(lab):
+            raise ValueError(f"{slug} {t['name']} {key}: 표시 글에 작업 메모 {lab!r}")
+        out.append({"label": lab, **day(x["iso"], _texts(x))})
+    return out
+
+
+def _interviews(slug, t):
+    ds = t["interview_dates"]
+    if not ds:
+        raise ValueError(f"{slug} {t['name']}: 면접일 없음")
+
+    def inside(a, b):
+        return b["iso_start"] >= a["iso_start"] and b["iso_end"] <= a["iso_end"]
+
+    keep = []
+    for i, d in enumerate(ds):
+        others = [x for j, x in enumerate(ds) if j != i]
+        summary = (others and d["scope"].startswith(("전체", "전형 전체")) and d["iso_start"] < d["iso_end"]
+                   and all(inside(d, x) for x in others))
+        if not summary:
+            keep.append(d)
+    out = []
+    for d in keep:
+        lab = clean_scope(d["scope"])
+        if META.search(lab) or any(ch in lab for ch in BAN):
+            raise ValueError(f"{slug} {t['name']}: 모집단위 글에 작업 메모 {lab!r} (원문 {d['scope']!r})")
+        x = {"label": lab, **day(d["iso_start"], _texts(d))}
+        if d["iso_end"] != d["iso_start"]:
+            e = day(d["iso_end"], _texts(d))
+            x["iso_end"], x["wd_end"] = e["iso"], e["wd"]
+        out.append(x)
+    return out
+
+
+def compile_univ(f, ledger_u, groups, samples, used, short):
+    slug = f["slug"]
+    lt = {t["name"]: t for t in ledger_u["tracks"]}
+    tracks = []
+    for t in f["tracks"]:
+        L = lt.get(t["name"])
+        if L is None or L.get("interview_status") != "conducted":
+            raise ValueError(f"{slug}: 원장에 면접 실시 전형 {t['name']!r} 없음")
+        fmt = t["interview_format"]
+        tracks.append({
+            "name": san(t["name"]),
+            "interviews": _interviews(slug, t),
+            "stage1": _announce(slug, t, "stage1_announce", "stage1_announce_split"),
+            "final": _announce(slug, t, "final_announce", "final_announce_by_scope"),
+            "quota": (t.get("quota") or {}).get("value"),
+            "basis": L.get("interview_basis"),
+            "minutes": L.get("interview_minutes"),
+            "prep": L.get("prep_minutes"),
+            "ratio": clean_ratio(L.get("selection_ratio")),
+            "quote": clean_quote(fmt["quote"]),
+            "page": fmt["page"],
+        })
+    qs = pick_questions(groups, samples, used)
+    if len(qs) != 4:
+        raise ValueError(f"{slug}: 대표 기출 {len(qs)}문 (4문이어야 함)")
+    doc = f["doc"]
+    return {
+        "slug": slug, "short": short, "full": re.sub(r"\(.*?\)", "", f["univ"]).strip(),
+        "doc": {"title": clean_title(doc["title"]), "url": doc["url"]},
+        "tracks": tracks,
+        "types": grade_types([(t, len(q)) for t, q in groups]),
+        "questions": qs,
+    }
+
+
+def _sha16(p):
+    return hashlib.sha256(Path(p).read_bytes()).hexdigest()[:16]
+
+
+def compile_bundle():
+    import build_guidebook as B   # 원장 sha 핀 검사와 짧은 대학명(SEARCH) 원장. 판매 상품 상태 스냅샷 검사를 물려받는다
+    cat = json.loads(CATALOG.read_text(encoding="utf-8"))
+    meta = json.loads(META_V3.read_text(encoding="utf-8"))
+    ledger = B.load_ledger()
+    sale = sorted((e for e in cat["items"] if e.get("onsale")), key=lambda e: e["slug"])
+    if len(sale) != 30:
+        raise ValueError(f"판매 {len(sale)}곳 (30곳이어야 함)")
+    used, univs, src = set(), [], {"ledger_sha16": B.LEDGER_SHA16, "facts_sha16": {}, "v24_html_sha16": {}}
+    for e in sale:
+        slug, name = e["slug"], e["name"]
+        fp = FACTS_DIR / f"{slug}.json"
+        f = json.loads(fp.read_text(encoding="utf-8"))
+        if f["slug"] != slug or f["univ"] != name:
+            raise ValueError(f"{slug}: 사실 파일 대학 불일치 {f['univ']!r} != {name!r}")
+        inp = v24_inputs(name)
+        if inp is None:
+            raise ValueError(f"{slug}: v24 승자 없음")
+        h = hashlib.sha256(inp["html"].read_bytes()).hexdigest()
+        if h != meta[slug].get("source_html_sha256"):
+            raise ValueError(f"{slug}: v24 HTML sha 가 meta v3 source_html_sha256 과 다르다")
+        groups = v24_groups(inp["html"])
+        if [t for t, _ in groups] != list(e["types"]):
+            raise ValueError(f"{slug}: v24 유형 목록이 카탈로그 types 와 다르다")
+        samples = [s["q"] for s in e["samples"]]
+        if [s["type"] for s in e["samples"]] != [t for t, _ in groups[:len(samples)]]:
+            raise ValueError(f"{slug}: 맛보기 유형이 앞 유형 순서와 다르다")
+        u = compile_univ(f, ledger[name], groups, samples, used, B.SEARCH[slug]["u"])
+        used |= {q["q"] for q in u["questions"]}
+        univs.append(u)
+        src["facts_sha16"][slug] = _sha16(fp)
+        src["v24_html_sha16"][slug] = h[:16]
+    return {
+        "_note": "compile_interview_info.py 가 만든다(손으로 고치지 않는다). build_interview_info.py 가 이 파일만 읽어 interview/<slug>.html 30면을 쓴다.",
+        "academic_year": 2027,
+        "checked": CHECKED,
+        "sources": src,
+        "univs": univs,
+    }
+
+
+def dump(b):
+    return json.dumps(b, ensure_ascii=False, indent=1) + "\n"
+
+
+def main():
+    b = compile_bundle()
+    s = dump(b)
+    if "--check" in sys.argv:
+        cur = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
+        print("compile_interview_info --check:", "같음" if cur == s else "다름")
+        sys.exit(0 if cur == s else 1)
+    OUT.write_text(s, encoding="utf-8")
+    nq = sum(len(u["questions"]) for u in b["univs"])
+    nt = sum(len(u["tracks"]) for u in b["univs"])
+    print(f"compile_interview_info: {len(b['univs'])}곳, 전형 {nt}, 대표 기출 {nq}문 -> {OUT.relative_to(ROOT)}")
+
+
+if __name__ == "__main__":
+    main()
