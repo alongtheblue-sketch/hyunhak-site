@@ -223,8 +223,9 @@ def _track_match(name, track):
     return bool(a) and a in _norm_t(track)
 
 
-LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_a58b7d76.json"
-LEDGER_SHA16 = "a58b7d765df8618e"
+# 이름 꼬리 = 내용 sha256 앞 8자, 핀 = 앞 16자. 2026-11-16 정정(중앙대 융합형인재 의학부 7명, 인하대 의예과 16명과 지금 요강 판 sha, 근거 쪽)으로 a58b7d76 에서 바뀜
+LEDGER_2027 = SITE / "_tools" / "fixtures" / "admissions_ledger_2027_29a478ba.json"
+LEDGER_SHA16 = "29a478ba61aefef0"
 EXTRA_OFFICIAL = SITE / "_tools" / "search_official_extra.json"
 EXTRA_STATUS = {"conducted", "not_conducted", "absent", "pending", "blocked"}
 

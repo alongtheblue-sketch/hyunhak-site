@@ -761,6 +761,84 @@ class SourceContract(unittest.TestCase):
         self.assertEqual(K.compile_bundle(), json.loads(BUNDLE.read_text(encoding="utf-8")))
 
 
+# ---------------------------------------------------------------- 판매 면 요강 원장 정정 (2026-11-16 추가 명세 결정 7)
+class LedgerCorrection(unittest.TestCase):
+    """판매 면이 쓰는 2027 학종 원장의 두 값을 요강과 다시 대조해 고친다. 중앙대 융합형인재 의학부 모집 15명(요강 31쪽 7명),
+    인하대 인하미래인재(면접형) 의예과 15명(지금 요강 10쪽 16명). 원장 파일 이름은 내용 sha256 앞 8자, 빌드 핀은 앞 16자다."""
+
+    @classmethod
+    def setUpClass(cls):
+        import build_guidebook as B
+        cls.B = B
+        cls.L = B.load_ledger()
+
+    def _track(self, univ, name):
+        return next(t for t in self.L[univ]["tracks"] if t["name"] == name)
+
+    def test_ledger_file_named_by_content_hash(self):
+        files = sorted((HERE / "fixtures").glob("admissions_ledger_2027_*.json"))
+        self.assertEqual(len(files), 1, files)
+        p = files[0]
+        sha = hashlib.sha256(p.read_bytes()).hexdigest()
+        self.assertEqual(p.name, f"admissions_ledger_2027_{sha[:8]}.json")
+        self.assertEqual(Path(self.B.LEDGER_2027).resolve(), p.resolve())
+        self.assertEqual(self.B.LEDGER_SHA16, sha[:16])
+        raw = p.read_bytes()
+        self.assertEqual(json.dumps(json.loads(raw), ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode() + b"\n", raw)
+        for rel in ("_tools/build_guidebook.py", "_tools/compile_interview_info.py", "_tools/search_official_extra.json", "_tools/test_search_official_v24.py"):
+            names = set(re.findall(r"admissions_ledger_2027_[0-9a-f]{8}\.json", (ROOT / rel).read_text(encoding="utf-8")))
+            self.assertEqual(names, {p.name}, rel)
+
+    def test_cau_fusion_medical_quota(self):
+        t = self._track("중앙대학교", "융합형인재전형-의학부")
+        self.assertEqual(t["selection_ratio"], "모집 7명; 1단계 서류 100%, 2단계 1단계 70%+면접 30%")
+        ev = json.dumps(t["evidence"], ensure_ascii=False)
+        self.assertNotIn("15명", ev)
+        self.assertTrue(any(e["page"] == 31 and "의학부 모집인원은 7명" in e["claim"] for e in t["evidence"]))
+        doc = self.L["중앙대학교"]["documents"][0]
+        self.assertEqual(doc["sha256"], _facts("cau")["doc"]["sha256_actual"])   # 원장 판 = 받은 판
+        self.assertIn("의과 의학부 7", _pdf_page("cau", 31))
+        self.assertIn("학생부종합(융합형인재) 총계", _pdf_page("cau", 31))
+
+    def test_inha_tracks_match_current_guide(self):
+        u = self.L["인하대학교"]
+        doc = u["documents"][0]
+        self.assertEqual(doc["sha256"], _facts("inha")["doc"]["sha256_actual"])
+        self.assertEqual(doc["checked_at"], "2026-11-16")
+        t1 = self._track("인하대학교", "인하미래인재(면접형)-의예과 제외")
+        t2 = self._track("인하대학교", "인하미래인재(면접형)-의예과")
+        t3 = self._track("인하대학교", "지역의사선발전형")
+        self.assertEqual(t2["selection_ratio"], "전형 총 모집 939명 중 의예과 16명; 1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%")
+        self.assertNotIn("15명", json.dumps(u["tracks"], ensure_ascii=False))
+        # 인원 밖의 값(면접 근거, 시간, 선발 비율)은 지금 판에서도 같다
+        self.assertEqual([(t["interview_basis"], t["interview_minutes"], t["prep_minutes"]) for t in (t1, t2, t3)],
+                         [("record_based", None, None), ("record_based", 15, None), ("record_based", 15, None)])
+        self.assertEqual(t1["selection_ratio"], "전형 총 모집 939명 중 의예과를 제외한 모집단위; 1단계 서류 100%(3.5배수), 2단계 1단계 70%+면접 30%")
+        self.assertEqual(t3["selection_ratio"], "모집 6명; 1단계 서류 100%(3배수), 2단계 1단계 70%+면접 30%")
+        self.assertEqual([sorted({e["page"] for e in t["evidence"]}) for t in (t1, t2, t3)], [[14, 15], [10, 14, 15], [19, 20]])
+        p10, p14, p15, p19, p20 = (_pdf_page("inha", n) for n in (10, 14, 15, 19, 20))
+        self.assertIn("의과대학 의예과 16", p10)
+        self.assertIn("합계 939", p10)
+        for q in ("1. 모집단위 및 모집인원: 939명", "3.5배수", "(의예과: 3배수)", "반영비율 70% 30%"):
+            self.assertIn(q, p14)
+        for q in ("면접위원 2인과 지원자 1인의 개별 면접", "(2개의 면접실을 이동하면서 진행)", "8~10분 내외", "15분 내외(각 면접실별 7~8분 내외)"):
+            self.assertIn(q, p15)
+        self.assertIn("1. 모집단위 및 모집인원: 의예과 6명", p19)
+        for q in ("3배수", "반영비율 70% 30%", "평가시간 15분 내외", "(2개의 면접실을 이동하면서 진행)"):
+            self.assertIn(q, p20)
+
+    def test_sales_page_official_cards(self):
+        cat = {e["slug"]: e for e in json.loads(CATALOG.read_text(encoding="utf-8"))["items"]}
+        cau = self.B._official_html(cat["cau"])
+        self.assertIn("모집 7명, 1단계 서류 100%, 2단계 1단계 70%+면접 30%", cau)
+        self.assertNotIn("모집 15명", cau)
+        inha = self.B._official_html(cat["inha"])
+        self.assertIn("전형 총 모집 939명 중 의예과 16명, 1단계 서류 100%(3배수)", inha)
+        self.assertNotIn("의예과 15명", inha)
+        self.assertIn("원문 대조 2026-11-16.", inha)
+        self.assertIn("<dt>요강 쪽수</dt><dd>10, 14, 15쪽</dd>", inha)
+
+
 # ---------------------------------------------------------------- 허브, llms, 워커
 class SiteWiring(unittest.TestCase):
     def test_worker_table_frees_info_paths(self):
